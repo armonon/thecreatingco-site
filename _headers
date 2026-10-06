@@ -1,0 +1,27 @@
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: SAMEORIGIN
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+
+# --- thecreateco suite kit (wave 4) — added 2026-10-06; rules above unchanged ---
+/suite/v1/*
+  Cache-Control: public, max-age=300, stale-while-revalidate=86400
+  Access-Control-Allow-Origin: *
+  Cross-Origin-Resource-Policy: cross-origin
+  X-Robots-Tag: noindex
+
+/locker/bridge.html
+  Content-Security-Policy: frame-ancestors 'self' https://thecreatingco.com https://*.thecreatingco.com https://sattarimusic.com https://www.sattarimusic.com https://*.netlify.app http://localhost:*
+  Cross-Origin-Resource-Policy: cross-origin
+  Cross-Origin-Embedder-Policy: require-corp
+  Cache-Control: no-cache
+  X-Robots-Tag: noindex
+
+/locker/core.js
+  Cross-Origin-Resource-Policy: same-origin
+  Cache-Control: no-cache
+
+/locker/sw.js
+  Cache-Control: no-cache
+  Service-Worker-Allowed: /locker/

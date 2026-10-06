@@ -1,0 +1,17 @@
+{
+  "name": "Locker",
+  "short_name": "Locker",
+  "description": "Your files from thecreateco apps, in one place, kept in this browser on this device.",
+  "id": "/locker/",
+  "start_url": "/locker/",
+  "scope": "/locker/",
+  "display": "standalone",
+  "background_color": "#101010",
+  "theme_color": "#101010",
+  "icons": [
+    { "src": "/locker/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "/locker/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/locker/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/locker/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

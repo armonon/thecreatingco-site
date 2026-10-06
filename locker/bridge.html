@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<title>thecreateco Locker bridge</title>
+<script src="/locker/core.js"></script>
+</head>
+<body>
+<script>
+(function () {
+  'use strict';
+  var core = self.TCCLockerCore;
+  var parentWin = window.parent;
+  if (!core || parentWin === window) return;
+
+  // Only talk to an allowlisted embedder. ancestorOrigins is available in
+  // Chromium/WebKit; elsewhere we rely on the per-message origin check below
+  // (and the CSP frame-ancestors header on this page).
+  var anc = location.ancestorOrigins && location.ancestorOrigins[0];
+  var parentOrigin = anc || null;
+  if (parentOrigin && !core.allowed(parentOrigin)) return;
+
+  window.addEventListener('message', function (ev) {
+    if (ev.source !== parentWin) return;
+    if (!parentOrigin && core.allowed(ev.origin)) parentOrigin = ev.origin;
+    core.serve(ev, function (msg) {
+      try { ev.source.postMessage(msg, ev.origin); } catch (e) {}
+    });
+  });
+
+  if (core.channel) {
+    core.channel.onmessage = function (ev) {
+      if (!parentOrigin) return;
+      try { parentWin.postMessage({ tcc: 1, kind: 'changed', change: ev.data }, parentOrigin); } catch (e) {}
+    };
+  }
+
+  // The ready ping carries no data. Target the known origin when we have it.
+  try { parentWin.postMessage({ tcc: 1, kind: 'ready', v: 1 }, parentOrigin || '*'); } catch (e) {}
+})();
+</script>
+</body>
+</html>
