@@ -118,3 +118,7 @@
  .mm-catalog-home .mm-notable-card h3{font-size:22px}
 }
 @media(prefers-reduced-motion:reduce){.mm-notable-icon{transition:none}}
+
+.mm-catalog-home .mm-tool-new{font-size:13px;color:#53564c;margin-block:-4px 16px}
+.mm-catalog-home .mm-tool-new strong{color:var(--tool-tone,#17171a)}
+.mm-catalog-home .mm-tool-new a{color:inherit;text-decoration:underline;text-underline-offset:3px}

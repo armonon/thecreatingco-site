@@ -37,7 +37,7 @@
       if(!empty){empty=document.createElement('p');empty.className='mm-group-empty';empty.textContent='No products in this collection match this filter.';group.append(empty);}
       empty.hidden=all('[data-mm-category]',group).some(card=>!card.hidden);
     });
-    document.querySelector('.mm-filter-count').textContent=value==='All tools'?'4 suite products + 4 other apps':`${count} ${count===1?'product':'products'} across both collections`;
+    document.querySelector('.mm-filter-count').textContent=value==='All tools'?'4 suite products + 5 other apps':`${count} ${count===1?'product':'products'} across both collections`;
   }));
   const launch=document.querySelector('.mm-launch-dialog');
   if(launch){
