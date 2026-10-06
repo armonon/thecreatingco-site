@@ -1,0 +1,2 @@
+/* Keep the first instruction before the canvas in an embedded phone lesson. */
+@media(max-width:600px){.lw-mini .lw-focus-guide{order:1;flex:none;border-top:0;border-bottom:1px solid #dbe0eb}.lw-mini .lw-body{order:2;min-height:180px}.lw-mini .lw-focus-guide nav{margin-bottom:6px}.lw-mini .lw-focus-meta{margin-top:4px}.lw-mini .lw-focus-guide{padding:10px 12px}}

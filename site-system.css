@@ -1,0 +1,60 @@
+/* Momentium marketing roles. Native editor documents retain their own interface. */
+@font-face{font-family:Momentium;src:url('/assets/form-origin/geist-98bbbccb.woff2') format('woff2');font-style:normal;font-weight:100 900;font-display:swap}
+:root{--site-font:Momentium,Arial,sans-serif;--site-cream:#f6f7ef;--site-ink:#22271f;--site-muted:#505b4a;--site-line:#bcc2b4;--form-tone:#d8e8d2;--luma-tone:#ffd6e7;--stemdeck-tone:#ffddba;--scenepilot-tone:#ded4ff;--site-radius:8px}
+body.momentium-shell,body.momentium-shell :is(button,input,select,textarea){font-family:var(--site-font)}
+body.momentium-shell :is(.suite-origin,.form-origin,.pf,.pr-next,.pr-overview,.learn-hub,.scope-section,.release-strip,.ah-chapter,.scene-render-gallery,.unified-page){font-family:var(--site-font);color:var(--site-ink)}
+body.momentium-shell :is(.pf,.pr-next,.pr-overview,.scope-section,.ah-chapter,.scene-render-gallery) h2, .unified-page h2{font-family:var(--site-font);font-size:clamp(28px,3.4vw,46px);font-weight:550;line-height:1.12;letter-spacing:-.035em}
+body.momentium-shell :is(.pf-lede,.pf-scope,.pf-group-intro,.pr-heading>p,.lg-intro>p,.feature-availability){color:var(--site-muted);line-height:1.6}
+body.momentium-shell :is(.pf,.scope-section,.pr-next) p{font-size:15px;line-height:1.65}
+body.momentium-shell :is(button,a,summary,input,select,textarea):focus-visible{outline:3px solid #5742b8;outline-offset:4px}
+body.momentium-shell :is(button,.action-link,.pf-example-link,.hub-direct,.hub-studio-footer>a,.hub-studio-footer>button,.pr-nav a){min-height:44px}
+body.momentium-shell :is(.action-link,.pf-example-link,.hub-direct){display:inline-flex;align-items:center;gap:8px;padding:8px 0;text-underline-offset:4px}
+body.momentium-shell button:disabled{opacity:.55;cursor:not-allowed}
+body.momentium-shell button:not(:disabled):active{transform:translateY(1px)}
+.product-hub{position:relative;padding-block:44px;scroll-margin-top:150px}
+.product-hub .challenge-heading{max-width:720px;margin-bottom:20px}
+.product-hub .challenge-heading h2{font-size:clamp(30px,4vw,48px);margin:8px 0 14px;line-height:1.1}
+.product-hub .challenge-heading p{font-size:16px;line-height:1.65;color:var(--site-muted)}
+.challenge-steps{display:flex;gap:8px;margin-bottom:22px;flex-wrap:wrap}
+.challenge-steps button{display:flex;align-items:center;gap:10px;border:1px solid var(--site-line);border-radius:24px;padding:10px 16px;background:#fff;color:var(--site-ink);font:inherit;font-size:13px}
+.challenge-steps span{font-size:10px;color:var(--site-muted)}
+.challenge-steps button:hover{background:var(--site-cream)}
+.hub-studio{scroll-margin-top:150px}
+.hub-studio-footer>button{display:inline-flex;align-items:center;justify-content:center;padding:10px 14px;border:1px solid var(--site-line);border-radius:6px;background:white;color:var(--site-ink);font-size:13px;cursor:pointer}
+body.momentium-shell .hub-studio-footer p{font-size:12px;color:#505647}
+body.momentium-shell .hub-studio-heading .hub-kicker{font-size:11px;color:#515644}
+body.momentium-shell .hub-status{font-size:12px;color:#444b40}
+body.momentium-shell .hub-navigation>span{font-size:11px;color:#515644}
+.secondary-reference{max-width:1360px;margin:24px auto;border-block:1px solid var(--site-line);padding:0 24px;background:#f5f5ee}
+.secondary-reference>summary{list-style:none;display:flex;align-items:center;justify-content:space-between;gap:18px;min-height:76px;cursor:pointer;font-size:18px;font-weight:550}
+.secondary-reference>summary::before{content:'+';font-size:24px}.secondary-reference[open]>summary::before{content:'−'}
+.secondary-reference>summary>span{font-size:12px;color:var(--site-muted);margin-left:auto}
+.secondary-reference[open]{padding-bottom:24px}.secondary-reference>section{max-width:100%}
+.feature-availability{font-size:12px!important;margin-top:12px}
+.pf-edition{color:#37442e!important;background:#e6ecdf!important;font-size:11px!important;border:1px solid #b8c6ac}
+.unified-page{max-width:1280px;margin:auto;padding:64px 28px 90px;min-height:70vh}
+.unified-page h1{font-size:clamp(40px,6vw,76px);line-height:1.04;letter-spacing:-.045em;font-weight:550;max-width:850px;margin:16px 0 24px}
+.unified-page h2{margin:14px 0 20px}.unified-page h3{font-size:24px;line-height:1.2;margin:14px 0}
+.unified-page p{font-size:16px;line-height:1.65;max-width:760px;color:var(--site-muted)}
+.eyebrow{font-size:11px!important;letter-spacing:.08em;text-transform:uppercase;font-weight:600}
+.project-grid,.work-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin:36px 0}
+.project-card,.work-card{background:#fff;border:1px solid var(--site-line);border-radius:12px;padding:24px;min-width:0}
+.project-card img{display:block;width:100%;height:290px;object-fit:contain;background:#f1f0e8;border-radius:8px}
+.project-card p,.work-card p{font-size:14px}
+.project-actions{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:16px}
+.project-actions :is(a,button),.unified-page button{min-height:44px;display:inline-flex;align-items:center;justify-content:center;font:inherit;font-size:13px;padding:10px 14px;border:1px solid var(--site-line);border-radius:6px;background:#fff;color:var(--site-ink);text-underline-offset:4px;cursor:pointer}
+.project-actions a:first-child,.unified-page button[type=submit]{background:var(--site-ink);color:white}
+.unified-notice{border-left:3px solid #839479;padding:12px 18px;background:#edf0e5;margin:24px 0}
+.unified-page form{max-width:780px;display:grid;gap:18px;padding:26px;border:1px solid var(--site-line);border-radius:12px;background:#fff}
+.unified-page label{display:grid;gap:8px;font-size:14px}.unified-page :is(input,select,textarea){min-height:46px;border:1px solid #a9b3a0;border-radius:6px;width:100%;padding:12px;font:inherit;color:var(--site-ink);background:white}
+.unified-page .check-label{display:flex;align-items:flex-start;gap:12px;line-height:1.6}.check-label input{width:20px;min-height:20px;margin-top:4px;flex-shrink:0}
+.unified-page [hidden]{display:none!important}.work-empty{border:1px dashed var(--site-line);padding:32px;border-radius:10px;margin-top:30px}
+@media(max-width:700px){.product-hub{padding:32px 12px}.challenge-steps{gap:6px}.challenge-steps button{padding:8px 11px;font-size:12px}.secondary-reference{margin:16px 12px;padding:0 16px}.secondary-reference>summary{font-size:16px}.secondary-reference>summary>span{display:none}.unified-page{padding:32px 16px 56px}.project-grid,.work-grid{grid-template-columns:1fr;gap:16px}.project-card,.work-card{padding:18px}.project-card img{height:240px}.unified-page form{padding:18px}.hub-studio-footer>button{flex:1}.hub-studio-footer>a{min-height:44px!important}.hub-studio{scroll-margin-top:134px}.challenge-heading .eyebrow{font-size:10px!important}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
+.challenge-steps button[aria-pressed=true]{background:#e2e9db;border-color:#67765b;box-shadow:inset 0 0 0 1px #67765b}
+.secondary-reference .suite-origin,.secondary-reference .form-origin{max-width:100%;padding:0}
+@media(max-width:700px){.hub-studio-footer>button{flex:1 1 calc(50% - 8px);min-width:120px;min-height:48px}.hub-studio-footer>a[href="/work/"]{flex-basis:100%;justify-content:flex-start}.hub-studio-footer>a.hub-continue{flex-basis:100%}}
+
+body.momentium-shell.unified-shell{background:var(--site-cream);color:var(--site-ink)}
+body.presentation-form{--pr-tone:var(--form-tone)!important;--accent:var(--form-tone)!important}body.presentation-luma{--pr-tone:var(--luma-tone)!important;--accent:var(--luma-tone)!important}body.presentation-stemdeck{--pr-tone:var(--stemdeck-tone)!important;--accent:var(--stemdeck-tone)!important}body.presentation-scenepilot{--pr-tone:var(--scenepilot-tone)!important;--accent:var(--scenepilot-tone)!important}
+.presentation-form .pf{--pf-accent:var(--form-tone)!important}.presentation-luma .pf{--pf-accent:var(--luma-tone)!important}.presentation-stemdeck .pf{--pf-accent:var(--stemdeck-tone)!important}.presentation-scenepilot .pf{--pf-accent:var(--scenepilot-tone)!important}

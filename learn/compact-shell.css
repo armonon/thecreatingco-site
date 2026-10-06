@@ -1,0 +1,18 @@
+/* The editor is the lesson. Keep its surrounding controls in one small bar. */
+.hub-toolbar{display:flex;align-items:center;gap:8px;padding:10px 12px;border-bottom:1px solid #dce0d5;background:#fafbf6;position:relative;z-index:3}
+.hub-toolbar .hub-navigation{display:flex;align-items:center;gap:6px;flex:1;min-width:0;margin:0;padding:0;border:0}
+.hub-toolbar .hub-navigation select{flex:1;min-width:0;width:auto;max-width:420px;margin:0;font-size:14px;height:44px;padding:0 28px 0 10px}
+.hub-toolbar button,.hub-work-menu>summary{display:flex;align-items:center;justify-content:center;min-height:44px;border:1px solid #d6dbce;border-radius:7px;background:white;color:#252b22;cursor:pointer;font:inherit;font-size:13px}
+.hub-toolbar [data-hub-cycle],.hub-toolbar [data-hub-expand]{flex:0 0 44px;width:44px;height:44px;padding:0;font-size:19px}
+.hub-work-menu{position:relative;flex:none}.hub-work-menu>summary{padding:0 13px;list-style:none;white-space:nowrap}.hub-work-menu>summary::-webkit-details-marker{display:none}.hub-work-menu[open]>summary{background:#e9eedf}
+.hub-work-actions{position:absolute;right:0;top:calc(100% + 8px);width:248px;max-width:calc(100vw - 42px);padding:8px;background:#fff;border:1px solid #d6dbce;border-radius:10px;box-shadow:0 12px 32px #18211026;display:grid;gap:4px}
+.hub-work-actions :is(button,a){display:flex;align-items:center;justify-content:flex-start;width:100%;min-height:44px!important;text-align:left;padding:10px 12px!important;border:0!important;background:transparent!important;color:#252b22!important;border-radius:6px;font-size:13px;text-decoration:none;box-sizing:border-box}
+.hub-work-actions :is(button,a):hover{background:#eef1e7!important}.hub-toolbar :is(button,select,summary,a):focus-visible{outline:3px solid #7956ae;outline-offset:2px}
+.hub-status:empty{display:none!important}.hub-status:not(:empty){margin:0!important;padding:10px 14px!important;min-height:0!important;background:#f0f3e9}
+.hub-first-move[hidden]{display:none!important}.hub-first-move:not([hidden]){margin:0;padding:10px 14px}
+.hub-expanded .hub-toolbar{flex:none}.hub-expanded .hub-status{flex:none}
+@media(max-width:600px){.hub-toolbar{gap:5px;padding:7px 6px;flex-wrap:wrap}.hub-toolbar .hub-navigation{flex:1 1 calc(100% - 50px);order:0}.hub-toolbar [data-hub-expand]{order:1}.hub-toolbar .hub-work-menu{order:2;margin-left:auto}.hub-work-menu>summary{min-height:36px;font-size:12px;padding:0 10px}.hub-toolbar .hub-navigation select{font-size:13px}.hub-work-actions{right:0}.hub-studio{border-radius:10px}.hub-stage{border:0}}
+@media(max-width:600px){.hub-toolbar{flex-wrap:nowrap;gap:4px}.hub-toolbar .hub-navigation{flex:1;gap:3px}.hub-toolbar .hub-work-menu{order:1;margin:0}.hub-toolbar [data-hub-expand]{order:2}.hub-work-menu>summary{width:44px;height:44px;min-height:44px;padding:0;font-size:0}.hub-work-menu>summary:after{content:'Keep';font-size:11px}.hub-toolbar .hub-navigation select{padding-left:5px;padding-right:18px}.hub-work-actions{right:-48px}}
+.hub-toolbar details.hub-work-menu{padding:0;margin:0;border:0;background:transparent}
+
+@media(max-width:600px){[data-active-product="luma"] .hub-studio:not(.hub-expanded) .hub-stage iframe{height:clamp(600px,calc(100svh - 140px),760px)!important}}

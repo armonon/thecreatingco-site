@@ -1,0 +1,226 @@
+{
+  "form": {
+    "product": "Form Studio",
+    "edition": "Web editor",
+    "capture_date": "2026-09-29",
+    "provenance": "Browser geometry and exports vary from the native edition. These views do not qualify a part for manufacturing.",
+    "screenshots": [
+      {
+        "path": "/assets/workflows/form-technical.png",
+        "title": "Read the geometry",
+        "caption": "Inspect an original procedural flange in the technical view."
+      },
+      {
+        "path": "/assets/workflows/form-materials.png",
+        "title": "Change the surface",
+        "caption": "Compare a satin aluminum finish on the same editable part."
+      },
+      {
+        "path": "/assets/workflows/form-sketch.png",
+        "title": "Work in a sketch",
+        "caption": "Move into the sketch workspace to develop the next detail."
+      },
+      {
+        "path": "/assets/workflows/form-handoff.png",
+        "title": "Keep the project",
+        "caption": "Save an editable project and explore the available export formats."
+      }
+    ]
+  },
+  "luma": {
+    "product": "Luma Studio",
+    "edition": "Web editor",
+    "capture_date": "2026-09-29",
+    "provenance": "The blue shirt is an original AI-generated input image. The screenshots show local editing, not hosted image generation. Native RAW and print features vary.",
+    "screenshots": [
+      {
+        "path": "/assets/workflows/luma-import.png",
+        "title": "Start with an image",
+        "caption": "Import an original image into the layer workspace."
+      },
+      {
+        "path": "/assets/workflows/luma-tone.png",
+        "title": "Develop the tone",
+        "caption": "Adjust exposure and contrast with editable tone layers."
+      },
+      {
+        "path": "/assets/workflows/luma-curves.png",
+        "title": "Shape the curve",
+        "caption": "Add a curves layer and inspect its tonal controls."
+      },
+      {
+        "path": "/assets/workflows/luma-export.png",
+        "title": "Choose the handoff",
+        "caption": "Review PNG, JPEG, WebP, PSD and native project options."
+      }
+    ]
+  },
+  "ghost": {
+    "product": "Ghost Studio",
+    "edition": "Web studio",
+    "capture_date": "2026-09-29",
+    "provenance": "An original AI-generated front reference was reused for both photo slots in this demonstration. The resulting study is an approximation, not calibrated fit or an exact sewing pattern.",
+    "screenshots": [
+      {
+        "path": "/assets/workflows/ghost-references.png",
+        "title": "Bring your references",
+        "caption": "Start a visual garment study from reference photos."
+      },
+      {
+        "path": "/assets/workflows/ghost-adjust.png",
+        "title": "Refine the form",
+        "caption": "Inspect the front view and refine the generated approximation."
+      },
+      {
+        "path": "/assets/workflows/ghost-compare.png",
+        "title": "Compare with the source",
+        "caption": "Check the photo references alongside the garment study."
+      },
+      {
+        "path": "/assets/workflows/ghost-export.png",
+        "title": "Take the study with you",
+        "caption": "Choose a GLB, preview image or editable project backup."
+      }
+    ]
+  },
+  "scenepilot": {
+    "product": "ScenePilot",
+    "edition": "Browser Lite",
+    "capture_date": "2026-09-29",
+    "provenance": "Original synthetic test footage. These are Browser Lite captures; the full native Pro workspaces have a different feature set. Browser codec and export support varies.",
+    "screenshots": [
+      {
+        "path": "/assets/workflows/scenepilot-project.png",
+        "title": "Set the canvas",
+        "caption": "Choose an aspect ratio and begin a browser video project."
+      },
+      {
+        "path": "/assets/workflows/scenepilot-analysis.png",
+        "title": "Find the rhythm",
+        "caption": "Analyze an original test clip to reveal timing and shot information."
+      },
+      {
+        "path": "/assets/workflows/scenepilot-timeline.png",
+        "title": "Refine the sequence",
+        "caption": "Continue with a normal editable timeline after analysis."
+      },
+      {
+        "path": "/assets/workflows/scenepilot-effects.png",
+        "title": "Explore the effects",
+        "caption": "Inspect the available Browser Lite effects and editing controls."
+      }
+    ]
+  },
+  "librarian": {
+    "product": "Librarian",
+    "edition": "Web library",
+    "capture_date": "2026-09-29",
+    "provenance": "Original demonstration PDFs. Retain your source files: browser storage can be cleared. These captures demonstrate local reading, not hosted AI.",
+    "screenshots": [
+      {
+        "path": "/assets/workflows/librarian-library.png",
+        "title": "Build a personal shelf",
+        "caption": "Import original PDFs and return to them from the library."
+      },
+      {
+        "path": "/assets/workflows/librarian-reading.png",
+        "title": "Open the book",
+        "caption": "Read an original demonstration PDF in the browser."
+      },
+      {
+        "path": "/assets/workflows/librarian-dark.png",
+        "title": "Change the atmosphere",
+        "caption": "Switch the surrounding reader interface to a dark theme."
+      },
+      {
+        "path": "/assets/workflows/librarian-zoom.png",
+        "title": "Look closer",
+        "caption": "Increase the reading zoom to 150 percent."
+      }
+    ]
+  },
+  "reclaim": {
+    "product": "Reclaim",
+    "edition": "Read-only browser companion",
+    "capture_date": "2026-09-29",
+    "provenance": "The browser companion only reviews selected files. It cannot scan the whole Mac, clear caches, quarantine or delete files.",
+    "screenshots": [
+      {
+        "path": "/assets/workflows/reclaim-review.png",
+        "title": "Review selected files",
+        "caption": "Inspect the sizes and names of files you choose."
+      },
+      {
+        "path": "/assets/workflows/reclaim-duplicates.png",
+        "title": "Find identical content",
+        "caption": "Review copies matched by file content, using original test files."
+      },
+      {
+        "path": "/assets/workflows/reclaim-search.png",
+        "title": "Narrow the review",
+        "caption": "Search the selected files to focus on a smaller set."
+      },
+      {
+        "path": "/assets/workflows/reclaim-report.png",
+        "title": "Keep a report",
+        "caption": "Export the review as a report. The source files remain unchanged."
+      }
+    ]
+  },
+  "stemdeck": {
+    "product": "StemDeck",
+    "edition": "Browser mixer companion",
+    "capture_date": "2026-09-29",
+    "provenance": "The browser companion mixes loaded audio. Native stem separation, plugins, tempo/key algorithms and Replay are not part of this edition.",
+    "screenshots": [
+      {
+        "path": "/assets/workflows/stemdeck-decks.png",
+        "title": "Load the decks",
+        "caption": "Bring original audio studies into the four-deck browser mixer."
+      },
+      {
+        "path": "/assets/workflows/stemdeck-cues.png",
+        "title": "Set the starting point",
+        "caption": "Choose a cue, set a deck level and enable looping."
+      },
+      {
+        "path": "/assets/workflows/stemdeck-mixing.png",
+        "title": "Move through the mix",
+        "caption": "Play the loaded decks and blend the two sides with a crossfader."
+      },
+      {
+        "path": "/assets/workflows/stemdeck-export.png",
+        "title": "Keep the sketch",
+        "caption": "Export a short stereo WAV from the selected cues and current mix settings."
+      }
+    ]
+  },
+  "bounce": {
+    "product": "Bounce",
+    "edition": "Browser player companion",
+    "capture_date": "2026-09-29",
+    "provenance": "The browser companion plays local audio with EQ and saved playlists. Native metadata scanning and streaming services are not included.",
+    "screenshots": [
+      {
+        "path": "/assets/workflows/bounce-listening.png",
+        "title": "Get into a track",
+        "caption": "Play original audio studies from a local queue."
+      },
+      {
+        "path": "/assets/workflows/bounce-equalizer.png",
+        "title": "Make it your sound",
+        "caption": "Adjust bass and treble while listening."
+      },
+      {
+        "path": "/assets/workflows/bounce-search.png",
+        "title": "Find the next track",
+        "caption": "Search a queue of your own audio files."
+      },
+      {
+        "path": "/assets/workflows/bounce-playlist.png",
+        "title": "Come back to a playlist",
+        "caption": "Save a named playlist in this browser for another listening session."
+      }
+    ]
+  }
+}

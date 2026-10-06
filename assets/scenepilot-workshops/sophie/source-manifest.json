@@ -1,0 +1,703 @@
+{
+  "channel": "https://www.youtube.com/@sophiesky999/videos",
+  "source": "Actual published Sophie Sky / Roze channel videos. Short editable excerpts, with original source timestamps.",
+  "groups": {
+    "dance": {
+      "label": "Went to Ecstatic Dance and Filmed a Music Video",
+      "channel": "Roze",
+      "videoId": "Lx-cbLcb5Ec",
+      "sourceUrl": "https://www.youtube.com/watch?v=Lx-cbLcb5Ec",
+      "clips": [
+        {
+          "url": "/assets/scenepilot-workshops/sophie/roze-dance-01.mp4",
+          "name": "roze-dance-01.mp4",
+          "videoId": "Lx-cbLcb5Ec",
+          "title": "Went to Ecstatic Dance and Filmed a Music Video",
+          "sourceStart": 9,
+          "duration": 6,
+          "size": 1773884
+        },
+        {
+          "url": "/assets/scenepilot-workshops/sophie/roze-dance-02.mp4",
+          "name": "roze-dance-02.mp4",
+          "videoId": "Lx-cbLcb5Ec",
+          "title": "Went to Ecstatic Dance and Filmed a Music Video",
+          "sourceStart": 20,
+          "duration": 6,
+          "size": 1096197
+        },
+        {
+          "url": "/assets/scenepilot-workshops/sophie/roze-dance-03.mp4",
+          "name": "roze-dance-03.mp4",
+          "videoId": "Lx-cbLcb5Ec",
+          "title": "Went to Ecstatic Dance and Filmed a Music Video",
+          "sourceStart": 30,
+          "duration": 6,
+          "size": 1474587
+        }
+      ],
+      "audio": {
+        "videoId": "Lx-cbLcb5Ec",
+        "title": "Went to Ecstatic Dance and Filmed a Music Video",
+        "sourceUrl": "https://www.youtube.com/watch?v=Lx-cbLcb5Ec",
+        "url": "/assets/scenepilot-workshops/sophie/roze-dance-soundtrack.m4a",
+        "name": "roze-dance-soundtrack.m4a",
+        "sourceStart": 9,
+        "duration": 12,
+        "size": 196005
+      }
+    },
+    "kauai": {
+      "label": "Roadtrip With Us Around KAUAI",
+      "channel": "Roze",
+      "videoId": "IlIp-nz6sr8",
+      "sourceUrl": "https://www.youtube.com/watch?v=IlIp-nz6sr8",
+      "clips": [
+        {
+          "url": "/assets/scenepilot-workshops/sophie/roze-kauai-01.mp4",
+          "name": "roze-kauai-01.mp4",
+          "videoId": "IlIp-nz6sr8",
+          "title": "Roadtrip With Us Around KAUAI",
+          "sourceStart": 10,
+          "duration": 6,
+          "size": 1463837
+        },
+        {
+          "url": "/assets/scenepilot-workshops/sophie/roze-kauai-02.mp4",
+          "name": "roze-kauai-02.mp4",
+          "videoId": "IlIp-nz6sr8",
+          "title": "Roadtrip With Us Around KAUAI",
+          "sourceStart": 54,
+          "duration": 6,
+          "size": 2643198
+        },
+        {
+          "url": "/assets/scenepilot-workshops/sophie/roze-kauai-03.mp4",
+          "name": "roze-kauai-03.mp4",
+          "videoId": "IlIp-nz6sr8",
+          "title": "Roadtrip With Us Around KAUAI",
+          "sourceStart": 145,
+          "duration": 6,
+          "size": 2417249
+        }
+      ],
+      "audio": {
+        "videoId": "IlIp-nz6sr8",
+        "title": "Roadtrip With Us Around KAUAI",
+        "sourceUrl": "https://www.youtube.com/watch?v=IlIp-nz6sr8",
+        "url": "/assets/scenepilot-workshops/sophie/roze-kauai-soundtrack.m4a",
+        "name": "roze-kauai-soundtrack.m4a",
+        "sourceStart": 10,
+        "duration": 12,
+        "size": 199117
+      }
+    },
+    "california": {
+      "label": "California Coast and Joshua Tree",
+      "channel": "Roze",
+      "videoId": "ZT-t76-M4zE",
+      "sourceUrl": "https://www.youtube.com/watch?v=ZT-t76-M4zE",
+      "clips": [
+        {
+          "url": "/assets/scenepilot-workshops/sophie/roze-california-01.mp4",
+          "name": "roze-california-01.mp4",
+          "videoId": "ZT-t76-M4zE",
+          "title": "California Coast and Joshua Tree",
+          "sourceStart": 100,
+          "duration": 6,
+          "size": 1018305
+        },
+        {
+          "url": "/assets/scenepilot-workshops/sophie/roze-california-02.mp4",
+          "name": "roze-california-02.mp4",
+          "videoId": "ZT-t76-M4zE",
+          "title": "California Coast and Joshua Tree",
+          "sourceStart": 250,
+          "duration": 6,
+          "size": 1158522
+        },
+        {
+          "url": "/assets/scenepilot-workshops/sophie/roze-california-03.mp4",
+          "name": "roze-california-03.mp4",
+          "videoId": "ZT-t76-M4zE",
+          "title": "California Coast and Joshua Tree",
+          "sourceStart": 350,
+          "duration": 6,
+          "size": 1054893
+        }
+      ],
+      "audio": {
+        "videoId": "ZT-t76-M4zE",
+        "title": "California Coast and Joshua Tree",
+        "sourceUrl": "https://www.youtube.com/watch?v=ZT-t76-M4zE",
+        "url": "/assets/scenepilot-workshops/sophie/roze-california-soundtrack.m4a",
+        "name": "roze-california-soundtrack.m4a",
+        "sourceStart": 100,
+        "duration": 12,
+        "size": 197585
+      }
+    },
+    "day-in-life": {
+      "label": "Day In The Life (as an ARTIST)",
+      "channel": "Roze",
+      "videoId": "Wd0TKBt6UeE",
+      "sourceUrl": "https://www.youtube.com/watch?v=Wd0TKBt6UeE",
+      "clips": [
+        {
+          "url": "/assets/scenepilot-workshops/sophie/roze-day-in-life-01.mp4",
+          "name": "roze-day-in-life-01.mp4",
+          "videoId": "Wd0TKBt6UeE",
+          "title": "Day In The Life (as an ARTIST)",
+          "sourceStart": 24,
+          "duration": 6,
+          "size": 738578
+        },
+        {
+          "url": "/assets/scenepilot-workshops/sophie/roze-day-in-life-02.mp4",
+          "name": "roze-day-in-life-02.mp4",
+          "videoId": "Wd0TKBt6UeE",
+          "title": "Day In The Life (as an ARTIST)",
+          "sourceStart": 130,
+          "duration": 6,
+          "size": 289147
+        },
+        {
+          "url": "/assets/scenepilot-workshops/sophie/roze-day-in-life-03.mp4",
+          "name": "roze-day-in-life-03.mp4",
+          "videoId": "Wd0TKBt6UeE",
+          "title": "Day In The Life (as an ARTIST)",
+          "sourceStart": 180,
+          "duration": 6,
+          "size": 991567
+        }
+      ],
+      "audio": {
+        "videoId": "Wd0TKBt6UeE",
+        "title": "Day In The Life (as an ARTIST)",
+        "sourceUrl": "https://www.youtube.com/watch?v=Wd0TKBt6UeE",
+        "url": "/assets/scenepilot-workshops/sophie/roze-day-in-life-soundtrack.m4a",
+        "name": "roze-day-in-life-soundtrack.m4a",
+        "sourceStart": 24,
+        "duration": 12,
+        "size": 196251
+      }
+    },
+    "feel-alive": {
+      "label": "I FEEL ALIVE",
+      "channel": "Roze",
+      "videoId": "LEDbKjpTX7s",
+      "sourceUrl": "https://www.youtube.com/watch?v=LEDbKjpTX7s",
+      "clips": [
+        {
+          "url": "/assets/scenepilot-workshops/sophie/roze-feel-alive-01.mp4",
+          "name": "roze-feel-alive-01.mp4",
+          "videoId": "LEDbKjpTX7s",
+          "title": "I FEEL ALIVE",
+          "sourceStart": 40,
+          "duration": 6,
+          "size": 911789
+        },
+        {
+          "url": "/assets/scenepilot-workshops/sophie/roze-feel-alive-02.mp4",
+          "name": "roze-feel-alive-02.mp4",
+          "videoId": "LEDbKjpTX7s",
+          "title": "I FEEL ALIVE",
+          "sourceStart": 90,
+          "duration": 6,
+          "size": 732557
+        },
+        {
+          "url": "/assets/scenepilot-workshops/sophie/roze-feel-alive-03.mp4",
+          "name": "roze-feel-alive-03.mp4",
+          "videoId": "LEDbKjpTX7s",
+          "title": "I FEEL ALIVE",
+          "sourceStart": 120,
+          "duration": 6,
+          "size": 351135
+        }
+      ],
+      "audio": {
+        "videoId": "LEDbKjpTX7s",
+        "title": "I FEEL ALIVE",
+        "sourceUrl": "https://www.youtube.com/watch?v=LEDbKjpTX7s",
+        "url": "/assets/scenepilot-workshops/sophie/roze-feel-alive-soundtrack.m4a",
+        "name": "roze-feel-alive-soundtrack.m4a",
+        "sourceStart": 40,
+        "duration": 12,
+        "size": 196434
+      }
+    }
+  },
+  "lessons": {
+    "autocut": {
+      "label": "Ecstatic Dance \u00d7 I FEEL ALIVE",
+      "channel": "Roze",
+      "videoId": "Lx-cbLcb5Ec",
+      "sourceUrl": "https://www.youtube.com/watch?v=Lx-cbLcb5Ec",
+      "clips": [
+        {
+          "url": "/assets/scenepilot-workshops/sophie/roze-dance-01.mp4",
+          "name": "roze-dance-01.mp4",
+          "videoId": "Lx-cbLcb5Ec",
+          "title": "Went to Ecstatic Dance and Filmed a Music Video",
+          "sourceStart": 9,
+          "duration": 6,
+          "size": 1773884
+        },
+        {
+          "url": "/assets/scenepilot-workshops/sophie/roze-dance-02.mp4",
+          "name": "roze-dance-02.mp4",
+          "videoId": "Lx-cbLcb5Ec",
+          "title": "Went to Ecstatic Dance and Filmed a Music Video",
+          "sourceStart": 20,
+          "duration": 6,
+          "size": 1096197
+        },
+        {
+          "url": "/assets/scenepilot-workshops/sophie/roze-dance-03.mp4",
+          "name": "roze-dance-03.mp4",
+          "videoId": "Lx-cbLcb5Ec",
+          "title": "Went to Ecstatic Dance and Filmed a Music Video",
+          "sourceStart": 30,
+          "duration": 6,
+          "size": 1474587
+        }
+      ],
+      "audio": {
+        "videoId": "LEDbKjpTX7s",
+        "title": "I FEEL ALIVE",
+        "sourceUrl": "https://www.youtube.com/watch?v=LEDbKjpTX7s",
+        "url": "/assets/scenepilot-workshops/sophie/roze-feel-alive-soundtrack.m4a",
+        "name": "roze-feel-alive-soundtrack.m4a",
+        "sourceStart": 40,
+        "duration": 12,
+        "size": 196434
+      }
+    },
+    "blend": {
+      "label": "Sunset dance \u00d7 Joshua Tree",
+      "channel": "Roze",
+      "videoId": "Lx-cbLcb5Ec",
+      "sourceUrl": "https://www.youtube.com/watch?v=Lx-cbLcb5Ec",
+      "clips": [
+        {
+          "url": "/assets/scenepilot-workshops/sophie/roze-dance-held-01.mp4",
+          "name": "roze-dance-held-01.mp4",
+          "videoId": "Lx-cbLcb5Ec",
+          "title": "Went to Ecstatic Dance and Filmed a Music Video",
+          "sourceStart": 96,
+          "duration": 10,
+          "size": 723987
+        },
+        {
+          "url": "/assets/scenepilot-workshops/sophie/roze-dance-02.mp4",
+          "name": "roze-dance-02.mp4",
+          "videoId": "Lx-cbLcb5Ec",
+          "title": "Went to Ecstatic Dance and Filmed a Music Video",
+          "sourceStart": 20,
+          "duration": 6,
+          "size": 1096197
+        },
+        {
+          "url": "/assets/scenepilot-workshops/sophie/roze-california-held-01.mp4",
+          "name": "roze-california-held-01.mp4",
+          "videoId": "ZT-t76-M4zE",
+          "title": "California Coast and Joshua Tree",
+          "sourceStart": 370.5,
+          "duration": 12,
+          "size": 3974133
+        }
+      ],
+      "audio": {
+        "videoId": "Lx-cbLcb5Ec",
+        "title": "Went to Ecstatic Dance and Filmed a Music Video",
+        "sourceUrl": "https://www.youtube.com/watch?v=Lx-cbLcb5Ec",
+        "url": "/assets/scenepilot-workshops/sophie/roze-dance-held-soundtrack.m4a",
+        "name": "roze-dance-held-soundtrack.m4a",
+        "sourceStart": 96,
+        "duration": 12,
+        "size": 195302
+      }
+    },
+    "moods": {
+      "label": "California Coast and Joshua Tree",
+      "channel": "Roze",
+      "videoId": "ZT-t76-M4zE",
+      "sourceUrl": "https://www.youtube.com/watch?v=ZT-t76-M4zE",
+      "clips": [
+        {
+          "url": "/assets/scenepilot-workshops/sophie/roze-california-held-01.mp4",
+          "name": "roze-california-held-01.mp4",
+          "videoId": "ZT-t76-M4zE",
+          "title": "California Coast and Joshua Tree",
+          "sourceStart": 370.5,
+          "duration": 12,
+          "size": 3974133
+        },
+        {
+          "url": "/assets/scenepilot-workshops/sophie/roze-california-02.mp4",
+          "name": "roze-california-02.mp4",
+          "videoId": "ZT-t76-M4zE",
+          "title": "California Coast and Joshua Tree",
+          "sourceStart": 250,
+          "duration": 6,
+          "size": 1158522
+        },
+        {
+          "url": "/assets/scenepilot-workshops/sophie/roze-california-03.mp4",
+          "name": "roze-california-03.mp4",
+          "videoId": "ZT-t76-M4zE",
+          "title": "California Coast and Joshua Tree",
+          "sourceStart": 350,
+          "duration": 6,
+          "size": 1054893
+        }
+      ],
+      "audio": {
+        "videoId": "ZT-t76-M4zE",
+        "title": "California Coast and Joshua Tree",
+        "sourceUrl": "https://www.youtube.com/watch?v=ZT-t76-M4zE",
+        "url": "/assets/scenepilot-workshops/sophie/roze-california-held-soundtrack.m4a",
+        "name": "roze-california-held-soundtrack.m4a",
+        "sourceStart": 370.5,
+        "duration": 12,
+        "size": 196113
+      }
+    },
+    "ramp": {
+      "label": "Went to Ecstatic Dance and Filmed a Music Video",
+      "channel": "Roze",
+      "videoId": "Lx-cbLcb5Ec",
+      "sourceUrl": "https://www.youtube.com/watch?v=Lx-cbLcb5Ec",
+      "clips": [
+        {
+          "url": "/assets/scenepilot-workshops/sophie/roze-dance-held-01.mp4",
+          "name": "roze-dance-held-01.mp4",
+          "videoId": "Lx-cbLcb5Ec",
+          "title": "Went to Ecstatic Dance and Filmed a Music Video",
+          "sourceStart": 96,
+          "duration": 10,
+          "size": 723987
+        },
+        {
+          "url": "/assets/scenepilot-workshops/sophie/roze-dance-02.mp4",
+          "name": "roze-dance-02.mp4",
+          "videoId": "Lx-cbLcb5Ec",
+          "title": "Went to Ecstatic Dance and Filmed a Music Video",
+          "sourceStart": 20,
+          "duration": 6,
+          "size": 1096197
+        },
+        {
+          "url": "/assets/scenepilot-workshops/sophie/roze-dance-03.mp4",
+          "name": "roze-dance-03.mp4",
+          "videoId": "Lx-cbLcb5Ec",
+          "title": "Went to Ecstatic Dance and Filmed a Music Video",
+          "sourceStart": 30,
+          "duration": 6,
+          "size": 1474587
+        }
+      ],
+      "audio": {
+        "videoId": "Lx-cbLcb5Ec",
+        "title": "Went to Ecstatic Dance and Filmed a Music Video",
+        "sourceUrl": "https://www.youtube.com/watch?v=Lx-cbLcb5Ec",
+        "url": "/assets/scenepilot-workshops/sophie/roze-dance-held-soundtrack.m4a",
+        "name": "roze-dance-held-soundtrack.m4a",
+        "sourceStart": 96,
+        "duration": 12,
+        "size": 195302
+      }
+    },
+    "titles": {
+      "label": "Went to Ecstatic Dance and Filmed a Music Video",
+      "channel": "Roze",
+      "videoId": "Lx-cbLcb5Ec",
+      "sourceUrl": "https://www.youtube.com/watch?v=Lx-cbLcb5Ec",
+      "clips": [
+        {
+          "url": "/assets/scenepilot-workshops/sophie/roze-dance-held-01.mp4",
+          "name": "roze-dance-held-01.mp4",
+          "videoId": "Lx-cbLcb5Ec",
+          "title": "Went to Ecstatic Dance and Filmed a Music Video",
+          "sourceStart": 96,
+          "duration": 10,
+          "size": 723987
+        },
+        {
+          "url": "/assets/scenepilot-workshops/sophie/roze-dance-02.mp4",
+          "name": "roze-dance-02.mp4",
+          "videoId": "Lx-cbLcb5Ec",
+          "title": "Went to Ecstatic Dance and Filmed a Music Video",
+          "sourceStart": 20,
+          "duration": 6,
+          "size": 1096197
+        },
+        {
+          "url": "/assets/scenepilot-workshops/sophie/roze-dance-03.mp4",
+          "name": "roze-dance-03.mp4",
+          "videoId": "Lx-cbLcb5Ec",
+          "title": "Went to Ecstatic Dance and Filmed a Music Video",
+          "sourceStart": 30,
+          "duration": 6,
+          "size": 1474587
+        }
+      ],
+      "audio": {
+        "videoId": "Lx-cbLcb5Ec",
+        "title": "Went to Ecstatic Dance and Filmed a Music Video",
+        "sourceUrl": "https://www.youtube.com/watch?v=Lx-cbLcb5Ec",
+        "url": "/assets/scenepilot-workshops/sophie/roze-dance-held-soundtrack.m4a",
+        "name": "roze-dance-held-soundtrack.m4a",
+        "sourceStart": 96,
+        "duration": 12,
+        "size": 195302
+      }
+    },
+    "trim": {
+      "label": "Day In The Life (as an ARTIST)",
+      "channel": "Roze",
+      "videoId": "Wd0TKBt6UeE",
+      "sourceUrl": "https://www.youtube.com/watch?v=Wd0TKBt6UeE",
+      "clips": [
+        {
+          "url": "/assets/scenepilot-workshops/sophie/roze-day-in-life-held-01.mp4",
+          "name": "roze-day-in-life-held-01.mp4",
+          "videoId": "Wd0TKBt6UeE",
+          "title": "Day In The Life (as an ARTIST)",
+          "sourceStart": 132,
+          "duration": 12,
+          "size": 723011
+        },
+        {
+          "url": "/assets/scenepilot-workshops/sophie/roze-day-in-life-02.mp4",
+          "name": "roze-day-in-life-02.mp4",
+          "videoId": "Wd0TKBt6UeE",
+          "title": "Day In The Life (as an ARTIST)",
+          "sourceStart": 130,
+          "duration": 6,
+          "size": 289147
+        },
+        {
+          "url": "/assets/scenepilot-workshops/sophie/roze-day-in-life-03.mp4",
+          "name": "roze-day-in-life-03.mp4",
+          "videoId": "Wd0TKBt6UeE",
+          "title": "Day In The Life (as an ARTIST)",
+          "sourceStart": 180,
+          "duration": 6,
+          "size": 991567
+        }
+      ],
+      "audio": {
+        "videoId": "Wd0TKBt6UeE",
+        "title": "Day In The Life (as an ARTIST)",
+        "sourceUrl": "https://www.youtube.com/watch?v=Wd0TKBt6UeE",
+        "url": "/assets/scenepilot-workshops/sophie/roze-day-in-life-held-soundtrack.m4a",
+        "name": "roze-day-in-life-held-soundtrack.m4a",
+        "sourceStart": 132,
+        "duration": 12,
+        "size": 198065
+      }
+    },
+    "transition": {
+      "label": "Kauai coast \u00d7 Joshua Tree",
+      "channel": "Roze",
+      "videoId": "IlIp-nz6sr8",
+      "sourceUrl": "https://www.youtube.com/watch?v=IlIp-nz6sr8",
+      "clips": [
+        {
+          "url": "/assets/scenepilot-workshops/sophie/roze-kauai-held-01.mp4",
+          "name": "roze-kauai-held-01.mp4",
+          "videoId": "IlIp-nz6sr8",
+          "title": "Roadtrip With Us Around KAUAI",
+          "sourceStart": 105.1,
+          "duration": 6,
+          "size": 2448035
+        },
+        {
+          "url": "/assets/scenepilot-workshops/sophie/roze-california-held-01.mp4",
+          "name": "roze-california-held-01.mp4",
+          "videoId": "ZT-t76-M4zE",
+          "title": "California Coast and Joshua Tree",
+          "sourceStart": 370.5,
+          "duration": 12,
+          "size": 3974133
+        },
+        {
+          "url": "/assets/scenepilot-workshops/sophie/roze-kauai-03.mp4",
+          "name": "roze-kauai-03.mp4",
+          "videoId": "IlIp-nz6sr8",
+          "title": "Roadtrip With Us Around KAUAI",
+          "sourceStart": 145,
+          "duration": 6,
+          "size": 2417249
+        }
+      ],
+      "audio": {
+        "videoId": "IlIp-nz6sr8",
+        "title": "Roadtrip With Us Around KAUAI",
+        "sourceUrl": "https://www.youtube.com/watch?v=IlIp-nz6sr8",
+        "url": "/assets/scenepilot-workshops/sophie/roze-kauai-held-soundtrack.m4a",
+        "name": "roze-kauai-held-soundtrack.m4a",
+        "sourceStart": 105.1,
+        "duration": 12,
+        "size": 197772
+      }
+    },
+    "delivery": {
+      "label": "Went to Ecstatic Dance and Filmed a Music Video",
+      "channel": "Roze",
+      "videoId": "Lx-cbLcb5Ec",
+      "sourceUrl": "https://www.youtube.com/watch?v=Lx-cbLcb5Ec",
+      "clips": [
+        {
+          "url": "/assets/scenepilot-workshops/sophie/roze-dance-held-01.mp4",
+          "name": "roze-dance-held-01.mp4",
+          "videoId": "Lx-cbLcb5Ec",
+          "title": "Went to Ecstatic Dance and Filmed a Music Video",
+          "sourceStart": 96,
+          "duration": 10,
+          "size": 723987
+        },
+        {
+          "url": "/assets/scenepilot-workshops/sophie/roze-dance-02.mp4",
+          "name": "roze-dance-02.mp4",
+          "videoId": "Lx-cbLcb5Ec",
+          "title": "Went to Ecstatic Dance and Filmed a Music Video",
+          "sourceStart": 20,
+          "duration": 6,
+          "size": 1096197
+        },
+        {
+          "url": "/assets/scenepilot-workshops/sophie/roze-dance-03.mp4",
+          "name": "roze-dance-03.mp4",
+          "videoId": "Lx-cbLcb5Ec",
+          "title": "Went to Ecstatic Dance and Filmed a Music Video",
+          "sourceStart": 30,
+          "duration": 6,
+          "size": 1474587
+        }
+      ],
+      "audio": {
+        "videoId": "Lx-cbLcb5Ec",
+        "title": "Went to Ecstatic Dance and Filmed a Music Video",
+        "sourceUrl": "https://www.youtube.com/watch?v=Lx-cbLcb5Ec",
+        "url": "/assets/scenepilot-workshops/sophie/roze-dance-held-soundtrack.m4a",
+        "name": "roze-dance-held-soundtrack.m4a",
+        "sourceStart": 96,
+        "duration": 12,
+        "size": 195302
+      }
+    }
+  },
+  "continuousTakes": {
+    "dance": {
+      "label": "Went to Ecstatic Dance and Filmed a Music Video",
+      "channel": "Roze",
+      "videoId": "Lx-cbLcb5Ec",
+      "sourceUrl": "https://www.youtube.com/watch?v=Lx-cbLcb5Ec",
+      "clips": [
+        {
+          "url": "/assets/scenepilot-workshops/sophie/roze-dance-held-01.mp4",
+          "name": "roze-dance-held-01.mp4",
+          "videoId": "Lx-cbLcb5Ec",
+          "title": "Went to Ecstatic Dance and Filmed a Music Video",
+          "sourceStart": 96,
+          "duration": 10,
+          "size": 723987
+        }
+      ],
+      "audio": {
+        "videoId": "Lx-cbLcb5Ec",
+        "title": "Went to Ecstatic Dance and Filmed a Music Video",
+        "sourceUrl": "https://www.youtube.com/watch?v=Lx-cbLcb5Ec",
+        "url": "/assets/scenepilot-workshops/sophie/roze-dance-held-soundtrack.m4a",
+        "name": "roze-dance-held-soundtrack.m4a",
+        "sourceStart": 96,
+        "duration": 12,
+        "size": 195302
+      }
+    },
+    "california": {
+      "label": "California Coast and Joshua Tree",
+      "channel": "Roze",
+      "videoId": "ZT-t76-M4zE",
+      "sourceUrl": "https://www.youtube.com/watch?v=ZT-t76-M4zE",
+      "clips": [
+        {
+          "url": "/assets/scenepilot-workshops/sophie/roze-california-held-01.mp4",
+          "name": "roze-california-held-01.mp4",
+          "videoId": "ZT-t76-M4zE",
+          "title": "California Coast and Joshua Tree",
+          "sourceStart": 370.5,
+          "duration": 12,
+          "size": 3974133
+        }
+      ],
+      "audio": {
+        "videoId": "ZT-t76-M4zE",
+        "title": "California Coast and Joshua Tree",
+        "sourceUrl": "https://www.youtube.com/watch?v=ZT-t76-M4zE",
+        "url": "/assets/scenepilot-workshops/sophie/roze-california-held-soundtrack.m4a",
+        "name": "roze-california-held-soundtrack.m4a",
+        "sourceStart": 370.5,
+        "duration": 12,
+        "size": 196113
+      }
+    },
+    "day-in-life": {
+      "label": "Day In The Life (as an ARTIST)",
+      "channel": "Roze",
+      "videoId": "Wd0TKBt6UeE",
+      "sourceUrl": "https://www.youtube.com/watch?v=Wd0TKBt6UeE",
+      "clips": [
+        {
+          "url": "/assets/scenepilot-workshops/sophie/roze-day-in-life-held-01.mp4",
+          "name": "roze-day-in-life-held-01.mp4",
+          "videoId": "Wd0TKBt6UeE",
+          "title": "Day In The Life (as an ARTIST)",
+          "sourceStart": 132,
+          "duration": 12,
+          "size": 723011
+        }
+      ],
+      "audio": {
+        "videoId": "Wd0TKBt6UeE",
+        "title": "Day In The Life (as an ARTIST)",
+        "sourceUrl": "https://www.youtube.com/watch?v=Wd0TKBt6UeE",
+        "url": "/assets/scenepilot-workshops/sophie/roze-day-in-life-held-soundtrack.m4a",
+        "name": "roze-day-in-life-held-soundtrack.m4a",
+        "sourceStart": 132,
+        "duration": 12,
+        "size": 198065
+      }
+    },
+    "kauai": {
+      "label": "Roadtrip With Us Around KAUAI",
+      "channel": "Roze",
+      "videoId": "IlIp-nz6sr8",
+      "sourceUrl": "https://www.youtube.com/watch?v=IlIp-nz6sr8",
+      "clips": [
+        {
+          "url": "/assets/scenepilot-workshops/sophie/roze-kauai-held-01.mp4",
+          "name": "roze-kauai-held-01.mp4",
+          "videoId": "IlIp-nz6sr8",
+          "title": "Roadtrip With Us Around KAUAI",
+          "sourceStart": 105.1,
+          "duration": 6,
+          "size": 2448035
+        }
+      ],
+      "audio": {
+        "videoId": "IlIp-nz6sr8",
+        "title": "Roadtrip With Us Around KAUAI",
+        "sourceUrl": "https://www.youtube.com/watch?v=IlIp-nz6sr8",
+        "url": "/assets/scenepilot-workshops/sophie/roze-kauai-held-soundtrack.m4a",
+        "name": "roze-kauai-held-soundtrack.m4a",
+        "sourceStart": 105.1,
+        "duration": 12,
+        "size": 197772
+      }
+    }
+  }
+}

@@ -1,0 +1,160 @@
+{
+  "format": "scenepilot-cut",
+  "version": 2,
+  "project": "Speed ramps / Momentium / Freeze the perfect deck angle",
+  "duration": 8,
+  "bpm": 104,
+  "beatOffset": 0,
+  "beats": [
+    0,
+    0.5769230769230769,
+    1.1538461538461537,
+    1.7307692307692308,
+    2.3076923076923075,
+    2.8846153846153846,
+    3.4615384615384617,
+    4.038461538461538,
+    4.615384615384615,
+    5.1923076923076925,
+    5.769230769230769,
+    6.346153846153846,
+    6.923076923076923,
+    7.5
+  ],
+  "sections": [
+    {
+      "id": "lesson-section",
+      "name": "Your story",
+      "start": 0,
+      "end": 8,
+      "every": 4,
+      "duration": 0.4,
+      "scale": 100,
+      "enabled": true,
+      "color": "#b8a3ff",
+      "energy": 0.5,
+      "rhythm": "normal",
+      "pattern": "restrained",
+      "locked": false
+    }
+  ],
+  "tracks": [
+    {
+      "id": "lesson-overlay",
+      "name": "Atmosphere",
+      "color": "#b8a3ff",
+      "enabled": true,
+      "blend": "normal",
+      "opacity": 70,
+      "hue": 0,
+      "saturation": 100,
+      "brightness": 100,
+      "glow": 0,
+      "fadeIn": 0,
+      "fadeOut": 0
+    }
+  ],
+  "baseCuts": [
+    {
+      "id": "lesson-shot-0",
+      "assetId": "source-1",
+      "sectionId": "lesson-section",
+      "start": 0,
+      "duration": 8,
+      "sourceStart": 0,
+      "playbackRate": 1,
+      "transitionType": "none"
+    }
+  ],
+  "placements": [],
+  "compositions": [],
+  "titles": [],
+  "mainAsset": {
+    "name": "films-soundtrack.m4a",
+    "kind": "audio",
+    "size": 196292,
+    "lastModified": 0
+  },
+  "assets": [
+    {
+      "id": "source-1",
+      "name": "decks.mp4",
+      "kind": "video",
+      "size": 802063,
+      "lastModified": 0
+    },
+    {
+      "id": "source-2",
+      "name": "pattern.mp4",
+      "kind": "video",
+      "size": 2413340,
+      "lastModified": 0
+    },
+    {
+      "id": "source-3",
+      "name": "prism.mp4",
+      "kind": "video",
+      "size": 2880184,
+      "lastModified": 0
+    }
+  ],
+  "effects": {
+    "styleId": "cinematic",
+    "autoEnergy": "dynamic",
+    "montageEnabled": true,
+    "montagePace": "cinematic",
+    "punchPreset": "off",
+    "transitionType": "none",
+    "strobePreset": "off",
+    "strobeColor": "#ffffff",
+    "strobeSecondaryColor": "#ff334f",
+    "strobeAlternate": false,
+    "strobeIntensity": 0.7,
+    "strobeAttack": 0,
+    "strobeHold": 0.008,
+    "strobeDecay": 0.08,
+    "strobeShape": "exponential",
+    "strobeMode": "full",
+    "strobeBlend": "screen",
+    "strobeX": 0.5,
+    "strobeY": 0.5,
+    "strobeSize": 0.75,
+    "strobeSoftness": 0.65,
+    "strobeAngle": 0,
+    "strobeSafeMode": true,
+    "strobeSensitivity": 0.5,
+    "strobeBand": "all",
+    "stutterPreset": "off",
+    "speedPreset": "off",
+    "dropRampEnabled": false,
+    "audioReactive": false,
+    "shakePreset": "off",
+    "lookPreset": "none",
+    "manualGrade": {
+      "exposure": 1,
+      "contrast": 1,
+      "saturation": 1,
+      "temperature": 0,
+      "tint": 0,
+      "bloom": 0,
+      "vignette": 0,
+      "grain": 0,
+      "aberration": 0
+    },
+    "mirrorMode": 0,
+    "streak": 0,
+    "echoPreset": "off"
+  },
+  "settings": {
+    "aspect": "16:9",
+    "customSize": {
+      "width": 1080,
+      "height": 1080
+    },
+    "colorCurve": "none"
+  },
+  "proState": {
+    "masterGain": 1
+  },
+  "savedAt": 0
+}

@@ -1,0 +1,12 @@
+{
+  "source": "https://form-3d-studio.armonon.chatgpt.site/",
+  "sections": [
+    "Hero",
+    "Workflow",
+    "Capabilities",
+    "Fabric"
+  ],
+  "image_sha256": "d1455486d202c32e690339c909fc6146ce6463f3ec276338898a44f86aa2fa3a",
+  "fonts": "Original Geist files",
+  "style_source": "Original marketing.css, scoped to the embedded section"
+}

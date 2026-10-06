@@ -1,0 +1,33 @@
+.site-menu { position: relative; margin: 0 0 0 auto; padding: 0; border: 0; flex: 0 0 44px; color: #181a20; font: 600 14px/1.4 system-ui, sans-serif; letter-spacing: 0; }
+.site-menu summary { display: flex; align-items: center; justify-content: center; cursor: pointer; width: 44px; height: 44px; list-style: none; border: 1px solid #bfc1c8; border-radius: 6px; background: #fff; }
+.site-menu summary::-webkit-details-marker { display: none; }
+.site-menu summary svg { width: 22px; height: 22px; }
+.site-menu nav { position: absolute; z-index: 200; top: 50px; right: 0; display: grid !important; gap: 0 !important; width: min(270px, calc(100vw - 32px)); padding: 8px; background: #fff; border: 1px solid #bfc1c8; border-radius: 6px; box-shadow: 0 8px 24px #0002; }
+.site-menu:not([open]) nav { display: none !important; }
+.site-menu nav a { display: flex !important; align-items: center; min-height: 44px; padding: 8px 12px; color: #181a20 !important; font-size: 14px !important; text-decoration: none; border-radius: 4px; }
+.site-menu nav a:hover { background: #edf0f5; }
+.site-menu summary:focus-visible, .site-menu a:focus-visible { outline: 3px solid #3659c9; outline-offset: 3px; }
+.sl-standalone header:has(> .site-menu), .lg-header:has(> .site-menu) { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; }
+.sl-standalone header:has(> .site-menu) > nav { margin-left: auto; }
+.sl-intro h1, .sl-standalone main > .sl > h1 { font: inherit; font-size: 42px; font-weight: 800; line-height: 1.08; margin: 0 0 20px; letter-spacing: 0; }
+.legacy-library-notice { padding: 20px; margin: 16px; border-left: 4px solid #3659c9; background: #edf1ff; color: #171b26; font: 16px/1.5 system-ui,sans-serif; }
+.legacy-library-notice p { margin: 0 0 12px; }
+.legacy-library-notice a { color: #2542a3; font-weight: 650; }
+.feedback-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+.feedback-actions button { min-height: 44px; }
+#feedback-form [hidden] { display: none !important; }
+#feedback-form small { font-size: 14px; line-height: 1.5; }
+#feedback-status { overflow-wrap: anywhere; }
+.privacy-date { font-size: 14px; }
+@media (max-width: 700px) {
+  .mm-header { gap: 10px; }
+  .mm-header > .site-menu { order: 3; margin-left: 0; }
+  .mm-header .mm-launch-button { margin-left: auto; font-size: 13px; padding: 10px 12px; }
+  .sl-intro h1, .sl-standalone main > .sl > h1 { font-size: 32px; }
+}
+@media (max-width: 360px) {
+  .momentium-shell .mm-header .wordmark { font-size: 20px; }
+  .mm-header .mm-launch-button span { display: none; }
+  .momentium-shell .mm-header { padding-left: 12px; padding-right: 12px; gap: 8px; }
+  .momentium-shell .mm-header .mm-launch-button { white-space: nowrap; font-size: 12px; }
+}

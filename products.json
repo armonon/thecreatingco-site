@@ -1,0 +1,74 @@
+[
+  {
+    "id": "form",
+    "name": "Form Studio",
+    "url": "https://form-3d-studio.armonon.chatgpt.site/studio",
+    "edition": "Web editor \u00b7 beta",
+    "scope": "Create editable geometry, explore materials, and save a Form project in the browser.",
+    "limits": "Native geometry, simulation, filesystem integration and rendering differ from the web edition. Browser work is not certification for manufacturing, engineering or garment fit.",
+    "website": "https://form-studio-design.netlify.app/"
+  },
+  {
+    "id": "luma",
+    "name": "Luma Studio",
+    "url": "https://luma-studio-app.netlify.app/studio",
+    "edition": "Web editor \u00b7 early access",
+    "scope": "Paint, compose with layers, adjust color, and export an image using the shared Luma editing engine.",
+    "limits": "Native RAW codecs and desktop print features are not all available in the browser. Optional hosted generative edits require sign-in and send selected image content to a service. PSD conversions have limits.",
+    "website": "https://luma-studio-app.netlify.app/"
+  },
+  {
+    "id": "ghost",
+    "name": "Ghost Studio",
+    "url": "https://ghost-garment-studio-lp.netlify.app/",
+    "edition": "Web studio \u00b7 1.2.0",
+    "scope": "Add photos, adjust a garment or object study, and export a GLB or editable project using the real Ghost web app.",
+    "limits": "Local silhouette and template methods create visual approximations. They do not recover exact patterns or calibrated fit. Recovery belongs to this browser; export a portable backup.",
+    "website": "https://ghost-garment-studio-lp.netlify.app/workflows/"
+  },
+  {
+    "id": "scenepilot",
+    "name": "ScenePilot",
+    "url": "https://scene-pilot.netlify.app/app/",
+    "edition": "Browser Lite",
+    "scope": "Try the existing Browser Lite editor with your own media and a beat-aware edit.",
+    "limits": "Desktop Pro adds native media processing, inference and delivery features. Browser decoding and export depend on available codecs and memory. Native release qualification is incomplete; Intel is unqualified.",
+    "website": "https://scene-pilot.netlify.app/"
+  },
+  {
+    "id": "librarian",
+    "name": "Librarian",
+    "url": "https://librarian-atlas.netlify.app/",
+    "edition": "Web library \u00b7 early access",
+    "scope": "Import your PDFs, read them, build a shelf, and search connected book catalogs.",
+    "limits": "Catalog search needs a network connection and depends on each source. AI features may send questions and shelf context to the service. Browser storage can be cleared or evicted; retain your original files.",
+    "website": "https://librarian-20da0a9c.netlify.app/workflows/"
+  },
+  {
+    "id": "reclaim",
+    "name": "Reclaim",
+    "url": "https://universal-computer-operator.netlify.app/browser/",
+    "edition": "Browser file review \u00b7 limited scope",
+    "scope": "Inspect files you select, find identical copies by content, sort large files, and export a review report.",
+    "limits": "This read-only browser companion cannot scan your whole Mac, clear caches, quarantine or delete files. It is a scoped testing experience for file review, not the native cleanup engine.",
+    "website": "https://universal-computer-operator.netlify.app/"
+  },
+  {
+    "id": "stemdeck",
+    "name": "Sattari StemDeck",
+    "url": "https://sattarimusic.com/studio",
+    "edition": "StemDeck Online",
+    "scope": "Use Library, Perform, Arrange and Mixer views in StemDeck Online. Mix decks, arrange audio and MIDI, add built-in effects, capture input and save a portable project.",
+    "limits": "Arrangement playback is marked as a preview in the current Sattari studio. Browser effects are distinct from native plugin hosting. Track-stem export is not AI stem separation. Save a portable .sattari backup to keep your source audio with your session.",
+    "website": "https://stemdeck-studio.netlify.app/"
+  },
+  {
+    "id": "bounce",
+    "name": "Bounce",
+    "url": "https://bounce-music-player.netlify.app/browser/",
+    "edition": "Browser player \u00b7 limited scope",
+    "scope": "Play your audio, search a local queue, adjust EQ, and save a playlist in this browser.",
+    "limits": "Browser codecs determine which files play. Files and playlists stay in this browser; storage may be cleared. This companion does not include the native tag reader, desktop audio engine or a streaming catalog.",
+    "website": "https://bounce-music-player.netlify.app/"
+  }
+]

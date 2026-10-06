@@ -1,0 +1,28 @@
+/* Keep the story visible in the shared header, including compact layouts. */
+.mm-header nav[aria-label="Main navigation"] a[data-header-about] {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  box-sizing: border-box;
+}
+@media (max-width: 1100px) {
+  .momentium-shell.mm-polished .mm-header > nav[aria-label="Main navigation"] {
+    display: flex;
+    margin-left: auto;
+    flex: 0 0 auto;
+    gap: 0;
+  }
+  .momentium-shell.mm-polished .mm-header > nav[aria-label="Main navigation"] > a:not([data-header-about]) { display: none; }
+  .momentium-shell.mm-polished .mm-header .mm-launch-button { margin-left: 0; }
+}
+@media (max-width: 700px) {
+  .momentium-shell.mm-polished .mm-header .mm-launch-button {
+    font-size: 0;
+    width: 44px;
+    min-width: 44px;
+    height: 44px;
+    padding: 0;
+    justify-content: center;
+  }
+  .momentium-shell.mm-polished .mm-header .mm-launch-button span { display: inline; font-size: 20px; }
+}

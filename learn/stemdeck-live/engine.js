@@ -1,0 +1,13 @@
+export const STEMS=['vocals','drums','bass','music'];
+export class StemPlayer {
+  constructor(context,fetcher=(...args)=>fetch(...args)){this.context=context;this.fetcher=fetcher;this.buffers=null;this.loading=null;this.sources=[];this.gains=[];this.levels=STEMS.map(()=>1);this.muted=STEMS.map(()=>false);this.solo=STEMS.map(()=>false);this.playing=false;this.offset=0;this.started=0;this.duration=0;this.disposed=false;this.master=context.createGain();this.master.gain.value=.7;this.master.connect(context.destination);}
+  async load(){if(this.buffers)return;if(this.loading)return this.loading;this.loading=(async()=>{const buffers=await Promise.all(STEMS.map(async slug=>{const response=await this.fetcher(`/assets/stemdeck-studio/${slug}.wav`);if(!response.ok)throw Error('The song could not load. Check your connection and try again.');return this.context.decodeAudioData(await response.arrayBuffer());}));if(this.disposed)return;if(buffers.some(b=>Math.abs(b.duration-buffers[0].duration)>.002))throw Error('The stems are not aligned. Please reload this example.');this.buffers=buffers;this.duration=buffers[0].duration;})().catch(e=>{this.loading=null;throw e;});return this.loading;}
+  position(){return this.duration?Math.max(0,this.playing?this.offset+this.context.currentTime-this.started:this.offset)%this.duration:0;}
+  value(i){return this.muted[i]||(this.solo.some(Boolean)&&!this.solo[i])?0:this.levels[i];}
+  mix(){const t=this.context.currentTime;this.gains.forEach((gain,i)=>{gain.gain.cancelScheduledValues(t);gain.gain.setTargetAtTime(this.value(i),t,.012);});}
+  async play(){await this.context.resume();await this.load();if(this.disposed||this.playing)return;const when=this.context.currentTime+.035;this.started=when;this.sources=this.buffers.map((buffer,i)=>{const source=this.context.createBufferSource(),gain=this.context.createGain();source.buffer=buffer;source.loop=true;gain.gain.value=this.value(i);source.connect(gain).connect(this.master);this.gains.push(gain);source.start(when,this.offset);return source;});this.playing=true;}
+  pause(){if(this.playing)this.offset=this.position();this.playing=false;for(const source of this.sources){try{source.stop();}catch{}source.disconnect();}this.sources=[];this.gains.forEach(g=>g.disconnect());this.gains=[];}
+  async seek(seconds){const wasPlaying=this.playing;this.pause();this.offset=this.duration?Math.max(0,Math.min(seconds,this.duration-.001)):0;if(wasPlaying)await this.play();}
+  reset(){this.levels.fill(1);this.muted.fill(false);this.solo.fill(false);this.mix();}
+  dispose(){this.disposed=true;this.pause();this.master.disconnect();this.context.close();}
+}

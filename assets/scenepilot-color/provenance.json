@@ -1,0 +1,281 @@
+{
+  "source": "https://scene-pilot.netlify.app/#playground",
+  "collection": "11 Color effects, copied byte-for-byte from the original ScenePilot rendered gallery",
+  "photograph": {
+    "credit": "Johannes M\u00e4ndle / Unsplash",
+    "url": "https://unsplash.com/photos/a-mountain-range-seen-from-above-vXptr31LtuM"
+  },
+  "original_render_details": "https://scene-pilot.netlify.app/assets/effects-gallery/provenance.json",
+  "files": [
+    {
+      "source": "https://scene-pilot.netlify.app/assets/effects-gallery/fx-bleach-100.jpg",
+      "file": "fx-bleach-100.jpg",
+      "sha256": "ab08fa1d92d5bc067015ea423e0b678969902c4f97e9fe6afe1d746ac1c6e7a1",
+      "bytes": 152156
+    },
+    {
+      "source": "https://scene-pilot.netlify.app/assets/effects-gallery/fx-bleach-25.jpg",
+      "file": "fx-bleach-25.jpg",
+      "sha256": "7e76e70e93519f41c48471d616ad9b8f42ae54c7155e9474ebe32915142cba66",
+      "bytes": 127063
+    },
+    {
+      "source": "https://scene-pilot.netlify.app/assets/effects-gallery/fx-bleach-60.jpg",
+      "file": "fx-bleach-60.jpg",
+      "sha256": "50e64e503304668233b54adb9be1f828ab07aa97452f1b942df8336291fcdada",
+      "bytes": 146957
+    },
+    {
+      "source": "https://scene-pilot.netlify.app/assets/effects-gallery/fx-bleach-thumb.jpg",
+      "file": "fx-bleach-thumb.jpg",
+      "sha256": "97e7f67bc46ac81615853d80bb3d31ff45eddebd62ba340b1ff35f1bb80b3727",
+      "bytes": 11601
+    },
+    {
+      "source": "https://scene-pilot.netlify.app/assets/effects-gallery/fx-brightness-100.jpg",
+      "file": "fx-brightness-100.jpg",
+      "sha256": "9bb18c2746cac2ddb8899fc77eab215d45fc6027e0c8a3cb4c54ff714357b6b8",
+      "bytes": 150097
+    },
+    {
+      "source": "https://scene-pilot.netlify.app/assets/effects-gallery/fx-brightness-25.jpg",
+      "file": "fx-brightness-25.jpg",
+      "sha256": "16eb0db638ff50e3d7bf6992375f52d6522a20045a8cb1d3e65f96abe720aad7",
+      "bytes": 88742
+    },
+    {
+      "source": "https://scene-pilot.netlify.app/assets/effects-gallery/fx-brightness-60.jpg",
+      "file": "fx-brightness-60.jpg",
+      "sha256": "d61ceeaffb30bb66783712861183dc1aaafeebe543bcfcea4ba3810c128f7e77",
+      "bytes": 133090
+    },
+    {
+      "source": "https://scene-pilot.netlify.app/assets/effects-gallery/fx-brightness-thumb.jpg",
+      "file": "fx-brightness-thumb.jpg",
+      "sha256": "8ce2067fccac7f7dfc998afb8d4dbf42786a7f5349898be5d1c9cc6e6be7d534",
+      "bytes": 10753
+    },
+    {
+      "source": "https://scene-pilot.netlify.app/assets/effects-gallery/fx-contrast-100.jpg",
+      "file": "fx-contrast-100.jpg",
+      "sha256": "592aebfc33eb8aae7003a7796fa302a1e2a76458b011c8544ca9a42a83d1e4b0",
+      "bytes": 151474
+    },
+    {
+      "source": "https://scene-pilot.netlify.app/assets/effects-gallery/fx-contrast-25.jpg",
+      "file": "fx-contrast-25.jpg",
+      "sha256": "92a8681ef449b1671405da2b72a46f33e5a65ad08364eeeab2303e50dc1915c9",
+      "bytes": 129586
+    },
+    {
+      "source": "https://scene-pilot.netlify.app/assets/effects-gallery/fx-contrast-60.jpg",
+      "file": "fx-contrast-60.jpg",
+      "sha256": "f1103bbe5313e4c3410d349f75f48026bdfc2f6d0cd3205bab5476e38ebca635",
+      "bytes": 148554
+    },
+    {
+      "source": "https://scene-pilot.netlify.app/assets/effects-gallery/fx-contrast-thumb.jpg",
+      "file": "fx-contrast-thumb.jpg",
+      "sha256": "a7f3399bd3114b453b3e306dedf295990107ecb0411cee503f9a4d0d0e461d42",
+      "bytes": 11696
+    },
+    {
+      "source": "https://scene-pilot.netlify.app/assets/effects-gallery/fx-cooling-100.jpg",
+      "file": "fx-cooling-100.jpg",
+      "sha256": "246b4d9ff4d0e8d90e9cfd3fbd829fa1f459ad1c1ae126c16375aac4b84f2ae4",
+      "bytes": 109539
+    },
+    {
+      "source": "https://scene-pilot.netlify.app/assets/effects-gallery/fx-cooling-25.jpg",
+      "file": "fx-cooling-25.jpg",
+      "sha256": "5154c65c585c2ebe396da010d204827ece670ebc1cedb9633437413dacf4a88c",
+      "bytes": 105642
+    },
+    {
+      "source": "https://scene-pilot.netlify.app/assets/effects-gallery/fx-cooling-60.jpg",
+      "file": "fx-cooling-60.jpg",
+      "sha256": "89c4e7311c3a85d0a92753a3ba02dfb18068e63b0c07957f4c5eb7145aa3e161",
+      "bytes": 106754
+    },
+    {
+      "source": "https://scene-pilot.netlify.app/assets/effects-gallery/fx-cooling-thumb.jpg",
+      "file": "fx-cooling-thumb.jpg",
+      "sha256": "ee9349d96953af4cd36300ba7e0b2f519653ed42fbd0a5108670a24b371e4017",
+      "bytes": 8451
+    },
+    {
+      "source": "https://scene-pilot.netlify.app/assets/effects-gallery/fx-duotone-100.jpg",
+      "file": "fx-duotone-100.jpg",
+      "sha256": "f82cab7c6fea0a7b3ec7ec1d80bc78e1bc9966725bfa7c85705d0d354017734f",
+      "bytes": 92358
+    },
+    {
+      "source": "https://scene-pilot.netlify.app/assets/effects-gallery/fx-duotone-25.jpg",
+      "file": "fx-duotone-25.jpg",
+      "sha256": "6bda84427c1302129ddd7c2f716b634036a122d91100ac8a45869d6a7f3edc9d",
+      "bytes": 103691
+    },
+    {
+      "source": "https://scene-pilot.netlify.app/assets/effects-gallery/fx-duotone-60.jpg",
+      "file": "fx-duotone-60.jpg",
+      "sha256": "6e322b960e1afe9be1b96be04e814e1efb9de4764d8c1d82b68de8ef5ae17d2e",
+      "bytes": 98362
+    },
+    {
+      "source": "https://scene-pilot.netlify.app/assets/effects-gallery/fx-duotone-thumb.jpg",
+      "file": "fx-duotone-thumb.jpg",
+      "sha256": "6b4491677ff3ee551e57ef6d83c382537b096c8b5e3118176ecec942dff8a186",
+      "bytes": 7281
+    },
+    {
+      "source": "https://scene-pilot.netlify.app/assets/effects-gallery/fx-hue-100.jpg",
+      "file": "fx-hue-100.jpg",
+      "sha256": "f74165684cf8f1533a14f80494568db91558b0711bfa4f24f47ea04de1d2d79c",
+      "bytes": 107310
+    },
+    {
+      "source": "https://scene-pilot.netlify.app/assets/effects-gallery/fx-hue-25.jpg",
+      "file": "fx-hue-25.jpg",
+      "sha256": "9d4595959521f15b8d6db2942a6b3c2b2285f1a82fccfaa26f0cc21cdce4c91e",
+      "bytes": 104258
+    },
+    {
+      "source": "https://scene-pilot.netlify.app/assets/effects-gallery/fx-hue-60.jpg",
+      "file": "fx-hue-60.jpg",
+      "sha256": "9eb91cefc75c9a18703e04058041c71cef096806371f5a43d1a09a0ca5ad811d",
+      "bytes": 104611
+    },
+    {
+      "source": "https://scene-pilot.netlify.app/assets/effects-gallery/fx-hue-thumb.jpg",
+      "file": "fx-hue-thumb.jpg",
+      "sha256": "a08494731c33fd67224eea9c51b306a49fe45bacc5d6bc2916b73c559012ba7e",
+      "bytes": 8345
+    },
+    {
+      "source": "https://scene-pilot.netlify.app/assets/effects-gallery/fx-monochrome-100.jpg",
+      "file": "fx-monochrome-100.jpg",
+      "sha256": "1cb92350049dc444199a468eb72101df6b1ee10782680d1502c48341acfd4970",
+      "bytes": 97867
+    },
+    {
+      "source": "https://scene-pilot.netlify.app/assets/effects-gallery/fx-monochrome-25.jpg",
+      "file": "fx-monochrome-25.jpg",
+      "sha256": "91b33767cfde5aa77218fbd994a7eb678ffdcd6a7cb52897aa4ef26f4fb275a1",
+      "bytes": 105559
+    },
+    {
+      "source": "https://scene-pilot.netlify.app/assets/effects-gallery/fx-monochrome-60.jpg",
+      "file": "fx-monochrome-60.jpg",
+      "sha256": "c79002c64ba9e067bce56c4cf2ab26ddf9422cd23b9771148beb5c9e0574dc74",
+      "bytes": 101909
+    },
+    {
+      "source": "https://scene-pilot.netlify.app/assets/effects-gallery/fx-monochrome-thumb.jpg",
+      "file": "fx-monochrome-thumb.jpg",
+      "sha256": "057671b73ca644fde64a831399008c881f0d93b72d36a09c346ee7ab7ab51c7c",
+      "bytes": 7716
+    },
+    {
+      "source": "https://scene-pilot.netlify.app/assets/effects-gallery/fx-saturate-100.jpg",
+      "file": "fx-saturate-100.jpg",
+      "sha256": "e0e1f221f9f66e9794120ec77ee2295ea82d05389a5a35058770b297b1bc197c",
+      "bytes": 120271
+    },
+    {
+      "source": "https://scene-pilot.netlify.app/assets/effects-gallery/fx-saturate-25.jpg",
+      "file": "fx-saturate-25.jpg",
+      "sha256": "ad63b5c934411b48b9ae113c51e521abf5044fb7555949d7dbb1836449f974e8",
+      "bytes": 112783
+    },
+    {
+      "source": "https://scene-pilot.netlify.app/assets/effects-gallery/fx-saturate-60.jpg",
+      "file": "fx-saturate-60.jpg",
+      "sha256": "42527fe13c6fe86a39af0106816ca3fa615880d31ed0c900e3fa60ab3bea8414",
+      "bytes": 116691
+    },
+    {
+      "source": "https://scene-pilot.netlify.app/assets/effects-gallery/fx-saturate-thumb.jpg",
+      "file": "fx-saturate-thumb.jpg",
+      "sha256": "a547bcb349b8a2a68db89a3cce8cb6f340f07f68c1247442cd50760912344a77",
+      "bytes": 9285
+    },
+    {
+      "source": "https://scene-pilot.netlify.app/assets/effects-gallery/fx-sepia-100.jpg",
+      "file": "fx-sepia-100.jpg",
+      "sha256": "11f90c9e65f04587dc9f6f0f45b365a0859b65baa01a9b3d6aa1c94d049110b0",
+      "bytes": 115894
+    },
+    {
+      "source": "https://scene-pilot.netlify.app/assets/effects-gallery/fx-sepia-25.jpg",
+      "file": "fx-sepia-25.jpg",
+      "sha256": "289fc5a3000ab9929342dd14fa141960c3b6560245d52b3b3ee8e2186b1d53b5",
+      "bytes": 109675
+    },
+    {
+      "source": "https://scene-pilot.netlify.app/assets/effects-gallery/fx-sepia-60.jpg",
+      "file": "fx-sepia-60.jpg",
+      "sha256": "557d83113a31f08327b2bb38552868a15aace56347320c8efea7f750a66a951b",
+      "bytes": 112631
+    },
+    {
+      "source": "https://scene-pilot.netlify.app/assets/effects-gallery/fx-sepia-thumb.jpg",
+      "file": "fx-sepia-thumb.jpg",
+      "sha256": "214d29adcc2458abb819f79e7335062acc9b6130bc0167a1b5ac3b7cc542aaeb",
+      "bytes": 9037
+    },
+    {
+      "source": "https://scene-pilot.netlify.app/assets/effects-gallery/fx-solarize-100.jpg",
+      "file": "fx-solarize-100.jpg",
+      "sha256": "dd1c7df98ba948292f33d61beecd8ccaada6291938d606046417242d09fa9c11",
+      "bytes": 101851
+    },
+    {
+      "source": "https://scene-pilot.netlify.app/assets/effects-gallery/fx-solarize-25.jpg",
+      "file": "fx-solarize-25.jpg",
+      "sha256": "e891dc2c4993d53d622dbd6f8e5b2de17ef066c481996feb9bb412a9fd66911f",
+      "bytes": 101047
+    },
+    {
+      "source": "https://scene-pilot.netlify.app/assets/effects-gallery/fx-solarize-60.jpg",
+      "file": "fx-solarize-60.jpg",
+      "sha256": "8e9b1ebff4187988409297a75086b30c012917747dea95bdd101b5e6f065b2fa",
+      "bytes": 94192
+    },
+    {
+      "source": "https://scene-pilot.netlify.app/assets/effects-gallery/fx-solarize-thumb.jpg",
+      "file": "fx-solarize-thumb.jpg",
+      "sha256": "4337bc35573321738552e476b8d0cd65caabb16d48873cff8612ec98f02b8bbb",
+      "bytes": 7334
+    },
+    {
+      "source": "https://scene-pilot.netlify.app/assets/effects-gallery/fx-warmth-100.jpg",
+      "file": "fx-warmth-100.jpg",
+      "sha256": "594d3bda75ba41120e0efce10ef978b6047df7546caa7ade7242dbe69b407af1",
+      "bytes": 115550
+    },
+    {
+      "source": "https://scene-pilot.netlify.app/assets/effects-gallery/fx-warmth-25.jpg",
+      "file": "fx-warmth-25.jpg",
+      "sha256": "2cc9188e884875caa43a975aad4a4556310e2a027e811cf2a23fc46a421ab273",
+      "bytes": 109686
+    },
+    {
+      "source": "https://scene-pilot.netlify.app/assets/effects-gallery/fx-warmth-60.jpg",
+      "file": "fx-warmth-60.jpg",
+      "sha256": "5b6a8aa467130a72a2c9fdfe2252f31887148cbcdfec5b27bee141bc576c8890",
+      "bytes": 112519
+    },
+    {
+      "source": "https://scene-pilot.netlify.app/assets/effects-gallery/fx-warmth-thumb.jpg",
+      "file": "fx-warmth-thumb.jpg",
+      "sha256": "f28d53550da63bf0c78cbd0a2a65dd8775272af8b6775ece55c148e921230948",
+      "bytes": 9025
+    },
+    {
+      "source": "https://scene-pilot.netlify.app/assets/effects-gallery/original.jpg",
+      "file": "original.jpg",
+      "sha256": "3dafa75d4f5a5b8dbf836a66b28202fd024da52bd5632e93777ac620d1a11d4d",
+      "bytes": 107756
+    }
+  ]
+}

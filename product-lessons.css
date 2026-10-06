@@ -1,0 +1,7 @@
+.pr-page .pr-lessons{padding:38px max(24px,calc((100% - 1380px)/2));border-block:1px solid var(--pr-line);background:color-mix(in srgb,var(--pr-tone) 9%,#fafaf7);font:16px/1.6 system-ui,sans-serif}
+.pr-lessons h2{font:700 clamp(27px,3vw,40px)/1.15 system-ui,sans-serif;letter-spacing:-.035em;margin:0 0 14px;color:var(--pr-ink)}
+.pr-lessons p{max-width:780px;margin:0;color:var(--pr-muted);font-size:15px}
+.pr-lesson-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.pr-lesson-tags span{padding:7px 12px;border-radius:999px;border:1px solid #d5d5cb;background:#fff9;font-size:12px;font-weight:650}
+.pr-page .pr-lesson-target,.pr-page #product-lessons{scroll-margin-top:140px}
+@media(max-width:640px){.pr-page .pr-lessons{padding:30px 18px}.pr-lessons p{font-size:14px}.pr-page .pr-lesson-target,.pr-page #product-lessons{scroll-margin-top:125px}}

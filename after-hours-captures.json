@@ -1,0 +1,351 @@
+{
+  "campaign": "After Hours",
+  "date": "2026-09-29",
+  "stories": {
+    "form": {
+      "product": "Form Studio",
+      "project": "Orbit, an adjustable clasp",
+      "edition": "Web editor",
+      "accent": "#475c3e",
+      "title": "A small change. A different presence.",
+      "intro": "An editable clasp study, from its first proportions to a broader frame and two contrasting metal finishes.",
+      "chapters": [
+        {
+          "file": "form-01-proportions.png",
+          "title": "Start with proportion",
+          "caption": "The buckle starter establishes a 55 \u00d7 38 mm outer profile. Its frame, openings and centre bar remain in the editable feature history."
+        },
+        {
+          "file": "form-02-wider-frame.png",
+          "title": "Widen the outer rail",
+          "caption": "Changing the outer width to 64 mm preserves the openings and gives the right rail more weight. The geometry visibly updates in the same isometric view."
+        },
+        {
+          "file": "form-03-brass.png",
+          "title": "Bring in warmth",
+          "caption": "Polished brass changes the surface to a warmer finish, with roughness at 0.17 and metal at 0.94. The camera and geometry stay fixed for comparison."
+        },
+        {
+          "file": "form-04-steel.png",
+          "title": "Keep a cooler option",
+          "caption": "Brushed steel offers a cooler alternative. The finished state was saved as an editable Form project and exported to a verified PNG."
+        }
+      ],
+      "comparison": {
+        "title": "Compare the finishes",
+        "before": "form-03-brass.png",
+        "after": "form-04-steel.png",
+        "before_label": "Polished brass",
+        "after_label": "Brushed steel"
+      },
+      "outputs": [
+        {
+          "file": "orbit-clasp.form",
+          "label": "Download the editable clasp"
+        },
+        {
+          "file": "orbit-steel-render.png",
+          "label": "View the exported PNG"
+        }
+      ],
+      "note": "Actual browser session. The starter\u2019s optional fillet failed and was suppressed; these views show the resulting rectangular geometry. This is a visual study, not manufacturing or fit validation."
+    },
+    "luma": {
+      "product": "Luma Studio",
+      "project": "After Hours Exhibition Poster",
+      "edition": "Web editor",
+      "accent": "#6148bd",
+      "title": "An image becomes an invitation.",
+      "intro": "Build a real exhibition poster: one original still life, two editable text elements, and a controlled shift in tone.",
+      "chapters": [
+        {
+          "file": "luma-01-source.png",
+          "title": "Begin with an image",
+          "caption": "An original AI-generated still life becomes a 1024 \u00d7 1536 portrait document. The source artwork remains its own raster layer."
+        },
+        {
+          "file": "luma-02-type.png",
+          "title": "Give it a voice",
+          "caption": "AFTER HOURS and OBJECTS / SOUND / IDEAS are separate editable text elements, placed in the open space around the still life."
+        },
+        {
+          "file": "luma-03-tone.png",
+          "title": "Develop the atmosphere",
+          "caption": "A tone layer sets exposure to 0.20, contrast to 12, shadows to 8 and temperature to \u22128. The before and after views use the same composition."
+        },
+        {
+          "file": "luma-04-finished.png",
+          "title": "Keep every decision",
+          "caption": "The four-layer document was saved in Luma\u2019s native format. Its exported PNG was opened and visually checked at the original 1024 \u00d7 1536 size."
+        }
+      ],
+      "comparison": {
+        "title": "Compare the tone",
+        "before": "luma-before-tone.png",
+        "after": "luma-03-tone.png",
+        "before_label": "Original tone",
+        "after_label": "Developed tone"
+      },
+      "outputs": [
+        {
+          "file": "after-hours-poster.png",
+          "label": "Download the poster"
+        },
+        {
+          "file": "after-hours-poster.luma",
+          "label": "Download the editable project"
+        }
+      ],
+      "result": {
+        "file": "after-hours-poster.png",
+        "title": "The finished invitation",
+        "caption": "Actual PNG output from Luma. The source artwork was AI-generated; typography and tone were applied in the editor.",
+        "width": 1024,
+        "height": 1536
+      },
+      "note": "Actual browser session. Native Luma v4 archive integrity and all four layer records were verified. No PSD round-trip or print-production fidelity is implied."
+    },
+    "ghost": {
+      "product": "Ghost Studio",
+      "project": "Sculptural Jacket Study",
+      "edition": "Web studio",
+      "accent": "#2b6049",
+      "title": "Two references. A form to explore.",
+      "intro": "Bring a coherent front and back pair into a new collection, change the silhouette, and inspect the resulting jacket from both sides.",
+      "chapters": [
+        {
+          "file": "ghost-01-references.png",
+          "title": "Start with both sides",
+          "caption": "An original AI-generated front and back pair establishes the midnight-blue jacket and amber collar. The source comparison keeps both references available."
+        },
+        {
+          "file": "ghost-02-relaxed.png",
+          "title": "Give the silhouette room",
+          "caption": "Changing Natural to Relaxed produces a broader form. The wool setting and stiffness of 50 remain in place while the app settles the drape."
+        },
+        {
+          "file": "ghost-03-back.png",
+          "title": "Look behind the form",
+          "caption": "The rear view exposes the back construction beside the supplied reference. The result remains an estimated visual study."
+        },
+        {
+          "file": "ghost-04-export.png",
+          "title": "Keep the model and its source",
+          "caption": "The selected jacket exported to a textured GLB. The editable collection also retains the two original reference images and relaxed settings."
+        }
+      ],
+      "note": "Actual browser session. The GLB contains five meshes; the editable archive passed integrity checks and its two images match the originals. The model has visibly stepped outline edges. Unseen sides and dimensions are estimates; this is not sewing-pattern or fit validation.",
+      "outputs": [
+        {
+          "file": "after-hours-jacket.glb",
+          "label": "Download the jacket GLB"
+        },
+        {
+          "file": "after-hours-jacket-study.ghostbatch",
+          "label": "Download the editable collection"
+        }
+      ]
+    },
+    "scenepilot": {
+      "product": "ScenePilot",
+      "project": "Exhibition Trailer",
+      "edition": "Browser Lite",
+      "accent": "#7971ee",
+      "title": "An evening, in eighteen seconds.",
+      "intro": "Bring three original visual studies and a freshly mixed soundtrack into an editable cinematic sequence.",
+      "chapters": [
+        {
+          "file": "scenepilot-01-sources.png",
+          "title": "Gather the evening",
+          "caption": "Three original five-second clips bring the artwork, jacket and Form clasp into the media bin. The real StemDeck mix supplies the 18-second soundtrack."
+        },
+        {
+          "file": "scenepilot-02-first-cut.png",
+          "title": "Find the first cut",
+          "caption": "Cinematic mode analyzes the soundtrack at 104 BPM and creates ten master clips, with five additional overlay placements. The sequence stays editable."
+        },
+        {
+          "file": "scenepilot-03-dissolves.png",
+          "title": "Soften each arrival",
+          "caption": "The incoming edit changes from Zoom to a 0.30-second Dissolve, then applies to every master edit. The program monitor shows the resulting layered picture."
+        },
+        {
+          "file": "scenepilot-04-restored.png",
+          "title": "Return to the timeline",
+          "caption": "After saving and reloading, Restore saved project brings back the three source clips, soundtrack, 15 timeline items and effects. A real exported cut JSON preserves the edit map."
+        }
+      ],
+      "outputs": [
+        {
+          "file": "after-hours-exhibition.scenepilot.json",
+          "label": "Download the editable cut map"
+        },
+        {
+          "file": "after-hours-scene-sources.zip",
+          "label": "Download the original source bundle"
+        }
+      ],
+      "note": "Actual Browser Lite session. Source clips use original artwork, jacket references and the Form render. The downloadable JSON contains edit metadata and requires the source files. MP4 export canceled before writing a file; no rendered video is claimed."
+    },
+    "librarian": {
+      "product": "Librarian",
+      "project": "Exhibition Research Shelf",
+      "edition": "Web library",
+      "accent": "#785329",
+      "title": "Keep the ideas close.",
+      "intro": "Two original research documents become a small browser library. Move from the brief to its sound palette, adjust the reading view, and return after a reload.",
+      "chapters": [
+        {
+          "file": "librarian-01-field-notes.png",
+          "title": "Open the exhibition brief",
+          "caption": "After Hours Field Notes and Materials and Sound were imported as original PDFs. The field notes open in a light reading view at 67% zoom."
+        },
+        {
+          "file": "librarian-02-sound-palette.png",
+          "title": "Follow the sound",
+          "caption": "Pages five and six connect four measured waveform diagrams with the project handoff. The reader keeps the illustrated spread together."
+        },
+        {
+          "file": "librarian-03-dark-reading.png",
+          "title": "Change the reading light",
+          "caption": "The supported Dark control changes the same spread to a dimmer reading view. The page content stays in place for comparison."
+        },
+        {
+          "file": "librarian-04-retained.png",
+          "title": "Return to the shelf",
+          "caption": "After a full reload, both PDFs remain in the local library. Materials and Sound reopens with its original diagrams and text."
+        }
+      ],
+      "note": "Actual browser session using original authored PDFs.  Browser storage can be cleared or evicted; keep the original PDFs.",
+      "comparison": {
+        "title": "Compare the reading modes",
+        "before": "librarian-02-sound-palette.png",
+        "after": "librarian-03-dark-reading.png",
+        "before_label": "Light reading",
+        "after_label": "Dark reading"
+      },
+      "outputs": []
+    },
+    "reclaim": {
+      "product": "Reclaim",
+      "project": "Exhibition Folder Review",
+      "edition": "Read-only browser companion",
+      "accent": "#176742",
+      "title": "Find the copies worth reviewing.",
+      "intro": "An exhibition folder contains working files, exports, backups, and two notes with the same name. Compare their actual content before making a decision.",
+      "chapters": [
+        {
+          "file": "reclaim-01-review.png",
+          "title": "See the selected set",
+          "caption": "Seven original demonstration files total about 6.3 MB. The review lists their names and sizes and finds two groups of identical content."
+        },
+        {
+          "file": "reclaim-02-duplicates.png",
+          "title": "Match the bytes",
+          "caption": "A PDF pair and an audio pair match despite their different filenames. Together, the extra copies account for 3,277,228 bytes; no files were deleted."
+        },
+        {
+          "file": "reclaim-03-search.png",
+          "title": "Narrow the review",
+          "caption": "Searching Field-Notes isolates the working PDF and its final-copy counterpart while preserving the full review."
+        },
+        {
+          "file": "reclaim-04-report.png",
+          "title": "Keep the evidence",
+          "caption": "Two 67-byte notes.txt files have different contents and are not grouped as duplicates. The downloaded JSON report records the comparison results."
+        }
+      ],
+      "note": "Actual read-only browser review of disposable fixtures. The downloaded report was parsed against all seven original names, sizes and available hashes. Every source hash remained unchanged. This is selected-file review, not a system scan or a claim of reclaimed disk space.",
+      "outputs": [
+        {
+          "file": "after-hours-file-review.json",
+          "label": "Download the actual review report"
+        }
+      ]
+    },
+    "stemdeck": {
+      "product": "StemDeck",
+      "project": "Evening Mix",
+      "edition": "Browser mixer companion",
+      "accent": "#b6bafa",
+      "title": "Four parts. One evening mix.",
+      "intro": "Start with original percussion, bass, harmony and melody. Set their entry point, balance their levels, and render a short mix you can listen to.",
+      "chapters": [
+        {
+          "file": "stemdeck-01-parts.png",
+          "title": "Hear the ingredients",
+          "caption": "Four supplied original parts fill the four decks. Each 18.5-second stereo file has its own real waveform; these parts were composed separately."
+        },
+        {
+          "file": "stemdeck-02-cues.png",
+          "title": "Balance the arrangement",
+          "caption": "Deck levels are 60%, 50%, 60% and 80%. All four cues start at 4.615 seconds, about two bars into the source, with whole-track looping enabled."
+        },
+        {
+          "file": "stemdeck-03-blend.png",
+          "title": "Bring the melody forward",
+          "caption": "While the loaded decks play, the crossfader moves from the centre to 0.40 toward the harmony and melody decks."
+        },
+        {
+          "file": "stemdeck-04-export.png",
+          "title": "Keep the sketch",
+          "caption": "The browser renders an 18-second WAV from those cue, level, loop and crossfade settings. Playback was stopped after the listening check."
+        }
+      ],
+      "note": "Actual browser companion. The exported stereo, 44.1 kHz, 16-bit WAV was decoded and checked for non-silent audio and clipping. Export uses the current settings; it does not record live fader moves. No source separation or native plugins are implied.",
+      "outputs": [
+        {
+          "file": "After-Hours-Evening-Mix.wav",
+          "label": "Download the Evening Mix WAV"
+        }
+      ],
+      "audio": {
+        "file": "After-Hours-Evening-Mix.wav",
+        "title": "Listen to the Evening Mix",
+        "caption": "The actual 18-second StemDeck output. Press Play to listen; playback starts only when you choose it."
+      }
+    },
+    "bounce": {
+      "product": "Bounce",
+      "project": "After Hours Listening Session",
+      "edition": "Browser player companion",
+      "accent": "#873b24",
+      "title": "A session worth returning to.",
+      "intro": "Bring the four original parts and the finished mix into one listening queue. Shape the sound, choose an order, and save it on this device.",
+      "chapters": [
+        {
+          "file": "bounce-01-listening.png",
+          "title": "Begin with the finished mix",
+          "caption": "The verified StemDeck output plays alongside its four original source parts in a new five-track collection."
+        },
+        {
+          "file": "bounce-02-eq-seek.png",
+          "title": "Choose a passage",
+          "caption": "Bass moves to +1 dB, mid to 0 dB and treble to +4 dB. Seeking to about eight seconds picks out a passage in the 18-second mix."
+        },
+        {
+          "file": "bounce-03-search.png",
+          "title": "Find a part",
+          "caption": "A search for Harmony isolates the matching track. The queue was arranged to move from the complete mix through harmony, melody, bass and percussion."
+        },
+        {
+          "file": "bounce-04-retained.png",
+          "title": "Return to After Hours",
+          "caption": "The library is saved as After Hours. After reload, all five tracks return in the chosen order, with the playlist name and EQ settings retained."
+        }
+      ],
+      "note": "Actual browser companion. The exported JSON is a playlist file list with filenames and sizes; audio is not embedded in that file. Saved audio copies remain local to this browser and can be cleared or evicted. Original source files were retained.",
+      "outputs": [
+        {
+          "file": "after-hours-playlist.json",
+          "label": "Download the playlist file list"
+        }
+      ],
+      "audio": {
+        "file": "After-Hours-Evening-Mix.wav",
+        "title": "The mix in this session",
+        "caption": "The original StemDeck output used in the playlist. This download does not bake in Bounce\u2019s listening EQ."
+      }
+    }
+  }
+}

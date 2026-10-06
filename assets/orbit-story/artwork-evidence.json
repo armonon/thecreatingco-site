@@ -1,0 +1,23 @@
+{
+  "engine": "Luma native encode/decode/renderClean",
+  "layers": 13,
+  "artboards": [
+    {
+      "id": "orbit-poster",
+      "name": "Orbit launch poster",
+      "x": 0,
+      "y": 0,
+      "width": 1200,
+      "height": 1500
+    },
+    {
+      "id": "orbit-social",
+      "name": "Orbit square release",
+      "x": 1200,
+      "y": 0,
+      "width": 1200,
+      "height": 1200
+    }
+  ],
+  "source": "/assets/form-jewelry/orbit-gold.jpg"
+}

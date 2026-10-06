@@ -1,0 +1,6 @@
+.fashion-live-design{margin:0 0 50px;scroll-margin-top:90px}
+.fashion-live-design h2{font:650 32px/1.15 system-ui,sans-serif;letter-spacing:0;margin:10px 0 14px}
+.fashion-live-design>p:not(.eyebrow){max-width:760px;color:#53657f;font-size:16px}
+.fashion-live-design .form-box-stage{height:700px}
+.fashion-live-design .form-box-expanded .form-box-stage{height:100%}
+@media(max-width:699px){.fashion-live-design h2{font-size:27px}.fashion-live-design .form-box-stage{height:740px}}

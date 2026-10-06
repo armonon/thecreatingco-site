@@ -1,0 +1,155 @@
+/* Progressive refinement of the established Momentium identity. */
+html{scroll-padding-top:88px}
+.mm-polished{--mm-ease:cubic-bezier(.22,1,.36,1);letter-spacing:0}
+.mm-polished *{box-sizing:border-box}
+.mm-polished :is(h1,h2,h3,h4,p,a,button,summary){letter-spacing:0!important}
+.mm-polished :is(main,section,article,figure,nav,header,footer,div){min-width:0}
+.mm-polished :is(h1,h2,h3,p,figcaption){overflow-wrap:break-word}
+.mm-polished :is(img,video,canvas){max-width:100%}
+.mm-polished [hidden]{display:none!important}
+.mm-polished :is(button,a,summary,input,select,textarea){touch-action:manipulation}
+.mm-polished :is(button,summary){cursor:pointer}
+.mm-polished :focus-visible{outline:3px solid #293dff;outline-offset:4px}
+.mm-polished .mm-header{height:72px;gap:22px;transition:box-shadow .25s,border-color .25s}
+.mm-polished.mm-has-scrolled .mm-header{box-shadow:0 4px 16px #17171a12}
+.mm-polished>header:after{content:'';position:absolute;left:0;right:0;bottom:-2px;height:3px;background:#293dff;transform:scaleX(var(--mm-reading-progress,0));transform-origin:left;pointer-events:none}
+.mm-polished .mm-header>.wordmark{flex-shrink:0}
+.mm-polished .mm-header>nav{gap:22px}
+.mm-polished .mm-header>nav a{white-space:nowrap}
+.mm-polished .mm-header .mm-launch-button{white-space:nowrap}
+.mm-polished .mm-hero{padding-top:24px;padding-bottom:20px}
+.mm-polished .mm-hero-intro{padding-bottom:14px;align-items:center}
+.mm-polished .mm-hero h1{font-size:88px;line-height:1.02}
+.mm-polished .mm-hero .mm-kicker{margin-bottom:12px}
+.mm-polished .mm-hero-aside p{font-size:26px}
+.mm-polished .mm-access-compact{position:relative;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 24px;padding:4px 0;margin:0 0 8px;border:0;border-block:1px solid var(--ph-line,#c8c8c2);border-radius:0;background:transparent;color:inherit;max-width:none}
+.mm-polished .mm-access-brief{margin:0;font-size:14px;line-height:1.5;max-width:none;color:inherit}
+.mm-polished .mm-access-brief strong{display:inline-flex;align-items:center;gap:8px}
+.mm-polished .mm-access-brief strong:before{content:'';width:7px;height:7px;background:var(--ph-accent,#293dff);border-radius:50%;flex-shrink:0}
+.mm-polished .mm-access-compact>details{border:0;margin:0;padding:0;flex:0 0 auto}
+.mm-polished .mm-access-compact summary{font-size:13px;font-weight:700;min-height:44px;display:flex;align-items:center;gap:10px;list-style:none;padding:8px 0;text-decoration:underline;text-underline-offset:4px}
+.mm-polished .mm-access-compact summary::-webkit-details-marker{display:none}
+.mm-polished .mm-access-summary-short{display:none}
+.mm-polished .mm-access-compact summary:after{content:'+';font-size:20px;width:20px;text-align:center;text-decoration:none}
+.mm-polished .mm-access-compact details[open]{flex-basis:100%}
+.mm-polished .mm-access-compact details[open] summary:after{content:'-'}
+.mm-polished .mm-access-detail{padding:4px 0 14px;max-width:850px}
+.mm-polished .mm-access-detail .mm-access-copy{font-size:14px;line-height:1.6;max-width:none}
+.mm-polished .mm-access-detail .mm-access-status{font-size:13px;margin-top:8px}
+.mm-polished .mm-access-actions a{min-height:44px;display:inline-flex;align-items:center}
+.mm-polished .mm-hero-selector{border:0;padding:0 0 6px}
+.mm-polished .mm-shuffle{height:44px;line-height:1.25}
+.mm-polished .mm-shuffle span{line-height:1}
+.mm-polished .mm-feature-tabs{margin-block:0;padding-top:0;padding-bottom:12px}
+.mm-polished .mm-feature-tabs button{transition:background .22s,box-shadow .22s,transform .35s var(--mm-ease)}
+.mm-polished .mm-feature-bar{padding:9px 22px;min-height:64px}
+.mm-polished .mm-feature-bar .mm-solid{min-height:44px;padding:9px 18px}
+.mm-polished .mm-feature-bar h2{font-size:24px}
+.mm-polished .mm-feature-image{height:min(440px,calc(100svh - 550px));min-height:180px;padding:14px 20px;overflow:hidden}
+.mm-polished .mm-feature-image img{object-fit:contain;transform:translateY(var(--mm-drift,0px));transition:none}
+.mm-polished .mm-feature-panel{animation:mm-panel-enter .55s var(--mm-ease)}
+.mm-polished .mm-feature-caption{padding-block:14px 0}
+.mm-polished .mm-section-heading h2{font-size:54px}
+.mm-polished .mm-family-heading h2{font-size:40px}
+.mm-polished .mm-tool-grid{gap:30px}
+.mm-polished .mm-tool{padding:26px;border-radius:6px;box-shadow:none!important;transition:transform .35s var(--mm-ease)}
+.mm-polished .mm-tool h3{font-size:38px;line-height:1.12}
+.mm-polished .mm-tool-top{margin-bottom:16px}
+.mm-polished .mm-tool>p{min-height:0;margin-block:16px 22px;font-size:16px;line-height:1.55}
+.mm-polished .mm-tool-image{margin-inline:-26px;overflow:hidden}
+.mm-polished .mm-tool-image img{transition:filter .3s;aspect-ratio:1710/869;object-fit:contain}
+.mm-polished .mm-tool-actions{flex-wrap:wrap;gap:14px 20px;margin-top:22px}
+.mm-polished .mm-tool-actions a{min-height:44px;display:inline-flex;align-items:center}
+.mm-polished .mm-original-link{font-size:13px;line-height:1.5;margin-top:14px;padding-block:6px;min-height:36px}
+.mm-polished .mm-solid,.mm-polished .mm-launch-button{transition:background .2s,box-shadow .2s,transform .35s var(--mm-ease)}
+.mm-polished .mm-solid:active,.mm-polished .mm-launch-button:active{transform:translateY(0);box-shadow:none}
+.mm-polished .mm-ribbon{position:relative;justify-content:center;gap:32px;min-height:74px}
+.mm-polished .mm-ribbon span{transform:translateX(var(--mm-ribbon-drift,0px))}
+.mm-polished .ph-copy{display:block;padding:0;margin-bottom:22px}
+.mm-polished .ph h1{font-size:56px;line-height:1.08;margin-bottom:10px}
+.mm-polished .ph .ph-label{margin-bottom:10px}
+.mm-polished .ph .ph-promise{font-size:24px;max-width:none;margin-bottom:14px}
+.mm-polished .ph .ph-actions{position:static;justify-content:flex-start;max-width:none;gap:10px 14px;margin:0 0 16px}
+.mm-polished .ph .ph-actions a{min-height:44px;font-size:13px;padding:10px 16px}
+.mm-polished .ph .ph-tabs{gap:24px;justify-content:flex-start}
+.mm-polished .ph .ph-tabs button{min-height:44px;font-size:13px}
+.mm-polished .ph .ph-picture{height:420px;overflow:hidden;padding:12px}
+.mm-polished .ph .ph-picture img{transform:translateY(var(--mm-drift,0px));max-height:100%;object-fit:contain}
+.mm-polished .ph figcaption{font-size:13px;line-height:1.6;text-align:left;padding-top:12px}
+.mm-polished .ph .ph-discover{flex-wrap:wrap;gap:12px}
+.mm-polished .ph .ph-discover a{min-height:44px;display:inline-flex;align-items:center}
+.mm-polished .mm-dialog-heading button{height:44px;width:44px;flex:0 0 44px;padding:10px;border-radius:6px;display:flex;align-items:center;justify-content:center}
+.mm-polished .mm-launch-dialog{border-radius:6px;box-shadow:6px 6px 0 #293dff;max-width:calc(100% - 32px)}
+.mm-polished .mm-launch-story{min-height:44px}
+.mm-polished .mm-launch-item>div{min-width:0}
+.mm-polished .mm-launch-item h3{overflow-wrap:anywhere}
+.mm-polished .mm-footer nav a{min-height:44px;display:inline-flex;align-items:center}
+.mm-polished :is(.ah-actions,.ph-discover,.release-strip,.mm-story-pagination,.feedback-actions){flex-wrap:wrap}
+.mm-polished .release-strip{gap:20px}
+.mm-polished :is(.section,.sl,.px,.pf,.mw,.ah){scroll-margin-top:96px}
+.mm-polished .text-hero h1{font-size:64px;line-height:1.06}
+.mm-polished .text-hero{padding-block:48px 32px}
+.mm-polished :is(.sl-intro h1,.mm-gallery-intro h1){overflow-wrap:break-word}
+.mm-polished .mm-gallery-ticket{transform:none;border-radius:6px}
+.mm-polished .mm-scroll-top{position:fixed;right:24px;bottom:24px;z-index:25;width:48px;height:48px;display:flex;align-items:center;justify-content:center;background:#d8ff3e;color:#17171a;border:2px solid #17171a;border-radius:6px;box-shadow:3px 3px 0 #17171a;opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .2s,transform .2s,visibility .2s}
+.mm-polished.mm-deep-scroll .mm-scroll-top{opacity:1;visibility:visible;transform:none}
+.mm-scroll-top svg{transform:rotate(-90deg)}
+.mm-reveal{opacity:.86;transform:translateY(18px);transition:opacity .7s var(--mm-ease),transform .7s var(--mm-ease)}
+.mm-reveal.mm-in-view{opacity:1;transform:none}
+@keyframes mm-panel-enter{from{opacity:.65;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media(min-width:761px) and (max-height:800px){.mm-polished .mm-hero h1{font-size:76px}.mm-polished .mm-hero{padding-top:22px}.mm-polished .ph .ph-picture{height:320px}}
+@media(min-width:1600px){.mm-polished .ph .ph-picture{height:480px}}
+@media(max-width:1100px){.mm-polished .mm-header>nav{display:none}.mm-polished .mm-header>.mm-launch-button{margin-left:auto}.mm-polished .mm-header>.site-menu{margin-left:0}.mm-polished .mm-hero h1{font-size:78px}.mm-polished .mm-section-heading h2{font-size:46px}}
+@media(max-width:760px){
+ html{scroll-padding-top:80px}
+ .mm-polished .mm-header{height:64px;gap:10px;padding-inline:18px}
+ .mm-polished .mm-launch-button{min-height:44px}
+ .mm-polished .mm-hero{padding:20px 18px}
+ .mm-polished .mm-hero h1{font-size:54px}
+ .mm-polished .mm-hero-intro{padding-bottom:14px}
+ .mm-polished .mm-hero-aside{margin-top:12px}
+ .mm-polished .mm-hero-aside p{font-size:19px}
+ .mm-polished .mm-access-compact{display:flex;padding:6px 0;margin-bottom:12px;gap:4px 8px}
+ .mm-polished .mm-access-brief{font-size:13px}
+ .mm-polished .mm-access-compact summary{font-size:12px;padding-block:6px}
+ .mm-polished .mm-access-summary-full{display:none}
+ .mm-polished .mm-access-summary-short{display:inline}
+ .mm-polished .mm-hero-selector{gap:12px;padding-bottom:8px;align-items:center}
+ .mm-polished .mm-hero-selector p{font-size:13px;max-width:155px}
+ .mm-polished .mm-shuffle{flex-shrink:0;white-space:nowrap}
+ .mm-polished .mm-feature-tabs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;overflow:visible;margin:0;padding:0 0 14px}
+ .mm-polished .mm-feature-tabs button{min-height:44px;font-size:13px;padding:10px 8px;white-space:normal}
+ .mm-polished .mm-feature-tabs button[aria-selected=true]{transform:none;box-shadow:2px 3px 0 #17171a}
+ .mm-polished .mm-feature-bar{min-height:92px;padding:14px;gap:12px;align-items:center}
+ .mm-polished .mm-feature-bar h2{font-size:18px}
+ .mm-polished .mm-feature-bar .mm-solid{font-size:12px;padding:10px 12px;max-width:118px}
+ .mm-polished .mm-feature-image{height:auto;min-height:0;aspect-ratio:1710/869;padding:6px}
+ .mm-polished .mm-feature-image img{transform:none}
+ .mm-polished .mm-feature-caption{font-size:13px}
+ .mm-polished .mm-feature-caption a{min-height:44px;display:inline-flex;align-items:center;margin-top:2px}
+ .mm-polished .mm-ribbon{justify-content:flex-start;font-size:17px;min-height:62px;gap:24px}
+ .mm-polished .mm-section-heading h2{font-size:38px}
+ .mm-polished .mm-family-heading h2{font-size:30px}
+ .mm-polished .mm-tool{padding:22px}
+ .mm-polished .mm-tool h3{font-size:32px}
+ .mm-polished .mm-tool-image{margin-inline:-22px}
+ .mm-polished .mm-tool-actions .mm-text-link{font-size:13px}
+ .mm-polished .ph h1{font-size:42px}
+ .mm-polished .ph .ph-promise{font-size:22px}
+ .mm-polished .ph .ph-copy{margin-bottom:18px}
+ .mm-polished .ph .ph-tabs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;overflow:visible}
+ .mm-polished .ph .ph-tabs button{white-space:normal;text-align:left;min-width:0;line-height:1.4}
+ .mm-polished .ph .ph-picture{height:auto;aspect-ratio:1710/869;padding:0}
+ .mm-polished .ph .ph-picture img{transform:none}
+ .mm-polished .ph .ph-picture.ph-result{height:300px;aspect-ratio:auto}
+ .mm-polished .ph figcaption{font-size:12px}
+ .mm-polished .text-hero{padding:32px 18px 24px}
+ .mm-polished .text-hero h1{font-size:40px}
+ .mm-polished .mm-dialog-heading h2{font-size:24px}
+ .mm-polished .mm-launch-item{grid-template-columns:14px minmax(0,1fr) auto}
+ .mm-polished .mm-scroll-top{right:16px;bottom:max(16px,env(safe-area-inset-bottom));width:44px;height:44px}
+ .mm-reveal{transform:translateY(10px)}
+}
+@media(max-width:370px){.mm-polished .mm-hero h1{font-size:46px}.mm-polished .mm-header{padding-inline:12px;gap:8px}.mm-polished .mm-header .wordmark{font-size:20px}.mm-polished .mm-header .mm-launch-button{padding-inline:10px;font-size:12px}.mm-polished .mm-feature-bar h2{font-size:16px}.mm-polished .ph h1{font-size:36px}.mm-polished .text-hero h1{font-size:34px}}
+@media(hover:hover) and (pointer:fine){.mm-polished .mm-tool:hover{transform:translateY(-5px)}.mm-polished .mm-scroll-top:hover{transform:translateY(-3px)}}
+@media(prefers-reduced-motion:reduce){.mm-polished *{animation:none!important;transition:none!important;scroll-behavior:auto!important}.mm-reveal,.mm-reveal.mm-in-view{opacity:1;transform:none}.mm-polished :is(.mm-feature-image img,.ph .ph-picture img,.mm-ribbon span){transform:none!important}}

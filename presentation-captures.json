@@ -1,0 +1,81 @@
+{
+  "capture_date": "2026-09-29",
+  "provenance": "Actual browser demo sessions. Original built-in audio studies and file-review samples. Separate from the unfinished After Hours projects.",
+  "products": {
+    "stemdeck": {
+      "app": "https://sattarimusic.com/studio",
+      "frames": [
+        {
+          "path": "/assets/presentation/stemdeck-mix-viewport.png",
+          "title": "Move through the mix",
+          "caption": "Three original 24-second stereo studies play together. A crossfade of 0.20 shifts the balance; the fourth deck remains empty.",
+          "full_path": "/assets/presentation/stemdeck-mix.png",
+          "sha256": {
+            "path": "5ce0182e8df0008c1387a8d9559432cdcf399afe44ba86af13fe9000372aebf4",
+            "full_path": "9326379d0e159d65c794df349c14555e9572d983b428546ba049309f2473a79f"
+          }
+        },
+        {
+          "path": "/assets/presentation/stemdeck-cues-viewport.png",
+          "title": "Set a cue and loop",
+          "caption": "Deck A starts from a four-second cue, with its level at 69% and looping enabled. The controls remain visible beside the loaded waveforms.",
+          "full_path": "/assets/presentation/stemdeck-cues.png",
+          "sha256": {
+            "path": "199d9af3594d58d50509e6ba78d3282c34e178fe52ade530d4a7ff350401d018",
+            "full_path": "c6e0d0b81a1c99653a599220015432cac7f35ab495bc2f7374de4580aadb280f"
+          }
+        }
+      ]
+    },
+    "reclaim": {
+      "app": "https://universal-computer-operator.netlify.app/browser/",
+      "frames": [
+        {
+          "path": "/assets/presentation/reclaim-review-viewport.png",
+          "full_path": "/assets/presentation/reclaim-review-full.png",
+          "title": "Review a selected set",
+          "caption": "Four original sample files total 11.8 KB. Their sizes and names are visible before any decision; the review leaves the source files unchanged.",
+          "sha256": {
+            "path": "1f13edc431713bc4386ff5640ba5c17e4402f2d05bcdcaadf7b7faafd816dff7",
+            "full_path": "80153bf46c813dda650372356ba4b02838f06030e30a10d7a41a0a8b9d15b42d"
+          }
+        },
+        {
+          "path": "/assets/presentation/reclaim-duplicates-viewport.png",
+          "full_path": "/assets/presentation/reclaim-duplicates-full.png",
+          "title": "Find identical content",
+          "caption": "Two 44-byte briefs share identical content: one duplicate group and 44 bytes in the extra copy. Matching is based on content, not the filename.",
+          "sha256": {
+            "path": "d68578a93c80b8ee1c956a84201dde33e240addad7e587f58ba094a17491477d",
+            "full_path": "7b1244db4adf654e1c268f0ef03f9701b844b1e4acb4e71e776e14915d92e152"
+          }
+        }
+      ]
+    },
+    "bounce": {
+      "app": "https://bounce-music-player.netlify.app/browser/",
+      "frames": [
+        {
+          "path": "/assets/presentation/bounce-listening-viewport.png",
+          "full_path": "/assets/presentation/bounce-listening-full.png",
+          "title": "Shape a listening session",
+          "caption": "Open Water plays from a collection of three original 24-second studies. Bass is +3 dB, mid \u22121 dB and treble +2 dB.",
+          "sha256": {
+            "path": "43fcf82a88e2475d5e4b2d7934beb1262e4e5ee1d24fe30f7c2dc2d47f41bfc9",
+            "full_path": "2d62cd25dadddff9fe18cd5fa421e3da0732c17c94e83883f8ba7a7c31c80564"
+          }
+        },
+        {
+          "path": "/assets/presentation/bounce-library-viewport.png",
+          "full_path": "/assets/presentation/bounce-library-full.png",
+          "title": "Keep the order you chose",
+          "caption": "Evening studies was saved, then reloaded. Its three tracks, 03 / 01 / 02 order, playlist name and EQ settings were all retained in the browser.",
+          "sha256": {
+            "path": "6cb7138ebce0d96616f81720380ce631a045859629497ef5565ff5e5182d27d5",
+            "full_path": "934a4efe2d8db87fe556053a7b9d2efd61b2389157bbabf7dbd0662e05cf258d"
+          }
+        }
+      ]
+    }
+  }
+}

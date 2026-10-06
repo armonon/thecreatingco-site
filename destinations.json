@@ -1,0 +1,86 @@
+{
+  "updated": "2026-09-30",
+  "hub": "https://momentium-creative.netlify.app",
+  "products": [
+    {
+      "id": "form",
+      "name": "Form Studio",
+      "momentium": "https://momentium-creative.netlify.app/products/form/",
+      "website": "https://form-studio-design.netlify.app/",
+      "app": "https://form-3d-studio.armonon.chatgpt.site/studio",
+      "edition": "Web editor",
+      "family": "creative-suite"
+    },
+    {
+      "id": "luma",
+      "name": "Luma Studio",
+      "momentium": "https://momentium-creative.netlify.app/products/luma/",
+      "website": "https://luma-studio-app.netlify.app/",
+      "app": "https://luma-studio-app.netlify.app/studio",
+      "edition": "Web editor",
+      "family": "creative-suite"
+    },
+    {
+      "id": "stemdeck",
+      "name": "StemDeck",
+      "momentium": "https://momentium-creative.netlify.app/products/stemdeck/",
+      "website": "https://stemdeck-studio.netlify.app/",
+      "app": "https://sattarimusic.com/studio",
+      "edition": "StemDeck Online",
+      "family": "creative-suite",
+      "official_studio": "https://sattarimusic.com/studio"
+    },
+    {
+      "id": "scenepilot",
+      "name": "ScenePilot",
+      "momentium": "https://momentium-creative.netlify.app/products/scenepilot/",
+      "website": "https://scene-pilot.netlify.app/",
+      "app": "https://scene-pilot.netlify.app/app/",
+      "edition": "Browser Lite",
+      "family": "creative-suite"
+    },
+    {
+      "id": "ghost",
+      "name": "Ghost Studio",
+      "momentium": "https://momentium-creative.netlify.app/products/ghost/",
+      "website": "https://ghost-garment-studio-lp.netlify.app/workflows/",
+      "app": "https://ghost-garment-studio-lp.netlify.app/",
+      "edition": "Web studio",
+      "family": "other-apps"
+    },
+    {
+      "id": "librarian",
+      "name": "Librarian",
+      "momentium": "https://momentium-creative.netlify.app/products/librarian/",
+      "website": "https://librarian-20da0a9c.netlify.app/workflows/",
+      "app": "https://librarian-atlas.netlify.app/",
+      "edition": "Web library",
+      "family": "other-apps"
+    },
+    {
+      "id": "reclaim",
+      "name": "Reclaim",
+      "momentium": "https://momentium-creative.netlify.app/products/reclaim/",
+      "website": "https://universal-computer-operator.netlify.app/",
+      "app": "https://universal-computer-operator.netlify.app/browser/",
+      "edition": "Read-only browser companion",
+      "family": "other-apps"
+    },
+    {
+      "id": "bounce",
+      "name": "Bounce",
+      "momentium": "https://momentium-creative.netlify.app/products/bounce/",
+      "website": "https://bounce-music-player.netlify.app/",
+      "app": "https://bounce-music-player.netlify.app/browser/",
+      "edition": "Browser player companion",
+      "family": "other-apps"
+    }
+  ],
+  "ecosystem": [
+    {
+      "name": "Sattari Audio",
+      "website": "https://sattari-audio-suite.netlify.app/",
+      "family": "other-apps"
+    }
+  ]
+}

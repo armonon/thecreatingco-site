@@ -1,0 +1,63 @@
+{
+  "edition": "Reclaim browser file review",
+  "createdAt": "2026-09-30T00:21:36.591Z",
+  "readOnly": true,
+  "files": [
+    {
+      "id": 0,
+      "name": "Field-Notes-Working.pdf",
+      "size": 20568,
+      "state": "Compared",
+      "hash": "19104afe745c6046c5b6ce53cf70bcbcf7dfa37150c34aae1bf6db66949cc970",
+      "group": 1
+    },
+    {
+      "id": 1,
+      "name": "Field-Notes-Final-Copy.pdf",
+      "size": 20568,
+      "state": "Compared",
+      "hash": "19104afe745c6046c5b6ce53cf70bcbcf7dfa37150c34aae1bf6db66949cc970",
+      "group": 1
+    },
+    {
+      "id": 2,
+      "name": "Materials-and-Sound.pdf",
+      "size": 18681,
+      "state": "Size reviewed",
+      "hash": null,
+      "group": null
+    },
+    {
+      "id": 3,
+      "name": "Harmony-Master.wav",
+      "size": 3256660,
+      "state": "Compared",
+      "hash": "69951459a4e13b0786fff2423bb61c6b1fc677ded7900756f9cb7dc9e9e4981f",
+      "group": 2
+    },
+    {
+      "id": 4,
+      "name": "Harmony-Export-Copy.wav",
+      "size": 3256660,
+      "state": "Compared",
+      "hash": "69951459a4e13b0786fff2423bb61c6b1fc677ded7900756f9cb7dc9e9e4981f",
+      "group": 2
+    },
+    {
+      "id": 5,
+      "name": "notes.txt",
+      "size": 67,
+      "state": "Compared",
+      "hash": "22e84dfa395470baa941d6f4476b8a97f5ce383b244e721b1ec8accadc6f1779",
+      "group": null
+    },
+    {
+      "id": 6,
+      "name": "notes.txt",
+      "size": 67,
+      "state": "Compared",
+      "hash": "ebe4fcfb5370e56542db51f72ca413f7233fb58027eb5758b16201b5bb199e70",
+      "group": null
+    }
+  ]
+}

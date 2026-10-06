@@ -1,0 +1,522 @@
+[
+  {
+    "id": "autocut",
+    "title": "Find your first great cut.",
+    "short": "AutoCut",
+    "tag": "RHYTHM → STORY",
+    "problem": "A folder of footage is not a film yet.",
+    "features": "Native audio analysis · beat grid · editable AutoCut",
+    "reference": "/assets/scenepilot-workshops/films/source-manifest.json",
+    "referenceTitle": "Supplied film studies",
+    "steps": [
+      "Analyze the real soundtrack.",
+      "Change the pace of the cut.",
+      "Refine a shot after AutoCut."
+    ],
+    "challenge": "Make a restrained opening and a faster finish. Let one shot breathe.",
+    "pacing": "Choose your rhythm after analysis.",
+    "media": {
+      "label": "Cut a visual mixtape",
+      "channel": "Momentium film studies",
+      "sourceUrl": "/assets/scenepilot-workshops/films/source-manifest.json",
+      "clips": [
+        {
+          "key": "decks",
+          "original": "HYSTERICs.mov",
+          "sourceStart": 0,
+          "originalDuration": 4.166667,
+          "duration": 12,
+          "looped": true,
+          "name": "decks.mp4",
+          "url": "/assets/scenepilot-workshops/films/decks.mp4",
+          "size": 802063
+        },
+        {
+          "key": "pattern",
+          "original": "INSTRA PATTERN 4.mov",
+          "sourceStart": 0,
+          "originalDuration": 6.006,
+          "duration": 12,
+          "looped": true,
+          "name": "pattern.mp4",
+          "url": "/assets/scenepilot-workshops/films/pattern.mp4",
+          "size": 2413340
+        },
+        {
+          "key": "prism",
+          "original": "STORY OF MY LIFE 1.mov",
+          "sourceStart": 0,
+          "originalDuration": 6.233365,
+          "duration": 12,
+          "looped": true,
+          "name": "prism.mp4",
+          "url": "/assets/scenepilot-workshops/films/prism.mp4",
+          "size": 2880184
+        }
+      ],
+      "audio": {
+        "name": "films-soundtrack.m4a",
+        "url": "/assets/scenepilot-workshops/films/films-soundtrack.m4a",
+        "title": "EAT & SMO 3 / supplied soundtrack excerpt",
+        "duration": 12,
+        "sourceStart": 0,
+        "size": 196292
+      }
+    }
+  },
+  {
+    "id": "blend",
+    "title": "Let two scenes become one.",
+    "short": "Blend scenes",
+    "tag": "LIGHT → LAYERS",
+    "problem": "The second scene looks pasted on.",
+    "features": "Screen · Multiply · Overlay · opacity · track visibility",
+    "reference": "/assets/scenepilot-workshops/films/source-manifest.json",
+    "referenceTitle": "Supplied film studies",
+    "steps": [
+      "Try a blend other than Normal.",
+      "Balance the overlay opacity.",
+      "Toggle the overlay to compare."
+    ],
+    "challenge": "Keep the subject readable while the second scene adds atmosphere.",
+    "pacing": "Hold the spinning decks. Layer in the instrument pattern.",
+    "media": {
+      "label": "Decks in a psychedelic world",
+      "channel": "Momentium film studies",
+      "sourceUrl": "/assets/scenepilot-workshops/films/source-manifest.json",
+      "clips": [
+        {
+          "key": "decks",
+          "original": "HYSTERICs.mov",
+          "sourceStart": 0,
+          "originalDuration": 4.166667,
+          "duration": 12,
+          "looped": true,
+          "name": "decks.mp4",
+          "url": "/assets/scenepilot-workshops/films/decks.mp4",
+          "size": 802063
+        },
+        {
+          "key": "prism",
+          "original": "STORY OF MY LIFE 1.mov",
+          "sourceStart": 0,
+          "originalDuration": 6.233365,
+          "duration": 12,
+          "looped": true,
+          "name": "prism.mp4",
+          "url": "/assets/scenepilot-workshops/films/prism.mp4",
+          "size": 2880184
+        },
+        {
+          "key": "pattern",
+          "original": "INSTRA PATTERN 4.mov",
+          "sourceStart": 0,
+          "originalDuration": 6.006,
+          "duration": 12,
+          "looped": true,
+          "name": "pattern.mp4",
+          "url": "/assets/scenepilot-workshops/films/pattern.mp4",
+          "size": 2413340
+        }
+      ],
+      "audio": {
+        "name": "films-soundtrack.m4a",
+        "url": "/assets/scenepilot-workshops/films/films-soundtrack.m4a",
+        "title": "EAT & SMO 3 / supplied soundtrack excerpt",
+        "duration": 12,
+        "sourceStart": 0,
+        "size": 196292
+      }
+    }
+  },
+  {
+    "id": "moods",
+    "title": "One film. Three feelings.",
+    "short": "Color moods",
+    "tag": "COLOR → FEELING",
+    "problem": "The footage has no shared visual mood.",
+    "features": "Native look presets · white balance · grain · original comparison",
+    "reference": "/assets/scenepilot-workshops/films/source-manifest.json",
+    "referenceTitle": "Supplied film studies",
+    "steps": [
+      "Choose a different native look.",
+      "Adjust warmth or exposure.",
+      "Compare against the original."
+    ],
+    "challenge": "Create a warm memory, cool music-video treatment, or quiet monochrome.",
+    "pacing": "One ten-second prism study. Compare the color.",
+    "media": {
+      "label": "Change the prism’s atmosphere",
+      "channel": "Momentium film studies",
+      "sourceUrl": "/assets/scenepilot-workshops/films/source-manifest.json",
+      "clips": [
+        {
+          "key": "prism",
+          "original": "STORY OF MY LIFE 1.mov",
+          "sourceStart": 0,
+          "originalDuration": 6.233365,
+          "duration": 12,
+          "looped": true,
+          "name": "prism.mp4",
+          "url": "/assets/scenepilot-workshops/films/prism.mp4",
+          "size": 2880184
+        },
+        {
+          "key": "texture",
+          "original": "STORY OF MY LIFE 3.mov",
+          "sourceStart": 0,
+          "originalDuration": 2.416315,
+          "duration": 12,
+          "looped": true,
+          "name": "texture.mp4",
+          "url": "/assets/scenepilot-workshops/films/texture.mp4",
+          "size": 2885727
+        },
+        {
+          "key": "pattern",
+          "original": "INSTRA PATTERN 4.mov",
+          "sourceStart": 0,
+          "originalDuration": 6.006,
+          "duration": 12,
+          "looped": true,
+          "name": "pattern.mp4",
+          "url": "/assets/scenepilot-workshops/films/pattern.mp4",
+          "size": 2413340
+        }
+      ],
+      "audio": {
+        "name": "films-soundtrack.m4a",
+        "url": "/assets/scenepilot-workshops/films/films-soundtrack.m4a",
+        "title": "EAT & SMO 3 / supplied soundtrack excerpt",
+        "duration": 12,
+        "sourceStart": 0,
+        "size": 196292
+      }
+    }
+  },
+  {
+    "id": "ramp",
+    "title": "Make the movement land.",
+    "short": "Speed ramps",
+    "tag": "MOTION → MOMENT",
+    "problem": "The best movement passes too quickly.",
+    "features": "Native time remap · freeze · slow/fast source sampling",
+    "reference": "/assets/scenepilot-workshops/films/source-manifest.json",
+    "referenceTitle": "Supplied film studies",
+    "steps": [
+      "Apply a speed ramp.",
+      "Move the slow moment.",
+      "Play across the remapped shot."
+    ],
+    "challenge": "Freeze the key gesture, then let the movement rush back in.",
+    "pacing": "One eight-second take. Shape its movement.",
+    "media": {
+      "label": "Freeze the perfect deck angle",
+      "channel": "Momentium film studies",
+      "sourceUrl": "/assets/scenepilot-workshops/films/source-manifest.json",
+      "clips": [
+        {
+          "key": "decks",
+          "original": "HYSTERICs.mov",
+          "sourceStart": 0,
+          "originalDuration": 4.166667,
+          "duration": 12,
+          "looped": true,
+          "name": "decks.mp4",
+          "url": "/assets/scenepilot-workshops/films/decks.mp4",
+          "size": 802063
+        },
+        {
+          "key": "pattern",
+          "original": "INSTRA PATTERN 4.mov",
+          "sourceStart": 0,
+          "originalDuration": 6.006,
+          "duration": 12,
+          "looped": true,
+          "name": "pattern.mp4",
+          "url": "/assets/scenepilot-workshops/films/pattern.mp4",
+          "size": 2413340
+        },
+        {
+          "key": "prism",
+          "original": "STORY OF MY LIFE 1.mov",
+          "sourceStart": 0,
+          "originalDuration": 6.233365,
+          "duration": 12,
+          "looped": true,
+          "name": "prism.mp4",
+          "url": "/assets/scenepilot-workshops/films/prism.mp4",
+          "size": 2880184
+        }
+      ],
+      "audio": {
+        "name": "films-soundtrack.m4a",
+        "url": "/assets/scenepilot-workshops/films/films-soundtrack.m4a",
+        "title": "EAT & SMO 3 / supplied soundtrack excerpt",
+        "duration": 12,
+        "sourceStart": 0,
+        "size": 196292
+      }
+    }
+  },
+  {
+    "id": "titles",
+    "title": "Give the scene a voice.",
+    "short": "Kinetic type",
+    "tag": "WORDS → IMPACT",
+    "problem": "A beautiful shot still needs a memorable message.",
+    "features": "Editable timed type · rise/pop/slam · character animation · color",
+    "reference": "/assets/scenepilot-workshops/films/source-manifest.json",
+    "referenceTitle": "Supplied film studies",
+    "steps": [
+      "Write your own headline.",
+      "Change its entrance animation.",
+      "Move the title in the frame."
+    ],
+    "challenge": "Use only three words. Make their rhythm feel part of the scene.",
+    "pacing": "One eight-second take. Give the words room.",
+    "media": {
+      "label": "Make a Sattari motion poster",
+      "channel": "Momentium film studies",
+      "sourceUrl": "/assets/scenepilot-workshops/films/source-manifest.json",
+      "clips": [
+        {
+          "key": "pattern",
+          "original": "INSTRA PATTERN 4.mov",
+          "sourceStart": 0,
+          "originalDuration": 6.006,
+          "duration": 12,
+          "looped": true,
+          "name": "pattern.mp4",
+          "url": "/assets/scenepilot-workshops/films/pattern.mp4",
+          "size": 2413340
+        },
+        {
+          "key": "decks",
+          "original": "HYSTERICs.mov",
+          "sourceStart": 0,
+          "originalDuration": 4.166667,
+          "duration": 12,
+          "looped": true,
+          "name": "decks.mp4",
+          "url": "/assets/scenepilot-workshops/films/decks.mp4",
+          "size": 802063
+        },
+        {
+          "key": "texture",
+          "original": "STORY OF MY LIFE 3.mov",
+          "sourceStart": 0,
+          "originalDuration": 2.416315,
+          "duration": 12,
+          "looped": true,
+          "name": "texture.mp4",
+          "url": "/assets/scenepilot-workshops/films/texture.mp4",
+          "size": 2885727
+        }
+      ],
+      "audio": {
+        "name": "films-soundtrack.m4a",
+        "url": "/assets/scenepilot-workshops/films/films-soundtrack.m4a",
+        "title": "EAT & SMO 3 / supplied soundtrack excerpt",
+        "duration": 12,
+        "sourceStart": 0,
+        "size": 196292
+      }
+    }
+  },
+  {
+    "id": "trim",
+    "title": "Make every frame earn its place.",
+    "short": "Precise trims",
+    "tag": "TIMING → TENSION",
+    "problem": "The opening waits too long to reveal the next shot.",
+    "features": "Native split · ripple timing · source slip · undo/redo",
+    "reference": "/assets/scenepilot-workshops/films/source-manifest.json",
+    "referenceTitle": "Supplied film studies",
+    "steps": [
+      "Split a shot at the playhead.",
+      "Change one shot duration.",
+      "Slip its source without moving the cut."
+    ],
+    "challenge": "Make a compelling opening with the fewest cuts possible.",
+    "pacing": "Two five-second shots. Decide where to cut.",
+    "media": {
+      "label": "Build a surreal collage",
+      "channel": "Momentium film studies",
+      "sourceUrl": "/assets/scenepilot-workshops/films/source-manifest.json",
+      "clips": [
+        {
+          "key": "collage",
+          "original": "waitin4luv.mp4",
+          "sourceStart": 0,
+          "originalDuration": 34.966667,
+          "duration": 12,
+          "looped": false,
+          "name": "collage.mp4",
+          "url": "/assets/scenepilot-workshops/films/collage.mp4",
+          "size": 1589736
+        },
+        {
+          "key": "prism",
+          "original": "STORY OF MY LIFE 1.mov",
+          "sourceStart": 0,
+          "originalDuration": 6.233365,
+          "duration": 12,
+          "looped": true,
+          "name": "prism.mp4",
+          "url": "/assets/scenepilot-workshops/films/prism.mp4",
+          "size": 2880184
+        },
+        {
+          "key": "texture",
+          "original": "STORY OF MY LIFE 3.mov",
+          "sourceStart": 0,
+          "originalDuration": 2.416315,
+          "duration": 12,
+          "looped": true,
+          "name": "texture.mp4",
+          "url": "/assets/scenepilot-workshops/films/texture.mp4",
+          "size": 2885727
+        }
+      ],
+      "audio": {
+        "name": "films-soundtrack.m4a",
+        "url": "/assets/scenepilot-workshops/films/films-soundtrack.m4a",
+        "title": "EAT & SMO 3 / supplied soundtrack excerpt",
+        "duration": 12,
+        "sourceStart": 0,
+        "size": 196292
+      }
+    }
+  },
+  {
+    "id": "transition",
+    "title": "Cut, dissolve, or make a move.",
+    "short": "Transitions",
+    "tag": "CUT → CONNECTION",
+    "problem": "The transition calls attention to itself.",
+    "features": "Native per-cut transitions · dissolve · zoom · whip · duration",
+    "reference": "/assets/scenepilot-workshops/films/source-manifest.json",
+    "referenceTitle": "Supplied film studies",
+    "steps": [
+      "Choose a transition into shot two.",
+      "Adjust the transition duration.",
+      "Play through the join."
+    ],
+    "challenge": "Use a direct cut for clarity and a dissolve only where the story changes.",
+    "pacing": "Two five-second shots. Soften their meeting.",
+    "media": {
+      "label": "Connect two visual worlds",
+      "channel": "Momentium film studies",
+      "sourceUrl": "/assets/scenepilot-workshops/films/source-manifest.json",
+      "clips": [
+        {
+          "key": "prism",
+          "original": "STORY OF MY LIFE 1.mov",
+          "sourceStart": 0,
+          "originalDuration": 6.233365,
+          "duration": 12,
+          "looped": true,
+          "name": "prism.mp4",
+          "url": "/assets/scenepilot-workshops/films/prism.mp4",
+          "size": 2880184
+        },
+        {
+          "key": "texture",
+          "original": "STORY OF MY LIFE 3.mov",
+          "sourceStart": 0,
+          "originalDuration": 2.416315,
+          "duration": 12,
+          "looped": true,
+          "name": "texture.mp4",
+          "url": "/assets/scenepilot-workshops/films/texture.mp4",
+          "size": 2885727
+        },
+        {
+          "key": "decks",
+          "original": "HYSTERICs.mov",
+          "sourceStart": 0,
+          "originalDuration": 4.166667,
+          "duration": 12,
+          "looped": true,
+          "name": "decks.mp4",
+          "url": "/assets/scenepilot-workshops/films/decks.mp4",
+          "size": 802063
+        }
+      ],
+      "audio": {
+        "name": "films-soundtrack.m4a",
+        "url": "/assets/scenepilot-workshops/films/films-soundtrack.m4a",
+        "title": "EAT & SMO 3 / supplied soundtrack excerpt",
+        "duration": 12,
+        "sourceStart": 0,
+        "size": 196292
+      }
+    }
+  },
+  {
+    "id": "delivery",
+    "title": "One edit. Every screen.",
+    "short": "Social delivery",
+    "tag": "FILM → SHARE",
+    "problem": "The wide edit loses its focal point on a phone.",
+    "features": "Native output ratios · animated framing · editable project · video export",
+    "reference": "/assets/scenepilot-workshops/films/source-manifest.json",
+    "referenceTitle": "Supplied film studies",
+    "steps": [
+      "Switch the output to portrait.",
+      "Reframe a shot with scale or position.",
+      "Save your editable cut or render."
+    ],
+    "challenge": "Make a vertical teaser while keeping the original wide project editable.",
+    "pacing": "One eight-second take. Find the best framing.",
+    "media": {
+      "label": "Frame the Momo teaser",
+      "channel": "Momentium film studies",
+      "sourceUrl": "/assets/scenepilot-workshops/films/source-manifest.json",
+      "clips": [
+        {
+          "key": "momo",
+          "original": "Momo MockUp 1.mov",
+          "sourceStart": 0,
+          "originalDuration": 15.3153,
+          "duration": 12,
+          "looped": false,
+          "name": "momo.mp4",
+          "url": "/assets/scenepilot-workshops/films/momo.mp4",
+          "size": 880739
+        },
+        {
+          "key": "decks",
+          "original": "HYSTERICs.mov",
+          "sourceStart": 0,
+          "originalDuration": 4.166667,
+          "duration": 12,
+          "looped": true,
+          "name": "decks.mp4",
+          "url": "/assets/scenepilot-workshops/films/decks.mp4",
+          "size": 802063
+        },
+        {
+          "key": "pattern",
+          "original": "INSTRA PATTERN 4.mov",
+          "sourceStart": 0,
+          "originalDuration": 6.006,
+          "duration": 12,
+          "looped": true,
+          "name": "pattern.mp4",
+          "url": "/assets/scenepilot-workshops/films/pattern.mp4",
+          "size": 2413340
+        }
+      ],
+      "audio": {
+        "name": "films-soundtrack.m4a",
+        "url": "/assets/scenepilot-workshops/films/films-soundtrack.m4a",
+        "title": "EAT & SMO 3 / supplied soundtrack excerpt",
+        "duration": 12,
+        "sourceStart": 0,
+        "size": 196292
+      }
+    }
+  }
+]

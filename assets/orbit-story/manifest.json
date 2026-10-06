@@ -1,0 +1,91 @@
+{
+  "project": "Orbit",
+  "duration": 22.957146,
+  "bpm": 126,
+  "files": {
+    "CREDITS.txt": {
+      "bytes": 505,
+      "sha256": "88010f2d8810a4510a4a2ffaf99b7b526138d4b1c0e79f79c91383ee5e1adfea"
+    },
+    "README.txt": {
+      "bytes": 1820,
+      "sha256": "d0c2d79d94034120c39790daef0b133957bd0cf87300bfd72e41a897acb0750e"
+    },
+    "artwork-evidence.json": {
+      "bytes": 443,
+      "sha256": "34a56e3f24be44d628ee41666cf2f95ab89db2e1c10e7272580375cfb23b1284"
+    },
+    "orbit-artwork.luma": {
+      "bytes": 424660,
+      "sha256": "76b2baeb169369cb3adcbef176587652eda421db060c0ed4d158c201e1a7a6b4"
+    },
+    "orbit-complete-project.zip": {
+      "bytes": 24351888,
+      "sha256": "868e3c9c51cfdecd6f980f4d6fc32e7d59142fbae738987e5b9ce6858b2110a4"
+    },
+    "orbit-film-sources.zip": {
+      "bytes": 6432990,
+      "sha256": "47897d8afde3ef4e48d65055cf5fac3f810c95781deb2693e3ca31083d0d08ac"
+    },
+    "orbit-film.scenepilot.json": {
+      "bytes": 4353,
+      "sha256": "377fcd64c73ec5393e36b45c721425fe285cd9e3e75d04bdbd69638061441da5"
+    },
+    "orbit-object.jpg": {
+      "bytes": 77939,
+      "sha256": "07d61168fc54e05fc6c4b2079e5aa2be9cb1ec64eda9ec790ec0dfd7e94aed43"
+    },
+    "orbit-pendant.form": {
+      "bytes": 19766,
+      "sha256": "ea63291d9a08d93d43d050f9679a697326b9b5b1124dea5e11578e406c1acabb"
+    },
+    "orbit-pendant.step": {
+      "bytes": 19250,
+      "sha256": "f6baccb5adee301c3a657c81f493825551cf9bf4cd5c05a2b4e07301c9ca0361"
+    },
+    "orbit-poster.jpg": {
+      "bytes": 81119,
+      "sha256": "37d3b730677180f29f31bd74ab4699e651eb8e3b49e14f6f737d8437d40952df"
+    },
+    "orbit-poster.png": {
+      "bytes": 269290,
+      "sha256": "dd9dfff5d980a2876a62ece608b148c790ead325e2a246b18385610d8bb92723"
+    },
+    "orbit-preview.mp4": {
+      "bytes": 719125,
+      "sha256": "eff36950baef88ab25b8995e61d8f5fe4d04e149c97104ea2fb8f513b60caae2"
+    },
+    "orbit-shot-1.mp4": {
+      "bytes": 46110,
+      "sha256": "06aba282479a9e20b52579d66327e95834f6930e86e9606ec813831c621fa1d1"
+    },
+    "orbit-shot-2.mp4": {
+      "bytes": 34843,
+      "sha256": "d523a5da748814d65b0f1acf070a767d5898d9c46caad2b6804924f7a939aead"
+    },
+    "orbit-shot-3.mp4": {
+      "bytes": 34186,
+      "sha256": "41d18b49ae5337b31634676377b159eefc69133c988159afdc6ffe1aa1b81fd0"
+    },
+    "orbit-social.jpg": {
+      "bytes": 58357,
+      "sha256": "31b0e037ba5c5a3cef08da11978381143848a5e2f2a5a4cfb62723f630e0d581"
+    },
+    "orbit-social.png": {
+      "bytes": 244109,
+      "sha256": "905c10d6d62d7f1a18c3eeead4b9af17252c36b6d7d5453c7ecb8bc3e7c08292"
+    },
+    "orbit-sound-studio.jpg": {
+      "bytes": 92202,
+      "sha256": "2c03278f41768b19c57e2af50466db002c030b521205b8ccd255684bf3d85fb0"
+    },
+    "orbit-sound.sattari": {
+      "bytes": 20189833,
+      "sha256": "8710c0fddcb8e5d00350595b150d624cfd60dcd0ee1a787b2c753c49fe97d8cc"
+    },
+    "orbit-sound.wav": {
+      "bytes": 6611702,
+      "sha256": "a24294446b66b6cc8b09ca3401755d21c0d170b5138e2e1bb45450e9dafe05b7"
+    }
+  }
+}

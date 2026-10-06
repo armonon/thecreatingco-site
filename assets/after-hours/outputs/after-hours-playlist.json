@@ -1,0 +1,27 @@
+{
+  "name": "After Hours",
+  "edition": "Bounce browser companion",
+  "tracks": [
+    {
+      "filename": "After-Hours-Evening-Mix.wav",
+      "bytes": 3175244
+    },
+    {
+      "filename": "After-Hours-03-Harmony.wav",
+      "bytes": 3256660
+    },
+    {
+      "filename": "After-Hours-04-Melody.wav",
+      "bytes": 3256660
+    },
+    {
+      "filename": "After-Hours-02-Bass.wav",
+      "bytes": 3256660
+    },
+    {
+      "filename": "After-Hours-01-Percussion.wav",
+      "bytes": 3256660
+    }
+  ],
+  "note": "File list only. Audio is not embedded."
+}

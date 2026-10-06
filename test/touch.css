@@ -1,0 +1,17 @@
+/* Shared by the file-review, player and legacy mixer companions. */
+.app-body { padding-bottom: env(safe-area-inset-bottom); }
+.app-main, .player-layout > *, .queue-item > .track { min-width: 0; }
+.app-body input[type=range] { min-height: 44px; touch-action: pan-y pinch-zoom; }
+.app-body .queue-item > .track { overflow-wrap: anywhere; }
+@media (any-pointer: coarse), (max-width: 760px) {
+  .app-body .small-btn { min-width: 44px; min-height: 44px; flex: 0 0 44px; }
+  .app-body .deck .pill { min-height: 44px; }
+  .app-body input:not([type=checkbox]):not([type=radio]):not([type=range]),
+  .app-body select, .app-body textarea { font-size: 16px; min-height: 44px; min-width: 0; max-width: 100%; }
+  .app-header nav a { display: inline-flex; align-items: center; min-height: 44px; }
+  .app-body .queue-item { flex-wrap: wrap; gap: 6px; }
+  .app-body .queue-item > .track { flex-basis: calc(100% - 4px); }
+  .app-body .eq-grid { gap: 12px; }
+  .app-body .app-toolbar > #filter { flex: 1 1 180px; }
+  .app-body .app-toolbar > #search { min-width: min(220px, 100%); }
+}
