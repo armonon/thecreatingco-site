@@ -258,7 +258,13 @@ async function main() {
   check('image card shows a preview + Locker badge', await imgCard.locator('img').count() === 1 && (await imgCard.locator('.badge').textContent()) === 'Locker');
   await imgCard.getByRole('button', { name: /^Send/ }).click();
   const targets = await imgCard.locator('.send li').allTextContents();
-  check('Send to menu is filtered by accepts (image → Luma yes, Bounce no)', targets.some(t => /^Luma/.test(t)) && !targets.some(t => /Bounce|Split/.test(t)), targets.join(', '));
+  const expectTargets = await lpage.evaluate(async () => {
+    const reg = await (await fetch('/suite/v1/apps.json')).json();
+    return reg.apps.filter(a => a.id !== 'locker' && a.menu !== false && a.opens === true && TCCLockerCore.matches({ name: 'x.png', type: 'image/png' }, a.accepts)).map(a => a.name);
+  });
+  const noneMsg = targets.length === 1 && /No app opens/.test(targets[0]);
+  check('Send to menu = apps with opens:true that accept image/png', expectTargets.length ? (targets.length === expectTargets.length && expectTargets.every(n => targets.some(t => t.startsWith(n)))) : noneMsg, targets.join(', ') || '(none)');
+  check('accepts matching (png → luma yes, bounce no)', await lpage.evaluate(() => TCC.locker.accepts('luma', { name: 'a.png', type: 'image/png' }) && !TCC.locker.accepts('bounce', { name: 'a.png', type: 'image/png' })));
   await lpage.keyboard.press('Escape');
   await imgCard.getByRole('button', { name: /^Rename/ }).click();
   await lpage.keyboard.press('ControlOrMeta+a');

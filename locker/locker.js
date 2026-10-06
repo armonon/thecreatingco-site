@@ -210,9 +210,9 @@
       if (!list.hidden) return closeSend(btn, list);
       list.innerHTML = '';
       var targets = registry.apps.filter(function (a) {
-        return a.id !== 'locker' && a.menu !== false && core.matches(e, a.accepts);
+        return a.id !== 'locker' && a.menu !== false && a.opens === true && core.matches(e, a.accepts);
       });
-      if (!targets.length) list.appendChild(el('li', { class: 'none', text: 'No app opens this file type yet.' }));
+      if (!targets.length) list.appendChild(el('li', { class: 'none', text: 'No app opens this kind of file from the Locker yet. Download it and open it in the app instead.' }));
       targets.forEach(function (a) {
         var label = a.name + (a.parent ? ' (' + appName(a.parent) + ')' : '');
         list.appendChild(el('li', null, [el('button', { type: 'button', text: label, onclick: function () { sendTo(a, e); closeSend(btn, list); } })]));

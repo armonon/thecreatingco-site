@@ -1,6 +1,7 @@
 {
   "version": 1,
   "updated": "2026-10-06",
+  "notes": "opens:true = the app handles ?tcc-open= via TCC.locker.onOpen (shown in Locker Send-to menus). accepts = MIME types, type/* wildcards or .extensions.",
   "home": { "name": "thecreatingco.com", "url": "https://thecreatingco.com/" },
   "groups": [
     { "id": "make", "name": "Make" },

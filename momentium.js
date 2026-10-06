@@ -40,7 +40,7 @@
     document.querySelector('.mm-filter-count').textContent=value==='All tools'?`${document.querySelectorAll('#creative-suite [data-mm-category]').length || 4} suite products + ${document.querySelectorAll('#other-apps [data-mm-category]:not([data-mm-focused-tool])').length} other apps + ${document.querySelectorAll('#other-apps [data-mm-focused-tool]').length} focused tools`:`${count} ${count===1?'product':'products'} across both collections`;
   }));
   const communityApps = [{"id": "sessions", "html": "<article class=\"mm-launch-item\" data-mm-search=\"sessions sound community other apps\" data-community-app=\"sessions\"><span class=\"mm-tool-dot\" style=\"background:#d8ff3e\" aria-hidden=\"true\"></span><div><strong class=\"launch-app-name\">Sessions</strong><p>Shared listening & room chat</p></div><a href=\"/community/network?view=Sessions\">Open app<span class=\"visually-hidden\">: Sessions</span></a></article>"}, {"id": "pocket-studio", "html": "<article class=\"mm-launch-item\" data-mm-search=\"pocket studio sound community other apps\" data-community-app=\"pocket-studio\"><span class=\"mm-tool-dot\" style=\"background:#c6b7ff\" aria-hidden=\"true\"></span><div><strong class=\"launch-app-name\">Pocket Studio</strong><p>Voice memos, trimming & sharing</p></div><a href=\"/community/network?view=Pocket%20Studio\">Open app<span class=\"visually-hidden\">: Pocket Studio</span></a></article>"}];
-  const otherLaunch = document.querySelector('[data-mm-launch-group="other-apps"]');
+  const otherLaunch = document.querySelector('[data-mm-launch-group="community"], [data-mm-launch-group="other-apps"]');
   if (otherLaunch) communityApps.forEach(app => {
     if (!otherLaunch.querySelector('[data-community-app="' + app.id + '"]')) otherLaunch.insertAdjacentHTML('beforeend', app.html);
   });
@@ -50,7 +50,7 @@
     launch.classList.add('ql-clean');launch.querySelector('h2').textContent='Quick launch';
     const label=launch.querySelector('label');label.textContent='Find an app';
     const search=launch.querySelector('input');search.placeholder='Search apps or what you want to make…';
-    const descriptions={'Form Studio':'3D modeling & CAD','Luma Studio':'Images, layers & color','StemDeck':'Stems, arrangement & mixing','ScenePilot':'Video editing & motion','Ghost Studio':'Garment exploration','Librarian':'Reading & your library','Reclaim':'File review & organization','Bounce':'Music playback & queues'};
+    const descriptions={'Form':'3D modeling & CAD','Luma':'Images, layers & color','Ghost':'Garment exploration','Form Studio':'3D modeling & CAD','Luma Studio':'Images, layers & color','StemDeck':'Stems, arrangement & mixing','ScenePilot':'Video editing & motion','Ghost Studio':'Garment exploration','Librarian':'Reading & your library','Reclaim':'File review & organization','Bounce':'Music playback & queues'};
     all('.mm-launch-item',launch).forEach(item=>{
       item.querySelector('.hero-launch-lesson')?.remove();
       const name=item.querySelector('.launch-app-name, h3').textContent.trim(),copy=item.querySelector('div'),links=all('a',item);
