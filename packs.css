@@ -1,0 +1,27 @@
+/* Free packs page (/packs/) — additive styles only, no existing rules touched. */
+.packs-hero{padding:150px 4.5% 50px;max-width:1120px;margin:0 auto}
+.packs-hero h1{max-width:900px;margin-bottom:22px}
+.packs-hero-sub{font-size:1.15rem;line-height:1.6;max-width:680px;margin-bottom:18px}
+.packs-hero-note{font-size:.95rem;color:#aeb1bb}
+.packs-hero-note a{color:#f8f8fa;text-decoration:underline;text-underline-offset:3px}
+
+.packs-grid-section{padding-top:10px}
+.packs-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+@media (max-width:1080px){.packs-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:720px){.packs-grid{grid-template-columns:1fr}}
+
+.pack-card{display:flex;flex-direction:column;border:1px solid #ffffff20;border-radius:20px;overflow:hidden;background:#15171c}
+.pack-card img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;background:#000}
+.pack-card-body{padding:26px;display:flex;flex-direction:column;gap:12px;flex:1}
+.pack-card-body h3{font-size:1.45rem;letter-spacing:-.02em}
+.pack-card-body>p{margin:0;color:#aeb1bb;font-size:.98rem;line-height:1.55}
+.pack-meta{list-style:none;display:flex;flex-wrap:wrap;gap:8px;padding:0;margin:4px 0 0}
+.pack-meta li{border:1px solid #ffffff25;border-radius:100px;padding:5px 12px;font-size:.78rem;color:#c8cad2}
+.pack-howto{font-size:.88rem;line-height:1.55;color:#8d909a;margin-top:2px}
+.pack-actions{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-top:auto;padding-top:12px}
+.pack-actions .button{min-height:46px;padding:12px 20px;font-size:.88rem}
+
+.packs-skip-section{padding-top:20px}
+.packs-skip{border:1px dashed #ffffff30;border-radius:16px;padding:24px 28px;color:#aeb1bb}
+.packs-skip p{margin:0;line-height:1.6}
+.packs-skip strong{color:#f8f8fa}
