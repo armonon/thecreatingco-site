@@ -37,8 +37,13 @@
       if(!empty){empty=document.createElement('p');empty.className='mm-group-empty';empty.textContent='No products in this collection match this filter.';group.append(empty);}
       empty.hidden=all('[data-mm-category]',group).some(card=>!card.hidden);
     });
-    document.querySelector('.mm-filter-count').textContent=value==='All tools'?'4 suite products + 5 other apps':`${count} ${count===1?'product':'products'} across both collections`;
+    document.querySelector('.mm-filter-count').textContent=value==='All tools'?`${document.querySelectorAll('#creative-suite [data-mm-category]').length || 4} suite products + ${document.querySelectorAll('#other-apps [data-mm-category]:not([data-mm-focused-tool])').length} other apps + ${document.querySelectorAll('#other-apps [data-mm-focused-tool]').length} focused tools`:`${count} ${count===1?'product':'products'} across both collections`;
   }));
+  const communityApps = [{"id": "sessions", "html": "<article class=\"mm-launch-item\" data-mm-search=\"sessions sound community other apps\" data-community-app=\"sessions\"><span class=\"mm-tool-dot\" style=\"background:#d8ff3e\" aria-hidden=\"true\"></span><div><strong class=\"launch-app-name\">Sessions</strong><p>Shared listening & room chat</p></div><a href=\"/community/network?view=Sessions\">Open app<span class=\"visually-hidden\">: Sessions</span></a></article>"}, {"id": "pocket-studio", "html": "<article class=\"mm-launch-item\" data-mm-search=\"pocket studio sound community other apps\" data-community-app=\"pocket-studio\"><span class=\"mm-tool-dot\" style=\"background:#c6b7ff\" aria-hidden=\"true\"></span><div><strong class=\"launch-app-name\">Pocket Studio</strong><p>Voice memos, trimming & sharing</p></div><a href=\"/community/network?view=Pocket%20Studio\">Open app<span class=\"visually-hidden\">: Pocket Studio</span></a></article>"}];
+  const otherLaunch = document.querySelector('[data-mm-launch-group="other-apps"]');
+  if (otherLaunch) communityApps.forEach(app => {
+    if (!otherLaunch.querySelector('[data-community-app="' + app.id + '"]')) otherLaunch.insertAdjacentHTML('beforeend', app.html);
+  });
   const launch=document.querySelector('.mm-launch-dialog');
   if(launch){
     const sheet=document.createElement('link');sheet.rel='stylesheet';sheet.href='/quick-launch.css?v=1';document.head.append(sheet);
