@@ -1,0 +1,184 @@
+[
+  {
+    "slug": "autocut", "asset": "autocut", "name": "AutoCut", "family": "ScenePilot", "parent": "scenepilot", "tone": "#c3b3ff",
+    "promise": "Give your footage a rhythm.",
+    "intro": "Bring your clips and a soundtrack. Build a beat-aware first cut, keep the moments you love, then refine the result in ScenePilot.",
+    "features": [["Start with the soundtrack", "Let the track's beat and energy guide a first sequence."], ["Keep your decisions", "Compare cut presets, re-roll and lock the shots you want to keep."], ["Keep editing", "Move the cut into ScenePilot instead of treating the first result as final."]],
+    "lessons": [
+      {"title": "A release-day teaser", "brief": "Turn a handful of performance clips into a short announcement.", "steps": ["Choose a short soundtrack section with a clear beat and import your clips.", "Compare a calmer preset with a faster cut; lock one strong opening shot.", "Review the sequence, then refine titles and transitions in ScenePilot."]},
+      {"title": "A product in motion", "brief": "Give a collection of detail shots a shared pace.", "steps": ["Import wide, close-up and detail shots alongside a soundtrack.", "Generate a first cut and keep shots that clearly show the product.", "Check the framing for your intended aspect ratio before export."]},
+      {"title": "Performance takes", "brief": "Explore a first edit using multiple takes of the same performance.", "steps": ["Use takes with clean reference audio and the same song.", "Review the suggested alignment and every cut between takes.", "Correct anything that drifts in the editor; do not assume alignment is exact."]}
+    ],
+    "exports": [["Rendered video", "Encoding and format availability depend on the browser."], ["ScenePilot handoff", "Continue refining the generated edit."], ["Shot list", "Keep a readable record of the selected shots."]],
+    "limits": "AutoCut makes a first cut, not a finished film. Beat detection and multi-take alignment can be wrong. Prior end-to-end evidence uses generated footage; broad real-footage and Safari export testing remain outstanding.",
+    "save": "Review the cut and export before leaving. Keep your original media; a browser session is not a backup.",
+    "related": ["board", "captions", "grade"]
+  },
+  {
+    "slug": "captions", "asset": "captions", "name": "Captions", "family": "ScenePilot", "parent": "scenepilot", "tone": "#c3b3ff",
+    "promise": "Let the words carry the moment.",
+    "intro": "Transcribe a clip on your device, correct the words and choose an animated style. Export a captioned WebM or take SRT and VTT files into another editor.",
+    "features": [["Words you can correct", "Edit the transcript instead of accepting every model prediction."], ["A style for the story", "Compare five animated caption styles and adjust line length."], ["Subtitles that travel", "Export SRT or VTT separately from the burned-in video."]],
+    "lessons": [
+      {"title": "A founder introduction", "brief": "Make a short spoken introduction easier to follow.", "steps": ["Import a short video with clear speech, or use an existing SRT/VTT file.", "Review names and punctuation, then choose a readable caption style.", "Export the subtitle file and, if needed, a burned-in WebM."]},
+      {"title": "An audio-only announcement", "brief": "Give a voice note a visual format.", "steps": ["Import an audio clip and check the transcript.", "Choose an audiogram aspect ratio and adjust caption grouping.", "Keep the tab visible during the real-time video export."]},
+      {"title": "Restyle existing subtitles", "brief": "Try a new presentation without retranscribing the clip.", "steps": ["Import your SRT or VTT alongside the matching media.", "Compare styles and check contrast against the footage.", "Export updated subtitles or a styled WebM, then review the result."]}
+    ],
+    "exports": [["WebM", "Animated captions burned into a video; no MP4 export currently."], ["SRT / VTT", "Editable subtitle files for other tools."], ["ScenePilot handoff", "Per-line titles, not word-by-word animation."]],
+    "limits": "The on-device speech model can mishear names, accents and sung lyrics. Review every transcript. Burn-in runs in real time with the tab visible. Translation, dubbing and universal language accuracy are not promised.",
+    "save": "Download SRT/VTT to preserve the edited words and timings. Keep the original clip and inspect the exported video.",
+    "related": ["autocut", "board", "grade"]
+  },
+  {
+    "slug": "board", "asset": "board", "name": "Board", "family": "ScenePilot", "parent": "scenepilot", "tone": "#c3b3ff",
+    "promise": "See the film before you shoot.",
+    "intro": "Turn a script or a list of beats into an editable shot plan. Sketch frames, add references and take a readable plan to the shoot.",
+    "features": [["A useful first pass", "Generate scenes and suggested shots from screenplay-style text or prose."], ["Make each shot yours", "Edit the lens, duration and shot type; sketch or upload a reference."], ["Take the plan with you", "Print to PDF, export CSV or save a board JSON file."]],
+    "lessons": [
+      {"title": "A three-shot product film", "brief": "Plan an opening, a detail and a reveal.", "steps": ["Write three beats: establish the object, show a detail, reveal the whole.", "Generate the board and replace guessed framing with your own choices.", "Sketch a reference for each shot and export the plan."]},
+      {"title": "A performance video", "brief": "Plan coverage before recording multiple takes.", "steps": ["Outline the song sections and where you want different setups.", "Add a wide, medium and close-up; review lens and duration suggestions.", "Print the board and use it as a shoot checklist."]},
+      {"title": "A tiny narrative", "brief": "Make a short scene legible before finding a camera.", "steps": ["Paste a short scene with a location and a clear action.", "Reorder or duplicate shots to establish the sequence you want.", "Save the board JSON before trying a ScenePilot handoff."]}
+    ],
+    "exports": [["Print to PDF", "A shoot-ready document through the browser print dialog."], ["CSV / board JSON", "A shot list or a portable board file."], ["ScenePilot markers", "Scene/shot markers and the written brief; sketches stay in Board."]],
+    "limits": "Parsing and shot suggestions are heuristics, not creative decisions. Review guessed lenses and durations. The ScenePilot import can replace the open project: save that project first. Sketches do not travel with the marker handoff.",
+    "save": "Browser autosave is local to that browser. Export board JSON for a portable copy; print or export CSV for the shoot.",
+    "related": ["autocut", "grade", "captions"]
+  },
+  {
+    "slug": "grade", "asset": "grade", "name": "Grade", "family": "ScenePilot", "parent": "scenepilot", "tone": "#c3b3ff",
+    "promise": "Find a look. Make it your own.",
+    "intro": "Bring a reference still and your image or clip. Compare a statistical color transfer, adjust its strength and export a graded still or .cube LUT.",
+    "features": [["Begin with a reference", "Use color statistics from a still to explore a new direction."], ["Compare as you adjust", "Check the before/after split and dial back the intensity."], ["Take the look elsewhere", "Export a .cube LUT or a graded PNG still."]],
+    "lessons": [
+      {"title": "A warmer portrait", "brief": "Explore a restrained color shift without losing the subject.", "steps": ["Load a portrait and a warm reference still you have rights to use.", "Start with Balanced transfer and lower intensity until skin looks believable.", "Compare before/after and export a PNG still."]},
+      {"title": "A cool performance look", "brief": "Test a reference palette against a video clip.", "steps": ["Import the clip and a reference with the colors you want.", "Compare transfer methods and review multiple moments in the clip.", "Export a .cube LUT and test it on the same source footage."]},
+      {"title": "A subtle LUT", "brief": "Learn how much a reference should influence the result.", "steps": ["Use source and reference images with similar exposure.", "Compare low and high intensity while watching shadows and skin.", "Export the LUT; treat it as source-specific, not a universal preset."]}
+    ],
+    "exports": [[".cube LUT", "17, 33 or 65 size; test it in the receiving editor."], ["PNG still", "A graded image you can inspect or edit further."], ["ScenePilot import", "Check the receiving editor's save and compatibility behavior."]],
+    "limits": "This is color transfer, not relighting or skin-aware grading. It assumes Rec.709/sRGB, not log or HDR. Histogram mode can posterize flat references. Cross-editor round-trips are not broadly qualified.",
+    "save": "Download the LUT and keep the original media and reference. Session-only previews are not saved grading projects.",
+    "related": ["autocut", "board", "captions"]
+  },
+  {
+    "slug": "mockup", "asset": "mockups", "name": "Mockup", "family": "Luma Studio", "parent": "luma", "tone": "#ff9ac6",
+    "promise": "Take your artwork off the canvas.",
+    "intro": "Try your artwork on a tee, hoodie, tote, poster, vinyl sleeve or phone screen. Adjust placement and color, then download a scene or the whole set.",
+    "entry": "In Luma Studio, open the studio menu and choose Mockups.",
+    "features": [["Six places for one idea", "Compare the same artwork across six stylized product scenes."], ["Placement that stays yours", "Adjust scale, rotation, position, product color and ink density."], ["Keep the presentation editable", "Open a result as a Luma document or export images and a ZIP."]],
+    "lessons": [
+      {"title": "A small merch collection", "brief": "Compare one graphic on a tee, hoodie and tote.", "steps": ["Open your artwork in Luma, then choose Mockups from the studio menu.", "Adjust placement on the tee and compare how it reads on other products.", "Export the scenes as a ZIP and inspect them side by side."]},
+      {"title": "An album artwork set", "brief": "Present a cover as a sleeve and a wall poster.", "steps": ["Use a finished artwork document or upload an image inside Mockups.", "Compare the vinyl sleeve and poster scenes; adjust scale separately.", "Open a result as a document to add final presentation details."]},
+      {"title": "A colorway comparison", "brief": "Find a product color that supports the artwork.", "steps": ["Choose one scene and a graphic with a clear silhouette.", "Try different product colors and check ink density and contrast.", "Download your preferred scene as PNG or JPEG."]}
+    ],
+    "exports": [["PNG / JPEG", "Individual scenes, up to the tool's 2000px option."], ["ZIP", "Download the full six-scene set."], ["Luma document", "Open a rendered scene for further editing."]],
+    "limits": "These are stylized procedural scenes, not photographs or physically simulated garments. Folds, fabric and glare are approximations. Use them to present a direction, not certify print placement or manufacturing results.",
+    "save": "Download the image set and save your original Luma document. Mockup scenes are not editable garment patterns.",
+    "related": ["glyph", "canvas", "press"]
+  },
+  {
+    "slug": "glyph", "asset": "glyph", "name": "Glyph", "family": "Luma Studio", "parent": "luma", "tone": "#ff9ac6",
+    "promise": "Draw a letter. Give it a voice.",
+    "intro": "Sketch letterforms on a guided grid, preview them as type and install the font in Luma. A simple place to begin making your own alphabet.",
+    "entry": "In Luma Studio, open the studio menu and choose Glyph font maker.",
+    "features": [["Guides for a shared rhythm", "Draw against baseline, x-height, cap-height and descender guides."], ["From strokes to type", "Compile brush or pen strokes into straight-segment outlines."], ["Use it in your artwork", "Export OTF/TTF and install the font in Luma's Type tool."]],
+    "lessons": [
+      {"title": "An exhibition wordmark", "brief": "Start with the letters needed for one short title.", "steps": ["Open Glyph font maker from Luma's studio menu.", "Draw a few letters with a consistent baseline and cap height.", "Install the font in Luma, then build a title with the Type tool."]},
+      {"title": "A handmade alphabet", "brief": "Explore a shared stroke style across several characters.", "steps": ["Choose a brush or pen and draw a small set of related letters.", "Preview a word and revise inconsistent widths or proportions.", "Export OTF or TTF to keep a copy outside the browser."]},
+      {"title": "Numbers for a poster", "brief": "Make a small display set for dates or edition numbers.", "steps": ["Draw the numerals needed for your design.", "Check how they align against the same guides and metrics.", "Use the installed font on a text layer and save the font separately."]}
+    ],
+    "exports": [["OTF / TTF", "Fonts made from straight-segment outlines."], ["Install in Luma", "Available to the Type tool in this browser."], ["Font project", "Use Save project to keep an editable copy of your letterforms."]],
+    "limits": "This embedded Glyph has no curve fitting, hinting, kerning, accents or bold/italic styles. Undrawn characters fall back to another font. Installing a font here does not embed it into .luma or PSD files.",
+    "save": "Export the font as well as your artwork. A browser-installed font is local to that browser and is not an account backup.",
+    "related": ["mockup", "glyph-studio", "press"]
+  },
+  {
+    "slug": "split", "asset": "split", "name": "Split", "family": "Sattari Labs", "parent": "stemdeck", "tone": "#8fe0d4",
+    "promise": "Hear the parts inside the song.",
+    "intro": "Separate vocals, drums, bass and the remaining instruments on your device. Listen to each stem, download WAVs or carry the parts into StemDeck.",
+    "features": [["Four stems to explore", "Preview vocals, drums, bass and the combined remaining instruments."], ["Processing on your device", "The separation model runs locally after its initial download."], ["A starting point for a mix", "Download the WAV files or use the StemDeck handoff."]],
+    "lessons": [
+      {"title": "Study your own mix", "brief": "Hear how the bass and drums share the groove.", "steps": ["Import a short song you own or have permission to process.", "Let the model load, separate the track and solo drums, then bass.", "Download the stems and compare them with the original mix."]},
+      {"title": "An instrumental practice version", "brief": "Explore a vocal-muted version for rehearsal.", "steps": ["Choose a song you have rights to use and run separation.", "Mute vocals and listen for bleed or missing musical details.", "Export useful stems; do not mistake separation for studio multitracks."]},
+      {"title": "A StemDeck starting point", "brief": "Bring separated parts into a mixing session.", "steps": ["Separate a short track and audition all four stems.", "Download backups before leaving Split.", "Send to StemDeck and check the parts in the receiving session."]}
+    ],
+    "exports": [["WAV stems", "Vocals, drums, bass and remaining instruments."], ["StemDeck handoff", "Bring separated parts into the Sattari audio workspace."], ["Original media", "Keep your source track separately."]],
+    "limits": "Expect bleed and artifacts, especially on dense mixes. The first run downloads a large model and CPU processing can take minutes. Phone/tablet performance is unqualified. Separation does not grant rights to reuse someone else's music.",
+    "save": "Results are not automatically backed up. Download the WAVs or complete the StemDeck handoff before leaving.",
+    "related": ["key-bpm", "vox", "pocket"]
+  },
+  {
+    "slug": "key-bpm", "asset": "keybpm", "name": "Key & BPM", "family": "Sattari Labs", "parent": "stemdeck", "tone": "#8fe0d4",
+    "promise": "Find a starting point for the mix.",
+    "intro": "Analyze a batch of tracks for estimated key, Camelot code and tempo. Export a CSV and make your final decisions by ear.",
+    "features": [["Bring a batch", "Analyze multiple tracks rather than repeating a one-file workflow."], ["Read the musical context", "Compare key, Camelot notation and tempo estimates in one list."], ["Keep the results", "Export CSV for reference or a compatible downstream workflow."]],
+    "lessons": [
+      {"title": "Prepare a small DJ crate", "brief": "Compare a handful of tracks before planning transitions.", "steps": ["Import five or six tracks with contrasting tempos.", "Review the key, Camelot and BPM estimates for each track.", "Export CSV and audition promising transitions by ear."]},
+      {"title": "Check a known track", "brief": "Learn how an estimate compares with a reference you trust.", "steps": ["Analyze a song whose key and tempo you already know.", "Check whether the tempo lands at half or double time.", "Treat differences as a reason to listen, not proof that the reference is wrong."]},
+      {"title": "Find a rehearsal tempo", "brief": "Use an estimate to begin practicing a part.", "steps": ["Import a recording with a clear pulse.", "Compare the estimated BPM with a metronome and the actual groove.", "Keep a CSV note, then adjust the practice tempo yourself."]}
+    ],
+    "exports": [["CSV", "Track names with estimated key, Camelot and BPM."], ["Batch results", "A reference list, not automatic DJ-library synchronization."], ["Musical review", "Confirm uncertain estimates by ear."]],
+    "limits": "One global key estimate does not describe key changes, modal or atonal music. BPM may land at half or double time. Rough results are fallback estimates. The analyzer is fixture-tested, not benchmarked on a labeled music corpus.",
+    "save": "Export the CSV before closing the tool. Check the import requirements of any software you want to use it with.",
+    "related": ["split", "pocket", "vox"]
+  },
+  {
+    "slug": "vox", "asset": "vox", "name": "Vox", "family": "Sattari Labs", "parent": "stemdeck", "tone": "#8fe0d4",
+    "promise": "Explore another side of your voice.",
+    "intro": "Record or import a clean solo vocal. Explore scale-based pitch correction, add a third or fifth harmony and export a WAV.",
+    "features": [["Start with one voice", "Record in the browser or import a clean, monophonic take."], ["Choose how far to push it", "Set the scale and compare light and stronger correction."], ["Try a harmony", "Explore a generated third or fifth that follows the lead."]],
+    "lessons": [
+      {"title": "A gentle vocal correction", "brief": "Hear what changes when the correction stays restrained.", "steps": ["Record a short a cappella phrase without a backing track.", "Check the key and compare light correction with the original.", "Export the take and listen for artifacts before using it in a mix."]},
+      {"title": "A harmony sketch", "brief": "Test a supporting interval before recording another singer.", "steps": ["Import a clean lead vocal and choose its intended scale.", "Compare a third and a fifth against the original melody.", "Use the export as a sketch, not an independent vocal performance."]},
+      {"title": "A deliberately synthetic voice", "brief": "Explore stronger correction as a creative texture.", "steps": ["Use a short phrase with clearly pitched notes.", "Raise correction strength and audition the result.", "Export WAV and keep the unprocessed take so you can revisit the choice."]}
+    ],
+    "exports": [["WAV", "Download the processed vocal result."], ["Recording / import", "Keep an original dry take separately."], ["Offline processing", "Not live correction while singing."]],
+    "limits": "Backing tracks, reverb and polyphonic audio can confuse pitch tracking. Large corrections and harmonies may sound phasey or robotic. The harmony follows the lead rather than creating an independent performance.",
+    "save": "Keep the original recording and download your processed WAV. Do not rely on the open tab as your only copy.",
+    "related": ["pocket", "split", "key-bpm"]
+  },
+  {
+    "slug": "canvas", "asset": "canvas", "name": "Canvas", "family": "Sattari Labs", "parent": "stemdeck", "tone": "#8fe0d4",
+    "promise": "Give the track something to move.",
+    "intro": "Bring music and optional cover art. Explore an audio-reactive vertical loop, shape its palette and export a visual for your release.",
+    "features": [["A visual that listens", "Use the track's rhythm to drive scene movement."], ["Make the cover move", "Bring artwork, palette choices and title/artist text into the composition."], ["Export for the destination", "Keep Spotify Canvas silent; include audio for a social clip when appropriate."]],
+    "lessons": [
+      {"title": "A cover-art loop", "brief": "Build a moving companion to an album cover.", "steps": ["Import your track and square cover artwork.", "Compare scenes, choose a palette and adjust kick sensitivity.", "Export a short loop and inspect both the movement and the loop boundary."]},
+      {"title": "A silent Canvas candidate", "brief": "Prepare a loop for a separate platform-upload check.", "steps": ["Pick a downbeat and a short section that loops well.", "Keep text and artwork legible in the vertical composition.", "Export silent MP4 if available, then verify Spotify's current requirements separately."]},
+      {"title": "A social announcement", "brief": "Combine a track excerpt with a moving visual.", "steps": ["Add the track, artwork and artist/title text.", "Preview readability and choose whether to include audio.", "Keep the tab visible during export and check the downloaded video."]}
+    ],
+    "exports": [["MP4 / WebM", "MP4 where supported; other browsers may offer WebM only."], ["Still image", "Keep a frame from the composition."], ["Silent or with audio", "Choose for the destination; no automatic Spotify publishing."]],
+    "limits": "Recording is real-time and needs the tab visible. Browser encoders vary. Loop boundaries have no crossfade, and kick detection can miss or double-count beats. A downloaded file is not a guarantee of platform acceptance.",
+    "save": "Download the finished video and keep your source artwork and audio. Review the file before publishing it elsewhere.",
+    "related": ["press", "pocket", "autocut"]
+  },
+  {
+    "slug": "pocket", "asset": "pocket", "name": "Pocket", "family": "Sattari Labs", "parent": "stemdeck", "tone": "#8fe0d4",
+    "promise": "Catch the groove while it's there.",
+    "intro": "Tap a 16-step drum and bass pattern, adjust swing and balance the voices. Keep a loop or send its parts to StemDeck.",
+    "features": [["A beat under your fingers", "Program six synthesized drum voices and one bass voice."], ["Find the feel", "Adjust tempo, swing, key and scale, then balance the mixer."], ["Keep the idea moving", "Export a loop or stems, or use the StemDeck handoff."]],
+    "lessons": [
+      {"title": "A late-night groove", "brief": "Start with a sparse kick, hat and bass pattern.", "steps": ["Tap a few kick hits, then add hats and a snare or clap.", "Add bass notes, choose a scale and experiment with swing.", "Balance the voices and export the loop."]},
+      {"title": "A rhythm comparison", "brief": "Learn how small timing choices change a beat.", "steps": ["Build a simple straight pattern at a comfortable tempo.", "Compare different swing amounts without changing the notes.", "Export the version whose feel you prefer."]},
+      {"title": "Parts for StemDeck", "brief": "Carry a sketch into a larger audio session.", "steps": ["Create a drum and bass pattern and check each voice in the mixer.", "Download stems as a backup.", "Send to StemDeck and confirm the parts arrive before leaving Pocket."]}
+    ],
+    "exports": [["WAV loop", "A rendered sketch of the pattern."], ["Individual stems", "Separate parts for further mixing."], ["StemDeck handoff", "Continue with the Sattari audio workspace."]],
+    "limits": "One 16-step bar per pattern; no song mode or pattern chaining. Sounds are synthesized, not sampled kits. Patterns live in local browser storage. Background tabs can drift, and physical-phone audio/download behavior still needs qualification.",
+    "save": "Export important ideas. Clearing site data can remove locally saved patterns; browser storage is not an account backup.",
+    "related": ["vox", "canvas", "key-bpm"]
+  },
+  {
+    "slug": "press", "asset": "press", "name": "Press", "family": "Sattari Labs", "parent": "stemdeck", "tone": "#8fe0d4",
+    "promise": "Put the artist, not the admin, first.",
+    "intro": "Gather your bio, photo, tracks and links into an artist press kit. Choose a look and download a self-contained HTML page you can host yourself.",
+    "features": [["Your story in one place", "Bring identity, music, press quotes and contact details together."], ["A presentation you control", "Choose a layout, accent and light or dark treatment."], ["A file you can take away", "Download HTML, print to PDF or save a portable draft."]],
+    "lessons": [
+      {"title": "A first artist EPK", "brief": "Build a concise introduction for a booker or journalist.", "steps": ["Add an artist name, short bio, photo and one representative track.", "Include contact information and only quotes you have permission to use.", "Preview the layout, download HTML and arrange hosting separately."]},
+      {"title": "A release link page", "brief": "Give a new release a focused set of links.", "steps": ["Add a short release description and your listening links.", "Choose an accent that works with your artwork and review the preview.", "Download HTML and test each link before sharing the hosted page."]},
+      {"title": "A printable introduction", "brief": "Make a compact document for an offline conversation.", "steps": ["Keep the bio concise and use a clearly readable photo.", "Check that links and contact details are useful without embedded players.", "Print to PDF and review the pages before sending them."]}
+    ],
+    "exports": [["Self-contained HTML", "A downloadable page; hosting is a separate step."], ["Print to PDF", "Browser printing; embedded players become links."], ["Draft file", "Move an editable draft between browsers."]],
+    "limits": "Press does not host your page or provide a messaging backend. Supported music/video services embed; other URLs remain links. Browser printing differs between devices. Local draft storage is not a cloud backup.",
+    "save": "Use Save draft file for a portable draft and download HTML for the public page. Host the HTML separately, then check its links.",
+    "related": ["canvas", "mockup", "captions"]
+  }
+]

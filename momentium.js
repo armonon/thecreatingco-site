@@ -56,7 +56,8 @@
     });
     let returnFocus=null;
     const input=launch.querySelector('input'), items=all('.mm-launch-item',launch);
-    function filter(){const query=input.value.trim().toLocaleLowerCase();let count=0;items.forEach(item=>{item.hidden=!item.dataset.mmSearch.includes(query);if(!item.hidden)count++;});all('[data-mm-launch-group]',launch).forEach(group=>{const visible=all('.mm-launch-item',group).filter(item=>!item.hidden).length;group.hidden=!visible;group.querySelector('.mm-launch-group-title span').textContent=`${visible} ${visible===1?'product':'products'}`;});launch.querySelector('.mm-launch-empty').hidden=!!count;launch.querySelector('.mm-launch-count').textContent=query?`${count} ${count===1?'product':'products'} ready to explore.`:'8 apps · Public web editions';}
+    const normalizeSearch=value=>value.toLocaleLowerCase().replace(/&/g,' ').replace(/\s+/g,' ').trim();
+    function filter(){const query=normalizeSearch(input.value);let count=0;items.forEach(item=>{item.hidden=!normalizeSearch(item.dataset.mmSearch).includes(query);if(!item.hidden)count++;});all('[data-mm-launch-group]',launch).forEach(group=>{const visible=all('.mm-launch-item',group).filter(item=>!item.hidden).length;group.hidden=!visible;group.querySelector('.mm-launch-group-title span').textContent=`${visible} ${visible===1?'product':'products'}`;});launch.querySelector('.mm-launch-empty').hidden=!!count;launch.querySelector('.mm-launch-count').textContent=query?`${count} ${count===1?'product':'products'} ready to explore.`:`${items.length} apps and tools · Public web editions`;}
     all('[data-mm-launch]').forEach(b=>b.addEventListener('click',()=>{returnFocus=b;input.value='';filter();launch.showModal();input.focus();}));
     input.addEventListener('input',filter);
     launch.addEventListener('keydown',e=>{if(e.key==='Escape'){e.preventDefault();launch.close();}});
