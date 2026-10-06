@@ -27,3 +27,21 @@ rollback deploy id.
 Until this site is wired to git-based deploys, treat this repo as a manual
 mirror: pull the live deploy's files again before making further changes, the
 same way this snapshot was built, so diffs stay meaningful.
+
+## Wave 4 (2026-10-06): suite kit + Locker
+
+- `suite/v1/suite.js` + `suite/v1/apps.json` — the shared apps menu and
+  `window.TCC.locker` client every thecreateco app loads. Edit `apps.json`,
+  then run `node maintenance/scripts/build-suite.mjs` (validates it and inlines
+  the offline fallback copy into `suite.js`).
+- `locker/` — the Locker page, the iframe bridge (`bridge.html` + `core.js`,
+  exact-match origin allowlist) and a service worker scoped to `/locker/` only.
+  Kill switch: `maintenance/locker-kill-switch-sw.js`.
+- `_headers` is now tracked: the original `/*` rule was reconstructed
+  byte-for-byte (sha1 `3c1fa8e9…` matched the deploy manifest); wave-4 rules are
+  appended below it. `_redirects` and `community/index.html` are still absent and
+  must be carried forward by sha1 from the published deploy's manifest, and the
+  `community-proxy` function by digest, exactly as described above.
+- Tests: `SUITE_BASE=<origin> node maintenance/tests/suite-kit.mjs`,
+  `HUB_BASE=<origin> node maintenance/tests/hub-suite-pass.mjs`.
+- Publish record and rollback targets: `~/code/wave4/WAVE4.md` (section K).
