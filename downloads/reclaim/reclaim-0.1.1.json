@@ -1,0 +1,27 @@
+{
+  "product": "Reclaim",
+  "version": "0.1.1",
+  "channel": "public-alpha",
+  "publishedDate": "2026-10-06",
+  "downloadUrl": "https://github.com/armonon/studio-downloads/releases/download/reclaim-v0.1.1/Reclaim-0.1.1-macOS-universal.dmg",
+  "releaseNotesUrl": "https://github.com/armonon/studio-downloads/releases/tag/reclaim-v0.1.1",
+  "minimumMacOS": "13.0",
+  "architectures": [
+    "x86_64",
+    "arm64"
+  ],
+  "bytes": 13679161,
+  "sha256": "163ca0b9d302a3895eafd15ea14ffe673451d0a3c7d1b93b5978bd6e2a9f9e5a",
+  "developerId": "Armon Nasiri (NJBZDU7XZX)",
+  "notarization": {
+    "application": {
+      "id": "6a6d6341-a851-412e-b481-47ca1f0a9251",
+      "status": "Accepted"
+    },
+    "diskImage": {
+      "id": "c9b642b5-f478-4fb0-8d5a-9b226be9a3e3",
+      "status": "Accepted"
+    }
+  },
+  "qualification": "Automated tests and local verification passed. Physical Intel, clean-machine installation, and macOS 13 testing remain outstanding."
+}
