@@ -90,8 +90,8 @@ def create_draft() -> None:
     removed = sorted(path for path in live if path not in files)
     if not set(changes) <= overlays | {'/' + p.relative_to(ROOT).as_posix() for p in pages} or not set(added) <= overlays or removed:
         raise RuntimeError(f'Unexpected diff: changed={len(changes)} added={added} removed={removed}')
-    if '/tools/index.html' not in changes or '/start/index.html' not in changes or '/site-navigation.js' not in changes:
-        raise RuntimeError('Expected Tools, start-page and site-navigation updates are absent from the draft')
+    if '/tools/index.html' not in changes or '/start/index.html' not in changes:
+        raise RuntimeError('Expected Tools and start-page updates are absent from the draft')
     func = request('GET', f'/sites/{SITE}/functions')
     funcs = {entry['n']: entry['d'] for entry in func.get('functions', [])}
     digest = funcs.get('community-proxy')
