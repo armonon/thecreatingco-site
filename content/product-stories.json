@@ -1,0 +1,497 @@
+{
+  "scenepilot": {
+    "name": "ScenePilot",
+    "tone": "#b8a3ff",
+    "intro": "Follow a real Browser Lite study from source media through an edited sequence.",
+    "slides": [
+      [
+        "Gather the material",
+        "Start with the footage and sound that give the sequence its direction.",
+        "/assets/after-hours/scenepilot-01-sources.png",
+        "ScenePilot Browser Lite showing source media in an example project."
+      ],
+      [
+        "Find the first cut",
+        "Arrange shots on the timeline and look for a rhythm that feels right.",
+        "/assets/after-hours/scenepilot-02-first-cut.png",
+        "ScenePilot timeline with the After Hours first-cut example."
+      ],
+      [
+        "Refine the transitions",
+        "Adjust how each moment connects and keep edit decisions in view.",
+        "/assets/after-hours/scenepilot-03-dissolves.png",
+        "ScenePilot transition edit in the After Hours example."
+      ],
+      [
+        "Return to the sequence",
+        "See the project as a working whole, with its choices visible together.",
+        "/assets/after-hours/scenepilot-04-restored.png",
+        "ScenePilot After Hours example reopened as a complete sequence."
+      ]
+    ]
+  },
+  "luma": {
+    "name": "Luma",
+    "tone": "#ff83ba",
+    "intro": "Move from a starting image to a considered visual through real Luma workspace captures.",
+    "slides": [
+      [
+        "Begin with an image",
+        "Bring a photograph or texture into a canvas you can shape.",
+        "/assets/after-hours/luma-01-source.png",
+        "Luma workspace with the After Hours poster source image."
+      ],
+      [
+        "Give the idea a voice",
+        "Use type and layers to make the composition feel intentional.",
+        "/assets/after-hours/luma-02-type.png",
+        "Luma workspace with typography added to the poster."
+      ],
+      [
+        "Shape the tone",
+        "Adjust color while keeping the underlying layers available.",
+        "/assets/after-hours/luma-03-tone.png",
+        "Luma Tone workspace applying a color adjustment."
+      ],
+      [
+        "See the finished study",
+        "Review the complete artwork in Luma's editing workspace.",
+        "/assets/after-hours/luma-04-finished.png",
+        "Completed After Hours poster study shown in Luma Studio."
+      ]
+    ]
+  },
+  "form": {
+    "name": "Form",
+    "tone": "#d8ff3e",
+    "intro": "A model grows through small, visible decisions. Explore a real Form Studio example from proportion to material studies.",
+    "slides": [
+      [
+        "Start from a sketch",
+        "Give the model a first shape, then use the editor to work through it.",
+        "/assets/after-hours/form-01-proportions.png",
+        "Form Studio editing an early proportion study."
+      ],
+      [
+        "Adjust the form",
+        "Refine geometry and inspect the result from the working view.",
+        "/assets/after-hours/form-02-wider-frame.png",
+        "Form Studio showing a wider frame in the example model."
+      ],
+      [
+        "Try a material",
+        "Explore how the design reads with a different material.",
+        "/assets/after-hours/form-03-brass.png",
+        "Form Studio example model with brass material applied."
+      ],
+      [
+        "Compare the finish",
+        "Review another material treatment before choosing a direction.",
+        "/assets/after-hours/form-04-steel.png",
+        "Form Studio example model with brushed steel material controls visible."
+      ]
+    ]
+  },
+  "stemdeck": {
+    "name": "StemDeck",
+    "tone": "#ffb05e",
+    "intro": "Build a mix by listening to the parts together. Follow a real browser-session example from stems to blend.",
+    "slides": [
+      [
+        "Bring in the parts",
+        "Start with tracks or already-separated stems in the browser mixer.",
+        "/assets/after-hours/stemdeck-01-parts.png",
+        "StemDeck Browser Mixer showing four loaded decks in a study."
+      ],
+      [
+        "Find the entry points",
+        "Set cues and loops so each part can join the mix where it belongs.",
+        "/assets/after-hours/stemdeck-02-cues.png",
+        "StemDeck example showing cue controls across four decks."
+      ],
+      [
+        "Blend the layers",
+        "Balance the parts and listen for the moment they become one mix.",
+        "/assets/after-hours/stemdeck-03-blend.png",
+        "StemDeck study showing a four-part blend in progress."
+      ],
+      [
+        "Keep a take",
+        "Explore the browser capture workflow for a short performance.",
+        "/assets/after-hours/stemdeck-04-export.png",
+        "StemDeck browser companion with capture and export controls."
+      ]
+    ]
+  },
+  "bounce": {
+    "name": "Bounce",
+    "tone": "#ff8570",
+    "intro": "Explore how Bounce brings local audio, sound shaping and a saved playlist into one personal listening flow.",
+    "slides": [
+      [
+        "Bring your own music",
+        "Start with audio files you choose; Bounce has no streaming catalog.",
+        "/assets/after-hours/bounce-01-listening.png",
+        "Bounce browser companion playing a local audio example."
+      ],
+      [
+        "Shape the sound",
+        "Use the browser companion's EQ controls to adjust the listening balance.",
+        "/assets/after-hours/bounce-02-eq-seek.png",
+        "Bounce browser companion showing equalizer and seek controls."
+      ],
+      [
+        "Find a track",
+        "Search the local library and move through the queue.",
+        "/assets/after-hours/bounce-03-search.png",
+        "Bounce browser companion searching a local music library."
+      ],
+      [
+        "Keep a playlist",
+        "Save a local playlist for your next browser session.",
+        "/assets/after-hours/bounce-04-retained.png",
+        "Bounce browser companion showing a retained playlist example."
+      ]
+    ]
+  },
+  "ghost": {
+    "name": "Ghost Studio",
+    "tone": "#a2ead6",
+    "intro": "Explore a garment from reference to a model you can inspect in real Ghost Studio example captures.",
+    "slides": [
+      [
+        "Start with references",
+        "Bring reference images into a garment study before shaping the model.",
+        "/assets/after-hours/ghost-01-references.png",
+        "Ghost Studio example with garment reference images."
+      ],
+      [
+        "Shape the silhouette",
+        "Adjust the garment and inspect how it sits on the mannequin.",
+        "/assets/after-hours/ghost-02-relaxed.png",
+        "Ghost Studio jacket study on the mannequin."
+      ],
+      [
+        "Check another view",
+        "Rotate the model to inspect it from another angle.",
+        "/assets/after-hours/ghost-03-back.png",
+        "Ghost Studio jacket study viewed from the back."
+      ],
+      [
+        "Choose what to keep",
+        "Review available project and image outputs for the current edition.",
+        "/assets/after-hours/ghost-04-export.png",
+        "Ghost Studio export panel showing project and image options."
+      ]
+    ]
+  },
+  "librarian": {
+    "name": "Librarian",
+    "tone": "#83d7ff",
+    "intro": "Make a reading space for references you return to. Follow an example from PDF to saved library.",
+    "slides": [
+      [
+        "Bring in a reference",
+        "Add documents you want to keep close and return to.",
+        "/assets/after-hours/librarian-01-field-notes.png",
+        "Librarian example with field notes in the reading workspace."
+      ],
+      [
+        "Make the shelf yours",
+        "Use the library view to organize and find material again.",
+        "/assets/after-hours/librarian-02-sound-palette.png",
+        "Librarian example showing an organized personal library."
+      ],
+      [
+        "Settle into reading",
+        "Adjust the reading view to suit the document and the moment.",
+        "/assets/after-hours/librarian-03-dark-reading.png",
+        "Librarian reader using a dark reading appearance."
+      ],
+      [
+        "Return to your notes",
+        "See a saved reading state and the reference ready to reopen.",
+        "/assets/after-hours/librarian-04-retained.png",
+        "Librarian example showing retained reading state."
+      ]
+    ]
+  },
+  "reclaim": {
+    "name": "Reclaim",
+    "tone": "#a9f09e",
+    "intro": "Review before you act. This read-only workflow surfaces potential duplicates and prepares a report without changing source files.",
+    "slides": [
+      [
+        "Choose what to review",
+        "Start with a folder you want to inspect; Reclaim is read-only.",
+        "/assets/after-hours/reclaim-01-review.png",
+        "Reclaim file-review interface before acting on any files."
+      ],
+      [
+        "Inspect possible duplicates",
+        "Compare candidate files and decide what deserves a closer look.",
+        "/assets/after-hours/reclaim-02-duplicates.png",
+        "Reclaim showing candidate duplicate files for review."
+      ],
+      [
+        "Narrow the search",
+        "Filter results before making your own decision.",
+        "/assets/after-hours/reclaim-03-search.png",
+        "Reclaim interface filtering a file review."
+      ],
+      [
+        "Take away a report",
+        "Export a review summary while leaving source files untouched.",
+        "/assets/after-hours/reclaim-04-report.png",
+        "Reclaim report view for a read-only file review."
+      ]
+    ]
+  },
+  "autocut": {
+    "name": "AutoCut",
+    "tone": "#b8a3ff",
+    "intro": "Start with footage and a song, then explore beat-aware cut controls. AutoCut is an alpha; results depend on material and device.",
+    "slides": [
+      [
+        "Start with your footage",
+        "Choose clips and music to begin a beat-aware edit.",
+        "/assets/creative-tools/autocut.webp",
+        "AutoCut starting screen showing where to add a song and clips."
+      ],
+      [
+        "Shape a cut",
+        "Explore style, pace and framing controls in a sample workspace.",
+        "/assets/tool-products/autocut.webp",
+        "AutoCut actual workspace with a sample project loaded."
+      ]
+    ]
+  },
+  "board": {
+    "name": "Board",
+    "tone": "#b8a3ff",
+    "intro": "Move from a written idea toward a plan you can see. Board is an alpha workflow for scripts, shot lists and storyboards.",
+    "slides": [
+      [
+        "Begin with the idea",
+        "Bring a script or outline into a film-planning workspace.",
+        "/assets/creative-tools/board.webp",
+        "Board starting workspace for a film-planning project."
+      ],
+      [
+        "Make the plan visible",
+        "Explore the Board workspace for shot-list and storyboard planning.",
+        "/assets/tool-products/board.webp",
+        "Board actual workspace with a planning example."
+      ]
+    ]
+  },
+  "canvas": {
+    "name": "Canvas",
+    "tone": "#ffb05e",
+    "intro": "Give a track a visual companion. Explore the browser alpha's audio-reactive loop workflow and current limits.",
+    "slides": [
+      [
+        "Start with a track",
+        "Bring audio into the visual workspace to shape a loop around it.",
+        "/assets/creative-tools/canvas.webp",
+        "Canvas starting workspace for an audio-reactive visual."
+      ],
+      [
+        "Shape the visual",
+        "Explore the current loop controls in an actual Canvas capture.",
+        "/assets/tool-products/canvas.webp",
+        "Canvas actual workspace capture showing visual controls."
+      ]
+    ]
+  },
+  "captions": {
+    "name": "Captions",
+    "tone": "#b8a3ff",
+    "intro": "Make dialogue easier to follow. Captions is an on-device transcription alpha; review recognition before relying on the result.",
+    "slides": [
+      [
+        "Bring in a clip",
+        "Start with a supported video or audio file on your device.",
+        "/assets/creative-tools/captions.webp",
+        "Captions starting workspace for a local media file."
+      ],
+      [
+        "Review the words",
+        "Explore the caption workspace and check the transcript against the audio.",
+        "/assets/tool-products/captions.webp",
+        "Captions actual workspace with an imported example subtitle file."
+      ]
+    ]
+  },
+  "glyph": {
+    "name": "Glyph",
+    "tone": "#ffe066",
+    "intro": "Draw letterforms inside Luma, refine the set, then export a font. Embedded Glyph is distinct from standalone Glyph Studio.",
+    "slides": [
+      [
+        "Draw a letter",
+        "Open Glyph inside Luma and start shaping the characters you need.",
+        "/assets/creative-tools/glyph.webp",
+        "Embedded Glyph workspace entry captured from Luma."
+      ],
+      [
+        "Explore the type",
+        "Review the embedded Glyph workspace and font-making controls.",
+        "/assets/tool-products/glyph.webp",
+        "Embedded Glyph actual workspace capture; not standalone Glyph Studio."
+      ]
+    ]
+  },
+  "grade": {
+    "name": "Grade",
+    "tone": "#b8a3ff",
+    "intro": "Find a look in a reference, then explore a transfer to your clip. Grade is an alpha; results depend on source material.",
+    "slides": [
+      [
+        "Choose a reference",
+        "Start with a still whose color and contrast you want to explore.",
+        "/assets/creative-tools/grade.webp",
+        "Grade starting workspace with reference and clip drop zones."
+      ],
+      [
+        "Tune the transfer",
+        "Explore the strength and look controls in Grade's actual workspace.",
+        "/assets/tool-products/grade.webp",
+        "Grade actual workspace capture showing transfer and export controls."
+      ]
+    ]
+  },
+  "key-bpm": {
+    "name": "Key & BPM",
+    "tone": "#ffb05e",
+    "intro": "Get a starting point for a mix by checking key and tempo across tracks. Treat analysis as a guide, not a guarantee.",
+    "slides": [
+      [
+        "Choose tracks",
+        "Start with a track or folder you want to inspect.",
+        "/assets/creative-tools/keybpm.webp",
+        "Key & BPM starting workspace for track analysis."
+      ],
+      [
+        "Read the analysis",
+        "Explore key and tempo results and prepare a CSV for your workflow.",
+        "/assets/tool-products/keybpm.webp",
+        "Key & BPM actual workspace capture with analysis controls."
+      ]
+    ]
+  },
+  "mockup": {
+    "name": "Mockup",
+    "tone": "#ff83ba",
+    "intro": "Place a design into a product scene from Luma. Mockup is an alpha; the exported PNG is the dependable handoff today.",
+    "slides": [
+      [
+        "Bring in artwork",
+        "Start with a design you want to see on a product surface.",
+        "/assets/creative-tools/mockups.webp",
+        "Mockup starting workspace for artwork placement."
+      ],
+      [
+        "Explore the scene",
+        "Review an exported example; the in-app preview may vary by browser.",
+        "/assets/tool-products/mockups.webp",
+        "Stylized procedural mockup exported as a PNG, not a photograph."
+      ]
+    ]
+  },
+  "pocket": {
+    "name": "Pocket",
+    "tone": "#ffb05e",
+    "intro": "Catch a musical idea before it disappears. Pocket is a mobile-first browser sketchpad for beats and loops.",
+    "slides": [
+      [
+        "Catch the rhythm",
+        "Open the sketchpad and start a beat or loop idea.",
+        "/assets/creative-tools/pocket.webp",
+        "Pocket starting workspace for a beat sketch."
+      ],
+      [
+        "Play the sketch",
+        "Explore the loop and pattern controls in an actual Pocket capture.",
+        "/assets/tool-products/pocket.webp",
+        "Pocket actual workspace capture for a beat sketch."
+      ]
+    ]
+  },
+  "press": {
+    "name": "Press",
+    "tone": "#ffb05e",
+    "intro": "Give your music a home base for the essentials. Press is an alpha artist-profile and electronic press-kit builder.",
+    "slides": [
+      [
+        "Start with your profile",
+        "Bring the artist details and links you want people to find.",
+        "/assets/creative-tools/press.webp",
+        "Press starting workspace for an artist profile."
+      ],
+      [
+        "Arrange the story",
+        "Explore how an artist page brings music, bio and links together.",
+        "/assets/tool-products/press.webp",
+        "Press actual workspace capture for a fictional artist example."
+      ]
+    ]
+  },
+  "split": {
+    "name": "Split",
+    "tone": "#ffb05e",
+    "intro": "Separate a song into parts on your device. Split is an alpha: results can include bleed and artifacts and are not studio-quality qualified.",
+    "slides": [
+      [
+        "Choose a song",
+        "Start with one supported audio file on your device; processing can take time.",
+        "/assets/creative-tools/split.webp",
+        "Split starting screen with the local audio import control."
+      ],
+      [
+        "Inspect the workflow",
+        "Explore local processing controls and the stated alpha limitations.",
+        "/assets/tool-products/split.webp",
+        "Split actual workspace showing import and alpha limits, not a successful separation result."
+      ]
+    ]
+  },
+  "vox": {
+    "name": "Vox",
+    "tone": "#ffb05e",
+    "intro": "Explore a vocal-correction workflow in the browser. Vox is an alpha, not live correction while singing.",
+    "slides": [
+      [
+        "Start with a vocal",
+        "Record or import a dry take to work from.",
+        "/assets/creative-tools/vox.webp",
+        "Vox starting workspace for a vocal recording."
+      ],
+      [
+        "Shape the result",
+        "Explore pitch and harmony controls, then keep a downloaded WAV.",
+        "/assets/tool-products/vox.webp",
+        "Vox actual workspace capture showing vocal-correction controls."
+      ]
+    ]
+  },
+  "glyph-studio": {
+    "name": "Glyph Studio",
+    "tone": "#ff8d61",
+    "intro": "Explore a browser font-making workspace and a few characters in context. The second image is promotional artwork, not an exported font.",
+    "slides": [
+      [
+        "Start with letterforms",
+        "Explore the browser editor and see the characters in a sample workspace.",
+        "/assets/creative-tools/glyph-studio.webp",
+        "Glyph Studio public alpha page showing the browser editor and example characters."
+      ],
+      [
+        "See the idea in context",
+        "Review the Glyph Studio visual identity; this artwork is not a downloadable font specimen.",
+        "/assets/share/glyph-studio.jpg",
+        "Promotional identity artwork for Glyph Studio, not an exported font."
+      ]
+    ]
+  }
+}
