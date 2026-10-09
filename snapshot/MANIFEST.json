@@ -1739,11 +1739,6 @@
     },
     {
       "repo": "https://github.com/armonon/thecreatingco-site",
-      "branch": "company/operations",
-      "sha": "ba5d2b3b2bdb76ec6a6b0eb566dcf2848bea2e75"
-    },
-    {
-      "repo": "https://github.com/armonon/thecreatingco-site",
       "branch": "feat/tools-directory-start-links-product-stories-20261009",
       "sha": "6354f944a46e13f324ac69cf08acae6c9bd7f9cd"
     },

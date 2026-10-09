@@ -72,6 +72,8 @@ def product_refs() -> list[dict[str, str]]:
             continue
         sha = git(repo, "rev-parse", "HEAD")
         branch = git(repo, "symbolic-ref", "--quiet", "--short", "HEAD")
+        if remote.removesuffix(".git") == "https://github.com/armonon/thecreatingco-site" and branch == "company/operations":
+            continue  # Avoid a self-reference that would create an hourly commit loop.
         if sha and branch:
             out.append({"repo": remote.removesuffix(".git"), "branch": branch, "sha": sha})
     return sorted({(x["repo"], x["branch"], x["sha"]): x for x in out}.values(), key=lambda x: (x["repo"], x["branch"], x["sha"]))
