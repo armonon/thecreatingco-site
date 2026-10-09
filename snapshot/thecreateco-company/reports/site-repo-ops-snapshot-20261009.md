@@ -14,6 +14,9 @@ private feedback, browser profiles, binary QA evidence and host backups were
 not copied. `snapshot/MANIFEST.json` in the operations branch records exact
 file hashes and omissions. This is not a complete workstation backup.
 
-An hourly local LaunchAgent is being configured to refresh and exact-head push
-the screened snapshot without merging or deploying it. Its successful first
-scheduled execution is not yet observed as of this report.
+An hourly local LaunchAgent (`com.thecreateco.ops-sync`) now refreshes and
+exact-head pushes the screened snapshot without merging or deploying it. The
+installed job was kickstarted through launchd and exited 0; its first observed
+run found no changes, verified remote head `8b8890339e3af88a0197022cf4e0ce4e98330cc1`,
+and recorded an `already-current` Git handoff receipt. A future timer-fired
+run has not yet been observed.
