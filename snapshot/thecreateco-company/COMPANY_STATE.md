@@ -1,6 +1,6 @@
 # thecreateco — Current State
 
-Updated: 2026-10-09T23:40:17+00:00 | Seeds loaded: 2026-10-07T23:38:29+00:00
+Updated: 2026-10-09T23:41:54+00:00 | Seeds loaded: 2026-10-07T23:38:29+00:00
 
 ## COMPANY HEALTH
 Unknown / not scored — evidence-backed health rubric not yet measured.
@@ -9,7 +9,7 @@ Unknown / not scored — evidence-backed health rubric not yet measured.
 ["Reach $1M annual company revenue ethically; first verify the current baseline and next $1K milestone", "Preserve user work and qualify the four flagship workflows", "Validate one focused paid offer; measure contribution, conversion and retention"]
 
 ## TOP PRIORITY
-P06 — Verify Form review-versus-canonical feature parity (priority 85.3333; estimate)
+M01 — Draft evidence-led Reclaim native-alpha demonstration (priority 89.6; estimate)
 
 ## PRODUCTS
 47 registered entries; inventory may be incomplete.
@@ -29,7 +29,6 @@ Unknown / not measured: visitors, downloads, signups, beta_testers, active_users
 Unknown-metric reporting periods: {'type': 'source availability check, not financial reporting interval', 'as_of': '2026-10-09T20:11:37.276475+00:00'}. Individual source details retained in context.
 
 ## CURRENT WORK
-- P06 Verify Form review-versus-canonical feature parity — RUNNING; priority 85.3333 (estimate)
 - M01 Draft evidence-led Reclaim native-alpha demonstration — QUEUED; priority 89.6 (estimate)
 - M05 Prepare focused beta-testing invitations — QUEUED; priority 89.6 (estimate)
 - W10 Verify first-use help and export-limit clarity — QUEUED; priority 89.6 (estimate)
@@ -38,7 +37,7 @@ Unknown-metric reporting periods: {'type': 'source availability check, not finan
 - P03 Verify Animate save/export recovery and assess undo — QUEUED; priority 81.0 (estimate)
 - P04 Qualify Locker cross-app open/save failure behavior — QUEUED; priority 81.0 (estimate)
 - M10 Audit free-pack usefulness and product handoff — QUEUED; priority 78.4 (estimate)
-Queue totals: BLOCKED 42, COMPLETE 44, NEEDS_REVIEW 17, QUEUED 23, RUNNING 1, WAITING 22
+Queue totals: BLOCKED 43, COMPLETE 44, NEEDS_REVIEW 17, QUEUED 23, WAITING 22
 Showing up to 8 running + 8 eligible queued; full details: TASK_QUEUE.json.
 
 ## BIGGEST BOTTLENECK
@@ -52,17 +51,17 @@ Preserve active release owners. Revenue research: Glyph first-font validation vi
 - Marketing claims/catalog lag newer app work; current live evidence is required.
 - Netlify Web Analytics is documented enabled, but company KPI values have not been retrieved or validated.
 - Core lab: all four full golden workflows still unqualified. Fresh dependency advisories in ScenePilot/Luma/Form; StemDeck local security repair awaits normal review/release path.
-81 tasks gated by review/validation/blockers; see TASK_QUEUE.json.
+82 tasks gated by review/validation/blockers; see TASK_QUEUE.json.
 
 ## RECENT RESULTS
+- 2026-10-09T23:41:54+00:00 P06 BLOCKED: Read-only exact PR9 parity batch:52Cast/mesh tests and desktop frontend build PASS; review endpoints200, canonical/public endpoin…
 - 2026-10-09T23:17:40+00:00 W05 COMPLETE: Sol-directed Luna non-sending audit: seven mocked validation/success/error checks PASS with independent Sol rerun; seven live GET…
 - 2026-10-09T22:12:56+00:00 W03 BLOCKED: Deterministic E02 checks PASS: five null-only placeholders, not observed journeys. M04 blocked; consent-compatible participant ou…
 - 2026-10-09T21:55:55+00:00 GROW-SITE-NETLIFY-HANDOFF-20261009 BLOCKED: Pushed exact website source on 6354f944a46e13f324ac69cf08acae6c9bd7f9cd and opened PR #2. Source checks pass. Both exact-manifest…
 - 2026-10-09T21:50:41+00:00 PROGRAM18-LIBRARIAN-COLLECTIONS-001 NEEDS_REVIEW: Implemented and committed the first Librarian Collections curator-to-reader slice at b6e3ca098dc69b411fdb077982eaedba3742a073. Ev…
-- 2026-10-09T21:44:31+00:00 M03 NEEDS_REVIEW: Prepared an internal source-grounded tutorial for the real four-glyph font workflow. It includes a hash-verified actual OTF outpu…
 
 ## MARKETING SUMMARY
-Read-only snapshot: read_only_snapshot; observed 2026-10-09T23:40:17+00:00.
+Read-only snapshot: read_only_snapshot; observed 2026-10-09T23:41:54+00:00.
 Queue statuses: {"tasks": {"COMPLETE": 26}}
 Campaign statuses: {"campaigns": {"active": 1}}
 Recorded outcomes: {"impressions": null, "clicks": null, "replies": null, "signups": null, "conversions": null, "engagement": null, "cost": null}

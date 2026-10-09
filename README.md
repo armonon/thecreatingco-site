@@ -18,7 +18,9 @@ whole workstation. It is not a substitute for encrypted host backups. A file
 with an email address or secret-like string is skipped wholesale, including
 some test fixtures, rather than being silently altered.
 
-To refresh: run `python3 sync_snapshot.py` in this worktree, review the
-manifest and staged diff, commit only this branch, then run
-`python3 /Users/agentsattari/git-handoff/push_branch.py . --expect-sha SHA`.
+The installed hourly LaunchAgent runs `publish_snapshot.py`. It refuses a dirty
+operations worktree, screens candidates, stages only `snapshot/`, skips an
+unchanged snapshot, and uses the exact-head Git handoff helper. If the normal
+push fails it leaves a local commit and reports the blocker; it never forces a
+push. For a manual refresh run `python3 publish_snapshot.py` in this worktree.
 No automatic merge or deploy follows.

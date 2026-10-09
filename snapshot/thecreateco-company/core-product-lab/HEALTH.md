@@ -1,6 +1,6 @@
 # Core Product Health
 
-Updated: 2026-10-09T23:22:04+00:00
+Updated: 2026-10-09T23:41:54+00:00
 
 Quality scores: unknown until measured. Local checks are not release qualification.
 
@@ -54,6 +54,6 @@ Quality scores: unknown until measured. Local checks are not release qualificati
 
 ## Next eligible task
 
-P06 — Verify Form review-versus-canonical feature parity
+P07 — Qualify ScenePilot Board to AutoCut workflow
 
 Full unified queue: [PRIORITIES.json](PRIORITIES.json). Original truth: ../engine/company.sqlite3, managed through ../engine/company.py.

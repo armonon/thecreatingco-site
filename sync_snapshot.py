@@ -15,7 +15,6 @@ import re
 import shutil
 import subprocess
 import sys
-from datetime import datetime, timezone
 
 HOME = pathlib.Path("/Users/agentsattari")
 DEST = pathlib.Path(__file__).resolve().parent / "snapshot"
@@ -112,7 +111,6 @@ def main() -> int:
         target.write_bytes(data)
         copied.append({"path": str(rel), "bytes": len(data), "sha256": hashlib.sha256(data).hexdigest()})
     manifest = {
-        "generated_at_utc": datetime.now(timezone.utc).isoformat(),
         "scope": "Screened company source and text evidence; not live databases, contacts, secrets, binary QA artifacts or full product source",
         "files": copied,
         "skipped": skipped,

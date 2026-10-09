@@ -1,44 +1,8 @@
 {
-  "generated_at": "2026-10-09T23:22:04+00:00",
+  "generated_at": "2026-10-09T23:41:54+00:00",
   "paused": false,
   "note": "Read-only company queue projection; severity first, priorities are estimates. Claim by ID via company.py.",
   "eligible": [
-    {
-      "task_id": "P06",
-      "title": "Verify Form review-versus-canonical feature parity",
-      "category": "product",
-      "workstream": "ENGINEERING",
-      "product": "form",
-      "campaign": null,
-      "status": "QUEUED",
-      "model": "gpt-6.1-sol",
-      "dependencies": [],
-      "scores": {
-        "impact": 8,
-        "user_value": 8,
-        "strategic_value": 8,
-        "urgency": 5,
-        "confidence": 8,
-        "effort": 3,
-        "risk": 2
-      },
-      "expected_value": "Document Cast/Room and canonical release differences; do not publish to a mismatched host.",
-      "next_action": "Document Cast/Room and canonical release differences; do not publish to a mismatched host.",
-      "evidence_sources": [
-        "/Users/agentsattari/code/wave5/WAVE5.md"
-      ],
-      "score_basis": "Provisional director estimate; evidence-backed opportunity, not measured ROI. Recheck before execution.",
-      "result": null,
-      "priority": 85.3333,
-      "priority_basis": "ESTIMATE: impact \u00d7 user_value \u00d7 confidence / (effort + risk + 1)",
-      "risk": 2,
-      "created_at": "2026-10-07T23:38:29+00:00",
-      "started_at": null,
-      "completed_at": null,
-      "attempts": 0,
-      "owner": null,
-      "lease_until": null
-    },
     {
       "task_id": "P07",
       "title": "Qualify ScenePilot Board to AutoCut workflow",
@@ -2638,7 +2602,7 @@
       "workstream": "ENGINEERING",
       "product": "form",
       "campaign": null,
-      "status": "QUEUED",
+      "status": "BLOCKED",
       "model": "gpt-6.1-sol",
       "dependencies": [],
       "scores": {
@@ -2651,21 +2615,26 @@
         "risk": 2
       },
       "expected_value": "Document Cast/Room and canonical release differences; do not publish to a mismatched host.",
-      "next_action": "Document Cast/Room and canonical release differences; do not publish to a mismatched host.",
+      "next_action": "Resume with authorized readable canonical artifact and deployed source identity; compare real Cast/Blender/Locker/PWA workflows. Reconcile existing PR6 through normal stack/review/CI gates; preserve Room owner work.",
       "evidence_sources": [
         "/Users/agentsattari/code/wave5/WAVE5.md"
       ],
       "score_basis": "Provisional director estimate; evidence-backed opportunity, not measured ROI. Recheck before execution.",
-      "result": null,
+      "result": "Read-only exact PR9 parity batch:52Cast/mesh tests and desktop frontend build PASS; review endpoints200, canonical/public endpoints403. PR9 still reproduces ASCII STL byte corruption26vs12triangles; existing parallel PR6 repair yields12. Room remains another workers dirty checkout. No code commit or push needed; no merge/deploy.",
       "priority": 85.3333,
       "priority_basis": "ESTIMATE: impact \u00d7 user_value \u00d7 confidence / (effort + risk + 1)",
       "risk": 2,
       "created_at": "2026-10-07T23:38:29+00:00",
-      "started_at": null,
+      "started_at": "2026-10-09T23:40:17+00:00",
       "completed_at": null,
-      "attempts": 0,
+      "attempts": 1,
       "owner": null,
-      "lease_until": null
+      "lease_until": null,
+      "result_evidence": {
+        "path": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-parity-20261009T2340/README.md",
+        "recorded_at": "2026-10-09T23:41:54+00:00",
+        "bytes": 3011
+      }
     },
     {
       "task_id": "P07",

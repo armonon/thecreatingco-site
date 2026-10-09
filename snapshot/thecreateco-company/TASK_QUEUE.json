@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-09T23:40:17+00:00",
+  "generated_at": "2026-10-09T23:41:54+00:00",
   "tasks": [
     {
       "task_id": "CORE-STEMDECK-SEC-001",
@@ -4787,7 +4787,7 @@
       "workstream": "ENGINEERING",
       "product": "form",
       "campaign": null,
-      "status": "RUNNING",
+      "status": "BLOCKED",
       "model": "gpt-6.1-sol",
       "dependencies": [],
       "scores": {
@@ -4800,12 +4800,12 @@
         "risk": 2
       },
       "expected_value": "Document Cast/Room and canonical release differences; do not publish to a mismatched host.",
-      "next_action": "Document Cast/Room and canonical release differences; do not publish to a mismatched host.",
+      "next_action": "Resume with authorized readable canonical artifact and deployed source identity; compare real Cast/Blender/Locker/PWA workflows. Reconcile existing PR6 through normal stack/review/CI gates; preserve Room owner work.",
       "evidence_sources": [
         "/Users/agentsattari/code/wave5/WAVE5.md"
       ],
       "score_basis": "Provisional director estimate; evidence-backed opportunity, not measured ROI. Recheck before execution.",
-      "result": null,
+      "result": "Read-only exact PR9 parity batch:52Cast/mesh tests and desktop frontend build PASS; review endpoints200, canonical/public endpoints403. PR9 still reproduces ASCII STL byte corruption26vs12triangles; existing parallel PR6 repair yields12. Room remains another workers dirty checkout. No code commit or push needed; no merge/deploy.",
       "priority": 85.3333,
       "priority_basis": "ESTIMATE: impact × user_value × confidence / (effort + risk + 1)",
       "risk": 2,
@@ -4813,8 +4813,13 @@
       "started_at": "2026-10-09T23:40:17+00:00",
       "completed_at": null,
       "attempts": 1,
-      "owner": "core-lab-20261009T2340-parity",
-      "lease_until": "2026-10-10T00:25:17+00:00"
+      "owner": null,
+      "lease_until": null,
+      "result_evidence": {
+        "path": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-parity-20261009T2340/README.md",
+        "recorded_at": "2026-10-09T23:41:54+00:00",
+        "bytes": 3011
+      }
     },
     {
       "task_id": "PROGRAM-18-20261007",
