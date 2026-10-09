@@ -1,0 +1,3 @@
+# Independent OpenAI review
+Parent /root reviewed the exact18-line shared STL classification change plus16-line regression delta before commit. No blocking findings. Exact binary byte count wins even for solid-prefixed header; prior truncated-binary behavior is preserved. Source SHA: d24f5d76b4fd0e99c43e1cb8e5e2d9b63db6665e. Reviewed file SHA256s recorded in artifact-manifests.json.
+No remote CI pass or release approval is inferred; required hosted checks remain billing-blocked. Shared audit probe fix at release-program/audit-interfaces.mjs also independently reviewed and approved; durable local company artifact, no home Git commit/push.

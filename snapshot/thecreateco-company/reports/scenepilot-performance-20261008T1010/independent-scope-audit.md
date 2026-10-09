@@ -1,0 +1,12 @@
+# Independent read-only workload scope audit — 2026-10-08
+
+Native child /root/perf_scope_audit requested gpt-6-luna; completed. Serving model identity not independently exposed. No files modified/tests run. No AGENTS.md in supplied ScenePilot worktree.
+
+- certify-long-project.mjs: generated12s H26423.976/25fps and ProRes30fps sources,600s sine,60 repeated10s clips,320x180/30fps output. Validates duration/endpoints/five2x2decoded samples. Subprocesses bounded30–60s; main sequence render has no overall deadline. Temporary data removed at completion. Neither playback nor real-camera/cross-machine evidence.
+- certify-release-stress.mjs: synthetic30s3840x2160/30fps H264/AAC source; cancellation then3exports with180s per-render deadline. Samples FFmpeg child RSS every250ms, not app/process-tree/system memory. One decoded sample per output. Also missingmedia preservation, simultaneous proxy work,64MB atomic-save death/retry. Top-level time unbounded; tempfiles retained on failure. Not a UI/multi-hour/real-footage soak.
+- certify-linked-media.mjs: generated1s160x90redH264; customprotocol fetch, metadata/seek0.5s and canvaspixel. Source30s, fetch/metadata10s deadlines; no global Electron deadline. Hardware acceleration disabled; no continuous playback/seek churn/CPU/RSS workload.
+- benchmark-editor.mjs: metadata-only256assets,10kcuts,10koverlays,8tracks; nominal4K frame plans but no video decoding/rendering.900preparedcalls per case,120unprepared;40warmups.2ms plannerp95/80ms compilation/128MB heap budgets.8PCM strips1second computed sine,1000msbudget. No media files/GPU/UI/playback/export/memory trend.
+
+Docs release-today-0.1.16.md/release-followup-0.1.16.md distinguish these synthetic microbench/export checks from real4K UI, appmemory and multi-hour coverage. maturity-pass-2026-09-23.md explicitly rejects320x180ten-minute export as4Kplayback qualification and proposes30–60min licensed interactive project. native-performance.md asks seek-to-visiblep50/p95, droppedframes, representativecodecs, multicam/nestedmasks, thermal/memory soak and supported environments.
+
+Recommendation: independent reproducible rights-cleared30–60min initial playback/export soak with host/spec/source/media fingerprints, seeklatency, droppedframes, A/Vsync start/mid/end, app/process-tree memoryseries/peak/post-soaktrend, thermal/load observations, bounded time/scratchdisk. Continue durable checkpoints toward multi-hour/devices. No existing script supplies this entire evidence.

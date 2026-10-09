@@ -1,0 +1,642 @@
+{
+  "product_id": "stemdeck",
+  "observed_at": "2026-10-08T05:55:55.982385+00:00",
+  "vision": "Professional performance, stem remix and editable arrangement without lost work or hidden sound changes",
+  "audience": "DJs, live performers and producers",
+  "source": {
+    "repo": "armonon/sattari-custom-site",
+    "commit": "8c06f816e47bc2405e20f8941e19a4697d5c7c3f",
+    "worktree": "/Users/agentsattari/code/core-product-lab/stemdeck",
+    "branch": "core-lab/stemdeck-audit-20261007",
+    "remote_main_observed": "47006d5fb84059be6a04f71c7b493f6fba8b684d",
+    "remote_note": "main advanced during audit with unrelated catalog copy; local evidence bound to stated SHA, no shared tree touched"
+  },
+  "architecture": {
+    "shell": "React/Vite; SattariStudioPage shares audio session across Library, Perform, Arrange, Mixer",
+    "audio": "Tone WebAudio engine, bounded/range-readable source paging, durable capture journal, source reconstruction and authoritative print",
+    "persistence": "IndexedDB assets plus validated localStorage session; portable .sattari document/assets; autosave conflict guard",
+    "release": "source/artifact fingerprinted release gate; Node22/24 CI; separate physical and install gates"
+  },
+  "supported_workflows": [
+    "synthetic project import/edit and master/aligned-stem export demonstrated at three widths",
+    "synthetic reconstructed arrangement reload and PCM export parity demonstrated",
+    "source code supports session save/reopen, history, capture and recovery with documented partial action support"
+  ],
+  "unsupported_or_unqualified": [
+    "complete real music/physical four-deck lifecycle",
+    "all effects reconstructed as independently editable exact replay",
+    "native plugin host parity",
+    "real Safari/mobile devices and long hardware soaks",
+    "clean native install/update and deployed source matching"
+  ],
+  "quality_score": null,
+  "quality_dimensions": {
+    "functionality": null,
+    "reliability": null,
+    "performance": null,
+    "ux": null,
+    "ui": null,
+    "professional_depth": null,
+    "output_quality": null,
+    "save_recovery": null,
+    "import_export": null,
+    "error_handling": null,
+    "onboarding": null,
+    "accessibility": null,
+    "documentation": null,
+    "differentiation": null,
+    "release_readiness": null
+  },
+  "release_readiness": "ALPHA / NOT QUALIFIED. Independently reviewed6bad0ed pushed PR34 (on PR33);2259 unit tests, standalone build/types/lint and actual WebKit39-asset UI/restart/zero-error PCM pass. Mandatory exact-head local gate BLOCKED at disk1.203GB<2.838GB; hosted/stack/native13-of14/physical/source-live gates unresolved.",
+  "golden_workflow_status": "LOCAL SYNTHETIC WEBKIT SUBSET PASS: four-deck capture/replay/arrange/edit/undo/save/full process reopen/portable39-asset restore/export. Physical/full musical/platform/release qualification UNVERIFIED.",
+  "audit": {
+    "unit_node22": {
+      "passed": 2233,
+      "failed": 0,
+      "files": 245
+    },
+    "unit_node26": {
+      "passed": 2066,
+      "failed": 167,
+      "cause": "Node native localStorage shadows test environment; not 167 demonstrated browser defects"
+    },
+    "types": "PASS",
+    "build": "PASS",
+    "ui_widths_passed": [
+      1440,
+      615,
+      390
+    ],
+    "browser": "installed Google Chrome, not pinned CI Chromium",
+    "synthetic_lifecycle": {
+      "bit_exact_reopen": true,
+      "master_pcm_max_error": 6.332993507385254e-08,
+      "aligned_stems": 10,
+      "full_reference_qualified": false
+    },
+    "arrangement_browser": {
+      "passed": 13,
+      "failed": 0
+    },
+    "open_github_issues": 0,
+    "todo_scan": "No TODO/FIXME/HACK hits in studio components/utils; docs remain actual known-gap ledger",
+    "performance": "No current professional workload benchmark; isolated check wall times are diagnostic only",
+    "physical_hardware_measured": false
+  },
+  "checked_areas": [
+    "architecture",
+    "tests",
+    "test run",
+    "build",
+    "UI screenshot and scripted interactions",
+    "main synthetic workflow subset",
+    "open bugs",
+    "TODOs",
+    "release status",
+    "performance evidence",
+    "save/reopen",
+    "undo/redo test coverage",
+    "import/export",
+    "failure recovery source/tests",
+    "documentation"
+  ],
+  "untested_limits": [
+    "full golden performance capture with real music",
+    "independent listening",
+    "30/60/120-minute physical sessions",
+    "Safari/Firefox and physical mobile",
+    "clean native install/update",
+    "physical disk exhaustion, in-flight-save process termination, power-loss recovery"
+  ],
+  "candidates": [
+    {
+      "id": "STEM-AUD-001",
+      "title": "Patch confirmed vulnerable dependency versions",
+      "category": "bug",
+      "severity": "P0",
+      "scores": {
+        "impact": 9,
+        "severity": 10,
+        "workflow_importance": 9,
+        "competitive_value": 5,
+        "release_importance": 10,
+        "confidence": 10,
+        "effort": 2,
+        "risk": 3
+      },
+      "evidence": [
+        "reports/stemdeck-audit-before.json",
+        "reports/stemdeck-ci.json"
+      ],
+      "next_action": "CORE-STEMDECK-SEC-001 owns targeted patch; full release gate remains.",
+      "evidence_kind": "confirmed dependency/test result"
+    },
+    {
+      "id": "STEM-AUD-002",
+      "title": "Qualify real perform \u2192 capture \u2192 replay \u2192 arrange lifecycle",
+      "category": "workflow_gap",
+      "severity": "P1",
+      "scores": {
+        "impact": 10,
+        "severity": 8,
+        "workflow_importance": 10,
+        "competitive_value": 9,
+        "release_importance": 10,
+        "confidence": 9,
+        "effort": 8,
+        "risk": 4
+      },
+      "evidence": [
+        "reports/stemdeck-golden-browser.json",
+        "docs/PROFESSIONAL_ACCEPTANCE.md"
+      ],
+      "next_action": "Extend synthetic fixture to four decks/stems; then rights-cleared music, authorized physical setup and exact replay comparison. Synthetic reload passes are not full capture qualification.",
+      "evidence_kind": "documented qualification gap or screenshot-grounded validation candidate"
+    },
+    {
+      "id": "STEM-AUD-003",
+      "title": "Measure long-session audio deadlines and memory",
+      "category": "performance_opportunity",
+      "severity": "P1",
+      "scores": {
+        "impact": 9,
+        "severity": 8,
+        "workflow_importance": 10,
+        "competitive_value": 8,
+        "release_importance": 10,
+        "confidence": 9,
+        "effort": 8,
+        "risk": 4
+      },
+      "evidence": [
+        "docs/SESSION_INTEGRITY_1_0.md",
+        "docs/PROFESSIONAL_ACCEPTANCE.md"
+      ],
+      "next_action": "Run unchanged normal/heavy profiles; physical 30/60/120 min series stays blocked until authorized equipment/media. Historical missed deadlines not claimed newly reproduced.",
+      "evidence_kind": "documented qualification gap or screenshot-grounded validation candidate"
+    },
+    {
+      "id": "STEM-AUD-004",
+      "title": "Make Node26 test environment explicit or pin supported test runtime",
+      "category": "technical_debt",
+      "severity": "P3",
+      "scores": {
+        "impact": 5,
+        "severity": 5,
+        "workflow_importance": 5,
+        "competitive_value": 2,
+        "release_importance": 7,
+        "confidence": 10,
+        "effort": 2,
+        "risk": 2
+      },
+      "evidence": [
+        "reports/stemdeck-unit.log",
+        "reports/stemdeck-unit-node22.log"
+      ],
+      "next_action": "Prevent Node native localStorage from shadowing jsdom or explicitly qualify/pin CI Node22/24; never weaken persistence assertions.",
+      "evidence_kind": "confirmed dependency/test result"
+    },
+    {
+      "id": "STEM-AUD-005",
+      "title": "Complete source/action reconstruction support matrix",
+      "category": "professional_feature_gap",
+      "severity": "P2",
+      "scores": {
+        "impact": 9,
+        "severity": 7,
+        "workflow_importance": 10,
+        "competitive_value": 9,
+        "release_importance": 9,
+        "confidence": 10,
+        "effort": 8,
+        "risk": 5
+      },
+      "evidence": [
+        "reports/stemdeck-matrix.log"
+      ],
+      "next_action": "Select one partial event family, preserve authoritative print and original events, regression-prove capture/replay/arrange/reopen/export parity.",
+      "evidence_kind": "documented qualification gap or screenshot-grounded validation candidate"
+    },
+    {
+      "id": "STEM-AUD-006",
+      "title": "Qualify process-crash and storage-exhaustion recovery",
+      "category": "workflow_gap",
+      "severity": "P1",
+      "scores": {
+        "impact": 10,
+        "severity": 9,
+        "workflow_importance": 10,
+        "competitive_value": 7,
+        "release_importance": 10,
+        "confidence": 9,
+        "effort": 6,
+        "risk": 4
+      },
+      "evidence": [
+        "docs/PROFESSIONAL_ACCEPTANCE.md",
+        "src/utils/audioProjectStore.js"
+      ],
+      "next_action": "Terminate isolated browser during save/capture, preserve last-good portable project and source journal; distinguish source/component tests from process recovery.",
+      "evidence_kind": "documented qualification gap or screenshot-grounded validation candidate"
+    },
+    {
+      "id": "STEM-AUD-007",
+      "title": "Validate dense performance controls and lower-panel occlusion",
+      "category": "ux_improvement",
+      "severity": "P3",
+      "scores": {
+        "impact": 6,
+        "severity": 5,
+        "workflow_importance": 8,
+        "competitive_value": 6,
+        "release_importance": 6,
+        "confidence": 7,
+        "effort": 3,
+        "risk": 2
+      },
+      "evidence": [
+        "reports/stemdeck-ui/1440-Perform.png"
+      ],
+      "next_action": "Screenshot shows tiny secondary labels and toast over lower controls. Observe keyboard/zoom and loaded four-deck session before redesign; single-source fixture insufficient for deck-layout diagnosis.",
+      "evidence_kind": "documented qualification gap or screenshot-grounded validation candidate"
+    },
+    {
+      "id": "STEM-AUD-008",
+      "title": "Qualify mobile/browser session portability",
+      "category": "workflow_gap",
+      "severity": "P2",
+      "scores": {
+        "impact": 8,
+        "severity": 6,
+        "workflow_importance": 8,
+        "competitive_value": 7,
+        "release_importance": 8,
+        "confidence": 9,
+        "effort": 7,
+        "risk": 4
+      },
+      "evidence": [
+        "reports/stemdeck-ui/report.json",
+        "docs/PROFESSIONAL_ACCEPTANCE.md"
+      ],
+      "next_action": "Automated widths are not Safari/iOS/Android: portable project reopen and interruption on actual supported engines/devices.",
+      "evidence_kind": "documented qualification gap or screenshot-grounded validation candidate"
+    },
+    {
+      "id": "STEM-AUD-009",
+      "title": "Validate user-sampled drum lanes and expressive sequencing needs",
+      "category": "professional_feature_gap",
+      "severity": "P4",
+      "scores": {
+        "impact": 6,
+        "severity": 4,
+        "workflow_importance": 6,
+        "competitive_value": 7,
+        "release_importance": 5,
+        "confidence": 8,
+        "effort": 7,
+        "risk": 4
+      },
+      "evidence": [
+        "docs/PROFESSIONAL_ACCEPTANCE.md"
+      ],
+      "next_action": "Project B explicitly missing sampled lanes/swing/probability/ratchets qualification; validate need after reliability milestone.",
+      "evidence_kind": "documented qualification gap or screenshot-grounded validation candidate"
+    },
+    {
+      "id": "STEM-AUD-010",
+      "title": "Establish independent output/mastering vectors",
+      "category": "professional_feature_gap",
+      "severity": "P2",
+      "scores": {
+        "impact": 8,
+        "severity": 7,
+        "workflow_importance": 9,
+        "competitive_value": 7,
+        "release_importance": 9,
+        "confidence": 9,
+        "effort": 6,
+        "risk": 3
+      },
+      "evidence": [
+        "docs/PROFESSIONAL_ACCEPTANCE.md",
+        "reports/stemdeck-golden-browser.json"
+      ],
+      "next_action": "Preserve actual PCM export comparisons; measure independent peak/LUFS/true-peak vectors, never advertise limiter threshold as guaranteed true-peak ceiling.",
+      "evidence_kind": "documented qualification gap or screenshot-grounded validation candidate"
+    }
+  ],
+  "report": "reports/stemdeck-initial.md",
+  "next_milestone": "Continue CORE-STEM-REPLAY-DEADLINE-001 measured diagnosis on follow-up branch; preserve all safety audio, existing50ms guard, CI/stack release gates. Investigate WebKit setup separately; no product-complete claim.",
+  "local_fix": {
+    "commit": "1569ef377f6d3e079936116b1d8e5c4fe7586f48",
+    "status": "PUSHED_PR28_OPEN_NOT_MERGED_OR_DEPLOYED",
+    "changes": [
+      "proxy-addr 2.0.7 \u2192 2.0.8",
+      "source-map-js 1.2.1 \u2192 1.2.2"
+    ],
+    "npm_audit_after": {
+      "total": 0
+    },
+    "post_fix_full_suite": {
+      "runtime": "Node22",
+      "command": "vitest run --maxWorkers=1",
+      "passed": 2233,
+      "failed": 0,
+      "files": 245
+    },
+    "prior_post_fix_run": {
+      "passed": 2232,
+      "failed": 1,
+      "note": "Staff throttle test spans wall-clock boundary; deterministic reviewer proof identifies test timing issue. Raw failure retained. Follow-up CORE-STEMDECK-TEST-001."
+    },
+    "types": "PASS",
+    "build": "PASS",
+    "review": "reports/stemdeck-security-review.md",
+    "full_release_gate": "PASS remote software gate Node22/24 at1569ef3; physical/artifact-provenance gates remain; releaseApproved=false",
+    "post_patch_ui": "PASS: 1440, 615, 390 widths; synthetic mixdown and stem exports, reports/stemdeck-fixed-ui/report.json",
+    "pr": "https://github.com/armonon/sattari-custom-site/pull/28",
+    "evidence": "/Users/agentsattari/thecreateco-company/reports/2026-10-07-stemdeck-security-push.md"
+  },
+  "current_version": "1.0.0",
+  "current_milestone": "First golden workflow reliable and evidenced; not yet complete",
+  "core_lab_report": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-initial.md",
+  "queue_view": "/Users/agentsattari/thecreateco-company/core-product-lab/PRIORITIES.json",
+  "recovery_qualification": {
+    "source_baseline": "1569ef377f6d3e079936116b1d8e5c4fe7586f48",
+    "status": "PUSHED_PR29_OPEN_NOT_MERGED_OR_DEPLOYED",
+    "browser": "Chrome for Testing153.0.8010.12 macOS",
+    "actual_browser_SIGKILL_reopen": "PASS: project equality, committed audio hashes, journal and portable backup preserved",
+    "actual_browser_quota": "PASS: rejected session/asset writes preserve data; interrupted capture stops with actionable health error; five completed audio chunks readable",
+    "rendered_error_UI": "UNVERIFIED: harness asserts engine health, not UI rendering",
+    "physical_disk_full": "UNVERIFIED",
+    "report": "reports/stemdeck-recovery-20261007.md",
+    "candidate_sha": "f6f061c6e463a552c287e883cbd7fc9bb3e0867e",
+    "pr": "https://github.com/armonon/sattari-custom-site/pull/29",
+    "full_local_suite": {
+      "files": 245,
+      "passed": 2235,
+      "failed": 0,
+      "runtime": "Node22"
+    },
+    "typecheck": "PASS",
+    "build": "PASS",
+    "independent_review": "PASS: separate parent OpenAI review",
+    "remote_gate": "PASS exact f6f061c Node22/24 frozen release/audio/120s soak gates run37716499019; deploy skipped"
+  },
+  "lifecycle_qualification": {
+    "status": "SCOPED_REPAIR_PUSHED_FULL_WORKFLOW_FAIL",
+    "source_sha": "af10e31c9df8f1363d3945e3b1d39518cd858009",
+    "pr": "https://github.com/armonon/sattari-custom-site/pull/33",
+    "evidence": [
+      "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-lifecycle-20261007/exact-gate/report.json",
+      "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-lifecycle-20261007/exact-ui/report.json",
+      "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-lifecycle-20261007/exact-platforms/report.json",
+      "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-lifecycle-20261007/README.md"
+    ],
+    "next_action": "Continue CORE-STEM-REPLAY-DEADLINE-001 measured diagnosis on follow-up branch; preserve all safety audio, existing50ms guard, CI/stack release gates. Investigate WebKit setup separately; no product-complete claim."
+  },
+  "completion_observations": {
+    "candidate_sha": "af10e31c9df8f1363d3945e3b1d39518cd858009",
+    "supported_platforms": [
+      "macOS Chromium",
+      "Safari/iOS",
+      "Android"
+    ],
+    "gates": {
+      "core_workflow": {
+        "status": "FAIL",
+        "coverage_complete": false,
+        "source_sha": "af10e31c9df8f1363d3945e3b1d39518cd858009",
+        "observed_at": "2026-10-08T03:51:04.725341+00:00",
+        "summary": "Actual generated four-deck load/analyze/capture/reconstruct/edit/Undo/Redo/save/reopen/export subset passed, but live-engine replay print stops on scheduler/source deadlines. Continuous musical/physical performance remains unqualified.",
+        "evidence": [
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-lifecycle-20261007/exact-ui/report.json",
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-lifecycle-20261007/README.md"
+        ]
+      },
+      "save_reopen_export": {
+        "status": "UNVERIFIED",
+        "coverage_complete": false,
+        "source_sha": "af10e31c9df8f1363d3945e3b1d39518cd858009",
+        "observed_at": "2026-10-08T03:51:04.725341+00:00",
+        "summary": "Actual Chromium full-process restart and fresh-profile portable restore preserve all41 referenced asset SHA-256 hashes, semantic state/original events, and768960-frame48kHz stereo master PCM (max error0). Aligned audible stem ZIP validated. Broader MIDI/pad/physical/platform coverage not complete.",
+        "evidence": [
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-lifecycle-20261007/exact-ui/report.json",
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-lifecycle-20261007/README.md"
+        ]
+      },
+      "reliability_recovery": {
+        "status": "UNVERIFIED",
+        "coverage_complete": false,
+        "source_sha": "af10e31c9df8f1363d3945e3b1d39518cd858009",
+        "observed_at": "2026-10-08T03:51:04.725341+00:00",
+        "summary": "Current whole-browser normal restart roundtrip passed. Prior f6f061c SIGKILL/quota evidence remains historical; additional current-head fault/cancellation/physical disk/power-loss coverage not complete.",
+        "evidence": [
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-lifecycle-20261007/exact-ui/report.json",
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-recovery-20261007.md"
+        ]
+      },
+      "performance": {
+        "status": "FAIL",
+        "coverage_complete": false,
+        "source_sha": "af10e31c9df8f1363d3945e3b1d39518cd858009",
+        "observed_at": "2026-10-08T03:51:04.725341+00:00",
+        "summary": "Exact clean Node22 unchanged120-second soak passed, but actual four-deck UI replay stops under scheduler/source-read deadlines, including prior quiet trial. Original takes retained; dedicated diagnosis queued without threshold changes.",
+        "evidence": [
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-lifecycle-20261007/exact-gate/report.json",
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-lifecycle-20261007/exact-ui/report.json",
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-lifecycle-20261007/quiet-lifecycle/report.json"
+        ]
+      },
+      "usability_accessibility": {
+        "status": "UNVERIFIED",
+        "coverage_complete": false,
+        "source_sha": "af10e31c9df8f1363d3945e3b1d39518cd858009",
+        "observed_at": "2026-10-08T03:51:04.725341+00:00",
+        "summary": "Actual desktop controls/file pickers/Undo/Redo exercised; complete artist usability/accessibility qualification incomplete.",
+        "evidence": [
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-lifecycle-20261007/exact-ui/report.json",
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-lifecycle-20261007/exact-gate/report.json"
+        ]
+      },
+      "responsive_behavior": {
+        "status": "UNVERIFIED",
+        "coverage_complete": false,
+        "source_sha": "af10e31c9df8f1363d3945e3b1d39518cd858009",
+        "observed_at": "2026-10-08T03:51:04.725341+00:00",
+        "summary": "Mandatory built-UI scripted viewport checks passed; real mobile/tablet behavior remains unverified.",
+        "evidence": [
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-lifecycle-20261007/exact-gate/report.json"
+        ]
+      },
+      "security_privacy": {
+        "status": "UNVERIFIED",
+        "coverage_complete": false,
+        "source_sha": "af10e31c9df8f1363d3945e3b1d39518cd858009",
+        "observed_at": "2026-10-08T03:51:04.725341+00:00",
+        "summary": "Reviewed timing/fallback admission repair; no external audio uploads or physical capture. Whole-product production privacy/security provenance coverage incomplete.",
+        "evidence": [
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-lifecycle-20261007/README.md",
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-lifecycle-20261007/independent-review.md"
+        ]
+      },
+      "documentation_support": {
+        "status": "UNVERIFIED",
+        "coverage_complete": false,
+        "source_sha": "af10e31c9df8f1363d3945e3b1d39518cd858009",
+        "observed_at": "2026-10-08T03:51:04.725341+00:00",
+        "summary": "Scoped capture timing/exact-frame repair, reproducible QA and retained replay/platform/cancellation limits documented. Complete support/release documentation still incomplete.",
+        "evidence": [
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-lifecycle-20261007/README.md",
+          "/Users/agentsattari/code/core-product-lab/stemdeck-recovery/docs/CAPTURE_TIMING_2026-10-07.md"
+        ]
+      },
+      "tests": {
+        "status": "FAIL",
+        "coverage_complete": false,
+        "source_sha": "af10e31c9df8f1363d3945e3b1d39518cd858009",
+        "observed_at": "2026-10-08T03:51:04.725341+00:00",
+        "summary": "Mandatory exact af10e31 Node22 gate passes2242 tests/lint/types/build/native/browser/120s soak. Supplemental real-UI lifecycle intentionally exits1 for actual replay failure; WebKit native suite aborts at storage setup. Do not replace these failures with automated-gate PASS.",
+        "evidence": [
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-lifecycle-20261007/exact-gate/report.json",
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-lifecycle-20261007/exact-ui/report.json",
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-lifecycle-20261007/exact-platforms/report.json"
+        ]
+      },
+      "supported_platforms": {
+        "status": "UNVERIFIED",
+        "coverage_complete": false,
+        "source_sha": "af10e31c9df8f1363d3945e3b1d39518cd858009",
+        "observed_at": "2026-10-08T03:51:04.725341+00:00",
+        "summary": "Actual native arrangement14/14 Chromium151 and Firefox153. WebKit26.5 setup fails at real IndexedDB asset write before any test; exact-frame render/export unverified there. Safari/iOS/Android/hardware installation remain unqualified.",
+        "evidence": [
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-lifecycle-20261007/exact-platforms/report.json",
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-lifecycle-20261007/exact-ui/report.json"
+        ],
+        "platform_results": {
+          "macOS Chromium": "UNVERIFIED",
+          "Safari/iOS": "UNVERIFIED",
+          "Android": "UNVERIFIED"
+        }
+      },
+      "critical_blockers": {
+        "status": "FAIL",
+        "coverage_complete": false,
+        "source_sha": "af10e31c9df8f1363d3945e3b1d39518cd858009",
+        "observed_at": "2026-10-08T03:51:04.725341+00:00",
+        "summary": "Timing truncation and one-frame export defects repaired. Actual replay deadline/source-read failures and unresolved WebKit storage qualification prevent complete core workflow sign-off.",
+        "evidence": [
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-lifecycle-20261007/exact-ui/report.json",
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-lifecycle-20261007/exact-platforms/report.json",
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-lifecycle-20261007/README.md"
+        ],
+        "known_critical_blockers": [
+          "Actual captured four-deck replay/print stops on scheduler/source-read deadline",
+          "WebKit audio-asset storage setup fails; cause and Safari/iOS support unqualified"
+        ],
+        "triage_complete": false
+      }
+    },
+    "deployment": {
+      "status": "OPEN_PR_NOT_DEPLOYED",
+      "pr": "https://github.com/armonon/sattari-custom-site/pull/33",
+      "base_pr": "https://github.com/armonon/sattari-custom-site/pull/29",
+      "merged": false,
+      "deployed": false,
+      "local_exact_gate": "PASS",
+      "remote_gate_status": "PENDING"
+    },
+    "next_action": "Continue CORE-STEM-REPLAY-DEADLINE-001 measured diagnosis on follow-up branch; preserve all safety audio, existing50ms guard, CI/stack release gates. Investigate WebKit setup separately; no product-complete claim."
+  },
+  "replay_deadline_candidate": {
+    "source_sha": "c15bb06a87b150a966e8c563457de4f2786ba141",
+    "branch": "core-lab/stemdeck-replay-deadline-20261007",
+    "status": "LOCAL_ONLY_NEEDS_REVIEW",
+    "report": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/README.md",
+    "core_workflow": "PARTIAL_PASS_UNQUALIFIED",
+    "mandatory_local_gate": "PASS",
+    "platforms": "Chromium14/14 Firefox14/14 WebKit13/14",
+    "next_action": "Independent parent OpenAI review of c15bb06 versus af10e31, then normal feature push/PR stacked on PR33 if approved. Prepared PR body and immutable local evidence exist. Do not bypass required hosted gates or retry during billing outage. Follow up CORE-STEM-WEBKIT-REFERENCE-001 for actual reference/fallback qualification."
+  },
+  "portable_archive_candidate": {
+    "source_sha": "6bad0edaf198d80d44c9aa02c3e65970fe7d9148",
+    "branch": "core-lab/stemdeck-archive-webkit-20261008",
+    "pr": "https://github.com/armonon/sattari-custom-site/pull/34",
+    "status": "PUSHED_OPEN_PR_QUALIFICATION_BLOCKED",
+    "report": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-archive-webkit-20261008/README.md",
+    "independent_reviews": "PASS scoped source and c15 prerequisite; OpenAI Sol separate contexts",
+    "webkit_assets_verified": 39,
+    "chromium_assets_verified": 39,
+    "webkit_master_pcm_max_error": 0,
+    "webkit_master_frames": 668352,
+    "storage_fault_cases_passed": 6,
+    "unit_tests_passed": 2259,
+    "mandatory_local_gate": "BLOCKED: disk1203224576<2838683648 bytes; no checks ran",
+    "hosted_checks_observed": [],
+    "resume_condition": "Provide>=2838683648 free bytes and rerun exact6bad mandatory gate; preserve hosted/stack gates and native/physical limitations",
+    "observed_at": "2026-10-08T05:55:55.982385+00:00"
+  },
+  "browser_portability_qualification": {
+    "observed_at": "2026-10-08T11:48:29.884513+00:00",
+    "task_id": "CORE-STEM-AUD-008",
+    "source_sha": "b26c03be150e9ebb4dfcfa489bb57e62802011ec",
+    "report": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-portability-20261008/README.md",
+    "status": "BLOCKED_FULL_MOBILE_PORTABILITY_UNQUALIFIED",
+    "engines": {
+      "Chromium151.0.7922.34": {
+        "verified_assets": 39,
+        "arrangement_events_edit_undo_redo_restart": "PASS",
+        "strict_export_byte_identity": "FAIL",
+        "maximum_pcm_lsb_error": 1,
+        "maximum_normalized_pcm_error": 1.1920928955078125e-07,
+        "within_existing_pcm_tolerance": true,
+        "exit_code": 1
+      },
+      "Firefox153.0": {
+        "verified_assets": 39,
+        "scoped_archive_edit_restart_export": "PASS",
+        "strict_export_byte_identity": "PASS",
+        "exit_code": 0
+      },
+      "WebKit26.5": {
+        "verified_assets": 39,
+        "scoped_archive_edit_restart_export": "PASS",
+        "strict_export_byte_identity": "PASS",
+        "exit_code": 0
+      }
+    },
+    "tests": {
+      "archive_storage": {
+        "passed": 40,
+        "files": 4,
+        "exit_code": 0
+      },
+      "vite_build": 0,
+      "prerender": 0,
+      "service_worker_after_prerequisite": 0
+    },
+    "retained_failures": [
+      "initial Chromium exit137 unknown cause",
+      "Chromium strict cross-engine WAV byte mismatch1LSB",
+      "initial service worker invoked before prerender completed; corrected order passes"
+    ],
+    "physical_platforms": {
+      "Safari_iOS": "UNVERIFIED",
+      "Android": "UNVERIFIED"
+    },
+    "limitations": [
+      "only normalized arrangement/event fields compared; other session fields unqualified",
+      "metadata rename only; sound-changing edit unqualified",
+      "normal committed close/reopen only; crash/in-flight interruption unqualified",
+      "no return portable archive transfer",
+      "local source UI, not deployed/packaged artifact"
+    ],
+    "independent_review": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-portability-20261008/independent-review.md",
+    "actual_model": "openai/gpt-6.1-sol",
+    "reviewer_configured_model": "openai/gpt-6.1-sol",
+    "fallbacks_used": [],
+    "resume_condition": "Authorized actual supported Safari/iOS/Android environment, fixture transfer and sufficient headroom; full relevant session state/meaningful edits/return portable transfer plus in-flight interruption preserving last-good project. Reuse same task; preserve mandatory release gates."
+  }
+}

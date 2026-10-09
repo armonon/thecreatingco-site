@@ -1,0 +1,9 @@
+# Sattari public alpha surface — approved review path
+
+- Owner approval: Armon's “approve Sattari” response to the clean public-surface cleanup review gate, 2026-10-08.
+- The June cleanup commit `1304702` and follow-up `51b5f04` were not pushed wholesale: current `main` had changed substantially. The cleanup was ported onto exact base `85cb19b` as a focused branch.
+- Review branch: `joey/public-alpha-download-cleanup-2026-10-08`; exact pushed head `77b8050`; [PR #36](https://github.com/armonon/sattari-custom-site/pull/36) is open against `main` and mergeable. Mixed NOW-editor [PR #3](https://github.com/armonon/sattari-custom-site/pull/3) remains untouched.
+- Scope: archive nine alpha download artifacts outside Netlify's publish input, remove the public page/links/SEO/prerender route, and 404 the legacy download paths. The current shop and browser music tools remain.
+- Exact-head local Node 22: 2,135 tests in 233 files pass; lint, type-check, build, SEO check for 82 public pages, archive SHA-256 checks, and `npm audit --audit-level=moderate` pass (0 reported vulnerabilities). Lockfile patch updates only `proxy-addr` 2.0.7→2.0.8 and `source-map-js` 1.2.1→1.2.2.
+- Hosted status as of 2026-10-09 01:05 PDT: exact-head GitHub Node 22 and Node 24 checks both SUCCESS; deploy job SKIPPED. Netlify preview `6ac7c3eba887400008089614` and its Header rules, Pages changed, Redirect rules and deploy-preview contexts all FAILURE. Public API state is `error` with no error message or available summary. Project-authenticated build logs remain unavailable here. A separate earlier main-targeted PR #24 also has a failed Netlify preview, so this failure is not yet attributed to this change.
+- No merge or production deployment was performed. Release remains gated on required hosted checks and review.

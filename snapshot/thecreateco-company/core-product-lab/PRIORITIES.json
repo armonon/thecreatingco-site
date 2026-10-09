@@ -1,0 +1,2763 @@
+{
+  "generated_at": "2026-10-09T23:22:04+00:00",
+  "paused": false,
+  "note": "Read-only company queue projection; severity first, priorities are estimates. Claim by ID via company.py.",
+  "eligible": [
+    {
+      "task_id": "P06",
+      "title": "Verify Form review-versus-canonical feature parity",
+      "category": "product",
+      "workstream": "ENGINEERING",
+      "product": "form",
+      "campaign": null,
+      "status": "QUEUED",
+      "model": "gpt-6.1-sol",
+      "dependencies": [],
+      "scores": {
+        "impact": 8,
+        "user_value": 8,
+        "strategic_value": 8,
+        "urgency": 5,
+        "confidence": 8,
+        "effort": 3,
+        "risk": 2
+      },
+      "expected_value": "Document Cast/Room and canonical release differences; do not publish to a mismatched host.",
+      "next_action": "Document Cast/Room and canonical release differences; do not publish to a mismatched host.",
+      "evidence_sources": [
+        "/Users/agentsattari/code/wave5/WAVE5.md"
+      ],
+      "score_basis": "Provisional director estimate; evidence-backed opportunity, not measured ROI. Recheck before execution.",
+      "result": null,
+      "priority": 85.3333,
+      "priority_basis": "ESTIMATE: impact \u00d7 user_value \u00d7 confidence / (effort + risk + 1)",
+      "risk": 2,
+      "created_at": "2026-10-07T23:38:29+00:00",
+      "started_at": null,
+      "completed_at": null,
+      "attempts": 0,
+      "owner": null,
+      "lease_until": null
+    },
+    {
+      "task_id": "P07",
+      "title": "Qualify ScenePilot Board to AutoCut workflow",
+      "category": "product",
+      "workstream": "ENGINEERING",
+      "product": "scenepilot",
+      "campaign": null,
+      "status": "QUEUED",
+      "model": "gpt-6.1-sol",
+      "dependencies": [],
+      "scores": {
+        "impact": 8,
+        "user_value": 9,
+        "strategic_value": 8,
+        "urgency": 5,
+        "confidence": 7,
+        "effort": 4,
+        "risk": 2
+      },
+      "expected_value": "Use a disposable project through save, handoff and export; report exact failure boundaries.",
+      "next_action": "Use a disposable project through save, handoff and export; report exact failure boundaries.",
+      "evidence_sources": [
+        "/Users/agentsattari/code/wave5/WAVE5.md"
+      ],
+      "score_basis": "Provisional director estimate; evidence-backed opportunity, not measured ROI. Recheck before execution.",
+      "result": null,
+      "priority": 72.0,
+      "priority_basis": "ESTIMATE: impact \u00d7 user_value \u00d7 confidence / (effort + risk + 1)",
+      "risk": 2,
+      "created_at": "2026-10-07T23:38:29+00:00",
+      "started_at": null,
+      "completed_at": null,
+      "attempts": 0,
+      "owner": null,
+      "lease_until": null
+    }
+  ],
+  "all_flagship_tasks": [
+    {
+      "task_id": "CORE-STEMDECK-SEC-001",
+      "title": "Patch CI-blocking proxy-addr and source-map-js advisories without broad dependency upgrades",
+      "product": "stemdeck",
+      "workstream": "CORE_PRODUCT_LAB",
+      "category": "BUG",
+      "area": "dependency security/release",
+      "severity": "P0",
+      "scores": {
+        "impact": 9,
+        "user_value": 10,
+        "severity": 10,
+        "workflow_importance": 9,
+        "competitive_value": 5,
+        "release_importance": 10,
+        "confidence": 10,
+        "effort": 2,
+        "risk": 3
+      },
+      "model": "gpt-6.1-sol",
+      "expected_value": "Remove confirmed vulnerable versions and unblock security stage; deployment still requires full gates",
+      "test_requirements": "npm audit clean, narrow lockfile diff, Node22 full tests, types/build, synthetic golden lifecycle",
+      "next_action": "Continue autonomously via existing QUEUED O02: reconcile unreviewed Wave2/Wave4 stack and live-only Downloads/SEO provenance, qualify current-base integration, then normal PR landing/release gates. Not waiting for personal founder review. PR https://github.com/armonon/sattari-custom-site/pull/28; passed run 37712013927.",
+      "source_evidence": "core-product-lab/reports/stemdeck-audit-before.json; GitHub run 37568746966",
+      "status": "COMPLETE",
+      "dependencies": [],
+      "priority": 150.0,
+      "priority_basis": "ESTIMATE: impact \u00d7 user_value \u00d7 confidence / (effort + risk + 1)",
+      "campaign": null,
+      "risk": 3,
+      "created_at": "2026-10-07T23:59:13+00:00",
+      "started_at": "2026-10-08T00:57:51+00:00",
+      "completed_at": "2026-10-08T01:31:28+00:00",
+      "result": "Pushed PR #28 at 1569ef3: two security dependencies patched plus independently reviewed missing service-worker gate packaging fix. Exact-head Node22/24 CI passed all 2233 tests, types/lint/build, browser/audio/UI, mandatory soak and artifact/source verification. Initial real CI failure retained. PR remains open; no main merge/deploy; releaseApproved=false.",
+      "attempts": 2,
+      "owner": null,
+      "lease_until": null,
+      "result_evidence": {
+        "path": "/Users/agentsattari/thecreateco-company/reports/2026-10-07-stemdeck-security-push.md",
+        "recorded_at": "2026-10-08T01:31:28+00:00",
+        "bytes": 6898
+      }
+    },
+    {
+      "task_id": "CORE-SP-SEC-001",
+      "title": "Patch and triage vulnerable production dependency versions",
+      "product": "scenepilot",
+      "area": "bug_reliability",
+      "category": "bug_reliability",
+      "workstream": "CORE_PRODUCT_LAB",
+      "severity": "P0",
+      "scores": {
+        "impact": 10,
+        "severity": 10,
+        "workflow_importance": 8,
+        "competitive_value": 4,
+        "release_importance": 10,
+        "confidence": 10,
+        "effort": 3,
+        "risk": 5,
+        "user_value": 8
+      },
+      "dependencies": [],
+      "status": "COMPLETE",
+      "model": "gpt-6.1-sol",
+      "expected_value": "Flagship golden-workflow reliability; scores are planning estimates, not health metrics.",
+      "test_requirements": "Reproduce on isolated exact source; preserve baseline/fixed evidence, appropriate build/tests and golden path; source reading is not interactive sign-off.",
+      "source_evidence": [
+        "npm audit --omit=dev on the isolated lockfile found direct next@16.3.3 critical and transitive sharp high/source-map-js high advisories.",
+        "Direct Next advisory includes next/og ImageResponse RCE affected below 16.3.6; additional Next advisories affect through below 16.3.8.",
+        "/tmp/scenepilot-audit-production-deps.json",
+        "Source directly imports next/headers and next/navigation for Vinext-backed runtime; direct next/og import was not found."
+      ],
+      "next_action": "Continue O02 exact stack/source/Netlify qualification before merging PR #90/#89; CORE-SP-SEC-002 for remaining Electron/runtime advisories. No personal founder review wait.",
+      "priority": 88.8889,
+      "priority_basis": "ESTIMATE: impact \u00d7 user_value \u00d7 confidence / (effort + risk + 1)",
+      "campaign": null,
+      "risk": 5,
+      "created_at": "2026-10-08T00:02:43+00:00",
+      "started_at": "2026-10-08T00:58:10+00:00",
+      "completed_at": "2026-10-08T01:02:15+00:00",
+      "result": "Independent OpenAI review, security patch committed and pushed in PR #90 head e9c62eb; full local verify passed 1091 tests and native/QA gates. PR OPEN, no remote checks reported; NOT merged/deployed. Production-classified audit zero, full tree still 30. Downstack qualification routed to queued O02.",
+      "attempts": 2,
+      "owner": null,
+      "lease_until": null,
+      "result_evidence": {
+        "path": "/Users/agentsattari/thecreateco-company/reports/2026-10-07-scenepilot-security-push.md",
+        "recorded_at": "2026-10-08T01:02:15+00:00",
+        "bytes": 2647
+      }
+    },
+    {
+      "task_id": "CORE-STEM-ARCHIVE-WEBKIT-001",
+      "title": "Repair and qualify WebKit portable archive asset byte identity",
+      "product": "stemdeck",
+      "area": "save_reopen_export",
+      "category": "bug",
+      "workstream": "CORE_PRODUCT_LAB",
+      "severity": "P0",
+      "status": "BLOCKED",
+      "model": "gpt-6.1-sol",
+      "scores": {
+        "impact": 10,
+        "user_value": 10,
+        "confidence": 8,
+        "effort": 6,
+        "risk": 4
+      },
+      "dependencies": [],
+      "expected_value": "Preserve user-owned audio bytes and events across portable project restoration; scores are estimates based on confirmed local synthetic corruption, not observed users or universal Safari defect.",
+      "test_requirements": "Exact-source own generated39-asset archive; sufficient free disk baseline; reproduce actual UI import and inspect all asset bytes/hashes, capture original events, full browser restart and exact PCM export. Smaller2-asset/4KiB/2.8MiB slices currently pass and must remain counterexamples. Materialized39-asset diagnostic first4 reads pass, but no whole-song memory allocation allowed as blind fix. Qualify bounded detached storage and denied/quota/failure atomicity. Keep native WebKit decode failure; product bounded decoder already works. Independent OpenAI review before source push, normal parent-stack/mandatory CI and release gates. No physical input or customer data.",
+      "source_evidence": {
+        "capacity_recheck": "reports/company-os-20261009/scheduled-proof.md",
+        "previous_evidence": [
+          "/Users/agentsattari/thecreateco-company/reports/stemdeck-webkit-reference-20261007/README.md",
+          "/Users/agentsattari/thecreateco-company/reports/stemdeck-webkit-reference-20261007/normal-ui/report.json",
+          "/Users/agentsattari/thecreateco-company/reports/stemdeck-webkit-reference-20261007/inspect-restored.json",
+          "/Users/agentsattari/thecreateco-company/reports/stemdeck-webkit-reference-20261007/archive-module-materialized.json",
+          "/Users/agentsattari/thecreateco-company/reports/stemdeck-webkit-reference-20261007/independent-diagnosis.md"
+        ]
+      },
+      "next_action": "Bounded Sol root-cause review of exact6bad staff-login forged-token throttle/test isolation failure; preserve assertions and evidence, independently review consequential fixes, then rerun unchanged complete gate. Keep PR34/parent-stack/hosted/native13-of14/physical/source-live release gates intact.",
+      "priority": 72.7273,
+      "priority_basis": "ESTIMATE: impact \u00d7 user_value \u00d7 confidence / (effort + risk + 1)",
+      "campaign": null,
+      "risk": 4,
+      "created_at": "2026-10-08T05:23:44+00:00",
+      "started_at": "2026-10-09T07:10:33+00:00",
+      "completed_at": null,
+      "result": "Sol-directed Luna exact6bad gate: pinned dependencies/browser restored locally; clean/unchanged source and disk preflight PASS (51.288GB >=2.839GB), matrix/lint PASS,2258 unit PASS/1 FAIL forged-token throttle expected429 got200; later build/browser/audio/120s soak unrun. No release.",
+      "attempts": 2,
+      "owner": null,
+      "lease_until": null,
+      "result_evidence": {
+        "path": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-archive-gate-20261009/README.md",
+        "recorded_at": "2026-10-09T07:17:46+00:00",
+        "bytes": 5082
+      },
+      "token_budget": 20000,
+      "tool_budget": 60
+    },
+    {
+      "task_id": "CORE-LUMA-AUD-005",
+      "title": "Resolve production dependency advisories and verify runtime exposure",
+      "product": "luma",
+      "area": "security",
+      "category": "security",
+      "workstream": "CORE_PRODUCT_LAB",
+      "severity": "P0",
+      "scores": {
+        "impact": 8,
+        "severity": 8,
+        "workflow_importance": 7,
+        "competitive_value": 2,
+        "release_importance": 10,
+        "confidence": 9,
+        "effort": 3,
+        "risk": 4,
+        "user_value": 7
+      },
+      "dependencies": [],
+      "status": "BLOCKED",
+      "model": "gpt-6.1-sol",
+      "expected_value": "Flagship golden-workflow reliability; scores are planning estimates, not health metrics.",
+      "test_requirements": "Reproduce on isolated exact source; preserve baseline/fixed evidence, appropriate build/tests and golden path; source reading is not interactive sign-off.",
+      "source_evidence": [
+        "npm audit --omit=dev --json exits 1 with 3 high findings in production dependency closure",
+        "next@16.3.6 affected by GHSA-cjq9-62q9-8jv4 (<16.3.8), plus high findings in sharp (<0.35.5) and source-map-js (<1.2.2)",
+        "audit details: /tmp/luma-audit-e709-npm-audit-production.json; deployed runtime reachability not tested"
+      ],
+      "next_action": "Restore authorized GitHub Actions execution, then exact-head required CI and normal stack qualification of PR5/6. Golden export RGB discrepancy CORE-LUMA-EXPORT-COLOR-001 and full save/reopen/platform gates remain separate unfinished work.",
+      "priority": 63.0,
+      "priority_basis": "ESTIMATE: impact \u00d7 user_value \u00d7 confidence / (effort + risk + 1)",
+      "campaign": null,
+      "risk": 4,
+      "created_at": "2026-10-08T00:02:45+00:00",
+      "started_at": "2026-10-08T02:43:05+00:00",
+      "completed_at": null,
+      "result": "Security PR5 5afa61c remains pushed/open; follow-up PR6 772f082 repaired standalone contract and lint. Full tests1374 pass/10 skip, lint/types/three builds pass. Prior standalone blockers are resolved. Exact-head GitHub jobs still cannot start due payment/spending restriction; no merge/deploy.",
+      "attempts": 2,
+      "owner": null,
+      "lease_until": null,
+      "evidence_sources": [
+        "/Users/agentsattari/thecreateco-company/core-product-lab/reports/luma-initial.md",
+        "/Users/agentsattari/thecreateco-company/core-product-lab/products/luma.json",
+        "/Users/agentsattari/thecreateco-company/reports/luma-completion-2026-10-07/README.md"
+      ],
+      "result_evidence": {
+        "path": "/Users/agentsattari/thecreateco-company/reports/luma-completion-2026-10-07/README.md",
+        "recorded_at": "2026-10-08T02:43:05+00:00",
+        "bytes": 6839
+      }
+    },
+    {
+      "task_id": "CORE-FORM-AUD-SEC-001",
+      "title": "Triage current production dependency advisories",
+      "product": "form",
+      "area": "bug/security",
+      "category": "bug/security",
+      "workstream": "CORE_PRODUCT_LAB",
+      "severity": "P0",
+      "scores": {
+        "impact": 8,
+        "severity": 9,
+        "workflow_importance": 4,
+        "release_importance": 9,
+        "confidence": 9,
+        "effort": 3,
+        "risk": 4,
+        "user_value": 4,
+        "competitive_value": 3
+      },
+      "dependencies": [],
+      "status": "BLOCKED",
+      "model": "gpt-6.1-sol",
+      "expected_value": "Flagship golden-workflow reliability; scores are planning estimates, not health metrics.",
+      "test_requirements": "Reproduce on isolated exact source; preserve baseline/fixed evidence, appropriate build/tests and golden path; source reading is not interactive sign-off.",
+      "source_evidence": {
+        "direct": [
+          "Isolated clean npm ci resolved next@16.3.4; npm audit --omit=dev reported 1 critical Next.js, 2 high dependency advisories (sharp, source-map-js). No next/og or ImageResponse reference found in source search. KNOWN_ISSUES.md:32 says no known high-severity production advisory."
+        ],
+        "hypothesis": [
+          "The Next.js RCE advisory may be unreachable if the vulnerable ImageResponse route is not exposed; exploitability and runtime dependency reachability are unverified."
+        ]
+      },
+      "next_action": "Restore authorized GitHub Actions execution and qualify exact-head PR3/4 normal web/native/artifact gates. CORE-FORM-UI-EXPORT-001 responsive menu failure and native/platform/source-deployment qualification remain; prior eight failures/lint are resolved.",
+      "priority": 36.0,
+      "priority_basis": "ESTIMATE: impact \u00d7 user_value \u00d7 confidence / (effort + risk + 1)",
+      "campaign": null,
+      "risk": 4,
+      "created_at": "2026-10-08T00:02:45+00:00",
+      "started_at": "2026-10-08T02:43:05+00:00",
+      "completed_at": null,
+      "result": "Security PR3 b433a12 remains pushed/open; follow-up PR4 ea67346 repaired eight baseline failures and source lint.1527/1527 tests, lint/types/web/desktop-front-end builds pass. Exact-head web job did not start due GitHub payment/spending restriction; no merge/deploy.",
+      "attempts": 2,
+      "owner": null,
+      "lease_until": null,
+      "evidence_sources": [
+        "/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-initial.md",
+        "/Users/agentsattari/thecreateco-company/core-product-lab/products/form.json",
+        "/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-completion-2026-10-07.md"
+      ],
+      "result_evidence": {
+        "path": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-completion-2026-10-07.md",
+        "recorded_at": "2026-10-08T02:43:05+00:00",
+        "bytes": 6664
+      }
+    },
+    {
+      "task_id": "CORE-FORM-001",
+      "title": "Initial form architecture and golden-workflow audit",
+      "product": "form",
+      "category": "AUDIT",
+      "workstream": "CORE_PRODUCT_LAB",
+      "model": "gpt-6-luna",
+      "scores": {
+        "impact": 10,
+        "user_value": 10,
+        "confidence": 9,
+        "effort": 5,
+        "risk": 1
+      },
+      "severity": "P1",
+      "expected_value": "Evidence-backed reliability before flagship breadth; no readiness claims without workflow proof.",
+      "test_requirements": "Record build/test commands and actual outputs; separate source audit from interactive qualification.",
+      "next_action": "Triage P0 production dependency advisory; reconcile ALPHA/beta/RC maturity and dirty source/live refs; repair stale workspace smoke assertions and run full golden qualification on a supported desktop build.",
+      "status": "COMPLETE",
+      "dependencies": [],
+      "priority": 128.5714,
+      "priority_basis": "ESTIMATE: impact \u00d7 user_value \u00d7 confidence / (effort + risk + 1)",
+      "campaign": null,
+      "risk": 1,
+      "created_at": "2026-10-07T23:51:47+00:00",
+      "started_at": "2026-10-07T23:52:56+00:00",
+      "completed_at": "2026-10-08T00:09:16+00:00",
+      "result": "Completed all 15 audit areas (source review and unverified limits explicit); product health remains unknown. Added detailed report, ALPHA-preserving structured product record, Form golden workflow qualification spec, durable Node 22 unit/workspace logs, production npm audit/build logs, and SwiftShader visual screenshot. Detached baseline clean; no app code fix. Full Node 22 unit repeat 1518/1526 pass (8 workspace smoke assertion failures); web build/typecheck pass with warnings recorded; security advisory exploitability unverified.",
+      "attempts": 1,
+      "owner": null,
+      "lease_until": null,
+      "result_evidence": {
+        "path": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-initial.md",
+        "recorded_at": "2026-10-08T00:09:16+00:00",
+        "bytes": 18291
+      }
+    },
+    {
+      "task_id": "CORE-LUMA-001",
+      "title": "Initial luma architecture and golden-workflow audit",
+      "product": "luma",
+      "category": "AUDIT",
+      "workstream": "CORE_PRODUCT_LAB",
+      "model": "gpt-6-luna",
+      "scores": {
+        "impact": 10,
+        "user_value": 10,
+        "confidence": 9,
+        "effort": 5,
+        "risk": 1
+      },
+      "severity": "P1",
+      "expected_value": "Evidence-backed reliability before flagship breadth; no readiness claims without workflow proof.",
+      "test_requirements": "Record build/test commands and actual outputs; separate source audit from interactive qualification.",
+      "next_action": "Fix checkout-dependent test, review compatible dependency remediation on a branch, then qualify Luma golden workflow on web and packaged desktop with source-bound evidence.",
+      "status": "COMPLETE",
+      "dependencies": [],
+      "priority": 128.5714,
+      "priority_basis": "ESTIMATE: impact \u00d7 user_value \u00d7 confidence / (effort + risk + 1)",
+      "campaign": null,
+      "risk": 1,
+      "created_at": "2026-10-07T23:51:47+00:00",
+      "started_at": "2026-10-07T23:52:46+00:00",
+      "completed_at": "2026-10-08T00:01:19+00:00",
+      "result": "Completed 15-area source-bound Luma audit at e709a16; web build passed, Chrome UI screenshot captured; npm suite 1372 passed/1 failed/10 skipped (cross-repo hard-coded path); production dependency audit has 3 high advisories, exposure unverified; release status 1/10; Rust tests blocked (cargo absent). Report, structured state, golden spec and durable logs saved. No fix/deploy.",
+      "attempts": 1,
+      "owner": null,
+      "lease_until": null,
+      "result_evidence": {
+        "path": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/luma-initial.md",
+        "recorded_at": "2026-10-08T00:01:19+00:00",
+        "bytes": 13380
+      }
+    },
+    {
+      "task_id": "CORE-SCENEPILOT-001",
+      "title": "Initial scenepilot architecture and golden-workflow audit",
+      "product": "scenepilot",
+      "category": "AUDIT",
+      "workstream": "CORE_PRODUCT_LAB",
+      "model": "gpt-6-luna",
+      "scores": {
+        "impact": 10,
+        "user_value": 10,
+        "confidence": 9,
+        "effort": 5,
+        "risk": 1
+      },
+      "severity": "P1",
+      "expected_value": "Evidence-backed reliability before flagship breadth; no readiness claims without workflow proof.",
+      "test_requirements": "Record build/test commands and actual outputs; separate source audit from interactive qualification.",
+      "next_action": "Triage and patch production dependency advisories in an isolated branch; then generate and qualify the ScenePilot golden project in Lite and Desktop Pro. Review the saved accessibility patch through normal PR/check gates.",
+      "status": "COMPLETE",
+      "dependencies": [],
+      "priority": 128.5714,
+      "priority_basis": "ESTIMATE: impact \u00d7 user_value \u00d7 confidence / (effort + risk + 1)",
+      "campaign": null,
+      "risk": 1,
+      "created_at": "2026-10-07T23:51:47+00:00",
+      "started_at": "2026-10-07T23:52:41+00:00",
+      "completed_at": "2026-10-08T00:01:47+00:00",
+      "result": "Source/repo audit complete. Isolated Wave4 commit builds; npm test 1091/1091 and npm run check pass, synthetic performance passes. Baseline UI audit found accessibility violations; isolated unmerged fix passes regression. Production dependency audit found 1 critical + 2 high advisories; exposure unverified and queued for security triage. Golden project spec written; fixture and complete workflow remain unqualified. No production changes or releases.",
+      "attempts": 1,
+      "owner": null,
+      "lease_until": null,
+      "result_evidence": {
+        "path": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-initial.md",
+        "recorded_at": "2026-10-08T00:01:47+00:00",
+        "bytes": 13755
+      }
+    },
+    {
+      "task_id": "CORE-STEMDECK-001",
+      "title": "Initial stemdeck architecture and golden-workflow audit",
+      "product": "stemdeck",
+      "category": "AUDIT",
+      "workstream": "CORE_PRODUCT_LAB",
+      "model": "gpt-6-luna",
+      "scores": {
+        "impact": 10,
+        "user_value": 10,
+        "confidence": 9,
+        "effort": 5,
+        "risk": 1
+      },
+      "severity": "P1",
+      "expected_value": "Evidence-backed reliability before flagship breadth; no readiness claims without workflow proof.",
+      "test_requirements": "Record build/test commands and actual outputs; separate source audit from interactive qualification.",
+      "next_action": "Finish CORE-STEMDECK-SEC-001, then four-deck capture/replay golden qualification and recovery.",
+      "status": "COMPLETE",
+      "dependencies": [],
+      "priority": 128.5714,
+      "priority_basis": "ESTIMATE: impact \u00d7 user_value \u00d7 confidence / (effort + risk + 1)",
+      "campaign": null,
+      "risk": 1,
+      "created_at": "2026-10-07T23:51:47+00:00",
+      "started_at": "2026-10-07T23:53:07+00:00",
+      "completed_at": "2026-10-08T00:05:49+00:00",
+      "result": "Initial 15-area audit recorded. Node22 baseline 2233/2233 tests; build/types and synthetic browser subset pass. No full professional qualification. Security fix tracked separately.",
+      "attempts": 1,
+      "owner": null,
+      "lease_until": null,
+      "result_evidence": {
+        "path": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-initial.md",
+        "recorded_at": "2026-10-08T00:05:49+00:00",
+        "bytes": 7451
+      }
+    },
+    {
+      "task_id": "CORE-FORM-UI-EXPORT-001",
+      "title": "Keep project open/export menu reachable at 1440px desktop width",
+      "product": "form",
+      "workstream": "CORE_PRODUCT_LAB",
+      "category": "core_workflow",
+      "area": "responsive_navigation",
+      "severity": "P1",
+      "status": "COMPLETE",
+      "model": "gpt-6.1-sol",
+      "scores": {
+        "impact": 8,
+        "user_value": 8,
+        "strategic_value": 7,
+        "urgency": 7,
+        "confidence": 10,
+        "effort": 3,
+        "risk": 3
+      },
+      "source_evidence": {
+        "direct": [
+          "Real Chrome1440x1000: topbar extends off rightedge; Project and workspace actions summary lies outside viewport. Playwright user-level click timesout despite scrollIntoView.1920x1080 same menu works and real STEP/GLB downloads pass. Screenshot browser-before-close.png and browser-workflow.log preserve observed failure."
+        ],
+        "hypothesis": [
+          "Nonshrinking topbar actions plus navigation exceed1440 available width."
+        ]
+      },
+      "test_requirements": "Preserve all actions/navigation; responsive topbar regression realbrowser1440 and narrower; no forced clicks; save/open/export reachable; normal lint/build/tests.",
+      "next_action": "Parent retain normal PR/check gate; continue broader Form/Cast provenance/workflow tasks independently.",
+      "evidence_sources": [
+        "/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-completion-20261007/browser-before-close.png",
+        "/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-completion-20261007/browser-workflow.log",
+        "/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-completion-20261007/browser-workflow-wide.log"
+      ],
+      "dependencies": [],
+      "priority": 91.4286,
+      "priority_basis": "ESTIMATE: impact \u00d7 user_value \u00d7 confidence / (effort + risk + 1)",
+      "campaign": null,
+      "expected_value": null,
+      "risk": 3,
+      "created_at": "2026-10-08T02:08:38+00:00",
+      "started_at": "2026-10-08T02:48:08+00:00",
+      "completed_at": "2026-10-08T03:03:52+00:00",
+      "result": "Reviewed repair1e7f6d1 pushed PR5. All24 realbrowser menu/file workflows pass (6widths,fine/coarse,dev/built); Node22unit1527/1527,budgets15/15,types/lint/builds pass,audit0. No merge/deploy; required remoteCI remains billing blocked.",
+      "attempts": 1,
+      "owner": null,
+      "lease_until": null,
+      "result_evidence": {
+        "path": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-project-menu-20261007/README.md",
+        "recorded_at": "2026-10-08T03:03:52+00:00",
+        "bytes": 3382
+      }
+    },
+    {
+      "task_id": "CORE-STEM-AUD-006",
+      "title": "Qualify process-crash and storage-exhaustion recovery",
+      "product": "stemdeck",
+      "area": "workflow_gap",
+      "category": "workflow_gap",
+      "workstream": "CORE_PRODUCT_LAB",
+      "severity": "P1",
+      "scores": {
+        "impact": 10,
+        "severity": 9,
+        "workflow_importance": 10,
+        "competitive_value": 7,
+        "release_importance": 10,
+        "confidence": 9,
+        "effort": 6,
+        "risk": 4,
+        "user_value": 10
+      },
+      "dependencies": [],
+      "status": "COMPLETE",
+      "model": "gpt-6.1-sol",
+      "expected_value": "Flagship golden-workflow reliability; scores are planning estimates, not health metrics.",
+      "test_requirements": "Reproduce on isolated exact source; preserve baseline/fixed evidence, appropriate build/tests and golden path; source reading is not interactive sign-off.",
+      "source_evidence": [
+        "docs/PROFESSIONAL_ACCEPTANCE.md",
+        "src/utils/audioProjectStore.js"
+      ],
+      "next_action": "Remote gate37716499019 pending. Preserve stack/provenance release gates; broader software golden/platform work remains queued, deferred for owner firstwave.",
+      "priority": 81.8182,
+      "priority_basis": "ESTIMATE: impact \u00d7 user_value \u00d7 confidence / (effort + risk + 1)",
+      "campaign": null,
+      "risk": 4,
+      "created_at": "2026-10-08T00:02:46+00:00",
+      "started_at": "2026-10-08T01:59:47+00:00",
+      "completed_at": "2026-10-08T02:10:05+00:00",
+      "result": "Scoped Chromium process-crash/browser-quota qualification completed and real blank-error defect fixed. Independent OpenAI reviewed f6f061c pushed PR29. Local245 files/2235 tests, types/build pass; actual SIGKILL preserves session/audio/journal and actual quota failure preserves backup/completed capture. No merge/deploy; hardware/physical-disk/full product gates unqualified.",
+      "attempts": 1,
+      "owner": null,
+      "lease_until": null,
+      "evidence_sources": [
+        "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-initial.md",
+        "/Users/agentsattari/thecreateco-company/core-product-lab/products/stemdeck.json"
+      ],
+      "result_evidence": {
+        "path": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-recovery-20261007.md",
+        "recorded_at": "2026-10-08T02:10:05+00:00",
+        "bytes": 4496
+      }
+    },
+    {
+      "task_id": "CORE-STEM-REPLAY-DEADLINE-001",
+      "title": "Diagnose and repair actual captured four-deck replay scheduling stop",
+      "product": "stemdeck",
+      "area": "core_workflow",
+      "category": "bug",
+      "workstream": "CORE_PRODUCT_LAB",
+      "severity": "P1",
+      "scores": {
+        "impact": 9,
+        "user_value": 10,
+        "confidence": 10,
+        "effort": 6,
+        "risk": 4
+      },
+      "dependencies": [],
+      "status": "NEEDS_REVIEW",
+      "model": "gpt-6.1-sol",
+      "expected_value": "Restore actual captured performance replay without discarding safety audio or loosening musical deadlines.",
+      "test_requirements": "Measure exact scheduler lateness, load and preparation/control queue bottleneck on owned captured fixture. Meaningful before/after tests; actual UI replay/print and PCM comparison; keep existing50ms grain deadline and mandatory soak unchanged. Independent OpenAI review before normal PR push.",
+      "source_evidence": [
+        "core-product-lab/reports/stemdeck-lifecycle-20261007/quiet-lifecycle/report.json",
+        "core-product-lab/reports/stemdeck-lifecycle-20261007/semantic-roundtrip/report.json"
+      ],
+      "next_action": "Parent independent OpenAI review exact6-file c15bb06 diff vsaf10e31, then normal feature push/PR stacked onPR33 if approved. Prepared PR body and all evidence retained. Do not bypass remote checks or retry billing outage. Continue queued CORE-STEM-WEBKIT-REFERENCE-001 after ownership/source coordination.",
+      "priority": 81.8182,
+      "priority_basis": "ESTIMATE: impact \u00d7 user_value \u00d7 confidence / (effort + risk + 1)",
+      "campaign": null,
+      "risk": 4,
+      "created_at": "2026-10-08T03:39:31+00:00",
+      "started_at": "2026-10-08T03:51:04+00:00",
+      "completed_at": null,
+      "result": "Local-only c15bb06 repairs measured acyclic path-enumeration stalls. Fresh npm ci, exact 2250-test mandatory gate/120-second soak, actual four-deck UI/production replay and39-asset archive roundtrip PASS; original/print middle PCM maximum error9.32e-9. Chromium/Firefox14/14; WebKit13/14 native reference decode failure retained. Independent parent review pending; not pushed, merged or deployed.",
+      "attempts": 1,
+      "owner": null,
+      "lease_until": null,
+      "result_evidence": {
+        "path": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/README.md",
+        "recorded_at": "2026-10-08T04:27:32+00:00",
+        "bytes": 8844
+      }
+    },
+    {
+      "task_id": "CORE-FORM-AUD-WF-001",
+      "title": "Qualify Sketch-to-independent-export golden workflow",
+      "product": "form",
+      "area": "workflow_gap",
+      "category": "workflow_gap",
+      "workstream": "CORE_PRODUCT_LAB",
+      "severity": "P1",
+      "scores": {
+        "impact": 9,
+        "severity": 8,
+        "workflow_importance": 10,
+        "release_importance": 10,
+        "confidence": 9,
+        "effort": 6,
+        "risk": 3,
+        "user_value": 10,
+        "competitive_value": 8
+      },
+      "dependencies": [],
+      "status": "BLOCKED",
+      "model": "gpt-6.1-sol",
+      "expected_value": "Flagship golden-workflow reliability; scores are planning estimates, not health metrics.",
+      "test_requirements": "Reproduce on isolated exact source; preserve baseline/fixed evidence, appropriate build/tests and golden path; source reading is not interactive sign-off.",
+      "source_evidence": {
+        "direct": [
+          "docs/RELEASE_ACCEPTANCE.md:40-50 and docs/RC_TEST_PLAN.md prescribe full save/close/reopen/export and external checks, but no current dated execution evidence was found during source audit."
+        ],
+        "hypothesis": [
+          "A user-visible defect may appear during actual qualification; no defect is asserted before reproduction."
+        ]
+      },
+      "next_action": "Resume broader constrained/multibody/refinement/recovery fixture and native artifact preparation; qualify exact supported native/recipientUI once artifact/signing/notary access exists. Keep mandatoryCI/stack gates; unrelated firstwave owners continue.",
+      "priority": 81.0,
+      "priority_basis": "ESTIMATE: impact \u00d7 user_value \u00d7 confidence / (effort + risk + 1)",
+      "campaign": null,
+      "risk": 3,
+      "created_at": "2026-10-08T00:02:45+00:00",
+      "started_at": "2026-10-08T03:10:15+00:00",
+      "completed_at": null,
+      "result": "Exact1e7f6d1 browser process restart/save-reopen-export subset PASS; nativeSTEP reader validates40x40x12mm solid/19200mm3 and independentGLB bytes/material match. Fullqualification BLOCKED: supportednative artifact/signingidentity/notarizationcredentials absent; broaderfixture/recovery still unverified. No merge/deploy.",
+      "attempts": 1,
+      "owner": null,
+      "lease_until": null,
+      "evidence_sources": [
+        "/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-initial.md",
+        "/Users/agentsattari/thecreateco-company/core-product-lab/products/form.json"
+      ],
+      "result_evidence": {
+        "path": "/Users/agentsattari/thecreateco-company/reports/form-golden-20261008T0310/README.md",
+        "recorded_at": "2026-10-08T03:18:50+00:00",
+        "bytes": 7278
+      }
+    },
+    {
+      "task_id": "CORE-STEM-AUD-002",
+      "title": "Qualify real perform \u2192 capture \u2192 replay \u2192 arrange lifecycle",
+      "product": "stemdeck",
+      "area": "workflow_gap",
+      "category": "workflow_gap",
+      "workstream": "CORE_PRODUCT_LAB",
+      "severity": "P1",
+      "scores": {
+        "impact": 10,
+        "severity": 8,
+        "workflow_importance": 10,
+        "competitive_value": 9,
+        "release_importance": 10,
+        "confidence": 9,
+        "effort": 8,
+        "risk": 4,
+        "user_value": 10
+      },
+      "dependencies": [],
+      "status": "BLOCKED",
+      "model": "gpt-6.1-sol",
+      "expected_value": "Flagship golden-workflow reliability; scores are planning estimates, not health metrics.",
+      "test_requirements": "Reproduce on isolated exact source; preserve baseline/fixed evidence, appropriate build/tests and golden path; source reading is not interactive sign-off.",
+      "source_evidence": [
+        "reports/stemdeck-golden-browser.json",
+        "docs/PROFESSIONAL_ACCEPTANCE.md"
+      ],
+      "next_action": "Claim CORE-STEM-REPLAY-DEADLINE-001 and measure/fix actual replay failure; later resolve WebKit storage and full physical/platform coverage. No merge/deploy with unresolved gates.",
+      "priority": 69.2308,
+      "priority_basis": "ESTIMATE: impact \u00d7 user_value \u00d7 confidence / (effort + risk + 1)",
+      "campaign": null,
+      "risk": 4,
+      "created_at": "2026-10-08T00:02:45+00:00",
+      "started_at": "2026-10-08T02:59:31+00:00",
+      "completed_at": null,
+      "result": "Scoped timing and exact-frame export repair af10e31 pushed PR33;2242-test exact local release gate and120s soak PASS. Actual41-asset portable restore/export PCM pass; full workflow FAIL from replay scheduling/source-read stop; WebKit asset storage setup unverified.",
+      "attempts": 1,
+      "owner": null,
+      "lease_until": null,
+      "evidence_sources": [
+        "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-initial.md",
+        "/Users/agentsattari/thecreateco-company/core-product-lab/products/stemdeck.json"
+      ],
+      "result_evidence": {
+        "path": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-lifecycle-20261007/README.md",
+        "recorded_at": "2026-10-08T03:51:04+00:00",
+        "bytes": 7975
+      }
+    },
+    {
+      "task_id": "CORE-SP-RECOVERY-001",
+      "title": "Qualify abrupt-exit, disk-pressure, and missing-media recovery journeys",
+      "product": "scenepilot",
+      "area": "workflow_gap",
+      "category": "workflow_gap",
+      "workstream": "CORE_PRODUCT_LAB",
+      "severity": "P1",
+      "scores": {
+        "impact": 9,
+        "severity": 8,
+        "workflow_importance": 9,
+        "competitive_value": 6,
+        "release_importance": 10,
+        "confidence": 9,
+        "effort": 6,
+        "risk": 4,
+        "user_value": 9
+      },
+      "dependencies": [],
+      "status": "NEEDS_REVIEW",
+      "model": "gpt-6.1-sol",
+      "expected_value": "Flagship golden-workflow reliability; scores are planning estimates, not health metrics.",
+      "test_requirements": "Reproduce on isolated exact source; preserve baseline/fixed evidence, appropriate build/tests and golden path; source reading is not interactive sign-off.",
+      "source_evidence": [
+        "docs/release-today-0.1.16.md explicitly lists abrupt termination, disk failure, and complete packaged relink UI sequence as NOT VERIFIED.",
+        "Deterministic project-store and render-queue-recovery tests exist; they are not the same as the missing packaged UI journeys."
+      ],
+      "next_action": "Review checkpoint then requeue remaining packaged/native-chooser/missing-main-source/UI-ENOSPC/kill-during-write qualification; preserve required PR94/downstack checks. No personal approval gate.",
+      "priority": 66.2727,
+      "priority_basis": "ESTIMATE: impact \u00d7 user_value \u00d7 confidence / (effort + risk + 1)",
+      "campaign": null,
+      "risk": 4,
+      "created_at": "2026-10-08T00:02:44+00:00",
+      "started_at": "2026-10-08T06:10:19+00:00",
+      "completed_at": null,
+      "result": "Resumable recovery checkpoint: independently reviewed c7d2b4f fixes offline sourcePath/folder/favorite/beatMap loss; pushed PR94 on PR93.1095units/types/lint/build and6exacthead Electron recovery/relink/permission-deniedchecks PASS; actual32MBENOSPC helper PASS. Full packaged/platform/UI-disk-pressure/kill-during-write and mandatory stack qualification UNVERIFIED.",
+      "attempts": 1,
+      "owner": null,
+      "lease_until": null,
+      "evidence_sources": [
+        "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-initial.md",
+        "/Users/agentsattari/thecreateco-company/core-product-lab/products/scenepilot.json"
+      ],
+      "result_evidence": {
+        "path": "/Users/agentsattari/thecreateco-company/reports/scenepilot-recovery-20261008/README.md",
+        "recorded_at": "2026-10-08T06:21:35+00:00",
+        "bytes": 6317
+      }
+    },
+    {
+      "task_id": "CORE-SP-SEC-002",
+      "title": "Triage and patch remaining shipped Electron/runtime and development-tool advisories",
+      "product": "scenepilot",
+      "area": "bug_reliability",
+      "category": "bug_reliability",
+      "workstream": "CORE_PRODUCT_LAB",
+      "severity": "P1",
+      "status": "COMPLETE",
+      "model": "gpt-6.1-sol",
+      "dependencies": [],
+      "scores": {
+        "impact": 9,
+        "user_value": 8,
+        "confidence": 9,
+        "effort": 4,
+        "risk": 5,
+        "severity": 8,
+        "workflow_importance": 8,
+        "competitive_value": 3,
+        "release_importance": 10
+      },
+      "expected_value": "Release-security risk reduction; estimates, not observed health. npm omit=dev excludes shipped Electron runtime.",
+      "source_evidence": [
+        "/Users/agentsattari/thecreateco-company/reports/2026-10-07-sp-security/report.md",
+        "/Users/agentsattari/thecreateco-company/reports/2026-10-07-sp-security/audit-final-all.json"
+      ],
+      "test_requirements": "Isolated source; preserve baseline advisories; targeted runtime-exposure triage and patched full audit, build/check/tests, desktop sandbox/preload/protocol smoke where available. Do not blindly downgrade Vinext.",
+      "next_action": "Continue residual exposure and normal stack release qualification; complete native golden/recovery/platform gates remain.",
+      "priority": 64.8,
+      "priority_basis": "ESTIMATE: impact \u00d7 user_value \u00d7 confidence / (effort + risk + 1)",
+      "campaign": null,
+      "risk": 5,
+      "created_at": "2026-10-08T00:15:39+00:00",
+      "started_at": "2026-10-08T02:27:24+00:00",
+      "completed_at": "2026-10-08T02:46:20+00:00",
+      "result": "Scoped runtime/tooling triage and compatible repairs reviewed and pushed PR91(5027e2d),PR92(528899c). Electron fourhighadvisories removed; tooling29\u219216groups. Fullverify1091/1091+QA twice passed and real sandboxedElectron startup passed. Notmerged/deployed; wholeproduct incomplete. Residual exposure tracked CORE-SP-SEC-RESIDUAL-001.",
+      "attempts": 1,
+      "owner": null,
+      "lease_until": null,
+      "result_evidence": {
+        "path": "/Users/agentsattari/thecreateco-company/reports/scenepilot-runtime-release18/README.md",
+        "recorded_at": "2026-10-08T02:46:20+00:00",
+        "bytes": 2570
+      }
+    },
+    {
+      "task_id": "CORE-STEM-WEBKIT-REFERENCE-001",
+      "title": "Qualify WebKit captured reference decode and real UI lossless fallback",
+      "product": "stemdeck",
+      "area": "supported_platforms",
+      "category": "bug",
+      "workstream": "CORE_PRODUCT_LAB",
+      "severity": "P1",
+      "status": "NEEDS_REVIEW",
+      "model": "gpt-6.1-sol",
+      "scores": {
+        "impact": 8,
+        "user_value": 9,
+        "confidence": 8,
+        "effort": 5,
+        "risk": 3
+      },
+      "dependencies": [],
+      "expected_value": "Establish dependable browser capture/reopen without silently relying on an undecodable compressed reference. Preserve authoritative lossless safety chunks and original events.",
+      "test_requirements": "Owned generated sources only. Reproduce persistent WebKit 26.5 MediaRecorder native decode failure; collect actual MIME/bytes/ffprobe and bounded product decoder evidence. Verify actual public UI capture/lossless fallback/save/reopen/export before labeling a core blocker or claiming compatibility. Keep failed native case and ephemeral Blob limitation explicit. No physical inputs or real user files. Independent OpenAI review before any source push.",
+      "source_evidence": [
+        "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/exact-platforms/report.json",
+        "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/webkit-storage-probe.json",
+        "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/webkit-persistent-storage-probe.json"
+      ],
+      "next_action": "Execute CORE-STEM-ARCHIVE-WEBKIT-001 with disk baseline, bounded detached storage, every-asset hash/real UI restart/PCM proof and independent OpenAI review; preserve parent stack and hosted gates.",
+      "priority": 64.0,
+      "priority_basis": "ESTIMATE: impact \u00d7 user_value \u00d7 confidence / (effort + risk + 1)",
+      "campaign": null,
+      "risk": 3,
+      "created_at": "2026-10-08T04:26:37+00:00",
+      "started_at": "2026-10-08T05:10:24+00:00",
+      "completed_at": null,
+      "result": "Bounded actual WebKit audit: native M4A decode fails but real product bounded decoder passes; actual capture/replay and explicit WAV same-profile restart/export pass. Fresh portable restoration fails byte identity/storage. Source unchanged; independent Sol diagnosis retained. P0 repair queued; no qualification, push, merge or deployment claimed.",
+      "attempts": 1,
+      "owner": null,
+      "lease_until": null,
+      "result_evidence": {
+        "path": "/Users/agentsattari/thecreateco-company/reports/stemdeck-webkit-reference-20261007/README.md",
+        "recorded_at": "2026-10-08T05:23:44+00:00",
+        "bytes": 10353
+      }
+    },
+    {
+      "task_id": "CORE-STEM-AUD-003",
+      "title": "Measure long-session audio deadlines and memory",
+      "product": "stemdeck",
+      "area": "performance_opportunity",
+      "category": "performance_opportunity",
+      "workstream": "CORE_PRODUCT_LAB",
+      "severity": "P1",
+      "scores": {
+        "impact": 9,
+        "severity": 8,
+        "workflow_importance": 10,
+        "competitive_value": 8,
+        "release_importance": 10,
+        "confidence": 9,
+        "effort": 8,
+        "risk": 4,
+        "user_value": 10
+      },
+      "dependencies": [],
+      "status": "BLOCKED",
+      "model": "gpt-6.1-sol",
+      "expected_value": "Flagship golden-workflow reliability; scores are planning estimates, not health metrics.",
+      "test_requirements": "Reproduce on isolated exact source; preserve baseline/fixed evidence, appropriate build/tests and golden path; source reading is not interactive sign-off.",
+      "source_evidence": [
+        "docs/SESSION_INTEGRITY_1_0.md",
+        "docs/PROFESSIONAL_ACCEPTANCE.md"
+      ],
+      "next_action": "Provide>=2838683648bytes safe recording headroom; rerun unchanged soak once. Qualify full normal/heavy profiles separately; physical series requires authorized equipment/media.",
+      "priority": 62.3077,
+      "priority_basis": "ESTIMATE: impact \u00d7 user_value \u00d7 confidence / (effort + risk + 1)",
+      "campaign": null,
+      "risk": 4,
+      "created_at": "2026-10-08T00:02:45+00:00",
+      "started_at": "2026-10-08T07:10:17+00:00",
+      "completed_at": null,
+      "result": "Unchanged120s soak refused before capture: available1229836288<required2838683648bytes. Targeted3files21tests pass; full normal/heavy and physical30/60/120min remain unverified. No source change or release.",
+      "attempts": 1,
+      "owner": null,
+      "lease_until": null,
+      "evidence_sources": [
+        "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-initial.md",
+        "/Users/agentsattari/thecreateco-company/core-product-lab/products/stemdeck.json"
+      ],
+      "result_evidence": {
+        "path": "/Users/agentsattari/thecreateco-company/reports/stemdeck-performance-20261008T0710/README.md",
+        "recorded_at": "2026-10-08T07:12:05+00:00",
+        "bytes": 4878
+      }
+    },
+    {
+      "task_id": "CORE-FORM-GARMENT-FIT-001",
+      "title": "Reproduce and reduce the current Form garment fit failure without relaxing proof gates",
+      "product": "form",
+      "category": "reliability",
+      "workstream": "CORE_PRODUCT_LAB",
+      "severity": "P1",
+      "model": "openai/gpt-6-luna",
+      "model_tier": "LUNA",
+      "token_budget": 18000,
+      "tool_budget": 50,
+      "context_token_budget": 18000,
+      "scores": {
+        "impact": 9,
+        "user_value": 9,
+        "confidence": 7,
+        "effort": 6,
+        "risk": 6
+      },
+      "source_evidence": "Form docs/GARMENT_STABILIZATION_2026-09-23.md: retained reference screen 0/45 complete fit cases; latest candidate source and unchanged proof thresholds must be checked",
+      "test_requirements": "Freeze exact latest Form candidate; reproduce representative upper-body/trouser/dress cases and retained 45-case matrix; identify a specific strain/contact root cause, make a scoped engine or topology repair only when causally supported, rerun unchanged gates and relevant browser save/reopen/export checks. Preserve failures and physical-validation unknowns.",
+      "acceptance_criteria": "Reviewable source-stamped evidence; no relaxed screen or false CLO/manufacturing claim; targeted improvement verified against representative cases without regression; full matrix and release gaps recorded.",
+      "constraints": "Do not overwrite active Form worktrees, bypass stacked PR/CI gates, deploy, or represent unmeasured fit as validated.",
+      "next_action": "Proceed with pattern-first scan-to-editable-draft milestone; preserve independent physical/visual/native/release gates.",
+      "status": "COMPLETE",
+      "dependencies": [],
+      "priority": 43.6154,
+      "priority_basis": "ESTIMATE: impact \u00d7 user_value \u00d7 confidence / (effort + risk + 1)",
+      "campaign": null,
+      "expected_value": null,
+      "risk": 6,
+      "created_at": "2026-10-09T16:28:46+00:00",
+      "started_at": "2026-10-09T16:28:51+00:00",
+      "completed_at": "2026-10-09T16:37:53+00:00",
+      "result": "Exact current Form candidate b5f8b08 passes unchanged 45/45 CPU garment numerical fit and engineering screens; September 0/45 is stale. No causal solver repair warranted. Physical sample validation remains 0/45; releaseReady false.",
+      "attempts": 1,
+      "owner": null,
+      "lease_until": null,
+      "result_evidence": {
+        "path": "/Users/agentsattari/thecreateco-company/reports/form-garment-20261009/PATTERN_FIRST_APP.md",
+        "recorded_at": "2026-10-09T16:37:53+00:00",
+        "bytes": 6239
+      }
+    },
+    {
+      "task_id": "CORE-FORM-AUD-SEC-002",
+      "title": "Triage remaining toolchain and Vinext runtime dependency advisories",
+      "product": "form",
+      "workstream": "CORE_PRODUCT_LAB",
+      "category": "bug/security",
+      "area": "bug/security",
+      "severity": "P1",
+      "model": "gpt-6.1-sol",
+      "scores": {
+        "impact": 7,
+        "severity": 7,
+        "workflow_importance": 4,
+        "release_importance": 8,
+        "confidence": 8,
+        "effort": 4,
+        "risk": 4,
+        "user_value": 5,
+        "competitive_value": 2
+      },
+      "dependencies": [],
+      "source_evidence": {
+        "direct": [
+          "Candidate full npm audit retains 15 high and 4 moderate package groups. Miniflare uses sharp 0.35.2. Cloudflare Worker ships Vinext app-router and separate /_vinext/image handler; package dev classification alone is not runtime reachability evidence."
+        ],
+        "hypothesis": [
+          "Whether reported Vinext/toolchain advisory paths enter deployed worker bundles is unverified."
+        ]
+      },
+      "evidence_sources": [
+        "/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-security-20261007/fixed-full-audit.json",
+        "/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-security-20261007/review.md"
+      ],
+      "test_requirements": "Reproduce exact-head clean install/full audit; map each advisory to deployed worker/dev/desktop paths. Patch compatible versions in isolated worktree, preserve baseline failures, rerun all affected builds/unit/golden subset and independent OpenAI review; no forced breaking updates or gate bypass.",
+      "next_action": "Resume remaining advisory remediation when compatible patched braces/tooling releases exist or independently reviewed replacement approach is concrete; exact-head audit/affected tests required. PR7 must retain downstack/mandatoryCI/native/deployed artifact gates. Worker binding repair is CORE-FORM-WORKER-IMAGE-BINDING-001.",
+      "expected_value": "Resolve evidenced remaining security triage without claiming dev-only classification makes bundled dependencies harmless; scores are planning estimates.",
+      "status": "BLOCKED",
+      "priority": 31.1111,
+      "priority_basis": "ESTIMATE: impact \u00d7 user_value \u00d7 confidence / (effort + risk + 1)",
+      "campaign": null,
+      "risk": 4,
+      "created_at": "2026-10-08T01:49:24+00:00",
+      "started_at": "2026-10-08T03:40:17+00:00",
+      "completed_at": null,
+      "result": "Reviewed dependency repair be1f727 pushed PR7 on PR5; full advisory groups19 to12 (high15 to8), production0; unit1527/1527,budgets15/15,types/lint/web/desktop builds and real synthetic lifecycle PASS. Remaining braces/glob/Vinext and Drizzle advisories unresolved; exact-head CI zero-step billing failure. Separate Worker image500 binding defect queued.",
+      "attempts": 1,
+      "owner": null,
+      "lease_until": null,
+      "result_evidence": {
+        "path": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-runtime-security-20261008T0340/README.md",
+        "recorded_at": "2026-10-08T03:51:46+00:00",
+        "bytes": 7156
+      }
+    },
+    {
+      "task_id": "FORM-GARMENT-APP-001",
+      "title": "Build dedicated pattern-first garment designer with scan-to-editable-pattern and pattern-to-3D workflows",
+      "product": "form",
+      "category": "product",
+      "workstream": "CORE_PRODUCT_LAB",
+      "severity": "P1",
+      "model": "openai/gpt-6-luna",
+      "model_tier": "LUNA",
+      "token_budget": 20000,
+      "tool_budget": 60,
+      "context_token_budget": 20000,
+      "scores": {
+        "impact": 9,
+        "user_value": 9,
+        "confidence": 6,
+        "effort": 8,
+        "risk": 7
+      },
+      "dependencies": [
+        "CORE-FORM-GARMENT-FIT-001"
+      ],
+      "source_evidence": "Armon Discord #general 2026-10-09 requires dedicated garment app, both workflows, with every accepted scan becoming an editable pattern. First category-specific draft contract is Form PR #10 (d42d25c), stacked on draft PR #9; report /Users/agentsattari/thecreateco-company/reports/form-garment-20261009/PATTERN_FIRST_APP.md.",
+      "test_requirements": "For every accepted scan fixture, import authorized front/back views, preserve original bytes, validate category and input quality, calibrate scale from a supplied measurement or explicitly mark unmeasured, produce an editable Form-compatible draft pattern with source links and inferred/edited/validated status for every piece and seam, then save/close/reopen and export the pattern. Also prove authored-pattern-to-3D drape and scan-to-visualization roundtrips, deterministic regeneration, independent DXF/PDF/3D parsing, unsupported/incomplete input refusal, visual comparison, accessibility and responsive UI. Include category-stratified fixture corpus and non-regression checks; do not equate silhouette shells with sewing construction.",
+      "acceptance_criteria": "Pattern is the primary scan output: 100% of accepted scans produce editable, source-linked draft pattern pieces and reviewable missing-evidence flags; no accepted scan may silently end only as image/mesh. Unsupported or insufficient inputs receive actionable needs-input status, not a fabricated validated pattern. Pattern edits propagate to 3D preview; original photos remain preserved; fit/manufacturing claims require measured dimensions, construction and physical sample evidence. Both scan and manual pattern entry workflows complete save/reopen/export proof.",
+      "constraints": "Keep Form/Ghost source and user data safe. Prefer versioned core/interface over divergent solver copies; do not bypass active PR/CI, merge or deploy. Inferred pattern is not a production cutting pattern until measured and reviewed. Preserve source images, coordinate/scale provenance and correction history.",
+      "next_action": "Review the local slice; then continue with decoded-image validation, front/back upload and trace UI, asset-to-scanEvidence links, and save/reopen/export workflow. Hosted CI remains blocked before job start by GitHub billing/spending-limit status; do not bypass PR/release gates.",
+      "status": "NEEDS_REVIEW",
+      "priority": 30.375,
+      "priority_basis": "ESTIMATE: impact \u00d7 user_value \u00d7 confidence / (effort + risk + 1)",
+      "campaign": null,
+      "expected_value": null,
+      "risk": 7,
+      "created_at": "2026-10-09T16:28:48+00:00",
+      "started_at": "2026-10-09T16:49:47+00:00",
+      "completed_at": null,
+      "result": "Completed a bounded source-image custody slice for the pattern-first garment task: exact PNG/JPEG/WebP bytes are embedded as versioned Form project assets with SHA-256/view provenance and duplicate/size guards. 13 focused source/pattern/project tests pass; typecheck, targeted lint, build and independent Sol review pass. This is not an end-user scan workflow and does not complete the app.",
+      "attempts": 1,
+      "owner": null,
+      "lease_until": null,
+      "result_evidence": {
+        "path": "/Users/agentsattari/thecreateco-company/reports/form-garment-20261009/SOURCE_ASSET_CUSTODY_SLICE.md",
+        "recorded_at": "2026-10-09T16:53:30+00:00",
+        "bytes": 2925
+      }
+    },
+    {
+      "task_id": "CORE-FORM-AUD-REL-001",
+      "title": "Reconcile release maturity and evidence date",
+      "product": "form",
+      "area": "workflow_gap",
+      "category": "workflow_gap",
+      "workstream": "CORE_PRODUCT_LAB",
+      "severity": "P2",
+      "scores": {
+        "impact": 7,
+        "severity": 6,
+        "workflow_importance": 7,
+        "release_importance": 9,
+        "confidence": 10,
+        "effort": 2,
+        "risk": 2,
+        "user_value": 7,
+        "competitive_value": 5
+      },
+      "dependencies": [],
+      "status": "COMPLETE",
+      "model": "gpt-6-luna",
+      "expected_value": "Flagship golden-workflow reliability; scores are planning estimates, not health metrics.",
+      "test_requirements": "Reproduce on isolated exact source; preserve baseline/fixed evidence, appropriate build/tests and golden path; source reading is not interactive sign-off.",
+      "source_evidence": {
+        "direct": [
+          "README.md:5 calls 0.40 active beta; KNOWN_ISSUES.md title calls 0.40.0 RC1; PRODUCTION_READINESS.md:5 last audited 2026-08-26; generated product registry reported ALPHA on 2026-10-07."
+        ],
+        "hypothesis": []
+      },
+      "next_action": "Resume queued Worker image binding repair and residual qualification; restore mandatory CI and qualify exact-head downstack before merge/deploy.",
+      "priority": 98.0,
+      "priority_basis": "ESTIMATE: impact \u00d7 user_value \u00d7 confidence / (effort + risk + 1)",
+      "campaign": null,
+      "risk": 2,
+      "created_at": "2026-10-08T00:02:45+00:00",
+      "started_at": "2026-10-08T04:10:30+00:00",
+      "completed_at": "2026-10-08T04:12:20+00:00",
+      "result": "Reconciled dated maturity/source/PR evidence; ALPHA retained, PR7 candidate pinned, parallel PR6 and mandatory CI/native/full-workflow blockers explicit. Eight metadata assertions pass; no product release claimed.",
+      "attempts": 1,
+      "owner": null,
+      "lease_until": null,
+      "evidence_sources": [
+        "/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-initial.md",
+        "/Users/agentsattari/thecreateco-company/core-product-lab/products/form.json"
+      ],
+      "result_evidence": {
+        "path": "/Users/agentsattari/thecreateco-company/reports/form-release-reconciliation-20261008T0410/README.md",
+        "recorded_at": "2026-10-08T04:12:20+00:00",
+        "bytes": 4513
+      }
+    },
+    {
+      "task_id": "CORE-SP-WORKFLOW-001",
+      "title": "Qualify complete generated-media golden workflow in Lite and Desktop Pro",
+      "product": "scenepilot",
+      "area": "workflow_gap",
+      "category": "workflow_gap",
+      "workstream": "CORE_PRODUCT_LAB",
+      "severity": "P2",
+      "scores": {
+        "impact": 9,
+        "severity": 7,
+        "workflow_importance": 10,
+        "competitive_value": 8,
+        "release_importance": 10,
+        "confidence": 10,
+        "effort": 7,
+        "risk": 3,
+        "user_value": 10
+      },
+      "dependencies": [],
+      "status": "BLOCKED",
+      "model": "gpt-6-luna",
+      "expected_value": "Flagship golden-workflow reliability; scores are planning estimates, not health metrics.",
+      "test_requirements": "Reproduce on isolated exact source; preserve baseline/fixed evidence, appropriate build/tests and golden path; source reading is not interactive sign-off.",
+      "source_evidence": [
+        "Brief requires Import\u2192Edit\u2192Composite/Animate\u2192Audio\u2192Save\u2192Reopen\u2192Export.",
+        "Historical docs/release-today-0.1.16.md marks multiple full UI, relink, recovery, export-picker, and perceptual checks NOT VERIFIED.",
+        "/Users/agentsattari/thecreateco-company/core-product-lab/golden-projects/scenepilot.md is a recipe only; fixture not created or run."
+      ],
+      "next_action": "Resume remaining UI-authored Lite/Pro audiovisual recipe and exact independent/perceptual comparisons from dated fixtures; full completion requires signed packaged Pro/native chooser qualification. Mandatory hosted/reviewed stack gates before landing. No personal-signoff gate.",
+      "priority": 81.8182,
+      "priority_basis": "ESTIMATE: impact \u00d7 user_value \u00d7 confidence / (effort + risk + 1)",
+      "campaign": null,
+      "risk": 3,
+      "created_at": "2026-10-08T00:02:44+00:00",
+      "started_at": "2026-10-08T07:40:20+00:00",
+      "completed_at": null,
+      "result": "Reviewed Lite menu clipping repair c26d518 pushed PR95 on PR94;1095tests/build/check,6 rebuiltElectron checks,2 menu viewports,4 Lite lifecycle checks PASS;three baseline desktop12s composite runs/42 independent sampled output checks PASS. Full golden remains unqualified.",
+      "attempts": 2,
+      "owner": null,
+      "lease_until": null,
+      "evidence_sources": [
+        "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-initial.md",
+        "/Users/agentsattari/thecreateco-company/core-product-lab/products/scenepilot.json"
+      ],
+      "result_evidence": {
+        "path": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-golden-20261008T0740/README.md",
+        "recorded_at": "2026-10-08T08:07:32+00:00",
+        "bytes": 7644
+      }
+    },
+    {
+      "task_id": "CORE-LUMA-AUD-002",
+      "title": "Qualify current-source import-through-export golden workflow",
+      "product": "luma",
+      "area": "workflow_gap",
+      "category": "workflow_gap",
+      "workstream": "CORE_PRODUCT_LAB",
+      "severity": "P2",
+      "scores": {
+        "impact": 8,
+        "severity": 7,
+        "workflow_importance": 10,
+        "competitive_value": 8,
+        "release_importance": 10,
+        "confidence": 9,
+        "effort": 7,
+        "risk": 3,
+        "user_value": 10
+      },
+      "dependencies": [
+        "CORE-LUMA-EXPORT-COLOR-001"
+      ],
+      "status": "BLOCKED",
+      "model": "gpt-6.1-sol",
+      "expected_value": "Flagship golden-workflow reliability; scores are planning estimates, not health metrics.",
+      "test_requirements": "Reproduce on isolated exact source; preserve baseline/fixed evidence, appropriate build/tests and golden path; source reading is not interactive sign-off.",
+      "source_evidence": [
+        "node build/check-release-evidence.mjs status: 1/10; source-bound local qualification and compatibility corpus evidence missing",
+        "interactive workflow not run in this audit",
+        "golden-projects/luma.md defines the fixture and acceptance receipt"
+      ],
+      "next_action": "Continue queued CORE-LUMA-ADJUSTMENT-VARIANTS-001 independently. Resume full golden on actual packaged/native supported-platform environment and qualified failure paths; account owner resolves hosted billing, then normal mandatory checks without bypass. P01 source/live provenance still required.",
+      "priority": 65.4545,
+      "priority_basis": "ESTIMATE: impact \u00d7 user_value \u00d7 confidence / (effort + risk + 1)",
+      "campaign": null,
+      "risk": 3,
+      "created_at": "2026-10-08T00:02:44+00:00",
+      "started_at": "2026-10-08T03:33:14+00:00",
+      "completed_at": null,
+      "result": "Reviewed PR8 d18aef5 pushed, not merged/deployed. Layered actual browser13 checks pass; independent pixels RGB<=2 alpha0 and exact save/reopen/history.1404 engine/4 rendered/9 native-core/28 bridge pass; types/lints/three builds/audit0. Full golden not complete: native packaged GUI/physical platforms and missing-file/OS-write-failure campaigns need actual environment; mask-toggle/thumbnail semantics and adjustment variants remain unverified. Mandatory hosted3jobs0steps billing.",
+      "attempts": 1,
+      "owner": null,
+      "lease_until": null,
+      "evidence_sources": [
+        "/Users/agentsattari/thecreateco-company/core-product-lab/reports/luma-initial.md",
+        "/Users/agentsattari/thecreateco-company/core-product-lab/products/luma.json"
+      ],
+      "result_evidence": {
+        "path": "/Users/agentsattari/thecreateco-company/reports/luma-golden-20261007/completion-observation.json",
+        "recorded_at": "2026-10-08T04:06:26+00:00",
+        "bytes": 2715
+      }
+    },
+    {
+      "task_id": "CORE-STEM-AUD-010",
+      "title": "Establish independent output/mastering vectors",
+      "product": "stemdeck",
+      "area": "professional_feature_gap",
+      "category": "professional_feature_gap",
+      "workstream": "CORE_PRODUCT_LAB",
+      "severity": "P2",
+      "scores": {
+        "impact": 8,
+        "severity": 7,
+        "workflow_importance": 9,
+        "competitive_value": 7,
+        "release_importance": 9,
+        "confidence": 9,
+        "effort": 6,
+        "risk": 3,
+        "user_value": 9
+      },
+      "dependencies": [],
+      "status": "COMPLETE",
+      "model": "gpt-6-luna",
+      "expected_value": "Flagship golden-workflow reliability; scores are planning estimates, not health metrics.",
+      "test_requirements": "Reproduce on isolated exact source; preserve baseline/fixed evidence, appropriate build/tests and golden path; source reading is not interactive sign-off.",
+      "source_evidence": [
+        "docs/PROFESSIONAL_ACCEPTANCE.md",
+        "reports/stemdeck-golden-browser.json"
+      ],
+      "next_action": "Retain negative mastering vectors; expand phase/rate/musical/platform qualification and resume existing exact6bad mandatory gate only with adequate disk; preserve hostedCI/stack release holds.",
+      "priority": 64.8,
+      "priority_basis": "ESTIMATE: impact \u00d7 user_value \u00d7 confidence / (effort + risk + 1)",
+      "campaign": null,
+      "risk": 3,
+      "created_at": "2026-10-08T00:02:46+00:00",
+      "started_at": "2026-10-08T08:10:24+00:00",
+      "completed_at": "2026-10-08T08:21:02+00:00",
+      "result": "Scoped independent mastering audit complete at6bad0ed:32unit/9browser baseline passes;8actual export/FFmpeg oracle passes and2retained driven-limiter clipping refusals. Four overshoot/reduced-input diagnostics pass; original qualification remainsFAIL. Independent OpenAI-context evidence review accepted audit scope, no code or release changes.",
+      "attempts": 1,
+      "owner": null,
+      "lease_until": null,
+      "evidence_sources": [
+        "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-initial.md",
+        "/Users/agentsattari/thecreateco-company/core-product-lab/products/stemdeck.json"
+      ],
+      "result_evidence": {
+        "path": "/Users/agentsattari/thecreateco-company/reports/stemdeck-mastering-20261008T0810/README.md",
+        "recorded_at": "2026-10-08T08:21:02+00:00",
+        "bytes": 8677
+      }
+    },
+    {
+      "task_id": "CORE-STEM-AUD-005",
+      "title": "Complete source/action reconstruction support matrix",
+      "product": "stemdeck",
+      "area": "professional_feature_gap",
+      "category": "professional_feature_gap",
+      "workstream": "CORE_PRODUCT_LAB",
+      "severity": "P2",
+      "scores": {
+        "impact": 9,
+        "severity": 7,
+        "workflow_importance": 10,
+        "competitive_value": 9,
+        "release_importance": 9,
+        "confidence": 10,
+        "effort": 8,
+        "risk": 5,
+        "user_value": 10
+      },
+      "dependencies": [],
+      "status": "BLOCKED",
+      "model": "gpt-6-luna",
+      "expected_value": "Flagship golden-workflow reliability; scores are planning estimates, not health metrics.",
+      "test_requirements": "Reproduce on isolated exact source; preserve baseline/fixed evidence, appropriate build/tests and golden path; source reading is not interactive sign-off.",
+      "source_evidence": [
+        "reports/stemdeck-matrix.log"
+      ],
+      "next_action": "Provide>=2838683648 free bytes; resume actual mixer capture/replay PCM/arrangement render/process-reopen/independent WAV verification preserving print/events. Source/test/docs independent review passed; normal hosted/downstack gates remain.",
+      "priority": 64.2857,
+      "priority_basis": "ESTIMATE: impact \u00d7 user_value \u00d7 confidence / (effort + risk + 1)",
+      "campaign": null,
+      "risk": 5,
+      "created_at": "2026-10-08T00:02:46+00:00",
+      "started_at": "2026-10-08T09:10:20+00:00",
+      "completed_at": null,
+      "result": "Scoped20-row source audit and independently reviewed mixer test/docs checkpoint b26c03b pushed PR35 onPR34;71tests10files PASS. Full actual action-family parity blocked: free187310080bytes<unchanged2838683648-byte mandatory reservation. No product PASS/merge/deploy.",
+      "attempts": 1,
+      "owner": null,
+      "lease_until": null,
+      "evidence_sources": [
+        "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-initial.md",
+        "/Users/agentsattari/thecreateco-company/core-product-lab/products/stemdeck.json"
+      ],
+      "result_evidence": {
+        "path": "/Users/agentsattari/thecreateco-company/reports/stemdeck-support-20261008T0910/README.md",
+        "recorded_at": "2026-10-08T09:18:04+00:00",
+        "bytes": 6868
+      }
+    },
+    {
+      "task_id": "CORE-FORM-AUD-PERF-001",
+      "title": "Add current interactive and project lifecycle performance budgets",
+      "product": "form",
+      "area": "performance",
+      "category": "performance",
+      "workstream": "CORE_PRODUCT_LAB",
+      "severity": "P2",
+      "scores": {
+        "impact": 8,
+        "severity": 7,
+        "workflow_importance": 8,
+        "release_importance": 8,
+        "confidence": 9,
+        "effort": 5,
+        "risk": 3,
+        "user_value": 8,
+        "competitive_value": 7
+      },
+      "dependencies": [],
+      "status": "BLOCKED",
+      "model": "gpt-6-luna",
+      "expected_value": "Flagship golden-workflow reliability; scores are planning estimates, not health metrics.",
+      "test_requirements": "Reproduce on isolated exact source; preserve baseline/fixed evidence, appropriate build/tests and golden path; source reading is not interactive sign-off.",
+      "source_evidence": {
+        "direct": [
+          "docs/PERFORMANCE_BUDGETS.md:12-31 lists historical native CAD/cloth gates and missing viewport/input, startup/open/save, cancellation and peak-memory budgets; KNOWN_ISSUES.md:28-32 reports multi-second dense rebuilds."
+        ],
+        "hypothesis": [
+          "Current released build may have performance regressions or headroom improvements; no fresh product benchmark was run."
+        ]
+      },
+      "next_action": "Resume same task after adequate verified free capacity for isolated checkout/dependencies/builds/artifacts and supported noncompeting benchmark hardware; retain existing branch at be1f727 and requeue through CLI.",
+      "priority": 64.0,
+      "priority_basis": "ESTIMATE: impact \u00d7 user_value \u00d7 confidence / (effort + risk + 1)",
+      "campaign": null,
+      "risk": 3,
+      "created_at": "2026-10-08T00:02:45+00:00",
+      "started_at": "2026-10-08T09:40:24+00:00",
+      "completed_at": null,
+      "result": "Exact-source isolated worktree checkout failed ENOSPC; 130396KiB available at100% capacity. No benchmarks/builds/tests/dogfood or source modifications. Failure and environment retained.",
+      "attempts": 1,
+      "owner": null,
+      "lease_until": null,
+      "evidence_sources": [
+        "/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-initial.md",
+        "/Users/agentsattari/thecreateco-company/core-product-lab/products/form.json"
+      ],
+      "result_evidence": {
+        "path": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-performance-20261008T0940/README.md",
+        "recorded_at": "2026-10-08T09:41:51+00:00",
+        "bytes": 3171
+      }
+    },
+    {
+      "task_id": "CORE-SP-PERF-001",
+      "title": "Measure real-media playback/export memory envelope and long-session performance",
+      "product": "scenepilot",
+      "area": "performance_opportunity",
+      "category": "performance_opportunity",
+      "workstream": "CORE_PRODUCT_LAB",
+      "severity": "P2",
+      "scores": {
+        "impact": 9,
+        "severity": 7,
+        "workflow_importance": 9,
+        "competitive_value": 7,
+        "release_importance": 10,
+        "confidence": 9,
+        "effort": 8,
+        "risk": 4,
+        "user_value": 9
+      },
+      "dependencies": [],
+      "status": "BLOCKED",
+      "model": "gpt-6-luna",
+      "expected_value": "Flagship golden-workflow reliability; scores are planning estimates, not health metrics.",
+      "test_requirements": "Reproduce on isolated exact source; preserve baseline/fixed evidence, appropriate build/tests and golden path; source reading is not interactive sign-off.",
+      "source_evidence": {
+        "capacity_recheck": "reports/company-os-20261009/scheduled-proof.md",
+        "previous_evidence": [
+          "npm run qa:performance passed at /Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-evidence/performance-benchmark.log with measured synthetic timing values in the report.",
+          "docs/release-today-0.1.16.md explicitly leaves sustained real-footage 4K, low-memory devices, multi-hour memory growth and path-backed export size envelope unverified."
+        ]
+      },
+      "next_action": "Restore lockfile-pinned Electron43.7.9 in isolated dependency environment and verify executable; run bounded linked-media gate preserving failure evidence. Then qualify rights-cleared representative media, exact built app artifacts, app-process-tree memory/playback/export and durable long-session ownership. Keep hosted/stack/native gates intact; no duplicate task.",
+      "priority": 56.0769,
+      "priority_basis": "ESTIMATE: impact \u00d7 user_value \u00d7 confidence / (effort + risk + 1)",
+      "campaign": null,
+      "risk": 4,
+      "created_at": "2026-10-08T00:02:44+00:00",
+      "started_at": "2026-10-09T07:40:21+00:00",
+      "completed_at": null,
+      "result": "Three exact c26d518 synthetic benchmark repetitions PASS; linked-media exit127 electron missing. Real-media playback/export/app-process-tree and long-session qualification unverified. Clean isolated source; no release actions.",
+      "attempts": 2,
+      "owner": null,
+      "lease_until": null,
+      "evidence_sources": [
+        "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-initial.md",
+        "/Users/agentsattari/thecreateco-company/core-product-lab/products/scenepilot.json"
+      ],
+      "result_evidence": {
+        "path": "/Users/agentsattari/thecreateco-company/reports/scenepilot-performance-20261009T0740/README.md",
+        "recorded_at": "2026-10-09T07:43:29+00:00",
+        "bytes": 9220
+      },
+      "token_budget": 8000,
+      "tool_budget": 60
+    },
+    {
+      "task_id": "CORE-LUMA-EXPORT-COLOR-001",
+      "title": "Preserve unedited raster RGB through CPU PNG export",
+      "product": "luma",
+      "area": "output_fidelity",
+      "category": "bug",
+      "workstream": "CORE_PRODUCT_LAB",
+      "severity": "P2",
+      "model": "gpt-6.1-sol",
+      "status": "COMPLETE",
+      "dependencies": [],
+      "scores": {
+        "impact": 7,
+        "user_value": 8,
+        "strategic_value": 7,
+        "urgency": 6,
+        "confidence": 9,
+        "effort": 5,
+        "risk": 4
+      },
+      "expected_value": "Prevent color changes on unedited images and meet explicit output-fidelity gate; severity/priority are planning estimates.",
+      "test_requirements": "Source-controlled regression using retained synthetic2048x1536 fixture. Source PNG\u2192browser\u2192imported bitmap exact; CPU export must meet fixed maxRGB2/alpha0 tolerance, do not loosen without justified independent semantics. Test opaque/partial alpha, repeated export and save/reopen.",
+      "source_evidence": [
+        "reports/luma-completion-2026-10-07/color-diagnostic.json",
+        "reports/luma-completion-2026-10-07/golden/report.json"
+      ],
+      "next_action": "Continue full layered/masked/adjusted golden and native/platform/recovery qualification; account owner restores mandatory Actions execution; reconcile stack/live provenance before any release.",
+      "priority": 50.4,
+      "priority_basis": "ESTIMATE: impact \u00d7 user_value \u00d7 confidence / (effort + risk + 1)",
+      "campaign": null,
+      "risk": 4,
+      "created_at": "2026-10-08T02:09:17+00:00",
+      "started_at": "2026-10-08T03:06:24+00:00",
+      "completed_at": "2026-10-08T03:31:57+00:00",
+      "result": "Reviewed d4e7223 pushed PR7 abovePR6: fixed linear-rgba8 CPU RGB7 drift to RGB0; fixed stale bitmap after32-to8 conversion and actual browser save pointer/keyboard confirmation deadlocks. Exact clean Node22 types/strict+full lint/three builds/1393pass10skip/rendered4; audit production0;15 actual Chrome154 PNG/archive/keyboard checks pass. Narrow source task complete, product NOT complete. Mandatory3hostedjobs0steps due billing; no merge/deployment.",
+      "attempts": 1,
+      "owner": null,
+      "lease_until": null,
+      "result_evidence": {
+        "path": "/Users/agentsattari/thecreateco-company/reports/luma-color-20261007/README.md",
+        "recorded_at": "2026-10-08T03:31:57+00:00",
+        "bytes": 4414
+      }
+    },
+    {
+      "task_id": "CORE-STEM-AUD-008",
+      "title": "Qualify mobile/browser session portability",
+      "product": "stemdeck",
+      "area": "workflow_gap",
+      "category": "workflow_gap",
+      "workstream": "CORE_PRODUCT_LAB",
+      "severity": "P2",
+      "scores": {
+        "impact": 8,
+        "severity": 6,
+        "workflow_importance": 8,
+        "competitive_value": 7,
+        "release_importance": 8,
+        "confidence": 9,
+        "effort": 7,
+        "risk": 4,
+        "user_value": 8
+      },
+      "dependencies": [],
+      "status": "BLOCKED",
+      "model": "gpt-6-luna",
+      "expected_value": "Flagship golden-workflow reliability; scores are planning estimates, not health metrics.",
+      "test_requirements": "Reproduce on isolated exact source; preserve baseline/fixed evidence, appropriate build/tests and golden path; source reading is not interactive sign-off.",
+      "source_evidence": [
+        "reports/stemdeck-ui/report.json",
+        "docs/PROFESSIONAL_ACCEPTANCE.md"
+      ],
+      "next_action": "Reuse task after authorized actual supported Safari/iOS/Android environment and sufficient headroom; qualify full session state, sound-changing post-restart edit, return archive transfer and in-flight interruption preservation. Preserve mandatory hosted/stack/release gates.",
+      "priority": 48.0,
+      "priority_basis": "ESTIMATE: impact \u00d7 user_value \u00d7 confidence / (effort + risk + 1)",
+      "campaign": null,
+      "risk": 4,
+      "created_at": "2026-10-08T00:02:46+00:00",
+      "started_at": "2026-10-08T11:40:23+00:00",
+      "completed_at": null,
+      "result": "Exact b26c03b three-engine39-asset/state/edit/restart qualification; Firefox/WebKit byte-identical exports PASS, Chromium strict byte mismatch max1LSB below existing2e-6 PCM tolerance retained FAIL.40tests/build PASS. Independent OpenAI evidence audit; full state/physical mobile/interruption unqualified.",
+      "attempts": 1,
+      "owner": null,
+      "lease_until": null,
+      "evidence_sources": [
+        "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-initial.md",
+        "/Users/agentsattari/thecreateco-company/core-product-lab/products/stemdeck.json"
+      ],
+      "result_evidence": {
+        "path": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-portability-20261008/README.md",
+        "recorded_at": "2026-10-08T11:48:30+00:00",
+        "bytes": 8624
+      }
+    },
+    {
+      "task_id": "CORE-FORM-AUD-WF-002",
+      "title": "Qualify separate CAD and Rig persistence/history handoffs",
+      "product": "form",
+      "area": "workflow_gap",
+      "category": "workflow_gap",
+      "workstream": "CORE_PRODUCT_LAB",
+      "severity": "P2",
+      "scores": {
+        "impact": 8,
+        "severity": 7,
+        "workflow_importance": 8,
+        "release_importance": 8,
+        "confidence": 8,
+        "effort": 6,
+        "risk": 4,
+        "user_value": 8,
+        "competitive_value": 7
+      },
+      "dependencies": [],
+      "status": "BLOCKED",
+      "model": "gpt-6-luna",
+      "expected_value": "Flagship golden-workflow reliability; scores are planning estimates, not health metrics.",
+      "test_requirements": "Reproduce on isolated exact source; preserve baseline/fixed evidence, appropriate build/tests and golden path; source reading is not interactive sign-off.",
+      "source_evidence": {
+        "direct": [
+          "app/PARKED.md:14-19 documents separate CAD/Rig schemas and recovery channels with explicit handoff; source includes individual workflow tests but no full cross-workspace close/reopen qualification was run."
+        ],
+        "hypothesis": [
+          "Users may expect more transparent cross-workspace persistence than current explicit boundary provides; usability impact not measured."
+        ]
+      },
+      "next_action": "Investigate extra navigation-only history checkpoint through CORE-FORM-HANDOFF-HISTORY-001; resume exact supported-native cross-channel recovery and linked/garment handoff variants when artifact/access exists. Preserve PR8/PR7/PR5 gates and firstwave priorities.",
+      "priority": 46.5455,
+      "priority_basis": "ESTIMATE: impact \u00d7 user_value \u00d7 confidence / (effort + risk + 1)",
+      "campaign": null,
+      "risk": 4,
+      "created_at": "2026-10-08T00:02:45+00:00",
+      "started_at": "2026-10-08T12:10:32+00:00",
+      "completed_at": null,
+      "result": "Exact779d61d independently Sol-reviewed docs pushed PR8 onPR7;42focused unit/4mocked integration/12builtChromium checks and frontend build PASS. Full native handoff/recovery qualification BLOCKED: exact supported app/DMG, DeveloperID signing identity and notarization access missing; hosted mandatory checks billing-blocked. Two-step navigation Undo observation queued for scoped investigation. Not merged/deployed/product complete.",
+      "attempts": 1,
+      "owner": null,
+      "lease_until": null,
+      "evidence_sources": [
+        "/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-initial.md",
+        "/Users/agentsattari/thecreateco-company/core-product-lab/products/form.json"
+      ],
+      "result_evidence": {
+        "path": "/Users/agentsattari/thecreateco-company/reports/form-handoff-20261008T1210/README.md",
+        "recorded_at": "2026-10-08T12:28:18+00:00",
+        "bytes": 10766
+      }
+    },
+    {
+      "task_id": "CORE-LUMA-ADJUSTMENT-VARIANTS-001",
+      "title": "Qualify partial-opacity, masked and styled adjustment alpha semantics",
+      "product": "luma",
+      "workstream": "CORE_PRODUCT_LAB",
+      "category": "workflow_gap",
+      "severity": "P2",
+      "model": "gpt-6.1-sol",
+      "scores": {
+        "impact": 7,
+        "user_value": 8,
+        "confidence": 8,
+        "effort": 5,
+        "risk": 4
+      },
+      "expected_value": "Prevent transparency changes in non-default adjustment variants; this is uncovered scope, not a measured universal failure.",
+      "source_evidence": {
+        "capacity_recheck": "reports/company-os-20261009/scheduled-proof.md",
+        "previous_evidence": [
+          "reports/luma-golden-20261007/README.md",
+          "https://github.com/armonon/luma-studio/pull/8"
+        ]
+      },
+      "next_action": "Resume with compositor repair for legacy non-normal/multipass/transparent-style coverage. Retain new failing oracle; add regression tests and obtain independent OpenAI review, then rerun exact-head types/build/archive/browser checks. Separate fullUI/native/hosted/stack gates remain; no billing retries or gate bypass.",
+      "status": "BLOCKED",
+      "dependencies": [],
+      "priority": 44.8,
+      "priority_basis": "ESTIMATE: impact \u00d7 user_value \u00d7 confidence / (effort + risk + 1)",
+      "campaign": null,
+      "risk": 4,
+      "created_at": "2026-10-08T04:06:26+00:00",
+      "started_at": "2026-10-09T09:40:20+00:00",
+      "completed_at": null,
+      "result": "Sol-directed Luna exact8c15f85 qualification: Vinext build/types,7focused tests,24Chromium renderer cases PASS; new alpha oracle FAIL6/15 in Multiply/multipass/no-op style. Synthetic archive reopen preserves alpha160->220 defect. No source change/push/merge/deploy; hosted/native/fullUI gates unresolved.",
+      "attempts": 3,
+      "owner": null,
+      "lease_until": null,
+      "result_evidence": {
+        "path": "/Users/agentsattari/thecreateco-company/reports/luma-adjustment-20261009T0940/README.md",
+        "recorded_at": "2026-10-09T09:45:13+00:00",
+        "bytes": 5467
+      },
+      "token_budget": 20000,
+      "tool_budget": 60
+    },
+    {
+      "task_id": "CORE-FORM-LINT-001",
+      "title": "Repair source workspace texture mutation lint gate without changing texture semantics",
+      "product": "form",
+      "workstream": "CORE_PRODUCT_LAB",
+      "category": "test_gate",
+      "area": "test_gate",
+      "severity": "P2",
+      "model": "gpt-6.1-sol",
+      "scores": {
+        "impact": 6,
+        "severity": 6,
+        "workflow_importance": 7,
+        "release_importance": 8,
+        "confidence": 9,
+        "effort": 3,
+        "risk": 3,
+        "user_value": 5,
+        "competitive_value": 2
+      },
+      "source_evidence": {
+        "direct": [
+          "Source-only npm run lint exits 1 with exactly one react-hooks/immutability error app/cad-workspace.tsx:2174 on Three texture map.image.data mutation; no source edit in security patch."
+        ],
+        "hypothesis": [
+          "Likely mutable Three object access through React ref trips immutability analysis; root cause/repair must be verified."
+        ]
+      },
+      "evidence_sources": [
+        "/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-security-20261007/lint-source-only.log"
+      ],
+      "test_requirements": "Reproduce exact-head npm ci and source-only npm run lint, retain failing log; refactor mutable texture update without disabling lint rules; verify actual texture edit/upload, undo and save/reopen with current archive contract; full suite and builds, independent OpenAI review.",
+      "next_action": "Normal PR and native release checks remain; no deployment claimed.",
+      "expected_value": "Restore source lint release gate; scores are planning estimates.",
+      "status": "COMPLETE",
+      "dependencies": [],
+      "priority": 38.5714,
+      "priority_basis": "ESTIMATE: impact \u00d7 user_value \u00d7 confidence / (effort + risk + 1)",
+      "campaign": null,
+      "risk": 3,
+      "created_at": "2026-10-08T01:49:24+00:00",
+      "started_at": "2026-10-08T01:59:59+00:00",
+      "completed_at": "2026-10-08T02:11:32+00:00",
+      "result": "Reviewed repair ea67346 pushed: imperative Three paint texture upload helper preserves identity/pixel bounds/Undo snapshots; new regression passes; source lint0, typecheck0, fullunit1527/1527, production and desktopfrontend builds pass. Actual prior error was cad-viewport-3d.tsx2174, not cad-workspace. No rules suppressed.",
+      "attempts": 1,
+      "owner": null,
+      "lease_until": null,
+      "result_evidence": {
+        "path": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-completion-2026-10-07.md",
+        "recorded_at": "2026-10-08T02:11:32+00:00",
+        "bytes": 4559
+      }
+    },
+    {
+      "task_id": "OS-ENCORE-VALIDATE-20261009",
+      "title": "Validate ENCORE post-restart editable performance slice using owned synthetic media",
+      "product": "stemdeck",
+      "workstream": "CORE_PRODUCT_LAB",
+      "category": "VALIDATE",
+      "area": "internal repeat-use hypothesis",
+      "severity": "P2",
+      "status": "WAITING",
+      "dependencies": [
+        "CORE-STEM-ARCHIVE-WEBKIT-001",
+        "CORE-STEM-AUD-005"
+      ],
+      "model": "openai/gpt-6-luna",
+      "model_tier": "Luna",
+      "context_token_budget": 8000,
+      "token_budget": 12000,
+      "tool_budget": 20,
+      "scores": {
+        "impact": 6,
+        "user_value": 9,
+        "strategic_value": 7,
+        "urgency": 4,
+        "confidence": 5,
+        "effort": 3,
+        "risk": 3
+      },
+      "score_basis": "Decision ESTIMATES from one Sol selection; no demand/product-quality measurement.",
+      "expected_value": "Determine whether existing declared editable actions communicate a useful second-session revision; synthetic technical proof only, not customer or release validation.",
+      "test_requirements": "Three independent actual-UI cold restores of identical owned synthetic four-deck fixture; every referenced asset hash and declared semantic state; frozen timing/PCM tolerance; immutable original; persistent audibly consequential edit and independently decoded WAV with affected/unaffected region assertions; exact source/fixture/environment/commands/exits retained. Reuse valid exact-source mandatory local proof; no gate weakening.",
+      "acceptance_criteria": "Three observed cold runs preserve declared slice and assets; post-restart arrangement edit changes expected PCM region and survives further reopen. Fewer runs is partial. Native/physical/hosted/source-live readiness and demand remain unqualified.",
+      "constraints": "Single leased StemDeck owner; recheck live product leases and PAUSE. No another-worker checkout edits, product implementation, physical capture, user files, spending, external recruitment/publication, feature repair, gate bypass or deployment. <=35min one cycle; use reusable capsule; no extra Astra/creative review.",
+      "next_action": "WAITING until existing CORE-STEM-ARCHIVE-WEBKIT-001 and CORE-STEM-AUD-005 complete/reconcile at chosen reviewed source, unchanged 2838683648-byte local preflight satisfied and no competing StemDeck owner. Then engine revise QUEUED and claim once; execute reports/company-os-20261009/encore-luna-capsule.md. Preserve all release/native/physical gates.",
+      "evidence_sources": [
+        "reports/company-os-20261009/astra-invention.md",
+        "reports/company-os-20261009/sol-selection.md",
+        "reports/company-os-20261009/encore-luna-capsule.md",
+        "core-product-lab/reports/stemdeck-archive-webkit-20261008/README.md",
+        "reports/stemdeck-support-20261008T0910/README.md"
+      ],
+      "priority": 38.5714,
+      "priority_basis": "ESTIMATE: impact \u00d7 user_value \u00d7 confidence / (effort + risk + 1)",
+      "campaign": null,
+      "risk": 3,
+      "created_at": "2026-10-09T06:51:41+00:00",
+      "started_at": null,
+      "completed_at": null,
+      "result": null,
+      "attempts": 0,
+      "owner": null,
+      "lease_until": null
+    },
+    {
+      "task_id": "CORE-SP-SEC-RESIDUAL-001",
+      "title": "Qualify remaining build-tool advisory reachability and update upstream-safe fixes",
+      "product": "scenepilot",
+      "category": "existing",
+      "workstream": "ENGINEERING",
+      "severity": "P2",
+      "model": "OpenAI/Sol",
+      "scores": {
+        "impact": 6,
+        "user_value": 6,
+        "confidence": 8,
+        "effort": 4,
+        "risk": 3
+      },
+      "next_action": "Resume SAME task after adequate disk for gated exact-source configured build/package and full syntheticUIgolden; inspect signed app.asar and provider/runtime resources. Require upstream fixed version or separately reviewed narrow build-input mitigation; keep16audit groups and PR89-through95 stack/CI gates visible.",
+      "evidence_sources": [
+        "/Users/agentsattari/thecreateco-company/reports/scenepilot-runtime-release18/README.md"
+      ],
+      "expected_value": "Bound remaining toolchain risk without weakening verification.",
+      "status": "BLOCKED",
+      "dependencies": [],
+      "priority": 36.0,
+      "priority_basis": "ESTIMATE: impact \u00d7 user_value \u00d7 confidence / (effort + risk + 1)",
+      "campaign": null,
+      "risk": 3,
+      "created_at": "2026-10-08T02:46:20+00:00",
+      "started_at": "2026-10-08T15:40:23+00:00",
+      "completed_at": null,
+      "result": "Independent OpenAI-approved qualification checkpoint at exact c26d518: full audit16groups(8high8moderate),production0; scoped main13/renderer2081input builds exclude affected leaves;39/39 synthetic component regressions pass. Latest braces3.0.3/sprintf-js1.1.3 still affected. Signed package/provider inventory and configured builds/fullUIgolden not qualified; disk~159MiB. No code change/push/merge/deploy.",
+      "attempts": 1,
+      "owner": null,
+      "lease_until": null,
+      "result_evidence": {
+        "path": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-sec-residual-20261008T1540/README.md",
+        "recorded_at": "2026-10-08T15:44:51+00:00",
+        "bytes": 4238
+      }
+    },
+    {
+      "task_id": "CORE-FORM-WORKER-IMAGE-BINDING-001",
+      "title": "Repair Worker static-image Fetcher and Images binding contract",
+      "product": "form",
+      "workstream": "CORE_PRODUCT_LAB",
+      "category": "bug",
+      "area": "import/export",
+      "severity": "P2",
+      "status": "BLOCKED",
+      "model": "gpt-6.1-sol",
+      "scores": {
+        "impact": 6,
+        "severity": 6,
+        "workflow_importance": 4,
+        "release_importance": 6,
+        "confidence": 10,
+        "effort": 3,
+        "risk": 4,
+        "user_value": 4,
+        "competitive_value": 2
+      },
+      "source_evidence": {
+        "capacity_recheck": "reports/company-os-20261009/scheduled-proof.md",
+        "previous_evidence": {
+          "direct": [
+            "Exact-source emitted local Worker: GET /og.png 200; valid /_vinext/image?url=/og.png&w=16&q=75 returns500 TypeError env.ASSETS.fetch is not a function. ASSETS is R2 used by asset API; generated config has no explicit static Fetcher or IMAGES binding. External image URL rejected400. Handler/config are unchanged from baseline."
+          ],
+          "hypothesis": [
+            "Whether this endpoint is used by the deployed golden workflow is unverified; no live request or Cloudflare Images entitlement change performed."
+          ]
+        }
+      },
+      "evidence_sources": [
+        "/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-runtime-security-20261008T0340/worker-requests.log",
+        "/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-runtime-security-20261008T0340/review.md"
+      ],
+      "test_requirements": "Reproduce500 on isolated exact Worker artifact. Keep R2 asset get/put/delete separate from static Fetcher; define authorized supported image behavior without adding paid/access bindings. Regression valid PNG200 transform/passthrough semantics, invalid URL400, SVG policy, original static assets and R2 CRUD; build web/desktop, independent OpenAI review, exact-head normal CI gates. No deployment/spend or assertion weakening.",
+      "next_action": "After concrete billing/access-resolution evidence, perform one bounded exact-head mandatory hosted CI qualification and review complete PR7/downstack before merge. Preserve native/full-golden/source-live gates; no bypass or automatic billing retries.",
+      "expected_value": "Restore evidenced endpoint reliability; scores are planning estimates, deployment impact unknown.",
+      "dependencies": [],
+      "priority": 30.0,
+      "priority_basis": "ESTIMATE: impact \u00d7 user_value \u00d7 confidence / (effort + risk + 1)",
+      "campaign": null,
+      "risk": 4,
+      "created_at": "2026-10-08T03:49:53+00:00",
+      "started_at": "2026-10-09T11:40:23+00:00",
+      "completed_at": null,
+      "result": "Sol-directed Luna static Fetcher/R2 repair b5f8b08 independently OpenAI reviewed and pushed draft PR9 on PR7. Local emitted Worker image200 byte/security fallback and R2CRUD, web/desktop frontend builds, types/lint,4asset tests and synthetic browser undo/save/process-reopen/STEP+GLB pass. Exact-head hosted web/native did not start: billing/spending-limit annotations; no retries/merge/deploy. Full/native/source-live/downstack gates remain.",
+      "attempts": 2,
+      "owner": null,
+      "lease_until": null,
+      "result_evidence": {
+        "path": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-worker-images-20261009T1140/README.md",
+        "recorded_at": "2026-10-09T11:50:12+00:00",
+        "bytes": 9320
+      },
+      "token_budget": 20000,
+      "tool_budget": 60
+    },
+    {
+      "task_id": "CORE-LUMA-AUD-004",
+      "title": "Maintain explicit roadmap for advanced color and high-depth interchange gaps",
+      "product": "luma",
+      "area": "professional_capability_gap",
+      "category": "professional_capability_gap",
+      "workstream": "CORE_PRODUCT_LAB",
+      "severity": "P2",
+      "scores": {
+        "impact": 6,
+        "severity": 5,
+        "workflow_importance": 6,
+        "competitive_value": 6,
+        "release_importance": 5,
+        "confidence": 9,
+        "effort": 8,
+        "risk": 5,
+        "user_value": 6
+      },
+      "dependencies": [],
+      "status": "COMPLETE",
+      "model": "gpt-6-luna",
+      "expected_value": "Flagship golden-workflow reliability; scores are planning estimates, not health metrics.",
+      "test_requirements": "Reproduce on isolated exact source; preserve baseline/fixed evidence, appropriate build/tests and golden path; source reading is not interactive sign-off.",
+      "source_evidence": [
+        "README.md Photoshop interchange policy documents narrow edited high-depth PSD support and 8-bit compatibility conversion for other cases",
+        "README.md states CMYK/Lab editing and ICC device-link support are not complete"
+      ],
+      "next_action": "Reliability repair remains prior; qualify disclosure via CORE-LUMA-HIGH-DEPTH-DOC-001, validate demand before broader color implementation.",
+      "priority": 23.1429,
+      "priority_basis": "ESTIMATE: impact \u00d7 user_value \u00d7 confidence / (effort + risk + 1)",
+      "campaign": null,
+      "risk": 5,
+      "created_at": "2026-10-08T00:02:44+00:00",
+      "started_at": "2026-10-09T13:40:22+00:00",
+      "completed_at": "2026-10-09T13:42:14+00:00",
+      "result": "Bounded color/interchange roadmap and exact-source synthetic engine qualification:51/51 pass. README understates layered16/32bit support; scoped deduplicated documentation follow-up queued. Demand unknown; full golden and existing alpha defects unresolved. No code change or deployment.",
+      "attempts": 1,
+      "owner": null,
+      "lease_until": null,
+      "evidence_sources": [
+        "/Users/agentsattari/thecreateco-company/core-product-lab/reports/luma-initial.md",
+        "/Users/agentsattari/thecreateco-company/core-product-lab/products/luma.json"
+      ],
+      "result_evidence": {
+        "path": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/luma-roadmap-20261009T1340/README.md",
+        "recorded_at": "2026-10-09T13:42:14+00:00",
+        "bytes": 4226
+      }
+    },
+    {
+      "task_id": "CORE-STEMDECK-TEST-001",
+      "title": "Stabilize revocation throttle test clock without changing authentication behavior",
+      "product": "stemdeck",
+      "area": "test isolation",
+      "category": "technical_debt",
+      "severity": "P3",
+      "workstream": "CORE_PRODUCT_LAB",
+      "model": "gpt-6-luna",
+      "scores": {
+        "impact": 5,
+        "user_value": 5,
+        "severity": 4,
+        "workflow_importance": 5,
+        "competitive_value": 1,
+        "release_importance": 7,
+        "confidence": 10,
+        "effort": 1,
+        "risk": 1
+      },
+      "source_evidence": "core-product-lab/reports/stemdeck-security-review.md",
+      "test_requirements": "Apply reviewed fixed Date.now clock inside affected test with finally restore; focused suite and deterministic window-rollover control. No auth implementation changes.",
+      "next_action": "Independent exact-head review and hosted gate assessment; retain PR28 downstack release gates.",
+      "status": "NEEDS_REVIEW",
+      "dependencies": [],
+      "priority": 83.3333,
+      "priority_basis": "ESTIMATE: impact \u00d7 user_value \u00d7 confidence / (effort + risk + 1)",
+      "campaign": null,
+      "expected_value": null,
+      "risk": 1,
+      "created_at": "2026-10-08T00:06:48+00:00",
+      "started_at": "2026-10-09T14:40:58+00:00",
+      "completed_at": null,
+      "result": "Test-only clock stabilization pushed as PR37 at 6265c32; focused17/17 and full serial2234/2234 pass; no auth changes, merge or deploy.",
+      "attempts": 1,
+      "owner": null,
+      "lease_until": null,
+      "result_evidence": {
+        "path": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-throttle-clock-20261009.md",
+        "recorded_at": "2026-10-09T14:45:40+00:00",
+        "bytes": 1299
+      }
+    },
+    {
+      "task_id": "CORE-SP-A11Y-001",
+      "title": "Review isolated ScenePilot tablist/contrast repair and qualify exact candidate",
+      "product": "scenepilot",
+      "area": "bug_reliability",
+      "category": "bug_reliability",
+      "workstream": "CORE_PRODUCT_LAB",
+      "severity": "P3",
+      "scores": {
+        "impact": 6,
+        "severity": 5,
+        "workflow_importance": 5,
+        "competitive_value": 3,
+        "release_importance": 6,
+        "confidence": 10,
+        "effort": 2,
+        "risk": 1,
+        "user_value": 5
+      },
+      "dependencies": [],
+      "status": "COMPLETE",
+      "model": "gpt-6-luna",
+      "expected_value": "Flagship golden-workflow reliability; scores are planning estimates, not health metrics.",
+      "test_requirements": "Reproduce on isolated exact source; preserve baseline/fixed evidence, appropriate build/tests and golden path; source reading is not interactive sign-off.",
+      "source_evidence": [
+        "Baseline npm run qa:accessibility: critical aria-required-children on .monitor-tabs and contrast ratios 3.23, 3.90, 3.93 (<4.5:1), repeated across tested states.",
+        "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-evidence/accessibility-baseline-fail.log",
+        "Separate branch /tmp/scenepilot-fix-fb42d12, files app/source-program-monitor.tsx and app/studio-workspace.css: check passes; same Axe audit passes New Project, Edit, Delivery with zero blocking findings.",
+        "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-a11y-fix.patch",
+        "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-evidence/accessibility-fix-check.log",
+        "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-evidence/accessibility-fix-pass.log"
+      ],
+      "next_action": "O02 handles exact reviewed stack/main integration; preserve separate original audit checkout. Full golden workflow still unqualified.",
+      "priority": 75.0,
+      "priority_basis": "ESTIMATE: impact \u00d7 user_value \u00d7 confidence / (effort + risk + 1)",
+      "campaign": null,
+      "risk": 1,
+      "created_at": "2026-10-08T00:02:43+00:00",
+      "started_at": "2026-10-08T00:59:57+00:00",
+      "completed_at": "2026-10-08T01:02:15+00:00",
+      "result": "Independently reviewed original 2-file patch, reproduced baseline accessibility failures, applied unchanged to owned branch and committed e9c62eb. Full local verify passes, zero Axe violations in 3 UI states. Pushed PR #90 OPEN, not merged/deployed; stack qualification continues O02.",
+      "attempts": 1,
+      "owner": null,
+      "lease_until": null,
+      "evidence_sources": [
+        "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-initial.md",
+        "/Users/agentsattari/thecreateco-company/core-product-lab/products/scenepilot.json"
+      ],
+      "result_evidence": {
+        "path": "/Users/agentsattari/thecreateco-company/reports/2026-10-07-scenepilot-security-push.md",
+        "recorded_at": "2026-10-08T01:02:15+00:00",
+        "bytes": 2647
+      }
+    },
+    {
+      "task_id": "CORE-LUMA-HIGH-DEPTH-DOC-001",
+      "title": "Correct stale high-depth PSD/PSB compatibility disclosure",
+      "product": "luma",
+      "workstream": "CORE_PRODUCT_LAB",
+      "severity": "P3",
+      "area": "documentation",
+      "category": "documentation",
+      "model": "gpt-6-luna",
+      "scores": {
+        "impact": 4,
+        "user_value": 5,
+        "confidence": 10,
+        "effort": 1,
+        "risk": 1
+      },
+      "source_evidence": [
+        "/Users/agentsattari/thecreateco-company/core-product-lab/reports/luma-roadmap-20261009T1340/README.md"
+      ],
+      "test_requirements": "At exact latest source compare README Photoshop policy to highDepthEligibility and native writer; run five-file 51-test qualification including layered16/32bit masks and fallback warnings; preserve all exclusions and do not claim external/UI qualification. Isolated scoped commit/push via normal gates.",
+      "next_action": "Existing release qualification must verify exact-head mandatory CI after billing repair and review downstack before any merge; existing adjustment-alpha repair remains priority.",
+      "status": "COMPLETE",
+      "dependencies": [],
+      "priority": 66.6667,
+      "priority_basis": "ESTIMATE: impact \u00d7 user_value \u00d7 confidence / (effort + risk + 1)",
+      "campaign": null,
+      "expected_value": null,
+      "risk": 1,
+      "created_at": "2026-10-09T13:42:14+00:00",
+      "started_at": "2026-10-09T15:40:21+00:00",
+      "completed_at": "2026-10-09T15:42:53+00:00",
+      "result": "README-only native high-depth disclosure corrected;51/51 synthetic tests pass;30bea20 pushed draft PR10 on PR9. Hosted3jobs billing-blocked; no merge/deploy/full-golden claim.",
+      "attempts": 1,
+      "owner": null,
+      "lease_until": null,
+      "result_evidence": {
+        "path": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/luma-high-depth-doc-20261009T1540/README.md",
+        "recorded_at": "2026-10-09T15:42:53+00:00",
+        "bytes": 2743
+      }
+    },
+    {
+      "task_id": "CORE-FORM-AUD-TEST-001",
+      "title": "Update stale workspace smoke assertions after base64 archive migration and scope status queries",
+      "product": "form",
+      "area": "test_gate",
+      "category": "test_gate",
+      "workstream": "CORE_PRODUCT_LAB",
+      "severity": "P3",
+      "scores": {
+        "impact": 6,
+        "severity": 5,
+        "workflow_importance": 6,
+        "release_importance": 7,
+        "confidence": 9,
+        "effort": 2,
+        "risk": 2,
+        "user_value": 6,
+        "competitive_value": 2
+      },
+      "model": "gpt-6-luna",
+      "source_evidence": {
+        "direct": [
+          "Durable full Node 22 repeat: 1,518/1,526 pass, 8 fail; workspace smoke repeat 92/100 pass. Seven failures report ambiguous getByRole(\"status\") due implicit output roles. The baked-texture assertion reads legacy paintTexture.pixels; using the current pixelsBase64 field in a temporary local validation made the existing save/reopen comparison pass. Initial full run had one additional order/load-sensitive failure (1,517/1,526), not captured durably."
+        ],
+        "hypothesis": [
+          "The remaining failing assertions may be stale test selectors/contracts rather than application defects; inspect exact failure list before concluding."
+        ]
+      },
+      "test_requirements": "Reproduce in isolated exact-source baseline; fix root cause without weakening tests; retain command outcomes and limitations.",
+      "next_action": "Normal stacked PR checks; follow CORE-FORM-UI-EXPORT-001 and golden/native qualification after firstwave priorities.",
+      "status": "COMPLETE",
+      "dependencies": [],
+      "priority": 64.8,
+      "priority_basis": "ESTIMATE: impact \u00d7 user_value \u00d7 confidence / (effort + risk + 1)",
+      "campaign": null,
+      "expected_value": null,
+      "risk": 2,
+      "created_at": "2026-10-08T00:05:22+00:00",
+      "started_at": "2026-10-08T01:59:28+00:00",
+      "completed_at": "2026-10-08T02:11:32+00:00",
+      "result": "Reviewed repair ea67346 pushed: named workspace status selectors and decoded base64 texture roundtrip assertions restore smoke100/100; fullunit1527/1527 after build, budgets15/15; CI now builds before artifact-dependent test. Real Chrome synthetic persistence/export subset passes at1920;1440 export menu overflow separately queued. No merge/deploy or whole-product qualification.",
+      "attempts": 1,
+      "owner": null,
+      "lease_until": null,
+      "evidence_sources": [
+        "/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-initial.md",
+        "/Users/agentsattari/thecreateco-company/core-product-lab/products/form.json"
+      ],
+      "result_evidence": {
+        "path": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-completion-2026-10-07.md",
+        "recorded_at": "2026-10-08T02:11:32+00:00",
+        "bytes": 4559
+      }
+    },
+    {
+      "task_id": "CORE-STEM-AUD-007",
+      "title": "Validate dense performance controls and lower-panel occlusion",
+      "product": "stemdeck",
+      "area": "ux_improvement",
+      "category": "ux_improvement",
+      "workstream": "CORE_PRODUCT_LAB",
+      "severity": "P3",
+      "scores": {
+        "impact": 6,
+        "severity": 5,
+        "workflow_importance": 8,
+        "competitive_value": 6,
+        "release_importance": 6,
+        "confidence": 7,
+        "effort": 3,
+        "risk": 2,
+        "user_value": 8
+      },
+      "dependencies": [],
+      "status": "NEEDS_REVIEW",
+      "model": "gpt-6-luna",
+      "expected_value": "Flagship golden-workflow reliability; scores are planning estimates, not health metrics.",
+      "test_requirements": "Reproduce on isolated exact source; preserve baseline/fixed evidence, appropriate build/tests and golden path; source reading is not interactive sign-off.",
+      "source_evidence": [
+        "reports/stemdeck-ui/1440-Perform.png"
+      ],
+      "next_action": "Review the local branch and evidence packet, then continue only through normal PR/CI/release gates.",
+      "priority": 56.0,
+      "priority_basis": "ESTIMATE: impact \u00d7 user_value \u00d7 confidence / (effort + risk + 1)",
+      "campaign": null,
+      "risk": 2,
+      "created_at": "2026-10-08T00:02:46+00:00",
+      "started_at": "2026-10-09T16:36:48+00:00",
+      "completed_at": null,
+      "result": "Completed the bounded responsive workspace audit and local CSS fix; npm build and manual 3-width synthetic-fixture checks passed; independent Sol review found no actionable issue. Local change and evidence are review-ready, but no commit/PR/deploy was performed.",
+      "attempts": 1,
+      "owner": null,
+      "lease_until": null,
+      "evidence_sources": [
+        "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-initial.md",
+        "/Users/agentsattari/thecreateco-company/core-product-lab/products/stemdeck.json"
+      ],
+      "result_evidence": {
+        "path": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-responsive-audit-20261009/README.md",
+        "recorded_at": "2026-10-09T16:49:25+00:00",
+        "bytes": 2343
+      }
+    },
+    {
+      "task_id": "CORE-STEM-AUD-004",
+      "title": "Make Node26 test environment explicit or pin supported test runtime",
+      "product": "stemdeck",
+      "area": "technical_debt",
+      "category": "technical_debt",
+      "workstream": "CORE_PRODUCT_LAB",
+      "severity": "P3",
+      "scores": {
+        "impact": 5,
+        "severity": 5,
+        "workflow_importance": 5,
+        "competitive_value": 2,
+        "release_importance": 7,
+        "confidence": 10,
+        "effort": 2,
+        "risk": 2,
+        "user_value": 5
+      },
+      "dependencies": [],
+      "status": "NEEDS_REVIEW",
+      "model": "gpt-6-luna",
+      "expected_value": "Flagship golden-workflow reliability; scores are planning estimates, not health metrics.",
+      "test_requirements": "Reproduce on isolated exact source; preserve baseline/fixed evidence, appropriate build/tests and golden path; source reading is not interactive sign-off.",
+      "source_evidence": [
+        "reports/stemdeck-unit.log",
+        "reports/stemdeck-unit-node22.log"
+      ],
+      "next_action": "Independent OpenAI review of a9e9d97, then normal PR/CI route; do not treat this environment repair as full workflow qualification.",
+      "priority": 50.0,
+      "priority_basis": "ESTIMATE: impact \u00d7 user_value \u00d7 confidence / (effort + risk + 1)",
+      "campaign": null,
+      "risk": 2,
+      "created_at": "2026-10-08T00:02:45+00:00",
+      "started_at": "2026-10-09T17:05:53+00:00",
+      "completed_at": null,
+      "result": "Node 26 experimental process localStorage was shadowing jsdom in parallel browser tests. Added a cross-platform Vitest wrapper and regression proof; full suite 2234/2234, type-check and production build pass at a9e9d97.",
+      "attempts": 1,
+      "owner": null,
+      "lease_until": null,
+      "evidence_sources": [
+        "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-initial.md",
+        "/Users/agentsattari/thecreateco-company/core-product-lab/products/stemdeck.json"
+      ],
+      "result_evidence": {
+        "path": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-node26-test-environment-20261009.md",
+        "recorded_at": "2026-10-09T17:10:23+00:00",
+        "bytes": 1726
+      }
+    },
+    {
+      "task_id": "CORE-SP-UX-001",
+      "title": "Clarify Lite/Pro disabled controls and loaded-media counts",
+      "product": "scenepilot",
+      "area": "ux_improvement",
+      "category": "ux_improvement",
+      "workstream": "CORE_PRODUCT_LAB",
+      "severity": "P3",
+      "scores": {
+        "impact": 6,
+        "severity": 4,
+        "workflow_importance": 7,
+        "competitive_value": 3,
+        "release_importance": 5,
+        "confidence": 7,
+        "effort": 3,
+        "risk": 2,
+        "user_value": 7
+      },
+      "dependencies": [],
+      "status": "BLOCKED",
+      "model": "gpt-6-luna",
+      "expected_value": "Flagship golden-workflow reliability; scores are planning estimates, not health metrics.",
+      "test_requirements": "Reproduce on isolated exact source; preserve baseline/fixed evidence, appropriate build/tests and golden path; source reading is not interactive sign-off.",
+      "source_evidence": [
+        "docs/release-today-0.1.16.md reports some Lite controls expose Pro-only workflows and main source media can coexist with a displayed zero asset-bin count; it notes this is confusing, not source loss."
+      ],
+      "next_action": "Qualify correct reviewed candidate stack including existing c26d518; stage exact lockfile FFmpeg; rerun unforced Lite and full desktop golden plus independent OpenAI stack review. Reuse existing task/fix; do not duplicate.",
+      "priority": 49.0,
+      "priority_basis": "ESTIMATE: impact \u00d7 user_value \u00d7 confidence / (effort + risk + 1)",
+      "campaign": null,
+      "risk": 2,
+      "created_at": "2026-10-08T00:02:44+00:00",
+      "started_at": "2026-10-09T17:40:17+00:00",
+      "completed_at": null,
+      "result": "Exact02c6ece isolated qualification:39tests and renderer build PASS; Lite Video track ordinary click intercepted, known c26d518 fix absent from divergent stack. Desktop scoped media/H264/save/fresh-process reopen PASS; final mixed export blocked by missing ffmpeg-static. Separate-source counts UNKNOWN after2 harness failures. Untested8b6e91d local artifact retained unpushed; no independent review/merge/deploy.",
+      "attempts": 1,
+      "owner": null,
+      "lease_until": null,
+      "evidence_sources": [
+        "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-initial.md",
+        "/Users/agentsattari/thecreateco-company/core-product-lab/products/scenepilot.json"
+      ],
+      "result_evidence": {
+        "path": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-ux-20261009T1740/REPORT.md",
+        "recorded_at": "2026-10-09T17:51:17+00:00",
+        "bytes": 3649
+      }
+    },
+    {
+      "task_id": "CORE-FORM-HANDOFF-HISTORY-001",
+      "title": "Investigate extra navigation history checkpoint on Animation-to-CAD return",
+      "product": "form",
+      "workstream": "CORE_PRODUCT_LAB",
+      "category": "workflow_gap",
+      "area": "history",
+      "severity": "P3",
+      "status": "BLOCKED",
+      "model": "gpt-6-luna",
+      "dependencies": [],
+      "scores": {
+        "impact": 6,
+        "user_value": 7,
+        "confidence": 8,
+        "effort": 3,
+        "risk": 3
+      },
+      "expected_value": "Remove or explain non-authored history steps without losing authored edits; planning scores are estimates.",
+      "test_requirements": "Reproduce exactcurrent StudioEntry/CAD/Fabric/Animation flow in realbuiltbrowser, compare pre/post Undo authored content, add meaningful regression and run relevant save/history/UI checks; no indiscriminate fingerprint exclusion.",
+      "source_evidence": {
+        "direct": [
+          "Exact779d61d builtChromium audit repeated two Undo steps to remove last Animation key after CAD return; preserved CAD/Fabric/scene and zero errors. /Users/agentsattari/thecreateco-company/reports/form-handoff-20261008T1210/history-traversal.json",
+          "project-format.ts:342-356 excludes wrapper updatedAt but not inner Fabric data.updatedAt."
+        ],
+        "hypothesis": [
+          "Fabric hydration updatedAt may create non-authored checkpoint; exact root cause not yet confirmed."
+        ]
+      },
+      "evidence_sources": [
+        "/Users/agentsattari/thecreateco-company/reports/form-handoff-20261008T1210/README.md",
+        "/Users/agentsattari/thecreateco-company/reports/form-handoff-20261008T1210/browser-result.json",
+        "/Users/agentsattari/thecreateco-company/reports/form-handoff-20261008T1210/final-artifact-manifest.json",
+        "/Users/agentsattari/thecreateco-company/reports/form-handoff-20261008T1210/history-traversal.json"
+      ],
+      "next_action": "Establish bounded worker cost authority, resume isolated Luna capsule with exact-current built-browser journal and authored Undo regression; preserve release gates.",
+      "priority": 48.0,
+      "priority_basis": "ESTIMATE: impact \u00d7 user_value \u00d7 confidence / (effort + risk + 1)",
+      "campaign": null,
+      "risk": 3,
+      "created_at": "2026-10-08T12:27:23+00:00",
+      "started_at": "2026-10-09T19:10:46+00:00",
+      "completed_at": null,
+      "result": "Sol deterministic checkpoint: 12 history/format tests PASS on b5f8b08; isolated timestamp probe confirms Fabric inner updatedAt changes fingerprint, not browser root cause. Luna not dispatched: all cost caps unknown, no new spending approval; browser reproduction/fix unqualified.",
+      "attempts": 1,
+      "owner": null,
+      "lease_until": null,
+      "result_evidence": {
+        "path": "/Users/agentsattari/thecreateco-company/reports/form-history-20261009T1910/README.md",
+        "recorded_at": "2026-10-09T19:12:04+00:00",
+        "bytes": 3713
+      }
+    },
+    {
+      "task_id": "CORE-FORM-AUD-FEAT-002",
+      "title": "Expand independent interchange corpus for supported recipients",
+      "product": "form",
+      "area": "professional_feature_gap",
+      "category": "professional_feature_gap",
+      "workstream": "CORE_PRODUCT_LAB",
+      "severity": "P3",
+      "scores": {
+        "impact": 7,
+        "severity": 6,
+        "workflow_importance": 7,
+        "release_importance": 7,
+        "confidence": 8,
+        "effort": 6,
+        "risk": 3,
+        "user_value": 7,
+        "competitive_value": 8
+      },
+      "dependencies": [],
+      "status": "WAITING",
+      "model": "gpt-6-luna",
+      "expected_value": "Flagship golden-workflow reliability; scores are planning estimates, not health metrics.",
+      "test_requirements": "Reproduce on isolated exact source; preserve baseline/fixed evidence, appropriate build/tests and golden path; source reading is not interactive sign-off.",
+      "source_evidence": {
+        "direct": [
+          "KNOWN_ISSUES.md:22-26 cites FreeCAD/Blender automation but says AutoCAD/Cinema4D/CLO need licensed installs and representative files; no external recipient app was run in this audit."
+        ],
+        "hypothesis": [
+          "There may be format-specific semantic/unit issues outside existing validation; none were reproduced here."
+        ]
+      },
+      "next_action": "Run the documented interchange matrix on supported representative projects and recipient versions; record scale, bounds, topology and warnings.",
+      "priority": 39.2,
+      "priority_basis": "ESTIMATE: impact \u00d7 user_value \u00d7 confidence / (effort + risk + 1)",
+      "campaign": null,
+      "risk": 3,
+      "created_at": "2026-10-08T00:02:45+00:00",
+      "started_at": null,
+      "completed_at": null,
+      "result": null,
+      "attempts": 0,
+      "owner": null,
+      "lease_until": null,
+      "evidence_sources": [
+        "/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-initial.md",
+        "/Users/agentsattari/thecreateco-company/core-product-lab/products/form.json"
+      ]
+    },
+    {
+      "task_id": "CORE-LUMA-AUD-003",
+      "title": "Measure packaged interaction latency and process memory",
+      "product": "luma",
+      "area": "performance_opportunity",
+      "category": "performance_opportunity",
+      "workstream": "CORE_PRODUCT_LAB",
+      "severity": "P3",
+      "scores": {
+        "impact": 6,
+        "severity": 5,
+        "workflow_importance": 7,
+        "competitive_value": 5,
+        "release_importance": 6,
+        "confidence": 8,
+        "effort": 6,
+        "risk": 2,
+        "user_value": 7
+      },
+      "dependencies": [],
+      "status": "BLOCKED",
+      "model": "gpt-6-luna",
+      "expected_value": "Flagship golden-workflow reliability; scores are planning estimates, not health metrics.",
+      "test_requirements": "Reproduce on isolated exact source; preserve baseline/fixed evidence, appropriate build/tests and golden path; source reading is not interactive sign-off.",
+      "source_evidence": [
+        "No fresh source-matched p50/p95/p99 or process-tree memory benchmark run",
+        "docs/release/performance-pass-2026-09-21.md and docs/release/critical-review-2026-09-23.md distinguish microbenchmarks from packaged workflows and accounted memory from process RAM"
+      ],
+      "next_action": "Reuse task after isolated native qualification identifier/profile and validated input-to-paint/process-tree RSS harness exist; synthetic dense/sparse brush/transform/save/reopen/export fixtures, raw samples and parity required.",
+      "priority": 37.3333,
+      "priority_basis": "ESTIMATE: impact \u00d7 user_value \u00d7 confidence / (effort + risk + 1)",
+      "campaign": null,
+      "risk": 2,
+      "created_at": "2026-10-08T00:02:44+00:00",
+      "started_at": "2026-10-09T19:40:22+00:00",
+      "completed_at": null,
+      "result": "Exact-source release macOS package and ad-hoc codesign PASS;20synthetic memory/persistence tests PASS;CPU brush benchmark pixel parity PASS. Packaged input percentiles/process-tree RAM/full native golden NOT RUN: isolated native recovery profile and measurement driver not established.",
+      "attempts": 1,
+      "owner": null,
+      "lease_until": null,
+      "evidence_sources": [
+        "/Users/agentsattari/thecreateco-company/core-product-lab/reports/luma-initial.md",
+        "/Users/agentsattari/thecreateco-company/core-product-lab/products/luma.json"
+      ],
+      "result_evidence": {
+        "path": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/luma-perf-20261009T1940/README.md",
+        "recorded_at": "2026-10-09T19:45:10+00:00",
+        "bytes": 3685
+      }
+    },
+    {
+      "task_id": "CORE-FORM-AUD-FEAT-001",
+      "title": "Reconcile exact CAD operation support matrix and parity",
+      "product": "form",
+      "area": "professional_feature_gap",
+      "category": "professional_feature_gap",
+      "workstream": "CORE_PRODUCT_LAB",
+      "severity": "P3",
+      "scores": {
+        "impact": 7,
+        "severity": 5,
+        "workflow_importance": 7,
+        "release_importance": 6,
+        "confidence": 8,
+        "effort": 8,
+        "risk": 4,
+        "user_value": 7,
+        "competitive_value": 8
+      },
+      "dependencies": [],
+      "status": "WAITING",
+      "model": "gpt-6-luna",
+      "expected_value": "Flagship golden-workflow reliability; scores are planning estimates, not health metrics.",
+      "test_requirements": "Reproduce on isolated exact source; preserve baseline/fixed evidence, appropriate build/tests and golden path; source reading is not interactive sign-off.",
+      "source_evidence": {
+        "direct": [
+          "KNOWN_ISSUES.md:18 disclaims full mature mechanical CAD operation parity; README.md:10 scopes exact operation coverage; older readiness ledger calls native operation gaps, but current commit may supersede those entries."
+        ],
+        "hypothesis": [
+          "Specific remaining user-critical operation gaps are unverified until current support matrix and representative corpus are reconciled."
+        ]
+      },
+      "next_action": "Audit current source/tests against versioned operation matrix, then run exact-geometry corpus before creating implementation tasks.",
+      "priority": 30.1538,
+      "priority_basis": "ESTIMATE: impact \u00d7 user_value \u00d7 confidence / (effort + risk + 1)",
+      "campaign": null,
+      "risk": 4,
+      "created_at": "2026-10-08T00:02:45+00:00",
+      "started_at": null,
+      "completed_at": null,
+      "result": null,
+      "attempts": 0,
+      "owner": null,
+      "lease_until": null,
+      "evidence_sources": [
+        "/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-initial.md",
+        "/Users/agentsattari/thecreateco-company/core-product-lab/products/form.json"
+      ]
+    },
+    {
+      "task_id": "CORE-LUMA-AUD-001",
+      "title": "Restore standalone Luma CI: portable required mesh contract and local-image lint",
+      "product": "luma",
+      "area": "bug",
+      "category": "bug",
+      "workstream": "CORE_PRODUCT_LAB",
+      "severity": "P3",
+      "scores": {
+        "impact": 3,
+        "severity": 3,
+        "workflow_importance": 2,
+        "competitive_value": 1,
+        "release_importance": 4,
+        "confidence": 10,
+        "effort": 1,
+        "risk": 1,
+        "user_value": 2
+      },
+      "dependencies": [],
+      "status": "COMPLETE",
+      "model": "gpt-6-luna",
+      "expected_value": "Flagship golden-workflow reliability; scores are planning estimates, not health metrics.",
+      "test_requirements": "Isolated checkout npm test, npx tsc --noEmit -p ., npx eslint app tests --max-warnings 0; explicit cross-app contract mismatch/missing-source coverage. Preserve required cross-app validation.",
+      "source_evidence": [
+        "npm test: 1 failure in 1383 tests",
+        "tests/form-mesh.test.ts:21 resolves ../../sculptor-studio/app/luma-mesh-asset.ts; absent at /private/tmp/sculptor-studio in isolated worktree",
+        "2026-10-08T01:16Z security patch and baseline both: 1372pass/1fail/10skip; zero-warning lint fails upscale-dialog.tsx:98. Report reports/luma-security-2026-10-07/README.md"
+      ],
+      "next_action": "Firstwave priority then CORE-LUMA-EXPORT-COLOR-001 and golden resume. Account admin restores Actions execution; exact-head CI and stacked PR gates before normal landing, no deployment.",
+      "priority": 20.0,
+      "priority_basis": "ESTIMATE: impact \u00d7 user_value \u00d7 confidence / (effort + risk + 1)",
+      "campaign": null,
+      "risk": 1,
+      "created_at": "2026-10-08T00:02:44+00:00",
+      "started_at": "2026-10-08T01:59:15+00:00",
+      "completed_at": "2026-10-08T02:09:17+00:00",
+      "result": "Independent OpenAI-reviewed portable mandatory Form contract and local-image lint repair772f082 pushed PR6. Full local npm test1374pass/10skip, tsc/lint/three builds pass. Task repair complete; product/release NOT complete, remote Actions never started due account payments/spending and output fidelity/golden/native gates remain.",
+      "attempts": 1,
+      "owner": null,
+      "lease_until": null,
+      "evidence_sources": [
+        "/Users/agentsattari/thecreateco-company/core-product-lab/reports/luma-initial.md",
+        "/Users/agentsattari/thecreateco-company/core-product-lab/products/luma.json",
+        "reports/luma-security-2026-10-07/README.md"
+      ],
+      "result_evidence": {
+        "path": "/Users/agentsattari/thecreateco-company/reports/luma-completion-2026-10-07/README.md",
+        "recorded_at": "2026-10-08T02:09:17+00:00",
+        "bytes": 6839
+      }
+    },
+    {
+      "task_id": "CORE-SP-FEATURE-002",
+      "title": "Evaluate reverse/variable audio retiming and pitch-preserving stretch",
+      "product": "scenepilot",
+      "area": "professional_feature_gap",
+      "category": "professional_feature_gap",
+      "workstream": "CORE_PRODUCT_LAB",
+      "severity": "P4",
+      "scores": {
+        "impact": 6,
+        "severity": 3,
+        "workflow_importance": 6,
+        "competitive_value": 6,
+        "release_importance": 4,
+        "confidence": 8,
+        "effort": 7,
+        "risk": 4,
+        "user_value": 6
+      },
+      "dependencies": [],
+      "status": "WAITING",
+      "model": "gpt-6-luna",
+      "expected_value": "Flagship golden-workflow reliability; scores are planning estimates, not health metrics.",
+      "test_requirements": "Reproduce on isolated exact source; preserve baseline/fixed evidence, appropriate build/tests and golden path; source reading is not interactive sign-off.",
+      "source_evidence": [
+        "docs/audio-edit-reliability-2026-09-23.md:77 lists reverse/variable audio retiming and pitch-preserving stretch as not implemented."
+      ],
+      "next_action": "Verify current behavior before implementing; retain exact-source evidence.",
+      "priority": 24.0,
+      "priority_basis": "ESTIMATE: impact \u00d7 user_value \u00d7 confidence / (effort + risk + 1)",
+      "campaign": null,
+      "risk": 4,
+      "created_at": "2026-10-08T00:02:44+00:00",
+      "started_at": null,
+      "completed_at": null,
+      "result": null,
+      "attempts": 0,
+      "owner": null,
+      "lease_until": null,
+      "evidence_sources": [
+        "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-initial.md",
+        "/Users/agentsattari/thecreateco-company/core-product-lab/products/scenepilot.json"
+      ]
+    },
+    {
+      "task_id": "CORE-STEM-AUD-009",
+      "title": "Validate user-sampled drum lanes and expressive sequencing needs",
+      "product": "stemdeck",
+      "area": "professional_feature_gap",
+      "category": "professional_feature_gap",
+      "workstream": "CORE_PRODUCT_LAB",
+      "severity": "P4",
+      "scores": {
+        "impact": 6,
+        "severity": 4,
+        "workflow_importance": 6,
+        "competitive_value": 7,
+        "release_importance": 5,
+        "confidence": 8,
+        "effort": 7,
+        "risk": 4,
+        "user_value": 6
+      },
+      "dependencies": [],
+      "status": "WAITING",
+      "model": "gpt-6-luna",
+      "expected_value": "Flagship golden-workflow reliability; scores are planning estimates, not health metrics.",
+      "test_requirements": "Reproduce on isolated exact source; preserve baseline/fixed evidence, appropriate build/tests and golden path; source reading is not interactive sign-off.",
+      "source_evidence": [
+        "docs/PROFESSIONAL_ACCEPTANCE.md"
+      ],
+      "next_action": "Project B explicitly missing sampled lanes/swing/probability/ratchets qualification; validate need after reliability milestone.",
+      "priority": 24.0,
+      "priority_basis": "ESTIMATE: impact \u00d7 user_value \u00d7 confidence / (effort + risk + 1)",
+      "campaign": null,
+      "risk": 4,
+      "created_at": "2026-10-08T00:02:46+00:00",
+      "started_at": null,
+      "completed_at": null,
+      "result": null,
+      "attempts": 0,
+      "owner": null,
+      "lease_until": null,
+      "evidence_sources": [
+        "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-initial.md",
+        "/Users/agentsattari/thecreateco-company/core-product-lab/products/stemdeck.json"
+      ]
+    },
+    {
+      "task_id": "CORE-SP-FEATURE-001",
+      "title": "Evaluate independent per-composition frame rates",
+      "product": "scenepilot",
+      "area": "professional_feature_gap",
+      "category": "professional_feature_gap",
+      "workstream": "CORE_PRODUCT_LAB",
+      "severity": "P4",
+      "scores": {
+        "impact": 5,
+        "severity": 3,
+        "workflow_importance": 5,
+        "competitive_value": 5,
+        "release_importance": 3,
+        "confidence": 8,
+        "effort": 6,
+        "risk": 3,
+        "user_value": 5
+      },
+      "dependencies": [],
+      "status": "WAITING",
+      "model": "gpt-6-luna",
+      "expected_value": "Flagship golden-workflow reliability; scores are planning estimates, not health metrics.",
+      "test_requirements": "Reproduce on isolated exact source; preserve baseline/fixed evidence, appropriate build/tests and golden path; source reading is not interactive sign-off.",
+      "source_evidence": [
+        "docs/composition-workflow.md:19 states composition frame rate follows the project and independent rates are not implemented."
+      ],
+      "next_action": "Verify current behavior before implementing; retain exact-source evidence.",
+      "priority": 20.0,
+      "priority_basis": "ESTIMATE: impact \u00d7 user_value \u00d7 confidence / (effort + risk + 1)",
+      "campaign": null,
+      "risk": 3,
+      "created_at": "2026-10-08T00:02:44+00:00",
+      "started_at": null,
+      "completed_at": null,
+      "result": null,
+      "attempts": 0,
+      "owner": null,
+      "lease_until": null,
+      "evidence_sources": [
+        "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-initial.md",
+        "/Users/agentsattari/thecreateco-company/core-product-lab/products/scenepilot.json"
+      ]
+    },
+    {
+      "task_id": "P01",
+      "title": "Reconcile Luma production with a reproducible source baseline",
+      "category": "product",
+      "workstream": "ENGINEERING",
+      "product": "luma",
+      "campaign": null,
+      "status": "BLOCKED",
+      "model": "gpt-6.1-sol",
+      "dependencies": [],
+      "scores": {
+        "impact": 10,
+        "user_value": 9,
+        "strategic_value": 10,
+        "urgency": 8,
+        "confidence": 9,
+        "effort": 4,
+        "risk": 3
+      },
+      "expected_value": "Verify current deployment, preserve its full manifest and map source before preparing any release; do not automatically roll back.",
+      "next_action": "Reuse P01; recover live build inputs or independently qualify reviewed full replacement; private supported-Node dependencies, full Netlify assembly, synthetic UI golden and exact-source OpenAI/CI/stack gates required. No rollback.",
+      "evidence_sources": [
+        "/Users/agentsattari/code/wave5/WAVE5.md"
+      ],
+      "score_basis": "Provisional director estimate; evidence-backed opportunity, not measured ROI. Recheck before execution.",
+      "result": "Read-only current deployment1692-file manifest retained;1292overlay/277public files match;122downloaded app files exact. Deployed config differs; commit/branch null. Synthetic overlay PASS. Netlify build twice fails external dependency symlink; raw failure evidence preserved. No source/production changes.",
+      "priority": 101.25,
+      "priority_basis": "ESTIMATE: impact \u00d7 user_value \u00d7 confidence / (effort + risk + 1)",
+      "risk": 3,
+      "created_at": "2026-10-07T23:38:29+00:00",
+      "started_at": "2026-10-09T21:40:19+00:00",
+      "completed_at": null,
+      "attempts": 1,
+      "owner": null,
+      "lease_until": null,
+      "result_evidence": {
+        "path": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/luma-provenance-20261009T2140/README.md",
+        "recorded_at": "2026-10-09T21:43:43+00:00",
+        "bytes": 3920
+      }
+    },
+    {
+      "task_id": "P06",
+      "title": "Verify Form review-versus-canonical feature parity",
+      "category": "product",
+      "workstream": "ENGINEERING",
+      "product": "form",
+      "campaign": null,
+      "status": "QUEUED",
+      "model": "gpt-6.1-sol",
+      "dependencies": [],
+      "scores": {
+        "impact": 8,
+        "user_value": 8,
+        "strategic_value": 8,
+        "urgency": 5,
+        "confidence": 8,
+        "effort": 3,
+        "risk": 2
+      },
+      "expected_value": "Document Cast/Room and canonical release differences; do not publish to a mismatched host.",
+      "next_action": "Document Cast/Room and canonical release differences; do not publish to a mismatched host.",
+      "evidence_sources": [
+        "/Users/agentsattari/code/wave5/WAVE5.md"
+      ],
+      "score_basis": "Provisional director estimate; evidence-backed opportunity, not measured ROI. Recheck before execution.",
+      "result": null,
+      "priority": 85.3333,
+      "priority_basis": "ESTIMATE: impact \u00d7 user_value \u00d7 confidence / (effort + risk + 1)",
+      "risk": 2,
+      "created_at": "2026-10-07T23:38:29+00:00",
+      "started_at": null,
+      "completed_at": null,
+      "attempts": 0,
+      "owner": null,
+      "lease_until": null
+    },
+    {
+      "task_id": "P07",
+      "title": "Qualify ScenePilot Board to AutoCut workflow",
+      "category": "product",
+      "workstream": "ENGINEERING",
+      "product": "scenepilot",
+      "campaign": null,
+      "status": "QUEUED",
+      "model": "gpt-6.1-sol",
+      "dependencies": [],
+      "scores": {
+        "impact": 8,
+        "user_value": 9,
+        "strategic_value": 8,
+        "urgency": 5,
+        "confidence": 7,
+        "effort": 4,
+        "risk": 2
+      },
+      "expected_value": "Use a disposable project through save, handoff and export; report exact failure boundaries.",
+      "next_action": "Use a disposable project through save, handoff and export; report exact failure boundaries.",
+      "evidence_sources": [
+        "/Users/agentsattari/code/wave5/WAVE5.md"
+      ],
+      "score_basis": "Provisional director estimate; evidence-backed opportunity, not measured ROI. Recheck before execution.",
+      "result": null,
+      "priority": 72.0,
+      "priority_basis": "ESTIMATE: impact \u00d7 user_value \u00d7 confidence / (effort + risk + 1)",
+      "risk": 2,
+      "created_at": "2026-10-07T23:38:29+00:00",
+      "started_at": null,
+      "completed_at": null,
+      "attempts": 0,
+      "owner": null,
+      "lease_until": null
+    },
+    {
+      "task_id": "I06",
+      "title": "Validate a scene-to-delivery checklist for short filmmakers",
+      "category": "idea",
+      "workstream": "RESEARCH",
+      "product": "scenepilot",
+      "campaign": null,
+      "status": "WAITING",
+      "model": "gpt-6-luna",
+      "dependencies": [],
+      "scores": {
+        "impact": 7,
+        "user_value": 8,
+        "strategic_value": 7,
+        "urgency": 5,
+        "confidence": 4,
+        "effort": 3,
+        "risk": 2
+      },
+      "expected_value": "Hypothesis: export/caption/aspect checks are repetitive; examine existing ScenePilot features before a prototype.",
+      "next_action": "Hypothesis: export/caption/aspect checks are repetitive; examine existing ScenePilot features before a prototype.",
+      "evidence_sources": [
+        "/Users/agentsattari/thecreateco-marketing/research/brand-expansion-2026-10-06.md"
+      ],
+      "score_basis": "Provisional director estimate; evidence-backed opportunity, not measured ROI. Recheck before execution.",
+      "result": null,
+      "validation_gate": "WAITING for problem/demand evidence and explicit prototype decision; do not auto-build.",
+      "opportunity_scores": {
+        "user_pain": 8,
+        "market_demand": null,
+        "differentiation": null,
+        "build_feasibility": 7,
+        "company_fit": 8,
+        "shared_technology": 7,
+        "monetization_potential": null,
+        "organic_growth_potential": null,
+        "competition_opportunity": null,
+        "wow_factor": null
+      },
+      "opportunity_score_basis": "Only inferred fit/feasibility/pain estimated; market/commercial scores unknown pending research.",
+      "estimates": {
+        "development_effort": 3,
+        "maintenance_burden": null,
+        "distribution_difficulty": null,
+        "risk": 2
+      },
+      "priority": 37.3333,
+      "priority_basis": "ESTIMATE: impact \u00d7 user_value \u00d7 confidence / (effort + risk + 1)",
+      "risk": 2,
+      "created_at": "2026-10-07T23:38:29+00:00",
+      "started_at": null,
+      "completed_at": null,
+      "attempts": 0,
+      "owner": null,
+      "lease_until": null
+    }
+  ]
+}

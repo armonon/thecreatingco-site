@@ -1,0 +1,4 @@
+#!/bin/sh
+# thecreateco marketing engine CLI
+ENGINE="$(cd "$(dirname "$0")/.." && pwd)"
+PYTHONPATH="$ENGINE${PYTHONPATH:+:$PYTHONPATH}" exec python3 -m mktg.cli "$@"

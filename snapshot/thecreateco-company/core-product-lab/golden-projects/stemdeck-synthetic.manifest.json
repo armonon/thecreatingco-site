@@ -1,0 +1,9 @@
+{
+  "schema": 1,
+  "sourceCommit": "8c06f816e47bc2405e20f8941e19a4697d5c7c3f",
+  "sourceGenerator": "scripts/studio-ui-fixture.mjs",
+  "sha256": "a2ab393d24489915870472138fe37c62ba1dfdc0d8e7484a79f6affe9b34fe9f",
+  "bytes": 943465,
+  "origin": "generated 220 Hz 8-second PCM, no third-party music",
+  "scope": "one deck, six arrangement lanes; UI/import/edit/export fixture, NOT full four-deck performance-capture qualification"
+}

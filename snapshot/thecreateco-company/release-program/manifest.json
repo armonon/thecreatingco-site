@@ -1,0 +1,63 @@
+{
+  "assignment_message": "1557572531173462058",
+  "requested_count": 18,
+  "scope_status": "CONFIRMED",
+  "confirmed_product_ids": [
+    "luma",
+    "form",
+    "stemdeck",
+    "scenepilot",
+    "reclaim",
+    "glyph",
+    "split",
+    "captions",
+    "reframe",
+    "pocket-studio",
+    "autocut",
+    "key-bpm",
+    "librarian",
+    "sessions",
+    "pocket",
+    "ghost",
+    "cast",
+    "bounce"
+  ],
+  "unidentified_count": 0,
+  "scope_question": null,
+  "source": "Current user assignment, confirmed existing Core Product Lab scope; no guessed remaining names.",
+  "created_at": "2026-10-08T02:01:57+00:00",
+  "completion_criteria": [
+    "core_workflow",
+    "tests",
+    "supported_platforms",
+    "documentation",
+    "critical_blockers"
+  ],
+  "scope_notes": "Armon explicitly named these18 and exclusions; preserve excluded products,data,website entries and shared dependencies.",
+  "confirmed_at": "2026-10-08T02:06:48+00:00",
+  "first_wave": [
+    "bounce",
+    "pocket-studio",
+    "key-bpm",
+    "glyph"
+  ],
+  "excluded_product_ids": [
+    "mockup",
+    "grade",
+    "press",
+    "canvas",
+    "board",
+    "vox",
+    "locker"
+  ],
+  "scorecard_dimensions": [
+    "core_workflow",
+    "save_reopen_export",
+    "reliability_recovery",
+    "performance",
+    "usability_accessibility",
+    "responsive_behavior",
+    "security_privacy",
+    "documentation_support"
+  ]
+}

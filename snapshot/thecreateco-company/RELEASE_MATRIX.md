@@ -1,0 +1,708 @@
+# Product release matrix — ongoing assignment
+
+Updated: 2026-10-09T14:15:28+00:00
+**0/18 products meet all documented completion gates. Assignment NOT COMPLETE.**
+
+Named scope: 18/18. CONFIRMED.
+Unnamed products are not silently selected, omitted, or counted as passing.
+
+A completed queue task, pushed PR, passing subset or release wave is NOT a completed product.
+PASS requires exact-candidate evidence and complete declared coverage. Missing checks remain UNVERIFIED.
+
+## Luma Studio
+
+- Product completion: INCOMPLETE
+- Release status: alpha — Working alpha source/interface evidence exists, but complete workflow, recovery, platform and security coverage remains partial; not a stable-release certification.
+- Candidate: 8c15f8537c1176b7d4c0076182b7501c92f714b5
+- Repository: https://github.com/armonon/luma-studio
+- Application: https://luma.thecreatingco.com/studio
+- core workflow: **UNVERIFIED** — Normal partial opacity/raster masks/browser renderer subset plus Nodevector fixture repaired; full UI and styled/non-normal/multipass/BlendIf qualification incomplete.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/luma-adjustment-variants-20261008/README.md)
+- save reopen export: **UNVERIFIED** — Whole gate not qualified on this candidate; previous PR8 evidence retained in engine audit history.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/luma-adjustment-variants-20261008/README.md)
+- reliability recovery: **UNVERIFIED** — Whole gate not qualified on this candidate; previous PR8 evidence retained in engine audit history.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/luma-adjustment-variants-20261008/README.md)
+- performance: **UNVERIFIED** — Whole gate not qualified on this candidate; previous PR8 evidence retained in engine audit history.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/luma-adjustment-variants-20261008/README.md)
+- usability accessibility: **UNVERIFIED** — Whole gate not qualified on this candidate; previous PR8 evidence retained in engine audit history.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/luma-adjustment-variants-20261008/README.md)
+- responsive behavior: **UNVERIFIED** — Whole gate not qualified on this candidate; previous PR8 evidence retained in engine audit history.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/luma-adjustment-variants-20261008/README.md)
+- security privacy: **UNVERIFIED** — Whole gate not qualified on this candidate; previous PR8 evidence retained in engine audit history.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/luma-adjustment-variants-20261008/README.md)
+- documentation support: **UNVERIFIED** — Whole gate not qualified on this candidate; previous PR8 evidence retained in engine audit history.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/luma-adjustment-variants-20261008/README.md)
+- tests: **UNVERIFIED** — 1436 engine pass/10skip,types/full strict lint,72three-engine renderer cases and195840pixel probe pass. Full application/native builds and rendered-page tests not run due disk144MiB; hosted3jobs0stepsfailed billing. Not whole test-gate qualification.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/luma-adjustment-variants-20261008/README.md)
+- supported platforms: **UNVERIFIED** — Whole gate not qualified on this candidate; previous PR8 evidence retained in engine audit history.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/luma-adjustment-variants-20261008/README.md)
+- critical blockers: **BLOCKED** — Insufficient local disk for exact-head full builds; Actions37795215877 all3jobs0steps failed due payments/spending. Full golden/native/source-live qualification unresolved.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/luma-adjustment-variants-20261008/README.md)
+- Deployment: {"status": "PUSHED_PR_OPEN_NOT_MERGED_NOT_DEPLOYED", "source_sha": "8c15f8537c1176b7d4c0076182b7501c92f714b5", "pr": "https://github.com/armonon/luma-studio/pull/9", "base_pr": "https://github.com/armonon/luma-studio/pull/8"}
+- Exact next action: Restore sufficient disk for exact-head builds; qualify styled/non-normal/multipass/BlendIf and full UI persistence. Resolve hosted account CI through existing owner/access path; no retry loops or gate bypass.
+
+## Form Studio
+
+- Product completion: INCOMPLETE
+- Release status: alpha — Source-described beta remains unqualified; dated evidence supports ALPHA only. No stable or production claim.
+- Candidate: 779d61d324a6f5f8a6813b51735d4495dbfabc08
+- Repository: https://github.com/armonon/form-studio
+- Application: https://form.thecreatingco.com/studio
+- core workflow: **UNVERIFIED** — Exact779d61d builtChromium shared Model/Fabric/Animation/Model edit/back/keyframe/history subset PASS. Full native, linked/garment handoffs and broader golden workflow unverified.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/form-handoff-20261008T1210/README.md)
+  - [browser-result.json](/Users/agentsattari/thecreateco-company/reports/form-handoff-20261008T1210/browser-result.json)
+  - [final-artifact-manifest.json](/Users/agentsattari/thecreateco-company/reports/form-handoff-20261008T1210/final-artifact-manifest.json)
+- save reopen export: **UNVERIFIED** — Exact779d61d actual .form download/full Chromium process restart/reopen preserves CAD/Fabric authored data and Animation cube/keyframe; old history resets. Independent geometry/mesh export evidence remains prior-source only; full native/export/recovery unqualified.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/form-handoff-20261008T1210/README.md)
+  - [browser-result.json](/Users/agentsattari/thecreateco-company/reports/form-handoff-20261008T1210/browser-result.json)
+  - [final-artifact-manifest.json](/Users/agentsattari/thecreateco-company/reports/form-handoff-20261008T1210/final-artifact-manifest.json)
+- reliability recovery: **UNVERIFIED** — Exact779d61d shared Undo/Redo and browser save/reopen PASS; two Undo steps required after Animation return. Cross-key native/browser crash/interruption/pressure and linked/garment variants unverified.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/form-handoff-20261008T1210/README.md)
+  - [browser-result.json](/Users/agentsattari/thecreateco-company/reports/form-handoff-20261008T1210/browser-result.json)
+  - [final-artifact-manifest.json](/Users/agentsattari/thecreateco-company/reports/form-handoff-20261008T1210/final-artifact-manifest.json)
+- performance: **UNVERIFIED** — 15JSbudget tests pass; interactive/hardware/largeproject envelope unqualified.
+  - [budgets.log](/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-completion-20261007/budgets.log)
+- usability accessibility: **UNVERIFIED** — Former offscreen Project trigger repaired on exact head; actual normal1440 exports PASS. Full accessibility/onboarding coverage unverified; first-run product center dismissed normally.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/form-golden-20261008T0310/README.md)
+  - [browser-workflow-result.json](/Users/agentsattari/thecreateco-company/reports/form-golden-20261008T0310/browser-workflow-result.json)
+  - [step-verification.json](/Users/agentsattari/thecreateco-company/reports/form-golden-20261008T0310/step-verification.json)
+  - [export-verification.json](/Users/agentsattari/thecreateco-company/reports/form-golden-20261008T0310/export-verification.json)
+- responsive behavior: **UNVERIFIED** — Prior exact-head reviewed menu repair passes24browser variants320–1440px; current1440 fullbrowserrestart/export PASS. Former offscreen-menu defect repaired; fullproduct responsive qualification incomplete.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/form-golden-20261008T0310/README.md)
+  - [browser-workflow-result.json](/Users/agentsattari/thecreateco-company/reports/form-golden-20261008T0310/browser-workflow-result.json)
+  - [step-verification.json](/Users/agentsattari/thecreateco-company/reports/form-golden-20261008T0310/step-verification.json)
+  - [export-verification.json](/Users/agentsattari/thecreateco-company/reports/form-golden-20261008T0310/export-verification.json)
+- security privacy: **UNVERIFIED** — Productionnpm audit zero; development/native/Vinext runtime and deployedtree not fullyqualified.
+  - [production-audit.json](/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-completion-20261007/production-audit.json)
+- documentation support: **UNVERIFIED** — Exact779d61d narrow stale routing/shared-container/recovery-boundary correction independently Sol-reviewed and pushed PR8. Full documentation/support coverage unverified.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/form-handoff-20261008T1210/README.md)
+  - [browser-result.json](/Users/agentsattari/thecreateco-company/reports/form-handoff-20261008T1210/browser-result.json)
+  - [final-artifact-manifest.json](/Users/agentsattari/thecreateco-company/reports/form-handoff-20261008T1210/final-artifact-manifest.json)
+- tests: **UNVERIFIED** — Exact779d61d focused42unit+4mocked integration and12actual builtChromium assertions PASS; desktopfrontend build PASS. Fullsuite/native/hosted/platform gates not qualified by this audit.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/form-handoff-20261008T1210/README.md)
+  - [browser-result.json](/Users/agentsattari/thecreateco-company/reports/form-handoff-20261008T1210/browser-result.json)
+  - [final-artifact-manifest.json](/Users/agentsattari/thecreateco-company/reports/form-handoff-20261008T1210/final-artifact-manifest.json)
+- supported platforms: **UNVERIFIED** — Exact779d61d macOSarm64 bundledChromium153 SwiftShader desktopfrontend subset PASS. InstalledChrome154 loopback timed out; native/signed app and other platforms/browsers unqualified.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/form-handoff-20261008T1210/README.md)
+  - [browser-result.json](/Users/agentsattari/thecreateco-company/reports/form-handoff-20261008T1210/browser-result.json)
+  - [final-artifact-manifest.json](/Users/agentsattari/thecreateco-company/reports/form-handoff-20261008T1210/final-artifact-manifest.json)
+- critical blockers: **BLOCKED** — Fresh preflight lacks exactnativeapp/DMG/signing identity/credentials; mandatory PR8 web/native checks billing-blocked, desktopartifact skipped. No merge/deployment; fullgolden remains unqualified.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/form-handoff-20261008T1210/README.md)
+  - [browser-result.json](/Users/agentsattari/thecreateco-company/reports/form-handoff-20261008T1210/browser-result.json)
+  - [final-artifact-manifest.json](/Users/agentsattari/thecreateco-company/reports/form-handoff-20261008T1210/final-artifact-manifest.json)
+  - [hosted-run.txt](/Users/agentsattari/thecreateco-company/reports/form-handoff-20261008T1210/hosted-run.txt)
+  - [native-preflight.json](/Users/agentsattari/thecreateco-company/reports/form-handoff-20261008T1210/native-preflight.json)
+- Deployment: {"status": "PUSHED_PR_OPEN_NOT_MERGED_NOT_DEPLOYED", "source_sha": "779d61d324a6f5f8a6813b51735d4495dbfabc08", "pr": "https://github.com/armonon/form-studio/pull/8", "base": "qa/form-runtime-security-20261008T0340", "prerequisite_pr": "https://github.com/armonon/form-studio/pull/7", "checks": "web/native-macos FAILURE due billing; desktop-artifact SKIPPED; no retry or bypass", "published_source_sha": null}
+- Exact next action: Investigate extra navigation history checkpoint; resume exactnative/cross-channel recovery and explicit linked-model/Fabric-character variants; preserve PR8→PR7→PR5 stack/hosted gates and firstwave priority.
+
+## StemDeck
+
+- Product completion: INCOMPLETE
+- Release status: alpha — Software recovery fix qualified; full golden/platform/provenance requirements remain incomplete.
+- Candidate: c15bb06a87b150a966e8c563457de4f2786ba141
+- Repository: https://github.com/armonon/sattari-custom-site
+- Application: https://stemdeck.thecreatingco.com/studio
+- core workflow: **UNVERIFIED** — Actual clean-head synthetic four-deck load/analyze/12-second continuous perform/capture/replay-print/arrange/undo-redo/save/close/reopen/export passes. Actual production-bundle replay also passes with no late controls and original event history preserved. Full musical/physical/input/platform workflow coverage incomplete. Current local-source WebKit actual four-deck capture, arrangement reconstruction/edit undo-redo and live replay-print PASS (0 late controls); fresh portable restore FAIL, so whole workflow remains unqualified.
+  - [report.json](/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/exact-ui/report.json)
+  - [report.json](/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/exact-production-replay/report.json)
+  - [README.md](/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/README.md)
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/stemdeck-webkit-reference-20261007/README.md)
+- save reopen export: **FAIL** — Current exact-source WebKit normal capture and explicit long-session WAV same-profile browser restart/export PASS: 658368 and 660416 frames at48kHz stereo, maximum PCM error0. Fresh portable profile: normal import returns entire SATPROJ6 archive for individual audio blobs; lossless import fails local storage. Disk pressure affects bulk import failures; wrong bytes directly observed. Whole-product qualification incomplete.
+  - [report.json](/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/exact-ui/report.json)
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/stemdeck-webkit-reference-20261007/README.md)
+- reliability recovery: **FAIL** — Current normal full-browser restart, portable archive and mandatory captured-recovery suite pass. Earlier f6f061c SIGKILL/quota evidence is historical; current-head power-loss/full-platform qualification incomplete. Current local WebKit fresh-profile portable restore fails asset byte identity; imported audio reads begin SATPROJ6 rather than RIFF. Original generated archive/capture kept. No real user data was involved.
+  - [report.json](/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/exact-ui/report.json)
+  - [report.json](/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/exact-gate/report.json)
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/stemdeck-webkit-reference-20261007/README.md)
+- performance: **UNVERIFIED** — Measured dependency path-enumeration bottleneck repaired locally without changing 50 ms grain or 250 ms control guards. Actual UI/production replay passes, mandatory unchanged 120-second soak passes. Original lossless capture versus actual print middle interval has zero-sample lag and maximum sample error 9.32e-9. Full musical/hardware envelope unverified.
+  - [report.json](/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/exact-gate/report.json)
+  - [report.json](/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/exact-ui/report.json)
+  - [exact-capture-print-comparison.json](/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/exact-capture-print-comparison.json)
+  - [cpu-profile.json](/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/actual-modules/cpu-profile.json)
+  - [diagnostics.json](/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/reachability-probe/diagnostics.json)
+- usability accessibility: **UNVERIFIED** — Actual desktop file controls, perform/print/arrange and undo/redo exercised. Whole-product artist/accessibility qualification incomplete.
+  - [report.json](/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/exact-ui/report.json)
+  - [report.json](/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/exact-gate/report.json)
+- responsive behavior: **UNVERIFIED** — Mandatory built UI viewport checks pass. Real mobile/tablet behavior remains unverified.
+  - [report.json](/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/exact-gate/report.json)
+- security privacy: **UNVERIFIED** — Version/source-fenced dependency repair changes no source media, network authorization or security gate. Uses owned synthetic fixtures only. Independent source review remains pending; whole-product privacy/security provenance not complete.
+  - [review-request.json](/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/review-request.json)
+  - [clean-install.log](/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/clean-install.log)
+  - [README.md](/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/README.md)
+- documentation support: **UNVERIFIED** — Scoped repair, reproducible install and qualification limits documented. Current work log distinguishes ephemeral WebKit Blob failure from persistent reference-decode failure. Full support/release documentation incomplete.
+  - [README.md](/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/README.md)
+  - [review-request.json](/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/review-request.json)
+- tests: **FAIL** — Mandatory exact clean Node 22 gate passes 2,250 tests, lint/types/build/native/browser and unchanged 120-second soak. Supplemental exact UI and actual production replay pass. Persistent platform suites: Chromium 14/14, Firefox 14/14, WebKit 13/14; native MediaRecorder reference decode fails in WebKit. Do not replace that remaining failed check with mandatory-gate PASS. Additional actual WebKit normal-ui and lossless-ui suites exit1 at fresh portable restoration; earlier passing subsets retained. No native-test waiver or source change.
+  - [report.json](/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/exact-gate/report.json)
+  - [report.json](/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/exact-ui/report.json)
+  - [report.json](/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/exact-platforms/report.json)
+  - [report.json](/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/exact-production-replay/report.json)
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/stemdeck-webkit-reference-20261007/README.md)
+- supported platforms: **FAIL** — Persistent Chromium 151 and Firefox 153 native arrangement suites pass 14/14. Persistent WebKit 26.5 passes 13/14 including exact frame/WAV/ZIP and lossless source capture; MediaRecorder reference fails native decodeAudioData. Ephemeral WebKit rejects even a 3-byte Blob while persistent storage succeeds. Real Safari/iOS/Android/native devices unverified. Same WebKit M4A successfully decodes through the real bounded product decoder despite native failure. Explicit WAV and same-profile reopen/export pass; fresh portable restore fails. Do not label Safari universally broken or qualified from Playwright alone.
+  - [report.json](/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/exact-platforms/report.json)
+  - [webkit-storage-probe.json](/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/webkit-storage-probe.json)
+  - [webkit-persistent-storage-probe.json](/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/webkit-persistent-storage-probe.json)
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/stemdeck-webkit-reference-20261007/README.md)
+- critical blockers: **FAIL** — Native reference decoder failure is retained but real bounded product decoder succeeds, so native failure alone is not a proven core blocker. Actual fresh-profile WebKit portable restore byte corruption is a confirmed synthetic-fixture failure; full39-asset imports can also fail local storage with disk-pressure confound. Smaller slice probes pass; root cause remains a hypothesis, no patch approved. Independent review, hosted gates, remaining device/platform/source-live qualification unresolved.
+  - [report.json](/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/exact-ui/report.json)
+  - [report.json](/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/exact-platforms/report.json)
+  - [review-request.json](/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/review-request.json)
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/stemdeck-webkit-reference-20261007/README.md)
+- Deployment: {"status": "LOCAL_ONLY_NEEDS_INDEPENDENT_REVIEW", "branch": "core-lab/stemdeck-replay-deadline-20261007", "base_pr": "https://github.com/armonon/sattari-custom-site/pull/33", "pushed": false, "merged": false, "deployed": false, "local_exact_gate": "PASS", "remote_gate_status": "NOT_REQUESTED_UNPUSHED_REVIEW_PENDING", "review_status": "PENDING", "last_pushed_candidate": "af10e31c9df8f1363d3945e3b1d39518cd858009"}
+- Exact next action: Execute queued CORE-STEM-ARCHIVE-WEBKIT-001 P0 repair: reproduce real39-asset portable roundtrip with disk baseline; use bounded detached-storage candidate only after proof, verify every hash/browser restart/PCM/failure atomicity, retain native failure, obtain independent OpenAI source review and normal stack/CI gates. Qualification audit CORE-STEM-WEBKIT-REFERENCE-001 is NEEDS_REVIEW, not product completion.
+
+## ScenePilot
+
+- Product completion: INCOMPLETE
+- Release status: alpha — Runtime security repair verified; whole product release gates remain incomplete.
+- Candidate: c26d518bc3d05f0adbf7287f79c5f5f15ac25220
+- Repository: https://github.com/armonon/scenepilot-studio-badass
+- Application: https://scenepilot.thecreatingco.com/app/
+- core workflow: **UNVERIFIED** — Four reviewed primary workflow defects repaired/pushed PR93. Real import/insertion/Save/cold-reopen/mixed video+audio UI export subset passes; complete golden recipe unverified.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/scenepilot-golden-release18/README.md)
+  - [receipt.json](/Users/agentsattari/thecreateco-company/reports/scenepilot-golden-release18/exact-audio-head/receipt.json)
+- save reopen export: **UNVERIFIED** — Fullserialized journal/recovery and offline/relinked-save identity PASS with explicit added-track/source-path delta. No new export qualification; earlier a47417b export evidence remains candidate-specific. Full gate unverified.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/scenepilot-recovery-20261008/README.md)
+  - [result.json](/Users/agentsattari/thecreateco-company/reports/scenepilot-recovery-20261008/result.json)
+  - [source-build-receipt.json](/Users/agentsattari/thecreateco-company/reports/scenepilot-recovery-20261008/source-build-receipt.json)
+- reliability recovery: **UNVERIFIED** — Exact c7d2b4f actual development Electron completed-autosave SIGKILL/restart recovery, moved source offline-save/relink including favorite/beatMap, permission-denied preservation/retry6checks PASS; dedicated32MB ENOSPC atomic-helper PASS. Full packaged/main-source/UI ENOSPC/kill-during-write/platform/powerloss unverified.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/scenepilot-recovery-20261008/README.md)
+  - [result.json](/Users/agentsattari/thecreateco-company/reports/scenepilot-recovery-20261008/result.json)
+  - [source-build-receipt.json](/Users/agentsattari/thecreateco-company/reports/scenepilot-recovery-20261008/source-build-receipt.json)
+- performance: **UNVERIFIED** — Three exact-source Node synthetic planner/PCM repetitions PASS. Real-media playback/export, app/process-tree memory and multi-hour/device soak BLOCKED by146423808bytes free disk. Not full performance or release qualification.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/scenepilot-performance-20261008T1010/README.md)
+  - [receipt.json](/Users/agentsattari/thecreateco-company/reports/scenepilot-performance-20261008T1010/receipt.json)
+  - [benchmark-1.json](/Users/agentsattari/thecreateco-company/reports/scenepilot-performance-20261008T1010/benchmark-1.json)
+  - [benchmark-2.json](/Users/agentsattari/thecreateco-company/reports/scenepilot-performance-20261008T1010/benchmark-2.json)
+  - [benchmark-3.json](/Users/agentsattari/thecreateco-company/reports/scenepilot-performance-20261008T1010/benchmark-3.json)
+- usability accessibility: **UNVERIFIED** — Full release gate not qualified by this runtime-security checkpoint.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/scenepilot-runtime-release18/README.md)
+- responsive behavior: **UNVERIFIED** — Full release gate not qualified by this runtime-security checkpoint.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/scenepilot-runtime-release18/README.md)
+- security privacy: **UNVERIFIED** — Runtime four high advisories fixed inPR91; compatibletoolingPR92 reduces29→16groups(8high8moderate). Remainingbraces/sprintf upstream latestaffected; exposure follow-up queued. No fullsecurityclear.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/scenepilot-runtime-release18/README.md)
+- documentation support: **UNVERIFIED** — Full release gate not qualified by this runtime-security checkpoint.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/scenepilot-runtime-release18/README.md)
+- tests: **UNVERIFIED** — Node22 types/lint, desktop renderer, productionbuild1095/1095units and6exact-head realElectron recovery checks PASS. Baseline metadata regression fails/fixed2tests pass. Required hosted/downstack and full platform requirements unresolved.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/scenepilot-recovery-20261008/README.md)
+  - [result.json](/Users/agentsattari/thecreateco-company/reports/scenepilot-recovery-20261008/result.json)
+  - [source-build-receipt.json](/Users/agentsattari/thecreateco-company/reports/scenepilot-recovery-20261008/source-build-receipt.json)
+- supported platforms: **UNVERIFIED** — Full release gate not qualified by this runtime-security checkpoint.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/scenepilot-runtime-release18/README.md)
+- critical blockers: **UNVERIFIED** — Complete critical/security/core-workflow triage not finished; do not infer absence.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/scenepilot-runtime-release18/README.md)
+- Deployment: {"status": "PUSHED_PR95_OPEN_NOT_MERGED_NOT_DEPLOYED", "url": "https://github.com/armonon/scenepilot-studio-badass/pull/95", "source_sha": "c26d518bc3d05f0adbf7287f79c5f5f15ac25220", "base": "codex/scenepilot-recovery-20261008", "mandatory_checks": "Not rechecked this audit; prior checkpoint reports unresolved mandatory stack/hosted checks."}
+- Exact next action: Restore sufficient approved scratch capacity, then rights-cleared real-media/app-process-tree playback/export soak; retain exact candidate and PR95 downstack/mandatory gates.
+
+## Reclaim
+
+- Product completion: INCOMPLETE
+- Release status: alpha — Scoped safety repairs with real fixture evidence; broader native workflow/platform/safety gaps remain.
+- Candidate: c46f9811c7fd34a00625541178d1f1e0d2b2456b
+- Repository: https://github.com/armonon/universal-operator-batch-kit
+- Application: https://reclaim.thecreatingco.com/browser/
+- core workflow: **UNVERIFIED** — Real native engine duplicate/quarantine/restore fixture subset passed; full Tauri GUI workflow unverified.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/reclaim-safety-20261007/README.md)
+- save reopen export: **UNVERIFIED** — Actual SIGKILL interrupted5000-file batch; fresh OS process restored every byte. Native UI report/restart and full artifact workflow unverified.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/reclaim-safety-20261007/README.md)
+- reliability recovery: **UNVERIFIED** — Actual separate filesystem/resource-fork roundtrip and real ENOSPC preservation passed. Power-loss, hostile final-unlink race and disconnect/corrupt-manifest recovery unverified.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/reclaim-safety-20261007/README.md)
+- performance: **UNVERIFIED** — Streaming/bounded metadata implemented; comprehensive large-library/UI responsiveness budgets unverified.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/reclaim-safety-20261007/README.md)
+- usability accessibility: **UNVERIFIED** — Keep-one and stale-selection guards added; full actual native UI/a11y not verified.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/reclaim-safety-20261007/README.md)
+- responsive behavior: **UNVERIFIED** — Read-only browser1440/390 screenshots, native minimum960x680; full responsive/accessibility coverage unverified.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/reclaim-safety-20261007/README.md)
+- security privacy: **UNVERIFIED** — Unique-data and Mac-metadata loss bugs repaired. Final compare-to-unlink hostile-writer race and concurrent parent-path qualification remain; not complete safety clearance.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/reclaim-safety-20261007/README.md)
+- documentation support: **UNVERIFIED** — README and native safety guide reflect current browser/native split and limitations; full user support/recovery docs not fully qualified.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/reclaim-safety-20261007/README.md)
+- tests: **PASS** — Exact clean candidate:58 native tests passed/3 explicitly ignored; owned-volume test separately passed;77 TS tests,typecheck,build passed. Not full product gate.
+  - [exact-head.json](/Users/agentsattari/thecreateco-company/reports/reclaim-safety-20261007/exact-head.json)
+  - [exact-native.log](/Users/agentsattari/thecreateco-company/reports/reclaim-safety-20261007/exact-native.log)
+  - [exact-disk-pressure.log](/Users/agentsattari/thecreateco-company/reports/reclaim-safety-20261007/exact-disk-pressure.log)
+  - [exact-typescript-tests.log](/Users/agentsattari/thecreateco-company/reports/reclaim-safety-20261007/exact-typescript-tests.log)
+- supported platforms: **UNVERIFIED** — Mac arm64 native engine + Chromium151/Firefox153/WebKit26.5 read-only browser subset passed; native UI, physical Intel, macOS13/clean-machine and actual Safari/iOS unverified.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/reclaim-safety-20261007/README.md)
+- critical blockers: **UNVERIFIED** — Known false-duplicate/metadata-loss defects repaired. No all-clear: native fullworkflow, hostile filesystem races and artifact/platform triage remain incomplete.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/reclaim-safety-20261007/README.md)
+- Deployment: {"status": "OPEN_PR_NOT_DEPLOYED", "pr": "https://github.com/armonon/universal-operator-batch-kit/pull/2", "merged": false, "deployed": false, "checks": "No PR checks reported; missing check is not PASS"}
+- Exact next action: Native GUI workflow and full artifact/hostile-filesystem qualification remain; clean-machine Intel/macOS13 needs platform access. Parent redirected next active work to StemDeck while preserving this checkpoint.
+
+## Glyph Studio
+
+- Product completion: INCOMPLETE
+- Release status: alpha — Working alpha source/interface evidence exists, but complete workflow, recovery, platform and security coverage remains partial; not a stable-release certification.
+- Candidate: a3e50fa6d5fabdf499fd1592085c54d9710e42dc
+- Repository: https://github.com/armonon/glyph-studio
+- Application: https://glyph-studio-610.netlify.app/studio
+- core workflow: **PASS** — Scoped standalone font workflow: brush/pen/erase/copy/metrics/kerning/edit/Undo/Redo; actual exports independently parsed/rendered. Brand Kit/native explicitly excluded.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/glyph-completion-20261007/README.md)
+  - [font-workflow.log](/Users/agentsattari/thecreateco-company/reports/glyph-completion-20261007/font-workflow.log)
+  - [font-firefox.log](/Users/agentsattari/thecreateco-company/reports/glyph-completion-20261007/font-firefox.log)
+  - [font-webkit.log](/Users/agentsattari/thecreateco-company/reports/glyph-completion-20261007/font-webkit.log)
+  - [extended-workflow.json](/Users/agentsattari/thecreateco-company/reports/glyph-completion-20261007/extended-workflow.json)
+- save reopen export: **PASS** — Exact editable Save/closed-tab/reopen/import/Undo/Redo on three browser engines; actual OTF/TTF/SVG and public-host roundtrip.
+  - [font-workflow.log](/Users/agentsattari/thecreateco-company/reports/glyph-completion-20261007/font-workflow.log)
+  - [font-firefox.log](/Users/agentsattari/thecreateco-company/reports/glyph-completion-20261007/font-firefox.log)
+  - [font-webkit.log](/Users/agentsattari/thecreateco-company/reports/glyph-completion-20261007/font-webkit.log)
+  - [public-font-workflow.log](/Users/agentsattari/thecreateco-company/reports/glyph-completion-20261007/public-font-workflow.log)
+- reliability recovery: **UNVERIFIED** — PASS subset: unreadable and semantic-corruption preservation, quota/retry, delayed/invalid imports, offline recovery; OS termination, browser eviction and broad low-memory stress not qualified.
+  - [recovery-fixed.log](/Users/agentsattari/thecreateco-company/reports/glyph-completion-20261007/recovery-fixed.log)
+  - [autosave.log](/Users/agentsattari/thecreateco-company/reports/glyph-completion-20261007/autosave.log)
+  - [pwa.log](/Users/agentsattari/thecreateco-company/reports/glyph-completion-20261007/pwa.log)
+- performance: **UNVERIFIED** — 85glyph10880point417508byte fixture import62ms/save-export76ms observed on host; no cross-device/stress guarantee.
+  - [extended-workflow.json](/Users/agentsattari/thecreateco-company/reports/glyph-completion-20261007/extended-workflow.json)
+- usability accessibility: **UNVERIFIED** — PASS subset: keyboard tab regression and zero automated WCAG violations across12 route/viewport combinations. Manual assistive-technology/nonvisual workflow not qualified.
+  - [recovery-fixed.log](/Users/agentsattari/thecreateco-company/reports/glyph-completion-20261007/recovery-fixed.log)
+  - [public-ui.json](/Users/agentsattari/thecreateco-company/reports/glyph-completion-20261007/public-ui.json)
+- responsive behavior: **UNVERIFIED** — Zero horizontal overflow at390/768/1440 on4routes. Actual mobile touch/tablet input unverified.
+  - [public-ui.json](/Users/agentsattari/thecreateco-company/reports/glyph-completion-20261007/public-ui.json)
+- security privacy: **UNVERIFIED** — Production advisories0, strict authored-data import validation, no server/user-data changes; broad privacy/security assessment not completed.
+  - [audit-production.json](/Users/agentsattari/thecreateco-company/reports/glyph-completion-20261007/audit-production.json)
+  - [independent-review.md](/Users/agentsattari/thecreateco-company/reports/glyph-completion-20261007/independent-review.md)
+- documentation support: **PASS** — README/Guide truthfully describe autosave/recovery/backup limits and supported font formats, OTF kerning limit retained; source/live parity and release/rollback recorded.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/glyph-completion-20261007/README.md)
+- tests: **PASS** — 45/45unit, lint/build, quota/recovery/browser smoke/PWA, full font workflow onChromium/Firefox/WebKit; exact-source public draft checks pass.
+  - [unit.log](/Users/agentsattari/thecreateco-company/reports/glyph-completion-20261007/unit.log)
+  - [lint.log](/Users/agentsattari/thecreateco-company/reports/glyph-completion-20261007/lint.log)
+  - [build.log](/Users/agentsattari/thecreateco-company/reports/glyph-completion-20261007/build.log)
+  - [recovery-fixed.log](/Users/agentsattari/thecreateco-company/reports/glyph-completion-20261007/recovery-fixed.log)
+  - [autosave.log](/Users/agentsattari/thecreateco-company/reports/glyph-completion-20261007/autosave.log)
+  - [smoke.log](/Users/agentsattari/thecreateco-company/reports/glyph-completion-20261007/smoke.log)
+  - [pwa.log](/Users/agentsattari/thecreateco-company/reports/glyph-completion-20261007/pwa.log)
+  - [font-workflow.log](/Users/agentsattari/thecreateco-company/reports/glyph-completion-20261007/font-workflow.log)
+  - [font-firefox.log](/Users/agentsattari/thecreateco-company/reports/glyph-completion-20261007/font-firefox.log)
+  - [font-webkit.log](/Users/agentsattari/thecreateco-company/reports/glyph-completion-20261007/font-webkit.log)
+- supported platforms: **UNVERIFIED** — macOS arm64 headlessChromium/Firefox/WebKit primary workflow passed; Windows/Linux/physical mobile/installed font hosts not exercised.
+  - [font-workflow.log](/Users/agentsattari/thecreateco-company/reports/glyph-completion-20261007/font-workflow.log)
+  - [font-firefox.log](/Users/agentsattari/thecreateco-company/reports/glyph-completion-20261007/font-firefox.log)
+  - [font-webkit.log](/Users/agentsattari/thecreateco-company/reports/glyph-completion-20261007/font-webkit.log)
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/glyph-completion-20261007/README.md)
+- critical blockers: **UNVERIFIED** — No known critical blockers in verified standalone workflow after repairs; broader platform/security triage incomplete, so not whole-product release qualification.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/glyph-completion-20261007/README.md)
+  - [independent-review.md](/Users/agentsattari/thecreateco-company/reports/glyph-completion-20261007/independent-review.md)
+- Deployment: {"status": "PASS", "pr": "https://github.com/armonon/glyph-studio/pull/2", "pushed_sha": "a3e50fa6d5fabdf499fd1592085c54d9710e42dc", "merged": true, "merged_sha": "0feefc7785d356f1862f23a96162bfd69f4d872e", "tree_equal": true, "deployed": true, "deploy_id": "6ac702c6402f6654a7134732", "rollback_deploy_id": "6ac5d2b39f450706b3f7dda1", "public_url": "https://glyph-studio-610.netlify.app", "public_workflow_verified": true, "evidence": ["/Users/agentsattari/thecreateco-company/reports/glyph-completion-20261007/publish-receipt.json", "/Users/agentsattari/thecreateco-company/reports/glyph-completion-20261007/public-provenance.json", "/Users/agentsattari/thecreateco-company/reports/glyph-completion-20261007/public-font-workflow.log", "/Users/agentsattari/thecreateco-company/reports/glyph-completion-20261007/public-ui.json"]}
+- Exact next action: Complete actual target/device/manual-a11y/stress/security qualification; retain truthful partial-release classification, do not repeat completed corruption fixes.
+
+## Split
+
+- Product completion: INCOMPLETE
+- Release status: alpha — Working alpha source/interface evidence exists, but complete workflow, recovery, platform and security coverage remains partial; not a stable-release certification.
+- Candidate: not yet pinned in completion record
+- Repository: https://github.com/armonon/sattari-custom-site
+- Application: https://sattarimusic.com/studio/split
+- core workflow: **UNVERIFIED** — No complete gate evidence recorded.
+- save reopen export: **UNVERIFIED** — No complete gate evidence recorded.
+- reliability recovery: **UNVERIFIED** — No complete gate evidence recorded.
+- performance: **UNVERIFIED** — No complete gate evidence recorded.
+- usability accessibility: **UNVERIFIED** — No complete gate evidence recorded.
+- responsive behavior: **UNVERIFIED** — No complete gate evidence recorded.
+- security privacy: **UNVERIFIED** — No complete gate evidence recorded.
+- documentation support: **UNVERIFIED** — No complete gate evidence recorded.
+- tests: **UNVERIFIED** — No complete gate evidence recorded.
+- supported platforms: **UNVERIFIED** — No complete gate evidence recorded.
+- critical blockers: **UNVERIFIED** — No complete gate evidence recorded.
+- Deployment: {"status": "UNVERIFIED"}
+- Exact next action: Continue claimed product work; update completion observations after milestone.
+
+## Captions
+
+- Product completion: INCOMPLETE
+- Release status: alpha — Working alpha source/interface evidence exists, but complete workflow, recovery, platform and security coverage remains partial; not a stable-release certification.
+- Candidate: not yet pinned in completion record
+- Repository: https://github.com/armonon/scenepilot-studio-badass
+- Application: https://scenepilot.thecreatingco.com/tools/captions/
+- core workflow: **UNVERIFIED** — No complete gate evidence recorded.
+- save reopen export: **UNVERIFIED** — No complete gate evidence recorded.
+- reliability recovery: **UNVERIFIED** — No complete gate evidence recorded.
+- performance: **UNVERIFIED** — No complete gate evidence recorded.
+- usability accessibility: **UNVERIFIED** — No complete gate evidence recorded.
+- responsive behavior: **UNVERIFIED** — No complete gate evidence recorded.
+- security privacy: **UNVERIFIED** — No complete gate evidence recorded.
+- documentation support: **UNVERIFIED** — No complete gate evidence recorded.
+- tests: **UNVERIFIED** — No complete gate evidence recorded.
+- supported platforms: **UNVERIFIED** — No complete gate evidence recorded.
+- critical blockers: **UNVERIFIED** — No complete gate evidence recorded.
+- Deployment: {"status": "UNVERIFIED"}
+- Exact next action: Continue claimed product work; update completion observations after milestone.
+
+## Reframe
+
+- Product completion: INCOMPLETE
+- Release status: alpha — Working alpha source/interface evidence exists, but complete workflow, recovery, platform and security coverage remains partial; not a stable-release certification.
+- Candidate: 08a64180df7ca80f64436437027d8fc10b5c65df
+- Repository: https://github.com/armonon/scenepilot-studio-badass
+- Application: https://scenepilot.thecreatingco.com/tools/reframe/
+- core workflow: **UNVERIFIED** — Local Chromium preview/overlap/model-failure and synthetic output PASS subset; real footage/other platforms unqualified.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/reframe-lifecycle-20261009/README.md)
+- save reopen export: **UNVERIFIED** — Actual page-close/new-page/SHA-verified renamed-media/session restore/export PASS subset; complete supported-platform coverage unverified.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/reframe-lifecycle-20261009/README.md)
+- reliability recovery: **UNVERIFIED** — Latest-request/player/error/stale-render/wrong-media checks PASS subset; broader denied-storage/corrupt/long-session coverage unverified.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/reframe-lifecycle-20261009/README.md)
+- performance: **UNVERIFIED** — No complete gate evidence recorded.
+- usability accessibility: **UNVERIFIED** — No complete gate evidence recorded.
+- responsive behavior: **UNVERIFIED** — No complete gate evidence recorded.
+- security privacy: **UNVERIFIED** — No complete gate evidence recorded.
+- documentation support: **UNVERIFIED** — New scoped session reopen/relink guide; full support documentation coverage not qualified.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/reframe-lifecycle-20261009/README.md)
+- tests: **UNVERIFIED** — 26 focused tests, types, targeted lint and tools build pass; required hosted/stack checks not yet qualified.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/reframe-lifecycle-20261009/README.md)
+- supported platforms: **UNVERIFIED** — No complete gate evidence recorded.
+- critical blockers: **UNVERIFIED** — No complete gate evidence recorded.
+- Deployment: {"status": "UNCHANGED_NOT_DEPLOYED", "candidate_pushed": true, "merged": false, "pr": "https://github.com/armonon/scenepilot-studio-badass/pull/96"}
+- Exact next action: Draft PR96: independently review/integrate exact-head Reframe patch and parent stack; require mandatory checks before merge/release. Preserve synthetic/Chromium and source/live limitations.
+
+## Pocket Studio
+
+- Product completion: INCOMPLETE
+- Release status: blocked — Canonical editable Community source/deployment project and authenticated separate test sessions unavailable; guest interface and anonymous upload boundary only verified.
+- Candidate: not yet pinned in completion record
+- Application: https://thecreatingco.com/community/network?view=Pocket%20Studio
+- core workflow: **BLOCKED** — Live guest interface exists; canonical Community source/deployment project not located. Authenticated upload and full product workflow not qualified.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/pocketstudio-discovery-2026-10-07/README.md)
+- save reopen export: **UNVERIFIED** — Exact-source full product gate not qualified; canonical upstream source missing.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/pocketstudio-discovery-2026-10-07/README.md)
+- reliability recovery: **UNVERIFIED** — Pocket microphone-denial message observed; timer00:00 and shelf0/20 preserved, no recording grant. Persistence/export/storage failure remains unverified.
+  - [guest-check.json](/Users/agentsattari/thecreateco-company/reports/pocketstudio-discovery-2026-10-07/guest-check.json)
+- performance: **UNVERIFIED** — Exact-source full product gate not qualified; canonical upstream source missing.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/pocketstudio-discovery-2026-10-07/README.md)
+- usability accessibility: **UNVERIFIED** — Exact-source full product gate not qualified; canonical upstream source missing.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/pocketstudio-discovery-2026-10-07/README.md)
+- responsive behavior: **UNVERIFIED** — 390px Chromium public interface visually inspected with no horizontal overflow for Pocket; not a complete mobile/browser matrix.
+  - [pocket-phone.png](/Users/agentsattari/thecreateco-company/reports/pocketstudio-discovery-2026-10-07/pocket-phone.png)
+  - [guest-check.json](/Users/agentsattari/thecreateco-company/reports/pocketstudio-discovery-2026-10-07/guest-check.json)
+- security privacy: **UNVERIFIED** — Anonymous no-cookie upload-init POST with empty JSON rejected401; guest UI remains accessible. Server implementation review, authenticated access/ownership, cross-user and account lifecycle unverified.
+  - [anonymous-boundary.json](/Users/agentsattari/thecreateco-company/reports/pocketstudio-discovery-2026-10-07/anonymous-boundary.json)
+  - [guest-check.json](/Users/agentsattari/thecreateco-company/reports/pocketstudio-discovery-2026-10-07/guest-check.json)
+- documentation support: **UNVERIFIED** — Exact-source full product gate not qualified; canonical upstream source missing.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/pocketstudio-discovery-2026-10-07/README.md)
+- tests: **UNVERIFIED** — Exact-source full product gate not qualified; canonical upstream source missing.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/pocketstudio-discovery-2026-10-07/README.md)
+- supported platforms: **UNVERIFIED** — Exact-source full product gate not qualified; canonical upstream source missing.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/pocketstudio-discovery-2026-10-07/README.md)
+- critical blockers: **BLOCKED** — Missing canonical upstream source/deploy provenance and no designated authenticated/two-user test accounts; cannot implement/release a genuine fix yet.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/pocketstudio-discovery-2026-10-07/README.md)
+- Deployment: {"status": "LIVE_OBSERVED_SOURCE_UNVERIFIED", "source_sha": null, "details": "Existing public endpoint observed; no new deployment; manual Netlify proxy deployment lacks source commit/repository metadata."}
+- Exact next action: Owner provides canonical Community source repository and deployment project. Then establish exact-source reproducible build and scoped PR fixes; designated authenticated test accounts needed separately for upload/account/reconnect and two-user Sessions checks. No mock replacement or whole-static-mirror deployment.
+
+## AutoCut
+
+- Product completion: INCOMPLETE
+- Release status: alpha — Working alpha source/interface evidence exists, but complete workflow, recovery, platform and security coverage remains partial; not a stable-release certification.
+- Candidate: not yet pinned in completion record
+- Repository: https://github.com/armonon/scenepilot-studio-badass
+- Application: https://scenepilot.thecreatingco.com/tools/autocut/
+- core workflow: **UNVERIFIED** — No complete gate evidence recorded.
+- save reopen export: **UNVERIFIED** — No complete gate evidence recorded.
+- reliability recovery: **UNVERIFIED** — No complete gate evidence recorded.
+- performance: **UNVERIFIED** — No complete gate evidence recorded.
+- usability accessibility: **UNVERIFIED** — No complete gate evidence recorded.
+- responsive behavior: **UNVERIFIED** — No complete gate evidence recorded.
+- security privacy: **UNVERIFIED** — No complete gate evidence recorded.
+- documentation support: **UNVERIFIED** — No complete gate evidence recorded.
+- tests: **UNVERIFIED** — No complete gate evidence recorded.
+- supported platforms: **UNVERIFIED** — No complete gate evidence recorded.
+- critical blockers: **UNVERIFIED** — No complete gate evidence recorded.
+- Deployment: {"status": "UNVERIFIED"}
+- Exact next action: Continue claimed product work; update completion observations after milestone.
+
+## Key & BPM
+
+- Product completion: INCOMPLETE
+- Release status: alpha — Real result persistence and first-wave workflow candidate implemented; no stable-release or deployed-candidate claim.
+- Candidate: dab0dda829ffc436987773d650abbe0232f4a0ec
+- Repository: https://github.com/armonon/sattari-custom-site
+- Application: https://sattarimusic.com/studio/keybpm
+- core workflow: **UNVERIFIED** — Actual file/decoder/worker reference key/Camelot/tempo, sort, CSV and portable-report workflow pass in3 engines. Musical-corpus accuracy and physical platform coverage remain partial.
+  - [chromium-report.json](/Users/agentsattari/thecreateco-company/release-program/reports/key-bpm-20261007/candidate-chromium/chromium-report.json)
+  - [firefox-report.json](/Users/agentsattari/thecreateco-company/release-program/reports/key-bpm-20261007/candidate-firefox/firefox-report.json)
+  - [webkit-report.json](/Users/agentsattari/thecreateco-company/release-program/reports/key-bpm-20261007/candidate-webkit/webkit-report.json)
+  - [README.md](/Users/agentsattari/thecreateco-company/release-program/reports/key-bpm-20261007/README.md)
+- save reopen export: **PASS** — Version1 report download→fresh-context file-picker reopen→exact measurements/confidence/timestamps→reexport PASS in3 engines; malformed/oversized imports atomic. Report contains no audio; CSV preserved.
+  - [chromium-report.json](/Users/agentsattari/thecreateco-company/release-program/reports/key-bpm-20261007/candidate-chromium/chromium-report.json)
+  - [firefox-report.json](/Users/agentsattari/thecreateco-company/release-program/reports/key-bpm-20261007/candidate-firefox/firefox-report.json)
+  - [webkit-report.json](/Users/agentsattari/thecreateco-company/release-program/reports/key-bpm-20261007/candidate-webkit/webkit-report.json)
+  - [README.md](/Users/agentsattari/thecreateco-company/release-program/reports/key-bpm-20261007/README.md)
+- reliability recovery: **UNVERIFIED** — Unavailable analyzer status and filename-collision bugs fixed; overlapping intake capped at200.20-file Stop/Resume and failed inputs pass; OS interruption/disk-failure coverage not comprehensive.
+  - [targeted.log](/Users/agentsattari/thecreateco-company/release-program/reports/key-bpm-20261007/targeted.log)
+  - [chromium-report.json](/Users/agentsattari/thecreateco-company/release-program/reports/key-bpm-20261007/candidate-chromium/chromium-report.json)
+  - [README.md](/Users/agentsattari/thecreateco-company/release-program/reports/key-bpm-20261007/README.md)
+- performance: **UNVERIFIED** — Measured synthetic workflow diagnostics and600-second acceptance recorded; no supported-load performance/memory budget qualification.
+  - [chromium-report.json](/Users/agentsattari/thecreateco-company/release-program/reports/key-bpm-20261007/candidate-chromium/chromium-report.json)
+  - [README.md](/Users/agentsattari/thecreateco-company/release-program/reports/key-bpm-20261007/README.md)
+- usability accessibility: **UNVERIFIED** — Keyboard horizontal results scrolling passes all3 tested engines; full screen-reader/accessibility audit unverified.
+  - [chromium-report.json](/Users/agentsattari/thecreateco-company/release-program/reports/key-bpm-20261007/candidate-chromium/chromium-report.json)
+  - [firefox-report.json](/Users/agentsattari/thecreateco-company/release-program/reports/key-bpm-20261007/candidate-firefox/firefox-report.json)
+  - [webkit-report.json](/Users/agentsattari/thecreateco-company/release-program/reports/key-bpm-20261007/candidate-webkit/webkit-report.json)
+  - [README.md](/Users/agentsattari/thecreateco-company/release-program/reports/key-bpm-20261007/README.md)
+- responsive behavior: **UNVERIFIED** — 1440/768/390 CSS widths pass in3 engines; actual mobile device behavior unverified.
+  - [chromium-report.json](/Users/agentsattari/thecreateco-company/release-program/reports/key-bpm-20261007/candidate-chromium/chromium-report.json)
+  - [firefox-report.json](/Users/agentsattari/thecreateco-company/release-program/reports/key-bpm-20261007/candidate-firefox/firefox-report.json)
+  - [webkit-report.json](/Users/agentsattari/thecreateco-company/release-program/reports/key-bpm-20261007/candidate-webkit/webkit-report.json)
+  - [README.md](/Users/agentsattari/thecreateco-company/release-program/reports/key-bpm-20261007/README.md)
+- security privacy: **UNVERIFIED** — Report parser bounded/atomic and CSV formula defense preserved; local audio unchanged/no upload. Exact-head remote advisory/runtime gate pending and complete product privacy audit unverified.
+  - [targeted.log](/Users/agentsattari/thecreateco-company/release-program/reports/key-bpm-20261007/targeted.log)
+  - [README.md](/Users/agentsattari/thecreateco-company/release-program/reports/key-bpm-20261007/README.md)
+- documentation support: **PASS** — Exact-candidate docs describe real report workflow, no-source-audio limitation, browser-specific codecs and unresolved release/device gates.
+  - [KEY_BPM_REPORTS.md](/Users/agentsattari/code/core-product-lab/key-bpm/docs/KEY_BPM_REPORTS.md)
+  - [README.md](/Users/agentsattari/thecreateco-company/release-program/reports/key-bpm-20261007/README.md)
+- tests: **PASS** — Local Node22 final application tree247files/2249tests,35targeted,types/build/lint PASS; exact candidate3-engine browser core/report PASS. Remote CI still running.
+  - [final-unit.log](/Users/agentsattari/thecreateco-company/release-program/reports/key-bpm-20261007/final-unit.log)
+  - [final-build.log](/Users/agentsattari/thecreateco-company/release-program/reports/key-bpm-20261007/final-build.log)
+  - [final-types.log](/Users/agentsattari/thecreateco-company/release-program/reports/key-bpm-20261007/final-types.log)
+  - [chromium-report.json](/Users/agentsattari/thecreateco-company/release-program/reports/key-bpm-20261007/candidate-chromium/chromium-report.json)
+  - [firefox-report.json](/Users/agentsattari/thecreateco-company/release-program/reports/key-bpm-20261007/candidate-firefox/firefox-report.json)
+  - [webkit-report.json](/Users/agentsattari/thecreateco-company/release-program/reports/key-bpm-20261007/candidate-webkit/webkit-report.json)
+  - [README.md](/Users/agentsattari/thecreateco-company/release-program/reports/key-bpm-20261007/README.md)
+- supported platforms: **UNVERIFIED** — Chromium151/Firefox153/WebKit26.5 macOS core/report pass. WebKit automation M4A/AAC unsupported; Safari app/iOS/Android unverified. No universal codec/device certification.
+  - [chromium-report.json](/Users/agentsattari/thecreateco-company/release-program/reports/key-bpm-20261007/candidate-chromium/chromium-report.json)
+  - [firefox-report.json](/Users/agentsattari/thecreateco-company/release-program/reports/key-bpm-20261007/candidate-firefox/firefox-report.json)
+  - [webkit-report.json](/Users/agentsattari/thecreateco-company/release-program/reports/key-bpm-20261007/candidate-webkit/webkit-report.json)
+  - [webkit-report.json](/Users/agentsattari/thecreateco-company/release-program/reports/key-bpm-20261007/exact-webkit/webkit-report.json)
+  - [README.md](/Users/agentsattari/thecreateco-company/release-program/reports/key-bpm-20261007/README.md)
+- critical blockers: **UNVERIFIED** — Reproduced report/intake/data-status defects fixed; complete physical-platform/production-artifact triage remains unverified. Source-live stack release dependency unresolved.
+  - [README.md](/Users/agentsattari/thecreateco-company/release-program/reports/key-bpm-20261007/README.md)
+- Deployment: {"status": "OPEN_PR_NOT_DEPLOYED", "pr": "https://github.com/armonon/sattari-custom-site/pull/31", "merged": false, "deployed": false, "remote_gate": "https://github.com/armonon/sattari-custom-site/actions/runs/37718570242", "remote_gate_status": "PENDING", "remote_ci": {"run": "https://github.com/armonon/sattari-custom-site/actions/runs/37718570242", "attempt1": "FAIL: real scheduler lateness0.237s during mandatory StemDeck soak; Node24 cancelled", "attempt2": "SUCCESS: exact dab0dda Node22/24 frozen release gates, mandatory120ssoak; deploy skipped"}}
+- Exact next action: Remote exact-head checks now pass on unchanged rerun; retain first-attempt scheduler-failure evidence. Complete source/live stack reconciliation and actual platform qualification before release.
+
+## Librarian
+
+- Product completion: INCOMPLETE
+- Release status: blocked — Public reader404; exact one-file repair prepared but function-preserving deployment blocked. Not a complete product.
+- Candidate: ca7e806c86d376e707c0afdefc8a0e84ff40b35e
+- Repository: https://github.com/armonon/librarian
+- Application: https://librarian.thecreatingco.com/
+- core workflow: **BLOCKED** — Public PDF reader404; current source and exact recovered one-file browser overlay pass, not deployed.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/librarian-workflow-20261007/README.md)
+  - [results.json](/Users/agentsattari/thecreateco-company/reports/librarian-workflow-20261007/results.json)
+- save reopen export: **UNVERIFIED** — Actual PDF original-byte roundtrip passes in localcurrentmain and recoveredpublic responseoverlay. Live unmodified reader still404; broader workflows incomplete.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/librarian-workflow-20261007/README.md)
+  - [results.json](/Users/agentsattari/thecreateco-company/reports/librarian-workflow-20261007/results.json)
+- reliability recovery: **UNVERIFIED** — Partial evidence only; full product criteria not qualified.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/librarian-workflow-20261007/README.md)
+  - [results.json](/Users/agentsattari/thecreateco-company/reports/librarian-workflow-20261007/results.json)
+- performance: **UNVERIFIED** — Partial evidence only; full product criteria not qualified.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/librarian-workflow-20261007/README.md)
+  - [results.json](/Users/agentsattari/thecreateco-company/reports/librarian-workflow-20261007/results.json)
+- usability accessibility: **UNVERIFIED** — Partial evidence only; full product criteria not qualified.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/librarian-workflow-20261007/README.md)
+  - [results.json](/Users/agentsattari/thecreateco-company/reports/librarian-workflow-20261007/results.json)
+- responsive behavior: **UNVERIFIED** — Partial evidence only; full product criteria not qualified.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/librarian-workflow-20261007/README.md)
+  - [results.json](/Users/agentsattari/thecreateco-company/reports/librarian-workflow-20261007/results.json)
+- security privacy: **UNVERIFIED** — Candidate repaired critical/high build dependencies: full audit0critical0high13moderate; prod0. Moderate/privacy/auth/platform qualification remains incomplete.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/librarian-workflow-20261007/tooling/README.md)
+  - [dependency-audit-final.json](/Users/agentsattari/thecreateco-company/reports/librarian-workflow-20261007/dependency-audit-final.json)
+- documentation support: **UNVERIFIED** — Scoped reviewed README now accurately describes hiddenAI and guarded prereqs; complete support/platform docs not certified.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/librarian-workflow-20261007/README.md)
+  - [results.json](/Users/agentsattari/thecreateco-company/reports/librarian-workflow-20261007/results.json)
+- tests: **UNVERIFIED** — Exactcandidate44units,6WebKitcases,web/iOSbuilds,216webfile byteparity,7PNG pixelparity andtemplate/cache compatibility pass. Not fullnative/platform/auth certification.
+  - [results.json](/Users/agentsattari/thecreateco-company/reports/librarian-workflow-20261007/tooling/results.json)
+- supported platforms: **UNVERIFIED** — Partial evidence only; full product criteria not qualified.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/librarian-workflow-20261007/README.md)
+  - [results.json](/Users/agentsattari/thecreateco-company/reports/librarian-workflow-20261007/results.json)
+- critical blockers: **BLOCKED** — Public reader404 repair prepared; deploying while preserving exact live functions unresolved. Build-tool vulnerabilities and broader qualification incomplete.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/librarian-workflow-20261007/README.md)
+  - [results.json](/Users/agentsattari/thecreateco-company/reports/librarian-workflow-20261007/results.json)
+- Deployment: {"status": "UNCHANGED", "published_deploy": "6ac1ecba6479a9e160b433b7", "published_source_sha": null, "active_frontend_reproduced_from": "179024b483c641ba407c83c8d6a5c579c5e1f97b", "source_pr": "PR2_AND_PR3_OPEN_NOT_MERGED", "new_deploy_created": false}
+- Exact next action: Recover exact Netlify function artifacts/reuse for onefile publicPDFrestoration; continue moderate dependency and broader workflow/platform qualification.
+
+## Sessions
+
+- Product completion: INCOMPLETE
+- Release status: blocked — Canonical editable Community source/deployment project and authenticated separate test sessions unavailable; guest interface and anonymous upload boundary only verified.
+- Candidate: not yet pinned in completion record
+- Application: https://thecreatingco.com/community/network?view=Sessions
+- core workflow: **BLOCKED** — Live guest interface exists; canonical Community source/deployment project not located. Authenticated upload and full product workflow not qualified.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/pocketstudio-discovery-2026-10-07/README.md)
+- save reopen export: **UNVERIFIED** — Exact-source full product gate not qualified; canonical upstream source missing.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/pocketstudio-discovery-2026-10-07/README.md)
+- reliability recovery: **UNVERIFIED** — Guest empty-room list observed. Actual two-client queue sync, reconnect, permission and failure recovery unverified.
+  - [guest-check.json](/Users/agentsattari/thecreateco-company/reports/pocketstudio-discovery-2026-10-07/guest-check.json)
+- performance: **UNVERIFIED** — Exact-source full product gate not qualified; canonical upstream source missing.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/pocketstudio-discovery-2026-10-07/README.md)
+- usability accessibility: **UNVERIFIED** — Exact-source full product gate not qualified; canonical upstream source missing.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/pocketstudio-discovery-2026-10-07/README.md)
+- responsive behavior: **UNVERIFIED** — 390px Chromium public interface visually inspected with no horizontal overflow for Pocket; not a complete mobile/browser matrix.
+  - [sessions-phone.png](/Users/agentsattari/thecreateco-company/reports/pocketstudio-discovery-2026-10-07/sessions-phone.png)
+  - [guest-check.json](/Users/agentsattari/thecreateco-company/reports/pocketstudio-discovery-2026-10-07/guest-check.json)
+- security privacy: **UNVERIFIED** — Anonymous no-cookie upload-init POST with empty JSON rejected401; guest UI remains accessible. Server implementation review, authenticated access/ownership, cross-user and account lifecycle unverified.
+  - [anonymous-boundary.json](/Users/agentsattari/thecreateco-company/reports/pocketstudio-discovery-2026-10-07/anonymous-boundary.json)
+  - [guest-check.json](/Users/agentsattari/thecreateco-company/reports/pocketstudio-discovery-2026-10-07/guest-check.json)
+- documentation support: **UNVERIFIED** — Exact-source full product gate not qualified; canonical upstream source missing.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/pocketstudio-discovery-2026-10-07/README.md)
+- tests: **UNVERIFIED** — Exact-source full product gate not qualified; canonical upstream source missing.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/pocketstudio-discovery-2026-10-07/README.md)
+- supported platforms: **UNVERIFIED** — Exact-source full product gate not qualified; canonical upstream source missing.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/pocketstudio-discovery-2026-10-07/README.md)
+- critical blockers: **BLOCKED** — Missing canonical upstream source/deploy provenance and no designated authenticated/two-user test accounts; cannot implement/release a genuine fix yet.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/pocketstudio-discovery-2026-10-07/README.md)
+- Deployment: {"status": "LIVE_OBSERVED_SOURCE_UNVERIFIED", "source_sha": null, "details": "Existing public endpoint observed; no new deployment; manual Netlify proxy deployment lacks source commit/repository metadata."}
+- Exact next action: Owner provides canonical Community source repository and deployment project. Then establish exact-source reproducible build and scoped PR fixes; designated authenticated test accounts needed separately for upload/account/reconnect and two-user Sessions checks. No mock replacement or whole-static-mirror deployment.
+
+## Pocket
+
+- Product completion: INCOMPLETE
+- Release status: alpha — Working alpha source/interface evidence exists, but complete workflow, recovery, platform and security coverage remains partial; not a stable-release certification.
+- Candidate: 4bd196d65c7fd56f5de038179978e3eae47ab6b7
+- Repository: https://github.com/armonon/sattari-custom-site
+- Application: https://sattarimusic.com/studio/pocket
+- core workflow: **UNVERIFIED** — Built Chromium edit/play/named-save/actualclose-reopen/WAVexport subset passes. Full supportedplatform and broader product requirements unverified.
+  - [report.json](/Users/agentsattari/thecreateco-company/reports/pocket-persistence-2026-10-07/browser-exact-head/report.json)
+- save reopen export: **UNVERIFIED** — Named localpattern close/reopen and independent24-bitstereoWAV structure/duration pass. Rawcorruptdata backupdownload passes; portableeditablepattern import not implemented/claimed.
+  - [report.json](/Users/agentsattari/thecreateco-company/reports/pocket-persistence-2026-10-07/browser-exact-head/report.json)
+- reliability recovery: **UNVERIFIED** — Capacity, syntax/semanticstorage corruption and failedwrites repaired; no automaticeviction. Actualbrowser preservation passes; physicalstoragepressure/interruption remain unverified.
+  - [report.json](/Users/agentsattari/thecreateco-company/reports/pocket-persistence-2026-10-07/browser-exact-head/report.json)
+  - [pocket-focused.log](/Users/agentsattari/thecreateco-company/reports/pocket-persistence-2026-10-07/pocket-focused.log)
+- performance: **UNVERIFIED** — Full release gate not qualified by this scoped persistence repair.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/pocket-persistence-2026-10-07/README.md)
+- usability accessibility: **UNVERIFIED** — Full release gate not qualified by this scoped persistence repair.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/pocket-persistence-2026-10-07/README.md)
+- responsive behavior: **UNVERIFIED** — Full release gate not qualified by this scoped persistence repair.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/pocket-persistence-2026-10-07/README.md)
+- security privacy: **UNVERIFIED** — Full release gate not qualified by this scoped persistence repair.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/pocket-persistence-2026-10-07/README.md)
+- documentation support: **UNVERIFIED** — Scoped source documentation matches save limits/errors/backup and release limits. Full product support/doc coverage not audited.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/pocket-persistence-2026-10-07/README.md)
+- tests: **PASS** — All2255 JS tests/246files pass;38focused, types, productionbuild, scopedzero-warninglint, five real built-Chromium workflow regressionspass. Quota unitfault injection explicitly separated.
+  - [all-tests.log](/Users/agentsattari/thecreateco-company/reports/pocket-persistence-2026-10-07/all-tests.log)
+  - [pocket-focused.log](/Users/agentsattari/thecreateco-company/reports/pocket-persistence-2026-10-07/pocket-focused.log)
+  - [report.json](/Users/agentsattari/thecreateco-company/reports/pocket-persistence-2026-10-07/browser-exact-head/report.json)
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/pocket-persistence-2026-10-07/README.md)
+- supported platforms: **UNVERIFIED** — Full release gate not qualified by this scoped persistence repair.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/pocket-persistence-2026-10-07/README.md)
+- critical blockers: **UNVERIFIED** — Two confirmed persistence dataloss paths plus semanticdraft follow-up fixed in reviewedPR30. Full productcritical triage and requiredrelease/stackchecks remain unverified.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/pocket-persistence-2026-10-07/README.md)
+- Deployment: {"status": "PUSHED_PR_OPEN_NOT_MERGED_NOT_DEPLOYED", "source_sha": "4bd196d65c7fd56f5de038179978e3eae47ab6b7", "pr": "https://github.com/armonon/sattari-custom-site/pull/30", "base": "core-lab/stemdeck-security-20261007", "checks": "No remote checks reported at observation; exact-head required gate qualification pending."}
+- Exact next action: Follow PROGRAM18-POCKET-QUALIFY-001 after founder firstwave: supportedbrowser/mobile, storagepressure/interruption, accessibility/performance and exacthead/stack release gates; no bypass or whole-site replacement.
+
+## Ghost Studio
+
+- Product completion: INCOMPLETE
+- Release status: alpha — Working alpha source/interface evidence exists, but complete workflow, recovery, platform and security coverage remains partial; not a stable-release certification.
+- Candidate: bfad2ee98a5194cc84892cc7a13a43e28fefea9b
+- Repository: https://github.com/armonon/ghost-garment-studio
+- Application: https://ghost.thecreatingco.com/
+- core workflow: **UNVERIFIED** — Chrome bundled jacket actual garment worker/import/adjust/generate/portable reopen PASS subset; no representative real-fixture/fidelity/full-platform qualification.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/ghost-roundtrip-20261009/README.md)
+  - [browser-roundtrip.json](/Users/agentsattari/thecreateco-company/reports/ghost-roundtrip-20261009/browser-output/browser-roundtrip.json)
+  - [director-verification.json](/Users/agentsattari/thecreateco-company/reports/ghost-roundtrip-20261009/director-verification.json)
+- save reopen export: **UNVERIFIED** — Portable fresh-context editable collection record/settings and two original photo hashes identical; independent Python GLB2 parse 13meshes/54678 finite vertices/2embedded PNG material refs PASS subset. Full workflow/platform/release unqualified.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/ghost-roundtrip-20261009/README.md)
+  - [browser-roundtrip.json](/Users/agentsattari/thecreateco-company/reports/ghost-roundtrip-20261009/browser-output/browser-roundtrip.json)
+  - [director-verification.json](/Users/agentsattari/thecreateco-company/reports/ghost-roundtrip-20261009/director-verification.json)
+- reliability recovery: **UNVERIFIED** — Completed stored snapshot survives full persistent Chrome process restart and UI restore/resave; one intermittent0-model observation with unmeasured debounce/commit timing is inconclusive. Natural-close/crash/migration/quota/cancel unqualified.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/ghost-roundtrip-20261009/README.md)
+  - [browser-roundtrip.json](/Users/agentsattari/thecreateco-company/reports/ghost-roundtrip-20261009/browser-output/browser-roundtrip.json)
+  - [director-verification.json](/Users/agentsattari/thecreateco-company/reports/ghost-roundtrip-20261009/director-verification.json)
+  - [recovery-process-cycle.json](/Users/agentsattari/thecreateco-company/reports/ghost-roundtrip-20261009/recovery-process-cycle.json)
+  - [recovery-untriggered-close.json](/Users/agentsattari/thecreateco-company/reports/ghost-roundtrip-20261009/recovery-untriggered-close.json)
+- performance: **UNVERIFIED** — No complete gate evidence recorded.
+- usability accessibility: **UNVERIFIED** — No complete gate evidence recorded.
+- responsive behavior: **UNVERIFIED** — No complete gate evidence recorded.
+- security privacy: **UNVERIFIED** — No complete gate evidence recorded.
+- documentation support: **UNVERIFIED** — No complete gate evidence recorded.
+- tests: **UNVERIFIED** — No complete gate evidence recorded.
+- supported platforms: **UNVERIFIED** — No complete gate evidence recorded.
+- critical blockers: **UNVERIFIED** — No complete gate evidence recorded.
+- Deployment: {"status": "UNVERIFIED", "changed": false}
+- Exact next action: Instrument recovery sync/debounce/transaction completion and close timing before accepting or diagnosing lost latest output. Preserve portable backup workaround and existing product/release gates.
+
+## Cast
+
+- Product completion: INCOMPLETE
+- Release status: blocked — Public ASCII STL corruption repaired in reviewed candidate PR6; mandatory CI and incomplete qualification prevent release readiness.
+- Candidate: d24f5d76b4fd0e99c43e1cb8e5e2d9b63db6665e
+- Repository: https://github.com/armonon/form-studio
+- Application: https://form-studio-review.netlify.app/studio
+- core workflow: **UNVERIFIED** — Built real Chrome ASCII STL cm import, exact triangle geometry export, repair/Undo, bad-import preservation, unchanged Form parent and exported mesh close/reopen. Public binary workflow separately passes. Remaining: Ring fit/resize, thickness, orientation, OBJ and larger/hollow geometries not fully qualified.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/form-cast-availability-20261007/README.md)
+  - [results.json](/Users/agentsattari/thecreateco-company/reports/form-cast-availability-20261007/results.json)
+- save reopen export: **UNVERIFIED** — Exported STL geometry close/reopen exactly matched; editable Cast analysis/session settings persistence remains unqualified.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/form-cast-availability-20261007/README.md)
+  - [results.json](/Users/agentsattari/thecreateco-company/reports/form-cast-availability-20261007/results.json)
+- reliability recovery: **UNVERIFIED** — Malformed input preserves previous mesh, repair Undo and original parent project verified. Nonfinite/large/aborted/racing imports unverified.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/form-cast-availability-20261007/README.md)
+  - [results.json](/Users/agentsattari/thecreateco-company/reports/form-cast-availability-20261007/results.json)
+- performance: **UNVERIFIED** — 15 generic Form budgets pass; Cast-specific large mesh latency/memory and physical GPU unverified.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/form-cast-availability-20261007/README.md)
+  - [results.json](/Users/agentsattari/thecreateco-company/reports/form-cast-availability-20261007/results.json)
+- usability accessibility: **UNVERIFIED** — Actual Cast desktop pointer workflow used; manual keyboard/assistive-tech qualification incomplete.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/form-cast-availability-20261007/README.md)
+  - [results.json](/Users/agentsattari/thecreateco-company/reports/form-cast-availability-20261007/results.json)
+- responsive behavior: **UNVERIFIED** — 1440×1000 built Chrome workflow passed; Cast phone/tablet interaction unverified.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/form-cast-availability-20261007/README.md)
+  - [results.json](/Users/agentsattari/thecreateco-company/reports/form-cast-availability-20261007/results.json)
+- security privacy: **UNVERIFIED** — Production dependency audit0; input-hardening boundaries and full app authorization/privacy not qualified in this change.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/form-cast-availability-20261007/README.md)
+  - [results.json](/Users/agentsattari/thecreateco-company/reports/form-cast-availability-20261007/results.json)
+- documentation support: **UNVERIFIED** — Qualification report records reality/limitations; complete end-user Cast support documentation not audited.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/form-cast-availability-20261007/README.md)
+  - [results.json](/Users/agentsattari/thecreateco-company/reports/form-cast-availability-20261007/results.json)
+- tests: **UNVERIFIED** — Local Node22 types/lint/web+desktop builds1528/1528units15/15budgets/audit0 and built realbrowser workflow passed. Required hosted/native gates unresolved; no full test-gate certification.
+  - [unit.log](/Users/agentsattari/thecreateco-company/reports/form-cast-availability-20261007/unit.log)
+  - [budgets.log](/Users/agentsattari/thecreateco-company/reports/form-cast-availability-20261007/budgets.log)
+  - [check.log](/Users/agentsattari/thecreateco-company/reports/form-cast-availability-20261007/check.log)
+  - [build.log](/Users/agentsattari/thecreateco-company/reports/form-cast-availability-20261007/build.log)
+  - [desktop-build.log](/Users/agentsattari/thecreateco-company/reports/form-cast-availability-20261007/desktop-build.log)
+  - [production-audit.json](/Users/agentsattari/thecreateco-company/reports/form-cast-availability-20261007/production-audit.json)
+  - [cast-workflow.json](/Users/agentsattari/thecreateco-company/reports/form-cast-availability-20261007/local-built/cast-workflow.json)
+- supported platforms: **UNVERIFIED** — Chrome154.0.8037.98 on macOS Darwin25.2arm64 with SwiftShader,1440x1000 built frontend; remaining Safari/Firefox/Windows/Linux/native/hardware graphics and mobile interaction
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/form-cast-availability-20261007/README.md)
+  - [results.json](/Users/agentsattari/thecreateco-company/reports/form-cast-availability-20261007/results.json)
+- critical blockers: **BLOCKED** — Candidate repairs ASCII geometry corruption, but public version still affected. Mandatory Form CI blocked; broader input/recovery triage incomplete.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/form-cast-availability-20261007/README.md)
+  - [results.json](/Users/agentsattari/thecreateco-company/reports/form-cast-availability-20261007/results.json)
+- Deployment: {"status": "NOT_DEPLOYED", "source_pushed": true, "merged": false, "published_deploy": "6ac5ba1aaeefd1fa9121aa8a", "published_source_sha": null, "published_url": "https://form-studio-review.netlify.app/studio", "config_functions_data_changed": false}
+- Exact next action: Resume Cast ring/thickness/orientation/OBJ/adversarial-input/platform qualification independently; account owner resolves hosted CI then normal exact-head checks/stacked merges; reconcile live manifest before release.
+
+## Bounce
+
+- Product completion: INCOMPLETE
+- Release status: alpha — Working alpha source/interface evidence exists, but complete workflow, recovery, platform and security coverage remains partial; not a stable-release certification.
+- Candidate: 8c8c2541e8d8861a53f102ef8b985e4e35950f3e
+- Repository: https://github.com/armonon/bounce
+- Application: https://bounce.thecreatingco.com/browser/
+- core workflow: **UNVERIFIED** — Chromium/Firefox/WebKit actual local-file playback/reorder/EQ and published musical studies pass; fullcodec/native/hardware coverage unverified.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/bounce-release18-20261007/README.md)
+  - [report.json](/Users/agentsattari/thecreateco-company/reports/bounce-release18-20261007/live-check/report.json)
+- save reopen export: **UNVERIFIED** — Browser library restore and portable fresh-tab reopen preserve audio SHA256/order/EQ; actual Chromium quota retains old saved data. Native and all failure modes unverified.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/bounce-release18-20261007/README.md)
+  - [report.json](/Users/agentsattari/thecreateco-company/reports/bounce-release18-20261007/live-check/report.json)
+- reliability recovery: **UNVERIFIED** — Browser subset checked; complete product/platform coverage remains unverified.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/bounce-release18-20261007/README.md)
+  - [report.json](/Users/agentsattari/thecreateco-company/reports/bounce-release18-20261007/live-check/report.json)
+- performance: **UNVERIFIED** — Browser subset checked; complete product/platform coverage remains unverified.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/bounce-release18-20261007/README.md)
+  - [report.json](/Users/agentsattari/thecreateco-company/reports/bounce-release18-20261007/live-check/report.json)
+- usability accessibility: **UNVERIFIED** — Browser subset checked; complete product/platform coverage remains unverified.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/bounce-release18-20261007/README.md)
+  - [report.json](/Users/agentsattari/thecreateco-company/reports/bounce-release18-20261007/live-check/report.json)
+- responsive behavior: **UNVERIFIED** — Browser subset checked; complete product/platform coverage remains unverified.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/bounce-release18-20261007/README.md)
+  - [report.json](/Users/agentsattari/thecreateco-company/reports/bounce-release18-20261007/live-check/report.json)
+- security privacy: **UNVERIFIED** — Browser subset checked; complete product/platform coverage remains unverified.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/bounce-release18-20261007/README.md)
+  - [report.json](/Users/agentsattari/thecreateco-company/reports/bounce-release18-20261007/live-check/report.json)
+- documentation support: **UNVERIFIED** — Browser subset checked; complete product/platform coverage remains unverified.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/bounce-release18-20261007/README.md)
+  - [report.json](/Users/agentsattari/thecreateco-company/reports/bounce-release18-20261007/live-check/report.json)
+- tests: **UNVERIFIED** — Exact clean candidate passes3 browser workflow suites; Chromium draft and live workflow pass; PWA offline/update checks pass. Native and fullstress suite unverified.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/bounce-release18-20261007/README.md)
+  - [report.json](/Users/agentsattari/thecreateco-company/reports/bounce-release18-20261007/live-check/report.json)
+- supported platforms: **UNVERIFIED** — Browser subset checked; complete product/platform coverage remains unverified.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/bounce-release18-20261007/README.md)
+  - [report.json](/Users/agentsattari/thecreateco-company/reports/bounce-release18-20261007/live-check/report.json)
+- critical blockers: **UNVERIFIED** — Browser subset checked; complete product/platform coverage remains unverified.
+  - [README.md](/Users/agentsattari/thecreateco-company/reports/bounce-release18-20261007/README.md)
+  - [report.json](/Users/agentsattari/thecreateco-company/reports/bounce-release18-20261007/live-check/report.json)
+- Deployment: {"status": "PUBLISHED", "url": "https://bounce.thecreatingco.com/browser/", "deploy_id": "6ac6fe7a70a37106cdf27df7", "merged_sha": "77d7fab8b75752e0821b17b58553733d33d28cdc", "source_sha": "8c8c2541e8d8861a53f102ef8b985e4e35950f3e", "changed_files": ["/test/bounce.js", "/sw.js"], "unchanged_files": 45, "evidence": ["/Users/agentsattari/thecreateco-company/reports/bounce-release18-20261007/README.md", "/Users/agentsattari/thecreateco-company/reports/bounce-release18-20261007/live-check/report.json"]}
+- Exact next action: Qualify remaining codec, maximumsize, accessibility/physical platform and native distribution gates; no stable claim.
+
+## Persistent work log
+
+- Authoritative tasks/status/dependencies/changes/tests/blockers: [TASK_QUEUE.json](TASK_QUEUE.json).
+- Product gate observations: [PRODUCT_REGISTRY.json](PRODUCT_REGISTRY.json), field `completion_observations`.
+- Detailed dated evidence: [reports](reports/) and [Core Product Lab reports](core-product-lab/reports/).
+- Update records through engine/company.py; render this view with release-program/matrix.py.

@@ -1,0 +1,1752 @@
+{
+  "generated_at_utc": "2026-10-09T23:41:08.355989+00:00",
+  "scope": "Screened company source and text evidence; not live databases, contacts, secrets, binary QA artifacts or full product source",
+  "files": [
+    {
+      "path": "git-handoff/README.md",
+      "bytes": 1521,
+      "sha256": "132e32ae883f9c5e74d715e01c32caa848f97b1ecd59aa78fdca5925a9698aec"
+    },
+    {
+      "path": "git-handoff/audit_recent.py",
+      "bytes": 5024,
+      "sha256": "39353ee39046b8d560a4e7146ab4100d109ad94ae6db1fe10c360e6078c35ca5"
+    },
+    {
+      "path": "git-handoff/push_branch.py",
+      "bytes": 3465,
+      "sha256": "5852954fcf15db8a659e746b90b61f6ce65fe6d39c78e69e7dc852e43efa9634"
+    },
+    {
+      "path": "thecreateco-company/AGENTS.md",
+      "bytes": 2417,
+      "sha256": "e78209d9ecac7456c38658378e2fece084b09eb145d1da7e766efcc4ff4225e3"
+    },
+    {
+      "path": "thecreateco-company/AUTONOMY.md",
+      "bytes": 3624,
+      "sha256": "56d6a55868392ea7f4fdcc3e2dc3d45831a8566993761f8227dc63c3d4633d6c"
+    },
+    {
+      "path": "thecreateco-company/CI_OUTAGE_POLICY.md",
+      "bytes": 3552,
+      "sha256": "d8d64ecbc8c2497501507bc54d7bce22da6c9ead8a5a51dfae356d563eaecd25"
+    },
+    {
+      "path": "thecreateco-company/COMPANY_STATE.md",
+      "bytes": 8158,
+      "sha256": "fabacc3d862053e4ca549edb23d77f7e99261a1d063b477ca07f82bb59816d21"
+    },
+    {
+      "path": "thecreateco-company/DIRECTIVE.md",
+      "bytes": 9434,
+      "sha256": "0fd3eb8b64bd9fb2f2e283296207001c0060f375a668b58f3b6a50200514ea6a"
+    },
+    {
+      "path": "thecreateco-company/OPERATING_POLICY.md",
+      "bytes": 7230,
+      "sha256": "9931452abb1529b67422cda8ab8993a7ee7a3f3e8a57719df879bdb39a474261"
+    },
+    {
+      "path": "thecreateco-company/OS_DASHBOARD.json",
+      "bytes": 27896,
+      "sha256": "2c0a0506fe42f8b92a1931b99972e4acac7109443df5eb82a5c07858f1fe396d"
+    },
+    {
+      "path": "thecreateco-company/OS_DASHBOARD.md",
+      "bytes": 4877,
+      "sha256": "31fe482855500c0c50ef971604dad0e4832f8e1a9149cc44e50c6be40f56a81b"
+    },
+    {
+      "path": "thecreateco-company/PRODUCT_REGISTRY.json",
+      "bytes": 400914,
+      "sha256": "9d1928100e770b099e7b34acd0b6d6feea0beb154e0ca513d6cab17169657311"
+    },
+    {
+      "path": "thecreateco-company/README.md",
+      "bytes": 3328,
+      "sha256": "07639d39b168a49912ea86d9956e3e029259934a2daefd484fa4e33075d5d55a"
+    },
+    {
+      "path": "thecreateco-company/RELEASE_MATRIX.md",
+      "bytes": 86822,
+      "sha256": "293c27d941b3b90509bf8a78791aa31a69ae603223f781cac89ae8ecec6f7150"
+    },
+    {
+      "path": "thecreateco-company/REMAINING_WORK.md",
+      "bytes": 38033,
+      "sha256": "e079740cf5a4210fdec98cd3f226e3c74683cb426318f84feab26b2e835b0ba1"
+    },
+    {
+      "path": "thecreateco-company/REVENUE_DASHBOARD.md",
+      "bytes": 10538,
+      "sha256": "afeac35c445812114dd3e747e2ef135731a864d84001630a39c38aeeb07b1416"
+    },
+    {
+      "path": "thecreateco-company/REVENUE_DIRECTIVE.md",
+      "bytes": 9846,
+      "sha256": "764a2b4000186a8c02f3946b92339733780f13976a9d8d76537ecdd0022bf3d0"
+    },
+    {
+      "path": "thecreateco-company/TASK_QUEUE.json",
+      "bytes": 317451,
+      "sha256": "21147afd5f9a811e59b26f9a33bf7f25d0df273227f0085b88a364f750ac4fb9"
+    },
+    {
+      "path": "thecreateco-company/YEAR_ONE_EXECUTION.md",
+      "bytes": 9449,
+      "sha256": "26ef96208d9bd58a88b0d94b23d10699e44a22f62f495fdf36a738dc5c756d14"
+    },
+    {
+      "path": "thecreateco-company/core-product-lab/AGENTS.md",
+      "bytes": 1472,
+      "sha256": "0a901daaee16d4ec779877934f91427d876e11b07bf3489d925173a3c606f76b"
+    },
+    {
+      "path": "thecreateco-company/core-product-lab/DIRECTIVE.md",
+      "bytes": 7967,
+      "sha256": "7a54315ea017a36faf46b6336c0699769ccbf12a9ddd100e2b5bc19e340c6b0f"
+    },
+    {
+      "path": "thecreateco-company/core-product-lab/HEALTH.md",
+      "bytes": 4747,
+      "sha256": "e7beccfe4bfc01ca10440419160531add12f0e1d481ef1f7f22882d560eb5cae"
+    },
+    {
+      "path": "thecreateco-company/core-product-lab/PRIORITIES.json",
+      "bytes": 142596,
+      "sha256": "47667853bf5a1547f2094927e7ddf83ec6a05f759aa4ccd074bd10bfb00c16de"
+    },
+    {
+      "path": "thecreateco-company/core-product-lab/PRODUCT_HEALTH_REPORT.md",
+      "bytes": 7610,
+      "sha256": "3acd4cf575dda2c609b5408450824d4a4ea6639f1b0d78ae6fed149af2134b48"
+    },
+    {
+      "path": "thecreateco-company/core-product-lab/README.md",
+      "bytes": 2280,
+      "sha256": "597fd2fca2f357f6445cebfe7ac501b7f7282f750ab9b94f934b84208474fd6e"
+    },
+    {
+      "path": "thecreateco-company/core-product-lab/USER_BRIEF.txt",
+      "bytes": 29013,
+      "sha256": "63e63a55b9acadff4bb8dfce1e60043e9e2f84af1dfeca2d0888bba42477939a"
+    },
+    {
+      "path": "thecreateco-company/core-product-lab/golden-projects/form.md",
+      "bytes": 4912,
+      "sha256": "30cddfe1f13765453ac1222d1bf02cb50ab76dab61100309ddb374b1f5945c3a"
+    },
+    {
+      "path": "thecreateco-company/core-product-lab/golden-projects/luma.md",
+      "bytes": 3716,
+      "sha256": "02dfd51eec2c523871468493e83db8e17197d0a0905ef4f16749fd884a2f517d"
+    },
+    {
+      "path": "thecreateco-company/core-product-lab/golden-projects/scenepilot.md",
+      "bytes": 6082,
+      "sha256": "be7291cda02fe4f72787626c2f4abb9bc80279f08ff6126750c8faa5feb0ff1d"
+    },
+    {
+      "path": "thecreateco-company/core-product-lab/golden-projects/stemdeck-synthetic.manifest.json",
+      "bytes": 430,
+      "sha256": "7b0a87e42f0f03c0456f43f0564a9062d82e4e36ab8e855494fb486da833e54b"
+    },
+    {
+      "path": "thecreateco-company/core-product-lab/golden-projects/stemdeck.md",
+      "bytes": 1391,
+      "sha256": "3c3193f7479421cca7d8e134bf6e63ad152b793fa91d17d1f21ecf33ca3d616d"
+    },
+    {
+      "path": "thecreateco-company/core-product-lab/lab.py",
+      "bytes": 3981,
+      "sha256": "adf2c14dc0ff5f6d9159746da74f635a6b0ac32f7ccfed36323f090eeee5374c"
+    },
+    {
+      "path": "thecreateco-company/core-product-lab/products/form.json",
+      "bytes": 34312,
+      "sha256": "5513b4f1dd967532211aeaba2e4735fae6d6f80482edd661f22dae18464619b7"
+    },
+    {
+      "path": "thecreateco-company/core-product-lab/products/luma.json",
+      "bytes": 20013,
+      "sha256": "4d03999971aebb332f0b9fcca86cd4e6a3e8585cc7919394934374f2a3c9fc73"
+    },
+    {
+      "path": "thecreateco-company/core-product-lab/products/scenepilot.json",
+      "bytes": 19945,
+      "sha256": "7928083f7992c66f288cb18f247cf9f5f7508ca46e1574360035389aa9f2a97d"
+    },
+    {
+      "path": "thecreateco-company/core-product-lab/products/stemdeck.json",
+      "bytes": 30385,
+      "sha256": "ad04a91e5d2730d1faad94b9e496efebc2205d7e2d2a72f193485c85b6c8a49f"
+    },
+    {
+      "path": "thecreateco-company/core-product-lab/reports/core-review-2026-10-09.md",
+      "bytes": 5214,
+      "sha256": "9218c22999d2637931eb53193f372115f53d1c67891f688cf41d8b9ab8276a82"
+    },
+    {
+      "path": "thecreateco-company/core-product-lab/reports/form-completion-2026-10-07.md",
+      "bytes": 6664,
+      "sha256": "420d9bc4b86e00803b0594cfc449bb396237cf79a2a9e2a45436229151d83298"
+    },
+    {
+      "path": "thecreateco-company/core-product-lab/reports/form-completion-20261007/pr-body.md",
+      "bytes": 2315,
+      "sha256": "5b47555732827bec2266c2f78e00fa8bf7829a08f11fb2e878bea741c980817f"
+    },
+    {
+      "path": "thecreateco-company/core-product-lab/reports/form-evidence/README.md",
+      "bytes": 1451,
+      "sha256": "2dc8acc3bd68aab296111f13c3dcd83e62fe72c6c9d29bf6550c52296d34a179"
+    },
+    {
+      "path": "thecreateco-company/core-product-lab/reports/form-initial.md",
+      "bytes": 18291,
+      "sha256": "6261d7d9a959a0863c2316ca8a5b1930b771b01ad92bd79cedbc5c2c619ac41e"
+    },
+    {
+      "path": "thecreateco-company/core-product-lab/reports/form-performance-20261008T0940/README.md",
+      "bytes": 3171,
+      "sha256": "3c596ef87ccf139ead62f5d18e473352d756304c06cea6bdcb594379efcfa559"
+    },
+    {
+      "path": "thecreateco-company/core-product-lab/reports/form-project-menu-20261007/README.md",
+      "bytes": 3382,
+      "sha256": "1e9d7be6e7dc040ffa09256ced2a598e42569da147e3584a945576483d420700"
+    },
+    {
+      "path": "thecreateco-company/core-product-lab/reports/form-project-menu-20261007/pr-body.md",
+      "bytes": 1445,
+      "sha256": "9a5216d52fb0d11de3d3c2a2d5248230ac8ff29b900896eba6ecd7b3e92da275"
+    },
+    {
+      "path": "thecreateco-company/core-product-lab/reports/form-runtime-security-20261008T0340/README.md",
+      "bytes": 7866,
+      "sha256": "712b13e4cee27970775d831f01dd4bb8ab90961a58778b7b5980de83f54c152e"
+    },
+    {
+      "path": "thecreateco-company/core-product-lab/reports/form-runtime-security-20261008T0340/baseline-artifacts/dist/client/licenses/makehuman/LICENSE.ASSETS.md",
+      "bytes": 6962,
+      "sha256": "f6089cba01cb570a24712b41ab8a586ccd3cc5ef53dc266ca50b95c288956d2c"
+    },
+    {
+      "path": "thecreateco-company/core-product-lab/reports/form-runtime-security-20261008T0340/pr-body.md",
+      "bytes": 2239,
+      "sha256": "81ba2d2e7cb74e38f61c0277ddd170a5130c0a4acf68b95ed5dc98f521a1b882"
+    },
+    {
+      "path": "thecreateco-company/core-product-lab/reports/form-runtime-security-20261008T0340/review.md",
+      "bytes": 17610,
+      "sha256": "1c9dc7ffff72bf3ef1c5a8e6bbb3242c91b8f8fd023ddb0805986689b833a943"
+    },
+    {
+      "path": "thecreateco-company/core-product-lab/reports/form-security-2026-10-07.md",
+      "bytes": 5818,
+      "sha256": "61fc806dcb648616fc68db1b0d4835f3b0da52dc77432b9539169641f01fbe73"
+    },
+    {
+      "path": "thecreateco-company/core-product-lab/reports/form-security-20261007/netlify-review-dist/licenses/makehuman/LICENSE.ASSETS.md",
+      "bytes": 6962,
+      "sha256": "f6089cba01cb570a24712b41ab8a586ccd3cc5ef53dc266ca50b95c288956d2c"
+    },
+    {
+      "path": "thecreateco-company/core-product-lab/reports/form-security-20261007/pr-body.md",
+      "bytes": 1732,
+      "sha256": "60fe128920998ad0c7fbcca7b1688a6d37af6ee42e4eaa16209770f2fe397ad4"
+    },
+    {
+      "path": "thecreateco-company/core-product-lab/reports/form-security-20261007/review.md",
+      "bytes": 4974,
+      "sha256": "de295aef097efbba1f5de4538b0ecc1aaa215d7f8d00ab5f45e4638205be53d4"
+    },
+    {
+      "path": "thecreateco-company/core-product-lab/reports/form-worker-images-20261009T1140/README.md",
+      "bytes": 9320,
+      "sha256": "dfb6414c06af7652d828c7b835ac7b76ef1e834289d01bd717163077edf84d5a"
+    },
+    {
+      "path": "thecreateco-company/core-product-lab/reports/form-worker-images-20261009T1140/independent-review.md",
+      "bytes": 5818,
+      "sha256": "f71d99384bfaef6a7b8dfdddc258f8563f273924d3397485441284e4aea98862"
+    },
+    {
+      "path": "thecreateco-company/core-product-lab/reports/form-worker-images-20261009T1140/pr-body.md",
+      "bytes": 1374,
+      "sha256": "202bad3858fbad7a8c100563cb74e3581ba14538eb0b097a97df0edc43833d1a"
+    },
+    {
+      "path": "thecreateco-company/core-product-lab/reports/luma-high-depth-doc-20261009T1540/README.md",
+      "bytes": 2743,
+      "sha256": "ea57e509affd432064bc8d153375e6aa92fad0cdd87cf39bda54d8a120c1b846"
+    },
+    {
+      "path": "thecreateco-company/core-product-lab/reports/luma-initial.md",
+      "bytes": 13346,
+      "sha256": "7ad3d273f154107d3de66f4ef83542a62fab0ce9ca1d1bc7567e33d15e6a3065"
+    },
+    {
+      "path": "thecreateco-company/core-product-lab/reports/luma-perf-20261009T1940/README.md",
+      "bytes": 3685,
+      "sha256": "d30d98bfbfbb182e596f854aa2d67fdda58df0635aa9a168ceb18aa71df9df1a"
+    },
+    {
+      "path": "thecreateco-company/core-product-lab/reports/luma-provenance-20261009T2140/README.md",
+      "bytes": 3920,
+      "sha256": "b6f9eaac12935823311a2ba8781ff8b790be707bd7cb05bc9b70ba23eab5aafd"
+    },
+    {
+      "path": "thecreateco-company/core-product-lab/reports/luma-provenance-20261009T2140/synthetic-publish/learn/luma/workshops/fonts/readme.md",
+      "bytes": 1065,
+      "sha256": "2092232b8e74e7d25a66a4c77a1e0d676f0b8b4bf3b9e05d3d8c0bccb9953ea3"
+    },
+    {
+      "path": "thecreateco-company/core-product-lab/reports/luma-roadmap-20261009T1340/README.md",
+      "bytes": 4226,
+      "sha256": "e793014a2af911271c9ecd8a80ef85383ebcf09d14318071a7eebf591d7418fa"
+    },
+    {
+      "path": "thecreateco-company/core-product-lab/reports/openai-review-policy.md",
+      "bytes": 1122,
+      "sha256": "ff88737d0fb0caeee156136ee3570eccbd74876f0923d4d5f83b08cd97829adb"
+    },
+    {
+      "path": "thecreateco-company/core-product-lab/reports/scenepilot-evidence/README.md",
+      "bytes": 1007,
+      "sha256": "dc8bee83cdc3984e20d1253ed2a6e23c4663b6603dbe9cde02741014503eef9f"
+    },
+    {
+      "path": "thecreateco-company/core-product-lab/reports/scenepilot-golden-20261008T0740/README.md",
+      "bytes": 7644,
+      "sha256": "c71ec8ea268e017906b0a0cb288cd8b0571fe22d3692c59fd10c29d069312d77"
+    },
+    {
+      "path": "thecreateco-company/core-product-lab/reports/scenepilot-golden-20261008T0740/independent-review.md",
+      "bytes": 2525,
+      "sha256": "dd113fd59d42772d0e713c14499053c63f298bbc524bc567be274a3a8eeea08e"
+    },
+    {
+      "path": "thecreateco-company/core-product-lab/reports/scenepilot-golden-20261008T0740/pr-body.md",
+      "bytes": 1665,
+      "sha256": "4409b211d76b537d6e1f74ab53dfc19dc8e75572e9d9f8bd10980490e161bf33"
+    },
+    {
+      "path": "thecreateco-company/core-product-lab/reports/scenepilot-initial.md",
+      "bytes": 14868,
+      "sha256": "28113f0116b292db01817d5a4a61ce9f504a6bc76fa8762a34371e8dd9d8185a"
+    },
+    {
+      "path": "thecreateco-company/core-product-lab/reports/scenepilot-sec-residual-20261008T1540/README.md",
+      "bytes": 4238,
+      "sha256": "342fcd23ecf6b5bca630bbbb6a6c81665aff63be1ca3faf89e2d3afcdb3c8937"
+    },
+    {
+      "path": "thecreateco-company/core-product-lab/reports/scenepilot-sec-residual-20261008T1540/independent-review.md",
+      "bytes": 5489,
+      "sha256": "29090d54a42a25ed107c431338b7b79ce327bfc2885b8df87d89e3151144e018"
+    },
+    {
+      "path": "thecreateco-company/core-product-lab/reports/scenepilot-ux-20261009T1740/REPORT.md",
+      "bytes": 3649,
+      "sha256": "b7c09a96b71e5f24afc2ce6777e34cc5915ce20851226d7359d3bb7fcb4c07ba"
+    },
+    {
+      "path": "thecreateco-company/core-product-lab/reports/setup-verification.md",
+      "bytes": 3722,
+      "sha256": "5815eacc35a11d0c77d551bdd074f676b5e7eaf3ed252a544e82973893959412"
+    },
+    {
+      "path": "thecreateco-company/core-product-lab/reports/stemdeck-archive-gate-20261009/README.md",
+      "bytes": 5082,
+      "sha256": "54588425b84c00e8f3997ec7a33cc75b4d94105c8bdb9c85aa6673590759ad4e"
+    },
+    {
+      "path": "thecreateco-company/core-product-lab/reports/stemdeck-archive-gate-20261009/exact-gate/README.md",
+      "bytes": 2656,
+      "sha256": "18c5dafc2336730f49edcee41223caea43018590fa7f8e3594a79db3c727fc95"
+    },
+    {
+      "path": "thecreateco-company/core-product-lab/reports/stemdeck-archive-webkit-20261008/README.md",
+      "bytes": 9779,
+      "sha256": "8f964b8ef289c1d4ec7ce8b7c43cffb69bf5c2bee091c2d016ba576d270aad8e"
+    },
+    {
+      "path": "thecreateco-company/core-product-lab/reports/stemdeck-archive-webkit-20261008/independent-source-review.md",
+      "bytes": 4239,
+      "sha256": "15c7957e07ce9f18073a6f620b58ec282492886b94601d7d7174ea393a81dcb1"
+    },
+    {
+      "path": "thecreateco-company/core-product-lab/reports/stemdeck-archive-webkit-20261008/parent-stack-review.md",
+      "bytes": 5223,
+      "sha256": "446405d171ad780b54b80f3d1da3943bc50b5ce4ea6edd7b5819b194253d1ebd"
+    },
+    {
+      "path": "thecreateco-company/core-product-lab/reports/stemdeck-archive-webkit-20261008/pr-body.md",
+      "bytes": 2620,
+      "sha256": "0fac1fb5b5311f3ec76470bf86f10776fe34f0fc317541ec88df2cc4205214e4"
+    },
+    {
+      "path": "thecreateco-company/core-product-lab/reports/stemdeck-initial.md",
+      "bytes": 7451,
+      "sha256": "3a2fa1cc5ade93b2745b1031893385d5f2c8544865fe39567d293b7b6d87bdf7"
+    },
+    {
+      "path": "thecreateco-company/core-product-lab/reports/stemdeck-lifecycle-20261007/CAPTURE_TIMING.md",
+      "bytes": 4046,
+      "sha256": "a254ce41a9e32f68bddc46263fd5f63e05d12f1c34d7d5be3bb14847c866d728"
+    },
+    {
+      "path": "thecreateco-company/core-product-lab/reports/stemdeck-lifecycle-20261007/README.md",
+      "bytes": 7975,
+      "sha256": "cb352436db13221a0f1e590839d1445347359b6c769622f0ae13deb1c047d7b8"
+    },
+    {
+      "path": "thecreateco-company/core-product-lab/reports/stemdeck-lifecycle-20261007/independent-review.md",
+      "bytes": 1343,
+      "sha256": "bcdea9b49f4aaa8b1b4269b7d3006e307dd8bc0835bd3ed1089a6db6ad9dc0fd"
+    },
+    {
+      "path": "thecreateco-company/core-product-lab/reports/stemdeck-lifecycle-20261007/pr-body.md",
+      "bytes": 1906,
+      "sha256": "f3f591d3910d64addb566d7f2f7d9ed2c8c6489c9557879502ec3e52ffcff530"
+    },
+    {
+      "path": "thecreateco-company/core-product-lab/reports/stemdeck-node26-test-environment-20261009.md",
+      "bytes": 2249,
+      "sha256": "2269095f59fd914148bb320494a585a6d4c7d36a69834f96f9fd11d876579cb1"
+    },
+    {
+      "path": "thecreateco-company/core-product-lab/reports/stemdeck-portability-20261008/README.md",
+      "bytes": 8624,
+      "sha256": "1a3ebe6211695c3ca728146feaa89d64d1539504bea0108f004dfc8ae23f9c08"
+    },
+    {
+      "path": "thecreateco-company/core-product-lab/reports/stemdeck-portability-20261008/independent-review.md",
+      "bytes": 7861,
+      "sha256": "6b0fd54dee48a49f4057c81b4fe5d6693172e5e3192c7a981de052fee780c994"
+    },
+    {
+      "path": "thecreateco-company/core-product-lab/reports/stemdeck-recovery-20261007.md",
+      "bytes": 4854,
+      "sha256": "e00646691bb97fdd6f2c7565f7366b6e95ff0c5945670f1e2813b2fd85e1a3a0"
+    },
+    {
+      "path": "thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/README.md",
+      "bytes": 8844,
+      "sha256": "c787ebd6bf216b7f54bd2343476c4df3d9eb069013ff13be42de89c2aef1eff5"
+    },
+    {
+      "path": "thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/pr-body.md",
+      "bytes": 2864,
+      "sha256": "8a13cc3a4dd94f048ea07f06ef0a0dba2c19d1c75593ebc247ec4cb6b2061806"
+    },
+    {
+      "path": "thecreateco-company/core-product-lab/reports/stemdeck-responsive-audit-20261009/README.md",
+      "bytes": 2671,
+      "sha256": "74ebdf0d7c8b9b3ff95b40d78efb305358e00c4d24932bbd1de54b0e8781157e"
+    },
+    {
+      "path": "thecreateco-company/core-product-lab/reports/stemdeck-security-fix.md",
+      "bytes": 3026,
+      "sha256": "9db64a995cc95bb7fdbeaba438dc006733ae95abe1d882beed2301031e22ced1"
+    },
+    {
+      "path": "thecreateco-company/core-product-lab/reports/stemdeck-security-review.md",
+      "bytes": 7407,
+      "sha256": "a9aaa86613b9b45d5319da791922b750a3c89b7e5d87af1590b8b6f5e1ec397e"
+    },
+    {
+      "path": "thecreateco-company/core-product-lab/reports/stemdeck-throttle-clock-20261009.md",
+      "bytes": 1299,
+      "sha256": "d2b02ad6ec10cc6bb27ba00592605f8482aac91add72e014ab5eeb99dd662d0d"
+    },
+    {
+      "path": "thecreateco-company/core-product-lab/test_lab.py",
+      "bytes": 1620,
+      "sha256": "8605eb8c458f0469712c327c82537a90d037124a14ce28a797245ea62dcb3557"
+    },
+    {
+      "path": "thecreateco-company/engine/README.md",
+      "bytes": 8556,
+      "sha256": "51ea236618a16383a8ac746469cf54371acc321546697f898d775d0f83883fdd"
+    },
+    {
+      "path": "thecreateco-company/engine/anomalies.py",
+      "bytes": 2266,
+      "sha256": "5028cda8ce4c45f771373d1b0d7e2960ceced7b7e09c087c68f3b0e6871d9599"
+    },
+    {
+      "path": "thecreateco-company/engine/company.py",
+      "bytes": 39494,
+      "sha256": "62787d494df4a1b0a9e9cecbe0aef79cd78cadeea914c406c3d21b05c9ffa20a"
+    },
+    {
+      "path": "thecreateco-company/engine/os_cycle.py",
+      "bytes": 25737,
+      "sha256": "f3509b6be71b29b74c6faff3b745126e78bd72483eba99403f3dc0ba0e9c214e"
+    },
+    {
+      "path": "thecreateco-company/engine/telemetry.py",
+      "bytes": 22727,
+      "sha256": "54ad9015eec003614da1836fc1a5f1eff8ac5e17806a16b182585a9fd47ba7ff"
+    },
+    {
+      "path": "thecreateco-company/release-program/DIRECTIVE.md",
+      "bytes": 3294,
+      "sha256": "cdf67d0b1545e26bb45bf5b501ffa52c3114f2218ae355a6aaf37b789bf6fd2c"
+    },
+    {
+      "path": "thecreateco-company/release-program/manifest.json",
+      "bytes": 1386,
+      "sha256": "2b070caee1306ab1785f39b95e0c7c1893e75b1a471e3d32e5757c3b1cdd7d4b"
+    },
+    {
+      "path": "thecreateco-company/release-program/matrix.py",
+      "bytes": 7684,
+      "sha256": "821a40d7037009ced03692a4a5f92fbfe1eb870e099fde93bce540fb02f409a9"
+    },
+    {
+      "path": "thecreateco-company/release-program/release-matrix.json",
+      "bytes": 242413,
+      "sha256": "1db7a8e4b47b0e612b821257f3a3094ad13cebd224a34dd9f1d72e6af698cc53"
+    },
+    {
+      "path": "thecreateco-company/release-program/reports/key-bpm-20261007/README.md",
+      "bytes": 7349,
+      "sha256": "ea4b59959f405f265eab86483440aff8f643c12f817a0573986c2bd89811572b"
+    },
+    {
+      "path": "thecreateco-company/release-program/test_matrix.py",
+      "bytes": 2328,
+      "sha256": "c2b7badb9e9d9f6a88d6adc56e60943bd87a7e927e661c43808030b338fc42e8"
+    },
+    {
+      "path": "thecreateco-company/reports/2026-10-07-W06/PRODUCTS.after.md",
+      "bytes": 31109,
+      "sha256": "3e8f46e22e7580f29fd951bded07e2aa69559904c1074ff25794178b1081d523"
+    },
+    {
+      "path": "thecreateco-company/reports/2026-10-07-W06/PRODUCTS.before.md",
+      "bytes": 30077,
+      "sha256": "1fb07ffa7d3b32264ce81001aec88c44156955f1f4592b5c10ddba596e909b1d"
+    },
+    {
+      "path": "thecreateco-company/reports/2026-10-07-W06/report.md",
+      "bytes": 5907,
+      "sha256": "6b67b491379507b7dd351dab1db1d247257cbec17c645ec5d1845ba5a7623261"
+    },
+    {
+      "path": "thecreateco-company/reports/2026-10-07-autonomous-push-reporting.md",
+      "bytes": 2329,
+      "sha256": "97d4de06c87927b5e63dbb3662fb543c02ab86cbe19dbac2cf952dd498669183"
+    },
+    {
+      "path": "thecreateco-company/reports/2026-10-07-readiness-first/report.md",
+      "bytes": 1977,
+      "sha256": "6525e467091caa9a5ca2a150caca87c2e03997f32736e88b50f9e9eb701243d0"
+    },
+    {
+      "path": "thecreateco-company/reports/2026-10-07-scenepilot-security-push.md",
+      "bytes": 2647,
+      "sha256": "039d9e16f35a45740c08701f5ee4b23bc929bf40d66be3dcdece691aca3b8540"
+    },
+    {
+      "path": "thecreateco-company/reports/2026-10-07-sp-security/landing-review.md",
+      "bytes": 4116,
+      "sha256": "5303cba37f517bc0fdf02699e8a2e2a7933f047ccf30b4b15a6895cd7613fb1e"
+    },
+    {
+      "path": "thecreateco-company/reports/2026-10-07-sp-security/report.md",
+      "bytes": 7775,
+      "sha256": "f04a257408d97dcc9a9174c18c983e91f643b8c776b29131da86398392d19d49"
+    },
+    {
+      "path": "thecreateco-company/reports/2026-10-07-sp-security/review-findings.md",
+      "bytes": 426,
+      "sha256": "e2f05dab9fcd5c314ac10be10c535043b3d983d02c4160701215dd436d9553de"
+    },
+    {
+      "path": "thecreateco-company/reports/2026-10-07-square/report.md",
+      "bytes": 2346,
+      "sha256": "a17f001a627381392e4daf6b9794431bd71d1b1597a985ab38af3d2fc8f25f08"
+    },
+    {
+      "path": "thecreateco-company/reports/2026-10-07-stemdeck-gate-independent-review.md",
+      "bytes": 2247,
+      "sha256": "a98980d40d6c4d476d75dd71a806119b2a411778bab33620ccafa72b83ad807d"
+    },
+    {
+      "path": "thecreateco-company/reports/2026-10-07-stemdeck-security-push.md",
+      "bytes": 6898,
+      "sha256": "097c7fe901571169944296ea6d72336863748f9492b3840289631f255cf8af14"
+    },
+    {
+      "path": "thecreateco-company/reports/2026-10-07-web-utilities/README.md",
+      "bytes": 20675,
+      "sha256": "404919fa7cac27daa943c97af5ff05531d9a4c36a252e53d114f9b5659f370c2"
+    },
+    {
+      "path": "thecreateco-company/reports/2026-10-07-web-utilities/asset-readiness.md",
+      "bytes": 18873,
+      "sha256": "029ecfb2890ed6387c8ce44ea12278ddb4b96a35c0be11c91e8edf09d32f4a62"
+    },
+    {
+      "path": "thecreateco-company/reports/2026-10-07-web-utilities/audio-market.md",
+      "bytes": 19759,
+      "sha256": "32b12eb26e9b264558967d80bc3d912bf1f6c542ee3b8557805cba920911ac20"
+    },
+    {
+      "path": "thecreateco-company/reports/2026-10-07-web-utilities/verification.md",
+      "bytes": 1146,
+      "sha256": "3558503c52e47959097faf43f26bd74df5f24b80eb18d13d3d0ad2d960a978ff"
+    },
+    {
+      "path": "thecreateco-company/reports/2026-10-08-sattari-public-alpha-cleanup.md",
+      "bytes": 1817,
+      "sha256": "ded76983f6be228b79ccee599b37388780a088f23637c8c471ec7a45ee530d9f"
+    },
+    {
+      "path": "thecreateco-company/reports/2026-10-09-organic-tool-growth-plan.md",
+      "bytes": 9632,
+      "sha256": "8e5f17d4dc1229e764135c70f0f649c49d29fa065be8fa28af7d9b9b968ed989"
+    },
+    {
+      "path": "thecreateco-company/reports/2026-10-09-pr-acceptance-triage.md",
+      "bytes": 2057,
+      "sha256": "e5bbb5f4f4faa17dd7869d1fa9fba682b25cf112ef610309de75ac5a7d5d7f4b"
+    },
+    {
+      "path": "thecreateco-company/reports/2026-10-09-site-publish-handoff/README.md",
+      "bytes": 4772,
+      "sha256": "c26299bb94a15d73fdab447586ab678846ff522ecabc6b405ddfdc9a19a5bc69"
+    },
+    {
+      "path": "thecreateco-company/reports/2026-10-09-tools-directory-release.md",
+      "bytes": 2269,
+      "sha256": "87ec5bc6c318eb311fc2b43047d2b7d2e2ee5e4c56aada0b755d90b1d0e1cd0d"
+    },
+    {
+      "path": "thecreateco-company/reports/OS-COST-ASTRA-REASON-NOT-EXPOSED-20261009-misclaim.md",
+      "bytes": 666,
+      "sha256": "6dceb52708afafa625195175029249cb6e0fe91437c06157611d197f98127577"
+    },
+    {
+      "path": "thecreateco-company/reports/W02-netlify-analytics-access-20261009.md",
+      "bytes": 1233,
+      "sha256": "49ddc3888600e8cd7c5b1c234ea9133a89172286938b29e300054482cbf806e8"
+    },
+    {
+      "path": "thecreateco-company/reports/WEBLAB-NETLIFY-DEPLOY-2026-10-09.md",
+      "bytes": 958,
+      "sha256": "259c65072ea2d7b595f65e26e666c14feb1fb50510e32b9f1211743c2f9cc31f"
+    },
+    {
+      "path": "thecreateco-company/reports/WEBLAB-PROTOTYPE-001.md",
+      "bytes": 999,
+      "sha256": "dc3f17fcb8e9016d819bc8936c13fc3c99ef0b2f04711a3f47ead2432ab5a1ca"
+    },
+    {
+      "path": "thecreateco-company/reports/actions-retry-20261007/README.md",
+      "bytes": 502,
+      "sha256": "f9df3b3a90bbb40281c5a0b698e2d10cf140737cba3df0032118e60e9c54feec"
+    },
+    {
+      "path": "thecreateco-company/reports/app-backlinks-20261009/work-log.md",
+      "bytes": 3592,
+      "sha256": "6235e7b1f29233afdbad784da38fa7df4f17803b10ebef870e9d1f5c960242a4"
+    },
+    {
+      "path": "thecreateco-company/reports/autocut-roundtrip-20261009/README.md",
+      "bytes": 7425,
+      "sha256": "68c7a932cd40a391b7706861566917520ed65795f2ae0f30e47a9ea7c381c9f0"
+    },
+    {
+      "path": "thecreateco-company/reports/autocut-roundtrip-20261009/pr-body.md",
+      "bytes": 1535,
+      "sha256": "0676c92efebc23837508d617c80253f071878de53a8303c90429637764b565e7"
+    },
+    {
+      "path": "thecreateco-company/reports/bounce-release18-20261007/README.md",
+      "bytes": 2761,
+      "sha256": "dd3a176a38646ca26b0e902faefa3112816530d4f3053e8f37bff70e1bf848ed"
+    },
+    {
+      "path": "thecreateco-company/reports/bounce-release18-20261007/pr-body.md",
+      "bytes": 1218,
+      "sha256": "5729a89edb97d5ae176509b4b290827dd974b3a6326eb59af26262c7a534e22f"
+    },
+    {
+      "path": "thecreateco-company/reports/captions-lifecycle-20261009/README.md",
+      "bytes": 4128,
+      "sha256": "f4a79cfec3f34c4680401052b5b83692056aafb1884ea08fd9f732d8535b7f93"
+    },
+    {
+      "path": "thecreateco-company/reports/captions-lifecycle-20261009/worker.md",
+      "bytes": 4543,
+      "sha256": "516fa85a5fbf8214eb820cda2a38e1e50361b1534a7204f59dd18d4f5e6143e4"
+    },
+    {
+      "path": "thecreateco-company/reports/company-os-20261009/README.md",
+      "bytes": 5851,
+      "sha256": "69f0b404cbbab447f9439303316889ef1b1087bcba1c804bb0928600974605c7"
+    },
+    {
+      "path": "thecreateco-company/reports/company-os-20261009/astra-invention.md",
+      "bytes": 8447,
+      "sha256": "5097e2f46b14f7e2d9171edd41bcbc9f6df38c6d3de3f4b459b1d8783dcee78d"
+    },
+    {
+      "path": "thecreateco-company/reports/company-os-20261009/baseline/DIRECTIVE.md",
+      "bytes": 8907,
+      "sha256": "0e8368bb3376daf04fba24f8e9a2432cf793098957c26180259bd0da2298c93b"
+    },
+    {
+      "path": "thecreateco-company/reports/company-os-20261009/encore-luna-capsule.md",
+      "bytes": 5546,
+      "sha256": "e10b8a762ab41b6f1865e4971628d2d8bde54f01b2c5da268f407d6c532fba13"
+    },
+    {
+      "path": "thecreateco-company/reports/company-os-20261009/independent-review.md",
+      "bytes": 11296,
+      "sha256": "e7e61d64b2e4fcb08ce0bc0b5b42411f5e2bff6a4daf1b608f18afc0b24c8715"
+    },
+    {
+      "path": "thecreateco-company/reports/company-os-20261009/initial-audit.md",
+      "bytes": 10265,
+      "sha256": "43545efea60487012f7fe16e0a0ea7cd8576a4d98b7432c64cde3d2a82a37ff2"
+    },
+    {
+      "path": "thecreateco-company/reports/company-os-20261009/os-cycle.md",
+      "bytes": 3280,
+      "sha256": "01da72e5f1d862f70b660cb15ba13adc6008cab15a71de3cd4636f54388544bb"
+    },
+    {
+      "path": "thecreateco-company/reports/company-os-20261009/scheduled-proof.md",
+      "bytes": 3379,
+      "sha256": "2619b72738905440b7955699d2b7baa5a6e03a47a94a0cd000699e823e523f85"
+    },
+    {
+      "path": "thecreateco-company/reports/company-os-20261009/sol-selection.md",
+      "bytes": 7481,
+      "sha256": "ebdf28239d872c19a47535b65ebc202d7064fc386978c29c72d5aaab0212816a"
+    },
+    {
+      "path": "thecreateco-company/reports/company-os-20261009/telemetry.md",
+      "bytes": 8982,
+      "sha256": "6fb654f5d16c97e11510e7545b0b184e90a9a6ff28d2abbf7335998c5cfefb6a"
+    },
+    {
+      "path": "thecreateco-company/reports/cost-astra-reason-20261009T1610/README.md",
+      "bytes": 3222,
+      "sha256": "114e2955664065fed7259d91f1eaa687006439553264fdc79fd3fad2b07bb9e8"
+    },
+    {
+      "path": "thecreateco-company/reports/cost-failure-audit-20261009/README.md",
+      "bytes": 2440,
+      "sha256": "41af711a255da23f8ccf5137c9b92d2d6289c9c06bc97c3595c05aeec5f0d7db"
+    },
+    {
+      "path": "thecreateco-company/reports/cost-failure-audit-20261009-1810/README.md",
+      "bytes": 2851,
+      "sha256": "4159d750f0ffc3ea847dc5a80d3a9928c380326aeabd6ce39bdd211d74aba01b"
+    },
+    {
+      "path": "thecreateco-company/reports/creative-suite-upgrade-track-2026-10-09.md",
+      "bytes": 2812,
+      "sha256": "991b3944387a5b6b7d661c5c570779d79a014f55e4c39c5cc56b6520ed19be6a"
+    },
+    {
+      "path": "thecreateco-company/reports/cross-thread-push-20261009.md",
+      "bytes": 2428,
+      "sha256": "ab517bd171549c8077aaa68ad8d2ae3b508da7d75be5bb6ca8e0b58029080b5b"
+    },
+    {
+      "path": "thecreateco-company/reports/external-storage-20261008/README.md",
+      "bytes": 1422,
+      "sha256": "9db8d17264b40dad7907f1c4831b3a2f66e2f0b76ef0866362e54a79c6a41cde"
+    },
+    {
+      "path": "thecreateco-company/reports/form-cast-availability-20261007/README.md",
+      "bytes": 5022,
+      "sha256": "c77286242c3ec2484e00eb5e6380a5dc7b75c1701bdfb6928daf614f18f17efa"
+    },
+    {
+      "path": "thecreateco-company/reports/form-cast-availability-20261007/independent-review.md",
+      "bytes": 646,
+      "sha256": "222630ee80a202f44c3408233682808d4f7f3980f17617d29bfb9a88e1c8c8b2"
+    },
+    {
+      "path": "thecreateco-company/reports/form-garment-20261009/PATTERN_FIRST_APP.md",
+      "bytes": 7145,
+      "sha256": "ddfc9e4ddaa7ee1f36bbf8c4a5d75e85b462f13ba1d3f145ce556d08105b10dc"
+    },
+    {
+      "path": "thecreateco-company/reports/form-garment-20261009/SOURCE_ASSET_CUSTODY_SLICE.md",
+      "bytes": 3602,
+      "sha256": "a3c1ccca3a27675225930bee274d1b5d65b4744c37fc0a64f0dbf17477b95157"
+    },
+    {
+      "path": "thecreateco-company/reports/form-golden-20261008T0310/README.md",
+      "bytes": 7726,
+      "sha256": "b200dde95adf66b9030fc766b616770da513bd43ae2d72766efa205d66bd1e0f"
+    },
+    {
+      "path": "thecreateco-company/reports/form-handoff-20261008T1210/README.md",
+      "bytes": 10766,
+      "sha256": "685efbe8f7c8b47b6601e1f9446b5475c8888fe1a70edafa6c184228eed877f4"
+    },
+    {
+      "path": "thecreateco-company/reports/form-handoff-20261008T1210/independent-audits.md",
+      "bytes": 2369,
+      "sha256": "76d4e40fbd782f960fa3501d77a9f5e38ca18b739562ea55148c2cf930764407"
+    },
+    {
+      "path": "thecreateco-company/reports/form-handoff-20261008T1210/pr-body.md",
+      "bytes": 1241,
+      "sha256": "9f3134dbb9577e3668a04967f561423f3be12e982d57c7593032149a86be6d3f"
+    },
+    {
+      "path": "thecreateco-company/reports/form-history-20261009T1910/README.md",
+      "bytes": 3713,
+      "sha256": "e8cf943c00ca6b9dde04537f8f0a4a5113e7a9efdbd8f8a9cc45f6a189c06d2d"
+    },
+    {
+      "path": "thecreateco-company/reports/form-image-binding-20261008T1548/README.md",
+      "bytes": 5011,
+      "sha256": "943ed986aa30fe6b3e25ed586926bcd63f0505baabe11dc6bd66e19b14277e89"
+    },
+    {
+      "path": "thecreateco-company/reports/form-release-reconciliation-20261008T0410/README.md",
+      "bytes": 5360,
+      "sha256": "5a02b0a9540ec9f9d6652c8e5ddec7877d28f48646e66239032a543c49a71dbe"
+    },
+    {
+      "path": "thecreateco-company/reports/ghost-roundtrip-20261007/README.md",
+      "bytes": 1973,
+      "sha256": "068953ab1f30c424a8bfe684f66bdc27dc2b197ffa1c99f304e05c7411da4efb"
+    },
+    {
+      "path": "thecreateco-company/reports/ghost-roundtrip-20261009/README.md",
+      "bytes": 10174,
+      "sha256": "b15bfe1e3a4a7617132d475354fdad52c1b52dbd67af9d4189f078fe1a568369"
+    },
+    {
+      "path": "thecreateco-company/reports/ghost-roundtrip-20261009/director-checkpoint.md",
+      "bytes": 1992,
+      "sha256": "c18b0f837f027e24cc38b2de8fae0f7001445bb7559bc861695cf8342aab24b0"
+    },
+    {
+      "path": "thecreateco-company/reports/glyph-20261007-1910/README.md",
+      "bytes": 5346,
+      "sha256": "c1be952629bfc690bbe1dbc7cceddaae0b566a0bae51454f8a907b6d74b557fc"
+    },
+    {
+      "path": "thecreateco-company/reports/glyph-20261007-1910/independent-review.md",
+      "bytes": 799,
+      "sha256": "13f6ecc8338fda1a5cccd4207ebfb2a576cc92d0150f16f5aea4184aef1c2975"
+    },
+    {
+      "path": "thecreateco-company/reports/glyph-20261007-1910/pr-body.md",
+      "bytes": 1170,
+      "sha256": "c8406b829b569c2445b73eb02a3c18ea82d6c39beec7d4ba8c7121ff62ac0346"
+    },
+    {
+      "path": "thecreateco-company/reports/glyph-completion-20261007/README.md",
+      "bytes": 7908,
+      "sha256": "a8e985d29eeda6872c2aaea54cca6bb8ad6662022eda39447557974a5b3f71aa"
+    },
+    {
+      "path": "thecreateco-company/reports/glyph-completion-20261007/independent-review.md",
+      "bytes": 1009,
+      "sha256": "47ca01d26ab8694f776010a79617d90e4c7034f8ef931fe0af9c130f1f6c50b0"
+    },
+    {
+      "path": "thecreateco-company/reports/glyph-completion-20261007/pr-body.md",
+      "bytes": 1795,
+      "sha256": "f9414a6579160ddaeafd2767d44179da238edf0639be5e829ff0d823ae2dd610"
+    },
+    {
+      "path": "thecreateco-company/reports/glyph-destination-20261007/README.md",
+      "bytes": 6921,
+      "sha256": "1446b26f5265aa64978100b21c2be47309f44d63448660d9507f3c1e39552c08"
+    },
+    {
+      "path": "thecreateco-company/reports/glyph-destination-20261007/creator-validation-pack.md",
+      "bytes": 5385,
+      "sha256": "796a9191ebeda2cf5dbf8b87e1092f34015dc1169463c137a1b2bec93fd0df7a"
+    },
+    {
+      "path": "thecreateco-company/reports/glyph-destination-20261007/independent-review.md",
+      "bytes": 9745,
+      "sha256": "face87ec869a45eb6093d972f6db122c9f21a72ee55ea91c317341c09f2f1352"
+    },
+    {
+      "path": "thecreateco-company/reports/glyph-destination-20261007/metadata-code-review.md",
+      "bytes": 3160,
+      "sha256": "f9a45b6945d40f56415abd973efa2264ac58074e55c4430058d0e750c83e0411"
+    },
+    {
+      "path": "thecreateco-company/reports/glyph-destination-20261007/pr-body.md",
+      "bytes": 1156,
+      "sha256": "0fda385570df8e0aceb89fa88994328e71976a0001c0fe4d4c8a188f86570d3e"
+    },
+    {
+      "path": "thecreateco-company/reports/glyph-destination-20261007/verification.md",
+      "bytes": 929,
+      "sha256": "05e8bec02ee9bdca02c454ccd34692aced93bb9be0ac1ba101353f309b83f0c8"
+    },
+    {
+      "path": "thecreateco-company/reports/implementation-verification.md",
+      "bytes": 5348,
+      "sha256": "575fdd0aa5fbbdb999cd733f5932b6c515898b24ab928f29f062be8d1ea19729"
+    },
+    {
+      "path": "thecreateco-company/reports/initial-portfolio-audit.md",
+      "bytes": 12992,
+      "sha256": "afd09dc4dc7d9f28a878e1fb3efcbd788daa2fa22b8b2aa49f0bd60a33016f89"
+    },
+    {
+      "path": "thecreateco-company/reports/librarian-collections-20261009/README.md",
+      "bytes": 1819,
+      "sha256": "627f32caf8943a55ec710dfa78e69076da443d28a5eef286ec10cbe09aedbcbe"
+    },
+    {
+      "path": "thecreateco-company/reports/librarian-moderate-20261009/README.md",
+      "bytes": 4358,
+      "sha256": "bdd98fa573763c5ea32f88bad9297ccd4e5b2f46a536f6782fcf99993f599af9"
+    },
+    {
+      "path": "thecreateco-company/reports/librarian-uuid-repair-20261009/README.md",
+      "bytes": 6695,
+      "sha256": "8d8ec75d6fbd947731476d27d1c5faf96107cda91c9c7a3161d1561883d46ded"
+    },
+    {
+      "path": "thecreateco-company/reports/librarian-uuid-repair-20261009/pr-body.md",
+      "bytes": 1020,
+      "sha256": "c6f718c5c3e6b58d4833aff0542450fb2ce19fac90f225ac31c690267eb653a1"
+    },
+    {
+      "path": "thecreateco-company/reports/librarian-workflow-20261007/README.md",
+      "bytes": 5532,
+      "sha256": "8ce41065f3cece2754c986705231f0abd2875b68fe7033413aa6a5f2354693aa"
+    },
+    {
+      "path": "thecreateco-company/reports/librarian-workflow-20261007/tooling/README.md",
+      "bytes": 2257,
+      "sha256": "ee9d0c95c8590a86c178f73055569c5f5bf07d192cb5d6da866d9a2280f69ccf"
+    },
+    {
+      "path": "thecreateco-company/reports/librarian-workflow-20261007/tooling/assets-baseline/ios/App/CapApp-SPM/README.md",
+      "bytes": 162,
+      "sha256": "42c535861f4a866e35f85764ed6af1ea046d6a409bf9852ecb00e5d292a1626e"
+    },
+    {
+      "path": "thecreateco-company/reports/librarian-workflow-20261007/tooling/assets-candidate/ios/App/CapApp-SPM/README.md",
+      "bytes": 162,
+      "sha256": "42c535861f4a866e35f85764ed6af1ea046d6a409bf9852ecb00e5d292a1626e"
+    },
+    {
+      "path": "thecreateco-company/reports/local-environment-audit-20261007/README.md",
+      "bytes": 2819,
+      "sha256": "03ea2f55d12edfd4b83d1f1502e1a0f2565b5ceee6bf4c208d7884382bf40589"
+    },
+    {
+      "path": "thecreateco-company/reports/luma-adjustment-20261009T0940/README.md",
+      "bytes": 5467,
+      "sha256": "6bda3b00c3764510e16408d5d3ca5c93a3b84b5f1f1fdbf595be01cf7ea5888a"
+    },
+    {
+      "path": "thecreateco-company/reports/luma-adjustment-variants-20261008/README.md",
+      "bytes": 5370,
+      "sha256": "bd10dc525603aa04ed6905a44cf8dec2800f20303d154fd7cf3925087e04ee02"
+    },
+    {
+      "path": "thecreateco-company/reports/luma-adjustment-variants-20261008/independent-review.md",
+      "bytes": 4033,
+      "sha256": "3f2b1bc2acae432d137d65a0a6aa63f8d0377ec54f09b20c4e4c0027b5f296e3"
+    },
+    {
+      "path": "thecreateco-company/reports/luma-adjustment-variants-20261008/pr-body.md",
+      "bytes": 981,
+      "sha256": "df990fc1dd961362a3b11f21382c642a627dcd4af9d9087ed1af59814d9b6f7c"
+    },
+    {
+      "path": "thecreateco-company/reports/luma-adjustment-variants-20261008/recovery-independent-review.md",
+      "bytes": 1224,
+      "sha256": "dec2055386e507e4e28bad6eaa736e8e3f02344299d86e1a83b33800da0cf767"
+    },
+    {
+      "path": "thecreateco-company/reports/luma-color-20261007/README.md",
+      "bytes": 4414,
+      "sha256": "f7c13bdb1b85fa1c38d9c3423e153f5c6f087bf6c9f2446368cc24b42ecf1627"
+    },
+    {
+      "path": "thecreateco-company/reports/luma-color-20261007/pr-body.md",
+      "bytes": 2229,
+      "sha256": "9dffae2810db92793be1f0a1d0f251fd41218629e7e92bbe6f661801ff6aa18b"
+    },
+    {
+      "path": "thecreateco-company/reports/luma-completion-2026-10-07/README.md",
+      "bytes": 6839,
+      "sha256": "3f34e7b0e519093e3ae70bed77eac2eed50b6899aa745ccd682214379e10b896"
+    },
+    {
+      "path": "thecreateco-company/reports/luma-completion-2026-10-07/independent-review.md",
+      "bytes": 795,
+      "sha256": "22072cd2dc24dff7cb29f6e3ca358ed47ede5d22ca98d1938892c1e516b0163b"
+    },
+    {
+      "path": "thecreateco-company/reports/luma-completion-2026-10-07/pr-body.md",
+      "bytes": 1582,
+      "sha256": "daf34a4abfde8d8f798efc0b77ab3d9716af1155f8b63ec062966181c622e495"
+    },
+    {
+      "path": "thecreateco-company/reports/luma-golden-20261007/INDEPENDENT_REVIEW.md",
+      "bytes": 1556,
+      "sha256": "e96fc0fb74417e6040fd77e7a4f41acb47b55f33e7631022c89ae59453519030"
+    },
+    {
+      "path": "thecreateco-company/reports/luma-golden-20261007/README.md",
+      "bytes": 6550,
+      "sha256": "601359b6f5d2d21ba16d96f92b9f0b40e6ae18aa81e0b9b2fcfa55f99b08831c"
+    },
+    {
+      "path": "thecreateco-company/reports/luma-golden-20261007/pr-body.md",
+      "bytes": 2181,
+      "sha256": "85828130f939ed914eee4ab22f6e577dc4b5a3d8e20971a5885a1c5ca765a925"
+    },
+    {
+      "path": "thecreateco-company/reports/luma-security-2026-10-07/README.md",
+      "bytes": 10341,
+      "sha256": "44a2501ab7e9f666a59599ccc554490d46127e591e36fec11d1a25dce2175984"
+    },
+    {
+      "path": "thecreateco-company/reports/luma-security-2026-10-07/independent-review.md",
+      "bytes": 2716,
+      "sha256": "f635889a6647a843d06613667ec806ba4b191fc0a44de79790cdcc4544a84742"
+    },
+    {
+      "path": "thecreateco-company/reports/luma-security-2026-10-07/pr-body.md",
+      "bytes": 2565,
+      "sha256": "962ec6af180a65e889b69fe985c6d0761580c8f6aa6d735d7714edadd17f5903"
+    },
+    {
+      "path": "thecreateco-company/reports/m04-outcomes-20261009/README.md",
+      "bytes": 2954,
+      "sha256": "530f04f504721f2cb662fb4465541424bbb52b2a8a90a370a45af9b6e139da25"
+    },
+    {
+      "path": "thecreateco-company/reports/now-messages-20261009/README.md",
+      "bytes": 4083,
+      "sha256": "d685ddf049b350bbec787a032e6a7e61bf898812131de4d2c282eb099486c089"
+    },
+    {
+      "path": "thecreateco-company/reports/now-platform-20261009/PLATFORM_BOUNDARY.md",
+      "bytes": 4764,
+      "sha256": "380c1d3fb2fa79350ea1a5d229d30f7b8fc70d1faa234cb5189e793bde01e2f3"
+    },
+    {
+      "path": "thecreateco-company/reports/pocket-persistence-2026-10-07/README.md",
+      "bytes": 6987,
+      "sha256": "c234075f1cb9bc3556cb76544a0628c552768d9d9b30edb454b7f771173b7f00"
+    },
+    {
+      "path": "thecreateco-company/reports/pocket-persistence-2026-10-07/independent-review.md",
+      "bytes": 819,
+      "sha256": "bd023a4b603eb1aecf8d1bb7cdebcd646bcaf518a59b2ac3936039d6e63d7815"
+    },
+    {
+      "path": "thecreateco-company/reports/pocket-persistence-2026-10-07/pr-body.md",
+      "bytes": 1954,
+      "sha256": "cc77d007f5e8827d07567f8a092cc9a2549f83509ac1c369620de1ca3f44a5e8"
+    },
+    {
+      "path": "thecreateco-company/reports/pocket-qualification-20261009/README.md",
+      "bytes": 4820,
+      "sha256": "42213776723cb7f6b3e53782859a8c444d3c4726f7bc430f23bcc6742e17f002"
+    },
+    {
+      "path": "thecreateco-company/reports/pocket-qualification-20261009/director-review.md",
+      "bytes": 1197,
+      "sha256": "8ebabfe0e2eecb84c8b0e7183d8ab22d94027f4269a5a5b2901da7b1653e6f13"
+    },
+    {
+      "path": "thecreateco-company/reports/pocketstudio-discovery-2026-10-07/README.md",
+      "bytes": 5913,
+      "sha256": "a2de1191105ec2f160f7a63ed43d253473702016cd226a325c7590ed68099bd9"
+    },
+    {
+      "path": "thecreateco-company/reports/portfolio-audit-2026-10-09.md",
+      "bytes": 8118,
+      "sha256": "4bed6ab8575d3c911c16b6e5be088fe007f9dd70c03fbdd07ece9cb8d0901b96"
+    },
+    {
+      "path": "thecreateco-company/reports/product-storytelling-2026-10-09/README.md",
+      "bytes": 2614,
+      "sha256": "050f82a36889497746061e08564d8e0bb3a49c822d40a8e1c76c96d211530f7b"
+    },
+    {
+      "path": "thecreateco-company/reports/quality-and-feedback-rubric.md",
+      "bytes": 2852,
+      "sha256": "76709dece844c1f151b107ff590c605643cdf0e17c45d8fcb80586204e08e7f9"
+    },
+    {
+      "path": "thecreateco-company/reports/reclaim-safety-20261007/README.md",
+      "bytes": 4613,
+      "sha256": "943a831d2196fb1fed7da1c4f152a89c22f1138a40aff0740b0f60542540da8b"
+    },
+    {
+      "path": "thecreateco-company/reports/reclaim-safety-20261007/independent-review.md",
+      "bytes": 1128,
+      "sha256": "8dd960fc55b2abdf7ace0ef961b8943f9305df8e090709249151d0225f5517a7"
+    },
+    {
+      "path": "thecreateco-company/reports/reclaim-safety-20261007/pr-body.md",
+      "bytes": 1909,
+      "sha256": "084cd6bbac8a2b43488553be657996d4d4eb89d8f558a745452ff0a292fcb6a8"
+    },
+    {
+      "path": "thecreateco-company/reports/reframe-lifecycle-20261009/README.md",
+      "bytes": 5345,
+      "sha256": "a6217d76cdec44ffd0f62481e0988a873ec3b5995165f6208d839fdb268853f5"
+    },
+    {
+      "path": "thecreateco-company/reports/reframe-lifecycle-20261009/evidence.md",
+      "bytes": 6701,
+      "sha256": "01a622b976f7796a19c99e6c5b25e3da12f2171f1a5a1ac0c4c9e0da86b30a58"
+    },
+    {
+      "path": "thecreateco-company/reports/reframe-lifecycle-20261009/pr-body.md",
+      "bytes": 1873,
+      "sha256": "8c70d6e85b832c1d5f14e54fc188f03ae54aace2575100bcc1d481bf4878927e"
+    },
+    {
+      "path": "thecreateco-company/reports/release18-inventory-20261007/README.md",
+      "bytes": 8134,
+      "sha256": "58d421c5e5d7286923860283b188ae2d950887d93ec3b81248326819b0e589bf"
+    },
+    {
+      "path": "thecreateco-company/reports/release18-inventory-gaps-20261007/README.md",
+      "bytes": 17204,
+      "sha256": "1fd38b41a01af1abb5546646fd6967ecff440e37870ce4254d6bf6a54eb55e48"
+    },
+    {
+      "path": "thecreateco-company/reports/revenue-2026-10-07/README.md",
+      "bytes": 23933,
+      "sha256": "4dd91925e4c8afcef9c61d69e44bf999a847735fe4158510f4d2a0e3dfb30bb2"
+    },
+    {
+      "path": "thecreateco-company/reports/revenue-2026-10-07/asset-audit.md",
+      "bytes": 20765,
+      "sha256": "51f5658a0c5e8c3ad1d776588eb9c5a24213a7798a4f950a933e6e7d57488581"
+    },
+    {
+      "path": "thecreateco-company/reports/revenue-2026-10-07/independent-review.md",
+      "bytes": 8134,
+      "sha256": "5482785e50f768b76e5292923476c2bfec8cf6f4050a05f7ae062d1dd0a8d016"
+    },
+    {
+      "path": "thecreateco-company/reports/revenue-2026-10-07/market-evidence.md",
+      "bytes": 21693,
+      "sha256": "7e1e8dbfc971250e62de9de9735b3fb0e41bc179d695d9a93bab77a933bcae19"
+    },
+    {
+      "path": "thecreateco-company/reports/revenue-2026-10-07/thecreateco-revenue-audit-2026-10-07.md",
+      "bytes": 23688,
+      "sha256": "e77ae9056f5326163e197ea12b6427a1bc62ac1a1932cda1ab72bffe41522833"
+    },
+    {
+      "path": "thecreateco-company/reports/revenue-2026-10-07/verification.md",
+      "bytes": 3329,
+      "sha256": "c88decdcca52980370bd24c89c592ebde14825c59850db193370d480b0d7d352"
+    },
+    {
+      "path": "thecreateco-company/reports/revenue-baseline-20261009/README.md",
+      "bytes": 3323,
+      "sha256": "2e46717b36833057ebc3aeb42508211af3c074915c1e6fa608a0815084cb9ffe"
+    },
+    {
+      "path": "thecreateco-company/reports/sattari-provenance-20261007/LOCAL_CI_FEASIBILITY.md",
+      "bytes": 4153,
+      "sha256": "fbe4853ffe3027b9262c9b1299f004e8e4e7006efeaf19bee90ce82998a5c6ff"
+    },
+    {
+      "path": "thecreateco-company/reports/sattari-provenance-20261007/README.md",
+      "bytes": 9860,
+      "sha256": "157aa683ca888df2689d96d366b0222f6d140e16d59d2b06aee2e9f3bca77ead"
+    },
+    {
+      "path": "thecreateco-company/reports/sattari-provenance-20261007/integrated-pr-body.md",
+      "bytes": 2828,
+      "sha256": "6953c6324ae667f21bf2ec9de9d344078342b10fa47c5d3584dd0eabba8130e4"
+    },
+    {
+      "path": "thecreateco-company/reports/scenepilot-golden-release18/FINDINGS.md",
+      "bytes": 4499,
+      "sha256": "6c90dbda604f04beabe0ee6bad2356c0c12e01238f8393470b214d1c58fbc837"
+    },
+    {
+      "path": "thecreateco-company/reports/scenepilot-golden-release18/README.md",
+      "bytes": 2452,
+      "sha256": "46598b114029ec0bb8ccb423162c0bd4593a4ae493683754f159ceeeeeb6ba38"
+    },
+    {
+      "path": "thecreateco-company/reports/scenepilot-golden-release18/pr-body.md",
+      "bytes": 2619,
+      "sha256": "b1d129f65831e8af2034f2bc92b7e963d47afb9a6cde5103869caf79b115e945"
+    },
+    {
+      "path": "thecreateco-company/reports/scenepilot-golden-release18/reopen-independent-review.md",
+      "bytes": 1697,
+      "sha256": "a4e2e164c2d441253a749faba78bf583c8466bee7fd4b1c23def541831c13ab5"
+    },
+    {
+      "path": "thecreateco-company/reports/scenepilot-performance-20261008T1010/README.md",
+      "bytes": 6174,
+      "sha256": "bd6eb3ead1037a3fe5d956be6e477f1abd91ec7e39e231617cb230906658dacd"
+    },
+    {
+      "path": "thecreateco-company/reports/scenepilot-performance-20261008T1010/independent-scope-audit.md",
+      "bytes": 2495,
+      "sha256": "67258da57cb5d0a5fcc25559c4e80a054ad86984fce333992996e37f423c4a90"
+    },
+    {
+      "path": "thecreateco-company/reports/scenepilot-performance-20261009T0740/README.md",
+      "bytes": 9220,
+      "sha256": "5a74979ec24bfff8e39e50505864e3b7114fa5c208970ab153779555f6a025e6"
+    },
+    {
+      "path": "thecreateco-company/reports/scenepilot-recovery-20261008/README.md",
+      "bytes": 6317,
+      "sha256": "237c40384d48160d16b54c717d093b48ab04dceba9db5c0baa3178437e0e95d4"
+    },
+    {
+      "path": "thecreateco-company/reports/scenepilot-recovery-20261008/fix-review.md",
+      "bytes": 5777,
+      "sha256": "80505dede8ee5a88ce7eaa0311d56d448a7688fbd2412657e8e074e4fdc5c0a2"
+    },
+    {
+      "path": "thecreateco-company/reports/scenepilot-recovery-20261008/independent-review.md",
+      "bytes": 5734,
+      "sha256": "141341e59cd3b88e6e33811e532010cf68603bd45a7562fa4f1f081b3036b061"
+    },
+    {
+      "path": "thecreateco-company/reports/scenepilot-recovery-20261008/pr-body.md",
+      "bytes": 1450,
+      "sha256": "4ad69680f4624bda733a7c061981f9057ff33e4b99ddd543ef9caaecda39d452"
+    },
+    {
+      "path": "thecreateco-company/reports/scenepilot-runtime-release18/README.md",
+      "bytes": 2570,
+      "sha256": "0a0fb570fe8dea61f6f19db0f379cc670d793f3c07896977a7d902b7df1c71dd"
+    },
+    {
+      "path": "thecreateco-company/reports/scenepilot-runtime-release18/independent-review.md",
+      "bytes": 2386,
+      "sha256": "4fb936f2d8a7b20e6eda133b6b43f7fabfba1430230fda47d707ce58875958dd"
+    },
+    {
+      "path": "thecreateco-company/reports/scenepilot-runtime-release18/pr-body.md",
+      "bytes": 824,
+      "sha256": "83422fa1ac3e6b4627b53cae6f87bd4610de8687dd8501e35ad52659e7304b88"
+    },
+    {
+      "path": "thecreateco-company/reports/scenepilot-runtime-release18/tooling-independent-review.md",
+      "bytes": 967,
+      "sha256": "1a92b55832c481cdbb2e26ae7fa7c8c100729260ac4c887d03173ae0e6d12afc"
+    },
+    {
+      "path": "thecreateco-company/reports/scenepilot-runtime-release18/tooling-pr-body.md",
+      "bytes": 1012,
+      "sha256": "c46cb181e38250aeab6d3eb739895987cec00bce70f5d4bd0b28ad46739eda77"
+    },
+    {
+      "path": "thecreateco-company/reports/social-layer-audit-20261007/IMPLEMENTATION_ACCEPTANCE.md",
+      "bytes": 3374,
+      "sha256": "7e37edb331e1222faa85b80ae4db4b6022caa11279184de03c5e66206dee6db3"
+    },
+    {
+      "path": "thecreateco-company/reports/social-layer-audit-20261007/README.md",
+      "bytes": 6316,
+      "sha256": "53a12080066b9495fed4bf83099b2bcc00f4ae206dafddb9f0399fcc6cc0f708"
+    },
+    {
+      "path": "thecreateco-company/reports/split-session-20261009T1010/README.md",
+      "bytes": 7350,
+      "sha256": "56f28945532b4db19cc0661e1ef8321ecca5a8141d3d2aad868b9c71261fcd68"
+    },
+    {
+      "path": "thecreateco-company/reports/split-session-20261009T1010/review.md",
+      "bytes": 5515,
+      "sha256": "914aef22bf2181544c954d2b254dada1c9f1752f27a3bd5b5afc5a3829d3c354"
+    },
+    {
+      "path": "thecreateco-company/reports/stemdeck-mastering-20261008T0810/README.md",
+      "bytes": 8677,
+      "sha256": "fed42ff274c01bc0c61c6bae3f58499e51f1767e353adbe88d3a9b07901adc40"
+    },
+    {
+      "path": "thecreateco-company/reports/stemdeck-mastering-20261008T0810/independent-review.md",
+      "bytes": 1095,
+      "sha256": "97bcd63c48768e59fba2d85ec622cc99d732afd6d5c9e4d0c0d5759081fe8e69"
+    },
+    {
+      "path": "thecreateco-company/reports/stemdeck-mastering-20261008T0810/research-advice.md",
+      "bytes": 666,
+      "sha256": "d683b56a7563cb3ee9c64a3b892121c7a6c9b2101005995740d30426ba686af0"
+    },
+    {
+      "path": "thecreateco-company/reports/stemdeck-performance-20261008T0710/README.md",
+      "bytes": 4878,
+      "sha256": "c366c13ed41b78d498f7b386f18614c57cff579eeaa4fb3d0894dd2ad72e58de"
+    },
+    {
+      "path": "thecreateco-company/reports/stemdeck-support-20261008T0910/README.md",
+      "bytes": 7162,
+      "sha256": "db028bfa0e051251c2e88f60fa4c3042f8a04bad4a2dc62af81a5f5ed32927bc"
+    },
+    {
+      "path": "thecreateco-company/reports/stemdeck-support-20261008T0910/independent-review.md",
+      "bytes": 5025,
+      "sha256": "7fe74d239c027b7b554760271b0f7dbffb8a31270fabfc2a51465a2d2ec69d20"
+    },
+    {
+      "path": "thecreateco-company/reports/stemdeck-support-20261008T0910/pr-body.md",
+      "bytes": 1216,
+      "sha256": "f26e32525f5cee23052e3639023752f1f0e438b1f4299839a9a4d9d2ce6d9f37"
+    },
+    {
+      "path": "thecreateco-company/reports/stemdeck-webkit-reference-20261007/README.md",
+      "bytes": 11013,
+      "sha256": "809d5814c0aa419759f373b244f5ffc69750674bc17d553294818a2ebb47e4c4"
+    },
+    {
+      "path": "thecreateco-company/reports/stemdeck-webkit-reference-20261007/independent-diagnosis.md",
+      "bytes": 3793,
+      "sha256": "5720991f8898cd373a85bc0ab6cc503fdc029e988cecb45035b18fc508638c22"
+    },
+    {
+      "path": "thecreateco-company/reports/w03-validation-20261009/README.md",
+      "bytes": 2288,
+      "sha256": "436dcd958ee8ccc991606297b16adb203eb4b95558fb5bedda22ff85e2a9373a"
+    },
+    {
+      "path": "thecreateco-company/reports/weblab-mvp-20261009/README.md",
+      "bytes": 7442,
+      "sha256": "3ef032c1aebedfcea0d099807cfdbea1be6491fe4874f8187b8e9a8bdd302065"
+    },
+    {
+      "path": "thecreateco-company/reports/year1-plan-20261009/W01-availability.md",
+      "bytes": 1043,
+      "sha256": "84875d8f334c0bff874bb8587efc2f58c91020aec61205396f1b9a8b107d386a"
+    },
+    {
+      "path": "thecreateco-company/reports/year1-plan-20261009/audit.md",
+      "bytes": 6106,
+      "sha256": "06862628aa17fce519fe0f952e41aa209ff87f8376210c38cf09571484000f9b"
+    },
+    {
+      "path": "thecreateco-company/reports/year1-plan-20261009/glyph-first-font-tutorial-draft.md",
+      "bytes": 3521,
+      "sha256": "ab4e9c941757473adbb4a2dc675341e190ea82484418eda9e47a87066ca52ba5"
+    },
+    {
+      "path": "thecreateco-marketing/COMMUNITY_RULES.md",
+      "bytes": 10294,
+      "sha256": "4580ef063a535e6e5f8b1728c166939fe4915d0824a7de40039997e9854608a0"
+    },
+    {
+      "path": "thecreateco-marketing/PRODUCTS.md",
+      "bytes": 31109,
+      "sha256": "3e8f46e22e7580f29fd951bded07e2aa69559904c1074ff25794178b1081d523"
+    },
+    {
+      "path": "thecreateco-marketing/engine/bin/mktg",
+      "bytes": 166,
+      "sha256": "9263fd74386201a251b943cd9f8a3296f4b27fc5e421cf47add4a55ecac2f91d"
+    },
+    {
+      "path": "thecreateco-marketing/engine/mktg/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "thecreateco-marketing/engine/mktg/cli.py",
+      "bytes": 12212,
+      "sha256": "e6531f2709934998a28e0ab2cd010c0ee2ddb3475aea11eac6aff4534f68f8f7"
+    },
+    {
+      "path": "thecreateco-marketing/engine/mktg/db.py",
+      "bytes": 6134,
+      "sha256": "c9a657c93885beb7e84bc042eb2fd0c1d54718af81859249270323efa42bffe1"
+    },
+    {
+      "path": "thecreateco-marketing/engine/mktg/importer.py",
+      "bytes": 7506,
+      "sha256": "ed599128fda75dd2e8b510eb80e001988dfc6b95127f9d878079cc5679ea244d"
+    },
+    {
+      "path": "thecreateco-marketing/engine/mktg/memory.py",
+      "bytes": 12557,
+      "sha256": "a50c67fdd055c1b3783905003cc3da9b9df344059824530580a99c2a3b69bcc8"
+    },
+    {
+      "path": "thecreateco-marketing/engine/mktg/telemetry.py",
+      "bytes": 5260,
+      "sha256": "5b76aba396f3d220b1b75568808381f0c16740b253d787d69f8ee565d780b262"
+    },
+    {
+      "path": "thecreateco-marketing/engine/tests/test_company_context.py",
+      "bytes": 945,
+      "sha256": "782fe7723e1b332bea321e4ea151c13d322c63532c58c10b72362492c4220b9f"
+    },
+    {
+      "path": "thecreateco-marketing/engine/tests/test_price_evidence.py",
+      "bytes": 1440,
+      "sha256": "73de08e089d89e8bb2d670eb37705f979b2a05f0a30f52ae99cad7755a3910bb"
+    }
+  ],
+  "skipped": [
+    {
+      "path": "git-handoff/test_push_branch.py",
+      "reason": "sensitive-or-binary"
+    },
+    {
+      "path": "thecreateco-company/engine/test_anomalies.py",
+      "reason": "sensitive-or-binary"
+    },
+    {
+      "path": "thecreateco-company/engine/test_company.py",
+      "reason": "sensitive-or-binary"
+    },
+    {
+      "path": "thecreateco-company/engine/test_os_cycle.py",
+      "reason": "sensitive-or-binary"
+    },
+    {
+      "path": "thecreateco-company/engine/test_telemetry.py",
+      "reason": "sensitive-or-binary"
+    },
+    {
+      "path": "thecreateco-company/reports/w05-forms-20261009/README.md",
+      "reason": "sensitive-or-binary"
+    },
+    {
+      "path": "thecreateco-marketing/BRAND.md",
+      "reason": "sensitive-or-binary"
+    },
+    {
+      "path": "thecreateco-marketing/CATALOG.md",
+      "reason": "dirty-tracked-source"
+    },
+    {
+      "path": "thecreateco-marketing/DIRECTIVE.md",
+      "reason": "dirty-tracked-source"
+    },
+    {
+      "path": "thecreateco-marketing/STATE.md",
+      "reason": "dirty-tracked-source"
+    },
+    {
+      "path": "thecreateco-marketing/engine/README.md",
+      "reason": "dirty-tracked-source"
+    },
+    {
+      "path": "thecreateco-marketing/engine/bin/scheduled-tick",
+      "reason": "dirty-tracked-source"
+    },
+    {
+      "path": "thecreateco-marketing/engine/config/routing.json",
+      "reason": "dirty-tracked-source"
+    },
+    {
+      "path": "thecreateco-marketing/engine/mktg/engine.py",
+      "reason": "dirty-tracked-source"
+    },
+    {
+      "path": "thecreateco-marketing/engine/mktg/prompts.py",
+      "reason": "dirty-tracked-source"
+    },
+    {
+      "path": "thecreateco-marketing/engine/mktg/providers.py",
+      "reason": "dirty-tracked-source"
+    },
+    {
+      "path": "thecreateco-marketing/engine/mktg/router.py",
+      "reason": "dirty-tracked-source"
+    },
+    {
+      "path": "thecreateco-marketing/engine/tests/test_engine.py",
+      "reason": "dirty-tracked-source"
+    }
+  ],
+  "product_git_refs": [
+    {
+      "repo": "https://github.com/armonon/animate",
+      "branch": "main",
+      "sha": "11ccaca4730606ba922ecf70b5754171ce365725"
+    },
+    {
+      "repo": "https://github.com/armonon/bounce",
+      "branch": "codex/bounce-release18-20261007",
+      "sha": "8c8c2541e8d8861a53f102ef8b985e4e35950f3e"
+    },
+    {
+      "repo": "https://github.com/armonon/bounce",
+      "branch": "wave4/bounce-web-pwa",
+      "sha": "c85ec72570f402d37f3a13b4916759f084bb09ce"
+    },
+    {
+      "repo": "https://github.com/armonon/cymatic-generator",
+      "branch": "main",
+      "sha": "84683049559ceec6e9eb4549a379517abe134e47"
+    },
+    {
+      "repo": "https://github.com/armonon/form-studio",
+      "branch": "wave5/form-room",
+      "sha": "b5abdd1de5f71fe0244ef9a651a6d983067541ff"
+    },
+    {
+      "repo": "https://github.com/armonon/ghost-garment-studio",
+      "branch": "wave5/ghost-pattern",
+      "sha": "bfad2ee98a5194cc84892cc7a13a43e28fefea9b"
+    },
+    {
+      "repo": "https://github.com/armonon/glyph-studio",
+      "branch": "main",
+      "sha": "bc6b6d047d4bb0c1a988b3c820a3e7c367c6e5fa"
+    },
+    {
+      "repo": "https://github.com/armonon/librarian",
+      "branch": "wave4/librarian-pwa-suite",
+      "sha": "1ba7da455c348621218dd5f5423d4b0adbfbc491"
+    },
+    {
+      "repo": "https://github.com/armonon/luma-studio",
+      "branch": "docs/luma-high-depth-20261009T1540",
+      "sha": "30bea20f862c4302887b79b89f364f2d7bdf5710"
+    },
+    {
+      "repo": "https://github.com/armonon/luma-studio",
+      "branch": "fix/luma-adjustment-checkpoint-20261008T1441",
+      "sha": "8c15f8537c1176b7d4c0076182b7501c92f714b5"
+    },
+    {
+      "repo": "https://github.com/armonon/luma-studio",
+      "branch": "fix/luma-adjustment-variants-20261008",
+      "sha": "d18aef51086b50708cb9cb3a33fddc21d792dc58"
+    },
+    {
+      "repo": "https://github.com/armonon/luma-studio",
+      "branch": "fix/luma-completion-20261007",
+      "sha": "772f082581e06e7a5783aff35ed859aace890394"
+    },
+    {
+      "repo": "https://github.com/armonon/luma-studio",
+      "branch": "fix/luma-cpu-export-color-20261007",
+      "sha": "d4e722330e65a260badc475f53a7a176ccfe7e57"
+    },
+    {
+      "repo": "https://github.com/armonon/luma-studio",
+      "branch": "fix/luma-layered-golden-20261007",
+      "sha": "d18aef51086b50708cb9cb3a33fddc21d792dc58"
+    },
+    {
+      "repo": "https://github.com/armonon/luma-studio",
+      "branch": "fix/luma-production-security-20261007",
+      "sha": "5afa61c3febc1bb12acf156889b147e5fd51e41a"
+    },
+    {
+      "repo": "https://github.com/armonon/luma-studio",
+      "branch": "qualification/luma-adjustment-20261009T0940",
+      "sha": "8c15f8537c1176b7d4c0076182b7501c92f714b5"
+    },
+    {
+      "repo": "https://github.com/armonon/luma-studio",
+      "branch": "wave5/luma-new",
+      "sha": "e709a1667ff72feacca91bb0a04238ec59ae96d7"
+    },
+    {
+      "repo": "https://github.com/armonon/moodboard",
+      "branch": "main",
+      "sha": "b2a54d1acaa902a06c2fd99a367deb7bbe5e42cf"
+    },
+    {
+      "repo": "https://github.com/armonon/portfolio-studio",
+      "branch": "main",
+      "sha": "ae9a10e30204bcb9771272a48dc34a887b478693"
+    },
+    {
+      "repo": "https://github.com/armonon/sattari-custom-site",
+      "branch": "audit/stemdeck-mastering-20261008",
+      "sha": "6bad0edaf198d80d44c9aa02c3e65970fe7d9148"
+    },
+    {
+      "repo": "https://github.com/armonon/sattari-custom-site",
+      "branch": "codex/split-session-20261009",
+      "sha": "e3f01236571f0cf7a3bc013537aefcc08cba24bd"
+    },
+    {
+      "repo": "https://github.com/armonon/sattari-custom-site",
+      "branch": "core-lab/stemdeck-archive-webkit-20261008",
+      "sha": "6bad0edaf198d80d44c9aa02c3e65970fe7d9148"
+    },
+    {
+      "repo": "https://github.com/armonon/sattari-custom-site",
+      "branch": "core-lab/stemdeck-audit-20261007",
+      "sha": "a9e9d977e409c56e3b1f2d636ea9291034848645"
+    },
+    {
+      "repo": "https://github.com/armonon/sattari-custom-site",
+      "branch": "core-lab/stemdeck-portability-20261008",
+      "sha": "b26c03be150e9ebb4dfcfa489bb57e62802011ec"
+    },
+    {
+      "repo": "https://github.com/armonon/sattari-custom-site",
+      "branch": "core-lab/stemdeck-replay-deadline-20261007",
+      "sha": "c15bb06a87b150a966e8c563457de4f2786ba141"
+    },
+    {
+      "repo": "https://github.com/armonon/sattari-custom-site",
+      "branch": "core-lab/stemdeck-security-gate-20261007",
+      "sha": "1569ef377f6d3e079936116b1d8e5c4fe7586f48"
+    },
+    {
+      "repo": "https://github.com/armonon/sattari-custom-site",
+      "branch": "core-lab/stemdeck-support-mixer-20261008",
+      "sha": "b26c03be150e9ebb4dfcfa489bb57e62802011ec"
+    },
+    {
+      "repo": "https://github.com/armonon/sattari-custom-site",
+      "branch": "core-lab/stemdeck-throttle-clock-20261009",
+      "sha": "6265c325014d92430f9b7b9b2b8ccbc6f0821149"
+    },
+    {
+      "repo": "https://github.com/armonon/sattari-custom-site",
+      "branch": "core-lab/stemdeck-webkit-reference-20261008",
+      "sha": "c15bb06a87b150a966e8c563457de4f2786ba141"
+    },
+    {
+      "repo": "https://github.com/armonon/sattari-custom-site",
+      "branch": "fix/pocket-persistence-20261007",
+      "sha": "4bd196d65c7fd56f5de038179978e3eae47ab6b7"
+    },
+    {
+      "repo": "https://github.com/armonon/sattari-custom-site",
+      "branch": "joey/public-surface-local-recovery-2026-06-02",
+      "sha": "fec21b4e5807c670887c099aac58e48a8852ee31"
+    },
+    {
+      "repo": "https://github.com/armonon/sattari-custom-site",
+      "branch": "polish/mobile-interactive-site",
+      "sha": "c4029c6407088ddc870353b5708f6154b81cf338"
+    },
+    {
+      "repo": "https://github.com/armonon/sattari-custom-site",
+      "branch": "release18/key-bpm-20261007",
+      "sha": "dab0dda829ffc436987773d650abbe0232f4a0ec"
+    },
+    {
+      "repo": "https://github.com/armonon/sattari-custom-site",
+      "branch": "release18/sattari-integrated-20261007",
+      "sha": "e547d7d4eef74d533795cea493a426b091b92d2a"
+    },
+    {
+      "repo": "https://github.com/armonon/sattari-custom-site",
+      "branch": "wave2/sattari-canvas-pocket-press",
+      "sha": "4d766e6f998b4243d66e1c978ae300ec71536d6e"
+    },
+    {
+      "repo": "https://github.com/armonon/sattari-custom-site",
+      "branch": "wave2/sattari-split-keybpm-vox",
+      "sha": "caabef99c429f732676eb7d46143f595ddbfabca"
+    },
+    {
+      "repo": "https://github.com/armonon/sattari-custom-site",
+      "branch": "wave3/sattari-lyric-clean",
+      "sha": "702a6f940d4c0f022f39330dff9e8fd349186c6f"
+    },
+    {
+      "repo": "https://github.com/armonon/sattari-custom-site",
+      "branch": "wave4/sattari-suite",
+      "sha": "a9a77e6ad21245a99c83b592ed2fb8a660e71a37"
+    },
+    {
+      "repo": "https://github.com/armonon/sattari-plugins",
+      "branch": "main",
+      "sha": "62ee840e198cf8576f6e7c6b3180e8f5b39a304a"
+    },
+    {
+      "repo": "https://github.com/armonon/scenepilot-compositor",
+      "branch": "main",
+      "sha": "9378358b2037bc36f782f5f52cf6dbeb1376b1d5"
+    },
+    {
+      "repo": "https://github.com/armonon/scenepilot-studio-badass",
+      "branch": "codex/captions-lifecycle-20261009",
+      "sha": "02c6eced0e572eafe5c5c2f8e4fe1b0e8b011b40"
+    },
+    {
+      "repo": "https://github.com/armonon/scenepilot-studio-badass",
+      "branch": "codex/reframe-lifecycle-20261009",
+      "sha": "08a64180df7ca80f64436437027d8fc10b5c65df"
+    },
+    {
+      "repo": "https://github.com/armonon/scenepilot-studio-badass",
+      "branch": "codex/scenepilot-golden-20261008T0740",
+      "sha": "c26d518bc3d05f0adbf7287f79c5f5f15ac25220"
+    },
+    {
+      "repo": "https://github.com/armonon/scenepilot-studio-badass",
+      "branch": "codex/scenepilot-recovery-20261008",
+      "sha": "c7d2b4fc973861eba785f26e5f607671ac22deb4"
+    },
+    {
+      "repo": "https://github.com/armonon/scenepilot-studio-badass",
+      "branch": "codex/scenepilot-workflow-release18",
+      "sha": "a47417bc4b3390bc30697cc2b7d3d573ad14e4d6"
+    },
+    {
+      "repo": "https://github.com/armonon/scenepilot-studio-badass",
+      "branch": "fix/release-today-hardening",
+      "sha": "baaec95f232d8cae14d466439b1c0930082499e4"
+    },
+    {
+      "repo": "https://github.com/armonon/scenepilot-studio-badass",
+      "branch": "wave2/scenepilot-captions-board-grade",
+      "sha": "e099ef400ed038a094b9a8abe78b7aafac0535f1"
+    },
+    {
+      "repo": "https://github.com/armonon/scenepilot-studio-badass",
+      "branch": "wave3/scenepilot-reframe",
+      "sha": "787cc57bb7fc963e804d6860057930d956f8b43b"
+    },
+    {
+      "repo": "https://github.com/armonon/scenepilot-studio-badass",
+      "branch": "wave4/scenepilot-suite",
+      "sha": "fb42d12b98c895b47642eaab4a9be74de0c2c358"
+    },
+    {
+      "repo": "https://github.com/armonon/thecreatingco-site",
+      "branch": "feat/tools-directory-start-links-product-stories-20261009",
+      "sha": "6354f944a46e13f324ac69cf08acae6c9bd7f9cd"
+    },
+    {
+      "repo": "https://github.com/armonon/universal-operator-batch-kit",
+      "branch": "release18/reclaim-safety-20261007",
+      "sha": "c46f9811c7fd34a00625541178d1f1e0d2b2456b"
+    },
+    {
+      "repo": "https://github.com/armonon/universal-operator-batch-kit",
+      "branch": "wave4/reclaim-pwa-suite",
+      "sha": "54d2c34d322323ad8ca9815e4368a84897d12ecd"
+    },
+    {
+      "repo": "https://github.com/armonon/weblab",
+      "branch": "codex/weblab-mvp",
+      "sha": "8d51ea2c3387df3f49808e2bdf9510c6d37b5c67"
+    }
+  ]
+}

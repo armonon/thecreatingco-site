@@ -1,0 +1,443 @@
+{
+  "product_id": "luma",
+  "name": "Luma Studio",
+  "product_type": "standalone application",
+  "audience": "image editors and visual designers; audience inferred from product capabilities and docs, not user research",
+  "vision": "Local-first, non-destructive image editing with professional depth and explicit compatibility limits.",
+  "source": {
+    "repository": "/Users/agentsattari/code/wave2/luma-E",
+    "branch": "wave5/luma-new",
+    "commit": "e709a1667ff72feacca91bb0a04238ec59ae96d7",
+    "upstream_branch_match": true,
+    "origin_main_is_ancestor": true
+  },
+  "status": {
+    "maturity": "ALPHA",
+    "availability": "web and packaged desktop source exist; deployed artifact is not reconciled or qualified by this audit",
+    "release_readiness": "unqualified; 1 of 10 current release evidence gates pass",
+    "overall_quality_score": null,
+    "quality_dimensions": {
+      "functionality": null,
+      "reliability": null,
+      "performance": null,
+      "ux": null,
+      "ui": null,
+      "professional_workflow_depth": null,
+      "output_quality": null,
+      "save_recovery": null,
+      "import_export": null,
+      "error_handling": null,
+      "onboarding": null,
+      "accessibility": null,
+      "documentation": null,
+      "differentiation": null,
+      "release_readiness": null
+    }
+  },
+  "architecture": {
+    "web": "Next/vinext + Vite, shared TypeScript Studio/document/rendering engine, browser Canvas/WebGL and file APIs",
+    "desktop": "Tauri UI shell with native file dialogs/IPC and Rust f32 compositor for eligible exports",
+    "persistence": "Luma project ZIP format, serial/coalesced save queues, IndexedDB autosave/recovery, operation-history snapshots",
+    "entrypoints": [
+      "app/studio/page.tsx",
+      "app/engine/studio.ts",
+      "app/engine/project.ts",
+      "src-tauri/src/",
+      "crates/luma-core/"
+    ]
+  },
+  "supported_workflows": [
+    "Layer-based raster, text, shape, path, group, adjustment and smart-object editing per README",
+    "Save/reopen .luma projects with bounded decoding and recovery paths",
+    "Undo/redo with branch-preserving operation history",
+    "PNG/JPEG/WebP, PDF/SVG, PSD/PSB and supported RAW import/export paths with format-specific limits",
+    "Web and Tauri desktop editing; native file dialogs are desktop-only"
+  ],
+  "unsupported_or_partial": [
+    "CMYK/N-channel editing and arbitrary device-link ICC transforms",
+    "General multilayer high-depth PSD writing; current high-depth paths are narrowly eligible or compatibility conversions",
+    "Documents beyond canvas limits: selection/mask/transform operations remain guarded",
+    "Complete Photoshop/third-party plugin ecosystem and independent >=50-project compatibility qualification",
+    "Packaged desktop signing/notarization, updater failure campaign, remote crash receipt and clean-machine installation are not evidenced by current artifacts"
+  ],
+  "audit": {
+    "date": "2026-10-07",
+    "report": "core-product-lab/reports/luma-initial.md",
+    "golden_spec": "core-product-lab/golden-projects/luma.md",
+    "web_build": "passed within npm test",
+    "test_command": "npm test",
+    "test_result": {
+      "total": 1383,
+      "passed": 1372,
+      "failed": 1,
+      "skipped": 10
+    },
+    "known_test_failure": "tests/form-mesh.test.ts:21 hard-codes sibling /private/tmp/sculptor-studio path; does not establish an app workflow defect",
+    "npm_audit": {
+      "full_install_high": 16,
+      "production_high": 3,
+      "production_findings": [
+        "next@16.3.6 includes high SSRF advisory GHSA-cjq9-62q9-8jv4 (range <16.3.8); npm audit proposes 16.4.0",
+        "sharp <0.35.5",
+        "source-map-js <1.2.2"
+      ],
+      "exploitability_assessed": false,
+      "report": "core-product-lab/reports/luma-evidence/luma-audit-e709-npm-audit-production.json"
+    },
+    "release_status_command": "node build/check-release-evidence.mjs status",
+    "release_gates_passed": 1,
+    "release_gates_total": 10,
+    "interactive_golden_workflow": "untested",
+    "visual_ui_inspection": "one local Chrome screenshot at 1440x1000; interactive quality/accessibility matrix remains untested",
+    "packaged_desktop_build": "untested; Rust cargo suites blocked because cargo is unavailable (exit 127)",
+    "performance_benchmarks": null,
+    "independent_compatibility_corpus": "missing from audited worktree",
+    "source_matched_performance_history": null
+  },
+  "top_candidates": [
+    {
+      "id": "LUMA-AUD-001",
+      "title": "Make cross-repository mesh contract test checkout-independent",
+      "category": "bug",
+      "severity_priority": "P3",
+      "scores": {
+        "impact": 3,
+        "severity": 3,
+        "workflow_importance": 2,
+        "competitive_value": 1,
+        "release_importance": 4,
+        "confidence": 10,
+        "effort": 1,
+        "risk": 1
+      },
+      "evidence": [
+        "npm test: 1 failure in 1383 tests",
+        "tests/form-mesh.test.ts:21 resolves ../../sculptor-studio/app/luma-mesh-asset.ts; absent at /private/tmp/sculptor-studio in isolated worktree"
+      ],
+      "next_action": "Use configured/canonical Form source or explicitly report cross-repo source unavailable without failing the Luma suite."
+    },
+    {
+      "id": "LUMA-AUD-002",
+      "title": "Qualify current-source import-through-export golden workflow",
+      "category": "workflow_gap",
+      "severity_priority": "P2",
+      "scores": {
+        "impact": 8,
+        "severity": 7,
+        "workflow_importance": 10,
+        "competitive_value": 8,
+        "release_importance": 10,
+        "confidence": 9,
+        "effort": 7,
+        "risk": 3
+      },
+      "evidence": [
+        "node build/check-release-evidence.mjs status: 1/10; source-bound local qualification and compatibility corpus evidence missing",
+        "interactive workflow not run in this audit",
+        "golden-projects/luma.md defines the fixture and acceptance receipt"
+      ],
+      "next_action": "Run the documented deterministic fixture in web and desktop and retain exact logs, project/export hashes, comparisons and limitations."
+    },
+    {
+      "id": "LUMA-AUD-003",
+      "title": "Measure packaged interaction latency and process memory",
+      "category": "performance_opportunity",
+      "severity_priority": "P3",
+      "scores": {
+        "impact": 6,
+        "severity": 5,
+        "workflow_importance": 7,
+        "competitive_value": 5,
+        "release_importance": 6,
+        "confidence": 8,
+        "effort": 6,
+        "risk": 2
+      },
+      "evidence": [
+        "No fresh source-matched p50/p95/p99 or process-tree memory benchmark run",
+        "docs/release/performance-pass-2026-09-21.md and docs/release/critical-review-2026-09-23.md distinguish microbenchmarks from packaged workflows and accounted memory from process RAM"
+      ],
+      "next_action": "Record repeatable brush, transform, open/save/export timings and peak process RAM on dense/sparse fixtures in a packaged build."
+    },
+    {
+      "id": "LUMA-AUD-004",
+      "title": "Maintain explicit roadmap for advanced color and high-depth interchange gaps",
+      "category": "professional_capability_gap",
+      "severity_priority": "P2",
+      "scores": {
+        "impact": 6,
+        "severity": 5,
+        "workflow_importance": 6,
+        "competitive_value": 6,
+        "release_importance": 5,
+        "confidence": 9,
+        "effort": 8,
+        "risk": 5
+      },
+      "evidence": [
+        "README.md Photoshop interchange policy documents narrow edited high-depth PSD support and 8-bit compatibility conversion for other cases",
+        "README.md states CMYK/Lab editing and ICC device-link support are not complete"
+      ],
+      "next_action": "Preserve preflight disclosure; validate actual demand and fidelity requirements before investing in broader color/interchange implementation."
+    },
+    {
+      "id": "LUMA-AUD-005",
+      "title": "Resolve production dependency advisories and verify runtime exposure",
+      "category": "security",
+      "severity_priority": "P0",
+      "scores": {
+        "impact": 8,
+        "severity": 8,
+        "workflow_importance": 7,
+        "competitive_value": 2,
+        "release_importance": 10,
+        "confidence": 9,
+        "effort": 3,
+        "risk": 4
+      },
+      "evidence": [
+        "npm audit --omit=dev --json exits 1 with 3 high findings in production dependency closure",
+        "next@16.3.6 affected by GHSA-cjq9-62q9-8jv4 (<16.3.8), plus high findings in sharp (<0.35.5) and source-map-js (<1.2.2)",
+        "audit details: /tmp/luma-audit-e709-npm-audit-production.json; deployed runtime reachability not tested"
+      ],
+      "next_action": "Isolated compatible dependency update, build/test and route/config reachability review; no deployment authorized by this finding."
+    }
+  ],
+  "ux_candidates": [],
+  "checked_areas": [
+    "architecture",
+    "tests",
+    "test run",
+    "build",
+    "UI source",
+    "main workflows (source/tests)",
+    "open bugs/reports",
+    "TODOs",
+    "release status",
+    "performance evidence",
+    "save/reopen",
+    "undo/redo",
+    "import/export",
+    "failure recovery",
+    "documentation"
+  ],
+  "untested_limits": [
+    "interactive UI and visual signoff",
+    "full interactive golden workflow",
+    "Tauri/package build and native dialogs",
+    "real crash/power-loss/disk-full recovery",
+    "current independent PSD/PSB/RAW corpus",
+    "clean-machine install/update",
+    "current performance benchmark",
+    "physical tablet/high-DPI runtime"
+  ],
+  "next_milestone": "Repair demonstrated legacy adjustment alpha inflation with exact regression cases and independent OpenAI review; rerun persistence/build/browser gates without assertion relaxation.",
+  "notes": "Initial audit retained as dated evidence. Latest reviewed source repair is in completion_observation; no overall quality score or release/deployment qualification inferred.",
+  "quality_dimensions": {
+    "functionality": null,
+    "reliability": null,
+    "performance": null,
+    "ux": null,
+    "ui": null,
+    "professional_workflow_depth": null,
+    "output_quality": null,
+    "save_recovery": null,
+    "import_export": null,
+    "error_handling": null,
+    "onboarding": null,
+    "accessibility": null,
+    "documentation": null,
+    "competitive_differentiation": null,
+    "release_readiness": null
+  },
+  "current_version": "0.6.0-rc.0",
+  "current_milestone": "First golden workflow reliable and evidenced; not yet complete",
+  "core_lab_report": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/luma-initial.md",
+  "queue_view": "/Users/agentsattari/thecreateco-company/core-product-lab/PRIORITIES.json",
+  "release_readiness": "ALPHA / unqualified. Exact PR9 8c15f85 Vinext build/types,7focused tests and24Chromium renderer cases pass. Extended synthetic oracle fails6/15: Multiply/multipass/no-op style inflate partial alpha; archive reopen preserves defect. Hosted/stack/native/fullUI/source-live gates unresolved.",
+  "security_remediation": {
+    "observed_at": "2026-10-08T01:19:49+00:00",
+    "source_sha": "5afa61c3febc1bb12acf156889b147e5fd51e41a",
+    "pr": "https://github.com/armonon/luma-studio/pull/5",
+    "production_audit_findings": 0,
+    "production_audit_source": "reports/luma-security-2026-10-07/fixed-audit.json",
+    "all_dependency_findings": {
+      "high": 10,
+      "moderate": 3
+    },
+    "status": "SOURCE_PATCH_PUSHED_CI_BLOCKED_NOT_MERGED_OR_DEPLOYED",
+    "report": "reports/luma-security-2026-10-07/README.md",
+    "deployed_exploitability": "unverified"
+  },
+  "completion_observation": {
+    "observed_at": "2026-10-08T04:05:58.685470+00:00",
+    "source_sha": {
+      "status": "PASS",
+      "value": "d18aef51086b50708cb9cb3a33fddc21d792dc58",
+      "evidence": "/Users/agentsattari/thecreateco-company/reports/luma-golden-20261007/pr-state.json"
+    },
+    "core_workflow": {
+      "status": "UNVERIFIED",
+      "details": "Layered import/group/move/mask/tone/history/save/close/reopen/export and recovery subset13checks PASS. Full golden mask switch/thumbnail semantics, missing-file/actual OS failure and native platforms remain unqualified.",
+      "evidence": [
+        "/Users/agentsattari/thecreateco-company/reports/luma-golden-20261007/exact-browser/report.json"
+      ]
+    },
+    "tests": {
+      "status": "PASS",
+      "details": "Exact clean Node22:1404 engine pass/10skip,4 rendered checks, types/strict/full lint, Vinext/Netlify/desktop builds and production audit0. Chrome154 layered13checks pass. Existing Rust1.99 native core9 and bridge28 pass; not native GUI/platform qualification.",
+      "evidence": [
+        "/Users/agentsattari/thecreateco-company/reports/luma-golden-20261007/exact-web-gates.json",
+        "/Users/agentsattari/thecreateco-company/reports/luma-golden-20261007/exact-browser/report.json",
+        "/Users/agentsattari/thecreateco-company/reports/luma-golden-20261007/native-checks.json"
+      ]
+    },
+    "platforms": {
+      "status": "UNVERIFIED",
+      "details": "Local macOS Chrome154 and native core/bridge suites pass; actual packaged UI/GPU/physical platforms not qualified.",
+      "evidence": [
+        "/Users/agentsattari/thecreateco-company/reports/luma-golden-20261007/native-checks.json",
+        "/Users/agentsattari/thecreateco-company/reports/luma-golden-20261007/exact-browser/report.json"
+      ]
+    },
+    "documentation": {
+      "status": "PASS",
+      "details": "Scoped source-controlled layered reproduction, admission accounting and adjustment limits documented; not full support gate.",
+      "evidence": [
+        "/Users/agentsattari/thecreateco-company/reports/luma-golden-20261007/README.md"
+      ]
+    },
+    "critical_blockers": {
+      "status": "BLOCKED",
+      "details": "Mandatory Actions37725744179 all3jobs0steps; payments/spending. Remaining full golden/native/source-live requirements remain unverified.",
+      "evidence": [
+        "/Users/agentsattari/thecreateco-company/reports/luma-golden-20261007/ci-jobs.json",
+        "/Users/agentsattari/thecreateco-company/reports/luma-golden-20261007/ci-annotations.json"
+      ]
+    },
+    "deployment": {
+      "status": "UNVERIFIED",
+      "details": "Reviewed PR8 open abovePR7; no merge/deploy; live artifact provenance unresolved.",
+      "evidence": [
+        "/Users/agentsattari/thecreateco-company/reports/luma-golden-20261007/pr-state.json"
+      ]
+    }
+  },
+  "adjustment_qualification": {
+    "observed_at": "2026-10-09T09:45:13.663694+00:00",
+    "source_sha": "8c15f8537c1176b7d4c0076182b7501c92f714b5",
+    "report": "/Users/agentsattari/thecreateco-company/reports/luma-adjustment-20261009T0940/README.md",
+    "status": "BLOCKED",
+    "results": {
+      "focused_tests_passed": 7,
+      "chromium_renderer_cases_passed": 24,
+      "chromium_page_errors": 0,
+      "alpha_regression_samples_failed": 6,
+      "alpha_probe_total_samples": 15,
+      "typecheck_exit": 0,
+      "vinext_build_exit": 0,
+      "synthetic_archive_roundtrip": "exact render and adjustment metadata preserved; alpha160 remains incorrectly220"
+    },
+    "limitations": [
+      "No full UI/native/Firefox/WebKit qualification",
+      "Hosted mandatory CI previously billing-blocked; not retried",
+      "Non-normal/multipass/no-op styled compositor fix not implemented",
+      "Netlify/desktop builds not run this cycle"
+    ],
+    "models": {
+      "director": "openai/gpt-6.1-sol",
+      "executor": "openai/gpt-6-luna",
+      "fallback": null,
+      "billed_cost": null
+    }
+  },
+  "color_interchange_roadmap": {
+    "observed_at": "2026-10-09T13:42:14.446756+00:00",
+    "source_sha": "8c15f8537c1176b7d4c0076182b7501c92f714b5",
+    "report": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/luma-roadmap-20261009T1340/README.md",
+    "tests_passed": 51,
+    "tests_failed": 0,
+    "scope": "synthetic engine qualification only",
+    "documentation_drift": "README understates bounded layered 16/32-bit native PSD/PSB support",
+    "demand_validation": "unknown",
+    "full_golden": "unqualified"
+  },
+  "high_depth_documentation": {
+    "observed_at": "2026-10-09T15:42:53.142827+00:00",
+    "source_sha": "30bea20f862c4302887b79b89f364f2d7bdf5710",
+    "baseline_sha": "8c15f8537c1176b7d4c0076182b7501c92f714b5",
+    "report": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/luma-high-depth-doc-20261009T1540/README.md",
+    "pr": "https://github.com/armonon/luma-studio/pull/10",
+    "tests_passed": 51,
+    "tests_failed": 0,
+    "status": "DOCUMENTATION_PUSHED_DRAFT_CI_BILLING_BLOCKED",
+    "full_golden": "unqualified",
+    "independent_review": "not run; documentation-only scope",
+    "deployed": false
+  },
+  "packaged_performance_qualification": {
+    "observed_at": "2026-10-09T19:45:10.674048+00:00",
+    "source_sha": "30bea20f862c4302887b79b89f364f2d7bdf5710",
+    "report": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/luma-perf-20261009T1940/README.md",
+    "status": "BLOCKED_PACKAGED_RUNTIME_MEASUREMENTS",
+    "packaged_build_exit": 0,
+    "packaged_build_elapsed_seconds": 127.22453784942627,
+    "codesign_verify_exit": 0,
+    "signing": "ad-hoc; not notarized",
+    "focused_tests": {
+      "passed": 20,
+      "failed": 0,
+      "skipped": 0
+    },
+    "cpu_brush_microbenchmark": {
+      "baseline_median_ms": 346.253458,
+      "incremental_median_ms": 52.80341700000008,
+      "pixel_parity": "exact",
+      "samples": 3,
+      "process_max_rss_bytes": 145309696,
+      "scope": "Node synthetic engine subprocess; not packaged app or process-tree RAM"
+    },
+    "packaged_input_to_paint_percentiles": null,
+    "packaged_peak_process_tree_ram": null,
+    "packaged_golden_workflow": "NOT_RUN",
+    "models": {
+      "director": "openai/gpt-6.1-sol",
+      "routine_executor": "deterministic tools; no Luna invocation",
+      "review": "not run; no source change",
+      "fallback": null,
+      "additional_model_calls": 0,
+      "billed_cost": null
+    },
+    "resume_condition": "Build a separately identified native qualification bundle/profile with isolated synthetic recovery state; execute dense/sparse brush/transform/open/save/reopen/export fixtures using validated input-to-paint instrumentation and process-tree RSS sampler; record raw samples and parity, p50/p95/p99 and peak RAM. Reuse this task, not a duplicate."
+  },
+  "production_provenance_qualification": {
+    "observed_at": "2026-10-09T21:43:43.549590+00:00",
+    "report": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/luma-provenance-20261009T2140/README.md",
+    "source_sha": "30bea20f862c4302887b79b89f364f2d7bdf5710",
+    "published_deploy": "6ac5d1a6d2965007d3910de2",
+    "published_commit_ref": null,
+    "published_manifest_files": 1692,
+    "matching_overlay_files": 1292,
+    "matching_public_files": 277,
+    "downloaded_app_files_verified": 122,
+    "config_matches": false,
+    "source_deploy_identity": "UNKNOWN",
+    "overlay_synthetic_check": "PASS",
+    "build_exit_codes": [
+      1,
+      1
+    ],
+    "build_blocker": "out-of-root node_modules symlink; copy retry preserved symlink",
+    "full_golden": "NOT_RUN",
+    "status": "BLOCKED",
+    "resume_condition": "Reuse P01. Recover the original build input/receipt for published deploy 6ac5d1a6d2965007d3910de2 or independently establish a reviewed complete replacement candidate. Resolve dependency symlink via actual private dependencies on supported Node22/24, rerun npm run build:netlify, assemble Netlify functions/redirects, preserve all1692manifest paths, qualify synthetic UI save/reopen/export, and pass exact-source independent OpenAI/stack/CI gates before any promotion. Do not rollback or carry opaque compiled app chunks forward as source.",
+    "models": {
+      "director": "openai/gpt-6.1-sol",
+      "executor": "deterministic tools",
+      "additional_model_calls": 0,
+      "fallback": null,
+      "independent_review": "NOT_RUN",
+      "billed_cost": null
+    }
+  }
+}

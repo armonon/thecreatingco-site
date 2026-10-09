@@ -1,0 +1,11 @@
+# Librarian build-dependency repair
+Exact reviewed/pushed source `ca7e806c86d376e707c0afdefc8a0e84ff40b35e`, PR3 https://github.com/armonon/librarian/pull/3 stacked on PR2; OPEN, no merge/deploy.
+
+## Fix and evidence
+The asset generator pulled CLI5/tar6 andsharp0.32.6; Electron download tooling hadcache-semantics4.2.0. Final overrides align nestedCLI with existing root8.x (lock8.5.3), upgrade assetsharp0.35.5 andcache-semantics4.3.0. Only3 existing packageversions change; oldCLI5/tar6 subtree removed. Full audit1critical4high11moderate→0critical0high13moderate; productionaudit0. Remaining moderate advisory roots areuuid bufferbounds andsprintf-js precisionDoS. Their reachability/compatible remediation is a separate queued task; no cleansecurity claim.
+Clean install passed with unrelated install scripts/Electronbinary download skipped.44/44units,web/iOS-mode builds,6/6WebKit emulatedsmall-iPhone/iPad readingcases passed.216webartifact files are byte-identical to prior source candidate. Builds/tests pin exactsource; no physical/native packaging orAndroid qualification.
+Actual iOS asset generator ran against copied realprojectinputs in isolated reportfixtures.13writes yield7finalicon/splashPNGfiles; all decodedpixels/dimensions exactly equal baseline (PNGencodingbytes differ). No productassets changed. Actual resolvedCLI8 template extractor preserves safecontent and rejects traversal; actual cache API respectsVary undermax-stale anddoesnotstoreprivate response.
+
+## Rejected experiments, not shipped
+Forcingtar7 directly beneathCLI5 broke its default tar import. That compatibilityfailure is retained in compatibility-tar-override-failure.log; final configuration doesNOTuse it. Initial cacheharness wrongly assumed satisfiesWithoutRevalidation enforcedstorablewithoutVary; corrected to documented cache contract (storable check + Vary mismatch), preserving compatibility-cache-contract-attempt.log. Neither failed experiment is counted asPASS.
+Independent OpenAI source review approved finaltwofilediff andcompatibilityevidence. PackageSHA256s andiOSartifact hashes retained. The livePDF missingasset restoration remains separately prepared andblocked on exactfunctionpreservation; these dependency changes do not modify publicsite.

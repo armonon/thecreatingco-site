@@ -1,0 +1,364 @@
+{
+  "product_id": "scenepilot",
+  "product_name": "ScenePilot",
+  "status": "PUBLIC_ALPHA_REPORTED; current live artifact not inspected",
+  "maturity": "ALPHA",
+  "observed_at": "2026-10-08T08:07:32.389718+00:00",
+  "source": {
+    "repository": "/Users/agentsattari/code/wave2/scenepilot-autocut",
+    "audited_commit": "fb42d12b98c895b47642eaab4a9be74de0c2c358",
+    "branch": "wave4/scenepilot-suite",
+    "package_version": "0.1.16",
+    "clean_isolated_worktree": "/tmp/scenepilot-audit-fb42d12",
+    "existing_checkout_status": "193 modified/untracked paths; left untouched",
+    "remote_main": "a0a0791a2928780d3c77a160ed34d4e464a15745 (divergent; 2 commits unique to main, 43 unique to Wave 4)",
+    "other_checkout": "/Users/agentsattari/code/sattari/scenepilot-studio-badass at baaec95f232d8cae14d466439b1c0930082499e4; separate history, historical context only"
+  },
+  "quality_score": null,
+  "quality_scores": {
+    "functionality": null,
+    "reliability": null,
+    "design": null,
+    "performance": null,
+    "ux": null,
+    "onboarding": null,
+    "accessibility": null,
+    "documentation": null,
+    "competitive_differentiation": null,
+    "installation": null,
+    "error_handling": null,
+    "data_safety": null,
+    "mobile_responsiveness": null,
+    "user_value": null
+  },
+  "verification": {
+    "level": "ISOLATED_SOURCE_BUILD_TEST_UI_AUDIT; NO RELEASE QUALIFICATION",
+    "build": "npm run build:site PASS; npm test Vinext build + 1091/1091 PASS",
+    "checks": "npm run check PASS; npm run qa:performance PASS",
+    "accessibility_baseline": "FAIL: two critical aria-required-children instances and three serious contrast failures across New Project/Edit/Delivery; isolated unmerged patch makes same audit pass all three states",
+    "historical_release": "0.1.16 report says NOT READY for unrestricted production; review and clean-machine/real-media/recovery gates remain candidate-specific and pending",
+    "release_readiness": "Not qualified. Public artifact, notarization, exact-artifact clean install, full golden project, and perceptual gates not verified in this audit.",
+    "dependency_install": "npm ci --ignore-scripts succeeded and reported 33 advisories (9 moderate, 23 high, 1 critical); lifecycle install timed out downloading OpenVINO runtime. See report for test-environment ffmpeg workaround."
+  },
+  "evidence_sources": [
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-initial.md",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/golden-projects/scenepilot.md",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-evidence/npm-test-build-and-suite.log",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-evidence/npm-ci-ignore-scripts.log",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-evidence/lifecycle-install-timeout.txt",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-evidence/initial-quick-tests-setup-failure.log",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-evidence/build-site.log",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-evidence/check-typescript-lint.log",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-evidence/performance-benchmark.log",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-evidence/npm-audit-production.json",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-evidence/accessibility-baseline-fail.log",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-evidence/accessibility-fix-pass.log",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-evidence/accessibility-fix-check.log",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-golden-20261008T0740/README.md",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-golden-20261008T0740/candidate-receipt.json",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-golden-20261008T0740/independent-review.md",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-golden-20261008T0740/result.json",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-golden-20261008T0740/independent-output-analysis.json",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-golden-20261008T0740/lite/result.json",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-golden-20261008T0740/exact-head-menu/result.json",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-sec-residual-20261008T1540/README.md",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-sec-residual-20261008T1540/independent-review.md"
+  ],
+  "candidates": [
+    {
+      "id": "SP-SEC-001",
+      "title": "Patch and triage vulnerable production dependency versions",
+      "category": "bug_reliability",
+      "status": "DEPENDENCY_ADVISORIES_EVIDENCED; ROUTE_REACHABILITY_UNVERIFIED",
+      "priority": "P0 security",
+      "scores": {
+        "impact": 10,
+        "severity": 10,
+        "workflow_importance": 8,
+        "competitive_value": 4,
+        "release_importance": 10,
+        "confidence": 10,
+        "effort": 3,
+        "risk": 5
+      },
+      "evidence": [
+        "npm audit --omit=dev on the isolated lockfile found direct next@16.3.3 critical and transitive sharp high/source-map-js high advisories.",
+        "Direct Next advisory includes next/og ImageResponse RCE affected below 16.3.6; additional Next advisories affect through below 16.3.8.",
+        "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-evidence/npm-audit-production.json",
+        "Source directly imports next/headers and next/navigation for Vinext-backed runtime; direct next/og import was not found."
+      ],
+      "hypothesis": "The vulnerable implementation may be reachable through configured server routes; practical exploitability was not assessed.",
+      "next_action": "Determine whether affected server paths are deployed/reachable, patch to fixed versions in an isolated branch, and rerun build/test/security gates."
+    },
+    {
+      "id": "SP-A11Y-001",
+      "title": "Remove non-tab disclosure from monitor tablist and meet text contrast thresholds",
+      "category": "bug_reliability",
+      "status": "EVIDENCED_BASELINE_BUG; FIX_REGRESSION_PROVED_ON_UNMERGED_BRANCH",
+      "priority": "P3",
+      "scores": {
+        "impact": 6,
+        "severity": 5,
+        "workflow_importance": 5,
+        "competitive_value": 3,
+        "release_importance": 6,
+        "confidence": 10,
+        "effort": 2,
+        "risk": 1
+      },
+      "evidence": [
+        "Baseline npm run qa:accessibility: critical aria-required-children on .monitor-tabs and contrast ratios 3.23, 3.90, 3.93 (<4.5:1), repeated across tested states.",
+        "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-evidence/accessibility-baseline-fail.log",
+        "Separate branch /tmp/scenepilot-fix-fb42d12, files app/source-program-monitor.tsx and app/studio-workspace.css: check passes; same Axe audit passes New Project, Edit, Delivery with zero blocking findings.",
+        "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-a11y-fix.patch",
+        "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-evidence/accessibility-fix-check.log",
+        "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-evidence/accessibility-fix-pass.log"
+      ],
+      "hypothesis": null,
+      "next_action": "Review and merge the isolated two-file fix through the normal PR/check gate; rerun accessibility qualification on the exact proposed source."
+    },
+    {
+      "id": "SP-WORKFLOW-001",
+      "title": "Qualify complete generated-media golden workflow in Lite and Desktop Pro",
+      "category": "workflow_gap",
+      "status": "EVIDENCE_GAP; FAILURE_NOT_ASSERTED",
+      "priority": "P2",
+      "scores": {
+        "impact": 9,
+        "severity": 7,
+        "workflow_importance": 10,
+        "competitive_value": 8,
+        "release_importance": 10,
+        "confidence": 10,
+        "effort": 7,
+        "risk": 3
+      },
+      "evidence": [
+        "Brief requires Import\u2192Edit\u2192Composite/Animate\u2192Audio\u2192Save\u2192Reopen\u2192Export.",
+        "Historical docs/release-today-0.1.16.md marks multiple full UI, relink, recovery, export-picker, and perceptual checks NOT VERIFIED.",
+        "/Users/agentsattari/thecreateco-company/core-product-lab/golden-projects/scenepilot.md is a recipe only; fixture not created or run."
+      ],
+      "hypothesis": "Seams or preview/export mismatches may emerge only when the path is exercised as one real project; no such failure has been observed here.",
+      "next_action": "Generate the license-safe fixture and run/record the complete recipe independently for Lite and Desktop Pro."
+    },
+    {
+      "id": "SP-RECOVERY-001",
+      "title": "Qualify abrupt-exit, disk-pressure, and missing-media recovery journeys",
+      "category": "workflow_gap",
+      "status": "DOCUMENTED_UNVERIFIED_GATE; FAILURE_NOT_ASSERTED",
+      "priority": "P1 qualification gate",
+      "scores": {
+        "impact": 9,
+        "severity": 8,
+        "workflow_importance": 9,
+        "competitive_value": 6,
+        "release_importance": 10,
+        "confidence": 9,
+        "effort": 6,
+        "risk": 4
+      },
+      "evidence": [
+        "docs/release-today-0.1.16.md explicitly lists abrupt termination, disk failure, and complete packaged relink UI sequence as NOT VERIFIED.",
+        "Deterministic project-store and render-queue-recovery tests exist; they are not the same as the missing packaged UI journeys."
+      ],
+      "hypothesis": "Untested recovery edges may fail despite deterministic unit coverage; no current failure is claimed.",
+      "next_action": "Use isolated project copies to simulate process termination, full/read-only destination, and moved media; capture recovery state and verify no silent loss."
+    },
+    {
+      "id": "SP-UX-001",
+      "title": "Clarify Lite/Pro disabled controls and loaded-media counts",
+      "category": "ux_improvement",
+      "status": "HISTORICAL_EVIDENCE; CURRENT_BEHAVIOR_RECHECK_REQUIRED",
+      "priority": "P3",
+      "scores": {
+        "impact": 6,
+        "severity": 4,
+        "workflow_importance": 7,
+        "competitive_value": 3,
+        "release_importance": 5,
+        "confidence": 7,
+        "effort": 3,
+        "risk": 2
+      },
+      "evidence": [
+        "docs/release-today-0.1.16.md reports some Lite controls expose Pro-only workflows and main source media can coexist with a displayed zero asset-bin count; it notes this is confusing, not source loss."
+      ],
+      "hypothesis": "Wave 4 may already have changed these states; recheck current candidate before making a code change."
+    },
+    {
+      "id": "SP-PERF-001",
+      "title": "Measure real-media playback/export memory envelope and long-session performance",
+      "category": "performance_opportunity",
+      "status": "SYNTHETIC_ENGINE_GATES_PASS; DEVICE_WORKLOADS_UNVERIFIED",
+      "priority": "P2",
+      "scores": {
+        "impact": 9,
+        "severity": 7,
+        "workflow_importance": 9,
+        "competitive_value": 7,
+        "release_importance": 10,
+        "confidence": 9,
+        "effort": 8,
+        "risk": 4
+      },
+      "evidence": [
+        "npm run qa:performance passed at /Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-evidence/performance-benchmark.log with measured synthetic timing values in the report.",
+        "docs/release-today-0.1.16.md explicitly leaves sustained real-footage 4K, low-memory devices, multi-hour memory growth and path-backed export size envelope unverified."
+      ],
+      "hypothesis": "Large linked-media projects may exceed acceptable memory or latency bounds; no regression or safe project-size threshold was measured."
+    },
+    {
+      "id": "SP-FEATURE-001",
+      "title": "Evaluate independent per-composition frame rates",
+      "category": "professional_feature_gap",
+      "status": "DOCUMENTED_NOT_IMPLEMENTED; DEMAND_UNVALIDATED",
+      "priority": "P4",
+      "scores": {
+        "impact": 5,
+        "severity": 3,
+        "workflow_importance": 5,
+        "competitive_value": 5,
+        "release_importance": 3,
+        "confidence": 8,
+        "effort": 6,
+        "risk": 3
+      },
+      "evidence": [
+        "docs/composition-workflow.md:19 states composition frame rate follows the project and independent rates are not implemented."
+      ],
+      "hypothesis": "Independent comp rates may matter for mixed-delivery or nested-interchange workflows; validate actual user/interchange need first."
+    },
+    {
+      "id": "SP-FEATURE-002",
+      "title": "Evaluate reverse/variable audio retiming and pitch-preserving stretch",
+      "category": "professional_feature_gap",
+      "status": "DOCUMENTED_NOT_IMPLEMENTED; DEMAND_UNVALIDATED",
+      "priority": "P4",
+      "scores": {
+        "impact": 6,
+        "severity": 3,
+        "workflow_importance": 6,
+        "competitive_value": 6,
+        "release_importance": 4,
+        "confidence": 8,
+        "effort": 7,
+        "risk": 4
+      },
+      "evidence": [
+        "docs/audio-edit-reliability-2026-09-23.md:77 lists reverse/variable audio retiming and pitch-preserving stretch as not implemented."
+      ],
+      "hypothesis": "This may limit some professional editorial/audio workflows; demand, fidelity targets, and maintenance cost have not been validated."
+    }
+  ],
+  "next_milestone": "Resume remaining full UI-authored Lite/Pro audiovisual golden recipe from dated artifacts; qualify signed packaged Pro/native chooser/perceptual parity when available; preserve PR95\u219294\u219293\u219292\u219291\u219290 mandatory review/CI gates.",
+  "evidence_freshness": "Source/build/test/UI evidence observed 2026-10-07 on Wave 4 commit fb42d12. Historical release notes retain their dates and are not treated as current release proof.",
+  "quality_scores_policy": "null until dimension-specific qualification supports measured scores",
+  "execution_hold": null,
+  "quality_dimensions": {
+    "functionality": null,
+    "reliability": null,
+    "performance": null,
+    "ux": null,
+    "ui": null,
+    "professional_workflow_depth": null,
+    "output_quality": null,
+    "save_recovery": null,
+    "import_export": null,
+    "error_handling": null,
+    "onboarding": null,
+    "accessibility": null,
+    "documentation": null,
+    "competitive_differentiation": null,
+    "release_readiness": null
+  },
+  "vision": "Reliable professional editing, motion and compositing with approachable workflows",
+  "current_version": "0.1.16",
+  "current_milestone": "First golden workflow reliable and evidenced; not yet complete",
+  "core_lab_report": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-golden-20261008T0740/README.md",
+  "queue_view": "/Users/agentsattari/thecreateco-company/core-product-lab/PRIORITIES.json",
+  "release_readiness": "ALPHA / NOT QUALIFIED. Reviewed c26d518 pushed PR95 on PR94;1095tests/types/lint/build,6 rebuiltElectron checks,2 Lite menu viewports and4 Lite lifecycle checks PASS. Three baseline desktop synthetic12s exports/42 sampled output checks pass; fullUIauthored/package/nativechooser/perceptual/hosted-stack gates unresolved.",
+  "golden_workflow_status": "SCOPED SYNTHETIC PASS: three desktop12s composite persistence/undo/reopen/export runs; one Lite720p silent lifecycle; FULL GOLDEN UNQUALIFIED",
+  "last_core_lab_cycle": {
+    "task_id": "CORE-SP-UX-001",
+    "observed_at": "2026-10-09T17:51:17.735242+00:00",
+    "source_sha": "02c6eced0e572eafe5c5c2f8e4fe1b0e8b011b40",
+    "director_model": "OpenAI Sol; exact runtime identifier not exposed",
+    "executor_model": "inherited OpenAI Sol; Luna not invoked",
+    "fallback": null,
+    "focused_tests_passed": 39,
+    "focused_tests_total": 39,
+    "renderer_build": "PASS",
+    "lite_golden": "FAIL: normal Video track click intercepted by inspector; existing c26d518 absent from divergent stack",
+    "desktop_golden": "PARTIAL: save/fresh-process reopen pass; final mixed export blocked by ffmpeg-static ENOENT",
+    "main_source_count_qualification": null,
+    "independent_review": null,
+    "report": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-ux-20261009T1740/REPORT.md",
+    "unqualified_local_artifact": "codex/scenepilot-ux-qualification-20261009T1740 at 8b6e91d; untested/unpushed",
+    "full_golden_qualification": false
+  },
+  "security_residual_qualification": {
+    "task_id": "CORE-SP-SEC-RESIDUAL-001",
+    "observed_at": "2026-10-08T15:43:40.492515+00:00",
+    "source_sha": "c26d518bc3d05f0adbf7287f79c5f5f15ac25220",
+    "model": "openai/gpt-6.1-sol",
+    "fallback": null,
+    "full_audit_groups": {
+      "high": 8,
+      "moderate": 8,
+      "total": 16
+    },
+    "production_audit_groups": 0,
+    "scoped_main_inputs": 13,
+    "scoped_renderer_inputs": 2081,
+    "affected_scoped_bundle_inputs": 0,
+    "component_tests": {
+      "passed": 39,
+      "total": 39
+    },
+    "packaged_runtime_exposure": null,
+    "full_golden_qualification": false,
+    "limitations": [
+      "Sparse isolated checkout; shared dependency tree read-only, not clean install",
+      "Scoped esbuild graph builds, not configured production/package builds",
+      "No UI dogfood this cycle: approximately159MiB disk free",
+      "Upstream latest braces3.0.3/sprintf-js1.1.3 still affected"
+    ],
+    "report": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-sec-residual-20261008T1540/README.md"
+  },
+  "performance_qualification": {
+    "task_id": "CORE-SP-PERF-001",
+    "observed_at": "2026-10-09T07:43:28.864929+00:00",
+    "source_sha": "c26d518bc3d05f0adbf7287f79c5f5f15ac25220",
+    "director_model": "openai/gpt-6.1-sol",
+    "executor_requested_model": "gpt-6-luna",
+    "executor_serving_model": null,
+    "fallback": null,
+    "benchmark_repetitions_passed": 3,
+    "linked_media_exit_code": 127,
+    "full_golden_qualification": false,
+    "report": "/Users/agentsattari/thecreateco-company/reports/scenepilot-performance-20261009T0740/README.md",
+    "limitations": [
+      "Synthetic metadata/planner/one-second PCM only; not app-process-tree memory or real-media playback/export",
+      "Electron executable absent from shared dependency tree; linked-media not executed",
+      "Multi-hour/low-memory/platform/perceptual/hosted stack gates remain unresolved"
+    ]
+  },
+  "ux_qualification": {
+    "task_id": "CORE-SP-UX-001",
+    "observed_at": "2026-10-09T17:51:17.735242+00:00",
+    "source_sha": "02c6eced0e572eafe5c5c2f8e4fe1b0e8b011b40",
+    "director_model": "OpenAI Sol; exact runtime identifier not exposed",
+    "executor_model": "inherited OpenAI Sol; Luna not invoked",
+    "fallback": null,
+    "focused_tests_passed": 39,
+    "focused_tests_total": 39,
+    "renderer_build": "PASS",
+    "lite_golden": "FAIL: normal Video track click intercepted by inspector; existing c26d518 absent from divergent stack",
+    "desktop_golden": "PARTIAL: save/fresh-process reopen pass; final mixed export blocked by ffmpeg-static ENOENT",
+    "main_source_count_qualification": null,
+    "independent_review": null,
+    "report": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-ux-20261009T1740/REPORT.md",
+    "unqualified_local_artifact": "codex/scenepilot-ux-qualification-20261009T1740 at 8b6e91d; untested/unpushed",
+    "full_golden_qualification": false
+  }
+}

@@ -1,0 +1,836 @@
+{
+  "generated_at": "2026-10-09T23:22:05+00:00",
+  "company_health": {
+    "score": null,
+    "reason": "No evidence-complete quality/funnel baseline yet."
+  },
+  "products": [
+    {
+      "name": "ScenePilot",
+      "product_id": "scenepilot",
+      "maturity": "ALPHA",
+      "release_readiness": "ALPHA / NOT QUALIFIED. Reviewed c26d518 pushed PR95 on PR94;1095tests/types/lint/build,6 rebuiltElectron checks,2 Lite menu viewports and4 Lite lifecycle checks PASS. Three baseline desktop synthetic12s exports/42 sampled output checks pass; fullUIauthored/package/nativechooser/perceptual/hosted-stack gates unresolved.",
+      "quality_score": null,
+      "quality_scores": {
+        "functionality": null,
+        "reliability": null,
+        "design": null,
+        "performance": null,
+        "ux": null,
+        "onboarding": null,
+        "accessibility": null,
+        "documentation": null,
+        "competitive_differentiation": null,
+        "installation": null,
+        "error_handling": null,
+        "data_safety": null,
+        "mobile_responsiveness": null,
+        "user_value": null
+      },
+      "golden_workflow_status": "SCOPED SYNTHETIC PASS: three desktop12s composite persistence/undo/reopen/export runs; one Lite720p silent lifecycle; FULL GOLDEN UNQUALIFIED",
+      "health_status": null,
+      "observed_at": "2026-10-08T08:07:32.389718+00:00",
+      "next_milestone": "Resume remaining packaged Pro/native chooser/missing-main-source and UI disk-pressure/kill-during-write qualification; preserve PR94→PR93→PR92→PR91→PR90 stack/mandatory gates. No personal review gate.",
+      "verification_level": "LOCAL_SOURCE_AND_HISTORICAL_REPORTS_ONLY"
+    },
+    {
+      "name": "Luma",
+      "product_id": "luma",
+      "maturity": "ALPHA",
+      "release_readiness": "ALPHA / unqualified. Exact PR9 8c15f85 Vinext build/types,7focused tests and24Chromium renderer cases pass. Extended synthetic oracle fails6/15: Multiply/multipass/no-op style inflate partial alpha; archive reopen preserves defect. Hosted/stack/native/fullUI/source-live gates unresolved.",
+      "quality_score": null,
+      "quality_scores": {
+        "functionality": null,
+        "reliability": null,
+        "design": null,
+        "performance": null,
+        "ux": null,
+        "onboarding": null,
+        "accessibility": null,
+        "documentation": null,
+        "competitive_differentiation": null,
+        "installation": null,
+        "error_handling": null,
+        "data_safety": null,
+        "mobile_responsiveness": null,
+        "user_value": null
+      },
+      "golden_workflow_status": "Not yet fully qualified",
+      "health_status": null,
+      "observed_at": "2026-10-08T14:47:37.039225+00:00",
+      "next_milestone": "Restore sufficient disk for exact-head builds; qualify styled/non-normal/multipass/BlendIf and full UI persistence. Resolve hosted account CI through existing owner/access path; no retry loops or gate bypass.",
+      "verification_level": "LOCAL_REVIEWED_CI_REPAIR_AND_PARTIAL_BROWSER_EVIDENCE"
+    },
+    {
+      "name": "Form",
+      "product_id": "form",
+      "maturity": "ALPHA",
+      "release_readiness": "ALPHA / NOT QUALIFIED. Independently reviewed b5f8b08 pushed draft PR9 on PR7; emitted Worker PNG200 byte/header fallback and R2 CRUD, web/desktop frontend builds, typecheck/lint,4asset tests and scoped browser save/reopen/export PASS. Exact-head hosted CI billing-blocked; downstack/native/full golden/source-live gates unresolved. No merge/deploy.",
+      "quality_score": null,
+      "quality_scores": {
+        "functionality": null,
+        "reliability": null,
+        "design": null,
+        "performance": null,
+        "ux": null,
+        "onboarding": null,
+        "accessibility": null,
+        "documentation": null,
+        "competitive_differentiation": null,
+        "installation": null,
+        "error_handling": null,
+        "data_safety": null,
+        "mobile_responsiveness": null,
+        "user_value": null
+      },
+      "golden_workflow_status": "SCOPED_REAL_CHROMIUM_SHARED_CAD_FABRIC_ANIMATION_HISTORY_SAVE_FULL_PROCESS_REOPEN_PASS; FULL_NATIVE_GOLDEN_UNQUALIFIED",
+      "health_status": "UNKNOWN",
+      "observed_at": "2026-10-08T12:27:23.424804+00:00",
+      "next_milestone": "Repair queued Worker image binding defect; preserve independent PR6 Cast branch; qualify residual security, full native/workspace/platform and canonical deployment provenance; required CI and complete downstack review must pass before merge/deploy.",
+      "verification_level": "EXACT_SOURCE_BUILT_BROWSER_SUBSET_AND_INDEPENDENT_DOC_REVIEW"
+    },
+    {
+      "name": "StemDeck",
+      "product_id": "stemdeck",
+      "maturity": "ALPHA",
+      "release_readiness": "ALPHA / NOT QUALIFIED. Independently reviewed6bad0ed pushed PR34 (on PR33);2259 unit tests, standalone build/types/lint and actual WebKit39-asset UI/restart/zero-error PCM pass. Mandatory exact-head local gate BLOCKED at disk1.203GB<2.838GB; hosted/stack/native13-of14/physical/source-live gates unresolved.",
+      "quality_score": null,
+      "quality_scores": {
+        "functionality": null,
+        "reliability": null,
+        "design": null,
+        "performance": null,
+        "ux": null,
+        "onboarding": null,
+        "accessibility": null,
+        "documentation": null,
+        "competitive_differentiation": null,
+        "installation": null,
+        "error_handling": null,
+        "data_safety": null,
+        "mobile_responsiveness": null,
+        "user_value": null
+      },
+      "golden_workflow_status": "LOCAL SYNTHETIC WEBKIT SUBSET PASS: four-deck capture/replay/arrange/edit/undo/save/full process reopen/portable39-asset restore/export. Physical/full musical/platform/release qualification UNVERIFIED.",
+      "health_status": null,
+      "observed_at": "2026-10-08T05:55:55.982385+00:00",
+      "next_milestone": "Review local security repair 278e087, qualify full four-deck capture/replay golden path; remote gates intact.",
+      "verification_level": "LOCAL_SOURCE_BUILD_TEST_AND_SYNTHETIC_BROWSER_SUBSET"
+    }
+  ],
+  "queue": {
+    "counts_by_status": {
+      "COMPLETE": 44,
+      "BLOCKED": 42,
+      "NEEDS_REVIEW": 17,
+      "QUEUED": 24,
+      "WAITING": 22
+    },
+    "active_count": 0,
+    "blocked_count": 42,
+    "next_task": {
+      "task_id": "M01",
+      "title": "[department task omitted]",
+      "product": "reclaim",
+      "severity": null,
+      "next_action": "Verify current download/release first; draft before/after workflow and restore caveat, not a release announcement.",
+      "priority": 89.6
+    }
+  },
+  "bottleneck": {
+    "value": "Founder-reported revenue $0; apps not ready for sale. Main execution need: complete real workflows and release qualification. Paid offer/demand/delivery remain unvalidated; Square account access is not the current company bottleneck.",
+    "observed_at": "2026-10-07T23:37:41.524677+00:00",
+    "source": [
+      "/Users/agentsattari/code/wave5/WAVE5.md",
+      "/Users/agentsattari/code/wave2/thecreatingco-live/privacy/index.html"
+    ]
+  },
+  "revenue": {
+    "value": 0,
+    "currency": "USD",
+    "source": "Armon, Discord #millions, 2026-10-07: we have no revenue at the moment",
+    "period": {
+      "as_of": "2026-10-07",
+      "type": "Current founder-reported baseline; not audited daily/7d/30d accounting totals"
+    },
+    "observed_at": "2026-10-08T01:15:19.407251+00:00",
+    "status": "FOUNDER_REPORTED_NOT_LEDGER_VERIFIED",
+    "definition": "Current company revenue baseline reported by founder; no historical interval or payment ledger verified."
+  },
+  "website": {
+    "observed_at": "2026-10-09T23:22:04+00:00",
+    "probes": [
+      {
+        "url": "https://thecreatingco.com/",
+        "checked_at": "2026-10-09T23:22:04+00:00",
+        "http_status": 200,
+        "status": "ok"
+      }
+    ],
+    "source": "configured supervisor critical_urls"
+  },
+  "supervisor": {
+    "status": "available",
+    "source": "/Users/agentsattari/operations-supervisor/data/supervisor.sqlite3",
+    "observed_at": "2026-10-09T23:07:14.583000+00:00",
+    "heartbeat_counts": {
+      "ACTIVE": 1,
+      "BLOCKED": 10,
+      "FAILED": 1,
+      "IDLE": 17,
+      "WAITING": 5
+    }
+  },
+  "cost_snapshot": {
+    "version": 1,
+    "observed_at": "2026-10-09T23:22:01.503144+00:00",
+    "timezone": "America/Los_Angeles",
+    "daily": {
+      "ledger_rows": 147,
+      "records": 147,
+      "records_known_rows": 147,
+      "failures": 20,
+      "failures_known_rows": 147,
+      "input_tokens": 5771840,
+      "input_tokens_known_rows": 146,
+      "cached_tokens": 49988992,
+      "cached_tokens_known_rows": 144,
+      "cache_read_tokens": 49988992,
+      "cache_read_tokens_known_rows": 139,
+      "cache_write_tokens": null,
+      "cache_write_tokens_known_rows": 0,
+      "output_tokens": 398423,
+      "output_tokens_known_rows": 146,
+      "total_tokens": 56159255,
+      "total_tokens_known_rows": 146,
+      "list_estimated_usd": 0.0029449999999999997,
+      "list_estimated_usd_known_rows": 3,
+      "billed_usd": null,
+      "billed_usd_known_rows": 0
+    },
+    "weekly": {
+      "ledger_rows": 318,
+      "records": 318,
+      "records_known_rows": 318,
+      "failures": 40,
+      "failures_known_rows": 318,
+      "input_tokens": 12716744,
+      "input_tokens_known_rows": 314,
+      "cached_tokens": 138215854,
+      "cached_tokens_known_rows": 311,
+      "cache_read_tokens": 138208640,
+      "cache_read_tokens_known_rows": 284,
+      "cache_write_tokens": null,
+      "cache_write_tokens_known_rows": 0,
+      "output_tokens": 1033155,
+      "output_tokens_known_rows": 314,
+      "total_tokens": 151958539,
+      "total_tokens_known_rows": 314,
+      "list_estimated_usd": 0.36702479999999993,
+      "list_estimated_usd_known_rows": 25,
+      "billed_usd": null,
+      "billed_usd_known_rows": 0
+    },
+    "sources": {
+      "openclaw_cron": {
+        "observed_at": "2026-10-09T23:22:01.503144+00:00",
+        "status": "available",
+        "observed_receipts": 767,
+        "upserted_model_receipts": 291,
+        "truncated": false,
+        "error": null,
+        "agent_mapping_available": true,
+        "granularity": "scheduled_run_not_per_call"
+      },
+      "marketing_calls": {
+        "observed_at": "2026-10-09T23:22:01.503144+00:00",
+        "status": "available",
+        "upserted_calls": 27,
+        "start": "2026-09-04",
+        "end": "2026-10-09",
+        "granularity": "per_call_allowlisted_columns",
+        "invalid_timestamp_rows": 0,
+        "cost_basis": "source_estimate_not_billed; ambiguous zero normalized to null unless successful non-estimated zero-token call"
+      }
+    },
+    "daily_by_source": {
+      "openclaw_cron": {
+        "ledger_rows": 142,
+        "records": 142,
+        "records_known_rows": 142,
+        "failures": 20,
+        "failures_known_rows": 142,
+        "input_tokens": 5739957,
+        "input_tokens_known_rows": 141,
+        "cached_tokens": 49988992,
+        "cached_tokens_known_rows": 139,
+        "cache_read_tokens": 49988992,
+        "cache_read_tokens_known_rows": 139,
+        "cache_write_tokens": null,
+        "cache_write_tokens_known_rows": 0,
+        "output_tokens": 393248,
+        "output_tokens_known_rows": 141,
+        "total_tokens": 56122197,
+        "total_tokens_known_rows": 141,
+        "list_estimated_usd": null,
+        "list_estimated_usd_known_rows": 0,
+        "billed_usd": null,
+        "billed_usd_known_rows": 0
+      },
+      "marketing_calls": {
+        "ledger_rows": 5,
+        "records": 5,
+        "records_known_rows": 5,
+        "failures": 0,
+        "failures_known_rows": 5,
+        "input_tokens": 31883,
+        "input_tokens_known_rows": 5,
+        "cached_tokens": 0,
+        "cached_tokens_known_rows": 5,
+        "cache_read_tokens": null,
+        "cache_read_tokens_known_rows": 0,
+        "cache_write_tokens": null,
+        "cache_write_tokens_known_rows": 0,
+        "output_tokens": 5175,
+        "output_tokens_known_rows": 5,
+        "total_tokens": 37058,
+        "total_tokens_known_rows": 5,
+        "list_estimated_usd": 0.0029449999999999997,
+        "list_estimated_usd_known_rows": 3,
+        "billed_usd": null,
+        "billed_usd_known_rows": 0
+      }
+    },
+    "weekly_by_source": {
+      "openclaw_cron": {
+        "ledger_rows": 291,
+        "records": 291,
+        "records_known_rows": 291,
+        "failures": 40,
+        "failures_known_rows": 291,
+        "input_tokens": 12580339,
+        "input_tokens_known_rows": 287,
+        "cached_tokens": 138208640,
+        "cached_tokens_known_rows": 284,
+        "cache_read_tokens": 138208640,
+        "cache_read_tokens_known_rows": 284,
+        "cache_write_tokens": null,
+        "cache_write_tokens_known_rows": 0,
+        "output_tokens": 1015471,
+        "output_tokens_known_rows": 287,
+        "total_tokens": 151804450,
+        "total_tokens_known_rows": 287,
+        "list_estimated_usd": null,
+        "list_estimated_usd_known_rows": 0,
+        "billed_usd": null,
+        "billed_usd_known_rows": 0
+      },
+      "marketing_calls": {
+        "ledger_rows": 27,
+        "records": 27,
+        "records_known_rows": 27,
+        "failures": 0,
+        "failures_known_rows": 27,
+        "input_tokens": 136405,
+        "input_tokens_known_rows": 27,
+        "cached_tokens": 7214,
+        "cached_tokens_known_rows": 27,
+        "cache_read_tokens": null,
+        "cache_read_tokens_known_rows": 0,
+        "cache_write_tokens": null,
+        "cache_write_tokens_known_rows": 0,
+        "output_tokens": 17684,
+        "output_tokens_known_rows": 27,
+        "total_tokens": 154089,
+        "total_tokens_known_rows": 27,
+        "list_estimated_usd": 0.36702479999999993,
+        "list_estimated_usd_known_rows": 25,
+        "billed_usd": null,
+        "billed_usd_known_rows": 0
+      }
+    },
+    "totals_basis": "observed receipt sums; cross-source overlap is unreconciled, not company spend or billed totals",
+    "governor": {
+      "mode": "normal",
+      "advisory_only": true,
+      "budgets": [
+        {
+          "name": "daily",
+          "scope": "all",
+          "key": "all",
+          "window": "day",
+          "metric": "list_estimated_usd",
+          "observed": 0.0029449999999999997,
+          "limit": null,
+          "exceeded": false,
+          "coverage": "partial"
+        },
+        {
+          "name": "weekly",
+          "scope": "all",
+          "key": "all",
+          "window": "week",
+          "metric": "list_estimated_usd",
+          "observed": 0.36702479999999993,
+          "limit": null,
+          "exceeded": false,
+          "coverage": "partial"
+        },
+        {
+          "name": "per-agent",
+          "scope": "agent",
+          "key": "leila",
+          "window": "day",
+          "metric": "list_estimated_usd",
+          "observed": null,
+          "limit": null,
+          "exceeded": false,
+          "coverage": "partial"
+        },
+        {
+          "name": "per-agent",
+          "scope": "agent",
+          "key": "main",
+          "window": "day",
+          "metric": "list_estimated_usd",
+          "observed": null,
+          "limit": null,
+          "exceeded": false,
+          "coverage": "partial"
+        },
+        {
+          "name": "per-agent",
+          "scope": "agent",
+          "key": "marketing",
+          "window": "day",
+          "metric": "list_estimated_usd",
+          "observed": 0.0029449999999999997,
+          "limit": null,
+          "exceeded": false,
+          "coverage": "partial"
+        },
+        {
+          "name": "per-agent",
+          "scope": "agent",
+          "key": "operations-supervisor",
+          "window": "day",
+          "metric": "list_estimated_usd",
+          "observed": null,
+          "limit": null,
+          "exceeded": false,
+          "coverage": "partial"
+        },
+        {
+          "name": "per-task",
+          "scope": "task",
+          "key": "task_20261006_088a45bb",
+          "window": "week",
+          "metric": "list_estimated_usd",
+          "observed": 0.000431,
+          "limit": null,
+          "exceeded": false,
+          "coverage": "observed_rows_only"
+        },
+        {
+          "name": "per-task",
+          "scope": "task",
+          "key": "task_20261006_268c8458",
+          "window": "week",
+          "metric": "list_estimated_usd",
+          "observed": 0.039826,
+          "limit": null,
+          "exceeded": false,
+          "coverage": "observed_rows_only"
+        },
+        {
+          "name": "per-task",
+          "scope": "task",
+          "key": "task_20261006_2a9ea3ab",
+          "window": "week",
+          "metric": "list_estimated_usd",
+          "observed": 0.011024,
+          "limit": null,
+          "exceeded": false,
+          "coverage": "observed_rows_only"
+        },
+        {
+          "name": "per-task",
+          "scope": "task",
+          "key": "task_20261006_5deec64e",
+          "window": "week",
+          "metric": "list_estimated_usd",
+          "observed": 0.000566,
+          "limit": null,
+          "exceeded": false,
+          "coverage": "observed_rows_only"
+        },
+        {
+          "name": "per-task",
+          "scope": "task",
+          "key": "task_20261006_67269fe7",
+          "window": "week",
+          "metric": "list_estimated_usd",
+          "observed": 0.013408400000000001,
+          "limit": null,
+          "exceeded": false,
+          "coverage": "observed_rows_only"
+        },
+        {
+          "name": "per-task",
+          "scope": "task",
+          "key": "task_20261006_88edda9e",
+          "window": "week",
+          "metric": "list_estimated_usd",
+          "observed": 0.006726,
+          "limit": null,
+          "exceeded": false,
+          "coverage": "observed_rows_only"
+        },
+        {
+          "name": "per-task",
+          "scope": "task",
+          "key": "task_20261006_b3dddaa0",
+          "window": "week",
+          "metric": "list_estimated_usd",
+          "observed": 0.010866,
+          "limit": null,
+          "exceeded": false,
+          "coverage": "observed_rows_only"
+        },
+        {
+          "name": "per-task",
+          "scope": "task",
+          "key": "task_20261006_bb98ae3b",
+          "window": "week",
+          "metric": "list_estimated_usd",
+          "observed": 0.001257,
+          "limit": null,
+          "exceeded": false,
+          "coverage": "observed_rows_only"
+        },
+        {
+          "name": "per-task",
+          "scope": "task",
+          "key": "task_20261006_cc17e9e2",
+          "window": "week",
+          "metric": "list_estimated_usd",
+          "observed": 0.06826399999999999,
+          "limit": null,
+          "exceeded": false,
+          "coverage": "observed_rows_only"
+        },
+        {
+          "name": "per-task",
+          "scope": "task",
+          "key": "task_20261006_dc88986b",
+          "window": "week",
+          "metric": "list_estimated_usd",
+          "observed": 0.000407,
+          "limit": null,
+          "exceeded": false,
+          "coverage": "observed_rows_only"
+        },
+        {
+          "name": "per-task",
+          "scope": "task",
+          "key": "task_20261006_e0c27ac8",
+          "window": "week",
+          "metric": "list_estimated_usd",
+          "observed": 0.024017999999999998,
+          "limit": null,
+          "exceeded": false,
+          "coverage": "observed_rows_only"
+        },
+        {
+          "name": "per-task",
+          "scope": "task",
+          "key": "task_20261006_e875f57e",
+          "window": "week",
+          "metric": "list_estimated_usd",
+          "observed": 0.008592,
+          "limit": null,
+          "exceeded": false,
+          "coverage": "observed_rows_only"
+        },
+        {
+          "name": "per-task",
+          "scope": "task",
+          "key": "task_20261006_eda669dc",
+          "window": "week",
+          "metric": "list_estimated_usd",
+          "observed": 0.017061399999999997,
+          "limit": null,
+          "exceeded": false,
+          "coverage": "observed_rows_only"
+        },
+        {
+          "name": "per-task",
+          "scope": "task",
+          "key": "task_20261007_0a399381",
+          "window": "week",
+          "metric": "list_estimated_usd",
+          "observed": 0.042778,
+          "limit": null,
+          "exceeded": false,
+          "coverage": "observed_rows_only"
+        },
+        {
+          "name": "per-task",
+          "scope": "task",
+          "key": "task_20261007_11b8ca72",
+          "window": "week",
+          "metric": "list_estimated_usd",
+          "observed": 0.013862,
+          "limit": null,
+          "exceeded": false,
+          "coverage": "observed_rows_only"
+        },
+        {
+          "name": "per-task",
+          "scope": "task",
+          "key": "task_20261007_12bd4617",
+          "window": "week",
+          "metric": "list_estimated_usd",
+          "observed": 0.01105,
+          "limit": null,
+          "exceeded": false,
+          "coverage": "observed_rows_only"
+        },
+        {
+          "name": "per-task",
+          "scope": "task",
+          "key": "task_20261007_cc066827",
+          "window": "week",
+          "metric": "list_estimated_usd",
+          "observed": 0.000867,
+          "limit": null,
+          "exceeded": false,
+          "coverage": "observed_rows_only"
+        },
+        {
+          "name": "per-task",
+          "scope": "task",
+          "key": "task_20261008_4643b4a7",
+          "window": "week",
+          "metric": "list_estimated_usd",
+          "observed": 0.015548,
+          "limit": null,
+          "exceeded": false,
+          "coverage": "observed_rows_only"
+        },
+        {
+          "name": "per-task",
+          "scope": "task",
+          "key": "task_20261008_9479cc04",
+          "window": "week",
+          "metric": "list_estimated_usd",
+          "observed": 0.016128,
+          "limit": null,
+          "exceeded": false,
+          "coverage": "observed_rows_only"
+        },
+        {
+          "name": "per-task",
+          "scope": "task",
+          "key": "task_20261008_f465f112",
+          "window": "week",
+          "metric": "list_estimated_usd",
+          "observed": 0.000801,
+          "limit": null,
+          "exceeded": false,
+          "coverage": "observed_rows_only"
+        },
+        {
+          "name": "per-task",
+          "scope": "task",
+          "key": "task_20261008_fa1c495a",
+          "window": "week",
+          "metric": "list_estimated_usd",
+          "observed": 0.060599,
+          "limit": null,
+          "exceeded": false,
+          "coverage": "observed_rows_only"
+        },
+        {
+          "name": "per-task",
+          "scope": "task",
+          "key": "task_20261009_093f6c08",
+          "window": "week",
+          "metric": "list_estimated_usd",
+          "observed": 0.00077,
+          "limit": null,
+          "exceeded": false,
+          "coverage": "observed_rows_only"
+        },
+        {
+          "name": "per-task",
+          "scope": "task",
+          "key": "task_20261009_1bb3c799",
+          "window": "week",
+          "metric": "list_estimated_usd",
+          "observed": 0.001021,
+          "limit": null,
+          "exceeded": false,
+          "coverage": "observed_rows_only"
+        },
+        {
+          "name": "per-task",
+          "scope": "task",
+          "key": "task_20261009_776e8b81",
+          "window": "week",
+          "metric": "list_estimated_usd",
+          "observed": null,
+          "limit": null,
+          "exceeded": false,
+          "coverage": "partial"
+        },
+        {
+          "name": "per-task",
+          "scope": "task",
+          "key": "task_20261009_e6111948",
+          "window": "week",
+          "metric": "list_estimated_usd",
+          "observed": 0.001154,
+          "limit": null,
+          "exceeded": false,
+          "coverage": "observed_rows_only"
+        },
+        {
+          "name": "per-task",
+          "scope": "task",
+          "key": "task_20261009_e79c04b6",
+          "window": "week",
+          "metric": "list_estimated_usd",
+          "observed": null,
+          "limit": null,
+          "exceeded": false,
+          "coverage": "partial"
+        },
+        {
+          "name": "astra",
+          "scope": "astra",
+          "key": "astra",
+          "window": "week",
+          "metric": "list_estimated_usd",
+          "observed": null,
+          "limit": null,
+          "exceeded": false,
+          "coverage": "partial"
+        }
+      ]
+    },
+    "anomalies": [
+      {
+        "kind": "repeated_failures",
+        "count": 20
+      },
+      {
+        "kind": "astra_reason_not_exposed",
+        "ledger_rows": 40
+      }
+    ],
+    "astra": {
+      "ledger_rows": 40,
+      "outcomes_recorded": 0,
+      "outcomes_unknown": 40
+    },
+    "coverage_gaps": [
+      "interactive/native-child per-call usage not exposed by cron receipts",
+      "scheduled receipt token counts may aggregate multiple model calls",
+      "cache/input accounting differs by source; preserve explicit totals, do not subtract caches blindly",
+      "scheduled latency is end-to-end run duration, not pure inference latency",
+      "task/product/reasoning/escalation and billed cost often not exposed",
+      "marketing tokens and cost can be source estimates, not reconciled billing",
+      "visible receipts may overlap marketing calls; combined sums are not reconciled billing"
+    ]
+  },
+  "astra": {
+    "telemetry": {
+      "ledger_rows": 40,
+      "outcomes_recorded": 0,
+      "outcomes_unknown": 40
+    },
+    "deliberate_cycles": {
+      "status": "available",
+      "cycles": [
+        {
+          "cycle_id": "company-os-initial-20261009",
+          "model": "openai/gpt-6-astra",
+          "mode": "INVENT",
+          "reason": "Find one compact suite trust/differentiation prototype informed by current workflow blockers",
+          "selected_idea": "ENCORE",
+          "selected_by": "openai/gpt-6.1-sol",
+          "downstream_task_ids": [
+            "OS-ENCORE-VALIDATE-20261009"
+          ],
+          "implementation_status": "WAITING_FOR_QUALIFICATION",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cost": null,
+          "usage_coverage": "Native child per-call usage unavailable from current sanitized collector",
+          "value_created": null,
+          "result": "Creative hypothesis selected; no product/customer outcome claimed",
+          "wow_review_used": false
+        }
+      ],
+      "source": "data/astra-cycles.json"
+    }
+  },
+  "marketing": {
+    "status": "read_only_snapshot",
+    "queue_statuses": {
+      "tasks": {
+        "COMPLETE": 26
+      }
+    },
+    "campaign_statuses": {
+      "campaigns": {
+        "active": 1
+      }
+    },
+    "outcomes": {
+      "impressions": {
+        "recorded_values": 0,
+        "sum_of_recorded_values": null
+      },
+      "clicks": {
+        "recorded_values": 0,
+        "sum_of_recorded_values": null
+      },
+      "replies": {
+        "recorded_values": 0,
+        "sum_of_recorded_values": null
+      },
+      "signups": {
+        "recorded_values": 0,
+        "sum_of_recorded_values": null
+      },
+      "conversions": {
+        "recorded_values": 0,
+        "sum_of_recorded_values": null
+      },
+      "engagement": {
+        "recorded_values": 0,
+        "sum_of_recorded_values": null
+      },
+      "cost": {
+        "recorded_values": 0,
+        "sum_of_recorded_values": null
+      }
+    },
+    "outcome_period": {
+      "earliest_record": null,
+      "latest_record": null
+    }
+  },
+  "experiments": {
+    "status": "unknown",
+    "source": null,
+    "reason": "No measured experiment result record is present in company state."
+  },
+  "sources": {
+    "task_queue_generated_at": "2026-10-09T23:22:04+00:00",
+    "product_registry_generated_at": "2026-10-09T23:22:04+00:00",
+    "product_health_updated": "2026-10-09T23:22:04+00:00"
+  }
+}

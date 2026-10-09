@@ -1,0 +1,3 @@
+# Independent vector-design advice
+
+Requested native gpt-6-luna. Exposed child runtime reported GPT-6; exact variant unavailable. No fallback observed. Read exact source meter/tests/mastering acceptance; recommended deterministic sine/transient/intersample/dense/bass-heavy fixtures, actual exportedPCM versusFFmpeg, predeclared0.2LU/sample0.1dB/estimatedtruepeak0.5dB tolerances, signed errors and no certification. Parent used0.11dBsample tolerance for FFmpeg0.1dBsummary rounding;actual maximum0.0464dB. Fixedfourphase12-tap app truepeak is estimate; preserve waveformedges,rates,channel mapping and failure results. No source or queue changes by research child.
