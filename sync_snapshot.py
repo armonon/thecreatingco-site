@@ -1,127 +1,130 @@
 #!/usr/bin/env python3
-"""Build a screened, non-deploy company snapshot in this branch.
-
-This deliberately does not sweep the home directory or publish the website.
-Run from the company/operations worktree, review the manifest, then commit and
-push the exact head with git-handoff/push_branch.py.
-"""
-
+"""Screen company state/source and exact committed product work into operations."""
 from __future__ import annotations
+import argparse,hashlib,json,os
+from pathlib import Path
+import shutil,subprocess,tempfile
+from screening import path_reason,content_reason,PRIVATE_PARTS
+from archive_product_work import archive,discover
 
-import hashlib
-import json
-import pathlib
-import re
-import shutil
-import subprocess
-import sys
+WORKSPACE_ROOT=Path('/Users/agentsattari')
+ROOT=Path(__file__).resolve().parent
+DEST=ROOT/'snapshot'
+CHECKPOINTS=WORKSPACE_ROOT/'.local/state/thecreateco-source-checkpoints.json'
+MAX_BYTES=2_000_000
+TEXT={'.md','.json','.py','.txt','.sh','.plist','.toml','.yaml','.yml'}
 
-HOME = pathlib.Path("/Users/agentsattari")
-DEST = pathlib.Path(__file__).resolve().parent / "snapshot"
-MAX_BYTES = 1_000_000
-TEXT_SUFFIXES = {".md", ".json", ".py", ".txt", ".sh"}
-REPORT_EXCLUDE_PARTS = {"site-packages", "node_modules", "venv", ".venv", "browser-profile", "recovery-profile"}
-SENSITIVE = [
-    re.compile(rb"[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}", re.I),
-    re.compile(rb"(?:ghp_|github_pat_|sk-|xox[baprs]-)[A-Za-z0-9_-]{20,}"),
-    re.compile(rb"-----BEGIN (?:RSA |OPENSSH |EC )?PRIVATE KEY-----"),
-    re.compile(rb"(?i)(?:verification|one.time|otp|2fa|login)\s+(?:code|pin)\s*[:=]?\s*\d{6,8}"),
-]
+def git(path,*args):
+    p=subprocess.run(['git','-C',str(path),*args],capture_output=True,text=True,timeout=60)
+    return p.stdout.strip() if p.returncode==0 else ''
 
+def walk(root,suffixes):
+    if not root.is_dir():return []
+    result=[]
+    for where,dirs,files in os.walk(root):
+        dirs[:]=[d for d in dirs if d not in PRIVATE_PARTS and d not in {'dist','build','vite-cache','synthetic-publish','published-app-artifact'}]
+        for name in files:
+            p=Path(where)/name
+            if p.suffix in suffixes:result.append(p)
+    return result
 
-def git(path: pathlib.Path, *args: str) -> str:
-    result = subprocess.run(["git", "-C", str(path), *args], text=True, capture_output=True, check=False)
-    return result.stdout.strip() if result.returncode == 0 else ""
-
-
-def candidates() -> list[pathlib.Path]:
-    files: list[pathlib.Path] = []
-    company = HOME / "thecreateco-company"
-    marketing = HOME / "thecreateco-marketing"
-    for file in company.iterdir():
-        if file.is_file() and file.suffix in {".md", ".json"}:
-            files.append(file)
-    for name in ("BRAND.md", "CATALOG.md", "COMMUNITY_RULES.md", "DIRECTIVE.md", "PRODUCTS.md", "STATE.md"):
-        files.append(marketing / name)
-    for root in (company / "engine", marketing / "engine" / "mktg", marketing / "engine" / "tests"):
-        files.extend(f for f in root.rglob("*") if f.is_file() and f.suffix in {".py", ".md"})
-    files.extend((marketing / "engine" / "bin" / name) for name in ("mktg", "scheduled-tick"))
-    files.extend((marketing / "engine" / "config" / "routing.json", marketing / "engine" / "README.md"))
-    lab = company / "core-product-lab"
-    release = company / "release-program"
-    for root in (lab, lab / "products", lab / "golden-projects", release):
-        files.extend(f for f in root.iterdir() if f.is_file() and f.suffix in TEXT_SUFFIXES)
-    handoff = HOME / "git-handoff"
-    files.extend(f for f in handoff.iterdir() if f.is_file() and f.suffix in {".md", ".py"})
-    for root in (company / "reports", lab / "reports", release / "reports"):
-        files.extend(f for f in root.rglob("*.md") if not REPORT_EXCLUDE_PARTS.intersection(f.parts))
+def candidates(workspace=WORKSPACE_ROOT):
+    company=workspace/'thecreateco-company';marketing=workspace/'thecreateco-marketing';files=[]
+    if company.is_dir():files += [p for p in company.iterdir() if p.is_file() and p.suffix in TEXT]
+    for folder in ['engine','data','automation','core-product-lab','release-program']:
+        root=company/folder
+        # Reports are text evidence only, never copied packaged applications/venvs.
+        for p in walk(root,TEXT):
+            if 'reports' in p.relative_to(root).parts and p.suffix!='.md':continue
+            files.append(p)
+    files += walk(company/'reports',{'.md'})
+    if marketing.is_dir():files += [p for p in marketing.iterdir() if p.is_file() and p.suffix in {'.md','.json'}]
+    for folder in ['engine/mktg','engine/tests','engine/config','content','research','outreach','packs-build']:
+        files += walk(marketing/folder,TEXT)
+    files += [marketing/'engine/README.md',marketing/'engine/bin/mktg',marketing/'engine/bin/scheduled-tick']
+    for folder in ['git-handoff','operations-supervisor']:
+        root=workspace/folder
+        files += [p for p in root.iterdir() if p.is_file() and p.suffix in TEXT] if root.is_dir() else []
+        files += walk(root/'tests',{'.py'})
     return sorted(set(files))
 
+def requires_checkpoint(rel):
+    p=Path(rel)
+    return p.suffix in {'.py','.sh'} or '/engine/config/' in '/'+str(p) or '/engine/bin/' in '/'+str(p)
 
-def product_refs() -> list[dict[str, str]]:
-    out: list[dict[str, str]] = []
-    for marker in sorted((HOME / "code").glob("**/.git")):
-        repo = marker.parent
-        rel = repo.relative_to(HOME / "code")
-        if rel.parts[0] not in {"wave2", "wave3", "wave4", "wave5", "sattari", "sattari-plugins-suite", "glyph-studio", "core-product-lab", "company-worktrees", "weblab"}:
-            continue
-        if any(part in {"node_modules", ".venv", "site-packages"} for part in repo.parts):
-            continue
-        remote = git(repo, "remote", "get-url", "origin")
-        if not remote.startswith("https://github.com/armonon/"):
-            continue
-        sha = git(repo, "rev-parse", "HEAD")
-        branch = git(repo, "symbolic-ref", "--quiet", "--short", "HEAD")
-        if remote.removesuffix(".git") == "https://github.com/armonon/thecreatingco-site" and branch == "company/operations":
-            continue  # Avoid a self-reference that would create an hourly commit loop.
-        if sha and branch:
-            out.append({"repo": remote.removesuffix(".git"), "branch": branch, "sha": sha})
-    return sorted({(x["repo"], x["branch"], x["sha"]): x for x in out}.values(), key=lambda x: (x["repo"], x["branch"], x["sha"]))
+def read_checkpoints():
+    try:return json.loads(CHECKPOINTS.read_text())
+    except FileNotFoundError:return {'files':{}}
 
+def checkpoint_sources(paths,evidence):
+    evidence=Path(evidence).resolve()
+    if not evidence.is_file():raise ValueError('Checkpoint evidence file required')
+    data=read_checkpoints();data.setdefault('files',{})
+    count=0
+    allowed=set(candidates())
+    for source in paths:
+        source=Path(source).resolve()
+        if source not in allowed:raise ValueError('Source outside company export scope')
+        rel=source.relative_to(WORKSPACE_ROOT)
+        if source.is_symlink() or path_reason(rel):continue
+        content=source.read_bytes()
+        if content_reason(content) or len(content)>MAX_BYTES:continue
+        data['files'][str(rel)]={'sha256':hashlib.sha256(content).hexdigest(),'evidence':str(evidence.relative_to(WORKSPACE_ROOT)),'evidence_sha256':hashlib.sha256(evidence.read_bytes()).hexdigest()}
+        count+=1
+    CHECKPOINTS.parent.mkdir(parents=True,exist_ok=True)
+    fd,tmp=tempfile.mkstemp(dir=CHECKPOINTS.parent,prefix='.checkpoint-')
+    with os.fdopen(fd,'w') as f:json.dump(data,f,indent=2);f.write('\n')
+    os.replace(tmp,CHECKPOINTS)
+    return count
 
-def main() -> int:
-    if git(DEST.parent, "symbolic-ref", "--short", "HEAD") != "company/operations":
-        print("Refusing to snapshot outside company/operations", file=sys.stderr)
-        return 2
-    if DEST.exists():
-        shutil.rmtree(DEST)
-    DEST.mkdir()
-    dirty_tracked = {
-        line[3:]
-        for line in git(HOME, "status", "--porcelain=v1", "-uno").splitlines()
-        if len(line) > 3
-    }
-    copied: list[dict[str, object]] = []
-    skipped: list[dict[str, str]] = []
-    for source in candidates():
-        rel = source.relative_to(HOME)
-        if str(rel) in dirty_tracked:
-            skipped.append({"path": str(rel), "reason": "dirty-tracked-source"})
-            continue
-        if not source.is_file() or source.is_symlink():
-            skipped.append({"path": str(rel), "reason": "missing-or-symlink"})
-            continue
-        if source.stat().st_size > MAX_BYTES:
-            skipped.append({"path": str(rel), "reason": "over-size-limit"})
-            continue
-        data = source.read_bytes()
-        if b"\x00" in data or any(pattern.search(data) for pattern in SENSITIVE):
-            skipped.append({"path": str(rel), "reason": "sensitive-or-binary"})
-            continue
-        target = DEST / rel
-        target.parent.mkdir(parents=True, exist_ok=True)
-        target.write_bytes(data)
-        copied.append({"path": str(rel), "bytes": len(data), "sha256": hashlib.sha256(data).hexdigest()})
-    manifest = {
-        "scope": "Screened company source and text evidence; not live databases, contacts, secrets, binary QA artifacts or full product source",
-        "files": copied,
-        "skipped": skipped,
-        "product_git_refs": product_refs(),
-    }
-    (DEST / "MANIFEST.json").write_text(json.dumps(manifest, indent=2) + "\n")
-    print(json.dumps({"copied": len(copied), "skipped": len(skipped), "product_refs": len(manifest["product_git_refs"])}))
+def build(target,workspace=WORKSPACE_ROOT,checkpoints=None,products=True):
+    target=Path(target);target.mkdir(parents=True,exist_ok=True)
+    approvals=checkpoints if checkpoints is not None else read_checkpoints()
+    copied=[];skipped=[]
+    for source in candidates(workspace):
+        rel=source.relative_to(workspace);reason=path_reason(rel)
+        if not reason and (not source.is_file() or source.is_symlink()):reason='missing-or-symlink'
+        if not reason and source.stat().st_size>MAX_BYTES:reason='over-size-limit'
+        if reason:skipped.append({'path':str(rel),'reason':reason});continue
+        data=source.read_bytes();digest=hashlib.sha256(data).hexdigest();reason=content_reason(data)
+        if not reason and requires_checkpoint(rel) and approvals.get('files',{}).get(str(rel),{}).get('sha256')!=digest:
+            reason='code-checkpoint-not-recorded-or-source-changed'
+        if reason:skipped.append({'path':str(rel),'reason':reason});continue
+        dst=target/rel;dst.parent.mkdir(parents=True,exist_ok=True);dst.write_bytes(data)
+        copied.append({'path':str(rel),'bytes':len(data),'sha256':digest})
+    product_records=archive(target/'product-work',workspace) if products else []
+    manifest={'scope':'Screened company state, checkpointed source, text evidence and exact committed product review deltas; no credentials/contacts/databases or dirty product work',
+        'files':copied,'skipped':skipped,'product_work':product_records,
+        'product_git_refs':[{'repo':x['repo'],'branch':branch,'sha':x['sha']} for x in product_records for branch in x['branches']]}
+    (target/'MANIFEST.json').write_text(json.dumps(manifest,indent=2)+'\n')
+    return manifest
+
+def main(argv=None):
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--checkpoint-evidence',type=Path)
+    parser.add_argument('--checkpoint-source',type=Path,action='append',default=[])
+    args=parser.parse_args(argv)
+    if git(ROOT,'symbolic-ref','--short','HEAD')!='company/operations':raise RuntimeError('Wrong branch')
+    if args.checkpoint_source:
+        if not args.checkpoint_evidence:raise ValueError('Evidence required for source checkpoints')
+        print(json.dumps({'checkpointed':checkpoint_sources(args.checkpoint_source,args.checkpoint_evidence)}))
+        return 0
+    # Build completely before replacing the tracked generated snapshot. A failed
+    # collection preserves the prior version and cannot erase unrelated source.
+    stage=Path(tempfile.mkdtemp(prefix='.snapshot-',dir=ROOT))
+    try:
+        manifest=build(stage)
+        if DEST.exists():
+            old=ROOT/'.previous-snapshot'
+            if old.exists():raise RuntimeError('Recovery snapshot already exists; inspect before publishing')
+            os.replace(DEST,old)
+            try:os.replace(stage,DEST)
+            except BaseException:os.replace(old,DEST);raise
+            shutil.rmtree(old) # generated prior snapshot retained in Git history
+        else:os.replace(stage,DEST)
+    finally:
+        if stage.exists():shutil.rmtree(stage)
+    print(json.dumps({'copied':len(manifest['files']),'skipped':len(manifest['skipped']),'product_commits':len(manifest['product_work'])}))
     return 0
 
-
-if __name__ == "__main__":
-    raise SystemExit(main())
+if __name__=='__main__':raise SystemExit(main())

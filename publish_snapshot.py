@@ -14,7 +14,7 @@ LOCK = pathlib.Path("/Users/agentsattari/.local/state/thecreateco-ops-sync.lock"
 
 
 def run(*args: str, capture: bool = False) -> str:
-    result = subprocess.run(args, cwd=ROOT, text=True, capture_output=True, check=True, timeout=120)
+    result = subprocess.run(args, cwd=ROOT, text=True, capture_output=True, check=True, timeout=600)
     return result.stdout.strip() if capture else ""
 
 
@@ -30,6 +30,16 @@ def main() -> int:
             raise RuntimeError("Wrong branch; refusing snapshot")
         if run("git", "status", "--porcelain=v1", capture=True):
             raise RuntimeError("Operations worktree dirty; review it before automated sync")
+        run('git', 'fetch', '--quiet', 'origin', 'refs/heads/company/operations:refs/remotes/origin/company/operations')
+        remote = run('git', 'rev-parse', 'refs/remotes/origin/company/operations', capture=True)
+        current = run('git', 'rev-parse', 'HEAD', capture=True)
+        if remote != current:
+            ahead = subprocess.run(['git','merge-base','--is-ancestor',remote,current],cwd=ROOT).returncode == 0
+            behind = subprocess.run(['git','merge-base','--is-ancestor',current,remote],cwd=ROOT).returncode == 0
+            if behind:
+                run('git','merge','--ff-only','refs/remotes/origin/company/operations')
+            elif not ahead:
+                raise RuntimeError('Operations branch diverged; retain local commits and reconcile, never force')
         run(sys.executable, str(ROOT / "sync_snapshot.py"))
         run("git", "add", "--", "snapshot")
         if run("git", "diff", "--cached", "--name-only", capture=True):
@@ -38,7 +48,7 @@ def main() -> int:
             print("Operations snapshot unchanged; checking remote head")
         sha = run("git", "rev-parse", "HEAD", capture=True)
         result = subprocess.run(
-            [sys.executable, str(HANDOFF), str(ROOT), "--expect-sha", sha],
+            [sys.executable, str(HANDOFF), str(ROOT), "--expect-sha", sha, '--no-company-mirror'],
             cwd=ROOT, text=True, check=True, timeout=120,
         )
         return result.returncode
