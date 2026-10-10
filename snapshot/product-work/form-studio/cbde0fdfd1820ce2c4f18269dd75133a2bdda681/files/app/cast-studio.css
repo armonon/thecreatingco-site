@@ -1,0 +1,85 @@
+/* Cast — print & cast prep. Shares Ghost Studio's dialog language (white sheet, lime accent, olive neutrals). */
+.cast-backdrop { position:fixed; inset:0; z-index:1200; display:grid; place-items:center; padding:20px; background:#15201966; backdrop-filter:blur(10px); }
+.cast-studio { width:min(1240px,100%); max-height:calc(100dvh - 40px); overflow:auto; border-radius:20px; background:#fff; color:#20211f; box-shadow:0 24px 100px #15201944; font:14px/1.55 system-ui,sans-serif; }
+.cast-studio * { box-sizing:border-box; }
+.cast-studio button,.cast-studio input,.cast-studio select { font:inherit; }
+.cast-studio button { cursor:pointer; }
+.cast-studio button:disabled { opacity:.45; cursor:default; }
+.cast-studio :is(button,input,select,summary):focus-visible { outline:3px solid #819519; outline-offset:3px; }
+.cast-header { height:74px; padding:0 24px; display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid #e4e6df; }
+.cast-header>div { display:flex; align-items:center; gap:10px; }
+.cast-header strong { font-size:23px; letter-spacing:-1px; }.cast-header strong span { font-weight:400; }
+.cast-header small { font-size:11px; letter-spacing:1px; color:#707766; margin-left:4px; }
+.cast-company-link { display:inline-grid; place-items:center; min-height:36px; padding:0 8px; border-radius:7px; color:#46513c; font-size:11px; font-weight:600; text-decoration:underline; text-underline-offset:3px; white-space:nowrap; }
+.cast-company-link:focus-visible { outline:3px solid #7a8f55; outline-offset:2px; }
+.cast-mark { background:#dfff00; border-radius:10px; font-size:28px; width:36px; height:39px; text-align:center; line-height:36px; }
+.cast-alpha { font-style:normal; font-size:10px; font-weight:700; letter-spacing:1.2px; padding:3px 7px; border-radius:6px; background:#20211f; color:#dfff00; }
+.cast-header>button { width:44px; height:44px; border:0; background:transparent; font-size:26px; color:inherit; }
+.cast-tabs { display:flex; flex-wrap:wrap; gap:6px; padding:12px 24px; border-bottom:1px solid #e4e6df; }
+.cast-tabs button { border:0; background:#f2f4ed; border-radius:8px; color:#566149; padding:10px 16px; min-height:44px; }
+.cast-tabs [aria-pressed=true] { background:#dfff00; color:#222615; }
+.cast-body { display:grid; grid-template-columns:280px minmax(0,1fr) 300px; min-height:600px; }
+.cast-controls { padding:22px; border-right:1px solid #e4e6df; display:flex; flex-direction:column; gap:8px; }
+.cast-details { padding:22px; border-left:1px solid #e4e6df; }
+.cast-eyebrow { font-size:11px; font-weight:700; letter-spacing:1.5px; color:#767b6d; margin:10px 0 4px; }
+.cast-field { display:flex; flex-wrap:wrap; gap:6px; margin:6px 0; color:#33402b; font-size:13px; }
+.cast-field span,.cast-field output { margin-left:auto; color:#7b856a; }
+.cast-field :is(input:not([type=range]),select) { width:100%; min-height:40px; border:1px solid #ccd2c2; border-radius:7px; padding:8px; background:white; color:#20211f; }
+.cast-field input[type=range] { width:100%; accent-color:#879a15; }
+.cast-file-row { display:grid; grid-template-columns:1fr 72px; gap:6px; }
+.cast-file-row select { min-height:40px; border:1px solid #ccd2c2; border-radius:7px; padding:6px; background:white; color:#20211f; }
+.cast-studio .cast-primary { display:block; width:100%; border:0; border-radius:9px; padding:12px; min-height:46px; background:#dfff00; color:#222615; font-weight:650; margin:6px 0; }
+.cast-studio .cast-secondary { display:block; width:100%; border:1px solid #ccd2c2; border-radius:9px; padding:10px; min-height:42px; background:#f6f8f1; color:#33402b; margin:4px 0; text-align:center; }
+.cast-note { color:#6b7361; font-size:12px; margin:2px 0; }
+.cast-error { color:#984838; min-height:18px; font-size:12px; margin:0; }
+.cast-controls progress { width:100%; accent-color:#92a614; }
+.cast-readout,.cast-details dl { margin:10px 0; border-block:1px solid #e4e6df; padding:10px 0; }
+.cast-readout dt,.cast-details dt { color:#7b856f; font-size:12px; }
+.cast-readout dd,.cast-details dd { margin:0 0 10px; }
+.cast-details h3 { font-size:21px; letter-spacing:-.6px; line-height:1.25; margin:4px 0 8px; }
+.cast-details p:not(.cast-eyebrow) { color:#6b7361; font-size:13px; }
+.cast-pass { color:#3d6b1c; }
+.cast-warn { color:#a2481f; }
+.cast-log { margin:8px 0; padding-left:18px; color:#4c5641; font-size:12px; }
+.cast-suggestions { display:grid; gap:6px; }
+.cast-suggestions button { display:grid; grid-template-columns:24px 1fr; text-align:left; gap:0 8px; border:1px solid #dfe3d5; border-radius:8px; background:#fff; color:#33402b; padding:8px; }
+.cast-suggestions button b { grid-row:span 2; width:24px; height:24px; border-radius:50%; background:#f1f5e6; text-align:center; }
+.cast-suggestions button small { color:#7b856f; }
+.cast-suggestions [aria-pressed=true] { border-color:#a8bb1f; background:#f7fbe3; }
+.cast-stage { background:#f1f3ec; display:flex; flex-direction:column; min-width:0; }
+.cast-stage-heading { padding:20px 24px 8px; display:grid; gap:4px; }
+.cast-stage-heading strong { overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.cast-stage-heading span { font-size:10px; letter-spacing:1px; color:#7a846b; }
+.cast-stage-view { position:relative; min-height:360px; flex:1; display:grid; place-items:center; }
+.cast-preview { position:absolute; inset:0; touch-action:none; }
+.cast-preview canvas { width:100%; height:100%; display:block; }
+.cast-preview p { padding:20px; color:#6b7361; }
+.cast-empty { text-align:center; color:#7d8870; padding:20px; }
+.cast-empty strong { font-size:19px; color:#46513b; }
+.cast-legend { display:flex; flex-wrap:wrap; justify-content:center; gap:6px 16px; list-style:none; margin:8px 0 0; padding:0 16px; font-size:12px; color:#5d6752; }
+.cast-legend i { display:inline-block; width:12px; height:12px; border-radius:3px; margin-right:6px; vertical-align:-1px; }
+.cast-hint { text-align:center; font-size:12px; color:#7b856f; margin:6px 0 16px; }
+.cast-weights { width:100%; border-collapse:collapse; font-size:13px; }
+.cast-weights th { text-align:left; font-weight:400; color:#5d6752; padding:3px 0; }
+.cast-weights td { text-align:right; font-variant-numeric:tabular-nums; }
+.cast-weights tr.selected th,.cast-weights tr.selected td { font-weight:650; color:#222615; }
+.cast-studio .cast-export { margin-top:14px; }
+.cast-limits { margin-top:16px; border-top:1px solid #e4e6df; padding-top:10px; font-size:12px; color:#6b7361; }
+.cast-limits summary { cursor:pointer; color:#46513b; min-height:32px; }
+@media(max-width:1060px) { .cast-body { grid-template-columns:260px minmax(0,1fr); }.cast-details { grid-column:1/-1; border-left:0; border-top:1px solid #e4e6df; } }
+@media(max-width:640px) { .cast-backdrop { padding:0; }.cast-studio { max-height:100dvh; height:100dvh; border-radius:0; }.cast-body { display:flex; flex-direction:column; }.cast-header { padding:0 16px; }.cast-header small { display:none; }.cast-company-link { width:36px; min-width:36px; padding:0; overflow:hidden; font-size:0; text-decoration:none; }.cast-company-link::after { content:"↗"; font-size:16px; }.cast-tabs { padding:10px 16px; }.cast-tabs button { flex:1; padding:8px; font-size:13px; }.cast-stage-view { min-height:340px; }.cast-field :is(input,select) { font-size:16px; } }
+/* Export for Blender sheet (CAD workspace); same dialog language as Cast. */
+.blender-sheet { width:min(760px,100%); max-height:calc(100dvh - 40px); overflow:auto; border-radius:20px; background:#fff; color:#20211f; box-shadow:0 24px 100px #15201944; font:14px/1.55 system-ui,sans-serif; padding:22px 24px; }
+.blender-sheet header { display:flex; justify-content:space-between; align-items:flex-start; gap:12px; }
+.blender-sheet header small { font-size:11px; font-weight:700; letter-spacing:1.6px; color:#707766; }
+.blender-sheet h2 { margin:4px 0 0; font-size:24px; letter-spacing:-.6px; }
+.blender-sheet header button { width:36px; height:36px; border-radius:50%; border:1px solid #e0e5d5; background:#fff; font-size:20px; cursor:pointer; }
+.blender-options { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:18px 0 6px; }
+.blender-options section { border:1px solid #e4e6df; border-radius:14px; padding:14px 16px; }
+.blender-options h3 { margin:0 0 6px; font-size:15px; }
+.blender-options p { margin:0 0 12px; color:#5f6658; font-size:13px; }
+.blender-options button { border:1px solid #dce2d0; background:#fff; border-radius:9px; padding:10px 14px; font:inherit; font-weight:600; cursor:pointer; }
+.blender-options .blender-primary { background:#dfff00; border-color:#dfff00; color:#222615; }
+.blender-options button:disabled { opacity:.5; cursor:wait; }
+.blender-sheet>p { color:#6b7262; font-size:13px; margin:10px 0 0; }
+@media (max-width:640px){ .blender-options { grid-template-columns:1fr; } }

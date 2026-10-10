@@ -1,0 +1,141 @@
+{
+  "sha": "05d40dfac0371f887bc20757930c0ba913f48dc5",
+  "base_sha": "f97ce57f4aaf7c061b02e7547eb3385c04a79f34",
+  "scope": "Committed screened review delta, not a release or complete binary artifact",
+  "files": [
+    {
+      "path": "apps/sattari-hub/Sources/SattariHub/Resources/sattari-products.json",
+      "status": "present",
+      "sha256": "1f35e7bce362daef506d3970a4936e0d055f8984f815ab6ea826e91981571ba6",
+      "bytes": 10840
+    },
+    {
+      "path": "cmake/SattariPlugin.cmake",
+      "status": "present",
+      "sha256": "bac4112f4a71a7ae3128a28cdbb2394ce69ded1035cf91919fa365a622e03909",
+      "bytes": 5206
+    },
+    {
+      "path": "plugins/auto-pitch/src/PluginProcessor.cpp",
+      "status": "present",
+      "sha256": "bf2c2eb7dd27d8fca842c3ae5e2f60977e67c38193a7f0d09cb82bcea4a8ec1b",
+      "bytes": 96961
+    },
+    {
+      "path": "plugins/auto-pitch/src/PluginProcessor.h",
+      "status": "present",
+      "sha256": "3c77e94b45f61472da06dd7e775cf5d0b25bf69e82989297ef2c3c54d3e80ebb",
+      "bytes": 20575
+    },
+    {
+      "path": "plugins/auto-pitch/tests/auto_pitch_core_contract.cpp",
+      "status": "present",
+      "sha256": "996d63644ae149f388e50686f84d2760121981f0c3ab38e04fbb6914e5a3c77d",
+      "bytes": 19796
+    },
+    {
+      "path": "plugins/auto-pitch/tools/autopitch_bench.cpp",
+      "status": "present",
+      "sha256": "7f7c469a7f1f4eff14b5a45fdd72f9c94d9460010550116bbfcd82a1fba828b2",
+      "bytes": 15174
+    },
+    {
+      "path": "plugins/sattari-arp/CMakeLists.txt",
+      "status": "present",
+      "sha256": "c8879cae3c40599e4832535ca6252f265bfe7b7051a9d4785b62b9b53cffe4a4",
+      "bytes": 1796
+    },
+    {
+      "path": "plugins/sattari-arp/src/PluginEditor.cpp",
+      "status": "present",
+      "sha256": "62cacf52fbcef452832c891251f7f6797a386bb0ea34a6d00273d4e8bd898313",
+      "bytes": 12388
+    },
+    {
+      "path": "plugins/sattari-arp/src/PluginProcessor.cpp",
+      "status": "present",
+      "sha256": "fd3c85e362b22ab98ae6726a468a4c69f19e4e8da5b7e576e121748f77449a83",
+      "bytes": 18021
+    },
+    {
+      "path": "plugins/sattari-arp/src/PluginProcessor.h",
+      "status": "present",
+      "sha256": "f5f5645d1dafd0e35fefab0793141a0e84eecd5f2d306ac17d1f06d3fdcf36fe",
+      "bytes": 4291
+    },
+    {
+      "path": "plugins/stemdeck/CMakeLists.txt",
+      "status": "present",
+      "sha256": "ccae7610824bbdf56ae67185f910880db72b03fcceeed5f92015627f9ab47898",
+      "bytes": 5037
+    },
+    {
+      "path": "plugins/stemdeck/src/BeatSyncEngine.cpp",
+      "status": "present",
+      "sha256": "0cf637095df7453b14f91658d7a03904b76d36ce211c44dfd07486f1727657ff",
+      "bytes": 9665
+    },
+    {
+      "path": "plugins/stemdeck/src/MainPluginEditor.cpp",
+      "status": "present",
+      "sha256": "d14cec935daa13cd97b9d7fae6a4db7c57564d69c6dc3e915b1cb30f271bae6c",
+      "bytes": 41205
+    },
+    {
+      "path": "plugins/stemdeck/src/MainPluginProcessor.cpp",
+      "status": "present",
+      "sha256": "b31a6c0d70e268db36611ca12e62c08b7d923dc638c76bde23de6b43cd999c2e",
+      "bytes": 46881
+    },
+    {
+      "path": "plugins/stemdeck/src/MainPluginProcessor.h",
+      "status": "present",
+      "sha256": "7c11881cd1cce82aad1500c025b3a3a0259404739e66aae0bcb508a36b0bfef3",
+      "bytes": 7842
+    },
+    {
+      "path": "plugins/stemdeck/src/StemProvider.cpp",
+      "status": "present",
+      "sha256": "da7606039811108d3840c5f32b516b8aa368eed1f1d8b9e709a1d366a3047c0d",
+      "bytes": 13878
+    },
+    {
+      "path": "plugins/stemdeck/src/WarpEngine.cpp",
+      "status": "present",
+      "sha256": "7082e9b379b3199a5729d7a211dd452ebba86ca44084d51d7c8ba5b6edcb6eda",
+      "bytes": 4962
+    },
+    {
+      "path": "scripts/autokey_reference_check.py",
+      "status": "present",
+      "sha256": "ff6939ff9a26195d6b299f9ed08e34dffd37d5f19a0e064458b2541bd28758a1",
+      "bytes": 5127
+    },
+    {
+      "path": "scripts/check_brand_registry_sync.py",
+      "status": "present",
+      "sha256": "93ce5d4a251a586c9ab403f71f67ec6d4b7863509d4e590888b8f5247c04a5a4",
+      "bytes": 3573
+    },
+    {
+      "path": "scripts/elevenlabs_music_pilot.py",
+      "status": "present",
+      "sha256": "0ba15ca438b5283d6aa28ebacb51f488a64b1499b32c4d192b9302928332e8cb",
+      "bytes": 26588
+    },
+    {
+      "path": "scripts/package_alpha_local.sh",
+      "status": "present",
+      "sha256": "194860049eec7c1848f9180c1164668c0ad9bb81ed3f526589e5fcda11660828",
+      "bytes": 14938
+    }
+  ],
+  "omitted": [],
+  "patch_sha256": "4ec75257d03b68f7d754a4a7512ae78eeee075140bfe21ada20050d680077ee5",
+  "repo": "https://github.com/armonon/sattari-plugins-suite",
+  "branches": [
+    "fix/daw-validation-20260923"
+  ],
+  "archive_path": "sattari-plugins-suite/05d40dfac0371f887bc20757930c0ba913f48dc5",
+  "local_worktree_dirty": false
+}

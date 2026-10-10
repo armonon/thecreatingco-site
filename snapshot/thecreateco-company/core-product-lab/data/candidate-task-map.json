@@ -1,0 +1,187 @@
+[
+  {
+    "candidate_id": "SP-SEC-001",
+    "task_id": "CORE-SP-SEC-001",
+    "status": "QUEUED",
+    "severity": "P0"
+  },
+  {
+    "candidate_id": "SP-A11Y-001",
+    "task_id": "CORE-SP-A11Y-001",
+    "status": "QUEUED",
+    "severity": "P3"
+  },
+  {
+    "candidate_id": "SP-WORKFLOW-001",
+    "task_id": "CORE-SP-WORKFLOW-001",
+    "status": "QUEUED",
+    "severity": "P2"
+  },
+  {
+    "candidate_id": "SP-RECOVERY-001",
+    "task_id": "CORE-SP-RECOVERY-001",
+    "status": "QUEUED",
+    "severity": "P1"
+  },
+  {
+    "candidate_id": "SP-UX-001",
+    "task_id": "CORE-SP-UX-001",
+    "status": "QUEUED",
+    "severity": "P3"
+  },
+  {
+    "candidate_id": "SP-PERF-001",
+    "task_id": "CORE-SP-PERF-001",
+    "status": "QUEUED",
+    "severity": "P2"
+  },
+  {
+    "candidate_id": "SP-FEATURE-001",
+    "task_id": "CORE-SP-FEATURE-001",
+    "status": "WAITING",
+    "severity": "P4"
+  },
+  {
+    "candidate_id": "SP-FEATURE-002",
+    "task_id": "CORE-SP-FEATURE-002",
+    "status": "WAITING",
+    "severity": "P4"
+  },
+  {
+    "candidate_id": "LUMA-AUD-001",
+    "task_id": "CORE-LUMA-AUD-001",
+    "status": "QUEUED",
+    "severity": "P3"
+  },
+  {
+    "candidate_id": "LUMA-AUD-002",
+    "task_id": "CORE-LUMA-AUD-002",
+    "status": "QUEUED",
+    "severity": "P2"
+  },
+  {
+    "candidate_id": "LUMA-AUD-003",
+    "task_id": "CORE-LUMA-AUD-003",
+    "status": "QUEUED",
+    "severity": "P3"
+  },
+  {
+    "candidate_id": "LUMA-AUD-004",
+    "task_id": "CORE-LUMA-AUD-004",
+    "status": "QUEUED",
+    "severity": "P2"
+  },
+  {
+    "candidate_id": "LUMA-AUD-005",
+    "task_id": "CORE-LUMA-AUD-005",
+    "status": "QUEUED",
+    "severity": "P0"
+  },
+  {
+    "candidate_id": "FORM-AUD-SEC-001",
+    "task_id": "CORE-FORM-AUD-SEC-001",
+    "status": "QUEUED",
+    "severity": "P0"
+  },
+  {
+    "candidate_id": "FORM-AUD-WF-001",
+    "task_id": "CORE-FORM-AUD-WF-001",
+    "status": "QUEUED",
+    "severity": "P1"
+  },
+  {
+    "candidate_id": "FORM-AUD-WF-002",
+    "task_id": "CORE-FORM-AUD-WF-002",
+    "status": "QUEUED",
+    "severity": "P2"
+  },
+  {
+    "candidate_id": "FORM-AUD-REL-001",
+    "task_id": "CORE-FORM-AUD-REL-001",
+    "status": "QUEUED",
+    "severity": "P2"
+  },
+  {
+    "candidate_id": "FORM-AUD-PERF-001",
+    "task_id": "CORE-FORM-AUD-PERF-001",
+    "status": "QUEUED",
+    "severity": "P2"
+  },
+  {
+    "candidate_id": "FORM-AUD-FEAT-001",
+    "task_id": "CORE-FORM-AUD-FEAT-001",
+    "status": "WAITING",
+    "severity": "P3"
+  },
+  {
+    "candidate_id": "FORM-AUD-FEAT-002",
+    "task_id": "CORE-FORM-AUD-FEAT-002",
+    "status": "WAITING",
+    "severity": "P3"
+  },
+  {
+    "candidate_id": "STEM-AUD-001",
+    "task_id": "CORE-STEMDECK-SEC-001",
+    "dedup": "Existing active security fix owns this candidate"
+  },
+  {
+    "candidate_id": "STEM-AUD-002",
+    "task_id": "CORE-STEM-AUD-002",
+    "status": "QUEUED",
+    "severity": "P1"
+  },
+  {
+    "candidate_id": "STEM-AUD-003",
+    "task_id": "CORE-STEM-AUD-003",
+    "status": "QUEUED",
+    "severity": "P1"
+  },
+  {
+    "candidate_id": "STEM-AUD-004",
+    "task_id": "CORE-STEM-AUD-004",
+    "status": "QUEUED",
+    "severity": "P3"
+  },
+  {
+    "candidate_id": "STEM-AUD-005",
+    "task_id": "CORE-STEM-AUD-005",
+    "status": "QUEUED",
+    "severity": "P2"
+  },
+  {
+    "candidate_id": "STEM-AUD-006",
+    "task_id": "CORE-STEM-AUD-006",
+    "status": "QUEUED",
+    "severity": "P1"
+  },
+  {
+    "candidate_id": "STEM-AUD-007",
+    "task_id": "CORE-STEM-AUD-007",
+    "status": "QUEUED",
+    "severity": "P3"
+  },
+  {
+    "candidate_id": "STEM-AUD-008",
+    "task_id": "CORE-STEM-AUD-008",
+    "status": "QUEUED",
+    "severity": "P2"
+  },
+  {
+    "candidate_id": "STEM-AUD-009",
+    "task_id": "CORE-STEM-AUD-009",
+    "status": "WAITING",
+    "severity": "P4"
+  },
+  {
+    "candidate_id": "STEM-AUD-010",
+    "task_id": "CORE-STEM-AUD-010",
+    "status": "QUEUED",
+    "severity": "P2"
+  },
+  {
+    "candidate_id": "FORM-AUD-TEST-001",
+    "task_id": "CORE-FORM-AUD-TEST-001",
+    "severity": "P3",
+    "status": "QUEUED"
+  }
+]

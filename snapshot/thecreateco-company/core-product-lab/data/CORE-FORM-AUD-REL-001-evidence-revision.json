@@ -1,0 +1,13 @@
+{
+  "task_id": "CORE-FORM-AUD-REL-001",
+  "source_evidence": {
+    "direct": [
+      "README.md:5 calls 0.40 active beta; KNOWN_ISSUES.md title calls 0.40.0 RC1; PRODUCTION_READINESS.md:5 last audited 2026-08-26; generated product registry reported ALPHA on 2026-10-07."
+    ],
+    "hypothesis": []
+  },
+  "evidence_sources": [
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-initial.md",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/products/form.json"
+  ]
+}

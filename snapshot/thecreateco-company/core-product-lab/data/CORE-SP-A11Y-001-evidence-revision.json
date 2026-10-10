@@ -1,0 +1,15 @@
+{
+  "task_id": "CORE-SP-A11Y-001",
+  "source_evidence": [
+    "Baseline npm run qa:accessibility: critical aria-required-children on .monitor-tabs and contrast ratios 3.23, 3.90, 3.93 (<4.5:1), repeated across tested states.",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-evidence/accessibility-baseline-fail.log",
+    "Separate branch /tmp/scenepilot-fix-fb42d12, files app/source-program-monitor.tsx and app/studio-workspace.css: check passes; same Axe audit passes New Project, Edit, Delivery with zero blocking findings.",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-a11y-fix.patch",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-evidence/accessibility-fix-check.log",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-evidence/accessibility-fix-pass.log"
+  ],
+  "evidence_sources": [
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-initial.md",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/products/scenepilot.json"
+  ]
+}

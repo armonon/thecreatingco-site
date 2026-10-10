@@ -1,0 +1,12 @@
+{
+  "task_id": "CORE-LUMA-AUD-005",
+  "source_evidence": [
+    "npm audit --omit=dev --json exits 1 with 3 high findings in production dependency closure",
+    "next@16.3.6 affected by GHSA-cjq9-62q9-8jv4 (<16.3.8), plus high findings in sharp (<0.35.5) and source-map-js (<1.2.2)",
+    "audit details: /tmp/luma-audit-e709-npm-audit-production.json; deployed runtime reachability not tested"
+  ],
+  "evidence_sources": [
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/luma-initial.md",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/products/luma.json"
+  ]
+}

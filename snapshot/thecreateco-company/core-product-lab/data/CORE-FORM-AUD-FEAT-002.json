@@ -1,0 +1,34 @@
+{
+  "task_id": "CORE-FORM-AUD-FEAT-002",
+  "title": "Expand independent interchange corpus for supported recipients",
+  "product": "form",
+  "area": "professional_feature_gap",
+  "category": "professional_feature_gap",
+  "workstream": "CORE_PRODUCT_LAB",
+  "severity": "P3",
+  "scores": {
+    "impact": 7,
+    "severity": 6,
+    "workflow_importance": 7,
+    "release_importance": 7,
+    "confidence": 8,
+    "effort": 6,
+    "risk": 3,
+    "user_value": 7,
+    "competitive_value": 8
+  },
+  "dependencies": [],
+  "status": "WAITING",
+  "model": "gpt-6-luna",
+  "expected_value": "Flagship golden-workflow reliability; scores are planning estimates, not health metrics.",
+  "test_requirements": "Reproduce on isolated exact source; preserve baseline/fixed evidence, appropriate build/tests and golden path; source reading is not interactive sign-off.",
+  "source_evidence": {
+    "direct": [
+      "KNOWN_ISSUES.md:22-26 cites FreeCAD/Blender automation but says AutoCAD/Cinema4D/CLO need licensed installs and representative files; no external recipient app was run in this audit."
+    ],
+    "hypothesis": [
+      "There may be format-specific semantic/unit issues outside existing validation; none were reproduced here."
+    ]
+  },
+  "next_action": "Run the documented interchange matrix on supported representative projects and recipient versions; record scale, bounds, topology and warnings."
+}

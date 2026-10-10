@@ -1,0 +1,850 @@
+import { memo, useEffect, useRef, useState } from 'react';
+import { ChevronDown, Download, Link2, Pause, Play, Scissors, Upload } from 'lucide-react';
+import { useDeckMeter, useDeckPosition, useTransport } from '../../studio/transport/transportStore';
+
+export const TOOL_TABS = ['CUES', 'LOOP', 'STEMS', 'FX'];
+
+const STEM_IDS = ['drums', 'bass', 'music', 'vocals'];
+const STEM_LABELS = ['DRUMS', 'BASS', 'MUSIC', 'VOCALS'];
+const STEM_WAVE_DEFINITIONS = [
+  { id: 'vocals', label: 'VOX', color: '#d4537e', offset: 9 },
+  { id: 'drums', label: 'DRM', color: '#4a9eff', offset: 0 },
+  { id: 'bass', label: 'BAS', color: '#4ad9c4', offset: 18 },
+  { id: 'music', label: 'OTH', color: '#888780', offset: 27 },
+];
+const LOOP_ROLLS = ['1/4', '1/2', '1', '2', '4', '8'];
+const BEAT_JUMPS = [-32, -16, -8, -4, 4, 8, 16, 32];
+
+function clamp(value, min, max) {
+  return Math.min(max, Math.max(min, value));
+}
+
+/** `inputProps` adds handlers to the range input, e.g. gesture start/end. */
+export function Knob({
+  label,
+  ariaLabel,
+  value,
+  min = 0,
+  max = 100,
+  step,
+  onChange,
+  accent,
+  suffix = '',
+  disabled = false,
+  inputProps,
+}) {
+  const normalized = (clamp(value, min, max) - min) / Math.max(1, max - min);
+  const angle = -135 + normalized * 270;
+
+  return (
+    <label className="sd-knob" style={{ '--sd-accent': accent, '--sd-angle': `${angle}deg` }}>
+      <span>{label}</span>
+      <span className="sd-knob-dial">
+        <i />
+        <input
+          {...inputProps}
+          type="range"
+          disabled={disabled}
+          min={min}
+          max={max}
+          step={step}
+          value={value}
+          onChange={(event) => onChange(Number(event.target.value))}
+          aria-label={ariaLabel || label}
+        />
+      </span>
+      <output>
+        {value}
+        {suffix}
+      </output>
+    </label>
+  );
+}
+
+/** `inputProps` adds handlers to the range input, e.g. gesture start/end. */
+export function VerticalFader({
+  label,
+  ariaLabel,
+  value,
+  min = 0,
+  max = 100,
+  onChange,
+  accent,
+  inputProps,
+}) {
+  return (
+    <label className="sd-vfader" style={{ '--sd-accent': accent }}>
+      <span>{label}</span>
+      <input
+        {...inputProps}
+        type="range"
+        min={min}
+        max={max}
+        value={value}
+        onChange={(event) => onChange(Number(event.target.value))}
+        aria-label={ariaLabel || label}
+      />
+      <output>{value}</output>
+    </label>
+  );
+}
+
+export function SegmentMeter({ level, accent, label, compact = false }) {
+  const active = Math.round(clamp(level, 0, 1) * (compact ? 9 : 14));
+  const count = compact ? 9 : 14;
+
+  return (
+    <div
+      className={`sd-segment-meter${compact ? ' is-compact' : ''}`}
+      role="meter"
+      aria-label={label}
+      aria-valuemin={0}
+      aria-valuemax={100}
+      aria-valuenow={Math.round(clamp(level, 0, 1) * 100) || 0}
+    >
+      {Array.from({ length: count }, (_, index) => (
+        <i
+          key={index}
+          className={`${index < active ? 'is-lit' : ''}${index > count - 3 ? ' is-hot' : index > count - 6 ? ' is-warm' : ''}`}
+          style={{ '--sd-accent': accent }}
+        />
+      ))}
+      {label ? <span>{label}</span> : null}
+    </div>
+  );
+}
+
+/** A deck's live meter; only this component re-renders on transport ticks. */
+export function DeckMeter({ deckId, ...props }) {
+  return <SegmentMeter level={useDeckMeter(deckId)} {...props} />;
+}
+
+const progressOf = (position, duration) =>
+  duration ? Math.min(100, (position / duration) * 100) : 0;
+
+function WavePlayhead({ deckId, duration }) {
+  const progress = progressOf(useDeckPosition(deckId), duration);
+  return <span className="sd-wave-playhead" style={{ left: `${progress}%` }} />;
+}
+
+function StemPlayhead({ deckId, duration }) {
+  const progress = progressOf(useDeckPosition(deckId), duration);
+  return <span className="sd-vertical-playhead" style={{ top: `${progress}%` }} />;
+}
+
+function Waveform({ deck, getPosition, onSeek }) {
+  return (
+    <button
+      type="button"
+      className={`sd-waveform${deck.playing ? ' is-playing' : ''}`}
+      style={{ '--sd-accent': deck.accent }}
+      onClick={(event) => {
+        if (event.detail === 0) return;
+        const bounds = event.currentTarget.getBoundingClientRect();
+        if (bounds.width)
+          onSeek(clamp((event.clientX - bounds.left) / bounds.width, 0, 1) * deck.duration);
+      }}
+      onKeyDown={(event) => {
+        const position = getPosition();
+        const targets = {
+          ArrowLeft: position - 5,
+          ArrowRight: position + 5,
+          Home: 0,
+          End: deck.duration,
+        };
+        if (!(event.key in targets)) return;
+        event.preventDefault();
+        onSeek(clamp(targets[event.key], 0, deck.duration));
+      }}
+      title="Click to seek; use Left/Right arrows to skip 5 seconds, Home/End to jump"
+      disabled={!deck.duration}
+      aria-label={`Seek Deck ${deck.id}`}
+    >
+      <span className="sd-wave-grid" />
+      <span className="sd-wave-bars">
+        {deck.waveform.map((height, index) => (
+          <i key={index} style={{ height: `${height}%` }} />
+        ))}
+      </span>
+      <WavePlayhead deckId={deck.id} duration={deck.duration} />
+    </button>
+  );
+}
+
+function StemWavefield({ deck, onSeek, onLoad, onChange, density = 8 }) {
+  return (
+    <div className="sd-stem-wavefield">
+      {STEM_WAVE_DEFINITIONS.map(({ id, label, color, offset }) => {
+        const lane = deck.lanes[id];
+        const ready = lane.status === 'ready';
+        return (
+          <section
+            className={`sd-stem-wave-column${ready ? ' is-ready' : ''}`}
+            style={{ '--sd-stem-color': color }}
+            key={id}
+          >
+            <header>
+              <strong>{label}</strong>
+              <span>{lane.status === 'loading' ? 'LOADING' : ready ? 'STEM' : 'LOAD'}</span>
+            </header>
+            <button
+              type="button"
+              className="sd-vertical-wave"
+              onClick={(event) => {
+                if (!ready) {
+                  onLoad(id);
+                  return;
+                }
+                const bounds = event.currentTarget.getBoundingClientRect();
+                onSeek(((event.clientY - bounds.top) / bounds.height) * deck.duration);
+              }}
+              aria-label={ready ? `Seek ${label} stem` : `Load ${label} stem`}
+            >
+              <span className="sd-vertical-wave-grid" />
+              <span className="sd-vertical-wave-shape">
+                {Array.from({ length: ready ? density * 3 : 0 }, (_, index) => {
+                  const peak =
+                    deck.waveform[
+                      (Math.floor((index * deck.waveform.length) / (density * 3)) + offset) %
+                        deck.waveform.length
+                    ] || 10;
+                  const width = Math.min(88, Math.max(8, peak * (id === 'bass' ? 0.9 : 1.45)));
+                  return <i key={index} style={{ width: `${width}%` }} />;
+                })}
+              </span>
+              <StemPlayhead deckId={deck.id} duration={deck.duration} />
+            </button>
+            <div className="sd-stem-wave-controls">
+              <Knob
+                label=""
+                ariaLabel={`${label} stem level`}
+                value={lane.level}
+                disabled={!ready}
+                onChange={(level) => onChange(id, { level })}
+                accent={color}
+              />
+              <div>
+                <button
+                  type="button"
+                  className={lane.muted ? 'is-active' : ''}
+                  onClick={() => onChange(id, { muted: !lane.muted })}
+                  disabled={!ready}
+                  aria-label={`Mute ${label}`}
+                  aria-pressed={lane.muted}
+                >
+                  M
+                </button>
+                <button
+                  type="button"
+                  className={lane.solo ? 'is-active is-solo' : ''}
+                  onClick={() => onChange(id, { solo: !lane.solo })}
+                  disabled={!ready}
+                  aria-label={`Solo ${label}`}
+                  aria-pressed={lane.solo}
+                >
+                  S
+                </button>
+              </div>
+            </div>
+          </section>
+        );
+      })}
+    </div>
+  );
+}
+
+function CueTools({ deck, getPosition, onSetHotCue, onDeleteHotCue, onDeckChange }) {
+  return (
+    <div className="sd-tool-content sd-cue-tools">
+      <details className="sd-beat-grid-editor">
+        <summary>Beat grid · {deck.bpm} BPM</summary>
+        {deck.analysis?.tempoMap?.beats?.length > 1 && (
+          <label>
+            <input
+              type="checkbox"
+              checked={!!deck.followTempoMap}
+              onChange={(event) => onDeckChange({ followTempoMap: event.target.checked })}
+            />
+            Follow detected tempo changes when synced · experimental
+            <small>
+              {Math.round(deck.analysis.tempoMap.confidence * 100)}% support · inferred beats need
+              checking by ear
+            </small>
+          </label>
+        )}
+        <label>
+          First beat (seconds)
+          <input
+            type="number"
+            min="0"
+            step="0.01"
+            aria-label={`Deck ${deck.id} first beat`}
+            value={deck.beatOffset || 0}
+            onChange={(event) =>
+              onDeckChange({ beatOffset: Math.max(0, Number(event.target.value) || 0) })
+            }
+          />
+        </label>
+        <button type="button" onClick={() => onDeckChange({ beatOffset: getPosition() })}>
+          First beat here
+        </button>
+        <button
+          type="button"
+          onClick={() => onDeckChange({ beatOffset: Math.max(0, (deck.beatOffset || 0) - 0.01) })}
+        >
+          Grid −10 ms
+        </button>
+        <button
+          type="button"
+          onClick={() => onDeckChange({ beatOffset: (deck.beatOffset || 0) + 0.01 })}
+        >
+          Grid +10 ms
+        </button>
+        <button type="button" onClick={() => onDeckChange({ bpm: Math.max(40, deck.bpm / 2) })}>
+          ½ BPM
+        </button>
+        <button type="button" onClick={() => onDeckChange({ bpm: Math.min(240, deck.bpm * 2) })}>
+          2× BPM
+        </button>
+        <button
+          type="button"
+          disabled={!deck.duration}
+          onClick={() => onDeckChange({ alignBeat: true })}
+        >
+          Align beats now
+        </button>
+        <small>
+          Manual grid controls set the initial alignment. Tempo following changes speed; it does not
+          repair an incorrectly detected beat map. Check alignment by ear.
+        </small>
+      </details>
+      <div className="sd-hot-cues">
+        {deck.hotCues.map((cue, index) => (
+          <button
+            type="button"
+            key={index}
+            className={cue !== null ? 'is-set' : ''}
+            onClick={() => onSetHotCue(index, cue === null ? getPosition() : cue)}
+            onDoubleClick={() => onDeleteHotCue(index)}
+            title={cue === null ? `Set hot cue ${index + 1}` : `Jump to hot cue ${index + 1}`}
+          >
+            {index + 1}
+          </button>
+        ))}
+      </div>
+      <div className="sd-marker-row">
+        <button type="button" onClick={() => onDeckChange({ introEnd: getPosition() })}>
+          Intro End
+        </button>
+        <button type="button" onClick={() => onDeckChange({ outroStart: getPosition() })}>
+          Outro Start
+        </button>
+      </div>
+    </div>
+  );
+}
+
+function LoopTools({ deck, getPosition, onDeckChange, onSetLoop, onBeatJump }) {
+  return (
+    <div className="sd-tool-content sd-loop-tools">
+      <div className="sd-loop-main-row">
+        <button type="button" onClick={() => onDeckChange({ loopStart: getPosition() })}>
+          IN
+        </button>
+        <button
+          type="button"
+          onClick={() => {
+            const start = deck.loopStart ?? 0;
+            const end = Math.max(start + 0.1, getPosition());
+            onSetLoop(true, start, end);
+          }}
+        >
+          OUT
+        </button>
+        <button
+          type="button"
+          className={deck.looping ? 'is-active' : ''}
+          onClick={() => onSetLoop(!deck.looping, deck.loopStart ?? 0, deck.loopEnd)}
+        >
+          LOOP
+        </button>
+        <button
+          type="button"
+          onClick={() =>
+            onSetLoop(true, deck.loopStart, deck.loopStart + (deck.loopEnd - deck.loopStart) / 2)
+          }
+        >
+          1/2
+        </button>
+        <button
+          type="button"
+          onClick={() =>
+            onSetLoop(true, deck.loopStart, deck.loopStart + (deck.loopEnd - deck.loopStart) * 2)
+          }
+        >
+          x2
+        </button>
+        <button
+          type="button"
+          disabled
+          title="Slip playback is not yet available in the browser engine"
+        >
+          Slip
+        </button>
+      </div>
+      <div className="sd-loop-roll-row">
+        {LOOP_ROLLS.map((roll) => (
+          <button
+            type="button"
+            key={roll}
+            onClick={() => {
+              const position = getPosition();
+              onSetLoop(true, position, position, roll);
+            }}
+          >
+            {roll}
+          </button>
+        ))}
+      </div>
+      <div className="sd-beat-jump-row">
+        {BEAT_JUMPS.map((beats) => (
+          <button type="button" key={beats} onClick={() => onBeatJump(beats)}>
+            {beats > 0 ? `+${beats}` : beats}
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function FxTools({ deck, onDeckChange, onStemFxChange }) {
+  return (
+    <div className="sd-tool-content sd-fx-tools">
+      <Knob
+        label="ECHO"
+        value={deck.fx.echo}
+        onChange={(echo) => onDeckChange({ fx: { ...deck.fx, echo } })}
+        accent={deck.accent}
+      />
+      <Knob
+        label="MACRO"
+        value={deck.fx.macro}
+        onChange={(macro) =>
+          onDeckChange({ fx: { ...deck.fx, macro, echo: macro, reverb: macro } })
+        }
+        accent={deck.accent}
+      />
+      <div className="sd-stem-fx-grid">
+        <span />
+        {STEM_LABELS.map((label) => (
+          <strong key={label}>{label.slice(0, 2)}</strong>
+        ))}
+        {['filter', 'send', 'pitch'].map((control) => (
+          <div className="sd-stem-fx-row" key={control}>
+            <span>{control === 'filter' ? 'F' : control === 'send' ? 'S' : 'P'}</span>
+            {STEM_IDS.map((stemId) => (
+              <input
+                key={stemId}
+                type="range"
+                disabled={deck.lanes[stemId].status !== 'ready'}
+                min={control === 'pitch' ? -12 : 0}
+                max={control === 'pitch' ? 12 : 100}
+                value={deck.stemFx[stemId][control]}
+                onChange={(event) =>
+                  onStemFxChange(stemId, { [control]: Number(event.target.value) })
+                }
+                aria-label={`${stemId} ${control}`}
+              />
+            ))}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function SourceTools({
+  deck,
+  onRequestLane,
+  onRequestStemSet,
+  onExtractMidi,
+  onExtractDrums,
+  onExportAbleton,
+  onLaneChange,
+}) {
+  const hasAudio = Object.values(deck.lanes).some((lane) => lane.status === 'ready');
+  return (
+    <div className="sd-tool-content sd-source-tools">
+      <button type="button" onClick={() => onRequestLane('fullMix')}>
+        <Upload size={12} /> Load
+      </button>
+      <button type="button" onClick={onRequestStemSet}>
+        <Upload size={12} /> Import stems
+      </button>
+      <button type="button" onClick={() => onRequestLane('drums')}>
+        Stem
+      </button>
+      <select
+        aria-label="Stem lane"
+        onChange={(event) => onRequestLane(event.target.value)}
+        defaultValue="drums"
+      >
+        {STEM_IDS.map((stemId) => (
+          <option value={stemId} key={stemId}>
+            {stemId}
+          </option>
+        ))}
+      </select>
+      <Knob
+        label="MIX"
+        value={deck.lanes.fullMix.level}
+        onChange={(level) => onLaneChange('fullMix', { level })}
+        accent={deck.accent}
+      />
+      <button type="button" onClick={onExtractMidi} disabled={!deck.duration}>
+        Pitch sketch
+      </button>
+      <button type="button" onClick={onExtractDrums} disabled={!deck.duration}>
+        Drum sketch
+      </button>
+      <button
+        type="button"
+        onClick={onExportAbleton}
+        disabled={!hasAudio || !onExportAbleton}
+        title="Export this deck for Ableton Live: its stems as WAV files and a Live Set at the deck's tempo"
+      >
+        <Download size={12} /> Ableton
+      </button>
+    </div>
+  );
+}
+
+function DeckToolbox(props) {
+  const { deck } = props;
+  const tab = deck.activeToolTab;
+
+  return (
+    <div className="sd-deck-toolbox">
+      <nav aria-label={`Deck ${deck.id} tools`}>
+        {TOOL_TABS.map((label) => (
+          <button
+            type="button"
+            key={label}
+            className={tab === label ? 'is-active' : ''}
+            onClick={() => props.onDeckChange({ activeToolTab: label })}
+          >
+            {label}
+          </button>
+        ))}
+      </nav>
+      {tab === 'CUES' ? <CueTools {...props} /> : null}
+      {tab === 'LOOP' ? <LoopTools {...props} /> : null}
+      {tab === 'FX' ? <FxTools {...props} /> : null}
+      {tab === 'STEMS' ? (
+        <SourceTools
+          {...props}
+          onRequestLane={props.onRequestLane}
+          onRequestStemSet={props.onRequestStemSet}
+        />
+      ) : null}
+    </div>
+  );
+}
+
+// Memoized: with stable handlers a channel re-renders only when its deck
+// changes. Playheads and the meter subscribe to the transport store.
+export const StemDeckChannel = memo(function StemDeckChannel({
+  deck,
+  onLoadLane,
+  onLoadStemSet,
+  onDeckChange,
+  onLaneChange,
+  onTogglePlay,
+  onCue,
+  onSeek,
+  onSetHotCue,
+  onDeleteHotCue,
+  onSetLoop,
+  onBeatJump,
+  onStemFxChange,
+  onExtractMidi,
+  onExtractDrums,
+  onExportAbleton,
+}) {
+  const transport = useTransport();
+  const getPosition = () => transport.getPosition(deck.id);
+  const inputsRef = useRef({});
+  const [waveDensity, setWaveDensity] = useState(8);
+  const [bpmDraft, setBpmDraft] = useState(String(deck.bpm));
+  useEffect(() => setBpmDraft(String(deck.bpm)), [deck.bpm]);
+  const commitBpm = () => {
+    const value = Number(bpmDraft);
+    const bpm =
+      bpmDraft.trim() && Number.isFinite(value) ? Math.max(40, Math.min(240, value)) : deck.bpm;
+    setBpmDraft(String(bpm));
+    if (bpm !== deck.bpm) onDeckChange({ bpm });
+  };
+  const requestLane = (laneId) => inputsRef.current[laneId]?.click();
+
+  return (
+    <article
+      className={`sd-deck${deck.playing ? ' is-playing' : ''}`}
+      style={{ '--sd-accent': deck.accent }}
+      aria-label={`Deck ${deck.id}`}
+    >
+      <header className="sd-deck-header">
+        <div className="sd-deck-identity">
+          <button
+            type="button"
+            className="sd-deck-badge"
+            onClick={() => onDeckChange({ masterDeck: true })}
+            aria-label={`Use Deck ${deck.id} as sync master`}
+          >
+            {deck.id}
+          </button>
+          <button type="button" className="sd-deck-title" onClick={() => requestLane('fullMix')}>
+            <span>{deck.title}</span>
+            <ChevronDown size={12} />
+          </button>
+          <div className="sd-deck-meta">
+            <input
+              type="number"
+              min="40"
+              max="240"
+              step="0.1"
+              value={bpmDraft}
+              aria-label={`Deck ${deck.id} BPM`}
+              onChange={(event) => setBpmDraft(event.target.value)}
+              onBlur={commitBpm}
+              onKeyDown={(event) => {
+                if (event.key === 'Enter') {
+                  event.preventDefault();
+                  commitBpm();
+                }
+                if (event.key === 'Escape') {
+                  event.preventDefault();
+                  setBpmDraft(String(deck.bpm));
+                }
+              }}
+            />
+            <button
+              type="button"
+              aria-label={`Deck ${deck.id} key lock`}
+              aria-pressed={deck.keyLock}
+              onClick={() => onDeckChange({ keyLock: !deck.keyLock })}
+            >
+              ♩ {deck.keyName}
+            </button>
+          </div>
+        </div>
+        <div className="sd-deck-live-actions">
+          <span className="sd-processing-badge">{deck.duration ? 'AUDIO' : 'EMPTY'}</span>
+          <select
+            aria-label={`Deck ${deck.id} sync alignment`}
+            title="Align individual beats, or bar downbeats (4 beats)"
+            value={deck.syncQuantum === 4 ? 4 : 1}
+            onChange={(event) => onDeckChange({ syncQuantum: Number(event.target.value) })}
+          >
+            <option value={1}>Beat</option>
+            <option value={4}>Bar · 4</option>
+          </select>
+          <button
+            type="button"
+            className={deck.synced ? 'is-active' : ''}
+            aria-pressed={deck.synced}
+            onClick={() => onDeckChange(deck.synced ? { synced: false } : { alignBeat: true })}
+            disabled={!deck.duration}
+          >
+            SYNC
+          </button>
+        </div>
+      </header>
+
+      {/* Keep transport before the tall stem editor in both visual and keyboard
+          order, so short laptop screens never require scrolling just to play. */}
+      <div className="sd-deck-transport">
+        <button
+          type="button"
+          className="sd-play-button"
+          onClick={onTogglePlay}
+          disabled={!deck.duration}
+          aria-label={deck.playing ? `Pause Deck ${deck.id}` : `Play Deck ${deck.id}`}
+        >
+          {deck.playing ? <Pause size={15} /> : <Play size={15} />}
+          {deck.playing ? 'PAUSE' : 'PLAY'}
+        </button>
+        <button type="button" onClick={onCue} disabled={!deck.duration}>
+          CUE
+        </button>
+        <div className="sd-cf-assign" aria-label={`Deck ${deck.id} crossfader assignment`}>
+          {[
+            ['left', 'A'],
+            ['center', 'Ctr'],
+            ['right', 'B'],
+          ].map(([side, label]) => (
+            <button
+              type="button"
+              key={side}
+              className={deck.cfSide === side ? 'is-active' : ''}
+              onClick={() => onDeckChange({ cfSide: side })}
+            >
+              {label}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <div className="sd-deck-overview">
+        <Waveform deck={deck} getPosition={getPosition} onSeek={onSeek} />
+        <div className="sd-deck-density" aria-label="Waveform density">
+          {[4, 8, 16].map((density) => (
+            <button
+              type="button"
+              key={density}
+              aria-label={`Waveform detail ${density}`}
+              aria-pressed={waveDensity === density}
+              className={waveDensity === density ? 'is-active' : ''}
+              onClick={() => setWaveDensity(density)}
+            >
+              {density}
+            </button>
+          ))}
+        </div>
+        <div className="sd-deck-spectrum" aria-label="Waveform display">
+          <span className="sd-processing-badge">STEMS</span>
+        </div>
+      </div>
+
+      <StemWavefield
+        deck={deck}
+        density={waveDensity}
+        onSeek={onSeek}
+        onLoad={requestLane}
+        onChange={onLaneChange}
+      />
+
+      <div className="sd-deck-mix-band">
+        <div className="sd-eq-bank">
+          {['low', 'mid', 'high'].map((band) => (
+            <Knob
+              key={band}
+              label={band.toUpperCase()}
+              value={deck.eq[band]}
+              onChange={(value) => onDeckChange({ eq: { ...deck.eq, [band]: value } })}
+              accent={deck.accent}
+            />
+          ))}
+          <Knob
+            label="FILT"
+            value={deck.filter}
+            onChange={(filter) => onDeckChange({ filter })}
+            accent={deck.accent}
+          />
+        </div>
+        <VerticalFader
+          label="VOL"
+          value={deck.gain}
+          onChange={(gain) => onDeckChange({ gain })}
+          accent={deck.accent}
+        />
+        <VerticalFader
+          label="XF"
+          value={deck.fader}
+          onChange={(fader) => onDeckChange({ fader })}
+          accent={deck.accent}
+        />
+        <VerticalFader
+          label="PITCH"
+          value={deck.pitch}
+          min={-12}
+          max={12}
+          onChange={(pitch) => onDeckChange({ pitch })}
+          accent={deck.accent}
+        />
+        <DeckMeter deckId={deck.id} accent={deck.accent} label={deck.id} compact />
+      </div>
+
+      <DeckToolbox
+        deck={deck}
+        getPosition={getPosition}
+        onDeckChange={onDeckChange}
+        onSetHotCue={onSetHotCue}
+        onDeleteHotCue={onDeleteHotCue}
+        onSetLoop={onSetLoop}
+        onBeatJump={onBeatJump}
+        onStemFxChange={onStemFxChange}
+        onLaneChange={onLaneChange}
+        onRequestLane={requestLane}
+        onRequestStemSet={() => inputsRef.current.stemSet?.click()}
+        onExtractMidi={onExtractMidi}
+        onExtractDrums={onExtractDrums}
+        onExportAbleton={onExportAbleton}
+      />
+
+      <footer className="sd-deck-status">
+        <span>
+          {deck.lanes.fullMix.status === 'ready'
+            ? deck.lanes.fullMix.name
+            : 'AI stems: load a full mix'}
+        </span>
+        <span>
+          <Link2 size={10} /> {deck.synced ? 'SYNCED' : deck.duration ? 'READY' : 'EMPTY'}
+        </span>
+      </footer>
+
+      {Object.keys(deck.lanes).map((laneId) => (
+        <input
+          key={laneId}
+          ref={(element) => {
+            inputsRef.current[laneId] = element;
+          }}
+          type="file"
+          accept="audio/*"
+          hidden
+          onChange={(event) => {
+            onLoadLane(laneId, event.target.files?.[0]);
+            event.target.value = '';
+          }}
+        />
+      ))}
+      <input
+        ref={(element) => {
+          inputsRef.current.stemSet = element;
+        }}
+        type="file"
+        accept="audio/*"
+        multiple
+        hidden
+        onChange={(event) => {
+          onLoadStemSet([...event.target.files]);
+          event.target.value = '';
+        }}
+      />
+    </article>
+  );
+});
+
+export function ArrangementWave({ peaks, accent }) {
+  return (
+    <span className="sd-arrangement-wave" style={{ '--sd-accent': accent }}>
+      {peaks.slice(0, 48).map((height, index) => (
+        <i key={index} style={{ height: `${Math.max(8, height)}%` }} />
+      ))}
+    </span>
+  );
+}
+
+export function EmptyArrangementDrop({ onDrop }) {
+  return (
+    <div
+      className="sd-arrangement-empty"
+      onDragOver={(event) => event.preventDefault()}
+      onDrop={(event) => {
+        event.preventDefault();
+        onDrop(event.dataTransfer.files?.[0]);
+      }}
+    >
+      <Scissors size={14} /> Drop audio to create a clip
+    </div>
+  );
+}

@@ -1,0 +1,31 @@
+{
+  "task_id": "CORE-FORM-AUD-TEST-001",
+  "title": "Update stale workspace smoke assertions after base64 archive migration and scope status queries",
+  "product": "form",
+  "area": "test_gate",
+  "category": "test_gate",
+  "workstream": "CORE_PRODUCT_LAB",
+  "severity": "P3",
+  "scores": {
+    "impact": 6,
+    "severity": 5,
+    "workflow_importance": 6,
+    "release_importance": 7,
+    "confidence": 9,
+    "effort": 2,
+    "risk": 2,
+    "user_value": 6,
+    "competitive_value": 2
+  },
+  "model": "gpt-6-luna",
+  "source_evidence": {
+    "direct": [
+      "Node 22.23.2 full unit run: 1,517/1,526 pass; 9 fail, all reported from workspace-smoke.test.mjs. Isolated baked-texture test fails because it asserts legacy `paintTexture.pixels`; changing only that isolated assertion to expect `pixelsBase64` makes the existing save/reopen assertions pass. DOM query failures report multiple role=status matches, including implicit output roles."
+    ],
+    "hypothesis": [
+      "The remaining failing assertions may be stale test selectors/contracts rather than application defects; inspect exact failure list before concluding."
+    ]
+  },
+  "test_requirements": "Reproduce in isolated exact-source baseline; fix root cause without weakening tests; retain command outcomes and limitations.",
+  "next_action": "Review the durable workspace smoke log, update test expectations/selectors to current schema/UI semantics, then rerun entire suite. Do not suppress or weaken behavior assertions."
+}

@@ -1,0 +1,29 @@
+{
+  "task_id": "CORE-STEM-AUD-005",
+  "title": "Complete source/action reconstruction support matrix",
+  "product": "stemdeck",
+  "area": "professional_feature_gap",
+  "category": "professional_feature_gap",
+  "workstream": "CORE_PRODUCT_LAB",
+  "severity": "P2",
+  "scores": {
+    "impact": 9,
+    "severity": 7,
+    "workflow_importance": 10,
+    "competitive_value": 9,
+    "release_importance": 9,
+    "confidence": 10,
+    "effort": 8,
+    "risk": 5,
+    "user_value": 10
+  },
+  "dependencies": [],
+  "status": "QUEUED",
+  "model": "gpt-6-luna",
+  "expected_value": "Flagship golden-workflow reliability; scores are planning estimates, not health metrics.",
+  "test_requirements": "Reproduce on isolated exact source; preserve baseline/fixed evidence, appropriate build/tests and golden path; source reading is not interactive sign-off.",
+  "source_evidence": [
+    "reports/stemdeck-matrix.log"
+  ],
+  "next_action": "Select one partial event family, preserve authoritative print and original events, regression-prove capture/replay/arrange/reopen/export parity."
+}

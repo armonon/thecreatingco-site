@@ -1,0 +1,70 @@
+{
+  "name": "librarian",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "electron/main.cjs",
+  "scripts": {
+    "predev": "node scripts/vendor-pdfjs.mjs",
+    "prebuild": "node scripts/vendor-pdfjs.mjs",
+    "test": "node --test tests/*.test.*",
+    "dev": "vite --host 0.0.0.0",
+    "build": "vite build",
+    "preview": "vite preview --host 0.0.0.0",
+    "ios:sync": "npm run build -- --mode ios && npx cap sync ios",
+    "capacitor:sync:after": "node scripts/normalize-ios-package.mjs",
+    "ios:assets": "npx capacitor-assets generate --ios",
+    "ios:open": "npx cap open ios",
+    "electron": "electron .",
+    "mac:pack": "npm run build && electron-builder --mac dir",
+    "mac:dist": "npm run build && electron-builder --mac",
+    "test:browser": "playwright test"
+  },
+  "build": {
+    "appId": "com.armonon.librarian",
+    "productName": "Librarian",
+    "directories": {
+      "output": "dist-mac",
+      "buildResources": "build-resources"
+    },
+    "files": [
+      "dist/**/*",
+      "electron/**/*"
+    ],
+    "mac": {
+      "category": "public.app-category.book",
+      "target": [
+        "dmg",
+        "zip"
+      ],
+      "hardenedRuntime": true,
+      "gatekeeperAssess": false,
+      "entitlements": "build-resources/entitlements.mac.plist",
+      "entitlementsInherit": "build-resources/entitlements.mac.plist",
+      "notarize": false
+    }
+  },
+  "devDependencies": {
+    "@capacitor/assets": "^3.0.5",
+    "@capacitor/cli": "^8.5.2",
+    "@playwright/test": "^1.63.0",
+    "electron": "^44.4.5",
+    "electron-builder": "^26.15.3",
+    "fake-indexeddb": "^6.2.5",
+    "pdfjs-dist": "6.3.289",
+    "vite": "8.3.3"
+  },
+  "dependencies": {
+    "@capacitor/core": "^8.5.2",
+    "@capacitor/filesystem": "^8.1.4",
+    "@capacitor/ios": "^8.5.2",
+    "@capacitor/share": "^8.0.3"
+  },
+  "overrides": {
+    "@capacitor/assets": {
+      "sharp": "0.35.5"
+    },
+    "http-cache-semantics": "4.3.0",
+    "@capacitor/cli": "$@capacitor/cli"
+  }
+}

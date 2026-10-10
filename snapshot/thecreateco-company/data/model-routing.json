@@ -1,0 +1,80 @@
+{
+  "director": {
+    "preferred": "openai/gpt-6.1-sol",
+    "fallback": "openai/gpt-6-sol",
+    "thinking": "medium"
+  },
+  "product": {
+    "research": "gpt-6-luna",
+    "ux": "openai/gpt-6.1-sol"
+  },
+  "engineering": {
+    "routine": "gpt-6-luna",
+    "complex": "gpt-6.1-sol"
+  },
+  "qa": {
+    "routine": "gpt-6-luna",
+    "high_impact": "gpt-6.1-sol"
+  },
+  "research": "gpt-6-luna",
+  "growth": "../thecreateco-marketing/engine/config/routing.json",
+  "executive_review": {
+    "role": "Independent ChatGPT/Sol reviewer",
+    "preferred": "openai/gpt-6.1-sol",
+    "fallback": "openai/gpt-6-sol",
+    "only_when": "major launch, architecture, high-impact portfolio decision or unresolved disagreement",
+    "require_available_model": true
+  },
+  "allocation": {
+    "existing_products_infrastructure": 0.6,
+    "growth": 0.25,
+    "validated_experiments": 0.15
+  },
+  "limits": {
+    "tasks_per_cycle": 1,
+    "workers_per_cycle": 3,
+    "cycle_minutes": 35
+  },
+  "live_proof": "2026-10-07: openclaw infer model run --model openai/gpt-6.1-sol returned COMPANY_DIRECTOR_OK via OpenAI local transport. Worker/reviewer routes are selected and verified when used, not implied by this proof.",
+  "review_policy": {
+    "provider": "openai",
+    "claude_reviews_allowed": false,
+    "source_message": "1557556492570464297",
+    "independence": "Separate reviewer/context; preserve gates"
+  },
+  "default": "openai/gpt-6-luna",
+  "provider_allowlist": [
+    "openai"
+  ],
+  "deterministic_first": true,
+  "creative": {
+    "model": "openai/gpt-6-astra",
+    "modes": [
+      "INVENT",
+      "WOW_REVIEW",
+      "BREAKTHROUGH",
+      "CROSS_PRODUCT",
+      "REVENUE",
+      "LAUNCH"
+    ],
+    "max_candidates": 3,
+    "max_selected": 1,
+    "max_calls_per_meaningful_cycle": 1,
+    "optional_finished_artifact_review": 1
+  },
+  "context_token_targets": {
+    "routine": 8000,
+    "coding": 20000,
+    "debug": 40000,
+    "architecture": 60000
+  },
+  "attempt_limits": {
+    "luna": 2,
+    "sol_escalation": 1,
+    "astra_cycle": 1,
+    "identical_failure_retry": 1,
+    "self_review": 1,
+    "rewrite": 1,
+    "research_rounds": 3
+  }
+}

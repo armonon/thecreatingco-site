@@ -1,0 +1,15 @@
+{
+  "task_id": "CORE-FORM-AUD-WF-001",
+  "source_evidence": {
+    "direct": [
+      "docs/RELEASE_ACCEPTANCE.md:40-50 and docs/RC_TEST_PLAN.md prescribe full save/close/reopen/export and external checks, but no current dated execution evidence was found during source audit."
+    ],
+    "hypothesis": [
+      "A user-visible defect may appear during actual qualification; no defect is asserted before reproduction."
+    ]
+  },
+  "evidence_sources": [
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-initial.md",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/products/form.json"
+  ]
+}

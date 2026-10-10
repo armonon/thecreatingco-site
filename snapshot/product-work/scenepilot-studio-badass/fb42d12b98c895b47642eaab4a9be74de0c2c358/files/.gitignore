@@ -1,0 +1,66 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/.vinext/
+/out/
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env files (can opt-in for committing if needed)
+.env*
+
+# vercel
+.vercel
+
+# typescript
+next-env.d.ts
+/dist/
+/release/
+/.wrangler/
+/outputs/
+/work/
+/electron/renderer/
+/electron/native-tools/
+/electron/native-models/
+/electron/inpaint-provider/
+/electron/media-tools/ffmpeg
+/electron/media-tools/ffprobe
+/electron/media-tools/ffmpeg.exe
+/electron/media-tools/ffprobe.exe
+/electron/media-tools/FFMPEG-LICENSE.txt
+/electron/media-tools/FFMPEG-README.txt
+/electron/media-tools/FFPROBE-README.md
+/public/models/interactive_segmentation.task
+/site/app/models/interactive_segmentation.task
+*.tsbuildinfo
+
+# local test media (regenerate with scripts/make-test-media.sh)
+/public/__testmedia/
+/test-media/
+
+# Local Netlify folder
+.netlify
+/native-macos/.build/
+/native-macos/.swiftpm/

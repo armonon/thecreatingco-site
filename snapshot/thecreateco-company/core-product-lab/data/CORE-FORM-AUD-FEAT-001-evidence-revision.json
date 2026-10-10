@@ -1,0 +1,15 @@
+{
+  "task_id": "CORE-FORM-AUD-FEAT-001",
+  "source_evidence": {
+    "direct": [
+      "KNOWN_ISSUES.md:18 disclaims full mature mechanical CAD operation parity; README.md:10 scopes exact operation coverage; older readiness ledger calls native operation gaps, but current commit may supersede those entries."
+    ],
+    "hypothesis": [
+      "Specific remaining user-critical operation gaps are unverified until current support matrix and representative corpus are reconciled."
+    ]
+  },
+  "evidence_sources": [
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-initial.md",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/products/form.json"
+  ]
+}

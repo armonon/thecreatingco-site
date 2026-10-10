@@ -1,0 +1,25 @@
+{
+  "task_id": "CORE-STEMDECK-SEC-001",
+  "title": "Patch CI-blocking proxy-addr and source-map-js advisories without broad dependency upgrades",
+  "product": "stemdeck",
+  "workstream": "CORE_PRODUCT_LAB",
+  "category": "BUG",
+  "area": "dependency security/release",
+  "severity": "P0",
+  "scores": {
+    "impact": 9,
+    "user_value": 10,
+    "severity": 10,
+    "workflow_importance": 9,
+    "competitive_value": 5,
+    "release_importance": 10,
+    "confidence": 10,
+    "effort": 2,
+    "risk": 3
+  },
+  "model": "gpt-6.1-sol",
+  "expected_value": "Remove confirmed vulnerable versions and unblock security stage; deployment still requires full gates",
+  "test_requirements": "npm audit clean, narrow lockfile diff, Node22 full tests, types/build, synthetic golden lifecycle",
+  "next_action": "Target transitive patch versions only; review diff and rerun unchanged checks",
+  "source_evidence": "core-product-lab/reports/stemdeck-audit-before.json; GitHub run 37568746966"
+}

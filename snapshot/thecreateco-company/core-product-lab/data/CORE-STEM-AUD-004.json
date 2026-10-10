@@ -1,0 +1,30 @@
+{
+  "task_id": "CORE-STEM-AUD-004",
+  "title": "Make Node26 test environment explicit or pin supported test runtime",
+  "product": "stemdeck",
+  "area": "technical_debt",
+  "category": "technical_debt",
+  "workstream": "CORE_PRODUCT_LAB",
+  "severity": "P3",
+  "scores": {
+    "impact": 5,
+    "severity": 5,
+    "workflow_importance": 5,
+    "competitive_value": 2,
+    "release_importance": 7,
+    "confidence": 10,
+    "effort": 2,
+    "risk": 2,
+    "user_value": 5
+  },
+  "dependencies": [],
+  "status": "QUEUED",
+  "model": "gpt-6-luna",
+  "expected_value": "Flagship golden-workflow reliability; scores are planning estimates, not health metrics.",
+  "test_requirements": "Reproduce on isolated exact source; preserve baseline/fixed evidence, appropriate build/tests and golden path; source reading is not interactive sign-off.",
+  "source_evidence": [
+    "reports/stemdeck-unit.log",
+    "reports/stemdeck-unit-node22.log"
+  ],
+  "next_action": "Prevent Node native localStorage from shadowing jsdom or explicitly qualify/pin CI Node22/24; never weaken persistence assertions."
+}

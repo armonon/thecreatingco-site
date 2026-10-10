@@ -1,0 +1,56 @@
+{
+  "id": "2069305d-6f38-41ba-b31c-a0fdbfdc7ea4",
+  "declarationKey": "company-director",
+  "agentId": "main",
+  "name": "thecreateco company director",
+  "enabled": true,
+  "createdAtMs": 1791416407429,
+  "schedule": {
+    "kind": "cron",
+    "expr": "10 * * * *",
+    "tz": "America/Los_Angeles"
+  },
+  "sessionTarget": "isolated",
+  "wakeMode": "now",
+  "payload": {
+    "kind": "agentTurn",
+    "message": "Run one bounded thecreateco company-director cycle, not a marketing-only cycle.\nWorkspace: /Users/agentsattari/thecreateco-company.\nRead AGENTS.md, DIRECTIVE.md, engine/README.md and COMPANY_STATE.md. If PAUSE exists,\ndo nothing and stop. Use Python stdlib CLI engine/company.py, never edit SQLite.\nRecover expired leases, refresh state, then select the highest-value eligible safe\ntask. Honor active ownership and existing product-specific holds. Claim it with\na unique owner name for this run; preserve the returned lease_token and heartbeat\nas needed. Execute ONE bounded task or audit batch, not the entire backlog.\n\nUse GPT-6.1 Sol for direction and difficult engineering decisions; delegate\nindependent scoped volume/research to Luna and creative/UX to Sonnet when those\nmodels are available. Read data/model-routing.json; record actual model and\nfallback. Marketing's existing engine handles marketing drafts, not engineering.\nRare consequential decisions may justify independent Opus review with rationale.\nDo not spawn ongoing workers without a durable task owner and completion path.\n\nInspect evidence relevant to the chosen task, run appropriate baseline checks,\nmake reversible local improvements in an isolated branch when needed, and test.\nKeep existing features; no blind rewrites, branch-protection bypass, production\nrollback/deploy, social posting, outreach sending, spend or account changes from\nthis scheduled company job. Prepare external changes for their existing review\npath. Local fixes, tests, evidence collection and drafts are authorized.\n\nWrite a dated report under reports/ with actual commands, observations, tests,\nlimitations and the next action. Finish the task via CLI using owner/token and\nevidence path. Use BLOCKED with an explicit reason when access is missing; do\nnot invent metrics or mark unverified work complete. Company metrics require\nsource, reporting period and observation time. Update products/context through\nthe CLI when evidence changes. Refresh after every meaningful batch.\n\nStop within 35 minutes, recording a checkpoint if incomplete. Do not create busywork\nwhen no useful safe work is available. Return a concise factual summary for run\nhistory only; do not send messages to any channel or person from this job.\n\nCore Product Lab amendment: read core-product-lab/DIRECTIVE.md and HEALTH.md.\nPrioritize its golden-workflow tasks above unrelated new app experiments; use\npython3 core-product-lab/lab.py next and respect active per-product ownership.\nStemDeck local development is reopened by the explicit Oct 7 flagship directive;\nunrelated Sattari/music scope and all release/licensing gates remain unchanged.",
+    "model": "openai/gpt-6.1-sol",
+    "fallbacks": [
+      "openai/gpt-6-sol"
+    ],
+    "thinking": "medium",
+    "timeoutSeconds": 2100,
+    "toolsAllow": [
+      "*"
+    ]
+  },
+  "delivery": {
+    "mode": "none",
+    "channel": "last"
+  },
+  "scheduledToolPolicy": {
+    "version": 1,
+    "mode": "trusted"
+  },
+  "state": {
+    "nextRunAtMs": 1791418200000,
+    "lastRunAtMs": 1791416653912,
+    "lastRunStatus": "ok",
+    "lastStatus": "ok",
+    "lastDurationMs": 152419,
+    "lastDeliveryStatus": "not-requested",
+    "lastFailureNotificationDeliveryStatus": "not-requested",
+    "consecutiveErrors": 0,
+    "consecutiveSkipped": 0,
+    "lastDelivered": false
+  },
+  "updatedAtMs": 1791417584277,
+  "configRevision": "sha256:V2nY5eY1fLwQsAu9L9o_Y89VSCHnvo3ULnn1Xr689zw",
+  "nextRunAtMs": 1791418200000,
+  "lastRunAtMs": 1791416653912,
+  "lastRunStatus": "ok",
+  "lastDelivered": false,
+  "lastDeliveryStatus": "not-requested",
+  "lastFailureNotificationDeliveryStatus": "not-requested"
+}

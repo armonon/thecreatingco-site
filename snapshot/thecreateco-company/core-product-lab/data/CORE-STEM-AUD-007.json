@@ -1,0 +1,29 @@
+{
+  "task_id": "CORE-STEM-AUD-007",
+  "title": "Validate dense performance controls and lower-panel occlusion",
+  "product": "stemdeck",
+  "area": "ux_improvement",
+  "category": "ux_improvement",
+  "workstream": "CORE_PRODUCT_LAB",
+  "severity": "P3",
+  "scores": {
+    "impact": 6,
+    "severity": 5,
+    "workflow_importance": 8,
+    "competitive_value": 6,
+    "release_importance": 6,
+    "confidence": 7,
+    "effort": 3,
+    "risk": 2,
+    "user_value": 8
+  },
+  "dependencies": [],
+  "status": "QUEUED",
+  "model": "gpt-6-luna",
+  "expected_value": "Flagship golden-workflow reliability; scores are planning estimates, not health metrics.",
+  "test_requirements": "Reproduce on isolated exact source; preserve baseline/fixed evidence, appropriate build/tests and golden path; source reading is not interactive sign-off.",
+  "source_evidence": [
+    "reports/stemdeck-ui/1440-Perform.png"
+  ],
+  "next_action": "Screenshot shows tiny secondary labels and toast over lower controls. Observe keyboard/zoom and loaded four-deck session before redesign; single-source fixture insufficient for deck-layout diagnosis."
+}

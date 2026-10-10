@@ -1,0 +1,17 @@
+[build]
+  command = "npm run build"
+  publish = "public"
+  functions = "netlify/functions"
+
+[build.environment]
+  NODE_VERSION = "22.17.0"
+
+[functions]
+  node_bundler = "esbuild"
+  external_node_modules = ["playwright-core"]
+
+[[redirects]]
+  from = "/api/audit"
+  to = "/.netlify/functions/audit"
+  status = 200
+  force = true

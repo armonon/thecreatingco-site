@@ -1,0 +1,14 @@
+{
+  "sha": "c4029c6407088ddc870353b5708f6154b81cf338",
+  "base_sha": "c4029c6407088ddc870353b5708f6154b81cf338",
+  "scope": "Committed screened review delta, not a release or complete binary artifact",
+  "files": [],
+  "omitted": [],
+  "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "repo": "https://github.com/armonon/sattari-custom-site",
+  "branches": [
+    "polish/mobile-interactive-site"
+  ],
+  "archive_path": "sattari-custom-site/c4029c6407088ddc870353b5708f6154b81cf338",
+  "local_worktree_dirty": true
+}

@@ -1,0 +1,2403 @@
+import type { PrecisionTileSurface } from "./tile-store";
+import { SparseAlphaSurface } from "./alpha-surface";
+import type { RawDevelopSettings } from "./raw-develop";
+import type { AiEditQuality, AiOperationControls, AiSelectionGuide } from "./ai-edit";
+import { cloneProAdjustment, type ProAdjustmentParams } from "./pro-adjustments";
+import { canvasFontForRun, resolvedTextStyleAt } from "./text-model";
+import { pathContours, traceContours, vectorPaints, type VectorPaint, type PathContour, type BooleanSource, type OffsetSource } from "./vector-path";
+import { resolvedTextSpatial, textSpatialAffine } from "./text-3d";
+import { requestTextFonts } from "./text-font-resources";
+import { nativeImportedFontCapHeight } from "./native-font-resources";
+import { bidiLineOrder, physicalTextAlignment } from "./text-bidi";
+
+export type BlendMode =
+  | "source-over"
+  | "dissolve"
+  | "darken"
+  | "multiply"
+  | "color-burn"
+  | "linear-burn"
+  | "darker-color"
+  | "lighten"
+  | "screen"
+  | "color-dodge"
+  | "linear-dodge"
+  | "lighter-color"
+  | "overlay"
+  | "soft-light"
+  | "hard-light"
+  | "vivid-light"
+  | "linear-light"
+  | "pin-light"
+  | "hard-mix"
+  | "difference"
+  | "exclusion"
+  | "subtract"
+  | "divide"
+  | "hue"
+  | "saturation"
+  | "color"
+  | "luminosity";
+
+export const BLEND_LABELS: Record<BlendMode, string> = {
+  "source-over": "Normal",
+  dissolve: "Dissolve",
+  darken: "Darken",
+  multiply: "Multiply",
+  "color-burn": "Color Burn",
+  "linear-burn": "Linear Burn",
+  "darker-color": "Darker Color",
+  lighten: "Lighten",
+  screen: "Screen",
+  "color-dodge": "Color Dodge",
+  "linear-dodge": "Linear Dodge (Add)",
+  "lighter-color": "Lighter Color",
+  overlay: "Overlay",
+  "soft-light": "Soft Light",
+  "hard-light": "Hard Light",
+  "vivid-light": "Vivid Light",
+  "linear-light": "Linear Light",
+  "pin-light": "Pin Light",
+  "hard-mix": "Hard Mix",
+  difference: "Difference",
+  exclusion: "Exclusion",
+  subtract: "Subtract",
+  divide: "Divide",
+  hue: "Hue",
+  saturation: "Saturation",
+  color: "Color",
+  luminosity: "Luminosity",
+};
+
+export const BLEND_MODE_GROUPS: ReadonlyArray<{
+  label: string;
+  modes: ReadonlyArray<BlendMode>;
+}> = [
+  { label: "Normal", modes: ["source-over", "dissolve"] },
+  { label: "Darken", modes: ["darken", "multiply", "color-burn", "linear-burn", "darker-color"] },
+  { label: "Lighten", modes: ["lighten", "screen", "color-dodge", "linear-dodge", "lighter-color"] },
+  { label: "Contrast", modes: ["overlay", "soft-light", "hard-light", "vivid-light", "linear-light", "pin-light", "hard-mix"] },
+  { label: "Inversion", modes: ["difference", "exclusion", "subtract", "divide"] },
+  { label: "Component", modes: ["hue", "saturation", "color", "luminosity"] },
+];
+
+export const BLEND_MODES: ReadonlyArray<BlendMode> = BLEND_MODE_GROUPS.flatMap((group) => group.modes);
+
+export type BlendPass = {
+  id: string;
+  mode: BlendMode;
+  opacity: number;
+  enabled: boolean;
+};
+
+export const MAX_LAYER_BLEND_PASSES = 8;
+
+export type BlendIfChannel = "gray" | "red" | "green" | "blue";
+
+export type BlendIfRange = {
+  /** Pixels below this value are hidden. */
+  black: number;
+  /** Pixels reach full opacity at this value. */
+  blackFeather: number;
+  /** Pixels begin fading out at this value. */
+  whiteFeather: number;
+  /** Pixels above this value are hidden. */
+  white: number;
+};
+
+export type BlendIf = {
+  activeChannel: BlendIfChannel;
+  channels: Record<BlendIfChannel, {
+    source: BlendIfRange;
+    underlying: BlendIfRange;
+  }>;
+};
+
+type LegacyBlendIf = {
+  channel: BlendIfChannel;
+  source: BlendIfRange;
+  underlying: BlendIfRange;
+};
+
+export const NEUTRAL_BLEND_IF_RANGE: BlendIfRange = {
+  black: 0,
+  blackFeather: 0,
+  whiteFeather: 1,
+  white: 1,
+};
+
+export const NEUTRAL_BLEND_IF: BlendIf = {
+  activeChannel: "gray",
+  channels: {
+    gray: { source: { ...NEUTRAL_BLEND_IF_RANGE }, underlying: { ...NEUTRAL_BLEND_IF_RANGE } },
+    red: { source: { ...NEUTRAL_BLEND_IF_RANGE }, underlying: { ...NEUTRAL_BLEND_IF_RANGE } },
+    green: { source: { ...NEUTRAL_BLEND_IF_RANGE }, underlying: { ...NEUTRAL_BLEND_IF_RANGE } },
+    blue: { source: { ...NEUTRAL_BLEND_IF_RANGE }, underlying: { ...NEUTRAL_BLEND_IF_RANGE } },
+  },
+};
+
+export type ToneParams = {
+  exposure: number;
+  contrast: number;
+  highlights: number;
+  shadows: number;
+  temperature: number;
+  vibrance: number;
+};
+
+export const NEUTRAL_TONE: ToneParams = {
+  exposure: 0,
+  contrast: 0,
+  highlights: 0,
+  shadows: 0,
+  temperature: 0,
+  vibrance: 0,
+};
+
+// Affine transform: translation × rotation × horizontal shear × scale.
+// where (tx,ty) is the on-canvas offset for the layer's origin (top-left),
+// Interactive rotations explicitly preserve the visual center.
+export type Transform = {
+  tx: number;
+  ty: number;
+  sx: number;
+  sy: number;
+  rotation: number; // radians
+  /** Horizontal shear in local coordinates. Omitted in older projects. */
+  skewX?: number;
+};
+
+export const IDENTITY_TRANSFORM: Transform = {
+  tx: 0,
+  ty: 0,
+  sx: 1,
+  sy: 1,
+  rotation: 0,
+  skewX: 0,
+};
+
+export type AffineTransform = {
+  a: number;
+  b: number;
+  c: number;
+  d: number;
+  e: number;
+  f: number;
+};
+
+export function affineForLayerTransform(transform: Transform): AffineTransform {
+  const cosine = Math.cos(transform.rotation);
+  const sine = Math.sin(transform.rotation);
+  return {
+    a: cosine * transform.sx,
+    b: sine * transform.sx,
+    c: (cosine * (transform.skewX ?? 0) - sine) * transform.sy,
+    d: (sine * (transform.skewX ?? 0) + cosine) * transform.sy,
+    e: transform.tx,
+    f: transform.ty,
+  };
+}
+
+export function inverseAffineForLayerTransform(transform: Transform): AffineTransform | null {
+  const forward = affineForLayerTransform(transform);
+  const determinant = forward.a * forward.d - forward.b * forward.c;
+  if (!Number.isFinite(determinant) || Math.abs(determinant) < 1e-12) return null;
+  const a = forward.d / determinant;
+  const b = -forward.b / determinant;
+  const c = -forward.c / determinant;
+  const d = forward.a / determinant;
+  return {
+    a,
+    b,
+    c,
+    d,
+    e: -(a * forward.e + c * forward.f),
+    f: -(b * forward.e + d * forward.f),
+  };
+}
+
+export function transformPoint(matrix: AffineTransform, x: number, y: number) {
+  return {
+    x: matrix.a * x + matrix.c * y + matrix.e,
+    y: matrix.b * x + matrix.d * y + matrix.f,
+  };
+}
+
+export function documentPointToLayer(transform: Transform, x: number, y: number) {
+  const inverse = inverseAffineForLayerTransform(transform);
+  return inverse ? transformPoint(inverse, x, y) : null;
+}
+
+/** Compose a document-space rotation around an arbitrary pivot with a layer transform. */
+export function rotateLayerTransformAround(
+  transform: Transform,
+  angleRadians: number,
+  pivotX: number,
+  pivotY: number,
+): Transform {
+  const cosine = Math.cos(angleRadians);
+  const sine = Math.sin(angleRadians);
+  const dx = transform.tx - pivotX;
+  const dy = transform.ty - pivotY;
+  return {
+    ...transform,
+    rotation: transform.rotation + angleRadians,
+    tx: pivotX + dx * cosine - dy * sine,
+    ty: pivotY + dx * sine + dy * cosine,
+  };
+}
+
+export type LayerKind =
+  | "raster"
+  | "smart-object"
+  | "group"
+  | "adjustment-tone"
+  | "adjustment-curves"
+  | "adjustment-levels"
+  | "adjustment-hsl"
+  | "adjustment-pro"
+  | "text"
+  | "shape"
+  | "path";
+
+// Levels: input black/white/gamma remap. 0..1 in x, gamma > 0.
+export type LevelsParams = {
+  inBlack: number;   // 0..1
+  inWhite: number;   // 0..1
+  gamma: number;     // 0.01..9.99, 1 = neutral
+  outBlack: number;  // 0..1
+  outWhite: number;  // 0..1
+};
+export const NEUTRAL_LEVELS: LevelsParams = {
+  inBlack: 0, inWhite: 1, gamma: 1, outBlack: 0, outWhite: 1,
+};
+
+// HSL adjustment: shifts hue, saturation, lightness globally. Ranges:
+//   hue     : -180..+180 degrees
+//   sat     : -100..+100 (percent of current saturation)
+//   light   : -100..+100 (percent lightness shift)
+export type HslParams = { hue: number; saturation: number; lightness: number };
+export const NEUTRAL_HSL: HslParams = { hue: 0, saturation: 0, lightness: 0 };
+
+// A curve is a set of control points 0..1 in x (input) and y (output). We
+// evaluate it as a smooth monotone spline into a 256-entry lookup table.
+export type CurvePoints = Array<{ x: number; y: number }>;
+export type Curves = {
+  rgb: CurvePoints;
+  r: CurvePoints;
+  g: CurvePoints;
+  b: CurvePoints;
+};
+export const IDENTITY_CURVE: CurvePoints = [
+  { x: 0, y: 0 },
+  { x: 1, y: 1 },
+];
+export const NEUTRAL_CURVES: Curves = {
+  rgb: [{ x: 0, y: 0 }, { x: 1, y: 1 }],
+  r: [{ x: 0, y: 0 }, { x: 1, y: 1 }],
+  g: [{ x: 0, y: 0 }, { x: 1, y: 1 }],
+  b: [{ x: 0, y: 0 }, { x: 1, y: 1 }],
+};
+
+// Bezier path anchor for the pen tool. Each anchor stores its tangent handles
+// as offsets from the anchor point (Photoshop convention).
+export type PathAnchor = {
+  x: number;
+  y: number;
+  hIn: { dx: number; dy: number };
+  hOut: { dx: number; dy: number };
+};
+export type PathStyle = {
+  anchors: PathAnchor[];
+  closed: boolean;
+  fill: string;
+  stroke: string;
+  strokeWidth: number;
+  contours?: PathContour[];
+  fillRule?: "nonzero" | "evenodd";
+  /** Frozen editable operands, not references to layers that can disappear. */
+  booleanSource?: BooleanSource;
+  appearance?: VectorPaint[];
+  /** Self-contained vector instances share geometry/appearance, not transforms. */
+  symbolId?: string;
+  offsetSource?: OffsetSource;
+};
+
+export type PathArcSample = { x: number; y: number; distance: number };
+
+/**
+ * Rasterize a path into an opaque mask the compositor can use like any other.
+ *
+ * Vector masks are resolution-independent in storage and pixels at render
+ * time; this is the one place that conversion happens, so the path stays the
+ * source of truth and nothing downstream needs to know it was ever a curve.
+ */
+const vectorMaskCache = new WeakMap<PathStyle, { canvas: HTMLCanvasElement; width: number; height: number }>();
+
+/**
+ * Set canvas letter spacing, where the platform has it.
+ *
+ * Doing this per character instead would give up the font's kerning pairs,
+ * which is a worse trade than losing tracking on an old browser: Photoshop
+ * tracks *and* kerns. Chrome, Safari and Firefox have all shipped it.
+ */
+function applyTracking(ctx: CanvasRenderingContext2D, px: number) {
+  if (!("letterSpacing" in ctx)) return;
+  ctx.letterSpacing = `${px}px`;
+}
+
+/**
+ * Draw one line stretched to fill the measure, by widening the word gaps.
+ *
+ * Justification overrides the paragraph's alignment and treats `x` as the left
+ * edge — the two settings contradict each other, and Photoshop resolves it the
+ * same way. A line already wider than the box, or with nothing to stretch, is
+ * drawn as it stands rather than squeezed.
+ */
+function drawJustified(
+  ctx: CanvasRenderingContext2D,
+  text: string,
+  x: number,
+  y: number,
+  boxWidth: number,
+  track: number,
+) {
+  const words = text.split(" ").filter(Boolean);
+  const gaps = words.length - 1;
+  if (gaps < 1) {
+    ctx.fillText(text, x, y);
+    return;
+  }
+  // Canvas letter spacing puts a step after the last glyph as well, which is
+  // advance the word never draws. Taking it off here — in the sum *and* in the
+  // cursor step, so the two agree — is what makes the line land on the measure
+  // instead of a whole tracking step short of it.
+  const widthOf = (word: string) => ctx.measureText(word).width - track;
+  const natural = words.reduce((sum, word) => sum + widthOf(word), 0);
+  const extra = (boxWidth - natural) / gaps;
+  const align = ctx.textAlign;
+  ctx.textAlign = "left";
+  let cursor = x;
+  for (const word of words) {
+    ctx.fillText(word, cursor, y);
+    cursor += widthOf(word) + extra;
+  }
+  ctx.textAlign = align;
+}
+
+type TextGrapheme = { segment: string; index: number; end: number };
+
+function textGraphemes(text: string, start = 0, end = text.length): TextGrapheme[] {
+  const slice = text.slice(start, end);
+  if (typeof Intl.Segmenter === "function") {
+    return [...new Intl.Segmenter(undefined, { granularity: "grapheme" }).segment(slice)].map((entry, index, all) => ({
+      segment: entry.segment,
+      index: start + entry.index,
+      end: index + 1 < all.length ? start + all[index + 1].index : end,
+    }));
+  }
+  let cursor = start;
+  return Array.from(slice).map((segment) => {
+    const item = { segment, index: cursor, end: cursor + segment.length };
+    cursor = item.end;
+    return item;
+  });
+}
+
+function configureTextRun(ctx: CanvasRenderingContext2D, style: TextStyle, offset: number) {
+  const run = resolvedTextStyleAt(style, offset);
+  ctx.font = canvasFontForRun(run);
+  ctx.fillStyle = run.color;
+  if ("fontKerning" in ctx) ctx.fontKerning = run.features.kern === false ? "none" : "normal";
+  if ("fontVariantCaps" in ctx) ctx.fontVariantCaps = run.features.smcp ? "small-caps" : "normal";
+  return run;
+}
+
+/** Photoshop box origins are frame tops; Luma's existing text y is a baseline. */
+export function paragraphCapHeight(ctx: CanvasRenderingContext2D, style: TextStyle) {
+  const run = configureTextRun(ctx, style, 0);
+  ctx.textBaseline = "alphabetic";
+  const exact = nativeImportedFontCapHeight(run.fontFamily);
+  if (exact !== undefined) return exact * run.fontSize;
+  const cap = ctx.measureText("H").actualBoundingBoxAscent;
+  return Number.isFinite(cap) && cap > 0 ? cap : run.fontSize * .7;
+}
+
+/** Shape contiguous style/direction runs, not isolated graphemes. */
+function canvasStyledRuns(style: TextStyle, start: number, end: number, splitWords = false) {
+  const { levels, order } = bidiLineOrder(style, start, end);
+  const rank = new Map(order.map((logical, visual) => [logical, visual]));
+  const runs: Array<TextGrapheme & { key: string; level: number; rank: number }> = [];
+  for (const item of textGraphemes(style.text, start, end)) {
+    const level = levels[item.index - start] ?? 0;
+    // Paint must not break shaping context (e.g. Arabic joining or fi ligatures).
+    // Font/metric changes still delimit shaping runs; color and decoration do not.
+    const resolved = resolvedTextStyleAt(style, item.index);
+    const key = JSON.stringify({ ...resolved, color: null, decoration: null });
+    const previous = runs.at(-1);
+    const visual = rank.get(item.index - start) ?? 0;
+    if (previous && previous.end === item.index && previous.key === key && previous.level === level &&
+        (!splitWords || (!/\s/u.test(previous.segment) && !/\s/u.test(item.segment)))) {
+      previous.segment += item.segment;
+      previous.end = item.end;
+      previous.rank = Math.min(previous.rank, visual);
+    } else runs.push({ ...item, key, level, rank: visual });
+  }
+  return runs.sort((a, b) => a.rank - b.rank);
+}
+
+function measureStyledRange(ctx: CanvasRenderingContext2D, style: TextStyle, start: number, end: number) {
+  if (start >= end) return 0;
+  if (!style.runs?.length) {
+    const run = configureTextRun(ctx, style, start);
+    const track = "letterSpacing" in ctx ? (run.tracking / 1000) * run.fontSize : 0;
+    applyTracking(ctx, track);
+    const width = (ctx.measureText(style.text.slice(start, end)).width - track) * run.fontStretch / 100;
+    applyTracking(ctx, 0);
+    return width;
+  }
+  let width = 0, trailing = 0;
+  const runs = canvasStyledRuns(style, start, end);
+  runs.forEach((item) => {
+    const run = configureTextRun(ctx, style, item.index);
+    applyTracking(ctx, (run.tracking / 1000) * run.fontSize);
+    width += ctx.measureText(item.segment).width * run.fontStretch / 100;
+    trailing = "letterSpacing" in ctx ? (run.tracking / 1000) * run.fontSize * run.fontStretch / 100 : 0;
+  });
+  applyTracking(ctx, 0);
+  // Keep inter-run advances, but not the last glyph's synthetic trailing gap.
+  // Otherwise structured/width-scaled type drifts from the fast-path anchor.
+  return width - trailing;
+}
+
+function drawStyledGlyph(
+  ctx: CanvasRenderingContext2D,
+  style: TextStyle,
+  grapheme: TextGrapheme,
+  x: number,
+  y: number,
+) {
+  const run = configureTextRun(ctx, style, grapheme.index);
+  const baseline = y - run.baselineShift;
+  const fills = style.appearance?.fills.filter((fill) => fill.enabled) ?? [];
+  const strokes = style.appearance?.strokes.filter((stroke) => stroke.enabled && stroke.width > 0) ?? [];
+  const stretch = run.fontStretch / 100;
+  ctx.save();
+  // Keep the layout anchor/baseline fixed. Only this run's glyph geometry and
+  // decoration stretch; paragraph frames, line height and layer transforms do not.
+  if (stretch !== 1) { ctx.translate(x, 0); ctx.scale(stretch, 1); ctx.translate(-x, 0); }
+  for (const stroke of strokes) {
+    ctx.globalAlpha = Math.max(0, Math.min(1, stroke.opacity));
+    ctx.strokeStyle = stroke.color;
+    ctx.lineWidth = stroke.width;
+    ctx.strokeText(grapheme.segment, x, baseline);
+  }
+  if (fills.length) {
+    for (const fill of fills) {
+      ctx.globalAlpha = Math.max(0, Math.min(1, fill.opacity));
+      ctx.fillStyle = fill.color;
+      ctx.fillText(grapheme.segment, x, baseline);
+    }
+  } else if (!style.appearance) {
+    ctx.globalAlpha = 1;
+    ctx.fillStyle = run.color;
+    ctx.fillText(grapheme.segment, x, baseline);
+  }
+  ctx.globalAlpha = 1;
+  if (run.decoration !== "none") {
+    const metrics = ctx.measureText(grapheme.segment);
+    const decorationY = run.decoration === "underline" ? baseline + Math.max(1, run.fontSize * 0.08) : baseline - run.fontSize * 0.3;
+    ctx.strokeStyle = run.color;
+    ctx.lineWidth = Math.max(1, run.fontSize / 16);
+    ctx.beginPath();
+    ctx.moveTo(x, decorationY);
+    ctx.lineTo(x + metrics.width, decorationY);
+    ctx.stroke();
+  }
+  ctx.restore();
+  return { width: ctx.measureText(grapheme.segment).width * stretch, run };
+}
+
+function drawStyledLine(
+  ctx: CanvasRenderingContext2D,
+  style: TextStyle,
+  start: number,
+  end: number,
+  anchorX: number,
+  y: number,
+  justifyWidth?: number,
+) {
+  applyTracking(ctx, 0);
+  const { base } = bidiLineOrder(style, start, end);
+  ctx.direction = base % 2 ? "rtl" : "ltr";
+  const alignment = physicalTextAlignment(style.align, base);
+  const graphemes = textGraphemes(style.text, start, end).filter((item) => item.segment !== "\n");
+  const natural = measureStyledRange(ctx, style, start, end);
+  const spaces = graphemes.filter((item) => /^\s+$/u.test(item.segment)).length;
+  const justifyExtra = justifyWidth && justifyWidth > natural && spaces ? (justifyWidth - natural) / spaces : 0;
+  let cursor = justifyWidth ? anchorX
+    : alignment === "center" ? anchorX - natural / 2
+      : alignment === "right" ? anchorX - natural
+        : anchorX;
+  // Decoration/appearance is paint, not a reason to split a shaped run into
+  // independent letters. Keep joining, ligatures and bidi in the native shaper.
+  if (!style.runs?.length && !justifyExtra) {
+    const run = configureTextRun(ctx, style, start);
+    applyTracking(ctx, (run.tracking / 1000) * run.fontSize);
+    drawStyledGlyph(ctx, style, { segment: style.text.slice(start, end), index: start, end }, cursor, y);
+    applyTracking(ctx, 0);
+    return;
+  }
+  const direction = ctx.direction;
+  for (const run of canvasStyledRuns(style, start, end, Boolean(justifyExtra))) {
+    const paint = configureTextRun(ctx, style, run.index);
+    applyTracking(ctx, (paint.tracking / 1000) * paint.fontSize);
+    ctx.direction = run.level % 2 ? "rtl" : "ltr";
+    cursor += drawShapedPaintRun(ctx, style, run, cursor, y);
+    if (justifyExtra && /^\s+$/u.test(run.segment)) cursor += justifyExtra;
+  }
+  ctx.direction = direction;
+  applyTracking(ctx, 0);
+}
+
+/** Paint color spans using the SAME shaped string, never independently shaped
+ * substrings. Canvas does not expose cluster carets: paint boundaries within a
+ * ligature are approximate, but the glyph geometry and line advance stay intact.
+ */
+function drawShapedPaintRun(
+  ctx: CanvasRenderingContext2D, style: TextStyle,
+  run: TextGrapheme & { level: number }, x: number, y: number,
+) {
+  const spans: Array<TextGrapheme & { key: string }> = [];
+  for (const item of textGraphemes(style.text, run.index, run.end)) {
+    const paint = resolvedTextStyleAt(style, item.index);
+    const key = JSON.stringify([paint.color, paint.decoration]);
+    const last = spans.at(-1);
+    if (last?.key === key) { last.segment += item.segment; last.end = item.end; }
+    else spans.push({ ...item, key });
+  }
+  if (spans.length < 2) return drawStyledGlyph(ctx, style, run, x, y).width;
+  const width = ctx.measureText(run.segment).width * resolvedTextStyleAt(style, run.index).fontStretch / 100;
+  const advances = spans.map(span => ctx.measureText(span.segment).width);
+  const total = advances.reduce((sum, advance) => sum + advance, 0);
+  let consumed = 0;
+  spans.forEach((span, index) => {
+    const from = total ? consumed / total * width : 0;
+    consumed += advances[index];
+    const to = index === spans.length - 1 ? width : total ? consumed / total * width : width;
+    const left = run.level % 2 ? width - to : from;
+    const right = run.level % 2 ? width - from : to;
+    // Preserve outer glyph overhangs. Interior boundaries partition the shared
+    // shaped run; no extra image-sized scratch canvas is needed.
+    const clipLeft = left === 0 ? x - 1e6 : x + left;
+    const clipRight = right === width ? x + width + 1e6 : x + right;
+    ctx.save();
+    ctx.beginPath(); ctx.rect(clipLeft, y - 1e6, clipRight - clipLeft, 2e6); ctx.clip();
+    drawStyledGlyph(ctx, style, { ...run, index: span.index }, x, y);
+    ctx.restore();
+  });
+  return width;
+}
+
+function structuredParagraphLines(ctx: CanvasRenderingContext2D, style: TextStyle) {
+  const lines: Array<{ start: number; end: number; paragraph: number; last: boolean; style: TextStyle; anchor: number; width?: number; height: number; before: number; after: number }> = [];
+  const inkEnd = (start: number, end: number) => {
+    // Trailing breakable whitespace does not consume the line's measure or
+    // move its centre/right alignment anchor. Keep NBSPs and interior spaces.
+    while (end > start && (style.text[end - 1] === " " || style.text[end - 1] === "\t")) end--;
+    return end;
+  };
+  let paragraphStart = 0;
+  style.text.split("\n").forEach((paragraph, paragraphIndex) => {
+    const paragraphEnd = paragraphStart + paragraph.length;
+    const overrides=style.paragraphs?.find(p=>p.start<=paragraphStart&&p.end>=paragraphEnd)?.style;
+    const lineStyle=overrides?{...style,direction:overrides.direction??style.direction,align:overrides.align==="justify"?"left" as const:overrides.align??style.align,justify:overrides.align?overrides.align==="justify":style.justify,lineHeight:overrides.lineHeight??style.lineHeight}:style;
+    const base=resolvedTextStyleAt(style,paragraphStart),direction=bidiLineOrder(lineStyle,paragraphStart,paragraphEnd).base;
+    const startIndent=overrides?.startIndent??0,endIndent=overrides?.endIndent??0,firstIndent=overrides?.firstLineIndent??0;
+    let first=true;
+    const available=()=>style.boxWidth===undefined?undefined:Math.max(1,style.boxWidth-startIndent-endIndent-(first?firstIndent:0));
+    const push=(start:number,end:number,last:boolean)=>{
+      end = inkEnd(start, end);
+      const width=available(),alignment=physicalTextAlignment(lineStyle.align,direction);
+      const offset=startIndent+(first?firstIndent:0),leftInset=direction%2?endIndent:offset,rightInset=direction%2?offset:endIndent;
+      // The legacy x coordinate is an alignment anchor, not a frame's left.
+      const anchor=style.x+(alignment==="center"?(leftInset-rightInset)/2:alignment==="right"?-rightInset:leftInset);
+      const largest=Math.max(base.fontSize,...(style.runs??[]).filter(r=>r.start<end&&r.end>start).map(r=>r.style.fontSize??base.fontSize));
+      lines.push({start,end,paragraph:paragraphIndex,last,style:lineStyle,anchor,width,height:largest*lineStyle.lineHeight,before:first?(overrides?.spaceBefore??0):0,after:last?(overrides?.spaceAfter??base.fontSize*(style.paragraphSpacing??0)):0});first=false;
+    };
+    if (style.layout !== "paragraph" || !style.boxWidth || paragraph.length === 0) {
+      push(paragraphStart,paragraphEnd,true);
+      paragraphStart = paragraphEnd + 1;
+      return;
+    }
+    // Unicode word boundaries permit CJK/Thai wrapping without cutting a
+    // grapheme or independently shaping the letters of a joining script.
+    const tokens:Array<{start:number;end:number}>=[];
+    const words=typeof Intl.Segmenter==="function"?[...new Intl.Segmenter(undefined,{granularity:"word"}).segment(paragraph)].map(p=>({index:p.index,segment:p.segment})):[...paragraph.matchAll(/\S+\s*/gu)].map(m=>({index:m.index!,segment:m[0]}));
+    for(const word of words){const last=tokens.at(-1);if(/^\s+$/u.test(word.segment)&&last)last.end=paragraphStart+word.index+word.segment.length;else tokens.push({start:paragraphStart+word.index,end:paragraphStart+word.index+word.segment.length});}
+    let lineStart = paragraphStart;
+    let lineEnd = paragraphStart;
+    for (const token of tokens) {
+      const candidate = measureStyledRange(ctx, lineStyle, lineStart, inkEnd(lineStart, token.end));
+      if (lineEnd > lineStart && candidate > available()!) {
+        push(lineStart,lineEnd,false);
+        lineStart = token.start;
+      }
+      lineEnd = token.end;
+    }
+    push(lineStart,Math.max(lineStart,lineEnd),true);
+    paragraphStart = paragraphEnd + 1;
+  });
+  return lines;
+}
+
+function drawStructuredText(ctx: CanvasRenderingContext2D, style: TextStyle) {
+  ctx.textAlign = "left";
+  ctx.textBaseline = "alphabetic";
+  if ("direction" in ctx) ctx.direction = style.direction === "rtl" ? "rtl" : "ltr";
+  const base = resolvedTextStyleAt(style, 0);
+  const lineHeight = base.fontSize * style.lineHeight;
+  if (style.layout === "vertical") {
+    let row = 0;
+    let column = 0;
+    for (const grapheme of textGraphemes(style.text)) {
+      if (grapheme.segment === "\n") { column += 1; row = 0; continue; }
+      const run = resolvedTextStyleAt(style, grapheme.index);
+      drawStyledGlyph(ctx, style, grapheme, style.x - column * lineHeight, style.y + row * (lineHeight + (run.tracking / 1000) * run.fontSize));
+      row += 1;
+    }
+    return;
+  }
+  if (style.layout === "path" && style.path?.anchors.length) {
+    const table = pathArcTable(style.path);
+    let distance = nearestPathDistance(table, style.x, style.y);
+    for (const grapheme of textGraphemes(style.text)) {
+      if (grapheme.segment === "\n") continue;
+      const run = configureTextRun(ctx, style, grapheme.index);
+      const advance = ctx.measureText(grapheme.segment).width * run.fontStretch / 100;
+      const sample = samplePathDistance(table, distance + advance / 2, style.path.closed);
+      if (!sample) break;
+      ctx.save();
+      ctx.translate(sample.x, sample.y);
+      ctx.rotate(sample.angle);
+      drawStyledGlyph(ctx, style, grapheme, -advance / 2, 0);
+      ctx.restore();
+      distance += advance + (run.tracking / 1000) * run.fontSize * run.fontStretch / 100;
+    }
+    return;
+  }
+  const lines = structuredParagraphLines(ctx, style);
+  let baseline=style.y;
+  for (let index = 0; index < lines.length; index += 1) {
+    const line = lines[index];
+    baseline+=line.before;
+    if(index>0&&style.boxHeight&&baseline-style.y+line.height>style.boxHeight)break;
+    drawStyledLine(
+      ctx,
+      line.style,
+      line.start,
+      line.end,
+      line.anchor,
+      baseline,
+      style.layout === "paragraph" && line.style.justify && !line.last ? line.width : undefined,
+    );
+    baseline+=line.height+line.after;
+  }
+}
+
+export function rasterizeVectorMask(
+  path: PathStyle,
+  width: number,
+  height: number,
+): HTMLCanvasElement {
+  // Cached against the path object. This runs inside drawContentLayer, which
+  // the viewport calls once per tile, so an uncached rasterize meant sixteen
+  // full-document canvases per frame on a 1024-square document — measured at
+  // 5.6x the frame cost. The path is the cache key because it is what the
+  // result depends on; editing it produces a new object.
+  const hit = vectorMaskCache.get(path);
+  if (hit && hit.width === width && hit.height === height) return hit.canvas;
+
+  const canvas = newCanvas(width, height);
+  const ctx = canvas.getContext("2d")!;
+  if (pathContours(path).every(contour => contour.anchors.length < 2)) {
+    // An unusable path must not blank the layer, so an empty mask reveals all.
+    ctx.fillStyle = "#ffffff";
+    ctx.fillRect(0, 0, width, height);
+    vectorMaskCache.set(path, { canvas, width, height });
+    return canvas;
+  }
+  ctx.fillStyle = "#ffffff";
+  ctx.beginPath();
+  traceContours(ctx, pathContours(path), true);
+  ctx.fill(path.fillRule ?? "nonzero");
+  vectorMaskCache.set(path, { canvas, width, height });
+  return canvas;
+}
+
+const midpoint = (a: number, b: number) => (a + b) / 2;
+
+function flattenCubic(
+  output: Array<{ x: number; y: number }>,
+  p0: { x: number; y: number },
+  p1: { x: number; y: number },
+  p2: { x: number; y: number },
+  p3: { x: number; y: number },
+  tolerance: number,
+  depth = 0,
+) {
+  const chord = Math.hypot(p3.x - p0.x, p3.y - p0.y);
+  const polygon = Math.hypot(p1.x - p0.x, p1.y - p0.y)
+    + Math.hypot(p2.x - p1.x, p2.y - p1.y)
+    + Math.hypot(p3.x - p2.x, p3.y - p2.y);
+  if (depth >= 12 || polygon - chord <= tolerance) {
+    output.push(p3);
+    return;
+  }
+  const p01 = { x: midpoint(p0.x, p1.x), y: midpoint(p0.y, p1.y) };
+  const p12 = { x: midpoint(p1.x, p2.x), y: midpoint(p1.y, p2.y) };
+  const p23 = { x: midpoint(p2.x, p3.x), y: midpoint(p2.y, p3.y) };
+  const p012 = { x: midpoint(p01.x, p12.x), y: midpoint(p01.y, p12.y) };
+  const p123 = { x: midpoint(p12.x, p23.x), y: midpoint(p12.y, p23.y) };
+  const center = { x: midpoint(p012.x, p123.x), y: midpoint(p012.y, p123.y) };
+  flattenCubic(output, p0, p01, p012, center, tolerance, depth + 1);
+  flattenCubic(output, center, p123, p23, p3, tolerance, depth + 1);
+}
+
+/** Adaptive Bezier flattening with cumulative arc length for text and tools. */
+export function pathArcTable(path: PathStyle, tolerance = 0.25): PathArcSample[] {
+  if (path.anchors.length < 2) return [];
+  const points: Array<{ x: number; y: number }> = [{ x: path.anchors[0].x, y: path.anchors[0].y }];
+  const segmentCount = path.anchors.length - 1 + (path.closed ? 1 : 0);
+  for (let index = 0; index < segmentCount; index += 1) {
+    const from = path.anchors[index % path.anchors.length];
+    const to = path.anchors[(index + 1) % path.anchors.length];
+    flattenCubic(
+      points,
+      from,
+      { x: from.x + from.hOut.dx, y: from.y + from.hOut.dy },
+      { x: to.x + to.hIn.dx, y: to.y + to.hIn.dy },
+      to,
+      Math.max(0.01, tolerance),
+    );
+  }
+  let distance = 0;
+  return points.map((point, index) => {
+    if (index > 0) distance += Math.hypot(point.x - points[index - 1].x, point.y - points[index - 1].y);
+    return { ...point, distance };
+  });
+}
+
+export function nearestPathDistance(table: ReadonlyArray<PathArcSample>, x: number, y: number) {
+  if (table.length < 2) return 0;
+  let nearestDistance = 0;
+  let nearestSquared = Infinity;
+  for (let index = 1; index < table.length; index += 1) {
+    const from = table[index - 1];
+    const to = table[index];
+    const dx = to.x - from.x;
+    const dy = to.y - from.y;
+    const lengthSquared = dx * dx + dy * dy;
+    const amount = lengthSquared > 0
+      ? Math.max(0, Math.min(1, ((x - from.x) * dx + (y - from.y) * dy) / lengthSquared))
+      : 0;
+    const px = from.x + dx * amount;
+    const py = from.y + dy * amount;
+    const squared = (x - px) ** 2 + (y - py) ** 2;
+    if (squared < nearestSquared) {
+      nearestSquared = squared;
+      nearestDistance = from.distance + (to.distance - from.distance) * amount;
+    }
+  }
+  return nearestDistance;
+}
+
+export function samplePathDistance(table: ReadonlyArray<PathArcSample>, distance: number, closed = false) {
+  if (table.length < 2) return null;
+  const total = table.at(-1)!.distance;
+  if (total <= 0) return null;
+  let target = distance;
+  if (closed) target = ((target % total) + total) % total;
+  else if (target < 0 || target > total) return null;
+  let low = 1;
+  let high = table.length - 1;
+  while (low < high) {
+    const middle = (low + high) >> 1;
+    if (table[middle].distance < target) low = middle + 1;
+    else high = middle;
+  }
+  const to = table[low];
+  const from = table[low - 1];
+  const span = Math.max(1e-9, to.distance - from.distance);
+  const amount = (target - from.distance) / span;
+  return {
+    x: from.x + (to.x - from.x) * amount,
+    y: from.y + (to.y - from.y) * amount,
+    angle: Math.atan2(to.y - from.y, to.x - from.x),
+  };
+}
+
+export type TextStyle = {
+  /**
+   * Version 2 adds structured typography while preserving the legacy fields
+   * below for old .luma files, PSD interchange and inexpensive rendering.
+   */
+  schemaVersion?: 2;
+  text: string;
+  font: string; // "600 128px Inter, system-ui, sans-serif"
+  color: string;
+  align: CanvasTextAlign;
+  lineHeight: number; // multiplier
+  x: number; // baseline x in layer-space
+  y: number; // baseline y in layer-space
+  layout?: "point" | "paragraph" | "vertical" | "path";
+  boxWidth?: number;
+  boxHeight?: number;
+  /** Imported paragraph frames anchor y at their top, not the first baseline. */
+  frameOrigin?: "top";
+  /** Letter spacing in thousandths of an em, which is Photoshop's unit. */
+  tracking?: number;
+  /** Extra space after each paragraph, as a multiple of the font size. */
+  paragraphSpacing?: number;
+  /** Stretch every line but the last to fill the box. Paragraph layout only. */
+  justify?: boolean;
+  /** Frozen path geometry for type-on-path so the text layer stays portable. */
+  path?: PathStyle;
+  /** Default structured character style. Run styles override these values. */
+  defaultStyle?: TextRunStyle;
+  /** Non-overlapping UTF-16 ranges. Omitted values inherit defaultStyle/font. */
+  runs?: TextRun[];
+  /** Paragraph-level ranges; newlines remain in the shared story string. */
+  paragraphs?: TextParagraphRange[];
+  direction?: TextDirection;
+  writingMode?: TextWritingMode;
+  language?: string;
+  /** Nondestructive text-only appearance, independent from layer effects. */
+  appearance?: TextAppearance;
+  /** Lightweight spatial preview plus an optional live link to Form Studio. */
+  spatial?: TextSpatialStyle;
+  /** Stable exchange identity; never grants automatic synchronization or overwrite authority. */
+  formOrigin?: { assetId: string; layerId: string };
+};
+
+export type SpatialTransform = {
+  /** Degrees, matching creative-tool inspectors rather than the renderer's radians. */
+  rotationX: number;
+  rotationY: number;
+  rotationZ: number;
+  /** 0 is orthographic; 100 is the strongest supported interactive preview. */
+  perspective: number;
+};
+
+export type SpatialMaterial = {
+  frontColor: string;
+  sideColor: string;
+  roughness: number;
+  metalness: number;
+};
+
+export type FormStudioTextLink = {
+  application: "form-studio";
+  projectId: string;
+  revisionId?: string;
+  objectId: string;
+  uri?: string;
+  autoUpdate: boolean;
+  lastSyncedAt?: number;
+};
+
+export type SpatialLayerStyle = {
+  schemaVersion: 1;
+  enabled: boolean;
+  transform: SpatialTransform;
+  extrusion: { depth: number; bevel: number };
+  material: SpatialMaterial;
+  link?: FormStudioTextLink;
+};
+
+/** Compatibility name retained for v2 text documents and the text bridge. */
+export type TextSpatialStyle = SpatialLayerStyle;
+
+export type TextDirection = "auto" | "ltr" | "rtl";
+export type TextWritingMode = "horizontal-tb" | "vertical-rl" | "vertical-lr";
+export type TextDecoration = "none" | "underline" | "line-through";
+
+export type TextRunStyle = {
+  fontFamily?: string;
+  fontSize?: number;
+  fontWeight?: number;
+  fontStyle?: "normal" | "italic" | "oblique";
+  fontStretch?: number;
+  color?: string;
+  tracking?: number;
+  baselineShift?: number;
+  decoration?: TextDecoration;
+  /** Registered and custom OpenType variable axes, e.g. wght/wdth/opsz. */
+  axes?: Record<string, number>;
+  /** OpenType feature tags, e.g. liga/smcp/onum. */
+  features?: Record<string, boolean>;
+};
+
+export type TextRun = {
+  start: number;
+  end: number;
+  style: TextRunStyle;
+};
+
+export type TextParagraphStyle = {
+  align?: "left" | "center" | "right" | "justify";
+  direction?: TextDirection;
+  lineHeight?: number;
+  spaceBefore?: number;
+  spaceAfter?: number;
+  firstLineIndent?: number;
+  startIndent?: number;
+  endIndent?: number;
+  hyphenate?: boolean;
+};
+
+export type TextParagraphRange = {
+  start: number;
+  end: number;
+  style: TextParagraphStyle;
+};
+
+export type TextAppearanceFill = {
+  id: string;
+  kind: "solid";
+  color: string;
+  opacity: number;
+  enabled: boolean;
+};
+
+export type TextAppearanceStroke = {
+  id: string;
+  color: string;
+  width: number;
+  opacity: number;
+  enabled: boolean;
+};
+
+export type TextAppearance = {
+  fills: TextAppearanceFill[];
+  strokes: TextAppearanceStroke[];
+};
+
+export type ShapeKind = "rect" | "ellipse";
+export type ShapeStyle = {
+  kind: ShapeKind;
+  x: number;
+  y: number;
+  w: number;
+  h: number;
+  fill: string;
+  stroke: string;
+  strokeWidth: number;
+  radius: number; // rect corner radius
+};
+
+export type SmartFilterKind =
+  | "blur"
+  | "sharpen"
+  | "high-pass"
+  | "motion-blur"
+  | "surface-blur"
+  | "median"
+  | "dust-scratches"
+  | "maximum"
+  | "minimum"
+  | "lens-blur"
+  | "reduce-noise"
+  | "displace"
+  | "invert"
+  | "desaturate"
+  | "hue";
+
+export type SmartFilter = {
+  id: string;
+  kind: SmartFilterKind;
+  enabled: boolean;
+  opacity: number;
+  params: Record<string, number>;
+};
+
+export type AiProvenance = {
+  id: string;
+  operation: "fill" | "expand" | "remove" | "relight" | "harmonize" | "upscale";
+  provider: "openai" | "local";
+  model: string;
+  prompt: string;
+  createdAt: string;
+  sourceLayerIds: string[];
+  usedSelection: boolean;
+  requestId?: string;
+  inputSha256?: string;
+  maskSha256?: string;
+  referenceSha256?: string;
+  parameters?: {
+    quality: AiEditQuality;
+    size: string;
+    variationIndex?: number;
+    controls?: AiOperationControls;
+    selection?: AiSelectionGuide;
+    identityReferenceLayerId?: string;
+    /** Document rectangle represented by the bounded AI input/output raster. */
+    workRegion?: { x: number; y: number; width: number; height: number; outputWidth: number; outputHeight: number };
+    geometryCopy?: { mode: "upscale" | "expand"; factor: number; width: number; height: number };
+  };
+};
+
+export type SourceProvenance = {
+  originalName: string;
+  format: string;
+  mode: "decoded" | "embedded-raw-preview" | "dng-cfa-developed" | "camera-raw-developed";
+  originalBytes?: number;
+  colorProfile?: {
+    id: string;
+    name: string;
+    version?: string;
+    colorSpace: string;
+    model: "matrix-trc" | "lut" | "unsupported-lut" | "metadata-only";
+    canTransform: boolean;
+    browserDecoded: true;
+    warnings: string[];
+  };
+};
+
+/**
+ * Original sensor asset and nondestructive develop recipe for an editable DNG
+ * layer. The source bytes are stored once in a .luma project; all display and
+ * precision surfaces remain reproducible derivatives.
+ */
+export type RawLayerSource = {
+  original: Uint8Array;
+  settings: RawDevelopSettings;
+  decoder: "luma-dng-tiff-v1" | "luma-camera-tiff-v1";
+  boundary: "classic-tiff-uncompressed-bayer" | "bigtiff-uncompressed-bayer" | "tiff-lossless-jpeg-bayer";
+  matrixSource: "forward-matrix-1" | "color-matrix-1" | "assumed-camera-rgb";
+  sensor: {
+    format?: string;
+    bitsPerSample: number;
+    dngVersion?: string;
+    warnings: string[];
+  };
+};
+
+/**
+ * Layer style effects.
+ *
+ * Effects split into two passes by where they sit relative to the layer's own
+ * pixels — see EFFECTS_BELOW_CONTENT. Shadows and glows draw underneath;
+ * overlays, strokes and bevels draw on top clipped to the layer's alpha.
+ *
+ * The shared fields stay required so existing callers keep working; per-kind
+ * options are optional with documented defaults.
+ */
+export type LayerEffectKind =
+  | "drop-shadow"
+  | "inner-shadow"
+  | "outer-glow"
+  | "inner-glow"
+  | "satin"
+  | "color-overlay"
+  | "gradient-overlay"
+  | "pattern-overlay"
+  | "stroke"
+  | "bevel-emboss"
+  | "backdrop-blur"
+  | "bloom"
+  | "relief"
+  | "long-shadow"
+  | "refraction"
+  | "reflection"
+  | "contact-shadow";
+
+/** Effects painted beneath the layer content; the rest paint over it. */
+export const EFFECTS_BELOW_CONTENT: ReadonlyArray<LayerEffectKind> = ["drop-shadow", "outer-glow", "long-shadow", "contact-shadow"];
+
+export type StrokePosition = "outside" | "inside" | "center";
+/** Edge glows hug the inside of the silhouette; centre glows radiate outwards. */
+export type GlowSource = "edge" | "center";
+export type GradientStyle = "linear" | "radial" | "angle" | "reflected" | "diamond";
+export type StrokeFillType = "color" | "gradient" | "pattern";
+export type GlowTechnique = "softer" | "precise";
+/** Where the bevel's relief sits relative to the layer's edge. */
+export type BevelStyle = "outer" | "inner" | "emboss" | "pillow" | "stroke";
+export type BevelDirection = "up" | "down";
+export type PatternKind = "checker" | "stripes" | "dots";
+
+export type GradientStop = { offset: number; color: string };
+
+export const DEFAULT_GRADIENT_STOPS: ReadonlyArray<GradientStop> = [
+  { offset: 0, color: "#000000" },
+  { offset: 1, color: "#ffffff" },
+];
+
+/**
+ * The shared light direction, so shadows, satin and bevels agree.
+ *
+ * Photoshop's default. `altitude` is carried for PSD fidelity; the 2D
+ * compositor has no surface normals to light, so nothing reads it yet.
+ */
+export type GlobalLight = { angle: number; altitude: number };
+export const DEFAULT_GLOBAL_LIGHT: GlobalLight = { angle: 120, altitude: 30 };
+
+export function resolvedGlobalLight(doc: Pick<Document, "globalLight">): GlobalLight {
+  return doc.globalLight ?? DEFAULT_GLOBAL_LIGHT;
+}
+
+export type LayerEffect = {
+  id: string;
+  kind: LayerEffectKind;
+  enabled: boolean;
+  opacity: number;
+  color: string;
+  blur: number;
+  offsetX: number;
+  offsetY: number;
+  /** Take the direction from the document's global light instead of this
+   *  effect's own angle, keeping the offset's distance. Shadows, satin, bevel. */
+  useGlobalLight?: boolean;
+  /** How this effect composites where it lands. Defaults per kind — see
+   *  EFFECT_BLEND_DEFAULTS. Any of the 27 modes is allowed. */
+  blendMode?: BlendMode;
+  /** bevel-emboss only — light elevation in degrees. Defaults to 30. */
+  altitude?: number;
+  /** bevel-emboss only — where the relief sits. Defaults to "inner". */
+  bevelStyle?: BevelStyle;
+  /** bevel-emboss only — "up" is raised, "down" is carved. Defaults to "up". */
+  direction?: BevelDirection;
+  /** bevel-emboss only — remaps the highlight/shadow ramp before it is drawn. */
+  glossContour?: CurvePoints;
+  /**
+   * Shadows and glows — how much of `blur` hardens the edge instead of
+   * softening it, 0..1. Photoshop calls this Spread outward and Choke inward.
+   * At 0 the falloff is pure blur; at 1 the edge is hard. Defaults to 0.
+   */
+  spread?: number;
+  /** Shadows and glows — dither the falloff, 0..1. Defaults to 0. */
+  noise?: number;
+  /**
+   * Remaps the effect's falloff profile: input alpha in, output alpha out.
+   * A dip in the middle gives a glow a ring, which is what contours are for.
+   * Defaults to linear (no change).
+   */
+  contour?: CurvePoints;
+  /** stroke only — thickness in document pixels. Defaults to 3. */
+  width?: number;
+  /** stroke only — defaults to "outside". */
+  position?: StrokePosition;
+  /** bevel-emboss only — offset in px between highlight and shadow. Defaults to 3. */
+  depth?: number;
+  /** bevel-emboss only — light direction in degrees. Defaults to 135 (top-left). */
+  angle?: number;
+  /** bevel-emboss only. Defaults to white. */
+  highlightColor?: string;
+  /** bevel-emboss only. Defaults to black. */
+  shadowColor?: string;
+  /** inner-glow only — defaults to "edge". */
+  glowSource?: GlowSource;
+  /** satin only — flips the sheen. Defaults to false. */
+  invert?: boolean;
+  /** gradient-overlay only. Defaults to DEFAULT_GRADIENT_STOPS. */
+  stops?: GradientStop[];
+  /** gradient-overlay only — degrees. Defaults to 90. */
+  gradientAngle?: number;
+  /** gradient-overlay only. Defaults to "linear". */
+  gradientStyle?: GradientStyle;
+  /** gradient-overlay only. Defaults to false. */
+  reverse?: boolean;
+  /** gradient-overlay only — dithers the ramp to hide banding, 0..1. */
+  dither?: number;
+  /** stroke only — what fills the band. Defaults to "color". */
+  fillType?: StrokeFillType;
+  /** glows — "precise" dilates the silhouette, "softer" blurs it. */
+  technique?: GlowTechnique;
+  /**
+   * glows — the part of the falloff the contour is applied across, 0..1.
+   * Photoshop's Range: at 1 the contour spans the whole glow, lower values
+   * compress it towards the edge.
+   */
+  range?: number;
+  /** pattern-overlay only. Defaults to "checker". */
+  pattern?: PatternKind;
+  /** pattern-overlay only — cell size in document pixels. Defaults to 16. */
+  patternScale?: number;
+  /** pattern-overlay only — the colour behind `color`. Defaults to transparent. */
+  patternBackground?: string;
+  /**
+   * backdrop-blur only — saturation of the blurred backdrop, where 1 leaves it
+   * alone. Real vibrancy pushes past 1; the frosted look is mostly this.
+   */
+  saturation?: number;
+  /** backdrop-blur only — how strongly `color` tints the result, 0..1. */
+  tint?: number;
+  /**
+   * bloom only — the luminance a pixel must exceed to bloom, 0..1.
+   * This is what separates bloom from a glow: a glow spreads the silhouette,
+   * bloom spreads only the parts of the image that are actually bright.
+   */
+  threshold?: number;
+  /** long-shadow only — how many stamps make up the trail. Defaults to 32. */
+  steps?: number;
+  /**
+   * refraction — how far the backdrop is displaced, in pixels. Defaults to 12.
+   * contact-shadow — how far the darkening reaches from the edge. Defaults to 8.
+   */
+  strength?: number;
+  /**
+   * Confine this effect to the layer's subject matte.
+   *
+   * The matte is computed on demand and cached on the layer, because inference
+   * is async and rendering is not. An effect asking for a matte the layer does
+   * not have yet simply renders unrestricted rather than blocking the frame.
+   */
+  restrictToSubject?: boolean;
+};
+
+export function isEffectBelowContent(kind: LayerEffectKind) {
+  return EFFECTS_BELOW_CONTENT.includes(kind);
+}
+
+/** Dialog order, matching Photoshop's Layer Style list (top of the shape outwards). */
+export const LAYER_EFFECT_KINDS: ReadonlyArray<LayerEffectKind> = [
+  "bevel-emboss",
+  "stroke",
+  "inner-shadow",
+  "inner-glow",
+  "satin",
+  "color-overlay",
+  "gradient-overlay",
+  "pattern-overlay",
+  "bloom",
+  "relief",
+  "outer-glow",
+  "drop-shadow",
+  "long-shadow",
+  "contact-shadow",
+  "backdrop-blur",
+  "refraction",
+  "reflection",
+];
+
+export const EFFECT_LABELS: Record<LayerEffectKind, string> = {
+  "bevel-emboss": "Bevel & Emboss",
+  stroke: "Stroke",
+  "inner-shadow": "Inner Shadow",
+  "inner-glow": "Inner Glow",
+  satin: "Satin",
+  "color-overlay": "Color Overlay",
+  "gradient-overlay": "Gradient Overlay",
+  "pattern-overlay": "Pattern Overlay",
+  "outer-glow": "Outer Glow",
+  "drop-shadow": "Drop Shadow",
+  "backdrop-blur": "Backdrop Blur",
+  bloom: "Bloom",
+  relief: "Relief",
+  "long-shadow": "Long Shadow",
+  refraction: "Refraction",
+  reflection: "Reflection",
+  "contact-shadow": "Contact Shadow",
+};
+
+/** Controls an effect actually reads. Anything omitted here is ignored by the renderer. */
+/**
+ * One entry per control, never a group: a compound "gradient" entry let a
+ * change to the stops hide the fact that the angle was being ignored, so the
+ * table stopped proving anything about the angle.
+ */
+export type EffectField =
+  | "offset" | "blur" | "width" | "position" | "depth" | "angle" | "altitude" | "bevelColors"
+  | "globalLight" | "glowSource" | "invert" | "blendMode" | "spread" | "noise" | "contour"
+  | "gradientStops" | "gradientAngle" | "gradientStyle" | "gradientReverse"
+  | "pattern" | "patternScale" | "saturation" | "tint" | "threshold" | "steps" | "strength"
+  | "dither" | "fillType" | "technique" | "range"
+  | "bevelStyle" | "direction" | "glossContour";
+
+/** Falloff shaping applies wherever an effect has a soft edge to shape. */
+const FALLOFF: ReadonlyArray<EffectField> = ["spread", "noise", "contour"];
+
+/**
+ * Note which kinds do *not* list "blendMode".
+ *
+ * Effects accumulate into the layer's own buffer, and the below-content ones
+ * land where that buffer is still empty — there is nothing there to blend
+ * with, so the control would be dead. Photoshop does expose a blend mode on a
+ * drop shadow, because its effects composite against the backdrop; matching
+ * that means re-deriving the layer's mask and clipping afterwards, so until
+ * then these deliberately have no mode rather than an inert one.
+ */
+export const EFFECT_FIELDS: Record<LayerEffectKind, ReadonlyArray<EffectField>> = {
+  "drop-shadow": ["offset", "blur", "globalLight", ...FALLOFF],
+  "inner-shadow": ["blendMode", "offset", "blur", "globalLight", ...FALLOFF],
+  "outer-glow": ["blur", "technique", "range", ...FALLOFF],
+  "inner-glow": ["blendMode", "blur", "glowSource", "technique", "range", ...FALLOFF],
+  satin: ["blendMode", "offset", "blur", "invert", "globalLight", "contour"],
+  "color-overlay": ["blendMode"],
+  "gradient-overlay": ["blendMode", "gradientStops", "gradientAngle", "gradientStyle", "gradientReverse", "dither"],
+  "pattern-overlay": ["blendMode", "pattern", "patternScale"],
+  // Stroke's gradient and pattern parameters are deliberately absent: they are
+  // read only under the matching fillType, and this table's contract is that a
+  // listed field always changes the render. Conditional parameters get their
+  // own tests instead of weakening the invariant to "sometimes".
+  stroke: ["blendMode", "width", "position", "fillType"],
+  "bevel-emboss": ["blendMode", "depth", "angle", "altitude", "blur", "bevelColors", "globalLight", "contour", "bevelStyle", "direction", "glossContour"],
+  "backdrop-blur": ["blendMode", "blur", "saturation", "tint"],
+  bloom: ["blendMode", "blur", "threshold"],
+  relief: ["blendMode", "depth", "angle", "globalLight"],
+  "long-shadow": ["offset", "globalLight", "steps"],
+  refraction: ["blendMode", "strength", "blur"],
+  reflection: ["blendMode", "blur", "offset"],
+  "contact-shadow": ["strength", "blur"],
+};
+
+/**
+ * The offset an effect actually uses, after global light.
+ *
+ * Global light shares a direction, not a distance: the effect keeps how far it
+ * throws and only borrows the angle, which is what makes every shadow in a
+ * document line up while staying individually tunable.
+ */
+export function resolvedEffectOffset(effect: LayerEffect, light: GlobalLight = DEFAULT_GLOBAL_LIGHT) {
+  if (!effect.useGlobalLight) return { x: effect.offsetX, y: effect.offsetY };
+  const distance = Math.hypot(effect.offsetX, effect.offsetY);
+  const radians = (light.angle * Math.PI) / 180;
+  return { x: Math.cos(radians) * distance, y: -Math.sin(radians) * distance };
+}
+
+/** The bevel light angle in degrees, after global light. */
+export function resolvedEffectAngle(effect: LayerEffect, light: GlobalLight = DEFAULT_GLOBAL_LIGHT) {
+  return effect.useGlobalLight ? light.angle : (effect.angle ?? 135);
+}
+
+/** Gradient stops in ascending order, with `reverse` already applied. */
+/**
+ * Photoshop's per-kind default blend mode — with one deliberate departure.
+ *
+ * Shadows multiply and glows screen *against what is behind the layer*. Our
+ * below-content effects are drawn into the layer's own buffer, where there is
+ * nothing beneath them yet, so a multiply drop shadow would composite against
+ * emptiness and vanish. Those two default to normal; everything above the
+ * content sits on the layer's own pixels and takes Photoshop's default, which
+ * is what makes an inner shadow darken the layer instead of painting over it.
+ *
+ * Any effect can still be set to any of the 27 modes.
+ */
+export const EFFECT_BLEND_DEFAULTS: Record<LayerEffectKind, BlendMode> = {
+  "drop-shadow": "source-over",
+  "outer-glow": "source-over",
+  "inner-shadow": "multiply",
+  "inner-glow": "screen",
+  satin: "multiply",
+  "color-overlay": "source-over",
+  "gradient-overlay": "source-over",
+  "pattern-overlay": "source-over",
+  stroke: "source-over",
+  "bevel-emboss": "source-over",
+  "backdrop-blur": "source-over",
+  // Bloom adds light. Relief must key off the *source* grey, not the base, so
+  // hard-light rather than overlay: with overlay a white area stays white
+  // whatever the emboss says, and the relief disappears exactly where the
+  // image is brightest.
+  bloom: "screen",
+  relief: "hard-light",
+  "long-shadow": "source-over",
+  refraction: "source-over",
+  reflection: "source-over",
+  "contact-shadow": "source-over",
+};
+
+export function resolvedEffectBlendMode(effect: LayerEffect): BlendMode {
+  return effect.blendMode ?? EFFECT_BLEND_DEFAULTS[effect.kind];
+}
+
+/** The bevel light elevation in degrees, after global light. */
+export function resolvedEffectAltitude(effect: LayerEffect, light: GlobalLight = DEFAULT_GLOBAL_LIGHT) {
+  return effect.useGlobalLight ? light.altitude : (effect.altitude ?? DEFAULT_GLOBAL_LIGHT.altitude);
+}
+
+/**
+ * How hard the light rakes across the surface, 0..1.
+ *
+ * A light directly overhead (90°) throws no directional shading, so the bevel
+ * flattens out; a grazing light (0°) throws the most. Altitude was stored and
+ * never read until this existed — a control that did nothing.
+ */
+export function bevelLightStrength(effect: LayerEffect, light: GlobalLight = DEFAULT_GLOBAL_LIGHT) {
+  const altitude = Math.max(0, Math.min(90, resolvedEffectAltitude(effect, light)));
+  return Math.cos((altitude * Math.PI) / 180);
+}
+
+export function resolvedGradientStops(effect: LayerEffect): GradientStop[] {
+  const stops = (effect.stops?.length ? effect.stops : DEFAULT_GRADIENT_STOPS)
+    .map((stop) => ({ offset: Math.max(0, Math.min(1, stop.offset)), color: stop.color }));
+  const oriented = effect.reverse
+    ? stops.map((stop) => ({ offset: 1 - stop.offset, color: stop.color }))
+    : stops;
+  return oriented.sort((a, b) => a.offset - b.offset);
+}
+
+export function effectUses(kind: LayerEffectKind, field: EffectField) {
+  return EFFECT_FIELDS[kind].includes(field);
+}
+
+/**
+ * Effects in painting order: bottom-most first.
+ *
+ * Photoshop paints layer styles in a fixed order regardless of the order they
+ * were added, and its dialog list is that order upside down — Bevel & Emboss
+ * sits at the top of the list because it paints last. Rendering in array order
+ * instead made the result depend on which button the user clicked first.
+ *
+ * Ties keep their relative order, so duplicates of one kind stack as added.
+ */
+export function effectsInPaintOrder(effects: ReadonlyArray<LayerEffect>): LayerEffect[] {
+  const rank = (effect: LayerEffect) => LAYER_EFFECT_KINDS.indexOf(effect.kind);
+  return effects
+    .map((effect, index) => ({ effect, index }))
+    .sort((a, b) => (rank(b.effect) - rank(a.effect)) || (a.index - b.index))
+    .map(({ effect }) => effect);
+}
+
+/** Light direction resolved to a pixel offset for bevel/emboss. */
+export function bevelOffset(effect: LayerEffect, light: GlobalLight = DEFAULT_GLOBAL_LIGHT) {
+  const depth = effect.depth ?? 3;
+  const radians = (resolvedEffectAngle(effect, light) * Math.PI) / 180;
+  return { dx: Math.cos(radians) * depth, dy: -Math.sin(radians) * depth };
+}
+
+export type Layer = {
+  /** Editable, source-backed 3D smart object. Bitmap is its committed render. */
+  lettering3d?: import("./lettering-asset").LetteringAsset;
+  mesh3d?: import("./form-mesh-asset").FormMeshAsset;
+  id: string;
+  name: string;
+  kind: LayerKind;
+  visible: boolean;
+  opacity: number;
+  /** Content opacity; unlike layer opacity, effects remain fully present. */
+  fillOpacity?: number;
+  blend: BlendMode;
+  /** Ordered blend passes. Missing means one legacy pass using `blend`. */
+  blendStack?: BlendPass[];
+  blendIf?: BlendIf;
+  transform: Transform;
+  /** Spatial presentation shared by raster, vector, text and smart objects. */
+  spatial?: SpatialLayerStyle;
+  parentId?: string;
+  locked?: boolean;
+  /** Marks the single layer used as a persistent AI identity/product reference. */
+  identityReference?: boolean;
+  clipping?: boolean;
+  filters?: SmartFilter[];
+  ai?: AiProvenance;
+  source?: SourceProvenance;
+  raw?: RawLayerSource;
+  /** Immutable embedded .luma contents for native Smart Objects (not a PSB payload). */
+  smartSource?: Uint8Array;
+  /** Stable source-layer slot used to restore preservation metadata from an embedded PSD/PSB. */
+  photoshop?: { sourceIndex: number };
+  effects?: LayerEffect[];
+  /** Cached subject matte for effects with `restrictToSubject`. */
+  subjectMask?: HTMLCanvasElement;
+  /**
+   * A resolution-independent mask, rasterized from a path.
+   *
+   * Kept alongside the pixel mask rather than replacing it: Photoshop layers
+   * carry both, and "Vector Mask Hides Effects" is a separate switch from the
+   * pixel-mask one precisely because the two can differ.
+   */
+  vectorMask?: PathStyle;
+  /**
+   * Advanced blending, matching Photoshop's pane.
+   *
+   * Knockout uses the layer's own alpha to punch through what is beneath —
+   * "shallow" stops at the enclosing group, "deep" goes to the bottom of the
+   * document. Combined with a fill opacity of 0 it is how you cut a shape
+   * clean through a stack.
+   */
+  knockout?: "none" | "shallow" | "deep";
+  /** Channels this layer is allowed to affect. Omitted means all three. */
+  blendChannels?: { r: boolean; g: boolean; b: boolean };
+  /**
+   * Whether the layer mask also hides the layer's effects.
+   *
+   * Photoshop defaults this off: the mask shapes the pixels, and a drop shadow
+   * still falls outside it. We applied the mask to the finished layer buffer,
+   * which is the "on" behaviour, with no way to turn it off.
+   */
+  maskHidesEffects?: boolean;
+  /** As maskHidesEffects, for the vector mask. */
+  vectorMaskHidesEffects?: boolean;
+  /**
+   * When false, effects and knockout apply across the layer's whole extent
+   * rather than only where it has pixels. Photoshop's default is true, which
+   * is what makes a style follow the shape of the artwork.
+   */
+  transparencyShapesLayer?: boolean;
+  /**
+   * When true, a clipping stack composites into its base and blends as one
+   * unit. Photoshop defaults this on; compositing each clipped layer
+   * separately is the "off" behaviour.
+   */
+  blendClippedAsGroup?: boolean;
+  bitmap?: HTMLCanvasElement;
+  /** Linear-light master for high-depth/tile-only layers. Full-size rgba8 bitmaps retain exact display samples. */
+  surface?: PrecisionTileSurface;
+  /** Sparse 8-bit layer-mask edit master. Missing tiles inherit default alpha. */
+  maskSurface?: SparseAlphaSurface;
+  /** Legacy/interchange mask canvas; released after migration to maskSurface. */
+  mask?: HTMLCanvasElement;
+  tone?: ToneParams;
+  curves?: Curves;
+  levels?: LevelsParams;
+  hsl?: HslParams;
+  proAdjustment?: ProAdjustmentParams;
+  text?: TextStyle;
+  shape?: ShapeStyle;
+  path?: PathStyle;
+};
+
+export function resolvedBlendPasses(layer: Pick<Layer, "id" | "blend" | "blendStack">): BlendPass[] {
+  if (layer.blendStack?.length) {
+    return layer.blendStack.map((pass) => ({
+      ...pass,
+      opacity: Math.max(0, Math.min(1, Number.isFinite(pass.opacity) ? pass.opacity : 1)),
+    }));
+  }
+  return [{ id: `${layer.id}-blend-0`, mode: layer.blend, opacity: 1, enabled: true }];
+}
+
+export function resolvedFillOpacity(layer: Pick<Layer, "fillOpacity">) {
+  return Math.max(0, Math.min(1, Number.isFinite(layer.fillOpacity) ? layer.fillOpacity! : 1));
+}
+
+function normalizedBlendIfRange(range?: Partial<BlendIfRange>): BlendIfRange {
+  const clamp = (value: number | undefined, fallback: number) => Math.max(0, Math.min(1, Number.isFinite(value) ? value! : fallback));
+  const black = clamp(range?.black, 0);
+  const blackFeather = Math.max(black, clamp(range?.blackFeather, black));
+  const whiteFeather = Math.max(blackFeather, clamp(range?.whiteFeather, 1));
+  const white = Math.max(whiteFeather, clamp(range?.white, 1));
+  return { black, blackFeather, whiteFeather, white };
+}
+
+/** The four Blend If handles, in the order they must stay in. */
+export const BLEND_IF_HANDLES = ["black", "blackFeather", "whiteFeather", "white"] as const;
+
+/**
+ * Reorder a range after one handle moved, pushing the others out of its way.
+ *
+ * `normalizedBlendIfRange` only ever raises a handle to satisfy the ordering,
+ * so pulling an outer handle inwards would be silently undone — dragging
+ * "White hide" left would do nothing at all. Handles push each other instead,
+ * which is also what Photoshop's split sliders do.
+ */
+export function orderBlendIfHandles(range: BlendIfRange, moved: keyof BlendIfRange): BlendIfRange {
+  const index = BLEND_IF_HANDLES.indexOf(moved);
+  if (index < 0) return range;
+  const next = { ...range };
+  const pivot = next[moved];
+  for (let i = index - 1; i >= 0; i -= 1) {
+    next[BLEND_IF_HANDLES[i]] = Math.min(next[BLEND_IF_HANDLES[i]], pivot);
+  }
+  for (let i = index + 1; i < BLEND_IF_HANDLES.length; i += 1) {
+    next[BLEND_IF_HANDLES[i]] = Math.max(next[BLEND_IF_HANDLES[i]], pivot);
+  }
+  return next;
+}
+
+export function resolvedBlendIf(layer: Pick<Layer, "blendIf">): BlendIf {
+  const source = layer.blendIf as (Partial<BlendIf> & Partial<LegacyBlendIf>) | undefined;
+  const candidateChannel = source?.activeChannel ?? source?.channel;
+  const activeChannel: BlendIfChannel = (["gray", "red", "green", "blue"] as const).includes(candidateChannel as BlendIfChannel)
+    ? candidateChannel as BlendIfChannel
+    : "gray";
+  const legacyBand = source?.source || source?.underlying
+    ? { source: normalizedBlendIfRange(source.source), underlying: normalizedBlendIfRange(source.underlying) }
+    : undefined;
+  const channel = (name: BlendIfChannel) => {
+    const band = source?.channels?.[name] ?? (name === activeChannel ? legacyBand : undefined);
+    return {
+      source: normalizedBlendIfRange(band?.source),
+      underlying: normalizedBlendIfRange(band?.underlying),
+    };
+  };
+  return {
+    activeChannel,
+    channels: {
+      gray: channel("gray"),
+      red: channel("red"),
+      green: channel("green"),
+      blue: channel("blue"),
+    },
+  };
+}
+
+export type Selection = {
+  // Grayscale mask; alpha 255 = fully selected.
+  /** Sparse edit master. New selection operations always populate this. */
+  surface?: SparseAlphaSurface;
+  /** Legacy/project interchange mirror. Never required for large documents. */
+  mask?: HTMLCanvasElement;
+  // Bounding rect for quick reject / drawing marching ants.
+  bounds: { x: number; y: number; w: number; h: number };
+};
+
+export type Guide = {
+  id: string;
+  orientation: "horizontal" | "vertical";
+  position: number;
+};
+
+export type CapturedBrushAsset = {
+  id: string;
+  name: string;
+  bitmap: HTMLCanvasElement;
+  /** Diameter in document pixels when sampled, before storage downsampling. */
+  sourceDiameter: number;
+  createdAt: string;
+  /** Optional document-space source retained by a Living Source Brush. */
+  liveSource?: {
+    mode: "merged" | "layer";
+    layerId?: string;
+    centerX: number;
+    centerY: number;
+    radius: number;
+    live: boolean;
+  };
+};
+
+export const MAX_CAPTURED_BRUSHES = 32;
+export const MAX_CAPTURED_BRUSH_EDGE = 512;
+
+export type ProofProfile = "none" | "srgb" | "display-p3" | "cmyk-generic";
+
+export type ProofSettings = {
+  profile: ProofProfile;
+  intent: "perceptual" | "relative-colorimetric" | "absolute-colorimetric" | "saturation";
+  blackPointCompensation: boolean;
+  gamutWarning: boolean;
+};
+
+export const MAX_LAYER_COMPS = 64;
+export const MAX_ARTBOARDS = 128;
+
+export type Artboard = {
+  id: string;
+  name: string;
+  x: number;
+  y: number;
+  width: number;
+  height: number;
+};
+
+export type LayerComp = {
+  id: string;
+  name: string;
+  createdAt: string;
+  layers: Array<{
+    layerId: string;
+    visible: boolean;
+    opacity: number;
+    transform: Transform;
+  }>;
+};
+
+export type Document = {
+  campaign?: import("./campaign").Campaign;
+  designSnapshots?: import("./design-snapshots").DesignSnapshot[];
+  /** Saved selection planes; never implicitly discarded by image export. */
+  alphaChannels?: Array<{ id: string; name: string; surface: SparseAlphaSurface }>;
+  width: number;
+  height: number;
+  colorSpace: "srgb" | "display-p3" | "linear-srgb";
+  bitDepth: 8 | 16 | 32;
+  resolution: { x: number; y: number; unit: "ppi" };
+  guides: Guide[];
+  proofing: ProofSettings;
+  /** Shared light direction for shadows, satin and bevels. */
+  globalLight?: GlobalLight;
+  capturedBrushes?: CapturedBrushAsset[];
+  layerComps?: LayerComp[];
+  artboards?: Artboard[];
+  layers: Layer[]; // index 0 is topmost
+  selection: Selection | null;
+};
+
+let idCounter = 0;
+export function nextId(prefix: string) {
+  idCounter += 1;
+  return `${prefix}-${idCounter.toString(36)}`;
+}
+
+/** Keep generated ids collision-free when a v2 project restores stable ids. */
+export function reserveId(id: string) {
+  const suffix = id.match(/-([0-9a-z]+)$/i)?.[1];
+  if (!suffix) return;
+  const value = Number.parseInt(suffix, 36);
+  if (Number.isFinite(value)) idCounter = Math.max(idCounter, value);
+}
+
+/**
+ * Geometry for drawing a source image into a destination canvas so the whole
+ * image is visible and centred, preserving aspect ratio ("contain").
+ *
+ * Importing used to draw at 0,0 at native size, which silently cropped any
+ * image larger than the document and pinned smaller ones to the top-left
+ * corner. Exported separately so the maths is testable without a canvas.
+ *
+ * Images smaller than the canvas are NOT upscaled — enlarging on import would
+ * invent detail the file does not have. They are centred at native size.
+ */
+export function fitImageRect(
+  sourceWidth: number,
+  sourceHeight: number,
+  destWidth: number,
+  destHeight: number,
+  { allowUpscale = false }: { allowUpscale?: boolean } = {},
+): { x: number; y: number; width: number; height: number; scale: number } {
+  if (sourceWidth <= 0 || sourceHeight <= 0 || destWidth <= 0 || destHeight <= 0) {
+    return { x: 0, y: 0, width: 0, height: 0, scale: 1 };
+  }
+  const contain = Math.min(destWidth / sourceWidth, destHeight / sourceHeight);
+  const scale = allowUpscale ? contain : Math.min(1, contain);
+  const width = sourceWidth * scale;
+  const height = sourceHeight * scale;
+  return {
+    x: (destWidth - width) / 2,
+    y: (destHeight - height) / 2,
+    width,
+    height,
+    scale,
+  };
+}
+
+export function newCanvas(width: number, height: number): HTMLCanvasElement {
+  const c = document.createElement("canvas");
+  c.width = width;
+  c.height = height;
+  return c;
+}
+
+export function cloneCanvas(src: HTMLCanvasElement): HTMLCanvasElement {
+  const c = newCanvas(src.width, src.height);
+  c.getContext("2d")!.drawImage(src, 0, 0);
+  return c;
+}
+
+export function createDocument(width: number, height: number): Document {
+  return {
+    width,
+    height,
+    colorSpace: "srgb",
+    bitDepth: 8,
+    resolution: { x: 72, y: 72, unit: "ppi" },
+    guides: [],
+    proofing: {
+      profile: "none",
+      intent: "relative-colorimetric",
+      blackPointCompensation: true,
+      gamutWarning: false,
+    },
+    capturedBrushes: [],
+    layerComps: [],
+    artboards: [],
+    layers: [],
+    selection: null,
+  };
+}
+
+export function createRasterLayer(
+  name: string,
+  bitmap?: HTMLCanvasElement,
+): Layer {
+  return {
+    id: nextId("raster"),
+    name,
+    kind: "raster",
+    visible: true,
+    opacity: 1,
+    blend: "source-over",
+    transform: { ...IDENTITY_TRANSFORM },
+    bitmap,
+  };
+}
+
+export function createGroupLayer(name = "Group"): Layer {
+  return {
+    id: nextId("group"),
+    name,
+    kind: "group",
+    visible: true,
+    opacity: 1,
+    blend: "source-over",
+    transform: { ...IDENTITY_TRANSFORM },
+    locked: false,
+  };
+}
+
+export function layerAncestors(doc: Document, layer: Layer): Layer[] {
+  const result: Layer[] = [];
+  const seen = new Set<string>();
+  let parentId = layer.parentId;
+  while (parentId && !seen.has(parentId)) {
+    seen.add(parentId);
+    const parent = doc.layers.find((candidate) => candidate.id === parentId);
+    if (!parent) break;
+    result.push(parent);
+    parentId = parent.parentId;
+  }
+  return result;
+}
+
+export function effectiveLayerVisible(doc: Document, layer: Layer) {
+  return layer.visible && layerAncestors(doc, layer).every((parent) => parent.visible);
+}
+
+export function effectiveLayerOpacity(doc: Document, layer: Layer) {
+  return layerAncestors(doc, layer).reduce((opacity, parent) => opacity * parent.opacity, layer.opacity);
+}
+
+export function findClippingBase(doc: Document, layer: Layer) {
+  const index = doc.layers.findIndex((candidate) => candidate.id === layer.id);
+  for (let i = index + 1; i < doc.layers.length; i++) {
+    const candidate = doc.layers[i];
+    if (candidate.parentId !== layer.parentId) continue;
+    // A clipping stack shares the first non-clipped base. Using the adjacent
+    // clipped member makes upper members inherit the wrong silhouette.
+    if (candidate.kind !== "group" && !candidate.clipping) return candidate;
+  }
+  return null;
+}
+
+export function createAdjustmentLayer(
+  name: string,
+  tone: ToneParams = { ...NEUTRAL_TONE },
+): Layer {
+  return {
+    id: nextId("adj"),
+    name,
+    kind: "adjustment-tone",
+    visible: true,
+    opacity: 1,
+    blend: "source-over",
+    transform: { ...IDENTITY_TRANSFORM },
+    tone,
+  };
+}
+
+export function createTextLayer(name: string, style: TextStyle): Layer {
+  return {
+    id: nextId("text"),
+    name,
+    kind: "text",
+    visible: true,
+    opacity: 1,
+    blend: "source-over",
+    transform: { ...IDENTITY_TRANSFORM },
+    text: style,
+  };
+}
+
+export function createShapeLayer(name: string, style: ShapeStyle): Layer {
+  return {
+    id: nextId("shape"),
+    name,
+    kind: "shape",
+    visible: true,
+    opacity: 1,
+    blend: "source-over",
+    transform: { ...IDENTITY_TRANSFORM },
+    shape: style,
+  };
+}
+
+export function createLevelsLayer(name: string, levels: LevelsParams = { ...NEUTRAL_LEVELS }): Layer {
+  return {
+    id: nextId("levels"),
+    name,
+    kind: "adjustment-levels",
+    visible: true,
+    opacity: 1,
+    blend: "source-over",
+    transform: { ...IDENTITY_TRANSFORM },
+    levels,
+  };
+}
+
+export function createHslLayer(name: string, hsl: HslParams = { ...NEUTRAL_HSL }): Layer {
+  return {
+    id: nextId("hsl"),
+    name,
+    kind: "adjustment-hsl",
+    visible: true,
+    opacity: 1,
+    blend: "source-over",
+    transform: { ...IDENTITY_TRANSFORM },
+    hsl,
+  };
+}
+
+export function createProAdjustmentLayer(name: string, proAdjustment: ProAdjustmentParams): Layer {
+  return {
+    id: nextId("pro-adjustment"),
+    name,
+    kind: "adjustment-pro",
+    visible: true,
+    opacity: 1,
+    blend: "source-over",
+    transform: { ...IDENTITY_TRANSFORM },
+    proAdjustment: cloneProAdjustment(proAdjustment),
+  };
+}
+
+export function applyLevelsToImageData(img: ImageData, p: LevelsParams): ImageData {
+  const inSpan = Math.max(0.001, p.inWhite - p.inBlack);
+  const outSpan = p.outWhite - p.outBlack;
+  const invGamma = 1 / Math.max(0.01, p.gamma);
+  const d = img.data;
+  for (let i = 0; i < d.length; i += 4) {
+    for (let k = 0; k < 3; k++) {
+      let v = d[i + k] / 255;
+      v = Math.max(0, Math.min(1, (v - p.inBlack) / inSpan));
+      v = Math.pow(v, invGamma);
+      v = p.outBlack + v * outSpan;
+      d[i + k] = Math.max(0, Math.min(255, Math.round(v * 255)));
+    }
+  }
+  return img;
+}
+
+// Convert to HSL, offset, convert back. Standard rec.601 luminance for
+// perceptual weighting — good enough for global HSL edits.
+export function applyHslToImageData(img: ImageData, p: HslParams): ImageData {
+  const d = img.data;
+  const hueOff = (p.hue % 360) / 360;
+  const satScale = 1 + p.saturation / 100;
+  const lightOff = p.lightness / 100;
+  for (let i = 0; i < d.length; i += 4) {
+    const r = d[i] / 255, g = d[i + 1] / 255, b = d[i + 2] / 255;
+    const max = Math.max(r, g, b), min = Math.min(r, g, b);
+    let h = 0, s = 0;
+    const l = (max + min) / 2;
+    if (max !== min) {
+      const dch = max - min;
+      s = l > 0.5 ? dch / (2 - max - min) : dch / (max + min);
+      switch (max) {
+        case r: h = (g - b) / dch + (g < b ? 6 : 0); break;
+        case g: h = (b - r) / dch + 2; break;
+        case b: h = (r - g) / dch + 4; break;
+      }
+      h /= 6;
+    }
+    h = (h + hueOff + 1) % 1;
+    s = Math.max(0, Math.min(1, s * satScale));
+    const l2 = Math.max(0, Math.min(1, l + lightOff));
+    const q = l2 < 0.5 ? l2 * (1 + s) : l2 + s - l2 * s;
+    const pcomp = 2 * l2 - q;
+    const conv = (t: number) => {
+      if (t < 0) t += 1;
+      if (t > 1) t -= 1;
+      if (t < 1 / 6) return pcomp + (q - pcomp) * 6 * t;
+      if (t < 1 / 2) return q;
+      if (t < 2 / 3) return pcomp + (q - pcomp) * (2 / 3 - t) * 6;
+      return pcomp;
+    };
+    d[i] = Math.round(conv(h + 1 / 3) * 255);
+    d[i + 1] = Math.round(conv(h) * 255);
+    d[i + 2] = Math.round(conv(h - 1 / 3) * 255);
+  }
+  return img;
+}
+
+export function createCurvesLayer(name: string, curves: Curves = cloneCurves(NEUTRAL_CURVES)): Layer {
+  return {
+    id: nextId("curves"),
+    name,
+    kind: "adjustment-curves",
+    visible: true,
+    opacity: 1,
+    blend: "source-over",
+    transform: { ...IDENTITY_TRANSFORM },
+    curves,
+  };
+}
+
+export function createPathLayer(name: string, path: PathStyle): Layer {
+  return {
+    id: nextId("path"),
+    name,
+    kind: "path",
+    visible: true,
+    opacity: 1,
+    blend: "source-over",
+    transform: { ...IDENTITY_TRANSFORM },
+    path,
+  };
+}
+
+export function cloneCurves(c: Curves): Curves {
+  return {
+    rgb: c.rgb.map((p) => ({ ...p })),
+    r: c.r.map((p) => ({ ...p })),
+    g: c.g.map((p) => ({ ...p })),
+    b: c.b.map((p) => ({ ...p })),
+  };
+}
+
+// Convert a set of control points into a 256-entry LUT via monotone cubic
+// interpolation (Fritsch–Carlson) — matches Photoshop's curve behavior well
+// enough that ordinary photo edits feel right.
+export function curveToLut(points: CurvePoints): Uint8ClampedArray {
+  const pts = [...points].sort((a, b) => a.x - b.x);
+  const n = pts.length;
+  const lut = new Uint8ClampedArray(256);
+  if (n === 0) {
+    for (let i = 0; i < 256; i++) lut[i] = i;
+    return lut;
+  }
+  if (n === 1) {
+    for (let i = 0; i < 256; i++) lut[i] = Math.round(pts[0].y * 255);
+    return lut;
+  }
+  const xs = pts.map((p) => p.x);
+  const ys = pts.map((p) => p.y);
+  const dx = new Array(n - 1).fill(0).map((_, i) => xs[i + 1] - xs[i]);
+  const dy = new Array(n - 1).fill(0).map((_, i) => ys[i + 1] - ys[i]);
+  const m = dx.map((d, i) => (d > 0 ? dy[i] / d : 0));
+  const tangents: number[] = new Array(n).fill(0);
+  tangents[0] = m[0];
+  tangents[n - 1] = m[n - 2];
+  for (let i = 1; i < n - 1; i++) tangents[i] = (m[i - 1] + m[i]) / 2;
+  for (let i = 0; i < n - 1; i++) {
+    if (m[i] === 0) {
+      tangents[i] = 0;
+      tangents[i + 1] = 0;
+    } else {
+      const a = tangents[i] / m[i];
+      const b = tangents[i + 1] / m[i];
+      const h = a * a + b * b;
+      if (h > 9) {
+        const t = 3 / Math.sqrt(h);
+        tangents[i] = t * a * m[i];
+        tangents[i + 1] = t * b * m[i];
+      }
+    }
+  }
+  const eval1 = (x: number): number => {
+    if (x <= xs[0]) return ys[0];
+    if (x >= xs[n - 1]) return ys[n - 1];
+    let seg = 0;
+    while (seg < n - 2 && x > xs[seg + 1]) seg++;
+    const h = xs[seg + 1] - xs[seg];
+    const t = (x - xs[seg]) / h;
+    const h00 = (1 + 2 * t) * (1 - t) * (1 - t);
+    const h10 = t * (1 - t) * (1 - t);
+    const h01 = t * t * (3 - 2 * t);
+    const h11 = t * t * (t - 1);
+    return h00 * ys[seg] + h10 * h * tangents[seg] + h01 * ys[seg + 1] + h11 * h * tangents[seg + 1];
+  };
+  for (let i = 0; i < 256; i++) {
+    const y = eval1(i / 255);
+    lut[i] = Math.max(0, Math.min(255, Math.round(y * 255)));
+  }
+  return lut;
+}
+
+export function applyCurvesToImageData(img: ImageData, curves: Curves): ImageData {
+  const rgb = curveToLut(curves.rgb);
+  const r = curveToLut(curves.r);
+  const g = curveToLut(curves.g);
+  const b = curveToLut(curves.b);
+  const d = img.data;
+  for (let i = 0; i < d.length; i += 4) {
+    // per-channel first, then luminance/rgb pass.
+    d[i] = rgb[r[d[i]]];
+    d[i + 1] = rgb[g[d[i + 1]]];
+    d[i + 2] = rgb[b[d[i + 2]]];
+  }
+  return img;
+}
+
+export function ensureMask(layer: Layer, width: number, height: number) {
+  if (!layer.maskSurface && layer.mask) {
+    if (layer.mask.width !== width || layer.mask.height !== height) throw new Error("Layer mask dimensions do not match the document");
+    const surface = new SparseAlphaSurface(width, height);
+    const context = layer.mask.getContext("2d")!;
+    for (let row = 0; row < surface.grid.rows; row += 1) for (let column = 0; column < surface.grid.columns; column += 1) {
+      const address = surface.grid.address(column, row);
+      const rgba = context.getImageData(address.x, address.y, address.width, address.height).data;
+      const alpha = new Uint8Array(address.width * address.height);
+      for (let pixel = 0; pixel < alpha.length; pixel += 1) alpha[pixel] = rgba[pixel * 4 + 3];
+      surface.writeTile(address.key, alpha);
+    }
+    layer.maskSurface = surface;
+    layer.mask = undefined;
+  }
+  if (!layer.maskSurface) layer.maskSurface = new SparseAlphaSurface(width, height, { defaultAlpha: 255 });
+  return layer.maskSurface;
+}
+
+// Draw a layer onto the given ctx at its transformed position. Used by both
+// renderer and any consumer that needs a rasterized layer (e.g. export).
+export function drawLayerContent(
+  ctx: CanvasRenderingContext2D,
+  layer: Layer,
+  projection?: { a: number; b: number; c: number; d: number; e: number; f: number },
+) {
+  const { transform: t } = layer;
+  const affine = affineForLayerTransform(t);
+  ctx.save();
+  // Rotate around the transformed origin
+  const { a: layerA, b: layerB, c: layerC, d: layerD } = affine;
+  const spatial = resolvedTextSpatial(layer.spatial ?? layer.text?.spatial);
+  const spatialOrigin = layer.text ? { x: layer.text.x, y: layer.text.y }
+    : layer.shape ? { x: layer.shape.x + layer.shape.w / 2, y: layer.shape.y + layer.shape.h / 2 }
+      : layer.bitmap ? { x: layer.bitmap.width / 2, y: layer.bitmap.height / 2 }
+        : { x: 0, y: 0 };
+  const spatialAffine = spatial
+    ? textSpatialAffine(spatial, spatialOrigin.x, spatialOrigin.y)
+    : { a: 1, b: 0, c: 0, d: 1, e: 0, f: 0 };
+  const a = layerA * spatialAffine.a + layerC * spatialAffine.b;
+  const b = layerB * spatialAffine.a + layerD * spatialAffine.b;
+  const c = layerA * spatialAffine.c + layerC * spatialAffine.d;
+  const d = layerB * spatialAffine.c + layerD * spatialAffine.d;
+  const tx = t.tx + layerA * spatialAffine.e + layerC * spatialAffine.f;
+  const ty = t.ty + layerB * spatialAffine.e + layerD * spatialAffine.f;
+  if (projection) {
+    ctx.setTransform(
+      projection.a * a + projection.c * b,
+      projection.b * a + projection.d * b,
+      projection.a * c + projection.c * d,
+      projection.b * c + projection.d * d,
+      projection.a * tx + projection.c * ty + projection.e,
+      projection.b * tx + projection.d * ty + projection.f,
+    );
+  } else {
+    ctx.setTransform(a, b, c, d, tx, ty);
+  }
+  if (spatial) {
+    const yaw = spatial.transform.rotationY * Math.PI / 180;
+    const pitch = spatial.transform.rotationX * Math.PI / 180;
+    const depth = Math.max(0, spatial.extrusion.depth);
+    ctx.shadowColor = spatial.material.sideColor;
+    ctx.shadowOffsetX = Math.sin(yaw + 0.45) * depth;
+    ctx.shadowOffsetY = Math.sin(pitch + 0.7) * depth;
+    ctx.shadowBlur = Math.max(0, spatial.extrusion.bevel);
+  }
+  if ((layer.kind === "raster" || layer.kind === "smart-object") && layer.bitmap) {
+    ctx.drawImage(layer.bitmap, 0, 0);
+  } else if (layer.kind === "text" && layer.text) {
+    requestTextFonts(layer.text, layer);
+    // Material color affects the preview without rewriting editable run colors.
+    let s = spatial ? {
+      ...layer.text,
+      color: spatial.material.frontColor,
+      defaultStyle: { ...layer.text.defaultStyle, color: spatial.material.frontColor },
+      runs: layer.text.runs?.map(run => ({ ...run, style: { ...run.style, color: spatial.material.frontColor } })),
+      appearance: layer.text.appearance ? { ...layer.text.appearance, fills: layer.text.appearance.fills.map(fill => ({ ...fill, color: spatial.material.frontColor })) } : undefined,
+    } : layer.text;
+    if (s.layout === "paragraph" && s.frameOrigin === "top") s = { ...s, y: s.y + paragraphCapHeight(ctx, s) };
+    const structuredDefault = resolvedTextStyleAt(s, 0);
+    const needsStructuredRuns = Boolean(
+      s.runs?.length
+      || s.paragraphs?.length
+      || s.appearance
+      || structuredDefault.baselineShift
+      || structuredDefault.decoration !== "none"
+      || structuredDefault.fontStretch !== 100
+      || ((!s.layout || s.layout === "point" || s.layout === "paragraph") &&
+        (s.direction === "rtl" || /[^\u0000-\u058f]/u.test(s.text))),
+    );
+    if (needsStructuredRuns && typeof ctx.measureText === "function") {
+      drawStructuredText(ctx, s);
+      ctx.restore();
+      return;
+    }
+    // Keep the native one-run path fast and fully shaped. Most text layers
+    // never need per-range drawing, so they retain browser kerning, ligatures,
+    // complex-script shaping and one fillText call per line.
+    configureTextRun(ctx, s, 0);
+    ctx.textAlign = s.align;
+    ctx.textBaseline = "alphabetic";
+    if ("direction" in ctx) ctx.direction = s.direction === "rtl" ? "rtl" : "ltr";
+    ctx.fillStyle = structuredDefault.color;
+    const fontSize = structuredDefault.fontSize;
+    const lh = fontSize * s.lineHeight;
+    // Photoshop measures tracking in thousandths of an em, so it holds its
+    // proportion when the point size changes.
+    const track = (structuredDefault.tracking / 1000) * fontSize;
+    applyTracking(ctx, track);
+    // Canvas adds the spacing after the last glyph too, which drags centred
+    // and right-aligned text off its anchor by half a step and a full step
+    // respectively. The measured run is that much wider than what is drawn.
+    const trackNudge = track === 0 ? 0
+      : ctx.textAlign === "center" ? track / 2
+      : ctx.textAlign === "right" || ctx.textAlign === "end" ? track
+      : 0;
+    const gap = fontSize * (s.paragraphSpacing ?? 0);
+    if (s.layout === "vertical") {
+      // Vertical runs advance down the column, so canvas letter spacing — a
+      // horizontal advance — is the wrong axis for it; tracking is added to
+      // the row step by hand instead.
+      applyTracking(ctx, 0);
+      let row = 0;
+      let column = 0;
+      for (const character of s.text) {
+        if (character === "\n") { column += 1; row = 0; continue; }
+        ctx.fillText(character, s.x - column * lh, s.y + row * (lh + track));
+        row += 1;
+      }
+    } else if (s.layout === "paragraph" && s.boxWidth) {
+      // Each entry keeps its paragraph index so the spacing after a paragraph
+      // can be applied without re-splitting, and so the last line of a
+      // paragraph is exempt from justification the way it is in Photoshop.
+      const lines: { text: string; paragraph: number; last: boolean }[] = [];
+      s.text.split("\n").forEach((paragraph, index) => {
+        const wrapped: string[] = [];
+        let line = "";
+        for (const word of paragraph.split(/\s+/)) {
+          const candidate = line ? `${line} ${word}` : word;
+          if (line && ctx.measureText(candidate).width > s.boxWidth!) {
+            wrapped.push(line);
+            line = word;
+          } else line = candidate;
+        }
+        wrapped.push(line);
+        wrapped.forEach((text, position) => lines.push({
+          text, paragraph: index, last: position === wrapped.length - 1,
+        }));
+      });
+      const step = (index: number) => index * lh + lines[index].paragraph * gap;
+      const maximumLines = s.boxHeight
+        ? Math.max(1, lines.filter((_, index) => step(index) + lh <= s.boxHeight!).length)
+        : lines.length;
+      for (let index = 0; index < Math.min(maximumLines, lines.length); index += 1) {
+        const line = lines[index];
+        const y = s.y + step(index);
+        if (s.justify && !line.last) drawJustified(ctx, line.text, s.x, y, s.boxWidth, track);
+        else ctx.fillText(line.text, s.x + trackNudge, y);
+      }
+    } else if (s.layout === "path" && s.path?.anchors.length) {
+      // Per-character drawing already advances by hand, so canvas letter
+      // spacing here would both double the gap and inflate every measurement.
+      applyTracking(ctx, 0);
+      const table = pathArcTable(s.path);
+      let distance = nearestPathDistance(table, s.x, s.y);
+      let previous = "";
+      const characters = typeof Intl.Segmenter === "function"
+        ? [...new Intl.Segmenter(undefined, { granularity: "grapheme" }).segment(s.text)].map((entry) => entry.segment)
+        : Array.from(s.text);
+      ctx.textAlign = "left";
+      for (const character of characters) {
+        const advance = ctx.measureText(character).width;
+        if (previous) {
+          distance += ctx.measureText(previous + character).width
+            - ctx.measureText(previous).width
+            - advance;
+        }
+        const center = distance + advance / 2;
+        const sample = samplePathDistance(table, center, s.path.closed);
+        if (!sample) break;
+        ctx.save();
+        ctx.translate(sample.x, sample.y);
+        ctx.rotate(sample.angle);
+        ctx.fillText(character, -advance / 2, 0);
+        ctx.restore();
+        distance += advance + track;
+        previous = character;
+      }
+    } else {
+      let paragraph = 0;
+      s.text.split("\n").forEach((line, index) => {
+        ctx.fillText(line, s.x + trackNudge, s.y + index * lh + paragraph * gap);
+        paragraph += 1;
+      });
+    }
+    applyTracking(ctx, 0);
+  } else if (layer.kind === "path" && layer.path) {
+    const p = layer.path;
+    if (pathContours(p).some(contour => contour.anchors.length >= 2)) {
+      for (const paint of vectorPaints(p)) {
+        if (!paint.enabled || paint.opacity === 0 || !paint.color || ["none", "transparent"].includes(paint.color)) continue;
+        ctx.save();
+        ctx.globalAlpha *= paint.opacity;
+        ctx.beginPath();
+        traceContours(ctx, pathContours(p).filter(c => paint.kind !== "fill" || c.closed));
+        if (paint.kind === "fill") {
+          ctx.fillStyle = paint.color;
+          ctx.fill(p.fillRule ?? "nonzero");
+        } else if (paint.width > 0) {
+          ctx.strokeStyle = paint.color;
+          ctx.lineWidth = paint.width;
+          ctx.lineJoin = "round";
+          ctx.lineCap = "round";
+          ctx.stroke();
+        }
+        ctx.restore();
+      }
+    }
+  } else if (layer.kind === "shape" && layer.shape) {
+    const sh = layer.shape;
+    ctx.beginPath();
+    if (sh.kind === "rect") {
+      roundedRect(ctx, sh.x, sh.y, sh.w, sh.h, sh.radius);
+    } else {
+      ctx.ellipse(
+        sh.x + sh.w / 2,
+        sh.y + sh.h / 2,
+        Math.abs(sh.w) / 2,
+        Math.abs(sh.h) / 2,
+        0,
+        0,
+        Math.PI * 2,
+      );
+    }
+    if (sh.fill && sh.fill !== "none") {
+      ctx.fillStyle = sh.fill;
+      ctx.fill();
+    }
+    if (sh.stroke && sh.strokeWidth > 0) {
+      ctx.strokeStyle = sh.stroke;
+      ctx.lineWidth = sh.strokeWidth;
+      ctx.stroke();
+    }
+  }
+  ctx.restore();
+}
+
+function roundedRect(
+  ctx: CanvasRenderingContext2D,
+  x: number,
+  y: number,
+  w: number,
+  h: number,
+  r: number,
+) {
+  const rr = Math.max(0, Math.min(r, Math.min(w, h) / 2));
+  ctx.moveTo(x + rr, y);
+  ctx.arcTo(x + w, y, x + w, y + h, rr);
+  ctx.arcTo(x + w, y + h, x, y + h, rr);
+  ctx.arcTo(x, y + h, x, y, rr);
+  ctx.arcTo(x, y, x + w, y, rr);
+  ctx.closePath();
+}
+
+// Return the four corners of a layer in doc space, in this order:
+// [top-left, top-right, bottom-right, bottom-left]. Assumes the layer's
+// intrinsic box starts at the supplied local origin (zero for raster layers).
+export function layerCorners(
+  layer: Layer,
+  docW: number,
+  docH: number,
+  originX = 0,
+  originY = 0,
+): Array<[number, number]> {
+  const t = layer.transform;
+  const matrix = affineForLayerTransform(t);
+  const map = (x: number, y: number): [number, number] => [
+    matrix.a * x + matrix.c * y + matrix.e,
+    matrix.b * x + matrix.d * y + matrix.f,
+  ];
+  return [map(originX, originY), map(originX + docW, originY), map(originX + docW, originY + docH), map(originX, originY + docH)];
+}

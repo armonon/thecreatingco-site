@@ -1,0 +1,9 @@
+{
+  "name": "thecreateco-weblab",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22 <27" },
+  "scripts": { "start": "node server.mjs", "build": "npm run check && npm test", "check": "node --check server.mjs && node --check lib/audit.mjs && node --check lib/audit-handler.mjs && node --check lib/safe-fetch.mjs && node --check scripts/*.mjs && node --check test/*.mjs && node --check netlify/functions/*.mjs", "test": "node --test", "verify:local": "npm run check && npm test && npm audit --omit=dev --audit-level=high", "verify:workflow": "node scripts/verify-workflow.mjs" },
+  "dependencies": { "axe-core": "4.14.0", "parse5": "8.0.1", "playwright-core": "1.64.0" }
+}

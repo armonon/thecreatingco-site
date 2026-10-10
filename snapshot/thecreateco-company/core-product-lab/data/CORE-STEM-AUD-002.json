@@ -1,0 +1,30 @@
+{
+  "task_id": "CORE-STEM-AUD-002",
+  "title": "Qualify real perform \u2192 capture \u2192 replay \u2192 arrange lifecycle",
+  "product": "stemdeck",
+  "area": "workflow_gap",
+  "category": "workflow_gap",
+  "workstream": "CORE_PRODUCT_LAB",
+  "severity": "P1",
+  "scores": {
+    "impact": 10,
+    "severity": 8,
+    "workflow_importance": 10,
+    "competitive_value": 9,
+    "release_importance": 10,
+    "confidence": 9,
+    "effort": 8,
+    "risk": 4,
+    "user_value": 10
+  },
+  "dependencies": [],
+  "status": "QUEUED",
+  "model": "gpt-6.1-sol",
+  "expected_value": "Flagship golden-workflow reliability; scores are planning estimates, not health metrics.",
+  "test_requirements": "Reproduce on isolated exact source; preserve baseline/fixed evidence, appropriate build/tests and golden path; source reading is not interactive sign-off.",
+  "source_evidence": [
+    "reports/stemdeck-golden-browser.json",
+    "docs/PROFESSIONAL_ACCEPTANCE.md"
+  ],
+  "next_action": "Extend synthetic fixture to four decks/stems; then rights-cleared music, authorized physical setup and exact replay comparison. Synthetic reload passes are not full capture qualification."
+}

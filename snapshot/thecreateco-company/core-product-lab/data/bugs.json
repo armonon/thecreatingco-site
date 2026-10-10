@@ -1,0 +1,47 @@
+[
+  {
+    "bug_id": "STEM-SEC-001",
+    "product": "stemdeck",
+    "severity": "P0",
+    "workflow": "dependency security / release",
+    "reproduction": "At 8c06f81 run npm ci, npm audit --json.",
+    "expected": "No unresolved blocking critical/high advisories in release dependency closure.",
+    "actual": "proxy-addr 2.0.7 critical; source-map-js 1.2.1 high. CI deployment skipped.",
+    "root_cause": "Lockfile retained advisory-affected transitive versions; deployed exploitability unverified.",
+    "fix": "Targeted proxy-addr 2.0.8 and source-map-js 1.2.2 lockfile update in isolated branch.",
+    "test": "Saved before/after npm audit; after zero findings; full suite/build/type and review evidence retained.",
+    "regression_coverage": "Existing unchanged test suite and browser lifecycle; required remote release gates remain.",
+    "status": "LOCAL_FIX_NEEDS_REVIEW",
+    "task_id": "CORE-STEMDECK-SEC-001"
+  },
+  {
+    "bug_id": "SP-A11Y-001",
+    "product": "scenepilot",
+    "severity": "P3",
+    "workflow": "New Project / Edit / Delivery accessibility",
+    "reproduction": "Run npm run qa:accessibility at fb42d12.",
+    "expected": "Valid tablist children and at least required text contrast.",
+    "actual": "Critical aria-required-children violations and serious contrast findings in three states.",
+    "root_cause": "Non-tab disclosure placed inside tablist; muted text colors below threshold.",
+    "fix": "Isolated two-file semantics/color repair; reports/scenepilot-a11y-fix.patch.",
+    "test": "Baseline failing and patched passing same Axe audit, plus typecheck/lint.",
+    "regression_coverage": "Existing three-state accessibility harness.",
+    "status": "LOCAL_FIX_NEEDS_REVIEW",
+    "task_id": "CORE-SP-A11Y-001"
+  },
+  {
+    "bug_id": "LUMA-AUD-001",
+    "product": "luma",
+    "severity": "P3",
+    "workflow": "independent-checkout test qualification",
+    "reproduction": "Run npm test in detached worktree without sibling sculptor-studio.",
+    "expected": "Reproducible contract validation with explicit source/fixture dependencies.",
+    "actual": "tests/form-mesh.test.ts reads absent hard-coded sibling path and fails ENOENT.",
+    "root_cause": "Test assumes a particular sibling repository layout.",
+    "fix": null,
+    "test": "Fresh audit: 1372 pass / 1 fail / 10 skip. Fix must preserve cross-app contract checks, not silently skip required coverage.",
+    "regression_coverage": "Required: isolated-checkout and configured Form-source cases.",
+    "status": "QUEUED",
+    "task_id": "CORE-LUMA-AUD-001"
+  }
+]

@@ -1,0 +1,193 @@
+[
+  {
+    "id": "2069305d-6f38-41ba-b31c-a0fdbfdc7ea4",
+    "declarationKey": "company-director",
+    "agentId": "main",
+    "name": "thecreateco company director",
+    "enabled": true,
+    "createdAtMs": 1791416407429,
+    "schedule": {
+      "kind": "cron",
+      "expr": "10 * * * *",
+      "tz": "America/Los_Angeles"
+    },
+    "sessionTarget": "isolated",
+    "wakeMode": "now",
+    "payload": {
+      "kind": "agentTurn",
+      "message": "Run one bounded thecreateco company-director cycle, not a marketing-only cycle.\nWorkspace: /Users/agentsattari/thecreateco-company.\nRead AGENTS.md, DIRECTIVE.md, engine/README.md and COMPANY_STATE.md. If PAUSE exists,\ndo nothing and stop. Use Python stdlib CLI engine/company.py, never edit SQLite.\nRecover expired leases, refresh state, then select the highest-value eligible safe\ntask. Honor active ownership and existing product-specific holds. Claim it with\na unique owner name for this run; preserve the returned lease_token and heartbeat\nas needed. Execute ONE bounded task or audit batch, not the entire backlog.\n\nUse GPT-6.1 Sol for direction and difficult engineering decisions; delegate\nindependent scoped volume/research to Luna and creative/UX review to ChatGPT/Sol. Read data/model-routing.json; record actual model and\nfallback. Marketing's existing engine handles marketing drafts, not engineering.\nConsequential decisions may justify a separate independent OpenAI/Sol review.\nDo not spawn ongoing workers without a durable task owner and completion path.\n\nInspect evidence relevant to the chosen task, run appropriate baseline checks,\nmake reversible local improvements in an isolated branch when needed, and test.\nKeep existing features; no blind rewrites, branch-protection bypass, production\nrollback/deploy, social posting, outreach sending, spend or account changes from\nthis scheduled company job. Prepare external changes for their existing review\npath. Local fixes, tests, evidence collection and drafts are authorized.\n\nWrite a dated report under reports/ with actual commands, observations, tests,\nlimitations and the next action. Finish the task via CLI using owner/token and\nevidence path. Use BLOCKED with an explicit reason when access is missing; do\nnot invent metrics or mark unverified work complete. Company metrics require\nsource, reporting period and observation time. Update products/context through\nthe CLI when evidence changes. Refresh after every meaningful batch.\n\nStop within 35 minutes, recording a checkpoint if incomplete. Do not create busywork\nwhen no useful safe work is available. Return a concise factual summary for run\nhistory only; do not send messages to any channel or person from this job.\n\nCore Product Lab amendment: read core-product-lab/DIRECTIVE.md and HEALTH.md.\nPrioritize its golden-workflow tasks above unrelated new app experiments; use\npython3 core-product-lab/lab.py next and respect active per-product ownership.\nStemDeck local development is reopened by the explicit Oct 7 flagship directive;\nunrelated Sattari/music scope and all release/licensing gates remain unchanged.\n\nOwner preference: no Claude/Sonnet/Opus reviews or review fallbacks; use ChatGPT/OpenAI.\n\n\nLATEST OWNER AUTHORIZATION (2026-10-07 17:56 Pacific): Before execution read /Users/agentsattari/thecreateco-company/AUTONOMY.md. Armon says do not wait for personal review; keep upgrading and pushing and send reports often. This overrides earlier local-only/no-push wording for routine scoped tested fixes: perform independent OpenAI review as appropriate, commit/push and follow normal PR/CI and stack gates without an extra Armon signoff. Do not bypass checks or merge unreviewed downstack work. Preserve source/deploy and high-risk boundaries. The dedicated 30-minute progress reporter handles channel reporting; this job retains its own delivery policy. Review-only weekly/monthly jobs remain reviews, not release jobs.\n\n\nNAMED18 RELEASE ASSIGNMENT: Read release-program/DIRECTIVE.md, manifest.json and RELEASE_MATRIX.md. Scope is now confirmed. Prioritize first wave Bounce, Pocket Studio, Key & BPM, Glyph Studio; preserve excluded apps, their data/site entries/shared dependencies. Continue via durable checkpoints across cycles; one wave or task COMPLETE is not product completion. Honor active owners and update exact-candidate evidence after milestones.",
+      "model": "openai/gpt-6.1-sol",
+      "fallbacks": [
+        "openai/gpt-6-sol"
+      ],
+      "thinking": "medium",
+      "timeoutSeconds": 2100,
+      "toolsAllow": [
+        "*"
+      ]
+    },
+    "delivery": {
+      "mode": "none",
+      "channel": "last"
+    },
+    "scheduledToolPolicy": {
+      "version": 1,
+      "mode": "trusted"
+    },
+    "state": {
+      "nextRunAtMs": 1791429000000,
+      "lastRunAtMs": 1791425400015,
+      "lastRunStatus": "ok",
+      "lastStatus": "ok",
+      "lastDurationMs": 359091,
+      "lastDeliveryStatus": "not-requested",
+      "lastFailureNotificationDeliveryStatus": "not-requested",
+      "consecutiveErrors": 0,
+      "consecutiveSkipped": 0,
+      "lastDelivered": false
+    },
+    "updatedAtMs": 1791425759106,
+    "configRevision": "sha256:5u5flo-eeJaDcNqXVZK_Ur0htMtE4qn0bNFrIhEfPJA",
+    "nextRunAtMs": 1791429000000,
+    "lastRunAtMs": 1791425400015,
+    "lastRunStatus": "ok",
+    "lastDelivered": false,
+    "lastDeliveryStatus": "not-requested",
+    "lastFailureNotificationDeliveryStatus": "not-requested",
+    "effectiveAgentId": "main",
+    "status": "ok"
+  },
+  {
+    "id": "99398759-74b2-4cb3-a096-beb54e44ceb4",
+    "declarationKey": "thecreateco-4geeks-progress",
+    "agentId": "main",
+    "name": "thecreateco #4geeks progress reports",
+    "enabled": true,
+    "createdAtMs": 1791421165850,
+    "schedule": {
+      "kind": "cron",
+      "expr": "20,50 8-22 * * *",
+      "tz": "America/Los_Angeles"
+    },
+    "sessionTarget": "isolated",
+    "wakeMode": "now",
+    "payload": {
+      "kind": "agentTurn",
+      "message": "Send the requested concise company/product progress report for Armon in #4geeks.\nWorkspace /Users/agentsattari/thecreateco-company. Read AUTONOMY.md and current\nrelease-program/DIRECTIVE.md and RELEASE_MATRIX.md for the named18 initiative.\nNewest exact-SHA evidence and live queue leases override stale lab summaries.\nTask COMPLETE never implies product completion. Report first-wave progress.\nCOMPANY_STATE.md, then TASK_QUEUE.json and core-product-lab/HEALTH.md only as needed.\nInspect at most three relevant latest result reports for exact commit/PR/test facts.\nThis is a read-only reporting task; do not claim tasks, code, run builds, publish,\nsend email, or change other schedules. Do not load private personal memory/CRM.\nUse automation/report-cursor.json for last reported task/completion IDs; update\nonly that cursor after preparing the report. Missing cursor means first report.\nReturn 3\u20135 concise bullets: what changed since last report; pushed PR/merged/deployed\nstatus distinguished; meaningful checks; exact blocker; next work. If no new result,\nsay so briefly and identify genuinely running work or next queued task, not invented\nactivity. Never infer a push/merge/deploy from a local commit or task COMPLETE.\nPrefer known GitHub links; wrap bare URLs in <>; no tables or secrets/contact data.\nIf PAUSE exists, report paused rather than implying work is running. Final response\nwill be delivered by cron to the configured Discord channel; do not call a send\ntool or duplicate the report. Keep under 150 words and finish within 3 minutes.",
+      "model": "openai/gpt-6-luna",
+      "fallbacks": [
+        "openai/gpt-6.1-sol"
+      ],
+      "thinking": "low",
+      "timeoutSeconds": 180,
+      "lightContext": true,
+      "toolsAllow": [
+        "*"
+      ]
+    },
+    "delivery": {
+      "mode": "announce",
+      "channel": "discord",
+      "to": "channel:1542939125366132819",
+      "accountId": "default"
+    },
+    "scheduledToolPolicy": {
+      "version": 1,
+      "mode": "trusted"
+    },
+    "state": {
+      "nextRunAtMs": 1791429600000,
+      "lastRunAtMs": 1791427800022,
+      "lastRunStatus": "ok",
+      "lastStatus": "ok",
+      "lastDurationMs": 30037,
+      "lastDelivered": true,
+      "lastDeliveryStatus": "delivered",
+      "lastFailureNotificationDeliveryStatus": "not-requested",
+      "consecutiveErrors": 0,
+      "consecutiveSkipped": 0
+    },
+    "updatedAtMs": 1791427830059,
+    "configRevision": "sha256:2UARyfVq7_Y5eFdUCtCmxqv3PIuz45UDHCzZ4Ww-FWk",
+    "nextRunAtMs": 1791429600000,
+    "lastRunAtMs": 1791427800022,
+    "lastRunStatus": "ok",
+    "lastDelivered": true,
+    "lastDeliveryStatus": "delivered",
+    "lastFailureNotificationDeliveryStatus": "not-requested",
+    "effectiveAgentId": "main",
+    "status": "ok"
+  },
+  {
+    "id": "b98880fe-a5a5-410f-a7ca-7366239125d8",
+    "declarationKey": "core-product-lab-cycle",
+    "agentId": "main",
+    "name": "Core Product Lab cycle",
+    "enabled": true,
+    "createdAtMs": 1791417446006,
+    "schedule": {
+      "kind": "cron",
+      "expr": "40 */2 * * *",
+      "tz": "America/Los_Angeles"
+    },
+    "sessionTarget": "isolated",
+    "wakeMode": "now",
+    "payload": {
+      "kind": "agentTurn",
+      "message": "Run one bounded Core Product Lab cycle. Workspace:\n/Users/agentsattari/thecreateco-company/core-product-lab.\nRead AGENTS.md, DIRECTIVE.md, HEALTH.md, ../engine/README.md and data/model-routing.json.\nStop if PAUSE here or ../PAUSE exists. ScenePilot, Luma, Form and StemDeck ONLY;\ngolden-workflow reliability before unrelated features or new apps.\n\nRun company.py recover; python3 lab.py next. Select only one eligible task, by\nseverity then value, and claim its exact ID via ../engine/company.py with a unique\nowner and 45-minute lease. Read relevant product state and evidence only. Do not\nrace another worker on the same product. The company queue is authoritative;\nnever edit its SQLite or generated exports. Reuse existing tasks, not duplicates.\n\nExecute a substantive safe local task or useful qualification batch in an isolated\nworktree. Sol directs; Luna handles bounded routine work; use ChatGPT/Sol\nfor material UX/design/workflow review and a separate OpenAI reviewer for consequential\nindependent audit. Record actual model and fallbacks; model proportions are guidance, not quotas.\nNative Codex children for Codex legwork; max three workers. Keep dependent work with\nits owner. No claim of a review unless it ran and produced evidence.\n\nBuild/test and dogfood a synthetic/authorized golden project. Preserve failing logs,\nsource SHA, environment and exact command results; never relax assertions merely\nto pass. Unknown stays unknown. No deployments, rollback, public messages, physical\nrecording, payment/access/legal changes, production deletion or gate bypass.\nExisting explicit release approval must still pass the repository's release gates.\n\nWrite dated report and update products/<id>.json with measured results/limitations.\nFinish task via company CLI with evidence, or checkpoint it BLOCKED with concrete\nresume condition. Heartbeat long tasks. Update company products/context through CLI\nwithout overwriting unrelated fields. Run lab.py refresh. Queue only meaningful\ndeduplicated follow-up work, with repro/test requirements and estimated scores.\nStop within 35 minutes; if no safe useful work is available, record idle, not busywork.\nReturn short run-history summary; do not send messages to people/channels.\n\nOwner preference: no Claude/Sonnet/Opus reviews or review fallbacks; use ChatGPT/OpenAI.\n\nLATEST OWNER AUTHORIZATION (2026-10-07 17:56 Pacific): Before execution read /Users/agentsattari/thecreateco-company/AUTONOMY.md. Armon says do not wait for personal review; keep upgrading and pushing and send reports often. This overrides earlier local-only/no-push wording for routine scoped tested fixes: perform independent OpenAI review as appropriate, commit/push and follow normal PR/CI and stack gates without an extra Armon signoff. Do not bypass checks or merge unreviewed downstack work. Preserve source/deploy and high-risk boundaries. The dedicated 30-minute progress reporter handles channel reporting; this job retains its own delivery policy. Review-only weekly/monthly jobs remain reviews, not release jobs.",
+      "model": "openai/gpt-6.1-sol",
+      "fallbacks": [
+        "openai/gpt-6-sol"
+      ],
+      "thinking": "medium",
+      "timeoutSeconds": 2100,
+      "toolsAllow": [
+        "*"
+      ]
+    },
+    "delivery": {
+      "mode": "none",
+      "channel": "last"
+    },
+    "scheduledToolPolicy": {
+      "version": 1,
+      "mode": "trusted"
+    },
+    "state": {
+      "nextRunAtMs": 1791430800000,
+      "lastRunAtMs": 1791423600037,
+      "lastRunStatus": "error",
+      "lastStatus": "error",
+      "lastDurationMs": 584854,
+      "lastError": "Form repair reviewed and pushed in [PR #3](https://github.com/armonon/form-studio/pull/3). Production advisories dropped from 3 to 0; four builds and synthetic checks passed.\n\nBlocked by eight existing test failures, one lint error, and GitHub CI payment/spending restrictions. Task checkpointed BLOCKED; evidence and follow-ups saved. Nothing merged or deployed.",
+      "lastDiagnostics": {
+        "summary": "Form repair reviewed and pushed in [PR #3](https://github.com/armonon/form-studio/pull/3). Production advisories dropped from 3 to 0; four builds and synthetic checks passed.\n\nBlocked by eight existing test failures, one lint error, and GitHub CI payment/spending restrictions. Task checkpointed BLOCKED; evidence and follow-ups saved. Nothing merged or deployed.",
+        "entries": [
+          {
+            "ts": 1791424184843,
+            "source": "agent-run",
+            "severity": "error",
+            "message": "Form repair reviewed and pushed in [PR #3](https://github.com/armonon/form-studio/pull/3). Production advisories dropped from 3 to 0; four builds and synthetic checks passed.\n\nBlocked by eight existing test failures, one lint error, and GitHub CI payment/spending restrictions. Task checkpointed BLOCKED; evidence and follow-ups saved. Nothing merged or deployed."
+          }
+        ]
+      },
+      "lastDiagnosticSummary": "Form repair reviewed and pushed in [PR #3](https://github.com/armonon/form-studio/pull/3). Production advisories dropped from 3 to 0; four builds and synthetic checks passed.\n\nBlocked by eight existing test failures, one lint error, and GitHub CI payment/spending restrictions. Task checkpointed BLOCKED; evidence and follow-ups saved. Nothing merged or deployed.",
+      "lastDelivered": false,
+      "lastDeliveryStatus": "not-requested",
+      "lastFailureNotificationDeliveryStatus": "not-requested",
+      "consecutiveErrors": 1,
+      "consecutiveSkipped": 0
+    },
+    "updatedAtMs": 1791424184891,
+    "configRevision": "sha256:zpLjYp7Dqh2Oy_1spOUL7Y18Abj9Ryb9uN_Rx5Cbhoc",
+    "nextRunAtMs": 1791430800000,
+    "lastRunAtMs": 1791423600037,
+    "lastRunStatus": "error",
+    "lastRunError": "Form repair reviewed and pushed in [PR #3](https://github.com/armonon/form-studio/pull/3). Production advisories dropped from 3 to 0; four builds and synthetic checks passed.\n\nBlocked by eight existing test failures, one lint error, and GitHub CI payment/spending restrictions. Task checkpointed BLOCKED; evidence and follow-ups saved. Nothing merged or deployed.",
+    "lastDelivered": false,
+    "lastDeliveryStatus": "not-requested",
+    "lastFailureNotificationDeliveryStatus": "not-requested",
+    "effectiveAgentId": "main",
+    "status": "error"
+  }
+]

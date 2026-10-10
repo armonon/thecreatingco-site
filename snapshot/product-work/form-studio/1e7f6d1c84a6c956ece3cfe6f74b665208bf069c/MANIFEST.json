@@ -1,0 +1,94 @@
+{
+  "sha": "1e7f6d1c84a6c956ece3cfe6f74b665208bf069c",
+  "base_sha": "b5abdd1de5f71fe0244ef9a651a6d983067541ff",
+  "scope": "Committed screened review delta, not a release or complete binary artifact",
+  "files": [
+    {
+      "path": ".github/workflows/ci.yml",
+      "status": "present",
+      "sha256": "1c93218e00c3545ccc45f9a912e11f5131c06ec901b54cfb3a2b7b3b48e580f6",
+      "bytes": 2287
+    },
+    {
+      "path": "KNOWN_ISSUES.md",
+      "status": "present",
+      "sha256": "59583b4b67f7172248c168a7e4cba9af0577b13b8e5d81078fbf5482939687f3",
+      "bytes": 2658
+    },
+    {
+      "path": "PRODUCTION_READINESS.md",
+      "status": "present",
+      "sha256": "d52d335795df647b2ef1f176e23eff7283b278a7280fc85ef49e9d4f0dfd901a",
+      "bytes": 18960
+    },
+    {
+      "path": "app/cad-phone.css",
+      "status": "present",
+      "sha256": "9c461bd0dbfe4f4442a7f904f9f06aabca116e560da45fef0e7412b00b3401d6",
+      "bytes": 19371
+    },
+    {
+      "path": "app/cad-viewport-3d.tsx",
+      "status": "present",
+      "sha256": "be8f90e4f6cdaebc49ea95e6a93706eba090104d50692526c2550e70ce9b22b7",
+      "bytes": 119469
+    },
+    {
+      "path": "app/cad-workspace.tsx",
+      "status": "present",
+      "sha256": "2505e2746e979b5d13f208b676a422d5faef9b4e6bfcf63ad46ed770cdc18adb",
+      "bytes": 511339
+    },
+    {
+      "path": "app/form-ui-v2.css",
+      "status": "present",
+      "sha256": "8a873f94646901a44ce49587292723b96eae07a3c205ceb11ce6b6b724059e4d",
+      "bytes": 148138
+    },
+    {
+      "path": "app/paint-data-texture.ts",
+      "status": "present",
+      "sha256": "1ff2459044a1013d0e7c0820246c984d04f8432e71290d35e5006b421788c176",
+      "bytes": 487
+    },
+    {
+      "path": "package-lock.json",
+      "status": "present",
+      "sha256": "a1850c8e76f295f688e6977f2cdd6a8f8adeada8e7a8eb5357fa4cf7a650476d",
+      "bytes": 414196
+    },
+    {
+      "path": "package.json",
+      "status": "present",
+      "sha256": "1e391a68e8066bf3b3ce96b0bb890e2c847fd63ccc9b79279422ba9fe3915548",
+      "bytes": 5626
+    },
+    {
+      "path": "scripts/verify-project-menu.mjs",
+      "status": "present",
+      "sha256": "d2de9e984188ed4ab6c01ada4fbd40ebf4467c583f9e45bb3e8ac9ad4548e398",
+      "bytes": 5461
+    },
+    {
+      "path": "tests/paint-data-texture.test.mjs",
+      "status": "present",
+      "sha256": "e5f3f1c3c32800fdf380cec565b018b7ca6265ff8e7a2b5a53af75a331019d76",
+      "bytes": 1504
+    },
+    {
+      "path": "tests/workspace-smoke.test.mjs",
+      "status": "present",
+      "sha256": "ec0db349fe2fb0828f8983de767b650a5d7dd18d5cf54ac2c61f12388519c36d",
+      "bytes": 195336
+    }
+  ],
+  "omitted": [],
+  "patch_sha256": "ab244ae03951e7e168cdb2d3038f20ca604106c3eecffed4add992221f8b8e6b",
+  "repo": "https://github.com/armonon/form-studio",
+  "branches": [
+    "fix/form-project-menu-20261007",
+    "qa/form-golden-20261008T0310"
+  ],
+  "archive_path": "form-studio/1e7f6d1c84a6c956ece3cfe6f74b665208bf069c",
+  "local_worktree_dirty": false
+}

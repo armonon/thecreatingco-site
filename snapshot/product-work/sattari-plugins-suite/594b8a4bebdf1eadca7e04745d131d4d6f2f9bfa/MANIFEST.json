@@ -1,0 +1,14 @@
+{
+  "sha": "594b8a4bebdf1eadca7e04745d131d4d6f2f9bfa",
+  "base_sha": "594b8a4bebdf1eadca7e04745d131d4d6f2f9bfa",
+  "scope": "Committed screened review delta, not a release or complete binary artifact",
+  "files": [],
+  "omitted": [],
+  "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "repo": "https://github.com/armonon/sattari-plugins-suite",
+  "branches": [
+    "experiment/poly-tune"
+  ],
+  "archive_path": "sattari-plugins-suite/594b8a4bebdf1eadca7e04745d131d4d6f2f9bfa",
+  "local_worktree_dirty": false
+}

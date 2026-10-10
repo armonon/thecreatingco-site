@@ -1,0 +1,10 @@
+{
+  "task_id": "CORE-SP-FEATURE-001",
+  "source_evidence": [
+    "docs/composition-workflow.md:19 states composition frame rate follows the project and independent rates are not implemented."
+  ],
+  "evidence_sources": [
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-initial.md",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/products/scenepilot.json"
+  ]
+}

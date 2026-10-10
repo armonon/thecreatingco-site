@@ -1,0 +1,11 @@
+{
+  "task_id": "CORE-LUMA-AUD-001",
+  "source_evidence": [
+    "npm test: 1 failure in 1383 tests",
+    "tests/form-mesh.test.ts:21 resolves ../../sculptor-studio/app/luma-mesh-asset.ts; absent at /private/tmp/sculptor-studio in isolated worktree"
+  ],
+  "evidence_sources": [
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/luma-initial.md",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/products/luma.json"
+  ]
+}

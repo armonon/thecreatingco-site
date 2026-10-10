@@ -1,0 +1,178 @@
+{
+  "sha": "77b80506a33aec941eeafbf4652aea32a5f28199",
+  "base_sha": "85cb19baf71a2acd3456fda24623fee0d8548870",
+  "scope": "Committed screened review delta, not a release or complete binary artifact",
+  "files": [
+    {
+      "path": "deliverables/sattari-internal-download-surface-archive-2026-10-08/DownloadsPage.tsx",
+      "status": "present",
+      "sha256": "74004c92b81a775a45799aaba9503ad166de28139fdfc644f4dd9847f92854c8",
+      "bytes": 15578
+    },
+    {
+      "path": "deliverables/sattari-internal-download-surface-archive-2026-10-08/README.md",
+      "status": "present",
+      "sha256": "bbb3405f201a401913f04abfc54f299ee8a6489e532c585424f482947d99336e",
+      "bytes": 610
+    },
+    {
+      "path": "deliverables/sattari-internal-download-surface-archive-2026-10-08/SHA256SUMS.txt",
+      "status": "present",
+      "sha256": "75d5efb94f4903ab55d4724fb4ff2efe2ca1663ca0c551021a301c20e221f283",
+      "bytes": 1798
+    },
+    {
+      "path": "netlify.toml",
+      "status": "present",
+      "sha256": "e4def8b40b244304f3e96c3e3380a3bb77e12d24c8cec12a5013a341a5ed8b29",
+      "bytes": 5936
+    },
+    {
+      "path": "package-lock.json",
+      "status": "present",
+      "sha256": "dcaaaaa496434e6e79f47c8bd0de97c7177191842bb9848c059c8178126c4048",
+      "bytes": 291478
+    },
+    {
+      "path": "scripts/check-seo.mjs",
+      "status": "present",
+      "sha256": "b48cef3a34ca18edb51923ec0fef8d18b4e2afe4947a9ebcd1c8a4d81befc11c",
+      "bytes": 9704
+    },
+    {
+      "path": "scripts/qualify-seo.mjs",
+      "status": "present",
+      "sha256": "80872b43122d70825a3c3f9693d4c9dd510bf4e697ce5771dfd833511f90500b",
+      "bytes": 5659
+    },
+    {
+      "path": "src/App.tsx",
+      "status": "present",
+      "sha256": "6c807b7dfe8b59d7a059822c803a0445c42a58b963efcb34ca0df6fd8f7ecdf1",
+      "bytes": 12094
+    },
+    {
+      "path": "src/components/AboutPage.jsx",
+      "status": "present",
+      "sha256": "9a083b21505c59cffb9d0236ac9c6c4d5ecfd207725fd797597133d0180eff96",
+      "bytes": 5537
+    },
+    {
+      "path": "src/components/AboutPage.test.jsx",
+      "status": "present",
+      "sha256": "3d296496131007b2594c68e28b031eee1a8a32e4f0d9b89e1e0625902786d0b8",
+      "bytes": 3607
+    },
+    {
+      "path": "src/components/Footer.jsx",
+      "status": "present",
+      "sha256": "ce3f076bb5b70945010c17bfef94416940c0c2381357c00b414fedd4c46ec605",
+      "bytes": 2346
+    },
+    {
+      "path": "src/data/catalog.js",
+      "status": "present",
+      "sha256": "f3295cbbc5741396fbfb1e11092cf34bbd66ade67f74df50d821c1d156cd6776",
+      "bytes": 28710
+    },
+    {
+      "path": "src/data/musicGuides.js",
+      "status": "present",
+      "sha256": "5fdb629921c1c1fc475daf490d0f18575750b11d60ca0b0cb8411442c88b842b",
+      "bytes": 53113
+    },
+    {
+      "path": "src/data/siteSeo.js",
+      "status": "present",
+      "sha256": "8db9b38b41478be63f9ce1c13b4b20f9ffdac22a47cd2226a1b3a65e3496fc7b",
+      "bytes": 12786
+    },
+    {
+      "path": "src/entry-prerender.jsx",
+      "status": "present",
+      "sha256": "b9f6ac371d86b85e1321549bf5f79ace7e4185d3864c9b807f0b3201f367bfe0",
+      "bytes": 4325
+    },
+    {
+      "path": "src/pages/HomePage.jsx",
+      "status": "present",
+      "sha256": "f98a0732f876c243eb0a02c934d83179df4259f3261300b23049c9b83b9e98c3",
+      "bytes": 13912
+    },
+    {
+      "path": "src/pages/SattariHubPage.jsx",
+      "status": "present",
+      "sha256": "6a2fbd5919e29493ae91a3d680509bdf98ccc1a875e8edc2f2f520256eab87c7",
+      "bytes": 6682
+    },
+    {
+      "path": "src/pages/SattariHubPage.test.jsx",
+      "status": "present",
+      "sha256": "498ad09fffbb3915ffed1d7dd2fff7c6d2789a3e8cd211be5142402274c9f5f0",
+      "bytes": 2251
+    },
+    {
+      "path": "src/utils/lazyComponents.tsx",
+      "status": "present",
+      "sha256": "4fd6c79ed95e54f6ca94ad1f0e47ae88189addd3bc01e1247d4ce0af12938a29",
+      "bytes": 6326
+    },
+    {
+      "path": "src/utils/seo.test.jsx",
+      "status": "present",
+      "sha256": "0450fa3c5dcb2c48024d59b3ac1f179e07cb76316e0387e6353b024e94c7263f",
+      "bytes": 9957
+    },
+    {
+      "path": "src/utils/siteMetrics.js",
+      "status": "present",
+      "sha256": "941db1e6740b6331fbd5e4689327344084c6461422451844cf3d819708cf3e43",
+      "bytes": 4198
+    }
+  ],
+  "omitted": [
+    {
+      "path": "deliverables/sattari-internal-download-surface-archive-2026-10-08/public-downloads/auto-pitch-realtime-alpha-v0.2.0.tar.gz",
+      "reason": "non-source-or-binary-asset"
+    },
+    {
+      "path": "deliverables/sattari-internal-download-surface-archive-2026-10-08/public-downloads/sattari-audio-plugin-suite-alpha-v0.1.0-mac-installer.pkg",
+      "reason": "non-source-or-binary-asset"
+    },
+    {
+      "path": "deliverables/sattari-internal-download-surface-archive-2026-10-08/public-downloads/sattari-audio-plugin-suite-alpha-v0.1.0-mac-installer.pkg.sha256",
+      "reason": "non-source-or-binary-asset"
+    },
+    {
+      "path": "deliverables/sattari-internal-download-surface-archive-2026-10-08/public-downloads/sattari-audio-plugin-suite-alpha-v0.1.0.sha256",
+      "reason": "non-source-or-binary-asset"
+    },
+    {
+      "path": "deliverables/sattari-internal-download-surface-archive-2026-10-08/public-downloads/sattari-audio-plugin-suite-alpha-v0.1.0.tar.gz",
+      "reason": "non-source-or-binary-asset"
+    },
+    {
+      "path": "deliverables/sattari-internal-download-surface-archive-2026-10-08/public-downloads/sattari-auto-pitch-autokey-tester-v0.6.zip",
+      "reason": "non-source-or-binary-asset"
+    },
+    {
+      "path": "deliverables/sattari-internal-download-surface-archive-2026-10-08/public-downloads/sattari-auto-pitch-autokey-tester-v0.6.zip.sha256",
+      "reason": "non-source-or-binary-asset"
+    },
+    {
+      "path": "deliverables/sattari-internal-download-surface-archive-2026-10-08/public-downloads/sattari-auto-pitch-realtime-alpha-v0.2.0-mac-installer.pkg",
+      "reason": "non-source-or-binary-asset"
+    },
+    {
+      "path": "deliverables/sattari-internal-download-surface-archive-2026-10-08/public-downloads/sattari-auto-pitch-realtime-alpha-v0.2.0.sha256",
+      "reason": "non-source-or-binary-asset"
+    }
+  ],
+  "patch_sha256": "c0fb71f0e5b0d5b38d4edfec828a1a68064d37d4bb8feca4f636342226ab3beb",
+  "repo": "https://github.com/armonon/sattari-custom-site",
+  "branches": [
+    "joey/public-alpha-download-cleanup-2026-10-08"
+  ],
+  "archive_path": "sattari-custom-site/77b80506a33aec941eeafbf4652aea32a5f28199",
+  "local_worktree_dirty": false
+}

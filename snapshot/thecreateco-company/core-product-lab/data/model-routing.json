@@ -1,0 +1,33 @@
+{
+  "director": "openai/gpt-6.1-sol",
+  "routine_worker": "gpt-6-luna",
+  "design_review": "openai/gpt-6.1-sol",
+  "independent_audit": "openai/gpt-6.1-sol",
+  "target_mix_guidance": {
+    "routine": "Luna majority; no rigid quota",
+    "direction_and_review": "Sol when needed; independent review in separate context"
+  },
+  "actual_execution": "Record actual model/fallback. Historical attempts remain historical; all future reviews use OpenAI per owner amendment.",
+  "review_fallback": "openai/gpt-6-sol",
+  "historical_provider_status": {
+    "sonnet": {
+      "attempted": "anthropic/claude-sonnet-5",
+      "at": "2026-10-07",
+      "status": "BLOCKED",
+      "reason": "Anthropic API returned insufficient credit balance. No review output. No fallback represented as Sonnet.",
+      "evidence": "reports/sonnet-stemdeck-review.json"
+    },
+    "luna": {
+      "status": "RUNNING_OR_COMPLETED",
+      "evidence": "Initial per-product native audit children"
+    },
+    "opus": {
+      "status": "NOT_INVOKED",
+      "reason": "No major release/architecture disagreement requiring rare audit"
+    }
+  },
+  "review_policy": {
+    "claude_reviews_allowed": false,
+    "source_message": "1557556492570464297"
+  }
+}

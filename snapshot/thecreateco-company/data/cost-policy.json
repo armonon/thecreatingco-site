@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "timezone": "America/Los_Angeles",
+  "mode": "normal",
+  "collection": {"cron_page_size": 200, "cron_max_pages": 10, "marketing_days": 35},
+  "budgets": [
+    {"name": "daily", "window": "day", "scope": "all", "metric": "list_estimated_usd", "limit": null},
+    {"name": "weekly", "window": "week", "scope": "all", "metric": "list_estimated_usd", "limit": null},
+    {"name": "per-agent", "window": "day", "scope": "agent", "metric": "list_estimated_usd", "limit": null},
+    {"name": "per-product", "window": "week", "scope": "product", "metric": "list_estimated_usd", "limit": null},
+    {"name": "per-task", "window": "week", "scope": "task", "metric": "list_estimated_usd", "limit": null},
+    {"name": "astra", "window": "week", "scope": "astra", "metric": "list_estimated_usd", "limit": null}
+  ],
+  "anomalies": {"failure_count": 3},
+  "notes": "No monetary caps or model prices have been authorized. Null limits disable enforcement. Estimates are not billed charges. Preflight is advisory; critical work always continues."
+}

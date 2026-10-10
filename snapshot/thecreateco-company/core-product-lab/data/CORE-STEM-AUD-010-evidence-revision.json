@@ -1,0 +1,11 @@
+{
+  "task_id": "CORE-STEM-AUD-010",
+  "source_evidence": [
+    "docs/PROFESSIONAL_ACCEPTANCE.md",
+    "reports/stemdeck-golden-browser.json"
+  ],
+  "evidence_sources": [
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-initial.md",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/products/stemdeck.json"
+  ]
+}

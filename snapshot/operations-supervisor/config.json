@@ -1,0 +1,34 @@
+{
+  "reporting_channel": "channel:1502117078763704320",
+  "reporting_channel_name": "maintenance",
+  "timezone": "America/Los_Angeles",
+  "critical_urls": ["https://thecreatingco.com/"],
+  "marketing_hourly_cost_alert_usd": 5,
+  "repo_roots": ["/Users/agentsattari/code"],
+  "channel_labels": {
+    "1501138899752194130": "general",
+    "1502312350273900678": "projects",
+    "1502312370821796062": "sattari",
+    "1502117078763704320": "maintenance",
+    "1503820987064520724": "trader",
+    "1556603586258145330": "thecreativeco",
+    "1542939125366132819": "4geeks",
+    "1557541397878280252": "4geeks-coursework",
+    "1557540207186681856": "creative-council",
+    "1557558874699997244": "millions",
+    "1502312405416411147": "mnr",
+    "1503908073306198098": "librarian"
+  },
+  "repos": {
+    "StemDeck": "/Users/agentsattari/code/core-product-lab/stemdeck",
+    "ScenePilot": "/Users/agentsattari/code/sattari/scenepilot-compositor",
+    "Luma": "/Users/agentsattari/code/wave2/luma-E",
+    "Form": "/Users/agentsattari/code/wave2/form-D",
+    "Sattari": "/Users/agentsattari/code/sattari-plugins-suite-live-integration",
+    "4Geeks": "/Users/agentsattari/code/4geeks-coursework-monorepo"
+  },
+  "queue_databases": {
+    "company": "/Users/agentsattari/thecreateco-company/engine/company.sqlite3",
+    "marketing": "/Users/agentsattari/thecreateco-marketing/engine/data/mktg.db"
+  }
+}

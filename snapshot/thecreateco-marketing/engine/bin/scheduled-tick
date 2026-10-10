@@ -1,0 +1,15 @@
+#!/bin/sh
+# launchd entry point (ai.thecreateco.marketing-engine). Hourly: one bounded queue pass.
+# From 07:00 local, also queues the day's single Sol planning batch (idempotent per day).
+export PATH=/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+ENGINE="$(cd "$(dirname "$0")/.." && pwd)"
+[ -f "$ENGINE/PAUSE" ] && { echo "$(date '+%F %T') paused (remove $ENGINE/PAUSE to resume)"; exit 0; }
+H=$(date +%H)
+[ "$H" -ge 7 ] && "$ENGINE/bin/mktg" plan >/dev/null
+"$ENGINE/bin/mktg" tick
+TICK_STATUS=$?
+COMPANY="/Users/agentsattari/thecreateco-company/engine/company.py"
+if [ -f "$COMPANY" ] && [ -f "/Users/agentsattari/thecreateco-company/engine/company.sqlite3" ]; then
+  python3 "$COMPANY" refresh >/dev/null || echo "Company state refresh failed; marketing result retained" >&2
+fi
+exit "$TICK_STATUS"

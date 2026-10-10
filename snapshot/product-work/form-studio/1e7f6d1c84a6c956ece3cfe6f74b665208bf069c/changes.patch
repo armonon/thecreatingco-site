@@ -1,0 +1,1239 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index a0e690082812c086157748cfdb73384bd443263c..888644db3222fbf972d4ba942e4fba9fe205c62d 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -29,10 +29,11 @@ jobs:
+       - run: npm ci
+       - run: python -m pip install -r requirements-ifc.txt
+       - run: npm run check
++      # rendered-html.test.mjs validates the actual generated Sites bundle.
++      - run: npm run build
+       - run: npm run test:unit
+       - run: npm run test:budgets
+       - run: npm run test:bim-ifc
+-      - run: npm run build
+       - run: npm audit --omit=dev --audit-level=high
+       - run: npm run release:validate
+ 
+diff --git a/KNOWN_ISSUES.md b/KNOWN_ISSUES.md
+index b7d4ab4afd7884832b80ead87912e35c66906e13..d3ff4a9957ad1a15d943a0b47fdfbeee6bdbee46 100644
+--- a/KNOWN_ISSUES.md
++++ b/KNOWN_ISSUES.md
+@@ -1,4 +1,4 @@
+-# Known issues — 0.40.0 RC1
++# Known issues — 0.40.0 (release qualification pending)
+ 
+ These limitations are release boundaries, not hidden promises.
+ 
+@@ -33,4 +33,4 @@ These limitations are release boundaries, not hidden promises.
+ 
+ ## Development toolchain
+ 
+-- The shipped dependency graph has no known high-severity production advisories. The optional website/database development toolchain still reports advisories in `image-size` and an old transitive `esbuild`; forced fixes require breaking upgrades to Vinext or Drizzle Kit and are outside the desktop RC runtime.
++- The 2026-10-07 isolated source dependency repair pins Next.js 16.3.8 and resolves sharp 0.35.5 / source-map-js 1.2.2 in the lockfile. `npm audit --omit=dev` reports zero advisories for this candidate; this is not verification of the deployed dependency tree or runtime exploitability. Development-tool advisories and the existing desktop/release qualification gates remain separate; do not use forced breaking upgrades to claim readiness.
+diff --git a/PRODUCTION_READINESS.md b/PRODUCTION_READINESS.md
+index 84888920ac9e6db62c95ce50aeabc8ccf7a8c23f..d43a2c91409552e2ca4dfe8b539420f2046d28e0 100644
+--- a/PRODUCTION_READINESS.md
++++ b/PRODUCTION_READINESS.md
+@@ -2,7 +2,38 @@
+ 
+ Authoritative status ledger for the shipping application. Update this file only when implementation and verification evidence changes.
+ 
+-Last audited: 2026-08-26
++## Current qualification checkpoint — 2026-10-07
++
++**Not a qualified production release.** The dated ledger below records historical
++engineering observations, not current deployed or supported-platform acceptance.
++Its percentages are historical planning estimates, not a measured completion gate.
++Current source work builds on security repair `b433a12` (PR #3): production npm
++audit was clean at that candidate, while required remote CI could not start due
++to the GitHub account payments/spending-limit restriction. No bypass is permitted.
++
++The workflow-gate follow-up adds a named workspace status region and repairs
++stale smoke-test selectors/base64 archive assertions without dropping behavioral
++checks. Its imperative Three texture upload boundary preserves existing geometry,
++GPU texture identity and document pixels; targeted tests cover subarray upload and
++Undo/cancel snapshots. Source lint, typecheck, production web build, desktop web
++bundle and 15 JavaScript budget tests pass locally on macOS arm64 / Node 22.
++A synthetic real-Chrome/SwiftShader workflow imported an original SVG, resized
++it to 40 mm, extruded 12 mm with the actual OCCT worker, applied brass, verified
++Undo/Redo, downloaded a .FORM, closed/reopened a tab, reopened the downloaded
++file and compared editable state. STEP and GLB exports worked at 1920px; independent
++GLB byte decoding confirmed 40 × 40 × 12 mm and brass material parameters.
++**Known blocker:** at 1440px the project actions menu overflowed offscreen, blocking
++normal menu access to export. This is not complete responsive/workflow coverage.
++These checks are not a signed native build, native launch or clean-install test.
++
++Complete golden-workflow, native Rust, signed/notarized distribution, clean-machine
++install/update and exact deployed-artifact qualification remain release gates.
++Form's review host and canonical host are distinct; this branch is not a deployment.
++Do not describe unsupported Windows, Intel macOS or Linux packages as verified.
++
++## Historical ledger (not current qualification)
++
++Last historically audited: 2026-08-26
+ Marketing entry point: `app/page.tsx`
+ Shipping web editor entry point: `app/studio/page.tsx` → `app/cad-workspace.tsx`
+ Desktop entry point: `desktop/main.tsx` → `app/cad-workspace.tsx`  
+diff --git a/app/cad-phone.css b/app/cad-phone.css
+index 75cb9057df3f5d7651e09b44f18afa70a3e90a4f..b95e6817a82681641b4e1baae12ec04f5de29310 100644
+--- a/app/cad-phone.css
++++ b/app/cad-phone.css
+@@ -18,7 +18,7 @@
+   }
+   .cad-shell.cad-shell.ui-inspector-collapsed { grid-template-rows: var(--ui-topbar-height) minmax(0,1fr) 0 !important; }
+   .cad-shell.cad-shell.cad-view-drawing { grid-template-columns: 0 minmax(0,1fr) !important; }
+-  .cad-shell .cad-topbar { display: grid; grid-template-columns: 44px minmax(0,1fr); grid-template-rows: 44px 44px; align-content: center; gap: 4px; padding: 4px 6px; min-width: 0; }
++  .cad-shell.cad-shell .cad-topbar { display: grid; grid-template-columns: 80px minmax(0,1fr); grid-template-rows: 44px 44px; align-content: center; gap: 4px; padding: 4px 6px; min-width: 0; }
+   .cad-shell .cad-brand { min-width: 0; }
+   .cad-shell .cad-brand > :not(button) { display: none !important; }
+   .cad-shell .cad-brand > button { width: 44px !important; height: 44px !important; }
+@@ -71,7 +71,7 @@
+   .cad-shell.cad-shell.ui-inspector-collapsed { grid-template: "top top top" 52px "tools canvas inspector" minmax(0,1fr) / 52px minmax(0,1fr) 0 !important; }
+   .cad-shell.cad-shell.cad-view-drawing { grid-template-columns: 0 minmax(0,1fr) min(300px,40%) !important; }
+   .cad-shell.cad-shell.cad-view-drawing.ui-inspector-collapsed { grid-template-columns: 0 minmax(0,1fr) 0 !important; }
+-  .cad-shell .cad-topbar { grid-template-columns: 44px minmax(0,1fr) 220px; grid-template-rows: 44px; }
++  .cad-shell.cad-shell .cad-topbar { grid-template-columns: 80px minmax(0,1fr) auto; grid-template-rows: 44px; }
+   .cad-shell .cad-view-switch { grid-row: 1; grid-column: 2; }
+   .cad-shell .cad-actions { grid-column: 3; }
+ }
+@@ -174,3 +174,13 @@
+   .studio-shell.v2.animation-workspace:not(.ui-tools-collapsed):not(.presentation-mode) { grid-template-columns: 52px minmax(0,1fr) min(320px,38%) !important; }
+   .studio-shell.v2.animation-workspace.ui-inspector-collapsed:not(.ui-tools-collapsed):not(.presentation-mode) { grid-template-columns: 52px minmax(0,1fr) 0 !important; }
+ }
++
++/* Preserve Back + Form identity and every action on the narrowest phones.
++   Suite menu, Undo/Redo, Save, Properties and Project each keep their targets. */
++@media (max-width: 355px) {
++  .cad-shell.cad-shell { --ui-topbar-height: 148px !important; }
++  .cad-shell.cad-shell .cad-topbar { grid-template-rows: 44px 44px 44px; }
++  .cad-shell .cad-brand { grid-row: 1; grid-column: 1 / -1; }
++  .cad-shell .cad-actions { grid-row: 2; grid-column: 1 / -1; justify-content: flex-end; }
++  .cad-shell .cad-view-switch { grid-row: 3; }
++}
+diff --git a/app/cad-viewport-3d.tsx b/app/cad-viewport-3d.tsx
+index 1e4879dc2254065e6f0b687c13daa6f0593e86f6..e859c57b4a3d5a64c4283a576c3a25cc3bc546d1 100644
+--- a/app/cad-viewport-3d.tsx
++++ b/app/cad-viewport-3d.tsx
+@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
+ import { currentPreviewPixelRatio } from "./mobile-preview";
+ import { PointerTapGuard } from "./pointer-tap-guard";
+ import * as THREE from "three";
++import { updatePaintDataTexture } from "./paint-data-texture";
+ import { captureNativeRenderScene, type NativeRenderScene } from "./native-render-scene";
+ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
+ import { TransformControls } from "three/examples/jsm/controls/TransformControls.js";
+@@ -2171,8 +2172,7 @@ export default function CadViewport3D({
+         if (!(child instanceof THREE.Mesh) || !(child.material instanceof THREE.MeshPhysicalMaterial)) continue;
+         const texture = meshBodies.find((body) => body.id === child.userData.meshFeatureId)?.texture;
+         if (texture && child.material.map instanceof THREE.DataTexture) {
+-          child.material.map.image.data = new Uint8Array(texture.pixels.buffer, texture.pixels.byteOffset, texture.pixels.byteLength);
+-          child.material.map.needsUpdate = true;
++          updatePaintDataTexture(child.material.map, texture.pixels);
+         }
+       }
+       return;
+diff --git a/app/cad-workspace.tsx b/app/cad-workspace.tsx
+index 4bd3b23e1e900380dca4804b5c0e80710337c82b..c1e131098280f9b8584241a4f6b8047f5c0b263c 100644
+--- a/app/cad-workspace.tsx
++++ b/app/cad-workspace.tsx
+@@ -6884,7 +6884,7 @@ export default function CadWorkspace({
+         <footer><button onClick={() => setCopilotPreview(null)}>Cancel</button><button className="accent" onClick={applyCopilotPreview}>Apply design</button></footer>
+       </div>}
+       <footer className="cad-statusbar">
+-        <div className="cad-status" role="status" aria-live="polite"><i />{view === "drawing" && /Under-constrained|Fully constrained|degrees of freedom/.test(status) ? `${activeDocumentSheet.title} · ${activeDocumentIsProduction ? "Exact model views" : "Live-linked source"}` : status}</div>
++        <div className="cad-status" role="status" aria-label="Workspace status" aria-live="polite"><i />{view === "drawing" && /Under-constrained|Fully constrained|degrees of freedom/.test(status) ? `${activeDocumentSheet.title} · ${activeDocumentIsProduction ? "Exact model views" : "Live-linked source"}` : status}</div>
+         <div className="cad-coordinates">X {fmt(fromMillimeters(cursor.x, units), precision)} &nbsp; Y {fmt(fromMillimeters(cursor.y, units), precision)} &nbsp; Z {fmt(0, precision)}</div>
+         <button className={snap ? "active" : ""} onClick={() => setSnap((value) => !value)}>Snap</button>
+         <button className={ortho ? "active" : ""} onClick={() => setOrtho((value) => !value)}>Ortho</button>
+diff --git a/app/form-ui-v2.css b/app/form-ui-v2.css
+index a134fe4f8bdf3f9b782f436932474a0abcac6269..ed31fb2bff0347eda99041e6f60d11f03c89bb6e 100644
+--- a/app/form-ui-v2.css
++++ b/app/form-ui-v2.css
+@@ -1874,3 +1874,10 @@
+ .fabric-pattern-row span { flex:1; overflow-wrap:anywhere; }
+ .fabric-pattern-walk { display:grid; gap:5px; padding:12px 0; border-bottom:1px solid var(--form-v2-border-soft); font-size:12px; }
+ .fabric-pattern-precision input,.fabric-pattern-precision select { min-width:0; }
++
++/* Keep the action column within the viewport: equal 1fr side columns let
++   their min-content widths push Project/Open/Export off-screen. */
++@media (min-width: 1101px) {
++  .cad-shell .cad-topbar { grid-template-columns: minmax(0, 1fr) auto auto; }
++  .cad-shell .cad-brand em { min-width: 0; }
++}
+diff --git a/app/paint-data-texture.ts b/app/paint-data-texture.ts
+new file mode 100644
+index 0000000000000000000000000000000000000000..3b597925ea2c2259dc7023d38a066563f4ebe755
+--- /dev/null
++++ b/app/paint-data-texture.ts
+@@ -0,0 +1,10 @@
++import type { DataTexture } from "three";
++
++/** Imperative GPU resource boundary: retain the material/map, swap only paint
++ * bytes and invalidate the upload. Pixels belong to the document and must not
++ * be mutated here (Undo/cancel may reuse an earlier immutable snapshot).
++ */
++export function updatePaintDataTexture(map: DataTexture, pixels: Uint8ClampedArray): void {
++  map.image.data = new Uint8Array(pixels.buffer, pixels.byteOffset, pixels.byteLength);
++  map.needsUpdate = true;
++}
+diff --git a/package-lock.json b/package-lock.json
+index 12365e09d9ddc86768ad823b1879b881ab2f4179..fc42eaa101c23533b11a3e7e5489a5a236fa428c 100644
+--- a/package-lock.json
++++ b/package-lock.json
+@@ -17,7 +17,7 @@
+         "cannon-es": "^0.20.0",
+         "cdt2d": "1.0.0",
+         "drizzle-orm": "0.45.2",
+-        "next": "^16.3.1",
++        "next": "16.3.8",
+         "occt-wasm": "^3.8.1",
+         "openvdb": "^0.3.0",
+         "react": "^19.2.8",
+@@ -2424,9 +2424,9 @@
+       }
+     },
+     "node_modules/@next/env": {
+-      "version": "16.3.4",
+-      "resolved": "https://registry.npmjs.org/@next/env/-/env-16.3.4.tgz",
+-      "integrity": "sha512-cjWZnUUa6jZq2kFaNe/ZyJdZonOZ/QoN0Zka2nz/FLOrfx14pQuM9c5RaSVkWMqgdt4ksgPAMWPyHSs/CyV48Q==",
++      "version": "16.3.8",
++      "resolved": "https://registry.npmjs.org/@next/env/-/env-16.3.8.tgz",
++      "integrity": "sha512-Al9zqHVV7TJv0eFuOU4U7Lvv74PTih4Ch63sk2xCIpSTkE3udFnaOcnzP2lQVymiL7yS9Cj2iClUXlR3EQ5sEw==",
+       "license": "MIT"
+     },
+     "node_modules/@next/eslint-plugin-next": {
+@@ -2441,9 +2441,9 @@
+       }
+     },
+     "node_modules/@next/swc-darwin-arm64": {
+-      "version": "16.3.4",
+-      "resolved": "https://registry.npmjs.org/@next/swc-darwin-arm64/-/swc-darwin-arm64-16.3.4.tgz",
+-      "integrity": "sha512-iBr3I5LZNk5/bgl5//iTgD2tcym14MX0Xo7fD//u9dYAEgGzza1y9oywluPtf74YnOswVdH1908aK9xVz7zQTw==",
++      "version": "16.3.8",
++      "resolved": "https://registry.npmjs.org/@next/swc-darwin-arm64/-/swc-darwin-arm64-16.3.8.tgz",
++      "integrity": "sha512-2JPRMh2nmQG5CiL7cXGL9AGwnPWJQ//cTtAUCT+w511QHk79SYz3LGv/pc5X643B/WEO0rvu3Yww0hqwt3kgeA==",
+       "cpu": [
+         "arm64"
+       ],
+@@ -2457,9 +2457,9 @@
+       }
+     },
+     "node_modules/@next/swc-darwin-x64": {
+-      "version": "16.3.4",
+-      "resolved": "https://registry.npmjs.org/@next/swc-darwin-x64/-/swc-darwin-x64-16.3.4.tgz",
+-      "integrity": "sha512-2dpiSyl2Jw/NrBPaU2MAKGSa+2MR82pJIn4Sm5Rjr+gxAeuh0z158Su3Z2O8zn7UNNq+ej4bToed6RcRN/Lydg==",
++      "version": "16.3.8",
++      "resolved": "https://registry.npmjs.org/@next/swc-darwin-x64/-/swc-darwin-x64-16.3.8.tgz",
++      "integrity": "sha512-GZtCCOBKJ4leVIT/Th0llWKhD1ca92lzbQiS5R5ON9QkoiFnilFsebDae1JU2a3HWoKMEmEZWGs1AGLavVM72Q==",
+       "cpu": [
+         "x64"
+       ],
+@@ -2473,9 +2473,9 @@
+       }
+     },
+     "node_modules/@next/swc-linux-arm64-gnu": {
+-      "version": "16.3.4",
+-      "resolved": "https://registry.npmjs.org/@next/swc-linux-arm64-gnu/-/swc-linux-arm64-gnu-16.3.4.tgz",
+-      "integrity": "sha512-+t+U8HZT+fApePCS5h89CSH3datz29MkzyfCn+6fpsZBG/oiEOhINcb9rtkv6sdpToLGFn2e6146NzaKCXkqrA==",
++      "version": "16.3.8",
++      "resolved": "https://registry.npmjs.org/@next/swc-linux-arm64-gnu/-/swc-linux-arm64-gnu-16.3.8.tgz",
++      "integrity": "sha512-O659ygeQYqneJ1fBKMpFxIFqYkYswu8IAS1OCKK/4f3ZgJJm1dRz4fVJZRi/kLLWjnBKnebOePA4WNv+sV1pVA==",
+       "cpu": [
+         "arm64"
+       ],
+@@ -2489,9 +2489,9 @@
+       }
+     },
+     "node_modules/@next/swc-linux-arm64-musl": {
+-      "version": "16.3.4",
+-      "resolved": "https://registry.npmjs.org/@next/swc-linux-arm64-musl/-/swc-linux-arm64-musl-16.3.4.tgz",
+-      "integrity": "sha512-mx03GNs1ocQA5JQ4FxDMmIsNkdrZh8cuezKCrId28e5/gIPU/l7Kcy2+vmCCzdjnnmXJy+iOAu+7K0QppO6Urg==",
++      "version": "16.3.8",
++      "resolved": "https://registry.npmjs.org/@next/swc-linux-arm64-musl/-/swc-linux-arm64-musl-16.3.8.tgz",
++      "integrity": "sha512-dSjKSyWpzxoO1d3DIZZcP4XJcNaKeLmxQMFOiYl5vuBRMmweIqnAhty8tAmRsvTss779cK1FtYnDMj40e4TQlg==",
+       "cpu": [
+         "arm64"
+       ],
+@@ -2505,9 +2505,9 @@
+       }
+     },
+     "node_modules/@next/swc-linux-x64-gnu": {
+-      "version": "16.3.4",
+-      "resolved": "https://registry.npmjs.org/@next/swc-linux-x64-gnu/-/swc-linux-x64-gnu-16.3.4.tgz",
+-      "integrity": "sha512-YIhGY6fSMfha52bnVxnzc9zaVBzJg+cqQTOD8tXIBSx4fuv0pVMxQTE0PaS59YhnMOiYiG09IMwxJAf/CFm/Dw==",
++      "version": "16.3.8",
++      "resolved": "https://registry.npmjs.org/@next/swc-linux-x64-gnu/-/swc-linux-x64-gnu-16.3.8.tgz",
++      "integrity": "sha512-lbqOuz3RPRcv+o9msNsJw5x4+Y1ZwPTs6vmL6DCf7i0fZfvng/F59wyeDwqHIvV0mK//RBy/jJkZ+nCKsSMXjQ==",
+       "cpu": [
+         "x64"
+       ],
+@@ -2521,9 +2521,9 @@
+       }
+     },
+     "node_modules/@next/swc-linux-x64-musl": {
+-      "version": "16.3.4",
+-      "resolved": "https://registry.npmjs.org/@next/swc-linux-x64-musl/-/swc-linux-x64-musl-16.3.4.tgz",
+-      "integrity": "sha512-+eaaX6axpDb0yF1GCpiERe6njplvdC+nks/fKfcHu3XPGRrald8P3/X7yv7QLdjA51knnxwl9pxdIJsg+w1L+Q==",
++      "version": "16.3.8",
++      "resolved": "https://registry.npmjs.org/@next/swc-linux-x64-musl/-/swc-linux-x64-musl-16.3.8.tgz",
++      "integrity": "sha512-+316WswI8ScVgZeUd+1KGaXkHhaYQzCjvH/05TZSpJ8zBizb1a4G7DtO7F12jcBIqMOtsz9ji1t48fmKtzqsGA==",
+       "cpu": [
+         "x64"
+       ],
+@@ -2537,9 +2537,9 @@
+       }
+     },
+     "node_modules/@next/swc-win32-arm64-msvc": {
+-      "version": "16.3.4",
+-      "resolved": "https://registry.npmjs.org/@next/swc-win32-arm64-msvc/-/swc-win32-arm64-msvc-16.3.4.tgz",
+-      "integrity": "sha512-0jcXW7Xs/uzICrmgV3MhDYDeRy++1CqnpDIerlPIqYO4bhzB4WNbX/aRnQclustsAyTkFKB0z6rbcjmNg5tR8A==",
++      "version": "16.3.8",
++      "resolved": "https://registry.npmjs.org/@next/swc-win32-arm64-msvc/-/swc-win32-arm64-msvc-16.3.8.tgz",
++      "integrity": "sha512-ji0gd4kMYUxO+1fJBIbiBVRCjzG/lloiyCccnlebvb1ZJ5qXCPZqYg4Jl1DrrixnWNMKylzgpmMWx0yNDYXlzw==",
+       "cpu": [
+         "arm64"
+       ],
+@@ -2553,9 +2553,9 @@
+       }
+     },
+     "node_modules/@next/swc-win32-x64-msvc": {
+-      "version": "16.3.4",
+-      "resolved": "https://registry.npmjs.org/@next/swc-win32-x64-msvc/-/swc-win32-x64-msvc-16.3.4.tgz",
+-      "integrity": "sha512-vvBzwu1pYQCp92maZCFCIw/XgOTMR5tur9GjakwIo2cmwRTMKajRZZDS9+e4KsUZWKu1E007WUeAFXRRjZeuzw==",
++      "version": "16.3.8",
++      "resolved": "https://registry.npmjs.org/@next/swc-win32-x64-msvc/-/swc-win32-x64-msvc-16.3.8.tgz",
++      "integrity": "sha512-WcTlaKt/TWkh5kUjdJcUmB1XgZ+1c6fz4Y9fDHL73YNSdGaUWjceeWrrlwF0nv19iABYWC4iAq1oX1w4Bn0vfg==",
+       "cpu": [
+         "x64"
+       ],
+@@ -8358,12 +8358,12 @@
+       "license": "MIT"
+     },
+     "node_modules/next": {
+-      "version": "16.3.4",
+-      "resolved": "https://registry.npmjs.org/next/-/next-16.3.4.tgz",
+-      "integrity": "sha512-/Ztf6CeRH+ejEXUrYtqI4gkS66eFIHuSwqi60RgcpWKodxFZx2/dqVCMKBwILfAHXQ+F1b1vAudgj3mnxqtoIA==",
++      "version": "16.3.8",
++      "resolved": "https://registry.npmjs.org/next/-/next-16.3.8.tgz",
++      "integrity": "sha512-U7QEZaTini6wKrb8A8hqLLqYQyCetegKjCpJOyxk642vWoMoU1x5PyZCJFvgYgiptA8xc5j/9xYlZFO7w9Sjmw==",
+       "license": "MIT",
+       "dependencies": {
+-        "@next/env": "16.3.4",
++        "@next/env": "16.3.8",
+         "@swc/helpers": "0.5.23",
+         "baseline-browser-mapping": "^2.9.19",
+         "caniuse-lite": "^1.0.30001579",
+@@ -8377,14 +8377,14 @@
+         "node": ">=20.9.0"
+       },
+       "optionalDependencies": {
+-        "@next/swc-darwin-arm64": "16.3.4",
+-        "@next/swc-darwin-x64": "16.3.4",
+-        "@next/swc-linux-arm64-gnu": "16.3.4",
+-        "@next/swc-linux-arm64-musl": "16.3.4",
+-        "@next/swc-linux-x64-gnu": "16.3.4",
+-        "@next/swc-linux-x64-musl": "16.3.4",
+-        "@next/swc-win32-arm64-msvc": "16.3.4",
+-        "@next/swc-win32-x64-msvc": "16.3.4",
++        "@next/swc-darwin-arm64": "16.3.8",
++        "@next/swc-darwin-x64": "16.3.8",
++        "@next/swc-linux-arm64-gnu": "16.3.8",
++        "@next/swc-linux-arm64-musl": "16.3.8",
++        "@next/swc-linux-x64-gnu": "16.3.8",
++        "@next/swc-linux-x64-musl": "16.3.8",
++        "@next/swc-win32-arm64-msvc": "16.3.8",
++        "@next/swc-win32-x64-msvc": "16.3.8",
+         "sharp": "^0.35.4"
+       },
+       "peerDependencies": {
+@@ -8411,9 +8411,9 @@
+       }
+     },
+     "node_modules/next/node_modules/@img/sharp-darwin-arm64": {
+-      "version": "0.35.4",
+-      "resolved": "https://registry.npmjs.org/@img/sharp-darwin-arm64/-/sharp-darwin-arm64-0.35.4.tgz",
+-      "integrity": "sha512-Uhfl4V4lhP2nbUVF9+hyH1+luj86f1gUFeo8ALYxFoULoU+G87D43BfeMP8XHsk9boxAnCY/bf2EHwhA7MuGsA==",
++      "version": "0.35.5",
++      "resolved": "https://registry.npmjs.org/@img/sharp-darwin-arm64/-/sharp-darwin-arm64-0.35.5.tgz",
++      "integrity": "sha512-QRUlFQ0WxvdWyqqG/WtI3iupfD5rBzmCHXSdPsY91sAtVtTo7Q4cb6zOccZ3gqEqkr0f1As1ehLqmEpDsRf+lg==",
+       "cpu": [
+         "arm64"
+       ],
+@@ -8429,13 +8429,13 @@
+         "url": "https://opencollective.com/libvips"
+       },
+       "optionalDependencies": {
+-        "@img/sharp-libvips-darwin-arm64": "1.3.3"
++        "@img/sharp-libvips-darwin-arm64": "1.3.4"
+       }
+     },
+     "node_modules/next/node_modules/@img/sharp-darwin-x64": {
+-      "version": "0.35.4",
+-      "resolved": "https://registry.npmjs.org/@img/sharp-darwin-x64/-/sharp-darwin-x64-0.35.4.tgz",
+-      "integrity": "sha512-hWniXY3bG5qKpkKrAwPe4y+VTPmf086YQAnkxWh7uA1YrlRouWGa0M0Mxj3ZjnXFkv7/TD1bTy9lGUK26vRvWw==",
++      "version": "0.35.5",
++      "resolved": "https://registry.npmjs.org/@img/sharp-darwin-x64/-/sharp-darwin-x64-0.35.5.tgz",
++      "integrity": "sha512-+BR255RhDlpygUpOc/Jdt1nT6DQ3XG/ERo5wbcdOf5Q320dKtPCKPLR1LJs9VGXRaMa8l1uUa0tkCNOXiAxZUw==",
+       "cpu": [
+         "x64"
+       ],
+@@ -8451,20 +8451,20 @@
+         "url": "https://opencollective.com/libvips"
+       },
+       "optionalDependencies": {
+-        "@img/sharp-libvips-darwin-x64": "1.3.3"
++        "@img/sharp-libvips-darwin-x64": "1.3.4"
+       }
+     },
+     "node_modules/next/node_modules/@img/sharp-freebsd-wasm32": {
+-      "version": "0.35.4",
+-      "resolved": "https://registry.npmjs.org/@img/sharp-freebsd-wasm32/-/sharp-freebsd-wasm32-0.35.4.tgz",
+-      "integrity": "sha512-lIsKw/BU+kjB4eZjxrYrZmwOJYi3Ajrv66iAlBmUPyKc3HpnloevB1g3wxGD9P/5BbQ1brBGl65VRRrCvQDEqA==",
++      "version": "0.35.5",
++      "resolved": "https://registry.npmjs.org/@img/sharp-freebsd-wasm32/-/sharp-freebsd-wasm32-0.35.5.tgz",
++      "integrity": "sha512-Y/z91nEZ4uIBX5X3nfTovjU9lHNKFYbL2lpHCLVNmXQK03VIZvXBBt0KxbPGp2SdGSF+2mQU4e+hQaWOt86iAw==",
+       "license": "Apache-2.0",
+       "optional": true,
+       "os": [
+         "freebsd"
+       ],
+       "dependencies": {
+-        "@img/sharp-wasm32": "0.35.4"
++        "@img/sharp-wasm32": "0.35.5"
+       },
+       "engines": {
+         "node": ">=20.9.0"
+@@ -8474,9 +8474,9 @@
+       }
+     },
+     "node_modules/next/node_modules/@img/sharp-libvips-darwin-arm64": {
+-      "version": "1.3.3",
+-      "resolved": "https://registry.npmjs.org/@img/sharp-libvips-darwin-arm64/-/sharp-libvips-darwin-arm64-1.3.3.tgz",
+-      "integrity": "sha512-suTBPTDGrI9WodccaDdwZItTSaBYASlBk1NSfElSHrUfzu3szG6lvIF58+WiFvnfzuK8ZBFS5zE00PxqxnRiPg==",
++      "version": "1.3.4",
++      "resolved": "https://registry.npmjs.org/@img/sharp-libvips-darwin-arm64/-/sharp-libvips-darwin-arm64-1.3.4.tgz",
++      "integrity": "sha512-5R89nBYiRdUlSWJxPhO+GVtaXzXSxKnRu/xqMn3KTA3L9EB9Oy/P+Nn2f2vlhPuUdy/Zusb2DarbyTpGCfEDuw==",
+       "cpu": [
+         "arm64"
+       ],
+@@ -8490,9 +8490,9 @@
+       }
+     },
+     "node_modules/next/node_modules/@img/sharp-libvips-darwin-x64": {
+-      "version": "1.3.3",
+-      "resolved": "https://registry.npmjs.org/@img/sharp-libvips-darwin-x64/-/sharp-libvips-darwin-x64-1.3.3.tgz",
+-      "integrity": "sha512-FVJZ5mITMobmXIz/hPDTw0EintTW5H3WfrxwLqEqjiIihlu+hVRyGrFQ60xl0Lxn7Bt3zdpevPaQi0HEzqz9fw==",
++      "version": "1.3.4",
++      "resolved": "https://registry.npmjs.org/@img/sharp-libvips-darwin-x64/-/sharp-libvips-darwin-x64-1.3.4.tgz",
++      "integrity": "sha512-iR2OKH80yi0U+dUplyh3/xdpFvps6YkCwsXenIJxqxR1v9o+xtKTGbS9H7cps+2Vxjc8B1j96p75NmTGjIhtpQ==",
+       "cpu": [
+         "x64"
+       ],
+@@ -8506,9 +8506,9 @@
+       }
+     },
+     "node_modules/next/node_modules/@img/sharp-libvips-linux-arm": {
+-      "version": "1.3.3",
+-      "resolved": "https://registry.npmjs.org/@img/sharp-libvips-linux-arm/-/sharp-libvips-linux-arm-1.3.3.tgz",
+-      "integrity": "sha512-3rbU4vqXXc3hY/OiXdl52xZvT0F1yEngWfvqudtPJg/KkyiaQw2DRsFrNzpmLvfavbwOq3qXn36GP8obHRULQA==",
++      "version": "1.3.4",
++      "resolved": "https://registry.npmjs.org/@img/sharp-libvips-linux-arm/-/sharp-libvips-linux-arm-1.3.4.tgz",
++      "integrity": "sha512-LmRtTsOHuvM2+wlO2Db37dx5MiZhB0FvSunciw48YjdOkZz9KAiRbm8ujeMOA1INqmei5NapFxYEK1D1ZSidmw==",
+       "cpu": [
+         "arm"
+       ],
+@@ -8522,9 +8522,9 @@
+       }
+     },
+     "node_modules/next/node_modules/@img/sharp-libvips-linux-arm64": {
+-      "version": "1.3.3",
+-      "resolved": "https://registry.npmjs.org/@img/sharp-libvips-linux-arm64/-/sharp-libvips-linux-arm64-1.3.3.tgz",
+-      "integrity": "sha512-0DaL0A6Xu6sQSQFwe4iVCrKWU2cCTItnRsYsCdxAMm9NF6twAA9BKnoqy4hqz4+azQ0JHuA26qiUKsf1XJ/v5A==",
++      "version": "1.3.4",
++      "resolved": "https://registry.npmjs.org/@img/sharp-libvips-linux-arm64/-/sharp-libvips-linux-arm64-1.3.4.tgz",
++      "integrity": "sha512-Y3dgX/6lE2QhQb+Gxy0WZxfg9MEm/JBjamZpS2IklP7xIQoKN4hzAm7KcMVGtaVDt3neE9OKBC7vAfonA/Lr1A==",
+       "cpu": [
+         "arm64"
+       ],
+@@ -8538,9 +8538,9 @@
+       }
+     },
+     "node_modules/next/node_modules/@img/sharp-libvips-linux-ppc64": {
+-      "version": "1.3.3",
+-      "resolved": "https://registry.npmjs.org/@img/sharp-libvips-linux-ppc64/-/sharp-libvips-linux-ppc64-1.3.3.tgz",
+-      "integrity": "sha512-cdn1OvUBwsXhbC0zSzJnNzf5MZ/mTrobawDvNXBTxe8VtqKAm0sRuEY2Evzovb/w9JMk4TvRxqt1mekSuJz64w==",
++      "version": "1.3.4",
++      "resolved": "https://registry.npmjs.org/@img/sharp-libvips-linux-ppc64/-/sharp-libvips-linux-ppc64-1.3.4.tgz",
++      "integrity": "sha512-Le6boB8Tai0Nis+gIxIpKx68UDVVIqdR8Tin5Yf1z2LJJQLDJvCDRqRu+jC2qCoD+eIomonmOwB4smBRxfVpYQ==",
+       "cpu": [
+         "ppc64"
+       ],
+@@ -8554,9 +8554,9 @@
+       }
+     },
+     "node_modules/next/node_modules/@img/sharp-libvips-linux-riscv64": {
+-      "version": "1.3.3",
+-      "resolved": "https://registry.npmjs.org/@img/sharp-libvips-linux-riscv64/-/sharp-libvips-linux-riscv64-1.3.3.tgz",
+-      "integrity": "sha512-HjPVx7yKz+0lqdhDlTw1tt90wamBoxhiXpvl1XZpJLiHH4RCJ5yDTqH+VlYPv2fwFs89JFw4c1IexYOcQUi4IQ==",
++      "version": "1.3.4",
++      "resolved": "https://registry.npmjs.org/@img/sharp-libvips-linux-riscv64/-/sharp-libvips-linux-riscv64-1.3.4.tgz",
++      "integrity": "sha512-aHkkIEHPRdQEegJN20MLmGtxYD9R2wQr3Cwpddnu5+YKMt6Uzax7S9h5gpZTo8wyrGuZSlfQ63OevL5mTyOC7Q==",
+       "cpu": [
+         "riscv64"
+       ],
+@@ -8570,9 +8570,9 @@
+       }
+     },
+     "node_modules/next/node_modules/@img/sharp-libvips-linux-s390x": {
+-      "version": "1.3.3",
+-      "resolved": "https://registry.npmjs.org/@img/sharp-libvips-linux-s390x/-/sharp-libvips-linux-s390x-1.3.3.tgz",
+-      "integrity": "sha512-neWLh+3yCNThxnfy3c4BbVBeGgt9aftno+XbT56iK28RgeDs3UOFWviLWlUu0bArYVYJaFDK+RRohbicUNCm8Q==",
++      "version": "1.3.4",
++      "resolved": "https://registry.npmjs.org/@img/sharp-libvips-linux-s390x/-/sharp-libvips-linux-s390x-1.3.4.tgz",
++      "integrity": "sha512-ra/mB6MikESDUO7Yg+Mi95bFBb9GsObURuhnOv3OqknjGe9sZrG8tCe9q0xSIGrtLgvgw0gKnFWcK4blSgQOuQ==",
+       "cpu": [
+         "s390x"
+       ],
+@@ -8586,9 +8586,9 @@
+       }
+     },
+     "node_modules/next/node_modules/@img/sharp-libvips-linux-x64": {
+-      "version": "1.3.3",
+-      "resolved": "https://registry.npmjs.org/@img/sharp-libvips-linux-x64/-/sharp-libvips-linux-x64-1.3.3.tgz",
+-      "integrity": "sha512-4vKmvAst9nrowcqquKFAyZJUDolUaIp8uRiN0mWFguJ1IplC9/pitXtlnnlU4aa/eJw3J7i67V+pwUL+wZGdsA==",
++      "version": "1.3.4",
++      "resolved": "https://registry.npmjs.org/@img/sharp-libvips-linux-x64/-/sharp-libvips-linux-x64-1.3.4.tgz",
++      "integrity": "sha512-GJ//SSXbnwSDes02umB3nDJLFcQzw8a18V8fyhqr6tV515tOEMdImjjxj1AoafMRz56F3PHgftnj1QEKSU1zkw==",
+       "cpu": [
+         "x64"
+       ],
+@@ -8602,9 +8602,9 @@
+       }
+     },
+     "node_modules/next/node_modules/@img/sharp-libvips-linuxmusl-arm64": {
+-      "version": "1.3.3",
+-      "resolved": "https://registry.npmjs.org/@img/sharp-libvips-linuxmusl-arm64/-/sharp-libvips-linuxmusl-arm64-1.3.3.tgz",
+-      "integrity": "sha512-Y9kQaLMuNoB0bPYOOdcZMaseNrFpPodIWWMrx+CZyydf2xn68j9WYc6sWWRrDwNkzCQjKYfc68L7jKjGlHMibw==",
++      "version": "1.3.4",
++      "resolved": "https://registry.npmjs.org/@img/sharp-libvips-linuxmusl-arm64/-/sharp-libvips-linuxmusl-arm64-1.3.4.tgz",
++      "integrity": "sha512-hvulFwtjUcagsis6BBxHwGFwWoNZjgYmULGVrZcyfNbjA8hKILbRxGg15/7w5HDyXHXUos/j6baAWqnCyQ2DWA==",
+       "cpu": [
+         "arm64"
+       ],
+@@ -8618,9 +8618,9 @@
+       }
+     },
+     "node_modules/next/node_modules/@img/sharp-libvips-linuxmusl-x64": {
+-      "version": "1.3.3",
+-      "resolved": "https://registry.npmjs.org/@img/sharp-libvips-linuxmusl-x64/-/sharp-libvips-linuxmusl-x64-1.3.3.tgz",
+-      "integrity": "sha512-fj8Mv0HHfD1Rr+4I68+3agJynxDWtBFgicTbSOb9Bke6pIwzGcJ+RX/yHjmiEGFMCavY/dxvem7MyNaJF+wDiw==",
++      "version": "1.3.4",
++      "resolved": "https://registry.npmjs.org/@img/sharp-libvips-linuxmusl-x64/-/sharp-libvips-linuxmusl-x64-1.3.4.tgz",
++      "integrity": "sha512-6zXKeE/p39I1AmA3cJG35eyBGNqNddLnUXjhwBnsGjFPWqf5VKkDBEqaEkPDoTEtkxwi2vv8Tcr2mDyP4So7Fg==",
+       "cpu": [
+         "x64"
+       ],
+@@ -8634,9 +8634,9 @@
+       }
+     },
+     "node_modules/next/node_modules/@img/sharp-linux-arm": {
+-      "version": "0.35.4",
+-      "resolved": "https://registry.npmjs.org/@img/sharp-linux-arm/-/sharp-linux-arm-0.35.4.tgz",
+-      "integrity": "sha512-7OAS8gI0EReKGVN2HssHlM6umJgxF5VI3xN0p9FA91p/YO+ou5hiNghLdZ5BEHztwaaK5+bLKRf8x/o2L2nk9A==",
++      "version": "0.35.5",
++      "resolved": "https://registry.npmjs.org/@img/sharp-linux-arm/-/sharp-linux-arm-0.35.5.tgz",
++      "integrity": "sha512-LEaXK2WdXVK5ykcw0buWyPMsmLLL2vpHLD6yrNSW+JGEL3BZPA4tpKN6iaMc4AxTTAoaX/sU1rOL51lcIz48ZQ==",
+       "cpu": [
+         "arm"
+       ],
+@@ -8652,13 +8652,13 @@
+         "url": "https://opencollective.com/libvips"
+       },
+       "optionalDependencies": {
+-        "@img/sharp-libvips-linux-arm": "1.3.3"
++        "@img/sharp-libvips-linux-arm": "1.3.4"
+       }
+     },
+     "node_modules/next/node_modules/@img/sharp-linux-arm64": {
+-      "version": "0.35.4",
+-      "resolved": "https://registry.npmjs.org/@img/sharp-linux-arm64/-/sharp-linux-arm64-0.35.4.tgz",
+-      "integrity": "sha512-De4jpEnAU8Hd5oT0j1G3uL4ZvTuipVMn7YC6vPaJhy6/7EwEae0SVAoBrUMYQbkLGDm85taVWwuPc1a44LTzCQ==",
++      "version": "0.35.5",
++      "resolved": "https://registry.npmjs.org/@img/sharp-linux-arm64/-/sharp-linux-arm64-0.35.5.tgz",
++      "integrity": "sha512-LYVx5JTsOM2CBzmxreh+nl64/3H6Xb09iSLknqH47z2T2DFFxDeFLP5y4dJwe6H7uGQlHPyEEtIqyo3DYsRwdQ==",
+       "cpu": [
+         "arm64"
+       ],
+@@ -8674,13 +8674,13 @@
+         "url": "https://opencollective.com/libvips"
+       },
+       "optionalDependencies": {
+-        "@img/sharp-libvips-linux-arm64": "1.3.3"
++        "@img/sharp-libvips-linux-arm64": "1.3.4"
+       }
+     },
+     "node_modules/next/node_modules/@img/sharp-linux-ppc64": {
+-      "version": "0.35.4",
+-      "resolved": "https://registry.npmjs.org/@img/sharp-linux-ppc64/-/sharp-linux-ppc64-0.35.4.tgz",
+-      "integrity": "sha512-2oYZJeIl4kCcMGk4ouZVjnkCtFrpQFlNEtJ6GbxzhHQchwH0NH/qEb9ykmOl29dqwMq+JhFdZn+1ak2FKhI9fQ==",
++      "version": "0.35.5",
++      "resolved": "https://registry.npmjs.org/@img/sharp-linux-ppc64/-/sharp-linux-ppc64-0.35.5.tgz",
++      "integrity": "sha512-QVxAAq8evVRI9ia2vqgwrmWucn5Dfv+JdWzj75pD8omHLPSP7f8p20O8jxzjCcuCEQEOtYOZUmX1hkiZ0kdevA==",
+       "cpu": [
+         "ppc64"
+       ],
+@@ -8696,13 +8696,13 @@
+         "url": "https://opencollective.com/libvips"
+       },
+       "optionalDependencies": {
+-        "@img/sharp-libvips-linux-ppc64": "1.3.3"
++        "@img/sharp-libvips-linux-ppc64": "1.3.4"
+       }
+     },
+     "node_modules/next/node_modules/@img/sharp-linux-riscv64": {
+-      "version": "0.35.4",
+-      "resolved": "https://registry.npmjs.org/@img/sharp-linux-riscv64/-/sharp-linux-riscv64-0.35.4.tgz",
+-      "integrity": "sha512-cPbNChoRURAWdebDIHSenxRpgEdy7JkPydSnUxRm9VvKD7m0/xVaR/8Fzlu81pk5nHEvHH87UZUA7cTtwnbJSA==",
++      "version": "0.35.5",
++      "resolved": "https://registry.npmjs.org/@img/sharp-linux-riscv64/-/sharp-linux-riscv64-0.35.5.tgz",
++      "integrity": "sha512-LtdreXguaavKODPIfzJ4kffx7UNt1omwtK0rch4EBbbSTXPnxWmYSayXdLJw0fJzQ97kHt1gL/yh4tvU+nCyRQ==",
+       "cpu": [
+         "riscv64"
+       ],
+@@ -8718,13 +8718,13 @@
+         "url": "https://opencollective.com/libvips"
+       },
+       "optionalDependencies": {
+-        "@img/sharp-libvips-linux-riscv64": "1.3.3"
++        "@img/sharp-libvips-linux-riscv64": "1.3.4"
+       }
+     },
+     "node_modules/next/node_modules/@img/sharp-linux-s390x": {
+-      "version": "0.35.4",
+-      "resolved": "https://registry.npmjs.org/@img/sharp-linux-s390x/-/sharp-linux-s390x-0.35.4.tgz",
+-      "integrity": "sha512-RY0JFY8Fd6RonCBtHz+DvadaPkXDSI1AUn6yWL9TipqkZ1vY8w8evqdgyDFnkm4/K1ve1TvZiaePP5oSd4+WVQ==",
++      "version": "0.35.5",
++      "resolved": "https://registry.npmjs.org/@img/sharp-linux-s390x/-/sharp-linux-s390x-0.35.5.tgz",
++      "integrity": "sha512-UZasTOFiYzotTsGOCu42BfUzP6Tu6Do/947iRm1RsLKvlllxwGcn4RN27LibGWceix4Y+Pmw3jsnTcCQIgWjqA==",
+       "cpu": [
+         "s390x"
+       ],
+@@ -8740,13 +8740,13 @@
+         "url": "https://opencollective.com/libvips"
+       },
+       "optionalDependencies": {
+-        "@img/sharp-libvips-linux-s390x": "1.3.3"
++        "@img/sharp-libvips-linux-s390x": "1.3.4"
+       }
+     },
+     "node_modules/next/node_modules/@img/sharp-linux-x64": {
+-      "version": "0.35.4",
+-      "resolved": "https://registry.npmjs.org/@img/sharp-linux-x64/-/sharp-linux-x64-0.35.4.tgz",
+-      "integrity": "sha512-9qvvEAuk8k89TfWUoX2htWjbAMX8p+NxCppjpcg5k6xMsjhBQPTsoIh36h9Qde4WRuGpJeYnOjdosDn/cnv+OA==",
++      "version": "0.35.5",
++      "resolved": "https://registry.npmjs.org/@img/sharp-linux-x64/-/sharp-linux-x64-0.35.5.tgz",
++      "integrity": "sha512-SxFtLTeJInhAA9Q836kux2vZNeOBQEx658qvbboZScr0wIARym3IcGmW7KpVD5sbVg0Ojy+udFQdayYIZyoNog==",
+       "cpu": [
+         "x64"
+       ],
+@@ -8762,13 +8762,13 @@
+         "url": "https://opencollective.com/libvips"
+       },
+       "optionalDependencies": {
+-        "@img/sharp-libvips-linux-x64": "1.3.3"
++        "@img/sharp-libvips-linux-x64": "1.3.4"
+       }
+     },
+     "node_modules/next/node_modules/@img/sharp-linuxmusl-arm64": {
+-      "version": "0.35.4",
+-      "resolved": "https://registry.npmjs.org/@img/sharp-linuxmusl-arm64/-/sharp-linuxmusl-arm64-0.35.4.tgz",
+-      "integrity": "sha512-KB5jxpfWQTr0nc3xdHtWChdbifHrBGsd2SM62Eyxrl8afikm+f5qGBU75SJIZBT/S1MC8XyacdlXBMSWq6OURA==",
++      "version": "0.35.5",
++      "resolved": "https://registry.npmjs.org/@img/sharp-linuxmusl-arm64/-/sharp-linuxmusl-arm64-0.35.5.tgz",
++      "integrity": "sha512-9HbMclmI1zlNkFRs3z9/eBtDjfD0sGlrX1z6b1qwmiFY5ElDLh4BC0LPBdVp7z1DXFiKlIcznf+ZlsuZzLxQqg==",
+       "cpu": [
+         "arm64"
+       ],
+@@ -8784,13 +8784,13 @@
+         "url": "https://opencollective.com/libvips"
+       },
+       "optionalDependencies": {
+-        "@img/sharp-libvips-linuxmusl-arm64": "1.3.3"
++        "@img/sharp-libvips-linuxmusl-arm64": "1.3.4"
+       }
+     },
+     "node_modules/next/node_modules/@img/sharp-linuxmusl-x64": {
+-      "version": "0.35.4",
+-      "resolved": "https://registry.npmjs.org/@img/sharp-linuxmusl-x64/-/sharp-linuxmusl-x64-0.35.4.tgz",
+-      "integrity": "sha512-f+eZJZIQNEEd26RPSW+76chwOf1XtA2Y/O+5ocVyLliHkeih3e+jhLVBdNTd2rS3IbNXK8+ug93Vf5ZXtF5Lxg==",
++      "version": "0.35.5",
++      "resolved": "https://registry.npmjs.org/@img/sharp-linuxmusl-x64/-/sharp-linuxmusl-x64-0.35.5.tgz",
++      "integrity": "sha512-4KOphqB035HrVdqLZfCgMzzERrQkkzOwRhl4OAkRO1YCldbaFjySXMaK534Mo0V+LndnlJk+sbUyLeU0ULyD1A==",
+       "cpu": [
+         "x64"
+       ],
+@@ -8806,13 +8806,13 @@
+         "url": "https://opencollective.com/libvips"
+       },
+       "optionalDependencies": {
+-        "@img/sharp-libvips-linuxmusl-x64": "1.3.3"
++        "@img/sharp-libvips-linuxmusl-x64": "1.3.4"
+       }
+     },
+     "node_modules/next/node_modules/@img/sharp-wasm32": {
+-      "version": "0.35.4",
+-      "resolved": "https://registry.npmjs.org/@img/sharp-wasm32/-/sharp-wasm32-0.35.4.tgz",
+-      "integrity": "sha512-zQnl4Kwp7Q6NHsENtU2T/00Zi+w3AQNwz3+UaTyVBy2FpXrzXzGjndpK61onhZjRtRpQXxCTeqw19bVyXOh7jA==",
++      "version": "0.35.5",
++      "resolved": "https://registry.npmjs.org/@img/sharp-wasm32/-/sharp-wasm32-0.35.5.tgz",
++      "integrity": "sha512-Ptsga1su4tQx+LLF1ECS9U6nz5kmrXKo6XVbtR48Ke3ZRxxgaWBu7IDtEe1quo8hiupwm6WFqxVlXaSf7IINGQ==",
+       "license": "Apache-2.0 AND LGPL-3.0-or-later AND MIT",
+       "optional": true,
+       "dependencies": {
+@@ -8826,16 +8826,16 @@
+       }
+     },
+     "node_modules/next/node_modules/@img/sharp-webcontainers-wasm32": {
+-      "version": "0.35.4",
+-      "resolved": "https://registry.npmjs.org/@img/sharp-webcontainers-wasm32/-/sharp-webcontainers-wasm32-0.35.4.tgz",
+-      "integrity": "sha512-ESfNkywmCfPNyaZjxooddJQiQ+l/nTpGEOGthxiLnIHXC/CmcBixnfwUleX9mCz9ovrUUvKMap/pm8RYbzfwaA==",
++      "version": "0.35.5",
++      "resolved": "https://registry.npmjs.org/@img/sharp-webcontainers-wasm32/-/sharp-webcontainers-wasm32-0.35.5.tgz",
++      "integrity": "sha512-hfhF/FmoQyTUkA0bIKFOtw536BQSeBMe6BF6QyWlrPxT754+TFLaZ7sKKTfvvM0yJgKgaYTwnFCIZ/GuDw5SUA==",
+       "cpu": [
+         "wasm32"
+       ],
+       "license": "Apache-2.0",
+       "optional": true,
+       "dependencies": {
+-        "@img/sharp-wasm32": "0.35.4"
++        "@img/sharp-wasm32": "0.35.5"
+       },
+       "engines": {
+         "node": ">=20.9.0"
+@@ -8845,9 +8845,9 @@
+       }
+     },
+     "node_modules/next/node_modules/@img/sharp-win32-arm64": {
+-      "version": "0.35.4",
+-      "resolved": "https://registry.npmjs.org/@img/sharp-win32-arm64/-/sharp-win32-arm64-0.35.4.tgz",
+-      "integrity": "sha512-iNdlBX9gLVvqe2I3uIJSIKTq6wckP/DYxZtcqxm09x5Gi24DnFBmPAWZmr60ZyYMG0xlzo6goG3670ar+RXvRw==",
++      "version": "0.35.5",
++      "resolved": "https://registry.npmjs.org/@img/sharp-win32-arm64/-/sharp-win32-arm64-0.35.5.tgz",
++      "integrity": "sha512-X4t7g+7ZA5DKblCBEXGjUqqemj4vczING/5viFwAL8h4N3qYeyjwdCvRLHi4EdOUI+2Z7UFlp1VM+p/AuEtm6Q==",
+       "cpu": [
+         "arm64"
+       ],
+@@ -8864,9 +8864,9 @@
+       }
+     },
+     "node_modules/next/node_modules/@img/sharp-win32-ia32": {
+-      "version": "0.35.4",
+-      "resolved": "https://registry.npmjs.org/@img/sharp-win32-ia32/-/sharp-win32-ia32-0.35.4.tgz",
+-      "integrity": "sha512-kqRsbaa5CS6KHlpxnN7WhE6vAAugXyZButpRdvDWetlv6Qv4N9WTcrWzF7tXfB9T7MsoadqdI8hmwLq6UlLvtw==",
++      "version": "0.35.5",
++      "resolved": "https://registry.npmjs.org/@img/sharp-win32-ia32/-/sharp-win32-ia32-0.35.5.tgz",
++      "integrity": "sha512-5Zm82LoBc43nhwNybZlG7Y1KO//Zhsn306fQl29ZOuStHLGTo3BWL83q3cznX0poxSAMuYL1On/BHBxkBeKr6A==",
+       "cpu": [
+         "ia32"
+       ],
+@@ -8883,9 +8883,9 @@
+       }
+     },
+     "node_modules/next/node_modules/@img/sharp-win32-x64": {
+-      "version": "0.35.4",
+-      "resolved": "https://registry.npmjs.org/@img/sharp-win32-x64/-/sharp-win32-x64-0.35.4.tgz",
+-      "integrity": "sha512-XtmnYhBcrORsJ4XJngyzr/EWP0hRZLAZRFaApdKuviyqF78+ylxh2y06ZmtULAMOnObJ3ucpN0AcwSWnMowTRg==",
++      "version": "0.35.5",
++      "resolved": "https://registry.npmjs.org/@img/sharp-win32-x64/-/sharp-win32-x64-0.35.5.tgz",
++      "integrity": "sha512-x76eH0vEiHlcMQu8Y8IenntaACtddpT6W0wmXtWrnKcnKI7ME5DdgqhAD6SEWOEl1v2zDvkZDhFA9KnURwpfqg==",
+       "cpu": [
+         "x64"
+       ],
+@@ -8915,9 +8915,9 @@
+       }
+     },
+     "node_modules/next/node_modules/sharp": {
+-      "version": "0.35.4",
+-      "resolved": "https://registry.npmjs.org/sharp/-/sharp-0.35.4.tgz",
+-      "integrity": "sha512-n++8XWcj+jCOr2IOl7h8LbKnGBDY4aPbmprMONBNFdn0ImXqpGVv5zliDs0V9HbmbCQLpbuo2ej9rAoOQTvMDA==",
++      "version": "0.35.5",
++      "resolved": "https://registry.npmjs.org/sharp/-/sharp-0.35.5.tgz",
++      "integrity": "sha512-Ywn4OnzGukp7CDMrp08RQ50YKmuwG47brZgIVPTvBaaAfQlRlygrRqSrxdCiL9M+LlzLBiJ68IR1QqvzHyjC7g==",
+       "license": "Apache-2.0",
+       "optional": true,
+       "dependencies": {
+@@ -8932,31 +8932,31 @@
+         "url": "https://opencollective.com/libvips"
+       },
+       "optionalDependencies": {
+-        "@img/sharp-darwin-arm64": "0.35.4",
+-        "@img/sharp-darwin-x64": "0.35.4",
+-        "@img/sharp-freebsd-wasm32": "0.35.4",
+-        "@img/sharp-libvips-darwin-arm64": "1.3.3",
+-        "@img/sharp-libvips-darwin-x64": "1.3.3",
+-        "@img/sharp-libvips-linux-arm": "1.3.3",
+-        "@img/sharp-libvips-linux-arm64": "1.3.3",
+-        "@img/sharp-libvips-linux-ppc64": "1.3.3",
+-        "@img/sharp-libvips-linux-riscv64": "1.3.3",
+-        "@img/sharp-libvips-linux-s390x": "1.3.3",
+-        "@img/sharp-libvips-linux-x64": "1.3.3",
+-        "@img/sharp-libvips-linuxmusl-arm64": "1.3.3",
+-        "@img/sharp-libvips-linuxmusl-x64": "1.3.3",
+-        "@img/sharp-linux-arm": "0.35.4",
+-        "@img/sharp-linux-arm64": "0.35.4",
+-        "@img/sharp-linux-ppc64": "0.35.4",
+-        "@img/sharp-linux-riscv64": "0.35.4",
+-        "@img/sharp-linux-s390x": "0.35.4",
+-        "@img/sharp-linux-x64": "0.35.4",
+-        "@img/sharp-linuxmusl-arm64": "0.35.4",
+-        "@img/sharp-linuxmusl-x64": "0.35.4",
+-        "@img/sharp-webcontainers-wasm32": "0.35.4",
+-        "@img/sharp-win32-arm64": "0.35.4",
+-        "@img/sharp-win32-ia32": "0.35.4",
+-        "@img/sharp-win32-x64": "0.35.4"
++        "@img/sharp-darwin-arm64": "0.35.5",
++        "@img/sharp-darwin-x64": "0.35.5",
++        "@img/sharp-freebsd-wasm32": "0.35.5",
++        "@img/sharp-libvips-darwin-arm64": "1.3.4",
++        "@img/sharp-libvips-darwin-x64": "1.3.4",
++        "@img/sharp-libvips-linux-arm": "1.3.4",
++        "@img/sharp-libvips-linux-arm64": "1.3.4",
++        "@img/sharp-libvips-linux-ppc64": "1.3.4",
++        "@img/sharp-libvips-linux-riscv64": "1.3.4",
++        "@img/sharp-libvips-linux-s390x": "1.3.4",
++        "@img/sharp-libvips-linux-x64": "1.3.4",
++        "@img/sharp-libvips-linuxmusl-arm64": "1.3.4",
++        "@img/sharp-libvips-linuxmusl-x64": "1.3.4",
++        "@img/sharp-linux-arm": "0.35.5",
++        "@img/sharp-linux-arm64": "0.35.5",
++        "@img/sharp-linux-ppc64": "0.35.5",
++        "@img/sharp-linux-riscv64": "0.35.5",
++        "@img/sharp-linux-s390x": "0.35.5",
++        "@img/sharp-linux-x64": "0.35.5",
++        "@img/sharp-linuxmusl-arm64": "0.35.5",
++        "@img/sharp-linuxmusl-x64": "0.35.5",
++        "@img/sharp-webcontainers-wasm32": "0.35.5",
++        "@img/sharp-win32-arm64": "0.35.5",
++        "@img/sharp-win32-ia32": "0.35.5",
++        "@img/sharp-win32-x64": "0.35.5"
+       },
+       "peerDependenciesMeta": {
+         "@types/node": {
+@@ -10023,9 +10023,9 @@
+       }
+     },
+     "node_modules/source-map-js": {
+-      "version": "1.2.1",
+-      "resolved": "https://registry.npmjs.org/source-map-js/-/source-map-js-1.2.1.tgz",
+-      "integrity": "sha512-UXWMKhLOwVKb728IUtQPXxfYU+usdybtUrK/8uGE8CQMvrhOpwvzDBwj0QhSL7MQc7vIsISBG8VQ8+IDQxpfQA==",
++      "version": "1.2.2",
++      "resolved": "https://registry.npmjs.org/source-map-js/-/source-map-js-1.2.2.tgz",
++      "integrity": "sha512-KGj/8Y43x35aZVDtt+J4mK1hoLGHULMYfSkODJNQjNDC3oW1PqPoxMwo0pLUsWM/UEGzON/NxeHywEfNXNP3Vw==",
+       "license": "BSD-3-Clause",
+       "engines": {
+         "node": ">=0.10.0"
+diff --git a/package.json b/package.json
+index 3281500b44dacc5a66e3fd99f350657f09eea169..9b32c747e65138e4d092872f32a134038631a2f4 100644
+--- a/package.json
++++ b/package.json
+@@ -66,7 +66,7 @@
+     "cannon-es": "^0.20.0",
+     "cdt2d": "1.0.0",
+     "drizzle-orm": "0.45.2",
+-    "next": "^16.3.1",
++    "next": "16.3.8",
+     "occt-wasm": "^3.8.1",
+     "openvdb": "^0.3.0",
+     "react": "^19.2.8",
+diff --git a/scripts/verify-project-menu.mjs b/scripts/verify-project-menu.mjs
+new file mode 100644
+index 0000000000000000000000000000000000000000..35bd185aa6b867f5833abc3bbe383f8346ec1dda
+--- /dev/null
++++ b/scripts/verify-project-menu.mjs
+@@ -0,0 +1,61 @@
++/** Real-browser regression. Start desktop:web:dev first; requires Playwright.
++ * FORM_BROWSER_URL=http://127.0.0.1:1420 FORM_PLAYWRIGHT_MODULE=playwright node scripts/verify-project-menu.mjs
++ * Does not mock OCCT, native APIs, downloads or layout; uses synthetic geometry.
++ */
++import assert from 'node:assert/strict';
++import { mkdtemp, readFile, writeFile } from 'node:fs/promises';
++import { tmpdir } from 'node:os';
++import { join } from 'node:path';
++const { chromium } = await import(process.env.FORM_PLAYWRIGHT_MODULE || 'playwright');
++const output = process.env.FORM_BROWSER_REPORT_DIR || await mkdtemp(join(tmpdir(), 'form-menu-'));
++const browser = await chromium.launch({ channel: process.env.FORM_BROWSER_CHANNEL || undefined, args: ['--enable-webgl', '--use-gl=angle', '--use-angle=swiftshader'] });
++const touch = process.env.FORM_BROWSER_TOUCH === '1';
++const results = [];
++try {
++  const page = await browser.newPage({ viewport: { width: 1440, height: 1000 }, acceptDownloads: true, hasTouch: touch });
++  const errors = []; page.on('pageerror', e => errors.push(e.message)); page.on('dialog', d => d.accept());
++  await page.goto(process.env.FORM_BROWSER_URL || 'http://127.0.0.1:1420');
++  await page.getByRole('button', { name: /Blank precision part/ }).click();
++  await page.getByLabel('Import SVG file').setInputFiles({ name: 'menu-fixture.svg', mimeType: 'image/svg+xml', buffer: Buffer.from('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 50"><rect x="5" y="5" width="20" height="20"/></svg>') });
++  const tools = page.getByRole('region', { name: 'Sketch and vector tools' });
++  await tools.getByLabel('Quick extrusion depth').fill('12 mm');
++  await tools.getByLabel('Quick extrusion depth').press('Enter');
++  await tools.getByRole('button', { name: 'Make 3D', exact: true }).click();
++  await page.waitForFunction(() => document.querySelector('.cad-status-exact')?.textContent === '1 exact body');
++  const project = () => page.evaluate(() => window.formCAD.getProject());
++  // JSON project format omits undefined optional fields and canonicalizes -0.
++  const expected = JSON.parse(JSON.stringify(await project()));
++  const summary = page.locator('.cad-project-menu > summary');
++  const grab = async action => { const event = page.waitForEvent('download'); await action(); return await event; };
++  for (const width of [1440, 1280, 1100, 768, 390, 320]) {
++    await page.setViewportSize({ width, height: 1000 });
++    const box = await summary.boundingBox();
++    assert.ok(box.x >= 0 && box.y >= 0 && box.x + box.width <= width && box.y + box.height <= 1000, `Project trigger outside ${width}px viewport`);
++    assert.ok(await page.locator('.cad-brand .form-brand-logo').isVisible(), 'Form identity retained');
++    const saved = await grab(() => page.getByRole('button', { name: 'Save', exact: true }).click());
++    const path = join(output, `fixture-${width}.form`); await saved.saveAs(path);
++    await (touch ? summary.tap() : summary.click());
++    const chooserEvent = page.waitForEvent('filechooser');
++    await page.getByRole('menuitem', { name: 'Open project…', exact: true }).click();
++    await (await chooserEvent).setFiles(path);
++    await page.getByRole('status', { name: 'Workspace status' }).filter({ hasText: 'Project opened' }).waitFor();
++    await page.waitForFunction(() => document.querySelector('.cad-status-exact')?.textContent === '1 exact body');
++    const reopened = await project();
++    for (const field of ['entities', 'features', 'appearance', 'geometricConstraints', 'modelState', 'layers']) assert.deepEqual(reopened[field], expected[field], `${field} at${width}`);
++    // Native details keyboard activation; Tab through the actual menu, not forced clicks.
++    await summary.focus(); await page.keyboard.press('Enter');
++    let found = false;
++    for (let i = 0; i < 35; i++) { await page.keyboard.press('Tab'); if (await page.evaluate(() => document.activeElement?.textContent === 'Export STEP')) { found = true; break; } }
++    assert.ok(found, `STEP reachable through keyboard menu at${width}`);
++    const step = await grab(() => page.keyboard.press('Enter'));
++    const stepBytes = await readFile(await step.path()); assert.match(stepBytes.toString(), /^ISO-10303-21/);
++    await (touch ? summary.tap() : summary.click()); await page.getByRole('menuitem', { name: 'Export for Blender…', exact: true }).click();
++    const glb = await grab(() => page.getByRole('button', { name: 'Download .glb ↓', exact: true }).click());
++    const glbBytes = await readFile(await glb.path()); assert.equal(glbBytes.readUInt32LE(0), 0x46546c67); assert.equal(glbBytes.readUInt32LE(8), glbBytes.length);
++    await page.getByRole('button', { name: 'Close Export for Blender', exact: true }).click();
++    await (touch ? summary.tap() : summary.click()); await page.keyboard.press('Escape'); assert.equal(await page.locator('.cad-project-menu').getAttribute('open'), null); assert.ok(await summary.evaluate(e => e === document.activeElement));
++    await page.screenshot({ path: join(output, `viewport-${width}.png`) });
++    results.push({ width, menu: 'PASS', mouse_save_open: 'PASS', keyboard_step: 'PASS', glb: 'PASS', step_bytes: stepBytes.length, glb_bytes: glbBytes.length });
++  }
++  assert.deepEqual(errors, []); await writeFile(join(output, 'browser-results.json'), JSON.stringify({ touch, results, errors }, null, 2)); console.log(JSON.stringify({ touch, results, errors, output }));
++} finally { await browser.close(); }
+diff --git a/tests/paint-data-texture.test.mjs b/tests/paint-data-texture.test.mjs
+new file mode 100644
+index 0000000000000000000000000000000000000000..36274328d48b7573442c1bf9f051ddb78ebbd6c5
+--- /dev/null
++++ b/tests/paint-data-texture.test.mjs
+@@ -0,0 +1,33 @@
++import test from 'node:test';
++import assert from 'node:assert/strict';
++import { DataTexture, SRGBColorSpace } from 'three';
++import { updatePaintDataTexture } from '../app/paint-data-texture.ts';
++
++test('paint upload retains GPU texture identity/settings and respects pixel subarray bounds', () => {
++  const initial = new Uint8Array(16).fill(10);
++  const map = new DataTexture(initial, 2, 2);
++  map.colorSpace = SRGBColorSpace;
++  const identity = map.uuid;
++  const source = map.source;
++  const backing = new Uint8ClampedArray(24).fill(255);
++  const painted = backing.subarray(4, 20);
++  painted.fill(64);
++  const before = backing.slice();
++  const version = map.version;
++  updatePaintDataTexture(map, painted);
++  assert.equal(map.uuid, identity);
++  assert.equal(map.source, source);
++  assert.equal(map.image.width, 2);
++  assert.equal(map.image.height, 2);
++  assert.equal(map.colorSpace, SRGBColorSpace);
++  assert.equal(map.image.data.buffer, backing.buffer);
++  assert.equal(map.image.data.byteOffset, painted.byteOffset);
++  assert.equal(map.image.data.byteLength, 16);
++  assert.deepEqual(Array.from(map.image.data), Array(16).fill(64));
++  assert.deepEqual(backing, before, 'upload never changes document pixels');
++  assert.equal(map.version, version + 1, 'new pixels request GPU upload');
++  updatePaintDataTexture(map, new Uint8ClampedArray(initial));
++  assert.deepEqual(map.image.data, initial, 'Undo/cancellation uploads the prior snapshot');
++  assert.equal(map.version, version + 2);
++  map.dispose();
++});
+diff --git a/tests/workspace-smoke.test.mjs b/tests/workspace-smoke.test.mjs
+index c7ad1a695dcd5e5f800783b0926014ba70b4678e..d37eb42dfa49b4ce2b43b79a44321e4c9c879e1c 100644
+--- a/tests/workspace-smoke.test.mjs
++++ b/tests/workspace-smoke.test.mjs
+@@ -860,7 +860,7 @@ test("SVG workbench rejects unsupported artwork without changing the current ske
+   t.after(cleanup); const utils = await mount({ initialView: "sketch" });
+   const before = window.formCAD.getProjectFile();
+   await act(async () => fireEvent.change(utils.getByLabelText("Import SVG file"), { target: { files: [{ name: "text.svg", size: 80, text: async () => '<svg xmlns="http://www.w3.org/2000/svg"><text>Logo</text></svg>' }] } }));
+-  assert.match(utils.getByRole("status").textContent, /Convert text and symbols to outlines/);
++  assert.match(utils.getByRole("status", { name: "Workspace status" }).textContent, /Convert text and symbols to outlines/);
+   assert.deepEqual(parseCadProject(window.formCAD.getProjectFile()).entities, parseCadProject(before).entities);
+ });
+ 
+@@ -1274,7 +1274,7 @@ test("Open cancellation and malformed files preserve the current document; accep
+   window.confirm = () => true;
+   await open('{broken json');
+   assert.equal(window.formCAD.getProject().meshFeatures.length, 1, 'malformed open is atomic');
+-  assert.match(utils.getByRole('status').textContent, /could not be opened/);
++  assert.match(utils.getByRole('status', { name: 'Workspace status' }).textContent, /could not be opened/);
+   await open(empty);
+   assert.equal(window.formCAD.getProject().meshFeatures.length, 0, 'new document owns its mesh state');
+   assert.equal(utils.getByTitle('Undo').disabled, true);
+@@ -1301,11 +1301,11 @@ test("native Open requires explicit confirmation and rejects intervening edits",
+   globalThis.isTauri = true;
+   const open = () => fireEvent.click(utils.getByRole('menuitem', { name: 'Open project…', hidden: true }));
+   await act(async () => open());
+-  await waitFor(() => assert.match(utils.getByRole('status').textContent, /Open cancelled/));
++  await waitFor(() => assert.match(utils.getByRole('status', { name: 'Workspace status' }).textContent, /Open cancelled/));
+   assert.equal(window.formCAD.getProject().meshFeatures.length, 1);
+   answer = new Error('Dialog unavailable');
+   await act(async () => open());
+-  await waitFor(() => assert.match(utils.getByRole('status').textContent, /could not be opened.*Dialog unavailable/));
++  await waitFor(() => assert.match(utils.getByRole('status', { name: 'Workspace status' }).textContent, /could not be opened.*Dialog unavailable/));
+   assert.equal(window.formCAD.getProject().meshFeatures.length, 1);
+   let finish;
+   answer = () => new Promise(resolve => { finish = resolve; });
+@@ -1314,13 +1314,13 @@ test("native Open requires explicit confirmation and rejects intervening edits",
+   globalThis.isTauri = false;
+   await act(async () => add());
+   await act(async () => finish(true));
+-  await waitFor(() => assert.match(utils.getByRole('status').textContent, /document changed during confirmation/));
++  await waitFor(() => assert.match(utils.getByRole('status', { name: 'Workspace status' }).textContent, /document changed during confirmation/));
+   assert.equal(window.formCAD.getProject().meshFeatures.length, 2);
+   globalThis.isTauri = true;
+   answer = true;
+   await act(async () => open());
+   await waitFor(() => assert.equal(window.formCAD.getProject().meshFeatures.length, 0));
+-  assert.match(utils.getByRole('status').textContent, /Project opened/);
++  assert.match(utils.getByRole('status', { name: 'Workspace status' }).textContent, /Project opened/);
+ });
+ 
+ test("native Save As handles cancel, failure, duplicate clicks and edits made during the dialog", async (t) => {
+@@ -1340,10 +1340,10 @@ test("native Save As handles cancel, failure, duplicate clicks and edits made du
+   } };
+   globalThis.isTauri = true;
+   await act(async () => fireEvent.click(save));
+-  await waitFor(() => assert.match(utils.getByRole('status').textContent, /Save cancelled/));
++  await waitFor(() => assert.match(utils.getByRole('status', { name: 'Workspace status' }).textContent, /Save cancelled/));
+   answer = new Error('Permission denied');
+   await act(async () => fireEvent.click(save));
+-  await waitFor(() => assert.match(utils.getByRole('status').textContent, /Save failed.*Permission denied/));
++  await waitFor(() => assert.match(utils.getByRole('status', { name: 'Workspace status' }).textContent, /Save failed.*Permission denied/));
+   let finish;
+   answer = () => new Promise((resolve) => { finish = resolve; });
+   await act(async () => { fireEvent.click(save); fireEvent.click(save); });
+@@ -1352,7 +1352,7 @@ test("native Save As handles cancel, failure, duplicate clicks and edits made du
+   globalThis.isTauri = false;
+   await act(async () => fireEvent.click(within(utils.container.querySelector('.cad-sculpt-section')).getByRole('button', { name: 'Box' })));
+   await act(async () => finish('/tmp/release-test.form'));
+-  await waitFor(() => assert.match(utils.getByRole('status').textContent, /newer edits remain unsaved/));
++  await waitFor(() => assert.match(utils.getByRole('status', { name: 'Workspace status' }).textContent, /newer edits remain unsaved/));
+   assert.ok(utils.getByTitle('Unsaved project changes'));
+   assert.equal(window.formCAD.getProject().meshFeatures.length, 1);
+ });
+@@ -1364,11 +1364,16 @@ test("baked texture pixels and UV ownership survive saving and reopening the rea
+   await act(async () => fireEvent.click(utils.getByRole('button', { name: 'Bake', exact: true })));
+   const source = window.formCAD.getProjectFile();
+   const original = parseCadProject(source).paintTexture;
+-  assert.ok(original?.pixels.length > 0);
++  assert.equal(original.pixels, undefined, "new projects use the bounded base64 archive");
++  assert.ok(original.pixelsBase64.length > 0);
++  const restored = restorePaintTexture(original);
++  assert.equal(restored.texture.pixels.length, original.size * original.size * 4);
+   assert.equal(original.meshId, window.formCAD.getProject().meshFeatures[0].id);
+   cleanup();
+   const reopened = await mount({ initialView: 'model', initialProjectContents: source });
+-  assert.deepEqual(parseCadProject(window.formCAD.getProjectFile()).paintTexture, original);
++  const reopenedTexture = parseCadProject(window.formCAD.getProjectFile()).paintTexture;
++  assert.deepEqual(reopenedTexture, original);
++  assert.deepEqual(restorePaintTexture(reopenedTexture), restored);
+   assert.equal(reopened.getByRole('button', { name: 'Paint', exact: true }).disabled, false);
+ });
+ 
+@@ -1421,7 +1426,7 @@ test("explicit native rebuild cannot apply a late result over a newer geometry e
+   await act(async () => { fireEvent.change(width, { target: { value: '123 mm' } }); fireEvent.keyDown(width, { key: 'Enter' }); });
+   await act(async () => stale(result(99999)));
+   assert.doesNotMatch(utils.container.querySelector('.cad-audit').textContent, /99999/);
+-  assert.match(utils.getByRole('status').textContent, /Dimension updated/);
++  assert.match(utils.getByRole('status', { name: 'Workspace status' }).textContent, /Dimension updated/);
+   const entity = parseCadProject(window.formCAD.getProjectFile()).entities.find(e => e.id === 'base-profile');
+   assert.equal(entity.b.x - entity.a.x, 123);
+ });
+@@ -1511,7 +1516,7 @@ test("scene-only native Open preserves cancellation, routes to Animation and vis
+   await act(async () => fireEvent.click(within(utils.container.querySelector('.cad-sculpt-section')).getByRole('button', { name: 'Box' })));
+   const open = () => fireEvent.click(utils.getByRole('menuitem', { name: 'Open project…', hidden: true }));
+   await act(async () => open());
+-  assert.match(utils.getByRole('status').textContent, /Open cancelled/);
++  assert.match(utils.getByRole('status', { name: 'Workspace status' }).textContent, /Open cancelled/);
+   assert.equal(window.formCAD.getProject().meshFeatures.length, 1);
+   answer = true;
+   await act(async () => open());
+@@ -1674,7 +1679,7 @@ test("canonical save state: native recovery restores as unsaved with no overwrit
+   await act(async()=>fireEvent.click(utils.getByRole('menuitem',{name:'Recover autosave'})));
+   await waitFor(()=>assert.ok(utils.getByTitle('Unsaved project changes')));
+   assert.equal(window.formCAD.getProjectPath(),null);
+-  assert.match(utils.getByRole('status').textContent,/Recovered unsaved snapshot/);
++  assert.match(utils.getByRole('status', { name: 'Workspace status' }).textContent,/Recovered unsaved snapshot/);
+ });
+ 
+ test("creative graphs, animation and baked textures participate in Undo and Redo", async (t) => {
+@@ -2014,7 +2019,7 @@ test("direct modeling exposes smart Offset and exact face Push / Pull workflows"
+   const pushPull = within(modelShelf).getByRole("button", { name: /Push \/ Pull/i });
+   assert.equal(pushPull.disabled, false);
+   await act(async () => fireEvent.click(pushPull));
+-  assert.match(utils.getByRole("status").textContent, /Push\/Pull.*click an exact face/i);
++  assert.match(utils.getByRole("status", { name: "Workspace status" }).textContent, /Push\/Pull.*click an exact face/i);
+   assert.match(utils.getByRole("button", { name: "Face" }).className, /active/);
+   assert.ok(utils.getByRole("button", { name: "Marquee" }), "exact-body marquee is exposed beside the topology filters");
+ });
+@@ -2041,7 +2046,7 @@ test("Model-first creation completes a constrained embedded sketch and exact cut
+   await act(async () => fireEvent.click(utils.getByRole("button", { name: "Create" })));
+   const createShelf = utils.getByRole("region", { name: "Create tools features" });
+   await act(async () => fireEvent.click(within(createShelf).getByRole("button", { name: /Box.*80 × 50 × 24 mm/ })));
+-  assert.match(utils.getByRole("status").textContent, /Box created · 80 × 50 × 24 mm/);
++  assert.match(utils.getByRole("status", { name: "Workspace status" }).textContent, /Box created · 80 × 50 × 24 mm/);
+   assert.equal(utils.getByTitle("Undo").disabled, false);
+ 
+   await act(async () => fireEvent.click(utils.getByRole("button", { name: "Sketch" })));
+@@ -2053,20 +2058,20 @@ test("Model-first creation completes a constrained embedded sketch and exact cut
+   assert.equal(utils.container.querySelector(".cad-3d").style.display, "block", "the solid remains visible behind the sketch");
+ 
+   await act(async () => fireEvent.click(within(embedded).getByRole("button", { name: "Centered Ø16" })));
+-  assert.match(utils.getByRole("status").textContent, /fully constrained/i);
++  assert.match(utils.getByRole("status", { name: "Workspace status" }).textContent, /fully constrained/i);
+   await act(async () => fireEvent.click(within(embedded).getByRole("button", { name: "Finish Sketch" })));
+   const regionActions = utils.getByRole("region", { name: "Closed sketch region actions" });
+   await act(async () => fireEvent.click(within(regionActions).getByRole("button", { name: "Cut through" })));
+   assert.equal(viewButton(utils, "2 Model").className, "active");
+   assert.equal(utils.queryByRole("region", { name: "Embedded Sketch Mode" }), null);
+-  assert.match(utils.getByRole("status").textContent, /Cut through body/i);
++  assert.match(utils.getByRole("status", { name: "Workspace status" }).textContent, /Cut through body/i);
+ 
+   await waitFor(() => assert.equal(utils.getByTitle("Undo").disabled, false));
+   await act(async () => fireEvent.click(utils.getByTitle("Undo")));
+-  assert.match(utils.getByRole("status").textContent, /Undo/i);
++  assert.match(utils.getByRole("status", { name: "Workspace status" }).textContent, /Undo/i);
+   await waitFor(() => assert.equal(utils.getByTitle("Redo").disabled, false));
+   await act(async () => fireEvent.click(utils.getByTitle("Redo")));
+-  assert.match(utils.getByRole("status").textContent, /Redo/i);
++  assert.match(utils.getByRole("status", { name: "Workspace status" }).textContent, /Redo/i);
+ 
+   const saved = window.formCAD.getProjectFile();
+   assert.ok(parseCadProject(saved).features.some((feature) => feature.type === "Cut"), "the exact cut is serialized");
+@@ -2087,21 +2092,21 @@ test("exact bodies support numeric XYZ placement and a guarded multi-body union"
+     fireEvent.change(z, { target: { value: "12 mm" } });
+     fireEvent.keyDown(z, { key: "Enter" });
+   });
+-  await waitFor(() => assert.match(utils.getByRole("status").textContent, /Moved 1 exact body.*12\.00 mm/i));
++  await waitFor(() => assert.match(utils.getByRole("status", { name: "Workspace status" }).textContent, /Moved 1 exact body.*12\.00 mm/i));
+   assert.deepEqual(parseCadProject(window.formCAD.getProjectFile()).assemblyInstances.at(-1).position, [0, 0, 12]);
+ 
+   await act(async () => fireEvent.keyDown(window, { key: " ", code: "Space" }));
+   await act(async () => fireEvent.keyUp(window, { key: " ", code: "Space" }));
+   const selectShelf = utils.getByRole("region", { name: "Select tools features" });
+   await act(async () => fireEvent.click(within(selectShelf).getByRole("button", { name: "Select all bodies" })));
+-  assert.match(utils.getByRole("status").textContent, /2 exact bodies selected/i);
++  assert.match(utils.getByRole("status", { name: "Workspace status" }).textContent, /2 exact bodies selected/i);
+ 
+   await act(async () => fireEvent.click(utils.getByRole("button", { name: "Modify" })));
+   const modifyShelf = utils.getByRole("region", { name: "Modify tools features" });
+   const union = within(modifyShelf).getByRole("button", { name: /Union.*2 selected bodies/i });
+   assert.equal(union.disabled, false);
+   await act(async () => fireEvent.click(union));
+-  assert.match(utils.getByRole("status").textContent, /Union committed.*2 sources/i);
++  assert.match(utils.getByRole("status", { name: "Workspace status" }).textContent, /Union committed.*2 sources/i);
+   const saved = parseCadProject(window.formCAD.getProjectFile());
+   assert.equal(saved.features.at(-1).type, "Fuse");
+   assert.equal(saved.features.at(-1).sourceEntityIds.length, 2);
+@@ -2153,11 +2158,11 @@ test("native export cancellation and failure cannot acknowledge or cancel a pend
+   const before=window.formCAD.getProjectFile();
+   const exportStep=()=>fireEvent.click(utils.getByRole('menuitem',{name:'Export STEP',hidden:true}));
+   await act(async()=>exportStep());
+-  assert.match(utils.getByRole('status').textContent,/Native export cancelled/);
++  assert.match(utils.getByRole('status', { name: 'Workspace status' }).textContent,/Native export cancelled/);
+   assert.match(utils.container.querySelector('.cad-exact-state').textContent,/Rebuilding/);
+   exportError=true;
+   await act(async()=>exportStep());
+-  assert.match(utils.getByRole('status').textContent,/Native export failed.*Read-only/);
++  assert.match(utils.getByRole('status', { name: 'Workspace status' }).textContent,/Native export failed.*Read-only/);
+   assert.match(utils.container.querySelector('.cad-exact-state').textContent,/Rebuilding/);
+   assert.equal(window.formCAD.getProjectFile(),before);
+   await act(async()=>finishRebuild({meshes:[],topology:[],bodyMetrics:[],assemblyChecks:[],bodyCount:1,
+@@ -2188,7 +2193,7 @@ test("invalid generic exact audits preserve the displayed body and block current
+     await deliver({meshes:[],topology:[],bodyMetrics:[],assemblyChecks:[],audit:invalid});
+     assert.match(utils.getByRole("alert",{name:"Exact operation recovery"}).textContent,/Invalid shell|invalid measurements/);
+     assert.equal(within(utils.getByRole("alert",{name:"Exact operation recovery"})).queryByRole("button",{name:"Suppress failing feature"}),null,"an unlocalized failure must not suppress a guessed feature");
+-    assert.match(utils.getByRole("status").textContent,/last valid body remains visible/);
++    assert.match(utils.getByRole("status", { name: "Workspace status" }).textContent,/last valid body remains visible/);
+     assert.deepEqual(visible(),before,"invalid response must not clear the displayed last valid mesh");
+   }
+   await deliver({meshes:[mesh],topology:[],bodyMetrics:[],assemblyChecks:[],audit});
+@@ -2225,7 +2230,7 @@ test("an exact body becomes a persistent linked creative copy with live modifier
+   const creative = within(modifyShelf).getByRole("button", { name: /Creative copy.*Preserve exact source/i });
+   assert.equal(creative.disabled, false);
+   await act(async () => fireEvent.click(creative));
+-  assert.match(utils.getByRole("status").textContent, /Creative copy ready.*exact source preserved/i);
++  assert.match(utils.getByRole("status", { name: "Workspace status" }).textContent, /Creative copy ready.*exact source preserved/i);
+   assert.match(utils.getByText(/Linked creative copy/).textContent, /Linked creative copy/);
+ 
+   const addModifier = utils.getByLabelText("Add a modifier");
+@@ -2246,7 +2251,7 @@ test("Design Copilot previews supported products and clearly declines out-of-sco
+     fireEvent.change(command, { target: { value: "make me a dinosaur" } });
+     fireEvent.keyDown(command, { key: "Enter" });
+   });
+-  assert.match(utils.getByRole("status").textContent, /outside the verified product-design catalog|cannot yet meet/i);
++  assert.match(utils.getByRole("status", { name: "Workspace status" }).textContent, /outside the verified product-design catalog|cannot yet meet/i);
+   assert.equal(utils.queryByRole("dialog", { name: "Design Copilot editable plan" }), null);
+ 
+   await act(async () => fireEvent.click(utils.getByText("Generators")));
+@@ -2591,7 +2596,7 @@ test("the shipping model view exposes persistent PBR appearance controls", async
+   assert.equal(brass.getAttribute("aria-pressed"), "false");
+   await act(async () => fireEvent.click(brass));
+   assert.equal(brass.getAttribute("aria-pressed"), "true");
+-  assert.match(utils.getByRole("status").textContent, /Polished brass applied/i);
++  assert.match(utils.getByRole("status", { name: "Workspace status" }).textContent, /Polished brass applied/i);
+   assert.ok(utils.getAllByRole("button", { name: "Render PNG" }).length >= 1);
+ });
+ 
+@@ -2622,7 +2627,7 @@ test("the desktop performance workflow exposes native rigid and deformable solve
+   assert.equal(deformable.disabled, false, "web users can click for an explanatory status instead of seeing a fake solve");
+   assert.equal(rigid.disabled, false);
+   await act(async () => fireEvent.click(deformable));
+-  assert.match(utils.getByRole("status").textContent, /Native deformable simulation is available in the standalone application/i);
++  assert.match(utils.getByRole("status", { name: "Workspace status" }).textContent, /Native deformable simulation is available in the standalone application/i);
+   await act(async () => fireEvent.click(utils.getByRole("button", { name: "Run production CAD self-test" })));
+   await waitFor(() => assert.match(utils.getByLabelText("Production CAD benchmark result").textContent, /PRODUCTION GATE PASSED/), { timeout: 5_000 });
+ });
+@@ -2639,23 +2644,23 @@ test("spoken component selection, marquee, and selection extrusion are wired int
+   const command = utils.getByLabelText("Precision CAD command");
+   await act(async () => fireEvent.change(command, { target: { value: "select all edges" } }));
+   await act(async () => fireEvent.keyDown(command, { key: "Enter" }));
+-  assert.match(utils.getByRole("status").textContent, /\d+ edges selected/i);
++  assert.match(utils.getByRole("status", { name: "Workspace status" }).textContent, /\d+ edges selected/i);
+ 
+   const marquee = utils.getByRole("button", { name: "Marquee select" });
+   assert.equal(marquee.disabled, false);
+   await act(async () => fireEvent.click(marquee));
+   assert.match(marquee.className, /active/);
+-  assert.match(utils.getByRole("status").textContent, /Marquee select.*drag/i);
++  assert.match(utils.getByRole("status", { name: "Workspace status" }).textContent, /Marquee select.*drag/i);
+   await act(async () => fireEvent.keyUp(window, { key: "Escape" }));
+   assert.doesNotMatch(marquee.className, /active/);
+ 
+   await act(async () => fireEvent.change(command, { target: { value: "extrude all in selection by 6 mm" } }));
+   const beforePreview = window.formCAD.getProjectFile();
+   await act(async () => fireEvent.keyDown(command, { key: "Enter" }));
+-  assert.match(utils.getByRole("status").textContent, /Preview extrude/);
++  assert.match(utils.getByRole("status", { name: "Workspace status" }).textContent, /Preview extrude/);
+   assert.deepEqual(parseCadProject(window.formCAD.getProjectFile()).meshFeatures, parseCadProject(beforePreview).meshFeatures, "preview never changes saved geometry");
+   await act(async () => fireEvent.click(utils.getByRole("button", { name: "Apply mesh edit" })));
+-  assert.match(utils.getByRole("status").textContent, /Pushed 6 cage face\(s\) by 6/i);
++  assert.match(utils.getByRole("status", { name: "Workspace status" }).textContent, /Pushed 6 cage face\(s\) by 6/i);
+ });
+ 
+ test("selection-first controls apply a saved weighted modifier and Undo removes it", async (t) => {
+@@ -2673,7 +2678,7 @@ test("selection-first controls apply a saved weighted modifier and Undo removes
+   await act(async () => fireEvent.click(within(utils.container.querySelector(".cad-sculpt-section")).getByRole("button", { name: "Box" })));
+   const toolbar = within(utils.getByRole("navigation", { name: "Creative selection tools" }));
+   await act(async () => fireEvent.click(toolbar.getByRole("button", { name: "Ellipse" })));
+-  assert.match(utils.getByRole("status").textContent, /Ellipse select/);
++  assert.match(utils.getByRole("status", { name: "Workspace status" }).textContent, /Ellipse select/);
+   await act(async () => fireEvent.keyUp(window, { key: "Escape" }));
+   await act(async () => fireEvent.click(toolbar.getByRole("button", { name: "Brush", exact: true })));
+   assert.ok(utils.container.querySelector(".form-selection-brush-cursor"));

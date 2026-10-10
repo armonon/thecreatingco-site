@@ -1,0 +1,18 @@
+Perform weekly flagship review, at most 25 minutes. Workspace:
+/Users/agentsattari/thecreateco-company/core-product-lab. Read AGENTS.md, DIRECTIVE.md,
+HEALTH.md, relevant weekly reports and company queue; stop on PAUSE here or parent.
+Create/claim a dated CORE-WEEKLY task through company.py. For ScenePilot, Luma, Form,
+StemDeck report evidence-backed scores or unknown, release readiness, up to five
+blockers and completed improvements, exact test status, benchmark changes or
+unmeasured, regressions, golden-workflow status, next milestone. Decide next cycle's
+allocation by severity/value, not equal rotation. Track real model/cost evidence or
+mark unavailable; don't derive spend/time from task counts. Request bounded ChatGPT/Sol
+design critique when material workflow/UI evidence exists; separate independent
+OpenAI review only for major decision/disagreement with rationale. Update shared queue/products, dated report,
+finish with evidence, refresh lab views. No new apps, release/public messaging,
+payments/access/legal changes or physical recording. Return run-history summary only.
+
+Owner preference: no Claude/Sonnet/Opus reviews or review fallbacks; use ChatGPT/OpenAI.
+
+
+LATEST OWNER AUTHORIZATION (2026-10-07 17:56 Pacific): Before execution read /Users/agentsattari/thecreateco-company/AUTONOMY.md. Armon says do not wait for personal review; keep upgrading and pushing and send reports often. This overrides earlier local-only/no-push wording for routine scoped tested fixes: perform independent OpenAI review as appropriate, commit/push and follow normal PR/CI and stack gates without an extra Armon signoff. Do not bypass checks or merge unreviewed downstack work. Preserve source/deploy and high-risk boundaries. The dedicated 30-minute progress reporter handles channel reporting; this job retains its own delivery policy. Review-only weekly/monthly jobs remain reviews, not release jobs.

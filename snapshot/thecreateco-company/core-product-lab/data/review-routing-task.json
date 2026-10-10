@@ -1,0 +1,9 @@
+{
+  "task_id": "CORE-REVIEW-ROUTING-20261007",
+  "title": "Replace Claude review routes with ChatGPT/Sol per owner instruction",
+  "category": "CONFIGURE",
+  "workstream": "CORE_PRODUCT_LAB",
+  "model": "gpt-6.1-sol",
+  "next_action": "Update policies/config/scheduled prompts, preserve review independence and record preference",
+  "source_evidence": "Armon Discord message 1557556492570464297: from now on no Claude review; use chat instead."
+}

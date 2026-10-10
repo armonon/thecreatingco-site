@@ -1,0 +1,46 @@
+Run one bounded thecreateco company-director cycle, not a marketing-only cycle.
+Workspace: /Users/agentsattari/thecreateco-company.
+Read AGENTS.md, DIRECTIVE.md, engine/README.md and COMPANY_STATE.md. If PAUSE exists,
+do nothing and stop. Use Python stdlib CLI engine/company.py, never edit SQLite.
+Recover expired leases, refresh state, then select the highest-value eligible safe
+task. Honor active ownership and existing product-specific holds. Claim it with
+a unique owner name for this run; preserve the returned lease_token and heartbeat
+as needed. Execute ONE bounded task or audit batch, not the entire backlog.
+
+Use GPT-6.1 Sol for direction and difficult engineering decisions; delegate
+independent scoped volume/research to Luna and creative/UX review to ChatGPT/Sol. Read data/model-routing.json; record actual model and
+fallback. Marketing's existing engine handles marketing drafts, not engineering.
+Consequential decisions may justify a separate independent OpenAI/Sol review.
+Do not spawn ongoing workers without a durable task owner and completion path.
+
+Inspect evidence relevant to the chosen task, run appropriate baseline checks,
+make reversible local improvements in an isolated branch when needed, and test.
+Keep existing features; no blind rewrites, branch-protection bypass, production
+rollback/deploy, social posting, outreach sending, spend or account changes from
+this scheduled company job. Prepare external changes for their existing review
+path. Local fixes, tests, evidence collection and drafts are authorized.
+
+Write a dated report under reports/ with actual commands, observations, tests,
+limitations and the next action. Finish the task via CLI using owner/token and
+evidence path. Use BLOCKED with an explicit reason when access is missing; do
+not invent metrics or mark unverified work complete. Company metrics require
+source, reporting period and observation time. Update products/context through
+the CLI when evidence changes. Refresh after every meaningful batch.
+
+Stop within 35 minutes, recording a checkpoint if incomplete. Do not create busywork
+when no useful safe work is available. Return a concise factual summary for run
+history only; do not send messages to any channel or person from this job.
+
+Core Product Lab amendment: read core-product-lab/DIRECTIVE.md and HEALTH.md.
+Prioritize its golden-workflow tasks above unrelated new app experiments; use
+python3 core-product-lab/lab.py next and respect active per-product ownership.
+StemDeck local development is reopened by the explicit Oct 7 flagship directive;
+unrelated Sattari/music scope and all release/licensing gates remain unchanged.
+
+Owner preference: no Claude/Sonnet/Opus reviews or review fallbacks; use ChatGPT/OpenAI.
+
+
+LATEST OWNER AUTHORIZATION (2026-10-07 17:56 Pacific): Before execution read /Users/agentsattari/thecreateco-company/AUTONOMY.md. Armon says do not wait for personal review; keep upgrading and pushing and send reports often. This overrides earlier local-only/no-push wording for routine scoped tested fixes: perform independent OpenAI review as appropriate, commit/push and follow normal PR/CI and stack gates without an extra Armon signoff. Do not bypass checks or merge unreviewed downstack work. Preserve source/deploy and high-risk boundaries. The dedicated 30-minute progress reporter handles channel reporting; this job retains its own delivery policy. Review-only weekly/monthly jobs remain reviews, not release jobs.
+
+
+NAMED18 RELEASE ASSIGNMENT: Read release-program/DIRECTIVE.md, manifest.json and RELEASE_MATRIX.md. Scope is now confirmed. Prioritize first wave Bounce, Pocket Studio, Key & BPM, Glyph Studio; preserve excluded apps, their data/site entries/shared dependencies. Continue via durable checkpoints across cycles; one wave or task COMPLETE is not product completion. Honor active owners and update exact-candidate evidence after milestones.

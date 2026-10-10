@@ -1,0 +1,486 @@
+diff --git a/README.md b/README.md
+index ea6559a1dc68df1c2ae110b358594f15f105e807..894533500814df0e65dbcc644ac8260a881b32b7 100644
+--- a/README.md
++++ b/README.md
+@@ -64,3 +64,24 @@ Best starting stack:
+ 3. Internet Archive for availability and public-domain/full-text links.
+ 4. Gutenberg/Standard Ebooks/LibriVox for free reading/listening layers.
+ 5. Google Books only as an enrichment layer, not the commercial backbone.
++
++## Installable & offline (PWA) — thecreateco Wave 4
++
++Librarian installs as an app and **works offline after your first visit** (web only; the iOS/Electron shells don't use a service worker).
++
++- `public/sw.js` (hand-written, no Workbox): precaches the app shell — the list and a content `VERSION` are injected at build time by the `pwaPrecache` plugin in `vite.config.js`. Navigations are network-first (3 s) with cached-page then shell fallback. `/pdfjs/` support files are cached on first use so the reader works offline.
++- **Never cached:** your PDFs (IndexedDB only), Netlify functions (`/.netlify/*`), and every cross-origin request (catalog APIs, book downloads, Google Fonts). Only exception: the public thecreateco suite kit script.
++- **No silent updates:** a new worker waits; `src/pwa.js` shows "Update available — Reload", and only that click posts `SKIP_WAITING`.
++- `/sw.js` is served `Cache-Control: no-cache` (`public/_headers`) so updates and the kill switch reach everyone quickly.
++- `npm run build && npm run pwa-check` — headless Chromium: manifest/icons, SW control, import a PDF → offline reload → reader paints it, cache audit (no PDFs/functions/cross-origin), and a v1→v2 update-prompt cycle. `PWA_CHECK_URL=https://librarian.thecreatingco.com/ npm run pwa-check` runs the offline checks against a deployed site.
++
++### Service worker kill switch
++
++If the service worker itself ever misbehaves in production: `npm run build && cp scripts/kill-switch-sw.js dist/sw.js`, then deploy `dist`. Every browser that installed it unregisters it and clears Librarian's caches on its next visit (PDFs and shelf are untouched). Restoring an older deploy alone does **not** remove an installed worker.
++
++## thecreateco suite menu + Locker
++
++On the web, `src/pwa.js` adds `<script src="https://thecreatingco.com/suite/v1/suite.js" data-app="librarian" defer>` and the header carries a persistent `<tcc-suite-menu>`. Optional: if the kit is missing or offline, nothing changes. The CSP allows `https://thecreatingco.com` for scripts, fonts and the Locker bridge frame.
++
++- **Save to Locker** on each Library PDF (stored in this browser on this device — no account, no cloud).
++- **Open from Locker:** `/?tcc-open=<id>` with a PDF adds it to the Library and opens the reader.
+diff --git a/index.html b/index.html
+index 9065d351ddd65006fdb6f21629e4e302ce9d2cdb..27d61e4bdaf956571143d923831237eab5cff840 100644
+--- a/index.html
++++ b/index.html
+@@ -2,7 +2,7 @@
+ <html lang="en">
+   <head>
+     <meta charset="UTF-8" />
+-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' https: data: blob:; connect-src 'self' https:; worker-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'none'" />
++    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'wasm-unsafe-eval' https://thecreatingco.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com https://thecreatingco.com; frame-src https://thecreatingco.com; img-src 'self' https: data: blob:; connect-src 'self' https:; worker-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'none'" />
+     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+     <title>Librarian — the open book atlas</title>
+     <meta name="description" content="A multi-source, beautifully organized index of books, authors, public-domain texts, covers, editions, and reading pathways." />
+diff --git a/package.json b/package.json
+index d7511774f8c8a3d3f75bee5045aee07627575251..8e1d355c1afa4040556b6d047e7d3d0d8576d1ee 100644
+--- a/package.json
++++ b/package.json
+@@ -17,7 +17,8 @@
+     "ios:open": "npx cap open ios",
+     "electron": "electron .",
+     "mac:pack": "npm run build && electron-builder --mac dir",
+-    "mac:dist": "npm run build && electron-builder --mac"
++    "mac:dist": "npm run build && electron-builder --mac",
++    "pwa-check": "node scripts/pwa-check.mjs"
+   },
+   "build": {
+     "appId": "com.armonon.librarian",
+diff --git a/public/sw.js b/public/sw.js
+index 8a9b6788c1ca15e2cc302edab801e42d81fcadca..41765dff97193964b720aa61113cdcf4ea9d3872 100644
+--- a/public/sw.js
++++ b/public/sw.js
+@@ -1,37 +1,89 @@
+-// Librarian service worker — installable + offline app shell.
+-// Live data (search APIs, AI, proxy) always hits the network; the app shell,
+-// built assets, fonts, and PDF.js are cached so the app + your PDF library work offline.
+-const VERSION = 'v1';
++// Librarian service worker — installable + offline app shell (thecreateco Wave 4 PWA pattern).
++//
++// - Precaches the built app shell (HTML, JS, CSS, icons, manifest). The list and
++//   VERSION are injected at build time by vite.config.js (pwaPrecache plugin), so a
++//   deploy that changes any file produces a new worker and a new cache.
++// - Navigations are network-first (3 s timeout) so a fresh deploy wins while online,
++//   falling back to the cached copy and then the precached shell ("/") offline.
++// - PDF.js support files under /pdfjs/ (cmaps, standard fonts, wasm decoders — static,
++//   versioned app assets) are cached on first use so the reader renders offline.
++// - NEVER cached: your PDFs (they live in IndexedDB, never fetched through here),
++//   Netlify functions (/.netlify/*: search proxy, AI), and every other cross-origin
++//   request (catalog APIs, book downloads, Google Fonts). The one cross-origin exception
++//   is the public thecreateco suite kit script (shared app menu), so it draws offline.
++// - Updates never take over mid-session: the waiting worker only calls skipWaiting()
++//   when the page posts {type:'SKIP_WAITING'}, which happens only after the user taps
++//   "Reload" on the "Update available" prompt (src/pwa.js).
++// Kill switch: scripts/kill-switch-sw.js (see README "Service worker kill switch").
++const VERSION = '__LIBRARIAN_SW_VERSION__';
++const PRECACHE_URLS = self.__LIBRARIAN_PRECACHE || [];
+ const SHELL = `librarian-shell-${VERSION}`;
+-const RUNTIME = `librarian-runtime-${VERSION}`;
+-const CDN_HOSTS = ['fonts.googleapis.com', 'fonts.gstatic.com', 'cdnjs.cloudflare.com'];
++const PAGES = 'librarian-pages';
++const PDFJS = 'librarian-pdfjs';
++const SUITE = 'tcc-suite-kit';
++const KEEP = new Set([SHELL, PAGES, PDFJS, SUITE]);
+ 
+-self.addEventListener('install', e => {
+-  e.waitUntil(caches.open(SHELL).then(c => c.addAll(['/', '/manifest.webmanifest', '/apple-touch-icon.png', '/pwa-192x192.png', '/pwa-512x512.png']).catch(() => {})).then(() => self.skipWaiting()));
++self.addEventListener('install', event => {
++  event.waitUntil(caches.open(SHELL).then(cache => cache.addAll(PRECACHE_URLS.map(url => new Request(url, { cache: 'reload' })))));
+ });
+ 
+-self.addEventListener('activate', e => {
+-  e.waitUntil(caches.keys().then(keys => Promise.all(keys.filter(k => k !== SHELL && k !== RUNTIME).map(k => caches.delete(k)))).then(() => self.clients.claim()));
++self.addEventListener('activate', event => {
++  event.waitUntil(
++    caches.keys()
++      .then(keys => Promise.all(keys.filter(key => (key.startsWith('librarian-') || key === SUITE) && !KEEP.has(key)).map(key => caches.delete(key))))
++      .then(() => self.clients.claim()),
++  );
+ });
+ 
+-self.addEventListener('fetch', e => {
+-  const req = e.request;
+-  if (req.method !== 'GET') return;
+-  const url = new URL(req.url);
+-  if (url.pathname.startsWith('/.netlify/')) return; // functions: always live
++self.addEventListener('message', event => {
++  if (event.data && event.data.type === 'SKIP_WAITING') self.skipWaiting();
++});
+ 
+-  if (req.mode === 'navigate') { // app shell: network-first, offline fallback
+-    e.respondWith(fetch(req).then(r => { const c = r.clone(); caches.open(SHELL).then(x => x.put('/', c)); return r; }).catch(() => caches.match('/')));
+-    return;
++const timeout = (ms) => new Promise((_, reject) => setTimeout(() => reject(new Error('timeout')), ms));
++
++async function navigation(request) {
++  const url = new URL(request.url);
++  const pageKey = url.origin + url.pathname; // ?q= searches share one cached page
++  try {
++    const response = await Promise.race([fetch(request), timeout(3000)]);
++    if (response.ok && !response.redirected && (response.headers.get('content-type') || '').includes('text/html')) {
++      const copy = response.clone();
++      caches.open(PAGES).then(cache => cache.put(pageKey, copy)).catch(() => {});
++    }
++    return response;
++  } catch {
++    return (await caches.match(pageKey, { cacheName: PAGES })) || (await caches.match('/', { cacheName: SHELL })) || Response.error();
+   }
+-  if (url.origin === self.location.origin) { // built assets: cache-first
+-    e.respondWith(caches.match(req).then(hit => hit || fetch(req).then(r => { if (r.ok) { const c = r.clone(); caches.open(RUNTIME).then(x => x.put(req, c)); } return r; })));
++}
++
++async function cacheFirst(request, cacheName) {
++  const hit = await caches.match(request, { cacheName });
++  if (hit) return hit;
++  const response = await fetch(request);
++  if (response.ok) { const copy = response.clone(); caches.open(cacheName).then(cache => cache.put(request, copy)).catch(() => {}); }
++  return response;
++}
++
++async function staleWhileRevalidate(request, cacheName) {
++  const cache = await caches.open(cacheName);
++  const hit = await cache.match(request);
++  const network = fetch(request).then(response => { if (response.ok || response.type === 'opaque') cache.put(request, response.clone()).catch(() => {}); return response; }).catch(() => hit || Response.error());
++  return hit || network;
++}
++
++self.addEventListener('fetch', event => {
++  const request = event.request;
++  if (request.method !== 'GET') return;
++  const url = new URL(request.url);
++
++  if (url.origin === 'https://thecreatingco.com' && url.pathname.startsWith('/suite/v1/') && /\.(js|json|css)$/.test(url.pathname)) {
++    event.respondWith(staleWhileRevalidate(request, SUITE));
+     return;
+   }
+-  if (CDN_HOSTS.includes(url.host)) { // fonts + PDF.js: stale-while-revalidate
+-    e.respondWith(caches.match(req).then(hit => {
+-      const net = fetch(req).then(r => { if (r.ok) { const c = r.clone(); caches.open(RUNTIME).then(x => x.put(req, c)); } return r; }).catch(() => hit);
+-      return hit || net;
+-    }));
+-  }
++  if (url.origin !== self.location.origin) return; // cross-origin: straight to the network, never cached
++  if (url.pathname.startsWith('/.netlify/')) return; // functions: always live
++  if (request.mode === 'navigate') { event.respondWith(navigation(request)); return; }
++  if (url.pathname.startsWith('/pdfjs/')) { event.respondWith(cacheFirst(request, PDFJS)); return; }
++  if (PRECACHE_URLS.includes(url.pathname)) { event.respondWith(cacheFirst(request, SHELL)); return; }
++  // anything else same-origin: network only
+ });
+diff --git a/scripts/kill-switch-sw.js b/scripts/kill-switch-sw.js
+new file mode 100644
+index 0000000000000000000000000000000000000000..d7975e31321ed3df9c73c8fc25c06533e14913b9
+--- /dev/null
++++ b/scripts/kill-switch-sw.js
+@@ -0,0 +1,16 @@
++// Librarian service worker KILL SWITCH — emergency use only.
++// Deploy this file as /sw.js to remove Librarian's service worker and its caches from
++// every browser that installed it (they pick it up on the next visit: /sw.js is served
++// with Cache-Control: no-cache, see public/_headers). Your PDFs and shelf live in
++// IndexedDB/localStorage and are NOT touched.
++//   npm run build && cp scripts/kill-switch-sw.js dist/sw.js && <deploy dist>
++self.addEventListener('install', () => self.skipWaiting());
++self.addEventListener('activate', event => {
++  event.waitUntil((async () => {
++    const keys = await caches.keys();
++    await Promise.all(keys.filter(k => k.startsWith('librarian-') || k === 'tcc-suite-kit').map(k => caches.delete(k)));
++    await self.registration.unregister();
++    const clients = await self.clients.matchAll({ type: 'window' });
++    clients.forEach(client => client.navigate(client.url));
++  })());
++});
+diff --git a/scripts/pwa-check.mjs b/scripts/pwa-check.mjs
+new file mode 100644
+index 0000000000000000000000000000000000000000..7c75a1a57cd721cada1d5fe67de5793fac5618a7
+--- /dev/null
++++ b/scripts/pwa-check.mjs
+@@ -0,0 +1,148 @@
++#!/usr/bin/env node
++/**
++ * PWA verification for Librarian (headless Chromium). `npm run build` first.
++ *
++ *   PWA_CHECK_URL=https://… node scripts/pwa-check.mjs   → offline checks against a deployed site
++ *   node scripts/pwa-check.mjs                            → offline checks + update-prompt cycle on dist/
++ *
++ * 1. Installability: manifest linked, name "Librarian", standalone, 192/512 + maskable icons resolve.
++ * 2. Service worker registers and controls the page after a reload.
++ * 3. Imports a PDF into the Library, goes fully offline (context.setOffline): reload, the
++ *    Library still lists it, the reader opens and paints the page (PDF.js worker precached).
++ * 4. Cache audit: no cached response is a PDF/user file, nothing cross-origin except the
++ *    suite kit script, no Netlify function responses.
++ * 5. (local only) Update cycle: v1 installed → v2 goes live at the same URL → "Update available"
++ *    toast → Reload → v2 controls the page. Never swaps silently.
++ * Zero console errors throughout (a failed load of the optional suite kit is ignored).
++ */
++import { chromium } from '@playwright/test';
++import { createServer } from 'node:http';
++import { cpSync, mkdtempSync, readFileSync, rmSync, writeFileSync, existsSync, statSync } from 'node:fs';
++import { tmpdir } from 'node:os';
++import path from 'node:path';
++
++const fail = msg => { console.error(`FAIL: ${msg}`); process.exitCode = 1; };
++const ok = msg => console.log(`ok — ${msg}`);
++const isSuiteKit = (url = '') => /^https:\/\/thecreatingco\.com\/(suite|locker)\//.test(url);
++const root = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
++
++// Minimal valid one-page PDF with a big black square, built with correct xref offsets.
++function tinyPdf() {
++  const objs = ['<< /Type /Catalog /Pages 2 0 R >>', '<< /Type /Pages /Kids [3 0 R] /Count 1 >>',
++    '<< /Type /Page /Parent 2 0 R /MediaBox [0 0 300 300] /Contents 4 0 R >>'];
++  const stream = '0 0 0 rg 50 50 200 200 re f';
++  objs.push(`<< /Length ${stream.length} >>\nstream\n${stream}\nendstream`);
++  let out = '%PDF-1.4\n'; const offsets = [];
++  objs.forEach((o, i) => { offsets.push(out.length); out += `${i + 1} 0 obj\n${o}\nendobj\n`; });
++  const xref = out.length;
++  out += `xref\n0 ${objs.length + 1}\n0000000000 65535 f \n` + offsets.map(o => `${String(o).padStart(10, '0')} 00000 n \n`).join('');
++  out += `trailer\n<< /Size ${objs.length + 1} /Root 1 0 R >>\nstartxref\n${xref}\n%%EOF\n`;
++  return Buffer.from(out, 'latin1');
++}
++
++// Static server standing in for Netlify: one fixed origin whose content can be swapped (a deploy).
++const TYPES = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript', '.mjs': 'text/javascript', '.css': 'text/css', '.png': 'image/png', '.webmanifest': 'application/manifest+json', '.wasm': 'application/wasm', '.json': 'application/json' };
++function serve() {
++  let dir = null;
++  const server = createServer((req, res) => {
++    const url = new URL(req.url, 'http://x');
++    let file = path.join(dir, decodeURIComponent(url.pathname));
++    if (!file.startsWith(dir)) { res.writeHead(403).end(); return; }
++    if (!existsSync(file) || statSync(file).isDirectory()) file = path.join(dir, 'index.html');
++    const headers = { 'Content-Type': TYPES[path.extname(file)] || 'application/octet-stream' };
++    if (url.pathname === '/sw.js') headers['Cache-Control'] = 'no-cache';
++    res.writeHead(200, headers).end(readFileSync(file));
++  });
++  return new Promise(resolve => server.listen(0, () => resolve({ server, base: `http://localhost:${server.address().port}/`, setDir: d => { dir = d; } })));
++}
++
++const remote = process.env.PWA_CHECK_URL;
++let local = null, tmp = null;
++if (!remote) {
++  tmp = mkdtempSync(path.join(tmpdir(), 'librarian-pwa-'));
++  cpSync(path.join(root, 'dist'), path.join(tmp, 'v1'), { recursive: true });
++  cpSync(path.join(root, 'dist'), path.join(tmp, 'v2'), { recursive: true });
++  // v2 = a "new deploy": different shell HTML and therefore a different precache VERSION / sw.js bytes.
++  const v2Html = path.join(tmp, 'v2', 'index.html');
++  writeFileSync(v2Html, readFileSync(v2Html, 'utf8').replace('</body>', '<!-- pwa-check-v2 --></body>'));
++  const v2Sw = path.join(tmp, 'v2', 'sw.js');
++  writeFileSync(v2Sw, readFileSync(v2Sw, 'utf8').replace(/const VERSION = "([0-9a-f]+)"/, 'const VERSION = "$1v2"'));
++  local = await serve(); local.setDir(path.join(tmp, 'v1'));
++}
++const base = remote || local.base;
++console.log(`${remote ? 'remote site' : 'local static server'} at ${base}`);
++
++const consoleErrors = [];
++const browser = await chromium.launch();
++try {
++  const context = await browser.newContext();
++  const page = await context.newPage();
++  page.on('console', m => { if (m.type() === 'error' && !isSuiteKit(m.location().url)) consoleErrors.push(`${m.text()} @ ${m.location().url}`); });
++  page.on('pageerror', e => consoleErrors.push(String(e)));
++
++  await page.goto(base, { waitUntil: 'load' });
++  const href = await page.locator('link[rel="manifest"]').getAttribute('href');
++  const manifest = await (await page.request.get(new URL(href, base).toString())).json();
++  if (manifest.name !== 'Librarian' || manifest.short_name !== 'Librarian') fail(`manifest name/short_name: ${manifest.name}/${manifest.short_name}`);
++  if (manifest.display !== 'standalone' || !manifest.start_url) fail('manifest display/start_url');
++  const icons = manifest.icons || [];
++  if (!icons.some(i => i.sizes === '192x192') || !icons.some(i => i.sizes === '512x512') || !icons.some(i => (i.purpose || '').includes('maskable'))) fail('manifest icons incomplete');
++  for (const i of icons) if (!(await page.request.get(new URL(i.src, base).toString())).ok()) fail(`icon ${i.src} does not resolve`);
++  ok(`manifest "${manifest.name}" (standalone, ${icons.length} icons incl. maskable, all resolve)`);
++  const swHeaders = (await page.request.get(new URL('/sw.js', base).toString())).headers();
++  if (!/no-cache/.test(swHeaders['cache-control'] || '')) fail(`/sw.js Cache-Control is "${swHeaders['cache-control']}", expected no-cache`); else ok('/sw.js served Cache-Control: no-cache');
++
++  await page.waitForFunction(() => navigator.serviceWorker.ready.then(() => true), null, { timeout: 20000 });
++  await page.reload({ waitUntil: 'load' });
++  if (!(await page.evaluate(() => !!navigator.serviceWorker.controller))) fail('page not controlled by the service worker after reload'); else ok('service worker controls the page');
++
++  // Import a PDF into the Library.
++  await page.getByRole('button', { name: /^Library/ }).first().click();
++  await page.locator('input[data-import]').first().setInputFiles({ name: 'pwa-check-book.pdf', mimeType: 'application/pdf', buffer: tinyPdf() });
++  await page.getByText('pwa-check-book').first().waitFor({ timeout: 15000 });
++  ok('imported a PDF into the Library');
++
++  await context.setOffline(true);
++  await page.reload({ waitUntil: 'load' });
++  await page.getByRole('button', { name: /^Library/ }).first().click();
++  await page.getByText('pwa-check-book').first().waitFor({ timeout: 15000 });
++  ok('offline reload: app shell loads and the Library still lists the PDF');
++  await page.locator('[data-read]').first().click();
++  await page.waitForFunction(() => [...document.querySelectorAll('canvas')].some(c => c.width > 50 && c.height > 50), null, { timeout: 20000 });
++  ok('offline: the reader opened and painted the PDF page (PDF.js worker served from the precache)');
++  await context.setOffline(false);
++
++  const audit = await page.evaluate(async () => {
++    const out = [];
++    for (const name of await caches.keys()) {
++      const cache = await caches.open(name);
++      for (const req of await cache.keys()) {
++        const res = await cache.match(req);
++        out.push({ cache: name, url: req.url, type: res.headers.get('content-type') || '', opaque: res.type === 'opaque' });
++      }
++    }
++    return out;
++  });
++  const origin = new URL(base).origin;
++  const bad = audit.filter(e => /pdf/i.test(e.type) || e.url.includes('/.netlify/') || e.url.startsWith('blob:') || (!e.url.startsWith(origin) && !/^https:\/\/thecreatingco\.com\/suite\//.test(e.url)));
++  if (bad.length) fail(`caches hold user/cross-origin/function data:\n${bad.map(b => `${b.cache} ${b.url} ${b.type}`).join('\n')}`);
++  else ok(`cache audit: ${audit.length} entries, all same-origin app assets (or the suite kit) — no PDFs, no function responses, nothing else cross-origin`);
++
++  if (local) {
++    local.setDir(path.join(tmp, 'v2'));
++    await page.evaluate(() => navigator.serviceWorker.getRegistration().then(r => r.update()));
++    await page.getByText('Update available.').waitFor({ timeout: 20000 }).catch(() => fail('no "Update available" prompt after v2 went live'));
++    const stillV1 = !(await page.content()).includes('pwa-check-v2');
++    if (stillV1) ok('"Update available" prompt shown; page still on v1 (no silent swap)'); else fail('page swapped to v2 before the user clicked Reload');
++    await Promise.all([page.waitForNavigation({ timeout: 20000 }), page.locator('.pwa-toast').getByRole('button', { name: 'Reload' }).click()]);
++    await page.waitForLoadState('load');
++    if ((await page.content()).includes('pwa-check-v2')) ok('after Reload the page serves v2 via the new worker'); else fail('after Reload the page is not on v2');
++  }
++
++  if (consoleErrors.length) fail(`${consoleErrors.length} console error(s):\n${consoleErrors.join('\n')}`); else ok('zero console errors');
++} finally {
++  await browser.close();
++  local?.server.close();
++  if (tmp) rmSync(tmp, { recursive: true, force: true });
++}
++process.exit(process.exitCode ?? 0);
+diff --git a/src/pwa.js b/src/pwa.js
+new file mode 100644
+index 0000000000000000000000000000000000000000..9c0eef9fe1eb6253b32a7f3bf4c9b1bc7a8b1f5a
+--- /dev/null
++++ b/src/pwa.js
+@@ -0,0 +1,68 @@
++// Installable/offline support + thecreateco suite kit, web only (never in the iOS/Electron shells).
++//
++// Service worker updates are opt-in: when a new deploy's worker is waiting and this page
++// was already controlled (a returning visitor), show "Update available — Reload". Only that
++// click posts SKIP_WAITING; the page reloads once the new worker takes control.
++//
++// Suite kit (https://thecreatingco.com/suite/v1/suite.js): shared app menu + Locker. It is
++// optional — if it is missing, blocked or offline, Librarian works exactly the same.
++
++const SUITE_SRC = 'https://thecreatingco.com/suite/v1/suite.js';
++
++function toast(message, actionLabel, onAction) {
++  document.querySelector('.pwa-toast')?.remove();
++  const el = document.createElement('div');
++  el.className = 'pwa-toast';
++  el.setAttribute('role', 'status');
++  const text = document.createElement('span'); text.textContent = message; el.append(text);
++  if (actionLabel) { const b = document.createElement('button'); b.className = 'btn-primary'; b.textContent = actionLabel; b.onclick = onAction; el.append(b); }
++  const x = document.createElement('button'); x.className = 'pwa-toast-x'; x.setAttribute('aria-label', 'Dismiss'); x.textContent = '×'; x.onclick = () => el.remove(); el.append(x);
++  document.body.append(el);
++}
++
++export function registerServiceWorker() {
++  if (!('serviceWorker' in navigator)) return;
++  const hadController = !!navigator.serviceWorker.controller;
++  let reloading = false;
++  navigator.serviceWorker.addEventListener('controllerchange', () => { if (reloading) location.reload(); });
++  const offerUpdate = worker => toast('Update available.', 'Reload', () => { reloading = true; worker.postMessage({ type: 'SKIP_WAITING' }); });
++  window.addEventListener('load', () => {
++    navigator.serviceWorker.register('/sw.js').then(reg => {
++      if (reg.waiting && hadController) offerUpdate(reg.waiting);
++      reg.addEventListener('updatefound', () => {
++        const worker = reg.installing; if (!worker) return;
++        worker.addEventListener('statechange', () => {
++          if (worker.state !== 'installed') return;
++          if (hadController) offerUpdate(worker);
++          else toast('Librarian is ready to work offline — your library and reader open without a connection.');
++        });
++      });
++      setInterval(() => reg.update().catch(() => {}), 60 * 60 * 1000);
++    }).catch(() => {});
++  });
++}
++
++export function loadSuiteKit() {
++  if (document.querySelector(`script[src="${SUITE_SRC}"]`)) return;
++  const s = document.createElement('script');
++  s.src = SUITE_SRC; s.defer = true; s.dataset.app = 'librarian';
++  s.onerror = () => {}; // optional: offline or unreachable is fine
++  document.head.append(s);
++}
++
++/** window.TCC.locker when the suite kit has loaded, else null. */
++export function locker() {
++  const l = window.TCC && window.TCC.locker;
++  return l && typeof l.save === 'function' && typeof l.onOpen === 'function' ? l : null;
++}
++
++/** Calls fn(locker) once the kit is available (polls ~30 s; also listens for a 'tcc:ready' event). */
++export function whenLocker(fn, timeoutMs = 30000) {
++  const now = locker(); if (now) { fn(now); return; }
++  const started = Date.now();
++  const done = () => { clearInterval(timer); window.removeEventListener('tcc:ready', check); };
++  const check = () => { const l = locker(); if (l) { done(); fn(l); } else if (Date.now() - started > timeoutMs) done(); };
++  const timer = setInterval(check, 250);
++  window.addEventListener('tcc:ready', check);
++}
++
+diff --git a/src/styles.css b/src/styles.css
+index c62986557cf9c2f94ffb6ac99c536334f96c34b8..dd05eead42c99f39c774a9bb0361136ec9ffa1b9 100644
+--- a/src/styles.css
++++ b/src/styles.css
+@@ -335,3 +335,11 @@ a { color: inherit; }
+   .modal h2 { padding-right: 44px; }
+   .nav { overscroll-behavior-x: contain; }
+ }
++
++/* PWA update/offline toast (src/pwa.js) */
++.pwa-toast { position: fixed; left: 50%; transform: translateX(-50%); bottom: calc(16px + env(safe-area-inset-bottom)); z-index: 80; display: flex; align-items: center; gap: 12px; width: max-content; max-width: calc(100% - 28px); background: var(--surface-2); border: 1px solid var(--line-strong); border-radius: 14px; padding: 10px 12px 10px 16px; box-shadow: 0 14px 44px rgba(0,0,0,0.55); font-size: 0.9rem; color: var(--text); line-height: 1.4; }
++.pwa-toast .btn-primary { padding: 7px 14px; }
++.pwa-toast-x { background: none; border: 0; color: var(--muted); font-size: 1.2rem; cursor: pointer; padding: 2px 6px; }
++/* thecreateco suite menu slot (kit renders into <tcc-suite-menu>; empty if the kit is absent) */
++.suite-slot { display: inline-flex; align-items: center; flex: none; margin-left: 10px; align-self: center; }
++tcc-suite-menu { display: inline-block; width: 36px; height: 36px; flex: none; color: var(--text); } /* box reserved: no shift when the kit loads */
+diff --git a/vite.config.js b/vite.config.js
+index 236ebb90a6e0061cf4df8e6776c4140c56f8e0cb..31f20af15a4e21cc70ce9cb82a04ca2b4f748c95 100644
+--- a/vite.config.js
++++ b/vite.config.js
+@@ -1,9 +1,39 @@
+ import { defineConfig } from 'vite';
++import { createHash } from 'node:crypto';
++import { readdirSync, readFileSync, statSync, writeFileSync } from 'node:fs';
++import path from 'node:path';
++
++// PWA: inject the precache list + a content VERSION into dist/sw.js (see public/sw.js).
++// Precache = app shell only: index.html (as "/"), built JS/CSS, icons, manifest.
++// /pdfjs/ support files are cached on first use; user PDFs never touch the SW.
++function pwaPrecache() {
++  let outDir;
++  return {
++    name: 'librarian-pwa-precache',
++    apply: 'build',
++    configResolved(config) { outDir = path.resolve(config.root, config.build.outDir); },
++    closeBundle() {
++      const swPath = path.join(outDir, 'sw.js');
++      const walk = dir => readdirSync(dir).flatMap(name => { const full = path.join(dir, name); return statSync(full).isDirectory() ? walk(full) : [full]; });
++      const files = walk(outDir).map(full => '/' + path.relative(outDir, full).split(path.sep).join('/'))
++        .filter(url => /^\/(assets\/.+\.(js|mjs|css)|index\.html|manifest\.webmanifest|(pwa-\d+x\d+|maskable-\d+x\d+|apple-touch-icon|favicon-64)\.png)$/.test(url))
++        .sort();
++      const hash = createHash('sha256');
++      for (const url of files) hash.update(url).update(readFileSync(path.join(outDir, url)));
++      const version = hash.digest('hex').slice(0, 12);
++      const urls = files.map(url => url === '/index.html' ? '/' : url);
++      const source = readFileSync(swPath, 'utf8');
++      if (!source.includes('self.__LIBRARIAN_PRECACHE || []')) throw new Error('sw.js precache placeholder missing');
++      writeFileSync(swPath, source.replace("'__LIBRARIAN_SW_VERSION__'", JSON.stringify(version)).replace('self.__LIBRARIAN_PRECACHE || []', JSON.stringify(urls)));
++    },
++  };
++}
+ 
+ // base: './' → relative asset paths, so the built app loads from any origin:
+ // the web (served at /), Capacitor iOS (capacitor://localhost), and Electron (file://).
+ export default defineConfig(({ mode }) => ({
+   base: './',
++  plugins: mode === 'ios' ? [] : [pwaPrecache()],
+   // PDF.js documents Safari support for its polyfilled legacy build.
+   resolve: mode === 'ios' ? {
+     alias: [

@@ -1,0 +1,14 @@
+{
+  "sha": "5869f37c9982d05e7b17541319e81d7a734b3a42",
+  "base_sha": "5869f37c9982d05e7b17541319e81d7a734b3a42",
+  "scope": "Committed screened review delta, not a release or complete binary artifact",
+  "files": [],
+  "omitted": [],
+  "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "repo": "https://github.com/armonon/librarian",
+  "branches": [
+    "main"
+  ],
+  "archive_path": "librarian/5869f37c9982d05e7b17541319e81d7a734b3a42",
+  "local_worktree_dirty": false
+}

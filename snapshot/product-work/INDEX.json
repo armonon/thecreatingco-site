@@ -1,0 +1,936 @@
+{
+  "scope": "Exact committed company Git changes; dirty/untracked files never copied",
+  "records": [
+    {
+      "repo": "https://github.com/armonon/animate",
+      "sha": "11ccaca4730606ba922ecf70b5754171ce365725",
+      "base_sha": "11ccaca4730606ba922ecf70b5754171ce365725",
+      "branches": [
+        "main"
+      ],
+      "archive_path": "animate/11ccaca4730606ba922ecf70b5754171ce365725",
+      "local_worktree_dirty": false,
+      "files": 0,
+      "omitted": 0
+    },
+    {
+      "repo": "https://github.com/armonon/bounce",
+      "sha": "8c8c2541e8d8861a53f102ef8b985e4e35950f3e",
+      "base_sha": "c85ec72570f402d37f3a13b4916759f084bb09ce",
+      "branches": [
+        "codex/bounce-release18-20261007"
+      ],
+      "archive_path": "bounce/8c8c2541e8d8861a53f102ef8b985e4e35950f3e",
+      "local_worktree_dirty": false,
+      "files": 4,
+      "omitted": 0
+    },
+    {
+      "repo": "https://github.com/armonon/bounce",
+      "sha": "c85ec72570f402d37f3a13b4916759f084bb09ce",
+      "base_sha": "c85ec72570f402d37f3a13b4916759f084bb09ce",
+      "branches": [
+        "wave4/bounce-web-pwa"
+      ],
+      "archive_path": "bounce/c85ec72570f402d37f3a13b4916759f084bb09ce",
+      "local_worktree_dirty": false,
+      "files": 0,
+      "omitted": 0
+    },
+    {
+      "repo": "https://github.com/armonon/form-studio",
+      "sha": "1e7f6d1c84a6c956ece3cfe6f74b665208bf069c",
+      "base_sha": "b5abdd1de5f71fe0244ef9a651a6d983067541ff",
+      "branches": [
+        "fix/form-project-menu-20261007",
+        "qa/form-golden-20261008T0310"
+      ],
+      "archive_path": "form-studio/1e7f6d1c84a6c956ece3cfe6f74b665208bf069c",
+      "local_worktree_dirty": false,
+      "files": 13,
+      "omitted": 0
+    },
+    {
+      "repo": "https://github.com/armonon/form-studio",
+      "sha": "779d61d324a6f5f8a6813b51735d4495dbfabc08",
+      "base_sha": "b5abdd1de5f71fe0244ef9a651a6d983067541ff",
+      "branches": [
+        "qa/form-handoff-20261008T1210"
+      ],
+      "archive_path": "form-studio/779d61d324a6f5f8a6813b51735d4495dbfabc08",
+      "local_worktree_dirty": false,
+      "files": 14,
+      "omitted": 0
+    },
+    {
+      "repo": "https://github.com/armonon/form-studio",
+      "sha": "b433a12331af3dba200be596422442c103783831",
+      "base_sha": "b5abdd1de5f71fe0244ef9a651a6d983067541ff",
+      "branches": [
+        "fix/core-form-security-20261007"
+      ],
+      "archive_path": "form-studio/b433a12331af3dba200be596422442c103783831",
+      "local_worktree_dirty": false,
+      "files": 3,
+      "omitted": 0
+    },
+    {
+      "repo": "https://github.com/armonon/form-studio",
+      "sha": "b5abdd1de5f71fe0244ef9a651a6d983067541ff",
+      "base_sha": "b5abdd1de5f71fe0244ef9a651a6d983067541ff",
+      "branches": [
+        "wave5/form-room"
+      ],
+      "archive_path": "form-studio/b5abdd1de5f71fe0244ef9a651a6d983067541ff",
+      "local_worktree_dirty": true,
+      "files": 0,
+      "omitted": 0
+    },
+    {
+      "repo": "https://github.com/armonon/form-studio",
+      "sha": "b5f8b08832dc7961b097ce2ae7a0c29db2fc0055",
+      "base_sha": "b5abdd1de5f71fe0244ef9a651a6d983067541ff",
+      "branches": [
+        "fix/form-worker-images-20261009"
+      ],
+      "archive_path": "form-studio/b5f8b08832dc7961b097ce2ae7a0c29db2fc0055",
+      "local_worktree_dirty": false,
+      "files": 15,
+      "omitted": 1
+    },
+    {
+      "repo": "https://github.com/armonon/form-studio",
+      "sha": "be1f7272c5689d6401194d643fa3eb09a2b0b73b",
+      "base_sha": "b5abdd1de5f71fe0244ef9a651a6d983067541ff",
+      "branches": [
+        "qa/form-runtime-security-20261008T0340"
+      ],
+      "archive_path": "form-studio/be1f7272c5689d6401194d643fa3eb09a2b0b73b",
+      "local_worktree_dirty": false,
+      "files": 13,
+      "omitted": 0
+    },
+    {
+      "repo": "https://github.com/armonon/form-studio",
+      "sha": "c292256227befffde4646f9ec4b6fad56419c7fa",
+      "base_sha": "b5abdd1de5f71fe0244ef9a651a6d983067541ff",
+      "branches": [
+        "feat/pattern-first-scan-20261009"
+      ],
+      "archive_path": "form-studio/c292256227befffde4646f9ec4b6fad56419c7fa",
+      "local_worktree_dirty": false,
+      "files": 24,
+      "omitted": 1
+    },
+    {
+      "repo": "https://github.com/armonon/form-studio",
+      "sha": "cbde0fdfd1820ce2c4f18269dd75133a2bdda681",
+      "base_sha": "b5abdd1de5f71fe0244ef9a651a6d983067541ff",
+      "branches": [
+        "codex/form-company-backlink-20261009"
+      ],
+      "archive_path": "form-studio/cbde0fdfd1820ce2c4f18269dd75133a2bdda681",
+      "local_worktree_dirty": false,
+      "files": 7,
+      "omitted": 0
+    },
+    {
+      "repo": "https://github.com/armonon/form-studio",
+      "sha": "d24f5d76b4fd0e99c43e1cb8e5e2d9b63db6665e",
+      "base_sha": "b5abdd1de5f71fe0244ef9a651a6d983067541ff",
+      "branches": [
+        "fix/cast-stl-file-import-20261007"
+      ],
+      "archive_path": "form-studio/d24f5d76b4fd0e99c43e1cb8e5e2d9b63db6665e",
+      "local_worktree_dirty": false,
+      "files": 15,
+      "omitted": 0
+    },
+    {
+      "repo": "https://github.com/armonon/form-studio",
+      "sha": "ea6734638f72232676985f610daac18341fcd8ca",
+      "base_sha": "b5abdd1de5f71fe0244ef9a651a6d983067541ff",
+      "branches": [
+        "fix/form-workflow-gates-20261007"
+      ],
+      "archive_path": "form-studio/ea6734638f72232676985f610daac18341fcd8ca",
+      "local_worktree_dirty": false,
+      "files": 10,
+      "omitted": 0
+    },
+    {
+      "repo": "https://github.com/armonon/ghost-garment-studio",
+      "sha": "bfad2ee98a5194cc84892cc7a13a43e28fefea9b",
+      "base_sha": "bfad2ee98a5194cc84892cc7a13a43e28fefea9b",
+      "branches": [
+        "fix/ghost-roundtrip-20261007",
+        "wave5/ghost-pattern"
+      ],
+      "archive_path": "ghost-garment-studio/bfad2ee98a5194cc84892cc7a13a43e28fefea9b",
+      "local_worktree_dirty": true,
+      "files": 0,
+      "omitted": 0
+    },
+    {
+      "repo": "https://github.com/armonon/glyph-studio",
+      "sha": "129c7aa0ce1f5f8e437e606b1fd278ee1d9c67a0",
+      "base_sha": "0feefc7785d356f1862f23a96162bfd69f4d872e",
+      "branches": [
+        "fix/glyph-ttf-name-metadata-20261007"
+      ],
+      "archive_path": "glyph-studio/129c7aa0ce1f5f8e437e606b1fd278ee1d9c67a0",
+      "local_worktree_dirty": false,
+      "files": 2,
+      "omitted": 0
+    },
+    {
+      "repo": "https://github.com/armonon/glyph-studio",
+      "sha": "3d99059feb331cd980734e137baa576cbc8e9894",
+      "base_sha": "3d99059feb331cd980734e137baa576cbc8e9894",
+      "branches": [
+        "audit/glyph-director-20261007-1910"
+      ],
+      "archive_path": "glyph-studio/3d99059feb331cd980734e137baa576cbc8e9894",
+      "local_worktree_dirty": false,
+      "files": 0,
+      "omitted": 0
+    },
+    {
+      "repo": "https://github.com/armonon/glyph-studio",
+      "sha": "a3e50fa6d5fabdf499fd1592085c54d9710e42dc",
+      "base_sha": "a3e50fa6d5fabdf499fd1592085c54d9710e42dc",
+      "branches": [
+        "fix/glyph-recovery-qualification-20261007"
+      ],
+      "archive_path": "glyph-studio/a3e50fa6d5fabdf499fd1592085c54d9710e42dc",
+      "local_worktree_dirty": false,
+      "files": 0,
+      "omitted": 0
+    },
+    {
+      "repo": "https://github.com/armonon/glyph-studio",
+      "sha": "bc6b6d047d4bb0c1a988b3c820a3e7c367c6e5fa",
+      "base_sha": "bc6b6d047d4bb0c1a988b3c820a3e7c367c6e5fa",
+      "branches": [
+        "main"
+      ],
+      "archive_path": "glyph-studio/bc6b6d047d4bb0c1a988b3c820a3e7c367c6e5fa",
+      "local_worktree_dirty": true,
+      "files": 0,
+      "omitted": 0
+    },
+    {
+      "repo": "https://github.com/armonon/librarian",
+      "sha": "1ba7da455c348621218dd5f5423d4b0adbfbc491",
+      "base_sha": "3775d28d0eff19925405c77cda158681846c5f99",
+      "branches": [
+        "wave4/librarian-pwa-suite"
+      ],
+      "archive_path": "librarian/1ba7da455c348621218dd5f5423d4b0adbfbc491",
+      "local_worktree_dirty": false,
+      "files": 9,
+      "omitted": 3
+    },
+    {
+      "repo": "https://github.com/armonon/librarian",
+      "sha": "5869f37c9982d05e7b17541319e81d7a734b3a42",
+      "base_sha": "5869f37c9982d05e7b17541319e81d7a734b3a42",
+      "branches": [
+        "main"
+      ],
+      "archive_path": "librarian/5869f37c9982d05e7b17541319e81d7a734b3a42",
+      "local_worktree_dirty": false,
+      "files": 0,
+      "omitted": 0
+    },
+    {
+      "repo": "https://github.com/armonon/librarian",
+      "sha": "b549a40072c1a5f01cd846fd37c68da3c1c31030",
+      "base_sha": "7126236a7f0ab5e3f999099b4593a714a056b040",
+      "branches": [
+        "fix/librarian-workflow-20261007"
+      ],
+      "archive_path": "librarian/b549a40072c1a5f01cd846fd37c68da3c1c31030",
+      "local_worktree_dirty": false,
+      "files": 2,
+      "omitted": 0
+    },
+    {
+      "repo": "https://github.com/armonon/librarian",
+      "sha": "b6e3ca098dc69b411fdb077982eaedba3742a073",
+      "base_sha": "413e3e963273b22dd7184cb1830126f66b01aba8",
+      "branches": [
+        "feat/librarian-collections-20261009"
+      ],
+      "archive_path": "librarian/b6e3ca098dc69b411fdb077982eaedba3742a073",
+      "local_worktree_dirty": false,
+      "files": 20,
+      "omitted": 2
+    },
+    {
+      "repo": "https://github.com/armonon/librarian",
+      "sha": "ca7e806c86d376e707c0afdefc8a0e84ff40b35e",
+      "base_sha": "7126236a7f0ab5e3f999099b4593a714a056b040",
+      "branches": [
+        "fix/librarian-build-deps-20261007"
+      ],
+      "archive_path": "librarian/ca7e806c86d376e707c0afdefc8a0e84ff40b35e",
+      "local_worktree_dirty": false,
+      "files": 3,
+      "omitted": 1
+    },
+    {
+      "repo": "https://github.com/armonon/librarian",
+      "sha": "dce2f0f7e7e6a235967ccc19e55db3fcf8af1056",
+      "base_sha": "7126236a7f0ab5e3f999099b4593a714a056b040",
+      "branches": [
+        "fix/librarian-uuid11-20261009"
+      ],
+      "archive_path": "librarian/dce2f0f7e7e6a235967ccc19e55db3fcf8af1056",
+      "local_worktree_dirty": false,
+      "files": 3,
+      "omitted": 1
+    },
+    {
+      "repo": "https://github.com/armonon/luma-studio",
+      "sha": "30bea20f862c4302887b79b89f364f2d7bdf5710",
+      "base_sha": "8110bb57792c5f08324e59579ac9f7ba412f1688",
+      "branches": [
+        "docs/luma-high-depth-20261009T1540"
+      ],
+      "archive_path": "luma-studio/30bea20f862c4302887b79b89f364f2d7bdf5710",
+      "local_worktree_dirty": false,
+      "files": 95,
+      "omitted": 7
+    },
+    {
+      "repo": "https://github.com/armonon/luma-studio",
+      "sha": "5afa61c3febc1bb12acf156889b147e5fd51e41a",
+      "base_sha": "8110bb57792c5f08324e59579ac9f7ba412f1688",
+      "branches": [
+        "fix/luma-production-security-20261007"
+      ],
+      "archive_path": "luma-studio/5afa61c3febc1bb12acf156889b147e5fd51e41a",
+      "local_worktree_dirty": false,
+      "files": 74,
+      "omitted": 7
+    },
+    {
+      "repo": "https://github.com/armonon/luma-studio",
+      "sha": "772f082581e06e7a5783aff35ed859aace890394",
+      "base_sha": "8110bb57792c5f08324e59579ac9f7ba412f1688",
+      "branches": [
+        "fix/luma-completion-20261007"
+      ],
+      "archive_path": "luma-studio/772f082581e06e7a5783aff35ed859aace890394",
+      "local_worktree_dirty": false,
+      "files": 78,
+      "omitted": 7
+    },
+    {
+      "repo": "https://github.com/armonon/luma-studio",
+      "sha": "8c15f8537c1176b7d4c0076182b7501c92f714b5",
+      "base_sha": "8110bb57792c5f08324e59579ac9f7ba412f1688",
+      "branches": [
+        "fix/luma-adjustment-checkpoint-20261008T1441",
+        "qualification/luma-adjustment-20261009T0940"
+      ],
+      "archive_path": "luma-studio/8c15f8537c1176b7d4c0076182b7501c92f714b5",
+      "local_worktree_dirty": false,
+      "files": 94,
+      "omitted": 7
+    },
+    {
+      "repo": "https://github.com/armonon/luma-studio",
+      "sha": "d18aef51086b50708cb9cb3a33fddc21d792dc58",
+      "base_sha": "8110bb57792c5f08324e59579ac9f7ba412f1688",
+      "branches": [
+        "fix/luma-adjustment-variants-20261008",
+        "fix/luma-layered-golden-20261007"
+      ],
+      "archive_path": "luma-studio/d18aef51086b50708cb9cb3a33fddc21d792dc58",
+      "local_worktree_dirty": false,
+      "files": 92,
+      "omitted": 7
+    },
+    {
+      "repo": "https://github.com/armonon/luma-studio",
+      "sha": "d4e722330e65a260badc475f53a7a176ccfe7e57",
+      "base_sha": "8110bb57792c5f08324e59579ac9f7ba412f1688",
+      "branches": [
+        "fix/luma-cpu-export-color-20261007"
+      ],
+      "archive_path": "luma-studio/d4e722330e65a260badc475f53a7a176ccfe7e57",
+      "local_worktree_dirty": false,
+      "files": 85,
+      "omitted": 7
+    },
+    {
+      "repo": "https://github.com/armonon/luma-studio",
+      "sha": "e709a1667ff72feacca91bb0a04238ec59ae96d7",
+      "base_sha": "8110bb57792c5f08324e59579ac9f7ba412f1688",
+      "branches": [
+        "wave5/luma-new"
+      ],
+      "archive_path": "luma-studio/e709a1667ff72feacca91bb0a04238ec59ae96d7",
+      "local_worktree_dirty": false,
+      "files": 73,
+      "omitted": 7
+    },
+    {
+      "repo": "https://github.com/armonon/moodboard",
+      "sha": "b2a54d1acaa902a06c2fd99a367deb7bbe5e42cf",
+      "base_sha": "b2a54d1acaa902a06c2fd99a367deb7bbe5e42cf",
+      "branches": [
+        "main"
+      ],
+      "archive_path": "moodboard/b2a54d1acaa902a06c2fd99a367deb7bbe5e42cf",
+      "local_worktree_dirty": false,
+      "files": 0,
+      "omitted": 0
+    },
+    {
+      "repo": "https://github.com/armonon/portfolio-studio",
+      "sha": "ae9a10e30204bcb9771272a48dc34a887b478693",
+      "base_sha": "ae9a10e30204bcb9771272a48dc34a887b478693",
+      "branches": [
+        "main"
+      ],
+      "archive_path": "portfolio-studio/ae9a10e30204bcb9771272a48dc34a887b478693",
+      "local_worktree_dirty": false,
+      "files": 0,
+      "omitted": 0
+    },
+    {
+      "repo": "https://github.com/armonon/sattari-custom-site",
+      "sha": "1569ef377f6d3e079936116b1d8e5c4fe7586f48",
+      "base_sha": "abde931cd81634a54288177c9d40dfd65321a5d8",
+      "branches": [
+        "core-lab/stemdeck-security-gate-20261007"
+      ],
+      "archive_path": "sattari-custom-site/1569ef377f6d3e079936116b1d8e5c4fe7586f48",
+      "local_worktree_dirty": false,
+      "files": 103,
+      "omitted": 10
+    },
+    {
+      "repo": "https://github.com/armonon/sattari-custom-site",
+      "sha": "4bd196d65c7fd56f5de038179978e3eae47ab6b7",
+      "base_sha": "abde931cd81634a54288177c9d40dfd65321a5d8",
+      "branches": [
+        "fix/pocket-persistence-20261007"
+      ],
+      "archive_path": "sattari-custom-site/4bd196d65c7fd56f5de038179978e3eae47ab6b7",
+      "local_worktree_dirty": false,
+      "files": 106,
+      "omitted": 10
+    },
+    {
+      "repo": "https://github.com/armonon/sattari-custom-site",
+      "sha": "4d766e6f998b4243d66e1c978ae300ec71536d6e",
+      "base_sha": "abde931cd81634a54288177c9d40dfd65321a5d8",
+      "branches": [
+        "wave2/sattari-canvas-pocket-press"
+      ],
+      "archive_path": "sattari-custom-site/4d766e6f998b4243d66e1c978ae300ec71536d6e",
+      "local_worktree_dirty": false,
+      "files": 24,
+      "omitted": 1
+    },
+    {
+      "repo": "https://github.com/armonon/sattari-custom-site",
+      "sha": "6265c325014d92430f9b7b9b2b8ccbc6f0821149",
+      "base_sha": "abde931cd81634a54288177c9d40dfd65321a5d8",
+      "branches": [
+        "core-lab/stemdeck-throttle-clock-20261009"
+      ],
+      "archive_path": "sattari-custom-site/6265c325014d92430f9b7b9b2b8ccbc6f0821149",
+      "local_worktree_dirty": false,
+      "files": 103,
+      "omitted": 10
+    },
+    {
+      "repo": "https://github.com/armonon/sattari-custom-site",
+      "sha": "6bad0edaf198d80d44c9aa02c3e65970fe7d9148",
+      "base_sha": "abde931cd81634a54288177c9d40dfd65321a5d8",
+      "branches": [
+        "audit/stemdeck-mastering-20261008",
+        "core-lab/stemdeck-archive-webkit-20261008"
+      ],
+      "archive_path": "sattari-custom-site/6bad0edaf198d80d44c9aa02c3e65970fe7d9148",
+      "local_worktree_dirty": false,
+      "files": 132,
+      "omitted": 10
+    },
+    {
+      "repo": "https://github.com/armonon/sattari-custom-site",
+      "sha": "702a6f940d4c0f022f39330dff9e8fd349186c6f",
+      "base_sha": "abde931cd81634a54288177c9d40dfd65321a5d8",
+      "branches": [
+        "wave3/sattari-lyric-clean"
+      ],
+      "archive_path": "sattari-custom-site/702a6f940d4c0f022f39330dff9e8fd349186c6f",
+      "local_worktree_dirty": false,
+      "files": 84,
+      "omitted": 1
+    },
+    {
+      "repo": "https://github.com/armonon/sattari-custom-site",
+      "sha": "77b80506a33aec941eeafbf4652aea32a5f28199",
+      "base_sha": "85cb19baf71a2acd3456fda24623fee0d8548870",
+      "branches": [
+        "joey/public-alpha-download-cleanup-2026-10-08"
+      ],
+      "archive_path": "sattari-custom-site/77b80506a33aec941eeafbf4652aea32a5f28199",
+      "local_worktree_dirty": false,
+      "files": 21,
+      "omitted": 9
+    },
+    {
+      "repo": "https://github.com/armonon/sattari-custom-site",
+      "sha": "a9a77e6ad21245a99c83b592ed2fb8a660e71a37",
+      "base_sha": "abde931cd81634a54288177c9d40dfd65321a5d8",
+      "branches": [
+        "wave4/sattari-suite"
+      ],
+      "archive_path": "sattari-custom-site/a9a77e6ad21245a99c83b592ed2fb8a660e71a37",
+      "local_worktree_dirty": false,
+      "files": 106,
+      "omitted": 10
+    },
+    {
+      "repo": "https://github.com/armonon/sattari-custom-site",
+      "sha": "a9e9d977e409c56e3b1f2d636ea9291034848645",
+      "base_sha": "abde931cd81634a54288177c9d40dfd65321a5d8",
+      "branches": [
+        "core-lab/stemdeck-audit-20261007"
+      ],
+      "archive_path": "sattari-custom-site/a9e9d977e409c56e3b1f2d636ea9291034848645",
+      "local_worktree_dirty": true,
+      "files": 104,
+      "omitted": 10
+    },
+    {
+      "repo": "https://github.com/armonon/sattari-custom-site",
+      "sha": "b26c03be150e9ebb4dfcfa489bb57e62802011ec",
+      "base_sha": "abde931cd81634a54288177c9d40dfd65321a5d8",
+      "branches": [
+        "core-lab/stemdeck-portability-20261008",
+        "core-lab/stemdeck-support-mixer-20261008"
+      ],
+      "archive_path": "sattari-custom-site/b26c03be150e9ebb4dfcfa489bb57e62802011ec",
+      "local_worktree_dirty": false,
+      "files": 134,
+      "omitted": 10
+    },
+    {
+      "repo": "https://github.com/armonon/sattari-custom-site",
+      "sha": "c15bb06a87b150a966e8c563457de4f2786ba141",
+      "base_sha": "abde931cd81634a54288177c9d40dfd65321a5d8",
+      "branches": [
+        "core-lab/stemdeck-replay-deadline-20261007",
+        "core-lab/stemdeck-webkit-reference-20261008"
+      ],
+      "archive_path": "sattari-custom-site/c15bb06a87b150a966e8c563457de4f2786ba141",
+      "local_worktree_dirty": false,
+      "files": 125,
+      "omitted": 10
+    },
+    {
+      "repo": "https://github.com/armonon/sattari-custom-site",
+      "sha": "c4029c6407088ddc870353b5708f6154b81cf338",
+      "base_sha": "c4029c6407088ddc870353b5708f6154b81cf338",
+      "branches": [
+        "polish/mobile-interactive-site"
+      ],
+      "archive_path": "sattari-custom-site/c4029c6407088ddc870353b5708f6154b81cf338",
+      "local_worktree_dirty": true,
+      "files": 0,
+      "omitted": 0
+    },
+    {
+      "repo": "https://github.com/armonon/sattari-custom-site",
+      "sha": "caabef99c429f732676eb7d46143f595ddbfabca",
+      "base_sha": "abde931cd81634a54288177c9d40dfd65321a5d8",
+      "branches": [
+        "wave2/sattari-split-keybpm-vox"
+      ],
+      "archive_path": "sattari-custom-site/caabef99c429f732676eb7d46143f595ddbfabca",
+      "local_worktree_dirty": false,
+      "files": 30,
+      "omitted": 0
+    },
+    {
+      "repo": "https://github.com/armonon/sattari-custom-site",
+      "sha": "d178c70038a0df5249978ea39e5e7f4898d03587",
+      "base_sha": "abde931cd81634a54288177c9d40dfd65321a5d8",
+      "branches": [
+        "core-lab/stemdeck-responsive-20261009"
+      ],
+      "archive_path": "sattari-custom-site/d178c70038a0df5249978ea39e5e7f4898d03587",
+      "local_worktree_dirty": false,
+      "files": 104,
+      "omitted": 10
+    },
+    {
+      "repo": "https://github.com/armonon/sattari-custom-site",
+      "sha": "dab0dda829ffc436987773d650abbe0232f4a0ec",
+      "base_sha": "abde931cd81634a54288177c9d40dfd65321a5d8",
+      "branches": [
+        "release18/key-bpm-20261007"
+      ],
+      "archive_path": "sattari-custom-site/dab0dda829ffc436987773d650abbe0232f4a0ec",
+      "local_worktree_dirty": false,
+      "files": 108,
+      "omitted": 10
+    },
+    {
+      "repo": "https://github.com/armonon/sattari-custom-site",
+      "sha": "e3f01236571f0cf7a3bc013537aefcc08cba24bd",
+      "base_sha": "abde931cd81634a54288177c9d40dfd65321a5d8",
+      "branches": [
+        "codex/split-session-20261009"
+      ],
+      "archive_path": "sattari-custom-site/e3f01236571f0cf7a3bc013537aefcc08cba24bd",
+      "local_worktree_dirty": false,
+      "files": 109,
+      "omitted": 10
+    },
+    {
+      "repo": "https://github.com/armonon/sattari-custom-site",
+      "sha": "e547d7d4eef74d533795cea493a426b091b92d2a",
+      "base_sha": "abde931cd81634a54288177c9d40dfd65321a5d8",
+      "branches": [
+        "release18/sattari-integrated-20261007"
+      ],
+      "archive_path": "sattari-custom-site/e547d7d4eef74d533795cea493a426b091b92d2a",
+      "local_worktree_dirty": false,
+      "files": 118,
+      "omitted": 10
+    },
+    {
+      "repo": "https://github.com/armonon/sattari-custom-site",
+      "sha": "fec21b4e5807c670887c099aac58e48a8852ee31",
+      "base_sha": "696223a33113e008b23a0c04a93bdd2bdff93551",
+      "branches": [
+        "joey/public-surface-local-recovery-2026-06-02"
+      ],
+      "archive_path": "sattari-custom-site/fec21b4e5807c670887c099aac58e48a8852ee31",
+      "local_worktree_dirty": true,
+      "files": 12,
+      "omitted": 8
+    },
+    {
+      "repo": "https://github.com/armonon/sattari-plugins-suite",
+      "sha": "021c6390265835fa84b388e55d32f82e053ee9ae",
+      "base_sha": "021c6390265835fa84b388e55d32f82e053ee9ae",
+      "branches": [
+        "feature/harmony-engine"
+      ],
+      "archive_path": "sattari-plugins-suite/021c6390265835fa84b388e55d32f82e053ee9ae",
+      "local_worktree_dirty": true,
+      "files": 0,
+      "omitted": 0
+    },
+    {
+      "repo": "https://github.com/armonon/sattari-plugins-suite",
+      "sha": "05d40dfac0371f887bc20757930c0ba913f48dc5",
+      "base_sha": "f97ce57f4aaf7c061b02e7547eb3385c04a79f34",
+      "branches": [
+        "fix/daw-validation-20260923"
+      ],
+      "archive_path": "sattari-plugins-suite/05d40dfac0371f887bc20757930c0ba913f48dc5",
+      "local_worktree_dirty": false,
+      "files": 21,
+      "omitted": 0
+    },
+    {
+      "repo": "https://github.com/armonon/sattari-plugins-suite",
+      "sha": "08b7ad4f8a4838af2d8b507c95163da3a4044fb5",
+      "base_sha": "f27e4fc6548746d05f6a6b7cab73c2d4b7940357",
+      "branches": [
+        "integration/live-low-latency"
+      ],
+      "archive_path": "sattari-plugins-suite/08b7ad4f8a4838af2d8b507c95163da3a4044fb5",
+      "local_worktree_dirty": false,
+      "files": 178,
+      "omitted": 42
+    },
+    {
+      "repo": "https://github.com/armonon/sattari-plugins-suite",
+      "sha": "428c7444010a4a432ae712e74a7a19cc0fdc0e53",
+      "base_sha": "821400431291e34ca93fe413e6199d03c590cab7",
+      "branches": [
+        "experiment/neural-vocal-corpus"
+      ],
+      "archive_path": "sattari-plugins-suite/428c7444010a4a432ae712e74a7a19cc0fdc0e53",
+      "local_worktree_dirty": false,
+      "files": 5,
+      "omitted": 0
+    },
+    {
+      "repo": "https://github.com/armonon/sattari-plugins-suite",
+      "sha": "48a2449a34be6690d62209c0bd0efddbef30332d",
+      "base_sha": "48a2449a34be6690d62209c0bd0efddbef30332d",
+      "branches": [
+        "validation/adversarial-expansion"
+      ],
+      "archive_path": "sattari-plugins-suite/48a2449a34be6690d62209c0bd0efddbef30332d",
+      "local_worktree_dirty": false,
+      "files": 0,
+      "omitted": 0
+    },
+    {
+      "repo": "https://github.com/armonon/sattari-plugins-suite",
+      "sha": "594b8a4bebdf1eadca7e04745d131d4d6f2f9bfa",
+      "base_sha": "594b8a4bebdf1eadca7e04745d131d4d6f2f9bfa",
+      "branches": [
+        "experiment/poly-tune"
+      ],
+      "archive_path": "sattari-plugins-suite/594b8a4bebdf1eadca7e04745d131d4d6f2f9bfa",
+      "local_worktree_dirty": false,
+      "files": 0,
+      "omitted": 0
+    },
+    {
+      "repo": "https://github.com/armonon/sattari-plugins-suite",
+      "sha": "9092f51b6d2b5f5279188681da77d4f13b704a9f",
+      "base_sha": "f27e4fc6548746d05f6a6b7cab73c2d4b7940357",
+      "branches": [
+        "rnd/next-gen-20260927"
+      ],
+      "archive_path": "sattari-plugins-suite/9092f51b6d2b5f5279188681da77d4f13b704a9f",
+      "local_worktree_dirty": false,
+      "files": 196,
+      "omitted": 38
+    },
+    {
+      "repo": "https://github.com/armonon/sattari-plugins-suite",
+      "sha": "a23e6bea6ea83d8cbbdc66518b4df968e3b13086",
+      "base_sha": "a23e6bea6ea83d8cbbdc66518b4df968e3b13086",
+      "branches": [
+        "feature/live-pitch"
+      ],
+      "archive_path": "sattari-plugins-suite/a23e6bea6ea83d8cbbdc66518b4df968e3b13086",
+      "local_worktree_dirty": true,
+      "files": 0,
+      "omitted": 0
+    },
+    {
+      "repo": "https://github.com/armonon/sattari-plugins-suite",
+      "sha": "afedb659c9ea672560d08d7fe12d248b39290a48",
+      "base_sha": "f27e4fc6548746d05f6a6b7cab73c2d4b7940357",
+      "branches": [
+        "fix/songkey-live-feed-20260924"
+      ],
+      "archive_path": "sattari-plugins-suite/afedb659c9ea672560d08d7fe12d248b39290a48",
+      "local_worktree_dirty": false,
+      "files": 136,
+      "omitted": 36
+    },
+    {
+      "repo": "https://github.com/armonon/sattari-plugins-suite",
+      "sha": "b69c19fd15db71bc5e535802fafdefffe331ec58",
+      "base_sha": "f27e4fc6548746d05f6a6b7cab73c2d4b7940357",
+      "branches": [
+        "fix/autopitch-review-20260924"
+      ],
+      "archive_path": "sattari-plugins-suite/b69c19fd15db71bc5e535802fafdefffe331ec58",
+      "local_worktree_dirty": false,
+      "files": 130,
+      "omitted": 36
+    },
+    {
+      "repo": "https://github.com/armonon/scenepilot-compositor",
+      "sha": "9378358b2037bc36f782f5f52cf6dbeb1376b1d5",
+      "base_sha": "9378358b2037bc36f782f5f52cf6dbeb1376b1d5",
+      "branches": [
+        "main"
+      ],
+      "archive_path": "scenepilot-compositor/9378358b2037bc36f782f5f52cf6dbeb1376b1d5",
+      "local_worktree_dirty": false,
+      "files": 0,
+      "omitted": 0
+    },
+    {
+      "repo": "https://github.com/armonon/scenepilot-studio-badass",
+      "sha": "02c6eced0e572eafe5c5c2f8e4fe1b0e8b011b40",
+      "base_sha": "1380c2fe7111fd750469fde5c8c73c7df36c7951",
+      "branches": [
+        "codex/captions-lifecycle-20261009"
+      ],
+      "archive_path": "scenepilot-studio-badass/02c6eced0e572eafe5c5c2f8e4fe1b0e8b011b40",
+      "local_worktree_dirty": false,
+      "files": 647,
+      "omitted": 1749
+    },
+    {
+      "repo": "https://github.com/armonon/scenepilot-studio-badass",
+      "sha": "08a64180df7ca80f64436437027d8fc10b5c65df",
+      "base_sha": "1380c2fe7111fd750469fde5c8c73c7df36c7951",
+      "branches": [
+        "codex/reframe-lifecycle-20261009"
+      ],
+      "archive_path": "scenepilot-studio-badass/08a64180df7ca80f64436437027d8fc10b5c65df",
+      "local_worktree_dirty": false,
+      "files": 650,
+      "omitted": 1749
+    },
+    {
+      "repo": "https://github.com/armonon/scenepilot-studio-badass",
+      "sha": "787cc57bb7fc963e804d6860057930d956f8b43b",
+      "base_sha": "1380c2fe7111fd750469fde5c8c73c7df36c7951",
+      "branches": [
+        "wave3/scenepilot-reframe"
+      ],
+      "archive_path": "scenepilot-studio-badass/787cc57bb7fc963e804d6860057930d956f8b43b",
+      "local_worktree_dirty": false,
+      "files": 169,
+      "omitted": 11
+    },
+    {
+      "repo": "https://github.com/armonon/scenepilot-studio-badass",
+      "sha": "8d740071cb9631cfa18d4d6c7faa4a806b8fa42a",
+      "base_sha": "1380c2fe7111fd750469fde5c8c73c7df36c7951",
+      "branches": [
+        "codex/autocut-roundtrip-20261009"
+      ],
+      "archive_path": "scenepilot-studio-badass/8d740071cb9631cfa18d4d6c7faa4a806b8fa42a",
+      "local_worktree_dirty": false,
+      "files": 645,
+      "omitted": 1749
+    },
+    {
+      "repo": "https://github.com/armonon/scenepilot-studio-badass",
+      "sha": "a47417bc4b3390bc30697cc2b7d3d573ad14e4d6",
+      "base_sha": "1380c2fe7111fd750469fde5c8c73c7df36c7951",
+      "branches": [
+        "codex/scenepilot-workflow-release18"
+      ],
+      "archive_path": "scenepilot-studio-badass/a47417bc4b3390bc30697cc2b7d3d573ad14e4d6",
+      "local_worktree_dirty": false,
+      "files": 645,
+      "omitted": 1749
+    },
+    {
+      "repo": "https://github.com/armonon/scenepilot-studio-badass",
+      "sha": "baaec95f232d8cae14d466439b1c0930082499e4",
+      "base_sha": "1380c2fe7111fd750469fde5c8c73c7df36c7951",
+      "branches": [
+        "fix/release-today-hardening"
+      ],
+      "archive_path": "scenepilot-studio-badass/baaec95f232d8cae14d466439b1c0930082499e4",
+      "local_worktree_dirty": false,
+      "files": 57,
+      "omitted": 1
+    },
+    {
+      "repo": "https://github.com/armonon/scenepilot-studio-badass",
+      "sha": "c26d518bc3d05f0adbf7287f79c5f5f15ac25220",
+      "base_sha": "1380c2fe7111fd750469fde5c8c73c7df36c7951",
+      "branches": [
+        "codex/scenepilot-golden-20261008T0740"
+      ],
+      "archive_path": "scenepilot-studio-badass/c26d518bc3d05f0adbf7287f79c5f5f15ac25220",
+      "local_worktree_dirty": false,
+      "files": 647,
+      "omitted": 1749
+    },
+    {
+      "repo": "https://github.com/armonon/scenepilot-studio-badass",
+      "sha": "c7d2b4fc973861eba785f26e5f607671ac22deb4",
+      "base_sha": "1380c2fe7111fd750469fde5c8c73c7df36c7951",
+      "branches": [
+        "codex/scenepilot-recovery-20261008"
+      ],
+      "archive_path": "scenepilot-studio-badass/c7d2b4fc973861eba785f26e5f607671ac22deb4",
+      "local_worktree_dirty": false,
+      "files": 646,
+      "omitted": 1749
+    },
+    {
+      "repo": "https://github.com/armonon/scenepilot-studio-badass",
+      "sha": "e099ef400ed038a094b9a8abe78b7aafac0535f1",
+      "base_sha": "1380c2fe7111fd750469fde5c8c73c7df36c7951",
+      "branches": [
+        "wave2/scenepilot-captions-board-grade"
+      ],
+      "archive_path": "scenepilot-studio-badass/e099ef400ed038a094b9a8abe78b7aafac0535f1",
+      "local_worktree_dirty": false,
+      "files": 116,
+      "omitted": 5
+    },
+    {
+      "repo": "https://github.com/armonon/scenepilot-studio-badass",
+      "sha": "fb42d12b98c895b47642eaab4a9be74de0c2c358",
+      "base_sha": "1380c2fe7111fd750469fde5c8c73c7df36c7951",
+      "branches": [
+        "wave4/scenepilot-suite"
+      ],
+      "archive_path": "scenepilot-studio-badass/fb42d12b98c895b47642eaab4a9be74de0c2c358",
+      "local_worktree_dirty": true,
+      "files": 642,
+      "omitted": 1749
+    },
+    {
+      "repo": "https://github.com/armonon/thecreatingco-site",
+      "sha": "9b72229fb473ead0f018cd7b3133ab480bcffb59",
+      "base_sha": "5515c3e3ddf870e56193849550e1345276c5b80d",
+      "branches": [
+        "codex/year1-availability-clarity-20261009"
+      ],
+      "archive_path": "thecreatingco-site/9b72229fb473ead0f018cd7b3133ab480bcffb59",
+      "local_worktree_dirty": false,
+      "files": 4,
+      "omitted": 0
+    },
+    {
+      "repo": "https://github.com/armonon/thecreatingco-site",
+      "sha": "a5bfb89d42add6f6dbedc6b1191ea377054c69f1",
+      "base_sha": "5515c3e3ddf870e56193849550e1345276c5b80d",
+      "branches": [
+        "feat/tools-directory-start-links-product-stories-20261009"
+      ],
+      "archive_path": "thecreatingco-site/a5bfb89d42add6f6dbedc6b1191ea377054c69f1",
+      "local_worktree_dirty": false,
+      "files": 62,
+      "omitted": 4
+    },
+    {
+      "repo": "https://github.com/armonon/universal-operator-batch-kit",
+      "sha": "54d2c34d322323ad8ca9815e4368a84897d12ecd",
+      "base_sha": "54d2c34d322323ad8ca9815e4368a84897d12ecd",
+      "branches": [
+        "wave4/reclaim-pwa-suite"
+      ],
+      "archive_path": "universal-operator-batch-kit/54d2c34d322323ad8ca9815e4368a84897d12ecd",
+      "local_worktree_dirty": false,
+      "files": 0,
+      "omitted": 0
+    },
+    {
+      "repo": "https://github.com/armonon/universal-operator-batch-kit",
+      "sha": "c46f9811c7fd34a00625541178d1f1e0d2b2456b",
+      "base_sha": "ac2ea525fce22d4bbd6c1589bebd1e88ea673685",
+      "branches": [
+        "release18/reclaim-safety-20261007"
+      ],
+      "archive_path": "universal-operator-batch-kit/c46f9811c7fd34a00625541178d1f1e0d2b2456b",
+      "local_worktree_dirty": false,
+      "files": 8,
+      "omitted": 0
+    },
+    {
+      "repo": "https://github.com/armonon/weblab",
+      "sha": "8d51ea2c3387df3f49808e2bdf9510c6d37b5c67",
+      "base_sha": "28b259727b180db5fcbc504be8d481cf1cc50620",
+      "branches": [
+        "codex/weblab-mvp"
+      ],
+      "archive_path": "weblab/8d51ea2c3387df3f49808e2bdf9510c6d37b5c67",
+      "local_worktree_dirty": false,
+      "files": 15,
+      "omitted": 1
+    }
+  ]
+}

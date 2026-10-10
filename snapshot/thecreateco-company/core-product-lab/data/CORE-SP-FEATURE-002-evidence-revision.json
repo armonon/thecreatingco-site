@@ -1,0 +1,10 @@
+{
+  "task_id": "CORE-SP-FEATURE-002",
+  "source_evidence": [
+    "docs/audio-edit-reliability-2026-09-23.md:77 lists reverse/variable audio retiming and pitch-preserving stretch as not implemented."
+  ],
+  "evidence_sources": [
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-initial.md",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/products/scenepilot.json"
+  ]
+}

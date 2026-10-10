@@ -1,0 +1,37 @@
+Run one bounded Core Product Lab cycle. Workspace:
+/Users/agentsattari/thecreateco-company/core-product-lab.
+Read AGENTS.md, DIRECTIVE.md, HEALTH.md, ../engine/README.md and data/model-routing.json.
+Stop if PAUSE here or ../PAUSE exists. ScenePilot, Luma, Form and StemDeck ONLY;
+golden-workflow reliability before unrelated features or new apps.
+
+Run company.py recover; python3 lab.py next. Select only one eligible task, by
+severity then value, and claim its exact ID via ../engine/company.py with a unique
+owner and 45-minute lease. Read relevant product state and evidence only. Do not
+race another worker on the same product. The company queue is authoritative;
+never edit its SQLite or generated exports. Reuse existing tasks, not duplicates.
+
+Execute a substantive safe local task or useful qualification batch in an isolated
+worktree. Sol directs; Luna handles bounded routine work; use ChatGPT/Sol
+for material UX/design/workflow review and a separate OpenAI reviewer for consequential
+independent audit. Record actual model and fallbacks; model proportions are guidance, not quotas.
+Native Codex children for Codex legwork; max three workers. Keep dependent work with
+its owner. No claim of a review unless it ran and produced evidence.
+
+Build/test and dogfood a synthetic/authorized golden project. Preserve failing logs,
+source SHA, environment and exact command results; never relax assertions merely
+to pass. Unknown stays unknown. No deployments, rollback, public messages, physical
+recording, payment/access/legal changes, production deletion or gate bypass.
+Existing explicit release approval must still pass the repository's release gates.
+
+Write dated report and update products/<id>.json with measured results/limitations.
+Finish task via company CLI with evidence, or checkpoint it BLOCKED with concrete
+resume condition. Heartbeat long tasks. Update company products/context through CLI
+without overwriting unrelated fields. Run lab.py refresh. Queue only meaningful
+deduplicated follow-up work, with repro/test requirements and estimated scores.
+Stop within 35 minutes; if no safe useful work is available, record idle, not busywork.
+Return short run-history summary; do not send messages to people/channels.
+
+Owner preference: no Claude/Sonnet/Opus reviews or review fallbacks; use ChatGPT/OpenAI.
+
+
+LATEST OWNER AUTHORIZATION (2026-10-07 17:56 Pacific): Before execution read /Users/agentsattari/thecreateco-company/AUTONOMY.md. Armon says do not wait for personal review; keep upgrading and pushing and send reports often. This overrides earlier local-only/no-push wording for routine scoped tested fixes: perform independent OpenAI review as appropriate, commit/push and follow normal PR/CI and stack gates without an extra Armon signoff. Do not bypass checks or merge unreviewed downstack work. Preserve source/deploy and high-risk boundaries. The dedicated 30-minute progress reporter handles channel reporting; this job retains its own delivery policy. Review-only weekly/monthly jobs remain reviews, not release jobs.

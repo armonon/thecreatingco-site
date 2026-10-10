@@ -1,0 +1,4000 @@
+diff --git a/docs/STUDIO_LABS_SPLIT_KEYBPM_VOX.md b/docs/STUDIO_LABS_SPLIT_KEYBPM_VOX.md
+new file mode 100644
+index 0000000000000000000000000000000000000000..f3ff997abc72c11f7508bf645eac15ef4df6b0d9
+--- /dev/null
++++ b/docs/STUDIO_LABS_SPLIT_KEYBPM_VOX.md
+@@ -0,0 +1,61 @@
++# Studio labs: Split, Key & BPM, Vox (alpha)
++
++Three single-purpose tools under the Studio, all running in the browser. Each
++page is labelled **Alpha**, lists its limits on the page, and is prerendered but
++`noindex` (not in the sitemap) until the owner approves it. Listed on the Hub
++under "Studio labs".
++
++| Route            | What it does                                                                                                                    | Engine                                                                                                                                  |
++| ---------------- | ------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
++| `/studio/split`  | One song → vocals / drums / bass / instruments; sample-locked mute/solo preview; WAV + ZIP; **Open in StemDeck**                | Existing Stem Separator stack (`useStemSeparator`, HTDemucs via `demucs-web` + `onnxruntime-web`, WebGPU with CPU fallback)             |
++| `/studio/keybpm` | Many tracks → key, Camelot, BPM, level; sort; CSV export                                                                        | Existing `analyzeStemAudio` (Sattari AutoKey + site beat tracker) in a worker; rough-tempo fallback                                     |
++| `/studio/vox`    | Record (MediaRecorder) or drop a vocal → detected key → scale correction with strength + glide → optional 3rd/5th harmony → WAV | New `src/labs/vox/voxDsp.js`: YIN tracking (`src/loop/pitch.js`), AutoKey profiles (`decideSongKey`), own TD-PSOLA shifter, in a worker |
++
++Code: `src/labs/{split,keybpm,vox}`, shared frame/parts in `src/labs/audio`.
++StemDeck handoff: `src/studio/stemHandoff.js` + `src/studio/hooks/useStemHandoff.js`
++(one call in `SattariStudioPage.jsx`). Split puts the original file and the four
++stem WAVs in an in-memory handoff and navigates to `/studio`; once the restored
++session is ready the first empty deck gets the full mix (for BPM/key analysis)
++and each stem lane (Demucs `other` → StemDeck `music`), with the full-mix level
++set to 0. A reload or new tab loses the handoff (download the WAVs instead).
++Occupied decks are never replaced.
++
++## Licenses
++
++- HTDemucs (Meta, `facebookresearch/demucs`): MIT. ONNX conversion
++  `timcsy/demucs-web-onnx@92e33df` (`htdemucs_embedded.onnx`, 172 MB), pinned by
++  revision, byte size and SHA-256 in `src/utils/stemSeparatorModel.js`. The HF
++  repo itself carries no license tag; the weights derive from the MIT release.
++- `demucs-web` 1.0.2, `onnxruntime-web` 1.30.0, `fflate` 0.8.3: MIT.
++- Vox DSP is original code in this repo. No GPL code (no Rubber Band). The
++  repository has no LICENSE file (proprietary), so GPL code must not be added.
++- No paid APIs, no keys, no uploads. Split needs one network fetch of the model
++  from Hugging Face (cached in Cache Storage).
++
++## Limits (also shown on each page)
++
++- Split: HTDemucs-class quality (bleed/artifacts), one song at a time, ≤10 min /
++  100 MB, CPU mode is slow (the 8 s demo took 90–170 s on CPU in headless Chrome
++  on a loaded Mac), phones untested.
++- Key & BPM: one global key per track; BPM may be half/double; "rough" BPM comes
++  from a single 60 s pass folded into 70–180 BPM; ≤10 min / 200 MB per file;
++  fixture-tested only, not benchmarked on a labelled corpus.
++- Vox: monophonic dry vocal only; YIN + PSOLA (no neural pitch model, no formant
++  control), large shifts sound phasey; offline render (not live); ≤3 min.
++
++## Verification
++
++```sh
++npx vitest run src/labs src/studio/stemHandoff.test.js src/pages/SattariHubPage.test.jsx
++npm run build && npx vite preview --host 127.0.0.1 --port 5191
++LABS_CHROME="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" \
++  node scripts/qualify-studio-labs.mjs   # LABS_SKIP_SPLIT=1 skips the model run
++```
++
++The browser script (synthetic audio) checks: Key & BPM rows (C major/8B/120,
++A minor/8A/100 rough, silence → no estimate) and CSV; Vox detects C major, tunes
++a line sung +35 cents to within ±1 cent per note, a harmony third lands on E4,
++and a fake-microphone recording loads; Split runs real HTDemucs on the demo,
++plays the stems, exports an exact-length WAV, and **Open in StemDeck** fills
++Deck A. It also checks 390 px layouts for overflow. Run tests on Node 22 (see
++`.nvmrc`): Node 26's global `localStorage` breaks unrelated jsdom suites.
+diff --git a/scripts/qualify-studio-labs.mjs b/scripts/qualify-studio-labs.mjs
+new file mode 100644
+index 0000000000000000000000000000000000000000..e142381bfa9027e96a6747734f5a8dae5d66fd32
+--- /dev/null
++++ b/scripts/qualify-studio-labs.mjs
+@@ -0,0 +1,296 @@
++// Browser smoke test for the Studio alpha labs (Split, Key & BPM, Vox).
++//
++//   npm run build && npx vite preview --host 127.0.0.1 --port 5191
++//   LABS_URL=http://127.0.0.1:5191 node scripts/qualify-studio-labs.mjs
++//
++// LABS_CHROME=/path/to/chrome uses an installed Chrome instead of Playwright's
++// bundled Chromium. LABS_SKIP_SPLIT=1 skips the real HTDemucs run (172 MB model
++// download + CPU inference). Screenshots go to LABS_QA_DIR (/tmp/sattari-split-keybpm-vox-qa).
++// This is a functional check with synthetic audio, not a quality benchmark.
++import assert from 'node:assert/strict';
++import { mkdir, readFile } from 'node:fs/promises';
++import process from 'node:process';
++import { Buffer } from 'node:buffer';
++import { wavBytes } from '../src/utils/arrangementExport.js';
++import { detectFundamental } from '../src/loop/pitch.js';
++
++const { chromium } = await import(process.env.PLAYWRIGHT_MODULE || 'playwright');
++const base = process.env.LABS_URL || 'http://127.0.0.1:5191';
++const out = process.env.LABS_QA_DIR || '/tmp/sattari-split-keybpm-vox-qa';
++await mkdir(out, { recursive: true });
++const rate = 44100;
++
++function wavFile(name, samples) {
++  return {
++    name,
++    mimeType: 'audio/wav',
++    buffer: Buffer.from(
++      wavBytes({
++        sampleRate: rate,
++        length: samples.length,
++        numberOfChannels: 1,
++        getChannelData: () => samples,
++      })
++    ),
++  };
++}
++
++function loop(rootMidi, minor, bpm, seconds = 14) {
++  const samples = new Float32Array(seconds * rate);
++  const notes = [rootMidi, rootMidi + (minor ? 3 : 4), rootMidi + 7];
++  for (let i = 0; i < samples.length; i++)
++    samples[i] = notes.reduce(
++      (sum, midi) => sum + 0.1 * Math.sin((2 * Math.PI * 440 * 2 ** ((midi - 69) / 12) * i) / rate),
++      0
++    );
++  for (let t = 0.2; t < seconds; t += 60 / bpm)
++    for (let i = 0; i < 2000; i++) {
++      const at = Math.floor(t * rate) + i;
++      if (at < samples.length) samples[at] += 0.8 * Math.exp(-i / 240) * Math.sin(i * 0.225);
++    }
++  return samples;
++}
++
++// A "sung" C major line, every note 35 cents sharp.
++const VOX_NOTES = [60, 62, 64, 65, 67, 65, 64, 62, 60, 64, 67, 72, 67, 64, 60];
++const NOTE_SECONDS = 0.45;
++function sharpVocal() {
++  const samples = new Float32Array(Math.round(VOX_NOTES.length * NOTE_SECONDS * rate));
++  VOX_NOTES.forEach((midi, index) => {
++    const hz = 440 * 2 ** ((midi + 0.35 - 69) / 12);
++    const start = Math.round(index * NOTE_SECONDS * rate);
++    const length = Math.round((NOTE_SECONDS - 0.05) * rate);
++    let phase = 0;
++    for (let i = 0; i < length; i++) {
++      phase += (2 * Math.PI * hz) / rate;
++      const envelope = Math.min(1, i / 400, (length - i) / 400);
++      samples[start + i] =
++        envelope *
++        (0.3 * Math.sin(phase) + 0.15 * Math.sin(2 * phase) + 0.07 * Math.sin(3 * phase));
++    }
++  });
++  return samples;
++}
++
++function readWav(bytes) {
++  const view = new DataView(bytes.buffer, bytes.byteOffset, bytes.byteLength);
++  const channels = view.getUint16(22, true);
++  const bits = view.getUint16(34, true);
++  const format = view.getUint16(20, true);
++  let offset = 12;
++  while (bytes.toString('ascii', offset, offset + 4) !== 'data')
++    offset += 8 + view.getUint32(offset + 4, true);
++  const size = view.getUint32(offset + 4, true);
++  const start = offset + 8;
++  const frames = size / (channels * (bits / 8));
++  const samples = new Float32Array(frames);
++  for (let i = 0; i < frames; i++) {
++    const at = start + i * channels * (bits / 8);
++    if (format === 3) samples[i] = view.getFloat32(at, true);
++    else if (bits === 24) {
++      let value = bytes[at] | (bytes[at + 1] << 8) | (bytes[at + 2] << 16);
++      if (value & 0x800000) value -= 0x1000000;
++      samples[i] = value / 8388608;
++    } else samples[i] = view.getInt16(at, true) / 32768;
++  }
++  return { samples, rate: view.getUint32(24, true), channels };
++}
++
++async function download(page, click) {
++  const [file] = await Promise.all([page.waitForEvent('download'), click()]);
++  return { name: file.suggestedFilename(), bytes: await readFile(await file.path()) };
++}
++
++// React tracks input values, so set ranges through the native setter.
++async function setRange(locator, value) {
++  await locator.evaluate((element, next) => {
++    Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set.call(element, next);
++    element.dispatchEvent(new Event('input', { bubbles: true }));
++  }, String(value));
++}
++
++async function noOverflow(page, label) {
++  await page.setViewportSize({ width: 390, height: 844 });
++  await page.screenshot({ path: `${out}/${label}-mobile.png`, fullPage: true });
++  const fits = await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth);
++  await page.setViewportSize({ width: 1440, height: 1000 });
++  assert(fits, `${label}: mobile layout overflows`);
++}
++
++const browser = await chromium.launch({
++  headless: true,
++  ...(process.env.LABS_CHROME ? { executablePath: process.env.LABS_CHROME } : {}),
++  args: [
++    '--use-fake-ui-for-media-stream',
++    '--use-fake-device-for-media-stream',
++    '--autoplay-policy=no-user-gesture-required',
++  ],
++});
++const context = await browser.newContext({
++  viewport: { width: 1440, height: 1000 },
++  acceptDownloads: true,
++});
++await context.grantPermissions(['microphone'], { origin: base });
++const page = await context.newPage();
++const errors = [];
++page.on('pageerror', (error) => errors.push(error.message));
++page.on('response', (response) => {
++  if (response.status() >= 400) console.log('HTTP', response.status(), response.url());
++});
++page.on('console', (event) => {
++  if (event.type() === 'error') console.log('CONSOLE:', event.text());
++});
++const report = {};
++
++try {
++  // ---------- Key & BPM ----------
++  await page.goto(`${base}/studio/keybpm`);
++  await page.getByRole('heading', { level: 1, name: /Key & BPM/ }).waitFor();
++  await page
++    .locator('input[type=file]')
++    .setInputFiles([
++      wavFile('c-major-120.wav', loop(60, false, 120)),
++      wavFile('a-minor-100.wav', loop(57, true, 100)),
++      wavFile('silence.wav', new Float32Array(rate * 4)),
++    ]);
++  await page
++    .locator('tbody tr[data-status="done"], tbody tr[data-status="error"]')
++    .nth(2)
++    .waitFor({ timeout: 180000 });
++  const rows = await page.$$eval('tbody tr', (trs) =>
++    trs.map((tr) => [...tr.querySelectorAll('th,td')].map((cell) => cell.textContent.trim()))
++  );
++  console.log('Key & BPM rows', rows);
++  report.keybpm = rows;
++  assert.match(rows[0][2], /^C major/);
++  assert.equal(rows[0][3], '8B');
++  assert.match(rows[0][4], /^120/);
++  assert.match(rows[1][2], /^A minor/);
++  assert.equal(rows[1][3], '8A');
++  assert.match(rows[1][4], /^100/);
++  assert.equal(rows[2][2], '—');
++  const csv = await download(page, () => page.getByRole('button', { name: 'Export CSV' }).click());
++  const csvText = csv.bytes.toString('utf8');
++  assert.equal(csv.name, 'sattari-key-bpm.csv');
++  assert.equal(csvText.trim().split('\r\n').length, 4);
++  assert.match(csvText, /"c-major-120.wav","14.0","C major","8B"/);
++  await page.screenshot({ path: `${out}/keybpm-desktop.png`, fullPage: true });
++  await noOverflow(page, 'keybpm');
++
++  // ---------- Vox: file ----------
++  await page.goto(`${base}/studio/vox`);
++  await page.getByRole('heading', { level: 1, name: /Vox/ }).waitFor();
++  await page.locator('input[type=file]').setInputFiles(wavFile('sharp-line.wav', sharpVocal()));
++  await page.getByText(/^Detected |No clear key/).waitFor({ timeout: 60000 });
++  const detected = await page.locator('.alab-controls .alab-note').first().textContent();
++  console.log('Vox key:', detected);
++  report.voxKey = detected;
++  assert.match(detected, /C major|A minor/);
++  // Correct fully and instantly to C major, then measure the exported take.
++  await page.getByLabel('Key root', { exact: true }).selectOption('0');
++  await page.getByLabel('Scale', { exact: true }).selectOption('major');
++  await setRange(page.locator('.alab-slider input').first(), 1);
++  await setRange(page.locator('.alab-slider input').nth(1), 0);
++  await page.waitForTimeout(400);
++  await page.getByRole('button', { name: 'Play tuned' }).waitFor();
++  await page.waitForFunction(() => !document.querySelector('.alab-actions [role=status]'));
++  const tuned = await download(page, () =>
++    page.getByRole('button', { name: 'Export WAV' }).click()
++  );
++  const wav = readWav(tuned.bytes);
++  assert.equal(wav.rate, rate);
++  const cents = VOX_NOTES.map((midi, index) => {
++    const at = Math.round((index * NOTE_SECONDS + 0.15) * rate);
++    const found = detectFundamental(wav.samples.subarray(at, at + 4096), rate, 70, 1200, 0.001);
++    return found
++      ? Math.round(1200 * Math.log2(found.frequency / (440 * 2 ** ((midi - 69) / 12))))
++      : null;
++  });
++  console.log('Vox output error per note (cents, input was +35):', cents);
++  report.voxCents = cents;
++  assert(
++    cents.every((value) => value !== null && Math.abs(value) <= 12),
++    'Vox did not tune the line'
++  );
++  await page.getByText('3rd above').click();
++  await page.waitForTimeout(400);
++  await page.waitForFunction(() => !document.querySelector('.alab-actions [role=status]'));
++  const harmony = await download(page, () =>
++    page.getByRole('button', { name: 'Harmony only' }).click()
++  );
++  const harmonyWav = readWav(harmony.bytes);
++  const first = detectFundamental(
++    harmonyWav.samples.subarray(Math.round(0.15 * rate), Math.round(0.15 * rate) + 4096),
++    rate,
++    70,
++    1500,
++    0.001
++  );
++  report.harmonyFirstHz = first?.frequency;
++  console.log('Harmony over C4 (expect E4 ≈ 329.6 Hz):', first?.frequency);
++  assert(
++    first && Math.abs(1200 * Math.log2(first.frequency / 329.63)) < 20,
++    'Harmony is not a third above'
++  );
++  await page.screenshot({ path: `${out}/vox-desktop.png`, fullPage: true });
++  await noOverflow(page, 'vox');
++
++  // ---------- Vox: microphone (Chrome fake device) ----------
++  await page.goto(`${base}/studio/vox`);
++  await page.getByRole('button', { name: 'Record a take' }).click();
++  await page.getByRole('button', { name: /^Stop/ }).waitFor({ timeout: 15000 });
++  await page.waitForTimeout(3000);
++  await page.getByRole('button', { name: /^Stop/ }).click();
++  await page.getByRole('heading', { name: 'vox-recording' }).waitFor({ timeout: 30000 });
++  await page.getByText(/^Detected |No clear key/).waitFor({ timeout: 60000 });
++  report.recording = 'ok';
++  await page.screenshot({ path: `${out}/vox-recorded.png`, fullPage: true });
++
++  // ---------- Split (real HTDemucs) ----------
++  if (process.env.LABS_SKIP_SPLIT !== '1') {
++    await page.goto(`${base}/studio/split`);
++    await page.getByRole('heading', { level: 1, name: /Split/ }).waitFor();
++    await page.screenshot({ path: `${out}/split-empty.png`, fullPage: true });
++    const started = Date.now();
++    await page.getByRole('button', { name: /8-second demo/ }).click();
++    await page.getByRole('status').first().waitFor({ timeout: 60000 });
++    await page.screenshot({ path: `${out}/split-progress.png`, fullPage: true });
++    await page.getByRole('button', { name: 'Open in StemDeck' }).waitFor({ timeout: 15 * 60000 });
++    report.splitSeconds = Math.round((Date.now() - started) / 1000);
++    console.log(`Split finished in ${report.splitSeconds}s`);
++    await page.getByRole('button', { name: 'Play stems' }).waitFor();
++    await page.waitForFunction(() => !document.querySelector('.alab-play [class*=alab-spin]'));
++    const lanes = await page.$$eval('.alab-lane-name', (nodes) =>
++      nodes.map((node) => node.textContent)
++    );
++    assert.deepEqual(lanes, ['Vocals', 'Drums', 'Bass', 'Instruments', 'Original']);
++    await page.getByRole('button', { name: 'Mute Vocals' }).click();
++    await page.getByRole('button', { name: 'Play stems' }).click();
++    await page.waitForTimeout(1200);
++    const position = await page.getByLabel('Playback position').inputValue();
++    assert(Number(position) > 0.3, 'Stem preview did not play');
++    await page.getByRole('button', { name: 'Pause stems' }).click();
++    const stem = await download(page, () =>
++      page.getByRole('link', { name: 'Download Bass WAV' }).click()
++    );
++    const bass = readWav(stem.bytes);
++    assert.equal(bass.channels, 2);
++    assert.equal(bass.samples.length, 8 * rate, 'Bass stem length must match the 8 s demo');
++    await page.screenshot({ path: `${out}/split-done.png`, fullPage: true });
++    await noOverflow(page, 'split');
++    await page.getByRole('button', { name: 'Open in StemDeck' }).click();
++    await page.waitForURL(/\/studio$/);
++    await page.getByText(/Split stems are ready in Deck/).waitFor({ timeout: 120000 });
++    report.handoff = await page
++      .getByText(/Split stems are ready in Deck/)
++      .first()
++      .textContent();
++    console.log('StemDeck:', report.handoff);
++    await page.screenshot({ path: `${out}/stemdeck-handoff.png` });
++  }
++
++  assert.deepEqual(errors, [], `Page errors: ${errors.join('; ')}`);
++  console.log('PASS', JSON.stringify(report));
++} finally {
++  await browser.close();
++}
+diff --git a/src/App.tsx b/src/App.tsx
+index 1c2bbe14edf4e3f9261f9726e1bdd1b48da00dc2..79371056c5843e490e9967e1c1e1a4dd5f664c06 100644
+--- a/src/App.tsx
++++ b/src/App.tsx
+@@ -26,6 +26,9 @@ import {
+   SattariLearnPage,
+   SattariStudioPage,
+   StemSeparatorPage,
++  SplitPage,
++  KeyBpmPage,
++  VoxPage,
+   ServicesPage,
+   StudioBookingStatus,
+   ShopPage,
+@@ -111,6 +114,10 @@ const ROUTES: RouteDefinition[] = [
+   localPage('/services/instrument-repair-woodland-hills', 'repair-woodland-hills'),
+   localPage('/services/instrument-repair-calabasas', 'repair-calabasas'),
+   { path: '/stem-seperator', redirect: '/stem-separator' },
++  // Studio alpha labs: Split, Key & BPM, Vox (src/labs).
++  { path: '/studio/split', page: SplitPage },
++  { path: '/studio/keybpm', page: KeyBpmPage },
++  { path: '/studio/vox', page: VoxPage },
+ ];
+ 
+ // Matched exactly as <Routes> ranks them, including the catch-all.
+@@ -160,9 +167,10 @@ const App: FC = () => {
+   const pagePath = location.pathname.replace(/\/+$/, '').toLowerCase() || '/';
+   const drawerRef = useRef<HTMLDivElement>(null);
+   const openerRef = useRef<HTMLElement | null>(null);
+-  const isAudioWorkspace = ['/hub', '/learn', '/loop', '/studio', '/stem-separator'].includes(
+-    pagePath
+-  );
++  // /studio/<lab> pages are Studio alpha labs (Split, Key & BPM, Vox, ...).
++  const isStudioLab = pagePath.startsWith('/studio/');
++  const isAudioWorkspace =
++    isStudioLab || ['/hub', '/learn', '/loop', '/studio', '/stem-separator'].includes(pagePath);
+   const isResourcePage = /^\/(guides|tools|visit|privacy)(\/|$)/.test(pagePath);
+ 
+   const openCart = useCallback(() => {
+@@ -256,9 +264,10 @@ const App: FC = () => {
+           noindex
+         />
+       )}
+-      {!['/', '/studio', '/learn', '/loop', '/stem-separator'].includes(pagePath) && (
+-        <BackgroundMedia />
+-      )}
++      {!isStudioLab &&
++        !['/', '/studio', '/learn', '/loop', '/stem-separator'].includes(pagePath) && (
++          <BackgroundMedia />
++        )}
+ 
+       {!['/studio', '/learn', '/loop'].includes(pagePath) && <Navbar onCartClick={openCart} />}
+ 
+diff --git a/src/components/Navbar.jsx b/src/components/Navbar.jsx
+index 50e7997215e39681efc6a63193cf6734682bbc81..e7017b847ef0b2d2d751ce5942c749c94bd2a936 100644
+--- a/src/components/Navbar.jsx
++++ b/src/components/Navbar.jsx
+@@ -19,7 +19,9 @@ export default function Navbar({ onCartClick }) {
+   const headerRef = useRef(null);
+   const menuButtonRef = useRef(null);
+   const path = location.pathname.replace(/\/+$/, '').toLowerCase() || '/';
+-  const inHub = ['/hub', '/learn', '/loop', '/studio', '/stem-separator'].includes(path);
++  const inHub =
++    path.startsWith('/studio/') ||
++    ['/hub', '/learn', '/loop', '/studio', '/stem-separator'].includes(path);
+   const inShop = path === '/shop' || path.startsWith('/shop/') || path.startsWith('/product/');
+ 
+   // Every navigation gets a new key, including tapping the link for the page
+diff --git a/src/entry-prerender.jsx b/src/entry-prerender.jsx
+index 20d4f4b6a8cbc5958d2df36611b2de413bc33bf7..43984444f51bec4012df2f12b7b6e82f63b510d0 100644
+--- a/src/entry-prerender.jsx
++++ b/src/entry-prerender.jsx
+@@ -61,6 +61,10 @@ export function getPrerenderRoutes(inventory) {
+     ...[
+       ['/cart', 'src/pages/CartPage.tsx'],
+       ['/studio-booking', 'src/pages/StudioBookingStatus.jsx'],
++      // Studio alpha labs: prerendered so they are real pages, noindex while alpha.
++      ['/studio/split', 'src/labs/split/SplitPage.jsx'],
++      ['/studio/keybpm', 'src/labs/keybpm/KeyBpmPage.jsx'],
++      ['/studio/vox', 'src/labs/vox/VoxPage.jsx'],
+       ['/checkout/success', 'src/pages/CheckoutStatus.jsx'],
+       ['/checkout/cancel', 'src/pages/CheckoutStatus.jsx'],
+       ['/instagram/callback', 'src/pages/InstagramCallback.jsx'],
+diff --git a/src/labs/audio/AudioLabParts.jsx b/src/labs/audio/AudioLabParts.jsx
+new file mode 100644
+index 0000000000000000000000000000000000000000..ba8c4b614abc1b2a3a20bcfe85161b38dd29b33c
+--- /dev/null
++++ b/src/labs/audio/AudioLabParts.jsx
+@@ -0,0 +1,93 @@
++import { useEffect, useRef, useState } from 'react';
++import { Plus, Upload } from 'lucide-react';
++
++export function LabWaveform({ peaks, color = 'currentColor', progress = null, height = 44 }) {
++  const ref = useRef(null);
++  useEffect(() => {
++    const canvas = ref.current;
++    if (!canvas || !peaks?.length) return undefined;
++    const draw = () => {
++      const rect = canvas.getBoundingClientRect();
++      const scale = window.devicePixelRatio || 1;
++      canvas.width = Math.max(1, rect.width * scale);
++      canvas.height = height * scale;
++      const context = canvas.getContext('2d');
++      if (!context) return;
++      context.scale(scale, scale);
++      const max = Math.max(0.01, ...peaks);
++      const step = rect.width / peaks.length;
++      peaks.forEach((peak, index) => {
++        const bar = Math.max(1, (peak / max) * (height - 6));
++        context.globalAlpha = progress !== null && index / peaks.length > progress ? 0.45 : 1;
++        context.fillStyle = color;
++        context.fillRect(index * step, (height - bar) / 2, Math.max(1, step - 1), bar);
++      });
++    };
++    draw();
++    if (typeof ResizeObserver === 'undefined') return undefined;
++    const observer = new ResizeObserver(draw);
++    observer.observe(canvas);
++    return () => observer.disconnect();
++  }, [peaks, color, progress, height]);
++  return <canvas ref={ref} className="alab-waveform" style={{ height }} aria-hidden="true" />;
++}
++
++/** Drop zone plus file picker. */
++export function LabDrop({ title, hint, multiple = false, disabled = false, onFiles, children }) {
++  const [dragging, setDragging] = useState(false);
++  const picker = useRef(null);
++  return (
++    <div
++      className={`alab-drop${dragging ? ' is-dragging' : ''}${disabled ? ' is-locked' : ''}`}
++      onDragOver={(event) => {
++        event.preventDefault();
++        if (!disabled) setDragging(true);
++      }}
++      onDragLeave={(event) => {
++        if (!event.currentTarget.contains(event.relatedTarget)) setDragging(false);
++      }}
++      onDrop={(event) => {
++        event.preventDefault();
++        setDragging(false);
++        if (!disabled) onFiles([...event.dataTransfer.files]);
++      }}
++    >
++      <div className="alab-drop-mark">
++        <Upload size={24} strokeWidth={1.5} aria-hidden="true" />
++      </div>
++      <div className="alab-drop-copy">
++        <h2>{dragging ? 'Drop to add' : title}</h2>
++        <p>{hint}</p>
++      </div>
++      <div className="alab-drop-actions">
++        <button
++          type="button"
++          className="alab-button"
++          disabled={disabled}
++          onClick={() => picker.current?.click()}
++        >
++          <Plus size={16} aria-hidden="true" /> Choose audio
++        </button>
++        {children}
++      </div>
++      <input
++        ref={picker}
++        type="file"
++        className="alab-file-input"
++        aria-label={title}
++        accept="audio/*,.wav,.mp3,.flac,.m4a,.aac,.ogg,.opus,.aif,.aiff,.webm"
++        multiple={multiple}
++        disabled={disabled}
++        onChange={(event) => {
++          onFiles([...event.target.files]);
++          event.target.value = '';
++        }}
++      />
++    </div>
++  );
++}
++
++export function formatTime(seconds) {
++  if (!Number.isFinite(seconds)) return '0:00';
++  return `${Math.floor(seconds / 60)}:${String(Math.floor(seconds % 60)).padStart(2, '0')}`;
++}
+diff --git a/src/labs/audio/AudioLabShell.jsx b/src/labs/audio/AudioLabShell.jsx
+new file mode 100644
+index 0000000000000000000000000000000000000000..a991d7d57937e4470ecd8f16daf2af0f3c677c23
+--- /dev/null
++++ b/src/labs/audio/AudioLabShell.jsx
+@@ -0,0 +1,78 @@
++import { Link } from 'react-router-dom';
++import { ArrowLeft, FlaskConical, ShieldCheck, SlidersHorizontal } from 'lucide-react';
++import { SEO } from '../../utils/seo';
++import { LAB_TOOLS } from './audioLabTools';
++import './audioLabs.css';
++
++const ORIGIN = 'https://sattarimusic.com';
++
++/** Shared frame for the Studio alpha labs: alpha label, honest limits, sibling links. */
++export default function AudioLabShell({
++  tool,
++  title,
++  eyebrow,
++  summary,
++  description,
++  limits,
++  children,
++}) {
++  const current = LAB_TOOLS.find((item) => item.id === tool);
++  return (
++    <>
++      <SEO
++        title={`${title} alpha · Sattari Studio lab`}
++        description={description}
++        url={`${ORIGIN}${current.path}`}
++        noindex
++      />
++      <div className="alab-page" data-lab={tool}>
++        <div className="alab-shell">
++          <nav className="alab-breadcrumb" aria-label="Breadcrumb">
++            <Link to="/hub">
++              <ArrowLeft size={14} aria-hidden="true" /> Sattari Hub
++            </Link>
++            <Link to="/studio">
++              <SlidersHorizontal size={14} aria-hidden="true" /> Open StemDeck
++            </Link>
++          </nav>
++          <header className="alab-heading">
++            <div>
++              <p className="alab-eyebrow">{eyebrow}</p>
++              <h1>
++                {title} <span className="alab-alpha">Alpha</span>
++              </h1>
++              <p className="alab-summary">{summary}</p>
++            </div>
++            <span className="alab-private">
++              <ShieldCheck size={16} aria-hidden="true" /> Runs on your device. No uploads.
++            </span>
++          </header>
++          {children}
++          <section className="alab-limits" aria-labelledby={`${tool}-limits`}>
++            <h2 id={`${tool}-limits`}>
++              <FlaskConical size={16} aria-hidden="true" /> Alpha: what it does not do yet
++            </h2>
++            <ul>
++              {limits.map((limit) => (
++                <li key={limit}>{limit}</li>
++              ))}
++            </ul>
++          </section>
++          <nav className="alab-siblings" aria-label="Studio labs">
++            {LAB_TOOLS.map((item) => (
++              <Link
++                key={item.id}
++                to={item.path}
++                aria-current={item.id === tool ? 'page' : undefined}
++                className={item.id === tool ? 'is-current' : undefined}
++              >
++                <strong>{item.name}</strong>
++                <span>{item.blurb}</span>
++              </Link>
++            ))}
++          </nav>
++        </div>
++      </div>
++    </>
++  );
++}
+diff --git a/src/labs/audio/audioLabFiles.js b/src/labs/audio/audioLabFiles.js
+new file mode 100644
+index 0000000000000000000000000000000000000000..bdd29696ecc8bbe75fe1050a4e6da467696f0613
+--- /dev/null
++++ b/src/labs/audio/audioLabFiles.js
+@@ -0,0 +1,73 @@
++import { wavBytes } from '../../utils/arrangementExport';
++
++export const LAB_RATE = 44100;
++
++export function isAudioFile(file) {
++  return (
++    Boolean(file?.size) &&
++    (file.type.startsWith('audio/') ||
++      /\.(wav|mp3|flac|m4a|aac|ogg|opus|aiff?|webm)$/i.test(file.name || ''))
++  );
++}
++
++/** Interleaves channels into a 24-bit PCM WAV blob. */
++export function wavBlob(channels, rate = LAB_RATE) {
++  const bytes = wavBytes({
++    numberOfChannels: channels.length,
++    length: channels[0].length,
++    sampleRate: rate,
++    getChannelData: (index) => channels[index],
++  });
++  return new Blob([bytes], { type: 'audio/wav' });
++}
++
++/** Decodes any browser-supported file to mono float samples at `rate`. */
++export async function decodeMono(blob, rate = LAB_RATE) {
++  const Decoder = globalThis.OfflineAudioContext || globalThis.webkitOfflineAudioContext;
++  if (!Decoder) throw new Error('Audio decoding is unavailable in this browser.');
++  const context = new Decoder(1, 1, rate);
++  let buffer;
++  try {
++    buffer = await context.decodeAudioData(await blob.arrayBuffer());
++  } catch {
++    throw new Error('This file could not be decoded. Try a WAV, MP3 or M4A file.');
++  }
++  const samples = new Float32Array(buffer.length);
++  for (let channel = 0; channel < buffer.numberOfChannels; channel++) {
++    const data = buffer.getChannelData(channel);
++    for (let i = 0; i < samples.length; i++) samples[i] += data[i] / buffer.numberOfChannels;
++  }
++  return { samples, rate, duration: buffer.duration };
++}
++
++export function downloadBlob(blob, name) {
++  const url = URL.createObjectURL(blob);
++  const link = document.createElement('a');
++  link.href = url;
++  link.download = name;
++  document.body.appendChild(link);
++  link.click();
++  link.remove();
++  setTimeout(() => URL.revokeObjectURL(url), 60000);
++}
++
++export function baseName(name) {
++  return (
++    String(name || 'track')
++      .replace(/\.[^.]+$/, '')
++      .replace(/[<>:"/\\|?*]/g, '_')
++      .replace(/\p{Cc}/gu, '_')
++      .trim()
++      .slice(0, 100) || 'track'
++  );
++}
++
++export function peaksOf(samples, count = 240) {
++  const peaks = new Float32Array(count);
++  for (let bin = 0; bin < count; bin++) {
++    const start = Math.floor((bin * samples.length) / count),
++      end = Math.floor(((bin + 1) * samples.length) / count);
++    for (let i = start; i < end; i++) peaks[bin] = Math.max(peaks[bin], Math.abs(samples[i]));
++  }
++  return peaks;
++}
+diff --git a/src/labs/audio/audioLabTools.js b/src/labs/audio/audioLabTools.js
+new file mode 100644
+index 0000000000000000000000000000000000000000..64b4c14a4990a2699c654e489412a420a6daa954
+--- /dev/null
++++ b/src/labs/audio/audioLabTools.js
+@@ -0,0 +1,21 @@
++// Sattari Studio alpha labs: small single-purpose tools that hand off to StemDeck.
++export const LAB_TOOLS = [
++  {
++    id: 'split',
++    name: 'Split',
++    path: '/studio/split',
++    blurb: 'Separate a song into vocals, drums, bass and instruments on your device.',
++  },
++  {
++    id: 'keybpm',
++    name: 'Key & BPM',
++    path: '/studio/keybpm',
++    blurb: 'Drop a folder of tracks, get key, Camelot and tempo, export CSV.',
++  },
++  {
++    id: 'vox',
++    name: 'Vox',
++    path: '/studio/vox',
++    blurb: 'Record or drop a vocal, tune it to the key, add a harmony, export WAV.',
++  },
++];
+diff --git a/src/labs/audio/audioLabs.css b/src/labs/audio/audioLabs.css
+new file mode 100644
+index 0000000000000000000000000000000000000000..340127319536cb7ede64a6bc9e70213081b96cca
+--- /dev/null
++++ b/src/labs/audio/audioLabs.css
+@@ -0,0 +1,656 @@
++/* Sattari Studio labs (Split, Key & BPM, Vox). Same palette and rhythm as the
++   Stem Separator and Hub pages, with a day theme. */
++.alab-page {
++  --alab-bg: #111213;
++  --alab-panel: #191b1d;
++  --alab-raised: #232628;
++  --alab-line: #34383b;
++  --alab-text: #f3f5f4;
++  --alab-muted: #a4acae;
++  --alab-accent: #b9e7c8;
++  --alab-accent-ink: #102018;
++  --alab-bad: #ffb4a8;
++  position: relative;
++  z-index: 1;
++  min-height: calc(100vh - 88px);
++  background: var(--alab-bg);
++  color: var(--alab-text);
++  padding: 0 24px 72px;
++  color-scheme: dark;
++  font-family: Inter, sans-serif;
++  letter-spacing: 0;
++}
++[data-theme='day'] .alab-page {
++  --alab-bg: #f4f6f5;
++  --alab-panel: #ffffff;
++  --alab-raised: #eef1ef;
++  --alab-line: #d4dcd7;
++  --alab-text: #19221e;
++  --alab-muted: #58655f;
++  --alab-accent: #216a52;
++  --alab-accent-ink: #ffffff;
++  --alab-bad: #a3271a;
++  color-scheme: light;
++}
++.alab-page * {
++  box-sizing: border-box;
++  letter-spacing: 0;
++}
++.alab-page :is(h1, h2, h3, p, ul) {
++  margin: 0;
++  color: inherit;
++}
++.alab-page a {
++  color: inherit;
++}
++.alab-page :is(button, select, input) {
++  font: inherit;
++}
++.alab-page button {
++  cursor: pointer;
++}
++.alab-page button:disabled {
++  opacity: 0.4;
++  cursor: not-allowed;
++}
++.alab-page :is(a, button, input, select, summary):focus-visible {
++  outline: 2px solid var(--alab-accent);
++  outline-offset: 3px;
++}
++.alab-shell {
++  max-width: 1240px;
++  margin: 0 auto;
++}
++.alab-breadcrumb {
++  display: flex;
++  justify-content: space-between;
++  gap: 16px;
++  padding: 22px 0;
++  border-bottom: 1px solid var(--alab-line);
++}
++.alab-breadcrumb a {
++  display: inline-flex;
++  align-items: center;
++  gap: 8px;
++  min-height: 32px;
++  font-size: 12px;
++  color: var(--alab-muted);
++  text-decoration: none;
++}
++.alab-breadcrumb a:hover {
++  color: var(--alab-text);
++}
++.alab-heading {
++  display: flex;
++  justify-content: space-between;
++  align-items: flex-end;
++  gap: 24px;
++  padding: 34px 0 26px;
++}
++.alab-eyebrow {
++  margin-bottom: 8px !important;
++  font-size: 11px;
++  color: var(--alab-muted);
++  text-transform: uppercase;
++}
++.alab-heading h1 {
++  display: flex;
++  align-items: center;
++  flex-wrap: wrap;
++  gap: 12px;
++  font-size: 32px;
++  line-height: 1.2;
++  font-weight: 600;
++}
++.alab-alpha {
++  font-size: 10px;
++  line-height: 20px;
++  padding: 0 7px;
++  border: 1px solid var(--alab-accent);
++  border-radius: 4px;
++  color: var(--alab-accent);
++  text-transform: uppercase;
++  font-weight: 600;
++}
++.alab-summary {
++  max-width: 720px;
++  margin-top: 12px !important;
++  color: var(--alab-muted);
++  font-size: 15px;
++  line-height: 1.55;
++}
++.alab-private {
++  display: inline-flex;
++  align-items: center;
++  gap: 7px;
++  flex-shrink: 0;
++  color: var(--alab-accent);
++  font-size: 12px;
++}
++.alab-workspace {
++  display: grid;
++  gap: 18px;
++}
++.alab-input-row {
++  display: grid;
++  grid-template-columns: minmax(240px, 1fr) 2fr;
++  gap: 18px;
++}
++.alab-card,
++.alab-drop {
++  border: 1px solid var(--alab-line);
++  border-radius: 8px;
++  background: var(--alab-panel);
++  padding: 20px;
++}
++.alab-card {
++  display: grid;
++  gap: 16px;
++  min-width: 0;
++}
++.alab-card h2,
++.alab-toolbar h2 {
++  font-size: 16px;
++  font-weight: 600;
++  overflow: hidden;
++  text-overflow: ellipsis;
++  white-space: nowrap;
++}
++.alab-card-head {
++  display: flex;
++  justify-content: space-between;
++  align-items: center;
++  gap: 16px;
++  flex-wrap: wrap;
++  min-width: 0;
++}
++.alab-card-head > div:first-child {
++  min-width: 0;
++}
++.alab-record {
++  align-content: start;
++}
++.alab-drop {
++  display: flex;
++  align-items: center;
++  gap: 18px;
++  flex-wrap: wrap;
++  border-style: dashed;
++  transition:
++    border-color 0.15s,
++    background 0.15s;
++}
++.alab-drop.is-dragging {
++  border-color: var(--alab-accent);
++  background: var(--alab-raised);
++}
++.alab-drop.is-locked {
++  opacity: 0.6;
++}
++.alab-drop-mark {
++  display: grid;
++  place-items: center;
++  width: 52px;
++  height: 52px;
++  border-radius: 50%;
++  background: var(--alab-raised);
++  color: var(--alab-accent);
++}
++.alab-drop-copy {
++  flex: 1 1 220px;
++}
++.alab-drop-copy h2 {
++  font-size: 17px;
++  font-weight: 600;
++}
++.alab-drop-copy p {
++  margin-top: 4px !important;
++  color: var(--alab-muted);
++  font-size: 13px;
++}
++.alab-drop-actions,
++.alab-toolbar-actions,
++.alab-actions {
++  display: flex;
++  align-items: center;
++  gap: 10px;
++  flex-wrap: wrap;
++}
++.alab-file-input {
++  position: absolute;
++  width: 1px;
++  height: 1px;
++  opacity: 0;
++  pointer-events: none;
++}
++.alab-button,
++.alab-text-button {
++  display: inline-flex;
++  align-items: center;
++  justify-content: center;
++  gap: 8px;
++  min-height: 40px;
++  padding: 0 14px;
++  border-radius: 6px;
++  font-size: 14px;
++  text-decoration: none;
++}
++.alab-button {
++  border: 1px solid var(--alab-line);
++  background: var(--alab-raised);
++  color: var(--alab-text);
++}
++.alab-button:hover:not(:disabled) {
++  border-color: var(--alab-muted);
++}
++.alab-primary {
++  border-color: var(--alab-accent);
++  background: var(--alab-accent);
++  color: var(--alab-accent-ink);
++  font-weight: 600;
++}
++.alab-primary:hover:not(:disabled) {
++  filter: brightness(1.06);
++}
++.alab-danger {
++  border-color: #e0786a;
++  background: #e0786a;
++  color: #1d0d0a;
++  font-weight: 600;
++}
++.alab-text-button {
++  border: 0;
++  background: transparent;
++  color: var(--alab-muted);
++}
++.alab-text-button:hover:not(:disabled) {
++  color: var(--alab-text);
++}
++.alab-inline-select {
++  display: inline-flex;
++  align-items: center;
++  gap: 8px;
++  color: var(--alab-muted);
++  font-size: 13px;
++}
++.alab-page select {
++  min-height: 36px;
++  padding: 0 10px;
++  border: 1px solid var(--alab-line);
++  border-radius: 6px;
++  background: var(--alab-raised);
++  color: var(--alab-text);
++}
++.alab-error {
++  border: 1px solid var(--alab-bad);
++  border-radius: 6px;
++  padding: 12px 14px;
++  color: var(--alab-bad);
++  font-size: 13px;
++  display: grid;
++  gap: 4px;
++}
++.alab-bad {
++  color: var(--alab-bad);
++  font-size: 13px;
++}
++.alab-note {
++  color: var(--alab-muted);
++  font-size: 13px;
++  line-height: 1.5;
++}
++.alab-empty {
++  padding: 28px;
++  border: 1px solid var(--alab-line);
++  border-radius: 8px;
++  color: var(--alab-muted);
++  text-align: center;
++  font-size: 14px;
++}
++.alab-toolbar {
++  display: flex;
++  justify-content: space-between;
++  align-items: center;
++  gap: 12px;
++  flex-wrap: wrap;
++}
++.alab-toolbar h2 span {
++  margin-left: 6px;
++  color: var(--alab-muted);
++  font-weight: 400;
++}
++.alab-status {
++  display: inline-flex;
++  align-items: center;
++  gap: 7px;
++  color: var(--alab-muted);
++  font-size: 13px;
++}
++.alab-spin {
++  animation: alab-spin 1s linear infinite;
++}
++@keyframes alab-spin {
++  to {
++    transform: rotate(360deg);
++  }
++}
++@media (prefers-reduced-motion: reduce) {
++  .alab-spin {
++    animation: none;
++  }
++}
++.alab-progress {
++  display: grid;
++  gap: 8px;
++  font-size: 13px;
++  color: var(--alab-muted);
++}
++.alab-progress > div {
++  display: flex;
++  justify-content: space-between;
++  gap: 12px;
++}
++.alab-progress span {
++  display: inline-flex;
++  align-items: center;
++  gap: 7px;
++}
++.alab-progress progress {
++  width: 100%;
++  height: 6px;
++  accent-color: var(--alab-accent);
++}
++.alab-waveform {
++  display: block;
++  width: 100%;
++  color: var(--alab-muted);
++}
++.alab-table-wrap {
++  overflow-x: auto;
++  border: 1px solid var(--alab-line);
++  border-radius: 8px;
++}
++.alab-table {
++  width: 100%;
++  border-collapse: collapse;
++  font-size: 14px;
++  font-variant-numeric: tabular-nums;
++}
++.alab-table :is(th, td) {
++  padding: 11px 14px;
++  border-bottom: 1px solid var(--alab-line);
++  text-align: left;
++  vertical-align: top;
++}
++.alab-table thead th {
++  background: var(--alab-panel);
++  color: var(--alab-muted);
++  font-size: 12px;
++  font-weight: 500;
++  text-transform: uppercase;
++  white-space: nowrap;
++}
++.alab-table tbody th {
++  max-width: 320px;
++  overflow: hidden;
++  text-overflow: ellipsis;
++  white-space: nowrap;
++  font-weight: 500;
++}
++.alab-table tbody tr:last-child :is(th, td) {
++  border-bottom: 0;
++}
++.alab-table .alab-note {
++  min-width: 200px;
++}
++.alab-flag {
++  display: inline-block;
++  margin-left: 6px;
++  padding: 0 5px;
++  border: 1px solid var(--alab-line);
++  border-radius: 4px;
++  color: var(--alab-muted);
++  font-size: 11px;
++}
++.alab-mixer {
++  display: grid;
++  gap: 12px;
++}
++.alab-transport {
++  display: grid;
++  grid-template-columns: auto 1fr auto;
++  align-items: center;
++  gap: 14px;
++}
++.alab-transport input[type='range'],
++.alab-lane input[type='range'],
++.alab-slider input[type='range'] {
++  width: 100%;
++  accent-color: var(--alab-accent);
++}
++.alab-play {
++  display: grid;
++  place-items: center;
++  width: 46px;
++  height: 46px;
++  border: 0;
++  border-radius: 50%;
++  background: var(--alab-accent);
++  color: var(--alab-accent-ink);
++}
++.alab-time {
++  color: var(--alab-muted);
++  font-size: 13px;
++  font-variant-numeric: tabular-nums;
++}
++.alab-lanes {
++  list-style: none;
++  padding: 0;
++  display: grid;
++  gap: 8px;
++}
++.alab-lane {
++  display: grid;
++  grid-template-columns: 110px auto 1fr 110px 36px;
++  align-items: center;
++  gap: 12px;
++  padding: 8px 10px;
++  border: 1px solid var(--alab-line);
++  border-left: 3px solid var(--lane-color);
++  border-radius: 6px;
++  background: var(--alab-raised);
++}
++.alab-lane .alab-waveform {
++  color: var(--lane-color);
++}
++.alab-lane-name {
++  font-weight: 600;
++  font-size: 14px;
++}
++.alab-lane-buttons {
++  display: flex;
++  gap: 6px;
++}
++.alab-lane-buttons button {
++  display: grid;
++  place-items: center;
++  width: 34px;
++  height: 34px;
++  border: 1px solid var(--alab-line);
++  border-radius: 6px;
++  background: transparent;
++  color: var(--alab-muted);
++}
++.alab-lane-buttons button.is-on {
++  border-color: var(--lane-color);
++  background: var(--lane-color);
++  color: #111;
++}
++.alab-icon-link {
++  display: grid;
++  place-items: center;
++  width: 34px;
++  height: 34px;
++  border-radius: 6px;
++  color: var(--alab-muted);
++}
++.alab-icon-link:hover {
++  color: var(--alab-text);
++  background: var(--alab-panel);
++}
++.alab-controls {
++  display: grid;
++  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
++  gap: 18px;
++  align-items: start;
++}
++.alab-controls fieldset {
++  border: 0;
++  margin: 0;
++  padding: 0;
++  display: grid;
++  gap: 8px;
++  min-width: 0;
++}
++.alab-controls legend,
++.alab-slider > span {
++  margin-bottom: 4px;
++  font-size: 12px;
++  color: var(--alab-muted);
++  text-transform: uppercase;
++}
++.alab-slider {
++  display: grid;
++  gap: 6px;
++}
++.alab-slider > span {
++  display: flex;
++  justify-content: space-between;
++}
++.alab-slider output {
++  color: var(--alab-text);
++  text-transform: none;
++}
++.alab-pair {
++  display: flex;
++  gap: 8px;
++}
++.alab-segmented {
++  display: flex;
++  border: 1px solid var(--alab-line);
++  border-radius: 6px;
++  overflow: hidden;
++}
++.alab-segmented label {
++  flex: 1;
++  padding: 8px 6px;
++  text-align: center;
++  font-size: 13px;
++  color: var(--alab-muted);
++  cursor: pointer;
++}
++.alab-segmented label + label {
++  border-left: 1px solid var(--alab-line);
++}
++.alab-segmented label.is-on {
++  background: var(--alab-accent);
++  color: var(--alab-accent-ink);
++  font-weight: 600;
++}
++.alab-segmented input {
++  position: absolute;
++  opacity: 0;
++  width: 1px;
++  height: 1px;
++}
++.alab-segmented label:focus-within {
++  outline: 2px solid var(--alab-accent);
++  outline-offset: -2px;
++}
++.alab-pitch-graph {
++  display: block;
++  width: 100%;
++  height: 180px;
++  border: 1px solid var(--alab-line);
++  border-radius: 6px;
++  background: var(--alab-bg);
++}
++.alab-meter {
++  width: 100%;
++  height: 8px;
++}
++.alab-limits {
++  margin-top: 34px;
++  padding: 18px 20px;
++  border: 1px solid var(--alab-line);
++  border-radius: 8px;
++}
++.alab-limits h2 {
++  display: flex;
++  align-items: center;
++  gap: 8px;
++  margin-bottom: 10px !important;
++  font-size: 14px;
++  font-weight: 600;
++}
++.alab-limits ul {
++  display: grid;
++  gap: 6px;
++  padding-left: 18px;
++  color: var(--alab-muted);
++  font-size: 13px;
++  line-height: 1.5;
++}
++.alab-siblings {
++  display: grid;
++  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
++  gap: 12px;
++  margin-top: 18px;
++}
++.alab-siblings a {
++  display: grid;
++  gap: 4px;
++  padding: 14px 16px;
++  border: 1px solid var(--alab-line);
++  border-radius: 8px;
++  text-decoration: none;
++}
++.alab-siblings a:hover {
++  border-color: var(--alab-muted);
++}
++.alab-siblings a.is-current {
++  border-color: var(--alab-accent);
++}
++.alab-siblings strong {
++  font-size: 14px;
++}
++.alab-siblings span {
++  color: var(--alab-muted);
++  font-size: 13px;
++}
++@media (max-width: 760px) {
++  .alab-page {
++    padding: 0 14px 56px;
++  }
++  .alab-heading {
++    flex-direction: column;
++    align-items: flex-start;
++  }
++  .alab-heading h1 {
++    font-size: 26px;
++  }
++  .alab-input-row {
++    grid-template-columns: 1fr;
++  }
++  .alab-lane {
++    grid-template-columns: 1fr auto 36px;
++  }
++  .alab-lane .alab-waveform {
++    grid-column: 1 / -1;
++    grid-row: 2;
++  }
++  .alab-lane input[type='range'] {
++    grid-column: 1 / -1;
++    grid-row: 3;
++  }
++}
+diff --git a/src/labs/audio/audioLabs.test.jsx b/src/labs/audio/audioLabs.test.jsx
+new file mode 100644
+index 0000000000000000000000000000000000000000..35f85f5d0a99218abb43f71bc01f6227d1688406
+--- /dev/null
++++ b/src/labs/audio/audioLabs.test.jsx
+@@ -0,0 +1,41 @@
++import { render, screen } from '@testing-library/react';
++import { MemoryRouter } from 'react-router-dom';
++import { afterEach, describe, expect, it, vi } from 'vitest';
++import SplitPage from '../split/SplitPage';
++import KeyBpmPage from '../keybpm/KeyBpmPage';
++import VoxPage from '../vox/VoxPage';
++import { LAB_TOOLS } from './audioLabTools';
++
++vi.mock('../../utils/seo', () => ({ SEO: () => null }));
++
++class FakeWorker {
++  postMessage() {}
++  terminate() {}
++}
++
++afterEach(() => vi.unstubAllGlobals());
++
++describe.each([
++  ['Split', SplitPage, /Split into stems|Add a song/, /bleed between stems/],
++  ['Key & BPM', KeyBpmPage, /Add tracks/, /half or double time/],
++  ['Vox', VoxPage, /Record a take/, /monophonic/],
++])('%s lab', (title, Page, control, limitation) => {
++  it('is labelled alpha, states its limits and links the other labs', () => {
++    vi.stubGlobal('Worker', FakeWorker);
++    render(
++      <MemoryRouter>
++        <Page />
++      </MemoryRouter>
++    );
++    expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent(title);
++    expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('Alpha');
++    expect(screen.getAllByText(control).length).toBeGreaterThan(0);
++    expect(screen.getByText(limitation)).toBeInTheDocument();
++    expect(screen.getByText(/Runs on your device/)).toBeInTheDocument();
++    const nav = screen.getByRole('navigation', { name: 'Studio labs' });
++    for (const tool of LAB_TOOLS) {
++      expect(nav.querySelector(`a[href="${tool.path}"]`)).not.toBeNull();
++    }
++    expect(nav.querySelector('[aria-current="page"]')).toHaveTextContent(title);
++  });
++});
+diff --git a/src/labs/keybpm/KeyBpmPage.jsx b/src/labs/keybpm/KeyBpmPage.jsx
+new file mode 100644
+index 0000000000000000000000000000000000000000..85855e7e99aaa648b2b1a3c6ae2f5b0116439d10
+--- /dev/null
++++ b/src/labs/keybpm/KeyBpmPage.jsx
+@@ -0,0 +1,303 @@
++import { useEffect, useMemo, useRef, useState } from 'react';
++import { Download, LoaderCircle, Square, Trash2 } from 'lucide-react';
++import AudioLabShell from '../audio/AudioLabShell';
++import { formatTime, LabDrop } from '../audio/AudioLabParts';
++import { downloadBlob, isAudioFile } from '../audio/audioLabFiles';
++import { decodeTrack, SAMPLE_RATE } from '../../utils/stemSeparator';
++import { KEYBPM_MAX_BYTES, KEYBPM_MAX_FILES, resultRow, resultsCsv } from './keyBpm';
++
++const LIMITS = [
++  'Key is one global estimate per track (Sattari AutoKey). Key changes, modal or atonal music are not reported separately.',
++  'BPM can land on half or double time. "Rough" means the strict estimator declined and a single 60-second pass was used, folded into 70–180 BPM.',
++  'Up to 10 minutes and 200 MB per file, mono or stereo, in formats your browser can decode.',
++  'Results live only in this tab. Export the CSV before leaving.',
++  'Fixture-tested, not benchmarked on a labelled music corpus yet: treat values as starting points.',
++];
++
++const SORTS = {
++  added: () => 0,
++  bpm: (a, b) => (a.result?.bpm ?? 1e9) - (b.result?.bpm ?? 1e9),
++  camelot: (a, b) => {
++    const value = (row) => {
++      const code = row.result?.camelot;
++      return code ? parseInt(code, 10) * 2 + (code.endsWith('B') ? 1 : 0) : 1e9;
++    };
++    return value(a) - value(b);
++  },
++  name: (a, b) => a.file.name.localeCompare(b.file.name),
++};
++
++function createWorker() {
++  return new Worker(new URL('./keyBpm.worker.js', import.meta.url), { type: 'module' });
++}
++
++function analyzeInWorker(worker, id, audio, signal) {
++  return new Promise((resolve, reject) => {
++    const abort = () => reject(new DOMException('Stopped.', 'AbortError'));
++    signal.addEventListener('abort', abort, { once: true });
++    const settle = (fn, value) => {
++      signal.removeEventListener('abort', abort);
++      fn(value);
++    };
++    worker.onmessage = ({ data }) => {
++      if (data.id !== id) return;
++      if (data.error) settle(reject, new Error(data.error));
++      else settle(resolve, data);
++    };
++    worker.onerror = (event) => {
++      event.preventDefault?.();
++      settle(reject, new Error('The analysis worker stopped. Try a shorter file.'));
++    };
++    worker.postMessage(
++      { id, left: audio.left, right: audio.right, channels: audio.channels, rate: SAMPLE_RATE },
++      [audio.left.buffer, audio.right.buffer]
++    );
++  });
++}
++
++export default function KeyBpmPage() {
++  const [rows, setRows] = useState([]);
++  const [errors, setErrors] = useState([]);
++  const [running, setRunning] = useState(false);
++  const [sort, setSort] = useState('added');
++  const rowsRef = useRef([]);
++  const worker = useRef(null);
++  const controller = useRef(null);
++  const mounted = useRef(true);
++
++  const publish = (next) => {
++    rowsRef.current = next;
++    if (mounted.current) setRows(next);
++  };
++  const update = (id, patch) =>
++    publish(rowsRef.current.map((row) => (row.id === id ? { ...row, ...patch } : row)));
++
++  useEffect(() => {
++    mounted.current = true;
++    return () => {
++      mounted.current = false;
++      controller.current?.abort();
++      worker.current?.terminate();
++    };
++  }, []);
++
++  const runQueue = async () => {
++    if (controller.current) return;
++    const abort = new AbortController();
++    controller.current = abort;
++    setRunning(true);
++    try {
++      for (;;) {
++        const row = rowsRef.current.find((item) => item.status === 'queued');
++        if (!row || abort.signal.aborted) break;
++        update(row.id, { status: 'analyzing' });
++        try {
++          const audio = await decodeTrack(row.file, abort.signal);
++          worker.current ||= createWorker();
++          const { analysis, rough } = await analyzeInWorker(
++            worker.current,
++            row.id,
++            audio,
++            abort.signal
++          );
++          update(row.id, { status: 'done', result: resultRow(row.file.name, analysis, rough) });
++        } catch (error) {
++          if (abort.signal.aborted) {
++            update(row.id, { status: 'queued' });
++            break;
++          }
++          worker.current?.terminate();
++          worker.current = null;
++          update(row.id, {
++            status: 'error',
++            result: { file: row.file.name, status: 'error', note: error.message },
++          });
++        }
++      }
++    } finally {
++      controller.current = null;
++      if (mounted.current) setRunning(false);
++    }
++  };
++
++  const addFiles = (files) => {
++    const issues = [];
++    const seen = new Set(rowsRef.current.map((row) => `${row.file.name}:${row.file.size}`));
++    const added = [];
++    for (const file of files) {
++      const key = `${file.name}:${file.size}`;
++      if (!isAudioFile(file)) issues.push(`${file.name}: not an audio file.`);
++      else if (file.size > KEYBPM_MAX_BYTES) issues.push(`${file.name}: larger than 200 MB.`);
++      else if (seen.has(key)) issues.push(`${file.name}: already in the list.`);
++      else if (rowsRef.current.length + added.length >= KEYBPM_MAX_FILES)
++        issues.push(`${file.name}: the list holds up to ${KEYBPM_MAX_FILES} tracks.`);
++      else {
++        seen.add(key);
++        added.push({ id: crypto.randomUUID(), file, status: 'queued', result: null });
++      }
++    }
++    setErrors(issues);
++    if (!added.length) return;
++    publish([...rowsRef.current, ...added]);
++    void runQueue();
++  };
++
++  const stop = () => {
++    controller.current?.abort();
++    worker.current?.terminate();
++    worker.current = null;
++  };
++
++  const done = rows.filter((row) => row.result);
++  const sorted = useMemo(() => [...rows].sort(SORTS[sort]), [rows, sort]);
++  const remaining = rows.filter((row) => row.status === 'queued' || row.status === 'analyzing');
++
++  return (
++    <AudioLabShell
++      tool="keybpm"
++      title="Key & BPM"
++      eyebrow="Sattari Studio lab"
++      summary="Drop a folder of tracks and get the key, Camelot code and tempo of each, measured in your browser with Sattari AutoKey. Export everything as CSV for your DJ crates."
++      description="Detect the musical key, Camelot code and BPM of many tracks at once in your browser, then export a CSV. Alpha."
++      limits={LIMITS}
++    >
++      <div className="alab-workspace">
++        <LabDrop
++          title="Add tracks"
++          hint="Drop many files at once · WAV, MP3, FLAC, M4A, OGG · up to 10 min each"
++          multiple
++          onFiles={addFiles}
++        />
++        {errors.length > 0 && (
++          <div className="alab-error" role="alert">
++            {errors.slice(0, 6).map((error) => (
++              <p key={error}>{error}</p>
++            ))}
++            {errors.length > 6 && <p>…and {errors.length - 6} more.</p>}
++          </div>
++        )}
++        <div className="alab-toolbar">
++          <h2>
++            Tracks <span>{rows.length}</span>
++          </h2>
++          <div className="alab-toolbar-actions">
++            {running ? (
++              <span className="alab-status" role="status">
++                <LoaderCircle className="alab-spin" size={15} aria-hidden="true" /> Analyzing{' '}
++                {done.length + 1} of {done.length + remaining.length}
++              </span>
++            ) : remaining.length > 0 ? (
++              <button type="button" className="alab-text-button" onClick={() => void runQueue()}>
++                Resume ({remaining.length})
++              </button>
++            ) : null}
++            {running && (
++              <button type="button" className="alab-text-button" onClick={stop}>
++                <Square size={14} aria-hidden="true" /> Stop
++              </button>
++            )}
++            <label className="alab-inline-select">
++              Sort
++              <select value={sort} onChange={(event) => setSort(event.target.value)}>
++                <option value="added">As added</option>
++                <option value="name">Name</option>
++                <option value="bpm">BPM</option>
++                <option value="camelot">Camelot</option>
++              </select>
++            </label>
++            <button
++              type="button"
++              className="alab-button"
++              disabled={!done.length}
++              onClick={() =>
++                downloadBlob(
++                  new Blob([resultsCsv(done.map((row) => row.result))], {
++                    type: 'text/csv;charset=utf-8',
++                  }),
++                  'sattari-key-bpm.csv'
++                )
++              }
++            >
++              <Download size={16} aria-hidden="true" /> Export CSV
++            </button>
++            <button
++              type="button"
++              className="alab-text-button"
++              disabled={running || !rows.length}
++              onClick={() => publish([])}
++            >
++              <Trash2 size={14} aria-hidden="true" /> Clear
++            </button>
++          </div>
++        </div>
++        {rows.length === 0 ? (
++          <p className="alab-empty">No tracks yet. Results appear here as each file is measured.</p>
++        ) : (
++          <div className="alab-table-wrap">
++            <table className="alab-table">
++              <thead>
++                <tr>
++                  <th scope="col">Track</th>
++                  <th scope="col">Length</th>
++                  <th scope="col">Key</th>
++                  <th scope="col">Camelot</th>
++                  <th scope="col">BPM</th>
++                  <th scope="col">Level</th>
++                  <th scope="col">Notes</th>
++                </tr>
++              </thead>
++              <tbody>
++                {sorted.map(({ id, file, status, result }) => (
++                  <tr key={id} data-status={status}>
++                    <th scope="row" title={file.name}>
++                      {file.name}
++                    </th>
++                    {status === 'done' ? (
++                      <>
++                        <td>{formatTime(result.duration)}</td>
++                        <td>
++                          {result.key || '—'}
++                          {result.key && result.keyEvidence === 'tentative' && (
++                            <small
++                              className="alab-flag"
++                              title={`Alternative: ${result.alternative}`}
++                            >
++                              tentative
++                            </small>
++                          )}
++                        </td>
++                        <td>{result.camelot || '—'}</td>
++                        <td>
++                          {result.bpm ?? '—'}
++                          {result.bpm !== null && result.tempoEvidence !== 'supported' && (
++                            <small className="alab-flag">{result.tempoEvidence}</small>
++                          )}
++                        </td>
++                        <td>{result.rmsDb === null ? '—' : `${result.rmsDb} dB RMS`}</td>
++                        <td className="alab-note">
++                          {result.alternative && `Alt. ${result.alternative}. `}
++                          {result.note}
++                        </td>
++                      </>
++                    ) : (
++                      <td colSpan={6} className="alab-note">
++                        {status === 'queued' && 'Waiting'}
++                        {status === 'analyzing' && (
++                          <span className="alab-status">
++                            <LoaderCircle className="alab-spin" size={14} aria-hidden="true" />{' '}
++                            Measuring…
++                          </span>
++                        )}
++                        {status === 'error' && <span className="alab-bad">{result?.note}</span>}
++                      </td>
++                    )}
++                  </tr>
++                ))}
++              </tbody>
++            </table>
++          </div>
++        )}
++      </div>
++    </AudioLabShell>
++  );
++}
+diff --git a/src/labs/keybpm/keyBpm.js b/src/labs/keybpm/keyBpm.js
+new file mode 100644
+index 0000000000000000000000000000000000000000..fe920389738726db7266ae54a6952357b99badf1
+--- /dev/null
++++ b/src/labs/keybpm/keyBpm.js
+@@ -0,0 +1,128 @@
++// Key & BPM alpha: result shaping and CSV export. Measurement itself reuses the
++// Stem Separator's analyzeStemAudio (Sattari AutoKey + the site's beat tracker).
++import { trackTempo } from '../../utils/tempoMap';
++
++const NOTES = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
++export const KEYBPM_MAX_FILES = 200;
++export const KEYBPM_MAX_BYTES = 200 * 1024 ** 2;
++
++export function keyParts(key) {
++  const match = /^([A-G][#♯b♭]?)\s+(major|minor)$/.exec(String(key || '').trim());
++  if (!match) return null;
++  const name = match[1].replace('♯', '#').replace('♭', 'b');
++  const flats = { Db: 'C#', Eb: 'D#', Gb: 'F#', Ab: 'G#', Bb: 'A#' };
++  const root = NOTES.indexOf(flats[name] || name);
++  return root < 0 ? null : { root, minor: match[2] === 'minor' };
++}
++
++/** Camelot wheel code (8B = C major, 8A = A minor). */
++export function camelot(key) {
++  const parts = keyParts(key);
++  if (!parts) return '';
++  const majorRoot = parts.minor ? (parts.root + 3) % 12 : parts.root;
++  return `${((7 * majorRoot + 7) % 12) + 1}${parts.minor ? 'A' : 'B'}`;
++}
++
++export const ROUGH_MIN_BPM = 70;
++export const ROUGH_MAX_BPM = 180;
++const median = (values) => [...values].sort((a, b) => a - b)[values.length >> 1];
++
++/**
++ * A rough tempo for material where the strict estimator declined (pulse varies
++ * between sections). Uses up to 60 s from the middle of the track, folded to
++ * 70–180 BPM.
++ */
++export function roughTempo(left, right, rate) {
++  const stride = Math.max(1, Math.floor(rate / 11025));
++  const seconds = Math.min(60, left.length / rate);
++  const from = Math.floor((left.length - seconds * rate) / 2);
++  const length = Math.floor((seconds * rate) / stride);
++  const samples = new Float32Array(length);
++  for (let i = 0; i < length; i++) {
++    let sum = 0;
++    for (let j = 0; j < stride; j++) {
++      const at = from + i * stride + j;
++      sum += (left[at] + right[at]) / 2;
++    }
++    samples[i] = sum / stride;
++  }
++  const tempo = trackTempo(samples, rate / stride);
++  const beats = tempo.beats.filter((beat) => !beat.inferred);
++  if (beats.length < 8 || !(tempo.confidence >= 0.3)) return null;
++  const intervals = tempo.beats.slice(1).map((beat, i) => beat.time - tempo.beats[i].time);
++  let bpm = 60 / median(intervals);
++  if (!Number.isFinite(bpm) || bpm <= 0) return null;
++  // Fold into the usual DJ range; the low-confidence path often locks to double time.
++  while (bpm > ROUGH_MAX_BPM) bpm /= 2;
++  while (bpm < ROUGH_MIN_BPM) bpm *= 2;
++  return Math.round(bpm);
++}
++
++const KEY_NOTES = {
++  quiet: 'Too quiet',
++  short: 'Shorter than 3 s',
++  'limited-harmony': 'Not enough tonal evidence',
++};
++const TEMPO_NOTES = {
++  quiet: 'Too quiet',
++  short: 'Shorter than 3 s',
++  'no-pulse': 'No steady pulse found',
++  variable: 'Tempo varies between sections',
++};
++
++/** One table row from an analyzeStemAudio result (+ optional rough tempo). */
++export function resultRow(fileName, analysis, rough = null) {
++  if (!analysis || analysis.status !== 'ready')
++    return { file: fileName, status: 'error', note: 'Analysis unavailable for this file.' };
++  const bpm = analysis.bpm ?? rough;
++  const notes = [];
++  if (!analysis.key && KEY_NOTES[analysis.keyReason])
++    notes.push(`Key: ${KEY_NOTES[analysis.keyReason]}`);
++  if (analysis.bpm === null && TEMPO_NOTES[analysis.tempoReason])
++    notes.push(`BPM: ${TEMPO_NOTES[analysis.tempoReason]}${rough ? ' (rough value shown)' : ''}`);
++  return {
++    file: fileName,
++    status: 'done',
++    duration: analysis.duration,
++    key: analysis.key || '',
++    camelot: camelot(analysis.key),
++    keyConfidence: analysis.keyConfidence,
++    keyEvidence: analysis.key ? analysis.keyEvidence : 'insufficient',
++    alternative: analysis.key ? analysis.keyAlternative || '' : '',
++    bpm: bpm ?? null,
++    tempoEvidence:
++      analysis.bpm !== null ? analysis.tempoEvidence : rough ? 'rough' : 'insufficient',
++    rmsDb: analysis.rmsDb,
++    peakDb: analysis.peakDb,
++    note: notes.join('; '),
++  };
++}
++
++// Quote every cell and neutralise spreadsheet formulas (=, +, -, @ prefixes).
++export function csvCell(value) {
++  let text = value === null || value === undefined ? '' : String(value);
++  if (/^[=+\-@\t\r]/.test(text)) text = `'${text}`;
++  return `"${text.replace(/"/g, '""')}"`;
++}
++
++export const CSV_COLUMNS = [
++  ['File', (row) => row.file],
++  ['Duration (s)', (row) => (Number.isFinite(row.duration) ? row.duration.toFixed(1) : '')],
++  ['Key', (row) => row.key],
++  ['Camelot', (row) => row.camelot],
++  ['Key evidence', (row) => row.keyEvidence],
++  ['Key margin', (row) => (Number.isFinite(row.keyConfidence) ? row.keyConfidence.toFixed(3) : '')],
++  ['Alternative key', (row) => row.alternative],
++  ['BPM', (row) => row.bpm ?? ''],
++  ['BPM evidence', (row) => row.tempoEvidence],
++  ['RMS dBFS', (row) => row.rmsDb ?? ''],
++  ['Peak dBFS', (row) => row.peakDb ?? ''],
++  ['Status', (row) => row.status],
++  ['Notes', (row) => row.note || ''],
++];
++
++export function resultsCsv(rows) {
++  const lines = [CSV_COLUMNS.map(([name]) => csvCell(name)).join(',')];
++  for (const row of rows) lines.push(CSV_COLUMNS.map(([, get]) => csvCell(get(row))).join(','));
++  return `${lines.join('\r\n')}\r\n`;
++}
+diff --git a/src/labs/keybpm/keyBpm.test.js b/src/labs/keybpm/keyBpm.test.js
+new file mode 100644
+index 0000000000000000000000000000000000000000..cb84b44273e4a55b4f324eddd946eb29581a4441
+--- /dev/null
++++ b/src/labs/keybpm/keyBpm.test.js
+@@ -0,0 +1,108 @@
++// @vitest-environment node
++import { describe, expect, it } from 'vitest';
++import { analyzeStemAudio } from '../../utils/stemMusicalAnalysis';
++import { camelot, csvCell, keyParts, resultRow, resultsCsv, roughTempo } from './keyBpm';
++
++const rate = 44100;
++
++// C major triad plus a 120 BPM click, like a minimal loop.
++function loop(seconds = 12, bpm = 120) {
++  const samples = new Float32Array(seconds * rate);
++  for (let i = 0; i < samples.length; i++)
++    samples[i] = [60, 64, 67].reduce(
++      (sum, midi) => sum + 0.1 * Math.sin((2 * Math.PI * 440 * 2 ** ((midi - 69) / 12) * i) / rate),
++      0
++    );
++  for (let t = 0.2; t < seconds; t += 60 / bpm)
++    for (let i = 0; i < 2000; i++) {
++      const at = Math.floor(t * rate) + i;
++      if (at < samples.length) samples[at] += 0.8 * Math.exp(-i / 240) * Math.sin(i * 0.225);
++    }
++  return samples;
++}
++
++describe('Camelot codes', () => {
++  it.each([
++    ['C major', '8B'],
++    ['A minor', '8A'],
++    ['G major', '9B'],
++    ['E minor', '9A'],
++    ['F major', '7B'],
++    ['B major', '1B'],
++    ['G# minor', '1A'],
++    ['B♭ major', '6B'],
++    ['C♯ minor', '12A'],
++  ])('%s is %s', (key, code) => {
++    expect(camelot(key)).toBe(code);
++  });
++
++  it('ignores unknown keys', () => {
++    expect(camelot('')).toBe('');
++    expect(camelot(null)).toBe('');
++    expect(keyParts('H major')).toBeNull();
++  });
++});
++
++describe('CSV export', () => {
++  it('quotes cells and neutralises spreadsheet formulas', () => {
++    expect(csvCell('plain')).toBe('"plain"');
++    expect(csvCell('say "hi"')).toBe('"say ""hi"""');
++    expect(csvCell('=HYPERLINK("x")')).toBe('"\'=HYPERLINK(""x"")"');
++    expect(csvCell(null)).toBe('""');
++  });
++
++  it('writes a header and one line per result', () => {
++    const csv = resultsCsv([
++      { file: 'a.wav', status: 'done', duration: 10, key: 'C major', camelot: '8B', bpm: 120 },
++      { file: 'b.mp3', status: 'error', note: 'Could not decode' },
++    ]);
++    const lines = csv.trim().split('\r\n');
++    expect(lines).toHaveLength(3);
++    expect(lines[0]).toMatch(/^"File","Duration \(s\)","Key","Camelot"/);
++    expect(lines[1]).toContain('"a.wav","10.0","C major","8B"');
++    expect(lines[1]).toContain('"120"');
++    expect(lines[2]).toContain('"error","Could not decode"');
++  });
++});
++
++describe('result rows', () => {
++  it('measures key and tempo of a synthetic loop with the shared analyzer', () => {
++    const samples = loop();
++    const row = resultRow('loop.wav', analyzeStemAudio(samples, samples, rate));
++    expect(row).toMatchObject({ status: 'done', key: 'C major', camelot: '8B', bpm: 120 });
++    expect(row.note).toBe('');
++  });
++
++  it('labels a rough tempo and missing key honestly', () => {
++    const row = resultRow(
++      'pad.wav',
++      {
++        status: 'ready',
++        duration: 30,
++        key: null,
++        keyReason: 'limited-harmony',
++        bpm: null,
++        tempoReason: 'variable',
++        rmsDb: -20,
++        peakDb: -3,
++      },
++      97
++    );
++    expect(row).toMatchObject({ key: '', camelot: '', bpm: 97, tempoEvidence: 'rough' });
++    expect(row.note).toMatch(/Not enough tonal evidence/);
++    expect(row.note).toMatch(/rough value shown/);
++    expect(resultRow('x', { status: 'unavailable' })).toMatchObject({ status: 'error' });
++  });
++});
++
++describe('rough tempo', () => {
++  it('reports a folded estimate for a 100 BPM loop the strict estimator declines', () => {
++    const samples = loop(14, 100);
++    expect(roughTempo(samples, samples, rate)).toBe(100);
++  });
++
++  it('declines silence', () => {
++    const silence = new Float32Array(rate * 10);
++    expect(roughTempo(silence, silence, rate)).toBeNull();
++  });
++});
+diff --git a/src/labs/keybpm/keyBpm.worker.js b/src/labs/keybpm/keyBpm.worker.js
+new file mode 100644
+index 0000000000000000000000000000000000000000..9f3e0f85e9ea0f8ebfa0ae52e21fc339a5de650c
+--- /dev/null
++++ b/src/labs/keybpm/keyBpm.worker.js
+@@ -0,0 +1,19 @@
++import { safeAnalyzeStemAudio } from '../../utils/stemMusicalAnalysis';
++import { roughTempo } from './keyBpm';
++
++// One file at a time; the page decodes (Web Audio is main-thread only) and
++// transfers the PCM here so long scans never block the interface.
++self.onmessage = ({ data: { id, left, right, channels, rate } }) => {
++  try {
++    const analysis = safeAnalyzeStemAudio(left, right, rate, { channels });
++    const rough =
++      analysis.status === 'ready' &&
++      analysis.bpm === null &&
++      ['variable', 'no-pulse'].includes(analysis.tempoReason)
++        ? roughTempo(left, right, rate)
++        : null;
++    self.postMessage({ id, analysis, rough });
++  } catch (error) {
++    self.postMessage({ id, error: error?.message || 'Analysis failed.' });
++  }
++};
+diff --git a/src/labs/split/SplitPage.jsx b/src/labs/split/SplitPage.jsx
+new file mode 100644
+index 0000000000000000000000000000000000000000..3a8ab64b0d788b610aa8d8f9d332da58b6d3f499
+--- /dev/null
++++ b/src/labs/split/SplitPage.jsx
+@@ -0,0 +1,267 @@
++import { useMemo, useRef, useState } from 'react';
++import { useNavigate } from 'react-router-dom';
++import {
++  ArrowUpRight,
++  AudioLines,
++  Download,
++  LoaderCircle,
++  RotateCcw,
++  SlidersHorizontal,
++  Square,
++  Wand2,
++} from 'lucide-react';
++import AudioLabShell from '../audio/AudioLabShell';
++import { formatTime, LabDrop, LabWaveform } from '../audio/AudioLabParts';
++import StemMixer from './StemMixer';
++import useStemSeparator from '../../hooks/useStemSeparator';
++import { safeTrackName, STEMS } from '../../utils/stemSeparator';
++import { createStemArchive } from '../../utils/stemSeparatorDownload';
++import { downloadBlob } from '../audio/audioLabFiles';
++import { offerStemHandoff } from '../../studio/stemHandoff';
++
++const LIMITS = [
++  'Quality is HTDemucs-class, not studio grade: expect some bleed between stems and artifacts on dense mixes.',
++  '"Instruments" is everything that is not vocals, drums or bass (guitars, keys, synths together).',
++  'First run downloads a 172 MB model from Hugging Face (cached afterwards). Desktop Chrome/Edge with WebGPU is fastest; CPU mode can take several minutes per song.',
++  'One song at a time, up to 10 minutes and 100 MB. Phones and tablets are untested.',
++  'Use it on your own tracks or for practice; you are responsible for having the rights to what you separate.',
++  'Results are not saved: download the WAVs or send them to StemDeck before leaving the page.',
++];
++
++export default function SplitPage() {
++  const separator = useStemSeparator();
++  const { jobs, running, errors, cpuOnly, setCpuOnly, loadingDemo, addFiles, remove, run, cancel } =
++    separator;
++  const navigate = useNavigate();
++  const [zipping, setZipping] = useState(false);
++  const [zipError, setZipError] = useState('');
++  const zipAbort = useRef(null);
++  const job = jobs[jobs.length - 1] || null;
++  const locked = running || loadingDemo || zipping;
++
++  const choose = (files) => {
++    if (locked || !files.length) return;
++    jobs.forEach((item) => remove(item.id));
++    addFiles([files[0]]);
++  };
++
++  const lanes = useMemo(() => {
++    if (job?.status !== 'done') return null;
++    return STEMS.map((stem) => {
++      const output = job.outputs.find((item) => item.id === stem.id);
++      return (
++        output && {
++          ...stem,
++          blob: output.blob,
++          url: output.url,
++          name: output.name,
++          peaks: output.peaks,
++        }
++      );
++    })
++      .filter(Boolean)
++      .concat({
++        id: 'original',
++        label: 'Original',
++        color: '#8b939b',
++        blob: job.file,
++        peaks: job.peaks,
++        muted: true,
++      });
++  }, [job]);
++
++  const openInStemDeck = () => {
++    const title = safeTrackName(job.file.name);
++    offerStemHandoff({
++      title,
++      fullMix: job.file,
++      stems: job.outputs.map((output) => ({
++        id: output.id,
++        file: new File([output.blob], output.name, { type: 'audio/wav' }),
++      })),
++    });
++    navigate('/studio');
++  };
++
++  const downloadZip = async () => {
++    const controller = new AbortController();
++    zipAbort.current = controller;
++    setZipping(true);
++    setZipError('');
++    try {
++      const blob = await createStemArchive([job], controller.signal);
++      downloadBlob(blob, `${safeTrackName(job.file.name)}-stems.zip`);
++    } catch (error) {
++      if (!controller.signal.aborted) setZipError(error.message);
++    } finally {
++      setZipping(false);
++      zipAbort.current = null;
++    }
++  };
++
++  const analysis = job?.analysis?.status === 'ready' ? job.analysis : null;
++
++  return (
++    <AudioLabShell
++      tool="split"
++      title="Split"
++      eyebrow="Sattari Studio lab"
++      summary="Drop a song and split it into vocals, drums, bass and instruments with the HTDemucs model running in your browser. Mute the vocals, solo the bass, download WAV stems or open them straight in StemDeck."
++      description="Split a song into vocals, drums, bass and instrument stems in your browser with HTDemucs, then open them in StemDeck. Alpha."
++      limits={LIMITS}
++    >
++      <div className="alab-workspace">
++        <LabDrop
++          title={job ? 'Choose another song' : 'Add a song'}
++          hint="WAV, MP3, FLAC, M4A, OGG · one song · up to 10 min"
++          disabled={locked}
++          onFiles={choose}
++        >
++          <button
++            type="button"
++            className="alab-text-button"
++            disabled={locked}
++            onClick={() => {
++              jobs.forEach((item) => remove(item.id));
++              void separator.loadDemo();
++            }}
++          >
++            <AudioLines size={15} aria-hidden="true" /> Try the 8-second demo
++          </button>
++        </LabDrop>
++        {errors.length > 0 && (
++          <div className="alab-error" role="alert">
++            {errors.map((error) => (
++              <p key={error}>{error}</p>
++            ))}
++          </div>
++        )}
++
++        {job && (
++          <section className="alab-card" aria-label="Song">
++            <div className="alab-card-head">
++              <div>
++                <h2 title={job.file.name}>{job.file.name}</h2>
++                <p className="alab-note">
++                  {job.duration ? formatTime(job.duration) : 'Not decoded yet'}
++                  {analysis?.key && ` · ${analysis.key}`}
++                  {analysis?.bpm && ` · ${analysis.bpm} BPM`}
++                  {analysis && ' (estimates)'}
++                </p>
++              </div>
++              <div className="alab-toolbar-actions">
++                <label className="alab-inline-select">
++                  Device
++                  <select
++                    value={cpuOnly ? 'cpu' : 'auto'}
++                    disabled={locked}
++                    onChange={(event) => setCpuOnly(event.target.value === 'cpu')}
++                  >
++                    <option value="auto">Automatic (WebGPU if available)</option>
++                    <option value="cpu">CPU compatibility mode</option>
++                  </select>
++                </label>
++                {running ? (
++                  <button type="button" className="alab-text-button" onClick={cancel}>
++                    <Square size={14} aria-hidden="true" /> Stop
++                  </button>
++                ) : job.status !== 'done' ? (
++                  <button
++                    type="button"
++                    className="alab-button alab-primary"
++                    disabled={locked}
++                    onClick={() => void run(job.id)}
++                  >
++                    {job.status === 'queued' ? (
++                      <>
++                        <Wand2 size={16} aria-hidden="true" /> Split into stems
++                      </>
++                    ) : (
++                      <>
++                        <RotateCcw size={16} aria-hidden="true" /> Retry
++                      </>
++                    )}
++                  </button>
++                ) : null}
++              </div>
++            </div>
++            {job.peaks && job.status !== 'done' && (
++              <LabWaveform peaks={job.peaks} color="#8b939b" />
++            )}
++            {job.status === 'processing' && (
++              <div className="alab-progress" role="status">
++                <div>
++                  <span>
++                    <LoaderCircle className="alab-spin" size={14} aria-hidden="true" />{' '}
++                    {job.message}
++                  </span>
++                  {job.progress !== null && <span>{Math.round(job.progress * 100)}%</span>}
++                </div>
++                <progress
++                  max="1"
++                  value={job.progress === null ? undefined : job.progress}
++                  aria-label="Separation progress"
++                />
++              </div>
++            )}
++            {(job.status === 'error' || job.status === 'cancelled') && (
++              <p className="alab-bad" role="alert">
++                {job.message}
++              </p>
++            )}
++            {job.status === 'queued' && (
++              <p className="alab-note">
++                Nothing is uploaded. The first split downloads the 172 MB model once and keeps it in
++                your browser cache.
++              </p>
++            )}
++            {lanes && (
++              <>
++                <StemMixer lanes={lanes} />
++                <div className="alab-actions">
++                  <button
++                    type="button"
++                    className="alab-button alab-primary"
++                    onClick={openInStemDeck}
++                  >
++                    <SlidersHorizontal size={16} aria-hidden="true" /> Open in StemDeck
++                  </button>
++                  <button
++                    type="button"
++                    className="alab-button"
++                    disabled={zipping}
++                    onClick={() => void downloadZip()}
++                  >
++                    {zipping ? (
++                      <LoaderCircle className="alab-spin" size={16} aria-hidden="true" />
++                    ) : (
++                      <Download size={16} aria-hidden="true" />
++                    )}{' '}
++                    All stems (ZIP)
++                  </button>
++                  <a
++                    className="alab-text-button"
++                    href="/stem-separator-credits.txt"
++                    target="_blank"
++                    rel="noreferrer"
++                  >
++                    Model credits <ArrowUpRight size={13} aria-hidden="true" />
++                  </a>
++                </div>
++                {zipError && (
++                  <p className="alab-bad" role="alert">
++                    {zipError}
++                  </p>
++                )}
++                <p className="alab-note">
++                  Open in StemDeck loads the original and the four stems into the first empty deck,
++                  with the full mix turned down. WAVs are 32-bit float, 44.1 kHz.
++                </p>
++              </>
++            )}
++          </section>
++        )}
++      </div>
++    </AudioLabShell>
++  );
++}
+diff --git a/src/labs/split/StemMixer.jsx b/src/labs/split/StemMixer.jsx
+new file mode 100644
+index 0000000000000000000000000000000000000000..8c2f9df34ed7b8c23d9cb01226f026e2dd017558
+--- /dev/null
++++ b/src/labs/split/StemMixer.jsx
+@@ -0,0 +1,247 @@
++import { useCallback, useEffect, useRef, useState } from 'react';
++import { Download, Headphones, LoaderCircle, Pause, Play, VolumeX } from 'lucide-react';
++import { formatTime, LabWaveform } from '../audio/AudioLabParts';
++
++/**
++ * Sample-locked preview of separated stems: every lane is an AudioBuffer
++ * started on the same AudioContext clock, so muting or soloing never drifts.
++ * lanes: [{ id, label, color, blob, url?, name?, peaks }]
++ */
++export default function StemMixer({ lanes }) {
++  const context = useRef(null);
++  const buffers = useRef(new Map());
++  const gains = useRef(new Map());
++  const sources = useRef([]);
++  const clock = useRef({ startedAt: 0, offset: 0 });
++  const frame = useRef(0);
++  const [state, setState] = useState({ status: 'loading', message: 'Preparing preview' });
++  const [playing, setPlaying] = useState(false);
++  const [position, setPosition] = useState(0);
++  const [duration, setDuration] = useState(0);
++  const [mix, setMix] = useState(() =>
++    Object.fromEntries(
++      lanes.map((lane) => [lane.id, { muted: Boolean(lane.muted), solo: false, level: 1 }])
++    )
++  );
++
++  useEffect(() => {
++    let cancelled = false;
++    const Context = window.AudioContext || window.webkitAudioContext;
++    if (!Context) {
++      setState({ status: 'error', message: 'Web Audio is unavailable; use the downloads.' });
++      return undefined;
++    }
++    const audio = new Context();
++    const decoded = buffers.current;
++    const nodes = gains.current;
++    context.current = audio;
++    (async () => {
++      try {
++        let longest = 0;
++        for (const lane of lanes) {
++          const buffer = await audio.decodeAudioData(await lane.blob.arrayBuffer());
++          if (cancelled) return;
++          buffers.current.set(lane.id, buffer);
++          const gain = audio.createGain();
++          gain.connect(audio.destination);
++          gains.current.set(lane.id, gain);
++          longest = Math.max(longest, buffer.duration);
++        }
++        setDuration(longest);
++        setState({ status: 'ready', message: '' });
++      } catch {
++        if (!cancelled)
++          setState({
++            status: 'error',
++            message: 'The preview could not be prepared (memory?). The WAV downloads still work.',
++          });
++      }
++    })();
++    return () => {
++      cancelled = true;
++      cancelAnimationFrame(frame.current);
++      sources.current.forEach((source) => {
++        try {
++          source.stop();
++        } catch {
++          /* already stopped */
++        }
++      });
++      void audio.close().catch(() => {});
++      decoded.clear();
++      nodes.clear();
++    };
++  }, [lanes]);
++
++  // Apply mute/solo/level to the gain nodes.
++  useEffect(() => {
++    const audio = context.current;
++    if (!audio) return;
++    const anySolo = Object.values(mix).some((lane) => lane.solo);
++    for (const [id, gain] of gains.current) {
++      const lane = mix[id];
++      const audible = lane && !lane.muted && (!anySolo || lane.solo);
++      gain.gain.setTargetAtTime(audible ? lane.level : 0, audio.currentTime, 0.015);
++    }
++  }, [mix, state.status]);
++
++  const stopSources = () => {
++    sources.current.forEach((source) => {
++      source.onended = null;
++      try {
++        source.stop();
++      } catch {
++        /* already stopped */
++      }
++    });
++    sources.current = [];
++    cancelAnimationFrame(frame.current);
++  };
++
++  const now = useCallback(() => {
++    const audio = context.current;
++    if (!audio || !clock.current.startedAt) return clock.current.offset;
++    return clock.current.offset + audio.currentTime - clock.current.startedAt;
++  }, []);
++
++  const start = async (offset) => {
++    const audio = context.current;
++    if (!audio || state.status !== 'ready') return;
++    await audio.resume();
++    stopSources();
++    const when = audio.currentTime + 0.05;
++    for (const [id, buffer] of buffers.current) {
++      const source = audio.createBufferSource();
++      source.buffer = buffer;
++      source.connect(gains.current.get(id));
++      source.start(when, Math.min(offset, buffer.duration));
++      sources.current.push(source);
++    }
++    clock.current = { startedAt: when, offset };
++    setPlaying(true);
++    const tick = () => {
++      const at = now();
++      if (at >= duration) {
++        stopSources();
++        clock.current = { startedAt: 0, offset: 0 };
++        setPosition(0);
++        setPlaying(false);
++        return;
++      }
++      setPosition(Math.max(0, at));
++      frame.current = requestAnimationFrame(tick);
++    };
++    frame.current = requestAnimationFrame(tick);
++  };
++
++  const pause = () => {
++    const at = now();
++    stopSources();
++    clock.current = { startedAt: 0, offset: at };
++    setPosition(at);
++    setPlaying(false);
++  };
++
++  const seek = (seconds) => {
++    if (playing) void start(seconds);
++    else {
++      clock.current = { startedAt: 0, offset: seconds };
++      setPosition(seconds);
++    }
++  };
++
++  const change = (id, patch) =>
++    setMix((current) => ({ ...current, [id]: { ...current[id], ...patch } }));
++  const progress = duration ? position / duration : 0;
++
++  return (
++    <section className="alab-mixer" aria-label="Stem preview">
++      <div className="alab-transport">
++        <button
++          type="button"
++          className="alab-play"
++          disabled={state.status !== 'ready'}
++          onClick={() => (playing ? pause() : void start(clock.current.offset))}
++          aria-label={playing ? 'Pause stems' : 'Play stems'}
++        >
++          {state.status === 'loading' ? (
++            <LoaderCircle className="alab-spin" size={20} aria-hidden="true" />
++          ) : playing ? (
++            <Pause size={20} aria-hidden="true" />
++          ) : (
++            <Play size={20} aria-hidden="true" />
++          )}
++        </button>
++        <input
++          type="range"
++          min="0"
++          max={duration || 1}
++          step="0.01"
++          value={position}
++          disabled={state.status !== 'ready'}
++          aria-label="Playback position"
++          onChange={(event) => seek(Number(event.target.value))}
++        />
++        <span className="alab-time">
++          {formatTime(position)} / {formatTime(duration)}
++        </span>
++      </div>
++      {state.message && <p className="alab-note">{state.message}</p>}
++      <ul className="alab-lanes">
++        {lanes.map((lane) => {
++          const settings = mix[lane.id];
++          return (
++            <li key={lane.id} className="alab-lane" style={{ '--lane-color': lane.color }}>
++              <span className="alab-lane-name">{lane.label}</span>
++              <div className="alab-lane-buttons">
++                <button
++                  type="button"
++                  aria-pressed={settings.muted}
++                  className={settings.muted ? 'is-on' : undefined}
++                  onClick={() => change(lane.id, { muted: !settings.muted })}
++                  aria-label={`Mute ${lane.label}`}
++                  title="Mute"
++                >
++                  <VolumeX size={15} aria-hidden="true" />
++                </button>
++                <button
++                  type="button"
++                  aria-pressed={settings.solo}
++                  className={settings.solo ? 'is-on' : undefined}
++                  onClick={() => change(lane.id, { solo: !settings.solo })}
++                  aria-label={`Solo ${lane.label}`}
++                  title="Solo"
++                >
++                  <Headphones size={15} aria-hidden="true" />
++                </button>
++              </div>
++              <LabWaveform peaks={lane.peaks} color={lane.color} progress={progress} />
++              <input
++                type="range"
++                min="0"
++                max="1.5"
++                step="0.01"
++                value={settings.level}
++                aria-label={`${lane.label} level`}
++                onChange={(event) => change(lane.id, { level: Number(event.target.value) })}
++              />
++              {lane.url ? (
++                <a
++                  className="alab-icon-link"
++                  href={lane.url}
++                  download={lane.name}
++                  aria-label={`Download ${lane.label} WAV`}
++                  title={`Download ${lane.label} WAV`}
++                >
++                  <Download size={16} aria-hidden="true" />
++                </a>
++              ) : (
++                <span />
++              )}
++            </li>
++          );
++        })}
++      </ul>
++    </section>
++  );
++}
+diff --git a/src/labs/vox/VoxPage.jsx b/src/labs/vox/VoxPage.jsx
+new file mode 100644
+index 0000000000000000000000000000000000000000..772236912adf9b04fcacadc4e46a4cf05344f4e1
+--- /dev/null
++++ b/src/labs/vox/VoxPage.jsx
+@@ -0,0 +1,500 @@
++import { useCallback, useEffect, useRef, useState } from 'react';
++import { Download, LoaderCircle, Mic, Play, Square } from 'lucide-react';
++import AudioLabShell from '../audio/AudioLabShell';
++import { formatTime, LabDrop, LabWaveform } from '../audio/AudioLabParts';
++import {
++  baseName,
++  decodeMono,
++  downloadBlob,
++  isAudioFile,
++  LAB_RATE,
++  peaksOf,
++  wavBlob,
++} from '../audio/audioLabFiles';
++import useVoxRecorder from './useVoxRecorder';
++import { hzToMidi, keyLabel, NOTE_NAMES, scalePitchClasses, VOX_MAX_SECONDS } from './voxDsp';
++
++const LIMITS = [
++  'One clean, solo (monophonic) voice. Backing tracks, reverb-heavy or polyphonic audio confuse the pitch tracker.',
++  'Pitch detection is YIN-based (no neural model yet) and the shifter is a simple PSOLA: large corrections and harmonies can sound phasey or robotic.',
++  'Harmony is one diatonic voice (3rd or 5th above), generated from the same take, so it moves exactly with the lead.',
++  'Up to 3 minutes per take. Processing is offline (not live while you sing); changes re-render in about a second.',
++  'Key detection reads the notes you sang and can pick the relative major/minor; check it and override if needed.',
++];
++
++const STRENGTH_DEFAULT = 0.8;
++
++function createWorker() {
++  return new Worker(new URL('./vox.worker.js', import.meta.url), { type: 'module' });
++}
++
++function PitchGraph({ analysis, curve, keyChoice, duration }) {
++  const ref = useRef(null);
++  useEffect(() => {
++    const canvas = ref.current;
++    if (!canvas || !analysis) return undefined;
++    const draw = () => {
++      const rect = canvas.getBoundingClientRect();
++      const scale = window.devicePixelRatio || 1;
++      const width = rect.width,
++        height = 180;
++      canvas.width = Math.max(1, width * scale);
++      canvas.height = height * scale;
++      const context = canvas.getContext('2d');
++      if (!context) return;
++      context.scale(scale, scale);
++      const { f0, hopSeconds, offsetSeconds } = analysis;
++      const midis = [];
++      for (const hz of f0) if (hz) midis.push(hzToMidi(hz));
++      if (!midis.length) return;
++      midis.sort((a, b) => a - b);
++      const low = Math.floor(midis[Math.floor(midis.length * 0.02)]) - 2;
++      const high = Math.ceil(midis[Math.floor(midis.length * 0.98)]) + 2;
++      const y = (midi) => height - ((midi - low) / Math.max(1, high - low)) * height;
++      const x = (seconds) => (seconds / Math.max(0.1, duration)) * width;
++      const classes = scalePitchClasses(keyChoice.root, keyChoice.mode);
++      const styles = getComputedStyle(canvas);
++      context.font = '10px Inter, sans-serif';
++      for (let note = low; note <= high; note++) {
++        if (!classes.includes(((note % 12) + 12) % 12)) continue;
++        context.fillStyle = styles.getPropertyValue('--alab-line') || '#34383b';
++        context.fillRect(0, y(note), width, 1);
++        context.fillStyle = styles.getPropertyValue('--alab-muted') || '#a4acae';
++        context.fillText(NOTE_NAMES[((note % 12) + 12) % 12], 2, y(note) - 2);
++      }
++      const plot = (color, shiftAt) => {
++        context.fillStyle = color;
++        for (let i = 0; i < f0.length; i++) {
++          if (!f0[i]) continue;
++          const midi = hzToMidi(f0[i]) + shiftAt(i);
++          context.fillRect(x(offsetSeconds + i * hopSeconds), y(midi) - 1, 2, 2);
++        }
++      };
++      plot('rgba(160, 168, 170, 0.55)', () => 0);
++      if (curve) plot(styles.getPropertyValue('--alab-accent') || '#b9e7c8', (i) => curve[i] || 0);
++    };
++    draw();
++    if (typeof ResizeObserver === 'undefined') return undefined;
++    const observer = new ResizeObserver(draw);
++    observer.observe(canvas);
++    return () => observer.disconnect();
++  }, [analysis, curve, keyChoice, duration]);
++  return (
++    <canvas
++      ref={ref}
++      className="alab-pitch-graph"
++      role="img"
++      aria-label="Detected pitch in grey, corrected pitch in colour, scale notes as lines"
++    />
++  );
++}
++
++export default function VoxPage() {
++  const [take, setTake] = useState(null);
++  const [analysis, setAnalysis] = useState(null);
++  const [progress, setProgress] = useState(null);
++  const [error, setError] = useState('');
++  const [keyChoice, setKeyChoice] = useState({ root: 0, mode: 'major' });
++  const [strength, setStrength] = useState(STRENGTH_DEFAULT);
++  const [speedMs, setSpeedMs] = useState(40);
++  const [harmony, setHarmony] = useState('none');
++  const [harmonyGain, setHarmonyGain] = useState(0.6);
++  const [render, setRender] = useState(null);
++  const [rendering, setRendering] = useState(false);
++  const [playing, setPlaying] = useState(null);
++  const worker = useRef(null);
++  const currentId = useRef(null);
++  const serial = useRef(0);
++  const audio = useRef(null);
++  const source = useRef(null);
++
++  useEffect(() => {
++    const instance = createWorker();
++    worker.current = instance;
++    instance.onmessage = ({ data }) => {
++      if (data.id !== currentId.current) return;
++      if (data.type === 'progress') setProgress(data.progress);
++      if (data.type === 'loaded') {
++        setProgress(null);
++        setAnalysis(data);
++        if (data.key.valid) setKeyChoice({ root: data.key.root, mode: data.key.mode });
++      }
++      if (data.type === 'rendered' && data.serial === serial.current) {
++        setRender(data);
++        setRendering(false);
++      }
++      if (data.type === 'error') {
++        setProgress(null);
++        setRendering(false);
++        setError(data.message);
++      }
++    };
++    instance.onerror = (event) => {
++      event.preventDefault?.();
++      setProgress(null);
++      setRendering(false);
++      setError('The Vox engine stopped. Reload the page and try a shorter take.');
++    };
++    return () => {
++      instance.terminate();
++      try {
++        source.current?.stop();
++      } catch {
++        /* already stopped */
++      }
++      void audio.current?.close().catch(() => {});
++    };
++  }, []);
++
++  const stopPlayback = useCallback(() => {
++    if (source.current) {
++      source.current.onended = null;
++      try {
++        source.current.stop();
++      } catch {
++        /* already stopped */
++      }
++      source.current = null;
++    }
++    setPlaying(null);
++  }, []);
++
++  const loadTake = useCallback(
++    async (blob, name) => {
++      stopPlayback();
++      setError('');
++      setAnalysis(null);
++      setRender(null);
++      try {
++        const decoded = await decodeMono(blob, LAB_RATE);
++        if (decoded.duration > VOX_MAX_SECONDS + 1)
++          throw new Error('Takes can be up to 3 minutes. Trim the file and try again.');
++        if (decoded.duration < 1) throw new Error('The take is shorter than a second.');
++        const id = crypto.randomUUID();
++        currentId.current = id;
++        setTake({ id, name, ...decoded, peaks: peaksOf(decoded.samples) });
++        setProgress(0);
++        worker.current.postMessage({
++          type: 'load',
++          id,
++          samples: decoded.samples.slice(),
++          rate: decoded.rate,
++        });
++      } catch (problem) {
++        setTake(null);
++        setError(problem.message);
++      }
++    },
++    [stopPlayback]
++  );
++
++  const recorder = useVoxRecorder((blob) => void loadTake(blob, 'vox-recording'));
++
++  // Re-render whenever a setting changes (debounced; stale renders are dropped).
++  useEffect(() => {
++    if (!take || !analysis || analysis.id !== take.id) return undefined;
++    const timer = setTimeout(() => {
++      serial.current += 1;
++      setRendering(true);
++      worker.current.postMessage({
++        type: 'render',
++        id: take.id,
++        serial: serial.current,
++        options: {
++          root: keyChoice.root,
++          mode: keyChoice.mode,
++          strength,
++          speedMs,
++          harmony: harmony === 'none' ? null : harmony,
++          harmonyGain,
++        },
++      });
++    }, 150);
++    return () => clearTimeout(timer);
++  }, [take, analysis, keyChoice, strength, speedMs, harmony, harmonyGain]);
++
++  const play = async (which) => {
++    stopPlayback();
++    const samples = which === 'original' ? take?.samples : render?.mix;
++    if (!samples) return;
++    const Context = window.AudioContext || window.webkitAudioContext;
++    audio.current ||= new Context();
++    await audio.current.resume();
++    const buffer = audio.current.createBuffer(1, samples.length, LAB_RATE);
++    buffer.copyToChannel(samples, 0);
++    const node = audio.current.createBufferSource();
++    node.buffer = buffer;
++    node.connect(audio.current.destination);
++    node.onended = () => {
++      if (source.current === node) {
++        source.current = null;
++        setPlaying(null);
++      }
++    };
++    node.start();
++    source.current = node;
++    setPlaying(which);
++  };
++
++  const exportWav = (samples, suffix) =>
++    downloadBlob(wavBlob([samples], LAB_RATE), `${baseName(take.name)}-${suffix}.wav`);
++
++  const detected = analysis?.key;
++  const busy = progress !== null || recorder.status !== 'idle';
++
++  return (
++    <AudioLabShell
++      tool="vox"
++      title="Vox"
++      eyebrow="Sattari Studio lab"
++      summary="Record or drop a vocal, let Vox find the key, then pull every note to the scale with as much or as little strength as you like. Add a third or fifth harmony and export WAV."
++      description="Record or drop a vocal, detect its key, pitch-correct it to the scale with a strength control, add a harmony and export WAV in your browser. Alpha."
++      limits={LIMITS}
++    >
++      <div className="alab-workspace">
++        <div className="alab-input-row">
++          <section className="alab-card alab-record" aria-label="Record">
++            <h2>Record</h2>
++            <p className="alab-note">Headphones on. Browser voice processing is switched off.</p>
++            {recorder.status === 'recording' ? (
++              <button type="button" className="alab-button alab-danger" onClick={recorder.stop}>
++                <Square size={16} aria-hidden="true" /> Stop · {formatTime(recorder.elapsed)}
++              </button>
++            ) : (
++              <button
++                type="button"
++                className="alab-button alab-primary"
++                disabled={busy}
++                onClick={() => void recorder.start()}
++              >
++                <Mic size={16} aria-hidden="true" />{' '}
++                {recorder.status === 'requesting' ? 'Waiting for microphone…' : 'Record a take'}
++              </button>
++            )}
++            <meter
++              className="alab-meter"
++              min="0"
++              max="1"
++              low="0.7"
++              high="0.95"
++              optimum="0.5"
++              value={recorder.level}
++              aria-label="Input level"
++            />
++            {recorder.error && (
++              <p className="alab-bad" role="alert">
++                {recorder.error}
++              </p>
++            )}
++          </section>
++          <LabDrop
++            title="Or drop a vocal"
++            hint="Dry solo vocal · WAV, MP3, M4A · up to 3 min"
++            disabled={busy}
++            onFiles={(files) => {
++              const file = files.find(isAudioFile);
++              if (file) void loadTake(file, file.name);
++              else if (files.length) setError('Choose an audio file.');
++            }}
++          />
++        </div>
++        {error && (
++          <div className="alab-error" role="alert">
++            <p>{error}</p>
++          </div>
++        )}
++
++        {take && (
++          <section className="alab-card" aria-label="Take">
++            <div className="alab-card-head">
++              <div>
++                <h2 title={take.name}>{take.name}</h2>
++                <p className="alab-note">
++                  {formatTime(take.duration)} · mono · 44.1 kHz
++                  {analysis && ` · ${Math.round(analysis.voiced * 100)}% voiced`}
++                </p>
++              </div>
++            </div>
++            <LabWaveform peaks={take.peaks} color="#e998bc" />
++            {progress !== null && (
++              <div className="alab-progress" role="status">
++                <div>
++                  <span>
++                    <LoaderCircle className="alab-spin" size={14} aria-hidden="true" /> Tracking
++                    pitch
++                  </span>
++                  <span>{Math.round(progress * 100)}%</span>
++                </div>
++                <progress max="1" value={progress} aria-label="Pitch tracking progress" />
++              </div>
++            )}
++            {analysis && (
++              <>
++                <div className="alab-controls">
++                  <fieldset>
++                    <legend>Key</legend>
++                    <p className="alab-note" aria-live="polite">
++                      {detected?.valid
++                        ? `Detected ${keyLabel(detected)}${detected.margin < 0.1 ? ' (tentative)' : ''}${detected.alternative ? ` · alt. ${detected.alternative}` : ''}`
++                        : 'No clear key found. Pick one.'}
++                    </p>
++                    <div className="alab-pair">
++                      <select
++                        aria-label="Key root"
++                        value={keyChoice.root}
++                        onChange={(event) =>
++                          setKeyChoice((value) => ({ ...value, root: Number(event.target.value) }))
++                        }
++                      >
++                        {NOTE_NAMES.map((name, index) => (
++                          <option key={name} value={index}>
++                            {name}
++                          </option>
++                        ))}
++                      </select>
++                      <select
++                        aria-label="Scale"
++                        value={keyChoice.mode}
++                        onChange={(event) =>
++                          setKeyChoice((value) => ({ ...value, mode: event.target.value }))
++                        }
++                      >
++                        <option value="major">Major</option>
++                        <option value="minor">Minor</option>
++                        <option value="chromatic">Chromatic</option>
++                      </select>
++                    </div>
++                  </fieldset>
++                  <label className="alab-slider">
++                    <span>
++                      Strength <output>{Math.round(strength * 100)}%</output>
++                    </span>
++                    <input
++                      type="range"
++                      min="0"
++                      max="1"
++                      step="0.01"
++                      value={strength}
++                      onChange={(event) => setStrength(Number(event.target.value))}
++                    />
++                  </label>
++                  <label className="alab-slider">
++                    <span>
++                      Glide <output>{speedMs === 0 ? 'Instant' : `${speedMs} ms`}</output>
++                    </span>
++                    <input
++                      type="range"
++                      min="0"
++                      max="200"
++                      step="5"
++                      value={speedMs}
++                      onChange={(event) => setSpeedMs(Number(event.target.value))}
++                    />
++                  </label>
++                  <fieldset>
++                    <legend>Harmony</legend>
++                    <div className="alab-segmented">
++                      {[
++                        ['none', 'Off'],
++                        ['third', '3rd above'],
++                        ['fifth', '5th above'],
++                      ].map(([value, label]) => (
++                        <label key={value} className={harmony === value ? 'is-on' : undefined}>
++                          <input
++                            type="radio"
++                            name="vox-harmony"
++                            value={value}
++                            checked={harmony === value}
++                            onChange={() => setHarmony(value)}
++                          />
++                          {label}
++                        </label>
++                      ))}
++                    </div>
++                    {harmony !== 'none' && (
++                      <label className="alab-slider">
++                        <span>
++                          Harmony level <output>{Math.round(harmonyGain * 100)}%</output>
++                        </span>
++                        <input
++                          type="range"
++                          min="0"
++                          max="1"
++                          step="0.01"
++                          value={harmonyGain}
++                          onChange={(event) => setHarmonyGain(Number(event.target.value))}
++                        />
++                      </label>
++                    )}
++                  </fieldset>
++                </div>
++                <PitchGraph
++                  analysis={analysis}
++                  curve={render?.curve}
++                  keyChoice={keyChoice}
++                  duration={take.duration}
++                />
++                <div className="alab-actions">
++                  {playing ? (
++                    <button type="button" className="alab-button" onClick={stopPlayback}>
++                      <Square size={16} aria-hidden="true" /> Stop {playing}
++                    </button>
++                  ) : (
++                    <>
++                      <button
++                        type="button"
++                        className="alab-button alab-primary"
++                        disabled={!render}
++                        onClick={() => void play('tuned')}
++                      >
++                        <Play size={16} aria-hidden="true" /> Play tuned
++                      </button>
++                      <button
++                        type="button"
++                        className="alab-button"
++                        onClick={() => void play('original')}
++                      >
++                        <Play size={16} aria-hidden="true" /> Play original
++                      </button>
++                    </>
++                  )}
++                  {rendering && (
++                    <span className="alab-status" role="status">
++                      <LoaderCircle className="alab-spin" size={14} aria-hidden="true" /> Rendering
++                    </span>
++                  )}
++                  <button
++                    type="button"
++                    className="alab-button"
++                    disabled={!render}
++                    onClick={() => exportWav(render.mix, 'vox-tuned')}
++                  >
++                    <Download size={16} aria-hidden="true" /> Export WAV
++                  </button>
++                  {render?.harmony && (
++                    <>
++                      <button
++                        type="button"
++                        className="alab-text-button"
++                        onClick={() => exportWav(render.lead, 'vox-lead')}
++                      >
++                        Lead only
++                      </button>
++                      <button
++                        type="button"
++                        className="alab-text-button"
++                        onClick={() => exportWav(render.harmony, 'vox-harmony')}
++                      >
++                        Harmony only
++                      </button>
++                    </>
++                  )}
++                </div>
++              </>
++            )}
++          </section>
++        )}
++      </div>
++    </AudioLabShell>
++  );
++}
+diff --git a/src/labs/vox/useVoxRecorder.js b/src/labs/vox/useVoxRecorder.js
+new file mode 100644
+index 0000000000000000000000000000000000000000..7913e18d4d7bc4094707f2ae9d18b53d62c3ebb3
+--- /dev/null
++++ b/src/labs/vox/useVoxRecorder.js
+@@ -0,0 +1,108 @@
++import { useCallback, useEffect, useRef, useState } from 'react';
++import { VOX_MAX_SECONDS } from './voxDsp';
++
++const MIME_TYPES = ['audio/webm;codecs=opus', 'audio/webm', 'audio/mp4', 'audio/ogg;codecs=opus'];
++
++/** Microphone take via MediaRecorder, with browser voice processing turned off. */
++export default function useVoxRecorder(onTake) {
++  const [status, setStatus] = useState('idle');
++  const [elapsed, setElapsed] = useState(0);
++  const [level, setLevel] = useState(0);
++  const [error, setError] = useState('');
++  const runtime = useRef(null);
++  const latestOnTake = useRef(onTake);
++  latestOnTake.current = onTake;
++
++  const release = useCallback(() => {
++    const current = runtime.current;
++    runtime.current = null;
++    if (!current) return;
++    clearInterval(current.timer);
++    cancelAnimationFrame(current.frame);
++    current.stream.getTracks().forEach((track) => track.stop());
++    void current.context?.close().catch(() => {});
++  }, []);
++
++  useEffect(
++    () => () => {
++      if (runtime.current?.recorder.state === 'recording') {
++        runtime.current.recorder.ondataavailable = null;
++        runtime.current.recorder.onstop = null;
++        runtime.current.recorder.stop();
++      }
++      release();
++    },
++    [release]
++  );
++
++  const stop = useCallback(() => {
++    const recorder = runtime.current?.recorder;
++    if (recorder?.state === 'recording') recorder.stop();
++  }, []);
++
++  const start = useCallback(async () => {
++    if (runtime.current) return;
++    setError('');
++    if (!navigator.mediaDevices?.getUserMedia || typeof MediaRecorder === 'undefined') {
++      setError('Recording is not supported in this browser. Drop a vocal file instead.');
++      return;
++    }
++    setStatus('requesting');
++    let stream;
++    try {
++      stream = await navigator.mediaDevices.getUserMedia({
++        audio: { echoCancellation: false, noiseSuppression: false, autoGainControl: false },
++      });
++    } catch {
++      setStatus('idle');
++      setError('Microphone access was blocked. Allow it in the address bar, or drop a file.');
++      return;
++    }
++    const mimeType = MIME_TYPES.find((type) => MediaRecorder.isTypeSupported?.(type));
++    const recorder = new MediaRecorder(stream, mimeType ? { mimeType } : undefined);
++    const chunks = [];
++    const started = performance.now();
++    const current = { stream, recorder, timer: 0, frame: 0, context: null };
++    runtime.current = current;
++    try {
++      const Context = window.AudioContext || window.webkitAudioContext;
++      const context = new Context();
++      const analyser = context.createAnalyser();
++      analyser.fftSize = 1024;
++      context.createMediaStreamSource(stream).connect(analyser);
++      const data = new Float32Array(analyser.fftSize);
++      const meter = () => {
++        analyser.getFloatTimeDomainData(data);
++        let peak = 0;
++        for (const value of data) peak = Math.max(peak, Math.abs(value));
++        setLevel(peak);
++        current.frame = requestAnimationFrame(meter);
++      };
++      current.context = context;
++      meter();
++    } catch {
++      /* The level meter is optional. */
++    }
++    recorder.ondataavailable = (event) => {
++      if (event.data.size) chunks.push(event.data);
++    };
++    recorder.onstop = () => {
++      release();
++      setStatus('idle');
++      setLevel(0);
++      const blob = new Blob(chunks, { type: recorder.mimeType || mimeType || 'audio/webm' });
++      if (blob.size) latestOnTake.current(blob);
++      else setError('The recording was empty. Check your input device and try again.');
++    };
++    current.timer = setInterval(() => {
++      const seconds = (performance.now() - started) / 1000;
++      setElapsed(seconds);
++      if (seconds >= VOX_MAX_SECONDS) recorder.stop();
++    }, 200);
++    setElapsed(0);
++    recorder.start(250);
++    setStatus('recording');
++  }, [release]);
++
++  return { status, elapsed, level, error, start, stop };
++}
+diff --git a/src/labs/vox/vox.worker.js b/src/labs/vox/vox.worker.js
+new file mode 100644
+index 0000000000000000000000000000000000000000..103d1e33a8f423002baa5e5ca06e6a062dee1d04
+--- /dev/null
++++ b/src/labs/vox/vox.worker.js
+@@ -0,0 +1,36 @@
++import { analysisMarks, detectVocalKey, renderVox, trackPitch, voicedRatio } from './voxDsp';
++
++// Holds one vocal: tracking and pitch marks are computed once per take, each
++// render only rebuilds the correction curve and the PSOLA output.
++let take = null;
++
++self.onmessage = ({ data }) => {
++  try {
++    if (data.type === 'load') {
++      const { samples, rate } = data;
++      const track = trackPitch(samples, rate, (progress) =>
++        self.postMessage({ type: 'progress', id: data.id, progress })
++      );
++      take = { id: data.id, samples, rate, track, marks: analysisMarks(samples, rate, track) };
++      self.postMessage({
++        type: 'loaded',
++        id: data.id,
++        key: detectVocalKey(track),
++        voiced: voicedRatio(track),
++        f0: track.f0.slice(),
++        hopSeconds: track.hopSeconds,
++        offsetSeconds: track.offsetSeconds,
++      });
++      return;
++    }
++    if (data.type === 'render') {
++      if (!take || take.id !== data.id) return;
++      const result = renderVox(take.samples, take.rate, take.track, data.options, take.marks);
++      const transfer = [result.lead.buffer, result.mix.buffer, result.curve.buffer];
++      if (result.harmony) transfer.push(result.harmony.buffer);
++      self.postMessage({ type: 'rendered', id: data.id, serial: data.serial, ...result }, transfer);
++    }
++  } catch (error) {
++    self.postMessage({ type: 'error', id: data.id, message: error?.message || 'Vox failed.' });
++  }
++};
+diff --git a/src/labs/vox/voxDsp.js b/src/labs/vox/voxDsp.js
+new file mode 100644
+index 0000000000000000000000000000000000000000..988ead4915271312f4ca92ba2b68a14491e9a788
+--- /dev/null
++++ b/src/labs/vox/voxDsp.js
+@@ -0,0 +1,310 @@
++// Vox alpha DSP: offline pitch tracking, scale snapping and TD-PSOLA pitch
++// shifting for a single monophonic vocal. Pure functions, no Web Audio, so the
++// same code runs in the worker and in unit tests. Written for this repo; no
++// third-party DSP code (Rubber Band and similar GPL libraries are not used).
++import { detectFundamental, reduceSampleRate } from '../../loop/pitch';
++import { decideSongKey } from '../../loop/autoKey';
++
++export const NOTE_NAMES = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
++export const SCALES = {
++  major: [0, 2, 4, 5, 7, 9, 11],
++  minor: [0, 2, 3, 5, 7, 8, 10],
++  chromatic: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
++};
++export const HARMONY_STEPS = { third: 2, fifth: 4 };
++export const VOX_MAX_SECONDS = 180;
++
++const PITCH_RATE = 11025;
++const FRAME = 1024;
++const HOP = 128;
++const MIN_HZ = 75;
++const MAX_HZ = 1000;
++
++const wrap12 = (value) => ((value % 12) + 12) % 12;
++export const hzToMidi = (hz) => 69 + 12 * Math.log2(hz / 440);
++export const midiToName = (midi) =>
++  `${NOTE_NAMES[wrap12(Math.round(midi))]}${Math.floor(Math.round(midi) / 12) - 1}`;
++
++export function parseKey(text) {
++  const match = /^([A-G](?:#|b)?)\s*(major|minor|chromatic)?$/i.exec(String(text || '').trim());
++  if (!match) return null;
++  const flats = { Db: 'C#', Eb: 'D#', Gb: 'F#', Ab: 'G#', Bb: 'A#' };
++  const name = flats[match[1]] || match[1].toUpperCase();
++  const root = NOTE_NAMES.indexOf(name);
++  if (root < 0) return null;
++  return { root, mode: (match[2] || 'major').toLowerCase() };
++}
++
++export function keyLabel({ root, mode }) {
++  return mode === 'chromatic' ? 'Chromatic' : `${NOTE_NAMES[root]} ${mode}`;
++}
++
++/** Pitch classes of the scale, as offsets from C. */
++export function scalePitchClasses(root, mode) {
++  return (SCALES[mode] || SCALES.major).map((step) => wrap12(root + step));
++}
++
++/** The nearest MIDI note (integer) whose pitch class is in the scale. */
++export function snapToScale(midi, root, mode) {
++  const classes = scalePitchClasses(root, mode);
++  let best = Math.round(midi);
++  let distance = Infinity;
++  for (let candidate = Math.floor(midi) - 2; candidate <= Math.ceil(midi) + 2; candidate++) {
++    if (!classes.includes(wrap12(candidate))) continue;
++    const d = Math.abs(candidate - midi);
++    if (d < distance - 1e-9) {
++      distance = d;
++      best = candidate;
++    }
++  }
++  return best;
++}
++
++/** The scale note `steps` degrees above an in-scale MIDI note (3rd = 2, 5th = 4). */
++export function diatonicAbove(midi, root, mode, steps) {
++  if (mode === 'chromatic') return midi + (steps === 2 ? 4 : steps === 4 ? 7 : steps);
++  const classes = scalePitchClasses(root, mode);
++  let note = midi;
++  for (let moved = 0; moved < steps; ) {
++    note += 1;
++    if (classes.includes(wrap12(note))) moved++;
++  }
++  return note;
++}
++
++function median3(a, b, c) {
++  return Math.max(Math.min(a, b), Math.min(Math.max(a, b), c));
++}
++
++/**
++ * YIN pitch track (the same detector Learn uses) at about 11 kHz, 11.6 ms hop.
++ * f0 is 0 for unvoiced frames. Very short voiced islands are dropped, and a
++ * 3-frame median removes single-frame octave glitches.
++ */
++export function trackPitch(samples, rate, onProgress = () => {}) {
++  const reduced = reduceSampleRate(samples, rate, PITCH_RATE);
++  const data = reduced.samples;
++  const pitchRate = reduced.rate;
++  let peak = 0;
++  for (let i = 0; i < data.length; i++) peak = Math.max(peak, Math.abs(data[i]));
++  const floor = Math.max(0.0015, peak * 0.03);
++  const frames = Math.max(0, Math.floor((data.length - FRAME) / HOP) + 1);
++  const raw = new Float32Array(frames);
++  for (let frame = 0; frame < frames; frame++) {
++    const at = frame * HOP;
++    const result = detectFundamental(
++      data.subarray(at, at + FRAME),
++      pitchRate,
++      MIN_HZ,
++      MAX_HZ,
++      floor
++    );
++    raw[frame] = result ? result.frequency : 0;
++    if (frame % 200 === 0) onProgress(frame / Math.max(1, frames));
++  }
++  const f0 = new Float32Array(frames);
++  for (let i = 0; i < frames; i++) {
++    if (!raw[i]) continue;
++    const a = raw[i - 1] || raw[i],
++      c = raw[i + 1] || raw[i];
++    f0[i] = median3(a, raw[i], c);
++  }
++  // Drop voiced islands shorter than 4 frames (~45 ms): breaths and consonants.
++  for (let i = 0; i < frames; ) {
++    if (!f0[i]) {
++      i++;
++      continue;
++    }
++    let end = i;
++    while (end < frames && f0[end]) end++;
++    if (end - i < 4) f0.fill(0, i, end);
++    i = end;
++  }
++  onProgress(1);
++  // Frame centre in seconds: (frame * HOP + FRAME / 2) / pitchRate.
++  return { f0, hopSeconds: HOP / pitchRate, offsetSeconds: FRAME / 2 / pitchRate };
++}
++
++export function pitchAt(track, seconds) {
++  const index = Math.round((seconds - track.offsetSeconds) / track.hopSeconds);
++  if (index < 0 || index >= track.f0.length) return 0;
++  return track.f0[index];
++}
++
++export function voicedRatio(track) {
++  if (!track.f0.length) return 0;
++  let voiced = 0;
++  for (const value of track.f0) if (value > 0) voiced++;
++  return voiced / track.f0.length;
++}
++
++/** Key from the sung notes: pitch-class durations scored with Sattari AutoKey's profiles. */
++export function detectVocalKey(track) {
++  const histogram = Array(12).fill(0);
++  let voiced = 0;
++  for (const hz of track.f0) {
++    if (!hz) continue;
++    voiced++;
++    histogram[wrap12(Math.round(hzToMidi(hz)))] += 1;
++  }
++  const distinct = histogram.filter((value) => value > voiced * 0.02).length;
++  if (voiced * track.hopSeconds < 2 || distinct < 3)
++    return { valid: false, reason: voiced ? 'few-notes' : 'no-voice' };
++  // decideSongKey expects the native A-indexed pitch-class profile.
++  const pcp = histogram.map((_, index) => histogram[(index + 9) % 12]);
++  const result = decideSongKey(pcp);
++  if (!result.valid) return { valid: false, reason: 'ambiguous' };
++  return {
++    valid: true,
++    root: result.root,
++    mode: result.minor ? 'minor' : 'major',
++    margin: result.margin,
++    alternative: result.alternative?.key || null,
++  };
++}
++
++/**
++ * Per-frame pitch shift in semitones for the lead (and optional harmony).
++ * strength 0..1 is how much of the distance to the scale note is removed;
++ * speedMs is the glide time toward a new target note (0 = instant/robotic).
++ */
++export function correctionCurve(track, { root, mode, strength = 1, speedMs = 40, harmony = null }) {
++  const n = track.f0.length;
++  const lead = new Float32Array(n);
++  const harm = new Float32Array(n);
++  const alpha = speedMs > 0 ? 1 - Math.exp(-(track.hopSeconds * 1000) / speedMs) : 1;
++  const steps = HARMONY_STEPS[harmony] || 0;
++  let target = null;
++  let smoothed = null;
++  for (let i = 0; i < n; i++) {
++    const hz = track.f0[i];
++    if (!hz) {
++      target = null;
++      smoothed = null;
++      continue;
++    }
++    const midi = hzToMidi(hz);
++    const snapped = snapToScale(midi, root, mode);
++    // Hysteresis: keep the current note until the voice is clearly nearer another.
++    if (
++      target === null ||
++      (snapped !== target && Math.abs(midi - target) - Math.abs(midi - snapped) > 0.2)
++    )
++      target = snapped;
++    smoothed = smoothed === null ? target : smoothed + alpha * (target - smoothed);
++    const leadShift = Math.max(-6, Math.min(6, strength * (smoothed - midi)));
++    lead[i] = leadShift;
++    if (steps) harm[i] = leadShift + (diatonicAbove(target, root, mode, steps) - target);
++  }
++  return { lead, harmony: steps ? harm : null };
++}
++
++function curveAt(track, curve, seconds) {
++  const position = (seconds - track.offsetSeconds) / track.hopSeconds;
++  const i = Math.floor(position);
++  if (i < 0) return curve[0] || 0;
++  if (i >= curve.length - 1) return curve[curve.length - 1] || 0;
++  const t = position - i;
++  return curve[i] * (1 - t) + curve[i + 1] * t;
++}
++
++/** Pitch-synchronous analysis marks at full rate: [{at, period, voiced}]. */
++export function analysisMarks(samples, rate, track) {
++  const marks = [];
++  const unvoicedPeriod = Math.round(rate * 0.005);
++  let position = 0;
++  let wasVoiced = false;
++  while (position < samples.length) {
++    const hz = pitchAt(track, position / rate);
++    if (hz > 0) {
++      const period = rate / hz;
++      let at = Math.round(position);
++      // Lock onto the waveform's local maximum so grains are pitch-synchronous.
++      const radius = Math.max(1, Math.round(wasVoiced ? period * 0.2 : period * 0.5));
++      let best = at,
++        bestValue = -Infinity;
++      for (
++        let j = Math.max(0, at - (wasVoiced ? radius : 0));
++        j <= Math.min(samples.length - 1, at + radius);
++        j++
++      ) {
++        if (samples[j] > bestValue) {
++          bestValue = samples[j];
++          best = j;
++        }
++      }
++      if (marks.length && best <= marks[marks.length - 1].at) best = at;
++      at = best;
++      marks.push({ at, period, voiced: true });
++      position = at + period;
++      wasVoiced = true;
++    } else {
++      marks.push({ at: Math.round(position), period: unvoicedPeriod, voiced: false });
++      position += unvoicedPeriod;
++      wasVoiced = false;
++    }
++  }
++  return marks;
++}
++
++/**
++ * TD-PSOLA: Hann grains two analysis periods long, re-spaced at the shifted
++ * period. Duration and formants are kept; amplitude is normalised by the
++ * summed window so shifted passages keep their level.
++ */
++export function psola(samples, rate, track, curve, marks = analysisMarks(samples, rate, track)) {
++  const n = samples.length;
++  const out = new Float32Array(n);
++  const weight = new Float32Array(n);
++  if (!marks.length) return out;
++  let k = 0;
++  let synthesis = marks[0].at;
++  while (synthesis < n) {
++    while (
++      k + 1 < marks.length &&
++      Math.abs(marks[k + 1].at - synthesis) <= Math.abs(marks[k].at - synthesis)
++    )
++      k++;
++    const mark = marks[k];
++    const shift = mark.voiced ? curveAt(track, curve, synthesis / rate) : 0;
++    const ratio = 2 ** (shift / 12);
++    const half = Math.max(2, Math.round(mark.period));
++    const center = Math.round(synthesis);
++    for (let j = -half; j <= half; j++) {
++      const target = center + j;
++      const source = mark.at + j;
++      if (target < 0 || target >= n || source < 0 || source >= n) continue;
++      const w = 0.5 + 0.5 * Math.cos((Math.PI * j) / half);
++      out[target] += samples[source] * w;
++      weight[target] += w;
++    }
++    synthesis += mark.voiced ? mark.period / ratio : mark.period;
++  }
++  for (let i = 0; i < n; i++)
++    out[i] = weight[i] > 0.25 ? out[i] / weight[i] : out[i] * 4 * weight[i];
++  return out;
++}
++
++export function peakLevel(samples) {
++  let peak = 0;
++  for (let i = 0; i < samples.length; i++) peak = Math.max(peak, Math.abs(samples[i]));
++  return peak;
++}
++
++/** Corrected lead, optional harmony and a mix (harmony at `harmonyGain`), peak-limited to -1 dBFS. */
++export function renderVox(samples, rate, track, options, marks) {
++  const analysis = marks || analysisMarks(samples, rate, track);
++  const curves = correctionCurve(track, options);
++  const lead = psola(samples, rate, track, curves.lead, analysis);
++  const harmony = curves.harmony ? psola(samples, rate, track, curves.harmony, analysis) : null;
++  const gain = options.harmonyGain ?? 0.6;
++  const mix = new Float32Array(lead.length);
++  for (let i = 0; i < lead.length; i++) mix[i] = lead[i] + (harmony ? harmony[i] * gain : 0);
++  const ceiling = 10 ** (-1 / 20);
++  const peak = peakLevel(mix);
++  if (peak > ceiling) {
++    const scale = ceiling / peak;
++    for (let i = 0; i < mix.length; i++) mix[i] *= scale;
++  }
++  return { lead, harmony, mix, curve: curves.lead };
++}
+diff --git a/src/labs/vox/voxDsp.test.js b/src/labs/vox/voxDsp.test.js
+new file mode 100644
+index 0000000000000000000000000000000000000000..b0f57d4f47f3e2920555f0c6e80cdaa8ed35a161
+--- /dev/null
++++ b/src/labs/vox/voxDsp.test.js
+@@ -0,0 +1,143 @@
++import { describe, expect, it } from 'vitest';
++import { detectFundamental } from '../../loop/pitch';
++import {
++  correctionCurve,
++  detectVocalKey,
++  diatonicAbove,
++  hzToMidi,
++  keyLabel,
++  parseKey,
++  psola,
++  renderVox,
++  snapToScale,
++  trackPitch,
++} from './voxDsp';
++
++const RATE = 44100;
++
++// A voice-like tone: fundamental plus decaying harmonics.
++function tone(
++  hz,
++  seconds,
++  rate = RATE,
++  out = new Float32Array(Math.round(seconds * rate)),
++  at = 0
++) {
++  let phase = 0;
++  for (let i = 0; i < Math.round(seconds * rate); i++) {
++    phase += (2 * Math.PI * hz) / rate;
++    out[at + i] = 0.3 * Math.sin(phase) + 0.15 * Math.sin(2 * phase) + 0.07 * Math.sin(3 * phase);
++  }
++  return out;
++}
++
++function centsBetween(a, b) {
++  return 1200 * Math.log2(a / b);
++}
++
++function measured(samples, from = 0.4, to = 0.6) {
++  const slice = samples.subarray(
++    Math.round(samples.length * from),
++    Math.round(samples.length * to)
++  );
++  return detectFundamental(slice, RATE, 70, 1200, 0.001)?.frequency;
++}
++
++describe('scale helpers', () => {
++  it('parses keys including flats and defaults to major', () => {
++    expect(parseKey('A minor')).toEqual({ root: 9, mode: 'minor' });
++    expect(parseKey('Bb')).toEqual({ root: 10, mode: 'major' });
++    expect(parseKey('nope')).toBeNull();
++    expect(keyLabel({ root: 1, mode: 'major' })).toBe('C# major');
++  });
++
++  it('snaps to the nearest scale note', () => {
++    expect(snapToScale(61.3, 0, 'major')).toBe(62);
++    expect(snapToScale(60.4, 0, 'major')).toBe(60);
++    expect(snapToScale(61.3, 0, 'chromatic')).toBe(61);
++    expect(snapToScale(63.2, 9, 'minor')).toBe(64);
++  });
++
++  it('builds diatonic thirds and fifths', () => {
++    expect(diatonicAbove(60, 0, 'major', 2)).toBe(64);
++    expect(diatonicAbove(62, 0, 'major', 2)).toBe(65);
++    expect(diatonicAbove(60, 0, 'major', 4)).toBe(67);
++    expect(diatonicAbove(69, 9, 'minor', 2)).toBe(72);
++    expect(diatonicAbove(60, 0, 'chromatic', 2)).toBe(64);
++  });
++});
++
++describe('pitch tracking and correction', () => {
++  it('tracks a steady tone within a few cents', () => {
++    const track = trackPitch(tone(220, 1), RATE);
++    const voiced = Array.from(track.f0).filter(Boolean);
++    expect(voiced.length).toBeGreaterThan(track.f0.length * 0.8);
++    const sorted = voiced.sort((a, b) => a - b);
++    expect(Math.abs(centsBetween(sorted[sorted.length >> 1], 220))).toBeLessThan(8);
++  });
++
++  it('treats silence as unvoiced', () => {
++    const track = trackPitch(new Float32Array(RATE), RATE);
++    expect(Array.from(track.f0).every((value) => value === 0)).toBe(true);
++    expect(detectVocalKey(track)).toMatchObject({ valid: false });
++  });
++
++  it('shifts pitch with PSOLA while keeping duration', () => {
++    const input = tone(220, 1);
++    const track = trackPitch(input, RATE);
++    const up = psola(input, RATE, track, new Float32Array(track.f0.length).fill(2));
++    expect(up.length).toBe(input.length);
++    expect(Math.abs(centsBetween(measured(up), 220 * 2 ** (2 / 12)))).toBeLessThan(15);
++    const same = psola(input, RATE, track, new Float32Array(track.f0.length));
++    expect(Math.abs(centsBetween(measured(same), 220))).toBeLessThan(8);
++  });
++
++  it('pulls an off-key note to the scale according to strength', () => {
++    const sharp = 220 * 2 ** (40 / 1200); // A3 + 40 cents
++    const input = tone(sharp, 1);
++    const track = trackPitch(input, RATE);
++    const full = renderVox(input, RATE, track, { root: 0, mode: 'major', strength: 1, speedMs: 0 });
++    expect(Math.abs(centsBetween(measured(full.lead), 220))).toBeLessThan(10);
++    const half = correctionCurve(track, { root: 0, mode: 'major', strength: 0.5, speedMs: 0 });
++    const voiced = Array.from(half.lead).filter((value, i) => track.f0[i]);
++    const middle = voiced[voiced.length >> 1];
++    expect(middle).toBeCloseTo(-0.2, 1);
++  });
++
++  it('adds a diatonic harmony a third above', () => {
++    const input = tone(261.63, 1); // C4
++    const track = trackPitch(input, RATE);
++    const result = renderVox(input, RATE, track, {
++      root: 0,
++      mode: 'major',
++      strength: 1,
++      speedMs: 0,
++      harmony: 'third',
++    });
++    expect(Math.abs(centsBetween(measured(result.harmony), 329.63))).toBeLessThan(15);
++    expect(Math.max(...result.mix.map(Math.abs))).toBeLessThanOrEqual(10 ** (-1 / 20) + 1e-6);
++  });
++
++  it('estimates the key of a sung C major phrase', () => {
++    const notes = [60, 64, 67, 72, 67, 65, 64, 62, 60, 67, 64, 60, 59, 62, 67, 60];
++    const input = new Float32Array(Math.round(notes.length * 0.4 * RATE));
++    notes.forEach((midi, index) =>
++      tone(440 * 2 ** ((midi - 69) / 12), 0.35, RATE, input, Math.round(index * 0.4 * RATE))
++    );
++    const key = detectVocalKey(trackPitch(input, RATE));
++    expect(key).toMatchObject({ valid: true, root: 0, mode: 'major' });
++    expect(hzToMidi(440)).toBe(69);
++  });
++});
++
++describe('note changes', () => {
++  it('follows a sharp step down from F to E without sticking to the old note', () => {
++    const input = new Float32Array(RATE);
++    tone(440 * 2 ** ((65.38 - 69) / 12), 0.5, RATE, input, 0);
++    tone(440 * 2 ** ((64.38 - 69) / 12), 0.5, RATE, input, Math.round(0.5 * RATE));
++    const track = trackPitch(input, RATE);
++    const { lead } = correctionCurve(track, { root: 0, mode: 'major', strength: 1, speedMs: 0 });
++    const late = Math.floor(track.f0.length * 0.85);
++    expect(hzToMidi(track.f0[late]) + lead[late]).toBeCloseTo(64, 1);
++  });
++});
+diff --git a/src/pages/SattariHubPage.jsx b/src/pages/SattariHubPage.jsx
+index 0172a4e45d13070e0a0895782116b77803d2addb..da0fef129edf40d8280e3d30910b8df5d660a8e1 100644
+--- a/src/pages/SattariHubPage.jsx
++++ b/src/pages/SattariHubPage.jsx
+@@ -5,6 +5,7 @@ import {
+   AudioLines,
+   BookOpen,
+   Download,
++  FlaskConical,
+   Library,
+   Radio,
+   SlidersHorizontal,
+@@ -14,6 +15,7 @@ import {
+ } from 'lucide-react';
+ import { SEO } from '../utils/seo';
+ import { PAGE_SEO } from '../data/siteSeo';
++import { LAB_TOOLS } from '../labs/audio/audioLabTools';
+ import '../styles-hub.css';
+ 
+ const workspaces = [
+@@ -144,6 +146,27 @@ export default function SattariHubPage() {
+             </div>
+           </section>
+ 
++          <section className="hub-reading hub-studio-labs" aria-labelledby="hub-studio-labs-title">
++            <div className="hub-section-heading">
++              <h2 id="hub-studio-labs-title">
++                <FlaskConical size={18} aria-hidden="true" /> Studio labs
++              </h2>
++              <span>Alpha · runs on your device</span>
++            </div>
++            <div className="hub-reading-grid">
++              {LAB_TOOLS.map(({ id, name, path, blurb }) => (
++                <Link key={id} to={path} className="hub-reading-link">
++                  <span className="hub-eyebrow">Alpha</span>
++                  <h3>
++                    {name}
++                    <ArrowUpRight size={20} aria-hidden="true" />
++                  </h3>
++                  <p>{blurb}</p>
++                </Link>
++              ))}
++            </div>
++          </section>
++
+           <section className="hub-reading" aria-labelledby="hub-reading-title">
+             <div className="hub-section-heading">
+               <h2 id="hub-reading-title">
+diff --git a/src/pages/SattariHubPage.test.jsx b/src/pages/SattariHubPage.test.jsx
+index f65cc898ac9cb0559f826b9c1b846b31ed144053..ac3278bbe7aeaff57932c79448b619d237a58d6d 100644
+--- a/src/pages/SattariHubPage.test.jsx
++++ b/src/pages/SattariHubPage.test.jsx
+@@ -58,3 +58,21 @@ it('omits the listening desk, demo player and header shortcut', () => {
+   ).toBeNull();
+   expect(container.querySelector('.hub-workspaces').nextElementSibling).toHaveClass('hub-reading');
+ });
++
++it('lists the Studio alpha labs', () => {
++  render(
++    <MemoryRouter>
++      <SattariHubPage />
++    </MemoryRouter>
++  );
++  for (const [name, route] of [
++    ['Split', '/studio/split'],
++    ['Key & BPM', '/studio/keybpm'],
++    ['Vox', '/studio/vox'],
++  ]) {
++    expect(screen.getByRole('link', { name: new RegExp(`^Alpha\\s*${name}`) })).toHaveAttribute(
++      'href',
++      route
++    );
++  }
++});
+diff --git a/src/pages/SattariStudioPage.jsx b/src/pages/SattariStudioPage.jsx
+index a7325392553d2db988df132cfc99bcf33926c235..99b8f5e878103d4d390f260fb46ecc02d2e08c75 100644
+--- a/src/pages/SattariStudioPage.jsx
++++ b/src/pages/SattariStudioPage.jsx
+@@ -11,6 +11,7 @@ import { useMasterControls } from '../studio/hooks/useMasterControls';
+ import { useMidi } from '../studio/hooks/useMidi';
+ import { usePads } from '../studio/hooks/usePads';
+ import { useStudioEngine } from '../studio/hooks/useStudioEngine';
++import { useStemHandoff } from '../studio/hooks/useStemHandoff';
+ import { useInputSource, useInspector } from '../studio/hooks/useShellPanels';
+ import { useStudioKeyboard } from '../studio/hooks/useStudioKeyboard';
+ import { createStudioActivity } from '../studio/session/studioActivity';
+@@ -96,6 +97,8 @@ export default function SattariStudioPage() {
+     setActiveView,
+     setNotice,
+   });
++  // Stems sent from the Split lab (/studio/split) land in the first free deck.
++  useStemHandoff({ ready: session.ready, decks, deckOps, actions, setActiveView, setNotice });
+   const pads = usePads({ engine, session, activity, setNotice });
+   const midi = useMidi({ triggerPad: pads.triggerPad, padCount: state.pads.length, setNotice });
+   const master = useMasterControls({ engine, session, setNotice });
+diff --git a/src/studio/hooks/useStemHandoff.js b/src/studio/hooks/useStemHandoff.js
+new file mode 100644
+index 0000000000000000000000000000000000000000..4f09c006f13101f423516408c070d1b771c80e3f
+--- /dev/null
++++ b/src/studio/hooks/useStemHandoff.js
+@@ -0,0 +1,47 @@
++import { useEffect, useRef } from 'react';
++import { deckIsFree } from '../session/sessionModel';
++import { hasStemHandoff, takeStemHandoff } from '../stemHandoff';
++
++/**
++ * Loads stems handed over by the Split lab into the first free deck once the
++ * restored session is ready: the original mix (for BPM/key analysis) plus each
++ * stem lane, with the full-mix lane turned down so the stems are what you hear.
++ */
++export function useStemHandoff({ ready, decks, deckOps, actions, setActiveView, setNotice }) {
++  const latest = useRef({ decks, deckOps, actions, setActiveView, setNotice });
++  latest.current = { decks, deckOps, actions, setActiveView, setNotice };
++
++  useEffect(() => {
++    if (!ready || !hasStemHandoff()) return;
++    const handoff = takeStemHandoff();
++    const {
++      decks: current,
++      deckOps: ops,
++      actions: act,
++      setActiveView: view,
++      setNotice: notify,
++    } = latest.current;
++    const deck = current.find(deckIsFree);
++    if (!deck) {
++      notify(
++        'All four decks are in use, so the Split stems were not loaded. Clear a deck and use Open in StemDeck again, or import the downloaded WAVs.'
++      );
++      return;
++    }
++    void (async () => {
++      view('decks');
++      act.setFocusedDeckId(deck.id);
++      if (!(await ops.loadLane(deck.id, 'fullMix', handoff.fullMix))) return;
++      let loaded = 0;
++      for (const { laneId, file } of handoff.stems) {
++        if (await ops.loadLane(deck.id, laneId, file)) loaded += 1;
++      }
++      if (loaded) ops.changeLane(deck.id, 'fullMix', { level: 0 });
++      notify(
++        loaded === handoff.stems.length
++          ? `${handoff.title}: ${loaded} Split stems are ready in Deck ${deck.id}. The full mix is turned down; raise MIX to hear it.`
++          : `${handoff.title}: ${loaded} of ${handoff.stems.length} stems loaded into Deck ${deck.id}. Import the missing WAVs from your downloads.`
++      );
++    })();
++  }, [ready]);
++}
+diff --git a/src/studio/stemHandoff.js b/src/studio/stemHandoff.js
+new file mode 100644
+index 0000000000000000000000000000000000000000..16fa5c9e957dad367f444a58e3d68ae57c9afd1d
+--- /dev/null
++++ b/src/studio/stemHandoff.js
+@@ -0,0 +1,35 @@
++// In-memory handoff from the Split lab to StemDeck. The site is a single-page
++// app, so a client-side navigation to /studio keeps this module's state; a full
++// reload or a new tab does not (the user then imports the downloaded WAVs).
++
++// Split (Demucs) source ids → StemDeck lane ids.
++export const SPLIT_TO_STEMDECK_LANE = {
++  drums: 'drums',
++  bass: 'bass',
++  other: 'music',
++  vocals: 'vocals',
++};
++
++let pending = null;
++
++/** fullMix: File; stems: [{ id: 'vocals'|'drums'|'bass'|'other', file: File }] */
++export function offerStemHandoff({ title, fullMix, stems }) {
++  pending = {
++    title,
++    fullMix,
++    stems: stems
++      .filter((stem) => SPLIT_TO_STEMDECK_LANE[stem.id] && stem.file)
++      .map((stem) => ({ laneId: SPLIT_TO_STEMDECK_LANE[stem.id], file: stem.file })),
++  };
++  return pending;
++}
++
++export function hasStemHandoff() {
++  return pending !== null;
++}
++
++export function takeStemHandoff() {
++  const handoff = pending;
++  pending = null;
++  return handoff;
++}
+diff --git a/src/studio/stemHandoff.test.js b/src/studio/stemHandoff.test.js
+new file mode 100644
+index 0000000000000000000000000000000000000000..ca5b84821ec5a3f26a4a612839c362e0cb0f1c93
+--- /dev/null
++++ b/src/studio/stemHandoff.test.js
+@@ -0,0 +1,88 @@
++import { renderHook, waitFor } from '@testing-library/react';
++import { describe, expect, it, vi } from 'vitest';
++import { hasStemHandoff, offerStemHandoff, takeStemHandoff } from './stemHandoff';
++import { useStemHandoff } from './hooks/useStemHandoff';
++
++const file = (name) => new File(['x'], name, { type: 'audio/wav' });
++const freeDeck = (id) => ({ id, duration: 0, lanes: { fullMix: { status: 'empty' } } });
++const busyDeck = (id) => ({
++  id,
++  duration: 90,
++  lanes: { fullMix: { status: 'ready', duration: 90 } },
++});
++
++describe('Split → StemDeck handoff', () => {
++  it('maps Demucs sources to StemDeck lanes and is taken once', () => {
++    offerStemHandoff({
++      title: 'Song',
++      fullMix: file('song.mp3'),
++      stems: ['vocals', 'drums', 'bass', 'other', 'unknown'].map((id) => ({
++        id,
++        file: file(`${id}.wav`),
++      })),
++    });
++    expect(hasStemHandoff()).toBe(true);
++    const handoff = takeStemHandoff();
++    expect(handoff.stems.map((stem) => stem.laneId)).toEqual(['vocals', 'drums', 'bass', 'music']);
++    expect(takeStemHandoff()).toBeNull();
++  });
++
++  it('loads the mix and stems into the first free deck once the session is ready', async () => {
++    const mix = file('song.mp3');
++    offerStemHandoff({
++      title: 'Song',
++      fullMix: mix,
++      stems: [
++        { id: 'vocals', file: file('v.wav') },
++        { id: 'other', file: file('o.wav') },
++      ],
++    });
++    const deckOps = { loadLane: vi.fn().mockResolvedValue(true), changeLane: vi.fn() };
++    const actions = { setFocusedDeckId: vi.fn() };
++    const setNotice = vi.fn();
++    const setActiveView = vi.fn();
++    const props = {
++      ready: false,
++      decks: [busyDeck('A'), freeDeck('B')],
++      deckOps,
++      actions,
++      setActiveView,
++      setNotice,
++    };
++    const { rerender } = renderHook((current) => useStemHandoff(current), { initialProps: props });
++    expect(deckOps.loadLane).not.toHaveBeenCalled();
++    rerender({ ...props, ready: true });
++    await waitFor(() => expect(deckOps.changeLane).toHaveBeenCalled());
++    expect(deckOps.loadLane.mock.calls.map(([deck, lane]) => `${deck}:${lane}`)).toEqual([
++      'B:fullMix',
++      'B:vocals',
++      'B:music',
++    ]);
++    expect(deckOps.loadLane.mock.calls[0][2]).toBe(mix);
++    expect(deckOps.changeLane).toHaveBeenCalledWith('B', 'fullMix', { level: 0 });
++    expect(actions.setFocusedDeckId).toHaveBeenCalledWith('B');
++    expect(setActiveView).toHaveBeenCalledWith('decks');
++    expect(setNotice).toHaveBeenLastCalledWith(
++      expect.stringMatching(/2 Split stems are ready in Deck B/)
++    );
++    expect(hasStemHandoff()).toBe(false);
++  });
++
++  it('never replaces a loaded deck', () => {
++    offerStemHandoff({ title: 'Song', fullMix: file('s.mp3'), stems: [] });
++    const deckOps = { loadLane: vi.fn(), changeLane: vi.fn() };
++    const setNotice = vi.fn();
++    renderHook(() =>
++      useStemHandoff({
++        ready: true,
++        decks: ['A', 'B', 'C', 'D'].map(busyDeck),
++        deckOps,
++        actions: { setFocusedDeckId: vi.fn() },
++        setActiveView: vi.fn(),
++        setNotice,
++      })
++    );
++    expect(deckOps.loadLane).not.toHaveBeenCalled();
++    expect(setNotice).toHaveBeenCalledWith(expect.stringMatching(/All four decks are in use/));
++  });
++});
+diff --git a/src/styles-hub.css b/src/styles-hub.css
+index 1e9ed6bc5de352593b3eb4f4aa3b11cf502b635a..0a6407bc95ba4e65fe7ccc4679c8d185db0b7598 100644
+--- a/src/styles-hub.css
++++ b/src/styles-hub.css
+@@ -744,3 +744,12 @@
+     scroll-behavior: auto !important;
+   }
+ }
++/* Studio labs (alpha) */
++.hub-studio-labs .hub-reading-grid {
++  grid-template-columns: repeat(3, minmax(0, 1fr));
++}
++@media (max-width: 760px) {
++  .hub-studio-labs .hub-reading-grid {
++    grid-template-columns: 1fr;
++  }
++}
+diff --git a/src/utils/lazyComponents.tsx b/src/utils/lazyComponents.tsx
+index c4b1cef333c8f8b6e5a99c7bfeba405636a9ff52..884fee9d7878af6cf4e9984df15c4386bc656356 100644
+--- a/src/utils/lazyComponents.tsx
++++ b/src/utils/lazyComponents.tsx
+@@ -127,6 +127,10 @@ export const SattariLearnPage = lazyPage(() => import('@pages/LoopPracticePage')
+ export const SattariStudioPage = lazyPage(() => import('@pages/SattariStudioPage'));
+ export const SattariHubPage = lazyPage(() => import('@pages/SattariHubPage'));
+ export const StemSeparatorPage = lazyPage(() => import('@pages/StemSeparatorPage'));
++// Studio alpha labs (wave 2): /studio/split, /studio/keybpm, /studio/vox.
++export const SplitPage = lazyPage(() => import('../labs/split/SplitPage'));
++export const KeyBpmPage = lazyPage(() => import('../labs/keybpm/KeyBpmPage'));
++export const VoxPage = lazyPage(() => import('../labs/vox/VoxPage'));
+ export const GuideIndex = lazyPage(() => import('@pages/MusicResources'), 'GuideIndex');
+ export const GuideArticle = lazyPage(() => import('@pages/MusicResources'), 'GuideArticle');
+ export const ToolDetailsPage = lazyPage(() => import('@pages/MusicResources'), 'ToolDetailsPage');

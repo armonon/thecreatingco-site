@@ -1,0 +1,1 @@
+Pick a look. Drop its .cube file onto ScenePilot's Grade tool, or into Browser Lite's Auto Director -> Look LUT import (https://scenepilot.thecreatingco.com/tools/grade/). It's a standard .cube file, so it also opens in Premiere, DaVinci Resolve, or Final Cut through a LUT utility. Nine looks. One file each. Yours to grade with.

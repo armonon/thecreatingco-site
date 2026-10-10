@@ -1,0 +1,110 @@
+{
+  "sha": "8d51ea2c3387df3f49808e2bdf9510c6d37b5c67",
+  "base_sha": "28b259727b180db5fcbc504be8d481cf1cc50620",
+  "scope": "Committed screened review delta, not a release or complete binary artifact",
+  "files": [
+    {
+      "path": ".gitignore",
+      "status": "present",
+      "sha256": "9fc28f6a41418112263bdbc85d9c918f39a66b1cec6cfc3d8d1f427a341b9516",
+      "bytes": 95
+    },
+    {
+      "path": "README.md",
+      "status": "present",
+      "sha256": "51204b9872263a8cee44c3e70b318d516b2447011484edc52ebc1bf52b8d4d9e",
+      "bytes": 4079
+    },
+    {
+      "path": "lib/audit-handler.mjs",
+      "status": "present",
+      "sha256": "d323434c5cf440bba7034a2ce9d8dd191ef4851b54799112ca1cc233834e82d1",
+      "bytes": 1924
+    },
+    {
+      "path": "lib/audit.mjs",
+      "status": "present",
+      "sha256": "f0da9f1a2d2c2f89dde471c772e6ed480526db4029dd950d89404e4ba4bf3b56",
+      "bytes": 22881
+    },
+    {
+      "path": "netlify.toml",
+      "status": "present",
+      "sha256": "302dfe9d175eae4e75679c98580d61c6f205547009632e11b629e8a2245b9169",
+      "bytes": 327
+    },
+    {
+      "path": "netlify/functions/audit.mjs",
+      "status": "present",
+      "sha256": "a06ef3225b151d102d4ff55abe004fe52de4e1344100cde5f8bce43685e76f0e",
+      "bytes": 748
+    },
+    {
+      "path": "package.json",
+      "status": "present",
+      "sha256": "53bd7ed331910d280fe11ca95e65e75b2684d7a5fd97e06089a34e13f0ac08ce",
+      "bytes": 710
+    },
+    {
+      "path": "public/app.css",
+      "status": "present",
+      "sha256": "a59b77fef27c3fd19c5a073d4958649a1208cfff332ad51ec32355de8c4ce31f",
+      "bytes": 10066
+    },
+    {
+      "path": "public/app.js",
+      "status": "present",
+      "sha256": "e6dad507f6c8f052644b10ad933a3056eff87567b00eb2b413010cd01c7311f3",
+      "bytes": 4872
+    },
+    {
+      "path": "public/index.html",
+      "status": "present",
+      "sha256": "524e195e54949c148a257a781f20ab63b0adbba4c4b93ad669dec14e6f3112ce",
+      "bytes": 5028
+    },
+    {
+      "path": "scripts/verify-workflow.mjs",
+      "status": "present",
+      "sha256": "a7e2d02d20347b0646d3c8be1179faf6af5d8e9a45ccf0204f5afd758911d810",
+      "bytes": 4124
+    },
+    {
+      "path": "server.mjs",
+      "status": "present",
+      "sha256": "612fd3a739543ad2f21fd791b6733da48a7c65d71df9ee7dc98add75143c5352",
+      "bytes": 3031
+    },
+    {
+      "path": "test/netlify-function.test.mjs",
+      "status": "present",
+      "sha256": "785b9a376ecbebc96e8637bd183e4e16ad10a2422a66bf27a1e17bebab895218",
+      "bytes": 673
+    },
+    {
+      "path": "test/security.test.mjs",
+      "status": "present",
+      "sha256": "9a92ca9eaf585930a8adae20ca03ed9138bc7ec61d0d023674545469055fc6d6",
+      "bytes": 3046
+    },
+    {
+      "path": "test/server.test.mjs",
+      "status": "present",
+      "sha256": "1c0be6b5e2aa8be9eb8982180ff454a7617937c6278b818312e8df093e17ac06",
+      "bytes": 2242
+    }
+  ],
+  "omitted": [
+    {
+      "path": "public/_headers",
+      "reason": "non-source-or-binary-asset"
+    }
+  ],
+  "patch_sha256": "f4f836b4edd5ff67ade4125c9f4f6004f883316a1c1b4d970c41acc1a1ae9a62",
+  "repo": "https://github.com/armonon/weblab",
+  "branches": [
+    "codex/weblab-mvp"
+  ],
+  "archive_path": "weblab/8d51ea2c3387df3f49808e2bdf9510c6d37b5c67",
+  "local_worktree_dirty": false
+}

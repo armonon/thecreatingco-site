@@ -1,0 +1,75 @@
+{
+  "name": "sattari-custom-site",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "vite",
+    "dev:api": "node server/checkout-server.js",
+    "build": "vite build && node scripts/prerender.mjs && node scripts/build-studio-sw.mjs",
+    "preview": "vite preview",
+    "type-check": "tsc --noEmit",
+    "test:seo": "node scripts/check-seo.mjs",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "test": "vitest --run --passWithNoTests",
+    "test:meter-qualification": "node scripts/qualify-loudness.mjs",
+    "test:tempo-qualification": "node scripts/qualify-tempo.mjs",
+    "test:studio-audio": "node scripts/run-studio-audio-qa.mjs",
+    "test:studio-release": "node scripts/studio-release-gate.mjs",
+    "test:ui": "vitest --ui"
+  },
+  "dependencies": {
+    "@coderline/alphatab": "1.8.3",
+    "@netlify/blobs": "10.7.13",
+    "@sentry/react": "^11.1.0",
+    "cors": "^2.8.6",
+    "demucs-web": "1.0.2",
+    "dotenv": "^16.6.1",
+    "express": "^4.22.1",
+    "fflate": "0.8.3",
+    "lucide-react": "^0.468.0",
+    "mediabunny": "1.59.1",
+    "onnxruntime-web": "1.30.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-helmet-async": "^2.0.4",
+    "react-router-dom": "7.18.4",
+    "resend": "^6.1.3",
+    "stripe": "^17.3.1",
+    "tone": "15.1.22",
+    "vexflow": "4.2.5"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@types/node": "^22.20.4",
+    "@types/react": "^18.2.46",
+    "@types/react-dom": "^18.2.18",
+    "@vitejs/plugin-react": "^5.2.0",
+    "@vitest/ui": "4.1.11",
+    "eslint": "^10.11.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.6",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "globals": "^17.12.0",
+    "jsdom": "^29.0.2",
+    "playwright": "1.62.1",
+    "prettier": "^3.1.1",
+    "typescript": "^5.3.3",
+    "typescript-eslint": "^8.71.0",
+    "vite": "^7.3.2",
+    "vitest": "4.1.11"
+  },
+  "overrides": {
+    "qs": "^6.16.0",
+    "eslint-plugin-react": {
+      "eslint": "$eslint"
+    }
+  }
+}

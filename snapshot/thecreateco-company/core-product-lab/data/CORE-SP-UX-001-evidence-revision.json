@@ -1,0 +1,10 @@
+{
+  "task_id": "CORE-SP-UX-001",
+  "source_evidence": [
+    "docs/release-today-0.1.16.md reports some Lite controls expose Pro-only workflows and main source media can coexist with a displayed zero asset-bin count; it notes this is confusing, not source loss."
+  ],
+  "evidence_sources": [
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-initial.md",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/products/scenepilot.json"
+  ]
+}

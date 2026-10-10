@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#0d1211" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="icon" href="/app-icon-192.png" />
+    <title>ScenePilot Studio</title>
+    <link rel="apple-touch-icon" href="/app-icon-192.png" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/main.tsx"></script>
+    <!-- thecreateco suite kit (shared menu + Locker). After the app script so a slow or
+         unreachable kit never delays the editor; everything works without it. -->
+    <script src="https://thecreatingco.com/suite/v1/suite.js" data-app="scenepilot" defer></script>
+  </body>
+</html>

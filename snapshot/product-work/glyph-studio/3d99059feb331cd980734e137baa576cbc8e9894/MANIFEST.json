@@ -1,0 +1,14 @@
+{
+  "sha": "3d99059feb331cd980734e137baa576cbc8e9894",
+  "base_sha": "3d99059feb331cd980734e137baa576cbc8e9894",
+  "scope": "Committed screened review delta, not a release or complete binary artifact",
+  "files": [],
+  "omitted": [],
+  "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "repo": "https://github.com/armonon/glyph-studio",
+  "branches": [
+    "audit/glyph-director-20261007-1910"
+  ],
+  "archive_path": "glyph-studio/3d99059feb331cd980734e137baa576cbc8e9894",
+  "local_worktree_dirty": false
+}

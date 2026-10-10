@@ -1,0 +1,11 @@
+{
+  "task_id": "CORE-LUMA-AUD-004",
+  "source_evidence": [
+    "README.md Photoshop interchange policy documents narrow edited high-depth PSD support and 8-bit compatibility conversion for other cases",
+    "README.md states CMYK/Lab editing and ICC device-link support are not complete"
+  ],
+  "evidence_sources": [
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/luma-initial.md",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/products/luma.json"
+  ]
+}

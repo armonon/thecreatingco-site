@@ -1,0 +1,82 @@
+{
+  "sha": "1ba7da455c348621218dd5f5423d4b0adbfbc491",
+  "base_sha": "3775d28d0eff19925405c77cda158681846c5f99",
+  "scope": "Committed screened review delta, not a release or complete binary artifact",
+  "files": [
+    {
+      "path": "README.md",
+      "status": "present",
+      "sha256": "0242f56d781091b312bb55204dc03939aff4deacf4bae99c36a42b71ba39cc15",
+      "bytes": 5342
+    },
+    {
+      "path": "index.html",
+      "status": "present",
+      "sha256": "691c68fb4cc73e7c2f55eb2f04f99a202c12ae22d8eb6ce4a29c36159cd4aca2",
+      "bytes": 1786
+    },
+    {
+      "path": "package.json",
+      "status": "present",
+      "sha256": "31b634424295f54e3486a7f3698ba65f3e39c176c91e36335dc405736670a306",
+      "bytes": 1752
+    },
+    {
+      "path": "public/sw.js",
+      "status": "present",
+      "sha256": "69ae8252b7bd6d88e03d934c2756f14795595b75663efae28194a6186c2ef57a",
+      "bytes": 4587
+    },
+    {
+      "path": "scripts/kill-switch-sw.js",
+      "status": "present",
+      "sha256": "86f3f57040d7066e6f3e634098439276341d41b85fca8ce2f65e3a3cbac7c4c8",
+      "bytes": 929
+    },
+    {
+      "path": "scripts/pwa-check.mjs",
+      "status": "present",
+      "sha256": "aa81d24b1e8b8d7821ece61280e6a8fb2ef04c206c0ad9166054c55213d5eb9b",
+      "bytes": 9566
+    },
+    {
+      "path": "src/pwa.js",
+      "status": "present",
+      "sha256": "e5122f4041dab735383ec58587e6f56fc2b2fe474483d295eefb529015f96704",
+      "bytes": 3496
+    },
+    {
+      "path": "src/styles.css",
+      "status": "present",
+      "sha256": "c46daae4928c3cb8c58962ef69bbcd4fd0eab2e7a9f72b1f2104e80ffa7a1102",
+      "bytes": 29759
+    },
+    {
+      "path": "vite.config.js",
+      "status": "present",
+      "sha256": "14456ceb18bee80a97f2027d67f0ebb2c0ded86768981a2e931e68bc3e3cc991",
+      "bytes": 2457
+    }
+  ],
+  "omitted": [
+    {
+      "path": "public/_headers",
+      "reason": "non-source-or-binary-asset"
+    },
+    {
+      "path": "public/manifest.webmanifest",
+      "reason": "non-source-or-binary-asset"
+    },
+    {
+      "path": "src/main.js",
+      "reason": "non-fixture-email-content"
+    }
+  ],
+  "patch_sha256": "32e325a3f02779935d4cc8e768051b479fa36bed225ba0eb9a8f76d1ae0ba1ff",
+  "repo": "https://github.com/armonon/librarian",
+  "branches": [
+    "wave4/librarian-pwa-suite"
+  ],
+  "archive_path": "librarian/1ba7da455c348621218dd5f5423d4b0adbfbc491",
+  "local_worktree_dirty": false
+}

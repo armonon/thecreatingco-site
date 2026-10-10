@@ -1,0 +1,1436 @@
+[
+  {
+    "task_id": "P01",
+    "title": "Reconcile Luma production with a reproducible source baseline",
+    "category": "product",
+    "workstream": "ENGINEERING",
+    "product": "luma",
+    "campaign": null,
+    "status": "QUEUED",
+    "model": "gpt-6.1-sol",
+    "dependencies": [],
+    "scores": {
+      "impact": 10,
+      "user_value": 9,
+      "strategic_value": 10,
+      "urgency": 8,
+      "confidence": 9,
+      "effort": 4,
+      "risk": 3
+    },
+    "expected_value": "Verify current deployment, preserve its full manifest and map source before preparing any release; do not automatically roll back.",
+    "next_action": "Verify current deployment, preserve its full manifest and map source before preparing any release; do not automatically roll back.",
+    "evidence_sources": [
+      "/Users/agentsattari/code/wave5/WAVE5.md"
+    ],
+    "score_basis": "Provisional director estimate; evidence-backed opportunity, not measured ROI. Recheck before execution.",
+    "result": null
+  },
+  {
+    "task_id": "P02",
+    "title": "Recheck Librarian reader 404 and prepare a source-level repair",
+    "category": "product",
+    "workstream": "ENGINEERING",
+    "product": "librarian",
+    "campaign": null,
+    "status": "QUEUED",
+    "model": "gpt-6.1-sol",
+    "dependencies": [],
+    "scores": {
+      "impact": 9,
+      "user_value": 9,
+      "strategic_value": 9,
+      "urgency": 8,
+      "confidence": 8,
+      "effort": 4,
+      "risk": 2
+    },
+    "expected_value": "Reproduce the reported reader failure; inspect function dependencies without exposing secrets; test a fix locally.",
+    "next_action": "Reproduce the reported reader failure; inspect function dependencies without exposing secrets; test a fix locally.",
+    "evidence_sources": [
+      "/Users/agentsattari/code/wave5/WAVE5.md"
+    ],
+    "score_basis": "Provisional director estimate; evidence-backed opportunity, not measured ROI. Recheck before execution.",
+    "result": null
+  },
+  {
+    "task_id": "P03",
+    "title": "Verify Animate save/export recovery and assess undo",
+    "category": "product",
+    "workstream": "ENGINEERING",
+    "product": "animate",
+    "campaign": null,
+    "status": "QUEUED",
+    "model": "gpt-6.1-sol",
+    "dependencies": [],
+    "scores": {
+      "impact": 9,
+      "user_value": 9,
+      "strategic_value": 9,
+      "urgency": 5,
+      "confidence": 7,
+      "effort": 4,
+      "risk": 2
+    },
+    "expected_value": "Test loss scenarios and current undo/redo implementation; improve only reproduced gaps.",
+    "next_action": "Test loss scenarios and current undo/redo implementation; improve only reproduced gaps.",
+    "evidence_sources": [
+      "/Users/agentsattari/code/wave5/WAVE5.md"
+    ],
+    "score_basis": "Provisional director estimate; evidence-backed opportunity, not measured ROI. Recheck before execution.",
+    "result": null
+  },
+  {
+    "task_id": "P04",
+    "title": "Qualify Locker cross-app open/save failure behavior",
+    "category": "product",
+    "workstream": "ENGINEERING",
+    "product": "locker",
+    "campaign": null,
+    "status": "QUEUED",
+    "model": "gpt-6.1-sol",
+    "dependencies": [],
+    "scores": {
+      "impact": 9,
+      "user_value": 9,
+      "strategic_value": 9,
+      "urgency": 5,
+      "confidence": 7,
+      "effort": 4,
+      "risk": 2
+    },
+    "expected_value": "Test valid, cancelled and failed handoffs without losing edits; capture a compatibility matrix.",
+    "next_action": "Test valid, cancelled and failed handoffs without losing edits; capture a compatibility matrix.",
+    "evidence_sources": [
+      "/Users/agentsattari/code/wave5/WAVE5.md"
+    ],
+    "score_basis": "Provisional director estimate; evidence-backed opportunity, not measured ROI. Recheck before execution.",
+    "result": null
+  },
+  {
+    "task_id": "P05",
+    "title": "Qualify Reclaim native restore and deletion safeguards",
+    "category": "product",
+    "workstream": "ENGINEERING",
+    "product": "reclaim",
+    "campaign": null,
+    "status": "QUEUED",
+    "model": "gpt-6.1-sol",
+    "dependencies": [],
+    "scores": {
+      "impact": 10,
+      "user_value": 10,
+      "strategic_value": 10,
+      "urgency": 5,
+      "confidence": 6,
+      "effort": 5,
+      "risk": 3
+    },
+    "expected_value": "Use disposable fixtures to verify preview, reversible removal and restore; do not touch real user files.",
+    "next_action": "Use disposable fixtures to verify preview, reversible removal and restore; do not touch real user files.",
+    "evidence_sources": [
+      "/Users/agentsattari/code/wave5/WAVE5.md"
+    ],
+    "score_basis": "Provisional director estimate; evidence-backed opportunity, not measured ROI. Recheck before execution.",
+    "result": null
+  },
+  {
+    "task_id": "P06",
+    "title": "Verify Form review-versus-canonical feature parity",
+    "category": "product",
+    "workstream": "ENGINEERING",
+    "product": "form",
+    "campaign": null,
+    "status": "QUEUED",
+    "model": "gpt-6.1-sol",
+    "dependencies": [],
+    "scores": {
+      "impact": 8,
+      "user_value": 8,
+      "strategic_value": 8,
+      "urgency": 5,
+      "confidence": 8,
+      "effort": 3,
+      "risk": 2
+    },
+    "expected_value": "Document Cast/Room and canonical release differences; do not publish to a mismatched host.",
+    "next_action": "Document Cast/Room and canonical release differences; do not publish to a mismatched host.",
+    "evidence_sources": [
+      "/Users/agentsattari/code/wave5/WAVE5.md"
+    ],
+    "score_basis": "Provisional director estimate; evidence-backed opportunity, not measured ROI. Recheck before execution.",
+    "result": null
+  },
+  {
+    "task_id": "P07",
+    "title": "Qualify ScenePilot Board to AutoCut workflow",
+    "category": "product",
+    "workstream": "ENGINEERING",
+    "product": "scenepilot",
+    "campaign": null,
+    "status": "QUEUED",
+    "model": "gpt-6.1-sol",
+    "dependencies": [],
+    "scores": {
+      "impact": 8,
+      "user_value": 9,
+      "strategic_value": 8,
+      "urgency": 5,
+      "confidence": 7,
+      "effort": 4,
+      "risk": 2
+    },
+    "expected_value": "Use a disposable project through save, handoff and export; report exact failure boundaries.",
+    "next_action": "Use a disposable project through save, handoff and export; report exact failure boundaries.",
+    "evidence_sources": [
+      "/Users/agentsattari/code/wave5/WAVE5.md"
+    ],
+    "score_basis": "Provisional director estimate; evidence-backed opportunity, not measured ROI. Recheck before execution.",
+    "result": null
+  },
+  {
+    "task_id": "P08",
+    "title": "Test Glyph generated fonts and Brand Kit exports",
+    "category": "product",
+    "workstream": "ENGINEERING",
+    "product": "glyph",
+    "campaign": null,
+    "status": "QUEUED",
+    "model": "gpt-6.1-sol",
+    "dependencies": [],
+    "scores": {
+      "impact": 8,
+      "user_value": 8,
+      "strategic_value": 8,
+      "urgency": 5,
+      "confidence": 7,
+      "effort": 3,
+      "risk": 2
+    },
+    "expected_value": "Validate real outputs, licensing metadata and reopen behavior; separate standalone and embedded Glyph.",
+    "next_action": "Validate real outputs, licensing metadata and reopen behavior; separate standalone and embedded Glyph.",
+    "evidence_sources": [
+      "/Users/agentsattari/code/wave5/WAVE5.md"
+    ],
+    "score_basis": "Provisional director estimate; evidence-backed opportunity, not measured ROI. Recheck before execution.",
+    "result": null
+  },
+  {
+    "task_id": "P09",
+    "title": "Reconcile Moodboard and Portfolio implementation state",
+    "category": "product",
+    "workstream": "ENGINEERING",
+    "product": "portfolio",
+    "campaign": null,
+    "status": "QUEUED",
+    "model": "gpt-6.1-sol",
+    "dependencies": [],
+    "scores": {
+      "impact": 7,
+      "user_value": 8,
+      "strategic_value": 7,
+      "urgency": 5,
+      "confidence": 6,
+      "effort": 3,
+      "risk": 2
+    },
+    "expected_value": "Inspect new checkouts and outstanding work, then test import/save/export before assigning release maturity.",
+    "next_action": "Inspect new checkouts and outstanding work, then test import/save/export before assigning release maturity.",
+    "evidence_sources": [
+      "/Users/agentsattari/code/wave5/WAVE5.md"
+    ],
+    "score_basis": "Provisional director estimate; evidence-backed opportunity, not measured ROI. Recheck before execution.",
+    "result": null
+  },
+  {
+    "task_id": "P10",
+    "title": "Audit offline update and cache recovery across non-music apps",
+    "category": "product",
+    "workstream": "ENGINEERING",
+    "product": null,
+    "campaign": null,
+    "status": "QUEUED",
+    "model": "gpt-6.1-sol",
+    "dependencies": [],
+    "scores": {
+      "impact": 9,
+      "user_value": 9,
+      "strategic_value": 9,
+      "urgency": 5,
+      "confidence": 6,
+      "effort": 5,
+      "risk": 3
+    },
+    "expected_value": "Use disposable browser profiles; verify update safety and unsaved-work preservation, not just installability.",
+    "next_action": "Use disposable browser profiles; verify update safety and unsaved-work preservation, not just installability.",
+    "evidence_sources": [
+      "/Users/agentsattari/code/wave5/WAVE5.md"
+    ],
+    "score_basis": "Provisional director estimate; evidence-backed opportunity, not measured ROI. Recheck before execution.",
+    "result": null
+  },
+  {
+    "task_id": "W01",
+    "title": "Reconcile hub launch registry with actually available products",
+    "category": "website_growth",
+    "workstream": "PRODUCT",
+    "product": "company-site",
+    "campaign": null,
+    "status": "QUEUED",
+    "model": "gpt-6.1-sol",
+    "dependencies": [],
+    "scores": {
+      "impact": 8,
+      "user_value": 8,
+      "strategic_value": 8,
+      "urgency": 8,
+      "confidence": 8,
+      "effort": 2,
+      "risk": 1
+    },
+    "expected_value": "Compare published destinations against apps.json; include Animate only with live evidence and honest alpha status.",
+    "next_action": "Compare published destinations against apps.json; include Animate only with live evidence and honest alpha status.",
+    "evidence_sources": [
+      "/Users/agentsattari/code/wave2/thecreatingco-live/maintenance/AGENTS.md"
+    ],
+    "score_basis": "Provisional director estimate; evidence-backed opportunity, not measured ROI. Recheck before execution.",
+    "result": null
+  },
+  {
+    "task_id": "W02",
+    "title": "Retrieve verified aggregate analytics and define a weekly funnel baseline",
+    "category": "website_growth",
+    "workstream": "PRODUCT",
+    "product": "company-site",
+    "campaign": null,
+    "status": "QUEUED",
+    "model": "gpt-6.1-sol",
+    "dependencies": [],
+    "scores": {
+      "impact": 9,
+      "user_value": 9,
+      "strategic_value": 9,
+      "urgency": 8,
+      "confidence": 8,
+      "effort": 3,
+      "risk": 1
+    },
+    "expected_value": "Use existing Netlify Analytics/Forms access if available; record visitor, signup and activation definitions, intervals and unavailable fields.",
+    "next_action": "Use existing Netlify Analytics/Forms access if available; record visitor, signup and activation definitions, intervals and unavailable fields.",
+    "evidence_sources": [
+      "/Users/agentsattari/code/wave2/thecreatingco-live/maintenance/AGENTS.md"
+    ],
+    "score_basis": "Provisional director estimate; evidence-backed opportunity, not measured ROI. Recheck before execution.",
+    "result": null
+  },
+  {
+    "task_id": "W03",
+    "title": "Audit the first-project journey for the strongest existing product",
+    "category": "website_growth",
+    "workstream": "PRODUCT",
+    "product": "company-site",
+    "campaign": null,
+    "status": "QUEUED",
+    "model": "gpt-6.1-sol",
+    "dependencies": [],
+    "scores": {
+      "impact": 9,
+      "user_value": 9,
+      "strategic_value": 9,
+      "urgency": 5,
+      "confidence": 7,
+      "effort": 4,
+      "risk": 1
+    },
+    "expected_value": "Choose using available evidence, then observe visit \u2192 launch \u2192 first saved result; do not invent drop-off rates.",
+    "next_action": "Choose using available evidence, then observe visit \u2192 launch \u2192 first saved result; do not invent drop-off rates.",
+    "evidence_sources": [
+      "/Users/agentsattari/code/wave2/thecreatingco-live/maintenance/AGENTS.md"
+    ],
+    "score_basis": "Provisional director estimate; evidence-backed opportunity, not measured ROI. Recheck before execution.",
+    "result": null
+  },
+  {
+    "task_id": "W04",
+    "title": "Prepare product-versus-module comparison and selection guide",
+    "category": "website_growth",
+    "workstream": "PRODUCT",
+    "product": "company-site",
+    "campaign": null,
+    "status": "QUEUED",
+    "model": "gpt-6.1-sol",
+    "dependencies": [
+      "W01"
+    ],
+    "scores": {
+      "impact": 8,
+      "user_value": 8,
+      "strategic_value": 8,
+      "urgency": 5,
+      "confidence": 6,
+      "effort": 3,
+      "risk": 1
+    },
+    "expected_value": "Test whether visitors can select the right tool; reuse current directory and avoid duplicating pages.",
+    "next_action": "Test whether visitors can select the right tool; reuse current directory and avoid duplicating pages.",
+    "evidence_sources": [
+      "/Users/agentsattari/code/wave2/thecreatingco-live/maintenance/AGENTS.md"
+    ],
+    "score_basis": "Provisional director estimate; evidence-backed opportunity, not measured ROI. Recheck before execution.",
+    "result": null
+  },
+  {
+    "task_id": "W05",
+    "title": "Verify hub forms, consent and success/error paths",
+    "category": "website_growth",
+    "workstream": "PRODUCT",
+    "product": "company-site",
+    "campaign": null,
+    "status": "QUEUED",
+    "model": "gpt-6.1-sol",
+    "dependencies": [],
+    "scores": {
+      "impact": 9,
+      "user_value": 9,
+      "strategic_value": 9,
+      "urgency": 5,
+      "confidence": 7,
+      "effort": 3,
+      "risk": 2
+    },
+    "expected_value": "Inspect form configuration and use non-sending validation; production submissions require explicit test authorization.",
+    "next_action": "Inspect form configuration and use non-sending validation; production submissions require explicit test authorization.",
+    "evidence_sources": [
+      "/Users/agentsattari/code/wave2/thecreatingco-live/maintenance/AGENTS.md"
+    ],
+    "score_basis": "Provisional director estimate; evidence-backed opportunity, not measured ROI. Recheck before execution.",
+    "result": null
+  },
+  {
+    "task_id": "W06",
+    "title": "Refresh factual product and release claims",
+    "category": "website_growth",
+    "workstream": "PRODUCT",
+    "product": "company-site",
+    "campaign": null,
+    "status": "QUEUED",
+    "model": "gpt-6.1-sol",
+    "dependencies": [],
+    "scores": {
+      "impact": 9,
+      "user_value": 8,
+      "strategic_value": 9,
+      "urgency": 5,
+      "confidence": 9,
+      "effort": 2,
+      "risk": 1
+    },
+    "expected_value": "Reconcile marketing PRODUCTS with newer Reclaim download/analytics evidence before changing public claims.",
+    "next_action": "Reconcile marketing PRODUCTS with newer Reclaim download/analytics evidence before changing public claims.",
+    "evidence_sources": [
+      "/Users/agentsattari/code/wave2/thecreatingco-live/maintenance/AGENTS.md"
+    ],
+    "score_basis": "Provisional director estimate; evidence-backed opportunity, not measured ROI. Recheck before execution.",
+    "result": null
+  },
+  {
+    "task_id": "W07",
+    "title": "Audit mobile keyboard navigation and first-action accessibility",
+    "category": "website_growth",
+    "workstream": "PRODUCT",
+    "product": "company-site",
+    "campaign": null,
+    "status": "QUEUED",
+    "model": "gpt-6.1-sol",
+    "dependencies": [],
+    "scores": {
+      "impact": 8,
+      "user_value": 8,
+      "strategic_value": 8,
+      "urgency": 5,
+      "confidence": 7,
+      "effort": 4,
+      "risk": 1
+    },
+    "expected_value": "Measure existing pages at phone widths and keyboard-only flows; fix demonstrated defects.",
+    "next_action": "Measure existing pages at phone widths and keyboard-only flows; fix demonstrated defects.",
+    "evidence_sources": [
+      "/Users/agentsattari/code/wave2/thecreatingco-live/maintenance/AGENTS.md"
+    ],
+    "score_basis": "Provisional director estimate; evidence-backed opportunity, not measured ROI. Recheck before execution.",
+    "result": null
+  },
+  {
+    "task_id": "W08",
+    "title": "Measure critical-page performance before optimization",
+    "category": "website_growth",
+    "workstream": "PRODUCT",
+    "product": "company-site",
+    "campaign": null,
+    "status": "QUEUED",
+    "model": "gpt-6.1-sol",
+    "dependencies": [],
+    "scores": {
+      "impact": 7,
+      "user_value": 8,
+      "strategic_value": 7,
+      "urgency": 5,
+      "confidence": 7,
+      "effort": 3,
+      "risk": 1
+    },
+    "expected_value": "Capture baseline load/layout metrics on home, directory and one product page; optimize largest measured issue.",
+    "next_action": "Capture baseline load/layout metrics on home, directory and one product page; optimize largest measured issue.",
+    "evidence_sources": [
+      "/Users/agentsattari/code/wave2/thecreatingco-live/maintenance/AGENTS.md"
+    ],
+    "score_basis": "Provisional director estimate; evidence-backed opportunity, not measured ROI. Recheck before execution.",
+    "result": null
+  },
+  {
+    "task_id": "W09",
+    "title": "Check canonical links, sitemap and structured metadata for current releases",
+    "category": "website_growth",
+    "workstream": "PRODUCT",
+    "product": "company-site",
+    "campaign": null,
+    "status": "QUEUED",
+    "model": "gpt-6.1-sol",
+    "dependencies": [],
+    "scores": {
+      "impact": 7,
+      "user_value": 7,
+      "strategic_value": 7,
+      "urgency": 5,
+      "confidence": 6,
+      "effort": 2,
+      "risk": 1
+    },
+    "expected_value": "Verify current live evidence; old sitemap issues may already be fixed, so avoid blindly reapplying them.",
+    "next_action": "Verify current live evidence; old sitemap issues may already be fixed, so avoid blindly reapplying them.",
+    "evidence_sources": [
+      "/Users/agentsattari/code/wave2/thecreatingco-live/maintenance/AGENTS.md"
+    ],
+    "score_basis": "Provisional director estimate; evidence-backed opportunity, not measured ROI. Recheck before execution.",
+    "result": null
+  },
+  {
+    "task_id": "W10",
+    "title": "Verify first-use help and export-limit clarity",
+    "category": "website_growth",
+    "workstream": "PRODUCT",
+    "product": "company-site",
+    "campaign": null,
+    "status": "QUEUED",
+    "model": "gpt-6.1-sol",
+    "dependencies": [
+      "W06"
+    ],
+    "scores": {
+      "impact": 8,
+      "user_value": 8,
+      "strategic_value": 8,
+      "urgency": 5,
+      "confidence": 7,
+      "effort": 3,
+      "risk": 1
+    },
+    "expected_value": "Compare product-page instructions with current UI; document actual limits and usable recovery guidance.",
+    "next_action": "Compare product-page instructions with current UI; document actual limits and usable recovery guidance.",
+    "evidence_sources": [
+      "/Users/agentsattari/code/wave2/thecreatingco-live/maintenance/AGENTS.md"
+    ],
+    "score_basis": "Provisional director estimate; evidence-backed opportunity, not measured ROI. Recheck before execution.",
+    "result": null
+  },
+  {
+    "task_id": "M01",
+    "title": "Draft evidence-led Reclaim native-alpha demonstration",
+    "category": "marketing",
+    "workstream": "GROWTH",
+    "product": "reclaim",
+    "campaign": null,
+    "status": "QUEUED",
+    "model": "gpt-6-luna",
+    "dependencies": [
+      "W06"
+    ],
+    "scores": {
+      "impact": 8,
+      "user_value": 8,
+      "strategic_value": 8,
+      "urgency": 8,
+      "confidence": 7,
+      "effort": 3,
+      "risk": 1
+    },
+    "expected_value": "Verify current download/release first; draft before/after workflow and restore caveat, not a release announcement.",
+    "next_action": "Verify current download/release first; draft before/after workflow and restore caveat, not a release announcement.",
+    "evidence_sources": [
+      "/Users/agentsattari/thecreateco-marketing/STATE.md"
+    ],
+    "score_basis": "Provisional director estimate; evidence-backed opportunity, not measured ROI. Recheck before execution.",
+    "result": null
+  },
+  {
+    "task_id": "M02",
+    "title": "Draft a single-project suite workflow story",
+    "category": "marketing",
+    "workstream": "GROWTH",
+    "product": null,
+    "campaign": null,
+    "status": "QUEUED",
+    "model": "gpt-6-luna",
+    "dependencies": [
+      "P04",
+      "P07"
+    ],
+    "scores": {
+      "impact": 8,
+      "user_value": 8,
+      "strategic_value": 8,
+      "urgency": 8,
+      "confidence": 7,
+      "effort": 3,
+      "risk": 1
+    },
+    "expected_value": "Use a real saved/exported project; identify capture gaps explicitly, no fictional results.",
+    "next_action": "Use a real saved/exported project; identify capture gaps explicitly, no fictional results.",
+    "evidence_sources": [
+      "/Users/agentsattari/thecreateco-marketing/STATE.md"
+    ],
+    "score_basis": "Provisional director estimate; evidence-backed opportunity, not measured ROI. Recheck before execution.",
+    "result": null
+  },
+  {
+    "task_id": "M03",
+    "title": "Turn verified Glyph outputs into a useful tutorial",
+    "category": "marketing",
+    "workstream": "GROWTH",
+    "product": "glyph",
+    "campaign": null,
+    "status": "QUEUED",
+    "model": "gpt-6-luna",
+    "dependencies": [
+      "P08"
+    ],
+    "scores": {
+      "impact": 7,
+      "user_value": 8,
+      "strategic_value": 7,
+      "urgency": 5,
+      "confidence": 8,
+      "effort": 2,
+      "risk": 1
+    },
+    "expected_value": "Show an actual validated font/export workflow and one concrete creator use case.",
+    "next_action": "Show an actual validated font/export workflow and one concrete creator use case.",
+    "evidence_sources": [
+      "/Users/agentsattari/thecreateco-marketing/STATE.md"
+    ],
+    "score_basis": "Provisional director estimate; evidence-backed opportunity, not measured ROI. Recheck before execution.",
+    "result": null
+  },
+  {
+    "task_id": "M04",
+    "title": "Review existing outreach outcomes before drafting more",
+    "category": "marketing",
+    "workstream": "GROWTH",
+    "product": null,
+    "campaign": null,
+    "status": "QUEUED",
+    "model": "gpt-6-luna",
+    "dependencies": [],
+    "scores": {
+      "impact": 8,
+      "user_value": 8,
+      "strategic_value": 8,
+      "urgency": 5,
+      "confidence": 8,
+      "effort": 2,
+      "risk": 1
+    },
+    "expected_value": "Summarize opt-outs, replies and qualified interest in aggregate; no new sends in this task.",
+    "next_action": "Summarize opt-outs, replies and qualified interest in aggregate; no new sends in this task.",
+    "evidence_sources": [
+      "/Users/agentsattari/thecreateco-marketing/STATE.md"
+    ],
+    "score_basis": "Provisional director estimate; evidence-backed opportunity, not measured ROI. Recheck before execution.",
+    "result": null
+  },
+  {
+    "task_id": "M05",
+    "title": "Prepare focused beta-testing invitations",
+    "category": "marketing",
+    "workstream": "GROWTH",
+    "product": null,
+    "campaign": null,
+    "status": "QUEUED",
+    "model": "gpt-6-luna",
+    "dependencies": [],
+    "scores": {
+      "impact": 8,
+      "user_value": 8,
+      "strategic_value": 8,
+      "urgency": 5,
+      "confidence": 7,
+      "effort": 3,
+      "risk": 1
+    },
+    "expected_value": "Select one reproducible workflow and ask for specific feedback; use existing CRM and consent rules, draft only.",
+    "next_action": "Select one reproducible workflow and ask for specific feedback; use existing CRM and consent rules, draft only.",
+    "evidence_sources": [
+      "/Users/agentsattari/thecreateco-marketing/STATE.md"
+    ],
+    "score_basis": "Provisional director estimate; evidence-backed opportunity, not measured ROI. Recheck before execution.",
+    "result": null
+  },
+  {
+    "task_id": "M06",
+    "title": "Research useful comparison-page opportunities",
+    "category": "marketing",
+    "workstream": "GROWTH",
+    "product": null,
+    "campaign": null,
+    "status": "QUEUED",
+    "model": "gpt-6-luna",
+    "dependencies": [],
+    "scores": {
+      "impact": 7,
+      "user_value": 7,
+      "strategic_value": 7,
+      "urgency": 5,
+      "confidence": 5,
+      "effort": 3,
+      "risk": 1
+    },
+    "expected_value": "Compare verified capabilities and limitations, not invented competitor weaknesses or SEO volume.",
+    "next_action": "Compare verified capabilities and limitations, not invented competitor weaknesses or SEO volume.",
+    "evidence_sources": [
+      "/Users/agentsattari/thecreateco-marketing/STATE.md"
+    ],
+    "score_basis": "Provisional director estimate; evidence-backed opportunity, not measured ROI. Recheck before execution.",
+    "result": null
+  },
+  {
+    "task_id": "M07",
+    "title": "Repurpose one verified fix into a development story",
+    "category": "marketing",
+    "workstream": "GROWTH",
+    "product": null,
+    "campaign": null,
+    "status": "QUEUED",
+    "model": "gpt-6-luna",
+    "dependencies": [],
+    "scores": {
+      "impact": 7,
+      "user_value": 7,
+      "strategic_value": 7,
+      "urgency": 5,
+      "confidence": 7,
+      "effort": 2,
+      "risk": 1
+    },
+    "expected_value": "Require before/after evidence and a user benefit; avoid generic activity announcements.",
+    "next_action": "Require before/after evidence and a user benefit; avoid generic activity announcements.",
+    "evidence_sources": [
+      "/Users/agentsattari/thecreateco-marketing/STATE.md"
+    ],
+    "score_basis": "Provisional director estimate; evidence-backed opportunity, not measured ROI. Recheck before execution.",
+    "result": null
+  },
+  {
+    "task_id": "M08",
+    "title": "Refresh community opportunity research and current rules",
+    "category": "marketing",
+    "workstream": "GROWTH",
+    "product": null,
+    "campaign": null,
+    "status": "QUEUED",
+    "model": "gpt-6-luna",
+    "dependencies": [],
+    "scores": {
+      "impact": 7,
+      "user_value": 7,
+      "strategic_value": 7,
+      "urgency": 5,
+      "confidence": 5,
+      "effort": 3,
+      "risk": 1
+    },
+    "expected_value": "Recheck threads and rules before drafting; no posting or pretending to be an unaffiliated customer.",
+    "next_action": "Recheck threads and rules before drafting; no posting or pretending to be an unaffiliated customer.",
+    "evidence_sources": [
+      "/Users/agentsattari/thecreateco-marketing/STATE.md"
+    ],
+    "score_basis": "Provisional director estimate; evidence-backed opportunity, not measured ROI. Recheck before execution.",
+    "result": null
+  },
+  {
+    "task_id": "M09",
+    "title": "Design three first-result messaging experiments",
+    "category": "marketing",
+    "workstream": "GROWTH",
+    "product": null,
+    "campaign": null,
+    "status": "QUEUED",
+    "model": "gpt-6-luna",
+    "dependencies": [
+      "W02"
+    ],
+    "scores": {
+      "impact": 8,
+      "user_value": 8,
+      "strategic_value": 8,
+      "urgency": 5,
+      "confidence": 6,
+      "effort": 3,
+      "risk": 1
+    },
+    "expected_value": "Define audience, hypothesis, CTA and success measure; do not run until measurement and publishing authorization exist.",
+    "next_action": "Define audience, hypothesis, CTA and success measure; do not run until measurement and publishing authorization exist.",
+    "evidence_sources": [
+      "/Users/agentsattari/thecreateco-marketing/STATE.md"
+    ],
+    "score_basis": "Provisional director estimate; evidence-backed opportunity, not measured ROI. Recheck before execution.",
+    "result": null
+  },
+  {
+    "task_id": "M10",
+    "title": "Audit free-pack usefulness and product handoff",
+    "category": "marketing",
+    "workstream": "GROWTH",
+    "product": null,
+    "campaign": null,
+    "status": "QUEUED",
+    "model": "gpt-6-luna",
+    "dependencies": [],
+    "scores": {
+      "impact": 7,
+      "user_value": 8,
+      "strategic_value": 7,
+      "urgency": 5,
+      "confidence": 7,
+      "effort": 3,
+      "risk": 1
+    },
+    "expected_value": "Validate real pack files, licenses and import instructions; improve demonstrated friction before promotion.",
+    "next_action": "Validate real pack files, licenses and import instructions; improve demonstrated friction before promotion.",
+    "evidence_sources": [
+      "/Users/agentsattari/thecreateco-marketing/STATE.md"
+    ],
+    "score_basis": "Provisional director estimate; evidence-backed opportunity, not measured ROI. Recheck before execution.",
+    "result": null
+  },
+  {
+    "task_id": "O01",
+    "title": "Install company source-of-truth and recoverable queue",
+    "category": "operations",
+    "workstream": "OPERATIONS",
+    "product": null,
+    "campaign": null,
+    "status": "QUEUED",
+    "model": "gpt-6.1-sol",
+    "dependencies": [],
+    "scores": {
+      "impact": 10,
+      "user_value": 9,
+      "strategic_value": 10,
+      "urgency": 8,
+      "confidence": 10,
+      "effort": 3,
+      "risk": 1
+    },
+    "expected_value": "Validate transactional claims, recovery, evidence gates and generated state; retain existing growth engine.",
+    "next_action": "Validate transactional claims, recovery, evidence gates and generated state; retain existing growth engine.",
+    "evidence_sources": [
+      "/Users/agentsattari/thecreateco-marketing/engine/README.md"
+    ],
+    "score_basis": "Provisional director estimate; evidence-backed opportunity, not measured ROI. Recheck before execution.",
+    "result": null
+  },
+  {
+    "task_id": "O02",
+    "title": "Inventory release provenance and unresolved source/deploy drift",
+    "category": "operations",
+    "workstream": "OPERATIONS",
+    "product": null,
+    "campaign": null,
+    "status": "QUEUED",
+    "model": "gpt-6.1-sol",
+    "dependencies": [],
+    "scores": {
+      "impact": 10,
+      "user_value": 9,
+      "strategic_value": 10,
+      "urgency": 8,
+      "confidence": 9,
+      "effort": 3,
+      "risk": 2
+    },
+    "expected_value": "Record source, deployment and rollback evidence for critical products; no deployment changes.",
+    "next_action": "Record source, deployment and rollback evidence for critical products; no deployment changes.",
+    "evidence_sources": [
+      "/Users/agentsattari/thecreateco-marketing/engine/README.md"
+    ],
+    "score_basis": "Provisional director estimate; evidence-backed opportunity, not measured ROI. Recheck before execution.",
+    "result": null
+  },
+  {
+    "task_id": "O03",
+    "title": "Connect company director to growth and bounded scheduling",
+    "category": "operations",
+    "workstream": "OPERATIONS",
+    "product": null,
+    "campaign": null,
+    "status": "QUEUED",
+    "model": "gpt-6.1-sol",
+    "dependencies": [
+      "O01"
+    ],
+    "scores": {
+      "impact": 9,
+      "user_value": 8,
+      "strategic_value": 9,
+      "urgency": 8,
+      "confidence": 9,
+      "effort": 3,
+      "risk": 1
+    },
+    "expected_value": "Use one director loop, preserve CRM/delivery boundaries, update company state after growth batches, verify schedule.",
+    "next_action": "Use one director loop, preserve CRM/delivery boundaries, update company state after growth batches, verify schedule.",
+    "evidence_sources": [
+      "/Users/agentsattari/thecreateco-marketing/engine/README.md"
+    ],
+    "score_basis": "Provisional director estimate; evidence-backed opportunity, not measured ROI. Recheck before execution.",
+    "result": null
+  },
+  {
+    "task_id": "O04",
+    "title": "Define shared feedback categories and product-quality rubric",
+    "category": "operations",
+    "workstream": "OPERATIONS",
+    "product": null,
+    "campaign": null,
+    "status": "QUEUED",
+    "model": "gpt-6.1-sol",
+    "dependencies": [
+      "O01"
+    ],
+    "scores": {
+      "impact": 8,
+      "user_value": 8,
+      "strategic_value": 8,
+      "urgency": 8,
+      "confidence": 8,
+      "effort": 2,
+      "risk": 1
+    },
+    "expected_value": "Use BUG/UX/FEATURE/CONFUSION/PERFORMANCE/PRICING/DOCUMENTATION/PRAISE/MISSING_FEATURE; evidence before scores.",
+    "next_action": "Use BUG/UX/FEATURE/CONFUSION/PERFORMANCE/PRICING/DOCUMENTATION/PRAISE/MISSING_FEATURE; evidence before scores.",
+    "evidence_sources": [
+      "/Users/agentsattari/thecreateco-marketing/engine/README.md"
+    ],
+    "score_basis": "Provisional director estimate; evidence-backed opportunity, not measured ROI. Recheck before execution.",
+    "result": null
+  },
+  {
+    "task_id": "O05",
+    "title": "Establish recurring outcomes, model-cost and portfolio reviews",
+    "category": "operations",
+    "workstream": "OPERATIONS",
+    "product": null,
+    "campaign": null,
+    "status": "QUEUED",
+    "model": "gpt-6.1-sol",
+    "dependencies": [
+      "O03"
+    ],
+    "scores": {
+      "impact": 8,
+      "user_value": 8,
+      "strategic_value": 8,
+      "urgency": 8,
+      "confidence": 8,
+      "effort": 3,
+      "risk": 1
+    },
+    "expected_value": "Weekly CEO and monthly portfolio reviews; use actual calls/cost estimates and product evidence, not task counts as success.",
+    "next_action": "Weekly CEO and monthly portfolio reviews; use actual calls/cost estimates and product evidence, not task counts as success.",
+    "evidence_sources": [
+      "/Users/agentsattari/thecreateco-marketing/engine/README.md"
+    ],
+    "score_basis": "Provisional director estimate; evidence-backed opportunity, not measured ROI. Recheck before execution.",
+    "result": null
+  },
+  {
+    "task_id": "I01",
+    "title": "Validate a release-provenance checker for small creative teams",
+    "category": "idea",
+    "workstream": "RESEARCH",
+    "product": null,
+    "campaign": null,
+    "status": "WAITING",
+    "model": "gpt-6-luna",
+    "dependencies": [],
+    "scores": {
+      "impact": 8,
+      "user_value": 8,
+      "strategic_value": 8,
+      "urgency": 8,
+      "confidence": 4,
+      "effort": 4,
+      "risk": 2
+    },
+    "expected_value": "Hypothesis: small teams lose source/deploy traceability; test existing tools and interviews before building.",
+    "next_action": "Hypothesis: small teams lose source/deploy traceability; test existing tools and interviews before building.",
+    "evidence_sources": [
+      "/Users/agentsattari/thecreateco-marketing/research/brand-expansion-2026-10-06.md"
+    ],
+    "score_basis": "Provisional director estimate; evidence-backed opportunity, not measured ROI. Recheck before execution.",
+    "result": null,
+    "validation_gate": "WAITING for problem/demand evidence and explicit prototype decision; do not auto-build.",
+    "opportunity_scores": {
+      "user_pain": 8,
+      "market_demand": null,
+      "differentiation": null,
+      "build_feasibility": 6,
+      "company_fit": 8,
+      "shared_technology": 7,
+      "monetization_potential": null,
+      "organic_growth_potential": null,
+      "competition_opportunity": null,
+      "wow_factor": null
+    },
+    "opportunity_score_basis": "Only inferred fit/feasibility/pain estimated; market/commercial scores unknown pending research.",
+    "estimates": {
+      "development_effort": 4,
+      "maintenance_burden": null,
+      "distribution_difficulty": null,
+      "risk": 2
+    }
+  },
+  {
+    "task_id": "I02",
+    "title": "Validate a project-rescue and portable-backup assistant",
+    "category": "idea",
+    "workstream": "RESEARCH",
+    "product": null,
+    "campaign": null,
+    "status": "WAITING",
+    "model": "gpt-6-luna",
+    "dependencies": [],
+    "scores": {
+      "impact": 9,
+      "user_value": 9,
+      "strategic_value": 9,
+      "urgency": 8,
+      "confidence": 4,
+      "effort": 5,
+      "risk": 3
+    },
+    "expected_value": "Hypothesis: creators need dependable browser-project backups; first assess whether Locker already solves this.",
+    "next_action": "Hypothesis: creators need dependable browser-project backups; first assess whether Locker already solves this.",
+    "evidence_sources": [
+      "/Users/agentsattari/thecreateco-marketing/research/brand-expansion-2026-10-06.md"
+    ],
+    "score_basis": "Provisional director estimate; evidence-backed opportunity, not measured ROI. Recheck before execution.",
+    "result": null,
+    "validation_gate": "WAITING for problem/demand evidence and explicit prototype decision; do not auto-build.",
+    "opportunity_scores": {
+      "user_pain": 9,
+      "market_demand": null,
+      "differentiation": null,
+      "build_feasibility": 5,
+      "company_fit": 8,
+      "shared_technology": 7,
+      "monetization_potential": null,
+      "organic_growth_potential": null,
+      "competition_opportunity": null,
+      "wow_factor": null
+    },
+    "opportunity_score_basis": "Only inferred fit/feasibility/pain estimated; market/commercial scores unknown pending research.",
+    "estimates": {
+      "development_effort": 5,
+      "maintenance_burden": null,
+      "distribution_difficulty": null,
+      "risk": 3
+    }
+  },
+  {
+    "task_id": "I03",
+    "title": "Validate an export-readiness preflight inside existing editors",
+    "category": "idea",
+    "workstream": "RESEARCH",
+    "product": null,
+    "campaign": null,
+    "status": "WAITING",
+    "model": "gpt-6-luna",
+    "dependencies": [],
+    "scores": {
+      "impact": 8,
+      "user_value": 8,
+      "strategic_value": 8,
+      "urgency": 5,
+      "confidence": 4,
+      "effort": 4,
+      "risk": 2
+    },
+    "expected_value": "Hypothesis: creators struggle to know whether deliverables satisfy destination specs; prefer a feature over another app.",
+    "next_action": "Hypothesis: creators struggle to know whether deliverables satisfy destination specs; prefer a feature over another app.",
+    "evidence_sources": [
+      "/Users/agentsattari/thecreateco-marketing/research/brand-expansion-2026-10-06.md"
+    ],
+    "score_basis": "Provisional director estimate; evidence-backed opportunity, not measured ROI. Recheck before execution.",
+    "result": null,
+    "validation_gate": "WAITING for problem/demand evidence and explicit prototype decision; do not auto-build.",
+    "opportunity_scores": {
+      "user_pain": 8,
+      "market_demand": null,
+      "differentiation": null,
+      "build_feasibility": 6,
+      "company_fit": 8,
+      "shared_technology": 7,
+      "monetization_potential": null,
+      "organic_growth_potential": null,
+      "competition_opportunity": null,
+      "wow_factor": null
+    },
+    "opportunity_score_basis": "Only inferred fit/feasibility/pain estimated; market/commercial scores unknown pending research.",
+    "estimates": {
+      "development_effort": 4,
+      "maintenance_burden": null,
+      "distribution_difficulty": null,
+      "risk": 2
+    }
+  },
+  {
+    "task_id": "I04",
+    "title": "Validate accessible portfolio checks inside Portfolio",
+    "category": "idea",
+    "workstream": "RESEARCH",
+    "product": "portfolio",
+    "campaign": null,
+    "status": "WAITING",
+    "model": "gpt-6-luna",
+    "dependencies": [],
+    "scores": {
+      "impact": 7,
+      "user_value": 8,
+      "strategic_value": 7,
+      "urgency": 5,
+      "confidence": 3,
+      "effort": 4,
+      "risk": 2
+    },
+    "expected_value": "Hypothesis: independent creators need contrast/alt-text/keyboard checks; evaluate existing accessibility tools.",
+    "next_action": "Hypothesis: independent creators need contrast/alt-text/keyboard checks; evaluate existing accessibility tools.",
+    "evidence_sources": [
+      "/Users/agentsattari/thecreateco-marketing/research/brand-expansion-2026-10-06.md"
+    ],
+    "score_basis": "Provisional director estimate; evidence-backed opportunity, not measured ROI. Recheck before execution.",
+    "result": null,
+    "validation_gate": "WAITING for problem/demand evidence and explicit prototype decision; do not auto-build.",
+    "opportunity_scores": {
+      "user_pain": 8,
+      "market_demand": null,
+      "differentiation": null,
+      "build_feasibility": 6,
+      "company_fit": 8,
+      "shared_technology": 7,
+      "monetization_potential": null,
+      "organic_growth_potential": null,
+      "competition_opportunity": null,
+      "wow_factor": null
+    },
+    "opportunity_score_basis": "Only inferred fit/feasibility/pain estimated; market/commercial scores unknown pending research.",
+    "estimates": {
+      "development_effort": 4,
+      "maintenance_burden": null,
+      "distribution_difficulty": null,
+      "risk": 2
+    }
+  },
+  {
+    "task_id": "I05",
+    "title": "Validate a local asset-license and attribution companion",
+    "category": "idea",
+    "workstream": "RESEARCH",
+    "product": "locker",
+    "campaign": null,
+    "status": "WAITING",
+    "model": "gpt-6-luna",
+    "dependencies": [],
+    "scores": {
+      "impact": 8,
+      "user_value": 8,
+      "strategic_value": 8,
+      "urgency": 5,
+      "confidence": 3,
+      "effort": 5,
+      "risk": 3
+    },
+    "expected_value": "Hypothesis: mixed creative assets lose license provenance; research workflows and legal boundaries first.",
+    "next_action": "Hypothesis: mixed creative assets lose license provenance; research workflows and legal boundaries first.",
+    "evidence_sources": [
+      "/Users/agentsattari/thecreateco-marketing/research/brand-expansion-2026-10-06.md"
+    ],
+    "score_basis": "Provisional director estimate; evidence-backed opportunity, not measured ROI. Recheck before execution.",
+    "result": null,
+    "validation_gate": "WAITING for problem/demand evidence and explicit prototype decision; do not auto-build.",
+    "opportunity_scores": {
+      "user_pain": 8,
+      "market_demand": null,
+      "differentiation": null,
+      "build_feasibility": 5,
+      "company_fit": 8,
+      "shared_technology": 7,
+      "monetization_potential": null,
+      "organic_growth_potential": null,
+      "competition_opportunity": null,
+      "wow_factor": null
+    },
+    "opportunity_score_basis": "Only inferred fit/feasibility/pain estimated; market/commercial scores unknown pending research.",
+    "estimates": {
+      "development_effort": 5,
+      "maintenance_burden": null,
+      "distribution_difficulty": null,
+      "risk": 3
+    }
+  },
+  {
+    "task_id": "I06",
+    "title": "Validate a scene-to-delivery checklist for short filmmakers",
+    "category": "idea",
+    "workstream": "RESEARCH",
+    "product": "scenepilot",
+    "campaign": null,
+    "status": "WAITING",
+    "model": "gpt-6-luna",
+    "dependencies": [],
+    "scores": {
+      "impact": 7,
+      "user_value": 8,
+      "strategic_value": 7,
+      "urgency": 5,
+      "confidence": 4,
+      "effort": 3,
+      "risk": 2
+    },
+    "expected_value": "Hypothesis: export/caption/aspect checks are repetitive; examine existing ScenePilot features before a prototype.",
+    "next_action": "Hypothesis: export/caption/aspect checks are repetitive; examine existing ScenePilot features before a prototype.",
+    "evidence_sources": [
+      "/Users/agentsattari/thecreateco-marketing/research/brand-expansion-2026-10-06.md"
+    ],
+    "score_basis": "Provisional director estimate; evidence-backed opportunity, not measured ROI. Recheck before execution.",
+    "result": null,
+    "validation_gate": "WAITING for problem/demand evidence and explicit prototype decision; do not auto-build.",
+    "opportunity_scores": {
+      "user_pain": 8,
+      "market_demand": null,
+      "differentiation": null,
+      "build_feasibility": 7,
+      "company_fit": 8,
+      "shared_technology": 7,
+      "monetization_potential": null,
+      "organic_growth_potential": null,
+      "competition_opportunity": null,
+      "wow_factor": null
+    },
+    "opportunity_score_basis": "Only inferred fit/feasibility/pain estimated; market/commercial scores unknown pending research.",
+    "estimates": {
+      "development_effort": 3,
+      "maintenance_burden": null,
+      "distribution_difficulty": null,
+      "risk": 2
+    }
+  },
+  {
+    "task_id": "I07",
+    "title": "Validate feedback-to-revision annotations inside Moodboard",
+    "category": "idea",
+    "workstream": "RESEARCH",
+    "product": "moodboard",
+    "campaign": null,
+    "status": "WAITING",
+    "model": "gpt-6-luna",
+    "dependencies": [],
+    "scores": {
+      "impact": 7,
+      "user_value": 8,
+      "strategic_value": 7,
+      "urgency": 5,
+      "confidence": 3,
+      "effort": 5,
+      "risk": 3
+    },
+    "expected_value": "Hypothesis: visual feedback becomes disconnected from revisions; research alternatives and avoid redundant collaboration tooling.",
+    "next_action": "Hypothesis: visual feedback becomes disconnected from revisions; research alternatives and avoid redundant collaboration tooling.",
+    "evidence_sources": [
+      "/Users/agentsattari/thecreateco-marketing/research/brand-expansion-2026-10-06.md"
+    ],
+    "score_basis": "Provisional director estimate; evidence-backed opportunity, not measured ROI. Recheck before execution.",
+    "result": null,
+    "validation_gate": "WAITING for problem/demand evidence and explicit prototype decision; do not auto-build.",
+    "opportunity_scores": {
+      "user_pain": 8,
+      "market_demand": null,
+      "differentiation": null,
+      "build_feasibility": 5,
+      "company_fit": 8,
+      "shared_technology": 7,
+      "monetization_potential": null,
+      "organic_growth_potential": null,
+      "competition_opportunity": null,
+      "wow_factor": null
+    },
+    "opportunity_score_basis": "Only inferred fit/feasibility/pain estimated; market/commercial scores unknown pending research.",
+    "estimates": {
+      "development_effort": 5,
+      "maintenance_burden": null,
+      "distribution_difficulty": null,
+      "risk": 3
+    }
+  },
+  {
+    "task_id": "I08",
+    "title": "Validate brand-consistency checks as a Brand Kit extension",
+    "category": "idea",
+    "workstream": "RESEARCH",
+    "product": "glyph",
+    "campaign": null,
+    "status": "WAITING",
+    "model": "gpt-6-luna",
+    "dependencies": [],
+    "scores": {
+      "impact": 7,
+      "user_value": 7,
+      "strategic_value": 7,
+      "urgency": 5,
+      "confidence": 4,
+      "effort": 4,
+      "risk": 2
+    },
+    "expected_value": "Hypothesis: creators want to check type/color consistency in exports; compare existing Brand Kit scope first.",
+    "next_action": "Hypothesis: creators want to check type/color consistency in exports; compare existing Brand Kit scope first.",
+    "evidence_sources": [
+      "/Users/agentsattari/thecreateco-marketing/research/brand-expansion-2026-10-06.md"
+    ],
+    "score_basis": "Provisional director estimate; evidence-backed opportunity, not measured ROI. Recheck before execution.",
+    "result": null,
+    "validation_gate": "WAITING for problem/demand evidence and explicit prototype decision; do not auto-build.",
+    "opportunity_scores": {
+      "user_pain": 7,
+      "market_demand": null,
+      "differentiation": null,
+      "build_feasibility": 6,
+      "company_fit": 8,
+      "shared_technology": 7,
+      "monetization_potential": null,
+      "organic_growth_potential": null,
+      "competition_opportunity": null,
+      "wow_factor": null
+    },
+    "opportunity_score_basis": "Only inferred fit/feasibility/pain estimated; market/commercial scores unknown pending research.",
+    "estimates": {
+      "development_effort": 4,
+      "maintenance_burden": null,
+      "distribution_difficulty": null,
+      "risk": 2
+    }
+  },
+  {
+    "task_id": "I09",
+    "title": "Validate a cross-app learning project rather than a new editor",
+    "category": "idea",
+    "workstream": "RESEARCH",
+    "product": null,
+    "campaign": null,
+    "status": "WAITING",
+    "model": "gpt-6-luna",
+    "dependencies": [],
+    "scores": {
+      "impact": 8,
+      "user_value": 9,
+      "strategic_value": 8,
+      "urgency": 5,
+      "confidence": 5,
+      "effort": 3,
+      "risk": 1
+    },
+    "expected_value": "Hypothesis: one guided deliverable improves first use; validate with small usability sessions before coding.",
+    "next_action": "Hypothesis: one guided deliverable improves first use; validate with small usability sessions before coding.",
+    "evidence_sources": [
+      "/Users/agentsattari/thecreateco-marketing/research/brand-expansion-2026-10-06.md"
+    ],
+    "score_basis": "Provisional director estimate; evidence-backed opportunity, not measured ROI. Recheck before execution.",
+    "result": null,
+    "validation_gate": "WAITING for problem/demand evidence and explicit prototype decision; do not auto-build.",
+    "opportunity_scores": {
+      "user_pain": 9,
+      "market_demand": null,
+      "differentiation": null,
+      "build_feasibility": 7,
+      "company_fit": 8,
+      "shared_technology": 7,
+      "monetization_potential": null,
+      "organic_growth_potential": null,
+      "competition_opportunity": null,
+      "wow_factor": null
+    },
+    "opportunity_score_basis": "Only inferred fit/feasibility/pain estimated; market/commercial scores unknown pending research.",
+    "estimates": {
+      "development_effort": 3,
+      "maintenance_burden": null,
+      "distribution_difficulty": null,
+      "risk": 1
+    }
+  },
+  {
+    "task_id": "I10",
+    "title": "Validate a privacy-first creator feedback inbox",
+    "category": "idea",
+    "workstream": "RESEARCH",
+    "product": null,
+    "campaign": null,
+    "status": "WAITING",
+    "model": "gpt-6-luna",
+    "dependencies": [],
+    "scores": {
+      "impact": 7,
+      "user_value": 8,
+      "strategic_value": 7,
+      "urgency": 5,
+      "confidence": 3,
+      "effort": 4,
+      "risk": 3
+    },
+    "expected_value": "Hypothesis: small teams need structured useful feedback without collecting excess personal data; compare existing forms first.",
+    "next_action": "Hypothesis: small teams need structured useful feedback without collecting excess personal data; compare existing forms first.",
+    "evidence_sources": [
+      "/Users/agentsattari/thecreateco-marketing/research/brand-expansion-2026-10-06.md"
+    ],
+    "score_basis": "Provisional director estimate; evidence-backed opportunity, not measured ROI. Recheck before execution.",
+    "result": null,
+    "validation_gate": "WAITING for problem/demand evidence and explicit prototype decision; do not auto-build.",
+    "opportunity_scores": {
+      "user_pain": 8,
+      "market_demand": null,
+      "differentiation": null,
+      "build_feasibility": 6,
+      "company_fit": 8,
+      "shared_technology": 7,
+      "monetization_potential": null,
+      "organic_growth_potential": null,
+      "competition_opportunity": null,
+      "wow_factor": null
+    },
+    "opportunity_score_basis": "Only inferred fit/feasibility/pain estimated; market/commercial scores unknown pending research.",
+    "estimates": {
+      "development_effort": 4,
+      "maintenance_burden": null,
+      "distribution_difficulty": null,
+      "risk": 3
+    }
+  }
+]

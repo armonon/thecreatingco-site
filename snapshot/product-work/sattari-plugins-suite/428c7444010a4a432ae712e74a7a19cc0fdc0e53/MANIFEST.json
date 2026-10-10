@@ -1,0 +1,45 @@
+{
+  "sha": "428c7444010a4a432ae712e74a7a19cc0fdc0e53",
+  "base_sha": "821400431291e34ca93fe413e6199d03c590cab7",
+  "scope": "Committed screened review delta, not a release or complete binary artifact",
+  "files": [
+    {
+      "path": "corpus/neural_vocal/manifest.json",
+      "status": "present",
+      "sha256": "5b8bd719fd6c84c26a450907066fda1f0a840b3f19b2b325418d47423c455f9d",
+      "bytes": 77545
+    },
+    {
+      "path": "corpus/neural_vocal/results.json",
+      "status": "present",
+      "sha256": "4468ba2a8813793321a3be64969e33efa7ff9a41cc0190099e3d3f97e3d10020",
+      "bytes": 86198
+    },
+    {
+      "path": "scripts/corpus_bench.py",
+      "status": "present",
+      "sha256": "dda552f9c0e18223808bb87b407c109fb0d9ed7e749876e6a9e9bb63f9d19a8b",
+      "bytes": 7568
+    },
+    {
+      "path": "scripts/corpus_gen.py",
+      "status": "present",
+      "sha256": "90f5bfcd229e10ce60c4918616667daefafa923c333b2e894bbff2d8760566b3",
+      "bytes": 26218
+    },
+    {
+      "path": "validation/neural_vocal/CORPUS_REPORT.md",
+      "status": "present",
+      "sha256": "d382211ed9a4682054d5b31fe7c4a7e9ee68d9ec80fd61fa7bf008cd775da98c",
+      "bytes": 2446
+    }
+  ],
+  "omitted": [],
+  "patch_sha256": "004fb2e6758e0d867c5e29d9942d35cbcf168f5147152fa769e0b1cfdc34dcec",
+  "repo": "https://github.com/armonon/sattari-plugins-suite",
+  "branches": [
+    "experiment/neural-vocal-corpus"
+  ],
+  "archive_path": "sattari-plugins-suite/428c7444010a4a432ae712e74a7a19cc0fdc0e53",
+  "local_worktree_dirty": false
+}

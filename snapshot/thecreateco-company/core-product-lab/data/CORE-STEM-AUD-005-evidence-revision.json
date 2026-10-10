@@ -1,0 +1,10 @@
+{
+  "task_id": "CORE-STEM-AUD-005",
+  "source_evidence": [
+    "reports/stemdeck-matrix.log"
+  ],
+  "evidence_sources": [
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-initial.md",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/products/stemdeck.json"
+  ]
+}

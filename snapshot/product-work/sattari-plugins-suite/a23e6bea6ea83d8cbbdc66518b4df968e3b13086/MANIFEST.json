@@ -1,0 +1,14 @@
+{
+  "sha": "a23e6bea6ea83d8cbbdc66518b4df968e3b13086",
+  "base_sha": "a23e6bea6ea83d8cbbdc66518b4df968e3b13086",
+  "scope": "Committed screened review delta, not a release or complete binary artifact",
+  "files": [],
+  "omitted": [],
+  "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "repo": "https://github.com/armonon/sattari-plugins-suite",
+  "branches": [
+    "feature/live-pitch"
+  ],
+  "archive_path": "sattari-plugins-suite/a23e6bea6ea83d8cbbdc66518b4df968e3b13086",
+  "local_worktree_dirty": true
+}

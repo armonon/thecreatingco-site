@@ -1,0 +1,30 @@
+{
+  "task_id": "CORE-LUMA-AUD-004",
+  "title": "Maintain explicit roadmap for advanced color and high-depth interchange gaps",
+  "product": "luma",
+  "area": "professional_capability_gap",
+  "category": "professional_capability_gap",
+  "workstream": "CORE_PRODUCT_LAB",
+  "severity": "P2",
+  "scores": {
+    "impact": 6,
+    "severity": 5,
+    "workflow_importance": 6,
+    "competitive_value": 6,
+    "release_importance": 5,
+    "confidence": 9,
+    "effort": 8,
+    "risk": 5,
+    "user_value": 6
+  },
+  "dependencies": [],
+  "status": "QUEUED",
+  "model": "gpt-6-luna",
+  "expected_value": "Flagship golden-workflow reliability; scores are planning estimates, not health metrics.",
+  "test_requirements": "Reproduce on isolated exact source; preserve baseline/fixed evidence, appropriate build/tests and golden path; source reading is not interactive sign-off.",
+  "source_evidence": [
+    "README.md Photoshop interchange policy documents narrow edited high-depth PSD support and 8-bit compatibility conversion for other cases",
+    "README.md states CMYK/Lab editing and ICC device-link support are not complete"
+  ],
+  "next_action": "Preserve preflight disclosure; validate actual demand and fidelity requirements before investing in broader color/interchange implementation."
+}

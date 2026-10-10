@@ -1,0 +1,4539 @@
+diff --git a/scripts/qualify-labs.mjs b/scripts/qualify-labs.mjs
+new file mode 100644
+index 0000000000000000000000000000000000000000..2b221d697cd2c484dad7ec7bb1a9215f7607b6a5
+--- /dev/null
++++ b/scripts/qualify-labs.mjs
+@@ -0,0 +1,226 @@
++// Browser smoke test for the wave-2 alpha tools (Canvas, Pocket, Press) against
++// the production build. Run `npm run build` first, then:
++//   node scripts/qualify-labs.mjs            (starts `vite preview` itself)
++//   LABS_QA_URL=https://deploy-preview… node scripts/qualify-labs.mjs
++// PLAYWRIGHT_CHANNEL=chrome uses an installed Chrome instead of Playwright's.
++import assert from 'node:assert/strict';
++import { mkdir, readFile, writeFile } from 'node:fs/promises';
++import { chromium } from 'playwright';
++import { preview } from 'vite';
++
++const output = process.env.LABS_QA_OUTPUT || '/tmp/sattari-labs-qa';
++await mkdir(output, { recursive: true });
++
++let server = null;
++let base = process.env.LABS_QA_URL;
++if (!base) {
++  server = await preview({ preview: { port: 5391, host: '127.0.0.1' } });
++  base = server.resolvedUrls.local[0].replace(/\/$/, '');
++}
++
++/** A 4 s, 120 BPM test track: synthetic kicks over quiet noise, as 16-bit WAV. */
++async function testTrack() {
++  const rate = 44100;
++  const frames = rate * 4;
++  const data = Buffer.alloc(44 + frames * 2);
++  data.write('RIFF', 0);
++  data.writeUInt32LE(36 + frames * 2, 4);
++  data.write('WAVEfmt ', 8);
++  data.writeUInt32LE(16, 16);
++  data.writeUInt16LE(1, 20);
++  data.writeUInt16LE(1, 22);
++  data.writeUInt32LE(rate, 24);
++  data.writeUInt32LE(rate * 2, 28);
++  data.writeUInt16LE(2, 32);
++  data.writeUInt16LE(16, 34);
++  data.write('data', 36);
++  data.writeUInt32LE(frames * 2, 40);
++  let seed = 1;
++  for (let i = 0; i < frames; i++) {
++    seed = (seed * 1664525 + 1013904223) >>> 0;
++    const t = (i % (rate / 2)) / rate;
++    const sample =
++      Math.sin(2 * Math.PI * 55 * t) * Math.exp(-t / 0.07) * 0.8 +
++      ((seed / 2 ** 32) * 2 - 1) * 0.02;
++    data.writeInt16LE(Math.round(Math.max(-1, Math.min(1, sample)) * 32767), 44 + i * 2);
++  }
++  const path = `${output}/kick-test.wav`;
++  await writeFile(path, data);
++  return path;
++}
++
++const browser = await chromium.launch({
++  headless: true,
++  channel: process.env.PLAYWRIGHT_CHANNEL || undefined,
++  args: ['--autoplay-policy=no-user-gesture-required'],
++});
++const results = [];
++
++async function open(path, width) {
++  const context = await browser.newContext({
++    viewport: { width, height: width < 600 ? 844 : 1000 },
++    acceptDownloads: true,
++  });
++  const page = await context.newPage();
++  page.setDefaultTimeout(30000);
++  const errors = [];
++  page.on('pageerror', (error) => errors.push(error.message));
++  await page.goto(`${base}${path}`, { timeout: 120000 });
++  await page.getByRole('heading', { level: 1 }).waitFor();
++  const heading = await page.getByRole('heading', { level: 1 }).textContent();
++  assert.match(heading, /Alpha/, `${path}: heading must say Alpha`);
++  assert.equal(
++    await page.evaluate(() => document.documentElement.scrollWidth > innerWidth + 1),
++    false,
++    `${path} @${width}: horizontal overflow`
++  );
++  assert.match(
++    await page.locator('meta[name="robots"]').getAttribute('content'),
++    /noindex/,
++    `${path}: alpha tools stay noindex`
++  );
++  return { context, page, errors };
++}
++
++async function download(page, click) {
++  const [file] = await Promise.all([page.waitForEvent('download', { timeout: 60000 }), click()]);
++  const path = `${output}/${file.suggestedFilename()}`;
++  await file.saveAs(path);
++  return { name: file.suggestedFilename(), bytes: await readFile(path) };
++}
++
++try {
++  for (const width of [1280, 390]) {
++    // ---- Canvas ----
++    {
++      const { context, page, errors } = await open('/studio/canvas', width);
++      await page.getByLabel('Track').setInputFiles(await testTrack());
++      await page.getByText(/kicks detected/).waitFor();
++      const status = await page.locator('p.lab-status[role="status"]').textContent();
++      const kicks = Number(status.match(/(\d+) kicks/)[1]);
++      assert.ok(kicks >= 6 && kicks <= 9, `Canvas: expected ~8 kicks, got ${kicks}`);
++      for (const scene of ['Chladni', 'Ripple', 'Lattice', 'Horizon', 'Pulse']) {
++        await page.getByRole('button', { name: scene, exact: true }).click();
++        await page.waitForTimeout(250);
++        const lit = await page.locator('canvas').evaluate((canvas) => {
++          const ctx = canvas.getContext('2d');
++          const { data } = ctx.getImageData(0, 0, canvas.width, canvas.height);
++          let sum = 0;
++          for (let i = 0; i < data.length; i += 4 * 97) sum += data[i] + data[i + 1] + data[i + 2];
++          return sum;
++        });
++        assert.ok(lit > 1000, `Canvas: ${scene} drew nothing`);
++        if (width === 1280)
++          await page.locator('canvas').screenshot({ path: `${output}/canvas-${scene}.png` });
++      }
++      await page.getByRole('button', { name: '4 s', exact: true }).click();
++      const video = await download(page, () =>
++        page.getByRole('button', { name: /Export 4 s loop/ }).click()
++      );
++      assert.match(video.name, /\.(mp4|webm)$/);
++      assert.ok(video.bytes.length > 20000, `Canvas: video only ${video.bytes.length} bytes`);
++      results.push(
++        `Canvas @${width}: ${kicks} kicks, ${video.name} ${(video.bytes.length / 1e6).toFixed(2)} MB`
++      );
++      await page.screenshot({ path: `${output}/canvas-${width}.png`, fullPage: true });
++      assert.deepEqual(errors, []);
++      await context.close();
++    }
++
++    // ---- Pocket ----
++    {
++      const { context, page, errors } = await open('/studio/pocket', width);
++      await page.getByRole('button', { name: 'Play', exact: true }).click();
++      await page.locator('.pocket-step.is-playhead').first().waitFor();
++      await page.getByRole('button', { name: 'Stop', exact: true }).click();
++      const wav = await download(page, () =>
++        page.getByRole('button', { name: /WAV loop/ }).click()
++      );
++      assert.equal(wav.bytes.toString('ascii', 0, 4), 'RIFF');
++      // 2 bars at 92 BPM, stereo 24-bit at 44.1 kHz.
++      const expected = Math.round((60 / 92) * 8 * 44100) * 2 * 3 + 44;
++      assert.ok(
++        Math.abs(wav.bytes.length - expected) <= 6,
++        `Pocket: WAV ${wav.bytes.length} vs ${expected}`
++      );
++      const zip = await download(page, () => page.getByRole('button', { name: /Stems/ }).click());
++      assert.equal(zip.bytes.readUInt32LE(0), 0x04034b50);
++      await page.getByRole('button', { name: /Send to StemDeck/ }).click();
++      await page.getByText(/Added \d+ files to the StemDeck Library/).waitFor();
++      const libraryTracks = await page.evaluate(
++        () =>
++          new Promise((resolve, reject) => {
++            const request = indexedDB.open('sattari-music-library-v1');
++            request.onerror = () => reject(request.error);
++            request.onsuccess = () => {
++              const all = request.result.transaction('tracks').objectStore('tracks').getAll();
++              all.onsuccess = () => resolve(all.result.map((track) => track.path));
++            };
++          })
++      );
++      assert.ok(libraryTracks.some((path) => path.startsWith('Pocket/')));
++      results.push(
++        `Pocket @${width}: WAV ${wav.bytes.length} B, ZIP ${zip.bytes.length} B, ${libraryTracks.length} files in StemDeck library`
++      );
++      await page.screenshot({ path: `${output}/pocket-${width}.png`, fullPage: true });
++      if (width === 1280) {
++        await page.getByRole('link', { name: /Open StemDeck Library/ }).click();
++        await page.waitForURL(/\/studio$/);
++        await page
++          .getByRole('tab', { name: /Library/ })
++          .or(page.getByRole('button', { name: /^Library$/ }))
++          .first()
++          .click();
++        await page
++          .getByText(/starter-groove-kick/i)
++          .first()
++          .waitFor({ timeout: 20000 });
++        await page.screenshot({ path: `${output}/pocket-to-stemdeck.png` });
++      }
++      assert.deepEqual(errors, []);
++      await context.close();
++    }
++
++    // ---- Press ----
++    {
++      const { context, page, errors } = await open('/press', width);
++      await page.getByLabel('Artist or band name').fill('Nova Lane');
++      await page.getByLabel('Title 1').fill('First single');
++      await page.getByLabel(/URL 1/).fill('https://www.youtube.com/watch?v=dQw4w9WgXcQ');
++      await page.getByLabel('Booking email').fill('book@example.com');
++      await page.waitForTimeout(600);
++      const frame = page.frameLocator('iframe[title="Press kit preview"]');
++      await frame.getByRole('heading', { name: 'Nova Lane' }).waitFor();
++      const html = await download(page, () =>
++        page.getByRole('button', { name: /Download HTML/ }).click()
++      );
++      const text = html.bytes.toString('utf8');
++      assert.match(text, /<h1>Nova Lane<\/h1>/);
++      assert.match(text, /youtube-nocookie\.com\/embed\/dQw4w9WgXcQ/);
++      assert.doesNotMatch(text, /<script/i);
++      results.push(`Press @${width}: ${html.name} ${text.length} chars`);
++      await page.screenshot({ path: `${output}/press-${width}.png`, fullPage: true });
++      assert.deepEqual(errors, []);
++      await context.close();
++    }
++  }
++
++  // Hub lists the labs.
++  {
++    const context = await browser.newContext({ viewport: { width: 1280, height: 1000 } });
++    const page = await context.newPage();
++    await page.goto(`${base}/hub`, { timeout: 120000 });
++    for (const name of ['Canvas', 'Pocket', 'Press'])
++      await page
++        .locator('.hub-labs')
++        .getByRole('link', { name: new RegExp(name) })
++        .waitFor();
++    await page.locator('.hub-labs').screenshot({ path: `${output}/hub-labs.png` });
++    await context.close();
++  }
++  console.log(results.join('\n'));
++  console.log(`PASS: labs smoke test. Screenshots in ${output}`);
++} finally {
++  await browser.close();
++  await server?.close();
++}
+diff --git a/src/App.tsx b/src/App.tsx
+index 1c2bbe14edf4e3f9261f9726e1bdd1b48da00dc2..eea42071034e439af62cdee813125f1f340913e0 100644
+--- a/src/App.tsx
++++ b/src/App.tsx
+@@ -34,6 +34,9 @@ import {
+   ToolDetailsPage,
+   VisitPage,
+   PrivacyPage,
++  CanvasPage,
++  PocketPage,
++  PressPage,
+   type PreloadablePage,
+ } from '@utils/lazyComponents';
+ 
+@@ -73,6 +76,10 @@ const ROUTES: RouteDefinition[] = [
+   // Restores its panels from localStorage while rendering.
+   { path: '/studio', page: SattariStudioPage, hydrate: false },
+   { path: '/stem-separator', page: StemSeparatorPage },
++  // Wave-2 alpha tools.
++  { path: '/studio/canvas', page: CanvasPage },
++  { path: '/studio/pocket', page: PocketPage },
++  { path: '/press', page: PressPage },
+   // The Audio Suite and its downloads are one page, on /downloads.
+   { path: '/downloads', page: DownloadsPage },
+   { path: '/audio-suite', redirect: '/downloads' },
+@@ -135,6 +142,9 @@ export async function preloadRoute(pathname: string): Promise<{ hydrate: boolean
+   return { hydrate: route.hydrate !== false };
+ }
+ 
++// Wave-2 alpha tools: tool pages without the footer or shop assistant.
++const LAB_PATHS = ['/studio/canvas', '/studio/pocket', '/press'];
++
+ const FOCUSABLE =
+   'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
+ 
+@@ -160,9 +170,9 @@ const App: FC = () => {
+   const pagePath = location.pathname.replace(/\/+$/, '').toLowerCase() || '/';
+   const drawerRef = useRef<HTMLDivElement>(null);
+   const openerRef = useRef<HTMLElement | null>(null);
+-  const isAudioWorkspace = ['/hub', '/learn', '/loop', '/studio', '/stem-separator'].includes(
+-    pagePath
+-  );
++  const isAudioWorkspace =
++    ['/hub', '/learn', '/loop', '/studio', '/stem-separator'].includes(pagePath) ||
++    LAB_PATHS.includes(pagePath);
+   const isResourcePage = /^\/(guides|tools|visit|privacy)(\/|$)/.test(pagePath);
+ 
+   const openCart = useCallback(() => {
+@@ -256,9 +266,8 @@ const App: FC = () => {
+           noindex
+         />
+       )}
+-      {!['/', '/studio', '/learn', '/loop', '/stem-separator'].includes(pagePath) && (
+-        <BackgroundMedia />
+-      )}
++      {!['/', '/studio', '/learn', '/loop', '/stem-separator'].includes(pagePath) &&
++        !LAB_PATHS.includes(pagePath) && <BackgroundMedia />}
+ 
+       {!['/studio', '/learn', '/loop'].includes(pagePath) && <Navbar onCartClick={openCart} />}
+ 
+diff --git a/src/entry-prerender.jsx b/src/entry-prerender.jsx
+index 20d4f4b6a8cbc5958d2df36611b2de413bc33bf7..0bd4594bea524cc998431836a2c8ba772cc26625 100644
+--- a/src/entry-prerender.jsx
++++ b/src/entry-prerender.jsx
+@@ -65,6 +65,10 @@ export function getPrerenderRoutes(inventory) {
+       ['/checkout/cancel', 'src/pages/CheckoutStatus.jsx'],
+       ['/instagram/callback', 'src/pages/InstagramCallback.jsx'],
+       ['/404', 'src/components/NotFoundPage.tsx'],
++      // Wave-2 alpha tools: public but noindex until the owner decides.
++      ['/studio/canvas', 'src/labs/canvas/CanvasPage.jsx'],
++      ['/studio/pocket', 'src/labs/pocket/PocketPage.jsx'],
++      ['/press', 'src/labs/press/PressPage.jsx'],
+     ].map(([path, entry]) => ({ path, entry, indexable: false })),
+   ];
+ }
+diff --git a/src/labs/HubLabs.jsx b/src/labs/HubLabs.jsx
+new file mode 100644
+index 0000000000000000000000000000000000000000..2730efe2967ee09dc51d4dd9fba3f82d0a9964a2
+--- /dev/null
++++ b/src/labs/HubLabs.jsx
+@@ -0,0 +1,30 @@
++import { Link } from 'react-router-dom';
++import { ArrowUpRight, FlaskConical } from 'lucide-react';
++import { LAB_APPS } from './labsSeo';
++import './hubLabs.css';
++
++/** Hub listing for the wave-2 alpha tools. */
++export default function HubLabs() {
++  return (
++    <section className="hub-reading hub-labs" aria-labelledby="hub-labs-title">
++      <div className="hub-section-heading">
++        <h2 id="hub-labs-title">
++          <FlaskConical size={18} aria-hidden="true" /> Labs
++        </h2>
++        <span>Alpha tools</span>
++      </div>
++      <div className="hub-labs-grid">
++        {LAB_APPS.map(({ id, name, path, detail }) => (
++          <Link key={id} to={path} className="hub-reading-link">
++            <span className="hub-eyebrow">Alpha</span>
++            <h3>
++              {name}
++              <ArrowUpRight size={20} aria-hidden="true" />
++            </h3>
++            <p>{detail}</p>
++          </Link>
++        ))}
++      </div>
++    </section>
++  );
++}
+diff --git a/src/labs/LabPages.test.jsx b/src/labs/LabPages.test.jsx
+new file mode 100644
+index 0000000000000000000000000000000000000000..fc3163a3c5f4a36e18021f3799ef352b65d0efa9
+--- /dev/null
++++ b/src/labs/LabPages.test.jsx
+@@ -0,0 +1,101 @@
++import { act, fireEvent, render, screen } from '@testing-library/react';
++import { renderToString } from 'react-dom/server';
++import { MemoryRouter, StaticRouter } from 'react-router-dom';
++import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
++import CanvasPage from './canvas/CanvasPage';
++import PocketPage from './pocket/PocketPage';
++import PressPage from './press/PressPage';
++import { STORAGE_KEY } from './pocket/pocketPattern';
++import { DRAFT_KEY } from './press/pressHtml';
++import { LAB_SEO } from './labsSeo';
++
++vi.mock('../utils/seo', () => ({ SEO: () => null }));
++
++const page = (Component) => (
++  <MemoryRouter>
++    <Component />
++  </MemoryRouter>
++);
++
++beforeEach(() => {
++  localStorage.clear();
++  // jsdom has no 2D canvas; Canvas idles without one.
++  vi.spyOn(HTMLCanvasElement.prototype, 'getContext').mockReturnValue(null);
++});
++
++afterEach(() => {
++  vi.restoreAllMocks();
++  vi.useRealTimers();
++});
++
++describe.each([
++  ['Canvas', CanvasPage],
++  ['Pocket', PocketPage],
++  ['Press', PressPage],
++])('%s', (name, Component) => {
++  it('is labelled alpha with its limitations and renders on the server', () => {
++    expect(
++      renderToString(
++        <StaticRouter location="/">
++          <Component />
++        </StaticRouter>
++      )
++    ).toContain(name);
++    render(page(Component));
++    const heading = screen.getByRole('heading', { level: 1 });
++    expect(heading).toHaveTextContent(name);
++    expect(heading).toHaveTextContent('Alpha');
++    expect(screen.getByText('Alpha: what this does not do yet')).toBeInTheDocument();
++    expect(screen.getByRole('link', { name: /Sattari Hub/ })).toHaveAttribute('href', '/hub');
++  });
++});
++
++it('keeps the alpha tools out of search until the owner decides', () => {
++  for (const seo of Object.values(LAB_SEO)) {
++    expect(seo.noindex).toBe(true);
++    expect(seo.description.length).toBeLessThanOrEqual(180);
++  }
++});
++
++describe('Pocket', () => {
++  it('toggles steps and saves the pattern in this browser', () => {
++    render(page(PocketPage));
++    const step = screen.getByRole('button', { name: 'Kick step 2' });
++    expect(step).toHaveAttribute('aria-pressed', 'false');
++    fireEvent.click(step);
++    expect(step).toHaveAttribute('aria-pressed', 'true');
++
++    fireEvent.change(screen.getByLabelText('Name'), { target: { value: 'Bus idea' } });
++    fireEvent.click(screen.getByRole('button', { name: /Save/ }));
++    const saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
++    expect(saved[0].name).toBe('Bus idea');
++    expect(saved[0].drums.kick[1]).toBe(true);
++    expect(screen.getByRole('button', { name: /^Bus idea ·/ })).toBeInTheDocument();
++  });
++
++  it('keeps the bass monophonic: one note per step', () => {
++    render(page(PocketPage));
++    const low = screen.getByRole('button', { name: 'Bass B step 3' });
++    const high = screen.getByRole('button', { name: 'Bass G step 3' });
++    fireEvent.click(low);
++    fireEvent.click(high);
++    expect(high).toHaveAttribute('aria-pressed', 'true');
++    expect(low).toHaveAttribute('aria-pressed', 'false');
++  });
++});
++
++describe('Press', () => {
++  it('updates the preview and auto-saves the draft', async () => {
++    vi.useFakeTimers();
++    render(page(PressPage));
++    fireEvent.change(screen.getByLabelText('Artist or band name'), {
++      target: { value: 'Nova Lane' },
++    });
++    await act(async () => {
++      vi.advanceTimersByTime(400);
++    });
++    const preview = screen.getByTitle('Press kit preview');
++    expect(preview.getAttribute('srcdoc')).toContain('<h1>Nova Lane</h1>');
++    expect(JSON.parse(localStorage.getItem(DRAFT_KEY)).name).toBe('Nova Lane');
++  });
++});
+diff --git a/src/labs/LabShell.jsx b/src/labs/LabShell.jsx
+new file mode 100644
+index 0000000000000000000000000000000000000000..3830d89e73cf566c4207af8bd3eae43ee85af838
+--- /dev/null
++++ b/src/labs/LabShell.jsx
+@@ -0,0 +1,51 @@
++import { Link } from 'react-router-dom';
++import { ArrowLeft, ArrowUpRight, ShieldCheck } from 'lucide-react';
++import { SEO } from '../utils/seo';
++import { LAB_SEO } from './labsSeo';
++import './labs.css';
++
++/**
++ * Shared frame for the wave-2 alpha tools: breadcrumb, heading with an Alpha
++ * badge, a one-line pitch and an always-visible list of honest limitations.
++ */
++export default function LabShell({ lab, name, tagline, limitations, className = '', children }) {
++  return (
++    <>
++      <SEO {...LAB_SEO[lab]} />
++      <section className={`lab-page lab-${lab} ${className}`.trim()}>
++        <div className="lab-shell">
++          <nav className="lab-breadcrumb" aria-label="Music tools">
++            <Link to="/hub">
++              <ArrowLeft size={15} aria-hidden="true" /> Sattari Hub
++            </Link>
++            <Link to="/studio">
++              Open StemDeck <ArrowUpRight size={15} aria-hidden="true" />
++            </Link>
++          </nav>
++          <header className="lab-heading">
++            <div>
++              <p className="lab-eyebrow">Sattari music tools</p>
++              <h1>
++                {name} <span className="lab-badge">Alpha</span>
++              </h1>
++              <p className="lab-tagline">{tagline}</p>
++            </div>
++            <span className="lab-private">
++              <ShieldCheck size={16} aria-hidden="true" /> Runs in your browser. Nothing is
++              uploaded.
++            </span>
++          </header>
++          {children}
++          <details className="lab-limits">
++            <summary>Alpha: what this does not do yet</summary>
++            <ul>
++              {limitations.map((item) => (
++                <li key={item}>{item}</li>
++              ))}
++            </ul>
++          </details>
++        </div>
++      </section>
++    </>
++  );
++}
+diff --git a/src/labs/canvas/CanvasPage.jsx b/src/labs/canvas/CanvasPage.jsx
+new file mode 100644
+index 0000000000000000000000000000000000000000..1771f52c01f0e1793fe0dc153a35efba38eb0ab5
+--- /dev/null
++++ b/src/labs/canvas/CanvasPage.jsx
+@@ -0,0 +1,575 @@
++import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
++import { Download, Image as ImageIcon, Music, Pause, Play, Video } from 'lucide-react';
++import LabShell from '../LabShell';
++import { downloadBlob, safeFileName } from '../files';
++import { analyseBuffer, demoView, featuresAt, loopView } from './canvasFeatures';
++import { drawFrame, PALETTES, SCENES } from './canvasScenes';
++import { browserFormats, EXPORT_SIZES, LOOP_LENGTHS, recorderMimeType } from './canvasExport';
++
++const PREVIEW = { width: 720, height: 1280 };
++const MAX_AUDIO_BYTES = 200 * 1024 * 1024;
++
++const LIMITATIONS = [
++  'Recording runs in real time: an 8 second loop takes 8 seconds, and the tab must stay visible while it records.',
++  'MP4 export depends on your browser (recent Chrome, Edge and Safari). Firefox records WebM only; Spotify Canvas needs MP4, so convert WebM files first.',
++  'The loop restarts with the audio. Pick a loop start on a downbeat for the cleanest seam; there is no crossfade yet.',
++  'Kick detection is a simple low-band onset detector. Busy bass lines or very soft kicks can be missed or double-counted.',
++  'Browser-recorded WebM files may lack a duration in their header, so some players show no length until re-saved.',
++];
++
++function formatSeconds(value) {
++  const minutes = Math.floor(value / 60);
++  const seconds = (value % 60).toFixed(1).padStart(4, '0');
++  return `${minutes}:${seconds}`;
++}
++
++function loadImage(file) {
++  return new Promise((resolve, reject) => {
++    const url = URL.createObjectURL(file);
++    const image = new Image();
++    image.onload = () => resolve({ image, url, name: file.name });
++    image.onerror = () => {
++      URL.revokeObjectURL(url);
++      reject(new Error('That image could not be opened. Try a JPG or PNG.'));
++    };
++    image.src = url;
++  });
++}
++
++export default function CanvasPage() {
++  const canvasRef = useRef(null);
++  const meterRefs = useRef({});
++  const audio = useRef({ context: null, source: null, gain: null, startedAt: 0 });
++  const clock = useRef({ origin: 0 });
++  const settings = useRef(null);
++
++  const [track, setTrack] = useState(null);
++  const [cover, setCover] = useState(null);
++  const [scene, setScene] = useState('pulse');
++  const [paletteId, setPaletteId] = useState('golden');
++  const [colors, setColors] = useState(PALETTES[1].colors);
++  const [reactivity, setReactivity] = useState(0.8);
++  const [loopStart, setLoopStart] = useState(0);
++  const [loopLength, setLoopLength] = useState(8);
++  const [title, setTitle] = useState('');
++  const [artist, setArtist] = useState('');
++  const [sizeId, setSizeId] = useState('720');
++  const [formats, setFormats] = useState(null);
++  const [variant, setVariant] = useState(0);
++  const [formatId, setFormatId] = useState('');
++  const [includeAudio, setIncludeAudio] = useState(false);
++  const [playing, setPlaying] = useState(false);
++  const [recording, setRecording] = useState(null);
++  const [status, setStatus] = useState({
++    text: 'Drop a track to start. Until then, a built-in 120 BPM pulse drives the preview.',
++  });
++
++  const maxStart = track ? Math.max(0, track.duration - loopLength) : 0;
++  const start = Math.min(loopStart, maxStart);
++  const length = track ? Math.min(loopLength, track.duration - start) : loopLength;
++  const view = useMemo(
++    () => (track ? loopView(track.analysis, start, length) : demoView(length)),
++    [track, start, length]
++  );
++
++  useEffect(() => {
++    settings.current = {
++      scene,
++      colors,
++      react: reactivity,
++      title,
++      artist,
++      view,
++      cover: cover?.image || null,
++      variant,
++    };
++  });
++
++  useEffect(() => {
++    const available = browserFormats();
++    setFormats(available);
++    setFormatId(available[0]?.id || '');
++  }, []);
++
++  const loopTime = useCallback(() => {
++    const { context, source, startedAt } = audio.current;
++    const L = settings.current.view.length;
++    if (context && source) return (((context.currentTime - startedAt) % L) + L) % L;
++    return (((performance.now() / 1000 - clock.current.origin) % L) + L) % L;
++  }, []);
++
++  // One render loop for the page's lifetime; it reads the latest settings.
++  useEffect(() => {
++    const canvas = canvasRef.current;
++    const ctx = canvas?.getContext?.('2d');
++    if (!ctx) return undefined;
++    clock.current.origin = performance.now() / 1000;
++    let frame = 0;
++    const tick = () => {
++      const s = settings.current;
++      if (s) {
++        const t = loopTime();
++        const f = featuresAt(s.view, t);
++        drawFrame(ctx, { ...s, t, f });
++        for (const key of ['low', 'high', 'kick']) {
++          meterRefs.current[key]?.style.setProperty('--fill', `${Math.round(f[key] * 100)}%`);
++        }
++      }
++      frame = requestAnimationFrame(tick);
++    };
++    frame = requestAnimationFrame(tick);
++    return () => cancelAnimationFrame(frame);
++  }, [loopTime]);
++
++  const ensureContext = () => {
++    if (!audio.current.context) {
++      const Context = window.AudioContext || window.webkitAudioContext;
++      if (!Context) throw new Error('This browser does not support Web Audio.');
++      const context = new Context();
++      const gain = context.createGain();
++      gain.connect(context.destination);
++      audio.current.context = context;
++      audio.current.gain = gain;
++    }
++    return audio.current.context;
++  };
++
++  const stopPlayback = useCallback(() => {
++    const { source } = audio.current;
++    if (source) {
++      try {
++        source.stop();
++      } catch {
++        /* already stopped */
++      }
++      source.disconnect();
++      audio.current.source = null;
++    }
++    clock.current.origin = performance.now() / 1000;
++    setPlaying(false);
++  }, []);
++
++  const startPlayback = useCallback(
++    (extraDestination) => {
++      if (!track) return;
++      const context = ensureContext();
++      stopPlayback();
++      const source = context.createBufferSource();
++      source.buffer = track.buffer;
++      source.loop = true;
++      source.loopStart = start;
++      source.loopEnd = start + length;
++      source.connect(audio.current.gain);
++      if (extraDestination) source.connect(extraDestination);
++      audio.current.startedAt = context.currentTime;
++      source.start(context.currentTime, start);
++      audio.current.source = source;
++      setPlaying(true);
++      return context.resume();
++    },
++    [track, start, length, stopPlayback]
++  );
++
++  // Moving the loop while playing restarts it at the new start.
++  useEffect(() => {
++    if (audio.current.source && !recording) startPlayback();
++    // eslint-disable-next-line react-hooks/exhaustive-deps
++  }, [start, length]);
++
++  useEffect(
++    () => () => {
++      stopPlayback();
++      audio.current.context?.close?.();
++    },
++    [stopPlayback]
++  );
++
++  useEffect(() => () => cover && URL.revokeObjectURL(cover.url), [cover]);
++
++  const onAudio = async (file) => {
++    if (!file) return;
++    if (file.size > MAX_AUDIO_BYTES) {
++      setStatus({
++        text: 'That file is over 200 MB. Use a shorter or compressed file.',
++        error: true,
++      });
++      return;
++    }
++    setStatus({ text: `Decoding ${file.name}…` });
++    try {
++      const context = ensureContext();
++      const buffer = await context.decodeAudioData(await file.arrayBuffer());
++      const analysis = analyseBuffer(buffer);
++      stopPlayback();
++      setTrack({ name: file.name, buffer, analysis, duration: buffer.duration });
++      // Start on the first detected kick, if there is one in the first half.
++      const firstKick = analysis.onsets.find((time) => time < buffer.duration / 2) || 0;
++      setLoopStart(Math.max(0, Math.min(firstKick, buffer.duration - loopLength)));
++      if (!title) setTitle(file.name.replace(/\.[^.]+$/, '').slice(0, 40));
++      setStatus({
++        text: `${file.name}: ${formatSeconds(buffer.duration)}, ${analysis.onsets.length} kicks detected. Press play to hear the loop.`,
++      });
++    } catch (error) {
++      setStatus({
++        text: `Could not decode that file (${error.message || 'unknown format'}). Try WAV, MP3 or M4A.`,
++        error: true,
++      });
++    }
++  };
++
++  const onCover = async (file) => {
++    if (!file) return;
++    try {
++      setCover(await loadImage(file));
++    } catch (error) {
++      setStatus({ text: error.message, error: true });
++    }
++  };
++
++  const choosePalette = (palette) => {
++    setPaletteId(palette.id);
++    setColors(palette.colors);
++  };
++
++  const setColor = (index, value) =>
++    setColors((current) => current.map((color, i) => (i === index ? value : color)));
++
++  const exportStill = () => {
++    canvasRef.current?.toBlob((blob) => {
++      if (blob) downloadBlob(blob, `${safeFileName(title, 'canvas')}-still.png`);
++    }, 'image/png');
++  };
++
++  const exportLoop = async () => {
++    const format = formats?.find((item) => item.id === formatId) || formats?.[0];
++    const canvas = canvasRef.current;
++    if (!format || !canvas) return;
++    const size = EXPORT_SIZES.find((item) => item.id === sizeId) || EXPORT_SIZES[0];
++    const seconds = settings.current.view.length;
++    const stream = canvas.captureStream(30);
++    let destination = null;
++    try {
++      if (includeAudio && track) {
++        destination = ensureContext().createMediaStreamDestination();
++        destination.stream.getAudioTracks().forEach((item) => stream.addTrack(item));
++      }
++      canvas.width = size.width;
++      canvas.height = size.height;
++      const mimeType = recorderMimeType(format, Boolean(destination), (type) =>
++        MediaRecorder.isTypeSupported(type)
++      );
++      const recorder = new MediaRecorder(stream, {
++        mimeType,
++        videoBitsPerSecond: size.width >= 1080 ? 12_000_000 : 8_000_000,
++      });
++      const chunks = [];
++      recorder.ondataavailable = (event) => event.data.size && chunks.push(event.data);
++      const stopped = new Promise((resolve) => {
++        recorder.onstop = resolve;
++      });
++      setRecording({ seconds, elapsed: 0 });
++      setStatus({ text: `Recording ${seconds} s at ${size.label}. Keep this tab visible.` });
++      if (track) await startPlayback(destination);
++      else clock.current.origin = performance.now() / 1000;
++      recorder.start(250);
++      const began = performance.now();
++      await new Promise((resolve) => {
++        const timer = setInterval(() => {
++          const elapsed = (performance.now() - began) / 1000;
++          setRecording({ seconds, elapsed: Math.min(seconds, elapsed) });
++          if (elapsed >= seconds) {
++            clearInterval(timer);
++            resolve();
++          }
++        }, 100);
++      });
++      recorder.stop();
++      await stopped;
++      stopPlayback();
++      const blob = new Blob(chunks, { type: mimeType.split(';')[0] });
++      downloadBlob(
++        blob,
++        `${safeFileName(title, 'canvas')}-${size.width}x${size.height}-${seconds}s.${format.ext}`
++      );
++      setStatus({
++        text: `Saved a ${seconds} s ${format.label} loop (${(blob.size / 1e6).toFixed(1)} MB).`,
++      });
++    } catch (error) {
++      stopPlayback();
++      setStatus({ text: `Recording failed: ${error.message || error}`, error: true });
++    } finally {
++      stream.getTracks().forEach((item) => item.stop());
++      destination?.disconnect();
++      canvas.width = PREVIEW.width;
++      canvas.height = PREVIEW.height;
++      setRecording(null);
++    }
++  };
++
++  return (
++    <LabShell
++      lab="canvas"
++      name="Canvas"
++      tagline="Drop a track and cover art. Get a looping, audio-reactive 9:16 video for Spotify Canvas, Reels and TikTok."
++      limitations={LIMITATIONS}
++    >
++      <div className="lab-workspace">
++        <div className="lab-panel" aria-label="Canvas settings" role="group">
++          <h2>1. Sources</h2>
++          <label className="lab-drop">
++            <Music size={20} aria-hidden="true" />
++            <strong>{track ? track.name : 'Drop a track'}</strong>
++            <span>{track ? formatSeconds(track.duration) : 'WAV, MP3, M4A, FLAC, OGG'}</span>
++            <input
++              type="file"
++              accept="audio/*,.wav,.mp3,.m4a,.flac,.ogg,.aac,.aif,.aiff"
++              aria-label="Track"
++              disabled={Boolean(recording)}
++              onChange={(event) => onAudio(event.target.files?.[0])}
++            />
++          </label>
++          <label className="lab-drop">
++            <ImageIcon size={20} aria-hidden="true" />
++            <strong>{cover ? cover.name : 'Add cover art (optional)'}</strong>
++            <span>Square JPG or PNG works best</span>
++            <input
++              type="file"
++              accept="image/*"
++              aria-label="Cover art"
++              disabled={Boolean(recording)}
++              onChange={(event) => onCover(event.target.files?.[0])}
++            />
++          </label>
++
++          <h2>2. Look</h2>
++          <div className="lab-field">
++            <span>Scene</span>
++            <div className="lab-segment" role="group" aria-label="Scene">
++              {SCENES.map((item) => (
++                <button
++                  key={item.id}
++                  type="button"
++                  title={item.detail}
++                  aria-pressed={scene === item.id}
++                  onClick={() => setScene(item.id)}
++                >
++                  {item.label}
++                </button>
++              ))}
++              <button
++                type="button"
++                title="Cycle through variations of this scene"
++                onClick={() => setVariant((value) => (value + 1) % 6)}
++              >
++                Vary
++              </button>
++            </div>
++          </div>
++          <div className="lab-field">
++            <span>Palette</span>
++            <div className="lab-swatches" role="group" aria-label="Palette">
++              {PALETTES.map((palette) => (
++                <button
++                  key={palette.id}
++                  type="button"
++                  className="lab-swatch"
++                  aria-label={palette.label}
++                  title={palette.label}
++                  aria-pressed={paletteId === palette.id}
++                  style={{
++                    background: `linear-gradient(135deg, ${palette.colors[0]} 0 40%, ${palette.colors[1]} 40% 70%, ${palette.colors[2]} 70%)`,
++                  }}
++                  onClick={() => choosePalette(palette)}
++                />
++              ))}
++            </div>
++          </div>
++          <div className="lab-row">
++            {['Background', 'Accent', 'Highlight'].map((label, index) => (
++              <label key={label} className="lab-field">
++                <span>{label}</span>
++                <input
++                  type="color"
++                  value={colors[index]}
++                  onChange={(event) => setColor(index, event.target.value)}
++                />
++              </label>
++            ))}
++          </div>
++          <label className="lab-field">
++            <span>
++              Kick reaction <output>{Math.round(reactivity * 100)}%</output>
++            </span>
++            <input
++              type="range"
++              min="0"
++              max="1.5"
++              step="0.05"
++              value={reactivity}
++              onChange={(event) => setReactivity(Number(event.target.value))}
++            />
++          </label>
++          <div className="lab-grid-2">
++            <label className="lab-field">
++              <span>Title</span>
++              <input
++                type="text"
++                value={title}
++                maxLength={40}
++                onChange={(event) => setTitle(event.target.value)}
++              />
++            </label>
++            <label className="lab-field">
++              <span>Artist</span>
++              <input
++                type="text"
++                value={artist}
++                maxLength={40}
++                onChange={(event) => setArtist(event.target.value)}
++              />
++            </label>
++          </div>
++
++          <h2>3. Loop</h2>
++          <div className="lab-field">
++            <span>Length</span>
++            <div className="lab-segment" role="group" aria-label="Loop length">
++              {LOOP_LENGTHS.map((value) => (
++                <button
++                  key={value}
++                  type="button"
++                  aria-pressed={loopLength === value}
++                  disabled={Boolean(recording)}
++                  onClick={() => setLoopLength(value)}
++                >
++                  {value} s
++                </button>
++              ))}
++            </div>
++          </div>
++          <label className="lab-field">
++            <span>
++              Loop start <output>{formatSeconds(start)}</output>
++            </span>
++            <input
++              type="range"
++              min="0"
++              max={maxStart || 0}
++              step="0.05"
++              value={start}
++              disabled={!track || Boolean(recording)}
++              onChange={(event) => setLoopStart(Number(event.target.value))}
++            />
++          </label>
++        </div>
++
++        <div className="lab-panel lab-canvas-stage">
++          <canvas
++            ref={canvasRef}
++            width={PREVIEW.width}
++            height={PREVIEW.height}
++            aria-label="Canvas preview"
++            role="img"
++          />
++          <div className="lab-meters" aria-hidden="true">
++            {[
++              ['low', 'Low'],
++              ['high', 'High'],
++              ['kick', 'Kick'],
++            ].map(([key, label]) => (
++              <span key={key} className="lab-meter">
++                {label}
++                <i
++                  ref={(node) => {
++                    meterRefs.current[key] = node;
++                  }}
++                />
++              </span>
++            ))}
++          </div>
++          <div className="lab-row">
++            <button
++              type="button"
++              className="lab-button"
++              disabled={!track || Boolean(recording)}
++              onClick={() => (playing ? stopPlayback() : startPlayback())}
++            >
++              {playing ? (
++                <Pause size={16} aria-hidden="true" />
++              ) : (
++                <Play size={16} aria-hidden="true" />
++              )}
++              {playing ? 'Pause' : 'Play loop'}
++            </button>
++            <button
++              type="button"
++              className="lab-button"
++              disabled={Boolean(recording)}
++              onClick={exportStill}
++            >
++              <Download size={16} aria-hidden="true" /> Still PNG
++            </button>
++          </div>
++          <div className="lab-row">
++            <label className="lab-field">
++              <span>Size</span>
++              <select
++                value={sizeId}
++                disabled={Boolean(recording)}
++                onChange={(event) => setSizeId(event.target.value)}
++              >
++                {EXPORT_SIZES.map((item) => (
++                  <option key={item.id} value={item.id}>
++                    {item.label}
++                  </option>
++                ))}
++              </select>
++            </label>
++            <label className="lab-field">
++              <span>Format</span>
++              <select
++                value={formatId}
++                disabled={!formats?.length || Boolean(recording)}
++                onChange={(event) => setFormatId(event.target.value)}
++              >
++                {(formats || []).map((item) => (
++                  <option key={item.id} value={item.id}>
++                    {item.label}
++                  </option>
++                ))}
++              </select>
++            </label>
++          </div>
++          <label className="lab-row lab-field">
++            <input
++              type="checkbox"
++              checked={includeAudio}
++              disabled={!track || Boolean(recording)}
++              onChange={(event) => setIncludeAudio(event.target.checked)}
++            />
++            Include audio (for Reels/TikTok; Spotify Canvas must be silent)
++          </label>
++          <button
++            type="button"
++            className="lab-button is-primary"
++            disabled={!formats?.length || Boolean(recording)}
++            onClick={exportLoop}
++          >
++            <Video size={16} aria-hidden="true" />
++            {recording
++              ? `Recording ${recording.elapsed.toFixed(1)} / ${recording.seconds} s`
++              : `Export ${length} s loop`}
++          </button>
++          {formats?.length === 0 && (
++            <p className="lab-status is-error">
++              This browser cannot record canvas video. Try recent Chrome, Edge or Safari.
++            </p>
++          )}
++          <p className={`lab-status${status.error ? ' is-error' : ''}`} role="status">
++            {status.text}
++          </p>
++        </div>
++      </div>
++    </LabShell>
++  );
++}
+diff --git a/src/labs/canvas/canvasExport.js b/src/labs/canvas/canvasExport.js
+new file mode 100644
+index 0000000000000000000000000000000000000000..267dcd066201ac02543006478b4b836dcb862d07
+--- /dev/null
++++ b/src/labs/canvas/canvasExport.js
+@@ -0,0 +1,57 @@
++// Video formats MediaRecorder can produce from a canvas in this browser.
++// MP4 (H.264) comes first where supported: Spotify Canvas only accepts MP4.
++const CANDIDATES = [
++  { id: 'mp4-avc', label: 'MP4 (H.264)', mimeType: 'video/mp4;codecs=avc1.42E01E', ext: 'mp4' },
++  { id: 'mp4', label: 'MP4', mimeType: 'video/mp4', ext: 'mp4' },
++  { id: 'webm-vp9', label: 'WebM (VP9)', mimeType: 'video/webm;codecs=vp9', ext: 'webm' },
++  { id: 'webm-vp8', label: 'WebM (VP8)', mimeType: 'video/webm;codecs=vp8', ext: 'webm' },
++  { id: 'webm', label: 'WebM', mimeType: 'video/webm', ext: 'webm' },
++];
++
++export const EXPORT_SIZES = [
++  { id: '720', label: '720 × 1280', width: 720, height: 1280 },
++  { id: '1080', label: '1080 × 1920', width: 1080, height: 1920 },
++];
++
++export const LOOP_LENGTHS = [4, 6, 8, 15];
++
++function supports(isTypeSupported, type) {
++  try {
++    return Boolean(isTypeSupported(type));
++  } catch {
++    return false;
++  }
++}
++
++/**
++ * Supported formats, best first, at most one per container.
++ * @param {(type: string) => boolean} isTypeSupported
++ */
++export function supportedFormats(isTypeSupported) {
++  if (typeof isTypeSupported !== 'function') return [];
++  const out = [];
++  for (const candidate of CANDIDATES) {
++    if (
++      supports(isTypeSupported, candidate.mimeType) &&
++      !out.some((format) => format.ext === candidate.ext)
++    )
++      out.push(candidate);
++  }
++  return out;
++}
++
++/** The mime type to request, adding an audio codec when the format needs one named. */
++export function recorderMimeType(format, withAudio, isTypeSupported) {
++  if (!withAudio) return format.mimeType;
++  const options =
++    format.ext === 'mp4'
++      ? ['video/mp4;codecs=avc1.42E01E,mp4a.40.2', format.mimeType]
++      : [`${format.mimeType.replace(/;codecs=.*/, '')};codecs=vp9,opus`, format.mimeType];
++  return options.find((type) => supports(isTypeSupported, type)) || format.mimeType;
++}
++
++export function browserFormats() {
++  if (typeof MediaRecorder === 'undefined' || typeof HTMLCanvasElement === 'undefined') return [];
++  if (!('captureStream' in HTMLCanvasElement.prototype)) return [];
++  return supportedFormats((type) => MediaRecorder.isTypeSupported(type));
++}
+diff --git a/src/labs/canvas/canvasExport.test.js b/src/labs/canvas/canvasExport.test.js
+new file mode 100644
+index 0000000000000000000000000000000000000000..3d5ad30c62cfdd0cebaf5af68bba30510dd76746
+--- /dev/null
++++ b/src/labs/canvas/canvasExport.test.js
+@@ -0,0 +1,34 @@
++import { describe, expect, it } from 'vitest';
++import { recorderMimeType, supportedFormats } from './canvasExport';
++
++describe('supportedFormats', () => {
++  it('prefers MP4 and keeps one format per container', () => {
++    const formats = supportedFormats(() => true);
++    expect(formats.map((format) => format.ext)).toEqual(['mp4', 'webm']);
++    expect(formats[0].mimeType).toContain('avc1');
++  });
++
++  it('falls back to WebM where MP4 is unsupported (Firefox)', () => {
++    const formats = supportedFormats((type) => type.startsWith('video/webm'));
++    expect(formats).toHaveLength(1);
++    expect(formats[0].mimeType).toBe('video/webm;codecs=vp9');
++  });
++
++  it('returns nothing without MediaRecorder support or when the check throws', () => {
++    expect(supportedFormats(undefined)).toEqual([]);
++    expect(
++      supportedFormats(() => {
++        throw new Error('nope');
++      })
++    ).toEqual([]);
++  });
++});
++
++describe('recorderMimeType', () => {
++  const mp4 = supportedFormats(() => true)[0];
++  it('names an audio codec when audio is included and supported', () => {
++    expect(recorderMimeType(mp4, true, () => true)).toBe('video/mp4;codecs=avc1.42E01E,mp4a.40.2');
++    expect(recorderMimeType(mp4, true, () => false)).toBe(mp4.mimeType);
++    expect(recorderMimeType(mp4, false, () => true)).toBe(mp4.mimeType);
++  });
++});
+diff --git a/src/labs/canvas/canvasFeatures.js b/src/labs/canvas/canvasFeatures.js
+new file mode 100644
+index 0000000000000000000000000000000000000000..b1c6df46ec2e64223dfc5a7f887dcecc384a3b27
+--- /dev/null
++++ b/src/labs/canvas/canvasFeatures.js
+@@ -0,0 +1,195 @@
++// Audio features for Canvas. The decoded track is analysed once, up front, into
++// per-frame envelopes (overall energy, low band, high band) and kick onsets.
++// Rendering then reads features by loop time, so every frame of an exported
++// loop is a pure function of (time, audio): the same input gives the same
++// video, and the visual restarts exactly where the audio does.
++
++export const FEATURE_FPS = 60;
++const KICK_DECAY_SECONDS = 0.16;
++const MIN_ONSET_GAP_SECONDS = 0.16;
++
++/** Averages the channels of an AudioBuffer (or anything shaped like one). */
++export function mixToMono(buffer) {
++  const channels = buffer.numberOfChannels;
++  const out = new Float32Array(buffer.length);
++  for (let c = 0; c < channels; c++) {
++    const data = buffer.getChannelData(c);
++    for (let i = 0; i < out.length; i++) out[i] += data[i] / channels;
++  }
++  return out;
++}
++
++function onePole(cutoff, sampleRate) {
++  return Math.exp((-2 * Math.PI * cutoff) / sampleRate);
++}
++
++function percentile(values, p) {
++  if (!values.length) return 0;
++  const sorted = Array.from(values).sort((a, b) => a - b);
++  return sorted[Math.min(sorted.length - 1, Math.floor(p * sorted.length))];
++}
++
++function normalise(values) {
++  const ref = percentile(values, 0.97) || 1;
++  const out = new Float32Array(values.length);
++  for (let i = 0; i < values.length; i++) out[i] = Math.min(1, values[i] / ref);
++  return out;
++}
++
++/**
++ * Per-frame RMS envelopes and kick onsets for mono samples.
++ * Low band: two one-pole low-passes at 150 Hz (kick and bass body).
++ * High band: the signal minus a 3 kHz low-pass (hats, air, consonants).
++ */
++export function analyseSamples(samples, sampleRate, fps = FEATURE_FPS) {
++  const hop = sampleRate / fps;
++  const frames = Math.max(1, Math.floor(samples.length / hop));
++  const energy = new Float32Array(frames);
++  const low = new Float32Array(frames);
++  const high = new Float32Array(frames);
++  const aLow = onePole(150, sampleRate);
++  const aHigh = onePole(3000, sampleRate);
++  let lp1 = 0;
++  let lp2 = 0;
++  let hp = 0;
++  for (let f = 0; f < frames; f++) {
++    const start = Math.floor(f * hop);
++    const end = Math.min(samples.length, Math.floor((f + 1) * hop));
++    let e = 0;
++    let l = 0;
++    let h = 0;
++    for (let i = start; i < end; i++) {
++      const x = samples[i];
++      lp1 = (1 - aLow) * x + aLow * lp1;
++      lp2 = (1 - aLow) * lp1 + aLow * lp2;
++      hp = (1 - aHigh) * x + aHigh * hp;
++      const hi = x - hp;
++      e += x * x;
++      l += lp2 * lp2;
++      h += hi * hi;
++    }
++    const n = Math.max(1, end - start);
++    energy[f] = Math.sqrt(e / n);
++    low[f] = Math.sqrt(l / n);
++    high[f] = Math.sqrt(h / n);
++  }
++
++  // Kick onsets: positive low-band flux above an adaptive local threshold,
++  // peak-picked with a minimum gap.
++  const flux = new Float32Array(frames);
++  for (let f = 1; f < frames; f++) flux[f] = Math.max(0, low[f] - low[f - 1]);
++  const window = Math.round(fps * 0.5);
++  const fluxPeak = percentile(flux, 0.99) || 1;
++  const onsets = [];
++  const strengths = [];
++  const minGap = Math.round(MIN_ONSET_GAP_SECONDS * fps);
++  let last = -Infinity;
++  for (let f = 1; f < frames - 1; f++) {
++    if (flux[f] < flux[f - 1] || flux[f] < flux[f + 1]) continue;
++    let sum = 0;
++    let count = 0;
++    for (let k = Math.max(0, f - window); k <= Math.min(frames - 1, f + window); k++) {
++      sum += flux[k];
++      count++;
++    }
++    const threshold = (sum / count) * 2.2 + fluxPeak * 0.12;
++    if (flux[f] <= threshold || f - last < minGap) continue;
++    last = f;
++    onsets.push(f / fps);
++    strengths.push(Math.min(1, flux[f] / fluxPeak));
++  }
++
++  return {
++    fps,
++    duration: samples.length / sampleRate,
++    energy: normalise(energy),
++    low: normalise(low),
++    high: normalise(high),
++    onsets,
++    strengths,
++  };
++}
++
++export function analyseBuffer(buffer) {
++  return analyseSamples(mixToMono(buffer), buffer.sampleRate);
++}
++
++function smoothCircular(values, attack, release) {
++  // Two passes so the state at the loop seam matches the state one loop later.
++  const out = new Float32Array(values.length);
++  let y = 0;
++  for (let pass = 0; pass < 2; pass++)
++    for (let i = 0; i < values.length; i++) {
++      const x = values[i];
++      y += (x - y) * (x > y ? attack : release);
++      out[i] = y;
++    }
++  return out;
++}
++
++/**
++ * The slice of an analysis that a loop of `length` seconds starting at
++ * `start` plays, with a kick envelope that wraps around the loop seam.
++ */
++export function loopView(analysis, start, length) {
++  const { fps } = analysis;
++  const frames = Math.max(1, Math.round(length * fps));
++  const first = Math.max(0, Math.round(start * fps));
++  const pick = (source) => {
++    const out = new Float32Array(frames);
++    for (let i = 0; i < frames; i++) out[i] = source[Math.min(source.length - 1, first + i)] || 0;
++    return out;
++  };
++  const onsets = [];
++  analysis.onsets.forEach((time, index) => {
++    const at = time - first / fps;
++    if (at >= 0 && at < length) onsets.push({ time: at, strength: analysis.strengths[index] });
++  });
++  const kick = new Float32Array(frames);
++  for (let i = 0; i < frames; i++) {
++    const t = i / fps;
++    let value = 0;
++    for (const onset of onsets) {
++      // Age since this onset, counting the previous pass of the loop.
++      const age = (t - onset.time + length) % length;
++      value = Math.max(value, (0.45 + 0.55 * onset.strength) * Math.exp(-age / KICK_DECAY_SECONDS));
++    }
++    kick[i] = value;
++  }
++  return {
++    fps,
++    length,
++    frames,
++    energy: smoothCircular(pick(analysis.energy), 0.5, 0.08),
++    low: smoothCircular(pick(analysis.low), 0.6, 0.12),
++    high: smoothCircular(pick(analysis.high), 0.6, 0.15),
++    kick,
++    onsets,
++  };
++}
++
++/** A built-in 120 BPM pulse so the preview moves before a track is loaded. */
++export function demoView(length = 8, fps = FEATURE_FPS) {
++  const frames = Math.round(length * fps);
++  const onsets = [];
++  for (let t = 0; t < length - 1e-6; t += 0.5) onsets.push({ time: t, strength: t % 2 ? 0.6 : 1 });
++  const energy = new Float32Array(frames);
++  const low = new Float32Array(frames);
++  const high = new Float32Array(frames);
++  const kick = new Float32Array(frames);
++  for (let i = 0; i < frames; i++) {
++    const t = i / fps;
++    const beat = (t % 0.5) / 0.5;
++    kick[i] = Math.exp(-(beat * 0.5) / KICK_DECAY_SECONDS) * (Math.floor(t / 0.5) % 2 ? 0.6 : 1);
++    low[i] = 0.25 + 0.6 * kick[i];
++    high[i] = 0.3 + 0.25 * Math.max(0, Math.sin(Math.PI * 4 * t + 1.2));
++    energy[i] = 0.35 + 0.25 * Math.sin((2 * Math.PI * t) / length) ** 2 + 0.3 * kick[i];
++  }
++  return { fps, length, frames, energy, low, high, kick, onsets, demo: true };
++}
++
++/** Feature values at loop time `t` (seconds). */
++export function featuresAt(view, t) {
++  const i = ((Math.floor(t * view.fps) % view.frames) + view.frames) % view.frames;
++  return { energy: view.energy[i], low: view.low[i], high: view.high[i], kick: view.kick[i] };
++}
+diff --git a/src/labs/canvas/canvasFeatures.test.js b/src/labs/canvas/canvasFeatures.test.js
+new file mode 100644
+index 0000000000000000000000000000000000000000..b08c074f6268e29087dd3d5932220aa2603663b3
+--- /dev/null
++++ b/src/labs/canvas/canvasFeatures.test.js
+@@ -0,0 +1,87 @@
++import { describe, expect, it } from 'vitest';
++import { analyseSamples, demoView, featuresAt, loopView, mixToMono } from './canvasFeatures';
++import { chladniPoints, hexToRgb, rgba, seeded } from './canvasScenes';
++
++const RATE = 22050;
++
++/** A 120 BPM four-on-the-floor: 55 Hz kick bursts every 0.5 s over quiet hiss. */
++function kickTrack(seconds = 4) {
++  const samples = new Float32Array(seconds * RATE);
++  const random = seeded(7);
++  for (let i = 0; i < samples.length; i++) samples[i] = (random() * 2 - 1) * 0.01;
++  for (let beat = 0; beat < seconds * 2; beat++) {
++    const start = Math.round(beat * 0.5 * RATE);
++    for (let i = 0; i < RATE * 0.25 && start + i < samples.length; i++) {
++      const t = i / RATE;
++      samples[start + i] += Math.sin(2 * Math.PI * 55 * t) * Math.exp(-t / 0.06) * 0.9;
++    }
++  }
++  return samples;
++}
++
++describe('analyseSamples', () => {
++  it('finds each kick of a 120 BPM pattern within a frame or two', () => {
++    const analysis = analyseSamples(kickTrack(4), RATE);
++    expect(analysis.onsets.length).toBeGreaterThanOrEqual(7);
++    expect(analysis.onsets.length).toBeLessThanOrEqual(8);
++    for (const onset of analysis.onsets) {
++      const nearest = Math.round(onset / 0.5) * 0.5;
++      expect(Math.abs(onset - nearest)).toBeLessThan(0.04);
++    }
++  });
++
++  it('normalises envelopes into 0..1', () => {
++    const analysis = analyseSamples(kickTrack(2), RATE);
++    for (const key of ['energy', 'low', 'high']) {
++      const values = Array.from(analysis[key]);
++      expect(Math.min(...values)).toBeGreaterThanOrEqual(0);
++      expect(Math.max(...values)).toBeLessThanOrEqual(1);
++    }
++  });
++
++  it('reports no kicks in silence without dividing by zero', () => {
++    const analysis = analyseSamples(new Float32Array(RATE), RATE);
++    expect(analysis.onsets).toEqual([]);
++    expect(Array.from(analysis.energy).every(Number.isFinite)).toBe(true);
++  });
++});
++
++describe('loopView', () => {
++  it('slices the loop and wraps the kick envelope across the seam', () => {
++    const analysis = analyseSamples(kickTrack(6), RATE);
++    const view = loopView(analysis, 1, 2);
++    expect(view.frames).toBe(120);
++    expect(view.onsets.length).toBeGreaterThanOrEqual(3);
++    // The loop starts on a kick, so the first frames carry its envelope...
++    expect(featuresAt(view, 0.02).kick).toBeGreaterThan(0.3);
++    // ...and the envelope just before the seam continues from the last kick.
++    expect(featuresAt(view, 1.99).kick).toBeLessThan(featuresAt(view, 0.02).kick);
++  });
++
++  it('reads features with loop-time wrapping', () => {
++    const view = demoView(4);
++    expect(featuresAt(view, 0.25)).toEqual(featuresAt(view, 4.25));
++    expect(featuresAt(view, -0.5)).toEqual(featuresAt(view, 3.5));
++  });
++});
++
++describe('helpers', () => {
++  it('mixes channels to mono', () => {
++    const buffer = {
++      numberOfChannels: 2,
++      length: 2,
++      getChannelData: (c) => (c ? new Float32Array([1, 0]) : new Float32Array([0, 1])),
++    };
++    expect(Array.from(mixToMono(buffer))).toEqual([0.5, 0.5]);
++  });
++
++  it('parses colours and builds deterministic plate points', () => {
++    expect(hexToRgb('#d6b36d')).toEqual([214, 179, 109]);
++    expect(hexToRgb('#fff')).toEqual([255, 255, 255]);
++    expect(rgba('#000000', 2)).toBe('rgba(0, 0, 0, 1)');
++    const points = chladniPoints();
++    expect(points).toHaveLength(4);
++    expect(points[0][0]).toBe(chladniPoints()[0][0]);
++    expect(Array.from(points[1]).every((value) => value >= -1 && value <= 1)).toBe(true);
++  });
++});
+diff --git a/src/labs/canvas/canvasScenes.js b/src/labs/canvas/canvasScenes.js
+new file mode 100644
+index 0000000000000000000000000000000000000000..ab832fb11a783866c64f6897401877ea90484469
+--- /dev/null
++++ b/src/labs/canvas/canvasScenes.js
+@@ -0,0 +1,363 @@
++// Canvas scenes. Every scene draws one frame from (loop time, features) only,
++// with motion periods that divide the loop length, so the last frame of an
++// export flows into the first. The Chladni and Lattice ideas come from the
++// Sattari cymatic-generator prototype.
++
++const TAU = Math.PI * 2;
++
++export const SCENES = [
++  { id: 'pulse', label: 'Pulse', detail: 'Cover art that breathes on the kick' },
++  { id: 'chladni', label: 'Chladni', detail: 'Sand on a resonating plate' },
++  { id: 'ripple', label: 'Ripple', detail: 'Rings on every kick' },
++  { id: 'lattice', label: 'Lattice', detail: 'Rotating harmonic mandala' },
++  { id: 'horizon', label: 'Horizon', detail: 'Stacked waveform ridges' },
++];
++
++export const PALETTES = [
++  { id: 'obsidian', label: 'Obsidian', colors: ['#07070a', '#f4b35e', '#ff6b6b'] },
++  { id: 'golden', label: 'Sattari gold', colors: ['#0b0906', '#d6b36d', '#f7f0e8'] },
++  { id: 'aurora', label: 'Aurora', colors: ['#030710', '#67e8f9', '#a78bfa'] },
++  { id: 'clinical', label: 'Clinical', colors: ['#050608', '#d9f99d', '#93c5fd'] },
++  { id: 'rose', label: 'Rose', colors: ['#12060b', '#ff8fab', '#ffd6a5'] },
++  { id: 'paper', label: 'Paper', colors: ['#efe9df', '#1d1d1b', '#c2410c'] },
++];
++
++// Deterministic pseudo-random numbers (mulberry32).
++export function seeded(seed) {
++  let a = seed >>> 0;
++  return () => {
++    a = (a + 0x6d2b79f5) >>> 0;
++    let t = a;
++    t = Math.imul(t ^ (t >>> 15), t | 1);
++    t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
++    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
++  };
++}
++
++export function hexToRgb(hex) {
++  const value = String(hex).replace('#', '');
++  const full =
++    value.length === 3
++      ? value
++          .split('')
++          .map((c) => c + c)
++          .join('')
++      : value;
++  const n = Number.parseInt(full, 16);
++  if (!Number.isFinite(n)) return [0, 0, 0];
++  return [(n >> 16) & 255, (n >> 8) & 255, n & 255];
++}
++
++export function rgba(hex, alpha) {
++  const [r, g, b] = hexToRgb(hex);
++  return `rgba(${r}, ${g}, ${b}, ${Math.max(0, Math.min(1, alpha))})`;
++}
++
++function chladni(x, y, m, n) {
++  return (
++    Math.sin(m * Math.PI * x) * Math.sin(n * Math.PI * y) -
++    Math.sin(n * Math.PI * x) * Math.sin(m * Math.PI * y)
++  );
++}
++
++const CHLADNI_POINTS = 3200;
++const CHLADNI_MODES = [
++  [3, 5],
++  [4, 7],
++  [2, 9],
++  [5, 6],
++];
++let chladniCache = null;
++
++/** Points on the nodal lines of each plate mode, in matching order. */
++export function chladniPoints() {
++  if (chladniCache) return chladniCache;
++  chladniCache = CHLADNI_MODES.map(([m, n], index) => {
++    const random = seeded(1000 + index);
++    const points = new Float32Array(CHLADNI_POINTS * 2);
++    let count = 0;
++    let guard = 0;
++    while (count < CHLADNI_POINTS && guard++ < 400000) {
++      const x = random() * 2 - 1;
++      const y = random() * 2 - 1;
++      if (Math.abs(chladni(x, y, m, n)) < 0.025) {
++        points[count * 2] = x;
++        points[count * 2 + 1] = y;
++        count++;
++      }
++    }
++    return points;
++  });
++  return chladniCache;
++}
++
++function background(ctx, w, h, colors, f) {
++  const [bg, accent] = colors;
++  const g = ctx.createRadialGradient(w / 2, h * 0.45, 10, w / 2, h / 2, h * 0.75);
++  g.addColorStop(0, rgba(accent, 0.1 + f.energy * 0.12));
++  g.addColorStop(0.35, bg);
++  g.addColorStop(1, bg);
++  ctx.fillStyle = bg;
++  ctx.fillRect(0, 0, w, h);
++  ctx.fillStyle = g;
++  ctx.fillRect(0, 0, w, h);
++}
++
++function coverRect(image, w, h) {
++  const scale = Math.max(w / image.width, h / image.height);
++  const dw = image.width * scale;
++  const dh = image.height * scale;
++  return [(w - dw) / 2, (h - dh) / 2, dw, dh];
++}
++
++function roundedRect(ctx, x, y, w, h, r) {
++  ctx.beginPath();
++  ctx.moveTo(x + r, y);
++  ctx.arcTo(x + w, y, x + w, y + h, r);
++  ctx.arcTo(x + w, y + h, x, y + h, r);
++  ctx.arcTo(x, y + h, x, y, r);
++  ctx.arcTo(x, y, x + w, y, r);
++  ctx.closePath();
++}
++
++function drawPulse(ctx, w, h, s) {
++  const { colors, f, cover, react, phase } = s;
++  const [, accent, second] = colors;
++  if (cover) {
++    // Blurred, darkened cover fills the frame behind the artwork.
++    ctx.save();
++    const zoom = 1.25 + 0.04 * Math.sin(phase * TAU);
++    const [x, y, dw, dh] = coverRect(cover, w * zoom, h * zoom);
++    ctx.globalAlpha = 0.55;
++    if ('filter' in ctx) ctx.filter = `blur(${Math.round(w * 0.05)}px)`;
++    ctx.drawImage(cover, x - (w * (zoom - 1)) / 2, y - (h * (zoom - 1)) / 2, dw, dh);
++    ctx.restore();
++    ctx.fillStyle = rgba(colors[0], 0.55);
++    ctx.fillRect(0, 0, w, h);
++  }
++  const cx = w / 2;
++  const cy = h * 0.46;
++  // Rings ride the kick envelope.
++  ctx.save();
++  ctx.globalCompositeOperation = 'lighter';
++  for (let i = 0; i < 4; i++) {
++    const r = w * (0.36 + i * 0.07 + f.kick * react * 0.05 * (i + 1));
++    ctx.strokeStyle = rgba(i % 2 ? second : accent, (0.32 - i * 0.06) * (0.4 + f.kick * react));
++    ctx.lineWidth = w * 0.004 * (1 + f.kick * 2);
++    ctx.beginPath();
++    ctx.arc(cx, cy, r, 0, TAU);
++    ctx.stroke();
++  }
++  ctx.restore();
++  const size = w * 0.64 * (1 + f.kick * react * 0.07 + f.energy * 0.02);
++  ctx.save();
++  ctx.shadowColor = rgba(accent, 0.55 + 0.4 * f.kick);
++  ctx.shadowBlur = w * (0.04 + 0.1 * f.kick * react);
++  roundedRect(ctx, cx - size / 2, cy - size / 2, size, size, w * 0.03);
++  if (cover) {
++    ctx.fillStyle = '#000';
++    ctx.fill();
++    ctx.shadowBlur = 0;
++    ctx.clip();
++    const [x, y, dw, dh] = coverRect(cover, size, size);
++    ctx.drawImage(cover, cx - size / 2 + x, cy - size / 2 + y, dw, dh);
++  } else {
++    const g = ctx.createLinearGradient(cx - size / 2, cy - size / 2, cx + size / 2, cy + size / 2);
++    g.addColorStop(0, accent);
++    g.addColorStop(1, second);
++    ctx.fillStyle = g;
++    ctx.fill();
++  }
++  ctx.restore();
++  // A thin highlight sweep once per loop.
++  ctx.save();
++  roundedRect(ctx, cx - size / 2, cy - size / 2, size, size, w * 0.03);
++  ctx.clip();
++  const sweep = cx - size + phase * size * 2;
++  const g = ctx.createLinearGradient(sweep - size * 0.2, 0, sweep + size * 0.2, 0);
++  g.addColorStop(0, 'rgba(255,255,255,0)');
++  g.addColorStop(0.5, `rgba(255,255,255,${0.06 + f.high * 0.08})`);
++  g.addColorStop(1, 'rgba(255,255,255,0)');
++  ctx.fillStyle = g;
++  ctx.fillRect(cx - size / 2, cy - size / 2, size, size);
++  ctx.restore();
++}
++
++function drawChladni(ctx, w, h, s) {
++  const { colors, f, react, phase } = s;
++  const modes = chladniPoints();
++  // Two plate modes per loop, cross-faded A -> B -> A so the seam is continuous.
++  // Kicks shake the sand off the nodal lines; it settles back as they decay.
++  const morph = 0.5 - 0.5 * Math.cos(phase * TAU);
++  const pair = s.variant % 2 ? [modes[2], modes[3]] : [modes[0], modes[1]];
++  const cx = w / 2;
++  const cy = h * 0.48;
++  const radius = w * 0.44 * (1 + f.kick * react * 0.03);
++  const jitter = 0.003 + f.kick * react * 0.035 + f.high * 0.004;
++  const dot = Math.max(1.5, w / 360) * (1 + f.high * 0.5);
++  ctx.save();
++  ctx.globalCompositeOperation = 'lighter';
++  pair.forEach((points, mode) => {
++    const weight = mode ? morph : 1 - morph;
++    if (weight < 0.02) return;
++    const alpha = (0.3 + f.energy * 0.5) * weight;
++    for (let i = 0; i < CHLADNI_POINTS; i++) {
++      const x = points[i * 2] + Math.sin(i * 12.9898 + phase * TAU * 4) * jitter;
++      const y = points[i * 2 + 1] + Math.cos(i * 78.233 + phase * TAU * 4) * jitter;
++      ctx.fillStyle = rgba(i % 7 === 0 ? colors[2] : colors[1], alpha);
++      ctx.fillRect(cx + x * radius, cy + y * radius * 1.15, dot, dot);
++    }
++  });
++  ctx.restore();
++  ctx.strokeStyle = rgba(colors[1], 0.1 + f.kick * 0.25);
++  ctx.lineWidth = w * 0.003;
++  ctx.strokeRect(cx - radius, cy - radius * 1.15, radius * 2, radius * 2.3);
++}
++
++function drawRipple(ctx, w, h, s) {
++  const { colors, f, react, phase, view } = s;
++  const cx = w / 2;
++  const cy = h * 0.48;
++  const life = 2.2;
++  ctx.save();
++  ctx.globalCompositeOperation = 'lighter';
++  // Slow glows orbiting once per loop.
++  for (let i = 0; i < 5; i++) {
++    const angle = (i / 5) * TAU + phase * TAU;
++    const x = cx + Math.cos(angle) * w * 0.26;
++    const y = cy + Math.sin(angle) * w * 0.4;
++    const g = ctx.createRadialGradient(x, y, 0, x, y, w * (0.22 + f.high * 0.1));
++    g.addColorStop(0, rgba(colors[2], 0.08 + f.energy * 0.12));
++    g.addColorStop(1, 'rgba(0,0,0,0)');
++    ctx.fillStyle = g;
++    ctx.fillRect(0, 0, w, h);
++  }
++  const onsets = view.onsets.length ? view.onsets : [{ time: 0, strength: 0.5 }];
++  for (const onset of onsets) {
++    const age = (s.t - onset.time + view.length) % view.length;
++    if (age > life) continue;
++    const k = 1 - age / life;
++    const r = w * (0.05 + age * 0.38 * (0.7 + react * 0.3));
++    ctx.strokeStyle = rgba(colors[1], k * k * (0.35 + 0.5 * onset.strength));
++    ctx.lineWidth = w * (0.004 + 0.012 * k * onset.strength);
++    ctx.beginPath();
++    ctx.ellipse(cx, cy, r, r * 1.15, 0, 0, TAU);
++    ctx.stroke();
++  }
++  ctx.restore();
++  ctx.fillStyle = rgba(colors[1], 0.6 + f.kick * 0.4);
++  ctx.beginPath();
++  ctx.arc(cx, cy, w * (0.025 + f.kick * react * 0.03), 0, TAU);
++  ctx.fill();
++}
++
++function drawLattice(ctx, w, h, s) {
++  const { colors, f, react, phase } = s;
++  const cx = w / 2;
++  const cy = h * 0.48;
++  const maxR = w * (0.42 + f.energy * 0.06 + f.kick * react * 0.05);
++  const symmetry = 6 + (s.variant % 3) * 2;
++  ctx.save();
++  ctx.translate(cx, cy);
++  ctx.globalCompositeOperation = 'lighter';
++  for (let layer = 0; layer < 9; layer++) {
++    const points = symmetry + layer * 2;
++    const r = maxR * (0.16 + layer * 0.1);
++    const rotation = phase * TAU * (layer % 2 ? 1 : -1) * (1 / (1 + (layer % 3)));
++    ctx.beginPath();
++    for (let i = 0; i <= points; i++) {
++      const a = (i / points) * TAU + rotation;
++      const mod = 1 + Math.sin(a * (2 + layer) + phase * TAU * 2) * (0.03 + f.high * 0.14);
++      const x = Math.cos(a) * r * mod;
++      const y = Math.sin(a) * r * mod * 1.35;
++      if (i === 0) ctx.moveTo(x, y);
++      else ctx.lineTo(x, y);
++    }
++    ctx.closePath();
++    ctx.strokeStyle = rgba(layer % 2 ? colors[2] : colors[1], 0.3 + f.energy * 0.35 - layer * 0.02);
++    ctx.lineWidth = w * 0.002 * (1 + f.kick * react * 3);
++    ctx.stroke();
++  }
++  ctx.restore();
++}
++
++function drawHorizon(ctx, w, h, s) {
++  const { colors, react, view } = s;
++  const lines = 30;
++  const top = h * 0.22;
++  const spacing = (h * 0.62) / lines;
++  const steps = 72;
++  for (let line = 0; line < lines; line++) {
++    // Each ridge shows the music a little earlier: the newest is at the bottom.
++    const lag = (lines - 1 - line) * 0.06;
++    const t = (s.t - lag + view.length * 4) % view.length;
++    const i = Math.floor(t * view.fps) % view.frames;
++    const amp = (view.energy[i] * 0.6 + view.kick[i] * react * 0.8) * spacing * 3.2;
++    const y0 = top + line * spacing;
++    ctx.beginPath();
++    ctx.moveTo(w * 0.08, y0);
++    for (let k = 0; k <= steps; k++) {
++      const u = k / steps;
++      const x = w * (0.08 + u * 0.84);
++      const envelope = Math.exp(-(((u - 0.5) * 3.2) ** 2));
++      const noise =
++        Math.sin(u * 37 + line * 1.7 + s.phase * TAU) * 0.5 +
++        Math.sin(u * 91 + line * 0.9 - s.phase * TAU * 2) * 0.3 +
++        Math.sin(u * 13 + line * 2.3) * 0.2;
++      ctx.lineTo(x, y0 - envelope * amp * (0.6 + 0.4 * Math.abs(noise)));
++    }
++    ctx.lineTo(w * 0.92, y0);
++    ctx.closePath();
++    ctx.fillStyle = colors[0];
++    ctx.fill();
++    ctx.strokeStyle = rgba(line === lines - 1 ? colors[2] : colors[1], 0.5 + view.high[i] * 0.4);
++    ctx.lineWidth = Math.max(1, w / 520);
++    ctx.stroke();
++  }
++}
++
++function drawTitle(ctx, w, h, s) {
++  const { title, artist, colors } = s;
++  if (!title && !artist) return;
++  ctx.save();
++  ctx.textAlign = 'center';
++  ctx.textBaseline = 'alphabetic';
++  ctx.fillStyle = colors[0] === '#efe9df' ? '#1d1d1b' : '#ffffff';
++  ctx.shadowColor = 'rgba(0,0,0,0.45)';
++  ctx.shadowBlur = w * 0.02;
++  if (title) {
++    ctx.font = `600 ${Math.round(w * 0.06)}px Inter, system-ui, sans-serif`;
++    ctx.fillText(title, w / 2, h * 0.86, w * 0.86);
++  }
++  if (artist) {
++    ctx.globalAlpha = 0.75;
++    ctx.font = `500 ${Math.round(w * 0.038)}px Inter, system-ui, sans-serif`;
++    ctx.fillText(artist.toUpperCase(), w / 2, h * 0.86 + w * 0.065, w * 0.86);
++  }
++  ctx.restore();
++}
++
++const DRAW = {
++  pulse: drawPulse,
++  chladni: drawChladni,
++  ripple: drawRipple,
++  lattice: drawLattice,
++  horizon: drawHorizon,
++};
++
++/**
++ * Draws one frame.
++ * @param {CanvasRenderingContext2D} ctx
++ * @param {object} s scene state: { scene, t, view, f, colors, cover, react, title, artist, variant }
++ */
++export function drawFrame(ctx, s) {
++  const { width: w, height: h } = ctx.canvas;
++  const state = { ...s, phase: (s.t % s.view.length) / s.view.length, variant: s.variant || 0 };
++  ctx.save();
++  ctx.globalAlpha = 1;
++  ctx.globalCompositeOperation = 'source-over';
++  background(ctx, w, h, s.colors, s.f);
++  (DRAW[s.scene] || drawPulse)(ctx, w, h, state);
++  drawTitle(ctx, w, h, state);
++  ctx.restore();
++}
+diff --git a/src/labs/files.js b/src/labs/files.js
+new file mode 100644
+index 0000000000000000000000000000000000000000..713a9d17966727571ebe34c973423b87434b8268
+--- /dev/null
++++ b/src/labs/files.js
+@@ -0,0 +1,22 @@
++/** Saves a Blob through a temporary link. */
++export function downloadBlob(blob, filename) {
++  const url = URL.createObjectURL(blob);
++  const link = document.createElement('a');
++  link.href = url;
++  link.download = filename;
++  document.body.appendChild(link);
++  link.click();
++  link.remove();
++  setTimeout(() => URL.revokeObjectURL(url), 60000);
++}
++
++export function safeFileName(value, fallback = 'sattari') {
++  const name = String(value || '')
++    .normalize('NFKD')
++    .replace(/[^\w\s-]/g, '')
++    .trim()
++    .replace(/[\s_]+/g, '-')
++    .toLowerCase()
++    .slice(0, 60);
++  return name || fallback;
++}
+diff --git a/src/labs/hubLabs.css b/src/labs/hubLabs.css
+new file mode 100644
+index 0000000000000000000000000000000000000000..b99a91afdc1be3c0ba1613de3b1f078109299bd9
+--- /dev/null
++++ b/src/labs/hubLabs.css
+@@ -0,0 +1,11 @@
++.hub-labs-grid {
++  display: grid;
++  grid-template-columns: repeat(3, minmax(0, 1fr));
++  gap: 40px;
++}
++@media (max-width: 760px) {
++  .hub-labs-grid {
++    grid-template-columns: minmax(0, 1fr);
++    gap: 12px;
++  }
++}
+diff --git a/src/labs/labs.css b/src/labs/labs.css
+new file mode 100644
+index 0000000000000000000000000000000000000000..6010dab93d4b87ffcaac36edaf8bddd41acd2b1d
+--- /dev/null
++++ b/src/labs/labs.css
+@@ -0,0 +1,571 @@
++/* Wave-2 alpha tools (Canvas, Pocket, Press): one shared dark workspace in the
++   Sattari palette (near-black panels, warm gold accent), with a day variant. */
++.lab-page {
++  --lab-bg: #111213;
++  --lab-panel: #191b1d;
++  --lab-raised: #232628;
++  --lab-line: #34383b;
++  --lab-text: #f3f5f4;
++  --lab-muted: #a4acae;
++  --lab-accent: #d6b36d;
++  --lab-accent-soft: rgba(214, 179, 109, 0.16);
++  --lab-on: #00ff87;
++  position: relative;
++  z-index: 1;
++  min-height: calc(100vh - 88px);
++  background: var(--lab-bg);
++  color: var(--lab-text);
++  padding: 0 24px 72px;
++  color-scheme: dark;
++  font-family: Inter, sans-serif;
++  letter-spacing: 0;
++}
++[data-theme='day'] .lab-page {
++  --lab-bg: #f4f3ef;
++  --lab-panel: #ffffff;
++  --lab-raised: #ecebe6;
++  --lab-line: #d6d4cc;
++  --lab-text: #1b1b19;
++  --lab-muted: #5c5b55;
++  --lab-accent: #8a6a22;
++  --lab-accent-soft: rgba(138, 106, 34, 0.12);
++  --lab-on: #0a8a4f;
++  color-scheme: light;
++}
++.lab-page * {
++  box-sizing: border-box;
++  letter-spacing: 0;
++}
++.lab-page :is(h1, h2, h3, p) {
++  margin: 0;
++}
++.lab-page :is(button, input, select, textarea) {
++  font: inherit;
++  color: inherit;
++}
++.lab-page :is(a, button, input, select, textarea, summary):focus-visible {
++  outline: 2px solid var(--lab-accent);
++  outline-offset: 3px;
++}
++.lab-shell {
++  max-width: 1240px;
++  margin: 0 auto;
++  padding-top: 112px;
++  display: grid;
++  gap: 20px;
++}
++.lab-breadcrumb {
++  display: flex;
++  justify-content: space-between;
++  gap: 12px;
++  flex-wrap: wrap;
++}
++.lab-breadcrumb a {
++  display: inline-flex;
++  align-items: center;
++  gap: 6px;
++  min-height: 44px;
++  color: var(--lab-muted);
++  text-decoration: none;
++  font-size: 14px;
++}
++.lab-breadcrumb a:hover {
++  color: var(--lab-text);
++}
++.lab-heading {
++  display: flex;
++  justify-content: space-between;
++  align-items: flex-end;
++  gap: 16px;
++  flex-wrap: wrap;
++}
++.lab-eyebrow {
++  color: var(--lab-muted);
++  font-size: 13px;
++  text-transform: uppercase;
++  letter-spacing: 0.08em;
++}
++.lab-heading h1 {
++  font-size: clamp(34px, 6vw, 56px);
++  line-height: 1.05;
++  font-weight: 650;
++  display: flex;
++  align-items: center;
++  gap: 12px;
++  flex-wrap: wrap;
++}
++.lab-badge {
++  font-size: 13px;
++  font-weight: 600;
++  text-transform: uppercase;
++  letter-spacing: 0.08em;
++  border: 1px solid var(--lab-accent);
++  color: var(--lab-accent);
++  border-radius: 999px;
++  padding: 4px 10px;
++}
++.lab-tagline {
++  margin-top: 8px !important;
++  color: var(--lab-muted);
++  max-width: 60ch;
++}
++.lab-private {
++  display: inline-flex;
++  align-items: center;
++  gap: 8px;
++  color: var(--lab-muted);
++  font-size: 14px;
++}
++.lab-limits {
++  border: 1px solid var(--lab-line);
++  border-radius: 14px;
++  background: var(--lab-panel);
++  padding: 14px 18px;
++  color: var(--lab-muted);
++  font-size: 14px;
++}
++.lab-limits summary {
++  cursor: pointer;
++  color: var(--lab-text);
++  font-weight: 600;
++  min-height: 28px;
++}
++.lab-limits ul {
++  margin: 10px 0 0;
++  padding-left: 18px;
++  display: grid;
++  gap: 6px;
++}
++
++/* ---- shared building blocks ---- */
++.lab-workspace {
++  display: grid;
++  grid-template-columns: minmax(280px, 380px) minmax(0, 1fr);
++  gap: 20px;
++  align-items: start;
++}
++.lab-panel {
++  background: var(--lab-panel);
++  border: 1px solid var(--lab-line);
++  border-radius: 14px;
++  padding: 18px;
++  display: grid;
++  gap: 14px;
++  min-width: 0;
++}
++.lab-panel h2 {
++  font-size: 15px;
++  font-weight: 650;
++}
++.lab-field {
++  display: grid;
++  gap: 6px;
++  font-size: 14px;
++  color: var(--lab-muted);
++  min-width: 0;
++}
++.lab-field > span {
++  display: flex;
++  justify-content: space-between;
++  gap: 8px;
++}
++.lab-field output {
++  color: var(--lab-text);
++  font-variant-numeric: tabular-nums;
++}
++.lab-page
++  :is(
++    input[type='text'],
++    input[type='url'],
++    input[type='email'],
++    input[type='tel'],
++    input[type='number'],
++    select,
++    textarea
++  ) {
++  width: 100%;
++  min-height: 40px;
++  border: 1px solid var(--lab-line);
++  border-radius: 8px;
++  background: var(--lab-raised);
++  padding: 8px 10px;
++  color: var(--lab-text);
++}
++.lab-page textarea {
++  resize: vertical;
++  min-height: 110px;
++  line-height: 1.5;
++}
++.lab-page input[type='range'] {
++  width: 100%;
++  accent-color: var(--lab-accent);
++}
++.lab-page input[type='color'] {
++  width: 44px;
++  height: 36px;
++  border: 1px solid var(--lab-line);
++  border-radius: 8px;
++  background: var(--lab-raised);
++  padding: 2px;
++}
++.lab-row {
++  display: flex;
++  gap: 10px;
++  flex-wrap: wrap;
++  align-items: center;
++}
++.lab-grid-2 {
++  display: grid;
++  grid-template-columns: 1fr 1fr;
++  gap: 10px;
++}
++.lab-button {
++  display: inline-flex;
++  align-items: center;
++  justify-content: center;
++  gap: 8px;
++  min-height: 42px;
++  padding: 0 16px;
++  border-radius: 999px;
++  border: 1px solid var(--lab-line);
++  background: var(--lab-raised);
++  cursor: pointer;
++  font-size: 14px;
++  font-weight: 600;
++  text-decoration: none;
++  color: var(--lab-text);
++}
++.lab-button:hover:not(:disabled) {
++  border-color: var(--lab-accent);
++}
++.lab-button.is-primary {
++  background: var(--lab-accent);
++  border-color: var(--lab-accent);
++  color: #15120a;
++}
++.lab-button:disabled {
++  opacity: 0.5;
++  cursor: not-allowed;
++}
++.lab-drop {
++  display: grid;
++  place-items: center;
++  gap: 6px;
++  text-align: center;
++  border: 1.5px dashed var(--lab-line);
++  border-radius: 12px;
++  padding: 18px 12px;
++  color: var(--lab-muted);
++  font-size: 14px;
++  cursor: pointer;
++  position: relative;
++}
++.lab-drop.is-over,
++.lab-drop:hover {
++  border-color: var(--lab-accent);
++  color: var(--lab-text);
++}
++.lab-drop input[type='file'] {
++  position: absolute;
++  inset: 0;
++  opacity: 0;
++  cursor: pointer;
++}
++.lab-drop strong {
++  color: var(--lab-text);
++  font-weight: 600;
++  overflow-wrap: anywhere;
++}
++.lab-status {
++  font-size: 14px;
++  color: var(--lab-muted);
++  min-height: 20px;
++}
++.lab-status.is-error {
++  color: #ff8a80;
++}
++.lab-segment {
++  display: inline-flex;
++  border: 1px solid var(--lab-line);
++  border-radius: 20px;
++  padding: 3px;
++  gap: 2px;
++  flex-wrap: wrap;
++}
++.lab-segment button {
++  border: 0;
++  background: transparent;
++  border-radius: 999px;
++  min-height: 34px;
++  padding: 0 12px;
++  cursor: pointer;
++  font-size: 13px;
++  color: var(--lab-muted);
++}
++.lab-segment button[aria-pressed='true'] {
++  background: var(--lab-accent-soft);
++  color: var(--lab-text);
++}
++
++/* ---- Canvas ---- */
++.lab-canvas-stage {
++  display: grid;
++  justify-items: center;
++  gap: 12px;
++}
++.lab-canvas-stage canvas {
++  width: min(100%, 405px);
++  aspect-ratio: 9 / 16;
++  height: auto;
++  border-radius: 16px;
++  border: 1px solid var(--lab-line);
++  background: #000;
++  display: block;
++}
++.lab-meters {
++  display: grid;
++  grid-template-columns: repeat(3, 1fr);
++  gap: 8px;
++  width: min(100%, 405px);
++  font-size: 12px;
++  color: var(--lab-muted);
++}
++.lab-meter {
++  display: grid;
++  gap: 4px;
++}
++.lab-meter i {
++  display: block;
++  height: 6px;
++  border-radius: 3px;
++  background: linear-gradient(90deg, var(--lab-accent) var(--fill, 0%), var(--lab-raised) 0);
++}
++.lab-swatches {
++  display: flex;
++  gap: 8px;
++  flex-wrap: wrap;
++}
++.lab-swatch {
++  width: 34px;
++  height: 34px;
++  border-radius: 50%;
++  border: 2px solid transparent;
++  cursor: pointer;
++  padding: 0;
++}
++.lab-swatch[aria-pressed='true'] {
++  border-color: var(--lab-text);
++}
++
++/* ---- Pocket ---- */
++.lab-pocket .lab-shell {
++  max-width: 980px;
++}
++.pocket-transport {
++  display: flex;
++  flex-wrap: wrap;
++  gap: 12px;
++  align-items: end;
++}
++.pocket-transport .lab-field {
++  width: 120px;
++}
++.pocket-play {
++  width: 56px;
++  height: 56px;
++  border-radius: 50%;
++  border: 0;
++  background: var(--lab-accent);
++  color: #15120a;
++  display: grid;
++  place-items: center;
++  cursor: pointer;
++}
++.pocket-grid {
++  display: grid;
++  gap: 6px;
++}
++.pocket-track {
++  display: grid;
++  grid-template-columns: 92px minmax(0, 1fr);
++  gap: 8px;
++  align-items: center;
++}
++.pocket-track-head {
++  display: flex;
++  align-items: center;
++  gap: 4px;
++  font-size: 13px;
++  min-width: 0;
++}
++.pocket-track-head span {
++  flex: 1;
++  overflow: hidden;
++  text-overflow: ellipsis;
++  white-space: nowrap;
++}
++.pocket-mute {
++  width: 28px;
++  height: 28px;
++  border-radius: 6px;
++  border: 1px solid var(--lab-line);
++  background: var(--lab-raised);
++  font-size: 11px;
++  font-weight: 700;
++  cursor: pointer;
++  color: var(--lab-muted);
++}
++.pocket-mute[aria-pressed='true'] {
++  background: #5a2a26;
++  color: #ffd2cc;
++}
++.pocket-steps {
++  display: grid;
++  grid-template-columns: repeat(var(--steps, 16), minmax(0, 1fr));
++  gap: 4px;
++}
++.pocket-step {
++  aspect-ratio: 1;
++  min-height: 30px;
++  border-radius: 6px;
++  border: 1px solid var(--lab-line);
++  background: var(--lab-raised);
++  cursor: pointer;
++  padding: 0;
++  font-size: 11px;
++  font-weight: 700;
++  color: #15120a;
++}
++.pocket-step.is-beat {
++  background: color-mix(in srgb, var(--lab-raised) 70%, var(--lab-text) 8%);
++}
++.pocket-step[aria-pressed='true'] {
++  background: var(--track-color, var(--lab-accent));
++  border-color: var(--track-color, var(--lab-accent));
++}
++.pocket-step.is-playhead {
++  box-shadow: 0 0 0 2px var(--lab-text) inset;
++}
++.pocket-bass-row .pocket-step {
++  aspect-ratio: auto;
++  min-height: 24px;
++}
++.pocket-bass-row .pocket-track-head {
++  font-size: 11px;
++  color: var(--lab-muted);
++  justify-content: flex-end;
++  padding-right: 6px;
++}
++.pocket-pages {
++  display: none;
++}
++.pocket-saved {
++  display: grid;
++  gap: 6px;
++  margin: 0;
++  padding: 0;
++  list-style: none;
++}
++.pocket-saved li {
++  display: flex;
++  justify-content: space-between;
++  align-items: center;
++  gap: 8px;
++  font-size: 14px;
++}
++@media (max-width: 640px) {
++  .pocket-pages {
++    display: inline-flex;
++  }
++  .lab-pocket .pocket-steps {
++    --steps: 8 !important;
++  }
++  .lab-pocket .pocket-step.is-off-page {
++    display: none;
++  }
++  .pocket-track {
++    grid-template-columns: 70px minmax(0, 1fr);
++  }
++  .pocket-step {
++    min-height: 38px;
++  }
++  .pocket-bass-row .pocket-step {
++    min-height: 30px;
++  }
++}
++
++/* ---- Press ---- */
++.lab-press .lab-workspace {
++  grid-template-columns: minmax(300px, 440px) minmax(0, 1fr);
++}
++.press-preview {
++  position: sticky;
++  top: 96px;
++  display: grid;
++  gap: 10px;
++}
++.press-preview iframe {
++  width: 100%;
++  height: min(78vh, 900px);
++  border: 1px solid var(--lab-line);
++  border-radius: 14px;
++  background: #fff;
++}
++.press-list {
++  display: grid;
++  gap: 10px;
++}
++.press-item {
++  display: grid;
++  grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr) auto;
++  gap: 6px;
++  align-items: center;
++}
++.press-item.is-quote {
++  grid-template-columns: minmax(0, 1fr) auto;
++}
++.press-item.is-quote textarea {
++  grid-column: 1 / -1;
++}
++.press-remove {
++  width: 36px;
++  height: 36px;
++  border-radius: 8px;
++  border: 1px solid var(--lab-line);
++  background: var(--lab-raised);
++  cursor: pointer;
++  display: grid;
++  place-items: center;
++}
++.press-photo {
++  display: flex;
++  gap: 12px;
++  align-items: center;
++}
++.press-photo img {
++  width: 64px;
++  height: 64px;
++  object-fit: cover;
++  border-radius: 10px;
++}
++
++@media (max-width: 900px) {
++  .lab-workspace,
++  .lab-press .lab-workspace {
++    grid-template-columns: minmax(0, 1fr);
++  }
++  .press-preview {
++    position: static;
++  }
++}
++@media (max-width: 640px) {
++  .lab-page {
++    padding: 0 12px 56px;
++  }
++  .lab-shell {
++    padding-top: 92px;
++  }
++  .lab-panel {
++    padding: 14px;
++  }
++}
+diff --git a/src/labs/labsSeo.js b/src/labs/labsSeo.js
+new file mode 100644
+index 0000000000000000000000000000000000000000..3c9c7b183ca8064d174188e1721d4f5c6c8ea17c
+--- /dev/null
++++ b/src/labs/labsSeo.js
+@@ -0,0 +1,48 @@
++import { SITE_ORIGIN } from '../data/siteSeo';
++
++// Alpha tools stay out of search (noindex, not in the sitemap) until the owner
++// decides they are ready. Flip `noindex` and add them to the sitemap together.
++export const LAB_SEO = {
++  canvas: {
++    title: 'Canvas (alpha): Audio-Reactive Vertical Video Loops',
++    description:
++      'Turn a track and cover art into an audio-reactive 9:16 loop for Spotify Canvas, Reels and TikTok. Runs in your browser; nothing is uploaded.',
++    url: `${SITE_ORIGIN}/studio/canvas`,
++    noindex: true,
++  },
++  pocket: {
++    title: 'Pocket (alpha): Beat & Loop Sketchpad',
++    description:
++      'Sketch a beat on your phone: step sequencer, synthesized drums, bass line, swing. Export the loop as WAV or stems and open them in StemDeck.',
++    url: `${SITE_ORIGIN}/studio/pocket`,
++    noindex: true,
++  },
++  press: {
++    title: 'Press (alpha): Artist EPK & Link-in-Bio Builder',
++    description:
++      'Build an electronic press kit or link-in-bio page: bio, photo, links, tracks, press quotes and contact. Export one self-contained HTML file or a PDF.',
++    url: `${SITE_ORIGIN}/press`,
++    noindex: true,
++  },
++};
++
++export const LAB_APPS = [
++  {
++    id: 'canvas',
++    name: 'Canvas',
++    path: '/studio/canvas',
++    detail: 'Audio-reactive 9:16 loops for Spotify Canvas and Reels',
++  },
++  {
++    id: 'pocket',
++    name: 'Pocket',
++    path: '/studio/pocket',
++    detail: 'Phone-first beat sketchpad with WAV and stem export',
++  },
++  {
++    id: 'press',
++    name: 'Press',
++    path: '/press',
++    detail: 'EPK and link-in-bio page you can download as one file',
++  },
++];
+diff --git a/src/labs/pocket/PocketPage.jsx b/src/labs/pocket/PocketPage.jsx
+new file mode 100644
+index 0000000000000000000000000000000000000000..2ddbc94a9531d4fabd266329dc02168f70ac7345
+--- /dev/null
++++ b/src/labs/pocket/PocketPage.jsx
+@@ -0,0 +1,595 @@
++import { useCallback, useEffect, useRef, useState } from 'react';
++import { Link } from 'react-router-dom';
++import {
++  ArrowUpRight,
++  Download,
++  Eraser,
++  FileArchive,
++  Play,
++  Save,
++  Send,
++  Sparkles,
++  Square,
++  Trash2,
++} from 'lucide-react';
++import LabShell from '../LabShell';
++import { downloadBlob, safeFileName } from '../files';
++import { wavBytes, zipFiles } from '../../utils/arrangementExport';
++import {
++  ALL_TRACKS,
++  BASS_ROWS,
++  BASS_TRACK,
++  bassRowLabels,
++  deleteSaved,
++  DRUM_TRACKS,
++  emptyPattern,
++  KEYS,
++  LIMITS,
++  listSaved,
++  normalizePattern,
++  savePattern,
++  SCALES,
++  starterPattern,
++  stepDuration,
++  STEPS,
++  stepTime,
++} from './pocketPattern';
++import { renderLoop, scheduleStep } from './pocketSynth';
++
++const LOOKAHEAD_SECONDS = 0.12;
++const DRAFT_KEY = 'sattari-pocket-draft-v1';
++
++const LIMITATIONS = [
++  'One 16-step bar per pattern, one bass voice and six drum sounds. No song mode or chaining yet.',
++  'Sounds are simple Web Audio synthesis, not sampled kits; they are meant for sketching, not final mixes.',
++  'Patterns are saved in this browser only (localStorage). Clearing site data deletes them.',
++  'Send to StemDeck adds the WAVs to the StemDeck Library in this browser. Drag them onto decks or the arranger from there; it does not build a StemDeck project for you.',
++  'Phones may need the silent switch off to hear Web Audio, and timing can drift if the tab goes to the background.',
++];
++
++function storage() {
++  try {
++    return window.localStorage;
++  } catch {
++    return null;
++  }
++}
++
++export default function PocketPage() {
++  const [pattern, setPattern] = useState(starterPattern);
++  const [saved, setSaved] = useState([]);
++  const [playing, setPlaying] = useState(false);
++  const [playhead, setPlayhead] = useState(-1);
++  const [page, setPage] = useState(0);
++  const [bars, setBars] = useState(2);
++  const [busy, setBusy] = useState('');
++  const [sent, setSent] = useState(false);
++  const [status, setStatus] = useState({ text: 'Tap steps to build a beat, then press play.' });
++
++  const patternRef = useRef(pattern);
++  const engine = useRef(null);
++
++  useEffect(() => {
++    patternRef.current = pattern;
++    const gains = engine.current?.gains;
++    if (gains) {
++      for (const { id } of ALL_TRACKS) {
++        gains[id].gain.value = pattern.muted[id] ? 0 : pattern.volume[id];
++      }
++    }
++  }, [pattern]);
++
++  // Restore after mount (not during render) so the prerendered page hydrates.
++  useEffect(() => {
++    const store = storage();
++    setSaved(listSaved(store));
++    try {
++      const draft = store?.getItem(DRAFT_KEY);
++      if (draft) setPattern(normalizePattern(JSON.parse(draft)));
++    } catch {
++      /* ignore a broken draft */
++    }
++  }, []);
++
++  useEffect(() => {
++    const timer = setTimeout(() => {
++      try {
++        storage()?.setItem(DRAFT_KEY, JSON.stringify(pattern));
++      } catch {
++        /* storage full or blocked: saving drafts is best effort */
++      }
++    }, 300);
++    return () => clearTimeout(timer);
++  }, [pattern]);
++
++  const update = (change) => {
++    setSent(false);
++    setPattern((current) => ({ ...current, ...change(current) }));
++  };
++
++  const toggleDrum = (id, step) =>
++    update((current) => ({
++      drums: {
++        ...current.drums,
++        [id]: current.drums[id].map((on, i) => (i === step ? !on : on)),
++      },
++    }));
++
++  const toggleBass = (row, step) =>
++    update((current) => ({
++      bass: current.bass.map((value, i) => (i === step ? (value === row ? null : row) : value)),
++    }));
++
++  const setTrackValue = (field, id, value) =>
++    update((current) => ({ [field]: { ...current[field], [id]: value } }));
++
++  const stop = useCallback(() => {
++    const current = engine.current;
++    if (!current?.running) return;
++    clearInterval(current.timer);
++    cancelAnimationFrame(current.frame);
++    current.master.gain.setTargetAtTime(0, current.context.currentTime, 0.01);
++    const old = current.master;
++    setTimeout(() => old.disconnect(), 200);
++    current.context.suspend?.();
++    engine.current = { ...current, master: null, timer: 0, frame: 0, running: false };
++    setPlaying(false);
++    setPlayhead(-1);
++  }, []);
++
++  const start = async () => {
++    const Context = window.AudioContext || window.webkitAudioContext;
++    if (!Context) {
++      setStatus({ text: 'This browser does not support Web Audio.', error: true });
++      return;
++    }
++    const context = engine.current?.context || new Context({ latencyHint: 'interactive' });
++    await context.resume();
++    const master = context.createGain();
++    master.gain.value = 0.85;
++    master.connect(context.destination);
++    const gains = Object.fromEntries(
++      ALL_TRACKS.map(({ id }) => {
++        const gain = context.createGain();
++        const p = patternRef.current;
++        gain.gain.value = p.muted[id] ? 0 : p.volume[id];
++        gain.connect(master);
++        return [id, gain];
++      })
++    );
++    const state = {
++      context,
++      master,
++      gains,
++      running: true,
++      step: 0,
++      stepStart: context.currentTime + 0.06,
++      queue: [],
++      timer: 0,
++      frame: 0,
++    };
++    const schedule = () => {
++      const p = patternRef.current;
++      while (state.stepStart < context.currentTime + LOOKAHEAD_SECONDS) {
++        const swingOffset = stepTime(state.step, p.bpm, p.swing) - state.step * stepDuration(p.bpm);
++        const time = state.stepStart + swingOffset;
++        scheduleStep(context, gains, p, state.step, time);
++        state.queue.push({ step: state.step, time });
++        state.stepStart += stepDuration(p.bpm);
++        state.step = (state.step + 1) % STEPS;
++      }
++    };
++    const draw = () => {
++      let current = -1;
++      while (state.queue.length && state.queue[0].time <= context.currentTime) {
++        current = state.queue.shift().step;
++      }
++      if (current >= 0) setPlayhead(current);
++      state.frame = requestAnimationFrame(draw);
++    };
++    schedule();
++    state.timer = setInterval(schedule, 25);
++    state.frame = requestAnimationFrame(draw);
++    engine.current = state;
++    setPlaying(true);
++  };
++
++  useEffect(
++    () => () => {
++      stop();
++      engine.current?.context?.close?.();
++    },
++    [stop]
++  );
++
++  const render = async (label) => {
++    setBusy(label);
++    setStatus({ text: 'Rendering…' });
++    try {
++      return await renderLoop(patternRef.current, { bars });
++    } finally {
++      setBusy('');
++    }
++  };
++
++  const fileBase = safeFileName(pattern.name, 'pocket');
++  const stemName = (stem) => `${fileBase}-${stem.id}-${pattern.bpm}bpm.wav`;
++
++  const exportWav = async () => {
++    try {
++      const result = await render('wav');
++      downloadBlob(
++        new Blob([wavBytes(result.mix)], { type: 'audio/wav' }),
++        `${fileBase}-${pattern.bpm}bpm-${bars}bar.wav`
++      );
++      setStatus({ text: `Saved a ${result.seconds.toFixed(2)} s loop (24-bit WAV).` });
++    } catch (error) {
++      setStatus({ text: error.message, error: true });
++    }
++  };
++
++  const exportStems = async () => {
++    try {
++      const result = await render('stems');
++      const files = result.stems.map((stem) => ({
++        name: stemName(stem),
++        data: wavBytes(stem.buffer),
++      }));
++      files.push({ name: `${fileBase}-mix-${pattern.bpm}bpm.wav`, data: wavBytes(result.mix) });
++      downloadBlob(zipFiles(files), `${fileBase}-stems.zip`);
++      setStatus({ text: `Saved ${result.stems.length} stems and the mix in one ZIP.` });
++    } catch (error) {
++      setStatus({ text: error.message, error: true });
++    }
++  };
++
++  const sendToStemDeck = async () => {
++    try {
++      const result = await render('send');
++      const { importLibraryTrack } = await import('../../utils/musicLibrary');
++      const folder = `Pocket/${pattern.name || 'Untitled'}`;
++      for (const stem of [...result.stems, { id: 'mix', buffer: result.mix }]) {
++        const name = stemName(stem);
++        const file = new File([wavBytes(stem.buffer)], name, {
++          type: 'audio/wav',
++          lastModified: Date.now(),
++        });
++        await importLibraryTrack(file, `${folder}/${name}`);
++      }
++      setSent(true);
++      setStatus({
++        text: `Added ${result.stems.length + 1} files to the StemDeck Library under “${folder}”.`,
++      });
++    } catch (error) {
++      setStatus({ text: `Could not add to StemDeck: ${error.message}`, error: true });
++    }
++  };
++
++  const save = () => {
++    const store = storage();
++    if (!store) {
++      setStatus({
++        text: 'This browser blocks local storage, so patterns cannot be saved.',
++        error: true,
++      });
++      return;
++    }
++    try {
++      setSaved(savePattern(store, pattern));
++      setStatus({ text: `Saved “${pattern.name}” in this browser.` });
++    } catch (error) {
++      setStatus({ text: `Could not save: ${error.message}`, error: true });
++    }
++  };
++
++  const labels = bassRowLabels(pattern.key, pattern.scale);
++  const stepClass = (step) =>
++    [
++      'pocket-step',
++      step % 4 === 0 ? 'is-beat' : '',
++      step === playhead ? 'is-playhead' : '',
++      Math.floor(step / 8) !== page ? 'is-off-page' : '',
++    ]
++      .filter(Boolean)
++      .join(' ');
++
++  return (
++    <LabShell
++      lab="pocket"
++      name="Pocket"
++      tagline="A beat sketchpad for your phone. Tap a groove, add a bass line, export the loop or its stems."
++      limitations={LIMITATIONS}
++    >
++      <div className="lab-panel">
++        <div className="pocket-transport">
++          <button
++            type="button"
++            className="pocket-play"
++            aria-label={playing ? 'Stop' : 'Play'}
++            onClick={() => (playing ? stop() : start())}
++          >
++            {playing ? (
++              <Square size={20} aria-hidden="true" />
++            ) : (
++              <Play size={22} aria-hidden="true" />
++            )}
++          </button>
++          <label className="lab-field">
++            <span>
++              Tempo <output>{pattern.bpm} BPM</output>
++            </span>
++            <input
++              type="range"
++              min={LIMITS.bpm[0]}
++              max={LIMITS.bpm[1]}
++              value={pattern.bpm}
++              onChange={(event) => update(() => ({ bpm: Number(event.target.value) }))}
++            />
++          </label>
++          <label className="lab-field">
++            <span>
++              Swing <output>{Math.round(pattern.swing * 100)}%</output>
++            </span>
++            <input
++              type="range"
++              min={LIMITS.swing[0]}
++              max={LIMITS.swing[1]}
++              step="0.01"
++              value={pattern.swing}
++              onChange={(event) => update(() => ({ swing: Number(event.target.value) }))}
++            />
++          </label>
++          <label className="lab-field">
++            <span>Key</span>
++            <select
++              value={pattern.key}
++              onChange={(event) => update(() => ({ key: Number(event.target.value) }))}
++            >
++              {KEYS.map((key, index) => (
++                <option key={key} value={index}>
++                  {key}
++                </option>
++              ))}
++            </select>
++          </label>
++          <label className="lab-field">
++            <span>Scale</span>
++            <select
++              value={pattern.scale}
++              onChange={(event) => update(() => ({ scale: event.target.value }))}
++            >
++              {Object.entries(SCALES).map(([id, scale]) => (
++                <option key={id} value={id}>
++                  {scale.label}
++                </option>
++              ))}
++            </select>
++          </label>
++        </div>
++        <div className="lab-segment pocket-pages" role="group" aria-label="Steps shown">
++          {['1–8', '9–16'].map((label, index) => (
++            <button
++              key={label}
++              type="button"
++              aria-pressed={page === index}
++              onClick={() => setPage(index)}
++            >
++              Steps {label}
++            </button>
++          ))}
++        </div>
++
++        <div className="pocket-grid" role="group" aria-label="Drums">
++          {DRUM_TRACKS.map((track) => (
++            <div key={track.id} className="pocket-track" style={{ '--track-color': track.color }}>
++              <div className="pocket-track-head">
++                <button
++                  type="button"
++                  className="pocket-mute"
++                  aria-pressed={pattern.muted[track.id]}
++                  aria-label={`Mute ${track.label}`}
++                  onClick={() => setTrackValue('muted', track.id, !pattern.muted[track.id])}
++                >
++                  M
++                </button>
++                <span>{track.label}</span>
++              </div>
++              <div className="pocket-steps">
++                {pattern.drums[track.id].map((on, step) => (
++                  <button
++                    key={step}
++                    type="button"
++                    className={stepClass(step)}
++                    aria-pressed={on}
++                    aria-label={`${track.label} step ${step + 1}`}
++                    onClick={() => toggleDrum(track.id, step)}
++                  />
++                ))}
++              </div>
++            </div>
++          ))}
++        </div>
++
++        <div className="pocket-grid" role="group" aria-label="Bass line">
++          <div className="pocket-track" style={{ '--track-color': BASS_TRACK.color }}>
++            <div className="pocket-track-head">
++              <button
++                type="button"
++                className="pocket-mute"
++                aria-pressed={pattern.muted.bass}
++                aria-label="Mute Bass"
++                onClick={() => setTrackValue('muted', 'bass', !pattern.muted.bass)}
++              >
++                M
++              </button>
++              <span>Bass</span>
++            </div>
++            <label className="lab-field">
++              <span>
++                Tone <output>{Math.round(pattern.cutoff)} Hz</output>
++              </span>
++              <input
++                type="range"
++                min={LIMITS.cutoff[0]}
++                max={LIMITS.cutoff[1]}
++                step="10"
++                value={pattern.cutoff}
++                onChange={(event) => update(() => ({ cutoff: Number(event.target.value) }))}
++              />
++            </label>
++          </div>
++          {Array.from({ length: BASS_ROWS }, (_, index) => BASS_ROWS - 1 - index).map((row) => (
++            <div
++              key={row}
++              className="pocket-track pocket-bass-row"
++              style={{ '--track-color': BASS_TRACK.color }}
++            >
++              <div className="pocket-track-head">{labels[row]}</div>
++              <div className="pocket-steps">
++                {pattern.bass.map((value, step) => (
++                  <button
++                    key={step}
++                    type="button"
++                    className={stepClass(step)}
++                    aria-pressed={value === row}
++                    aria-label={`Bass ${labels[row]} step ${step + 1}`}
++                    onClick={() => toggleBass(row, step)}
++                  />
++                ))}
++              </div>
++            </div>
++          ))}
++        </div>
++      </div>
++
++      <div className="lab-workspace">
++        <div className="lab-panel">
++          <h2>Pattern</h2>
++          <label className="lab-field">
++            <span>Name</span>
++            <input
++              type="text"
++              value={pattern.name}
++              maxLength={60}
++              onChange={(event) => update(() => ({ name: event.target.value }))}
++            />
++          </label>
++          <div className="lab-row">
++            <button type="button" className="lab-button" onClick={save}>
++              <Save size={16} aria-hidden="true" /> Save
++            </button>
++            <button
++              type="button"
++              className="lab-button"
++              onClick={() => update(() => ({ ...emptyPattern(pattern.name), bpm: pattern.bpm }))}
++            >
++              <Eraser size={16} aria-hidden="true" /> Clear
++            </button>
++            <button
++              type="button"
++              className="lab-button"
++              onClick={() => update(() => starterPattern())}
++            >
++              <Sparkles size={16} aria-hidden="true" /> Starter
++            </button>
++          </div>
++          {saved.length > 0 && (
++            <ul className="pocket-saved" aria-label="Saved patterns">
++              {saved.map((item) => (
++                <li key={item.name}>
++                  <button
++                    type="button"
++                    className="lab-button"
++                    onClick={() => {
++                      setSent(false);
++                      setPattern(normalizePattern(item));
++                    }}
++                  >
++                    {item.name} · {item.bpm}
++                  </button>
++                  <button
++                    type="button"
++                    className="press-remove"
++                    aria-label={`Delete ${item.name}`}
++                    onClick={() => setSaved(deleteSaved(storage(), item.name))}
++                  >
++                    <Trash2 size={15} aria-hidden="true" />
++                  </button>
++                </li>
++              ))}
++            </ul>
++          )}
++
++          <h2>Export</h2>
++          <div className="lab-field">
++            <span>Loop length</span>
++            <div className="lab-segment" role="group" aria-label="Loop length">
++              {[1, 2, 4].map((value) => (
++                <button
++                  key={value}
++                  type="button"
++                  aria-pressed={bars === value}
++                  onClick={() => setBars(value)}
++                >
++                  {value} bar{value > 1 ? 's' : ''}
++                </button>
++              ))}
++            </div>
++          </div>
++          <div className="lab-row">
++            <button
++              type="button"
++              className="lab-button is-primary"
++              disabled={Boolean(busy)}
++              onClick={exportWav}
++            >
++              <Download size={16} aria-hidden="true" /> WAV loop
++            </button>
++            <button
++              type="button"
++              className="lab-button"
++              disabled={Boolean(busy)}
++              onClick={exportStems}
++            >
++              <FileArchive size={16} aria-hidden="true" /> Stems (ZIP)
++            </button>
++            <button
++              type="button"
++              className="lab-button"
++              disabled={Boolean(busy)}
++              onClick={sendToStemDeck}
++            >
++              <Send size={16} aria-hidden="true" /> Send to StemDeck
++            </button>
++          </div>
++          {sent && (
++            <Link to="/studio" className="lab-button">
++              Open StemDeck Library <ArrowUpRight size={16} aria-hidden="true" />
++            </Link>
++          )}
++          <p className={`lab-status${status.error ? ' is-error' : ''}`} role="status">
++            {status.text}
++          </p>
++        </div>
++        <div className="lab-panel">
++          <h2>Mixer</h2>
++          {ALL_TRACKS.map((track) => (
++            <label key={track.id} className="lab-field">
++              <span>
++                {track.label} <output>{Math.round(pattern.volume[track.id] * 100)}%</output>
++              </span>
++              <input
++                type="range"
++                min="0"
++                max="1"
++                step="0.01"
++                value={pattern.volume[track.id]}
++                onChange={(event) => setTrackValue('volume', track.id, Number(event.target.value))}
++              />
++            </label>
++          ))}
++        </div>
++      </div>
++    </LabShell>
++  );
++}
+diff --git a/src/labs/pocket/pocketPattern.js b/src/labs/pocket/pocketPattern.js
+new file mode 100644
+index 0000000000000000000000000000000000000000..d457c25c48730357ed67f461759a8a426d455f8d
+--- /dev/null
++++ b/src/labs/pocket/pocketPattern.js
+@@ -0,0 +1,209 @@
++// Pocket pattern model: plain data, pure helpers. The same timing functions
++// drive live playback and the offline WAV render, so exports match what plays.
++
++export const STEPS = 16;
++export const STORAGE_KEY = 'sattari-pocket-patterns-v1';
++export const MAX_SAVED = 40;
++
++export const DRUM_TRACKS = [
++  { id: 'kick', label: 'Kick', color: '#d6b36d' },
++  { id: 'snare', label: 'Snare', color: '#ff8a80' },
++  { id: 'clap', label: 'Clap', color: '#ffb36b' },
++  { id: 'hat', label: 'Hat', color: '#9fd8ff' },
++  { id: 'open', label: 'Open', color: '#7cc4ff' },
++  { id: 'rim', label: 'Rim', color: '#c4a7ff' },
++];
++export const BASS_TRACK = { id: 'bass', label: 'Bass', color: '#00e68a' };
++export const ALL_TRACKS = [...DRUM_TRACKS, BASS_TRACK];
++
++export const KEYS = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
++export const SCALES = {
++  minor: { label: 'Minor', steps: [0, 2, 3, 5, 7, 8, 10] },
++  minorPentatonic: { label: 'Minor pentatonic', steps: [0, 3, 5, 7, 10] },
++  dorian: { label: 'Dorian', steps: [0, 2, 3, 5, 7, 9, 10] },
++  major: { label: 'Major', steps: [0, 2, 4, 5, 7, 9, 11] },
++};
++export const BASS_ROWS = 8;
++
++export const LIMITS = { bpm: [60, 180], swing: [0, 0.6], volume: [0, 1], cutoff: [120, 4000] };
++
++const clamp = (value, [min, max], fallback) => {
++  const n = Number(value);
++  return Number.isFinite(n) ? Math.min(max, Math.max(min, n)) : fallback;
++};
++
++/** Semitone offsets above the root for each bass row, lowest first. */
++export function bassRowSemitones(scale = 'minor') {
++  const steps = (Object.hasOwn(SCALES, scale) ? SCALES[scale] : SCALES.minor).steps;
++  return Array.from(
++    { length: BASS_ROWS },
++    (_, row) => steps[row % steps.length] + 12 * Math.floor(row / steps.length)
++  );
++}
++
++export function bassRowLabels(key, scale) {
++  return bassRowSemitones(scale).map((semi) => KEYS[(key + semi) % 12]);
++}
++
++/** Bass pitch: row 0 is the root in octave 1 (A = 55 Hz). */
++export function bassFrequency(key, scale, row) {
++  const midi = 24 + key + bassRowSemitones(scale)[row];
++  return 440 * 2 ** ((midi - 69) / 12);
++}
++
++export const stepDuration = (bpm) => 60 / bpm / 4;
++export const barDuration = (bpm) => (60 / bpm) * 4;
++
++/** Seconds from the start of the bar to `step`, with swing delaying off-beat 16ths. */
++export function stepTime(step, bpm, swing) {
++  const duration = stepDuration(bpm);
++  return step * duration + (step % 2 ? swing * duration : 0);
++}
++
++/** Bass notes with lengths: each lasts until the next note (wrapping), at most 4 steps. */
++export function bassNotes(pattern) {
++  const steps = pattern.bass
++    .map((row, step) => (row === null ? null : { step, row }))
++    .filter(Boolean);
++  return steps.map((note, index) => {
++    const next = steps[(index + 1) % steps.length];
++    let gap = next.step - note.step;
++    if (gap <= 0) gap += STEPS;
++    return { ...note, length: Math.min(4, gap) };
++  });
++}
++
++const emptySteps = () => Array(STEPS).fill(false);
++const fromString = (text) => text.split('').map((c) => c === 'x');
++
++export function emptyPattern(name = 'Untitled') {
++  return {
++    version: 1,
++    name,
++    bpm: 92,
++    swing: 0.15,
++    key: 9,
++    scale: 'minor',
++    cutoff: 900,
++    drums: Object.fromEntries(DRUM_TRACKS.map(({ id }) => [id, emptySteps()])),
++    bass: Array(STEPS).fill(null),
++    volume: Object.fromEntries(ALL_TRACKS.map(({ id }) => [id, 0.8])),
++    muted: Object.fromEntries(ALL_TRACKS.map(({ id }) => [id, false])),
++  };
++}
++
++/** An original starter groove (written for Pocket; no samples involved). */
++export function starterPattern() {
++  const pattern = emptyPattern('Starter groove');
++  pattern.drums.kick = fromString('x.....x...x..x..');
++  pattern.drums.snare = fromString('....x.......x...');
++  pattern.drums.clap = fromString('............x...');
++  pattern.drums.hat = fromString('x.x.x.x.x.x.x.xx');
++  pattern.drums.open = fromString('.......x........');
++  pattern.drums.rim = fromString('...x......x.....');
++  pattern.bass = [0, null, null, 0, null, null, 2, null, null, null, 4, null, 3, null, 2, null];
++  pattern.volume.hat = 0.55;
++  pattern.volume.open = 0.5;
++  pattern.volume.rim = 0.5;
++  pattern.volume.clap = 0.6;
++  return pattern;
++}
++
++/** Coerces untrusted data (storage, older versions) into a valid pattern. */
++export function normalizePattern(raw) {
++  const base = emptyPattern();
++  if (!raw || typeof raw !== 'object') return base;
++  const steps = (value) =>
++    Array.from({ length: STEPS }, (_, i) => Boolean(Array.isArray(value) && value[i]));
++  return {
++    version: 1,
++    name: String(raw.name || base.name).slice(0, 60),
++    bpm: Math.round(clamp(raw.bpm, LIMITS.bpm, base.bpm)),
++    swing: clamp(raw.swing, LIMITS.swing, base.swing),
++    key: Math.round(clamp(raw.key, [0, 11], base.key)),
++    scale: Object.hasOwn(SCALES, raw.scale) ? raw.scale : base.scale,
++    cutoff: clamp(raw.cutoff, LIMITS.cutoff, base.cutoff),
++    drums: Object.fromEntries(DRUM_TRACKS.map(({ id }) => [id, steps(raw.drums?.[id])])),
++    bass: Array.from({ length: STEPS }, (_, i) => {
++      const row = Array.isArray(raw.bass) ? raw.bass[i] : null;
++      return Number.isInteger(row) && row >= 0 && row < BASS_ROWS ? row : null;
++    }),
++    volume: Object.fromEntries(
++      ALL_TRACKS.map(({ id }) => [id, clamp(raw.volume?.[id], LIMITS.volume, 0.8)])
++    ),
++    muted: Object.fromEntries(ALL_TRACKS.map(({ id }) => [id, Boolean(raw.muted?.[id])])),
++  };
++}
++
++export function trackHasNotes(pattern, id) {
++  return id === 'bass' ? pattern.bass.some((row) => row !== null) : pattern.drums[id].some(Boolean);
++}
++
++// ---- saved patterns (localStorage) ----
++
++export function listSaved(storage) {
++  try {
++    const parsed = JSON.parse(storage?.getItem(STORAGE_KEY) || '[]');
++    return Array.isArray(parsed) ? parsed.map(normalizePattern) : [];
++  } catch {
++    return [];
++  }
++}
++
++/** Saves by name (replacing a pattern with the same name), newest first. */
++export function savePattern(storage, pattern) {
++  const clean = normalizePattern(pattern);
++  const others = listSaved(storage).filter((item) => item.name !== clean.name);
++  const next = [clean, ...others].slice(0, MAX_SAVED);
++  storage.setItem(STORAGE_KEY, JSON.stringify(next));
++  return next;
++}
++
++export function deleteSaved(storage, name) {
++  const next = listSaved(storage).filter((item) => item.name !== name);
++  storage.setItem(STORAGE_KEY, JSON.stringify(next));
++  return next;
++}
++
++/**
++ * Wraps audio that rings past the loop end back onto the start, so the file
++ * repeats seamlessly (a cymbal ringing over the bar line is heard on repeat).
++ */
++export function foldTail(channels, loopFrames) {
++  return channels.map((data) => {
++    const out = new Float32Array(loopFrames);
++    out.set(data.subarray(0, Math.min(loopFrames, data.length)));
++    for (let i = loopFrames; i < data.length; i++) out[i % loopFrames] += data[i];
++    return out;
++  });
++}
++
++/** Mix = sum of stems; one shared gain keeps the mix under full scale so stems still sum to it. */
++export function mixStems(stems, ceiling = 0.98) {
++  const frames = stems[0]?.channels[0]?.length || 0;
++  const channelCount = stems[0]?.channels.length || 2;
++  const mix = Array.from({ length: channelCount }, () => new Float32Array(frames));
++  for (const stem of stems)
++    stem.channels.forEach((data, c) => {
++      for (let i = 0; i < frames; i++) mix[c][i] += data[i];
++    });
++  let peak = 0;
++  for (const data of mix) for (let i = 0; i < frames; i++) peak = Math.max(peak, Math.abs(data[i]));
++  const gain = peak > ceiling ? ceiling / peak : 1;
++  if (gain !== 1) {
++    for (const data of mix) for (let i = 0; i < frames; i++) data[i] *= gain;
++    for (const stem of stems)
++      for (const data of stem.channels) for (let i = 0; i < frames; i++) data[i] *= gain;
++  }
++  return { mix, gain, peak };
++}
++
++/** An AudioBuffer-shaped object, accepted by wavBytes(). */
++export function bufferLike(channels, sampleRate) {
++  return {
++    numberOfChannels: channels.length,
++    length: channels[0]?.length || 0,
++    sampleRate,
++    getChannelData: (index) => channels[index],
++  };
++}
+diff --git a/src/labs/pocket/pocketPattern.test.js b/src/labs/pocket/pocketPattern.test.js
+new file mode 100644
+index 0000000000000000000000000000000000000000..b7a3642f913147df2afc9542b13f4be06c4ba97d
+--- /dev/null
++++ b/src/labs/pocket/pocketPattern.test.js
+@@ -0,0 +1,128 @@
++import { describe, expect, it } from 'vitest';
++import {
++  bassFrequency,
++  bassNotes,
++  bassRowLabels,
++  deleteSaved,
++  emptyPattern,
++  foldTail,
++  listSaved,
++  mixStems,
++  normalizePattern,
++  savePattern,
++  starterPattern,
++  STEPS,
++  stepTime,
++  STORAGE_KEY,
++} from './pocketPattern';
++
++function memoryStorage() {
++  const data = new Map();
++  return {
++    getItem: (key) => (data.has(key) ? data.get(key) : null),
++    setItem: (key, value) => data.set(key, String(value)),
++  };
++}
++
++describe('timing', () => {
++  it('places 16ths and delays only the off-beats by the swing amount', () => {
++    expect(stepTime(0, 120, 0.5)).toBe(0);
++    expect(stepTime(2, 120, 0.5)).toBeCloseTo(0.25);
++    expect(stepTime(1, 120, 0)).toBeCloseTo(0.125);
++    expect(stepTime(1, 120, 0.5)).toBeCloseTo(0.1875);
++  });
++});
++
++describe('bass', () => {
++  it('tunes row 0 to the root in octave 1 (A = 55 Hz)', () => {
++    expect(bassFrequency(9, 'minor', 0)).toBeCloseTo(55);
++    expect(bassFrequency(9, 'minor', 7)).toBeCloseTo(110);
++    expect(bassRowLabels(9, 'minorPentatonic')).toEqual(['A', 'C', 'D', 'E', 'G', 'A', 'C', 'D']);
++  });
++
++  it('holds each note until the next one, wrapping, at most 4 steps', () => {
++    const pattern = emptyPattern();
++    pattern.bass[0] = 0;
++    pattern.bass[2] = 3;
++    pattern.bass[14] = 1;
++    expect(bassNotes(pattern)).toEqual([
++      { step: 0, row: 0, length: 2 },
++      { step: 2, row: 3, length: 4 },
++      { step: 14, row: 1, length: 2 },
++    ]);
++    const single = emptyPattern();
++    single.bass[5] = 2;
++    expect(bassNotes(single)).toEqual([{ step: 5, row: 2, length: 4 }]);
++  });
++});
++
++describe('normalizePattern', () => {
++  it('keeps a valid pattern unchanged', () => {
++    const starter = starterPattern();
++    expect(normalizePattern(JSON.parse(JSON.stringify(starter)))).toEqual(starter);
++  });
++
++  it('repairs hostile or broken data', () => {
++    const fixed = normalizePattern({
++      name: 'x'.repeat(500),
++      bpm: 9999,
++      swing: -3,
++      key: 40,
++      scale: '__proto__',
++      drums: { kick: 'nope', snare: [1, 0, 1] },
++      bass: [99, -1, 2.5, 3],
++      volume: { kick: 'loud' },
++    });
++    expect(fixed.name).toHaveLength(60);
++    expect(fixed.bpm).toBe(180);
++    expect(fixed.swing).toBe(0);
++    expect(fixed.key).toBe(11);
++    expect(fixed.scale).toBe('minor');
++    expect(fixed.drums.kick).toHaveLength(STEPS);
++    expect(fixed.drums.kick.every((on) => on === false)).toBe(true);
++    expect(fixed.drums.snare.slice(0, 3)).toEqual([true, false, true]);
++    expect(fixed.bass.slice(0, 4)).toEqual([null, null, null, 3]);
++    expect(fixed.volume.kick).toBe(0.8);
++    expect(normalizePattern(null)).toEqual(emptyPattern());
++  });
++});
++
++describe('saved patterns', () => {
++  it('saves by name, newest first, and deletes', () => {
++    const storage = memoryStorage();
++    savePattern(storage, { ...starterPattern(), name: 'One' });
++    savePattern(storage, { ...starterPattern(), name: 'Two', bpm: 120 });
++    savePattern(storage, { ...starterPattern(), name: 'One', bpm: 100 });
++    const saved = listSaved(storage);
++    expect(saved.map((item) => [item.name, item.bpm])).toEqual([
++      ['One', 100],
++      ['Two', 120],
++    ]);
++    expect(deleteSaved(storage, 'One').map((item) => item.name)).toEqual(['Two']);
++  });
++
++  it('treats corrupt storage as empty', () => {
++    const storage = memoryStorage();
++    storage.setItem(STORAGE_KEY, '{not json');
++    expect(listSaved(storage)).toEqual([]);
++    expect(listSaved(null)).toEqual([]);
++  });
++});
++
++describe('rendering helpers', () => {
++  it('folds the ring-out past the loop end back onto the start', () => {
++    const [out] = foldTail([new Float32Array([1, 2, 3, 4, 5, 6, 7])], 4);
++    expect(Array.from(out)).toEqual([1 + 5, 2 + 6, 3 + 7, 4]);
++  });
++
++  it('mixes stems and scales mix and stems together when the sum would clip', () => {
++    const stems = [
++      { channels: [new Float32Array([0.8, 0.1]), new Float32Array([0, 0])] },
++      { channels: [new Float32Array([0.8, -0.1]), new Float32Array([0, 0])] },
++    ];
++    const { mix, gain } = mixStems(stems, 0.98);
++    expect(gain).toBeCloseTo(0.98 / 1.6);
++    expect(mix[0][0]).toBeCloseTo(0.98);
++    expect(stems[0].channels[0][0] + stems[1].channels[0][0]).toBeCloseTo(mix[0][0]);
++  });
++});
+diff --git a/src/labs/pocket/pocketSynth.js b/src/labs/pocket/pocketSynth.js
+new file mode 100644
+index 0000000000000000000000000000000000000000..d5143a9f7729ac9ca953206d932239d0f798aa95
+--- /dev/null
++++ b/src/labs/pocket/pocketSynth.js
+@@ -0,0 +1,236 @@
++// Pocket's sounds are synthesized with Web Audio nodes (oscillators, filtered
++// noise, envelopes): no samples. The same voice functions schedule into a live
++// AudioContext or an OfflineAudioContext, so exports sound like playback.
++import {
++  ALL_TRACKS,
++  barDuration,
++  bassFrequency,
++  bassNotes,
++  bufferLike,
++  DRUM_TRACKS,
++  foldTail,
++  mixStems,
++  stepDuration,
++  stepTime,
++  STEPS,
++  trackHasNotes,
++} from './pocketPattern';
++
++const TAIL_SECONDS = 1.5;
++const noiseCache = new WeakMap();
++
++function noiseBuffer(ctx) {
++  if (noiseCache.has(ctx)) return noiseCache.get(ctx);
++  const length = Math.round(ctx.sampleRate * 1);
++  const buffer = ctx.createBuffer(1, length, ctx.sampleRate);
++  const data = buffer.getChannelData(0);
++  let seed = 0x2f6b9a1d;
++  for (let i = 0; i < length; i++) {
++    seed = (seed * 1664525 + 1013904223) >>> 0;
++    data[i] = (seed / 4294967296) * 2 - 1;
++  }
++  noiseCache.set(ctx, buffer);
++  return buffer;
++}
++
++function envelope(ctx, destination, time, peak, decay, attack = 0.001) {
++  const gain = ctx.createGain();
++  gain.gain.setValueAtTime(0, time);
++  gain.gain.linearRampToValueAtTime(peak, time + attack);
++  gain.gain.exponentialRampToValueAtTime(0.0001, time + attack + decay);
++  gain.connect(destination);
++  return gain;
++}
++
++function noise(ctx, time, duration, offset = 0) {
++  const source = ctx.createBufferSource();
++  source.buffer = noiseBuffer(ctx);
++  source.start(time, offset % 0.9, duration);
++  return source;
++}
++
++function filter(ctx, type, frequency, q = 0.7) {
++  const node = ctx.createBiquadFilter();
++  node.type = type;
++  node.frequency.value = frequency;
++  node.Q.value = q;
++  return node;
++}
++
++const VOICES = {
++  kick(ctx, out, time, v) {
++    const osc = ctx.createOscillator();
++    osc.type = 'sine';
++    osc.frequency.setValueAtTime(155, time);
++    osc.frequency.exponentialRampToValueAtTime(48, time + 0.11);
++    osc.connect(envelope(ctx, out, time, 1.0 * v, 0.42));
++    osc.start(time);
++    osc.stop(time + 0.5);
++    const click = noise(ctx, time, 0.02);
++    click.connect(filter(ctx, 'highpass', 2500)).connect(envelope(ctx, out, time, 0.18 * v, 0.012));
++  },
++  snare(ctx, out, time, v) {
++    const body = ctx.createOscillator();
++    body.type = 'triangle';
++    body.frequency.setValueAtTime(190, time);
++    body.frequency.exponentialRampToValueAtTime(150, time + 0.08);
++    body.connect(envelope(ctx, out, time, 0.45 * v, 0.1));
++    body.start(time);
++    body.stop(time + 0.2);
++    const snap = noise(ctx, time, 0.3, 0.1);
++    snap.connect(filter(ctx, 'highpass', 1200)).connect(envelope(ctx, out, time, 0.55 * v, 0.17));
++  },
++  clap(ctx, out, time, v) {
++    const band = filter(ctx, 'bandpass', 1300, 0.9);
++    const gain = ctx.createGain();
++    gain.gain.setValueAtTime(0, time);
++    for (const [at, level] of [
++      [0, 0.8],
++      [0.011, 0.7],
++      [0.023, 0.9],
++    ]) {
++      gain.gain.setValueAtTime(level * v, time + at);
++      gain.gain.exponentialRampToValueAtTime(0.05 * v, time + at + 0.009);
++    }
++    gain.gain.setValueAtTime(0.6 * v, time + 0.032);
++    gain.gain.exponentialRampToValueAtTime(0.0001, time + 0.22);
++    const source = noise(ctx, time, 0.3, 0.3);
++    source.connect(band).connect(gain).connect(out);
++  },
++  hat(ctx, out, time, v) {
++    const source = noise(ctx, time, 0.08, 0.5);
++    source
++      .connect(filter(ctx, 'highpass', 7200))
++      .connect(envelope(ctx, out, time, 0.32 * v, 0.045));
++  },
++  open(ctx, out, time, v) {
++    const source = noise(ctx, time, 0.5, 0.6);
++    source
++      .connect(filter(ctx, 'highpass', 6500))
++      .connect(envelope(ctx, out, time, 0.28 * v, 0.32, 0.004));
++  },
++  rim(ctx, out, time, v) {
++    for (const [frequency, level] of [
++      [820, 0.35],
++      [1640, 0.18],
++    ]) {
++      const osc = ctx.createOscillator();
++      osc.type = 'square';
++      osc.frequency.value = frequency;
++      osc
++        .connect(filter(ctx, 'bandpass', frequency, 3))
++        .connect(envelope(ctx, out, time, level * v, 0.05));
++      osc.start(time);
++      osc.stop(time + 0.08);
++    }
++  },
++};
++
++export function scheduleDrum(ctx, out, id, time, velocity = 1) {
++  VOICES[id]?.(ctx, out, time, velocity);
++}
++
++export function scheduleBass(ctx, out, frequency, time, duration, cutoff) {
++  const lowpass = filter(ctx, 'lowpass', cutoff * 3.5, 5);
++  lowpass.frequency.setValueAtTime(cutoff * 3.5, time);
++  lowpass.frequency.exponentialRampToValueAtTime(cutoff, time + 0.16);
++  const gain = ctx.createGain();
++  const end = time + Math.max(0.05, duration);
++  gain.gain.setValueAtTime(0, time);
++  gain.gain.linearRampToValueAtTime(0.42, time + 0.006);
++  gain.gain.setValueAtTime(0.36, Math.max(time + 0.007, end - 0.03));
++  gain.gain.linearRampToValueAtTime(0, end);
++  lowpass.connect(gain).connect(out);
++  for (const [type, detune, level] of [
++    ['sawtooth', 0, 0.7],
++    ['square', -1200, 0.5],
++  ]) {
++    const osc = ctx.createOscillator();
++    osc.type = type;
++    osc.frequency.value = frequency;
++    osc.detune.value = detune;
++    const mix = ctx.createGain();
++    mix.gain.value = level;
++    osc.connect(mix).connect(lowpass);
++    osc.start(time);
++    osc.stop(end + 0.01);
++  }
++}
++
++/** Hi-hats a little softer off the beat: a fixed accent, not randomness. */
++export function velocityFor(id, step) {
++  if (id === 'hat') return step % 4 === 0 ? 1 : step % 2 ? 0.62 : 0.8;
++  return 1;
++}
++
++/**
++ * Schedules one step of `pattern` at `time`.
++ * @param {Record<string, AudioNode>} outputs one node per track id
++ */
++export function scheduleStep(ctx, outputs, pattern, step, time) {
++  for (const { id } of DRUM_TRACKS) {
++    if (pattern.drums[id][step]) scheduleDrum(ctx, outputs[id], id, time, velocityFor(id, step));
++  }
++  const note = bassNotes(pattern).find((item) => item.step === step);
++  if (note) {
++    const frequency = bassFrequency(pattern.key, pattern.scale, note.row);
++    const duration = note.length * stepDuration(pattern.bpm) * 0.92;
++    scheduleBass(ctx, outputs.bass, frequency, time, duration, pattern.cutoff);
++  }
++}
++
++/**
++ * Renders `bars` repeats of the pattern offline, one stem per track that has
++ * notes and is not muted, each folded into a seamless loop. The mix is the
++ * exact sum of the stems.
++ */
++export async function renderLoop(pattern, { bars = 2, sampleRate = 44100 } = {}) {
++  const Offline = globalThis.OfflineAudioContext || globalThis.webkitOfflineAudioContext;
++  if (!Offline) throw new Error('This browser cannot render audio offline.');
++  const loopSeconds = barDuration(pattern.bpm) * bars;
++  const loopFrames = Math.round(loopSeconds * sampleRate);
++  const totalFrames = loopFrames + Math.round(TAIL_SECONDS * sampleRate);
++  const active = ALL_TRACKS.filter(({ id }) => !pattern.muted[id] && trackHasNotes(pattern, id));
++  const stems = [];
++  for (const track of active) {
++    const ctx = new Offline(2, totalFrames, sampleRate);
++    const gain = ctx.createGain();
++    gain.gain.value = pattern.volume[track.id];
++    gain.connect(ctx.destination);
++    const silent = ctx.createGain();
++    silent.gain.value = 0;
++    silent.connect(ctx.destination);
++    const outputs = Object.fromEntries(
++      ALL_TRACKS.map(({ id }) => [id, id === track.id ? gain : silent])
++    );
++    for (let bar = 0; bar < bars; bar++) {
++      for (let step = 0; step < STEPS; step++) {
++        const time = bar * barDuration(pattern.bpm) + stepTime(step, pattern.bpm, pattern.swing);
++        // Only this track's voice is built; the others would be silent anyway.
++        const solo = {
++          ...pattern,
++          drums: Object.fromEntries(
++            DRUM_TRACKS.map(({ id }) => [
++              id,
++              id === track.id ? pattern.drums[id] : Array(STEPS).fill(false),
++            ])
++          ),
++          bass: track.id === 'bass' ? pattern.bass : Array(STEPS).fill(null),
++        };
++        scheduleStep(ctx, outputs, solo, step, time);
++      }
++    }
++    const rendered = await ctx.startRendering();
++    const channels = foldTail([rendered.getChannelData(0), rendered.getChannelData(1)], loopFrames);
++    stems.push({ id: track.id, label: track.label, channels });
++  }
++  if (!stems.length) throw new Error('The pattern is empty. Add some steps first.');
++  const { mix, gain } = mixStems(stems);
++  return {
++    sampleRate,
++    seconds: loopSeconds,
++    gain,
++    mix: bufferLike(mix, sampleRate),
++    stems: stems.map((stem) => ({ ...stem, buffer: bufferLike(stem.channels, sampleRate) })),
++  };
++}
+diff --git a/src/labs/press/PressPage.jsx b/src/labs/press/PressPage.jsx
+new file mode 100644
+index 0000000000000000000000000000000000000000..9c205097a3668f9c020413aa156bbc793e34d10f
+--- /dev/null
++++ b/src/labs/press/PressPage.jsx
+@@ -0,0 +1,434 @@
++import { useEffect, useRef, useState } from 'react';
++import {
++  Download,
++  FileJson,
++  FolderOpen,
++  ImagePlus,
++  Plus,
++  Printer,
++  RotateCcw,
++  X,
++} from 'lucide-react';
++import LabShell from '../LabShell';
++import { downloadBlob, safeFileName } from '../files';
++import {
++  buildPressHtml,
++  DRAFT_KEY,
++  embedFor,
++  exampleDraft,
++  normalizeDraft,
++  safeUrl,
++} from './pressHtml';
++
++const PHOTO_MAX = 900;
++
++const LIMITATIONS = [
++  'There is no hosting: you download one HTML file and upload it wherever you like (your site, Netlify Drop, GitHub Pages, a Linktree alternative).',
++  'Players are embedded for YouTube, Spotify, SoundCloud, Apple Music and Vimeo links. Other links (Bandcamp, Tidal, etc.) show as plain links.',
++  'PDF export uses your browser’s print dialog (choose “Save as PDF”). Embedded players do not print; their links are printed instead.',
++  'Your draft is saved in this browser only. Use “Save draft file” to move it to another device.',
++  'Fonts fall back to the reader’s system fonts; there are no custom typefaces or templates beyond dark/light and two layouts yet.',
++];
++
++function storage() {
++  try {
++    return window.localStorage;
++  } catch {
++    return null;
++  }
++}
++
++function resizePhoto(file) {
++  return new Promise((resolve, reject) => {
++    const url = URL.createObjectURL(file);
++    const image = new Image();
++    image.onload = () => {
++      const scale = Math.min(1, PHOTO_MAX / Math.max(image.width, image.height));
++      const canvas = document.createElement('canvas');
++      canvas.width = Math.round(image.width * scale);
++      canvas.height = Math.round(image.height * scale);
++      canvas.getContext('2d').drawImage(image, 0, 0, canvas.width, canvas.height);
++      URL.revokeObjectURL(url);
++      resolve(canvas.toDataURL('image/jpeg', 0.85));
++    };
++    image.onerror = () => {
++      URL.revokeObjectURL(url);
++      reject(new Error('That image could not be opened. Try a JPG or PNG.'));
++    };
++    image.src = url;
++  });
++}
++
++function ListEditor({ items, onChange, fields, addLabel, max, describe }) {
++  const set = (index, key, value) =>
++    onChange(items.map((item, i) => (i === index ? { ...item, [key]: value } : item)));
++  return (
++    <div className="press-list">
++      {items.map((item, index) => (
++        <div
++          key={index}
++          className={`press-item${fields.some((field) => field.multiline) ? ' is-quote' : ''}`}
++        >
++          {fields.map(({ key, label, type = 'text', multiline }) =>
++            multiline ? (
++              <textarea
++                key={key}
++                aria-label={`${label} ${index + 1}`}
++                placeholder={label}
++                value={item[key]}
++                rows={2}
++                onChange={(event) => set(index, key, event.target.value)}
++              />
++            ) : (
++              <input
++                key={key}
++                type={type}
++                aria-label={`${label} ${index + 1}`}
++                placeholder={label}
++                value={item[key]}
++                onChange={(event) => set(index, key, event.target.value)}
++              />
++            )
++          )}
++          <button
++            type="button"
++            className="press-remove"
++            aria-label={`Remove ${describe} ${index + 1}`}
++            onClick={() => onChange(items.filter((_, i) => i !== index))}
++          >
++            <X size={15} aria-hidden="true" />
++          </button>
++        </div>
++      ))}
++      {items.length < max && (
++        <button
++          type="button"
++          className="lab-button"
++          onClick={() =>
++            onChange([...items, Object.fromEntries(fields.map(({ key }) => [key, '']))])
++          }
++        >
++          <Plus size={15} aria-hidden="true" /> {addLabel}
++        </button>
++      )}
++    </div>
++  );
++}
++
++export default function PressPage() {
++  const [draft, setDraft] = useState(exampleDraft);
++  const [html, setHtml] = useState(() => buildPressHtml(exampleDraft()));
++  const [status, setStatus] = useState({ text: '' });
++  const frame = useRef(null);
++  const restored = useRef(false);
++
++  useEffect(() => {
++    try {
++      const saved = storage()?.getItem(DRAFT_KEY);
++      if (saved) setDraft(normalizeDraft(JSON.parse(saved)));
++    } catch {
++      /* ignore a broken draft */
++    }
++    restored.current = true;
++  }, []);
++
++  // Rebuild the preview after typing pauses, so players do not reload per key.
++  useEffect(() => {
++    const timer = setTimeout(() => {
++      setHtml(buildPressHtml(draft));
++      if (!restored.current) return;
++      try {
++        storage()?.setItem(DRAFT_KEY, JSON.stringify(draft));
++      } catch {
++        setStatus({
++          text: 'Browser storage is full, so this draft is not auto-saved. Use “Save draft file”.',
++          error: true,
++        });
++      }
++    }, 350);
++    return () => clearTimeout(timer);
++  }, [draft]);
++
++  const set = (key, value) => setDraft((current) => ({ ...current, [key]: value }));
++  const setContact = (key, value) =>
++    setDraft((current) => ({ ...current, contact: { ...current.contact, [key]: value } }));
++
++  const onPhoto = async (file) => {
++    if (!file) return;
++    try {
++      set('photo', await resizePhoto(file));
++    } catch (error) {
++      setStatus({ text: error.message, error: true });
++    }
++  };
++
++  const base = safeFileName(draft.name, 'press-kit');
++
++  const downloadHtml = () => {
++    const page = buildPressHtml(draft);
++    const name = `${base}-${draft.layout === 'bio' ? 'links' : 'epk'}.html`;
++    downloadBlob(new Blob([page], { type: 'text/html' }), name);
++    setStatus({ text: `Saved ${name} (${Math.round(page.length / 1024)} KB, one file).` });
++  };
++
++  const printPdf = () => {
++    const view = frame.current?.contentWindow;
++    if (!view) return;
++    // The preview may be a keystroke behind; print exactly what is shown.
++    view.focus();
++    view.print();
++  };
++
++  const saveDraftFile = () =>
++    downloadBlob(
++      new Blob([JSON.stringify(draft, null, 2)], { type: 'application/json' }),
++      `${base}-press-draft.json`
++    );
++
++  const openDraftFile = async (file) => {
++    if (!file) return;
++    try {
++      setDraft(normalizeDraft(JSON.parse(await file.text())));
++      setStatus({ text: `Opened ${file.name}.` });
++    } catch {
++      setStatus({ text: 'That file is not a Press draft.', error: true });
++    }
++  };
++
++  const trackHint = (url) => {
++    if (!url.trim()) return '';
++    if (!safeUrl(url)) return 'Not a web link';
++    return embedFor(url) ? `${embedFor(url).provider} player` : 'Shown as a link';
++  };
++
++  return (
++    <LabShell
++      lab="press"
++      name="Press"
++      tagline="Build an electronic press kit or link-in-bio page. Download it as one HTML file or print it to PDF."
++      limitations={LIMITATIONS}
++      className="lab-press"
++    >
++      <div className="lab-workspace">
++        <div className="lab-panel" role="group" aria-label="Press kit details">
++          <h2>Artist</h2>
++          <label className="lab-field">
++            <span>Artist or band name</span>
++            <input
++              type="text"
++              value={draft.name}
++              maxLength={80}
++              onChange={(event) => set('name', event.target.value)}
++            />
++          </label>
++          <label className="lab-field">
++            <span>Tagline</span>
++            <input
++              type="text"
++              value={draft.tagline}
++              maxLength={120}
++              placeholder="Genre · role · city"
++              onChange={(event) => set('tagline', event.target.value)}
++            />
++          </label>
++          <label className="lab-field">
++            <span>Location</span>
++            <input
++              type="text"
++              value={draft.location}
++              maxLength={80}
++              onChange={(event) => set('location', event.target.value)}
++            />
++          </label>
++          <div className="press-photo">
++            {draft.photo && <img src={draft.photo} alt="" />}
++            <label className="lab-drop" style={{ flex: 1 }}>
++              <ImagePlus size={18} aria-hidden="true" />
++              <strong>{draft.photo ? 'Replace photo' : 'Add a photo'}</strong>
++              <input
++                type="file"
++                accept="image/*"
++                aria-label="Artist photo"
++                onChange={(event) => onPhoto(event.target.files?.[0])}
++              />
++            </label>
++            {draft.photo && (
++              <button
++                type="button"
++                className="press-remove"
++                aria-label="Remove photo"
++                onClick={() => set('photo', '')}
++              >
++                <X size={15} aria-hidden="true" />
++              </button>
++            )}
++          </div>
++          <label className="lab-field">
++            <span>Bio (blank line between paragraphs)</span>
++            <textarea
++              value={draft.bio}
++              maxLength={5000}
++              rows={6}
++              onChange={(event) => set('bio', event.target.value)}
++            />
++          </label>
++
++          <h2>Links</h2>
++          <ListEditor
++            items={draft.links}
++            onChange={(value) => set('links', value)}
++            fields={[
++              { key: 'label', label: 'Label' },
++              { key: 'url', label: 'https://…', type: 'url' },
++            ]}
++            addLabel="Add link"
++            describe="link"
++            max={16}
++          />
++
++          <h2>Tracks</h2>
++          <ListEditor
++            items={draft.tracks}
++            onChange={(value) => set('tracks', value)}
++            fields={[
++              { key: 'title', label: 'Title' },
++              { key: 'url', label: 'Spotify, YouTube, SoundCloud… URL', type: 'url' },
++            ]}
++            addLabel="Add track"
++            describe="track"
++            max={8}
++          />
++          {draft.tracks.some((track) => track.url.trim()) && (
++            <ul className="lab-status">
++              {draft.tracks
++                .filter((track) => track.url.trim())
++                .map((track, index) => (
++                  <li key={index}>
++                    {track.title || `Track ${index + 1}`}: {trackHint(track.url)}
++                  </li>
++                ))}
++            </ul>
++          )}
++
++          <h2>Press quotes</h2>
++          <ListEditor
++            items={draft.quotes}
++            onChange={(value) => set('quotes', value)}
++            fields={[
++              { key: 'text', label: 'Quote', multiline: true },
++              { key: 'source', label: 'Source' },
++            ]}
++            addLabel="Add quote"
++            describe="quote"
++            max={8}
++          />
++
++          <h2>Contact</h2>
++          <div className="lab-grid-2">
++            {[
++              ['booking', 'Booking email', 'email'],
++              ['management', 'Management email', 'email'],
++              ['press', 'Press email', 'email'],
++              ['phone', 'Phone', 'tel'],
++            ].map(([key, label, type]) => (
++              <label key={key} className="lab-field">
++                <span>{label}</span>
++                <input
++                  type={type}
++                  value={draft.contact[key]}
++                  onChange={(event) => setContact(key, event.target.value)}
++                />
++              </label>
++            ))}
++          </div>
++
++          <h2>Style</h2>
++          <div className="lab-row">
++            <div className="lab-segment" role="group" aria-label="Layout">
++              {[
++                ['epk', 'Press kit'],
++                ['bio', 'Link in bio'],
++              ].map(([value, label]) => (
++                <button
++                  key={value}
++                  type="button"
++                  aria-pressed={draft.layout === value}
++                  onClick={() => set('layout', value)}
++                >
++                  {label}
++                </button>
++              ))}
++            </div>
++            <div className="lab-segment" role="group" aria-label="Theme">
++              {[
++                ['dark', 'Dark'],
++                ['light', 'Light'],
++              ].map(([value, label]) => (
++                <button
++                  key={value}
++                  type="button"
++                  aria-pressed={draft.theme === value}
++                  onClick={() => set('theme', value)}
++                >
++                  {label}
++                </button>
++              ))}
++            </div>
++            <label className="lab-row lab-field">
++              Accent
++              <input
++                type="color"
++                value={draft.accent}
++                onChange={(event) => set('accent', event.target.value)}
++              />
++            </label>
++          </div>
++        </div>
++
++        <div className="press-preview">
++          <div className="lab-row">
++            <button type="button" className="lab-button is-primary" onClick={downloadHtml}>
++              <Download size={16} aria-hidden="true" /> Download HTML
++            </button>
++            <button type="button" className="lab-button" onClick={printPdf}>
++              <Printer size={16} aria-hidden="true" /> Print / PDF
++            </button>
++          </div>
++          <iframe
++            ref={frame}
++            title="Press kit preview"
++            srcDoc={html}
++            sandbox="allow-same-origin allow-scripts allow-popups allow-popups-to-escape-sandbox allow-modals"
++          />
++          <div className="lab-row">
++            <button type="button" className="lab-button" onClick={saveDraftFile}>
++              <FileJson size={16} aria-hidden="true" /> Save draft file
++            </button>
++            <label className="lab-button">
++              <FolderOpen size={16} aria-hidden="true" /> Open draft file
++              <input
++                type="file"
++                accept="application/json,.json"
++                hidden
++                onChange={(event) => openDraftFile(event.target.files?.[0])}
++              />
++            </label>
++            <button
++              type="button"
++              className="lab-button"
++              onClick={() => {
++                setDraft(exampleDraft());
++                setStatus({ text: 'Started over from the example.' });
++              }}
++            >
++              <RotateCcw size={16} aria-hidden="true" /> Start over
++            </button>
++          </div>
++          <p className={`lab-status${status.error ? ' is-error' : ''}`} role="status">
++            {status.text}
++          </p>
++        </div>
++      </div>
++    </LabShell>
++  );
++}
+diff --git a/src/labs/press/pressHtml.js b/src/labs/press/pressHtml.js
+new file mode 100644
+index 0000000000000000000000000000000000000000..a07be2c1e09af1c6814bf265037921f9d41a54ec
+--- /dev/null
++++ b/src/labs/press/pressHtml.js
+@@ -0,0 +1,335 @@
++// Press builds one self-contained HTML file from plain form data. Everything
++// the artist types is escaped; links must be http(s), mailto or tel; players are
++// embedded only for known hosts from IDs parsed out of the URL; the page carries
++// no script and a CSP that forbids scripts, so the file is safe to host anywhere.
++
++export const PRESS_VERSION = 1;
++export const DRAFT_KEY = 'sattari-press-draft-v1';
++
++const HEX = /^#[0-9a-f]{6}$/i;
++const ID = /^[\w-]+$/;
++const PHOTO = /^data:image\/(png|jpeg|webp);base64,[a-z0-9+/=]+$/i;
++const EMAIL = /^[^\s@<>"']+@[^\s@<>"']+\.[^\s@<>"']+$/;
++
++export const FRAME_HOSTS = [
++  'https://www.youtube-nocookie.com',
++  'https://open.spotify.com',
++  'https://w.soundcloud.com',
++  'https://embed.music.apple.com',
++  'https://player.vimeo.com',
++];
++
++export function escapeHtml(value) {
++  return String(value ?? '')
++    .replace(/&/g, '&amp;')
++    .replace(/</g, '&lt;')
++    .replace(/>/g, '&gt;')
++    .replace(/"/g, '&quot;')
++    .replace(/'/g, '&#39;');
++}
++
++/** An http(s) URL as a normalized string, or '' for anything else. Adds https:// to bare domains. */
++export function safeUrl(value) {
++  let text = String(value ?? '').trim();
++  if (!text) return '';
++  if (!/^[a-z][a-z0-9+.-]*:/i.test(text)) text = `https://${text}`;
++  try {
++    const url = new URL(text);
++    if (url.protocol !== 'https:' && url.protocol !== 'http:') return '';
++    if (!url.hostname.includes('.')) return '';
++    return url.href;
++  } catch {
++    return '';
++  }
++}
++
++export function mailto(value) {
++  const email = String(value ?? '').trim();
++  return EMAIL.test(email) ? `mailto:${email}` : '';
++}
++
++export function telLink(value) {
++  const digits = String(value ?? '').replace(/[^\d+]/g, '');
++  return digits.replace(/\D/g, '').length >= 7 ? `tel:${digits}` : '';
++}
++
++/** Player embed for a track URL on a known host, or null (shown as a link). */
++export function embedFor(value) {
++  const href = safeUrl(value);
++  if (!href) return null;
++  const url = new URL(href);
++  const host = url.hostname.replace(/^www\.|^m\./, '');
++  const parts = url.pathname.split('/').filter(Boolean);
++
++  if (host === 'youtube.com' || host === 'music.youtube.com' || host === 'youtu.be') {
++    let id = '';
++    if (host === 'youtu.be') id = parts[0];
++    else if (parts[0] === 'watch') id = url.searchParams.get('v');
++    else if (['shorts', 'embed', 'live'].includes(parts[0])) id = parts[1];
++    if (id && ID.test(id))
++      return {
++        provider: 'YouTube',
++        src: `https://www.youtube-nocookie.com/embed/${id}`,
++        ratio: '16 / 9',
++      };
++    return null;
++  }
++  if (host === 'open.spotify.com') {
++    const index = parts[0]?.startsWith('intl-') ? 1 : 0;
++    const [type, id] = [parts[index], parts[index + 1]];
++    if (
++      ['track', 'album', 'playlist', 'artist', 'episode', 'show'].includes(type) &&
++      ID.test(id || '')
++    )
++      return {
++        provider: 'Spotify',
++        src: `https://open.spotify.com/embed/${type}/${id}`,
++        height: type === 'track' || type === 'episode' ? 152 : 352,
++      };
++    return null;
++  }
++  if (host === 'soundcloud.com' && parts.length >= 2) {
++    const clean = `https://soundcloud.com/${parts.map(encodeURIComponent).join('/')}`;
++    return {
++      provider: 'SoundCloud',
++      src: `https://w.soundcloud.com/player/?url=${encodeURIComponent(clean)}&visual=false&show_comments=false`,
++      height: parts[1] === 'sets' ? 300 : 166,
++    };
++  }
++  if (host === 'music.apple.com' && parts.length >= 3) {
++    if (!parts.every((part) => /^[\w.%-]+$/.test(part))) return null;
++    const song = url.searchParams.get('i');
++    const query = song && ID.test(song) ? `?i=${song}` : '';
++    return {
++      provider: 'Apple Music',
++      src: `https://embed.music.apple.com/${parts.join('/')}${query}`,
++      height: query || parts[1] === 'song' ? 175 : 450,
++    };
++  }
++  if (host === 'vimeo.com' && /^\d+$/.test(parts[0] || '')) {
++    return {
++      provider: 'Vimeo',
++      src: `https://player.vimeo.com/video/${parts[0]}`,
++      ratio: '16 / 9',
++    };
++  }
++  return null;
++}
++
++export function exampleDraft() {
++  return {
++    version: PRESS_VERSION,
++    name: 'Artist Name',
++    tagline: 'Alt-R&B · Producer · Los Angeles',
++    location: 'Los Angeles, CA',
++    bio: 'Write two or three short paragraphs: who you are, what your music sounds like, and what is new.\n\nMention a recent release, a show, or a collaboration. Keep it in the third person for press.',
++    photo: '',
++    accent: '#d6b36d',
++    theme: 'dark',
++    layout: 'epk',
++    links: [
++      { label: 'Instagram', url: '' },
++      { label: 'Spotify', url: '' },
++    ],
++    tracks: [{ title: '', url: '' }],
++    quotes: [
++      { text: 'Add a line from a review, blog or playlist curator.', source: 'Publication' },
++    ],
++    contact: { booking: '', management: '', press: '', phone: '' },
++  };
++}
++
++const text = (value, max) => String(value ?? '').slice(0, max);
++const list = (value, max, shape) => (Array.isArray(value) ? value.slice(0, max).map(shape) : []);
++
++/** Coerces untrusted data (storage, imported JSON) into a valid draft. */
++export function normalizeDraft(raw) {
++  const base = exampleDraft();
++  if (!raw || typeof raw !== 'object') return base;
++  return {
++    version: PRESS_VERSION,
++    name: text(raw.name, 80),
++    tagline: text(raw.tagline, 120),
++    location: text(raw.location, 80),
++    bio: text(raw.bio, 5000),
++    photo: PHOTO.test(String(raw.photo || '')) ? raw.photo : '',
++    accent: HEX.test(String(raw.accent || '')) ? raw.accent : base.accent,
++    theme: raw.theme === 'light' ? 'light' : 'dark',
++    layout: raw.layout === 'bio' ? 'bio' : 'epk',
++    links: list(raw.links, 16, (item) => ({
++      label: text(item?.label, 40),
++      url: text(item?.url, 500),
++    })),
++    tracks: list(raw.tracks, 8, (item) => ({
++      title: text(item?.title, 80),
++      url: text(item?.url, 500),
++    })),
++    quotes: list(raw.quotes, 8, (item) => ({
++      text: text(item?.text, 400),
++      source: text(item?.source, 80),
++    })),
++    contact: {
++      booking: text(raw.contact?.booking, 120),
++      management: text(raw.contact?.management, 120),
++      press: text(raw.contact?.press, 120),
++      phone: text(raw.contact?.phone, 40),
++    },
++  };
++}
++
++function paragraphs(value) {
++  return String(value || '')
++    .split(/\n\s*\n/)
++    .map((part) => part.trim())
++    .filter(Boolean)
++    .map((part) => `<p>${escapeHtml(part).replace(/\n/g, '<br>')}</p>`)
++    .join('\n');
++}
++
++function trackHtml(track) {
++  const href = safeUrl(track.url);
++  if (!href) return '';
++  const title = escapeHtml(track.title || '');
++  const embed = embedFor(href);
++  const link = `<a class="track-link" href="${escapeHtml(href)}" rel="noopener" target="_blank">${title || escapeHtml(new URL(href).hostname)}</a>`;
++  if (!embed) return `<div class="track">${link}</div>`;
++  const size = embed.ratio
++    ? `style="aspect-ratio: ${embed.ratio}; width: 100%; height: auto"`
++    : `height="${embed.height}"`;
++  return `<div class="track">
++  ${title ? `<h3>${title}</h3>` : ''}
++  <iframe src="${escapeHtml(embed.src)}" title="${escapeHtml(track.title || embed.provider)} on ${embed.provider}" ${size} loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin"></iframe>
++  <p class="print-only">${link}</p>
++</div>`;
++}
++
++function styles(draft) {
++  const dark = draft.theme === 'dark';
++  const accent = HEX.test(draft.accent) ? draft.accent : '#d6b36d';
++  const narrow = draft.layout === 'bio';
++  return `:root{--bg:${dark ? '#0f0f10' : '#f6f4ef'};--panel:${dark ? '#18181a' : '#ffffff'};--text:${dark ? '#f4f3ef' : '#1a1a18'};--muted:${dark ? '#a9a8a2' : '#5d5c56'};--line:${dark ? '#2c2c30' : '#dedbd2'};--accent:${accent}}
++*{box-sizing:border-box}
++body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
++main{max-width:${narrow ? '520px' : '880px'};margin:0 auto;padding:48px 20px 64px;display:grid;gap:40px}
++header{display:grid;gap:18px;${narrow ? 'justify-items:center;text-align:center' : 'grid-template-columns:auto 1fr;align-items:end'}}
++header img{width:${narrow ? '140px' : '220px'};height:${narrow ? '140px' : '220px'};object-fit:cover;border-radius:${narrow ? '50%' : '16px'};border:1px solid var(--line)}
++h1{font-size:${narrow ? '34px' : 'clamp(36px,7vw,64px)'};line-height:1.05;margin:0;letter-spacing:-0.02em}
++h2{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin:0 0 14px}
++h3{font-size:16px;margin:0 0 8px}
++.tagline{color:var(--muted);margin:8px 0 0}
++.links{display:grid;gap:10px;${narrow ? '' : 'grid-template-columns:repeat(auto-fill,minmax(180px,1fr))'}}
++.links a{display:block;padding:14px 18px;border:1px solid var(--line);border-radius:999px;background:var(--panel);color:var(--text);text-decoration:none;font-weight:600;text-align:center}
++.links a:hover{border-color:var(--accent)}
++.tracks{display:grid;gap:18px}
++.track iframe{display:block;width:100%;border:0;border-radius:12px;background:var(--panel)}
++.track-link{color:var(--accent);font-weight:600}
++.bio p{margin:0 0 14px;max-width:68ch}
++blockquote{margin:0 0 16px;padding:16px 20px;border-left:3px solid var(--accent);background:var(--panel);border-radius:0 12px 12px 0}
++blockquote p{margin:0;font-size:18px}
++blockquote footer{margin-top:8px;color:var(--muted);font-size:14px}
++.contact dl{display:grid;grid-template-columns:max-content 1fr;gap:6px 18px;margin:0}
++.contact dt{color:var(--muted)}
++.contact dd{margin:0}
++.contact a{color:var(--text)}
++.made{color:var(--muted);font-size:12px;text-align:center}
++.print-only{display:none}
++@media print{
++ @page{margin:16mm}
++ :root{--bg:#fff;--panel:#fff;--text:#111;--muted:#555;--line:#ccc}
++ body{font-size:11pt}
++ main{max-width:none;padding:0;gap:22px}
++ header{grid-template-columns:auto 1fr;justify-items:start;text-align:left}
++ header img{width:150px;height:150px;border-radius:8px}
++ h1{font-size:30pt}
++ .links{grid-template-columns:1fr 1fr}
++ .links a{border-radius:6px;text-align:left;padding:6px 10px}
++ .links a::after{content:" " attr(href);font-weight:400;color:#555;font-size:9pt;word-break:break-all}
++ .track iframe{display:none}
++ .print-only{display:block}
++ section,blockquote{break-inside:avoid}
++}`;
++}
++
++/** The complete, self-contained page. */
++export function buildPressHtml(input) {
++  const draft = normalizeDraft(input);
++  const name = draft.name.trim() || 'Artist';
++  const bio = draft.layout === 'bio' ? draft.bio.split(/\n\s*\n/)[0] || '' : draft.bio;
++  const links = draft.links
++    .map((link) => ({ label: link.label.trim(), href: safeUrl(link.url) }))
++    .filter((link) => link.href)
++    .map(
++      (link) =>
++        `<a href="${escapeHtml(link.href)}" rel="noopener" target="_blank">${escapeHtml(link.label || new URL(link.href).hostname)}</a>`
++    );
++  const tracks = draft.tracks.map(trackHtml).filter(Boolean);
++  const quotes = draft.layout === 'bio' ? [] : draft.quotes.filter((quote) => quote.text.trim());
++  const contactRows = [
++    ['Booking', mailto(draft.contact.booking), draft.contact.booking],
++    ['Management', mailto(draft.contact.management), draft.contact.management],
++    ['Press', mailto(draft.contact.press), draft.contact.press],
++    ['Phone', telLink(draft.contact.phone), draft.contact.phone],
++  ].filter(([, href]) => href);
++  const description = (draft.tagline || bio.split('\n')[0] || `${name} press kit`).slice(0, 160);
++  const csp = [
++    "default-src 'none'",
++    'img-src data: https:',
++    "style-src 'unsafe-inline'",
++    `frame-src ${FRAME_HOSTS.join(' ')}`,
++    "base-uri 'none'",
++    "form-action 'none'",
++  ].join('; ');
++
++  return `<!doctype html>
++<html lang="en">
++<head>
++<meta charset="utf-8">
++<meta name="viewport" content="width=device-width, initial-scale=1">
++<meta http-equiv="Content-Security-Policy" content="${csp}">
++<meta name="referrer" content="strict-origin-when-cross-origin">
++<title>${escapeHtml(name)}${draft.layout === 'epk' ? ' · Press Kit' : ''}</title>
++<meta name="description" content="${escapeHtml(description)}">
++<meta property="og:title" content="${escapeHtml(name)}">
++<meta property="og:description" content="${escapeHtml(description)}">
++<meta name="generator" content="Sattari Press (alpha)">
++<style>${styles(draft)}</style>
++</head>
++<body>
++<main>
++<header>
++${draft.photo ? `<img src="${draft.photo}" alt="${escapeHtml(name)}">` : ''}
++<div>
++<h1>${escapeHtml(name)}</h1>
++${draft.tagline ? `<p class="tagline">${escapeHtml(draft.tagline)}</p>` : ''}
++${draft.location && draft.layout === 'epk' ? `<p class="tagline">${escapeHtml(draft.location)}</p>` : ''}
++</div>
++</header>
++${links.length ? `<section class="links" aria-label="Links">\n${links.join('\n')}\n</section>` : ''}
++${tracks.length ? `<section><h2>Listen</h2><div class="tracks">\n${tracks.join('\n')}\n</div></section>` : ''}
++${bio.trim() ? `<section class="bio"><h2>About</h2>\n${paragraphs(bio)}\n</section>` : ''}
++${
++  quotes.length
++    ? `<section><h2>Press</h2>\n${quotes
++        .map(
++          (quote) =>
++            `<blockquote><p>“${escapeHtml(quote.text.trim())}”</p>${quote.source.trim() ? `<footer>${escapeHtml(quote.source.trim())}</footer>` : ''}</blockquote>`
++        )
++        .join('\n')}\n</section>`
++    : ''
++}
++${
++  contactRows.length
++    ? `<section class="contact"><h2>Contact</h2><dl>\n${contactRows
++        .map(
++          ([label, href, value]) =>
++            `<dt>${label}</dt><dd><a href="${escapeHtml(href)}">${escapeHtml(value.trim())}</a></dd>`
++        )
++        .join('\n')}\n</dl></section>`
++    : ''
++}
++<p class="made">Made with Sattari Press</p>
++</main>
++</body>
++</html>
++`;
++}
+diff --git a/src/pages/SattariHubPage.jsx b/src/pages/SattariHubPage.jsx
+index 0172a4e45d13070e0a0895782116b77803d2addb..605a4d9ff4fa7670eb23c1b69503431b7b0bde80 100644
+--- a/src/pages/SattariHubPage.jsx
++++ b/src/pages/SattariHubPage.jsx
+@@ -15,6 +15,7 @@ import {
+ import { SEO } from '../utils/seo';
+ import { PAGE_SEO } from '../data/siteSeo';
+ import '../styles-hub.css';
++import HubLabs from '../labs/HubLabs';
+ 
+ const workspaces = [
+   {
+@@ -167,6 +168,8 @@ export default function SattariHubPage() {
+             </div>
+           </section>
+ 
++          <HubLabs />
++
+           <section className="hub-horizon" aria-labelledby="hub-horizon-title">
+             <div className="hub-section-heading">
+               <h2 id="hub-horizon-title">On the horizon</h2>
+diff --git a/src/utils/lazyComponents.tsx b/src/utils/lazyComponents.tsx
+index c4b1cef333c8f8b6e5a99c7bfeba405636a9ff52..09ec063bc762c182e54a26f2df11f16f72951558 100644
+--- a/src/utils/lazyComponents.tsx
++++ b/src/utils/lazyComponents.tsx
+@@ -132,6 +132,10 @@ export const GuideArticle = lazyPage(() => import('@pages/MusicResources'), 'Gui
+ export const ToolDetailsPage = lazyPage(() => import('@pages/MusicResources'), 'ToolDetailsPage');
+ export const VisitPage = lazyPage(() => import('@pages/MusicResources'), 'VisitPage');
+ export const PrivacyPage = lazyPage(() => import('@pages/MusicResources'), 'PrivacyPage');
++// Wave-2 alpha tools (src/labs).
++export const CanvasPage = lazyPage(() => import('@/labs/canvas/CanvasPage'));
++export const PocketPage = lazyPage(() => import('@/labs/pocket/PocketPage'));
++export const PressPage = lazyPage(() => import('@/labs/press/PressPage'));
+ 
+ // Fallback loading component
+ export const PageLoader = () => (

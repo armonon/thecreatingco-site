@@ -1,0 +1,13 @@
+Perform the daily Core Product Lab review, at most 15 minutes. Workspace:
+/Users/agentsattari/thecreateco-company/core-product-lab. Read AGENTS.md, DIRECTIVE.md,
+HEALTH.md. Stop on PAUSE here or parent. Create/claim a dated CORE-REVIEW task in the
+shared company queue. Inspect only new evidence since last review. For each flagship
+record what broke/improved, unmeasured or regressed performance, incomplete golden
+paths, nearest release, highest professional-use blocker and next task. Deduplicate
+and reprioritize tasks with company.py; do not manufacture bugs or scores, reopen
+stable areas, or implement a broad roadmap. Preserve active ownership. Write dated
+report, finish with evidence, refresh lab views. Model guidance applies; no release,
+external messaging, hardware recording or unrelated app work. Summary to run history.
+
+
+LATEST OWNER AUTHORIZATION (2026-10-07 17:56 Pacific): Before execution read /Users/agentsattari/thecreateco-company/AUTONOMY.md. Armon says do not wait for personal review; keep upgrading and pushing and send reports often. This overrides earlier local-only/no-push wording for routine scoped tested fixes: perform independent OpenAI review as appropriate, commit/push and follow normal PR/CI and stack gates without an extra Armon signoff. Do not bypass checks or merge unreviewed downstack work. Preserve source/deploy and high-risk boundaries. The dedicated 30-minute progress reporter handles channel reporting; this job retains its own delivery policy. Review-only weekly/monthly jobs remain reviews, not release jobs.

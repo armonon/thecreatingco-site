@@ -1,0 +1,27 @@
+{
+  "sha": "b549a40072c1a5f01cd846fd37c68da3c1c31030",
+  "base_sha": "7126236a7f0ab5e3f999099b4593a714a056b040",
+  "scope": "Committed screened review delta, not a release or complete binary artifact",
+  "files": [
+    {
+      "path": "README.md",
+      "status": "present",
+      "sha256": "ed7f3b12ae21907122114e987ee283b817b308346bbf0bb647f96503231a2a64",
+      "bytes": 4550
+    },
+    {
+      "path": "tests/ai-guard.test.mjs",
+      "status": "present",
+      "sha256": "020f4fa9606dde0c833c5bf2cc433c00a6aaa098d9992ac8a2cc454d42788814",
+      "bytes": 4188
+    }
+  ],
+  "omitted": [],
+  "patch_sha256": "43bbf9ec77d4aa40470890d02800f60add3697f4857e17f31536de1abd694339",
+  "repo": "https://github.com/armonon/librarian",
+  "branches": [
+    "fix/librarian-workflow-20261007"
+  ],
+  "archive_path": "librarian/b549a40072c1a5f01cd846fd37c68da3c1c31030",
+  "local_worktree_dirty": false
+}

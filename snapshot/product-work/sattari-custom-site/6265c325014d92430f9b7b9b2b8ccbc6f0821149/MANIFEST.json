@@ -1,0 +1,674 @@
+{
+  "sha": "6265c325014d92430f9b7b9b2b8ccbc6f0821149",
+  "base_sha": "abde931cd81634a54288177c9d40dfd65321a5d8",
+  "scope": "Committed screened review delta, not a release or complete binary artifact",
+  "files": [
+    {
+      "path": "docs/ABLETON_EXPORT.md",
+      "status": "present",
+      "sha256": "91cc5268590bbdff6a130445e98a83aff254c8aea0423d6c89f85953c9cf927f",
+      "bytes": 2172
+    },
+    {
+      "path": "docs/SPLIT_RECOVERY_2026_10_06.md",
+      "status": "present",
+      "sha256": "34e22945b68f0f719c94709655dfe34a319091b8ed34df3f35bc8a526dbbfa75",
+      "bytes": 1168
+    },
+    {
+      "path": "docs/STUDIO_LABS_SPLIT_KEYBPM_VOX.md",
+      "status": "present",
+      "sha256": "7543f4d71d3831bc1591657d8145957c7f7624cac0e9f9d79ac88c715f11273a",
+      "bytes": 5718
+    },
+    {
+      "path": "docs/STUDIO_PWA.md",
+      "status": "present",
+      "sha256": "424143991b9e0cfe6f988def67327a591d54225ead60f4339b12d5a611d7c838",
+      "bytes": 3778
+    },
+    {
+      "path": "netlify.toml",
+      "status": "present",
+      "sha256": "92445c11cc231f984e767acf57eb15ce168e6b89e9da35c987a57943e3edb73e",
+      "bytes": 6252
+    },
+    {
+      "path": "package-lock.json",
+      "status": "present",
+      "sha256": "dcaaaaa496434e6e79f47c8bd0de97c7177191842bb9848c059c8178126c4048",
+      "bytes": 291478
+    },
+    {
+      "path": "package.json",
+      "status": "present",
+      "sha256": "3eba463d5cf0a29ed80cee2009501e5220e3b5256ab61be966746f5412370af0",
+      "bytes": 2204
+    },
+    {
+      "path": "public/studio-install.html",
+      "status": "present",
+      "sha256": "2e2e8f3321daf2f8f728eeaf2d26f4d6e359dfb37cbd1d35fa7b9356a767ac24",
+      "bytes": 3849
+    },
+    {
+      "path": "scripts/ableton/extract-live-set-template.mjs",
+      "status": "present",
+      "sha256": "379002670234e8102de32d4d56817ac891200304d79bc4d3aa36f41ed8d3062a",
+      "bytes": 2555
+    },
+    {
+      "path": "scripts/build-studio-sw.mjs",
+      "status": "present",
+      "sha256": "b656bf6643ccad1bb2c4b22edc96465ce347abebd8acc20a1a08ebf852d745f0",
+      "bytes": 2893
+    },
+    {
+      "path": "scripts/gen-pwa-icons.mjs",
+      "status": "present",
+      "sha256": "a732fe78d5be37b6ea27b090934d930582ab45a1e3d2416197b3a54831f7f3a5",
+      "bytes": 3040
+    },
+    {
+      "path": "scripts/kill-switch-studio-sw.js",
+      "status": "present",
+      "sha256": "4c112a066e1bbcb416996c06909720c54488a76895505c4cd1f18d7cc7dc96bb",
+      "bytes": 1152
+    },
+    {
+      "path": "scripts/qualify-ableton-export.mjs",
+      "status": "present",
+      "sha256": "ebaa8c546c19cefbf86c8b5a32caa1bda8f772b0e79eac6bc86393314fc7ba14",
+      "bytes": 7879
+    },
+    {
+      "path": "scripts/qualify-labs.mjs",
+      "status": "present",
+      "sha256": "cec4240c804da2030cff1be9533842d1140e0b4c9fc37eaf4826a34aea172d07",
+      "bytes": 9566
+    },
+    {
+      "path": "scripts/qualify-studio-labs.mjs",
+      "status": "present",
+      "sha256": "93a549c5402c38a2cd840f48f058943641380cbd1e379b120ce91d0d7e4df731",
+      "bytes": 13005
+    },
+    {
+      "path": "scripts/qualify-studio-pwa.mjs",
+      "status": "present",
+      "sha256": "94777dd3364aada9aed9258db1a8ed3161c329a3a14aa27d8919581ebe6ba7c4",
+      "bytes": 11593
+    },
+    {
+      "path": "scripts/qualify-suite-locker.mjs",
+      "status": "present",
+      "sha256": "31a9a33f774b6ae7e6e02f700b5b87f37c56eb632d62ee9379fc9ccb580ee833",
+      "bytes": 8854
+    },
+    {
+      "path": "scripts/studio-release-gate.mjs",
+      "status": "present",
+      "sha256": "c3298fb994953cc99bace16b69621b0a7743758454522207ca08ff1676073326",
+      "bytes": 7782
+    },
+    {
+      "path": "src/App.tsx",
+      "status": "present",
+      "sha256": "c18f576d4558267877ee60ac4447f400e519049358a65218d67090e0a8bb303f",
+      "bytes": 13613
+    },
+    {
+      "path": "src/components/Navbar.jsx",
+      "status": "present",
+      "sha256": "4e7330ca40b3ae80a12ef5d900da39c0a23d5fa55e29686e5000289dfefe366d",
+      "bytes": 6128
+    },
+    {
+      "path": "src/components/studio/StemDeckChannel.jsx",
+      "status": "present",
+      "sha256": "e6b74f0b8481a8665f15e7955f2f77036246a4820fc2cbba6bf1f9ce3b0abaf1",
+      "bytes": 27059
+    },
+    {
+      "path": "src/components/studio/StudioInstallMetadata.jsx",
+      "status": "present",
+      "sha256": "7ded36a1297d971f9e161e8cce49063c1f8054dfc78cc8b3cce9a079e2031cee",
+      "bytes": 572
+    },
+    {
+      "path": "src/components/studio/StudioInstallMetadata.test.jsx",
+      "status": "present",
+      "sha256": "4119af52b052e378631f79f6cb744ab63ae975c01c64be19b81895bd27a0d65d",
+      "bytes": 874
+    },
+    {
+      "path": "src/entry-prerender.jsx",
+      "status": "present",
+      "sha256": "0aa46eaf94dadd7a4778c677a6e9c1eddf6da1d89cf85b9e57cefb7c6ade986c",
+      "bytes": 4780
+    },
+    {
+      "path": "src/hooks/useStemSeparator.js",
+      "status": "present",
+      "sha256": "7e026ecd5a968a08aa3a8537bc78ce69f5ba0455158e2f2fd6f7281ebde62c96",
+      "bytes": 6427
+    },
+    {
+      "path": "src/labs/HubLabs.jsx",
+      "status": "present",
+      "sha256": "e7979603a17f056660f204b126cdce48e10bbc84e333bc12d27c54ea898f4960",
+      "bytes": 1256
+    },
+    {
+      "path": "src/labs/LabPages.test.jsx",
+      "status": "present",
+      "sha256": "7b70540ac5d95c3deb27e0768c39bcbb956c5a4f0d9e7786e996568f488b26a4",
+      "bytes": 3679
+    },
+    {
+      "path": "src/labs/LabShell.jsx",
+      "status": "present",
+      "sha256": "854c7f5a1bd9ecc38577c77de7b874f09d11ad8a62860082e52b75e4a81d4ed3",
+      "bytes": 2336
+    },
+    {
+      "path": "src/labs/audio/AudioLabParts.jsx",
+      "status": "present",
+      "sha256": "3a20d0268a265ef3ade8a26710abef8104ada374c280d97c02f3c6e5cec3e4bc",
+      "bytes": 3289
+    },
+    {
+      "path": "src/labs/audio/AudioLabShell.jsx",
+      "status": "present",
+      "sha256": "a41d4e4f90c0dd751226547b6dbcb2d4c4337fd3587964a441bb02fe7e7b6edb",
+      "bytes": 2903
+    },
+    {
+      "path": "src/labs/audio/audioLabFiles.js",
+      "status": "present",
+      "sha256": "3799574523cdd81f39283d212466a26ee0b7d1f8359b58163f4ac318d3f7f58e",
+      "bytes": 2472
+    },
+    {
+      "path": "src/labs/audio/audioLabTools.js",
+      "status": "present",
+      "sha256": "31b71e36831494e4d81c14a851fad75efed1dd3371698e0136a545824e61d174",
+      "bytes": 778
+    },
+    {
+      "path": "src/labs/audio/audioLabs.css",
+      "status": "present",
+      "sha256": "fee3973e660ac6011a96faff35128393f8c0e8fdc835f4b58561f53797ba7cd8",
+      "bytes": 13045
+    },
+    {
+      "path": "src/labs/audio/audioLabs.test.jsx",
+      "status": "present",
+      "sha256": "427217bb30a4e53d69280404e40081927f890524d309480263510c3119013260",
+      "bytes": 1748
+    },
+    {
+      "path": "src/labs/canvas/CanvasPage.jsx",
+      "status": "present",
+      "sha256": "c71e1489a78bcfb5755d8ad0a73082eff27b4ef0444bc8ed1b50f63d4e92c796",
+      "bytes": 20838
+    },
+    {
+      "path": "src/labs/canvas/canvasExport.js",
+      "status": "present",
+      "sha256": "20a440b0c9162ae2985df0eaa4ad097f045be777d73c3453fa6a3549da25163b",
+      "bytes": 2167
+    },
+    {
+      "path": "src/labs/canvas/canvasExport.test.js",
+      "status": "present",
+      "sha256": "44fe365aae86ddeab609cf90d0360c2d460a9dab5a645b31b6d303469c25519a",
+      "bytes": 1324
+    },
+    {
+      "path": "src/labs/canvas/canvasFeatures.js",
+      "status": "present",
+      "sha256": "837e4010a47e0dc240d5c9c1db40b87a80aa9c1293536fd6204db4c43da6bb1b",
+      "bytes": 6855
+    },
+    {
+      "path": "src/labs/canvas/canvasFeatures.test.js",
+      "status": "present",
+      "sha256": "4284cd56f51a9e43b6751d7ea5cebaabbbb0c32cb850052e28216d19aedce317",
+      "bytes": 3486
+    },
+    {
+      "path": "src/labs/canvas/canvasScenes.js",
+      "status": "present",
+      "sha256": "537aed5ef301a35089d594f4e1f720e1da7fd5ad3bbd02e3246f7db00dc14992",
+      "bytes": 12780
+    },
+    {
+      "path": "src/labs/files.js",
+      "status": "present",
+      "sha256": "2d1971a83edab297acc56465b8a2a2f38ee6f4e36816826318ffc6f9789c7876",
+      "bytes": 690
+    },
+    {
+      "path": "src/labs/hubLabs.css",
+      "status": "present",
+      "sha256": "7d880970c76e04e2fa127d3061e4891318a88e4515adf6aebfe49af3802e9563",
+      "bytes": 212
+    },
+    {
+      "path": "src/labs/keybpm/KeyBpmPage.jsx",
+      "status": "present",
+      "sha256": "e595a8750ccd22a0f86fef5c78a3d5b08f401119db1093a2046ca44b9bdb2445",
+      "bytes": 11913
+    },
+    {
+      "path": "src/labs/keybpm/keyBpm.js",
+      "status": "present",
+      "sha256": "44c20d560528c9ff758689a5986b6e5ebad798dcf9e5b92734cbbc530c3aaf4c",
+      "bytes": 5138
+    },
+    {
+      "path": "src/labs/keybpm/keyBpm.test.js",
+      "status": "present",
+      "sha256": "961d3bc4f7b7aa73d6eef203bcbf4cb2212315a1984b55df8850cd800dee45d5",
+      "bytes": 3621
+    },
+    {
+      "path": "src/labs/keybpm/keyBpm.worker.js",
+      "status": "present",
+      "sha256": "e967f2b9cd9114920f996118ec3f7056f96c8facb341e0b729b5e8f20c867a36",
+      "bytes": 762
+    },
+    {
+      "path": "src/labs/labs.css",
+      "status": "present",
+      "sha256": "936a7ac98ce439416b6a10a870086256f1cb5bcbcea87b6628566ea24d4403cf",
+      "bytes": 11412
+    },
+    {
+      "path": "src/labs/labsSeo.js",
+      "status": "present",
+      "sha256": "81cf5b3c0943ed796a012ef72506ebaa7420d2d6ca0e45a89e33437eb16fc909",
+      "bytes": 1526
+    },
+    {
+      "path": "src/labs/pocket/PocketPage.jsx",
+      "status": "present",
+      "sha256": "8822323861555f24c794302164dbe98120247f0d71f117a123132e3482e9df73",
+      "bytes": 21209
+    },
+    {
+      "path": "src/labs/pocket/pocketPattern.js",
+      "status": "present",
+      "sha256": "9ed3a5d3329cda350a90648d265128aa965bee76f3649fa1869a0a0d09af968e",
+      "bytes": 7970
+    },
+    {
+      "path": "src/labs/pocket/pocketPattern.test.js",
+      "status": "present",
+      "sha256": "f4b01ff0e5df548642596d31ac9930152b277f408ac16244378b4d40137d9379",
+      "bytes": 4241
+    },
+    {
+      "path": "src/labs/pocket/pocketSynth.js",
+      "status": "present",
+      "sha256": "ffe8230ae95a272f4700ea3a3daeba0691c7190c7fbf38b0bbfd9dedc44a1067",
+      "bytes": 8327
+    },
+    {
+      "path": "src/labs/press/PressPage.jsx",
+      "status": "present",
+      "sha256": "f56fc3d69c711b7e8cb3a10ad2d075522316bf5dffe1b4c780daf688105f71e3",
+      "bytes": 14664
+    },
+    {
+      "path": "src/labs/press/pressHtml.js",
+      "status": "present",
+      "sha256": "089cec5a2164698bdecda56036400016fe1977628dcfb6998be11480e272fbee",
+      "bytes": 13592
+    },
+    {
+      "path": "src/labs/split/SplitOffline.jsx",
+      "status": "present",
+      "sha256": "ec6a26fa9c66ca1a28e37b587002c251084176d0418fae15f2ecfd1700d8f369",
+      "bytes": 4424
+    },
+    {
+      "path": "src/labs/split/SplitPage.jsx",
+      "status": "present",
+      "sha256": "57e66a5ad178aaae662ad8cbacc185873b9a7d42306a81f2e5a2496e65a67638",
+      "bytes": 12576
+    },
+    {
+      "path": "src/labs/split/StemMixer.jsx",
+      "status": "present",
+      "sha256": "8a82391ad22eecd5daac6e199ba7424acdf4665a884235fb2b2a9ba5647dc9a8",
+      "bytes": 8332
+    },
+    {
+      "path": "src/labs/vox/VoxPage.jsx",
+      "status": "present",
+      "sha256": "1750fb3aaa70c7613cd3961942671199e314e134b72aa337723917dfed0e9a7f",
+      "bytes": 19513
+    },
+    {
+      "path": "src/labs/vox/useVoxRecorder.js",
+      "status": "present",
+      "sha256": "617ffea036c06d3cee7d28d2c428c735ddff15da495c6165c31ee0359fda545d",
+      "bytes": 3865
+    },
+    {
+      "path": "src/labs/vox/vox.worker.js",
+      "status": "present",
+      "sha256": "987da97be88b7871cbad0b94fe7c839d455e06854be5481b1225c7abaf3c9b71",
+      "bytes": 1444
+    },
+    {
+      "path": "src/labs/vox/voxDsp.js",
+      "status": "present",
+      "sha256": "e649c4325723dde1e4d39a20c34ee723e814b69283a85a6525e02ea949e3773e",
+      "bytes": 11337
+    },
+    {
+      "path": "src/labs/vox/voxDsp.test.js",
+      "status": "present",
+      "sha256": "1d0c90d814a9a3e0b6f4f6859761e219ef2a06c0e0b9b2f946959cc53aa41205",
+      "bytes": 5394
+    },
+    {
+      "path": "src/pages/DownloadsPage.tsx",
+      "status": "present",
+      "sha256": "880516eb3bfaa9a0facdf749971f00750911a1ad78fe904f7c7d8a176648d796",
+      "bytes": 16321
+    },
+    {
+      "path": "src/pages/SattariHubPage.jsx",
+      "status": "present",
+      "sha256": "24dd9f0257de7a1781e63a99b6567e4cdf9085bbea818570967f1ca1dc665cec",
+      "bytes": 6922
+    },
+    {
+      "path": "src/pages/SattariHubPage.test.jsx",
+      "status": "present",
+      "sha256": "d147f7af00833b52774125f29676493363ee5ac1f5521e98c4cd5da28f299df2",
+      "bytes": 2671
+    },
+    {
+      "path": "src/pages/SattariStudioPage.jsx",
+      "status": "present",
+      "sha256": "98f2f80a90cdd7d3c9fd6b2a7727dfdbc844208abba1055e25f799c21587164b",
+      "bytes": 18367
+    },
+    {
+      "path": "src/pwa/SattariAppMetadata.jsx",
+      "status": "present",
+      "sha256": "4a9b6ce7d11c28762c25b128a5ae8779a6dfa332d034cea68ce090321d339f8d",
+      "bytes": 579
+    },
+    {
+      "path": "src/pwa/StudioPwaUi.jsx",
+      "status": "present",
+      "sha256": "f63da540ccc01befacd517ae2bc957ecb474b8fd335cbed54a3c78717d4ab742",
+      "bytes": 1664
+    },
+    {
+      "path": "src/pwa/studio-sw.js",
+      "status": "present",
+      "sha256": "282ca424c3b63f8c1afbde24f6c5552e23fc11d425ef45bb66f46e074a9ca802",
+      "bytes": 8057
+    },
+    {
+      "path": "src/pwa/studioPwa.css",
+      "status": "present",
+      "sha256": "492d60dc91715bed5a42a02312acfe55a19f49a17b5e3a684a3cc4af383c1151",
+      "bytes": 657
+    },
+    {
+      "path": "src/pwa/studioPwa.js",
+      "status": "present",
+      "sha256": "797ccdcf4a00cee4c244de7412fc4d630b23b8464501517a60b88f830201b139",
+      "bytes": 4027
+    },
+    {
+      "path": "src/studio/abletonDeckExport.js",
+      "status": "present",
+      "sha256": "39f728410d49fd0b887f15f2a8232f13472decd910bcd7933c1ee214d13d3679",
+      "bytes": 2142
+    },
+    {
+      "path": "src/studio/abletonDeckExport.test.js",
+      "status": "present",
+      "sha256": "5ec898de0cbec18f6168d104f9882e1bf44f2309c30696d8bf6816757acd61cf",
+      "bytes": 3252
+    },
+    {
+      "path": "src/studio/arrangement/ExportRangePanel.jsx",
+      "status": "present",
+      "sha256": "b75b64c05cc736d64bbe1413bca07e7fd2e094b9a0628e674d2d3e94b92a9d63",
+      "bytes": 4905
+    },
+    {
+      "path": "src/studio/downloads.js",
+      "status": "present",
+      "sha256": "1682f134f1c57514b37e07d9dabe8c929495810176aa41bda7e7bf7ec7a455a2",
+      "bytes": 445
+    },
+    {
+      "path": "src/studio/hooks/useDeckOperations.js",
+      "status": "present",
+      "sha256": "77a606faf4cd6199c595ad1d01fa7cdd91f63f6eb939316bd54ec92a59b604a3",
+      "bytes": 20060
+    },
+    {
+      "path": "src/studio/hooks/useLockerOpen.js",
+      "status": "present",
+      "sha256": "be45fc3b57bbdea990dd98ee05eeb54caa5f2d4b6c66ae05917a9df10f431834",
+      "bytes": 1829
+    },
+    {
+      "path": "src/studio/hooks/useStemHandoff.js",
+      "status": "present",
+      "sha256": "8053cf739494a13d0aacfd489887b62d1ed72c58a301fce8b827b8b0e1503498",
+      "bytes": 1921
+    },
+    {
+      "path": "src/studio/stemHandoff.js",
+      "status": "present",
+      "sha256": "836fe6d3595b89f8f7e041bcd1cb4917d111ed1088ae01ede31fc9af66783842",
+      "bytes": 975
+    },
+    {
+      "path": "src/studio/stemHandoff.test.js",
+      "status": "present",
+      "sha256": "a4ab6afbddb6e7feac1760234f81625e33c9e133885a5f271c81900c909aca5e",
+      "bytes": 3246
+    },
+    {
+      "path": "src/studio/views/CommandBar.jsx",
+      "status": "present",
+      "sha256": "d2891544d640bce3bd84ba3d60fce8f00fcccd20b9fc4f7e8d15166275b1411d",
+      "bytes": 7569
+    },
+    {
+      "path": "src/studio/views/SessionChrome.jsx",
+      "status": "present",
+      "sha256": "bf703855587fc79c997b8c383a3f4632262e21347533ccf74c92a14d10ce3585",
+      "bytes": 9400
+    },
+    {
+      "path": "src/suite/SuiteUi.jsx",
+      "status": "present",
+      "sha256": "ee6a05eacb750580cfa465cde67f20bff070407c068331b59607c2321c4a6c6a",
+      "bytes": 2797
+    },
+    {
+      "path": "src/suite/suite.css",
+      "status": "present",
+      "sha256": "131cf5f8a77709344ab52b989f0ef4bd745d5fb8d4dab239af0df28e324b2680",
+      "bytes": 2145
+    },
+    {
+      "path": "src/suite/suiteKit.js",
+      "status": "present",
+      "sha256": "32211747ad4292cbdfcf000081d8fa399ce47df3bac5c7cfab673cb4c901f30f",
+      "bytes": 5613
+    },
+    {
+      "path": "src/suite/suiteKit.test.jsx",
+      "status": "present",
+      "sha256": "f5c641a661e9a8b7f0fbf77d0369c33aea21b64fe80271dc3c005356e83913d4",
+      "bytes": 3357
+    },
+    {
+      "path": "src/utils/abletonExport/abletonExport.test.js",
+      "status": "present",
+      "sha256": "bb7a7dca8fe00541be6b800ac439b5b3e14c30580c8cc2d3ef736f0556c7d85e",
+      "bytes": 16197
+    },
+    {
+      "path": "src/utils/abletonExport/abletonPack.js",
+      "status": "present",
+      "sha256": "77f114071dadeb7a6b8ae2898f4beebbef8ff86389b3801341697ba196c949cf",
+      "bytes": 7044
+    },
+    {
+      "path": "src/utils/abletonExport/index.js",
+      "status": "present",
+      "sha256": "38c042f1c0c7260987babb15f7867826eda19b0c493e24be617fd99aad4fc29f",
+      "bytes": 2458
+    },
+    {
+      "path": "src/utils/abletonExport/liveSet.js",
+      "status": "present",
+      "sha256": "d8a0ecba9b639272ae3bffc616b6488dfe3d4730a9a7938e6c56640970baa4ec",
+      "bytes": 13764
+    },
+    {
+      "path": "src/utils/abletonExport/templates/audioTrack.xml",
+      "status": "present",
+      "sha256": "c61c50f347791a75b97d4095749fb0c77e45b928469a7df5eac78fff05532ab9",
+      "bytes": 15746
+    },
+    {
+      "path": "src/utils/abletonExport/templates/liveSet.xml",
+      "status": "present",
+      "sha256": "a3f415c71161f7bd929d7d6c797a3cc0e2f1102cddabdb413d64f6598597a9e7",
+      "bytes": 92381
+    },
+    {
+      "path": "src/utils/lazyComponents.tsx",
+      "status": "present",
+      "sha256": "4c7e34f3c795f90b91c5459d097a3ae66218853eaedfeb4c8981220b1e746734",
+      "bytes": 6968
+    },
+    {
+      "path": "src/utils/stemSeparator.js",
+      "status": "present",
+      "sha256": "4c2b165337b2a35f2d6d252059d993ecde391d062be9ea8ecaf94a4758718b68",
+      "bytes": 4980
+    },
+    {
+      "path": "src/utils/stemSeparator.test.js",
+      "status": "present",
+      "sha256": "84f115b859c0b65c5958382f2d6d24e63184b9f3f5a4679f9fbe8323c284693b",
+      "bytes": 4522
+    },
+    {
+      "path": "src/utils/stemSeparatorClient.js",
+      "status": "present",
+      "sha256": "a439c5c0ba93a5ec01d9acc2067f5ac28bed928045c0eedf6467eb437ccd847f",
+      "bytes": 3314
+    },
+    {
+      "path": "src/utils/stemSeparatorClient.test.js",
+      "status": "present",
+      "sha256": "8088168560b267a10593dffbfa21fcc25d85d198ac26fa8180623d130ab77f1d",
+      "bytes": 5397
+    },
+    {
+      "path": "tests/apple-packaging.test.js",
+      "status": "present",
+      "sha256": "57c5ba7245efacf385b968c377d803c95dfb6e6dcef6c06c0e047c25021d37e0",
+      "bytes": 2590
+    },
+    {
+      "path": "tests/netlify-functions/hash-staff-password.test.js",
+      "status": "present",
+      "sha256": "5307b336bd9feab238c967ddf6ee4b8e25aabcaddff8394cf379fdbc2c5b5a0f",
+      "bytes": 1528
+    },
+    {
+      "path": "tests/netlify-functions/staff-auth.test.js",
+      "status": "present",
+      "sha256": "70ad2e36147a06482859c225d0c47e6caa3c50c889ba1bf3c550bda43e128aa6",
+      "bytes": 7338
+    },
+    {
+      "path": "tests/netlify-functions/staff-endpoints-auth.test.js",
+      "status": "present",
+      "sha256": "1e308b0260e50202744496ab29362d5589a79f58ce12efdd1e150cd0db8ffee9",
+      "bytes": 4607
+    },
+    {
+      "path": "tests/netlify-functions/staff-login.test.js",
+      "status": "present",
+      "sha256": "ab55096144e3b6f6604d5bddb41e8534da0331bd824afe70932a39dd97bbf45a",
+      "bytes": 8524
+    },
+    {
+      "path": "tests/netlify-functions/staff-page.test.js",
+      "status": "present",
+      "sha256": "719f458f904b23ac61dcea1b5d37bfbb3dbbfbc23fa6733e541a7d29a22ebdd1",
+      "bytes": 10672
+    }
+  ],
+  "omitted": [
+    {
+      "path": "public/images/sattari-app/apple-touch-icon.png",
+      "reason": "non-source-or-binary-asset"
+    },
+    {
+      "path": "public/images/sattari-app/icon-192.png",
+      "reason": "non-source-or-binary-asset"
+    },
+    {
+      "path": "public/images/sattari-app/icon-512.png",
+      "reason": "non-source-or-binary-asset"
+    },
+    {
+      "path": "public/images/sattari-app/icon-maskable-192.png",
+      "reason": "non-source-or-binary-asset"
+    },
+    {
+      "path": "public/images/sattari-app/icon-maskable-512.png",
+      "reason": "non-source-or-binary-asset"
+    },
+    {
+      "path": "public/images/stemdeck/icon-maskable-192.png",
+      "reason": "non-source-or-binary-asset"
+    },
+    {
+      "path": "public/images/stemdeck/icon-maskable-512.png",
+      "reason": "non-source-or-binary-asset"
+    },
+    {
+      "path": "public/studio.webmanifest",
+      "reason": "non-source-or-binary-asset"
+    },
+    {
+      "path": "public/studio/sattari.webmanifest",
+      "reason": "non-source-or-binary-asset"
+    },
+    {
+      "path": "src/labs/press/pressHtml.test.js",
+      "reason": "non-fixture-email-content"
+    }
+  ],
+  "patch_sha256": "fc4a308e429354763412e46e81fa010520dd4021cec3e2f863f764a75407a5ce",
+  "repo": "https://github.com/armonon/sattari-custom-site",
+  "branches": [
+    "core-lab/stemdeck-throttle-clock-20261009"
+  ],
+  "archive_path": "sattari-custom-site/6265c325014d92430f9b7b9b2b8ccbc6f0821149",
+  "local_worktree_dirty": false
+}

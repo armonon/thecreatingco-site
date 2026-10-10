@@ -1,0 +1,17 @@
+{
+  "task_id": "WEBLAB-PROTOTYPE-001",
+  "title": "Build and qualify WebLab visual web/code prototype",
+  "category": "BUILD",
+  "workstream": "FOUNDER_DIRECTED_PRODUCT",
+  "product": "weblab",
+  "model": "openai/gpt-5.4",
+  "status": "QUEUED",
+  "dependencies": [],
+  "scores": {"impact": 6, "user_value": 7, "confidence": 7, "effort": 5, "risk": 4},
+  "expected_value": "A working local visual web-design proof that lets a user compose blocks, edit properties, test responsive preview and export portable HTML/CSS.",
+  "next_action": "Verify build and manually exercise add, inspector edit, phone preview and HTML export before considering a prototype review.",
+  "severity": "P4",
+  "area": "new-product-prototype",
+  "test_requirements": "Typecheck/build plus manual proof of add, inspector edit, phone preview and HTML export. No deployment.",
+  "source_evidence": "Founder direction in Discord #thecreativeco on 2026-10-09."
+}

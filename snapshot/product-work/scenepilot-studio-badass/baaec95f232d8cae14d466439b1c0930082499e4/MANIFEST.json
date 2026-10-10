@@ -1,0 +1,362 @@
+{
+  "sha": "baaec95f232d8cae14d466439b1c0930082499e4",
+  "base_sha": "1380c2fe7111fd750469fde5c8c73c7df36c7951",
+  "scope": "Committed screened review delta, not a release or complete binary artifact",
+  "files": [
+    {
+      "path": ".github/workflows/release-macos.yml",
+      "status": "present",
+      "sha256": "284791f71fc2ac4116ea21a55bf3e6517d15c5f8374fcc76d911ea60416bfe7c",
+      "bytes": 3852
+    },
+    {
+      "path": "README.md",
+      "status": "present",
+      "sha256": "6806ad6c599628dff516f4f774b1b62a4df8a4000b38873fb89580f4f748dfcd",
+      "bytes": 2133
+    },
+    {
+      "path": "app/canvas-preview.tsx",
+      "status": "present",
+      "sha256": "1b5936f0a502fc30b20395a53a208ce33f017928c59ceae3027ae58fcb9f2297",
+      "bytes": 20210
+    },
+    {
+      "path": "app/desktop-media.ts",
+      "status": "present",
+      "sha256": "af58eed0841843423e874a55c8b3cd233cb098aa509781cc7c2d8ae531d26cb8",
+      "bytes": 7123
+    },
+    {
+      "path": "app/edit-snapshot.ts",
+      "status": "present",
+      "sha256": "9c335563cdaaf9c3205fc6873f140054a47f9e0557a3132a015060d87c321e1d",
+      "bytes": 3958
+    },
+    {
+      "path": "app/editor-browser-actions.ts",
+      "status": "present",
+      "sha256": "c6fcc7aa7175190c569724ae1e17d1f63c1f39dc6ed8334fa7c1468599463152",
+      "bytes": 893
+    },
+    {
+      "path": "app/editor-preview-stage.tsx",
+      "status": "present",
+      "sha256": "3ab7b671851b39b9ca2f026ef9ec4ecfaf606f9afe8796013cab5a41fb3170a4",
+      "bytes": 8532
+    },
+    {
+      "path": "app/media-file-utils.ts",
+      "status": "present",
+      "sha256": "ffea175118433ff58e2c54d3f67142f9885963b349ebdd244a2598d1200f9696",
+      "bytes": 2471
+    },
+    {
+      "path": "app/page.tsx",
+      "status": "present",
+      "sha256": "e451cbb209667144b28d45c769c0179a28d2c35d40d33721fc19f5292bb1dd63",
+      "bytes": 499524
+    },
+    {
+      "path": "app/project-document.ts",
+      "status": "present",
+      "sha256": "9ebc01cf60156b8e50e3bfedb66c69117ca073701d4d06e7ca5136093dc54e2c",
+      "bytes": 7236
+    },
+    {
+      "path": "app/recovery-history-panel.tsx",
+      "status": "present",
+      "sha256": "cbab0612fa88b51775f1f4b1109f3e38e8e9c1047356146227f7c377e44c1bd2",
+      "bytes": 1407
+    },
+    {
+      "path": "app/render-queue-panel.tsx",
+      "status": "present",
+      "sha256": "6e007ce13cb352b34d2bb09e9fb02d2a9e1da4c3d2f2c772fcca955500e5ff1f",
+      "bytes": 2876
+    },
+    {
+      "path": "app/rotoscope-client.ts",
+      "status": "present",
+      "sha256": "7dbb7065630604c30aa564b7273be1d320934408022dc461fbd33451d5493e81",
+      "bytes": 3528
+    },
+    {
+      "path": "app/standalone-runtime.tsx",
+      "status": "present",
+      "sha256": "2d7e997f00166f499c3ff29b1910d7c51cfdaba5aead7eba3c035989cac61e71",
+      "bytes": 1979
+    },
+    {
+      "path": "app/studio-topbar.tsx",
+      "status": "present",
+      "sha256": "24ece49130adce10129fcaf0a875de713aa614179a9400de088fdf6e9918cbac",
+      "bytes": 4458
+    },
+    {
+      "path": "app/use-project-safety.ts",
+      "status": "present",
+      "sha256": "bfbebfd586c91bcfdd562267d5b24967b2dfe7a5a64ca7646c0d3a805bc67250",
+      "bytes": 2221
+    },
+    {
+      "path": "app/use-render-queue.ts",
+      "status": "present",
+      "sha256": "188c60f6058ffd3e32c55ae4846f0f7cabe1f17febd4c30e2daea6df58718b58",
+      "bytes": 2356
+    },
+    {
+      "path": "app/video-delivery.ts",
+      "status": "present",
+      "sha256": "37cc3426df142e07a7af088e40eb8b201b65b61ee4e71d355f0fc1dbc2f46309",
+      "bytes": 37105
+    },
+    {
+      "path": "desktop/index.html",
+      "status": "present",
+      "sha256": "697238d4ed08d0e989ed0d028b9da203286a7b712519cbdb29dfb130e39f5f6c",
+      "bytes": 622
+    },
+    {
+      "path": "docs/release-campaign-0.1.16.md",
+      "status": "present",
+      "sha256": "3b883fe80708ac5f87daba9e0560ea8ee007ac0b02dab0b9331e8a176f1ced5c",
+      "bytes": 10032
+    },
+    {
+      "path": "docs/release-followup-0.1.16.md",
+      "status": "present",
+      "sha256": "d91e02194400ef61fced620622a5c09501f3d36c2c0d68b5ad152fe329dff1d3",
+      "bytes": 8975
+    },
+    {
+      "path": "docs/release-handoff.md",
+      "status": "present",
+      "sha256": "b09a2209fa954513055ce9ee3e4c30b0f0ffc562a29e0fbb721cd0eba1826e39",
+      "bytes": 4184
+    },
+    {
+      "path": "docs/release-qa-assets.md",
+      "status": "present",
+      "sha256": "a25541c9496d2d46a0844c634bd4e6b509713980b2116a0a10232efae64972ff",
+      "bytes": 1112
+    },
+    {
+      "path": "docs/release-qualification.md",
+      "status": "present",
+      "sha256": "99ee732f502066cdb462916922237ef4fb5ae05e4b3e7d466697feaee13be780",
+      "bytes": 3530
+    },
+    {
+      "path": "docs/release-today-0.1.16.md",
+      "status": "present",
+      "sha256": "6e205fce1029916c1dd3a6da602b25c4a136a504e1fc3032cb2a803e1d96f38c",
+      "bytes": 12149
+    },
+    {
+      "path": "electron/atomic-file.js",
+      "status": "present",
+      "sha256": "5d70a1a78525c0143d92db2d0a71540ad2deca5116116dd3b412891e2ade7953",
+      "bytes": 1032
+    },
+    {
+      "path": "electron/desktop-io.js",
+      "status": "present",
+      "sha256": "502f53bbdb215e38d3a33ca4cfab22eee7ae01dcb9f49548d3a668cb699e3147",
+      "bytes": 2346
+    },
+    {
+      "path": "electron/main.js",
+      "status": "present",
+      "sha256": "8be3b08e7b4da0d83cc0eb89f8a741a5ec3cdcf35200d691ad2f76867c4b1ee9",
+      "bytes": 34745
+    },
+    {
+      "path": "electron/media-engine.js",
+      "status": "present",
+      "sha256": "56eb81bf9f4ec4e40508ec6118da9c2b4d82bdbe9676066535ee9b9d86a48d54",
+      "bytes": 36014
+    },
+    {
+      "path": "electron/notarize.mjs",
+      "status": "present",
+      "sha256": "c10def00883a5881c10e378205cfe0a72a5c1f1796ce15f0e65e6d729c4c104a",
+      "bytes": 1202
+    },
+    {
+      "path": "electron/package.json",
+      "status": "present",
+      "sha256": "c5931e0350e0d82e47c59d4971a4097bf69df2f6b2a467476bcd8506ec8d9621",
+      "bytes": 2673
+    },
+    {
+      "path": "electron/preload.cjs",
+      "status": "present",
+      "sha256": "039f7c4d42e1310f9abb1a58c39d4e1c4d655581490204a1801728b68c800012",
+      "bytes": 3054
+    },
+    {
+      "path": "lib/capabilities.ts",
+      "status": "present",
+      "sha256": "d0a68b341f7ec27f0806622c1b3800f803e7938d66600560bb9fa435d85bd518",
+      "bytes": 4785
+    },
+    {
+      "path": "lib/document-revision.ts",
+      "status": "present",
+      "sha256": "1109cf4166b16cba8456ef1f11e40927a1034e54665bca73ab1cb1c0bff5a239",
+      "bytes": 875
+    },
+    {
+      "path": "lib/pro-editor.ts",
+      "status": "present",
+      "sha256": "98c8fa7a6356e389dc22cc3109db74c8940683290fc286c966ac41ec25b8de13",
+      "bytes": 13714
+    },
+    {
+      "path": "lib/product-qualification.ts",
+      "status": "present",
+      "sha256": "d33193e47aa25268efe420b94dd5f9340bd89531c4e901d85b307093b2a412b0",
+      "bytes": 9592
+    },
+    {
+      "path": "lib/project-settings.ts",
+      "status": "present",
+      "sha256": "497c97cba96f8f6d7143d838b9cc33ef4e03557dcdaf2cbec6c19c890583b32b",
+      "bytes": 3519
+    },
+    {
+      "path": "lib/project-store.ts",
+      "status": "present",
+      "sha256": "3748de0aa2f98d0ab98fe2a96b70c3d6f7a25bb890fa3c8aee903de6202c1bdd",
+      "bytes": 22277
+    },
+    {
+      "path": "lib/render-media.ts",
+      "status": "present",
+      "sha256": "ed1f0dcc3a1b923cb8294d2c75ec88367837376c53e3ee335df75a8499c373dc",
+      "bytes": 1183
+    },
+    {
+      "path": "netlify.toml",
+      "status": "present",
+      "sha256": "cd28f2cc1784ff48b84564215a6dbc05522009e53ab4ce680734cca1658d0af2",
+      "bytes": 750
+    },
+    {
+      "path": "package.json",
+      "status": "present",
+      "sha256": "b10a7ec8ba26606165d1ee04c9c233bf575c3a66268f1564d4438aeb46ddcb78",
+      "bytes": 5548
+    },
+    {
+      "path": "scripts/build-native-roto.mjs",
+      "status": "present",
+      "sha256": "f22d1491d74edb95fb5b5b89091fb1f5e5dc150b55576eccb43008c534d3250a",
+      "bytes": 1279
+    },
+    {
+      "path": "scripts/certify-disk-pressure.mjs",
+      "status": "present",
+      "sha256": "3d3ef9b8fe8db7c175c516d80befe1954cd436f521de1d1910a767f811c988d4",
+      "bytes": 2549
+    },
+    {
+      "path": "scripts/certify-linked-media.mjs",
+      "status": "present",
+      "sha256": "cc87b7b57bd155c2be61cdf03a9c4d77035e6583cdc2656a128aa0094927a512",
+      "bytes": 3297
+    },
+    {
+      "path": "scripts/certify-package.mjs",
+      "status": "present",
+      "sha256": "aa2e32fcabb365bf03e247935169c2b1f595e0507cabe6a400ac000280f3b2f4",
+      "bytes": 4585
+    },
+    {
+      "path": "scripts/certify-product.mjs",
+      "status": "present",
+      "sha256": "9152d7b5a696cb73d54728d5b9eb751182518247a6eeafbff76e83fdba39a064",
+      "bytes": 8882
+    },
+    {
+      "path": "scripts/certify-release-stress.mjs",
+      "status": "present",
+      "sha256": "a9c7dfae3715e5d9435ff8beb3016aa97fe5b19a7f6f0becb70766da8e978929",
+      "bytes": 6737
+    },
+    {
+      "path": "scripts/qualification-process.mjs",
+      "status": "present",
+      "sha256": "5e978fb55c71bfe30dd5b2bd9e45eb78bc6008b980a56a0bdb126f3d3fafc866",
+      "bytes": 1518
+    },
+    {
+      "path": "scripts/release-evidence.mjs",
+      "status": "present",
+      "sha256": "b212615125499f3e68495660349dff60c45c5aa3b1c044ef9ef6fce0f1ce27cd",
+      "bytes": 2745
+    },
+    {
+      "path": "scripts/require-release-signing.mjs",
+      "status": "present",
+      "sha256": "01ab8234f3c13ff4e7b832451870b2134771cd03155508651385e3c6e08bf3a9",
+      "bytes": 1007
+    },
+    {
+      "path": "site/download.html",
+      "status": "present",
+      "sha256": "bea3cab1a6fe1f4ca23d8f8b33462d7ac0ad0c8fba592fa5a0adfaef1254d021",
+      "bytes": 5239
+    },
+    {
+      "path": "tests/capabilities.test.mjs",
+      "status": "present",
+      "sha256": "f6cd3504e6a4d761385bcc83fb42732f92f97160494dfe413de19b879aa761e3",
+      "bytes": 3548
+    },
+    {
+      "path": "tests/qualification-process.test.mjs",
+      "status": "present",
+      "sha256": "fd1bfcf7a3196f53382b50d463cdc1cca9d02b40c2d07fec3259c871da961e73",
+      "bytes": 1039
+    },
+    {
+      "path": "tests/release-evidence.test.mjs",
+      "status": "present",
+      "sha256": "a836403c3796a30812281403ecd377833a12ce18e7ea55347ed66be1b7d5d66e",
+      "bytes": 1874
+    },
+    {
+      "path": "tests/release-persistence.test.mjs",
+      "status": "present",
+      "sha256": "a2ed1929b9974f48d5bb139918528c9e87affeb3006e367bb412958ec1e6374e",
+      "bytes": 6698
+    },
+    {
+      "path": "tests/render-media.test.mjs",
+      "status": "present",
+      "sha256": "54c16cbe560d316a78a544d7e46e86ad41c8eb3e1c58f74df1f124e14de81b1e",
+      "bytes": 707
+    },
+    {
+      "path": "tests/render-preparation.test.mjs",
+      "status": "present",
+      "sha256": "c507c551ba5c5acb29687a299b09a8589d095acf119a242cfa635a6e42ec4c56",
+      "bytes": 5189
+    }
+  ],
+  "omitted": [
+    {
+      "path": "package-lock.json",
+      "reason": "non-fixture-email-content"
+    }
+  ],
+  "patch_sha256": "f22f2b521e547f336b93da40a865bdc12c6bcc7abe5259ef26a56918782d5089",
+  "repo": "https://github.com/armonon/scenepilot-studio-badass",
+  "branches": [
+    "fix/release-today-hardening"
+  ],
+  "archive_path": "scenepilot-studio-badass/baaec95f232d8cae14d466439b1c0930082499e4",
+  "local_worktree_dirty": false
+}

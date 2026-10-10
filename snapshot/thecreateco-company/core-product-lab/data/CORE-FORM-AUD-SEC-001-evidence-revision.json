@@ -1,0 +1,15 @@
+{
+  "task_id": "CORE-FORM-AUD-SEC-001",
+  "source_evidence": {
+    "direct": [
+      "Isolated clean npm ci resolved next@16.3.4; npm audit --omit=dev reported 1 critical Next.js, 2 high dependency advisories (sharp, source-map-js). No next/og or ImageResponse reference found in source search. KNOWN_ISSUES.md:32 says no known high-severity production advisory."
+    ],
+    "hypothesis": [
+      "The Next.js RCE advisory may be unreachable if the vulnerable ImageResponse route is not exposed; exploitability and runtime dependency reachability are unverified."
+    ]
+  },
+  "evidence_sources": [
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-initial.md",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/products/form.json"
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "sha": "9b72229fb473ead0f018cd7b3133ab480bcffb59",
+  "base_sha": "5515c3e3ddf870e56193849550e1345276c5b80d",
+  "scope": "Committed screened review delta, not a release or complete binary artifact",
+  "files": [
+    {
+      "path": "about/index.html",
+      "status": "present",
+      "sha256": "b0557ee84cd5fbcb6ebc1810ec09841d4e90188773874b9469d8c2255c1b318f",
+      "bytes": 28881
+    },
+    {
+      "path": "kickstarter/index.html",
+      "status": "present",
+      "sha256": "972eff9a03e720ee369f6768efca23bff7dfc277db8a71aad7fb8239cd9b9887",
+      "bytes": 30570
+    },
+    {
+      "path": "maintenance/tests/year-one-availability.mjs",
+      "status": "present",
+      "sha256": "1dce1e01af1386ff51a9718283d6e0673f1438779cf442ab2145a9d15e77e7e9",
+      "bytes": 1198
+    },
+    {
+      "path": "testing/index.html",
+      "status": "present",
+      "sha256": "0b83008ce34cd60aa0d12191283122c33865a98508b49d7ca6f8f3f4ec6255aa",
+      "bytes": 24701
+    }
+  ],
+  "omitted": [],
+  "patch_sha256": "2a0e165706cc212798a56e1a6d4ebac5ec6e9c5ecace71b3812d6ff1f4faf058",
+  "repo": "https://github.com/armonon/thecreatingco-site",
+  "branches": [
+    "codex/year1-availability-clarity-20261009"
+  ],
+  "archive_path": "thecreatingco-site/9b72229fb473ead0f018cd7b3133ab480bcffb59",
+  "local_worktree_dirty": false
+}

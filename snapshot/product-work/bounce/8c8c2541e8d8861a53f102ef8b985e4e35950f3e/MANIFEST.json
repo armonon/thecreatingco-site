@@ -1,0 +1,39 @@
+{
+  "sha": "8c8c2541e8d8861a53f102ef8b985e4e35950f3e",
+  "base_sha": "c85ec72570f402d37f3a13b4916759f084bb09ce",
+  "scope": "Committed screened review delta, not a release or complete binary artifact",
+  "files": [
+    {
+      "path": "pwa/RELEASE-QUALIFICATION.md",
+      "status": "present",
+      "sha256": "221e90fc719177c856aae014dfded19ccafa3e26cbe6815077299b5ca8395e2f",
+      "bytes": 2484
+    },
+    {
+      "path": "pwa/workflow-check.mjs",
+      "status": "present",
+      "sha256": "80b2fbdd028fb68e01edb0a759220108943c084ea86c7c3cf43c9418174ffda4",
+      "bytes": 9075
+    },
+    {
+      "path": "web/sw.js",
+      "status": "present",
+      "sha256": "2003f8cc3822399215893de71dff31f7c4ae6ffe344da73d5892dbc7b001711f",
+      "bytes": 4582
+    },
+    {
+      "path": "web/test/bounce.js",
+      "status": "present",
+      "sha256": "44d3232b475848502a44865f4f2a7435d7229c84de7c27eadc6fe2ee92323dbe",
+      "bytes": 10995
+    }
+  ],
+  "omitted": [],
+  "patch_sha256": "91938a00847618e62193fe5e21de417020dd7bf13748302a9da5f8db8e157c72",
+  "repo": "https://github.com/armonon/bounce",
+  "branches": [
+    "codex/bounce-release18-20261007"
+  ],
+  "archive_path": "bounce/8c8c2541e8d8861a53f102ef8b985e4e35950f3e",
+  "local_worktree_dirty": false
+}

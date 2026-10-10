@@ -1,0 +1,144 @@
+{
+  "sha": "b6e3ca098dc69b411fdb077982eaedba3742a073",
+  "base_sha": "413e3e963273b22dd7184cb1830126f66b01aba8",
+  "scope": "Committed screened review delta, not a release or complete binary artifact",
+  "files": [
+    {
+      "path": "README.md",
+      "status": "present",
+      "sha256": "7755b41287566f9923aa49291ed0921ddf4bcd5dea5cebda7f44356ee32095fc",
+      "bytes": 5368
+    },
+    {
+      "path": "docs/collections.md",
+      "status": "present",
+      "sha256": "5ee6352ef2473562e81aebb5db2cc92be804c9d0d05d9f0d9112c6a0b40fdde3",
+      "bytes": 3935
+    },
+    {
+      "path": "index.html",
+      "status": "present",
+      "sha256": "26407ee0a1245f813a754d684a90c99af32dcafad2a903d0b53fbdd91375dfb8",
+      "bytes": 1698
+    },
+    {
+      "path": "netlify/functions/collection-config.mjs",
+      "status": "present",
+      "sha256": "f8c4431f47e873b79826bb3302230ca194b2721fc37b65903df8a8b0dc39fc0b",
+      "bytes": 828
+    },
+    {
+      "path": "netlify/functions/collection-files.mjs",
+      "status": "present",
+      "sha256": "98d1a301bb5da9b9492056d7c78c0bf276c7745fce3d2a753825cb4f8d799dce",
+      "bytes": 12218
+    },
+    {
+      "path": "netlify/functions/collection-report.mjs",
+      "status": "present",
+      "sha256": "47681119e4950cb4925f8373f4089906458aaf87326e0bc1af823045e318215e",
+      "bytes": 2356
+    },
+    {
+      "path": "netlify/functions/collections.mjs",
+      "status": "present",
+      "sha256": "4ff985ab5f756a8e02c6554cc3c8d45c14c182bbc23cb7f8fc031da41661c51d",
+      "bytes": 5567
+    },
+    {
+      "path": "netlify/lib/collections-guard.mjs",
+      "status": "present",
+      "sha256": "4fc3f1d28c69726f7fdc68c82f969fc18d6729ecda252265c7fb91beb8c99445",
+      "bytes": 5256
+    },
+    {
+      "path": "package.json",
+      "status": "present",
+      "sha256": "10f9f263055f81ebe6de5621e5361b269a79c7bf3c40d96d3a64ac98002d0066",
+      "bytes": 2013
+    },
+    {
+      "path": "src/collections-detail.css",
+      "status": "present",
+      "sha256": "4a433d452674e684469dde76388de6c51850a64602c5f6854fd063c54027e595",
+      "bytes": 1500
+    },
+    {
+      "path": "src/collections.css",
+      "status": "present",
+      "sha256": "bbbcfe1c72c63a1a5e6bb9a76ffbd9b53d142c92ac46521c6db6761b8aedc9f1",
+      "bytes": 8725
+    },
+    {
+      "path": "src/collections.js",
+      "status": "present",
+      "sha256": "776f3d918e38f7426d08e374641ff37defc6de9a0c21805c541b409ffb414c67",
+      "bytes": 25494
+    },
+    {
+      "path": "src/entry.js",
+      "status": "present",
+      "sha256": "b94880023487862fbe8aa9dae7429a041ac3b04f8f3705b47068ff535c882efc",
+      "bytes": 166
+    },
+    {
+      "path": "src/pdf-reader.js",
+      "status": "present",
+      "sha256": "b729417cce4df5e0410211df45eb4bc7f05537e40f1381b92eb5b9b3a4f1b062",
+      "bytes": 87
+    },
+    {
+      "path": "src/pdfjs.js",
+      "status": "present",
+      "sha256": "ac1e08b5407fa4a1c8f89e6e052ced14964e3ed1867b4d1080f5bca3030a5c83",
+      "bytes": 319
+    },
+    {
+      "path": "supabase/migrations/20261009160000_librarian_collections.sql",
+      "status": "present",
+      "sha256": "dece31b5ee7417d4f1d68eb9d2ac244f2ee151135c6cd90734f9f6ea34ac35c6",
+      "bytes": 6873
+    },
+    {
+      "path": "tests/browser/collections.spec.js",
+      "status": "present",
+      "sha256": "afc556f0db00d192ea5a99959c891bfcdf8a6e91e7828b730d7ac091bfdf3616",
+      "bytes": 5913
+    },
+    {
+      "path": "tests/collection-files.test.mjs",
+      "status": "present",
+      "sha256": "460e36e2608a7c97fed289ef5545496eba0d6511240321ef3c106df2ba532a83",
+      "bytes": 1486
+    },
+    {
+      "path": "tests/collections-api.test.mjs",
+      "status": "present",
+      "sha256": "26910f4fe0448d0103de29bbad2d4a98aba743a83572f32bb7703c27a132c01f",
+      "bytes": 3031
+    },
+    {
+      "path": "tests/collections-guard.test.mjs",
+      "status": "present",
+      "sha256": "1a89a88fe5cfa2ea58beaf5d166cffd2ad17fda349a308bc895f91d5e77be9bb",
+      "bytes": 2724
+    }
+  ],
+  "omitted": [
+    {
+      "path": "package-lock.json",
+      "reason": "non-fixture-email-content"
+    },
+    {
+      "path": "src/main.js",
+      "reason": "non-fixture-email-content"
+    }
+  ],
+  "patch_sha256": "bb5e76bd8199726bcca03965a5bc0482a6a14f1659e46a4a4b935a4ec3b43d29",
+  "repo": "https://github.com/armonon/librarian",
+  "branches": [
+    "feat/librarian-collections-20261009"
+  ],
+  "archive_path": "librarian/b6e3ca098dc69b411fdb077982eaedba3742a073",
+  "local_worktree_dirty": false
+}

@@ -1,0 +1,15 @@
+{
+  "task_id": "CORE-FORM-AUD-TEST-001",
+  "source_evidence": {
+    "direct": [
+      "Durable full Node 22 repeat: 1,518/1,526 pass, 8 fail; workspace smoke repeat 92/100 pass. Seven failures report ambiguous getByRole(\"status\") due implicit output roles. The baked-texture assertion reads legacy paintTexture.pixels; using the current pixelsBase64 field in a temporary local validation made the existing save/reopen comparison pass. Initial full run had one additional order/load-sensitive failure (1,517/1,526), not captured durably."
+    ],
+    "hypothesis": [
+      "The remaining failing assertions may be stale test selectors/contracts rather than application defects; inspect exact failure list before concluding."
+    ]
+  },
+  "evidence_sources": [
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-initial.md",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/products/form.json"
+  ]
+}

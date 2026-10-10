@@ -1,0 +1,40 @@
+diff --git a/src/engine/font-export.ts b/src/engine/font-export.ts
+index e3ae529c960cfeef75971e0a6d75c10ffdd66009..45814590ce89f8c6bf118b5422ee73f7dc5956cb 100644
+--- a/src/engine/font-export.ts
++++ b/src/engine/font-export.ts
+@@ -147,7 +147,9 @@ function encodeGlyf(curves: CurvedContour[]): Uint8Array {
+ 
+ function nameTable(project: GlyphProject) {
+   const ps = postScriptName(project), full = `${project.familyName} ${project.styleName}`;
+-  const records: [number, string][] = [[0, "Made with Glyph Studio — thecreateco"], [1, project.familyName], [2, project.styleName], [3, `${ps};GlyphStudio;1.000`], [4, full], [5, "Version 1.000"], [6, ps]];
++  // Family/style names are validated ASCII; keep the maker credit ASCII too so
++  // the Macintosh Roman record cannot turn punctuation into a control byte.
++  const records: [number, string][] = [[0, "Made with Glyph Studio - thecreateco"], [1, project.familyName], [2, project.styleName], [3, `${ps};GlyphStudio;1.000`], [4, full], [5, "Version 1.000"], [6, ps]];
+   const encoded: { platform: number; encoding: number; language: number; id: number; bytes: number[] }[] = [];
+   for (const [id, text] of records) encoded.push({ platform: 1, encoding: 0, language: 0, id, bytes: [...text].map(c => c.charCodeAt(0) & 127) });
+   for (const [id, text] of records) {
+diff --git a/tests/glyph-geometry.test.ts b/tests/glyph-geometry.test.ts
+index 83f46db381f4da45a407a7f5b1bde801fec95c44..9636fc9099410f1ad8e3f77197200ad3e4b93156 100644
+--- a/tests/glyph-geometry.test.ts
++++ b/tests/glyph-geometry.test.ts
+@@ -126,6 +126,20 @@ describe("glyph geometry (ported from Luma)", () => {
+     }
+   });
+ 
++  test("TTF metadata round-trips without control characters on Mac and Windows", () => {
++    const font = parse(buildTtf(sampleProject()));
++    const names = font.names as unknown as Record<string, Record<string, Record<string, string>>>;
++    for (const platform of ["macintosh", "windows"]) {
++      expect(names[platform].copyright.en).toBe("Made with Glyph Studio - thecreateco");
++      for (const translations of Object.values(names[platform])) {
++        for (const text of Object.values(translations)) {
++          expect([...text].every(char => char.charCodeAt(0) >= 32 && char.charCodeAt(0) !== 127)).toBe(true);
++        }
++      }
++    }
++    expect(names.macintosh).toEqual(names.windows);
++  });
++
+   test("TTF shapes in HarfBuzz with the drawn advances", async () => {
+     const hb = await import("harfbuzzjs");
+     const face = new hb.Face(new hb.Blob(buildTtf(sampleProject())), 0);

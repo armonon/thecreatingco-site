@@ -1,0 +1,149 @@
+[
+  {
+    "created": true,
+    "job": {
+      "id": "2069305d-6f38-41ba-b31c-a0fdbfdc7ea4",
+      "declarationKey": "company-director",
+      "agentId": "main",
+      "name": "thecreateco company director",
+      "enabled": true,
+      "createdAtMs": 1791416407429,
+      "schedule": {
+        "kind": "cron",
+        "expr": "10 * * * *",
+        "tz": "America/Los_Angeles"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Run one bounded thecreateco company-director cycle, not a marketing-only cycle.\nWorkspace: /Users/agentsattari/thecreateco-company.\nRead AGENTS.md, DIRECTIVE.md, engine/README.md and COMPANY_STATE.md. If PAUSE exists,\ndo nothing and stop. Use Python stdlib CLI engine/company.py, never edit SQLite.\nRecover expired leases, refresh state, then select the highest-value eligible safe\ntask. Honor active ownership and existing product-specific holds. Claim it with\na unique owner name for this run; preserve the returned lease_token and heartbeat\nas needed. Execute ONE bounded task or audit batch, not the entire backlog.\n\nUse GPT-6.1 Sol for direction and difficult engineering decisions; delegate\nindependent scoped volume/research to Luna and creative/UX to Sonnet when those\nmodels are available. Read data/model-routing.json; record actual model and\nfallback. Marketing's existing engine handles marketing drafts, not engineering.\nRare consequential decisions may justify independent Opus review with rationale.\nDo not spawn ongoing workers without a durable task owner and completion path.\n\nInspect evidence relevant to the chosen task, run appropriate baseline checks,\nmake reversible local improvements in an isolated branch when needed, and test.\nKeep existing features; no blind rewrites, branch-protection bypass, production\nrollback/deploy, social posting, outreach sending, spend or account changes from\nthis scheduled company job. Prepare external changes for their existing review\npath. Local fixes, tests, evidence collection and drafts are authorized.\n\nWrite a dated report under reports/ with actual commands, observations, tests,\nlimitations and the next action. Finish the task via CLI using owner/token and\nevidence path. Use BLOCKED with an explicit reason when access is missing; do\nnot invent metrics or mark unverified work complete. Company metrics require\nsource, reporting period and observation time. Update products/context through\nthe CLI when evidence changes. Refresh after every meaningful batch.\n\nStop within 35 minutes, recording a checkpoint if incomplete. Do not create busywork\nwhen no useful safe work is available. Return a concise factual summary for run\nhistory only; do not send messages to any channel or person from this job.",
+        "model": "openai/gpt-6.1-sol",
+        "fallbacks": [
+          "openai/gpt-6-sol"
+        ],
+        "thinking": "medium",
+        "timeoutSeconds": 2100,
+        "toolsAllow": [
+          "*"
+        ]
+      },
+      "delivery": {
+        "mode": "none",
+        "channel": "last"
+      },
+      "scheduledToolPolicy": {
+        "version": 1,
+        "mode": "trusted"
+      },
+      "state": {
+        "nextRunAtMs": 1791418200000
+      },
+      "updatedAtMs": 1791416407429,
+      "configRevision": "sha256:9soeNHsEPZxTG3z3w-2sfKvhYVy7GZj07QKhxgS3EiM",
+      "nextRunAtMs": 1791418200000
+    },
+    "deliveryPreview": {
+      "label": "not requested",
+      "detail": "not requested"
+    }
+  },
+  {
+    "created": true,
+    "job": {
+      "id": "4a64dc91-9804-48aa-81b8-59cbc9b2cc6f",
+      "declarationKey": "company-weekly",
+      "agentId": "main",
+      "name": "thecreateco weekly CEO review",
+      "enabled": true,
+      "createdAtMs": 1791416407846,
+      "schedule": {
+        "kind": "cron",
+        "expr": "20 8 * * 1",
+        "tz": "America/Los_Angeles"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Perform the weekly thecreateco CEO review. Workspace /Users/agentsattari/thecreateco-company.\nRead AGENTS.md, DIRECTIVE.md, engine/README.md and COMPANY_STATE.md. Stop if PAUSE exists.\nUse a durable uniquely dated review task and claim it before work; do not edit SQLite.\nInspect only the week's reports, task events, dated metrics and marketing outcomes.\nSeparate true outcomes from activities; unknown metrics stay unknown. Examine\nstrongest products, quality gaps, retention/onboarding, feedback, campaign results,\ncost/model usage, excessive portfolio breadth, what to stop and the next bottleneck.\nMeasure allocation against 60% existing/25% growth/15% validated experiments where\nexecution records support it; do not fake time shares from task counts. Distinguish\nmarketing model-call telemetry from company-wide model costs, which may be missing.\nWrite reports/weekly-YYYY-MM-DD.md, update context and task priorities through CLI,\nand finish with evidence. Product changes and marketing execution happen in their\nexisting queues; no releases, outreach, spend or public commitments in this review.\nReturn a short run-history summary; do not send messages. Limit 25 minutes.",
+        "model": "openai/gpt-6.1-sol",
+        "fallbacks": [
+          "openai/gpt-6-sol"
+        ],
+        "thinking": "medium",
+        "timeoutSeconds": 1500,
+        "toolsAllow": [
+          "*"
+        ]
+      },
+      "delivery": {
+        "mode": "none",
+        "channel": "last"
+      },
+      "scheduledToolPolicy": {
+        "version": 1,
+        "mode": "trusted"
+      },
+      "state": {
+        "nextRunAtMs": 1791818400000
+      },
+      "updatedAtMs": 1791416407846,
+      "configRevision": "sha256:2dhc6PVV3MpGjxcyn9NDrlCM3-gEzSaUDbSsLgcZR6E",
+      "nextRunAtMs": 1791818400000
+    },
+    "deliveryPreview": {
+      "label": "not requested",
+      "detail": "not requested"
+    }
+  },
+  {
+    "created": true,
+    "job": {
+      "id": "97cc83fa-1512-4b26-8bc3-0f80052740cc",
+      "declarationKey": "company-monthly",
+      "agentId": "main",
+      "name": "thecreateco monthly portfolio review",
+      "enabled": true,
+      "createdAtMs": 1791416408277,
+      "schedule": {
+        "kind": "cron",
+        "expr": "30 8 1 * *",
+        "tz": "America/Los_Angeles"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Perform the monthly thecreateco portfolio review. Workspace /Users/agentsattari/thecreateco-company.\nRead AGENTS.md, DIRECTIVE.md, engine/README.md and COMPANY_STATE.md. Stop if PAUSE exists.\nCreate and claim a durable uniquely dated review task before work. Review the\nproduct registry against dated reports, genuine usage/feedback, quality, cost and\nstrategic fit. Recommend INVEST/MAINTAIN/REPOSITION/MERGE/PAUSE/RETIRE for each\nstandalone family; mark insufficient evidence instead of guessing. Do not confuse\nembedded modules with standalone apps or live alphas with production qualification.\nReassess the idea backlog's evidence gates; do not automatically prototype ideas.\nWrite reports/portfolio-YYYY-MM.md, update evidence-backed registry/context using\nCLI, finish the review task with evidence and refresh. Recommendations to retire,\nchange pricing or make commitments are not authorization to enact them.\nNo external actions or messaging. Return only a concise run-history summary. Limit 30 minutes.",
+        "model": "openai/gpt-6.1-sol",
+        "fallbacks": [
+          "openai/gpt-6-sol"
+        ],
+        "thinking": "medium",
+        "timeoutSeconds": 1800,
+        "toolsAllow": [
+          "*"
+        ]
+      },
+      "delivery": {
+        "mode": "none",
+        "channel": "last"
+      },
+      "scheduledToolPolicy": {
+        "version": 1,
+        "mode": "trusted"
+      },
+      "state": {
+        "nextRunAtMs": 1793550600000
+      },
+      "updatedAtMs": 1791416408277,
+      "configRevision": "sha256:0865Ro_jD4i54PEu6rIhTZ5uiMupTzaBm1vByY0RfPU",
+      "nextRunAtMs": 1793550600000
+    },
+    "deliveryPreview": {
+      "label": "not requested",
+      "detail": "not requested"
+    }
+  }
+]

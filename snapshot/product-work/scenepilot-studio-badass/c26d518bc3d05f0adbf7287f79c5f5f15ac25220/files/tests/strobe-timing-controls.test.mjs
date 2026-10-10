@@ -1,0 +1,20 @@
+import test from "node:test";
+import assert from "node:assert/strict";
+import { build } from "esbuild";
+const bundle = await build({entryPoints:["app/strobe-timing-controls.tsx"],bundle:true,write:false,platform:"node",format:"esm",jsx:"automatic",logLevel:"silent"});
+const { StrobeTimingControls } = await import(`data:text/javascript;base64,${Buffer.from(bundle.outputFiles[0].contents).toString("base64")}`);
+const nodes = v => !v || typeof v !== "object" ? [] : Array.isArray(v) ? v.flatMap(nodes) : [v,...nodes(v.props?.children)];
+test("custom BPM uses the independent callback and continuous undo handlers", () => {
+  const calls=[];
+  const props={timing:"custom",bpm:123.4,songBpm:95,preset:"rave",disabled:false,analyzed:true,limited:true,flashes:20,inputHandlers:{onPointerDown:()=>calls.push("checkpoint")},onBpm:v=>calls.push(v),onTiming:v=>calls.push(v),onPreset:v=>calls.push(v)};
+  const tree=nodes(StrobeTimingControls(props));
+  const slider=tree.find(n=>n.props?.["aria-label"] === "Strobe BPM");
+  assert.equal(slider.props.value,123.4); assert.equal(slider.props.step,"0.1");
+  slider.props.onPointerDown();slider.props.onChange({target:{value:"140.5"}});
+  tree.find(n=>n.type === "button" && n.props.children === "Sync to song").props.onClick();
+  assert.deepEqual(calls,["checkpoint",140.5,"song"]);
+  assert.ok(tree.find(n=>n.type === "option" && n.props.value === "drums").props.disabled);
+  assert.ok(nodes(StrobeTimingControls({...props,disabled:true})).find(n=>n.props?.["aria-label"] === "Strobe BPM").props.disabled);
+  assert.ok(!nodes(StrobeTimingControls({...props,timing:"song"})).some(n=>n.props?.["aria-label"] === "Strobe BPM"));
+  assert.ok(!nodes(StrobeTimingControls({...props,preset:"off"})).some(n=>n.props?.["aria-label"] === "Strobe BPM"));
+});

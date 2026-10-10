@@ -1,0 +1,13 @@
+{
+  "task_id": "CORE-SP-SEC-001",
+  "source_evidence": [
+    "npm audit --omit=dev on the isolated lockfile found direct next@16.3.3 critical and transitive sharp high/source-map-js high advisories.",
+    "Direct Next advisory includes next/og ImageResponse RCE affected below 16.3.6; additional Next advisories affect through below 16.3.8.",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-evidence/npm-audit-production.json",
+    "Source directly imports next/headers and next/navigation for Vinext-backed runtime; direct next/og import was not found."
+  ],
+  "evidence_sources": [
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-initial.md",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/products/scenepilot.json"
+  ]
+}

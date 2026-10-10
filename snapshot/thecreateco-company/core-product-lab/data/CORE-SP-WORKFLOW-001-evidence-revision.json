@@ -1,0 +1,12 @@
+{
+  "task_id": "CORE-SP-WORKFLOW-001",
+  "source_evidence": [
+    "Brief requires Import\u2192Edit\u2192Composite/Animate\u2192Audio\u2192Save\u2192Reopen\u2192Export.",
+    "Historical docs/release-today-0.1.16.md marks multiple full UI, relink, recovery, export-picker, and perceptual checks NOT VERIFIED.",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/golden-projects/scenepilot.md is a recipe only; fixture not created or run."
+  ],
+  "evidence_sources": [
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-initial.md",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/products/scenepilot.json"
+  ]
+}

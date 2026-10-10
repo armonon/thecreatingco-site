@@ -1,0 +1,38 @@
+{
+  "sha": "dce2f0f7e7e6a235967ccc19e55db3fcf8af1056",
+  "base_sha": "7126236a7f0ab5e3f999099b4593a714a056b040",
+  "scope": "Committed screened review delta, not a release or complete binary artifact",
+  "files": [
+    {
+      "path": "README.md",
+      "status": "present",
+      "sha256": "ed7f3b12ae21907122114e987ee283b817b308346bbf0bb647f96503231a2a64",
+      "bytes": 4550
+    },
+    {
+      "path": "package.json",
+      "status": "present",
+      "sha256": "9ef352f1b0922ebd1466856bddebaeec20451297219f9927942462f367a5de33",
+      "bytes": 2034
+    },
+    {
+      "path": "tests/ai-guard.test.mjs",
+      "status": "present",
+      "sha256": "020f4fa9606dde0c833c5bf2cc433c00a6aaa098d9992ac8a2cc454d42788814",
+      "bytes": 4188
+    }
+  ],
+  "omitted": [
+    {
+      "path": "package-lock.json",
+      "reason": "non-fixture-email-content"
+    }
+  ],
+  "patch_sha256": "77c59ffbd574fbbe3e4ab7999a72d5e762cd1c23a87503b92f7f934a4ea7a231",
+  "repo": "https://github.com/armonon/librarian",
+  "branches": [
+    "fix/librarian-uuid11-20261009"
+  ],
+  "archive_path": "librarian/dce2f0f7e7e6a235967ccc19e55db3fcf8af1056",
+  "local_worktree_dirty": false
+}

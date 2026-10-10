@@ -1,0 +1,14 @@
+{
+  "sha": "c85ec72570f402d37f3a13b4916759f084bb09ce",
+  "base_sha": "c85ec72570f402d37f3a13b4916759f084bb09ce",
+  "scope": "Committed screened review delta, not a release or complete binary artifact",
+  "files": [],
+  "omitted": [],
+  "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "repo": "https://github.com/armonon/bounce",
+  "branches": [
+    "wave4/bounce-web-pwa"
+  ],
+  "archive_path": "bounce/c85ec72570f402d37f3a13b4916759f084bb09ce",
+  "local_worktree_dirty": false
+}

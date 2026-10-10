@@ -1,0 +1,27 @@
+{
+  "product_id": "scenepilot",
+  "board_autocut_qualification": {
+    "task_id": "P07",
+    "observed_at": "2026-10-10T01:45:59.536525+00:00",
+    "source_sha": "8d740071cb9631cfa18d4d6c7faa4a806b8fa42a",
+    "status": "BLOCKED",
+    "director_model": "OpenAI Sol; exact serving identifier not exposed",
+    "executor_requested_model": "gpt-6-luna",
+    "executor_serving_model": null,
+    "reviewer_requested_model": "gpt-6.1-sol",
+    "reviewer_serving_model": null,
+    "fallback": null,
+    "focused_tests_passed": 12,
+    "focused_tests_total": 12,
+    "tools_build": "PASS",
+    "board_save_fresh_context_reopen_export": "PASS: synthetic one-scene two-shot fixture",
+    "editor_parser_compatibility": "PASS",
+    "editor_ui_import": null,
+    "autocut_board_handoff": "UNSUPPORTED: media picker skips marker-only JSON; editable-session parser rejects format",
+    "full_golden_qualification": false,
+    "code_commit": null,
+    "push": "No code commit resulted; no push needed",
+    "report": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-board-20261010T0140/REPORT.md",
+    "resume_condition": "Define Board shot-to-original-media/source-range/music binding and beat-cut constraints; then qualify synthetic end-to-end import/save/reopen/relink/export with missing-media existing-project preservation."
+  }
+}

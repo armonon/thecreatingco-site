@@ -1,0 +1,10 @@
+{
+  "destination": "https://github.com/armonon/thecreatingco-site/tree/company/operations",
+  "publisher": "/Users/agentsattari/code/company-worktrees/thecreatingco-operations/publish_snapshot.py",
+  "product_registry": "/Users/agentsattari/thecreateco-company/PRODUCT_REGISTRY.json",
+  "additional_company_repos": [
+    "https://github.com/armonon/scenepilot-compositor",
+    "https://github.com/armonon/scenepilot-studio-badass",
+    "https://github.com/armonon/weblab"
+  ]
+}

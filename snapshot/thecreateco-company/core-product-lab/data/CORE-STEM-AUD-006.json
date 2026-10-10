@@ -1,0 +1,30 @@
+{
+  "task_id": "CORE-STEM-AUD-006",
+  "title": "Qualify process-crash and storage-exhaustion recovery",
+  "product": "stemdeck",
+  "area": "workflow_gap",
+  "category": "workflow_gap",
+  "workstream": "CORE_PRODUCT_LAB",
+  "severity": "P1",
+  "scores": {
+    "impact": 10,
+    "severity": 9,
+    "workflow_importance": 10,
+    "competitive_value": 7,
+    "release_importance": 10,
+    "confidence": 9,
+    "effort": 6,
+    "risk": 4,
+    "user_value": 10
+  },
+  "dependencies": [],
+  "status": "QUEUED",
+  "model": "gpt-6.1-sol",
+  "expected_value": "Flagship golden-workflow reliability; scores are planning estimates, not health metrics.",
+  "test_requirements": "Reproduce on isolated exact source; preserve baseline/fixed evidence, appropriate build/tests and golden path; source reading is not interactive sign-off.",
+  "source_evidence": [
+    "docs/PROFESSIONAL_ACCEPTANCE.md",
+    "src/utils/audioProjectStore.js"
+  ],
+  "next_action": "Terminate isolated browser during save/capture, preserve last-good portable project and source journal; distinguish source/component tests from process recovery."
+}

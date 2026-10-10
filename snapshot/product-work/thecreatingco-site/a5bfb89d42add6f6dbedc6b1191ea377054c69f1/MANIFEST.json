@@ -1,0 +1,404 @@
+{
+  "sha": "a5bfb89d42add6f6dbedc6b1191ea377054c69f1",
+  "base_sha": "5515c3e3ddf870e56193849550e1345276c5b80d",
+  "scope": "Committed screened review delta, not a release or complete binary artifact",
+  "files": [
+    {
+      "path": "app-logos.css",
+      "status": "present",
+      "sha256": "a678b2c62e9a2c1eb3929925473e52f0c60add7dad93c085675e4c7517ea053e",
+      "bytes": 2725
+    },
+    {
+      "path": "app-logos.js",
+      "status": "present",
+      "sha256": "5bcaea2c921347d8355be3ac01ac533fe53e01d1f6ad148787751b62885a009b",
+      "bytes": 3090
+    },
+    {
+      "path": "assets/app-logos/autocut.svg",
+      "status": "present",
+      "sha256": "c0c930fc4e62c4ee46f3249f7a52f20840703d3b7d7a2b476e404949c3da4937",
+      "bytes": 180
+    },
+    {
+      "path": "assets/app-logos/board.svg",
+      "status": "present",
+      "sha256": "eb1d056f8fe5e03519975a873c82aeba8c2278d107d94c827dfba8d727853810",
+      "bytes": 277
+    },
+    {
+      "path": "assets/app-logos/bounce.svg",
+      "status": "present",
+      "sha256": "f258f9a30670d20396adab7ecd5894c2e436115c3ca9e57c43971ec69795a97b",
+      "bytes": 205
+    },
+    {
+      "path": "assets/app-logos/canvas.svg",
+      "status": "present",
+      "sha256": "da6a271a3c51c697ca3fc46bd5d3cf24b936e95103b46464f9a08815ef7d2c19",
+      "bytes": 248
+    },
+    {
+      "path": "assets/app-logos/captions.svg",
+      "status": "present",
+      "sha256": "24008c7b28679b65ad83d0ece3e19b45a4f225759affeeaae5f4296be7d2e375",
+      "bytes": 314
+    },
+    {
+      "path": "assets/app-logos/cast.svg",
+      "status": "present",
+      "sha256": "271b4e889f5be1c290e4d368a6e1bc3fa0df9f2ed9d316c9baf6375ab36becd7",
+      "bytes": 241
+    },
+    {
+      "path": "assets/app-logos/form.svg",
+      "status": "present",
+      "sha256": "6eccf261639fc9939360390b7a54aff578fe7c26d107d9661b43f13c254eeb25",
+      "bytes": 189
+    },
+    {
+      "path": "assets/app-logos/ghost.svg",
+      "status": "present",
+      "sha256": "f29ccb81354910d851494fefdec378d78adebd65c23f533cce823cd5f24f8115",
+      "bytes": 297
+    },
+    {
+      "path": "assets/app-logos/glyph-studio.svg",
+      "status": "present",
+      "sha256": "0906ab4cf9b88fa752e646f2569592757d01c09833b303308487fa8986989a05",
+      "bytes": 266
+    },
+    {
+      "path": "assets/app-logos/glyph.svg",
+      "status": "present",
+      "sha256": "ad98ce8c1fb933e97478042f34148bc098521aecb2ff552545e65e7e9fc320b8",
+      "bytes": 377
+    },
+    {
+      "path": "assets/app-logos/grade.svg",
+      "status": "present",
+      "sha256": "897d43f77137741dfd9f37bca73de3b1b34beea74fdacafb41662a272b4c02b8",
+      "bytes": 228
+    },
+    {
+      "path": "assets/app-logos/key-bpm.svg",
+      "status": "present",
+      "sha256": "4355aa0de4360de5180c7279ed390868be1219a2af0e3e7c38e996974a3ab836",
+      "bytes": 507
+    },
+    {
+      "path": "assets/app-logos/librarian.svg",
+      "status": "present",
+      "sha256": "a88e89bcecef676aacefd6f3cbfe073b87dde125ed1d4f3896673b1e4fbba373",
+      "bytes": 193
+    },
+    {
+      "path": "assets/app-logos/locker.svg",
+      "status": "present",
+      "sha256": "645f174eba8028fefc444b8407cf91e41a6677417c3321530e059dd36e6c6d5f",
+      "bytes": 300
+    },
+    {
+      "path": "assets/app-logos/luma.svg",
+      "status": "present",
+      "sha256": "36bd625ed56f8a1a9e69d147bb705e313171012bebc6fd1914b39e2469223945",
+      "bytes": 343
+    },
+    {
+      "path": "assets/app-logos/messages.svg",
+      "status": "present",
+      "sha256": "b991270b79dd6e4c4cd282848d6f0e956a5f8d3bbfcb01f43cce293263c4dfba",
+      "bytes": 442
+    },
+    {
+      "path": "assets/app-logos/mockups.svg",
+      "status": "present",
+      "sha256": "ac4ab7fe3a2b9582e31f5ff6a7e5a1e12e334565136012cd106fd1e63dba44ee",
+      "bytes": 393
+    },
+    {
+      "path": "assets/app-logos/pocket-studio.svg",
+      "status": "present",
+      "sha256": "10691d20f0609ce5d1522d59bd04d7c66e0b529718667ab7f90ed9c13f413897",
+      "bytes": 370
+    },
+    {
+      "path": "assets/app-logos/pocket.svg",
+      "status": "present",
+      "sha256": "0651fef9345c1954a04c7be80c7c5cb456bdcfe3df86dcb10411514fdf22baf5",
+      "bytes": 259
+    },
+    {
+      "path": "assets/app-logos/press.svg",
+      "status": "present",
+      "sha256": "7028c42d533bc4d5153d6fb66c2964e510dd186f27cb9da740038f9f51e51940",
+      "bytes": 229
+    },
+    {
+      "path": "assets/app-logos/reclaim.svg",
+      "status": "present",
+      "sha256": "1433a9451b34a281d904f71ba0f236b05dcb30703e72f8dbc6fa3211b87fae3f",
+      "bytes": 218
+    },
+    {
+      "path": "assets/app-logos/sessions.svg",
+      "status": "present",
+      "sha256": "0c2b0aba6715cd42318c8a566f7a102a0dfef1e25e1cded15a0635bac3bc36a4",
+      "bytes": 407
+    },
+    {
+      "path": "assets/app-logos/split.svg",
+      "status": "present",
+      "sha256": "38af544b68be48ddd67a09b253dd217fd8b5d89b4245ace04aeac91efc5d5e32",
+      "bytes": 561
+    },
+    {
+      "path": "assets/app-logos/stemdeck.svg",
+      "status": "present",
+      "sha256": "2d9012ee387f0678c484120a4fc31ec7518bb3b2c3b4cc24a8f109b8f5557a84",
+      "bytes": 336
+    },
+    {
+      "path": "assets/app-logos/vox.svg",
+      "status": "present",
+      "sha256": "2034bd86494c286d5d344043ef1f6e0b1455e5fe5d2d8faf342a06206057627b",
+      "bytes": 272
+    },
+    {
+      "path": "content/product-stories.json",
+      "status": "present",
+      "sha256": "7f3ad638419bef75459cc618c5a3322b40bf6a0971e4ba1ff0c753fd4f4894a1",
+      "bytes": 18372
+    },
+    {
+      "path": "maintenance/scripts/build-product-stories.py",
+      "status": "present",
+      "sha256": "0e21916df04a5ae5fcab1f2706fdb8a4b2e6516fc296b4ccf720140b067cf19a",
+      "bytes": 4490
+    },
+    {
+      "path": "maintenance/scripts/deploy-product-stories.py",
+      "status": "present",
+      "sha256": "86fad9fbc8bb5c988aa8f61afb7e810b61959f0bfee9846ce648a6bfb6ecc97e",
+      "bytes": 6348
+    },
+    {
+      "path": "product-story.css",
+      "status": "present",
+      "sha256": "e4d7ef9ba24b7f8ecf5609fb01f4d43ddb949c2133c11c3d536833d8c66d8f7a",
+      "bytes": 5735
+    },
+    {
+      "path": "product-story.js",
+      "status": "present",
+      "sha256": "a9ef69e4b09c86127908ccd050d1ceddb6001ac0b8193939affc5347e281ce66",
+      "bytes": 2431
+    },
+    {
+      "path": "products/autocut/index.html",
+      "status": "present",
+      "sha256": "4e51279189206b70ae240bca8c828fed2d25a2143f703f5e08e1fa9d2b378050",
+      "bytes": 36860
+    },
+    {
+      "path": "products/board/index.html",
+      "status": "present",
+      "sha256": "9abdf175a44665044bc848a2f307bb024b37d9417f30e01fb2f95221ffb83cc0",
+      "bytes": 36625
+    },
+    {
+      "path": "products/bounce/index.html",
+      "status": "present",
+      "sha256": "f4464f8fab279b0f4a2bd683803ed0b51b310b5877a310f22b508ce96b82a335",
+      "bytes": 47369
+    },
+    {
+      "path": "products/canvas/index.html",
+      "status": "present",
+      "sha256": "00351c8bfe0aad4b1b7061469ea13ba9f34c443095ce3b3aebee9ad06b499c44",
+      "bytes": 36661
+    },
+    {
+      "path": "products/captions/index.html",
+      "status": "present",
+      "sha256": "7133afc25f70de22cde48d99b3ab0a4ff0f6b560ac116e78ecf611edb22d6c31",
+      "bytes": 36964
+    },
+    {
+      "path": "products/form/index.html",
+      "status": "present",
+      "sha256": "77a9e0e085c2bef06c75417cf95054a9f29bae1e9e6b752543c15acf24f734a6",
+      "bytes": 80962
+    },
+    {
+      "path": "products/ghost/index.html",
+      "status": "present",
+      "sha256": "fa79356fa25d02e3b1da1ea52e08456582e2fcadbe4c663cd43d0c4d1d0d97b4",
+      "bytes": 48701
+    },
+    {
+      "path": "products/glyph-studio/index.html",
+      "status": "present",
+      "sha256": "00407bc1d5458661d7e2d5672236b491e80b93f3880c3e414adee241b5a0c675",
+      "bytes": 30872
+    },
+    {
+      "path": "products/glyph/index.html",
+      "status": "present",
+      "sha256": "284a76d7fbae03db6c24e8673c891ac347c89a81d14a12fdd0f379e0a4410fd6",
+      "bytes": 37041
+    },
+    {
+      "path": "products/grade/index.html",
+      "status": "present",
+      "sha256": "cc534f98522212c7e4ea8e76319ec3b90873dce4231fb0a7164ea66382491944",
+      "bytes": 36699
+    },
+    {
+      "path": "products/key-bpm/index.html",
+      "status": "present",
+      "sha256": "2b6320ac7a936317f3b9c76711dcbfe474a60d8b4b6b694e9f9a02b147a82e4c",
+      "bytes": 36652
+    },
+    {
+      "path": "products/librarian/index.html",
+      "status": "present",
+      "sha256": "48016317e0e3643385167c88553d8d78917d196c25c3ab2eeb77652995ab5327",
+      "bytes": 47803
+    },
+    {
+      "path": "products/luma/index.html",
+      "status": "present",
+      "sha256": "02098415d8d64c3131c6c6a3bd57531d09feb12be15f3f7d442d8ae09f3b6a6f",
+      "bytes": 81981
+    },
+    {
+      "path": "products/mockup/index.html",
+      "status": "present",
+      "sha256": "314d7858e0c9962cec9ad712dbee73309fbce7262b1bcec28a5dc928dfa8dd0d",
+      "bytes": 36870
+    },
+    {
+      "path": "products/pocket/index.html",
+      "status": "present",
+      "sha256": "4f29e93606f84ed87ba7153160622198b3873ed0ff6374d1fb99763e5dd27fc8",
+      "bytes": 36409
+    },
+    {
+      "path": "products/press/index.html",
+      "status": "present",
+      "sha256": "35517b543d772a89efb7dc6a4145d1679b3dad962fce964acb2b7a6d57951e3f",
+      "bytes": 36723
+    },
+    {
+      "path": "products/reclaim/index.html",
+      "status": "present",
+      "sha256": "5597ced9abf585bdabeb4f612e0059135d46aa0d8e2cb8c97dfda2467b80bcd7",
+      "bytes": 49173
+    },
+    {
+      "path": "products/scenepilot/index.html",
+      "status": "present",
+      "sha256": "11c11e867bb679c02e4a3636402b7bba78d18bbabb7723fe4896bf4690ea737a",
+      "bytes": 87529
+    },
+    {
+      "path": "products/split/index.html",
+      "status": "present",
+      "sha256": "c311366cc874b7d73cb3bc42208552f197ffd16df8888d049de0b1150a19e77c",
+      "bytes": 36929
+    },
+    {
+      "path": "products/stemdeck/index.html",
+      "status": "present",
+      "sha256": "5deedfa8d1c548a742d44ffd2d0209ba3f787a1f2cb666775256b0b6b1975079",
+      "bytes": 80895
+    },
+    {
+      "path": "products/vox/index.html",
+      "status": "present",
+      "sha256": "e942ea21c6285a59aac6f6c5143b5cc69fdcac9ac7cf10f8ad9a52643864c4d5",
+      "bytes": 36394
+    },
+    {
+      "path": "site-navigation.js",
+      "status": "present",
+      "sha256": "2f7e431ecfa512201ce9da923baf178417cdd9b8fb3f7e085cab9834b93b4eeb",
+      "bytes": 1987
+    },
+    {
+      "path": "site-refinement.css",
+      "status": "present",
+      "sha256": "181d28ace11a4d11cdf4471e4f2a9d3cd5c4c613d60fc722a9e58630af1d39a2",
+      "bytes": 11181
+    },
+    {
+      "path": "sitemap.xml",
+      "status": "present",
+      "sha256": "a03e30057fcb479b53d19021eafb8e3b9bcbfd0a877015966ad6145747175d8f",
+      "bytes": 2733
+    },
+    {
+      "path": "start/index.html",
+      "status": "present",
+      "sha256": "43f9c5eb599c05e93215df056269befd1d67ab4dafa43504bb8a22428c1765a1",
+      "bytes": 27154
+    },
+    {
+      "path": "start/motion.css",
+      "status": "present",
+      "sha256": "a2a8850d2fb9b254ab86f7d68ba979335f61e219b935e0aee0bf8512c0941eae",
+      "bytes": 5063
+    },
+    {
+      "path": "start/motion.js",
+      "status": "present",
+      "sha256": "1193eded26fc02c94536fc7eea79e57217950ff76b78efb43a42c81416f782e6",
+      "bytes": 6369
+    },
+    {
+      "path": "start/start.css",
+      "status": "present",
+      "sha256": "055224630cf6569268b33a9ba6519efdca94716bc39f352d7374564e261e1210",
+      "bytes": 4629
+    },
+    {
+      "path": "tools/index.html",
+      "status": "present",
+      "sha256": "72e9d934795d265462a3387b9fd06974ac7b1ee5cc9a2de9a5597ad21543c496",
+      "bytes": 57362
+    },
+    {
+      "path": "unified-shell.css",
+      "status": "present",
+      "sha256": "166fdd9b5ac170c5de8f38ff22eb5a8549fdecebfc2567bad3f51d26bb7f0c36",
+      "bytes": 10239
+    }
+  ],
+  "omitted": [
+    {
+      "path": "start/media/community.png",
+      "reason": "non-source-or-binary-asset"
+    },
+    {
+      "path": "start/media/store-charts.jpg",
+      "reason": "non-source-or-binary-asset"
+    },
+    {
+      "path": "start/media/store-current.jpg",
+      "reason": "non-source-or-binary-asset"
+    },
+    {
+      "path": "start/media/store.png",
+      "reason": "non-source-or-binary-asset"
+    }
+  ],
+  "patch_sha256": "f871ea069a6c8c19d9eeead867f62c5487f324753caefa41081d43341e1a253d",
+  "repo": "https://github.com/armonon/thecreatingco-site",
+  "branches": [
+    "feat/tools-directory-start-links-product-stories-20261009"
+  ],
+  "archive_path": "thecreatingco-site/a5bfb89d42add6f6dbedc6b1191ea377054c69f1",
+  "local_worktree_dirty": false
+}

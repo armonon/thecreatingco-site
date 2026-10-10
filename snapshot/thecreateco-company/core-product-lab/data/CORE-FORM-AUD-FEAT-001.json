@@ -1,0 +1,34 @@
+{
+  "task_id": "CORE-FORM-AUD-FEAT-001",
+  "title": "Reconcile exact CAD operation support matrix and parity",
+  "product": "form",
+  "area": "professional_feature_gap",
+  "category": "professional_feature_gap",
+  "workstream": "CORE_PRODUCT_LAB",
+  "severity": "P3",
+  "scores": {
+    "impact": 7,
+    "severity": 5,
+    "workflow_importance": 7,
+    "release_importance": 6,
+    "confidence": 8,
+    "effort": 8,
+    "risk": 4,
+    "user_value": 7,
+    "competitive_value": 8
+  },
+  "dependencies": [],
+  "status": "WAITING",
+  "model": "gpt-6-luna",
+  "expected_value": "Flagship golden-workflow reliability; scores are planning estimates, not health metrics.",
+  "test_requirements": "Reproduce on isolated exact source; preserve baseline/fixed evidence, appropriate build/tests and golden path; source reading is not interactive sign-off.",
+  "source_evidence": {
+    "direct": [
+      "KNOWN_ISSUES.md:18 disclaims full mature mechanical CAD operation parity; README.md:10 scopes exact operation coverage; older readiness ledger calls native operation gaps, but current commit may supersede those entries."
+    ],
+    "hypothesis": [
+      "Specific remaining user-critical operation gaps are unverified until current support matrix and representative corpus are reconciled."
+    ]
+  },
+  "next_action": "Audit current source/tests against versioned operation matrix, then run exact-geometry corpus before creating implementation tasks."
+}

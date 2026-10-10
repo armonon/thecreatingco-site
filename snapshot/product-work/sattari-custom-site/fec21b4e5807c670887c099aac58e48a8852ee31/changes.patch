@@ -1,0 +1,525 @@
+diff --git a/deliverables/sattari-internal-download-surface-archive-2026-06-02/DownloadsPage.tsx b/deliverables/sattari-internal-download-surface-archive-2026-06-02/DownloadsPage.tsx
+new file mode 100644
+index 0000000000000000000000000000000000000000..7d0b1d2aa3df615f34d35dcfa715f161d1b8073b
+--- /dev/null
++++ b/deliverables/sattari-internal-download-surface-archive-2026-06-02/DownloadsPage.tsx
+@@ -0,0 +1,178 @@
++import { SEO, StructuredData } from '../utils/seo';
++
++const macInstaller = {
++  name: 'Sattari Audio Plugin Suite Mac installer alpha v0.1.0',
++  filename: 'sattari-audio-plugin-suite-alpha-v0.1.0-mac-installer.pkg',
++  href: '/downloads/sattari-audio-plugin-suite-alpha-v0.1.0-mac-installer.pkg',
++  checksumHref: '/downloads/sattari-audio-plugin-suite-alpha-v0.1.0-mac-installer.pkg.sha256',
++  size: '26 MB',
++  sha256: 'a5fb20742934d68cc45d542e0587c860be3a8c47bcb454c4fb0975b9ee9ab195',
++  updated: 'June 2, 2026',
++};
++
++const suiteArchive = {
++  name: 'Sattari Audio Plugin Suite archive alpha v0.1.0',
++  filename: 'sattari-audio-plugin-suite-alpha-v0.1.0.tar.gz',
++  href: '/downloads/sattari-audio-plugin-suite-alpha-v0.1.0.tar.gz',
++  checksumHref: '/downloads/sattari-audio-plugin-suite-alpha-v0.1.0.sha256',
++  size: '26 MB',
++  sha256: '914063e32b8a1233ad320fb6f5bc1fed928de865a7ac1a7729cfd672b7bc5f08',
++  updated: 'May 28, 2026',
++};
++
++const autoPitchTester = {
++  name: 'Sattari Auto Pitch / AutoKey offline tester v0.6',
++  filename: 'sattari-auto-pitch-autokey-tester-v0.6.zip',
++  href: '/downloads/sattari-auto-pitch-autokey-tester-v0.6.zip',
++  checksumHref: '/downloads/sattari-auto-pitch-autokey-tester-v0.6.zip.sha256',
++  size: '2.3 MB',
++  sha256: '25775ff2bde22e5ebfe0e806f86eec1e96aed718e0a0148da2839fe7cf5da70a',
++  updated: 'June 2, 2026',
++};
++
++const includedPlugins = [
++  'Sattari Auto Pitch — AU, VST3, Standalone',
++  'Sattari StemDeck — VST3, Standalone',
++  'Sattari Arp — AU, VST3',
++  'Sub Conjurer — AU, VST3, Standalone',
++  'Side Chain Master — AU, VST3, Standalone',
++  'Sattari Royal Chain — AU, VST3, Standalone',
++];
++
++export default function DownloadsPage() {
++  return (
++    <section className="section page-header-offset downloads-shell">
++      <SEO
++        title="Sattari Downloads"
++        description="Download the current Sattari Audio Plugin Suite alpha validation package."
++        url="https://sattarimusic.com/downloads"
++      />
++      <StructuredData
++        data={{
++          '@context': 'https://schema.org',
++          '@type': 'SoftwareApplication',
++          name: macInstaller.name,
++          applicationCategory: 'MultimediaApplication',
++          operatingSystem: 'macOS',
++          downloadUrl: `https://sattarimusic.com${macInstaller.href}`,
++          softwareVersion: '0.1.0-alpha',
++          publisher: {
++            '@type': 'Organization',
++            name: 'Sattari Music',
++            url: 'https://sattarimusic.com',
++          },
++        }}
++      />
++
++      <div className="container downloads-hero">
++        <div className="downloads-copy">
++          <p className="eyebrow">Sattari Downloads</p>
++          <h1>Get the latest plugin suite build.</h1>
++          <p>
++            This downloader hosts the current Sattari Audio Plugin Suite alpha validation package: a
++            Mac installer for quick setup, the original archive with AU/VST3 plugin builds, and the
++            offline Auto Pitch / AutoKey tester kit for WAV experiments.
++          </p>
++          <div className="hero-actions downloads-actions">
++            <a className="button button-solid" href={macInstaller.href} download>
++              Download Mac installer
++            </a>
++            <a className="button button-outline" href={autoPitchTester.href} download>
++              Download Auto Pitch tester
++            </a>
++          </div>
++        </div>
++
++        <aside className="download-card" aria-label="Download details">
++          <span className="download-pill">Internal alpha</span>
++          <h2>{macInstaller.name}</h2>
++          <dl className="download-meta">
++            <div>
++              <dt>File</dt>
++              <dd>{macInstaller.filename}</dd>
++            </div>
++            <div>
++              <dt>Size</dt>
++              <dd>{macInstaller.size}</dd>
++            </div>
++            <div>
++              <dt>Updated</dt>
++              <dd>{macInstaller.updated}</dd>
++            </div>
++          </dl>
++          <div className="checksum-box">
++            <span>SHA-256</span>
++            <code>{macInstaller.sha256}</code>
++          </div>
++          <a className="download-link" href={macInstaller.checksumHref} download>
++            Download installer checksum
++          </a>
++        </aside>
++      </div>
++
++      <div className="container downloads-grid">
++        <article className="info-card downloads-info-card">
++          <p className="card-kicker">Included</p>
++          <h2>Six plugin lanes in one archive.</h2>
++          <ul className="download-list">
++            {includedPlugins.map((plugin) => (
++              <li key={plugin}>{plugin}</li>
++            ))}
++          </ul>
++        </article>
++
++        <article className="info-card downloads-info-card">
++          <p className="card-kicker">Install</p>
++          <h2>Mac installer flow.</h2>
++          <ol className="download-list ordered">
++            <li>Download the Mac installer package.</li>
++            <li>Open the package and approve the macOS install prompts.</li>
++            <li>Rescan plugins in Logic, Ableton, FL, or your target DAW.</li>
++          </ol>
++          <a className="download-link" href={suiteArchive.href} download>
++            Download manual archive instead
++          </a>
++        </article>
++      </div>
++
++      <div className="container downloads-grid">
++        <article className="info-card downloads-info-card">
++          <p className="card-kicker">Auto Pitch / AutoKey</p>
++          <h2>Offline tester kit.</h2>
++          <p>
++            Use this to process a 16-bit PCM vocal WAV with AutoKey, Modern tuning, and the
++            experimental corrected-WAV renderer. It includes demo audio, trace JSON, and the Pitch
++            Compass browser UI.
++          </p>
++          <a className="download-link" href={autoPitchTester.href} download>
++            Download {autoPitchTester.filename}
++          </a>
++        </article>
++
++        <article className="info-card downloads-info-card">
++          <p className="card-kicker">Checksums</p>
++          <h2>Verify downloads.</h2>
++          <ul className="download-list">
++            <li>
++              <a href={suiteArchive.checksumHref} download>
++                Suite archive SHA-256
++              </a>
++            </li>
++            <li>
++              <a href={autoPitchTester.checksumHref} download>
++                Auto Pitch tester SHA-256
++              </a>
++            </li>
++          </ul>
++        </article>
++      </div>
++
++      <div className="container downloads-warning">
++        <strong>Release gate:</strong> This is an internal alpha validation package, not a
++        sale-ready public release. Before any beta/public claim, each plugin still needs DAW open
++        tests, real-session listening, crash/CPU checks, install/uninstall checks, preset UX review,
++        and honest limitation notes.
++      </div>
++    </section>
++  );
++}
+diff --git a/deliverables/sattari-internal-download-surface-archive-2026-06-02/README.md b/deliverables/sattari-internal-download-surface-archive-2026-06-02/README.md
+new file mode 100644
+index 0000000000000000000000000000000000000000..28f2ad4cf1d0ef162e40b2b6ad94770ccd38d71c
+--- /dev/null
++++ b/deliverables/sattari-internal-download-surface-archive-2026-06-02/README.md
+@@ -0,0 +1,12 @@
++# Sattari internal download-surface archive — 2026-06-02
++
++This folder preserves metadata from the public `/downloads` surface before the local-only public-surface recovery branch removed that customer-facing route and static files.
++
++Preserved here:
++
++- `DownloadsPage.tsx` — former public download-page source copy for historical/internal reference.
++- `*.sha256` files — checksum text files copied from the public downloads folder when present.
++- `public-download-archive.ls.txt` — file-size inventory of the removed public downloads folder.
++- `public-download-archive.sha256` — SHA-256 manifest for removed public download files.
++
++The actual plugin/tester packages should stay in the internal Sattari packaging flow, not on the public customer-facing site until Armon explicitly approves a sale/beta/download surface.
+diff --git a/deliverables/sattari-internal-download-surface-archive-2026-06-02/public-download-archive.ls.txt b/deliverables/sattari-internal-download-surface-archive-2026-06-02/public-download-archive.ls.txt
+new file mode 100644
+index 0000000000000000000000000000000000000000..611ea6a9c50fa61ec188b40849c7cffc6d263036
+--- /dev/null
++++ b/deliverables/sattari-internal-download-surface-archive-2026-06-02/public-download-archive.ls.txt
+@@ -0,0 +1,6 @@
++    27187863  sattari-audio-plugin-suite-alpha-v0.1.0-mac-installer.pkg
++         124  sattari-audio-plugin-suite-alpha-v0.1.0-mac-installer.pkg.sha256
++         113  sattari-audio-plugin-suite-alpha-v0.1.0.sha256
++    27318400  sattari-audio-plugin-suite-alpha-v0.1.0.tar.gz
++     2381680  sattari-auto-pitch-autokey-tester-v0.6.zip
++         109  sattari-auto-pitch-autokey-tester-v0.6.zip.sha256
+diff --git a/public/404.html b/public/404.html
+new file mode 100644
+index 0000000000000000000000000000000000000000..010a1f14a4e0cf2323fb2ba9e3d6098125eb1c24
+--- /dev/null
++++ b/public/404.html
+@@ -0,0 +1,16 @@
++<!doctype html>
++<html lang="en">
++  <head>
++    <meta charset="utf-8" />
++    <meta name="robots" content="noindex" />
++    <meta name="viewport" content="width=device-width, initial-scale=1" />
++    <title>Not found | Sattari Music</title>
++  </head>
++  <body>
++    <main>
++      <h1>Not found</h1>
++      <p>This Sattari page is not publicly available.</p>
++      <p><a href="/">Return to Sattari Music</a></p>
++    </main>
++  </body>
++</html>
+diff --git a/public/robots.txt b/public/robots.txt
+index 67733e09e46390652e13d297787fcf99699b0bf1..80a2eb056143343575b2cea052e3a818cff0dfe5 100644
+--- a/public/robots.txt
++++ b/public/robots.txt
+@@ -2,6 +2,7 @@ User-agent: *
+ Allow: /
+ Disallow: /checkout/
+ Disallow: /cart
++Disallow: /internal/
+ 
+ Sitemap: https://sattarimusic.com/sitemap.xml
+ 
+diff --git a/public/sitemap.xml b/public/sitemap.xml
+index e709295fdc380830f640f8343ae809906c58ceba..ccdffddb6201cdeec847a2a1df02ad763863fbbd 100644
+--- a/public/sitemap.xml
++++ b/public/sitemap.xml
+@@ -96,10 +96,4 @@
+     <changefreq>weekly</changefreq>
+     <priority>0.82</priority>
+   </url>
+-  <url>
+-    <loc>https://sattarimusic.com/radio</loc>
+-    <lastmod>2026-05-15</lastmod>
+-    <changefreq>weekly</changefreq>
+-    <priority>0.7</priority>
+-  </url>
+ </urlset>
+diff --git a/src/App.tsx b/src/App.tsx
+index 5b595267ffbeb5d1255f2a62b11bd43d77c426b8..33a16e13303c516231f9d23b8e5c69a18a69e0eb 100644
+--- a/src/App.tsx
++++ b/src/App.tsx
+@@ -10,15 +10,12 @@ import {
+   Category,
+   CartPage,
+   CheckoutStatus,
+-  DownloadsPage,
+   HomePage,
+   InstagramCallback,
+   LazyPage,
+   LocalSeoPage,
+   ProductDetail,
+-  RadioPage,
+   RepairPage,
+-  SattariMarketPage,
+   ServicesPage,
+   ShopPage,
+ } from '@utils/lazyComponents';
+@@ -117,14 +114,12 @@ const App: FC = () => {
+             }
+           />
+           <Route path="/buy" element={<Navigate to="/shop" replace />} />
+-          <Route
+-            path="/market"
+-            element={
+-              <LazyPage>
+-                <SattariMarketPage />
+-              </LazyPage>
+-            }
+-          />
++          <Route path="/market" element={<Navigate to="/shop" replace />} />
++          <Route path="/profiles" element={<Navigate to="/" replace />} />
++          <Route path="/profile" element={<Navigate to="/" replace />} />
++          <Route path="/radio" element={<Navigate to="/" replace />} />
++          <Route path="/downloads" element={<Navigate to="/" replace />} />
++          <Route path="/download" element={<Navigate to="/" replace />} />
+           <Route
+             path="/los-angeles-music-store"
+             element={
+@@ -261,22 +256,6 @@ const App: FC = () => {
+               </LazyPage>
+             }
+           />
+-          <Route
+-            path="/radio"
+-            element={
+-              <LazyPage>
+-                <RadioPage />
+-              </LazyPage>
+-            }
+-          />
+-          <Route
+-            path="/downloads"
+-            element={
+-              <LazyPage>
+-                <DownloadsPage />
+-              </LazyPage>
+-            }
+-          />
+         </Routes>
+       </main>
+ 
+diff --git a/src/components/Navbar.jsx b/src/components/Navbar.jsx
+index edfb267065fe5be78f83ccd9be60b75206bee064..778dfc1df8a9438cd485037d25f577c8163c8087 100644
+--- a/src/components/Navbar.jsx
++++ b/src/components/Navbar.jsx
+@@ -5,9 +5,6 @@ import { useCart } from '../context/CartContext';
+ const links = [
+   { to: '/', label: 'Home' },
+   { to: '/shop', label: 'Shop' },
+-  { to: '/market', label: 'Market' },
+-  { to: '/radio', label: 'Radio' },
+-  { to: '/downloads', label: 'Downloads' },
+   { to: '/services', label: 'Local Services' },
+ ];
+ 
+diff --git a/src/components/SattariMarketPage.jsx b/src/components/SattariMarketPage.jsx
+index 57f1f68880876213d64607c7b838474278569d32..6d9036297be772dfa6261a4840eadb5fa83f35c9 100644
+--- a/src/components/SattariMarketPage.jsx
++++ b/src/components/SattariMarketPage.jsx
+@@ -19,17 +19,18 @@ export default function SattariMarketPage() {
+     '@context': 'https://schema.org',
+     '@type': 'WebPage',
+     name: 'Sattari Market',
+-    url: 'https://sattarimusic.com/market',
++    url: 'https://sattarimusic.com/internal/market-concept',
+     description:
+-      'Sattari Market concept page for NOW-powered music gear listings, source labels, and user-listing guardrails.',
++      'Internal Sattari Market concept page for NOW-powered music gear listings, source labels, and user-listing guardrails.',
+   };
+ 
+   return (
+     <section className="section page-header-offset sattari-market-page">
+       <SEO
+         title="Sattari Market — Music Gear Listing Concept"
+-        description="Preview the safe Sattari Market concept: music gear listings, NOW seller-profile trust, source labels, and clear guardrails before live connectors or marketplace payments."
+-        url="https://sattarimusic.com/market"
++        description="Internal preview of the safe Sattari Market concept: music gear listings, NOW seller-profile trust, source labels, and clear guardrails before live connectors or marketplace payments."
++        url="https://sattarimusic.com/internal/market-concept"
++        noIndex
+       />
+       <StructuredData data={pageSchema} />
+ 
+diff --git a/src/components/SattariMarketPage.route.test.jsx b/src/components/SattariMarketPage.route.test.jsx
+index a179dbd699e048ecdb1f3d329bc6402ba31de4d9..aadd8f7ead335380677b0d171f1aadb036b80f56 100644
+--- a/src/components/SattariMarketPage.route.test.jsx
++++ b/src/components/SattariMarketPage.route.test.jsx
+@@ -1,4 +1,4 @@
+-import { render, screen, within } from '@testing-library/react';
++import { render, screen } from '@testing-library/react';
+ import { HelmetProvider } from 'react-helmet-async';
+ import { MemoryRouter } from 'react-router-dom';
+ import { beforeEach, describe, expect, it, vi } from 'vitest';
+@@ -18,13 +18,15 @@ beforeEach(() => {
+     configurable: true,
+   });
+   vi.stubGlobal('localStorage', storage);
++
++  document.head.innerHTML = '';
+ });
+ 
+-function renderAppAtMarketRoute() {
++function renderAppAtRoute(pathname) {
+   return render(
+     <HelmetProvider>
+       <CartProvider>
+-        <MemoryRouter initialEntries={['/market']}>
++        <MemoryRouter initialEntries={[pathname]}>
+           <App />
+         </MemoryRouter>
+       </CartProvider>
+@@ -32,62 +34,38 @@ function renderAppAtMarketRoute() {
+   );
+ }
+ 
+-describe('Sattari Market route smoke', () => {
+-  it('renders the /market route with source lanes, sample listings, and hard guardrails', async () => {
+-    renderAppAtMarketRoute();
+-
+-    expect(
+-      await screen.findByRole('heading', { level: 1, name: 'Sattari Market' })
+-    ).toBeInTheDocument();
++describe('public tab exposure smoke', () => {
++  it('keeps Market, Profiles, Radio, and Downloads out of public navigation', () => {
++    renderAppAtRoute('/');
+ 
+-    expect(
+-      screen.getByText('Buy, sell, and discover music gear through trusted musician profiles.')
+-    ).toBeInTheDocument();
+-    expect(screen.getByRole('link', { name: /shop official sattari products/i })).toHaveAttribute(
+-      'href',
+-      '/shop'
+-    );
+-    expect(screen.getByRole('link', { name: /ask about local services/i })).toHaveAttribute(
+-      'href',
+-      '/services'
+-    );
++    expect(screen.queryByRole('link', { name: /^market$/i })).not.toBeInTheDocument();
++    expect(screen.queryByRole('link', { name: /^profiles$/i })).not.toBeInTheDocument();
++    expect(screen.queryByRole('link', { name: /^radio$/i })).not.toBeInTheDocument();
++    expect(screen.queryByRole('link', { name: /^downloads$/i })).not.toBeInTheDocument();
++  });
+ 
+-    const disclosure = screen.getByRole('note', { name: /prototype disclosure/i });
+-    expect(disclosure).toHaveTextContent('without adding live marketplace connectors');
+-    expect(disclosure).toHaveTextContent('checkout');
+-    expect(disclosure).toHaveTextContent('scraping');
+-    expect(disclosure).toHaveTextContent('external messaging');
++  it('redirects removed public routes away from their old surfaces', async () => {
++    renderAppAtRoute('/radio');
+ 
+     expect(
+-      screen.getByRole('heading', { name: /built first around musicians and studios/i })
++      await screen.findByRole('heading', { level: 1, name: 'Drums First. Always.' })
+     ).toBeInTheDocument();
+-    expect(screen.getAllByText('Drums & cymbals').length).toBeGreaterThan(0);
+-    expect(screen.getByText('Lessons, repairs & rentals')).toBeInTheDocument();
++    expect(
++      screen.queryByRole('heading', { level: 1, name: /sattari radio/i })
++    ).not.toBeInTheDocument();
++  });
+ 
+-    const sourceRegion = screen.getByText('External marketplace links').closest('article');
+-    expect(sourceRegion).toBeInTheDocument();
+-    expect(within(sourceRegion).getByText('Approval/compliance gated')).toBeInTheDocument();
+-    expect(sourceRegion).toHaveTextContent('link-out/source-label concepts only');
++  it('keeps /market pointed at the shop instead of a marketplace tab', async () => {
++    renderAppAtRoute('/market');
+ 
+-    const listingPanel = screen
+-      .getByRole('heading', {
+-        name: /listing cards show source and readiness/i,
+-      })
+-      .closest('section');
+-    expect(listingPanel).toBeInTheDocument();
+     expect(
+-      within(listingPanel).getByText('Pirouz Series cymbal — demo condition')
++      await screen.findByRole('heading', {
++        level: 1,
++        name: /build your setup with instruments, accessories, and handcrafted sattari gear/i,
++      })
+     ).toBeInTheDocument();
+-    expect(within(listingPanel).getByText('External link placeholder')).toBeInTheDocument();
+-    expect(within(listingPanel).getByText('Link-out concept only')).toBeInTheDocument();
+-
+-    const guardrails = screen
+-      .getByRole('heading', { name: /what this page does not do yet/i })
+-      .closest('section');
+-    expect(guardrails).toBeInTheDocument();
+-    expect(guardrails).toHaveTextContent('No scraping or live third-party marketplace sync');
+-    expect(guardrails).toHaveTextContent('No checkout, escrow, payments, shipping labels');
+-    expect(guardrails).toHaveTextContent('No external buyer/seller messages');
+-    expect(guardrails).toHaveTextContent('No official marketplace partnership');
++    expect(
++      screen.queryByRole('heading', { level: 1, name: /sattari market/i })
++    ).not.toBeInTheDocument();
+   });
+ });
+diff --git a/src/utils/lazyComponents.tsx b/src/utils/lazyComponents.tsx
+index a71f45f6c259b93ceee91f03661c2c0d0e874b1c..de56fb84b6a302e5cbbe25965cbd73e82278dfd0 100644
+--- a/src/utils/lazyComponents.tsx
++++ b/src/utils/lazyComponents.tsx
+@@ -11,9 +11,6 @@ export const InstagramCallback = lazy(() => import('@pages/InstagramCallback'));
+ export const ServicesPage = lazy(() => import('@components/ServicesPage'));
+ export const RepairPage = lazy(() => import('@components/RepairPage'));
+ export const LocalSeoPage = lazy(() => import('@components/LocalSeoPage'));
+-export const RadioPage = lazy(() => import('@components/RadioPage'));
+-export const DownloadsPage = lazy(() => import('@components/DownloadsPage'));
+-export const SattariMarketPage = lazy(() => import('@components/SattariMarketPage'));
+ 
+ // Fallback loading component
+ export const PageLoader = () => (
+diff --git a/src/utils/seo.tsx b/src/utils/seo.tsx
+index 7974d0135e11d745ffc4df0a362fc2e990df70d5..312cd05e1023a6b8d77e73fe3d31008e5d82f15c 100644
+--- a/src/utils/seo.tsx
++++ b/src/utils/seo.tsx
+@@ -7,6 +7,7 @@ interface SEOProps {
+   image?: string;
+   url?: string;
+   type?: string;
++  noIndex?: boolean;
+   children?: ReactNode;
+ }
+ 
+@@ -16,6 +17,7 @@ export const SEO: FC<SEOProps> = ({
+   image = '/sattari site/sattari logo.png',
+   url = 'https://sattarimusic.com',
+   type = 'website',
++  noIndex = false,
+ }) => {
+   const fullTitle = `${title} | Sattari Music - Premium Drum Gear & Services`;
+ 
+@@ -42,6 +44,7 @@ export const SEO: FC<SEOProps> = ({
+       <meta name="twitter:image" content={image} />
+ 
+       {/* Additional */}
++      {noIndex && <meta name="robots" content="noindex,nofollow" />}
+       <meta name="theme-color" content="#0a0a0b" />
+       <link rel="canonical" href={url} />
+     </Helmet>

@@ -1,0 +1,11 @@
+{
+  "task_id": "CORE-SP-RECOVERY-001",
+  "source_evidence": [
+    "docs/release-today-0.1.16.md explicitly lists abrupt termination, disk failure, and complete packaged relink UI sequence as NOT VERIFIED.",
+    "Deterministic project-store and render-queue-recovery tests exist; they are not the same as the missing packaged UI journeys."
+  ],
+  "evidence_sources": [
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-initial.md",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/products/scenepilot.json"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "sha": "bfad2ee98a5194cc84892cc7a13a43e28fefea9b",
+  "base_sha": "bfad2ee98a5194cc84892cc7a13a43e28fefea9b",
+  "scope": "Committed screened review delta, not a release or complete binary artifact",
+  "files": [],
+  "omitted": [],
+  "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "repo": "https://github.com/armonon/ghost-garment-studio",
+  "branches": [
+    "fix/ghost-roundtrip-20261007",
+    "wave5/ghost-pattern"
+  ],
+  "archive_path": "ghost-garment-studio/bfad2ee98a5194cc84892cc7a13a43e28fefea9b",
+  "local_worktree_dirty": true
+}

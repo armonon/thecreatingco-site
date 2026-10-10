@@ -1,0 +1,11 @@
+{
+  "task_id": "CORE-STEM-AUD-006",
+  "source_evidence": [
+    "docs/PROFESSIONAL_ACCEPTANCE.md",
+    "src/utils/audioProjectStore.js"
+  ],
+  "evidence_sources": [
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-initial.md",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/products/stemdeck.json"
+  ]
+}

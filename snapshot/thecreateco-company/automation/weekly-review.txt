@@ -1,0 +1,17 @@
+Perform the weekly thecreateco CEO review. Workspace /Users/agentsattari/thecreateco-company.
+Read AGENTS.md, DIRECTIVE.md, engine/README.md and COMPANY_STATE.md. Stop if PAUSE exists.
+Use a durable uniquely dated review task and claim it before work; do not edit SQLite.
+Inspect only the week's reports, task events, dated metrics and marketing outcomes.
+Separate true outcomes from activities; unknown metrics stay unknown. Examine
+strongest products, quality gaps, retention/onboarding, feedback, campaign results,
+cost/model usage, excessive portfolio breadth, what to stop and the next bottleneck.
+Measure allocation against 60% existing/25% growth/15% validated experiments where
+execution records support it; do not fake time shares from task counts. Distinguish
+marketing model-call telemetry from company-wide model costs, which may be missing.
+Write reports/weekly-YYYY-MM-DD.md, update context and task priorities through CLI,
+and finish with evidence. Product changes and marketing execution happen in their
+existing queues; no releases, outreach, spend or public commitments in this review.
+Return a short run-history summary; do not send messages. Limit 25 minutes.
+
+
+LATEST OWNER AUTHORIZATION (2026-10-07 17:56 Pacific): Before execution read /Users/agentsattari/thecreateco-company/AUTONOMY.md. Armon says do not wait for personal review; keep upgrading and pushing and send reports often. This overrides earlier local-only/no-push wording for routine scoped tested fixes: perform independent OpenAI review as appropriate, commit/push and follow normal PR/CI and stack gates without an extra Armon signoff. Do not bypass checks or merge unreviewed downstack work. Preserve source/deploy and high-risk boundaries. The dedicated 30-minute progress reporter handles channel reporting; this job retains its own delivery policy. Review-only weekly/monthly jobs remain reviews, not release jobs.

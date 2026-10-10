@@ -1,0 +1,43 @@
+# Netlify is a secondary target; the primary build is `npm run build`
+# (vinext / Cloudflare). Keep both working or drop one — a half-configured
+# deploy target is worse than none.
+
+[build]
+  command = "npm run build:netlify"
+
+# Required for App Router: /api/ai/edit is a server route, so publishing the
+# raw .next directory as a static site cannot work. The plugin wires the
+# server output to Netlify Functions and sets the publish directory itself.
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+# luma.thecreatingco.com has always published a much larger static
+# marketing/learning site alongside this app (see live-static/ and
+# docs/release/live-static-overlay.md). This runs after the plugin above and
+# merges those live-only files into the publish dir it just produced, so a
+# repo-driven deploy does not drop them.
+[[plugins]]
+  package = "./build/netlify-plugins/overlay-live-static"
+
+[build.environment]
+  NODE_VERSION = "24"
+  NEXT_TELEMETRY_DISABLED = "1"
+
+[functions]
+  node_bundler = "esbuild"
+
+# Offline support (app/studio/pwa.tsx, build/sw-template.js). Browsers should
+# revalidate service workers themselves, but CDNs do not always honour that:
+# force it, so an update — or the kill switch in docs/release/pwa.md —
+# reaches every visitor on their next navigation.
+[[headers]]
+  for = "/sw.js"
+  [headers.values]
+    Cache-Control = "no-cache"
+    Service-Worker-Allowed = "/"
+
+[[headers]]
+  for = "/*.webmanifest"
+  [headers.values]
+    Content-Type = "application/manifest+json"
+    Cache-Control = "no-cache"

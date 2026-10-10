@@ -1,0 +1,34 @@
+{
+  "task_id": "CORE-FORM-AUD-SEC-001",
+  "title": "Triage current production dependency advisories",
+  "product": "form",
+  "area": "bug/security",
+  "category": "bug/security",
+  "workstream": "CORE_PRODUCT_LAB",
+  "severity": "P0",
+  "scores": {
+    "impact": 8,
+    "severity": 9,
+    "workflow_importance": 4,
+    "release_importance": 9,
+    "confidence": 9,
+    "effort": 3,
+    "risk": 4,
+    "user_value": 4,
+    "competitive_value": 3
+  },
+  "dependencies": [],
+  "status": "QUEUED",
+  "model": "gpt-6.1-sol",
+  "expected_value": "Flagship golden-workflow reliability; scores are planning estimates, not health metrics.",
+  "test_requirements": "Reproduce on isolated exact source; preserve baseline/fixed evidence, appropriate build/tests and golden path; source reading is not interactive sign-off.",
+  "source_evidence": {
+    "direct": [
+      "Isolated clean npm ci resolved next@16.3.4; npm audit --omit=dev reported 1 critical Next.js, 2 high dependency advisories (sharp, source-map-js). No next/og or ImageResponse reference found in source search. KNOWN_ISSUES.md:32 says no known high-severity production advisory."
+    ],
+    "hypothesis": [
+      "The Next.js RCE advisory may be unreachable if the vulnerable ImageResponse route is not exposed; exploitability and runtime dependency reachability are unverified."
+    ]
+  },
+  "next_action": "Inspect dependency path and deployed Next/Vinext routes; upgrade to an unaffected compatible release in isolation and rerun audit, build, and tests."
+}

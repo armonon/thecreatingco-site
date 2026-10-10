@@ -1,0 +1,2420 @@
+diff --git a/apps/sattari-hub/Sources/SattariHub/Resources/sattari-products.json b/apps/sattari-hub/Sources/SattariHub/Resources/sattari-products.json
+index fda4ae853ce850f9a236183b4baa47589643028b..8da7c40ad3948bafceb00370691e1f19048a77da 100644
+--- a/apps/sattari-hub/Sources/SattariHub/Resources/sattari-products.json
++++ b/apps/sattari-hub/Sources/SattariHub/Resources/sattari-products.json
+@@ -41,7 +41,7 @@
+       "id": "voxkey",
+       "name": "Sattari VoxKey",
+       "category": "Voice-to-MIDI",
+-      "accent": "#7cffd4",
++      "accent": "#62f5c8",
+       "version": "0.1.0-alpha",
+       "status": "internal-alpha",
+       "description": "Realtime vocal audio to MIDI plugin for Ableton/DAWs.",
+@@ -67,7 +67,7 @@
+       "id": "stemdeck",
+       "name": "Sattari StemDeck",
+       "category": "Remix / stem performance",
+-      "accent": "#26d9ff",
++      "accent": "#62f5c8",
+       "version": "0.4.0-alpha+standalone-app",
+       "status": "standalone-app-alpha",
+       "description": "Standalone Mac DJ app alpha with split live mixer and arrangement recorder workspace.",
+@@ -119,7 +119,7 @@
+       "id": "side-chain-master",
+       "name": "Side Chain Master",
+       "category": "Mix utility",
+-      "accent": "#7cffd8",
++      "accent": "#62f5c8",
+       "version": "0.1.0-alpha",
+       "status": "internal-alpha",
+       "description": "Side-chain utility internal plugin build.",
+@@ -151,7 +151,7 @@
+       "id": "royal-chain",
+       "name": "Sattari Royal Chain",
+       "category": "Vocal chain",
+-      "accent": "#d8b45a",
++      "accent": "#62f5c8",
+       "version": "0.1.0-alpha",
+       "status": "internal-alpha",
+       "description": "Vocal-chain concept/internal plugin build.",
+@@ -183,7 +183,7 @@
+       "id": "sattari-arp",
+       "name": "Sattari Arp",
+       "category": "MIDI generator",
+-      "accent": "#ff6b35",
++      "accent": "#62f5c8",
+       "version": "0.1.0-alpha",
+       "status": "internal-alpha",
+       "description": "MIDI arpeggiator/generator internal plugin build.",
+@@ -209,7 +209,7 @@
+       "id": "bus",
+       "name": "Sattari Bus",
+       "category": "Bus / mix",
+-      "accent": "#9b7bff",
++      "accent": "#62f5c8",
+       "version": "0.1.0-alpha",
+       "status": "internal-alpha",
+       "description": "Bus/aux channel strip: glue compressor, 3-band tone, drive, width, pan, parallel mix, and output ceiling.",
+@@ -241,7 +241,7 @@
+       "id": "align",
+       "name": "Sattari Align",
+       "category": "Timing alignment",
+-      "accent": "#7dd3fc",
++      "accent": "#62f5c8",
+       "version": "0.1.0-alpha",
+       "status": "internal-alpha",
+       "description": "Time-aligns the Main signal to the Guide sidechain via onset-envelope cross-correlation. Works on any transient material - vocal doubles, guitar layers, drum stems.",
+diff --git a/cmake/SattariPlugin.cmake b/cmake/SattariPlugin.cmake
+index 878d424891715de58b7e5a1ea66f65f6d6151ae8..742bd461463519a64cc521d30e9a0a05661b023a 100644
+--- a/cmake/SattariPlugin.cmake
++++ b/cmake/SattariPlugin.cmake
+@@ -32,7 +32,7 @@ get_filename_component(SATTARI_REPO_ROOT "${CMAKE_CURRENT_LIST_DIR}/.." ABSOLUTE
+ function(sattari_add_plugin)
+     set(options       IS_SYNTH NEEDS_MIDI_INPUT NEEDS_MIDI_OUTPUT IS_MIDI_EFFECT EDITOR_WANTS_KEYBOARD_FOCUS)
+     set(oneValueArgs  TARGET SLUG PRODUCT_NAME PLUGIN_CODE MANUFACTURER_CODE COMPANY_NAME VERSION)
+-    set(multiValueArgs FORMATS SOURCES)
++    set(multiValueArgs FORMATS SOURCES VST3_CATEGORIES)
+     cmake_parse_arguments(SAP "${options}" "${oneValueArgs}" "${multiValueArgs}" ${ARGN})
+ 
+     if(NOT SAP_TARGET)
+@@ -80,7 +80,13 @@ function(sattari_add_plugin)
+         endif()
+     endforeach()
+ 
++    set(extra_plugin_args)
++    if(SAP_VST3_CATEGORIES)
++        list(APPEND extra_plugin_args VST3_CATEGORIES ${SAP_VST3_CATEGORIES})
++    endif()
++
+     juce_add_plugin(${SAP_TARGET}
++        ${extra_plugin_args}
+         COMPANY_NAME                "${SAP_COMPANY_NAME}"
+         IS_SYNTH                    ${IS_SYNTH_VAL}
+         NEEDS_MIDI_INPUT            ${NEEDS_MIDI_INPUT_VAL}
+diff --git a/plugins/auto-pitch/src/PluginProcessor.cpp b/plugins/auto-pitch/src/PluginProcessor.cpp
+index 6f68562c34648fd77e50dcd983c1c8bb87e6edd8..d31d68ca66a9dde758c3b00a5b9fb1078283f1f1 100644
+--- a/plugins/auto-pitch/src/PluginProcessor.cpp
++++ b/plugins/auto-pitch/src/PluginProcessor.cpp
+@@ -270,26 +270,7 @@ void SattariAutoPitchAudioProcessor::prepareToPlay (double sampleRate, int sampl
+     setLatencySamples (0);
+ 
+ #elif SATTARI_AUTOPITCH_HAS_SIGNALSMITH
+-    {
+-        const int numCh = juce::jmax (1, getTotalNumOutputChannels());
+-        const bool lowLat = apvts.getRawParameterValue ("lowLatency") != nullptr
+-                            && apvts.getRawParameterValue ("lowLatency")->load() > 0.5f;
+-
+-        // Live mode: small window for low latency (~23ms total at 44100Hz).
+-        // Standard mode: larger window for higher quality studio correction.
+-        if (lowLat)
+-            ssStretch.configure (numCh, 1024, 256);
+-        else
+-            ssStretch.configure (numCh, 4096, 1024);
+-
+-        ssStretch.reset();
+-        ssOutput.setSize (numCh, preparedBlockSize);
+-        ssInputPtrs.resize  ((size_t) numCh);
+-        ssOutputPtrs.resize ((size_t) numCh);
+-
+-        reportedLatencySamples = ssStretch.inputLatency() + ssStretch.outputLatency();
+-        setLatencySamples (reportedLatencySamples);
+-    }
++    configureSignalsmith (lowLatencyRequested());
+ 
+ #elif SATTARI_AUTOPITCH_HAS_RUBBERBAND
+     rubberBand.clear();
+@@ -328,6 +309,95 @@ void SattariAutoPitchAudioProcessor::prepareToPlay (double sampleRate, int sampl
+     reportedLatencySamples = 0;
+     setLatencySamples (0);
+ #endif  // SATTARI_AUTOPITCH_HAS_RUBBERBAND
++
++    resizeBypassDelay();
++}
++
++void SattariAutoPitchAudioProcessor::resizeBypassDelay()
++{
++    bypassDelay.setSize (juce::jmax (2, getTotalNumOutputChannels()), juce::jmax (0, reportedLatencySamples));
++    bypassDelay.clear();
++    bypassDelayWritePos = 0;
++}
++
++bool SattariAutoPitchAudioProcessor::lowLatencyRequested() const
++{
++    const auto* p = apvts.getRawParameterValue ("lowLatency");
++    return p != nullptr && p->load() > 0.5f;
++}
++
++void SattariAutoPitchAudioProcessor::configureSignalsmith (bool lowLat)
++{
++#if SATTARI_AUTOPITCH_HAS_SIGNALSMITH
++    const int numCh = juce::jmax (1, getTotalNumOutputChannels());
++
++    // Live mode: small window for low latency (~23ms total at 44100Hz).
++    // Standard mode: larger window for higher quality studio correction.
++    if (lowLat)
++        ssStretch.configure (numCh, 3072, 768);
++    else
++        ssStretch.configure (numCh, 4096, 1024);
++
++    ssConfigured = true;
++    ssConfiguredLowLatency = lowLat;
++    ssStretch.reset();
++    // The pitch detector's frame ends at the newest sample, so what it
++    // measures is centred pitchFrameSize / 2 samples in the past already.
++    ssScaleDelaySamples = juce::jmax (0, ssStretch.inputLatency() - pitchFrameSize / 2);
++    ssScaleHistory.assign ((size_t) (ssScaleDelaySamples + juce::jmax (preparedBlockSize, 8192) + 1), 1.0);
++    ssScaleWritePos = 0;
++    ssOutput.setSize (numCh, preparedBlockSize);
++    ssInputPtrs.resize  ((size_t) numCh);
++    ssOutputPtrs.resize ((size_t) numCh);
++
++    reportedLatencySamples = ssStretch.inputLatency() + ssStretch.outputLatency();
++    setLatencySamples (reportedLatencySamples);
++#else
++    juce::ignoreUnused (lowLat);
++#endif
++}
++
++void SattariAutoPitchAudioProcessor::applyLowLatencyChange()
++{
++#if SATTARI_AUTOPITCH_HAS_SIGNALSMITH
++    // Low Latency used to be read only in prepareToPlay, so toggling it did
++    // nothing until the host re-prepared. Reconfigure as soon as it changes.
++    // This allocates on the audio thread, but only once per toggle.
++    const bool lowLat = lowLatencyRequested();
++    if (! ssConfigured || lowLat == ssConfiguredLowLatency)
++        return;
++    configureSignalsmith (lowLat);
++    resizeBypassDelay();
++#endif
++}
++
++void SattariAutoPitchAudioProcessor::processBlockBypassed (juce::AudioBuffer<float>& buffer, juce::MidiBuffer&)
++{
++    // JUCE's default bypass passes audio through undelayed while the host is
++    // still compensating for reportedLatencySamples, so a bypassed vocal would
++    // play early. Delay the dry signal by the same amount instead.
++    applyLowLatencyChange();
++    auto mainBuffer = getBusBuffer (buffer, false, 0);
++    const int length = bypassDelay.getNumSamples();
++    if (length <= 0)
++        return;
++
++    const int numChannels = juce::jmin (mainBuffer.getNumChannels(), bypassDelay.getNumChannels());
++    int pos = bypassDelayWritePos;
++    for (int ch = 0; ch < numChannels; ++ch)
++    {
++        auto* data = mainBuffer.getWritePointer (ch);
++        auto* line = bypassDelay.getWritePointer (ch);
++        pos = bypassDelayWritePos;
++        for (int i = 0; i < mainBuffer.getNumSamples(); ++i)
++        {
++            const float dry = data[i];
++            data[i] = line[pos];
++            line[pos] = dry;
++            pos = (pos + 1) % length;
++        }
++    }
++    bypassDelayWritePos = pos;
+ }
+ 
+ void SattariAutoPitchAudioProcessor::releaseResources()
+@@ -341,7 +411,8 @@ void SattariAutoPitchAudioProcessor::releaseResources()
+ #endif
+ 
+ #if SATTARI_AUTOPITCH_HAS_SIGNALSMITH
+-    ssStretch.reset();
++    if (ssConfigured)
++        ssStretch.reset();
+     ssOutput.setSize (0, 0);
+     ssInputPtrs.clear();
+     ssOutputPtrs.clear();
+@@ -1319,8 +1390,10 @@ float SattariAutoPitchAudioProcessor::styleCorrectionStrength() const
+ {
+     const auto style = currentStyleChoice();
+     const float amount = apvts.getRawParameterValue ("amount")->load();
++    // Natural stays gentle at low/mid Amount but reaches full correction at 100%
++    // (it used to be capped at 52%, so Amount 100% still left half the error).
+     if (style == "Natural")
+-        return amount * 0.52f;
++        return amount * (0.52f + 0.48f * amount);
+     if (style == "Classic")
+         return amount * 0.76f;
+     if (style == "Modern Rap")
+@@ -1356,7 +1429,12 @@ double SattariAutoPitchAudioProcessor::pitchScaleForFrame (const PitchFrame& fra
+     if (! frame.voiced || apvts.getRawParameterValue ("enableCorrection")->load() < 0.5f)
+         return 1.0;
+ 
+-    const bool classic = apvts.getRawParameterValue ("classicMode")->load() > 0.5f;
++    const float amount = apvts.getRawParameterValue ("amount")->load();
++    if (amount <= 0.0001f)
++        return 1.0;
++
++    const bool classic = (apvts.getRawParameterValue ("classicMode")->load() > 0.5f
++                       || currentStyleChoice() == "Classic");
+ 
+     // Do No Harm gating is bypassed in Classic Mode (the hard sound corrects
+     // everything, including low-confidence frames - that grit is the point).
+@@ -1404,6 +1482,8 @@ void SattariAutoPitchAudioProcessor::processBlock (juce::AudioBuffer<float>& buf
+     if (numSamples <= 0)
+         return;
+ 
++    applyLowLatencyChange();
++
+     // Bus-aware: main input/output is bus 0, sidechain (optional) is bus 1.
+     // The monophonic vocal pitch tracker only sees the main input; the sidechain
+     // is read-only and feeds the polyphonic-AutoKey chroma analyser.
+@@ -1414,6 +1494,7 @@ void SattariAutoPitchAudioProcessor::processBlock (juce::AudioBuffer<float>& buf
+ 
+     const bool autoKeyOn = apvts.getRawParameterValue ("autoKey")->load() > 0.5f;
+     const bool useKeyMap = apvts.getRawParameterValue ("useKeyMap")->load() > 0.5f;
++    const bool correctionEnabled = apvts.getRawParameterValue ("enableCorrection")->load() > 0.5f;
+ 
+     // Key Map: when on and the host gives us a playhead position, the live
+     // correction key follows the offline-scanned map. This is how a single
+@@ -1505,15 +1586,19 @@ void SattariAutoPitchAudioProcessor::processBlock (juce::AudioBuffer<float>& buf
+     // downstream in pitchScaleForFrame -> we apply the override only when the
+     // user has correction enabled. polyAnalyseAndComputeScale() is the new
+     // override; pitchScaleForFrame stays untouched for v1 (monophonic) path.
+-    const double targetPitchScale = polyOn ? polyAnalyseAndComputeScale()
+-                                            : pitchScaleForFrame (lastPitchFrame);
++    const double targetPitchScale = correctionEnabled
++        ? (polyOn ? polyAnalyseAndComputeScale() : pitchScaleForFrame (lastPitchFrame))
++        : 1.0;
+ 
+     // --- Note-transition retune modeling -------------------------------------
+     // Detect a target-note change. On a change, spike transitionBoost so the
+     // engine retunes FAST to catch the new note, then decay so the sustain
+     // retune is SLOW (letting vibrato / natural drift survive). This per-note
+     // speed shaping is the core of a natural Auto-Tune "feel".
+-    const bool classicMode = apvts.getRawParameterValue ("classicMode")->load() > 0.5f;
++    const bool classicMode = correctionEnabled
++                          && apvts.getRawParameterValue ("amount")->load() > 0.0001f
++                          && (apvts.getRawParameterValue ("classicMode")->load() > 0.5f
++                              || currentStyleChoice() == "Classic");
+     const double transition = (double) apvts.getRawParameterValue ("transition")->load();
+ 
+     const double blockTimeSec = (double) numSamples / currentSampleRate;
+@@ -1585,16 +1670,17 @@ void SattariAutoPitchAudioProcessor::processBlock (juce::AudioBuffer<float>& buf
+     const float outputDb = apvts.getRawParameterValue ("outputGain")->load();
+     const float linearGain = juce::Decibels::decibelsToGain (inputDb + outputDb);
+ 
+-#if SATTARI_AUTOPITCH_HAS_ELASTIQUE
+-    processWithElastique (mainBuffer, smoothedPitchScale, linearGain);
+-#elif SATTARI_AUTOPITCH_HAS_SIGNALSMITH
+-    processWithSignalsmith (mainBuffer, smoothedPitchScale, linearGain);
++#if SATTARI_AUTOPITCH_HAS_SIGNALSMITH
++    processWithSignalsmith (mainBuffer, alignedPitchScale (smoothedPitchScale, numSamples), linearGain);
+ #elif SATTARI_AUTOPITCH_HAS_RUBBERBAND
+     processWithRubberBand (mainBuffer, smoothedPitchScale, linearGain);
++#elif SATTARI_AUTOPITCH_HAS_ELASTIQUE
++    processWithElastique (mainBuffer, smoothedPitchScale, linearGain);
+ #else
+     processFallbackFormantGuide (mainBuffer, smoothedPitchScale, linearGain);
+ #endif
+-    applyModeCharacter (mainBuffer);
++    if (correctionEnabled && apvts.getRawParameterValue ("amount")->load() > 0.0001f)
++        applyModeCharacter (mainBuffer);
+ }
+ 
+ void SattariAutoPitchAudioProcessor::processWithElastique (juce::AudioBuffer<float>& buffer, double pitchScale, float linearGain)
+@@ -1646,6 +1732,33 @@ void SattariAutoPitchAudioProcessor::processWithElastique (juce::AudioBuffer<flo
+ #endif
+ }
+ 
++double SattariAutoPitchAudioProcessor::alignedPitchScale (double currentScale, int numSamples)
++{
++#if SATTARI_AUTOPITCH_HAS_SIGNALSMITH
++    const int size = (int) ssScaleHistory.size();
++    if (size == 0 || ssScaleDelaySamples <= 0)
++        return currentScale;
++
++    // Scale that was measured for the audio at the centre of this block,
++    // ssScaleDelaySamples ago. Blocks longer than twice the delay fall back to
++    // the newest value.
++    const int lookBack = ssScaleDelaySamples - numSamples / 2;
++    const double aligned = lookBack > 0 && lookBack < size
++        ? ssScaleHistory[(size_t) ((ssScaleWritePos - lookBack + size) % size)]
++        : currentScale;
++
++    for (int i = 0; i < juce::jmin (numSamples, size); ++i)
++    {
++        ssScaleHistory[(size_t) ssScaleWritePos] = currentScale;
++        ssScaleWritePos = (ssScaleWritePos + 1) % size;
++    }
++    return aligned;
++#else
++    juce::ignoreUnused (numSamples);
++    return currentScale;
++#endif
++}
++
+ void SattariAutoPitchAudioProcessor::processWithSignalsmith (juce::AudioBuffer<float>& buffer, double pitchScale, float linearGain)
+ {
+ #if SATTARI_AUTOPITCH_HAS_SIGNALSMITH
+@@ -1669,9 +1782,11 @@ void SattariAutoPitchAudioProcessor::processWithSignalsmith (juce::AudioBuffer<f
+     else
+         ssStretch.setFormantFactor (1.0f, /*compensatePitch=*/false);
+ 
+-    // Ensure output scratch buffer covers this block size.
+-    if (ssOutput.getNumSamples() < numSamples || ssOutput.getNumChannels() < numChannels)
+-        ssOutput.setSize (numChannels, numSamples, false, true, true);
++    // Keep the logical scratch size identical to the current host block. When a
++    // DAW supplies smaller blocks than the prepared max size, copying a larger
++    // scratch buffer back through a JUCE bus-buffer view can leave the host
++    // buffer unchanged.
++    ssOutput.setSize (numChannels, numSamples, false, false, true);
+     ssOutput.clear();
+ 
+     // Build channel pointer arrays for the interleave-free signalsmith API.
+@@ -1686,7 +1801,8 @@ void SattariAutoPitchAudioProcessor::processWithSignalsmith (juce::AudioBuffer<f
+     // signalsmith-stretch is a streaming processor: N in → N out (with registered latency).
+     ssStretch.process (ssInputPtrs, numSamples, ssOutputPtrs, numSamples);
+ 
+-    buffer.makeCopyOf (ssOutput, /*avoidReallocating=*/true);
++    for (int ch = 0; ch < numChannels; ++ch)
++        buffer.copyFrom (ch, 0, ssOutput, ch, 0, numSamples);
+     buffer.applyGain (linearGain);
+ #else
+     juce::ignoreUnused (buffer, pitchScale, linearGain);
+@@ -1870,8 +1986,12 @@ juce::String SattariAutoPitchAudioProcessor::getLiveStatusSummary() const
+     const auto scale = scaleChoices[juce::jlimit (0, scaleChoices.size() - 1, juce::roundToInt (apvts.getRawParameterValue ("scale")->load()))];
+     const bool autoKeyOn = apvts.getRawParameterValue ("autoKey")->load() > 0.5f;
+     const juce::String engine =
+-#if SATTARI_AUTOPITCH_HAS_RUBBERBAND
++#if SATTARI_AUTOPITCH_HAS_SIGNALSMITH
++        "Signalsmith realtime";
++#elif SATTARI_AUTOPITCH_HAS_RUBBERBAND
+         "Rubber Band realtime";
++#elif SATTARI_AUTOPITCH_HAS_ELASTIQUE
++        "Elastique placeholder";
+ #else
+         "fallback guide";
+ #endif
+diff --git a/plugins/auto-pitch/src/PluginProcessor.h b/plugins/auto-pitch/src/PluginProcessor.h
+index 189c91f36c5ea2a5cc0db20b6da3a5b795e654f0..311bdb69a08ac4abfd6e485936739e78a4e820ed 100644
+--- a/plugins/auto-pitch/src/PluginProcessor.h
++++ b/plugins/auto-pitch/src/PluginProcessor.h
+@@ -199,6 +199,7 @@ public:
+ 
+     bool isBusesLayoutSupported (const BusesLayout& layouts) const override;
+     void processBlock (juce::AudioBuffer<float>&, juce::MidiBuffer&) override;
++    void processBlockBypassed (juce::AudioBuffer<float>&, juce::MidiBuffer&) override;
+ 
+     juce::AudioProcessorEditor* createEditor() override;
+     bool hasEditor() const override { return true; }
+@@ -437,11 +438,31 @@ private:
+     // signalsmith-stretch — MIT, secondary low-latency engine (active when
+     // elastique SDK is absent). Single instance manages all channels.
+     signalsmith::stretch::SignalsmithStretch<float> ssStretch;
++    // reset() on an unconfigured stretch dereferences null, and hosts may call
++    // releaseResources() without a prior prepareToPlay() (scan, remove, teardown).
++    bool ssConfigured = false;
++    bool ssConfiguredLowLatency = false;
++    // Pitch analysis runs on the newest input, but the stretch transposes audio
++    // from inputLatency() samples ago. Correction is delayed to match so it
++    // lands on the audio it was measured from.
++    std::vector<double> ssScaleHistory;
++    int ssScaleWritePos = 0;
++    int ssScaleDelaySamples = 0;
+     juce::AudioBuffer<float> ssOutput;
+     std::vector<const float*> ssInputPtrs;
+     std::vector<float*>       ssOutputPtrs;
+ #endif
+ 
++    double alignedPitchScale (double currentScale, int numSamples);
++    bool lowLatencyRequested() const;
++    void configureSignalsmith (bool lowLat);
++    void applyLowLatencyChange();
++    void resizeBypassDelay();
++
++    // Dry signal delayed by the reported latency, so host bypass stays in time.
++    juce::AudioBuffer<float> bypassDelay;
++    int bypassDelayWritePos = 0;
++
+ #if SATTARI_AUTOPITCH_HAS_RUBBERBAND
+     std::vector<std::unique_ptr<RubberBand::RubberBandStretcher>> rubberBand;
+     juce::AudioBuffer<float> rubberBandOutput;
+diff --git a/plugins/auto-pitch/tests/auto_pitch_core_contract.cpp b/plugins/auto-pitch/tests/auto_pitch_core_contract.cpp
+index ef37adafa6db394e76ee24f9e8593f29a04f69bc..1bd88fd0b53da9ce8647ecb2630b8365a79de0ee 100644
+--- a/plugins/auto-pitch/tests/auto_pitch_core_contract.cpp
++++ b/plugins/auto-pitch/tests/auto_pitch_core_contract.cpp
+@@ -2,6 +2,7 @@
+ 
+ #include <cmath>
+ #include <iostream>
++#include <vector>
+ 
+ namespace
+ {
+@@ -30,10 +31,273 @@ double rmsDifference (const juce::AudioBuffer<float>& a, const juce::AudioBuffer
+ 
+     return std::sqrt (sum / (double) juce::jmax (1, count));
+ }
++
++double midiToHz (int midi)
++{
++    return 440.0 * std::pow (2.0, ((double) midi - 69.0) / 12.0);
++}
++
++double hzToMidi (double hz)
++{
++    return 69.0 + 12.0 * std::log2 (hz / 440.0);
++}
++
++double estimateFrequencyFromPositiveCrossings (const std::vector<float>& samples, double sampleRate)
++{
++    std::vector<double> crossings;
++    crossings.reserve (samples.size() / 80);
++
++    for (size_t i = 1; i < samples.size(); ++i)
++    {
++        const double prev = samples[i - 1];
++        const double cur = samples[i];
++        if (prev < 0.0 && cur >= 0.0)
++        {
++            const double denom = cur - prev;
++            const double frac = std::abs (denom) > 1.0e-12 ? -prev / denom : 0.0;
++            crossings.push_back ((double) (i - 1) + frac);
++        }
++    }
++
++    if (crossings.size() < 2)
++        return 0.0;
++
++    double periodSum = 0.0;
++    for (size_t i = 1; i < crossings.size(); ++i)
++        periodSum += crossings[i] - crossings[i - 1];
++
++    const double period = periodSum / (double) (crossings.size() - 1);
++    return period > 0.0 ? sampleRate / period : 0.0;
++}
++
++void feedAutoKeyNote (SattariAutoPitchAudioProcessor& processor,
++                      int midi,
++                      int blocks,
++                      double& phase)
++{
++    constexpr int blockSize = 512;
++    constexpr double sampleRate = 48000.0;
++    const double frequency = midiToHz (midi);
++
++    for (int block = 0; block < blocks; ++block)
++    {
++        juce::AudioBuffer<float> buffer (2, blockSize);
++        for (int i = 0; i < blockSize; ++i)
++        {
++            const float sample = 0.22f * std::sin ((float) phase);
++            phase += juce::MathConstants<double>::twoPi * frequency / sampleRate;
++            for (int channel = 0; channel < buffer.getNumChannels(); ++channel)
++                buffer.setSample (channel, i, sample);
++        }
++
++        juce::MidiBuffer midiBuffer;
++        processor.processBlock (buffer, midiBuffer);
++    }
++}
++
++bool runAutoKeyFixture (const juce::String& label,
++                        const std::vector<int>& notes,
++                        int scale,
++                        const juce::String& expectedStatusFragment)
++{
++    SattariAutoPitchAudioProcessor processor;
++    processor.prepareToPlay (48000.0, 512);
++    auto& apvts = processor.parameters();
++    setParameter (apvts, "autoKey", 1.0f);
++    setParameter (apvts, "scale", (float) scale);
++    setParameter (apvts, "enableCorrection", 0.0f);
++    setParameter (apvts, "doNoHarm", 0.0f);
++    setParameter (apvts, "vocalRange", 0.0f);
++
++    double phase = 0.0;
++    for (int pass = 0; pass < 5; ++pass)
++        for (int note : notes)
++            feedAutoKeyNote (processor, note, 18, phase);
++
++    const auto status = processor.getLiveStatusSummary();
++    if (! status.contains (expectedStatusFragment))
++    {
++        std::cerr << "AutoKey fixture failed for " << label << ": expected status to contain '"
++                  << expectedStatusFragment << "', got: " << status << "\n";
++        return false;
++    }
++
++    return true;
++}
++
++double renderAmountDeltaAtBlockSize (int blockSize)
++{
++    constexpr int blocks = 90;
++    constexpr double sampleRate = 48000.0;
++    const double detunedFrequency = 440.0 * std::pow (2.0, 45.0 / 1200.0);
++
++    auto configureProcessor = [blockSize] (SattariAutoPitchAudioProcessor& processor, float amount)
++    {
++        processor.prepareToPlay (sampleRate, blockSize);
++        auto& apvts = processor.parameters();
++        setParameter (apvts, "keyRoot", 0.0f); // C
++        setParameter (apvts, "scale", 2.0f); // chromatic
++        setParameter (apvts, "style", 2.0f); // Modern Rap
++        setParameter (apvts, "amount", amount);
++        setParameter (apvts, "speed", 1.0f);
++        setParameter (apvts, "enableCorrection", 1.0f);
++        setParameter (apvts, "doNoHarm", 0.0f);
++        setParameter (apvts, "formantPreserve", 1.0f);
++    };
++
++    SattariAutoPitchAudioProcessor zeroProcessor;
++    SattariAutoPitchAudioProcessor strongProcessor;
++    configureProcessor (zeroProcessor, 0.0f);
++    configureProcessor (strongProcessor, 1.0f);
++
++    double phase = 0.0;
++    double diffEnergy = 0.0;
++    for (int block = 0; block < blocks; ++block)
++    {
++        juce::AudioBuffer<float> input (2, blockSize);
++        for (int i = 0; i < blockSize; ++i)
++        {
++            const float sample = 0.18f * std::sin ((float) phase);
++            phase += juce::MathConstants<double>::twoPi * detunedFrequency / sampleRate;
++            for (int channel = 0; channel < input.getNumChannels(); ++channel)
++                input.setSample (channel, i, sample);
++        }
++
++        juce::AudioBuffer<float> amountZero;
++        amountZero.makeCopyOf (input);
++        juce::AudioBuffer<float> strong;
++        strong.makeCopyOf (input);
++
++        juce::MidiBuffer midi;
++        zeroProcessor.processBlock (amountZero, midi);
++        midi.clear();
++        strongProcessor.processBlock (strong, midi);
++
++        diffEnergy += rmsDifference (amountZero, strong);
++    }
++
++    return diffEnergy;
++}
++
++double renderCorrectionOffBaselineDelta (int blockSize)
++{
++    constexpr int blocks = 90;
++    constexpr double sampleRate = 48000.0;
++    const double detunedFrequency = 440.0 * std::pow (2.0, 45.0 / 1200.0);
++
++    auto configureProcessor = [blockSize] (SattariAutoPitchAudioProcessor& processor,
++                                           bool enableCorrection,
++                                           float amount)
++    {
++        processor.prepareToPlay (sampleRate, blockSize);
++        auto& apvts = processor.parameters();
++        setParameter (apvts, "keyRoot", 0.0f); // C
++        setParameter (apvts, "scale", 2.0f); // chromatic
++        setParameter (apvts, "style", 1.0f); // Classic
++        setParameter (apvts, "amount", amount);
++        setParameter (apvts, "speed", 1.0f);
++        setParameter (apvts, "enableCorrection", enableCorrection ? 1.0f : 0.0f);
++        setParameter (apvts, "doNoHarm", 0.0f);
++        setParameter (apvts, "formantPreserve", 1.0f);
++    };
++
++    SattariAutoPitchAudioProcessor offProcessor;
++    SattariAutoPitchAudioProcessor zeroProcessor;
++    configureProcessor (offProcessor, false, 1.0f);
++    configureProcessor (zeroProcessor, true, 0.0f);
++
++    double phase = 0.0;
++    double diffEnergy = 0.0;
++    for (int block = 0; block < blocks; ++block)
++    {
++        juce::AudioBuffer<float> input (2, blockSize);
++        for (int i = 0; i < blockSize; ++i)
++        {
++            const float sample = 0.18f * std::sin ((float) phase);
++            phase += juce::MathConstants<double>::twoPi * detunedFrequency / sampleRate;
++            for (int channel = 0; channel < input.getNumChannels(); ++channel)
++                input.setSample (channel, i, sample);
++        }
++
++        juce::AudioBuffer<float> off;
++        off.makeCopyOf (input);
++        juce::AudioBuffer<float> zero;
++        zero.makeCopyOf (input);
++
++        juce::MidiBuffer midi;
++        offProcessor.processBlock (off, midi);
++        midi.clear();
++        zeroProcessor.processBlock (zero, midi);
++
++        diffEnergy += rmsDifference (off, zero);
++    }
++
++    return diffEnergy;
++}
++
++double renderClassicStrongB3Plus45ErrorCents (bool lowLatency)
++{
++    constexpr int blockSize = 512;
++    constexpr int blocks = 170;
++    constexpr double sampleRate = 48000.0;
++    constexpr int targetMidi = 59; // B3
++    const double inputFrequency = midiToHz (targetMidi) * std::pow (2.0, 45.0 / 1200.0);
++
++    SattariAutoPitchAudioProcessor processor;
++    auto& apvts = processor.parameters();
++    setParameter (apvts, "lowLatency", lowLatency ? 1.0f : 0.0f);
++    setParameter (apvts, "keyRoot", 0.0f); // C
++    setParameter (apvts, "scale", 2.0f); // chromatic
++    setParameter (apvts, "style", 1.0f); // Classic style must hard-correct.
++    setParameter (apvts, "amount", 1.0f);
++    setParameter (apvts, "speed", 1.0f);
++    setParameter (apvts, "enableCorrection", 1.0f);
++    setParameter (apvts, "doNoHarm", 0.0f);
++    setParameter (apvts, "formantPreserve", 1.0f);
++    setParameter (apvts, "classicMode", 0.0f); // Regression: style alone must be enough.
++    processor.prepareToPlay (sampleRate, blockSize);
++
++    std::vector<float> steadyOutput;
++    steadyOutput.reserve (8192);
++
++    double phase = 0.0;
++    for (int block = 0; block < blocks; ++block)
++    {
++        juce::AudioBuffer<float> buffer (2, blockSize);
++        for (int i = 0; i < blockSize; ++i)
++        {
++            const float sample = 0.18f * std::sin ((float) phase);
++            phase += juce::MathConstants<double>::twoPi * inputFrequency / sampleRate;
++            for (int channel = 0; channel < buffer.getNumChannels(); ++channel)
++                buffer.setSample (channel, i, sample);
++        }
++
++        juce::MidiBuffer midi;
++        processor.processBlock (buffer, midi);
++
++        if (block >= blocks - 16)
++            for (int i = 0; i < blockSize; ++i)
++                steadyOutput.push_back (buffer.getSample (0, i));
++    }
++
++    const double outputFrequency = estimateFrequencyFromPositiveCrossings (steadyOutput, sampleRate);
++    if (outputFrequency <= 0.0)
++        return 999.0;
++
++    return std::abs ((hzToMidi (outputFrequency) - (double) targetMidi) * 100.0);
++}
+ }
+ 
+ int main()
+ {
++    // Hosts may tear an instance down without ever preparing it (plugin scan,
++    // insert-then-remove). This used to segfault inside releaseResources().
++    for (int i = 0; i < 8; ++i)
++    {
++        SattariAutoPitchAudioProcessor unprepared;
++        unprepared.releaseResources();
++    }
++
+     SattariAutoPitchAudioProcessor processor;
+     processor.prepareToPlay (48000.0, 512);
+ 
+@@ -73,8 +337,10 @@ int main()
+ 
+     const auto status = processor.getLiveStatusSummary();
+     // Assert on what proves the engine ran, not on marketing copy: the status
+-    // must name either the real Rubber Band engine or the fallback guide.
+-    if (! (status.containsIgnoreCase ("Rubber Band") || status.containsIgnoreCase ("fallback")))
++    // must name an actual render engine.
++    if (! (status.containsIgnoreCase ("Signalsmith")
++           || status.containsIgnoreCase ("Rubber Band")
++           || status.containsIgnoreCase ("fallback")))
+     {
+         std::cerr << "unexpected status: " << status << "\n";
+         return 1;
+@@ -195,11 +461,55 @@ int main()
+         }
+     }
+ 
++    const double block256Delta = renderAmountDeltaAtBlockSize (256);
++    if (block256Delta <= 0.01)
++    {
++        std::cerr << "256-sample render path ignored correction amount; delta="
++                  << block256Delta << "\n";
++        return 1;
++    }
++
++    const double correctionOffDelta = renderCorrectionOffBaselineDelta (256);
++    if (correctionOffDelta > 0.0001)
++    {
++        std::cerr << "Correction Off did not match amount-zero neutral baseline; delta="
++                  << correctionOffDelta << "\n";
++        return 1;
++    }
++
++    const double classicB3ErrorCents = renderClassicStrongB3Plus45ErrorCents (false);
++    if (classicB3ErrorCents > 25.0)
++    {
++        std::cerr << "Classic strong correction missed B3 +45c steady target; absErrorCents="
++                  << classicB3ErrorCents << "\n";
++        return 1;
++    }
++
++    const double liveClassicB3ErrorCents = renderClassicStrongB3Plus45ErrorCents (true);
++    if (liveClassicB3ErrorCents > 25.0)
++    {
++        std::cerr << "Live low-latency Classic strong correction missed B3 +45c steady target; absErrorCents="
++                  << liveClassicB3ErrorCents << "\n";
++        return 1;
++    }
++
++    if (! runAutoKeyFixture ("C major", { 60, 64, 67, 72, 67, 64, 60, 62, 65, 67 },
++                             0, "AutoKey C major"))
++        return 1;
++    if (! runAutoKeyFixture ("A minor", { 57, 60, 64, 69, 64, 60, 57, 59, 62, 64 },
++                             1, "AutoKey A minor"))
++        return 1;
++
+     std::cout << "Auto Pitch core contract ok\n";
+     std::cout << "  status=" << status << "\n";
+     std::cout << "  keyTab=" << keyTabSummary << "\n";
+     std::cout << "  changedEnergy=" << changedEnergy << "\n";
++    std::cout << "  block256AmountDelta=" << block256Delta << "\n";
++    std::cout << "  correctionOffBaselineDelta=" << correctionOffDelta << "\n";
++    std::cout << "  classicB3Plus45AbsErrorCents=" << classicB3ErrorCents << "\n";
++    std::cout << "  liveLowLatencyClassicB3Plus45AbsErrorCents=" << liveClassicB3ErrorCents << "\n";
+     std::cout << "  modes=Natural, Classic, Modern Rap, Robot, Big Harmony\n";
++    std::cout << "  autoKeyFixtures=C major, A minor\n";
+ #if SATTARI_AUTOPITCH_HAS_ELASTIQUE
+     std::cout << "  engine=elastique\n";
+ #elif SATTARI_AUTOPITCH_HAS_SIGNALSMITH
+diff --git a/plugins/auto-pitch/tools/autopitch_bench.cpp b/plugins/auto-pitch/tools/autopitch_bench.cpp
+index c64ed1854b9ec2801a8eabaa3c72361a2ba0a36b..88aa45f40bb620eee9a765d94d412b840549a44e 100644
+--- a/plugins/auto-pitch/tools/autopitch_bench.cpp
++++ b/plugins/auto-pitch/tools/autopitch_bench.cpp
+@@ -4,9 +4,12 @@
+ //   autopitch_bench input.wav --output out.wav --trace trace.json [options]
+ //   --key C|C#|...|B         root note (default: A)
+ //   --scale major|minor|chromatic (default: minor)
++//   --style Natural|Classic|Modern Rap|Robot|Big Harmony|0..4 (default: Classic)
+ //   --amount 0..1            correction amount (default: 0.82)
+ //   --speed  0..1            retune speed (default: 0.70)
+ //   --block  N               block size in samples (default: 512)
++//   --auto-key               enable AutoKey Follow while rendering
++//   --disable-correction     set Enable Correction false for baseline renders
+ //   --intent-mode production|v2_shadow|v2_active  (default: production)
+ //   --smoke                  finite+non-silent check only, no trace required
+ //
+@@ -42,22 +45,29 @@ struct Args
+     juce::File traceJson;
+     juce::String key   = "A";
+     juce::String scale = "minor";
++    juce::String style = "Classic";
+     float  amount      = 0.82f;
+     float  speed       = 0.70f;
+     int    block       = 512;
+     IntentMode intentMode = IntentMode::PRODUCTION;
+     bool   smoke       = false;
++    bool   autoKey     = false;
+     bool   lowLatency  = false;   // --low-latency: sets lowLatency param → OptionWindowShort
++    bool   enableCorrection = true;
+     bool   valid       = false;
+ };
+ 
+-static void setParam (juce::AudioProcessorValueTreeState& apvts,
++static bool setParam (juce::AudioProcessorValueTreeState& apvts,
+                       const juce::String& id, float value)
+ {
+     if (auto* p = apvts.getParameter (id))
++    {
+         p->setValueNotifyingHost (p->convertTo0to1 (value));
+-    else
+-        std::fprintf (stderr, "WARNING: unknown parameter '%s'\n", id.toRawUTF8());
++        return true;
++    }
++
++    std::fprintf (stderr, "FAIL: unknown parameter '%s'\n", id.toRawUTF8());
++    return false;
+ }
+ 
+ static const char* reasonName (IntentReasonCode c)
+@@ -82,6 +92,36 @@ static int rootStringToIndex (const juce::String& root)
+     return idx >= 0 ? idx : 9; // default A
+ }
+ 
++static int styleStringToIndex (const juce::String& style)
++{
++    const juce::StringArray names { "Natural", "Classic", "Modern Rap", "Robot", "Big Harmony" };
++    if (style.containsOnly ("0123456789"))
++        return juce::jlimit (0, names.size() - 1, style.getIntValue());
++
++    const auto normalized = style.trim().toLowerCase().replace ("_", "-").replace (" ", "-");
++    for (int i = 0; i < names.size(); ++i)
++    {
++        const auto choice = names[i].toLowerCase().replace (" ", "-");
++        if (choice == normalized)
++            return i;
++    }
++
++    if (normalized == "modern" || normalized == "hard")
++        return 2;
++    if (normalized == "natural")
++        return 0;
++    if (normalized == "classic")
++        return 1;
++
++    return 1; // default Classic
++}
++
++static juce::String styleIndexToString (int style)
++{
++    const juce::StringArray names { "Natural", "Classic", "Modern Rap", "Robot", "Big Harmony" };
++    return names[juce::jlimit (0, names.size() - 1, style)];
++}
++
+ static Args parseArgs (int argc, char** argv)
+ {
+     Args a;
+@@ -91,9 +131,12 @@ static Args parseArgs (int argc, char** argv)
+             "usage: autopitch_bench input.wav --output out.wav --trace trace.json [options]\n"
+             "  --key C|C#|...|B     root note (default: A)\n"
+             "  --scale major|minor|chromatic (default: minor)\n"
++            "  --style Natural|Classic|Modern Rap|Robot|Big Harmony|0..4 (default: Classic)\n"
+             "  --amount 0..1        correction amount (default: 0.82)\n"
+             "  --speed  0..1        retune speed (default: 0.70)\n"
+             "  --block N            block size in samples (default: 512)\n"
++            "  --auto-key           enable AutoKey Follow while rendering\n"
++            "  --disable-correction set Enable Correction false for baseline renders\n"
+             "  --intent-mode production|v2_shadow|v2_active  (default: production)\n"
+             "  --smoke              finite+non-silent only, no --trace required\n");
+         return a;
+@@ -109,6 +152,7 @@ static Args parseArgs (int argc, char** argv)
+         else if (arg == "--trace" && hasNext) { a.traceJson  = juce::File (juce::String (argv[++i])); }
+         else if (arg == "--key"   && hasNext) { a.key        = juce::String (argv[++i]); }
+         else if (arg == "--scale" && hasNext) { a.scale      = juce::String (argv[++i]); }
++        else if (arg == "--style" && hasNext) { a.style      = juce::String (argv[++i]); }
+         else if (arg == "--amount"&& hasNext) { a.amount     = std::stof (argv[++i]); }
+         else if (arg == "--speed" && hasNext) { a.speed      = std::stof (argv[++i]); }
+         else if (arg == "--block" && hasNext) { a.block      = std::stoi (argv[++i]); }
+@@ -120,7 +164,9 @@ static Args parseArgs (int argc, char** argv)
+             else                       a.intentMode = IntentMode::PRODUCTION;
+         }
+         else if (arg == "--smoke")       { a.smoke = true; }
++        else if (arg == "--auto-key")    { a.autoKey = true; }
+         else if (arg == "--low-latency") { a.lowLatency = true; }
++        else if (arg == "--disable-correction") { a.enableCorrection = false; }
+     }
+ 
+     if (! a.inputWav.existsAsFile())
+@@ -171,20 +217,26 @@ int main (int argc, char** argv)
+     SattariAutoPitchAudioProcessor proc;
+     auto& apvts = proc.parameters();
+ 
+-    setParam (apvts, "keyRoot",          (float) rootStringToIndex (a.key));
+-    setParam (apvts, "scale",            a.scale == "minor" ? 1.0f
+-                                       : a.scale == "chromatic" ? 2.0f : 0.0f);
+-    setParam (apvts, "amount",           a.amount);
+-    setParam (apvts, "speed",            a.speed);
+-    setParam (apvts, "enableCorrection", 1.0f);
+-    setParam (apvts, "doNoHarm",         0.0f);
+-    setParam (apvts, "formantPreserve",  1.0f);
+-    setParam (apvts, "classicMode",      0.0f);
+-    setParam (apvts, "flexTune",         0.0f);
+-    setParam (apvts, "transition",       0.5f);
+-    setParam (apvts, "throat",           1.0f);
+-    setParam (apvts, "humanize",         0.0f);
+-    setParam (apvts, "lowLatency",       a.lowLatency ? 1.0f : 0.0f);
++    const int styleIndex = styleStringToIndex (a.style);
++    bool paramsOk = true;
++    paramsOk &= setParam (apvts, "keyRoot",          (float) rootStringToIndex (a.key));
++    paramsOk &= setParam (apvts, "scale",            a.scale == "minor" ? 1.0f
++                                                  : a.scale == "chromatic" ? 2.0f : 0.0f);
++    paramsOk &= setParam (apvts, "style",            (float) styleIndex);
++    paramsOk &= setParam (apvts, "autoKey",          a.autoKey ? 1.0f : 0.0f);
++    paramsOk &= setParam (apvts, "amount",           a.amount);
++    paramsOk &= setParam (apvts, "speed",            a.speed);
++    paramsOk &= setParam (apvts, "enableCorrection", a.enableCorrection ? 1.0f : 0.0f);
++    paramsOk &= setParam (apvts, "doNoHarm",         0.0f);
++    paramsOk &= setParam (apvts, "formantPreserve",  1.0f);
++    paramsOk &= setParam (apvts, "classicMode",      0.0f);
++    paramsOk &= setParam (apvts, "flexTune",         0.0f);
++    paramsOk &= setParam (apvts, "transition",       0.5f);
++    paramsOk &= setParam (apvts, "throat",           1.0f);
++    paramsOk &= setParam (apvts, "humanize",         0.0f);
++    paramsOk &= setParam (apvts, "lowLatency",       a.lowLatency ? 1.0f : 0.0f);
++    if (! paramsOk)
++        return 1;
+ 
+     proc.setIntentMode (a.intentMode);
+     proc.prepareToPlay (sr, a.block);
+@@ -278,11 +330,17 @@ int main (int argc, char** argv)
+     rootObj->setProperty ("inputFile",  a.inputWav.getFullPathName());
+     rootObj->setProperty ("key",        a.key);
+     rootObj->setProperty ("scale",      a.scale);
++    rootObj->setProperty ("style",      styleIndexToString (styleIndex));
++    rootObj->setProperty ("styleIndex", styleIndex);
++    rootObj->setProperty ("autoKey",    a.autoKey);
++    rootObj->setProperty ("enableCorrection", a.enableCorrection);
+     rootObj->setProperty ("amount",     (double) a.amount);
+     rootObj->setProperty ("speed",      (double) a.speed);
+     rootObj->setProperty ("intentMode", (int) a.intentMode);
+     rootObj->setProperty ("sampleRate", sr);
+     rootObj->setProperty ("blockSize",  a.block);
++    rootObj->setProperty ("processorStatus", proc.getLiveStatusSummary());
++    rootObj->setProperty ("reportedLatencySamples", proc.getLatencySamples());
+ 
+     const juce::String traceStr = juce::JSON::toString (juce::var (rootObj.get()), false);
+     a.traceJson.getParentDirectory().createDirectory();
+diff --git a/plugins/sattari-arp/CMakeLists.txt b/plugins/sattari-arp/CMakeLists.txt
+index 690079a41d4f8d0fdda8b96c2e5473ed8a264a76..f8c227101d1f4e962c3cfaef9d22f008b642f898 100644
+--- a/plugins/sattari-arp/CMakeLists.txt
++++ b/plugins/sattari-arp/CMakeLists.txt
+@@ -17,6 +17,10 @@ sattari_add_plugin(
+     NEEDS_MIDI_INPUT
+     NEEDS_MIDI_OUTPUT
+     IS_MIDI_EFFECT
++    # Ableton only loads VST3s as effects (audio in) or instruments (MIDI in), so
++    # the VST3 registers as an instrument with a silent stereo output; its MIDI is
++    # routed to a synth track from there. The AU stays a MIDI FX (aumi) for Logic.
++    VST3_CATEGORIES Instrument Generator
+     EDITOR_WANTS_KEYBOARD_FOCUS
+     SOURCES
+         src/PluginProcessor.cpp
+diff --git a/plugins/sattari-arp/src/PluginEditor.cpp b/plugins/sattari-arp/src/PluginEditor.cpp
+index b40eea6245f071f5afd19aae19e6cde7905d549e..d165176afedfbf3bfa0d447e68b8be0fefe56d38 100644
+--- a/plugins/sattari-arp/src/PluginEditor.cpp
++++ b/plugins/sattari-arp/src/PluginEditor.cpp
+@@ -57,8 +57,8 @@ SattariArpAudioProcessorEditor::SattariArpAudioProcessorEditor (SattariArpAudioP
+     scale.addItemList (juce::StringArray { "Off","Major","Minor","Penta Maj","Penta Min","Dorian","Mixolydian","Harm Minor" }, 1);
+     setupSlider (octaves);
+     setupSlider (ratchet);
+-    setupSlider (gate, "%");
+-    setupSlider (swing, "%");
++    setupSlider (gate);
++    setupSlider (swing);
+     setupSlider (fixedVelocity);
+     setupSlider (humanize);
+     setupSlider (transpose, " st");
+@@ -114,9 +114,6 @@ SattariArpAudioProcessorEditor::SattariArpAudioProcessorEditor (SattariArpAudioP
+     inputThruAttach = std::make_unique<ButtonAttachment> (params, "inputThru", inputThru);
+     hostSyncAttach = std::make_unique<ButtonAttachment> (params, "hostSync", hostSync);
+     followKeyAttach = std::make_unique<ButtonAttachment> (params, "followKey", followKey);
+-
+-    gate.textFromValueFunction = [] (double value) { return juce::String ((int) std::round (value * 100.0)) + "%"; };
+-    swing.textFromValueFunction = [] (double value) { return juce::String ((int) std::round (value * 100.0)) + "%"; };
+ }
+ 
+ SattariArpAudioProcessorEditor::~SattariArpAudioProcessorEditor()
+diff --git a/plugins/sattari-arp/src/PluginProcessor.cpp b/plugins/sattari-arp/src/PluginProcessor.cpp
+index b937cfaa7d85be7f87b2d422384691ecf37d311d..7ce6df2c9580a09d3ab243dbb649fa8eebbfdcfa 100644
+--- a/plugins/sattari-arp/src/PluginProcessor.cpp
++++ b/plugins/sattari-arp/src/PluginProcessor.cpp
+@@ -18,8 +18,17 @@ int clampVelocity (int velocity)
+ }
+ }
+ 
++// VST3 has no MIDI-effect type, so hosts like Ableton reject a VST3 without
++// audio buses. Give the VST3 a (silent) stereo output; other formats stay MIDI-only.
++juce::AudioProcessor::BusesProperties SattariArpAudioProcessor::makeBusesProperties()
++{
++    if (juce::PluginHostType::getPluginLoadedAs() == wrapperType_VST3)
++        return BusesProperties().withOutput ("Output", juce::AudioChannelSet::stereo(), true);
++    return {};
++}
++
+ SattariArpAudioProcessor::SattariArpAudioProcessor()
+-    : AudioProcessor (BusesProperties()),
++    : AudioProcessor (makeBusesProperties()),
+       apvts (*this, nullptr, "PARAMETERS", createParameterLayout())
+ {
+ }
+@@ -41,10 +50,15 @@ juce::AudioProcessorValueTreeState::ParameterLayout SattariArpAudioProcessor::cr
+     params.push_back (std::make_unique<juce::AudioParameterBool> ("followKey", "Follow Song Key", false));
+     params.push_back (std::make_unique<juce::AudioParameterChoice> ("scale", "Scale",
+         juce::StringArray { "Off", "Major", "Minor", "Penta Maj", "Penta Min", "Dorian", "Mixolydian", "Harm Minor" }, 0));
++    // Gate/Swing are stored as 0-1 fractions but shown as percentages, both in
++    // the editor and in host automation lanes.
++    const auto percent = juce::AudioParameterFloatAttributes()
++        .withStringFromValueFunction ([] (float v, int) { return juce::String (juce::roundToInt (v * 100.0f)) + "%"; })
++        .withValueFromStringFunction ([] (const juce::String& t) { return t.retainCharacters ("0123456789.-").getFloatValue() / 100.0f; });
+     params.push_back (std::make_unique<juce::AudioParameterFloat> ("gate", "Gate",
+-        juce::NormalisableRange<float> (0.10f, 1.00f, 0.01f), 0.72f));
++        juce::NormalisableRange<float> (0.10f, 1.00f, 0.01f), 0.72f, percent));
+     params.push_back (std::make_unique<juce::AudioParameterFloat> ("swing", "Swing",
+-        juce::NormalisableRange<float> (0.0f, 0.65f, 0.01f), 0.0f));
++        juce::NormalisableRange<float> (0.0f, 0.65f, 0.01f), 0.0f, percent));
+     params.push_back (std::make_unique<juce::AudioParameterChoice> ("velocityMode", "Velocity",
+         juce::StringArray { "Input", "Fixed", "Accent" }, 0));
+     params.push_back (std::make_unique<juce::AudioParameterInt> ("fixedVelocity", "Fixed Velocity", 1, 127, 96));
+diff --git a/plugins/sattari-arp/src/PluginProcessor.h b/plugins/sattari-arp/src/PluginProcessor.h
+index f8dd94a66d0e6648310042148130d551657970d3..30bbb612081a114e5a43c493ecd263fef3a44310 100644
+--- a/plugins/sattari-arp/src/PluginProcessor.h
++++ b/plugins/sattari-arp/src/PluginProcessor.h
+@@ -46,6 +46,7 @@ private:
+     };
+ 
+     static juce::AudioProcessorValueTreeState::ParameterLayout createParameterLayout();
++    static BusesProperties makeBusesProperties();
+ 
+     void renderArp (juce::MidiBuffer& output, int startSample, int numSamples);
+     void handleInputMidi (const juce::MidiMessage& message, int samplePosition, juce::MidiBuffer& output);
+diff --git a/plugins/stemdeck/CMakeLists.txt b/plugins/stemdeck/CMakeLists.txt
+index bf4ec14a5fa67ed8f97f9975df281e882fd89b0d..46a0092f1aea0e1437aade4a31831f72e2e644bf 100644
+--- a/plugins/stemdeck/CMakeLists.txt
++++ b/plugins/stemdeck/CMakeLists.txt
+@@ -16,6 +16,8 @@ sattari_add_plugin(
+     PLUGIN_CODE Sd01
+     FORMATS VST3 Standalone
+     IS_SYNTH
++    # Ableton refuses VST3 instruments that have no MIDI input.
++    NEEDS_MIDI_INPUT
+     EDITOR_WANTS_KEYBOARD_FOCUS
+     SOURCES
+         src/ArrangementBuilder.cpp
+diff --git a/plugins/stemdeck/src/BeatSyncEngine.cpp b/plugins/stemdeck/src/BeatSyncEngine.cpp
+index 35beba5e193b1fc800eff0410d189195f6d497d5..5a9bcef8b708bc640b7e8c68de9576a038cef63a 100644
+--- a/plugins/stemdeck/src/BeatSyncEngine.cpp
++++ b/plugins/stemdeck/src/BeatSyncEngine.cpp
+@@ -244,13 +244,13 @@ BeatSyncEngine::PlaybackPlan BeatSyncEngine::makePlaybackPlan (const TransportSy
+         case SyncMode::strict:    mode = "Strict Sync"; break;
+     }
+ 
+-    plan.statusLabel = mode + " • " + juce::String (plan.sourceBpm, 1) + "→" + juce::String (plan.masterBpm, 1) + " BPM • " + grid.interpretationLabel();
++    plan.statusLabel = mode + L" • " + juce::String (plan.sourceBpm, 1) + L"→" + juce::String (plan.masterBpm, 1) + L" BPM • " + grid.interpretationLabel();
+     if (! plan.syncEnabled)
+-        plan.statusLabel += " • armed";
++        plan.statusLabel += L" • armed";
+     else if (plan.hasLockedSourcePosition)
+-        plan.statusLabel += " • grid-locked";
++        plan.statusLabel += L" • grid-locked";
+     else
+-        plan.statusLabel += " • tempo drift";
++        plan.statusLabel += L" • tempo drift";
+ 
+     return plan;
+ }
+diff --git a/plugins/stemdeck/src/MainPluginEditor.cpp b/plugins/stemdeck/src/MainPluginEditor.cpp
+index 09103a5d8887b0d993e7e0b2660e0a26cd92efaa..0c6d0319537d860f945934fd74bf38028d350171 100644
+--- a/plugins/stemdeck/src/MainPluginEditor.cpp
++++ b/plugins/stemdeck/src/MainPluginEditor.cpp
+@@ -74,7 +74,7 @@ void MainPluginEditor::ArrangementRecorderView::paint (juce::Graphics& g)
+ 
+     g.setFont (juce::FontOptions (12.0f));
+     g.setColour (accent.withAlpha (0.95f));
+-    g.drawText (recording ? "● RECORDING MIX" : "○ READY TO CAPTURE MIX", header, juce::Justification::centredRight);
++    g.drawText (recording ? L"● RECORDING MIX" : L"○ READY TO CAPTURE MIX", header, juce::Justification::centredRight);
+ 
+     area.removeFromTop (10);
+     const int rulerHeight = 24;
+@@ -171,13 +171,18 @@ MainPluginEditor::MainPluginEditor (MainPluginProcessor& p)
+     title.setJustificationType (juce::Justification::centred);
+     addAndMakeVisible (title);
+ 
+-    subtitle.setText ("FOUR DECKS  •  STEM MIXER  •  ARRANGEMENT RECORDER", juce::dontSendNotification);
++    subtitle.setText (L"FOUR DECKS  •  STEM MIXER  •  ARRANGEMENT RECORDER", juce::dontSendNotification);
+     subtitle.setColour (juce::Label::textColourId, juce::Colours::lightgrey);
+     subtitle.setFont (juce::FontOptions (11.0f, juce::Font::bold));
+     subtitle.setJustificationType (juce::Justification::centredLeft);
+     addAndMakeVisible (subtitle);
+ 
+-    standaloneWorkflowGuide.setText ("STANDALONE APP ALPHA QUICK START  Load or drag a full mix onto Deck A/B/C/D  •  AI Split after local Demucs setup  •  Mix stems/faders/FX/pads  •  Record WAV to capture the performed arrangement  •  Not notarized or sale-ready", juce::dontSendNotification);
++    // The alpha/notarization notice only applies to the standalone app build.
++    const bool isStandalone = processorRef.wrapperType == juce::AudioProcessor::wrapperType_Standalone;
++    standaloneWorkflowGuide.setText (juce::String (isStandalone ? L"STANDALONE APP ALPHA QUICK START  " : L"QUICK START  ")
++                                         + L"Load or drag a full mix onto Deck A/B/C/D  •  AI Split after local Demucs setup  •  Mix stems/faders/FX/pads  •  Record WAV to capture the performed arrangement"
++                                         + (isStandalone ? L"  •  Not notarized or sale-ready" : L""),
++                                     juce::dontSendNotification);
+     standaloneWorkflowGuide.setColour (juce::Label::textColourId, juce::Colour (0xff67f6d2).withAlpha (0.94f));
+     standaloneWorkflowGuide.setFont (juce::FontOptions (12.0f, juce::Font::bold));
+     standaloneWorkflowGuide.setJustificationType (juce::Justification::centredLeft);
+@@ -548,7 +553,7 @@ void MainPluginEditor::refreshHostPluginChoices()
+ 
+ void MainPluginEditor::runPluginHostScan()
+ {
+-    pluginHostMessage.setText ("Scanning FX defaults…", juce::dontSendNotification);
++    pluginHostMessage.setText (L"Scanning FX defaults…", juce::dontSendNotification);
+     scanPluginsButton.setEnabled (false);
+ 
+     juce::Thread::launch ([safeThis = juce::Component::SafePointer<MainPluginEditor> (this)]
+@@ -565,9 +570,9 @@ void MainPluginEditor::runPluginHostScan()
+             safeThis->scanPluginsButton.setEnabled (true);
+             safeThis->refreshHostPluginChoices();
+             juce::String message = "Scanned " + result.scannedFormats.joinIntoString (", ")
+-                                 + " • known FX: " + juce::String (result.plugins.size());
++                                 + L" • known FX: " + juce::String (result.plugins.size());
+             if (! result.blacklistedFiles.isEmpty())
+-                message += " • blacklisted: " + juce::String (result.blacklistedFiles.size());
++                message += L" • blacklisted: " + juce::String (result.blacklistedFiles.size());
+             safeThis->pluginHostMessage.setText (message, juce::dontSendNotification);
+         });
+     });
+@@ -584,7 +589,7 @@ void MainPluginEditor::loadSelectedHostPlugin()
+     }
+ 
+     loadPluginButton.setEnabled (false);
+-    pluginHostMessage.setText ("Loading " + pluginSelector.getText() + " → " + pluginChainSelector.getText(), juce::dontSendNotification);
++    pluginHostMessage.setText ("Loading " + pluginSelector.getText() + L" → " + pluginChainSelector.getText(), juce::dontSendNotification);
+     processorRef.loadHostPluginToChainAsync (chainIndex, pluginIndex,
+         [safeThis = juce::Component::SafePointer<MainPluginEditor> (this)] (bool success, juce::String message)
+         {
+@@ -674,7 +679,7 @@ void MainPluginEditor::paint (juce::Graphics& g)
+ 
+     g.setColour (juce::Colours::white.withAlpha (0.68f));
+     g.setFont (juce::FontOptions (10.0f, juce::Font::bold));
+-    g.drawText ("Crossfader groups: A/C  ↔  B/D", crossfader.getBounds().withHeight (16).translated (0, -18), juce::Justification::centred);
++    g.drawText (L"Crossfader groups: A/C  ↔  B/D", crossfader.getBounds().withHeight (16).translated (0, -18), juce::Justification::centred);
+     g.drawText ("Master BPM", masterBpm.getBounds().withHeight (16).translated (0, -18), juce::Justification::centred);
+     g.drawText ("Master", master.getBounds().withHeight (16).translated (0, -18), juce::Justification::centred);
+     g.drawText ("Limit", limiter.getBounds().withHeight (16).translated (0, -18), juce::Justification::centred);
+@@ -822,7 +827,7 @@ void MainPluginEditor::timerCallback()
+ {
+     processorRef.refreshLiveKeyAnalysis();
+     auto snapshot = processorRef.getTransportSnapshot();
+-    tempoLabel.setText (juce::String (snapshot.bpm, 1) + " BPM • " + (snapshot.hostPlaying ? "host playing" : "host stopped"), juce::dontSendNotification);
++    tempoLabel.setText (juce::String (snapshot.bpm, 1) + L" BPM • " + (snapshot.hostPlaying ? "host playing" : "host stopped"), juce::dontSendNotification);
+     pluginHostStatus.setText (processorRef.getPluginHostStatus(), juce::dontSendNotification);
+     const bool recording = processorRef.isMasterRecording();
+     recordButton.setButtonText (recording ? "Stop Rec" : "Record WAV");
+@@ -832,7 +837,7 @@ void MainPluginEditor::timerCallback()
+ 
+     for (int i = 0; i < MainPluginProcessor::numDecks; ++i)
+     {
+-        deckControls[(size_t) i].keyInfo.setText (processorRef.getDeckKeyInfo (i) + " • " + processorRef.getDeckTimePitchStatus (i) + " • " + processorRef.getDeckBeatSyncStatus (i),
++        deckControls[(size_t) i].keyInfo.setText (processorRef.getDeckKeyInfo (i) + L" • " + processorRef.getDeckTimePitchStatus (i) + L" • " + processorRef.getDeckBeatSyncStatus (i),
+                                                    juce::dontSendNotification);
+         deckControls[(size_t) i].stemStatus.setText (processorRef.getDeckStemProviderStatus (i), juce::dontSendNotification);
+ 
+diff --git a/plugins/stemdeck/src/MainPluginProcessor.cpp b/plugins/stemdeck/src/MainPluginProcessor.cpp
+index fc6a2cc73afbc2d237d63489f0edf06bc7cedc88..cd0764ed148a41fb5826f68f3090978806ddecef 100644
+--- a/plugins/stemdeck/src/MainPluginProcessor.cpp
++++ b/plugins/stemdeck/src/MainPluginProcessor.cpp
+@@ -62,7 +62,7 @@ MainPluginProcessor::MainPluginProcessor()
+ #if JUCE_USE_MP3AUDIOFORMAT
+     formatManager.registerFormat (new juce::MP3AudioFormat(), true);
+ #endif
+-    apvts.state.setProperty ("schema", "SattariStemDeck.v0.3.8", nullptr);
++    apvts.state.setProperty ("schema", "SattariStemDeck.v" JucePlugin_VersionString, nullptr);
+     for (int i = 0; i < numDecks; ++i)
+     {
+         liveKeyPitchClass[(size_t) i].store (-1, std::memory_order_relaxed);
+@@ -645,17 +645,17 @@ juce::String MainPluginProcessor::getDeckKeyInfo (int deckIndex) const
+     if (analysis.hasKey() && targetKey >= 0)
+     {
+         const int matchShift = TrackAnalyzer::nearestSemitoneDelta (analysis.keyPitchClass, targetKey);
+-        text += " → " + TrackAnalyzer::pitchClassName (targetKey) + " (" + (matchShift >= 0 ? "+" : "") + juce::String (matchShift) + " st)";
++        text += L" → " + TrackAnalyzer::pitchClassName (targetKey) + " (" + (matchShift >= 0 ? "+" : "") + juce::String (matchShift) + " st)";
+     }
+ 
+     if (std::abs (manualShift) > 0.01f)
+         text += " + manual " + juce::String (manualShift, 1) + " st";
+ 
+     if (getBoolParam (deck + "KeyLock"))
+-        text += " • preserve requested";
++        text += L" • preserve requested";
+ 
+     if (liveKeyEnabled && ! liveAnalysis.hasKey())
+-        text += " • live listening…";
++        text += L" • live listening…";
+ 
+     return text;
+ }
+@@ -710,11 +710,11 @@ juce::String MainPluginProcessor::getDeckBeatSyncStatus (int deckIndex) const
+ 
+     juce::String text = plan.statusLabel;
+     if (analysis.detectedBpm > 1.0f)
+-        text += " • detected " + juce::String (analysis.detectedBpm, 1);
++        text += L" • detected " + juce::String (analysis.detectedBpm, 1);
+     if (! analysis.beatGridSamples.empty())
+-        text += " • " + juce::String ((int) analysis.beatGridSamples.size()) + " beats";
++        text += L" • " + juce::String ((int) analysis.beatGridSamples.size()) + " beats";
+     if (! analysis.transientAnchorSamples.empty())
+-        text += " • " + juce::String ((int) analysis.transientAnchorSamples.size()) + " anchors";
++        text += L" • " + juce::String ((int) analysis.transientAnchorSamples.size()) + " anchors";
+     return text;
+ }
+ 
+@@ -735,7 +735,7 @@ juce::String MainPluginProcessor::getPluginHostStatus() const
+ 
+ juce::String MainPluginProcessor::getStemProviderStatus() const
+ {
+-    return stemProvider.getName() + " • cache: " + stemProvider.getCacheRoot().getFullPathName();
++    return stemProvider.getName() + L" • cache: " + stemProvider.getCacheRoot().getFullPathName();
+ }
+ 
+ juce::String MainPluginProcessor::getDeckStemProviderStatus (int deckIndex) const
+@@ -747,13 +747,13 @@ juce::String MainPluginProcessor::getDeckStemProviderStatus (int deckIndex) cons
+     const auto status = stemProvider.getStatusForSource (juce::File (path));
+     juce::String text = status.headline;
+     if (status.sourceFile.existsAsFile())
+-        text += " • " + juce::String (status.readyCoreStems) + "/" + juce::String (status.totalCoreStems) + " stems";
++        text += L" • " + juce::String (status.readyCoreStems) + "/" + juce::String (status.totalCoreStems) + " stems";
+     if (status.jobQueued && ! status.jobRunning)
+-        text += " • queued";
++        text += L" • queued";
+     if (status.jobRunning)
+-        text += " • processing";
++        text += L" • processing";
+     if (status.detail.isNotEmpty())
+-        text += " • " + status.detail;
++        text += L" • " + status.detail;
+     return text;
+ }
+ 
+diff --git a/plugins/stemdeck/src/MainPluginProcessor.h b/plugins/stemdeck/src/MainPluginProcessor.h
+index 58620c3f8450f5bc6be53014292173ecbe25dc9b..bc6b73d9c06903f0634c3820a21dacd4fc67856b 100644
+--- a/plugins/stemdeck/src/MainPluginProcessor.h
++++ b/plugins/stemdeck/src/MainPluginProcessor.h
+@@ -28,7 +28,7 @@ public:
+     bool hasEditor() const override { return true; }
+ 
+     const juce::String getName() const override { return JucePlugin_Name; }
+-    bool acceptsMidi() const override { return false; }
++    bool acceptsMidi() const override { return true; }
+     bool producesMidi() const override { return false; }
+     bool isMidiEffect() const override { return false; }
+     double getTailLengthSeconds() const override { return 0.0; }
+diff --git a/plugins/stemdeck/src/StemProvider.cpp b/plugins/stemdeck/src/StemProvider.cpp
+index 3a6bfdecca9f036994f0b0036b10c4e5ed6b3e10..b06d4c2ab827090fbcf270d8ba0295eeebdce488 100644
+--- a/plugins/stemdeck/src/StemProvider.cpp
++++ b/plugins/stemdeck/src/StemProvider.cpp
+@@ -20,7 +20,7 @@ public:
+     JobStatus runJob() override
+     {
+         auto result = provider.inspectCache (sourceFile);
+-        provider.updateStatus (sourceFile, StemProvider::statusFromResult (result, false, true, provider.getSeparatorCommand().trim().isNotEmpty(), "Preparing premium offline stem cache…"));
++        provider.updateStatus (sourceFile, StemProvider::statusFromResult (result, false, true, provider.getSeparatorCommand().trim().isNotEmpty(), L"Preparing premium offline stem cache…"));
+         if (! result.allCoreStemsReady)
+         {
+             juce::String message;
+@@ -29,7 +29,7 @@ public:
+                 result = provider.inspectCache (sourceFile);
+ 
+             if (message.isNotEmpty())
+-                result.message = message + " • " + result.message;
++                result.message = message + L" • " + result.message;
+         }
+         provider.updateStatus (sourceFile, StemProvider::statusFromResult (result, false, false, provider.getSeparatorCommand().trim().isNotEmpty()));
+         provider.writeManifest (result);
+@@ -180,9 +180,9 @@ StemProvider::Status StemProvider::statusFromResult (const Result& result,
+     status.backendConfigured = backendConfigured;
+ 
+     if (status.allCoreStemsReady)
+-        status.headline = "AI stems ready — vocals, drums, bass, music";
++        status.headline = L"AI stems ready — vocals, drums, bass, music";
+     else if (running)
+-        status.headline = backendConfigured ? "Splitting AI stems offline…" : "Waiting for AI stem backend";
++        status.headline = backendConfigured ? L"Splitting AI stems offline…" : L"Waiting for AI stem backend";
+     else if (queued)
+         status.headline = "AI stem split queued";
+     else if (status.readyCoreStems > 0)
+diff --git a/plugins/stemdeck/src/WarpEngine.cpp b/plugins/stemdeck/src/WarpEngine.cpp
+index c51ee1b285ca4f703cd904a1e9518f9b5c7aac6e..320a3618d3f9168411868b8d23fb9d015142f190 100644
+--- a/plugins/stemdeck/src/WarpEngine.cpp
++++ b/plugins/stemdeck/src/WarpEngine.cpp
+@@ -89,7 +89,7 @@ juce::String WarpEngine::getStatusSummary() const
+     juce::String text = backendInfo.name;
+     text += backendInfo.available ? " ready" : " unavailable";
+     if (backendInfo.notes.isNotEmpty())
+-        text += " — " + backendInfo.notes;
++        text += L" — " + backendInfo.notes;
+     return text;
+ }
+ 
+@@ -125,9 +125,9 @@ WarpEngine::Plan WarpEngine::makePlan (const TransportSync::Snapshot& transport,
+     plan.backend = getSelectedBackend();
+ 
+     plan.statusLabel = "Warp: " + plan.beatSync.statusLabel
+-                     + " • tempo x" + juce::String (plan.timePitch.tempoRatio, 3)
+-                     + " • pitch " + (plan.deck.pitchSemitones >= 0.0f ? "+" : "") + juce::String (plan.deck.pitchSemitones, 2) + " st"
+-                     + " • " + plan.timePitch.statusLabel
+-                     + " • backend: " + plan.backend.name;
++                     + L" • tempo x" + juce::String (plan.timePitch.tempoRatio, 3)
++                     + L" • pitch " + (plan.deck.pitchSemitones >= 0.0f ? "+" : "") + juce::String (plan.deck.pitchSemitones, 2) + " st"
++                     + L" • " + plan.timePitch.statusLabel
++                     + L" • backend: " + plan.backend.name;
+     return plan;
+ }
+diff --git a/scripts/autokey_reference_check.py b/scripts/autokey_reference_check.py
+new file mode 100755
+index 0000000000000000000000000000000000000000..acb3c19b65bfe052e0b0868d64a685eefdc88d02
+--- /dev/null
++++ b/scripts/autokey_reference_check.py
+@@ -0,0 +1,155 @@
++#!/usr/bin/env python3
++"""Compare Auto Pitch AutoKey output against a reference-key CSV.
++
++CSV columns:
++  id,audio_path,expected_key,expected_mode,source
++
++`source` is free text, e.g. "Tunebat", "fixture", or "manual".
++"""
++
++from __future__ import annotations
++
++import argparse
++import csv
++import json
++import re
++import subprocess
++import sys
++from pathlib import Path
++
++
++ROOT = Path(__file__).resolve().parents[1]
++NOTE_NAMES = {"C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"}
++MODE_NAMES = {"major", "minor", "chromatic"}
++STATUS_RE = re.compile(r"\bAutoKey\s+([A-G](?:#)?)\s+(major|minor|chromatic)\b", re.IGNORECASE)
++
++
++def normalise_note(value: str) -> str:
++    note = value.strip().replace("Db", "C#").replace("Eb", "D#").replace("Gb", "F#").replace("Ab", "G#").replace("Bb", "A#")
++    if note not in NOTE_NAMES:
++        raise ValueError(f"unsupported key {value!r}")
++    return note
++
++
++def normalise_mode(value: str) -> str:
++    mode = value.strip().lower()
++    if mode in {"maj", "major"}:
++        return "major"
++    if mode in {"min", "minor"}:
++        return "minor"
++    if mode in {"chromatic", "chrom"}:
++        return "chromatic"
++    raise ValueError(f"unsupported mode {value!r}")
++
++
++def resolve_audio(path_text: str, csv_path: Path) -> Path:
++    path = Path(path_text).expanduser()
++    if not path.is_absolute():
++        path = (csv_path.parent / path).resolve()
++    return path
++
++
++def run_case(row: dict[str, str], csv_path: Path, bench: Path, out_dir: Path) -> dict[str, object]:
++    case_id = row["id"].strip()
++    expected_key = normalise_note(row["expected_key"])
++    expected_mode = normalise_mode(row["expected_mode"])
++    audio_path = resolve_audio(row["audio_path"], csv_path)
++    if not audio_path.exists():
++        raise FileNotFoundError(f"{case_id}: audio not found: {audio_path}")
++
++    case_dir = out_dir / case_id
++    case_dir.mkdir(parents=True, exist_ok=True)
++    trace_path = case_dir / "autokey_trace.json"
++
++    cmd = [
++        str(bench),
++        str(audio_path),
++        "--trace",
++        str(trace_path),
++        "--key",
++        "C",
++        "--scale",
++        expected_mode,
++        "--style",
++        "Natural",
++        "--amount",
++        "0",
++        "--speed",
++        "0.7",
++        "--block",
++        "512",
++        "--auto-key",
++    ]
++    result = subprocess.run(cmd, cwd=ROOT, text=True, capture_output=True, check=False)
++
++    detected_key = ""
++    detected_mode = ""
++    status = ""
++    if trace_path.exists():
++        trace = json.loads(trace_path.read_text())
++        status = str(trace.get("processorStatus", ""))
++        match = STATUS_RE.search(status)
++        if match:
++            detected_key = normalise_note(match.group(1).upper())
++            detected_mode = normalise_mode(match.group(2))
++
++    passed = result.returncode == 0 and detected_key == expected_key and detected_mode == expected_mode
++    return {
++        "id": case_id,
++        "source": row.get("source", ""),
++        "audio_path": str(audio_path),
++        "expected_key": expected_key,
++        "expected_mode": expected_mode,
++        "detected_key": detected_key,
++        "detected_mode": detected_mode,
++        "processor_status": status,
++        "returncode": result.returncode,
++        "stderr": result.stderr.strip(),
++        "trace": str(trace_path),
++        "pass": passed,
++    }
++
++
++def main() -> int:
++    parser = argparse.ArgumentParser()
++    parser.add_argument("csv", type=Path)
++    parser.add_argument("--bench", type=Path, default=ROOT / "build/plugins/auto-pitch/AutoPitchBench")
++    parser.add_argument("--out", type=Path, default=ROOT / "validation/autokey_reference/results")
++    args = parser.parse_args()
++
++    csv_path = args.csv.expanduser().resolve()
++    bench = args.bench.expanduser().resolve()
++    out_dir = args.out.expanduser().resolve()
++    out_dir.mkdir(parents=True, exist_ok=True)
++
++    rows = list(csv.DictReader(csv_path.read_text().splitlines()))
++    required = {"id", "audio_path", "expected_key", "expected_mode"}
++    missing = required - set(rows[0].keys() if rows else [])
++    if missing:
++        raise SystemExit(f"missing CSV columns: {', '.join(sorted(missing))}")
++
++    results = [run_case(row, csv_path, bench, out_dir) for row in rows]
++    (out_dir / "autokey_reference_results.json").write_text(json.dumps(results, indent=2) + "\n")
++
++    writer_path = out_dir / "autokey_reference_results.csv"
++    with writer_path.open("w", newline="") as f:
++        writer = csv.DictWriter(
++            f,
++            fieldnames=[
++                "id", "source", "expected_key", "expected_mode", "detected_key",
++                "detected_mode", "pass", "processor_status", "trace",
++            ],
++        )
++        writer.writeheader()
++        for row in results:
++            writer.writerow({key: row.get(key, "") for key in writer.fieldnames})
++
++    for row in results:
++        verdict = "PASS" if row["pass"] else "FAIL"
++        print(f"{verdict} {row['id']}: expected {row['expected_key']} {row['expected_mode']}, got {row['detected_key']} {row['detected_mode']}")
++
++    return 0 if all(row["pass"] for row in results) else 1
++
++
++if __name__ == "__main__":
++    sys.exit(main())
+diff --git a/scripts/check_brand_registry_sync.py b/scripts/check_brand_registry_sync.py
+index 010175fac070d369bd92ef9a54b4be34f1544a2a..fc451d9cdb98e7649d13ee3fe468abf09e483ed8 100644
+--- a/scripts/check_brand_registry_sync.py
++++ b/scripts/check_brand_registry_sync.py
+@@ -21,16 +21,27 @@ ROOT = Path(__file__).resolve().parents[1]
+ HEADER = ROOT / "core" / "include" / "sattari_audio_core" / "SattariBranding.h"
+ MANIFEST = ROOT / "apps" / "sattari-hub" / "Sources" / "SattariHub" / "Resources" / "sattari-products.json"
+ 
++# Matches constants such as:
++# inline constexpr std::uint32_t kAccent = 0xff62f5c8;
++CONSTANT = re.compile(
++    r'inline\s+constexpr\s+std::uint32_t\s+([A-Za-z_][A-Za-z0-9_]*)\s*=\s*0x([0-9a-fA-F]{8})\s*;'
++)
++
+ # Matches: { "id", "Display Name", "Category", 0xAARRGGBB },
++# or:      { "id", "Display Name", "Category", kAccent },
+ ENTRY = re.compile(
+-    r'\{\s*"([^"]+)"\s*,\s*"([^"]+)"\s*,\s*"([^"]+)"\s*,\s*0x([0-9a-fA-F]{8})\s*\}'
++    r'\{\s*"([^"]+)"\s*,\s*"([^"]+)"\s*,\s*"([^"]+)"\s*,\s*(?:0x([0-9a-fA-F]{8})|([A-Za-z_][A-Za-z0-9_]*))\s*\}'
+ )
+ 
+ 
+ def parse_registry() -> dict[str, dict[str, str]]:
+     text = HEADER.read_text()
++    constants = {name: value for name, value in CONSTANT.findall(text)}
+     out: dict[str, dict[str, str]] = {}
+-    for pid, name, _category, argb in ENTRY.findall(text):
++    for pid, name, _category, literal_argb, constant_name in ENTRY.findall(text):
++        argb = literal_argb or constants.get(constant_name)
++        if not argb:
++            continue
+         out[pid] = {"name": name, "accent": "#" + argb[-6:].lower()}
+     return out
+ 
+diff --git a/scripts/elevenlabs_music_pilot.py b/scripts/elevenlabs_music_pilot.py
+new file mode 100755
+index 0000000000000000000000000000000000000000..f2a132051202e71aca146696807d1f5055d84088
+--- /dev/null
++++ b/scripts/elevenlabs_music_pilot.py
+@@ -0,0 +1,823 @@
++#!/usr/bin/env python3
++"""Generate a small ElevenLabs Music pilot set and analyze key/BPM locally."""
++
++from __future__ import annotations
++
++import json
++import os
++import argparse
++import subprocess
++import sys
++import time
++import urllib.error
++import urllib.request
++from pathlib import Path
++
++import librosa
++import numpy as np
++
++
++ROOT = Path(__file__).resolve().parents[1]
++SERVICE = "com.sattari.elevenlabs.api-key"
++ACCOUNT = os.environ.get("USER", "agentsattari")
++API_URL = "https://api.elevenlabs.io/v1/music?output_format=mp3_48000_192"
++ROOT_NAMES = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"]
++MAJOR_PROFILE = np.array([6.35, 2.23, 3.48, 2.33, 4.38, 4.09, 2.52, 5.19, 2.39, 3.66, 2.29, 2.88])
++MINOR_PROFILE = np.array([6.33, 2.68, 3.52, 5.38, 2.60, 3.53, 2.54, 4.75, 3.98, 2.69, 3.34, 3.17])
++
++
++CASES = [
++    {
++        "id": "pilot_01_low_resonant_acappella",
++        "expected_key": "C",
++        "expected_mode": "minor",
++        "seed": 9101,
++        "duration_ms": 12000,
++        "styles": [
++            "solo low resonant fictional male vocal",
++            "a cappella",
++            "dry close microphone",
++            "C minor",
++            "72 BPM",
++            "sustained vowels",
++            "subtle breath before phrases",
++            "natural phrase endings",
++            "great production quality",
++        ],
++        "negative_styles": [
++            "celebrity impression",
++            "recognizable artist",
++            "choir",
++            "heavy reverb",
++            "autotune",
++            "distortion",
++        ],
++        "text": "[Verse]\nLow moon over quiet streets\nI hold the note and let it lean\nA slow blue line returns to me",
++    },
++    {
++        "id": "pilot_02_mid_pop_vocal",
++        "expected_key": "A",
++        "expected_mode": "major",
++        "seed": 9102,
++        "duration_ms": 12000,
++        "styles": [
++            "fictional mid range pop vocal",
++            "light minimal pop backing",
++            "A major",
++            "96 BPM",
++            "clear consonants",
++            "connected melodic phrase",
++            "small scoop into first note",
++            "dry lead vocal forward",
++            "great production quality",
++        ],
++        "negative_styles": [
++            "celebrity impression",
++            "recognizable artist",
++            "dense mix",
++            "heavy reverb",
++            "spoken word",
++        ],
++        "text": "[Verse]\nOpen the window and count to three\nMorning is moving in time with me\nEvery little echo finds the key",
++    },
++    {
++        "id": "pilot_03_bright_high_vibrato",
++        "expected_key": "G",
++        "expected_mode": "major",
++        "seed": 9103,
++        "duration_ms": 14000,
++        "styles": [
++            "bright high fictional female vocal",
++            "sparse piano and soft pulse",
++            "G major",
++            "108 BPM",
++            "expressive vibrato",
++            "gentle portamento",
++            "sustained high vowel",
++            "breath gaps",
++            "great production quality",
++        ],
++        "negative_styles": [
++            "celebrity impression",
++            "recognizable artist",
++            "opera",
++            "choir",
++            "heavy effects",
++        ],
++        "text": "[Verse]\nSilver in the ceiling light\nI rise and fall on every line\nCarry me softly through the night",
++    },
++    {
++        "id": "pilot_04_instrumental_key_bpm",
++        "expected_key": "D",
++        "expected_mode": "minor",
++        "seed": 9104,
++        "duration_ms": 12000,
++        "styles": [
++            "instrumental alt pop loop",
++            "D minor",
++            "84 BPM",
++            "clear bass root motion",
++            "simple drums",
++            "short hook",
++            "no vocals",
++            "steady tonal center",
++            "great production quality",
++        ],
++        "negative_styles": [
++            "vocals",
++            "speech",
++            "atonal",
++            "key changes",
++            "ambient wash",
++        ],
++        "text": "[Instrumental]\n{tight drums}\n{warm bass holds D minor}\n{short electric piano hook}",
++        "force_instrumental": True,
++    },
++]
++
++CASES.extend([
++    {
++        "id": "pilot_05_breathy_intimate_close",
++        "expected_key": "E",
++        "expected_mode": "minor",
++        "seed": 9205,
++        "duration_ms": 12000,
++        "styles": [
++            "breathy intimate fictional alto vocal",
++            "nearly a cappella",
++            "dry close microphone",
++            "E minor",
++            "76 BPM",
++            "quiet dynamics",
++            "soft consonants",
++            "audible breath gaps",
++            "great production quality",
++        ],
++        "negative_styles": [
++            "celebrity impression",
++            "recognizable artist",
++            "choir",
++            "heavy reverb",
++            "distortion",
++        ],
++        "text": "[Verse]\nAlmost under every word\nI leave a little air unheard\nMeet me where the shadows turn",
++    },
++    {
++        "id": "pilot_06_strong_projected_belt",
++        "expected_key": "B",
++        "expected_mode": "minor",
++        "seed": 9206,
++        "duration_ms": 12000,
++        "styles": [
++            "strong projected fictional tenor vocal",
++            "minimal cinematic drums",
++            "B minor",
++            "92 BPM",
++            "belted phrase endings",
++            "wide sustained vowels",
++            "clear pitch center",
++            "lead vocal forward",
++            "great production quality",
++        ],
++        "negative_styles": [
++            "celebrity impression",
++            "recognizable artist",
++            "choir",
++            "shouted speech",
++            "heavy reverb",
++        ],
++        "text": "[Verse]\nRaise the signal over stone\nHold the fire in my tone\nI will carry this alone",
++    },
++    {
++        "id": "pilot_07_fast_note_changes",
++        "expected_key": "C",
++        "expected_mode": "major",
++        "seed": 9207,
++        "duration_ms": 12000,
++        "styles": [
++            "fictional pop vocal agility exercise",
++            "light metronomic percussion",
++            "C major",
++            "126 BPM",
++            "fast note changes",
++            "short syllables",
++            "clean articulation",
++            "dry vocal upfront",
++            "great production quality",
++        ],
++        "negative_styles": [
++            "celebrity impression",
++            "recognizable artist",
++            "rap",
++            "choir",
++            "heavy effects",
++        ],
++        "text": "[Verse]\nTicking over tiny lights\nLittle ladders lifting bright\nEvery letter lands in flight",
++    },
++    {
++        "id": "pilot_08_portamento_slides",
++        "expected_key": "A",
++        "expected_mode": "minor",
++        "seed": 9208,
++        "duration_ms": 14000,
++        "styles": [
++            "expressive fictional mezzo vocal",
++            "sparse electric piano",
++            "A minor",
++            "88 BPM",
++            "obvious portamento slides",
++            "scoops into notes",
++            "slow downward drift",
++            "natural vibrato",
++            "great production quality",
++        ],
++        "negative_styles": [
++            "celebrity impression",
++            "recognizable artist",
++            "hard autotune",
++            "choir",
++            "dense mix",
++        ],
++        "text": "[Verse]\nFalling into every line\nSliding slowly out of time\nStill the center answers mine",
++    },
++    {
++        "id": "pilot_09_sustained_vowels",
++        "expected_key": "F",
++        "expected_mode": "major",
++        "seed": 9209,
++        "duration_ms": 12000,
++        "styles": [
++            "fictional warm baritone vocal",
++            "a cappella",
++            "F major",
++            "68 BPM",
++            "long sustained vowels",
++            "steady tone",
++            "small natural vibrato",
++            "dry studio vocal",
++            "great production quality",
++        ],
++        "negative_styles": [
++            "celebrity impression",
++            "recognizable artist",
++            "backing vocals",
++            "heavy reverb",
++            "instrumental solo",
++        ],
++        "text": "[Verse]\nAh I remain\nOh I remain\nStay on the open plain",
++    },
++    {
++        "id": "pilot_10_consonant_heavy",
++        "expected_key": "G",
++        "expected_mode": "minor",
++        "seed": 9210,
++        "duration_ms": 12000,
++        "styles": [
++            "fictional crisp conversational vocal",
++            "very light pulse",
++            "G minor",
++            "104 BPM",
++            "consonant heavy lyrics",
++            "plosives and fricatives",
++            "tight phrase endings",
++            "dry vocal present",
++            "great production quality",
++        ],
++        "negative_styles": [
++            "celebrity impression",
++            "recognizable artist",
++            "mumble",
++            "heavy reverb",
++            "choir",
++        ],
++        "text": "[Verse]\nBright clocks click past black brick steps\nSharp sparks skip through kept regrets\nSmall truths split the quiet net",
++    },
++    {
++        "id": "pilot_11_low_bass_voice",
++        "expected_key": "D",
++        "expected_mode": "major",
++        "seed": 9211,
++        "duration_ms": 12000,
++        "styles": [
++            "very low resonant fictional bass vocal",
++            "a cappella",
++            "D major",
++            "70 BPM",
++            "low sustained notes",
++            "warm chest resonance",
++            "slow phrase endings",
++            "dry close microphone",
++            "great production quality",
++        ],
++        "negative_styles": [
++            "celebrity impression",
++            "recognizable artist",
++            "choir",
++            "sub bass instrument",
++            "heavy reverb",
++        ],
++        "text": "[Verse]\nDeep river under the door\nOne note settles on the floor\nI return and ask for more",
++    },
++    {
++        "id": "pilot_12_high_bright_soprano",
++        "expected_key": "E",
++        "expected_mode": "major",
++        "seed": 9212,
++        "duration_ms": 12000,
++        "styles": [
++            "bright high fictional soprano pop vocal",
++            "minimal bell pad",
++            "E major",
++            "112 BPM",
++            "high clear sustained note",
++            "light vibrato",
++            "gentle breath before line",
++            "lead vocal forward",
++            "great production quality",
++        ],
++        "negative_styles": [
++            "celebrity impression",
++            "recognizable artist",
++            "opera",
++            "choir",
++            "heavy reverb",
++        ],
++        "text": "[Verse]\nCrystal morning opens wide\nLift the melody inside\nLet the upper color glide",
++    },
++    {
++        "id": "pilot_13_quiet_breathy_minor",
++        "expected_key": "F#",
++        "expected_mode": "minor",
++        "seed": 9213,
++        "duration_ms": 12000,
++        "styles": [
++            "quiet breathy fictional vocal",
++            "almost unaccompanied",
++            "F# minor",
++            "80 BPM",
++            "low volume phrases",
++            "breath noise",
++            "fragile note attacks",
++            "dry vocal",
++            "great production quality",
++        ],
++        "negative_styles": [
++            "celebrity impression",
++            "recognizable artist",
++            "choir",
++            "loud drums",
++            "heavy reverb",
++        ],
++        "text": "[Verse]\nWhisper through the paper wall\nBarely there but still I call\nSoftly let the edges fall",
++    },
++    {
++        "id": "pilot_14_wrong_note_color",
++        "expected_key": "C",
++        "expected_mode": "major",
++        "seed": 9214,
++        "duration_ms": 12000,
++        "styles": [
++            "fictional pop vocal",
++            "C major",
++            "90 BPM",
++            "one bluesy out of scale note",
++            "passing tone tension",
++            "connected melody",
++            "dry vocal upfront",
++            "small band backing",
++            "great production quality",
++        ],
++        "negative_styles": [
++            "celebrity impression",
++            "recognizable artist",
++            "choir",
++            "heavy autotune",
++            "atonal",
++        ],
++        "text": "[Verse]\nGreen light bends across the blue\nOne strange note is passing through\nThen it finds the center too",
++    },
++    {
++        "id": "pilot_15_octave_leap",
++        "expected_key": "A",
++        "expected_mode": "major",
++        "seed": 9215,
++        "duration_ms": 12000,
++        "styles": [
++            "fictional energetic vocal",
++            "A major",
++            "118 BPM",
++            "sudden octave leap",
++            "clear low note then high note",
++            "short breath before leap",
++            "minimal pop backing",
++            "lead vocal forward",
++            "great production quality",
++        ],
++        "negative_styles": [
++            "celebrity impression",
++            "recognizable artist",
++            "choir",
++            "scream",
++            "heavy reverb",
++        ],
++        "text": "[Verse]\nStart below the city line\nJump above the rooftop sign\nHold the daylight, make it shine",
++    },
++    {
++        "id": "pilot_16_repeated_staccato",
++        "expected_key": "B",
++        "expected_mode": "major",
++        "seed": 9216,
++        "duration_ms": 12000,
++        "styles": [
++            "fictional clean pop vocal",
++            "B major",
++            "122 BPM",
++            "repeated staccato notes",
++            "short syllable pattern",
++            "precise note starts",
++            "dry close vocal",
++            "light kick pulse",
++            "great production quality",
++        ],
++        "negative_styles": [
++            "celebrity impression",
++            "recognizable artist",
++            "legato only",
++            "choir",
++            "heavy effects",
++        ],
++        "text": "[Verse]\nTap tap take the tiny train\nStep step send it back again\nBright bright bits of silver rain",
++    },
++    {
++        "id": "pilot_17_wide_vibrato",
++        "expected_key": "C#",
++        "expected_mode": "minor",
++        "seed": 9217,
++        "duration_ms": 14000,
++        "styles": [
++            "expressive fictional soul vocal",
++            "C# minor",
++            "82 BPM",
++            "wide vibrato",
++            "sustained emotional note",
++            "slow attack",
++            "minimal organ pad",
++            "vocal upfront",
++            "great production quality",
++        ],
++        "negative_styles": [
++            "celebrity impression",
++            "recognizable artist",
++            "choir",
++            "hard autotune",
++            "distortion",
++        ],
++        "text": "[Verse]\nHold me in the turning sound\nWide and warm and circling round\nLet the center settle down",
++    },
++    {
++        "id": "pilot_18_slide_up_fast",
++        "expected_key": "D",
++        "expected_mode": "minor",
++        "seed": 9218,
++        "duration_ms": 12000,
++        "styles": [
++            "fictional agile alto vocal",
++            "D minor",
++            "100 BPM",
++            "fast upward slide",
++            "scoop into target note",
++            "connected melodic phrase",
++            "sparse percussion",
++            "dry vocal lead",
++            "great production quality",
++        ],
++        "negative_styles": [
++            "celebrity impression",
++            "recognizable artist",
++            "choir",
++            "heavy reverb",
++            "rap",
++        ],
++        "text": "[Verse]\nClimb the line and do not break\nSlide the spark across the lake\nLand it clean for morning's sake",
++    },
++    {
++        "id": "pilot_19_breath_gap_reentry",
++        "expected_key": "G#",
++        "expected_mode": "minor",
++        "seed": 9219,
++        "duration_ms": 12000,
++        "styles": [
++            "fictional breathy tenor vocal",
++            "G# minor",
++            "78 BPM",
++            "obvious breath gap",
++            "silence before reentry",
++            "soft reattack",
++            "nearly a cappella",
++            "dry close microphone",
++            "great production quality",
++        ],
++        "negative_styles": [
++            "celebrity impression",
++            "recognizable artist",
++            "choir",
++            "continuous pad",
++            "heavy reverb",
++        ],
++        "text": "[Verse]\nI leave the line\n{breath}\nThen find the sign\nI leave the line\n{breath}\nThen make it mine",
++    },
++    {
++        "id": "pilot_20_dynamic_swell",
++        "expected_key": "F",
++        "expected_mode": "minor",
++        "seed": 9220,
++        "duration_ms": 14000,
++        "styles": [
++            "fictional dramatic vocal",
++            "F minor",
++            "86 BPM",
++            "quiet to loud dynamic swell",
++            "crescendo on sustained note",
++            "clear vowel",
++            "minimal cinematic backing",
++            "vocal upfront",
++            "great production quality",
++        ],
++        "negative_styles": [
++            "celebrity impression",
++            "recognizable artist",
++            "choir",
++            "clipping",
++            "heavy reverb",
++        ],
++        "text": "[Verse]\nBegin as smoke beneath the wire\nGrow into a steady fire\nHold the word and lift it higher",
++    },
++    {
++        "id": "pilot_21_chromatic_run",
++        "expected_key": "E",
++        "expected_mode": "minor",
++        "seed": 9221,
++        "duration_ms": 12000,
++        "styles": [
++            "fictional vocal scale run",
++            "E minor",
++            "132 BPM",
++            "brief chromatic passing run",
++            "fast syllables",
++            "return to stable key center",
++            "dry lead vocal",
++            "light rhythm section",
++            "great production quality",
++        ],
++        "negative_styles": [
++            "celebrity impression",
++            "recognizable artist",
++            "choir",
++            "spoken word",
++            "heavy effects",
++        ],
++        "text": "[Verse]\nStep by step the colors race\nHalf steps flash across the phrase\nThen I settle into place",
++    },
++    {
++        "id": "pilot_22_harmonized_phrase",
++        "expected_key": "A",
++        "expected_mode": "minor",
++        "seed": 9222,
++        "duration_ms": 12000,
++        "styles": [
++            "fictional lead vocal with subtle harmony",
++            "A minor",
++            "94 BPM",
++            "two voice harmony on last phrase",
++            "lead still dominant",
++            "connected melodic phrase",
++            "small room ambience",
++            "great production quality",
++        ],
++        "negative_styles": [
++            "celebrity impression",
++            "recognizable artist",
++            "large choir",
++            "heavy reverb",
++            "atonal",
++        ],
++        "text": "[Verse]\nFollow where the candle bends\nSing the line before it ends\nTwo small voices meet as friends",
++    },
++    {
++        "id": "pilot_23_instrumental_stable_major",
++        "expected_key": "C",
++        "expected_mode": "major",
++        "seed": 9223,
++        "duration_ms": 12000,
++        "styles": [
++            "instrumental piano bass drum loop",
++            "C major",
++            "100 BPM",
++            "clear tonic bass",
++            "simple I IV V progression",
++            "no vocals",
++            "steady tempo",
++            "great production quality",
++        ],
++        "negative_styles": [
++            "vocals",
++            "speech",
++            "key changes",
++            "atonal",
++            "ambient wash",
++        ],
++        "text": "[Instrumental]\n{simple piano hook in C major}\n{bass plays clear C root}\n{steady drums}",
++    },
++    {
++        "id": "pilot_24_instrumental_stable_minor",
++        "expected_key": "A",
++        "expected_mode": "minor",
++        "seed": 9224,
++        "duration_ms": 12000,
++        "styles": [
++            "instrumental synth bass drum loop",
++            "A minor",
++            "90 BPM",
++            "clear tonic bass",
++            "simple minor progression",
++            "no vocals",
++            "steady tempo",
++            "great production quality",
++        ],
++        "negative_styles": [
++            "vocals",
++            "speech",
++            "major key",
++            "key changes",
++            "atonal",
++        ],
++        "text": "[Instrumental]\n{dark synth hook in A minor}\n{bass holds A root}\n{tight simple drums}",
++    },
++])
++
++
++def get_key() -> str:
++    return subprocess.check_output(
++        ["security", "find-generic-password", "-a", ACCOUNT, "-s", SERVICE, "-w"],
++        text=True,
++    ).strip()
++
++
++def compose(case: dict, out_mp3: Path) -> dict:
++    payload = {
++        "composition_plan": {
++            "chunks": [
++                {
++                    "text": case["text"],
++                    "duration_ms": case["duration_ms"],
++                    "positive_styles": case["styles"],
++                    "negative_styles": case["negative_styles"],
++                    "context_adherence": "high",
++                }
++            ]
++        },
++        "model_id": "music_v2_5",
++        "seed": case["seed"],
++        "store_for_inpainting": False,
++        "sign_with_c2pa": False,
++    }
++    data = json.dumps(payload).encode("utf-8")
++    req = urllib.request.Request(
++        API_URL,
++        data=data,
++        method="POST",
++        headers={
++            "Content-Type": "application/json",
++            "xi-api-key": get_key(),
++        },
++    )
++    start = time.time()
++    try:
++        with urllib.request.urlopen(req, timeout=180) as resp:
++            body = resp.read()
++            headers = dict(resp.headers.items())
++            status = resp.status
++    except urllib.error.HTTPError as exc:
++        detail = exc.read().decode("utf-8", "replace")
++        raise RuntimeError(f"{case['id']} generation failed HTTP {exc.code}: {detail[:1000]}") from exc
++
++    out_mp3.write_bytes(body)
++    return {
++        "status": status,
++        "elapsed_sec": round(time.time() - start, 3),
++        "bytes": len(body),
++        "content_type": headers.get("content-type", ""),
++        "request_id": headers.get("request-id", headers.get("x-request-id", "")),
++        "song_id": headers.get("song-id", headers.get("x-song-id", "")),
++    }
++
++
++def convert_to_wav(mp3: Path, wav: Path) -> None:
++    subprocess.run(
++        ["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-i", str(mp3), "-ar", "48000", "-ac", "1", str(wav)],
++        check=True,
++    )
++
++
++def pearson(a: np.ndarray, b: np.ndarray) -> float:
++    a = a - np.mean(a)
++    b = b - np.mean(b)
++    denom = np.linalg.norm(a) * np.linalg.norm(b)
++    return float(np.dot(a, b) / denom) if denom else -1.0
++
++
++def estimate_key_bpm(wav: Path) -> dict:
++    y, sr = librosa.load(wav, sr=48000, mono=True)
++    duration = len(y) / sr if sr else 0.0
++    rms = float(np.sqrt(np.mean(np.square(y)))) if len(y) else 0.0
++    peak = float(np.max(np.abs(y))) if len(y) else 0.0
++    tempo_raw, _ = librosa.beat.beat_track(y=y, sr=sr)
++    tempo = float(np.asarray(tempo_raw).reshape(-1)[0]) if np.asarray(tempo_raw).size else 0.0
++    chroma = librosa.feature.chroma_cqt(y=y, sr=sr)
++    chroma_mean = np.mean(chroma, axis=1)
++
++    candidates: list[tuple[float, str, str]] = []
++    for root in range(12):
++        candidates.append((pearson(np.roll(MAJOR_PROFILE, root), chroma_mean), ROOT_NAMES[root], "major"))
++        candidates.append((pearson(np.roll(MINOR_PROFILE, root), chroma_mean), ROOT_NAMES[root], "minor"))
++    candidates.sort(reverse=True, key=lambda item: item[0])
++    top = candidates[:5]
++    return {
++        "duration_sec": round(duration, 3),
++        "rms": rms,
++        "peak": peak,
++        "bpm_estimate": round(tempo, 3),
++        "detected_key": top[0][1],
++        "detected_mode": top[0][2],
++        "key_confidence_gap": round(top[0][0] - top[1][0], 4) if len(top) > 1 else 0.0,
++        "top_key_candidates": [
++            {"key": key, "mode": mode, "score": round(score, 4)}
++            for score, key, mode in top
++        ],
++    }
++
++
++def main() -> int:
++    parser = argparse.ArgumentParser()
++    parser.add_argument("--out", type=Path)
++    args = parser.parse_args()
++
++    out_dir = args.out.resolve() if args.out else ROOT / "validation" / f"elevenlabs_music_pilot_{time.strftime('%Y%m%d_%H%M%S')}"
++    audio_dir = out_dir / "audio"
++    meta_dir = out_dir / "metadata"
++    audio_dir.mkdir(parents=True, exist_ok=True)
++    meta_dir.mkdir(parents=True, exist_ok=True)
++
++    manifest = {
++        "created_at_unix": int(time.time()),
++        "tool": "scripts/elevenlabs_music_pilot.py",
++        "api": "ElevenLabs Music POST /v1/music",
++        "output_format": "mp3_48000_192",
++        "model_id": "music_v2_5",
++        "cases": [],
++        "tunebat": {
++            "status": "not_machine_verified",
++            "reason": "Tunebat Analyzer is a browser upload flow and returned 403/Cloudflare to headless fetch during this run.",
++        },
++    }
++
++    tunebat_rows = ["id,audio_path,expected_key,expected_mode,source"]
++    autokey_rows = ["id,audio_path,expected_key,expected_mode,source"]
++
++    for case in CASES:
++        mp3 = audio_dir / f"{case['id']}.mp3"
++        wav = audio_dir / f"{case['id']}.wav"
++        if mp3.exists():
++            generation = {
++                "status": "reused_existing_file",
++                "bytes": mp3.stat().st_size,
++            }
++        else:
++            generation = compose(case, mp3)
++        if not wav.exists() or wav.stat().st_mtime < mp3.stat().st_mtime:
++            convert_to_wav(mp3, wav)
++        analysis = estimate_key_bpm(wav)
++        case_manifest = {
++            **case,
++            "audio_mp3": str(mp3),
++            "audio_wav": str(wav),
++            "generation": generation,
++            "analysis": analysis,
++            "local_key_match": analysis["detected_key"] == case["expected_key"] and analysis["detected_mode"] == case["expected_mode"],
++        }
++        (meta_dir / f"{case['id']}.json").write_text(json.dumps(case_manifest, indent=2) + "\n")
++        manifest["cases"].append(case_manifest)
++        rel_wav = os.path.relpath(wav, out_dir)
++        tunebat_rows.append(f"{case['id']},{rel_wav},{case['expected_key']},{case['expected_mode']},Tunebat-upload-pending")
++        autokey_rows.append(f"{case['id']},{rel_wav},{case['expected_key']},{case['expected_mode']},ElevenLabs-pilot")
++        print(f"{case['id']}: {analysis['detected_key']} {analysis['detected_mode']} / {analysis['bpm_estimate']} BPM / local_match={case_manifest['local_key_match']}")
++
++    (out_dir / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
++    (out_dir / "tunebat_upload_manifest.csv").write_text("\n".join(tunebat_rows) + "\n")
++    (out_dir / "autokey_reference.csv").write_text("\n".join(autokey_rows) + "\n")
++    print(out_dir)
++    return 0
++
++
++if __name__ == "__main__":
++    sys.exit(main())
+diff --git a/scripts/package_alpha_local.sh b/scripts/package_alpha_local.sh
+index 74b445cc3c7cd5c93bee8572a0260e4730736934..a7515b020da6e2aea177f566c608adffda109d76 100755
+--- a/scripts/package_alpha_local.sh
++++ b/scripts/package_alpha_local.sh
+@@ -58,6 +58,24 @@ package_one() {
+       au_type=""; au_subtype=""; formats="AU, VST3";
+       limitation="MIDI-effect internal alpha; needs DAW MIDI routing, preset UX, timing feel, and generated-pattern validation before any product claim."
+       ;;
++    voxkey)
++      target="SattariVoxKey"; product="Sattari VoxKey"; bundle_dir="SattariVoxKey_artefacts";
++      au_name="Sattari VoxKey.component"; vst3_name="Sattari VoxKey.vst3"; app_name="Sattari VoxKey.app";
++      au_type="aufx"; au_subtype="Vk01"; formats="AU, VST3, Standalone";
++      limitation="Voice-to-MIDI internal alpha; needs real-vocal DAW routing, MIDI capture/export, latency, and generated-note musicality validation before any product claim."
++      ;;
++    bus)
++      target="SattariBus"; product="Sattari Bus"; bundle_dir="SattariBus_artefacts";
++      au_name="Sattari Bus.component"; vst3_name="Sattari Bus.vst3"; app_name="Sattari Bus.app";
++      au_type="aufx"; au_subtype="Bus1"; formats="AU, VST3, Standalone";
++      limitation="Bus/mix internal alpha; needs DAW insert validation, automation/save-reopen checks, CPU/headroom checks, and real-session listening before any product claim."
++      ;;
++    align)
++      target="SattariAlign"; product="Sattari Align"; bundle_dir="SattariAlign_artefacts";
++      au_name="Sattari Align.component"; vst3_name="Sattari Align.vst3"; app_name="Sattari Align.app";
++      au_type="aufx"; au_subtype="Algn"; formats="AU, VST3, Standalone";
++      limitation="Timing-alignment internal alpha; needs DAW sidechain routing validation, phase/listening checks, automation/save-reopen checks, and real-session timing validation before any product claim."
++      ;;
+     *)
+       echo "unknown plugin slug: $slug" >&2
+       return 1
+@@ -211,7 +229,7 @@ package_suite() {
+   rm -rf "$suite_dir"
+   mkdir -p "$suite_dir/Plugins/Components" "$suite_dir/Plugins/VST3" "$suite_dir/Applications" "$suite_dir/Sources" "$suite_dir/scripts"
+ 
+-  for slug in sub-conjurer stemdeck side-chain-master royal-chain auto-pitch sattari-arp; do
++  for slug in sub-conjurer stemdeck side-chain-master royal-chain auto-pitch sattari-arp voxkey bus align; do
+     local package_dir="$out_root/${slug}-plugin-alpha-v${version}"
+     if [[ ! -d "$package_dir" ]]; then
+       echo "missing individual package for suite: $package_dir" >&2
+@@ -240,6 +258,9 @@ Truth label: **internal all-plugin suite bundle / alpha validation package**. Th
+ - Sattari Auto Pitch — AU, VST3, Standalone
+ - Sattari StemDeck — VST3, Standalone
+ - Sattari Arp — AU, VST3
++- Sattari VoxKey — AU, VST3, Standalone
++- Sattari Bus — AU, VST3, Standalone
++- Sattari Align — AU, VST3, Standalone
+ - Sub Conjurer — AU, VST3, Standalone
+ - Side Chain Master — AU, VST3, Standalone
+ - Sattari Royal Chain — AU, VST3, Standalone
+@@ -325,7 +346,7 @@ EOF
+   echo "packaged $suite_dir"
+ }
+ 
+-for slug in sub-conjurer stemdeck side-chain-master royal-chain auto-pitch sattari-arp; do
++for slug in sub-conjurer stemdeck side-chain-master royal-chain auto-pitch sattari-arp voxkey bus align; do
+   package_one "$slug"
+ done
+ 

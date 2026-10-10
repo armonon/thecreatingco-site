@@ -1,0 +1,524 @@
+{
+  "sha": "702a6f940d4c0f022f39330dff9e8fd349186c6f",
+  "base_sha": "abde931cd81634a54288177c9d40dfd65321a5d8",
+  "scope": "Committed screened review delta, not a release or complete binary artifact",
+  "files": [
+    {
+      "path": "docs/STUDIO_LABS_SPLIT_KEYBPM_VOX.md",
+      "status": "present",
+      "sha256": "7543f4d71d3831bc1591657d8145957c7f7624cac0e9f9d79ac88c715f11273a",
+      "bytes": 5718
+    },
+    {
+      "path": "package-lock.json",
+      "status": "present",
+      "sha256": "f2ac34e0605a7c4b963adc54fa1a32d83b67c800daa11d7b55293e70a1cbbf13",
+      "bytes": 316635
+    },
+    {
+      "path": "package.json",
+      "status": "present",
+      "sha256": "2133928a33ab7236918f6448dc3088fd5a1d0e56392cccfc493ffd640f507e10",
+      "bytes": 2238
+    },
+    {
+      "path": "scripts/qualify-labs.mjs",
+      "status": "present",
+      "sha256": "cec4240c804da2030cff1be9533842d1140e0b4c9fc37eaf4826a34aea172d07",
+      "bytes": 9566
+    },
+    {
+      "path": "scripts/qualify-lyric-clean.mjs",
+      "status": "present",
+      "sha256": "5e64134f45b65e929d13adbb7bfe919a80a3ab8db6727f331067b21720af3ae7",
+      "bytes": 2399
+    },
+    {
+      "path": "scripts/qualify-studio-labs.mjs",
+      "status": "present",
+      "sha256": "93a549c5402c38a2cd840f48f058943641380cbd1e379b120ce91d0d7e4df731",
+      "bytes": 13005
+    },
+    {
+      "path": "src/App.tsx",
+      "status": "present",
+      "sha256": "5c647b8f73432d52d922aefe11c02072c57cdd563737fc80b97f4d9c4b6ddc5d",
+      "bytes": 13278
+    },
+    {
+      "path": "src/components/Navbar.jsx",
+      "status": "present",
+      "sha256": "1c667f7112d9dfd9536da3a8fe548f30ef31fa8f9b117f388205c4f208280bf5",
+      "bytes": 5851
+    },
+    {
+      "path": "src/entry-prerender.jsx",
+      "status": "present",
+      "sha256": "40dbcfd4792183443254cdabf48af478ca46214a4ccfdc93e0a6d00cf4bd41e6",
+      "bytes": 4917
+    },
+    {
+      "path": "src/labs/HubLabs.jsx",
+      "status": "present",
+      "sha256": "e7979603a17f056660f204b126cdce48e10bbc84e333bc12d27c54ea898f4960",
+      "bytes": 1256
+    },
+    {
+      "path": "src/labs/LabPages.test.jsx",
+      "status": "present",
+      "sha256": "12cc35367f26f27f9b7839fd9a8188d3b200d6995048be29fcec94b8509bdaab",
+      "bytes": 3608
+    },
+    {
+      "path": "src/labs/LabShell.jsx",
+      "status": "present",
+      "sha256": "c3004ea5a9e73b8f4eb12e989273423e0a91b45a4c31d4bc799451cb6dd3bd81",
+      "bytes": 1788
+    },
+    {
+      "path": "src/labs/audio/AudioLabParts.jsx",
+      "status": "present",
+      "sha256": "3a20d0268a265ef3ade8a26710abef8104ada374c280d97c02f3c6e5cec3e4bc",
+      "bytes": 3289
+    },
+    {
+      "path": "src/labs/audio/AudioLabShell.jsx",
+      "status": "present",
+      "sha256": "a4ed14e386286c44210b3d894397702d69bbfbf13515397c84b2a1fe2690a0b4",
+      "bytes": 2503
+    },
+    {
+      "path": "src/labs/audio/audioLabFiles.js",
+      "status": "present",
+      "sha256": "d12db04aadf37a32875e798cf22a0b07f24f407267ce915db94a4d9643c0e5b8",
+      "bytes": 2389
+    },
+    {
+      "path": "src/labs/audio/audioLabTools.js",
+      "status": "present",
+      "sha256": "16f4a38c80b8eb85712320fd94f8eac7ab1ff59c16d848d03155b88548d7bbde",
+      "bytes": 1270
+    },
+    {
+      "path": "src/labs/audio/audioLabs.css",
+      "status": "present",
+      "sha256": "b3b5daabb1fb35c2e6ebad15e20159bd87bb5c8863714f97a64597b858616734",
+      "bytes": 12577
+    },
+    {
+      "path": "src/labs/audio/audioLabs.test.jsx",
+      "status": "present",
+      "sha256": "9aecfa33040cc83100b32047d58536f664f2636d46c4bc0b4994a5b22fe05670",
+      "bytes": 1607
+    },
+    {
+      "path": "src/labs/canvas/CanvasPage.jsx",
+      "status": "present",
+      "sha256": "06d147fa98033bcdd899ccd5d8719b4ea5d9d3fdd2d0587c198d96601a607a7b",
+      "bytes": 20527
+    },
+    {
+      "path": "src/labs/canvas/canvasExport.js",
+      "status": "present",
+      "sha256": "20a440b0c9162ae2985df0eaa4ad097f045be777d73c3453fa6a3549da25163b",
+      "bytes": 2167
+    },
+    {
+      "path": "src/labs/canvas/canvasExport.test.js",
+      "status": "present",
+      "sha256": "44fe365aae86ddeab609cf90d0360c2d460a9dab5a645b31b6d303469c25519a",
+      "bytes": 1324
+    },
+    {
+      "path": "src/labs/canvas/canvasFeatures.js",
+      "status": "present",
+      "sha256": "837e4010a47e0dc240d5c9c1db40b87a80aa9c1293536fd6204db4c43da6bb1b",
+      "bytes": 6855
+    },
+    {
+      "path": "src/labs/canvas/canvasFeatures.test.js",
+      "status": "present",
+      "sha256": "4284cd56f51a9e43b6751d7ea5cebaabbbb0c32cb850052e28216d19aedce317",
+      "bytes": 3486
+    },
+    {
+      "path": "src/labs/canvas/canvasScenes.js",
+      "status": "present",
+      "sha256": "537aed5ef301a35089d594f4e1f720e1da7fd5ad3bbd02e3246f7db00dc14992",
+      "bytes": 12780
+    },
+    {
+      "path": "src/labs/clean/CleanPage.jsx",
+      "status": "present",
+      "sha256": "89857f10615ac4c547edd7907320156243bbac828f2d64d3c627d77effe2b933",
+      "bytes": 20441
+    },
+    {
+      "path": "src/labs/clean/cleanDsp.js",
+      "status": "present",
+      "sha256": "dac727f3ddc0be0e3dea32b3aadbd070fde58b1197b50a6098b3c7ba3054a729",
+      "bytes": 18524
+    },
+    {
+      "path": "src/labs/clean/cleanDsp.test.js",
+      "status": "present",
+      "sha256": "4b6404aff637f30db06d591e4652e7a1453b35cfa5408bffefdfc39034dbcfc0",
+      "bytes": 10034
+    },
+    {
+      "path": "src/labs/clean/cleanSpectrogram.js",
+      "status": "present",
+      "sha256": "e597e4f655a787dce7c458ab9e395b51086deb1bedeb25791214a3d959ace098",
+      "bytes": 2788
+    },
+    {
+      "path": "src/labs/clean/fft.js",
+      "status": "present",
+      "sha256": "5a725156a61f587de85c074cb67df2f1fc3ab4ea1caeb8958c0e72c465d8974f",
+      "bytes": 1948
+    },
+    {
+      "path": "src/labs/files.js",
+      "status": "present",
+      "sha256": "cf2fc21f9eaa678ae389e59381f1a3f7396932eafaf62f1603085f4729d5e2ca",
+      "bytes": 605
+    },
+    {
+      "path": "src/labs/hubLabs.css",
+      "status": "present",
+      "sha256": "7d880970c76e04e2fa127d3061e4891318a88e4515adf6aebfe49af3802e9563",
+      "bytes": 212
+    },
+    {
+      "path": "src/labs/keybpm/KeyBpmPage.jsx",
+      "status": "present",
+      "sha256": "138853542ff7768dc526c2e3a8eacc88b5b690be1d11a4b51361a317f5eaef16",
+      "bytes": 11712
+    },
+    {
+      "path": "src/labs/keybpm/keyBpm.js",
+      "status": "present",
+      "sha256": "44c20d560528c9ff758689a5986b6e5ebad798dcf9e5b92734cbbc530c3aaf4c",
+      "bytes": 5138
+    },
+    {
+      "path": "src/labs/keybpm/keyBpm.test.js",
+      "status": "present",
+      "sha256": "961d3bc4f7b7aa73d6eef203bcbf4cb2212315a1984b55df8850cd800dee45d5",
+      "bytes": 3621
+    },
+    {
+      "path": "src/labs/keybpm/keyBpm.worker.js",
+      "status": "present",
+      "sha256": "e967f2b9cd9114920f996118ec3f7056f96c8facb341e0b729b5e8f20c867a36",
+      "bytes": 762
+    },
+    {
+      "path": "src/labs/labs.css",
+      "status": "present",
+      "sha256": "97898f32f5cdacf565fd9eb3123a910a9fb07d5a18af9a1a855174ff726778e5",
+      "bytes": 11053
+    },
+    {
+      "path": "src/labs/labsSeo.js",
+      "status": "present",
+      "sha256": "81cf5b3c0943ed796a012ef72506ebaa7420d2d6ca0e45a89e33437eb16fc909",
+      "bytes": 1526
+    },
+    {
+      "path": "src/labs/lyric/LyricPage.jsx",
+      "status": "present",
+      "sha256": "45ea52bf3d9af4bfe2c3a043e8f583771a2403c6cca80c811731ce7fae14c51e",
+      "bytes": 30771
+    },
+    {
+      "path": "src/labs/lyric/LyricTimeline.jsx",
+      "status": "present",
+      "sha256": "b0ed2a7fa7442dfc5feed23dd059e8822aa7a5cd929948a536b29856f6ea251b",
+      "bytes": 2544
+    },
+    {
+      "path": "src/labs/lyric/lyric.css",
+      "status": "present",
+      "sha256": "84fd1a74639bac5552f308e1fb1ff956e8819f218b053dfb105c4cd5c6b28004",
+      "bytes": 2989
+    },
+    {
+      "path": "src/labs/lyric/lyricAlign.js",
+      "status": "present",
+      "sha256": "b2862b617fa10f364d96d1807e7bb5f2851aba9ee84df6be65d45bc1e8c29c22",
+      "bytes": 9533
+    },
+    {
+      "path": "src/labs/lyric/lyricAlign.test.js",
+      "status": "present",
+      "sha256": "eab6a702e5012e29552dffb99a770c5bc0ecd18f99f7fa7452a4b553d9c4dc77",
+      "bytes": 6518
+    },
+    {
+      "path": "src/labs/lyric/lyricAudio.js",
+      "status": "present",
+      "sha256": "e1057f7240bf9983f6ad630e069c7a5e2860828581f7a01fb0708e366dc1e5ae",
+      "bytes": 957
+    },
+    {
+      "path": "src/labs/lyric/lyricBackgrounds.js",
+      "status": "present",
+      "sha256": "83b7763e90c765db633acf722e46c634b674a3a1f0466b95e2d4dc6afac62de0",
+      "bytes": 5020
+    },
+    {
+      "path": "src/labs/lyric/lyricBackgrounds.test.js",
+      "status": "present",
+      "sha256": "f5390f5946fb9f78b899d1fc6879f197d530f838f5803d57021b7ee10f5b50ed",
+      "bytes": 2080
+    },
+    {
+      "path": "src/labs/lyric/lyricExport.js",
+      "status": "present",
+      "sha256": "32eec1468caf57427e2426a779d22e2d13c61fd94e6951c3756db073a9843426",
+      "bytes": 7189
+    },
+    {
+      "path": "src/labs/lyric/lyricExport.test.js",
+      "status": "present",
+      "sha256": "1b6ca375db986ac8c8287bc376c342284cb1730aaea33857b98f020d99404391",
+      "bytes": 3250
+    },
+    {
+      "path": "src/labs/lyric/lyricExportMp4.js",
+      "status": "present",
+      "sha256": "51a9170934881e116502d8df7f2b8e7160cd63f366cdaff145f6332866cafbbb",
+      "bytes": 4429
+    },
+    {
+      "path": "src/labs/lyric/lyricFonts.js",
+      "status": "present",
+      "sha256": "0828283cadcb5679ef1078e90ca70a39d9fbe0b5e551843516c885b737cbacb9",
+      "bytes": 1605
+    },
+    {
+      "path": "src/labs/lyric/lyricFonts.test.js",
+      "status": "present",
+      "sha256": "1f2e1f86e7542cef45fbb68e45f33d17abbfbfee41fb81968c3cc0373100e7ca",
+      "bytes": 1194
+    },
+    {
+      "path": "src/labs/lyric/lyricRender.js",
+      "status": "present",
+      "sha256": "1cc929e08b383c754f850ba33f74e2a3d89e688c3eef4c8342ac000b1c003077",
+      "bytes": 7462
+    },
+    {
+      "path": "src/labs/lyric/lyricRender.test.js",
+      "status": "present",
+      "sha256": "fa7e6bb7868fbacf02c873facfce7f8db06601af04126b49da13cce9fe564134",
+      "bytes": 3150
+    },
+    {
+      "path": "src/labs/lyric/lyricResample.js",
+      "status": "present",
+      "sha256": "477bb9cbf84d26d9538d482f237fc4fc237473a8d284c6d1c3b23f0f916ddfb2",
+      "bytes": 858
+    },
+    {
+      "path": "src/labs/lyric/lyricResample.test.js",
+      "status": "present",
+      "sha256": "6436fd8d889d7d59295f18cb6bbc9f0bfb5b569c509ac54174009ea794a4f768",
+      "bytes": 1433
+    },
+    {
+      "path": "src/labs/lyric/lyricWhisper.worker.js",
+      "status": "present",
+      "sha256": "2472606017c83f0b4365af445cf24beca17e30a6b5d2aced583d46dc22657162",
+      "bytes": 1942
+    },
+    {
+      "path": "src/labs/lyric/lyricWhisperClient.js",
+      "status": "present",
+      "sha256": "b3247a3d9d44f3eb8b742ee87a64efc2b4ec5909b49d8e100664cee5c0377c56",
+      "bytes": 2440
+    },
+    {
+      "path": "src/labs/lyric/lyricWhisperModel.js",
+      "status": "present",
+      "sha256": "0492ddcd2f86f4c99be8f9111a78e9c6192906a28e66b07d5360d7a9311c9e93",
+      "bytes": 1507
+    },
+    {
+      "path": "src/labs/lyric/normalizeWords.js",
+      "status": "present",
+      "sha256": "04c313f617a194fc0ac149c0e711a59d6da48d146f84905d31e3b41929b7023b",
+      "bytes": 2216
+    },
+    {
+      "path": "src/labs/pocket/PocketPage.jsx",
+      "status": "present",
+      "sha256": "314436a2532709d48624e734f8e8f873fbca2dbb4053371d00f4d7f3edb71076",
+      "bytes": 19532
+    },
+    {
+      "path": "src/labs/pocket/pocketPattern.js",
+      "status": "present",
+      "sha256": "9ed3a5d3329cda350a90648d265128aa965bee76f3649fa1869a0a0d09af968e",
+      "bytes": 7970
+    },
+    {
+      "path": "src/labs/pocket/pocketPattern.test.js",
+      "status": "present",
+      "sha256": "f4b01ff0e5df548642596d31ac9930152b277f408ac16244378b4d40137d9379",
+      "bytes": 4241
+    },
+    {
+      "path": "src/labs/pocket/pocketSynth.js",
+      "status": "present",
+      "sha256": "ffe8230ae95a272f4700ea3a3daeba0691c7190c7fbf38b0bbfd9dedc44a1067",
+      "bytes": 8327
+    },
+    {
+      "path": "src/labs/press/PressPage.jsx",
+      "status": "present",
+      "sha256": "b7fd058d2a203460a65841b577170b19d2583134e96539a8edf482dff95111be",
+      "bytes": 14410
+    },
+    {
+      "path": "src/labs/press/pressHtml.js",
+      "status": "present",
+      "sha256": "089cec5a2164698bdecda56036400016fe1977628dcfb6998be11480e272fbee",
+      "bytes": 13592
+    },
+    {
+      "path": "src/labs/split/SplitPage.jsx",
+      "status": "present",
+      "sha256": "4a25d8528dc7d24bdb4c2365502c91e44e5810f5eadfb278ec2684e90a6b7de9",
+      "bytes": 10254
+    },
+    {
+      "path": "src/labs/split/StemMixer.jsx",
+      "status": "present",
+      "sha256": "8a82391ad22eecd5daac6e199ba7424acdf4665a884235fb2b2a9ba5647dc9a8",
+      "bytes": 8332
+    },
+    {
+      "path": "src/labs/vox/VoxPage.jsx",
+      "status": "present",
+      "sha256": "ac9330c1845f152bdb0354f9ae867f8b0d1519ac5b936e36d40eb8c0b34f2265",
+      "bytes": 19201
+    },
+    {
+      "path": "src/labs/vox/useVoxRecorder.js",
+      "status": "present",
+      "sha256": "617ffea036c06d3cee7d28d2c428c735ddff15da495c6165c31ee0359fda545d",
+      "bytes": 3865
+    },
+    {
+      "path": "src/labs/vox/vox.worker.js",
+      "status": "present",
+      "sha256": "987da97be88b7871cbad0b94fe7c839d455e06854be5481b1225c7abaf3c9b71",
+      "bytes": 1444
+    },
+    {
+      "path": "src/labs/vox/voxDsp.js",
+      "status": "present",
+      "sha256": "e649c4325723dde1e4d39a20c34ee723e814b69283a85a6525e02ea949e3773e",
+      "bytes": 11337
+    },
+    {
+      "path": "src/labs/vox/voxDsp.test.js",
+      "status": "present",
+      "sha256": "1d0c90d814a9a3e0b6f4f6859761e219ef2a06c0e0b9b2f946959cc53aa41205",
+      "bytes": 5394
+    },
+    {
+      "path": "src/pages/SattariHubPage.jsx",
+      "status": "present",
+      "sha256": "24dd9f0257de7a1781e63a99b6567e4cdf9085bbea818570967f1ca1dc665cec",
+      "bytes": 6922
+    },
+    {
+      "path": "src/pages/SattariHubPage.test.jsx",
+      "status": "present",
+      "sha256": "d147f7af00833b52774125f29676493363ee5ac1f5521e98c4cd5da28f299df2",
+      "bytes": 2671
+    },
+    {
+      "path": "src/pages/SattariStudioPage.jsx",
+      "status": "present",
+      "sha256": "aa46ebca868eb362c1e150a7502e9b46f0436d29cb98c4d3689e19d7ee02274f",
+      "bytes": 18081
+    },
+    {
+      "path": "src/studio/hooks/useStemHandoff.js",
+      "status": "present",
+      "sha256": "8053cf739494a13d0aacfd489887b62d1ed72c58a301fce8b827b8b0e1503498",
+      "bytes": 1921
+    },
+    {
+      "path": "src/studio/stemHandoff.js",
+      "status": "present",
+      "sha256": "836fe6d3595b89f8f7e041bcd1cb4917d111ed1088ae01ede31fc9af66783842",
+      "bytes": 975
+    },
+    {
+      "path": "src/studio/stemHandoff.test.js",
+      "status": "present",
+      "sha256": "a4ab6afbddb6e7feac1760234f81625e33c9e133885a5f271c81900c909aca5e",
+      "bytes": 3246
+    },
+    {
+      "path": "src/utils/lazyComponents.tsx",
+      "status": "present",
+      "sha256": "d2f6bd682bc67c3c59b01dead18e6b986d9787e0af9f4ac0ff4995b5d05fdb0e",
+      "bytes": 7120
+    },
+    {
+      "path": "tests/netlify-functions/hash-staff-password.test.js",
+      "status": "present",
+      "sha256": "5307b336bd9feab238c967ddf6ee4b8e25aabcaddff8394cf379fdbc2c5b5a0f",
+      "bytes": 1528
+    },
+    {
+      "path": "tests/netlify-functions/staff-auth.test.js",
+      "status": "present",
+      "sha256": "70ad2e36147a06482859c225d0c47e6caa3c50c889ba1bf3c550bda43e128aa6",
+      "bytes": 7338
+    },
+    {
+      "path": "tests/netlify-functions/staff-endpoints-auth.test.js",
+      "status": "present",
+      "sha256": "1e308b0260e50202744496ab29362d5589a79f58ce12efdd1e150cd0db8ffee9",
+      "bytes": 4607
+    },
+    {
+      "path": "tests/netlify-functions/staff-login.test.js",
+      "status": "present",
+      "sha256": "a1ead13bb6cab0304e7edd79654abec76066a982cf9c635750f3c8f18077c5ec",
+      "bytes": 7897
+    },
+    {
+      "path": "tests/netlify-functions/staff-page.test.js",
+      "status": "present",
+      "sha256": "719f458f904b23ac61dcea1b5d37bfbb3dbbfbc23fa6733e541a7d29a22ebdd1",
+      "bytes": 10672
+    },
+    {
+      "path": "vite.config.js",
+      "status": "present",
+      "sha256": "c1218d92f30da8040f3da72116a63b4d24859add15c4e5fcacb2cbb6cd39268c",
+      "bytes": 1689
+    }
+  ],
+  "omitted": [
+    {
+      "path": "src/labs/press/pressHtml.test.js",
+      "reason": "non-fixture-email-content"
+    }
+  ],
+  "patch_sha256": "b8f7a8f00f926c058e04628d8e18cd49b28838ef93406fc11e51f7dfaa356411",
+  "repo": "https://github.com/armonon/sattari-custom-site",
+  "branches": [
+    "wave3/sattari-lyric-clean"
+  ],
+  "archive_path": "sattari-custom-site/702a6f940d4c0f022f39330dff9e8fd349186c6f",
+  "local_worktree_dirty": false
+}

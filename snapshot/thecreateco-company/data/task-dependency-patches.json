@@ -1,0 +1,246 @@
+[
+  {
+    "task_id": "P01",
+    "product": "luma",
+    "dependencies": []
+  },
+  {
+    "task_id": "P02",
+    "product": "librarian",
+    "dependencies": []
+  },
+  {
+    "task_id": "P03",
+    "product": "animate",
+    "dependencies": []
+  },
+  {
+    "task_id": "P04",
+    "product": "locker",
+    "dependencies": []
+  },
+  {
+    "task_id": "P05",
+    "product": "reclaim",
+    "dependencies": []
+  },
+  {
+    "task_id": "P06",
+    "product": "form",
+    "dependencies": []
+  },
+  {
+    "task_id": "P07",
+    "product": "scenepilot",
+    "dependencies": []
+  },
+  {
+    "task_id": "P08",
+    "product": "glyph",
+    "dependencies": []
+  },
+  {
+    "task_id": "P09",
+    "product": "portfolio",
+    "dependencies": []
+  },
+  {
+    "task_id": "P10",
+    "product": null,
+    "dependencies": []
+  },
+  {
+    "task_id": "W01",
+    "product": "company-site",
+    "dependencies": []
+  },
+  {
+    "task_id": "W02",
+    "product": "company-site",
+    "dependencies": []
+  },
+  {
+    "task_id": "W03",
+    "product": "company-site",
+    "dependencies": []
+  },
+  {
+    "task_id": "W04",
+    "product": "company-site",
+    "dependencies": [
+      "W01"
+    ]
+  },
+  {
+    "task_id": "W05",
+    "product": "company-site",
+    "dependencies": []
+  },
+  {
+    "task_id": "W06",
+    "product": "company-site",
+    "dependencies": []
+  },
+  {
+    "task_id": "W07",
+    "product": "company-site",
+    "dependencies": []
+  },
+  {
+    "task_id": "W08",
+    "product": "company-site",
+    "dependencies": []
+  },
+  {
+    "task_id": "W09",
+    "product": "company-site",
+    "dependencies": []
+  },
+  {
+    "task_id": "W10",
+    "product": "company-site",
+    "dependencies": [
+      "W06"
+    ]
+  },
+  {
+    "task_id": "M01",
+    "product": "reclaim",
+    "dependencies": [
+      "W06"
+    ]
+  },
+  {
+    "task_id": "M02",
+    "product": null,
+    "dependencies": [
+      "P04",
+      "P07"
+    ]
+  },
+  {
+    "task_id": "M03",
+    "product": "glyph",
+    "dependencies": [
+      "P08"
+    ]
+  },
+  {
+    "task_id": "M04",
+    "product": null,
+    "dependencies": []
+  },
+  {
+    "task_id": "M05",
+    "product": null,
+    "dependencies": []
+  },
+  {
+    "task_id": "M06",
+    "product": null,
+    "dependencies": []
+  },
+  {
+    "task_id": "M07",
+    "product": null,
+    "dependencies": []
+  },
+  {
+    "task_id": "M08",
+    "product": null,
+    "dependencies": []
+  },
+  {
+    "task_id": "M09",
+    "product": null,
+    "dependencies": [
+      "W02"
+    ]
+  },
+  {
+    "task_id": "M10",
+    "product": null,
+    "dependencies": []
+  },
+  {
+    "task_id": "O01",
+    "product": null,
+    "dependencies": []
+  },
+  {
+    "task_id": "O02",
+    "product": null,
+    "dependencies": []
+  },
+  {
+    "task_id": "O03",
+    "product": null,
+    "dependencies": [
+      "O01"
+    ]
+  },
+  {
+    "task_id": "O04",
+    "product": null,
+    "dependencies": [
+      "O01"
+    ]
+  },
+  {
+    "task_id": "O05",
+    "product": null,
+    "dependencies": [
+      "O03"
+    ]
+  },
+  {
+    "task_id": "I01",
+    "product": null,
+    "dependencies": []
+  },
+  {
+    "task_id": "I02",
+    "product": null,
+    "dependencies": []
+  },
+  {
+    "task_id": "I03",
+    "product": null,
+    "dependencies": []
+  },
+  {
+    "task_id": "I04",
+    "product": "portfolio",
+    "dependencies": []
+  },
+  {
+    "task_id": "I05",
+    "product": "locker",
+    "dependencies": []
+  },
+  {
+    "task_id": "I06",
+    "product": "scenepilot",
+    "dependencies": []
+  },
+  {
+    "task_id": "I07",
+    "product": "moodboard",
+    "dependencies": []
+  },
+  {
+    "task_id": "I08",
+    "product": "glyph",
+    "dependencies": []
+  },
+  {
+    "task_id": "I09",
+    "product": null,
+    "dependencies": []
+  },
+  {
+    "task_id": "I10",
+    "product": null,
+    "dependencies": []
+  }
+]

@@ -1,0 +1,32 @@
+{
+  "task_id": "CORE-FORM-AUD-REL-001",
+  "title": "Reconcile release maturity and evidence date",
+  "product": "form",
+  "area": "workflow_gap",
+  "category": "workflow_gap",
+  "workstream": "CORE_PRODUCT_LAB",
+  "severity": "P2",
+  "scores": {
+    "impact": 7,
+    "severity": 6,
+    "workflow_importance": 7,
+    "release_importance": 9,
+    "confidence": 10,
+    "effort": 2,
+    "risk": 2,
+    "user_value": 7,
+    "competitive_value": 5
+  },
+  "dependencies": [],
+  "status": "QUEUED",
+  "model": "gpt-6-luna",
+  "expected_value": "Flagship golden-workflow reliability; scores are planning estimates, not health metrics.",
+  "test_requirements": "Reproduce on isolated exact source; preserve baseline/fixed evidence, appropriate build/tests and golden path; source reading is not interactive sign-off.",
+  "source_evidence": {
+    "direct": [
+      "README.md:5 calls 0.40 active beta; KNOWN_ISSUES.md title calls 0.40.0 RC1; PRODUCTION_READINESS.md:5 last audited 2026-08-26; generated product registry reported ALPHA on 2026-10-07."
+    ],
+    "hypothesis": []
+  },
+  "next_action": "Confirm intended source/deployment ref and publish one dated evidence-backed maturity/release record; update registry without inventing readiness percentages."
+}

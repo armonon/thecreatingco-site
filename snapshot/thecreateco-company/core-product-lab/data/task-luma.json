@@ -1,0 +1,19 @@
+{
+  "task_id": "CORE-LUMA-001",
+  "title": "Initial luma architecture and golden-workflow audit",
+  "product": "luma",
+  "category": "AUDIT",
+  "workstream": "CORE_PRODUCT_LAB",
+  "model": "gpt-6-luna",
+  "scores": {
+    "impact": 10,
+    "user_value": 10,
+    "confidence": 9,
+    "effort": 5,
+    "risk": 1
+  },
+  "severity": "P1",
+  "expected_value": "Evidence-backed reliability before flagship breadth; no readiness claims without workflow proof.",
+  "test_requirements": "Record build/test commands and actual outputs; separate source audit from interactive qualification.",
+  "next_action": "Claim and audit; preserve worktrees and deployment gates."
+}

@@ -1,0 +1,111 @@
+diff --git a/app/cad-phone.css b/app/cad-phone.css
+index 75cb9057df3f5d7651e09b44f18afa70a3e90a4f..c8312a6792f95f9660ae6c97d8e4c63a340c8ad7 100644
+--- a/app/cad-phone.css
++++ b/app/cad-phone.css
+@@ -27,6 +27,7 @@
+   .cad-shell .cad-actions { grid-row: 1; grid-column: 2; overflow: visible; min-width: 0; gap: 0; }
+   .cad-shell .cad-actions > :is(.workspace-ui-controls,.cad-sync,.cad-share-action,.cad-icon-action) { display: none !important; }
+   .cad-shell .cad-actions .cad-history { display: flex; gap: 0; }
++  .cad-shell .cad-actions .company-home-link { flex-basis:44px; width:44px; height:44px; }
+   .cad-shell .cad-actions :is(.cad-history button,.cad-phone-inspector-toggle,.cad-project-menu > summary,.cad-save-action) { display: inline-flex !important; align-items: center; justify-content: center; width: 44px; min-width: 44px; min-height: 44px; height: 44px; margin: 0; padding: 0; font-size: 0; }
+   .cad-shell .cad-actions .cad-save-action svg { margin: 0; }
+   .cad-shell .cad-project-menu > div { position: fixed; top: calc(var(--compact-top,0px) + env(safe-area-inset-top) + 52px); left: 8px; right: 8px; width: auto; max-height: calc(var(--compact-height,100dvh) - 64px); overflow: auto; }
+diff --git a/app/cad-workspace.tsx b/app/cad-workspace.tsx
+index 4bd3b23e1e900380dca4804b5c0e80710337c82b..a82084264f5467d6e9d1f165909d37d0fa82064f 100644
+--- a/app/cad-workspace.tsx
++++ b/app/cad-workspace.tsx
+@@ -6289,6 +6289,7 @@ export default function CadWorkspace({
+         }}><UiIcon name="share" /></button>
+         <button className="cad-phone-inspector-toggle" aria-label={inspectorCollapsed ? "Show properties" : "Hide properties"} title={inspectorCollapsed ? "Show properties" : "Hide properties"} aria-expanded={!inspectorCollapsed} aria-controls="cad-properties" onClick={() => setInspectorCollapsed(!inspectorCollapsed)}><UiIcon name="inspector" /></button>
+         {suiteMenu && <tcc-suite-menu />}
++        {suiteMenu && <a className="company-home-link" href="https://thecreatingco.com/" target="_blank" rel="noopener noreferrer" aria-label="The Creating Co. home" title="Visit The Creating Co.">↗</a>}
+         <details ref={projectMenuRef} className="cad-project-menu" onKeyDown={(event) => {
+           if (event.key !== "Escape") return;
+           event.preventDefault();
+diff --git a/app/cast-studio.css b/app/cast-studio.css
+index 2377f126825fd30542bfe33e9aa0e9dd32cc5197..acef5e06176f9a0506ad894df14003ea1f972d6b 100644
+--- a/app/cast-studio.css
++++ b/app/cast-studio.css
+@@ -10,6 +10,8 @@
+ .cast-header>div { display:flex; align-items:center; gap:10px; }
+ .cast-header strong { font-size:23px; letter-spacing:-1px; }.cast-header strong span { font-weight:400; }
+ .cast-header small { font-size:11px; letter-spacing:1px; color:#707766; margin-left:4px; }
++.cast-company-link { display:inline-grid; place-items:center; min-height:36px; padding:0 8px; border-radius:7px; color:#46513c; font-size:11px; font-weight:600; text-decoration:underline; text-underline-offset:3px; white-space:nowrap; }
++.cast-company-link:focus-visible { outline:3px solid #7a8f55; outline-offset:2px; }
+ .cast-mark { background:#dfff00; border-radius:10px; font-size:28px; width:36px; height:39px; text-align:center; line-height:36px; }
+ .cast-alpha { font-style:normal; font-size:10px; font-weight:700; letter-spacing:1.2px; padding:3px 7px; border-radius:6px; background:#20211f; color:#dfff00; }
+ .cast-header>button { width:44px; height:44px; border:0; background:transparent; font-size:26px; color:inherit; }
+@@ -65,7 +67,7 @@
+ .cast-limits { margin-top:16px; border-top:1px solid #e4e6df; padding-top:10px; font-size:12px; color:#6b7361; }
+ .cast-limits summary { cursor:pointer; color:#46513b; min-height:32px; }
+ @media(max-width:1060px) { .cast-body { grid-template-columns:260px minmax(0,1fr); }.cast-details { grid-column:1/-1; border-left:0; border-top:1px solid #e4e6df; } }
+-@media(max-width:640px) { .cast-backdrop { padding:0; }.cast-studio { max-height:100dvh; height:100dvh; border-radius:0; }.cast-body { display:flex; flex-direction:column; }.cast-header { padding:0 16px; }.cast-header small { display:none; }.cast-tabs { padding:10px 16px; }.cast-tabs button { flex:1; padding:8px; font-size:13px; }.cast-stage-view { min-height:340px; }.cast-field :is(input,select) { font-size:16px; } }
++@media(max-width:640px) { .cast-backdrop { padding:0; }.cast-studio { max-height:100dvh; height:100dvh; border-radius:0; }.cast-body { display:flex; flex-direction:column; }.cast-header { padding:0 16px; }.cast-header small { display:none; }.cast-company-link { width:36px; min-width:36px; padding:0; overflow:hidden; font-size:0; text-decoration:none; }.cast-company-link::after { content:"↗"; font-size:16px; }.cast-tabs { padding:10px 16px; }.cast-tabs button { flex:1; padding:8px; font-size:13px; }.cast-stage-view { min-height:340px; }.cast-field :is(input,select) { font-size:16px; } }
+ /* Export for Blender sheet (CAD workspace); same dialog language as Cast. */
+ .blender-sheet { width:min(760px,100%); max-height:calc(100dvh - 40px); overflow:auto; border-radius:20px; background:#fff; color:#20211f; box-shadow:0 24px 100px #15201944; font:14px/1.55 system-ui,sans-serif; padding:22px 24px; }
+ .blender-sheet header { display:flex; justify-content:space-between; align-items:flex-start; gap:12px; }
+diff --git a/app/cast-studio.tsx b/app/cast-studio.tsx
+index d616762cb25d5a4ad616df10a13235d2c3832f65..2f1e07af973df5c9b15e86841a339010cdd852c2 100644
+--- a/app/cast-studio.tsx
++++ b/app/cast-studio.tsx
+@@ -354,14 +354,14 @@ export function CastStudio({ sources, onClose, onStatus }: { sources: CastSource
+       event.stopPropagation();
+       if (event.key === "Escape") { event.preventDefault(); onClose(); }
+       if (event.key === "Tab") {
+-        const controls = [...(dialog.current?.querySelectorAll<HTMLElement>("button:not(:disabled),input:not([hidden]),select") ?? [])].filter((node) => node.tabIndex >= 0);
++        const controls = [...(dialog.current?.querySelectorAll<HTMLElement>("button:not(:disabled),input:not([hidden]),select,a[href]") ?? [])].filter((node) => node.tabIndex >= 0);
+         const first = controls[0], last = controls.at(-1);
+         if (event.shiftKey && (document.activeElement === first || document.activeElement === dialog.current)) { event.preventDefault(); last?.focus(); }
+         else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first?.focus(); }
+       }
+     }}>
+       <header className="cast-header">
+-        <div><b className="cast-mark">c</b><strong>cast<span>prep</span></strong><em className="cast-alpha">ALPHA</em><small>IN FORM</small></div>
++        <div><b className="cast-mark">c</b><strong>cast<span>prep</span></strong><em className="cast-alpha">ALPHA</em><small>IN FORM</small><a className="cast-company-link" href="https://thecreatingco.com/" target="_blank" rel="noopener noreferrer" aria-label="The Creating Co. home" title="Visit The Creating Co.">The Creating Co.</a></div>
+         <button aria-label="Close Cast" onClick={onClose}>×</button>
+       </header>
+       <nav className="cast-tabs" aria-label="Cast checks">{([["ring", "Ring size"], ["thickness", "Thickness"], ["health", "Mesh health"], ["print", "Resin print"]] as [Tab, string][]).map(([id, label]) => <button key={id} aria-pressed={tab === id} disabled={!working && id !== "ring"} onClick={() => setTab(id)}>{label}</button>)}</nav>
+diff --git a/app/form-ui-v2.css b/app/form-ui-v2.css
+index a134fe4f8bdf3f9b782f436932474a0abcac6269..2d81bf11ee1e145d599d6db74049472464d7dc7c 100644
+--- a/app/form-ui-v2.css
++++ b/app/form-ui-v2.css
+@@ -131,6 +131,9 @@
+ }
+ 
+ .cad-brand { gap: 8px; }
++.company-home-link { display:inline-grid; place-items:center; flex:0 0 32px; width:32px; height:32px; border:1px solid var(--form-v2-border); border-radius:8px; color:var(--form-v2-text-secondary); text-decoration:none; font:600 16px/1 system-ui,sans-serif; }
++.company-home-link:hover { background:var(--form-v2-surface-hover,var(--form-v2-surface)); color:var(--form-v2-text); }
++.company-home-link:focus-visible { outline:3px solid var(--form-v2-accent); outline-offset:2px; }
+ .cad-brand > button,
+ .fabric-brand > button,
+ .workspace-back {
+diff --git a/app/studio-v2.tsx b/app/studio-v2.tsx
+index 8ae21e7c3f99de8d2064afab885cec35d262a3f2..b8ba9dd4c817004af96a7070911d1bcec35492b0 100644
+--- a/app/studio-v2.tsx
++++ b/app/studio-v2.tsx
+@@ -4765,6 +4765,7 @@ export default function Studio({
+             onTimeline={() => workspaceUi.update("timelineCollapsed", !workspaceUi.layout.timelineCollapsed)}
+           />
+           {suiteMenu && <tcc-suite-menu />}
++          {suiteMenu && <a className="company-home-link" href="https://thecreatingco.com/" target="_blank" rel="noopener noreferrer" aria-label="The Creating Co. home" title="Visit The Creating Co.">↗</a>}
+           <button className="cad-mode-button" onClick={openCadWorkspace}><span>⌗</span>FormCAD</button>
+           <button className="text-button" onClick={saveVersion}>Version</button>
+           <button className="text-button" onClick={() => setCommentsOpen((value) => !value)}>Comments {comments.length > 0 && <b>{comments.length}</b>}</button>
+diff --git a/tests/workspace-smoke.test.mjs b/tests/workspace-smoke.test.mjs
+index c7ad1a695dcd5e5f800783b0926014ba70b4678e..d681843294c26fe9e1950f7302302aeee26295bf 100644
+--- a/tests/workspace-smoke.test.mjs
++++ b/tests/workspace-smoke.test.mjs
+@@ -2903,11 +2903,13 @@ test("Cast checks a selected mesh and an opened STL without editing the project,
+   const { castMeshFromBuffers, writeBinaryStl } = await import("../app/cast-mesh.ts");
+   const { ringInnerDiameter } = await import("../app/cad-jewelry.ts");
+   const utils = await mount({ initialView: "model" });
++  assert.equal(utils.getByRole("link", { name: "The Creating Co. home" }).getAttribute("href"), "https://thecreatingco.com/");
+   await act(async () => fireEvent.click(within(utils.container.querySelector(".cad-sculpt-section")).getByRole("button", { name: "Box" })));
+   const before = window.formCAD.getProjectFile();
+ 
+   await act(async () => fireEvent.click(utils.getByRole("button", { name: "Open Cast print and cast prep" })));
+   const dialog = within(utils.getByRole("dialog", { name: "Cast print and cast prep" }));
++  assert.equal(dialog.getByRole("link", { name: "The Creating Co. home" }).getAttribute("href"), "https://thecreatingco.com/");
+   assert.match(dialog.getByLabelText("Model to check").selectedOptions[0].textContent, /mesh$/);
+   await act(async () => fireEvent.click(dialog.getByRole("button", { name: "Mesh health" })));
+   assert.ok(dialog.getByText("Closed and consistently wound"));

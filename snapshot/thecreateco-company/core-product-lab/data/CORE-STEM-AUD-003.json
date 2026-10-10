@@ -1,0 +1,30 @@
+{
+  "task_id": "CORE-STEM-AUD-003",
+  "title": "Measure long-session audio deadlines and memory",
+  "product": "stemdeck",
+  "area": "performance_opportunity",
+  "category": "performance_opportunity",
+  "workstream": "CORE_PRODUCT_LAB",
+  "severity": "P1",
+  "scores": {
+    "impact": 9,
+    "severity": 8,
+    "workflow_importance": 10,
+    "competitive_value": 8,
+    "release_importance": 10,
+    "confidence": 9,
+    "effort": 8,
+    "risk": 4,
+    "user_value": 10
+  },
+  "dependencies": [],
+  "status": "QUEUED",
+  "model": "gpt-6.1-sol",
+  "expected_value": "Flagship golden-workflow reliability; scores are planning estimates, not health metrics.",
+  "test_requirements": "Reproduce on isolated exact source; preserve baseline/fixed evidence, appropriate build/tests and golden path; source reading is not interactive sign-off.",
+  "source_evidence": [
+    "docs/SESSION_INTEGRITY_1_0.md",
+    "docs/PROFESSIONAL_ACCEPTANCE.md"
+  ],
+  "next_action": "Run unchanged normal/heavy profiles; physical 30/60/120 min series stays blocked until authorized equipment/media. Historical missed deadlines not claimed newly reproduced."
+}

@@ -1,0 +1,87 @@
+name: Release macOS app
+
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Release version (for example 0.1.14)"
+        required: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: scenepilot-macos-release
+  cancel-in-progress: true
+
+jobs:
+  release:
+    runs-on: macos-14
+    # Job-level so the "Publish to public downloads repo" step's `if` can read it
+    # (step-level env is not available to a step's `if` condition).
+    env:
+      RELEASES_TOKEN: ${{ secrets.RELEASES_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Set release version
+        env:
+          RELEASE_VERSION: ${{ github.event_name == 'workflow_dispatch' && inputs.version || github.ref_name }}
+        run: node scripts/set-release-version.mjs "$RELEASE_VERSION"
+      - name: Full release qualification (fail closed without completed review)
+        run: |
+          npm run desktop:stage-media-tools
+          npm run qa:product:release -- --full --review=docs/release-review.json
+      - name: Build, sign and notarize Desktop Pro
+        env:
+          CSC_LINK: ${{ secrets.MACOS_CERTIFICATE }}
+          CSC_KEY_PASSWORD: ${{ secrets.MACOS_CERTIFICATE_PASSWORD }}
+          CSC_NAME: ${{ secrets.MACOS_SIGNING_IDENTITY }}
+          SCENEPILOT_REQUIRE_NOTARIZATION: "1"
+          APPLE_ID: ${{ secrets.APPLE_ID }}
+          APPLE_APP_SPECIFIC_PASSWORD: ${{ secrets.APPLE_APP_SPECIFIC_PASSWORD }}
+          APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+        run: |
+          node scripts/require-release-signing.mjs
+          npm run desktop:stage-media-tools
+          npm run desktop:renderer
+          npx electron-builder --projectDir electron --mac dmg --arm64 --publish never --config.mac.identity="$CSC_NAME"
+          codesign --verify --deep --strict release/mac-arm64/ScenePilot.app
+          spctl --assess --type execute release/mac-arm64/ScenePilot.app
+      - name: Publish GitHub release (private archive)
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_VERSION: ${{ github.event_name == 'workflow_dispatch' && inputs.version || github.ref_name }}
+        run: |
+          RELEASE_VERSION="${RELEASE_VERSION#v}"
+          shasum -a 256 "release/ScenePilot-${RELEASE_VERSION}-arm64.dmg" > "release/ScenePilot-${RELEASE_VERSION}-arm64.dmg.sha256"
+          gh release create "v${RELEASE_VERSION}" \
+            "release/ScenePilot-${RELEASE_VERSION}-arm64.dmg" \
+            "release/ScenePilot-${RELEASE_VERSION}-arm64.dmg.sha256" \
+            --title "ScenePilot ${RELEASE_VERSION}" \
+            --notes "Automatic Apple Silicon build from main at ${GITHUB_SHA}."
+
+      # Publish the same DMG to the PUBLIC downloads repo so the website's
+      # download button works for everyone. Needs a fine-grained PAT with
+      # "Contents: read and write" on armonon/scenepilot-releases, stored as the
+      # repo secret RELEASES_TOKEN. Skipped automatically if the secret is unset.
+      - name: Publish to public downloads repo
+        if: ${{ env.RELEASES_TOKEN != '' }}
+        env:
+          GH_TOKEN: ${{ secrets.RELEASES_TOKEN }}
+          RELEASE_VERSION: ${{ github.event_name == 'workflow_dispatch' && inputs.version || github.ref_name }}
+          PUBLIC_REPO: armonon/scenepilot-releases
+        run: |
+          RELEASE_VERSION="${RELEASE_VERSION#v}"
+          gh release create "v${RELEASE_VERSION}" \
+            "release/ScenePilot-${RELEASE_VERSION}-arm64.dmg" \
+            "release/ScenePilot-${RELEASE_VERSION}-arm64.dmg.sha256" \
+            --repo "$PUBLIC_REPO" \
+            --title "ScenePilot ${RELEASE_VERSION}" \
+            --notes "ScenePilot Studio for macOS (Apple Silicon). Verify with the included SHA-256."

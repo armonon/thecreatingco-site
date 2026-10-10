@@ -1,0 +1,33 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { DataTexture, SRGBColorSpace } from 'three';
+import { updatePaintDataTexture } from '../app/paint-data-texture.ts';
+
+test('paint upload retains GPU texture identity/settings and respects pixel subarray bounds', () => {
+  const initial = new Uint8Array(16).fill(10);
+  const map = new DataTexture(initial, 2, 2);
+  map.colorSpace = SRGBColorSpace;
+  const identity = map.uuid;
+  const source = map.source;
+  const backing = new Uint8ClampedArray(24).fill(255);
+  const painted = backing.subarray(4, 20);
+  painted.fill(64);
+  const before = backing.slice();
+  const version = map.version;
+  updatePaintDataTexture(map, painted);
+  assert.equal(map.uuid, identity);
+  assert.equal(map.source, source);
+  assert.equal(map.image.width, 2);
+  assert.equal(map.image.height, 2);
+  assert.equal(map.colorSpace, SRGBColorSpace);
+  assert.equal(map.image.data.buffer, backing.buffer);
+  assert.equal(map.image.data.byteOffset, painted.byteOffset);
+  assert.equal(map.image.data.byteLength, 16);
+  assert.deepEqual(Array.from(map.image.data), Array(16).fill(64));
+  assert.deepEqual(backing, before, 'upload never changes document pixels');
+  assert.equal(map.version, version + 1, 'new pixels request GPU upload');
+  updatePaintDataTexture(map, new Uint8ClampedArray(initial));
+  assert.deepEqual(map.image.data, initial, 'Undo/cancellation uploads the prior snapshot');
+  assert.equal(map.version, version + 2);
+  map.dispose();
+});

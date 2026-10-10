@@ -1,0 +1,31 @@
+{
+  "task_id": "CORE-LUMA-AUD-005",
+  "title": "Resolve production dependency advisories and verify runtime exposure",
+  "product": "luma",
+  "area": "security",
+  "category": "security",
+  "workstream": "CORE_PRODUCT_LAB",
+  "severity": "P0",
+  "scores": {
+    "impact": 8,
+    "severity": 8,
+    "workflow_importance": 7,
+    "competitive_value": 2,
+    "release_importance": 10,
+    "confidence": 9,
+    "effort": 3,
+    "risk": 4,
+    "user_value": 7
+  },
+  "dependencies": [],
+  "status": "QUEUED",
+  "model": "gpt-6.1-sol",
+  "expected_value": "Flagship golden-workflow reliability; scores are planning estimates, not health metrics.",
+  "test_requirements": "Reproduce on isolated exact source; preserve baseline/fixed evidence, appropriate build/tests and golden path; source reading is not interactive sign-off.",
+  "source_evidence": [
+    "npm audit --omit=dev --json exits 1 with 3 high findings in production dependency closure",
+    "next@16.3.6 affected by GHSA-cjq9-62q9-8jv4 (<16.3.8), plus high findings in sharp (<0.35.5) and source-map-js (<1.2.2)",
+    "audit details: /tmp/luma-audit-e709-npm-audit-production.json; deployed runtime reachability not tested"
+  ],
+  "next_action": "Isolated compatible dependency update, build/test and route/config reachability review; no deployment authorized by this finding."
+}

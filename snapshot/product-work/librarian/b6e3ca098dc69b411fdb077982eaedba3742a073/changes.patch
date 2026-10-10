@@ -1,0 +1,928 @@
+diff --git a/README.md b/README.md
+index e0271cfd55700c7a97aaeab5f9c2dfef07409533..14f1da6e54dde4070ea6178d4e07d1a24feb12a7 100644
+--- a/README.md
++++ b/README.md
+@@ -74,3 +74,17 @@ Best starting stack:
+ 3. Internet Archive for availability and public-domain/full-text links.
+ 4. Gutenberg/Standard Ebooks/LibriVox for free reading/listening layers.
+ 5. Google Books only as an enrichment layer, not the commercial backbone.
++
++## Curated digital collections (incremental web feature)
++
++`/?collections=1` opens the curator workspace. It uses verified Supabase email
++accounts, server-mediated collection metadata, and a private Supabase Storage
++bucket for uploaded PDFs. A share link is `/?collection=<slug>`; guests can open
++public and unlisted collections without an account. Local-only PDF imports and
++the existing reader remain available from the original Library section.
++
++See [`docs/collections.md`](docs/collections.md) for the migration, server
++configuration, quota/security model, verification evidence, and remaining rollout
++gaps. The feature is not production-ready until the migration and server env are
++configured in the intended Supabase/Netlify projects and a real verified curator
++account completes the live workflow in a browser.
+diff --git a/docs/collections.md b/docs/collections.md
+new file mode 100644
+index 0000000000000000000000000000000000000000..ee093bbcb072516cd4d8780fd49564e87e00a8a3
+--- /dev/null
++++ b/docs/collections.md
+@@ -0,0 +1,77 @@
++# Librarian Collections — implementation and rollout
++
++This is an additive web feature. It does not replace the existing local IndexedDB
++PDF library, personal shelf, or reader.
++
++## Architecture
++
++- `src/collections.js` owns the responsive curator, public directory, library
++  viewer, upload flow, and PDF.js reader. The normal app still loads `main.js`.
++- Netlify functions verify Supabase access tokens server-side. Only verified,
++  non-anonymous accounts may write. Collection writes always include the verified
++  owner ID in server-side database filters.
++- The schema is in
++  `supabase/migrations/20261009160000_librarian_collections.sql`. Direct
++  `anon`/`authenticated` table access is revoked; RLS is enabled; service-role
++  credentials never enter the browser. PDF bytes are in a private bucket.
++- Uploads use a short-lived, path-scoped signed upload URL; a database reservation
++  enforces 50 MB per PDF, 100 PDFs per account, 2 GB total bytes per account, and
++  12 libraries per account. Finalization verifies the reserved byte count and
++  `%PDF-` header before publishing metadata.
++- Public or unlisted book access first checks collection visibility and then
++  issues a five-minute signed read URL. Private collections are concealed as 404
++  unless the caller has a verified owner session.
++- Upload forms require an explicit rights/permission acknowledgement. PDF.js
++  extracts title, author, page count, and a small first-page thumbnail. Curators
++  can add tags, feature a book, change shelf order, search, and remove PDFs.
++- Public links, copied iframe snippets, QR images (generated locally in the
++  browser), and an abuse-report form are available. Reports are rate limited and
++  store no reporter IP/email.
++
++## Configuration
++
++Apply the SQL migration to the Librarian Supabase project before exposing these
++functions. Configure Netlify function environment variables:
++
++- `SUPABASE_URL`
++- `SUPABASE_PUBLISHABLE_KEY`
++- `SUPABASE_SERVICE_ROLE_KEY` (server-only; never set as a client/build variable)
++- optionally `LIBRARIAN_ALLOWED_ORIGINS` for additional exact trusted origins
++
++Enable email verification in Supabase Auth. The feature uses Supabase email /
++password signup and login; no real credentials or deployment configuration were
++changed in this code task. The migration creates a private, PDF-only Storage
++bucket and guarded RPCs. Review the exact target project before applying it.
++
++## Local checks
++
++```sh
++npm test
++npm run build
++npm run test:browser -- tests/browser/collections.spec.js --project=iPhone
++```
++
++The browser tests stub account/database/storage HTTP boundaries, while exercising
++the actual mobile UI, signup-to-create flow, upload validation path, QR rendering,
++public access, and PDF.js canvas rendering. They do not prove a real Supabase or
++Netlify deployment.
++
++## Remaining before production
++
++- Apply and verify the migration on the intended Supabase project, configure
++  Netlify secrets, and verify real email-confirmed signup, expiry/refresh,
++  owner separation, quotas, signed upload/read URLs, and abuse reports.
++- Add automated expiry/cleanup for abandoned pending-upload reservations and
++  orphan objects.
++- Add pagination for collections exceeding current quotas and richer text search.
++- SEO is currently client-rendered at the share URL; crawler-specific server
++  metadata/prerendering is still needed for full SEO coverage.
++- Curator profiles, uploaded collection-cover files, annotation tools, and a
++  production moderation/retention workflow remain future work. Cover images in
++  this increment use curator-supplied HTTPS image URLs.
++- AI semantic search, summaries, and page-cited Q&A remain unimplemented; the
++  private storage and metadata boundary are a base for that future service.
++
++Do not describe Collections as production-ready until these live checks are
++completed. The separate existing production reader 404 remains a tracked blocker
++and is not changed by this feature branch.
+diff --git a/index.html b/index.html
+index 9065d351ddd65006fdb6f21629e4e302ce9d2cdb..a09d78ba8e2e0880c4318294e7ecf07b75fe46f5 100644
+--- a/index.html
++++ b/index.html
+@@ -20,6 +20,6 @@
+   </head>
+   <body>
+     <div id="app"></div>
+-    <script type="module" src="/src/main.js"></script>
++    <script type="module" src="/src/entry.js"></script>
+   </body>
+ </html>
+diff --git a/netlify/functions/collection-config.mjs b/netlify/functions/collection-config.mjs
+new file mode 100644
+index 0000000000000000000000000000000000000000..b455fbc952dbb9be2e72a2af1cbfeaddb643dd8c
+--- /dev/null
++++ b/netlify/functions/collection-config.mjs
+@@ -0,0 +1,13 @@
++export default async function handler(request) {
++  const headers = { 'content-type': 'application/json', 'cache-control': 'no-store', 'x-content-type-options': 'nosniff' };
++  if (request.method !== 'GET') return Response.json({ error: 'GET required.' }, { status: 405, headers: { ...headers, allow: 'GET' } });
++  const url = process.env.SUPABASE_URL;
++  const key = process.env.SUPABASE_PUBLISHABLE_KEY;
++  try {
++    const parsed = new URL(url);
++    if (parsed.protocol !== 'https:' || parsed.username || parsed.password || parsed.pathname !== '/' || !key) throw new Error('not configured');
++    return Response.json({ supabaseUrl: parsed.origin, publishableKey: key }, { headers });
++  } catch {
++    return Response.json({ error: 'Secure accounts are not configured for Librarian Collections.' }, { status: 503, headers });
++  }
++}
+diff --git a/netlify/functions/collection-files.mjs b/netlify/functions/collection-files.mjs
+new file mode 100644
+index 0000000000000000000000000000000000000000..a57bf86da855078e84fd696b7115eedf7f2b0023
+--- /dev/null
++++ b/netlify/functions/collection-files.mjs
+@@ -0,0 +1,148 @@
++import { createCollectionsGuard, CollectionError, readJson, mayReadCollection } from '../lib/collections-guard.mjs';
++
++const guard = createCollectionsGuard();
++const bucket = 'librarian-collections';
++const headers = { 'content-type': 'application/json', 'cache-control': 'no-store', 'x-content-type-options': 'nosniff' };
++const LIMIT = 50 * 1024 * 1024;
++const UUID = /^[0-9a-f-]{36}$/i;
++
++async function request(url, key, options = {}) {
++  const response = await fetch(url, { ...options, signal: AbortSignal.timeout(12000), headers: { apikey: key, authorization: `Bearer ${key}`, ...(options.headers || {}) } });
++  return response;
++}
++async function rows(context, path, options = {}) {
++  const response = await request(new URL(path, context.supabaseUrl), context.serviceKey, {
++    ...options, headers: { 'content-type': 'application/json', ...(options.headers || {}) },
++  });
++  if (!response.ok) throw new CollectionError(response.status === 409 ? 409 : 503, response.status === 409 ? 'That item already exists.' : 'Collection storage is unavailable.');
++  return response.status === 204 ? null : response.json();
++}
++async function storage(context, path, options = {}) {
++  return request(new URL(`/storage/v1${path}`, context.supabaseUrl), context.serviceKey, options);
++}
++export function validateMetadata(body) {
++  if (!body || typeof body !== 'object' || Array.isArray(body)) throw new CollectionError(400, 'Invalid PDF metadata.');
++  if (typeof body.title !== 'string' || !body.title.trim() || body.title.trim().length > 240) throw new CollectionError(400, 'Title must be 1–240 characters.');
++  if (!Number.isSafeInteger(body.pageCount) || body.pageCount < 1 || body.pageCount > 100000) throw new CollectionError(400, 'PDF page count is invalid.');
++  if (typeof body.thumbnailData !== 'string' || body.thumbnailData.length > 40000 || (body.thumbnailData && !/^data:image\/(?:jpeg|webp);base64,[A-Za-z0-9+/=]+$/.test(body.thumbnailData))) throw new CollectionError(400, 'PDF thumbnail is invalid.');
++  if (body.author !== undefined && (typeof body.author !== 'string' || body.author.length > 240)) throw new CollectionError(400, 'Author must be 240 characters or fewer.');
++  if (body.description !== undefined && (typeof body.description !== 'string' || body.description.length > 2000)) throw new CollectionError(400, 'Description must be 2,000 characters or fewer.');
++  const tags = body.tags ?? [];
++  if (!Array.isArray(tags) || tags.length > 20 || tags.some(tag => typeof tag !== 'string' || tag.trim().length < 1 || tag.length > 40)) throw new CollectionError(400, 'Use up to 20 tags, each 40 characters or fewer.');
++  return { title: body.title.trim(), author: body.author?.trim() || '', description: body.description?.trim() || '', tags: [...new Set(tags.map(tag => tag.trim()))] };
++}
++export function validateUploadRequest(body) {
++  if (!body || !UUID.test(body.collectionId) || !Number.isSafeInteger(body.bytes) || body.bytes < 1 || body.bytes > LIMIT || body.mime !== 'application/pdf') throw new CollectionError(400, 'Choose a PDF file up to 50 MB.');
++  if (body.shareRights !== true) throw new CollectionError(400, 'Confirm you have the rights or permission to share this PDF.');
++  return validateMetadata(body);
++}
++async function getBook(context, id) {
++  const rowsFound = await rows(context, `/rest/v1/collection_books?id=eq.${encodeURIComponent(id)}&owner_id=eq.${encodeURIComponent(context.user.id)}&select=id,collection_id,storage_path,byte_size,upload_state,title,author,description,tags,sort_order,featured`);
++  if (!rowsFound.length) throw new CollectionError(404, 'PDF not found.');
++  return rowsFound[0];
++}
++
++export default async function handler(req) {
++  if (req.method === 'OPTIONS') return new Response(null, { status: 204, headers });
++  try {
++    const url = new URL(req.url);
++    const action = url.searchParams.get('action');
++
++    if (req.method === 'POST' && action === 'read') {
++      const body = await readJson(req);
++      if (typeof body.slug !== 'string' || !UUID.test(body.bookId)) throw new CollectionError(404, 'PDF not found.');
++      const collectionRows = await rows({ supabaseUrl: new URL(process.env.SUPABASE_URL), serviceKey: process.env.SUPABASE_SERVICE_ROLE_KEY }, `/rest/v1/collections?slug=eq.${encodeURIComponent(body.slug)}&select=id,owner_id,visibility&limit=1`);
++      const collection = collectionRows[0];
++      let accountId = null;
++      if (collection?.visibility === 'private' && req.headers.has('authorization')) {
++        try { accountId = (await guard(req)).user.id; } catch { /* not owner */ }
++      }
++      if (!mayReadCollection(collection, accountId)) throw new CollectionError(404, 'PDF not found.');
++      const bookRows = await rows({ supabaseUrl: new URL(process.env.SUPABASE_URL), serviceKey: process.env.SUPABASE_SERVICE_ROLE_KEY }, `/rest/v1/collection_books?id=eq.${encodeURIComponent(body.bookId)}&collection_id=eq.${encodeURIComponent(collection.id)}&upload_state=eq.ready&select=id,storage_path,title,author,description,tags,page_count`);
++      if (!bookRows.length) throw new CollectionError(404, 'PDF not found.');
++      const signed = await storage({ supabaseUrl: new URL(process.env.SUPABASE_URL), serviceKey: process.env.SUPABASE_SERVICE_ROLE_KEY }, `/object/sign/${bucket}/${bookRows[0].storage_path}`, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ expiresIn: 300 }) });
++      if (!signed.ok) throw new CollectionError(503, 'PDF reader is unavailable.');
++      const { signedURL } = await signed.json();
++      return Response.json({ book: bookRows[0], url: new URL(`/storage/v1${signedURL}`, process.env.SUPABASE_URL).href }, { headers });
++    }
++
++    const context = await guard(req);
++    if (req.method !== 'POST') throw new CollectionError(405, 'POST required.');
++    const body = await readJson(req);
++    if (action === 'start') {
++      const metadata = validateUploadRequest(body);
++      const bookId = crypto.randomUUID();
++      const path = `${context.user.id}/${body.collectionId}/${bookId}.pdf`;
++      const admitted = await rows(context, '/rest/v1/rpc/reserve_librarian_collection_upload', { method: 'POST', body: JSON.stringify({ p_account_id: context.user.id, p_collection_id: body.collectionId, p_book_id: bookId, p_storage_path: path, p_bytes: body.bytes, p_title: metadata.title, p_author: metadata.author, p_description: metadata.description, p_tags: metadata.tags, p_page_count: body.pageCount, p_thumbnail_data: body.thumbnailData, p_share_rights: body.shareRights }) });
++      if (admitted !== true) throw new CollectionError(429, 'Collection not found or upload quota reached.');
++      const signed = await storage(context, `/object/upload/sign/${bucket}/${path}`, { method: 'POST', headers: { 'content-type': 'application/json' }, body: '{}' });
++      if (!signed.ok) {
++        await rows(context, `/rest/v1/collection_books?id=eq.${bookId}&owner_id=eq.${context.user.id}`, { method: 'DELETE' });
++        throw new CollectionError(503, 'Could not prepare a secure upload.');
++      }
++      const result = await signed.json();
++      return Response.json({ bookId, path, uploadUrl: new URL(`/storage/v1${result.url}`, context.supabaseUrl).href }, { status: 201, headers });
++    }
++    if (action === 'finish') {
++      if (!UUID.test(body.bookId)) throw new CollectionError(400, 'PDF upload id is invalid.');
++      const book = await getBook(context, body.bookId);
++      const info = await storage(context, `/object/${bucket}/${book.storage_path}`, { method: 'HEAD' });
++      if (!info.ok || Number(info.headers.get('content-length')) !== book.byte_size || Number(info.headers.get('content-length')) > LIMIT) throw new CollectionError(400, 'Uploaded PDF size did not match its reservation.');
++      const sample = await storage(context, `/object/${bucket}/${book.storage_path}`, { headers: { range: 'bytes=0-4' } });
++      const signature = sample.ok && sample.status === 206 ? new Uint8Array(await sample.arrayBuffer()) : new Uint8Array();
++      if (!sample.ok || sample.status !== 206 || signature.byteLength > 1024 || new TextDecoder().decode(signature.slice(0, 5)) !== '%PDF-') {
++        await storage(context, `/object/${bucket}/${book.storage_path}`, { method: 'DELETE' });
++        await rows(context, `/rest/v1/collection_books?id=eq.${book.id}&owner_id=eq.${context.user.id}`, { method: 'DELETE' });
++        throw new CollectionError(415, 'File contents are not a valid PDF.');
++      }
++      await rows(context, `/rest/v1/collection_books?id=eq.${book.id}&owner_id=eq.${context.user.id}`, { method: 'PATCH', headers: { prefer: 'return=minimal' }, body: JSON.stringify({ upload_state: 'ready', updated_at: new Date().toISOString() }) });
++      return Response.json({ ready: true }, { headers });
++    }
++    if (action === 'update') {
++      if (!UUID.test(body.bookId) || !body.update || typeof body.update !== 'object' || Array.isArray(body.update)) throw new CollectionError(400, 'Invalid PDF update.');
++      const book = await getBook(context, body.bookId);
++      const patch = {};
++      const update = body.update;
++      if (Object.keys(update).some(key => !['title','author','description','tags','sort_order','featured'].includes(key))) throw new CollectionError(400, 'Unsupported PDF field.');
++      if (update.title !== undefined) {
++        if (typeof update.title !== 'string' || !update.title.trim() || update.title.trim().length > 240) throw new CollectionError(400, 'Title must be 1–240 characters.');
++        patch.title = update.title.trim();
++      }
++      if (update.author !== undefined) {
++        if (typeof update.author !== 'string' || update.author.length > 240) throw new CollectionError(400, 'Author must be 240 characters or fewer.');
++        patch.author = update.author.trim();
++      }
++      if (update.description !== undefined) {
++        if (typeof update.description !== 'string' || update.description.length > 2000) throw new CollectionError(400, 'Description must be 2,000 characters or fewer.');
++        patch.description = update.description.trim();
++      }
++      if (update.tags !== undefined) {
++        if (!Array.isArray(update.tags) || update.tags.length > 20 || update.tags.some(tag => typeof tag !== 'string' || !tag.trim() || tag.length > 40)) throw new CollectionError(400, 'Use up to 20 tags, each 40 characters or fewer.');
++        patch.tags = [...new Set(update.tags.map(tag => tag.trim()))];
++      }
++      if (update.sort_order !== undefined) {
++        if (!Number.isSafeInteger(update.sort_order) || update.sort_order < 0 || update.sort_order > 99) throw new CollectionError(400, 'Invalid shelf position.');
++        patch.sort_order = update.sort_order;
++      }
++      if (update.featured !== undefined) {
++        if (typeof update.featured !== 'boolean') throw new CollectionError(400, 'Featured must be true or false.');
++        patch.featured = update.featured;
++      }
++      if (!Object.keys(patch).length) throw new CollectionError(400, 'No PDF changes supplied.');
++      const changed = await rows(context, `/rest/v1/collection_books?id=eq.${book.id}&owner_id=eq.${context.user.id}&select=id,title,author,description,tags,sort_order,featured`, { method: 'PATCH', headers: { prefer: 'return=representation' }, body: JSON.stringify(patch) });
++      return Response.json({ book: changed[0] }, { headers });
++    }
++    if (action === 'delete') {
++      if (!UUID.test(body.bookId)) throw new CollectionError(400, 'PDF id is invalid.');
++      const book = await getBook(context, body.bookId);
++      const removed = await storage(context, `/object/${bucket}/${book.storage_path}`, { method: 'DELETE' });
++      if (!removed.ok && removed.status !== 404) throw new CollectionError(503, 'Could not remove the stored PDF.');
++      await rows(context, `/rest/v1/collection_books?id=eq.${book.id}&owner_id=eq.${context.user.id}`, { method: 'DELETE' });
++      return Response.json({ deleted: true }, { headers });
++    }
++    throw new CollectionError(400, 'Unknown collection file action.');
++  } catch (error) {
++    const status = error instanceof CollectionError ? error.status : 503;
++    return Response.json({ error: error instanceof CollectionError ? error.message : 'Collection file service is unavailable.' }, { status, headers });
++  }
++}
+diff --git a/netlify/functions/collection-report.mjs b/netlify/functions/collection-report.mjs
+new file mode 100644
+index 0000000000000000000000000000000000000000..a66034802135b1fb4ce0b99102cca0c5688328d9
+--- /dev/null
++++ b/netlify/functions/collection-report.mjs
+@@ -0,0 +1,24 @@
++import { CollectionError, readJson } from '../lib/collections-guard.mjs';
++
++export const config = { rateLimit: { windowLimit: 5, windowSize: 60, aggregateBy: ['ip', 'domain'] } };
++const headers = { 'content-type':'application/json', 'cache-control':'no-store', 'x-content-type-options':'nosniff' };
++export default async function handler(request) {
++  if (request.method !== 'POST') return Response.json({error:'POST required.'},{status:405,headers:{...headers,allow:'POST'}});
++  try {
++    const body = await readJson(request);
++    if (typeof body.slug !== 'string' || !/^[a-z0-9](?:[a-z0-9-]{0,58}[a-z0-9])?$/.test(body.slug)) throw new CollectionError(400,'Collection slug is invalid.');
++    if (!['copyright','abuse','misleading','privacy','other'].includes(body.reason)) throw new CollectionError(400,'Choose a report reason.');
++    if (body.details !== undefined && (typeof body.details !== 'string' || body.details.length > 1200)) throw new CollectionError(400,'Report details must be 1,200 characters or fewer.');
++    const base = new URL(process.env.SUPABASE_URL);
++    const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
++    if (base.protocol !== 'https:' || !key) throw new CollectionError(503,'Reporting is unavailable.');
++    const common = { apikey:key, authorization:`Bearer ${key}` };
++    const lookup = await fetch(new URL(`/rest/v1/collections?slug=eq.${encodeURIComponent(body.slug)}&visibility=in.(public,unlisted)&select=id&limit=1`,base),{headers:common,signal:AbortSignal.timeout(8000)});
++    if (!lookup.ok) throw new CollectionError(503,'Reporting is unavailable.');
++    const collection=(await lookup.json())[0];
++    if (!collection) throw new CollectionError(404,'Collection not found.');
++    const saved=await fetch(new URL('/rest/v1/collection_reports',base),{method:'POST',headers:{...common,'content-type':'application/json',prefer:'return=minimal'},body:JSON.stringify({collection_id:collection.id,reason:body.reason,details:body.details?.trim()||''}),signal:AbortSignal.timeout(8000)});
++    if (!saved.ok) throw new CollectionError(503,'Could not save this report.');
++    return Response.json({received:true},{status:201,headers});
++  } catch (error) { return Response.json({error:error instanceof CollectionError?error.message:'Reporting is unavailable.'},{status:error instanceof CollectionError?error.status:503,headers}); }
++}
+diff --git a/netlify/functions/collections.mjs b/netlify/functions/collections.mjs
+new file mode 100644
+index 0000000000000000000000000000000000000000..ad44ab38bd67e1522e1bb9ef4a6317ae2c31b29b
+--- /dev/null
++++ b/netlify/functions/collections.mjs
+@@ -0,0 +1,76 @@
++import { createCollectionsGuard, CollectionError, readJson, validateCollection, mayReadCollection } from '../lib/collections-guard.mjs';
++
++const guard = createCollectionsGuard();
++const baseHeaders = { 'content-type': 'application/json', 'cache-control': 'no-store', 'x-content-type-options': 'nosniff' };
++async function db(url, key, path, options = {}) {
++  const response = await fetch(new URL(path, url), {
++    ...options,
++    signal: AbortSignal.timeout(8000),
++    headers: { apikey: key, authorization: `Bearer ${key}`, 'content-type': 'application/json', ...(options.headers || {}) },
++  });
++  if (!response.ok) throw new CollectionError(response.status === 409 ? 409 : 503, response.status === 409 ? 'That collection URL is already in use.' : 'Collection storage is unavailable.');
++  if (response.status === 204) return null;
++  return response.json();
++}
++
++async function authorized(req) { return guard(req); }
++
++export default async function handler(request) {
++  if (request.method === 'OPTIONS') return new Response(null, { status: 204, headers: baseHeaders });
++  try {
++    const incoming = new URL(request.url);
++    const slug = incoming.searchParams.get('slug');
++
++    if (request.method === 'GET' && slug) {
++      if (!/^[a-z0-9](?:[a-z0-9-]{0,58}[a-z0-9])?$/.test(slug)) throw new CollectionError(404, 'Collection not found.');
++      const record = await db(process.env.SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY, `/rest/v1/collections?slug=eq.${encodeURIComponent(slug)}&select=id,owner_id,title,slug,description,visibility,theme,cover_url,created_at&limit=1`);
++      const collection = record[0];
++      let accountId = null;
++      if (collection?.visibility === 'private' && request.headers.has('authorization')) {
++        try { accountId = (await authorized(request)).user.id; } catch { /* private records remain indistinguishable from missing ones */ }
++      }
++      if (!mayReadCollection(collection, accountId)) throw new CollectionError(404, 'Collection not found.');
++      const books = await db(process.env.SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY, `/rest/v1/collection_books?collection_id=eq.${encodeURIComponent(collection.id)}&upload_state=eq.ready&select=id,title,author,description,tags,sort_order,featured,page_count,thumbnail_data&order=sort_order.asc,created_at.asc`);
++      return Response.json({ collection: { ...collection, owner_id: undefined }, books }, { headers: { ...baseHeaders, 'cache-control': collection.visibility === 'public' ? 'public, max-age=60' : 'no-store' } });
++    }
++
++    if (request.method === 'GET' && incoming.searchParams.get('mine') === '1') {
++      const { user, supabaseUrl, serviceKey } = await authorized(request);
++      const collections = await db(supabaseUrl, serviceKey, `/rest/v1/collections?owner_id=eq.${encodeURIComponent(user.id)}&select=id,title,slug,description,visibility,theme,cover_url,created_at,updated_at&order=created_at.desc`);
++      return Response.json({ collections }, { headers: baseHeaders });
++    }
++
++    if (request.method === 'GET' && incoming.searchParams.get('directory') === '1') {
++      const collections = await db(process.env.SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY, '/rest/v1/collections?visibility=eq.public&select=id,title,slug,description,theme,cover_url,created_at&order=created_at.desc&limit=60');
++      return Response.json({ collections }, { headers: { ...baseHeaders, 'cache-control': 'public, max-age=60' } });
++    }
++
++    if (request.method === 'POST') {
++      const { user, supabaseUrl, serviceKey } = await authorized(request);
++      const body = validateCollection(await readJson(request));
++      const rows = await db(supabaseUrl, serviceKey, '/rest/v1/rpc/create_librarian_collection', {
++        method: 'POST', body: JSON.stringify({ p_owner_id: user.id, p_title: body.title, p_slug: body.slug, p_description: body.description, p_visibility: body.visibility, p_theme: body.theme, p_cover_url: body.cover_url }),
++      });
++      if (!rows?.length) throw new CollectionError(429, 'You can create up to 12 collections.');
++      return Response.json({ collection: rows[0] }, { status: 201, headers: baseHeaders });
++    }
++
++    if (request.method === 'PATCH') {
++      const { user, supabaseUrl, serviceKey } = await authorized(request);
++      const id = incoming.searchParams.get('id');
++      if (!id || !/^[0-9a-f-]{36}$/i.test(id)) throw new CollectionError(400, 'Collection id is required.');
++      const current = await db(supabaseUrl, serviceKey, `/rest/v1/collections?id=eq.${encodeURIComponent(id)}&owner_id=eq.${encodeURIComponent(user.id)}&select=id,owner_id`);
++      if (!current.length) throw new CollectionError(404, 'Collection not found.');
++      const body = validateCollection(await readJson(request));
++      const rows = await db(supabaseUrl, serviceKey, `/rest/v1/collections?id=eq.${encodeURIComponent(id)}&owner_id=eq.${encodeURIComponent(user.id)}&select=id,title,slug,description,visibility,theme,cover_url,created_at`, {
++        method: 'PATCH', headers: { prefer: 'return=representation' }, body: JSON.stringify(body),
++      });
++      return Response.json({ collection: rows[0] }, { headers: baseHeaders });
++    }
++
++    return Response.json({ error: 'Method not allowed.' }, { status: 405, headers: { ...baseHeaders, allow: 'GET, POST, PATCH, OPTIONS' } });
++  } catch (error) {
++    const status = error instanceof CollectionError ? error.status : 503;
++    return Response.json({ error: error instanceof CollectionError ? error.message : 'Collection storage is unavailable.' }, { status, headers: baseHeaders });
++  }
++}
+diff --git a/netlify/lib/collections-guard.mjs b/netlify/lib/collections-guard.mjs
+new file mode 100644
+index 0000000000000000000000000000000000000000..6f79ae523c5b6b61d597d4c93145ffa71e15aeab
+--- /dev/null
++++ b/netlify/lib/collections-guard.mjs
+@@ -0,0 +1,82 @@
++const MAX_BODY = 16_384;
++
++export class CollectionError extends Error {
++  constructor(status, message) { super(message); this.status = status; }
++}
++
++export async function readJson(request) {
++  if (!request.headers.get('content-type')?.startsWith('application/json')) throw new CollectionError(415, 'JSON required.');
++  const reader = request.body?.getReader();
++  if (!reader) throw new CollectionError(400, 'Request body required.');
++  const chunks = []; let size = 0;
++  try {
++    for (;;) {
++      const { done, value } = await reader.read();
++      if (done) break;
++      size += value.byteLength;
++      if (size > MAX_BODY) { await reader.cancel(); throw new CollectionError(413, 'Request too large.'); }
++      chunks.push(value);
++    }
++    const bytes = new Uint8Array(size); let offset = 0;
++    for (const chunk of chunks) { bytes.set(chunk, offset); offset += chunk.length; }
++    return JSON.parse(new TextDecoder('utf-8', { fatal: true }).decode(bytes));
++  } catch (error) {
++    if (error instanceof CollectionError) throw error;
++    throw new CollectionError(400, 'Invalid JSON.');
++  } finally { reader.releaseLock(); }
++}
++
++export function validateCollection(value) {
++  const fields = ['title', 'slug', 'description', 'visibility', 'theme', 'coverUrl'];
++  if (!value || typeof value !== 'object' || Array.isArray(value) || Object.keys(value).some(key => !fields.includes(key))) throw new CollectionError(400, 'Invalid collection.');
++  if (typeof value.title !== 'string' || !value.title.trim() || value.title.trim().length > 120) throw new CollectionError(400, 'Title must be 1–120 characters.');
++  if (typeof value.slug !== 'string' || !/^[a-z0-9](?:[a-z0-9-]{0,58}[a-z0-9])?$/.test(value.slug)) throw new CollectionError(400, 'Use a URL slug with lowercase letters, numbers, and hyphens.');
++  if (value.description !== undefined && (typeof value.description !== 'string' || value.description.length > 1200)) throw new CollectionError(400, 'Description must be 1,200 characters or fewer.');
++  if (!['private', 'unlisted', 'public'].includes(value.visibility)) throw new CollectionError(400, 'Choose public, unlisted, or private visibility.');
++  const themes = ['reading-room', 'linen', 'midnight'];
++  if (value.theme !== undefined && !themes.includes(value.theme)) throw new CollectionError(400, 'Unsupported collection theme.');
++  let cover_url = null;
++  if (value.coverUrl) {
++    try { const cover = new URL(value.coverUrl); if (cover.protocol !== 'https:' || cover.username || cover.password) throw new Error(); cover_url = cover.href; }
++    catch { throw new CollectionError(400, 'Cover image must be an HTTPS URL.'); }
++  }
++  return { title: value.title.trim(), slug: value.slug, description: value.description?.trim() || '', visibility: value.visibility, theme: value.theme || 'reading-room', cover_url };
++}
++
++export function mayReadCollection(collection, accountId = null) {
++  if (!collection) return false;
++  if (collection.visibility === 'private') return Boolean(accountId && collection.owner_id === accountId);
++  if (collection.visibility === 'unlisted' || collection.visibility === 'public') return true;
++  return false;
++}
++
++export function isOwner(collection, accountId) {
++  return Boolean(collection && accountId && collection.owner_id === accountId);
++}
++
++export function createCollectionsGuard({ env = process.env, fetcher = (...args) => fetch(...args) } = {}) {
++  return async request => {
++    const origin = request.headers.get('origin');
++    const allowed = new Set([new URL(request.url).origin, ...(env.LIBRARIAN_ALLOWED_ORIGINS || '').split(',').filter(Boolean)]);
++    if (origin && !allowed.has(origin)) throw new CollectionError(403, 'Origin not allowed.');
++    const token = request.headers.get('authorization')?.match(/^Bearer ([A-Za-z0-9._-]{20,8192})$/)?.[1];
++    if (!token) throw new CollectionError(401, 'Sign in to manage your collections.');
++    const base = env.SUPABASE_URL;
++    if (!base || !env.SUPABASE_PUBLISHABLE_KEY || !env.SUPABASE_SERVICE_ROLE_KEY) throw new CollectionError(503, 'Collections are unavailable while secure account storage is configured.');
++    let url;
++    try { url = new URL(base); } catch { throw new CollectionError(503, 'Account service is not configured.'); }
++    if (url.protocol !== 'https:' || url.username || url.password || url.pathname !== '/') throw new CollectionError(503, 'Account service is not configured.');
++    let response;
++    try {
++      response = await fetcher(new URL('/auth/v1/user', url), {
++        headers: { apikey: env.SUPABASE_PUBLISHABLE_KEY, authorization: `Bearer ${token}` },
++        signal: AbortSignal.timeout(8000),
++      });
++    } catch { throw new CollectionError(503, 'Account verification unavailable.'); }
++    if (!response.ok) throw new CollectionError(response.status === 401 || response.status === 403 ? 401 : 503, 'Account verification unavailable.');
++    let user;
++    try { user = await response.json(); } catch { throw new CollectionError(503, 'Account verification unavailable.'); }
++    if (!user?.id || !user.email || !user.email_confirmed_at || user.is_anonymous) throw new CollectionError(403, 'Verify your email before creating a collection.');
++    return { user, token, supabaseUrl: url, serviceKey: env.SUPABASE_SERVICE_ROLE_KEY };
++  };
++}
+diff --git a/package.json b/package.json
+index cb50793c2f07e472ff352501186ad6e4b170ef4b..aeacfe16529235c1d6f3456369e95d8f1512a539 100644
+--- a/package.json
++++ b/package.json
+@@ -58,7 +58,8 @@
+     "@capacitor/core": "^8.5.2",
+     "@capacitor/filesystem": "^8.1.4",
+     "@capacitor/ios": "^8.5.2",
+-    "@capacitor/share": "^8.0.3"
++    "@capacitor/share": "^8.0.3",
++    "qrcode": "^1.5.4"
+   },
+   "overrides": {
+     "@capacitor/assets": {
+diff --git a/src/collections-detail.css b/src/collections-detail.css
+new file mode 100644
+index 0000000000000000000000000000000000000000..141dca0e29d90be680a114cb7a7c5dcfd8cb0c93
+--- /dev/null
++++ b/src/collections-detail.css
+@@ -0,0 +1,9 @@
++.co-cover img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:inherit}
++.co-rights{grid-column:1/-1;display:flex!important;align-items:center;gap:10px;color:var(--quiet);font-size:.82rem!important;line-height:1.45}
++.co-rights input{width:20px;height:20px;flex:0 0 20px;accent-color:var(--accent)}
++.co-reader nav button:focus-visible,.co-reader header button:focus-visible,.co-app button:focus-visible,.co-app a:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
++.co-app img{max-width:100%}
++.co-report{margin-top:55px;border-top:1px solid #ffffff25;padding-top:15px;color:var(--quiet)}
++.co-report summary{cursor:pointer;font-size:.85rem}.co-report form{display:grid;gap:12px;width:min(580px,100%);margin-top:16px}.co-report form button{justify-self:start}
++.co-qr-backdrop{position:fixed;inset:0;z-index:55;background:#080705d9;display:grid;place-items:center;padding:18px}.co-qr{position:relative;width:min(420px,100%);padding:30px;border-radius:18px;background:var(--paper);color:var(--ink);text-align:center;box-shadow:0 20px 80px #0009}.co-qr h2{font:500 1.8rem var(--serif)}.co-qr img{width:min(270px,100%);aspect-ratio:1;image-rendering:pixelated;background:white;padding:10px;border-radius:10px}.co-qr p{color:var(--quiet);font-size:.84rem;line-height:1.5}.co-qr>button:first-child{position:absolute;right:14px;top:12px;border:0;background:none;color:var(--ink);font-size:1.6rem;cursor:pointer}
++@media(max-width:760px){.co-rights{grid-column:auto}}
+diff --git a/src/collections.css b/src/collections.css
+new file mode 100644
+index 0000000000000000000000000000000000000000..1b352a6943bfd6294c33763ca8749053d78142cd
+--- /dev/null
++++ b/src/collections.css
+@@ -0,0 +1,6 @@
++.collections-nav{display:inline-flex;align-items:center;color:var(--clay);font-size:.9rem;font-weight:600;padding:8px 12px;text-decoration:none;white-space:nowrap}
++.co-app{--paper:#17130f;--ink:#f2ebdd;--quiet:#ac9f8c;--accent:#db896d;min-height:100vh;background:var(--paper);color:var(--ink);font-family:var(--sans)}
++.co-app[data-theme="linen"],body[data-collection-theme="linen"] .co-app{--paper:#e9dfce;--ink:#2b271f;--quiet:#69604f;--accent:#a34f36;color-scheme:light}
++body[data-collection-theme="midnight"] .co-app{--paper:#090d13;--ink:#e3e7e9;--quiet:#9ba7ae;--accent:#b9aa75}
++.co-app *{box-sizing:border-box}.co-brand{font-family:var(--serif);font-size:1.3rem;color:var(--ink);text-decoration:none}.co-brand b{font:700 .63rem var(--sans);letter-spacing:.17em;color:var(--accent);margin-left:.5rem}.co-kicker{display:block;text-transform:uppercase;letter-spacing:.2em;color:var(--accent);font-size:.7rem;font-weight:700;margin:1.2rem 0 .6rem}.co-primary,.co-secondary,.co-app button,.co-app input,.co-app select,.co-app textarea{font:inherit}.co-primary{background:var(--accent);border:0;border-radius:10px;color:#fff;padding:12px 18px;font-weight:700;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center}.co-primary:hover{filter:brightness(1.08)}.co-primary:disabled{opacity:.55}.co-secondary{display:inline-flex;align-items:center;border:1px solid color-mix(in srgb,var(--quiet),transparent 55%);background:transparent;color:var(--ink);border-radius:9px;padding:9px 13px;cursor:pointer;text-decoration:none;font-size:.9rem}.co-auth{width:min(560px,calc(100% - 36px));margin:10vh auto}.co-auth h1,.co-public h1,.co-intro h1{font:500 clamp(2.7rem,6vw,5.1rem)/.98 var(--serif);letter-spacing:-.04em;margin:.65rem 0 1rem;max-width:14ch}.co-auth>p:not(.co-brand),.co-intro p,.co-public>p{color:var(--quiet);line-height:1.7;max-width:55ch}.co-auth form{margin:2rem 0 1rem}.co-app label{display:grid;gap:7px;color:var(--quiet);font-size:.84rem;font-weight:600}.co-app input,.co-app select,.co-app textarea{min-width:0;border:1px solid color-mix(in srgb,var(--quiet),transparent 72%);border-radius:9px;padding:11px 12px;background:color-mix(in srgb,var(--paper),white 3%);color:var(--ink);outline:none}.co-app input:focus,.co-app select:focus,.co-app textarea:focus{border-color:var(--accent);box-shadow:0 0 0 2px color-mix(in srgb,var(--accent),transparent 75%)}.co-auth form label{margin:14px 0}.co-auth form button{width:100%;margin-top:8px}.co-auth>a{color:var(--quiet);font-size:.9rem}.co-top{height:68px;border-bottom:1px solid color-mix(in srgb,var(--quiet),transparent 78%);display:flex;align-items:center;justify-content:space-between;padding:0 max(24px,calc((100vw - 1220px)/2))}.co-top span{color:var(--quiet);font-size:.85rem}.co-top button{background:none;border:0;color:var(--accent);cursor:pointer;margin-left:12px}.co-manager,.co-public{width:min(1220px,calc(100% - 44px));margin:0 auto;padding:42px 0 80px}.co-intro,.co-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:18px}.co-intro{padding:14px 0 36px;border-bottom:1px solid color-mix(in srgb,var(--quiet),transparent 80%)}.co-intro .co-kicker{margin-top:0}.co-intro h1{font-size:clamp(2.4rem,5vw,4.3rem);max-width:15ch;margin:.4rem 0}.co-intro p{margin:0}.co-message{background:color-mix(in srgb,var(--accent),transparent 88%);border-left:3px solid var(--accent);padding:12px 16px;color:var(--ink);border-radius:5px}.co-workspace{display:grid;grid-template-columns:245px minmax(0,1fr);gap:36px;padding-top:26px}.co-workspace aside{border-right:1px solid color-mix(in srgb,var(--quiet),transparent 80%);padding-right:22px}.co-workspace aside h2{font:500 1.25rem var(--serif)}.co-workspace aside h2 small{float:right;color:var(--quiet);font:500 .75rem var(--sans)}.co-choice{display:grid;width:100%;text-align:left;gap:3px;padding:11px;border:0;border-radius:9px;background:transparent;color:var(--ink);cursor:pointer;margin:4px 0}.co-choice.chosen,.co-choice:hover{background:color-mix(in srgb,var(--quiet),transparent 89%)}.co-choice small{color:var(--quiet);text-transform:capitalize}.co-workspace aside>.co-secondary{margin-top:16px;width:100%;justify-content:center}.co-edit{min-width:0}.co-heading{align-items:center;margin:3px 0 17px}.co-heading h2{font:500 1.9rem var(--serif);margin:4px 0}.co-heading .co-kicker{margin:0}.co-heading>input{width:min(320px,100%)}.co-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 18px;padding:20px;background:color-mix(in srgb,var(--quiet),transparent 94%);border:1px solid color-mix(in srgb,var(--quiet),transparent 82%);border-radius:14px;margin:20px 0 38px}.co-form .wide{grid-column:1/-1}.co-form>button{justify-self:start}.co-form label{font-size:.82rem}.co-upload{display:grid;grid-template-columns:repeat(3,minmax(120px,1fr));gap:12px;align-items:end;border:1px dashed color-mix(in srgb,var(--quiet),transparent 50%);border-radius:13px;padding:17px;margin:18px 0}.co-upload label:first-child{grid-column:span 2}.co-upload input[type=file]{font-size:.77rem}.co-upload small{color:var(--quiet);grid-column:1/-1}.co-books{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px;margin-top:18px}.co-book{display:flex;flex-direction:column;gap:6px;min-width:0}.co-cover{aspect-ratio:.72;display:grid;place-items:center;background:linear-gradient(145deg,#624c38,#29241c);border-radius:8px;color:#f4e5c9;font:500 3.2rem var(--serif);position:relative;box-shadow:3px 5px 12px #0004}.co-book:nth-child(3n+2) .co-cover{background:linear-gradient(145deg,#375456,#1b2c31)}.co-book:nth-child(3n) .co-cover{background:linear-gradient(145deg,#704147,#362328)}.co-cover b{position:absolute;right:6px;top:8px;font:700 .54rem var(--sans);letter-spacing:.1em;background:var(--accent);padding:4px;border-radius:4px}.co-book strong{font:500 1.05rem/1.2 var(--serif)}.co-book small,.co-book span{color:var(--quiet);font-size:.76rem}.co-book button{background:transparent;border:0;color:var(--accent);text-align:left;padding:5px 0;cursor:pointer}.co-new{width:min(820px,calc(100% - 36px));margin:7vh auto}.co-new h2{font:500 2.5rem var(--serif)}.co-directory{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px;margin:30px 0}.co-library{min-height:245px;border:1px solid #ffffff28;border-radius:12px;padding:23px;background:linear-gradient(145deg,#30261c,#17130f);color:#f2ebdd;text-decoration:none;display:flex;flex-direction:column}.co-library.linen{background:linear-gradient(145deg,#eee3ce,#c9b798);color:#28241e}.co-library.midnight{background:linear-gradient(145deg,#182a35,#090d13)}.co-library>span{font-size:.62rem;letter-spacing:.18em;color:var(--accent)}.co-library h2{font:500 1.9rem var(--serif);margin:24px 0 5px}.co-library p{line-height:1.5;color:inherit;opacity:.75}.co-library b{margin-top:auto;color:var(--accent)}.co-public>.co-brand{display:inline-block;margin-bottom:4rem}.co-public>h1{max-width:unset}.co-public>.co-heading{margin:32px 0 20px}.co-public>.co-heading span{color:var(--quiet)}.co-toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);z-index:50;background:#33281e;border:1px solid var(--accent);color:#fff;padding:11px 18px;border-radius:10px;max-width:calc(100% - 30px)}.co-reader{position:fixed;inset:0;z-index:60;background:#100e0b;color:#f2ebdd;display:flex;flex-direction:column}.co-reader header,.co-reader nav{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 18px;border-bottom:1px solid #ffffff22}.co-reader header button,.co-reader nav button{border:1px solid #ffffff33;border-radius:7px;background:#211d18;color:inherit;padding:9px 12px;cursor:pointer;min-height:40px}.co-reader nav{justify-content:center;flex-wrap:wrap}.co-reader nav input{width:170px}.co-canvas{overflow:auto;flex:1;text-align:center;padding:20px}.co-canvas canvas{max-width:100%;height:auto;box-shadow:0 3px 25px #0009}.co-canvas p{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
++@media(max-width:760px){.co-manager,.co-public{width:calc(100% - 30px);padding-top:25px}.co-workspace{grid-template-columns:1fr;gap:22px}.co-workspace aside{border-right:0;border-bottom:1px solid #ffffff25;padding:0 0 16px}.co-workspace aside .co-choice{display:inline-grid;width:auto;min-width:130px;margin-right:6px}.co-form{grid-template-columns:1fr}.co-form .wide{grid-column:auto}.co-upload{grid-template-columns:1fr}.co-upload label:first-child{grid-column:auto}.co-intro{align-items:flex-start;flex-direction:column}.co-top{padding:0 14px}.co-top span{font-size:0}.co-top span button{font-size:.8rem}.co-reader nav{gap:5px;padding:8px}.co-reader nav input{width:120px}.co-cover{aspect-ratio:.82}}
+diff --git a/src/collections.js b/src/collections.js
+new file mode 100644
+index 0000000000000000000000000000000000000000..be3cb3fe4cc786c61eaf29d0b8e6076164046eac
+--- /dev/null
++++ b/src/collections.js
+@@ -0,0 +1,36 @@
++import './collections.css';
++import './collections-detail.css';
++import { loadPdfjs } from './pdfjs.js';
++import QRCode from 'qrcode';
++
++const app=document.querySelector('#app'), FN='/.netlify/functions', KEY='librarian.collections.session.v1';
++const query=new URLSearchParams(location.search);let cfg,session=loadSession(),rows=[],active=null,books=[],message='',reader=null,filter='',qrData='';
++function loadSession(){try{return JSON.parse(localStorage.getItem(KEY))}catch{return null}}
++function saveSession(s){session=s;if(s)localStorage.setItem(KEY,JSON.stringify(s));else localStorage.removeItem(KEY)}
++function esc(x=''){return String(x).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
++function slug(s){return s.toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,60)}
++function authHeaders(){return {apikey:cfg.publishableKey,authorization:`Bearer ${session?.access_token||cfg.publishableKey}`}}
++async function call(path,options={}){let r=await fetch(`${FN}/${path}`,{...options,headers:{...authHeaders(),...(options.headers||{})}});if(r.status===401&&session?.refresh_token){const next=await fetch(`${cfg.supabaseUrl}/auth/v1/token?grant_type=refresh_token`,{method:'POST',headers:{apikey:cfg.publishableKey,'content-type':'application/json'},body:JSON.stringify({refresh_token:session.refresh_token})});if(next.ok){saveSession(await next.json());r=await fetch(`${FN}/${path}`,{...options,headers:{...authHeaders(),...(options.headers||{})}})}else saveSession(null)}let data={};try{data=await r.json()}catch{};if(!r.ok)throw Error(data.error||'Could not complete that action.');return data}
++async function account(path,body){const r=await fetch(`${cfg.supabaseUrl}/auth/v1/${path}`,{method:'POST',headers:{apikey:cfg.publishableKey,'content-type':'application/json'},body:JSON.stringify(body)});const d=await r.json();if(!r.ok)throw Error(d.msg||d.message||'Account request failed.');return d}
++function say(text){message=text;render()}
++async function open(slug){const d=await call(`collections?slug=${encodeURIComponent(slug)}`);active=d.collection;books=d.books||[];document.title=`${active.title} — Librarian`}
++async function mine(){rows=(await call('collections?mine=1')).collections||[];active=rows[0]||null;if(active)await open(active.slug)}
++async function boot(){try{const r=await fetch(`${FN}/collection-config`);cfg=await r.json();if(!r.ok)throw Error(cfg.error);if(query.has('collection'))await open(query.get('collection'));else if(query.has('collections')&&session)await mine();else if(!query.has('collections')){const d=await call('collections?directory=1');rows=d.collections||[]}}catch(e){message=e.message}render()}
++function auth(){return `<main class="co-auth"><p class="co-brand">Librarian <b>COLLECTIONS</b></p><span class="co-kicker">A room of your own</span><h1>Build a library worth wandering.</h1><p>Gather PDFs you have permission to share, arrange them with care, and give readers a link that opens straight to the shelves.</p><form data-auth><label>Email<input type="email" name="email" autocomplete="email" required></label><label>Password<input type="password" name="password" minlength="8" autocomplete="${query.has('signin')?'current-password':'new-password'}" required></label><button class="co-primary">${query.has('signin')?'Sign in':'Create curator account'}</button></form><a href="/?collections=1&signin=1">Already have an account? Sign in</a></main>`}
++function collectionForm(){return `<form class="co-form" data-create><label>Collection title<input name="title" required maxlength="120" placeholder="The Cartographer’s Reading Room"></label><label>Custom URL slug<input name="slug" required maxlength="60" pattern="[a-z0-9]([a-z0-9-]{0,58}[a-z0-9])?" placeholder="cartographers-reading-room"></label><label class="wide">Description<textarea name="description" maxlength="1200" rows="3"></textarea></label><label class="wide">Cover image URL<input name="coverUrl" type="url" inputmode="url" placeholder="https://example.org/cover.jpg"></label><label>Visibility<select name="visibility"><option value="private">Private — only you</option><option value="unlisted">Unlisted — link holders</option><option value="public">Public — discovery directory</option></select></label><label>Theme<select name="theme"><option value="reading-room">Reading room · walnut</option><option value="linen">Linen · warm paper</option><option value="midnight">Midnight · ink</option></select></label><button class="co-primary">Create collection</button></form>`}
++function bookCards(items,owner=false){return items.map((b,i)=>`<article class="co-book"><div class="co-cover">${b.thumbnail_data?`<img src="${esc(b.thumbnail_data)}" alt="Cover preview for ${esc(b.title)}">`:esc((b.title||'?').slice(0,1))}${b.featured?'<b>FEATURED</b>':''}</div><strong>${esc(b.title)}</strong><small>${esc(b.author||'')}</small><span>${esc((b.tags||[]).join(' · '))}</span><button data-read="${esc(b.id)}">Read PDF →</button>${owner?`<button data-feature="${esc(b.id)}" aria-pressed="${!!b.featured}">${b.featured?'Unfeature':'Feature'}</button><button data-order="${esc(b.id)}" data-position="${Math.max(0,i-1)}">Move up</button><button data-delete="${esc(b.id)}">Remove</button>`:''}</article>`).join('')}
++function manager(){if(!session)return auth();const visible=books.filter(b=>!filter||`${b.title} ${b.author} ${(b.tags||[]).join(' ')}`.toLowerCase().includes(filter.toLowerCase()));return `<header class="co-top"><a class="co-brand" href="/?collections=1">Librarian <b>COLLECTIONS</b></a><span>${esc(session.user?.email||'Curator')} <button data-signout>Sign out</button></span></header><main class="co-manager"><section class="co-intro"><div><span class="co-kicker">Your curator desk</span><h1>Make room for good books.</h1><p>Build reading lists, private archives, or a little digital museum.</p></div><button class="co-primary" data-new>＋ New collection</button></section>${message?`<p class="co-message" role="status">${esc(message)}</p>`:''}${!active?collectionForm():`<div class="co-workspace"><aside><h2>Your libraries <small>${rows.length}/12</small></h2>${rows.map(x=>`<button data-open="${esc(x.slug)}" class="co-choice ${x.id===active.id?'chosen':''}">${esc(x.title)}<small>${esc(x.visibility)}</small></button>`).join('')}<button class="co-secondary" data-new>＋ Create collection</button></aside><section class="co-edit"><div class="co-heading"><div><span class="co-kicker">Collection designer</span><h2>${esc(active.title)}</h2></div><button class="co-secondary" data-copy>Copy share link</button><button class="co-secondary" data-embed>Copy embed</button><button class="co-secondary" data-qr>QR code</button><button class="co-secondary" data-embed>Copy embed</button><a class="co-secondary" href="/?collection=${encodeURIComponent(active.slug)}" target="_blank" rel="noreferrer">Preview ↗</a></div><form class="co-form" data-settings><label>Title<input name="title" value="${esc(active.title)}" required maxlength="120"></label><label>Custom URL slug<input name="slug" value="${esc(active.slug)}" required maxlength="60"></label><label class="wide">Description<textarea name="description" maxlength="1200" rows="3">${esc(active.description)}</textarea></label><label class="wide">Cover image URL<input name="coverUrl" type="url" inputmode="url" value="${esc(active.cover_url||'')}" placeholder="https://example.org/cover.jpg"></label><label>Visibility<select name="visibility"><option value="private" ${active.visibility==='private'?'selected':''}>Private — only you</option><option value="unlisted" ${active.visibility==='unlisted'?'selected':''}>Unlisted — link holders</option><option value="public" ${active.visibility==='public'?'selected':''}>Public — discovery directory</option></select></label><label>Theme<select name="theme"><option value="reading-room" ${active.theme==='reading-room'?'selected':''}>Reading room · walnut</option><option value="linen" ${active.theme==='linen'?'selected':''}>Linen · warm paper</option><option value="midnight" ${active.theme==='midnight'?'selected':''}>Midnight · ink</option></select></label><button class="co-primary">Save design</button></form><div class="co-heading"><div><span class="co-kicker">The shelves</span><h2>${books.length} PDFs</h2></div><input data-search aria-label="Search collection" placeholder="Search books or tags" value="${esc(filter)}"></div><form data-upload class="co-upload"><label>Choose PDF<input type="file" name="pdf" accept="application/pdf,.pdf" required></label><label>Title<input name="title" maxlength="240" placeholder="PDF title"></label><label>Author<input name="author" maxlength="240" placeholder="Author"></label><label>Description<input name="description" maxlength="2000"></label><label>Tags<input name="tags" placeholder="history, archive"></label><label>Custom thumbnail<input type="file" name="thumbnail" accept="image/png,image/jpeg,image/webp"></label><label class="co-rights"><input type="checkbox" name="shareRights" required> I own this work or have permission to share this PDF.</label><button class="co-primary">Add PDF</button><small>PDF only · 50 MB maximum · stored privately</small></form><div class="co-books ${esc(active.theme)}">${bookCards(visible,true)||'<p>Add a PDF you have permission to share to begin.</p>'}</div></section></div>`}</main>`}
++function publicPage(){if(!active)return `<main class="co-public"><span class="co-kicker">The open stacks</span><h1>Libraries made to be explored.</h1><p>Curated reading rooms from Librarian members.</p><div class="co-directory">${rows.map(x=>`<a class="co-library ${esc(x.theme)}" style="${x.cover_url?`background-image:linear-gradient(180deg,#0003,#000c),url('${esc(x.cover_url)}')`:``}" href="/?collection=${encodeURIComponent(x.slug)}"><span>THE LIBRARY</span><h2>${esc(x.title)}</h2><p>${esc(x.description)}</p><b>Enter library →</b></a>`).join('')||'<p>No public libraries yet.</p>'}</div><a class="co-primary" href="/?collections=1">Create a library</a></main>`;const visible=books.filter(b=>!filter||`${b.title} ${b.author} ${(b.tags||[]).join(' ')}`.toLowerCase().includes(filter.toLowerCase()));return `<main class="co-public ${esc(active.theme)}"><a class="co-brand" href="/">Librarian <b>COLLECTIONS</b></a><span class="co-kicker">A curated digital library</span><h1>${esc(active.title)}</h1><p>${esc(active.description)}</p><div class="co-heading"><input data-search aria-label="Search books" placeholder="Search titles, authors, tags" value="${esc(filter)}"><span>${books.length} books</span></div><div class="co-books">${bookCards(visible)||'<p>No matching books.</p>'}</div><details class="co-report"><summary>Report this library</summary><form data-report><label>Reason<select name="reason"><option value="copyright">Copyright concern</option><option value="abuse">Abusive or harmful content</option><option value="misleading">Misleading information</option><option value="privacy">Privacy concern</option><option value="other">Other</option></select></label><label>Details<textarea name="details" maxlength="1200" rows="3"></textarea></label><button class="co-secondary">Submit report</button></form></details></main>`}
++function bookmarkKey(){return `librarian.bookmarks.${active.slug}.${reader.book.id}`}
++function getBookmarks(){try{return JSON.parse(localStorage.getItem(bookmarkKey())||'[]').filter(Number.isSafeInteger)}catch{return []}}
++function readerView(){return `<div class="co-reader" role="dialog" aria-modal="true" aria-label="Reading ${esc(reader.book.title)}"><header><strong>${esc(reader.book.title)}</strong><button data-close-reader aria-label="Close reader">×</button></header><nav><button data-page="-1" ${reader.page<=1?'disabled':''}>Previous</button><span>Page ${reader.page} / ${reader.pdf.numPages}</span><button data-page="1" ${reader.page>=reader.pdf.numPages?'disabled':''}>Next</button><button data-zoom="-.15" aria-label="Zoom out">−</button><button data-zoom=".15" aria-label="Zoom in">＋</button><input data-find-text aria-label="Search this book" placeholder="Search this book"><button data-find>Find</button><button data-bookmark>Bookmark page</button><select data-jump-bookmark aria-label="Jump to bookmark"><option value="">Bookmarks</option>${getBookmarks().map(n=>`<option value="${n}" ${n===reader.page?'selected':''}>Page ${n}</option>`).join('')}</select><span data-find-status aria-live="polite"></span></nav><div class="co-canvas"><canvas data-canvas></canvas><p>${esc(reader.text||'')}</p></div></div>`}
++function render(){document.body.dataset.collectionTheme=active?.theme||'reading-room';app.innerHTML=`<div class="co-app">${query.has('collections')?manager():publicPage()}${message?`<p class="co-toast" role="alert">${esc(message)}</p>`:''}${reader?readerView():''}${qrData?`<div class="co-qr-backdrop" role="presentation"><section class="co-qr" role="dialog" aria-modal="true" aria-label="Share QR code"><button data-qr-close aria-label="Close QR code">×</button><span class="co-kicker">Share this library</span><h2>${esc(active.title)}</h2><img src="${qrData}" alt="QR code for ${esc(active.title)}"><p>Anyone with this link can open this collection according to its visibility setting.</p><button class="co-primary" data-qr-download>Download PNG</button></section></div>`:''}</div>`;bind()}
++async function paint(){const page=await reader.pdf.getPage(reader.page),vp=page.getViewport({scale:reader.scale}),canvas=document.querySelector('[data-canvas]');if(!canvas)return;canvas.width=vp.width;canvas.height=vp.height;await page.render({canvasContext:canvas.getContext('2d'),viewport:vp}).promise;reader.text=(await page.getTextContent()).items.map(x=>x.str).join(' ');const status=document.querySelector('.co-reader nav span');if(status)status.textContent=`Page ${reader.page} / ${reader.pdf.numPages}`;const text=document.querySelector('.co-canvas p');if(text)text.textContent=reader.text;const buttons=document.querySelectorAll('.co-reader nav [data-page]');if(buttons[0])buttons[0].disabled=reader.page<=1;if(buttons[1])buttons[1].disabled=reader.page>=reader.pdf.numPages}
++async function searchDocument(term){const query=String(term||'').trim().toLocaleLowerCase(),status=document.querySelector('[data-find-status]');if(!query){if(status)status.textContent='Enter text to search.';return}if(status)status.textContent='Searching…';for(let offset=0;offset<reader.pdf.numPages;offset++){const pageNumber=(reader.page+offset-1)%reader.pdf.numPages+1;const page=await reader.pdf.getPage(pageNumber),content=await page.getTextContent(),text=content.items.map(item=>item.str).join(' ');if(text.toLocaleLowerCase().includes(query)){reader.page=pageNumber;await paint();const live=document.querySelector('[data-find-status]');if(live)live.textContent=`Found on page ${pageNumber}.`;return}if(offset%12===0)await new Promise(resolve=>setTimeout(resolve,0))}const live=document.querySelector('[data-find-status]');if(live)live.textContent='No match in this book.'}
++async function readBook(id){try{const b=books.find(x=>x.id===id),d=await call('collection-files?action=read',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({slug:active.slug,bookId:id})}),pdfjs=await loadPdfjs();reader={pdf:await pdfjs.getDocument({url:d.url}).promise,book:b||d.book,page:1,scale:1.15};render();await paint()}catch(e){message=e.message;render()}}
++async function upload(form){let reserved=null;try{const f=form.elements.pdf.files[0];if(!f||f.type!=='application/pdf'||f.size>50*1024*1024)throw Error('Choose a PDF up to 50 MB.');const data=await f.arrayBuffer();if(new TextDecoder().decode(new Uint8Array(data,0,5))!=='%PDF-')throw Error('File contents are not a PDF.');message='Checking the PDF and preparing its thumbnail…';render();const pdfjs=await loadPdfjs(),pdf=await pdfjs.getDocument({data}).promise,meta=await pdf.getMetadata().catch(()=>({info:{}})),page=await pdf.getPage(1),vp=page.getViewport({scale:Math.min(150/page.getViewport({scale:1}).width,190/page.getViewport({scale:1}).height)}),canvas=document.createElement('canvas');canvas.width=vp.width;canvas.height=vp.height;await page.render({canvasContext:canvas.getContext('2d'),viewport:vp}).promise;let thumbnailData=canvas.toDataURL('image/jpeg',.48);const chosenThumb=form.elements.thumbnail.files[0];if(chosenThumb){if(chosenThumb.size>5*1024*1024)throw Error('Custom thumbnails must be 5 MB or smaller.');const bitmap=await createImageBitmap(chosenThumb);canvas.width=130;canvas.height=180;const scale=Math.min(canvas.width/bitmap.width,canvas.height/bitmap.height),w=bitmap.width*scale,h=bitmap.height*scale;canvas.getContext('2d').clearRect(0,0,canvas.width,canvas.height);canvas.getContext('2d').drawImage(bitmap,(canvas.width-w)/2,(canvas.height-h)/2,w,h);bitmap.close();thumbnailData=canvas.toDataURL('image/jpeg',.48)}if(thumbnailData.length>40000)throw Error('Could not create a small enough thumbnail.');const v=new FormData(form),started=await call('collection-files?action=start',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({collectionId:active.id,bytes:f.size,mime:f.type,pageCount:pdf.numPages,thumbnailData,title:v.get('title')||meta.info?.Title||f.name.replace(/\.pdf$/i,''),author:v.get('author')||meta.info?.Author||'',description:v.get('description'),tags:String(v.get('tags')).split(',').map(x=>x.trim()).filter(Boolean),shareRights:v.get('shareRights')==='on'})});reserved=started.bookId;const sent=await fetch(started.uploadUrl,{method:'PUT',headers:{apikey:cfg.publishableKey,'content-type':'application/pdf','x-upsert':'false'},body:f});if(!sent.ok)throw Error('Secure file transfer failed.');await call('collection-files?action=finish',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({bookId:started.bookId})});await open(active.slug);message='PDF added to the collection.'}catch(e){if(reserved)await call('collection-files?action=delete',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({bookId:reserved})}).catch(()=>{});message=e.message}render()}
++async function reorderBook(id){const ordered=books.slice().sort((a,b)=>a.sort_order-b.sort_order),from=ordered.findIndex(book=>book.id===id);if(from<=0)return;[ordered[from-1],ordered[from]]=[ordered[from],ordered[from-1]];await Promise.all(ordered.map((book,index)=>call('collection-files?action=update',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({bookId:book.id,update:{sort_order:index}})})));books=ordered.map((book,index)=>({...book,sort_order:index}));message='Shelf order saved.';render()}
++function bind(){document.querySelector('[data-auth]')?.addEventListener('submit',async e=>{e.preventDefault();try{const v=new FormData(e.currentTarget),d=await account(query.has('signin')?'token?grant_type=password':'signup',{email:v.get('email'),password:v.get('password')});if(!d.access_token)message='Check your email to verify your curator account, then sign in.';else{saveSession(d);await mine();message=''}}catch(x){message=x.message}render()});document.querySelector('[data-signout]')?.addEventListener('click',()=>{saveSession(null);location.href='/?collections=1'});document.querySelectorAll('[data-new]').forEach(x=>x.onclick=()=>{active=null;render()});document.querySelector('[data-create]')?.addEventListener('input',e=>{if(e.target.name==='title'&&!e.currentTarget.dataset.touched)e.currentTarget.elements.slug.value=slug(e.target.value);if(e.target.name==='slug')e.currentTarget.dataset.touched='1'});document.querySelector('[data-create]')?.addEventListener('submit',async e=>{e.preventDefault();try{const v=Object.fromEntries(new FormData(e.currentTarget));const d=await call('collections',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(v)});rows.unshift(d.collection);active=d.collection;books=[];message='Collection created — add a PDF to start the shelves.'}catch(x){message=x.message}render()});document.querySelector('[data-settings] select[name=theme]')?.addEventListener('change',e=>{document.body.dataset.collectionTheme=e.target.value});document.querySelector('[data-settings]')?.addEventListener('submit',async e=>{e.preventDefault();try{const v=Object.fromEntries(new FormData(e.currentTarget));const d=await call(`collections?id=${encodeURIComponent(active.id)}`,{method:'PATCH',headers:{'content-type':'application/json'},body:JSON.stringify(v)});active=d.collection;rows=rows.map(x=>x.id===active.id?active:x);history.replaceState({},'',`/?collections=1&edit=${active.slug}`);message='Design saved.'}catch(x){message=x.message}render()});document.querySelectorAll('[data-open]').forEach(x=>x.onclick=async()=>{try{filter='';await open(x.dataset.open)}catch(e){message=e.message}render()});document.querySelector('[data-upload]')?.addEventListener('submit',e=>{e.preventDefault();void upload(e.currentTarget)});document.querySelectorAll('[data-read]').forEach(x=>x.onclick=()=>void readBook(x.dataset.read));document.querySelector('[data-copy]')?.addEventListener('click',async()=>{await navigator.clipboard.writeText(new URL(`/?collection=${active.slug}`,location.origin));message='Share link copied.';render()});document.querySelector('[data-embed]')?.addEventListener('click',async()=>{const link=new URL(`/?collection=${active.slug}&embed=1`,location.origin);await navigator.clipboard.writeText(`<iframe src="${link.href}" title="${esc(active.title)}" loading="lazy" width="100%" height="700"></iframe>`);message='Embed code copied.';render()});document.querySelector('[data-qr]')?.addEventListener('click',async()=>{try{qrData=await QRCode.toDataURL(new URL(`/?collection=${active.slug}`,location.origin).href,{width:320,margin:2,errorCorrectionLevel:'Q'});render()}catch{message='Could not create the QR code.';render()}});document.querySelector('[data-qr-close]')?.addEventListener('click',()=>{qrData='';render()});document.querySelector('[data-qr-download]')?.addEventListener('click',()=>{const a=document.createElement('a');a.href=qrData;a.download=`${active.slug}-qr.png`;a.click()});document.querySelector('[data-embed]')?.addEventListener('click',async()=>{const url=new URL(`/?collection=${active.slug}&embed=1`,location.origin);await navigator.clipboard.writeText(`<iframe src="${url.href}" title="${esc(active.title)}" loading="lazy" width="100%" height="700"></iframe>`);message='Embed code copied.';render()});document.querySelector('[data-search]')?.addEventListener('input',e=>{filter=e.target.value;render();const n=document.querySelector('[data-search]');n?.focus();n?.setSelectionRange(filter.length,filter.length)});document.querySelectorAll('[data-feature],[data-order]').forEach(x=>x.onclick=async()=>{const book=books.find(b=>b.id===x.dataset.feature||b.id===x.dataset.order);if(!book)return;let update={};if(x.dataset.feature)update.featured=!book.featured;else{await reorderBook(book.id);return}try{const d=await call('collection-files?action=update',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({bookId:book.id,update})});books=books.map(b=>b.id===book.id?{...b,...d.book}:b);books.sort((a,b)=>a.sort_order-b.sort_order);message='Shelf updated.'}catch(e){message=e.message}render()});document.querySelectorAll('[data-delete]').forEach(x=>x.onclick=async()=>{if(!confirm('Remove this PDF?'))return;try{await call('collection-files?action=delete',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({bookId:x.dataset.delete})});books=books.filter(b=>b.id!==x.dataset.delete);message='PDF removed.'}catch(e){message=e.message}render()});document.querySelector('[data-report]')?.addEventListener('submit',async e=>{e.preventDefault();const v=Object.fromEntries(new FormData(e.currentTarget));try{await fetch(`${FN}/collection-report`,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({...v,slug:active.slug})}).then(async r=>{if(!r.ok){const d=await r.json();throw Error(d.error||'Report could not be submitted.')}});message='Report received. Thank you.'}catch(x){message=x.message}render()});document.querySelector('[data-close-reader]')?.addEventListener('click',()=>{reader=null;render()});document.querySelectorAll('[data-page]').forEach(x=>x.onclick=()=>{reader.page=Math.max(1,Math.min(reader.pdf.numPages,reader.page+Number(x.dataset.page)));void paint()});document.querySelectorAll('[data-zoom]').forEach(x=>x.onclick=()=>{reader.scale=Math.max(.5,Math.min(2.5,reader.scale+Number(x.dataset.zoom)));void paint()});document.querySelector('[data-bookmark]')?.addEventListener('click',()=>{const a=getBookmarks();if(!a.includes(reader.page))a.push(reader.page);a.sort((x,y)=>x-y);localStorage.setItem(bookmarkKey(),JSON.stringify(a));render();void paint()});document.querySelector('[data-jump-bookmark]')?.addEventListener('change',e=>{if(e.target.value){reader.page=Number(e.target.value);void paint()}});document.querySelector('[data-find]')?.addEventListener('click',()=>void searchDocument(document.querySelector('[data-find-text]').value))}
++boot();
++
++document.addEventListener('keydown',event=>{if(!reader)return;if(event.key==='Escape'){reader=null;render()}else if(event.target instanceof HTMLInputElement||event.target instanceof HTMLSelectElement)return;else if(event.key==='ArrowRight'&&reader.page<reader.pdf.numPages){reader.page++;void paint()}else if(event.key==='ArrowLeft'&&reader.page>1){reader.page--;void paint()}});
+diff --git a/src/entry.js b/src/entry.js
+new file mode 100644
+index 0000000000000000000000000000000000000000..015f169647281b01a29955ed3eab692b6e1df491
+--- /dev/null
++++ b/src/entry.js
+@@ -0,0 +1,3 @@
++const params = new URLSearchParams(location.search);
++if (params.has('collections') || params.has('collection')) import('./collections.js');
++else import('./main.js');
+diff --git a/src/pdf-reader.js b/src/pdf-reader.js
+index 0e94ac6bebe7da15e876e872904217b258c75962..609c76b21ee352197331ddc14270a623c040a971 100644
+--- a/src/pdf-reader.js
++++ b/src/pdf-reader.js
+@@ -1,11 +1,2 @@
+-import workerURL from 'pdfjs-dist/build/pdf.worker.min.mjs?url';
++export { loadPdfjs } from './pdfjs.js';
+ export { pdfOptions } from './pdf-options.js';
+-
+-let library;
+-export function loadPdfjs() {
+-  library ??= import('pdfjs-dist/build/pdf.mjs').then(pdf => {
+-    pdf.GlobalWorkerOptions.workerSrc = workerURL;
+-    return pdf;
+-  }).catch(error => { library = undefined; throw error; });
+-  return library;
+-}
+diff --git a/src/pdfjs.js b/src/pdfjs.js
+new file mode 100644
+index 0000000000000000000000000000000000000000..a9e1372242e98d8c9bb9f4702f0e33355b8b76bc
+--- /dev/null
++++ b/src/pdfjs.js
+@@ -0,0 +1,10 @@
++import workerURL from 'pdfjs-dist/build/pdf.worker.min.mjs?url';
++
++let library;
++export function loadPdfjs() {
++  library ??= import('pdfjs-dist/build/pdf.mjs').then(pdf => {
++    pdf.GlobalWorkerOptions.workerSrc = workerURL;
++    return pdf;
++  }).catch(error => { library = undefined; throw error; });
++  return library;
++}
+diff --git a/supabase/migrations/20261009160000_librarian_collections.sql b/supabase/migrations/20261009160000_librarian_collections.sql
+new file mode 100644
+index 0000000000000000000000000000000000000000..1edf7392b91b73545e55f36e03880382004f68dd
+--- /dev/null
++++ b/supabase/migrations/20261009160000_librarian_collections.sql
+@@ -0,0 +1,99 @@
++-- Private-by-default catalog metadata. PDF bytes live in a private Storage bucket;
++-- all reads and writes are mediated by the server-side Netlify function.
++create table if not exists public.collections (
++  id uuid primary key default gen_random_uuid(),
++  owner_id uuid not null references auth.users(id) on delete cascade,
++  title text not null check (char_length(title) between 1 and 120),
++  slug text not null unique check (slug ~ '^[a-z0-9]([a-z0-9-]{0,58}[a-z0-9])?$'),
++  description text not null default '' check (char_length(description) <= 1200),
++  visibility text not null default 'private' check (visibility in ('private','unlisted','public')),
++  theme text not null default 'reading-room' check (theme in ('reading-room','linen','midnight')),
++  cover_url text,
++  created_at timestamptz not null default now(),
++  updated_at timestamptz not null default now()
++);
++
++create table if not exists public.collection_books (
++  id uuid primary key default gen_random_uuid(),
++  collection_id uuid not null references public.collections(id) on delete cascade,
++  owner_id uuid not null references auth.users(id) on delete cascade,
++  storage_path text not null unique,
++  title text not null check (char_length(title) between 1 and 240),
++  author text not null default '' check (char_length(author) <= 240),
++  description text not null default '' check (char_length(description) <= 2000),
++  tags text[] not null default '{}',
++  sort_order integer not null default 0,
++  featured boolean not null default false,
++  thumbnail_data text not null default '' check (char_length(thumbnail_data) <= 40000),
++  share_rights boolean not null default false,
++  byte_size bigint not null default 0 check (byte_size >= 0),
++  page_count integer check (page_count is null or page_count between 1 and 100000),
++  upload_state text not null default 'pending' check (upload_state in ('pending','ready')),
++  created_at timestamptz not null default now(),
++  updated_at timestamptz not null default now(),
++  constraint collection_book_tags_limit check (cardinality(tags) <= 20)
++);
++
++create index if not exists collections_public_directory_idx on public.collections (created_at desc) where visibility = 'public';
++create index if not exists collections_owner_idx on public.collections (owner_id, created_at desc);
++create index if not exists collection_books_order_idx on public.collection_books (collection_id, sort_order, created_at);
++
++create table if not exists public.collection_reports (
++  id uuid primary key default gen_random_uuid(),
++  collection_id uuid not null references public.collections(id) on delete cascade,
++  reason text not null check (reason in ('copyright','abuse','misleading','privacy','other')),
++  details text not null default '' check (char_length(details) <= 1200),
++  state text not null default 'open' check (state in ('open','reviewing','resolved','dismissed')),
++  created_at timestamptz not null default now()
++);
++create index if not exists collection_reports_open_idx on public.collection_reports (created_at) where state = 'open';
++
++alter table public.collections enable row level security;
++alter table public.collection_books enable row level security;
++alter table public.collection_reports enable row level security;
++revoke all on public.collections, public.collection_books, public.collection_reports from anon, authenticated;
++grant all on public.collections, public.collection_books, public.collection_reports to service_role;
++
++-- Create this private Storage bucket before enabling upload endpoints. The API will
++-- use short-lived, path-scoped signed upload/read URLs and enforce object quotas.
++insert into storage.buckets (id, name, public, file_size_limit, allowed_mime_types)
++values ('librarian-collections', 'librarian-collections', false, 52428800, array['application/pdf'])
++on conflict (id) do update set public = false, file_size_limit = 52428800, allowed_mime_types = array['application/pdf'];
++
++create or replace function public.create_librarian_collection(
++  p_owner_id uuid, p_title text, p_slug text, p_description text, p_visibility text, p_theme text, p_cover_url text
++) returns setof public.collections language plpgsql security definer set search_path = '' as $$
++declare existing_count bigint;
++begin
++  perform pg_advisory_xact_lock(hashtextextended(p_owner_id::text, 1));
++  select count(*) into existing_count from public.collections where owner_id = p_owner_id;
++  if existing_count >= 12 then return; end if;
++  return query insert into public.collections(owner_id,title,slug,description,visibility,theme,cover_url)
++    values (p_owner_id,p_title,p_slug,p_description,p_visibility,p_theme,p_cover_url) returning *;
++end $$;
++revoke all on function public.create_librarian_collection(uuid,text,text,text,text,text,text) from public, anon, authenticated;
++grant execute on function public.create_librarian_collection(uuid,text,text,text,text,text,text) to service_role;
++
++-- Admission and reservation happen atomically so concurrent uploads cannot race
++-- past collection/file quotas. A pending row reserves bytes until finalized/deleted.
++create or replace function public.reserve_librarian_collection_upload(
++  p_account_id uuid, p_collection_id uuid, p_book_id uuid, p_storage_path text,
++  p_bytes bigint, p_title text, p_author text, p_description text, p_tags text[],
++  p_page_count integer, p_thumbnail_data text, p_share_rights boolean
++) returns boolean language plpgsql security definer set search_path = '' as $$
++declare
++  used_bytes bigint;
++  book_count bigint;
++begin
++  if p_bytes < 1 or p_bytes > 52428800 or cardinality(p_tags) > 20 or p_page_count < 1 or p_page_count > 100000 or char_length(p_thumbnail_data) > 40000 or p_share_rights is not true then return false; end if;
++  perform pg_advisory_xact_lock(hashtextextended(p_account_id::text, 0));
++  if not exists (select 1 from public.collections c where c.id = p_collection_id and c.owner_id = p_account_id) then return false; end if;
++  select coalesce(sum(b.byte_size), 0), count(*) into used_bytes, book_count
++    from public.collection_books b where b.owner_id = p_account_id;
++  if book_count >= 100 or used_bytes + p_bytes > 2147483648 then return false; end if;
++  insert into public.collection_books(id, collection_id, owner_id, storage_path, byte_size, title, author, description, tags, sort_order, featured, thumbnail_data, share_rights, page_count)
++    values (p_book_id, p_collection_id, p_account_id, p_storage_path, p_bytes, p_title, p_author, p_description, p_tags, book_count::integer, false, p_thumbnail_data, true, p_page_count);
++  return true;
++end $$;
++revoke all on function public.reserve_librarian_collection_upload(uuid,uuid,uuid,text,bigint,text,text,text,text[],integer,text,boolean) from public, anon, authenticated;
++grant execute on function public.reserve_librarian_collection_upload(uuid,uuid,uuid,text,bigint,text,text,text,text[],integer,text,boolean) to service_role;
+diff --git a/tests/browser/collections.spec.js b/tests/browser/collections.spec.js
+new file mode 100644
+index 0000000000000000000000000000000000000000..1ef1086479c3a1372e09c304b2a77fdc62e82961
+--- /dev/null
++++ b/tests/browser/collections.spec.js
+@@ -0,0 +1,65 @@
++import { test, expect } from '@playwright/test';
++
++function samplePdf() {
++  const content = 'BT /F1 18 Tf 72 720 Td (Hello Librarian) Tj ET';
++  const objects = [
++    '<< /Type /Catalog /Pages 2 0 R >>',
++    '<< /Type /Pages /Kids [3 0 R] /Count 1 >>',
++    '<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 4 0 R >> >> /Contents 5 0 R >>',
++    '<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>',
++    `<< /Length ${content.length} >>\nstream\n${content}\nendstream`,
++  ];
++  let pdf = '%PDF-1.4\n'; const offsets = [0];
++  objects.forEach((object, index) => { offsets.push(new TextEncoder().encode(pdf).length); pdf += `${index+1} 0 obj\n${object}\nendobj\n`; });
++  const xref = new TextEncoder().encode(pdf).length;
++  pdf += `xref\n0 ${objects.length+1}\n0000000000 65535 f \n${offsets.slice(1).map(n=>`${String(n).padStart(10,'0')} 00000 n \n`).join('')}trailer\n<< /Size ${objects.length+1} /Root 1 0 R >>\nstartxref\n${xref}\n%%EOF`;
++  return Buffer.from(pdf);
++}
++
++test('guest opens a public collection and reads a PDF with the mobile reader', async ({ page }) => {
++  const bytes = samplePdf();
++  await page.route('**/.netlify/functions/collection-config', route => route.fulfill({ json: { supabaseUrl:'https://accounts.example.test', publishableKey:'public-test-key' } }));
++  await page.route('**/.netlify/functions/collections?slug=field-notes', route => route.fulfill({ json: { collection:{ id:'11111111-1111-4111-8111-111111111111',title:'Field Notes',slug:'field-notes',description:'A small test library.',visibility:'public',theme:'linen' }, books:[{ id:'22222222-2222-4222-8222-222222222222',title:'Hello Reader',author:'Test Curator',tags:['notes'],page_count:1,thumbnail_data:'' }] } }));
++  await page.route('**/.netlify/functions/collection-files?action=read', route => route.fulfill({ json:{ book:{id:'22222222-2222-4222-8222-222222222222',title:'Hello Reader',author:'Test Curator'},url:'https://storage.example.test/book.pdf' } }));
++  await page.route('https://storage.example.test/book.pdf', route => route.fulfill({ status:200, contentType:'application/pdf', headers:{'access-control-allow-origin':'*','accept-ranges':'bytes'}, body:bytes }));
++
++  await page.goto('/?collection=field-notes');
++  await expect(page.getByRole('heading', { name:'Field Notes' })).toBeVisible();
++  await expect(page.getByText('Hello Reader')).toBeVisible();
++  await page.locator('[data-read="22222222-2222-4222-8222-222222222222"]').click();
++  await expect(page.getByRole('dialog', { name:/Hello Reader/ })).toBeVisible();
++  await expect(page.locator('[data-canvas]')).toHaveJSProperty('width', 703);
++  await expect(page.getByText('Page 1 / 1')).toBeVisible();
++});
++
++test('curator signs in, creates a library, and securely uploads a validated PDF', async ({ page }) => {
++  const bytes = samplePdf(); let saved = null, uploaded = false;
++  await page.route('**/.netlify/functions/collection-config', route => route.fulfill({ json: { supabaseUrl:'https://accounts.example.test', publishableKey:'public-test-key' } }));
++  await page.route('https://accounts.example.test/auth/v1/signup', route => route.fulfill({ json:{access_token:'a'.repeat(30),refresh_token:'r'.repeat(30),user:{email:'curator@example.test'} } }));
++  await page.route('**/.netlify/functions/collections?mine=1', route => route.fulfill({ json:{collections:saved?[saved]:[]} }));
++  await page.route('**/.netlify/functions/collections*', async route => {
++    if (route.request().method()==='POST') { saved={id:'11111111-1111-4111-8111-111111111111',title:'Field Notes',slug:'field-notes',description:'A small archive',visibility:'unlisted',theme:'midnight'}; return route.fulfill({status:201,json:{collection:saved}}); }
++    if (route.request().url().includes('slug=field-notes')) return route.fulfill({json:{collection:saved,books:uploaded?[{id:'22222222-2222-4222-8222-222222222222',title:'Field notebook',author:'Ada Curator',tags:['archive'],sort_order:0,thumbnail_data:''}]:[]}});
++    return route.fulfill({json:{collections:[]} });
++  });
++  await page.route('**/.netlify/functions/collection-files?action=start', route => route.fulfill({status:201,json:{bookId:'22222222-2222-4222-8222-222222222222',uploadUrl:'https://storage.example.test/upload'}}));
++  await page.route('https://storage.example.test/upload', async route => { uploaded=true; await route.fulfill({status:200,json:{Key:'uploaded'}}); });
++  await page.route('**/.netlify/functions/collection-files?action=finish', route => route.fulfill({json:{ready:true}}));
++
++  await page.goto('/?collections=1');
++  await page.getByLabel('Email').fill('curator@example.test'); await page.getByLabel('Password').fill('correct-horse-9');
++  await page.getByRole('button',{name:'Create curator account'}).click();
++  await page.getByLabel('Collection title').fill('Field Notes'); await page.getByLabel('Custom URL slug').fill('field-notes');
++  await page.getByLabel('Description').fill('A small archive'); await page.getByLabel('Visibility').selectOption('unlisted'); await page.getByLabel('Theme').selectOption('midnight');
++  await page.getByRole('button',{name:'Create collection'}).click();
++  await page.getByRole('button',{name:'QR code'}).click();
++  await expect(page.getByRole('dialog',{name:'Share QR code'})).toBeVisible();
++  await expect(page.getByAltText('QR code for Field Notes')).toHaveAttribute('src',/^data:image\/png/);
++  await page.getByRole('button',{name:'Close QR code'}).click();
++  await page.getByLabel('Choose PDF').setInputFiles({name:'field-notebook.pdf',mimeType:'application/pdf',buffer:bytes});
++  await page.getByLabel('Author').fill('Ada Curator'); await page.getByLabel('Tags').fill('archive');
++  await page.getByLabel('I own this work or have permission to share this PDF.').check();
++  await page.getByRole('button',{name:'Add PDF'}).click();
++  await expect(page.getByText('Field notebook')).toBeVisible();
++  expect(uploaded).toBeTruthy();
++});
+diff --git a/tests/collection-files.test.mjs b/tests/collection-files.test.mjs
+new file mode 100644
+index 0000000000000000000000000000000000000000..8f60b93b27c7b695b525a00d6355b6e908fc4fd5
+--- /dev/null
++++ b/tests/collection-files.test.mjs
+@@ -0,0 +1,21 @@
++import test from 'node:test';
++import assert from 'node:assert/strict';
++import { validateMetadata, validateUploadRequest } from '../netlify/functions/collection-files.mjs';
++import { CollectionError } from '../netlify/lib/collections-guard.mjs';
++
++const valid = { collectionId:'11111111-1111-4111-8111-111111111111', bytes:4096, mime:'application/pdf', pageCount:3, thumbnailData:'data:image/jpeg;base64,SGVsbG8=', title:'Sample book', author:'A Reader', tags:['history'], shareRights:true };
++
++test('upload admission rejects spoofed MIME, invalid sizes, and malformed identity', () => {
++  assert.deepEqual(validateUploadRequest(valid), { title:'Sample book', author:'A Reader', description:'', tags:['history'] });
++  for (const changes of [
++    {mime:'text/html'}, {mime:'application/octet-stream'}, {bytes:0}, {bytes:52*1024*1024},
++    {collectionId:'../alice'}, {pageCount:0}, {thumbnailData:'data:text/html;base64,PHNjcmlwdD4='}, {shareRights:false},
++    {tags:Array.from({length:21},(_,i)=>`tag-${i}`)}, {title:' '.repeat(241)},
++  ]) assert.throws(() => validateUploadRequest({...valid,...changes}), CollectionError);
++});
++
++test('metadata extraction output is bounded before it can enter stored collection records', () => {
++  assert.equal(validateMetadata(valid).title,'Sample book');
++  assert.throws(() => validateMetadata({...valid, thumbnailData:'x'.repeat(40001)}), {status:400});
++  assert.throws(() => validateMetadata({...valid, description:'x'.repeat(2001)}), {status:400});
++});
+diff --git a/tests/collections-api.test.mjs b/tests/collections-api.test.mjs
+new file mode 100644
+index 0000000000000000000000000000000000000000..0d07121c36164ba72f1e53f65603e4a016b2e78e
+--- /dev/null
++++ b/tests/collections-api.test.mjs
+@@ -0,0 +1,54 @@
++import test from 'node:test';
++import assert from 'node:assert/strict';
++import handler from '../netlify/functions/collections.mjs';
++
++const originalEnv = { ...process.env };
++const originalFetch = globalThis.fetch;
++const headers = { 'content-type': 'application/json', authorization: `Bearer ${'a'.repeat(32)}` };
++const settings = () => {
++  process.env.SUPABASE_URL = 'https://accounts.example.test';
++  process.env.SUPABASE_PUBLISHABLE_KEY = 'publishable-test-key';
++  process.env.SUPABASE_SERVICE_ROLE_KEY = 'server-test-key';
++};
++const restore = () => {
++  for (const key of ['SUPABASE_URL', 'SUPABASE_PUBLISHABLE_KEY', 'SUPABASE_SERVICE_ROLE_KEY']) {
++    if (originalEnv[key] === undefined) delete process.env[key]; else process.env[key] = originalEnv[key];
++  }
++  globalThis.fetch = originalFetch;
++};
++
++test('writes require verified identity and private lookup conceals unauthorized records', async () => {
++  settings(); let storageCalls = 0;
++  globalThis.fetch = async url => {
++    if (String(url).includes('/auth/v1/user')) return Response.json({ id: 'bob', email: 'bob@example.test', email_confirmed_at: 'now' });
++    storageCalls++;
++    return Response.json([{ id: 'c1', owner_id: 'alice', visibility: 'private', title: 'Private' }]);
++  };
++  try {
++    const missingSession = await handler(new Request('https://library.example.test/.netlify/functions/collections', { method: 'POST', headers: { 'content-type': 'application/json' }, body: '{}' }));
++    assert.equal(missingSession.status, 401);
++    assert.equal(storageCalls, 0);
++    const hidden = await handler(new Request('https://library.example.test/.netlify/functions/collections?slug=private', { headers: { ...headers } }));
++    assert.equal(hidden.status, 404);
++  } finally { restore(); }
++});
++
++test('an owner update is always scoped by the verified owner id', async () => {
++  settings(); const requests = [];
++  globalThis.fetch = async (url, options = {}) => {
++    const address = String(url); requests.push([address, options]);
++    if (address.includes('/auth/v1/user')) return Response.json({ id: 'alice', email: 'alice@example.test', email_confirmed_at: 'now' });
++    if (options.method === 'PATCH') return Response.json([{ id: 'c1', title: 'Visible', slug: 'visible', description: '', visibility: 'public', theme: 'linen' }]);
++    return Response.json([{ id: 'c1', owner_id: 'alice' }]);
++  };
++  try {
++    const response = await handler(new Request('https://library.example.test/.netlify/functions/collections?id=11111111-1111-4111-8111-111111111111', {
++      method: 'PATCH', headers, body: JSON.stringify({ title: 'Visible', slug: 'visible', visibility: 'public', theme: 'linen' }),
++    }));
++    assert.equal(response.status, 200);
++    const ownerLookup = requests.find(([url]) => url.includes('owner_id=eq.alice'))?.[0];
++    assert.ok(ownerLookup, 'database lookup constrains writes to the verified owner');
++    const update = requests.find(([, options]) => options.method === 'PATCH');
++    assert.match(update[0], /owner_id=eq\.alice/);
++  } finally { restore(); }
++});
+diff --git a/tests/collections-guard.test.mjs b/tests/collections-guard.test.mjs
+new file mode 100644
+index 0000000000000000000000000000000000000000..3e4d5e30fafe4dd1bf7fcb102c24e8a7811b8fae
+--- /dev/null
++++ b/tests/collections-guard.test.mjs
+@@ -0,0 +1,44 @@
++import test from 'node:test';
++import assert from 'node:assert/strict';
++import { CollectionError, createCollectionsGuard, isOwner, mayReadCollection, validateCollection } from '../netlify/lib/collections-guard.mjs';
++
++test('collection metadata is bounded and accepts only known visibility/theme values', () => {
++  assert.deepEqual(validateCollection({ title: '  My books ', slug: 'my-books', visibility: 'unlisted' }), {
++    title: 'My books', slug: 'my-books', description: '', visibility: 'unlisted', theme: 'reading-room', cover_url: null,
++  });
++  for (const input of [
++    { title: '', slug: 'x', visibility: 'private' },
++    { title: 'ok', slug: '../other', visibility: 'public' },
++    { title: 'ok', slug: 'ok', visibility: 'friends' },
++    { title: 'ok', slug: 'ok', visibility: 'private', unexpected: true },
++    { title: 'ok', slug: 'ok', visibility: 'private', description: 'x'.repeat(1201) },
++  ]) assert.throws(() => validateCollection(input), CollectionError);
++});
++
++test('private visibility and ownership are enforced independently of client input', () => {
++  const collection = { id: 'c1', owner_id: 'alice', visibility: 'private' };
++  assert.equal(mayReadCollection(collection, null), false);
++  assert.equal(mayReadCollection(collection, 'bob'), false);
++  assert.equal(mayReadCollection(collection, 'alice'), true);
++  assert.equal(mayReadCollection({ ...collection, visibility: 'unlisted' }, null), true);
++  assert.equal(mayReadCollection({ ...collection, visibility: 'public' }, null), true);
++  assert.equal(isOwner(collection, 'alice'), true);
++  assert.equal(isOwner(collection, 'bob'), false);
++});
++
++test('missing, malformed, unverified, and anonymous sessions fail closed before storage', async () => {
++  const env = { SUPABASE_URL: 'https://accounts.example.test', SUPABASE_PUBLISHABLE_KEY: 'public', SUPABASE_SERVICE_ROLE_KEY: 'server-only' };
++  let calls = 0;
++  const guard = createCollectionsGuard({ env, fetcher: async () => { calls++; return Response.json({ id: 'alice', email: 'a@example.test', email_confirmed_at: 'now' }); } });
++  for (const authorization of ['', 'Basic abc', `Bearer ${'x'.repeat(9000)}`]) {
++    await assert.rejects(guard(new Request('https://library.example.test/collections', { headers: { authorization } })), { status: 401 });
++  }
++  assert.equal(calls, 0);
++  for (const user of [
++    { id: 'alice', email: 'a@example.test', is_anonymous: true },
++    { id: 'alice', email: 'a@example.test' },
++  ]) {
++    const unverified = createCollectionsGuard({ env, fetcher: async () => Response.json(user) });
++    await assert.rejects(unverified(new Request('https://library.example.test/collections', { headers: { authorization: `Bearer ${'x'.repeat(24)}` } })), { status: 403 });
++  }
++});

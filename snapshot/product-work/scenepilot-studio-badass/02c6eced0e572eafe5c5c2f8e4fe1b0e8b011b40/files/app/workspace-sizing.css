@@ -1,0 +1,17 @@
+/* Shared by the browser, Electron renderer and Next shell. Document controls
+   need room for their button height, group borders and navigation padding.
+   Let the row grow for platform scrollbars and larger text instead of clipping. */
+@media (min-width:981px) {
+  .studio-adaptive-shell.pro-shell.mode-pro:not(.mode-deliver) {
+    grid-template-rows:48px 42px minmax(44px,max-content) minmax(260px,1fr) var(--dock-bottom);
+  }
+  .studio-adaptive-shell.pro-shell.mode-pro .editor-document-tabs {
+    min-height:44px;
+  }
+  .studio-adaptive-shell.pro-shell.mode-pro[data-workspace-focus="viewer"]:not(.mode-deliver) {
+    grid-template-rows:48px 42px minmax(44px,max-content) minmax(260px,1fr) 0;
+  }
+  .studio-adaptive-shell.pro-shell.mode-pro[data-workspace-focus="timeline"]:not(.mode-deliver) {
+    grid-template-rows:48px 42px minmax(44px,max-content) 0 minmax(260px,1fr);
+  }
+}

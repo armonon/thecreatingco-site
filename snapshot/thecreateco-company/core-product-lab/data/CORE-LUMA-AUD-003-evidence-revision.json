@@ -1,0 +1,11 @@
+{
+  "task_id": "CORE-LUMA-AUD-003",
+  "source_evidence": [
+    "No fresh source-matched p50/p95/p99 or process-tree memory benchmark run",
+    "docs/release/performance-pass-2026-09-21.md and docs/release/critical-review-2026-09-23.md distinguish microbenchmarks from packaged workflows and accounted memory from process RAM"
+  ],
+  "evidence_sources": [
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/luma-initial.md",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/products/luma.json"
+  ]
+}

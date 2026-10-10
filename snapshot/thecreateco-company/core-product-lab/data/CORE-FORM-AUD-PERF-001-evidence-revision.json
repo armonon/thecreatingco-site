@@ -1,0 +1,15 @@
+{
+  "task_id": "CORE-FORM-AUD-PERF-001",
+  "source_evidence": {
+    "direct": [
+      "docs/PERFORMANCE_BUDGETS.md:12-31 lists historical native CAD/cloth gates and missing viewport/input, startup/open/save, cancellation and peak-memory budgets; KNOWN_ISSUES.md:28-32 reports multi-second dense rebuilds."
+    ],
+    "hypothesis": [
+      "Current released build may have performance regressions or headroom improvements; no fresh product benchmark was run."
+    ]
+  },
+  "evidence_sources": [
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-initial.md",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/products/form.json"
+  ]
+}

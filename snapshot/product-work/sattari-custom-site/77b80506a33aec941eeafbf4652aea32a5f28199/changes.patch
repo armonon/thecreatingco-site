@@ -1,0 +1,912 @@
+diff --git a/deliverables/sattari-internal-download-surface-archive-2026-10-08/DownloadsPage.tsx b/deliverables/sattari-internal-download-surface-archive-2026-10-08/DownloadsPage.tsx
+new file mode 100644
+index 0000000000000000000000000000000000000000..a6058eae522dd31a27e86e569b0407abc25fedb3
+--- /dev/null
++++ b/deliverables/sattari-internal-download-surface-archive-2026-10-08/DownloadsPage.tsx
+@@ -0,0 +1,418 @@
++import { Link } from 'react-router-dom';
++import AudioAlphaSignup from '@components/AudioAlphaSignup';
++import OptimizedProductImage from '@components/OptimizedProductImage';
++import { SEO, StructuredData } from '../utils/seo';
++import { PAGE_SEO, organizationSchema, websiteSchema } from '../data/siteSeo';
++
++/**
++ * Sattari Audio Suite — the whole thing on one tab: what it is, the product
++ * screenshots, the alpha builds, and the signup.
++ *
++ * Installers live in `public/downloads/` and are served by Netlify. Sizes and
++ * SHA-256 values below come from the checked-in `.sha256` files, so update
++ * them together whenever a build is replaced.
++ *
++ * Screenshots are `.png` with an `.avif` sibling; OptimizedProductImage picks
++ * the AVIF automatically (1.9 MB -> 158 KB across the ten shots).
++ */
++
++const SHOT = '/sattari site/audio-suite';
++
++interface Build {
++  name: string;
++  version: string;
++  summary: string;
++  primary: { label: string; file: string; size: string; sha256: string };
++  alternate?: { label: string; file: string; size: string; sha256: string };
++}
++
++const BUILDS: Build[] = [
++  {
++    name: 'Sattari Audio Plugin Suite',
++    version: 'alpha v0.1.0',
++    summary: 'The full suite in one macOS installer — Audio Unit, VST3 and standalone.',
++    primary: {
++      label: 'macOS installer',
++      file: 'sattari-audio-plugin-suite-alpha-v0.1.0-mac-installer.pkg',
++      size: '25.9 MB',
++      sha256: 'a5fb20742934d68cc45d542e0587c860be3a8c47bcb454c4fb0975b9ee9ab195',
++    },
++    alternate: {
++      label: 'Archive (.tar.gz)',
++      file: 'sattari-audio-plugin-suite-alpha-v0.1.0.tar.gz',
++      size: '26.1 MB',
++      sha256: '914063e32b8a1233ad320fb6f5bc1fed928de865a7ac1a7729cfd672b7bc5f08',
++    },
++  },
++  {
++    name: 'Sattari Auto Pitch (Realtime)',
++    version: 'alpha v0.2.0',
++    summary:
++      'Realtime pitch correction — restrained to hard-tuned, with a separate polyphonic path.',
++    primary: {
++      label: 'macOS installer',
++      file: 'sattari-auto-pitch-realtime-alpha-v0.2.0-mac-installer.pkg',
++      size: '8.8 MB',
++      sha256: '74b6cab68dfaea0a1dcf6f3b27051fde54bfb1ca249cc43a4de34a1d29eb32c6',
++    },
++    alternate: {
++      label: 'Archive (.tar.gz)',
++      file: 'auto-pitch-realtime-alpha-v0.2.0.tar.gz',
++      size: '8.8 MB',
++      sha256: '5a91f53c5ac31cdb30cb8b4dc3fa38053cca9221888b746c7a7171e9ddf0eaa1',
++    },
++  },
++  {
++    name: 'Auto Pitch AutoKey Tester',
++    version: 'v0.6',
++    summary: 'A small standalone tester for the AutoKey detection path.',
++    primary: {
++      label: 'Download (.zip)',
++      file: 'sattari-auto-pitch-autokey-tester-v0.6.zip',
++      size: '2.3 MB',
++      sha256: '25775ff2bde22e5ebfe0e806f86eec1e96aed718e0a0148da2839fe7cf5da70a',
++    },
++  },
++];
++
++const PRODUCTS = [
++  {
++    name: 'Mix',
++    role: '8-slot rack',
++    shot: 'mix',
++    body: 'The channel strip you assemble yourself — dynamics, tone and metering in whatever order the source needs, with external sidechain through the whole rack.',
++  },
++  {
++    name: 'Vocal',
++    role: '8-slot rack',
++    shot: 'vocal',
++    body: 'Cleanup, gate, de-ess, EQ, compression, saturation, doubling and space — the whole finish in one window.',
++  },
++  {
++    name: 'Create',
++    role: '8-slot rack',
++    shot: 'create',
++    body: 'Time, space and damage: reverb, delay, shimmer, tape, risers and vocoding, tempo-locked to the host.',
++  },
++  {
++    name: 'Stack',
++    role: '4-layer instrument rack',
++    shot: 'stack',
++    body: 'Four layers take the same MIDI and sum in parallel — each with its own level, pan, key range and transpose, so a stack becomes a split or an octave layer.',
++  },
++  {
++    name: 'Auto Pitch',
++    role: 'Pitch correction',
++    shot: 'auto-pitch',
++    body: 'Monophonic correction from restrained to hard-tuned, plus a separate polyphonic path for sustained tonal instruments.',
++  },
++  {
++    name: 'Compass',
++    role: 'Session conductor',
++    shot: 'brain',
++    body: 'Follows key, chord, tuning, energy and onsets, then publishes one approved session context the rest can follow — no MIDI routing or duplicate setup.',
++  },
++];
++
++const ANALYSIS = [
++  {
++    name: 'Scope',
++    shot: 'scope',
++    body: 'Spectrum, stereo field, correlation and session key in one surface.',
++  },
++  { name: 'Tuner', shot: 'tuner', body: 'Pitch, cents and confidence, without the visual noise.' },
++  {
++    name: 'Meter',
++    shot: 'meter',
++    body: 'Loudness, true peak and correlation, built for decisions.',
++  },
++  { name: 'Key', shot: 'song-key', body: 'The focused key detector and fallback publisher.' },
++];
++
++const FAQS = [
++  {
++    q: 'What do I need to run it?',
++    a: 'A Mac. The builds are Universal for Apple silicon and Intel, in Audio Unit, VST3 and standalone formats.',
++  },
++  {
++    q: 'Why does macOS say it can’t verify the developer?',
++    a: 'These alpha builds are not notarized by Apple yet. Right-click (or Control-click) the installer, choose Open, then confirm. Only do that because you trust where it came from.',
++  },
++  {
++    q: 'Does it cost anything?',
++    a: 'No. The alpha is free. We’re after real sessions and honest feedback, not customers yet.',
++  },
++  {
++    q: 'Do I need Compass for the rest to work?',
++    a: 'No. Every key-aware plugin keeps its manual controls and works on its own. Compass just saves you setting the same thing in several places.',
++  },
++  {
++    q: 'Will my sessions survive updates?',
++    a: 'That’s the intent — a module keeps the same parameter names standalone or in a rack. It is still alpha though, so keep a backup of anything important.',
++  },
++];
++
++function BuildCard({ build }: { build: Build }) {
++  return (
++    <article className="suite-build-card">
++      <div className="suite-build-head">
++        <p className="card-kicker">{build.version}</p>
++        <h3>{build.name}</h3>
++        <p className="suite-build-summary">{build.summary}</p>
++      </div>
++
++      <div className="suite-build-actions">
++        <a className="button button-solid" href={`/downloads/${build.primary.file}`} download>
++          {build.primary.label}
++          <span className="suite-build-size">{build.primary.size}</span>
++        </a>
++        {build.alternate && (
++          <a className="button button-outline" href={`/downloads/${build.alternate.file}`} download>
++            {build.alternate.label}
++            <span className="suite-build-size">{build.alternate.size}</span>
++          </a>
++        )}
++      </div>
++
++      <details className="suite-checksums">
++        <summary>Verify this download</summary>
++        <p className="suite-verify-help">
++          Run <code>shasum -a 256 &lt;file&gt;</code> and compare:
++        </p>
++        <p className="suite-hash">
++          <span className="suite-hash-label">{build.primary.file}</span>
++          <code>{build.primary.sha256}</code>
++        </p>
++        {build.alternate && (
++          <p className="suite-hash">
++            <span className="suite-hash-label">{build.alternate.file}</span>
++            <code>{build.alternate.sha256}</code>
++          </p>
++        )}
++      </details>
++    </article>
++  );
++}
++
++export default function DownloadsPage() {
++  const { url } = PAGE_SEO.downloads;
++
++  return (
++    <section className="section page-header-offset suite-page">
++      <SEO {...PAGE_SEO.downloads} />
++      {/* A page about the suite rather than SoftwareApplication markup: Google
++          only accepts app markup with ratings or reviews, and an alpha has
++          none (they must never be made up), so the app item was invalid. */}
++      <StructuredData
++        data={{
++          '@context': 'https://schema.org',
++          '@type': 'WebPage',
++          '@id': `${url}#webpage`,
++          url,
++          name: PAGE_SEO.downloads.title,
++          description: PAGE_SEO.downloads.description,
++          isPartOf: { '@id': websiteSchema['@id'] },
++          isAccessibleForFree: true,
++          about: {
++            '@type': 'Thing',
++            name: 'Sattari Audio Suite',
++            description:
++              'Connected Mac music products sharing one musical session context. Audio Unit, VST3 and standalone; alpha 0.1.0 for macOS.',
++          },
++          publisher: { '@id': organizationSchema['@id'] },
++        }}
++      />
++
++      {/* ---------- Hero ---------- */}
++      <div className="container suite-hero">
++        <div className="suite-hero-copy">
++          <p className="audio-alpha-badge">
++            <span className="audio-alpha-dot" aria-hidden="true" />
++            Free alpha &middot; macOS
++          </p>
++          <h1>Sattari Audio Suite</h1>
++          <p className="suite-lead">
++            Connected Mac music software. Compass reads the session, Auto Pitch tunes the
++            performance, and the Mix, Vocal, Create and Stack racks carry the same musical context
++            through to the finished track.
++          </p>
++          <div className="hero-actions">
++            <a className="button button-solid" href="#get-it">
++              Get the alpha
++            </a>
++            <a className="button button-outline" href="#products">
++              See what&rsquo;s inside
++            </a>
++          </div>
++          <div className="shop-trust-bar" aria-label="Highlights">
++            <span className="trust-chip">Apple silicon &amp; Intel</span>
++            <span className="trust-chip">AU · VST3 · Standalone</span>
++            <span className="trust-chip">Free while in alpha</span>
++          </div>
++        </div>
++        <div className="suite-hero-shot">
++          <OptimizedProductImage
++            src={`${SHOT}/mix.png`}
++            alt="The Sattari Mix rack, showing an eight-slot signal chain with EQ controls"
++            className="suite-shot-img"
++            loading="eager"
++            fetchpriority="high"
++            sizes="(max-width: 900px) 100vw, 50vw"
++          />
++        </div>
++      </div>
++
++      {/* ---------- Downloads ---------- */}
++      <div className="container suite-section" id="get-it">
++        <div className="section-header narrow">
++          <p className="eyebrow">Downloads</p>
++          <h2>Get the alpha</h2>
++          <p>Current builds for macOS. Free — expect rough edges, and tell us what breaks.</p>
++        </div>
++
++        <div className="suite-build-grid">
++          {BUILDS.map((build) => (
++            <BuildCard build={build} key={build.primary.file} />
++          ))}
++        </div>
++
++        <div className="suite-install-notice">
++          <h3>Before you install</h3>
++          <ul>
++            <li>
++              <strong>Not notarized by Apple yet.</strong> macOS will warn you the first time.
++              Right-click (or Control-click) the installer, choose <strong>Open</strong>, then
++              confirm — and only because you trust the source.
++            </li>
++            <li>
++              <strong>It&rsquo;s alpha.</strong> Don&rsquo;t use it for deadline work, and keep a
++              backup of any session you open with it.
++            </li>
++          </ul>
++        </div>
++      </div>
++
++      {/* ---------- Products ---------- */}
++      <div className="container suite-section" id="products">
++        <div className="section-header narrow">
++          <p className="eyebrow">What&rsquo;s inside</p>
++          <h2>Six products, one system</h2>
++          <p>Each one finishes a musical job instead of handing you a shelf of parts.</p>
++        </div>
++
++        <div className="suite-product-grid">
++          {PRODUCTS.map((product) => (
++            <article className="suite-product" key={product.name}>
++              <div className="suite-product-shot">
++                <OptimizedProductImage
++                  src={`${SHOT}/${product.shot}.png`}
++                  alt={`The Sattari ${product.name} interface`}
++                  className="suite-shot-img"
++                  loading="lazy"
++                  sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw"
++                />
++              </div>
++              <div className="suite-product-body">
++                <p className="card-kicker">{product.role}</p>
++                <h3>{product.name}</h3>
++                <p>{product.body}</p>
++              </div>
++            </article>
++          ))}
++        </div>
++      </div>
++
++      {/* ---------- Analysis tools ---------- */}
++      <div className="container suite-section">
++        <div className="section-header narrow">
++          <p className="eyebrow">Also included</p>
++          <h2>Read the session at a glance</h2>
++        </div>
++        <div className="suite-analysis-grid">
++          {ANALYSIS.map((tool) => (
++            <article className="suite-analysis" key={tool.name}>
++              <div className="suite-analysis-shot">
++                <OptimizedProductImage
++                  src={`${SHOT}/${tool.shot}.png`}
++                  alt={`The Sattari ${tool.name} interface`}
++                  className="suite-shot-img"
++                  loading="lazy"
++                  sizes="(max-width: 700px) 50vw, 25vw"
++                />
++              </div>
++              <h3>{tool.name}</h3>
++              <p>{tool.body}</p>
++            </article>
++          ))}
++        </div>
++      </div>
++
++      {/* ---------- The idea ---------- */}
++      <div className="container suite-section">
++        <div className="section-header narrow">
++          <p className="eyebrow">The idea</p>
++          <h2>Why it&rsquo;s built this way</h2>
++        </div>
++        <div className="card-grid three-col">
++          <article className="info-card">
++            <h3>One copy of every processor</h3>
++            <p>
++              Most suites ship the same compressor three times over. Here each processor exists
++              once, and loads either as its own plugin or as a slot in a rack — identical code, so
++              they can&rsquo;t drift apart.
++            </p>
++          </article>
++          <article className="info-card">
++            <h3>Build the chain, don&rsquo;t buy it</h3>
++            <p>
++              Pick a module per slot, reorder it, bypass it. Nothing is welded shut — the old
++              fixed-order plugins are presets now, and the order is yours.
++            </p>
++          </article>
++          <article className="info-card">
++            <h3>Your sessions survive</h3>
++            <p>
++              A module keeps the same parameter names standalone or inside a rack, so projects saved
++              before the racks existed still open as you left them.
++            </p>
++          </article>
++        </div>
++      </div>
++
++      {/* ---------- FAQ ---------- */}
++      <div className="container suite-section">
++        <div className="section-header narrow">
++          <p className="eyebrow">Questions</p>
++          <h2>Good to know</h2>
++        </div>
++        <div className="faq-list">
++          {FAQS.map((faq) => (
++            <details className="faq-item" key={faq.q}>
++              <summary className="faq-question">{faq.q}</summary>
++              <p className="faq-answer">{faq.a}</p>
++            </details>
++          ))}
++        </div>
++      </div>
++
++      {/* ---------- Signup ---------- */}
++      <div className="container suite-section">
++        <div className="section-header narrow">
++          <p className="eyebrow">Stay in the loop</p>
++          <h2>Told when new builds land</h2>
++          <p>
++            Tell us what you work in and we&rsquo;ll email you as builds go out — or if you need one
++            for a setup that isn&rsquo;t covered yet.
++          </p>
++        </div>
++        <AudioAlphaSignup />
++      </div>
++
++      <div className="container shop-back-link-row">
++        <Link to="/" className="btn-details">
++          Back to Sattari Music
++        </Link>
++      </div>
++    </section>
++  );
++}
+diff --git a/deliverables/sattari-internal-download-surface-archive-2026-10-08/README.md b/deliverables/sattari-internal-download-surface-archive-2026-10-08/README.md
+new file mode 100644
+index 0000000000000000000000000000000000000000..a90861502c4baad167c1ee92427ad6aa52459d60
+--- /dev/null
++++ b/deliverables/sattari-internal-download-surface-archive-2026-10-08/README.md
+@@ -0,0 +1,11 @@
++# Retired public alpha downloads
++
++The legacy Audio Suite installers and download page source were moved here from
++`public/downloads/` and `src/pages/DownloadsPage.tsx`. This directory is outside
++Netlify's `public/` input and `dist/` output. These builds remain in source
++history for internal review; they are not a qualified release or an invitation
++to republish them.
++
++`SHA256SUMS.txt` records the moved files. The public `/downloads` path and its
++legacy `/audio-suite` and `/audio` aliases must return 404. The current browser
++music tools and shop remain available; no deployment is implied by this archive.
+diff --git a/deliverables/sattari-internal-download-surface-archive-2026-10-08/SHA256SUMS.txt b/deliverables/sattari-internal-download-surface-archive-2026-10-08/SHA256SUMS.txt
+new file mode 100644
+index 0000000000000000000000000000000000000000..0a3237ca048960e5d44ad81d3b6b5c799f44f9d7
+--- /dev/null
++++ b/deliverables/sattari-internal-download-surface-archive-2026-10-08/SHA256SUMS.txt
+@@ -0,0 +1,9 @@
++5a91f53c5ac31cdb30cb8b4dc3fa38053cca9221888b746c7a7171e9ddf0eaa1  deliverables/sattari-internal-download-surface-archive-2026-10-08/public-downloads/auto-pitch-realtime-alpha-v0.2.0.tar.gz
++a5fb20742934d68cc45d542e0587c860be3a8c47bcb454c4fb0975b9ee9ab195  deliverables/sattari-internal-download-surface-archive-2026-10-08/public-downloads/sattari-audio-plugin-suite-alpha-v0.1.0-mac-installer.pkg
++452ffaf5ef168bea629f394b9d2734ae1f9de7fc9510f8d952625b90c9dbfc07  deliverables/sattari-internal-download-surface-archive-2026-10-08/public-downloads/sattari-audio-plugin-suite-alpha-v0.1.0-mac-installer.pkg.sha256
++a18cf78748bbf350823857db27c461dc2575c6913cb749d10aeeef82b8282814  deliverables/sattari-internal-download-surface-archive-2026-10-08/public-downloads/sattari-audio-plugin-suite-alpha-v0.1.0.sha256
++914063e32b8a1233ad320fb6f5bc1fed928de865a7ac1a7729cfd672b7bc5f08  deliverables/sattari-internal-download-surface-archive-2026-10-08/public-downloads/sattari-audio-plugin-suite-alpha-v0.1.0.tar.gz
++25775ff2bde22e5ebfe0e806f86eec1e96aed718e0a0148da2839fe7cf5da70a  deliverables/sattari-internal-download-surface-archive-2026-10-08/public-downloads/sattari-auto-pitch-autokey-tester-v0.6.zip
++5f948694e1ee6b847c86fadbc45f015e1b32dde5b27e8b1c582b34b801c7edf7  deliverables/sattari-internal-download-surface-archive-2026-10-08/public-downloads/sattari-auto-pitch-autokey-tester-v0.6.zip.sha256
++74b6cab68dfaea0a1dcf6f3b27051fde54bfb1ca249cc43a4de34a1d29eb32c6  deliverables/sattari-internal-download-surface-archive-2026-10-08/public-downloads/sattari-auto-pitch-realtime-alpha-v0.2.0-mac-installer.pkg
++f7f5c321ada83fd9c1c4efb05c07cb669a5123b5becc282820ad228bc5743015  deliverables/sattari-internal-download-surface-archive-2026-10-08/public-downloads/sattari-auto-pitch-realtime-alpha-v0.2.0.sha256
+diff --git a/netlify.toml b/netlify.toml
+index a6188513d049249c54e692859d083e62a600a053..da01dcb39efa6f5ebfe356fced938f7c59cc799d 100644
+--- a/netlify.toml
++++ b/netlify.toml
+@@ -32,18 +32,34 @@
+ 
+ [[redirects]]
+   from = "/audio-suite"
+-  to = "/downloads"
+-  status = 301
++  to = "/404.html"
++  status = 404
++  force = true
+ 
+ [[redirects]]
+   from = "/audio-suite/downloads"
+-  to = "/downloads"
+-  status = 301
++  to = "/404.html"
++  status = 404
++  force = true
+ 
+ [[redirects]]
+   from = "/audio"
+-  to = "/downloads"
+-  status = 301
++  to = "/404.html"
++  status = 404
++  force = true
++
++# Retired alpha packages are preserved outside the publish directory.
++[[redirects]]
++  from = "/downloads"
++  to = "/404.html"
++  status = 404
++  force = true
++
++[[redirects]]
++  from = "/downloads/*"
++  to = "/404.html"
++  status = 404
++  force = true
+ 
+ [[redirects]]
+   from = "/services/music-classes-los-angeles"
+diff --git a/package-lock.json b/package-lock.json
+index e49a0ee5d0a6d64735528803effb3b0e5ea781f7..64abf36b9468e5afcbeb1859dcbde232297a8f92 100644
+--- a/package-lock.json
++++ b/package-lock.json
+@@ -6456,9 +6456,9 @@
+       }
+     },
+     "node_modules/proxy-addr": {
+-      "version": "2.0.7",
+-      "resolved": "https://registry.npmjs.org/proxy-addr/-/proxy-addr-2.0.7.tgz",
+-      "integrity": "sha512-llQsMLSUDUPT44jdrU/O37qlnifitDP+ZwrmmZcoSKyLKvtZxpyV0n2/bD/N4tBAAZ/gJEdZU7KMraoK1+XYAg==",
++      "version": "2.0.8",
++      "resolved": "https://registry.npmjs.org/proxy-addr/-/proxy-addr-2.0.8.tgz",
++      "integrity": "sha512-5nnx0yGyVUcY6t9RnWcARWtwT9F1D8O9rt08htPvnd49W1IgZtmLkhu9WfMzQj1cFxjHIO6connUNVW5k7AVyQ==",
+       "license": "MIT",
+       "dependencies": {
+         "forwarded": "0.2.0",
+@@ -6466,6 +6466,10 @@
+       },
+       "engines": {
+         "node": ">= 0.10"
++      },
++      "funding": {
++        "type": "opencollective",
++        "url": "https://opencollective.com/express"
+       }
+     },
+     "node_modules/punycode": {
+@@ -7183,9 +7187,9 @@
+       }
+     },
+     "node_modules/source-map-js": {
+-      "version": "1.2.1",
+-      "resolved": "https://registry.npmjs.org/source-map-js/-/source-map-js-1.2.1.tgz",
+-      "integrity": "sha512-UXWMKhLOwVKb728IUtQPXxfYU+usdybtUrK/8uGE8CQMvrhOpwvzDBwj0QhSL7MQc7vIsISBG8VQ8+IDQxpfQA==",
++      "version": "1.2.2",
++      "resolved": "https://registry.npmjs.org/source-map-js/-/source-map-js-1.2.2.tgz",
++      "integrity": "sha512-KGj/8Y43x35aZVDtt+J4mK1hoLGHULMYfSkODJNQjNDC3oW1PqPoxMwo0pLUsWM/UEGzON/NxeHywEfNXNP3Vw==",
+       "dev": true,
+       "license": "BSD-3-Clause",
+       "engines": {
+diff --git a/scripts/check-seo.mjs b/scripts/check-seo.mjs
+index 4393e9917ea3e7f69d98377afbb4973b75c4df9c..16291227bb75af83066ec3493faf44f1059d4171 100644
+--- a/scripts/check-seo.mjs
++++ b/scripts/check-seo.mjs
+@@ -8,6 +8,9 @@ const sitemap = new JSDOM(await readFile('dist/sitemap.xml', 'utf8'), {
+ });
+ const urls = [...sitemap.window.document.querySelectorAll('loc')].map((node) => node.textContent);
+ assert.equal(new Set(urls).size, urls.length, 'Duplicate sitemap URL');
++assert.ok(!urls.includes(`${origin}/downloads`), 'Retired alpha page must not be indexed');
++await assert.rejects(access('dist/downloads'), { code: 'ENOENT' });
++await assert.rejects(access('dist/downloads.html'), { code: 'ENOENT' });
+ const titles = new Set();
+ const descriptions = new Set();
+ const localTargets = [
+@@ -115,7 +118,7 @@ for (const url of urls) {
+   }
+   if (path === '/') {
+     assert.match(doc.querySelector('.home-hero-copy').textContent, /musicians worldwide/i);
+-    for (const destination of ['/shop', '/learn', '/studio', '/downloads', '/services']) {
++    for (const destination of ['/shop', '/learn', '/studio', '/services']) {
+       assert.ok(doc.querySelector(`a[href="${destination}"]`), `Home must link to ${destination}`);
+     }
+   }
+@@ -127,17 +130,6 @@ for (const url of urls) {
+       doc.querySelector('meta[property="og:image"]').content
+     );
+   }
+-  if (path === '/downloads') {
+-    assert.match(doc.title, /Music Software for Mac/);
+-    const page = entities.find((item) => item['@id'] === `${url}#webpage`);
+-    assert.equal(page?.description, description);
+-    assert.equal(page?.publisher?.['@id'], organizations[0]['@id']);
+-    const downloads = [...doc.querySelectorAll('.suite-build-actions a[download]')];
+-    assert.ok(downloads.length >= 3, 'Software page must link to actual downloadable builds');
+-    for (const download of downloads) {
+-      await access(`dist${decodeURI(new URL(download.href).pathname)}`);
+-    }
+-  }
+   if (path.startsWith('/guides/')) {
+     const article = entities.find((item) => item['@type'] === 'Article');
+     assert.equal(article?.mainEntityOfPage, url, `${path}: article canonical`);
+diff --git a/scripts/qualify-seo.mjs b/scripts/qualify-seo.mjs
+index 6b6b840082f8e237c26ee589119c4259bc3fd373..4d88e159dfed3cf4c197007898c960529e274bfa 100644
+--- a/scripts/qualify-seo.mjs
++++ b/scripts/qualify-seo.mjs
+@@ -37,7 +37,6 @@ for (const path of paths) {
+ }
+ for (const [path, target] of [
+   ['/buy', '/shop'],
+-  ['/audio-suite', '/downloads'],
+   ['/services/music-classes-los-angeles', '/services/music-lessons-los-angeles'],
+   ['/services/drum-repair-los-angeles', '/services/instrument-repair-los-angeles'],
+   ['/stem-seperator', '/stem-separator'],
+diff --git a/src/App.tsx b/src/App.tsx
+index 1c2bbe14edf4e3f9261f9726e1bdd1b48da00dc2..2843737a98ede8e52450b2199f9c241676b60908 100644
+--- a/src/App.tsx
++++ b/src/App.tsx
+@@ -13,7 +13,6 @@ import { OrganizationSchema, SEO } from '@utils/seo';
+ import {
+   Category,
+   CartPage,
+-  DownloadsPage,
+   CheckoutStatus,
+   HomePage,
+   AboutPage,
+@@ -73,11 +72,6 @@ const ROUTES: RouteDefinition[] = [
+   // Restores its panels from localStorage while rendering.
+   { path: '/studio', page: SattariStudioPage, hydrate: false },
+   { path: '/stem-separator', page: StemSeparatorPage },
+-  // The Audio Suite and its downloads are one page, on /downloads.
+-  { path: '/downloads', page: DownloadsPage },
+-  { path: '/audio-suite', redirect: '/downloads' },
+-  { path: '/audio-suite/downloads', redirect: '/downloads' },
+-  { path: '/audio', redirect: '/downloads' },
+   localPage('/woodland-hills-drum-shop', 'woodland-drums'),
+   localPage('/encino-violin-shop', 'encino-violins'),
+   localPage('/services/violin-repair-los-angeles', 'violin-repair'),
+diff --git a/src/components/AboutPage.jsx b/src/components/AboutPage.jsx
+index 5340eb3469690fe26397c582e4f73faded1e95aa..d40bb0afb54f6f7243b6c9c00ca6dbe526ec0a26 100644
+--- a/src/components/AboutPage.jsx
++++ b/src/components/AboutPage.jsx
+@@ -31,9 +31,9 @@ export default function AboutPage() {
+             <h1>About Sattari Music</h1>
+             <p className="hero-copy">
+               Sattari is a music company for musicians worldwide. Buy instruments, learn guitar
+-              online, create music in Sattari Studio, separate stems and download audio software.
+-              Our appointment-only Woodland Hills shop brings it together with instrument repair,
+-              rentals, lessons and rehearsal space for Encino, Calabasas and Los Angeles.
++              online, create music in Sattari Studio, and separate stems. Our appointment-only
++              Woodland Hills shop brings it together with instrument repair, rentals, lessons and
++              rehearsal space for Encino, Calabasas and Los Angeles.
+             </p>
+             <div className="hero-actions">
+               <Link to="/shop" className="button button-solid">
+@@ -52,7 +52,6 @@ export default function AboutPage() {
+               <Link to="/shop/essentials">Practice essentials</Link>
+               <Link to="/learn">Learn guitar online</Link>
+               <Link to="/studio">Create music</Link>
+-              <Link to="/downloads">Download music software</Link>
+             </div>
+           </div>
+ 
+diff --git a/src/components/AboutPage.test.jsx b/src/components/AboutPage.test.jsx
+index 7a391870d312e1f8792f67669cd34c076b8ffc43..722a33d68569de31054a5b8f0008f36fc60fe188 100644
+--- a/src/components/AboutPage.test.jsx
++++ b/src/components/AboutPage.test.jsx
+@@ -37,10 +37,7 @@ it.each(['/about'])('preserves the original content at %s with About metadata',
+   expect(
+     screen.getByText(/Sattari is a music company for musicians worldwide/)
+   ).toBeInTheDocument();
+-  expect(screen.getByRole('link', { name: 'Download music software' })).toHaveAttribute(
+-    'href',
+-    '/downloads'
+-  );
++  expect(screen.queryByRole('link', { name: 'Download music software' })).not.toBeInTheDocument();
+   // Structured data may arrive as several blocks, each an entity or a @graph.
+   const entities = [...document.querySelectorAll('script[type="application/ld+json"]')].flatMap(
+     (node) => {
+@@ -74,10 +71,7 @@ it('links to About in navigation and footer and closes the mobile menu after nav
+   expect(nav.getByRole('link', { name: 'Home' })).toHaveAttribute('href', '/');
+   expect(nav.getByRole('link', { name: 'About' })).toHaveAttribute('href', '/about');
+   expect(screen.getByRole('link', { name: 'About Sattari' })).toHaveAttribute('href', '/about');
+-  expect(screen.getByRole('link', { name: 'Music software downloads' })).toHaveAttribute(
+-    'href',
+-    '/downloads'
+-  );
++  expect(screen.queryByRole('link', { name: 'Music software downloads' })).not.toBeInTheDocument();
+   fireEvent.click(screen.getByRole('button', { name: 'Open menu' }));
+   expect(screen.getByRole('button', { name: 'Close menu' })).toHaveAttribute(
+     'aria-expanded',
+diff --git a/src/components/Footer.jsx b/src/components/Footer.jsx
+index 455d443020966682201a643064d8ace8283a1135..32c6b38985bf31486f601ed96918e5a8402dd992 100644
+--- a/src/components/Footer.jsx
++++ b/src/components/Footer.jsx
+@@ -10,15 +10,14 @@ export default function Footer() {
+             {BUSINESS.name}
+           </Link>
+           <p className="footer-copy">
+-            Instruments, online guitar learning and music software for musicians worldwide. Repairs,
+-            rentals and lessons in Woodland Hills, California.
++            Instruments and online music tools for musicians worldwide. Repairs, rentals and lessons
++            in Woodland Hills, California.
+           </p>
+           <nav className="footer-quick-links" aria-label="Footer quick links">
+             <Link to="/about">About Sattari</Link>
+             <Link to="/shop">Shop gear</Link>
+             <Link to="/services">Book local support</Link>
+             <Link to="/hub">Enter Sattari Hub</Link>
+-            <Link to="/downloads">Music software downloads</Link>
+             <Link to="/guides">Music guides</Link>
+             <Link to="/visit">Visit & contact</Link>
+             <Link to="/privacy">Privacy choices</Link>
+diff --git a/src/data/catalog.js b/src/data/catalog.js
+index b7b80114aadbfbabc02e4f5ad5b1dfe17dd07ec5..0f114dd9153412a9196fbfa5879e5e47f0a1808c 100644
+--- a/src/data/catalog.js
++++ b/src/data/catalog.js
+@@ -182,7 +182,7 @@ export const products = [
+     slug: 'cremona-handmade-acoustic-violin',
+     category: 'violins',
+     description:
+-      'The Cremona is SATTARI\'s fully handmade acoustic violin — hand-carved, shaped, and finished with fine traditional varnishes, each one treated as its own instrument rather than a production unit. Full-size (4/4), individually workshop-fitted and tuned at SATTARI Musical Instruments in California before it ships. A step up from factory instruments at an honest price — for students taking the next serious step and adults who want a real acoustic violin without paying for a collector\'s piece.',
++      "The Cremona is SATTARI's fully handmade acoustic violin — hand-carved, shaped, and finished with fine traditional varnishes, each one treated as its own instrument rather than a production unit. Full-size (4/4), individually workshop-fitted and tuned at SATTARI Musical Instruments in California before it ships. A step up from factory instruments at an honest price — for students taking the next serious step and adults who want a real acoustic violin without paying for a collector's piece.",
+     price: 250.0,
+     image: '/sattari site/violins/cremona-acoustic.jpg',
+     gallery: [
+diff --git a/src/data/musicGuides.js b/src/data/musicGuides.js
+index 74b09233ed7b0301aa2a86399c8c7f897ce8c622..f030a9aecb05248360bed24f37066c6159bae784 100644
+--- a/src/data/musicGuides.js
++++ b/src/data/musicGuides.js
+@@ -257,7 +257,7 @@ export const musicGuides = [
+     title: 'When does a guitar need a professional setup?',
+     category: 'Guitar care',
+     description:
+-      'Spot the signs your guitar needs a professional setup: fret buzz, high action, tuning drift and intonation problems. What a setup fixes, how often to get one, and what to tell the shop.',
++      'Spot signs your guitar needs a setup: fret buzz, high action, tuning drift and intonation problems. Learn what a setup fixes, how often to get one, and what to tell the shop.',
+     answer:
+       'A guitar typically needs a setup when it buzzes or feels stiff to play, when frets feel sharp on the edges, when it drifts out of tune after every song, or when notes at the 12th fret are noticeably sharp or flat compared to the open string. A professional setup adjusts neck relief, action, nut and saddle height, and intonation — all together, which is why individual adjustments often cause new problems.',
+     image: '/sattari site/guitars/steel-acoustic.jpg',
+@@ -542,7 +542,7 @@ export const musicGuides = [
+         paragraphs: [
+           'Rubber practice pads give consistent rebound and are quieter than foam. The rebound is slightly bouncier than a real drum head, which means strokes that feel good on the pad will need some adjustment when you move to an acoustic kit. That is normal — the pad is for developing control, not reproducing an exact drum feel.',
+           'Gum rubber surfaces are the most common and durable option. Some pads include a second surface with a different feel or a quieter response. For most beginners, a standard rubber surface is all you need.',
+-          'Avoid pads that feel unusually hard or that do not give any rebound. Dead surfaces slow down development by forcing you to muscle strokes rather than using the stick\'s natural bounce.',
++          "Avoid pads that feel unusually hard or that do not give any rebound. Dead surfaces slow down development by forcing you to muscle strokes rather than using the stick's natural bounce.",
+         ],
+       },
+       {
+diff --git a/src/data/siteSeo.js b/src/data/siteSeo.js
+index a93baab4f8fad5eb093022534b84e80bde61c9ec..27723a6d6187f123382bf1eb8f29e9a1f75fbd93 100644
+--- a/src/data/siteSeo.js
++++ b/src/data/siteSeo.js
+@@ -46,7 +46,7 @@ export const organizationSchema = {
+   address: BUSINESS.address,
+   sameAs: ['https://www.instagram.com/sattari.music/'],
+   description:
+-    'Sattari Music is a California-based music company for musicians worldwide: instruments, online guitar learning, browser music creation and downloadable audio software, with local instrument services in Woodland Hills.',
++    'Sattari Music is a California-based music company for musicians worldwide: instruments, online guitar learning and browser music creation, with local instrument services in Woodland Hills.',
+ };
+ 
+ export const businessSchema = {
+@@ -151,15 +151,6 @@ export const PAGE_SEO = {
+     imageWidth: 1280,
+     imageHeight: 900,
+   },
+-  downloads: {
+-    title: 'Free Music Software for Mac | AU & VST3 Plugins',
+-    description:
+-      'Download free Sattari Audio Suite alpha builds for Mac: AU, VST3 and standalone music tools, Auto Pitch, mixing effects and instruments. Includes SHA-256 checksums.',
+-    url: `${SITE_ORIGIN}/downloads`,
+-    image: '/sattari site/audio-suite/mix.png',
+-    imageWidth: 1080,
+-    imageHeight: 660,
+-  },
+ };
+ 
+ export const CATEGORY_LOCAL_HELP = {
+@@ -194,7 +185,10 @@ export const CATEGORY_LOCAL_HELP = {
+     title: 'Violin guidance near Encino',
+     copy: "Shopping for your first violin or comparing acoustic and electric models? Start with your teacher's size requirements, playing goals and budget. Our shop is in Woodland Hills and serves Encino musicians.",
+     links: [
+-      { label: 'How to choose a violin for beginners', to: '/guides/choose-a-violin-for-beginners' },
++      {
++        label: 'How to choose a violin for beginners',
++        to: '/guides/choose-a-violin-for-beginners',
++      },
+       { label: 'Choosing a violin near Encino', to: '/encino-violin-shop' },
+       { label: 'Violin repair and setup', to: '/services/violin-repair-los-angeles' },
+     ],
+@@ -203,7 +197,10 @@ export const CATEGORY_LOCAL_HELP = {
+     title: 'Guitar and bass support in Woodland Hills',
+     copy: "Compare each instrument's specifications, then ask about fit, feel or setup before arranging a visit. We also take string, tuning and playability inquiries for instruments you already own.",
+     links: [
+-      { label: 'How to choose a beginner acoustic guitar', to: '/guides/choose-a-beginner-acoustic-guitar' },
++      {
++        label: 'How to choose a beginner acoustic guitar',
++        to: '/guides/choose-a-beginner-acoustic-guitar',
++      },
+       { label: 'Guitar and bass setup', to: '/services/guitar-setup-los-angeles' },
+       { label: 'Music store near Calabasas', to: '/calabasas-music-store' },
+     ],
+diff --git a/src/entry-prerender.jsx b/src/entry-prerender.jsx
+index 20d4f4b6a8cbc5958d2df36611b2de413bc33bf7..8b90269c31451d0d85573c2d68cc668c148afad8 100644
+--- a/src/entry-prerender.jsx
++++ b/src/entry-prerender.jsx
+@@ -34,7 +34,6 @@ export function getPrerenderRoutes(inventory) {
+     ['/learn', 'src/pages/LoopPracticePage.jsx'],
+     ['/studio', 'src/pages/SattariStudioPage.jsx'],
+     ['/stem-separator', 'src/pages/StemSeparatorPage.jsx'],
+-    ['/downloads', 'src/pages/DownloadsPage.tsx'],
+     ...localPages
+       .filter((page) => !page.canonicalUrl)
+       .map((page) => [new URL(page.url).pathname, LOCAL_SEO_ENTRY]),
+diff --git a/src/pages/HomePage.jsx b/src/pages/HomePage.jsx
+index abef1c671e8e5f947e10f5c45b536349ad7a9ecc..decc3b4219681f13de29dc246d06e77b1f1ccc2c 100644
+--- a/src/pages/HomePage.jsx
++++ b/src/pages/HomePage.jsx
+@@ -343,7 +343,7 @@ export default function HomePage() {
+                   Sattari Hub<span>.</span>
+                 </h2>
+                 <p className="home-section-description">
+-                  Learn guitar online, create a mix, separate a song or explore music software.
++                  Learn guitar online, create a mix, or separate a song.
+                 </p>
+               </div>
+               <Link to="/hub" className="home-button home-button-light">
+diff --git a/src/pages/SattariHubPage.jsx b/src/pages/SattariHubPage.jsx
+index 0172a4e45d13070e0a0895782116b77803d2addb..bf9e0728e7a0ad8efc0d6c6bc64870f8082204af 100644
+--- a/src/pages/SattariHubPage.jsx
++++ b/src/pages/SattariHubPage.jsx
+@@ -4,7 +4,6 @@ import {
+   ArrowUpRight,
+   AudioLines,
+   BookOpen,
+-  Download,
+   Library,
+   Radio,
+   SlidersHorizontal,
+@@ -93,9 +92,6 @@ export default function SattariHubPage() {
+             </div>
+             <div className="hub-heading-aside">
+               <p>Learn guitar. Create music. Explore sound.</p>
+-              <Link to="/downloads" className="hub-text-link">
+-                <Download size={16} aria-hidden="true" /> Music software for Mac
+-              </Link>
+             </div>
+           </header>
+ 
+diff --git a/src/pages/SattariHubPage.test.jsx b/src/pages/SattariHubPage.test.jsx
+index f65cc898ac9cb0559f826b9c1b846b31ed144053..18e34d609bbd68f2a2bfb6ed7046f4dcc4fbc423 100644
+--- a/src/pages/SattariHubPage.test.jsx
++++ b/src/pages/SattariHubPage.test.jsx
+@@ -23,10 +23,7 @@ it('launches all three real workspaces and their reference pages', () => {
+     ).toHaveAttribute('href', `/tools${route}`);
+   }
+   expect(screen.getAllByRole('img')).toHaveLength(3);
+-  expect(screen.getByRole('link', { name: 'Music software for Mac' })).toHaveAttribute(
+-    'href',
+-    '/downloads'
+-  );
++  expect(screen.queryByRole('link', { name: 'Music software for Mac' })).not.toBeInTheDocument();
+ });
+ 
+ it('links to published guides and keeps future projects out of the live tool list', () => {
+diff --git a/src/utils/lazyComponents.tsx b/src/utils/lazyComponents.tsx
+index c4b1cef333c8f8b6e5a99c7bfeba405636a9ff52..8746add1a3163d1792d15baa0e7c132d5fdd4339 100644
+--- a/src/utils/lazyComponents.tsx
++++ b/src/utils/lazyComponents.tsx
+@@ -121,7 +121,6 @@ export const ServicesPage = lazyPage(() => import('@components/ServicesPage'));
+ export const StudioBookingStatus = lazyPage(() => import('@pages/StudioBookingStatus'));
+ export const RepairPage = lazyPage(() => import('@components/RepairPage'));
+ export const LocalSeoPage = lazyPage(() => import('@components/LocalSeoPage'));
+-export const DownloadsPage = lazyPage(() => import('@pages/DownloadsPage'));
+ // The guided guitar workspace replaces the former analysis/arranger Learn page.
+ export const SattariLearnPage = lazyPage(() => import('@pages/LoopPracticePage'));
+ export const SattariStudioPage = lazyPage(() => import('@pages/SattariStudioPage'));
+diff --git a/src/utils/seo.test.jsx b/src/utils/seo.test.jsx
+index 1faa269ead427eba96b6b89b6bc01c4684065595..7d781825a8d4ab9fa22f6382d9dedbf7cb67cfa1 100644
+--- a/src/utils/seo.test.jsx
++++ b/src/utils/seo.test.jsx
+@@ -54,14 +54,13 @@ describe('search metadata', () => {
+     }
+   });
+ 
+-  it('targets distinct online music needs while keeping repair search local and downloads accurate', () => {
++  it('targets distinct online music needs while keeping repair search local', () => {
+     expect(PAGE_SEO.home.title).toBe('Learn, Shop & Create Music');
+     expect(PAGE_SEO.home.description).toContain('worldwide');
+     expect(PAGE_SEO.shop.title).toMatch(/Buy.*Online/);
+     expect(PAGE_SEO.learn.title).toContain('Learn Guitar Online');
+     expect(PAGE_SEO.studio.title).toContain('Browser DAW');
+-    expect(PAGE_SEO.downloads.title).toContain('Music Software for Mac');
+-    expect(PAGE_SEO.downloads.description).toMatch(/alpha.*AU, VST3/);
++    expect(PAGE_SEO).not.toHaveProperty('downloads');
+     expect(PAGE_SEO.repair.title).toContain('Los Angeles');
+     expect(PAGE_SEO.repair.description).toContain('Woodland Hills');
+     for (const page of [...Object.values(PAGE_SEO), ...Object.values(CATEGORY_SEO)]) {
+diff --git a/src/utils/siteMetrics.js b/src/utils/siteMetrics.js
+index 0807daee76ec63e4dc9b64b92943117dc61b07f4..1d005377e1e927a6b47b38faf09e57b6614afdfe 100644
+--- a/src/utils/siteMetrics.js
++++ b/src/utils/siteMetrics.js
+@@ -50,6 +50,14 @@ export const METRIC_PAGES = [
+   'guide-drumless',
+   'guide-key-bpm',
+   'guide-batch',
++  'guide-guitar-setup',
++  'guide-snare-tuning',
++  'guide-violin-care',
++  'guide-violin-choice',
++  'guide-drumsticks',
++  'guide-practice-pad',
++  'guide-acoustic-guitar',
++  'guide-guitar-care',
+   'tool-details',
+   'privacy',
+   'downloads',
+@@ -76,6 +84,14 @@ export function metricPage(path) {
+     '/guides/make-drumless-practice-tracks': 'guide-drumless',
+     '/guides/find-song-key-and-bpm': 'guide-key-bpm',
+     '/guides/batch-separate-audio-stems': 'guide-batch',
++    '/guides/when-does-my-guitar-need-a-setup': 'guide-guitar-setup',
++    '/guides/how-to-tune-a-snare-drum': 'guide-snare-tuning',
++    '/guides/beginner-violin-care': 'guide-violin-care',
++    '/guides/choose-a-violin-for-beginners': 'guide-violin-choice',
++    '/guides/drumsticks-for-beginners': 'guide-drumsticks',
++    '/guides/choose-a-practice-drum-pad': 'guide-practice-pad',
++    '/guides/choose-a-beginner-acoustic-guitar': 'guide-acoustic-guitar',
++    '/guides/how-to-care-for-a-guitar': 'guide-guitar-care',
+   };
+   return guides[path] || (METRIC_PAGES.includes(path.slice(1)) ? path.slice(1) : null);
+ }

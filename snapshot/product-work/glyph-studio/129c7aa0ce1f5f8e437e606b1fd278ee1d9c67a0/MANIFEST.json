@@ -1,0 +1,27 @@
+{
+  "sha": "129c7aa0ce1f5f8e437e606b1fd278ee1d9c67a0",
+  "base_sha": "0feefc7785d356f1862f23a96162bfd69f4d872e",
+  "scope": "Committed screened review delta, not a release or complete binary artifact",
+  "files": [
+    {
+      "path": "src/engine/font-export.ts",
+      "status": "present",
+      "sha256": "23c218813f8c74f90975c284b09a0a66b27f6af8caa0c0fd051fa016e0ba4e34",
+      "bytes": 16543
+    },
+    {
+      "path": "tests/glyph-geometry.test.ts",
+      "status": "present",
+      "sha256": "cb3bfe6a684972502835752a3a5f3673cc2b36a715b9071a54a758d11d2adb8e",
+      "bytes": 10483
+    }
+  ],
+  "omitted": [],
+  "patch_sha256": "824382aa27b950f67ad7b5a89538a0b6c81d3b5230cb5ecc3537b03bb1f4e28a",
+  "repo": "https://github.com/armonon/glyph-studio",
+  "branches": [
+    "fix/glyph-ttf-name-metadata-20261007"
+  ],
+  "archive_path": "glyph-studio/129c7aa0ce1f5f8e437e606b1fd278ee1d9c67a0",
+  "local_worktree_dirty": false
+}

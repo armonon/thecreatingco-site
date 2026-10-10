@@ -1,0 +1,14 @@
+{
+  "sha": "b5abdd1de5f71fe0244ef9a651a6d983067541ff",
+  "base_sha": "b5abdd1de5f71fe0244ef9a651a6d983067541ff",
+  "scope": "Committed screened review delta, not a release or complete binary artifact",
+  "files": [],
+  "omitted": [],
+  "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "repo": "https://github.com/armonon/form-studio",
+  "branches": [
+    "wave5/form-room"
+  ],
+  "archive_path": "form-studio/b5abdd1de5f71fe0244ef9a651a6d983067541ff",
+  "local_worktree_dirty": true
+}

@@ -1,0 +1,29 @@
+{
+  "task_id": "CORE-SP-UX-001",
+  "title": "Clarify Lite/Pro disabled controls and loaded-media counts",
+  "product": "scenepilot",
+  "area": "ux_improvement",
+  "category": "ux_improvement",
+  "workstream": "CORE_PRODUCT_LAB",
+  "severity": "P3",
+  "scores": {
+    "impact": 6,
+    "severity": 4,
+    "workflow_importance": 7,
+    "competitive_value": 3,
+    "release_importance": 5,
+    "confidence": 7,
+    "effort": 3,
+    "risk": 2,
+    "user_value": 7
+  },
+  "dependencies": [],
+  "status": "QUEUED",
+  "model": "gpt-6-luna",
+  "expected_value": "Flagship golden-workflow reliability; scores are planning estimates, not health metrics.",
+  "test_requirements": "Reproduce on isolated exact source; preserve baseline/fixed evidence, appropriate build/tests and golden path; source reading is not interactive sign-off.",
+  "source_evidence": [
+    "docs/release-today-0.1.16.md reports some Lite controls expose Pro-only workflows and main source media can coexist with a displayed zero asset-bin count; it notes this is confusing, not source loss."
+  ],
+  "next_action": "Verify current behavior before implementing; retain exact-source evidence."
+}

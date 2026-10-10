@@ -1,0 +1,164 @@
+{
+  "sha": "4d766e6f998b4243d66e1c978ae300ec71536d6e",
+  "base_sha": "abde931cd81634a54288177c9d40dfd65321a5d8",
+  "scope": "Committed screened review delta, not a release or complete binary artifact",
+  "files": [
+    {
+      "path": "scripts/qualify-labs.mjs",
+      "status": "present",
+      "sha256": "70272b768692a29a08570cacbdbb7994a66238df3723a272779ab44a8f08c8e7",
+      "bytes": 9559
+    },
+    {
+      "path": "src/App.tsx",
+      "status": "present",
+      "sha256": "4a7601df7e7bbef686a17131c617508fa8a4a604f97f7b2c6cd757728943c5de",
+      "bytes": 12781
+    },
+    {
+      "path": "src/entry-prerender.jsx",
+      "status": "present",
+      "sha256": "c445e09506e3c228aa46570cbf8e50b74d73fe97218c47088a52d8d61d3dbc31",
+      "bytes": 4619
+    },
+    {
+      "path": "src/labs/HubLabs.jsx",
+      "status": "present",
+      "sha256": "d10b0f57952f4b71c8dd111a162566f7a3c89dd74dbea0e5f826e09d8cea3bba",
+      "bytes": 958
+    },
+    {
+      "path": "src/labs/LabPages.test.jsx",
+      "status": "present",
+      "sha256": "230fe5ae5eb96d00a4711be0c5bd3c48f34cabc2dceaddd4e2464f5bbf580961",
+      "bytes": 3599
+    },
+    {
+      "path": "src/labs/LabShell.jsx",
+      "status": "present",
+      "sha256": "c3004ea5a9e73b8f4eb12e989273423e0a91b45a4c31d4bc799451cb6dd3bd81",
+      "bytes": 1788
+    },
+    {
+      "path": "src/labs/canvas/CanvasPage.jsx",
+      "status": "present",
+      "sha256": "06d147fa98033bcdd899ccd5d8719b4ea5d9d3fdd2d0587c198d96601a607a7b",
+      "bytes": 20527
+    },
+    {
+      "path": "src/labs/canvas/canvasExport.js",
+      "status": "present",
+      "sha256": "20a440b0c9162ae2985df0eaa4ad097f045be777d73c3453fa6a3549da25163b",
+      "bytes": 2167
+    },
+    {
+      "path": "src/labs/canvas/canvasExport.test.js",
+      "status": "present",
+      "sha256": "44fe365aae86ddeab609cf90d0360c2d460a9dab5a645b31b6d303469c25519a",
+      "bytes": 1324
+    },
+    {
+      "path": "src/labs/canvas/canvasFeatures.js",
+      "status": "present",
+      "sha256": "837e4010a47e0dc240d5c9c1db40b87a80aa9c1293536fd6204db4c43da6bb1b",
+      "bytes": 6855
+    },
+    {
+      "path": "src/labs/canvas/canvasFeatures.test.js",
+      "status": "present",
+      "sha256": "4284cd56f51a9e43b6751d7ea5cebaabbbb0c32cb850052e28216d19aedce317",
+      "bytes": 3486
+    },
+    {
+      "path": "src/labs/canvas/canvasScenes.js",
+      "status": "present",
+      "sha256": "537aed5ef301a35089d594f4e1f720e1da7fd5ad3bbd02e3246f7db00dc14992",
+      "bytes": 12780
+    },
+    {
+      "path": "src/labs/files.js",
+      "status": "present",
+      "sha256": "cf2fc21f9eaa678ae389e59381f1a3f7396932eafaf62f1603085f4729d5e2ca",
+      "bytes": 605
+    },
+    {
+      "path": "src/labs/hubLabs.css",
+      "status": "present",
+      "sha256": "7d880970c76e04e2fa127d3061e4891318a88e4515adf6aebfe49af3802e9563",
+      "bytes": 212
+    },
+    {
+      "path": "src/labs/labs.css",
+      "status": "present",
+      "sha256": "97898f32f5cdacf565fd9eb3123a910a9fb07d5a18af9a1a855174ff726778e5",
+      "bytes": 11053
+    },
+    {
+      "path": "src/labs/labsSeo.js",
+      "status": "present",
+      "sha256": "cea1df137e4f7ff99e1d1339d4138b0baf9d31e94f0339b19bd90bc77bc5e89a",
+      "bytes": 1599
+    },
+    {
+      "path": "src/labs/pocket/PocketPage.jsx",
+      "status": "present",
+      "sha256": "314436a2532709d48624e734f8e8f873fbca2dbb4053371d00f4d7f3edb71076",
+      "bytes": 19532
+    },
+    {
+      "path": "src/labs/pocket/pocketPattern.js",
+      "status": "present",
+      "sha256": "9ed3a5d3329cda350a90648d265128aa965bee76f3649fa1869a0a0d09af968e",
+      "bytes": 7970
+    },
+    {
+      "path": "src/labs/pocket/pocketPattern.test.js",
+      "status": "present",
+      "sha256": "f4b01ff0e5df548642596d31ac9930152b277f408ac16244378b4d40137d9379",
+      "bytes": 4241
+    },
+    {
+      "path": "src/labs/pocket/pocketSynth.js",
+      "status": "present",
+      "sha256": "ffe8230ae95a272f4700ea3a3daeba0691c7190c7fbf38b0bbfd9dedc44a1067",
+      "bytes": 8327
+    },
+    {
+      "path": "src/labs/press/PressPage.jsx",
+      "status": "present",
+      "sha256": "b7fd058d2a203460a65841b577170b19d2583134e96539a8edf482dff95111be",
+      "bytes": 14410
+    },
+    {
+      "path": "src/labs/press/pressHtml.js",
+      "status": "present",
+      "sha256": "089cec5a2164698bdecda56036400016fe1977628dcfb6998be11480e272fbee",
+      "bytes": 13592
+    },
+    {
+      "path": "src/pages/SattariHubPage.jsx",
+      "status": "present",
+      "sha256": "24dd9f0257de7a1781e63a99b6567e4cdf9085bbea818570967f1ca1dc665cec",
+      "bytes": 6922
+    },
+    {
+      "path": "src/utils/lazyComponents.tsx",
+      "status": "present",
+      "sha256": "9d4ffdf737494bf13e7071534f8e73ce4c88013b0702d13d537070f4160f1f87",
+      "bytes": 6668
+    }
+  ],
+  "omitted": [
+    {
+      "path": "src/labs/press/pressHtml.test.js",
+      "reason": "non-fixture-email-content"
+    }
+  ],
+  "patch_sha256": "dc14e0312cf72bcaa9b1b8e3089e2cefaf4ee60b70afb438e8aca73548d7de96",
+  "repo": "https://github.com/armonon/sattari-custom-site",
+  "branches": [
+    "wave2/sattari-canvas-pocket-press"
+  ],
+  "archive_path": "sattari-custom-site/4d766e6f998b4243d66e1c978ae300ec71536d6e",
+  "local_worktree_dirty": false
+}

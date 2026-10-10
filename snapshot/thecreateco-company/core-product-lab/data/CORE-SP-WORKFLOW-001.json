@@ -1,0 +1,31 @@
+{
+  "task_id": "CORE-SP-WORKFLOW-001",
+  "title": "Qualify complete generated-media golden workflow in Lite and Desktop Pro",
+  "product": "scenepilot",
+  "area": "workflow_gap",
+  "category": "workflow_gap",
+  "workstream": "CORE_PRODUCT_LAB",
+  "severity": "P2",
+  "scores": {
+    "impact": 9,
+    "severity": 7,
+    "workflow_importance": 10,
+    "competitive_value": 8,
+    "release_importance": 10,
+    "confidence": 10,
+    "effort": 7,
+    "risk": 3,
+    "user_value": 10
+  },
+  "dependencies": [],
+  "status": "QUEUED",
+  "model": "gpt-6-luna",
+  "expected_value": "Flagship golden-workflow reliability; scores are planning estimates, not health metrics.",
+  "test_requirements": "Reproduce on isolated exact source; preserve baseline/fixed evidence, appropriate build/tests and golden path; source reading is not interactive sign-off.",
+  "source_evidence": [
+    "Brief requires Import\u2192Edit\u2192Composite/Animate\u2192Audio\u2192Save\u2192Reopen\u2192Export.",
+    "Historical docs/release-today-0.1.16.md marks multiple full UI, relink, recovery, export-picker, and perceptual checks NOT VERIFIED.",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/golden-projects/scenepilot.md is a recipe only; fixture not created or run."
+  ],
+  "next_action": "Generate the license-safe fixture and run/record the complete recipe independently for Lite and Desktop Pro."
+}

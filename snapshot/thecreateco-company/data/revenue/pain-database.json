@@ -1,0 +1,165 @@
+{
+  "updated_at": "2026-10-08T03:58:13.875181+00:00",
+  "entries": [
+    {
+      "pain_id": "PAIN-001",
+      "problem": "Fragmented creative requests and manual asset tracking",
+      "audience": "Small content studios; extrapolation from enterprise case",
+      "frequency": null,
+      "severity": null,
+      "current_solution": "Existing tools/services; buyer-specific use unverified",
+      "current_cost": null,
+      "possible_solution": "One intake-to-review handoff in existing tools",
+      "evidence": [
+        {
+          "url": "https://www.frame.io/case-studies/vmware",
+          "observed_date": "2026-10-07",
+          "type": "Vendor-selected customer case; not independent or our target-customer validation"
+        }
+      ],
+      "revenue_potential": null,
+      "status": "HYPOTHESIS",
+      "next_validation": "Recent concrete example, actual recurrence/cost and buyer decision; do not import contact details"
+    },
+    {
+      "pain_id": "PAIN-002",
+      "problem": "Revision/version coordination across simultaneous projects",
+      "audience": "Small production teams; fit unvalidated",
+      "frequency": null,
+      "severity": null,
+      "current_solution": "Existing tools/services; buyer-specific use unverified",
+      "current_cost": null,
+      "possible_solution": "Version conventions, approval path and delivery checklist",
+      "evidence": [
+        {
+          "url": "https://www.frame.io/case-studies/sandwich",
+          "observed_date": "2026-10-07",
+          "type": "Vendor-selected customer case; not independent or our target-customer validation"
+        }
+      ],
+      "revenue_potential": null,
+      "status": "HYPOTHESIS",
+      "next_validation": "Recent concrete example, actual recurrence/cost and buyer decision; do not import contact details"
+    },
+    {
+      "pain_id": "PAIN-003",
+      "problem": "Remote media handoff and coordination",
+      "audience": "Distributed production crews",
+      "frequency": null,
+      "severity": null,
+      "current_solution": "Existing tools/services; buyer-specific use unverified",
+      "current_cost": null,
+      "possible_solution": "Existing-tool review/export setup and training",
+      "evidence": [
+        {
+          "url": "https://www.frame.io/case-studies/stamp",
+          "observed_date": "2026-10-07",
+          "type": "Vendor-selected customer case; not independent or our target-customer validation"
+        }
+      ],
+      "revenue_potential": null,
+      "status": "HYPOTHESIS",
+      "next_validation": "Recent concrete example, actual recurrence/cost and buyer decision; do not import contact details"
+    },
+    {
+      "pain_id": "PAIN-004",
+      "problem": "Rehearsal/equipment access need hypothesis",
+      "audience": "Local musicians/instructors",
+      "frequency": null,
+      "severity": null,
+      "current_solution": "Existing tools/services; buyer-specific use unverified",
+      "current_cost": null,
+      "possible_solution": "Verify and fill existing operator-confirmed service capacity",
+      "evidence": [
+        {
+          "url": "https://sattarimusic.com/services",
+          "observed_date": "2026-10-07",
+          "type": "Existing public offer, not demand evidence"
+        }
+      ],
+      "revenue_potential": null,
+      "status": "HYPOTHESIS",
+      "next_validation": "Recent concrete example, actual recurrence/cost and buyer decision; do not import contact details"
+    },
+    {
+      "pain_id": "WEB-FONT-001",
+      "problem": "Getting custom lettering into a usable font: spacing, baseline and destination-app compatibility",
+      "audience": "Lettering and brand creators",
+      "frequency": null,
+      "severity": null,
+      "current_solution": "See sourced market report; individual use/cost unverified",
+      "current_cost": null,
+      "possible_solution": "Existing narrow utility plus validated workflow improvement",
+      "evidence": [
+        {
+          "url": "https://www.calligraphr.com/en/docs/faq/",
+          "observed_date": "2026-10-07",
+          "type": "Vendor FAQ; not independent demand"
+        }
+      ],
+      "revenue_potential": null,
+      "status": "HYPOTHESIS",
+      "next_validation": "Observe five actual make/save/export/use journeys"
+    },
+    {
+      "pain_id": "WEB-AUDIO-001",
+      "problem": "Accurate key/tempo results and library tag/filename export",
+      "audience": "DJs",
+      "frequency": null,
+      "severity": null,
+      "current_solution": "See sourced market report; individual use/cost unverified",
+      "current_cost": null,
+      "possible_solution": "Existing narrow utility plus validated workflow improvement",
+      "evidence": [
+        {
+          "url": "https://www.reddit.com/r/DJs/comments/1woan3a/best_key_detection_software_nowadays/",
+          "observed_date": "2026-10-07",
+          "type": "Independent anecdote; prefers free; no willingness-to-pay evidence"
+        }
+      ],
+      "revenue_potential": null,
+      "status": "HYPOTHESIS",
+      "next_validation": "Observe current DJ preparation workflow; preserve existing free batch/CSV"
+    },
+    {
+      "pain_id": "WEB-AUDIO-002",
+      "problem": "Occasional drumless practice tracks without ongoing subscription",
+      "audience": "Practicing musicians",
+      "frequency": null,
+      "severity": null,
+      "current_solution": "See sourced market report; individual use/cost unverified",
+      "current_cost": null,
+      "possible_solution": "Existing narrow utility plus validated workflow improvement",
+      "evidence": [
+        {
+          "url": "https://www.reddit.com/r/drums/comments/1u78k8y/moises_app/",
+          "observed_date": "2026-10-07",
+          "type": "Independent anecdote; no willingness-to-pay-us evidence"
+        }
+      ],
+      "revenue_potential": null,
+      "status": "HYPOTHESIS",
+      "next_validation": "Validate practice outcome after real audio qualification"
+    },
+    {
+      "pain_id": "WEB-AUDIO-003",
+      "problem": "Audible bleed and artifacts reduce usable separation quality",
+      "audience": "Audio creators",
+      "frequency": null,
+      "severity": null,
+      "current_solution": "See sourced market report; individual use/cost unverified",
+      "current_cost": null,
+      "possible_solution": "Existing narrow utility plus validated workflow improvement",
+      "evidence": [
+        {
+          "url": "https://www.reddit.com/r/audioengineering/comments/1w9l6yz/best_vocalstem_extractor/",
+          "observed_date": "2026-10-07",
+          "type": "Independent anecdote; not representative comparative benchmark"
+        }
+      ],
+      "revenue_potential": null,
+      "status": "HYPOTHESIS",
+      "next_validation": "Run rights-cleared Split quality/performance benchmark"
+    }
+  ]
+}

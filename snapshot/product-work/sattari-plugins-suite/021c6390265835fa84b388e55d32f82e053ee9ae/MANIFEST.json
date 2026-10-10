@@ -1,0 +1,14 @@
+{
+  "sha": "021c6390265835fa84b388e55d32f82e053ee9ae",
+  "base_sha": "021c6390265835fa84b388e55d32f82e053ee9ae",
+  "scope": "Committed screened review delta, not a release or complete binary artifact",
+  "files": [],
+  "omitted": [],
+  "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "repo": "https://github.com/armonon/sattari-plugins-suite",
+  "branches": [
+    "feature/harmony-engine"
+  ],
+  "archive_path": "sattari-plugins-suite/021c6390265835fa84b388e55d32f82e053ee9ae",
+  "local_worktree_dirty": true
+}

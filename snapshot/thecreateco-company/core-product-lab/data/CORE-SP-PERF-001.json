@@ -1,0 +1,30 @@
+{
+  "task_id": "CORE-SP-PERF-001",
+  "title": "Measure real-media playback/export memory envelope and long-session performance",
+  "product": "scenepilot",
+  "area": "performance_opportunity",
+  "category": "performance_opportunity",
+  "workstream": "CORE_PRODUCT_LAB",
+  "severity": "P2",
+  "scores": {
+    "impact": 9,
+    "severity": 7,
+    "workflow_importance": 9,
+    "competitive_value": 7,
+    "release_importance": 10,
+    "confidence": 9,
+    "effort": 8,
+    "risk": 4,
+    "user_value": 9
+  },
+  "dependencies": [],
+  "status": "QUEUED",
+  "model": "gpt-6-luna",
+  "expected_value": "Flagship golden-workflow reliability; scores are planning estimates, not health metrics.",
+  "test_requirements": "Reproduce on isolated exact source; preserve baseline/fixed evidence, appropriate build/tests and golden path; source reading is not interactive sign-off.",
+  "source_evidence": [
+    "npm run qa:performance passed at /tmp/scenepilot-performance.log with measured synthetic timing values in the report.",
+    "docs/release-today-0.1.16.md explicitly leaves sustained real-footage 4K, low-memory devices, multi-hour memory growth and path-backed export size envelope unverified."
+  ],
+  "next_action": "Verify current behavior before implementing; retain exact-source evidence."
+}

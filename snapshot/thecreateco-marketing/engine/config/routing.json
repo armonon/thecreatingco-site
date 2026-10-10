@@ -1,0 +1,275 @@
+{
+  "_doc": "Cost-vs-quality knobs for the thecreateco marketing engine. Edit freely; engine reads this on every run. See engine/README.md#settings.",
+  "roles": {
+    "luna": {
+      "label": "GPT-6 Luna \u2014 default high-volume worker",
+      "chain": [
+        "openai/gpt-6-luna"
+      ]
+    },
+    "sol": {
+      "label": "GPT-6.1 Sol \u2014 strategy and complex work",
+      "chain": [
+        "openai/gpt-6.1-sol"
+      ]
+    },
+    "sonnet": {
+      "label": "Legacy creative role key \u2014 routed to OpenAI Luna",
+      "chain": [
+        "openai/gpt-6-luna"
+      ]
+    },
+    "opus": {
+      "label": "Legacy final-review role key \u2014 OpenAI Sol policy",
+      "chain": [
+        "openai/gpt-6.1-sol"
+      ],
+      "fallback_mode": "consensus"
+    },
+    "astra": {
+      "label": "GPT-6 Astra \u2014 deliberate high-leverage invention only",
+      "chain": [
+        "openai/gpt-6-astra"
+      ]
+    }
+  },
+  "_chain_notes": "OpenAI-only active routes. Historical Anthropic pricing entries are retained for past telemetry. Legacy sonnet/opus role keys remain for schema compatibility.",
+  "luna_sonnet_fallback_min_creativity": 2,
+  "task_types": {
+    "research_summary": "luna",
+    "extract": "luna",
+    "organize_research": "luna",
+    "lead_classify": "luna",
+    "lead_score": "luna",
+    "dedupe_assist": "luna",
+    "keyword_research": "luna",
+    "seo_research": "luna",
+    "first_draft": "luna",
+    "social_variations": "luna",
+    "headline_variations": "luna",
+    "cta_variations": "luna",
+    "email_personalize": "luna",
+    "categorize": "luna",
+    "structured_json": "luna",
+    "analytics_summary": "luna",
+    "community_discovery": "luna",
+    "forum_classify": "luna",
+    "repurpose": "luna",
+    "format": "luna",
+    "browser_decision": "luna",
+    "routine_ops": "luna",
+    "faq": "luna",
+    "competitor_data": "luna",
+    "campaign_plan": "sol",
+    "prioritize": "sol",
+    "next_actions": "sol",
+    "performance_analysis": "sol",
+    "metrics_interpretation": "sol",
+    "audience_selection": "sol",
+    "resource_allocation": "sol",
+    "competitor_analysis": "sol",
+    "experiment_eval": "sol",
+    "launch_plan": "sol",
+    "resolve_ambiguity": "sol",
+    "angle_selection": "sol",
+    "workflow_plan": "sol",
+    "rank_opportunities": "sol",
+    "strategy_review": "sol",
+    "alignment_review": "sol",
+    "revise_strategy": "sol",
+    "creative_copy": "sonnet",
+    "brand_voice": "luna",
+    "outreach_copy": "luna",
+    "storytelling": "luna",
+    "launch_copy": "luna",
+    "campaign_concept": "luna",
+    "community_post": "luna",
+    "creator_messaging": "luna",
+    "positioning_copy": "luna",
+    "landing_copy": "luna",
+    "email_campaign_copy": "luna",
+    "kickstarter_copy": "luna",
+    "polish_copy": "luna",
+    "creative_review": "sol",
+    "second_opinion": "sol",
+    "apply_changes": "luna",
+    "revise_copy": "luna",
+    "final_review": "opus"
+  },
+  "default_role": "luna",
+  "_escalation_doc": "Deterministic overrides applied after the task_type lookup. Luna is never auto-escalated after a successful result.",
+  "escalation": {
+    "astra_types": [],
+    "note": "Astra deliberately invoked only by company creative-cycle capsule; planner importance scores never authorize it."
+  },
+  "reasoning": {
+    "_doc": "Complexity maps to bounded OpenAI thinking levels.",
+    "levels": [
+      "low",
+      "low",
+      "medium",
+      "high",
+      "max"
+    ],
+    "role_floor": {
+      "luna": "low",
+      "sol": "medium",
+      "sonnet": "low",
+      "opus": "high",
+      "astra": "high",
+      "consensus": "medium"
+    },
+    "role_cap": {
+      "luna": "medium",
+      "sol": "high",
+      "sonnet": "medium",
+      "opus": "high",
+      "astra": "high",
+      "consensus": "high"
+    },
+    "max_requires_flag": true
+  },
+  "token_budgets": {
+    "_doc": "Max output tokens hint + max retrieved-context chars per role.",
+    "luna": {
+      "context_chars": 24000,
+      "max_output_tokens": 2000
+    },
+    "sol": {
+      "context_chars": 12000,
+      "max_output_tokens": 3000
+    },
+    "sonnet": {
+      "context_chars": 8000,
+      "max_output_tokens": 3000
+    },
+    "opus": {
+      "context_chars": 14000,
+      "max_output_tokens": 2500
+    },
+    "astra": {
+      "context_chars": 12000,
+      "max_output_tokens": 3000
+    }
+  },
+  "loop_limits": {
+    "max_simple_searches": 3,
+    "max_simple_page_reads": 10,
+    "max_self_reviews": 1,
+    "max_rewrites": 1,
+    "max_model_retries": 1,
+    "max_provider_retries": 1,
+    "max_strategy_reconsiderations_without_new_data": 1,
+    "tasks_per_tick": 12,
+    "running_lease_minutes": 20,
+    "retries_by_role": {
+      "luna": 1,
+      "sonnet": 1,
+      "sol": 0,
+      "opus": 0,
+      "consensus": 0,
+      "astra": 0
+    }
+  },
+  "opus_guardrail": {
+    "per_campaign_tier": {
+      "routine": 0,
+      "normal": 1,
+      "major": 2
+    },
+    "min_importance": 3,
+    "daily_max_calls": 6
+  },
+  "provider_cooldowns_minutes": {
+    "rate_limit": [
+      5,
+      15,
+      60
+    ],
+    "quota": 60,
+    "credit": 360,
+    "auth": 360,
+    "network": [
+      1,
+      5,
+      15
+    ],
+    "unknown": [
+      2,
+      10,
+      30
+    ]
+  },
+  "anomaly": {
+    "_doc": "Shares are % of model calls today; spend is list-price USD equivalent.",
+    "max_share": {
+      "opus": 5,
+      "sol": 25,
+      "sonnet": 25
+    },
+    "min_calls_before_share_alerts": 20,
+    "daily_spend_alert_usd": 5.0,
+    "spike_vs_7d_avg_multiplier": 3.0
+  },
+  "prices_per_mtok": {
+    "_doc": "List prices (USD / 1M tokens) used when a provider doesn't return cost. OpenAI from docs/providers/openai/models.md. Subscription routes are billed as subscriptions, so these are list-price equivalents.",
+    "openai/gpt-6-luna": {
+      "in": 0.1,
+      "cached": 0.01,
+      "out": 0.5
+    },
+    "openai/gpt-6-sol": {
+      "in": 2.0,
+      "cached": 0.2,
+      "out": 10.0
+    },
+    "openai/gpt-5.6-luna": {
+      "in": 0.1,
+      "cached": 0.01,
+      "out": 0.5
+    },
+    "openai/gpt-5.6-sol": {
+      "in": 2.0,
+      "cached": 0.2,
+      "out": 10.0
+    },
+    "anthropic/claude-haiku-4-5": {
+      "in": 1.0,
+      "cached": 0.1,
+      "out": 5.0
+    },
+    "anthropic/claude-sonnet-5": {
+      "in": 3.0,
+      "cached": 0.3,
+      "out": 15.0
+    },
+    "anthropic/claude-opus-5-5": {
+      "in": 5.0,
+      "cached": 0.5,
+      "out": 25.0
+    }
+  },
+  "outreach": {
+    "max_new_recipients_per_day": 10,
+    "max_followups": 2,
+    "min_days_between_followups": 7
+  },
+  "state": {
+    "max_chars": 12000
+  },
+  "review_policy": {
+    "provider": "openai",
+    "model_chain": [
+      "openai/gpt-6.1-sol"
+    ],
+    "consensus_chains": [
+      [
+        "openai/gpt-6.1-sol"
+      ],
+      [
+        "openai/gpt-6.1-sol"
+      ]
+    ],
+    "note": "OpenAI-only review. Independent review context is preserved; legacy role keys identify review function, not provider."
+  }
+}

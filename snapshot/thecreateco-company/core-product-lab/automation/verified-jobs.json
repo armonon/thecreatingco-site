@@ -1,0 +1,128 @@
+[
+  {
+    "id": "b98880fe-a5a5-410f-a7ca-7366239125d8",
+    "declarationKey": "core-product-lab-cycle",
+    "agentId": "main",
+    "name": "Core Product Lab cycle",
+    "enabled": true,
+    "createdAtMs": 1791417446006,
+    "schedule": {
+      "kind": "cron",
+      "expr": "40 */2 * * *",
+      "tz": "America/Los_Angeles"
+    },
+    "sessionTarget": "isolated",
+    "wakeMode": "now",
+    "payload": {
+      "kind": "agentTurn",
+      "message": "Run one bounded Core Product Lab cycle. Workspace:\n/Users/agentsattari/thecreateco-company/core-product-lab.\nRead AGENTS.md, DIRECTIVE.md, HEALTH.md, ../engine/README.md and data/model-routing.json.\nStop if PAUSE here or ../PAUSE exists. ScenePilot, Luma, Form and StemDeck ONLY;\ngolden-workflow reliability before unrelated features or new apps.\n\nRun company.py recover; python3 lab.py next. Select only one eligible task, by\nseverity then value, and claim its exact ID via ../engine/company.py with a unique\nowner and 45-minute lease. Read relevant product state and evidence only. Do not\nrace another worker on the same product. The company queue is authoritative;\nnever edit its SQLite or generated exports. Reuse existing tasks, not duplicates.\n\nExecute a substantive safe local task or useful qualification batch in an isolated\nworktree. Sol directs; Luna handles bounded routine work; involve available Sonnet\nfor material UX/design/workflow review, rare Opus for consequential independent\naudit. Record actual model and fallbacks; model proportions are guidance, not quotas.\nNative Codex children for Codex legwork; max three workers. Keep dependent work with\nits owner. No claim of a review unless it ran and produced evidence.\n\nBuild/test and dogfood a synthetic/authorized golden project. Preserve failing logs,\nsource SHA, environment and exact command results; never relax assertions merely\nto pass. Unknown stays unknown. No deployments, rollback, public messages, physical\nrecording, payment/access/legal changes, production deletion or gate bypass.\nExisting explicit release approval must still pass the repository's release gates.\n\nWrite dated report and update products/<id>.json with measured results/limitations.\nFinish task via company CLI with evidence, or checkpoint it BLOCKED with concrete\nresume condition. Heartbeat long tasks. Update company products/context through CLI\nwithout overwriting unrelated fields. Run lab.py refresh. Queue only meaningful\ndeduplicated follow-up work, with repro/test requirements and estimated scores.\nStop within 35 minutes; if no safe useful work is available, record idle, not busywork.\nReturn short run-history summary; do not send messages to people/channels.",
+      "model": "openai/gpt-6.1-sol",
+      "fallbacks": [
+        "openai/gpt-6-sol"
+      ],
+      "thinking": "medium",
+      "timeoutSeconds": 2100,
+      "toolsAllow": [
+        "*"
+      ]
+    },
+    "delivery": {
+      "mode": "none",
+      "channel": "last"
+    },
+    "scheduledToolPolicy": {
+      "version": 1,
+      "mode": "trusted"
+    },
+    "state": {
+      "nextRunAtMs": 1791423600000
+    },
+    "updatedAtMs": 1791417446006,
+    "configRevision": "sha256:9oZCng5LZx76JmfCA1mMQwpxkjUGoHV3lEpitMwrnX0",
+    "nextRunAtMs": 1791423600000
+  },
+  {
+    "id": "18441c61-15d1-4a67-8234-900437818f26",
+    "declarationKey": "core-product-lab-daily",
+    "agentId": "main",
+    "name": "Core Product Lab daily",
+    "enabled": true,
+    "createdAtMs": 1791417446785,
+    "schedule": {
+      "kind": "cron",
+      "expr": "5 9 * * *",
+      "tz": "America/Los_Angeles"
+    },
+    "sessionTarget": "isolated",
+    "wakeMode": "now",
+    "payload": {
+      "kind": "agentTurn",
+      "message": "Perform the daily Core Product Lab review, at most 15 minutes. Workspace:\n/Users/agentsattari/thecreateco-company/core-product-lab. Read AGENTS.md, DIRECTIVE.md,\nHEALTH.md. Stop on PAUSE here or parent. Create/claim a dated CORE-REVIEW task in the\nshared company queue. Inspect only new evidence since last review. For each flagship\nrecord what broke/improved, unmeasured or regressed performance, incomplete golden\npaths, nearest release, highest professional-use blocker and next task. Deduplicate\nand reprioritize tasks with company.py; do not manufacture bugs or scores, reopen\nstable areas, or implement a broad roadmap. Preserve active ownership. Write dated\nreport, finish with evidence, refresh lab views. Model guidance applies; no release,\nexternal messaging, hardware recording or unrelated app work. Summary to run history.",
+      "model": "openai/gpt-6.1-sol",
+      "fallbacks": [
+        "openai/gpt-6-sol"
+      ],
+      "thinking": "medium",
+      "timeoutSeconds": 900,
+      "toolsAllow": [
+        "*"
+      ]
+    },
+    "delivery": {
+      "mode": "none",
+      "channel": "last"
+    },
+    "scheduledToolPolicy": {
+      "version": 1,
+      "mode": "trusted"
+    },
+    "state": {
+      "nextRunAtMs": 1791475500000
+    },
+    "updatedAtMs": 1791417446785,
+    "configRevision": "sha256:By48zYQDIjAStPQJi2Y5oUilbOo38jtB_5ZKL-q6FQM",
+    "nextRunAtMs": 1791475500000
+  },
+  {
+    "id": "8f524ec8-f2ed-4809-a895-e5a8dca329b7",
+    "declarationKey": "core-product-lab-weekly",
+    "agentId": "main",
+    "name": "Core Product Lab weekly",
+    "enabled": true,
+    "createdAtMs": 1791417447537,
+    "schedule": {
+      "kind": "cron",
+      "expr": "35 9 * * 1",
+      "tz": "America/Los_Angeles"
+    },
+    "sessionTarget": "isolated",
+    "wakeMode": "now",
+    "payload": {
+      "kind": "agentTurn",
+      "message": "Perform weekly flagship review, at most 25 minutes. Workspace:\n/Users/agentsattari/thecreateco-company/core-product-lab. Read AGENTS.md, DIRECTIVE.md,\nHEALTH.md, relevant weekly reports and company queue; stop on PAUSE here or parent.\nCreate/claim a dated CORE-WEEKLY task through company.py. For ScenePilot, Luma, Form,\nStemDeck report evidence-backed scores or unknown, release readiness, up to five\nblockers and completed improvements, exact test status, benchmark changes or\nunmeasured, regressions, golden-workflow status, next milestone. Decide next cycle's\nallocation by severity/value, not equal rotation. Track real model/cost evidence or\nmark unavailable; don't derive spend/time from task counts. Request bounded Sonnet\ndesign critique when material workflow/UI evidence exists; Opus only for major\ndecision/disagreement with rationale. Update shared queue/products, dated report,\nfinish with evidence, refresh lab views. No new apps, release/public messaging,\npayments/access/legal changes or physical recording. Return run-history summary only.",
+      "model": "openai/gpt-6.1-sol",
+      "fallbacks": [
+        "openai/gpt-6-sol"
+      ],
+      "thinking": "medium",
+      "timeoutSeconds": 1500,
+      "toolsAllow": [
+        "*"
+      ]
+    },
+    "delivery": {
+      "mode": "none",
+      "channel": "last"
+    },
+    "scheduledToolPolicy": {
+      "version": 1,
+      "mode": "trusted"
+    },
+    "state": {
+      "nextRunAtMs": 1791822900000
+    },
+    "updatedAtMs": 1791417447537,
+    "configRevision": "sha256:ABRGydiFSPH2_mbqZQMjoxa5IUpj68dvZBMEyA2-69w",
+    "nextRunAtMs": 1791822900000
+  }
+]

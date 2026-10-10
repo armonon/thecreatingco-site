@@ -1,0 +1,30 @@
+{
+  "task_id": "CORE-LUMA-AUD-001",
+  "title": "Make cross-repository mesh contract test checkout-independent",
+  "product": "luma",
+  "area": "bug",
+  "category": "bug",
+  "workstream": "CORE_PRODUCT_LAB",
+  "severity": "P3",
+  "scores": {
+    "impact": 3,
+    "severity": 3,
+    "workflow_importance": 2,
+    "competitive_value": 1,
+    "release_importance": 4,
+    "confidence": 10,
+    "effort": 1,
+    "risk": 1,
+    "user_value": 2
+  },
+  "dependencies": [],
+  "status": "QUEUED",
+  "model": "gpt-6-luna",
+  "expected_value": "Flagship golden-workflow reliability; scores are planning estimates, not health metrics.",
+  "test_requirements": "Reproduce on isolated exact source; preserve baseline/fixed evidence, appropriate build/tests and golden path; source reading is not interactive sign-off.",
+  "source_evidence": [
+    "npm test: 1 failure in 1383 tests",
+    "tests/form-mesh.test.ts:21 resolves ../../sculptor-studio/app/luma-mesh-asset.ts; absent at /private/tmp/sculptor-studio in isolated worktree"
+  ],
+  "next_action": "Use configured/canonical Form source or explicitly report cross-repo source unavailable without failing the Luma suite."
+}

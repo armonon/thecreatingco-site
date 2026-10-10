@@ -1,0 +1,6 @@
+{
+  "product_id": "stemdeck",
+  "release_readiness": "ALPHA / NOT QUALIFIED. Dependency advisories repaired locally at 278e087; all 2233 Node22 tests, typecheck and build pass. Remote release/full physical gates remain open.",
+  "observed_at": "2026-10-08T00:08:26.403413+00:00",
+  "next_milestone": "Review local security repair 278e087, qualify full four-deck capture/replay golden path; remote gates intact."
+}

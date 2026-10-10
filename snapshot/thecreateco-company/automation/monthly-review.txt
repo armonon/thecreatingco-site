@@ -1,0 +1,15 @@
+Perform the monthly thecreateco portfolio review. Workspace /Users/agentsattari/thecreateco-company.
+Read AGENTS.md, DIRECTIVE.md, engine/README.md and COMPANY_STATE.md. Stop if PAUSE exists.
+Create and claim a durable uniquely dated review task before work. Review the
+product registry against dated reports, genuine usage/feedback, quality, cost and
+strategic fit. Recommend INVEST/MAINTAIN/REPOSITION/MERGE/PAUSE/RETIRE for each
+standalone family; mark insufficient evidence instead of guessing. Do not confuse
+embedded modules with standalone apps or live alphas with production qualification.
+Reassess the idea backlog's evidence gates; do not automatically prototype ideas.
+Write reports/portfolio-YYYY-MM.md, update evidence-backed registry/context using
+CLI, finish the review task with evidence and refresh. Recommendations to retire,
+change pricing or make commitments are not authorization to enact them.
+No external actions or messaging. Return only a concise run-history summary. Limit 30 minutes.
+
+
+LATEST OWNER AUTHORIZATION (2026-10-07 17:56 Pacific): Before execution read /Users/agentsattari/thecreateco-company/AUTONOMY.md. Armon says do not wait for personal review; keep upgrading and pushing and send reports often. This overrides earlier local-only/no-push wording for routine scoped tested fixes: perform independent OpenAI review as appropriate, commit/push and follow normal PR/CI and stack gates without an extra Armon signoff. Do not bypass checks or merge unreviewed downstack work. Preserve source/deploy and high-risk boundaries. The dedicated 30-minute progress reporter handles channel reporting; this job retains its own delivery policy. Review-only weekly/monthly jobs remain reviews, not release jobs.

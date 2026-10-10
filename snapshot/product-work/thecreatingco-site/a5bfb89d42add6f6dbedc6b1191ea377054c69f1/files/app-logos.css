@@ -1,0 +1,43 @@
+.cc-app-logo{display:inline-block!important;object-fit:contain!important;flex:none;max-width:100%;background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important}
+.mm-launch-item>.cc-app-logo{width:36px!important;height:36px!important;margin-bottom:4px}
+.mm-notable-icon:has(.cc-app-logo){background:transparent!important;box-shadow:none!important;border:0!important}
+.mm-notable-icon .cc-app-logo{width:88px!important;height:88px!important;padding:4px}
+.cc-logo-title{display:flex;align-items:center;gap:12px}
+.cc-logo-title .cc-app-logo{width:32px!important;height:32px!important}
+.cc-logo-eyebrow{display:flex;align-items:center;gap:14px}
+.cc-logo-eyebrow>.cc-app-logo{width:48px!important;height:48px!important}
+img.cc-existing-logo{object-fit:contain!important;padding:12px;aspect-ratio:1;max-height:260px}
+@media(max-width:600px){.cc-logo-eyebrow{gap:10px}.cc-logo-eyebrow>.cc-app-logo{width:36px!important;height:36px!important}}
+
+#creative-suite .cc-logo-title>.cc-app-logo{width:44px!important;height:44px!important}
+
+/* Homepage app identity tiles: one shared box treatment. */
+.momentium-home :is(#creative-suite,#other-apps) .cc-app-logo{
+ box-sizing:border-box!important;width:72px!important;height:72px!important;
+ padding:12px!important;background:#fafaf5!important;
+ border:1px solid #d5d7cc!important;border-radius:12px!important;
+ box-shadow:0 1px 2px rgb(28 34 25 / 5%)!important;
+}
+.momentium-home #other-apps .mm-notable-icon:has(.cc-app-logo){
+ width:72px!important;height:72px!important;padding:0!important;
+ background:transparent!important;border:0!important;border-radius:12px!important;
+ display:grid!important;place-items:center;
+}
+.momentium-home #creative-suite .cc-logo-title{gap:16px}
+.momentium-home #other-apps .mm-notable-icon:focus-visible{outline:3px solid #6750b8;outline-offset:4px}
+
+/* iOS-style app tiles: generous rounded squares, no outlined mini-box. */
+.momentium-home :is(#creative-suite,#other-apps) .cc-app-logo{
+ width:112px!important;height:112px!important;padding:20px!important;
+ border:0!important;border-radius:25px!important;
+ background:linear-gradient(145deg,#fff,color-mix(in srgb,var(--tool-tone,#cbd4ed) 24%,#fff))!important;
+ box-shadow:0 8px 20px rgb(24 30 42 / 12%),inset 0 1px 0 rgb(255 255 255 / 90%)!important;
+}
+.momentium-home #other-apps .mm-notable-icon:has(.cc-app-logo){
+ width:112px!important;height:112px!important;border-radius:25px!important;
+ filter:none!important;box-shadow:none!important;
+}
+.momentium-home #creative-suite .cc-logo-title>.cc-app-logo{
+ width:64px!important;height:64px!important;padding:11px!important;border-radius:15px!important;
+ box-shadow:0 4px 12px rgb(24 30 42 / 10%)!important;
+}

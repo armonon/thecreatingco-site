@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#11131a">
+  <title>WebLab — Check your website</title>
+  <meta name="description" content="A practical, evidence-backed checkup for your website.">
+  <link rel="stylesheet" href="/app.css">
+  <script type="module" src="/app.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to main content</a>
+  <header class="topbar"><a class="brand" href="/"><span class="brand-mark" aria-hidden="true">W</span><span>Web<span>Lab</span></span></a><span class="local-pill"><i></i> Public alpha preview</span></header>
+  <main id="main">
+    <section class="hero" aria-labelledby="page-title">
+      <p class="eyebrow"><span class="spark" aria-hidden="true">✳</span> YOUR SITE, WITH A CLEARER NEXT STEP</p>
+      <h1 id="page-title">Make your website<br><em>work harder.</em></h1>
+      <p class="lede">A practical checkup for search previews, broken links, accessibility, mobile layouts and more. See what’s actually there—and what to fix next.</p>
+      <form id="audit-form" class="audit-form" novalidate>
+        <label for="site-url">Website address</label>
+        <div class="input-row"><span aria-hidden="true" class="url-glyph">↗</span><input id="site-url" name="url" type="url" inputmode="url" autocomplete="url" spellcheck="false" placeholder="https://yourwebsite.com" required maxlength="2048"><button id="audit-button" type="submit"><span>Check my website</span><b aria-hidden="true">→</b></button></div>
+        <p class="form-hint">Public websites only. We won’t submit forms, sign in, or change your site.</p>
+      </form>
+    </section>
+    <section id="status" class="status" role="status" aria-live="polite" aria-atomic="true" hidden></section>
+    <section id="results" class="results" aria-labelledby="results-title" hidden>
+      <div class="results-head"><div><p class="eyebrow">YOUR CHECKUP</p><h2 id="results-title">Here’s what we found</h2><p id="result-url" class="result-url"></p></div><button id="new-check" class="quiet-button" type="button">Check another site <span aria-hidden="true">↗</span></button></div>
+      <div class="summary-grid" id="summary-grid"></div>
+      <div class="report-columns"><section class="panel findings-panel"><div class="panel-heading"><div><p class="eyebrow">CLEAR, SPECIFIC, FIXABLE</p><h3>Recommended next steps</h3></div><span id="finding-count" class="count-pill"></span></div><div id="findings" class="finding-list"></div></section><aside class="panel details-panel"><p class="eyebrow">PAGE SNAPSHOT</p><h3 id="snapshot-title">—</h3><p id="snapshot-description" class="snapshot-description"></p><dl id="snapshot-details" class="snapshot-details"></dl><h4>Coverage boundaries</h4><ul id="coverage-list" class="coverage-list"></ul></aside></div>
+      <div class="report-footer"><span class="footer-icon" aria-hidden="true">i</span><p><strong>This checkup gives advice, not automatic edits.</strong> It checks public response HTML and links, then renders a script-free copy for accessibility and responsive checks. It does not test sign-in, submit forms, measure full Core Web Vitals, inspect source files or certify launch readiness.</p></div>
+      <div class="export-row"><p id="scan-time"></p><button id="download-report" class="quiet-button" type="button">Download report <span aria-hidden="true">↓</span></button></div>
+    </section>
+    <section class="what-we-check" aria-labelledby="checks-title"><div class="check-heading"><p class="eyebrow">A BETTER WEBSITE STARTS WITH THE DETAILS</p><h2 id="checks-title">See what’s working.<br><em>Know what’s next.</em></h2></div><div class="check-grid">
+      <article class="check-card"><span class="card-num">01</span><span class="card-icon" aria-hidden="true">⌕</span><h3>Search & sharing</h3><p>Titles, descriptions, headings, canonical URLs and social preview metadata.</p></article>
+      <article class="check-card"><span class="card-num">02</span><span class="card-icon" aria-hidden="true">↗</span><h3>Links that lead somewhere</h3><p>A bounded check of page links, with destinations and HTTP errors shown.</p></article>
+      <article class="check-card"><span class="card-num">03</span><span class="card-icon" aria-hidden="true">◉</span><h3>Accessibility & mobile</h3><p>Automated WCAG rule checks and layout-overflow checks at common viewport widths.</p></article>
+      <article class="check-card"><span class="card-num">04</span><span class="card-icon" aria-hidden="true">□</span><h3>Forms & launch basics</h3><p>Labels and secure form signals—without sending a message or touching customer data.</p></article>
+    </div></section>
+  </main>
+  <footer class="site-footer"><span>WebLab <span class="footer-dot">·</span> A <a class="company-link" href="https://thecreatingco.com/">The Creating Co.</a> prototype</span><span>Useful clarity. No false green lights.</span></footer>
+</body>
+</html>

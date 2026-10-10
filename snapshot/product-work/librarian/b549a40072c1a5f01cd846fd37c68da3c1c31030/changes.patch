@@ -1,0 +1,58 @@
+diff --git a/README.md b/README.md
+index ea6559a1dc68df1c2ae110b358594f15f105e807..e0271cfd55700c7a97aaeab5f9c2dfef07409533 100644
+--- a/README.md
++++ b/README.md
+@@ -24,7 +24,8 @@ Keyless, CORS-friendly sources are called directly from the browser. Keyed or no
+ ### Tabs
+ 
+ - **Search** — the federated search and results.
+-- **AI Librarian** — drafts a reading path from your saved shelf. This is an *offline heuristic template*, not a live model; it reflects your question and shelf categories. Wire it to an API for generative answers.
++- **Library** — import your PDFs, read them and keep reading progress locally.
++- **AI Librarian (not exposed in the current navigation)** — dormant client/server recommendation code remains, but the app has no account/session integration. It is not an offline heuristic and must not be advertised as available. The server requires a verified Momentium account and a durable quota check before any configured provider call. Guest search, shelf and local PDF reading do not require this feature.
+ - **Sources** — the ranked source map and the ingest → resolve → enrich → explore architecture.
+ - **Shelf** — your locally saved books.
+ 
+@@ -51,6 +52,15 @@ npm run build && netlify deploy --prod --dir=dist
+ 
+ Set the proxy API keys as Netlify env vars (`DPLA_KEY`, `EUROPEANA_KEY`, `CORE_KEY`) or in a gitignored `netlify/functions/_keys.mjs`.
+ 
++Do not deploy a partial local snapshot over a live site: first reconcile published assets, functions and configuration with the intended source. A successful frontend build does not recover production proxy configuration or prove the currently published PDF reader assets are present. Follow required PR/check gates.
++
++### Recommendation service prerequisites
++
++Before making the hidden AI feature reachable, integrate the approved account/login session flow (including expiry and sign-out) and send its session Bearer token to the protected function. No such client integration currently exists. Never accept a service-role key in the browser, fabricate a session, or remove the server guard to enable recommendations.
++
++The server additionally needs `LIBRARIAN_AI_ENABLED=true`, `SUPABASE_URL`, `SUPABASE_PUBLISHABLE_KEY`, server-only `SUPABASE_SERVICE_ROLE_KEY`, the durable `consume_librarian_ai_quota` RPC, and existing provider configuration. Unconfigured, expired, unverified and quota-denied requests fail closed. Configure only approved deployments; do not put credential values in source. Verified-account end-to-end recommendations remain unqualified until authorized test access and this integration exist.
++
++
+ ## Research
+ 
+ See [`docs/book-data-research.md`](docs/book-data-research.md) for the ranked API/source plan and long-term architecture.
+diff --git a/tests/ai-guard.test.mjs b/tests/ai-guard.test.mjs
+index fe18a89ee554635f0db8637e3d08054c9ec40aa7..c853aa804df895bd16bd68fb997e3a1f7ca4a2a5 100644
+--- a/tests/ai-guard.test.mjs
++++ b/tests/ai-guard.test.mjs
+@@ -54,3 +54,23 @@ test('unverified accounts, malformed payloads, public diagnostics and quota fail
+     await assert.rejects(guard(make(body)), { status: expected });
+   }
+ });
++
++test('expired sessions and account-service failures stop before quota', async () => {
++  for (const [status, expected] of [[401, 401], [403, 401], [429, 503], [500, 503]]) {
++    let calls = 0;
++    const guard = createAiGuard({ env, fetcher: async () => { calls++; return new Response(null, { status }); } });
++    await assert.rejects(guard(make()), { status: expected });
++    assert.equal(calls, 1, 'a failed account check must never consume quota');
++  }
++  const unavailable = createAiGuard({ env, fetcher: async () => { throw new Error('offline'); } });
++  await assert.rejects(unavailable(make()), { status: 503 });
++});
++
++test('missing or malformed bearer cannot reach the account or quota service', async () => {
++  let calls = 0;
++  const guard = createAiGuard({ env, fetcher: async () => { calls++; throw new Error('not permitted'); } });
++  for (const authorization of ['', 'Basic abcdefghijklmnopqrstuvwxyz', 'Bearer short', 'Bearer ' + 'x'.repeat(8193)]) {
++    await assert.rejects(guard(make(undefined, { authorization })), { status: 401 });
++  }
++  assert.equal(calls, 0);
++});

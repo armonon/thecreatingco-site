@@ -1,0 +1,14 @@
+{
+  "sha": "48a2449a34be6690d62209c0bd0efddbef30332d",
+  "base_sha": "48a2449a34be6690d62209c0bd0efddbef30332d",
+  "scope": "Committed screened review delta, not a release or complete binary artifact",
+  "files": [],
+  "omitted": [],
+  "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "repo": "https://github.com/armonon/sattari-plugins-suite",
+  "branches": [
+    "validation/adversarial-expansion"
+  ],
+  "archive_path": "sattari-plugins-suite/48a2449a34be6690d62209c0bd0efddbef30332d",
+  "local_worktree_dirty": false
+}

@@ -1,0 +1,34 @@
+{
+  "task_id": "CORE-SP-A11Y-001",
+  "title": "Review isolated ScenePilot tablist/contrast repair and qualify exact candidate",
+  "product": "scenepilot",
+  "area": "bug_reliability",
+  "category": "bug_reliability",
+  "workstream": "CORE_PRODUCT_LAB",
+  "severity": "P3",
+  "scores": {
+    "impact": 6,
+    "severity": 5,
+    "workflow_importance": 5,
+    "competitive_value": 3,
+    "release_importance": 6,
+    "confidence": 10,
+    "effort": 2,
+    "risk": 1,
+    "user_value": 5
+  },
+  "dependencies": [],
+  "status": "QUEUED",
+  "model": "gpt-6-luna",
+  "expected_value": "Flagship golden-workflow reliability; scores are planning estimates, not health metrics.",
+  "test_requirements": "Reproduce on isolated exact source; preserve baseline/fixed evidence, appropriate build/tests and golden path; source reading is not interactive sign-off.",
+  "source_evidence": [
+    "Baseline npm run qa:accessibility: critical aria-required-children on .monitor-tabs and contrast ratios 3.23, 3.90, 3.93 (<4.5:1), repeated across tested states.",
+    "/tmp/scenepilot-accessibility.log",
+    "Separate branch /tmp/scenepilot-fix-fb42d12, files app/source-program-monitor.tsx and app/studio-workspace.css: check passes; same Axe audit passes New Project, Edit, Delivery with zero blocking findings.",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-a11y-fix.patch",
+    "/tmp/scenepilot-fix-check.log",
+    "/tmp/scenepilot-fix-accessibility.log"
+  ],
+  "next_action": "Inspect reports/scenepilot-a11y-fix.patch and baseline/passing logs; retain normal PR/release gates."
+}

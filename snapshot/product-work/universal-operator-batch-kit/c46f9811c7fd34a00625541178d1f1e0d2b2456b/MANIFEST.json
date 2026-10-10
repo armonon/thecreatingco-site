@@ -1,0 +1,63 @@
+{
+  "sha": "c46f9811c7fd34a00625541178d1f1e0d2b2456b",
+  "base_sha": "ac2ea525fce22d4bbd6c1589bebd1e88ea673685",
+  "scope": "Committed screened review delta, not a release or complete binary artifact",
+  "files": [
+    {
+      "path": "README.md",
+      "status": "present",
+      "sha256": "a8b494f922c83a2c0c61615b9b5e4e6c60b6ded0d70f073f528930f876b21ee5",
+      "bytes": 11385
+    },
+    {
+      "path": "docs/RECLAIM_SAFETY.md",
+      "status": "present",
+      "sha256": "5950068592c5cc73b1c40b40e34d3d5d199c6d6621a4087c930a8394a891c197",
+      "bytes": 4888
+    },
+    {
+      "path": "src-tauri/Cargo.lock",
+      "status": "present",
+      "sha256": "163b54e6fc1849d090bbf7832d050147dcc19ae3156217a109cb866a7c05caea",
+      "bytes": 123278
+    },
+    {
+      "path": "src-tauri/Cargo.toml",
+      "status": "present",
+      "sha256": "4c2b6ddcdfcc57404a4f9104450fea5f8b4ad413c49a33706338f6dfcab3742a",
+      "bytes": 828
+    },
+    {
+      "path": "src-tauri/src/batch_operator.rs",
+      "status": "present",
+      "sha256": "716ab176437d124cd96ffcaf6819576b26aae66efa491af883c3c86ad8455eed",
+      "bytes": 206764
+    },
+    {
+      "path": "src/components/DiskCleanerPanel.tsx",
+      "status": "present",
+      "sha256": "27ad8c001326370a2447c79d7d6591f9e6ea89a40dfa5469bf479f981c0ea578",
+      "bytes": 31322
+    },
+    {
+      "path": "src/operator/diskCleaner.ts",
+      "status": "present",
+      "sha256": "c24f040cf6fd526a2190929156e5932b92c632ca1695e9c33d552cd818116e2d",
+      "bytes": 9900
+    },
+    {
+      "path": "tests/diskCleaner.test.ts",
+      "status": "present",
+      "sha256": "a8f9dbbe92f6b4640bc6f7a1a552445a1155c39f75012d890606f4b64864cde5",
+      "bytes": 3358
+    }
+  ],
+  "omitted": [],
+  "patch_sha256": "b01b695ea260ba126a42370193776661433f4029ebcef410c47bf6ad45775b82",
+  "repo": "https://github.com/armonon/universal-operator-batch-kit",
+  "branches": [
+    "release18/reclaim-safety-20261007"
+  ],
+  "archive_path": "universal-operator-batch-kit/c46f9811c7fd34a00625541178d1f1e0d2b2456b",
+  "local_worktree_dirty": false
+}

@@ -1,0 +1,29 @@
+{
+  "task_id": "CORE-SP-FEATURE-001",
+  "title": "Evaluate independent per-composition frame rates",
+  "product": "scenepilot",
+  "area": "professional_feature_gap",
+  "category": "professional_feature_gap",
+  "workstream": "CORE_PRODUCT_LAB",
+  "severity": "P4",
+  "scores": {
+    "impact": 5,
+    "severity": 3,
+    "workflow_importance": 5,
+    "competitive_value": 5,
+    "release_importance": 3,
+    "confidence": 8,
+    "effort": 6,
+    "risk": 3,
+    "user_value": 5
+  },
+  "dependencies": [],
+  "status": "WAITING",
+  "model": "gpt-6-luna",
+  "expected_value": "Flagship golden-workflow reliability; scores are planning estimates, not health metrics.",
+  "test_requirements": "Reproduce on isolated exact source; preserve baseline/fixed evidence, appropriate build/tests and golden path; source reading is not interactive sign-off.",
+  "source_evidence": [
+    "docs/composition-workflow.md:19 states composition frame rate follows the project and independent rates are not implemented."
+  ],
+  "next_action": "Verify current behavior before implementing; retain exact-source evidence."
+}

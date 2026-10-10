@@ -1,0 +1,34 @@
+{
+  "task_id": "CORE-FORM-AUD-WF-001",
+  "title": "Qualify Sketch-to-independent-export golden workflow",
+  "product": "form",
+  "area": "workflow_gap",
+  "category": "workflow_gap",
+  "workstream": "CORE_PRODUCT_LAB",
+  "severity": "P1",
+  "scores": {
+    "impact": 9,
+    "severity": 8,
+    "workflow_importance": 10,
+    "release_importance": 10,
+    "confidence": 9,
+    "effort": 6,
+    "risk": 3,
+    "user_value": 10,
+    "competitive_value": 8
+  },
+  "dependencies": [],
+  "status": "QUEUED",
+  "model": "gpt-6.1-sol",
+  "expected_value": "Flagship golden-workflow reliability; scores are planning estimates, not health metrics.",
+  "test_requirements": "Reproduce on isolated exact source; preserve baseline/fixed evidence, appropriate build/tests and golden path; source reading is not interactive sign-off.",
+  "source_evidence": {
+    "direct": [
+      "docs/RELEASE_ACCEPTANCE.md:40-50 and docs/RC_TEST_PLAN.md prescribe full save/close/reopen/export and external checks, but no current dated execution evidence was found during source audit."
+    ],
+    "hypothesis": [
+      "A user-visible defect may appear during actual qualification; no defect is asserted before reproduction."
+    ]
+  },
+  "next_action": "Create and run core-product-lab/golden-projects/form.md on the exact supported desktop build; compare geometry/materials and independent STEP/mesh import."
+}

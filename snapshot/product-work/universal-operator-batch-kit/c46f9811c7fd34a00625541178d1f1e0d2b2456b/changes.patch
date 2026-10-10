@@ -1,0 +1,733 @@
+diff --git a/README.md b/README.md
+index b5939066c0b9eb78549f4fcae403abda1976798a..fdc51562d1a7cea6f2146df067af8beb08a7ef7f 100644
+--- a/README.md
++++ b/README.md
+@@ -1,19 +1,29 @@
+-# Universal Operator Batch Kit
++# Reclaim
+ 
+-A supervised "work session" desktop app for **Universal Computer Operator**, and a drop-in kit you can also fold into an existing app (see `INTEGRATION.md`).
++Reclaim is a Mac storage-review and reversible-quarantine alpha built with Tauri2 and React. The native interface is `DiskCleanerPanel`; the original supervised operator kit remains in the source but its overlays are disabled. The separate browser edition (`site/browser/`) is **read-only** file review. It cannot quarantine, restore or delete files.
+ 
+-## Run it (standalone, for testing)
++## Run and verify
+ 
+-This repo is now a self-contained Tauri v2 app. On macOS:
+-
+-```bash
+-npm install                 # frontend deps (vite, @tauri-apps/cli, react)
+-npm run tauri dev           # builds the Rust backend and launches the app
++```sh
++npm ci
++npm run typecheck
++npm test
++npm run build
++cd src-tauri
++cargo test --locked
++# From the repository root, on macOS:
++# npm run tauri dev
+ ```
+ 
+-Prerequisites: **Node 18+**, **Rust** (https://rustup.rs), and Xcode command-line tools (`xcode-select --install`). First launch compiles the Rust backend (a few minutes) and may prompt for macOS permissions (Automation, etc.). Styling loads from the Tailwind CDN, so keep internet on for the first run.
++Prerequisites: Node, Rust and Xcode command-line tools. Frontend styles are built locally; no Tailwind CDN is required. Native file operations are Mac-only qualified in the current source. A Windows build workflow does not establish Windows support.
++
++Read [native safety and qualification](docs/RECLAIM_SAFETY.md) before testing removal or preparing a release. Use disposable files. Quarantine is reversible **until explicitly emptied or an enabled retention policy empties it**; moving into quarantine does not immediately free disk space.
++
++Local native-engine and browser checks do not establish signed-package, clean-machine, physical Intel, macOS13, complete native UI or adversarial concurrent-filesystem safety. Published downloads have separate source/artifact provenance and qualification requirements.
++
++## Original operator kit reference
+ 
+-Then work through `VALIDATION_CHECKLIST.md`. Note: this scaffold was written without a local Rust/Tauri toolchain to compile it, so if `npm run tauri dev` surfaces a build error, it'll be in the Rust/Tauri config — paste it and it's a quick fix. For `tauri build` (a distributable) you'll want full icons: `npm run tauri icon src-tauri/icons/icon.png`.
++The following describes retained integration features, not the current Reclaim UI or a claim that each workflow is release-qualified.
+ 
+ ## What This Adds
+ 
+diff --git a/docs/RECLAIM_SAFETY.md b/docs/RECLAIM_SAFETY.md
+new file mode 100644
+index 0000000000000000000000000000000000000000..4c798dc337b2722bab517c22721d62a8c28a7971
+--- /dev/null
++++ b/docs/RECLAIM_SAFETY.md
+@@ -0,0 +1,37 @@
++# Reclaim file safety and qualification
++
++## Two different products surfaces
++
++- Native Mac app: storage review, duplicate analysis, quarantine and restore. Browser checks do not validate this engine or its Tauri UI.
++- Browser edition: selected-file SHA256 review (up to64MiB per compared file and10,000 files), filter/search and downloadable JSON report. Originals are never changed. Reports contain filenames, sizes and hashes, not file content. Native restore is not available in the browser.
++
++## Native duplicate review
++
++The native engine compares regular files of at least1MiB across the selected roots. It streams every data-fork byte into SHA256 and includes sorted Mac extended-attribute names/values (including resource forks). Metadata above16MiB, unreadable/changing files, symbolic links and hardlinked files are conservatively excluded. Repeated/overlapping roots do not count one inode twice. Traversal remains capped at200,000 entries and displayed groups at200; this is not an exhaustive disk certificate.
++
++Read handles use no-follow and observed identity/size/mtime/ctime are rechecked after hashing. This is a scan-time result, not a lock against subsequent external edits. The UI (not the general-purpose native trash command) requires leaving one file in each reviewed group and reports actual moved/skipped item counts. Review your selection; keep other applications from editing or moving those files during cleanup.
++
++## Quarantine and recovery
++
++- A private manifest is written and synced before moves; stored names cannot collide with user filenames or `manifest.json`.
++- Same-volume moves use atomic macOS no-replace rename. Restore refuses occupied destinations, including dangling links, and validates recovery paths. Invalid metadata does not authorize traversal.
++- Cross-volume regular files are copied into an exclusive temporary file, synced and published without overwrite before removing the source. Mac descriptor-based copying preserves resource forks, extended attributes and metadata, not just the data fork. A full-disk copy failure keeps the source. Opened-descriptor and current-path identity, size, mtime and ctime are checked after copying and immediately before source removal; observed modification/replacement fails closed. A completed recovery copy may remain alongside a changed source. There is still a final check-to-unlink race against a hostile writer; this is not an atomic compare-and-delete guarantee.
++- Quarantine does not free disk space until emptied. Emptying or automatic retention is permanent; verify restored content before emptying anything. This qualification never empties real user files.
++
++## Reproducible local evidence
++
++`cargo test --locked` covers full-content false-positive regression, overlapping-root/hardlink exclusion, distinct resource-fork/annotation handling, occupied-destination and manifest traversal checks, same-name/manifest-name recovery, partial permission failure and resource-fork preservation. A native-engine subprocess test creates5,000 disposable files, actually kills a partially completed quarantine worker, restarts a separate process and verifies every original byte on restore. It is not a simulated exception and not a Tauri GUI test.
++
++The ignored subprocess helper is invoked only by that recovery test. The pre-existing `live_disk_smoke` stays ignored because it reads actual user folders. Do not indiscriminately run all ignored tests.
++
++A separate opt-in test, `quarantine_owned_volume_roundtrip_and_disk_full_preserve_source`, needs an owned disposable32MiB mounted filesystem whose root contains `owned-fixture` with exact text `reclaim-disposable-32mb-volume`. Set `RECLAIM_OWNED_TEST_VOLUME` to that mount only, then run:
++
++```sh
++cargo test --locked quarantine_owned_volume_roundtrip_and_disk_full_preserve_source -- --ignored --nocapture
++```
++
++It refuses the source filesystem, limits fixture writes, verifies a real8MiB cross-volume round trip, fills only that test volume until actual ENOSPC, and verifies a failed copy leaves its original bytes intact. Never point this at an existing user volume. Use a newly created disk image; detach it afterward.
++
++## Still unverified / not release-ready
++
++Native UI action/confirmation wiring, signed/notarized exact-artifact installation, clean-machine behavior, oldest-supported macOS13 and physical Intel remain separate gates. Source uses Mac-specific atomic moves; other operating systems are not claimed supported here. Crash tests cover process termination, not sudden power loss. Hostile concurrent parent-directory/path replacement and concurrent source writes during cross-volume copy are not comprehensively qualified. Do not infer race-free or full data-loss certification from the passing fixture subset. Corrupt-manifest manual recovery, external-volume disconnect and general performance/accessibility also need dedicated evidence.
+diff --git a/src-tauri/Cargo.lock b/src-tauri/Cargo.lock
+index cb2ddebf0e1f8c64690d127750fa45469bb68b5c..a87fd99aeaad5e2fdff1ecd71c30bd6be7d5bf8e 100644
+--- a/src-tauri/Cargo.lock
++++ b/src-tauri/Cargo.lock
+@@ -4002,6 +4002,7 @@ dependencies = [
+  "rusqlite",
+  "serde",
+  "serde_json",
++ "sha2",
+  "tauri",
+  "tauri-build",
+  "tauri-plugin-global-shortcut",
+diff --git a/src-tauri/Cargo.toml b/src-tauri/Cargo.toml
+index 2d1cb11b376d619e752a80ab4dd29e2a12fd80a6..126930cc3a5b45aca33307cef32842a65682e12d 100644
+--- a/src-tauri/Cargo.toml
++++ b/src-tauri/Cargo.toml
+@@ -18,6 +18,7 @@ chrono = { version = "0.4", features = ["serde"] }
+ rusqlite = { version = "0.37", features = ["bundled"] }
+ serde = { version = "1", features = ["derive"] }
+ serde_json = "1"
++sha2 = "0.10.9"
+ thiserror = "2"
+ uuid = { version = "1", features = ["v4", "serde"] }
+ which = "8"
+diff --git a/src-tauri/src/batch_operator.rs b/src-tauri/src/batch_operator.rs
+index 68fe0a81e37998e08fb34efafeb2fbbac32812d3..7d52585865ffa99d86bc51cfb36ad70752af0007 100644
+--- a/src-tauri/src/batch_operator.rs
++++ b/src-tauri/src/batch_operator.rs
+@@ -1145,20 +1145,52 @@ fn rename_without_overwrite(source: &Path, destination: &Path) -> std::io::Resul
+ }
+ 
+ fn copy_then_remove(source: &Path, destination: &Path) -> std::io::Result<()> {
+-    use std::os::unix::fs::OpenOptionsExt;
++    copy_then_remove_checked(source, destination, || {})
++}
++
++// The callback permits deterministic real-filesystem race regression tests;
++// production supplies a no-op and never exposes this hook to IPC callers.
++fn copy_then_remove_checked(source: &Path, destination: &Path, after_copy: impl FnOnce()) -> std::io::Result<()> {
++    use std::os::unix::fs::{MetadataExt, OpenOptionsExt};
+     let parent = destination.parent().ok_or_else(|| std::io::Error::other("Missing destination directory"))?;
+     let temporary = parent.join(format!(".reclaim-copy-{}", Uuid::new_v4()));
+     let result = (|| {
+-        let mut input = fs::OpenOptions::new().read(true).custom_flags(libc::O_NOFOLLOW).open(source)?;
++        let input = fs::OpenOptions::new().read(true).custom_flags(libc::O_NOFOLLOW).open(source)?;
+         let metadata = input.metadata()?;
+         if !metadata.is_file() { return Err(std::io::Error::other("Cross-volume recovery supports regular files only")); }
+-        let mut output = fs::OpenOptions::new().write(true).create_new(true).mode(0o600).open(&temporary)?;
+-        std::io::copy(&mut input, &mut output)?;
+-        output.set_permissions(metadata.permissions())?;
++        let snapshot = |md: &fs::Metadata| (md.dev(), md.ino(), md.len(), md.mtime(), md.mtime_nsec(), md.ctime(), md.ctime_nsec());
++        let validate_source = || -> std::io::Result<()> {
++            let opened = input.metadata()?;
++            let current = fs::symlink_metadata(source)?;
++            if !current.is_file() || snapshot(&metadata) != snapshot(&opened) || snapshot(&metadata) != snapshot(&current) {
++                return Err(std::io::Error::other("Source changed during cross-volume copy; preserving source and any completed recovery copy."));
++            }
++            Ok(())
++        };
++        let output = fs::OpenOptions::new().write(true).create_new(true).mode(0o600).open(&temporary)?;
++        #[cfg(target_os = "macos")]
++        {
++            use std::os::fd::AsRawFd;
++            // Resource forks and extended attributes are user data too. The
++            // descriptor API copies them without following a substituted path.
++            let flags = libc::COPYFILE_DATA | libc::COPYFILE_METADATA;
++            let copied = unsafe { libc::fcopyfile(input.as_raw_fd(), output.as_raw_fd(), std::ptr::null_mut(), flags) };
++            if copied != 0 { return Err(std::io::Error::last_os_error()); }
++        }
++        #[cfg(not(target_os = "macos"))]
++        {
++            std::io::copy(&mut &input, &mut &output)?;
++            output.set_permissions(metadata.permissions())?;
++        }
+         output.sync_all()?;
++        after_copy();
++        validate_source()?;
+         drop(output);
+         rename_without_overwrite(&temporary, destination)?;
+         fs::File::open(parent)?.sync_all()?;
++        validate_source()?;
++        // No portable compare-and-unlink primitive exists: this last check is
++        // fail-closed for observed changes, not a hostile-writer race guarantee.
+         fs::remove_file(source)
+     })();
+     if result.is_err() { let _ = fs::remove_file(&temporary); }
+@@ -4016,23 +4048,69 @@ pub fn disk_usage_tree(path: Option<String>, limit: Option<usize>) -> Result<Val
+     }))
+ }
+ 
+-/// A content fingerprint sampled from a file's size + head + tail — cheap enough
+-/// to scan many files, strong enough to find duplicates a human will then review.
+-fn sampled_hash(path: &Path, size: u64) -> Option<u64> {
+-    use std::hash::{Hash, Hasher};
+-    use std::io::{Read, Seek, SeekFrom};
+-    let mut f = fs::File::open(path).ok()?;
+-    let mut hasher = std::collections::hash_map::DefaultHasher::new();
+-    size.hash(&mut hasher);
+-    let mut buf = vec![0u8; 65536];
+-    let n = f.read(&mut buf).ok()?;
+-    buf[..n].hash(&mut hasher);
+-    if size > 131_072 {
+-        f.seek(SeekFrom::End(-65536)).ok()?;
+-        let n2 = f.read(&mut buf).ok()?;
+-        buf[..n2].hash(&mut hasher);
+-    }
+-    Some(hasher.finish())
++/// Extended attributes can include a resource fork and user annotations. Do not
++/// call equal data forks duplicates when these differ. Bound metadata allocation;
++/// files with unusually large attribute sets are conservatively not compared.
++#[cfg(target_os = "macos")]
++fn hash_duplicate_attributes(file: &fs::File, hasher: &mut sha2::Sha256) -> Option<()> {
++    use sha2::Digest;
++    use std::os::fd::AsRawFd;
++    const LIMIT: usize = 16 * 1024 * 1024;
++    let fd = file.as_raw_fd();
++    let length = unsafe { libc::flistxattr(fd, std::ptr::null_mut(), 0, 0) };
++    if length < 0 || length as usize > LIMIT { return None; }
++    let mut names = vec![0u8; length as usize];
++    if unsafe { libc::flistxattr(fd, names.as_mut_ptr().cast(), names.len(), 0) } != length { return None; }
++    let mut names: Vec<&[u8]> = names.split(|byte| *byte == 0).filter(|name| !name.is_empty()).collect();
++    names.sort();
++    let mut total = 0usize;
++    for name in names {
++        let attribute = std::ffi::CString::new(name).ok()?;
++        let length = unsafe { libc::fgetxattr(fd, attribute.as_ptr(), std::ptr::null_mut(), 0, 0, 0) };
++        if length < 0 { return None; }
++        total = total.checked_add(length as usize)?;
++        if total > LIMIT { return None; }
++        let mut value = vec![0u8; length as usize];
++        if unsafe { libc::fgetxattr(fd, attribute.as_ptr(), value.as_mut_ptr().cast(), value.len(), 0, 0) } != length { return None; }
++        hasher.update((name.len() as u64).to_le_bytes());
++        hasher.update(name);
++        hasher.update((value.len() as u64).to_le_bytes());
++        hasher.update(value);
++    }
++    Some(())
++}
++
++/// Compare every byte, with bounded memory. A sampled head/tail match is not
++/// enough to call a file a duplicate: differing middles may hold unique work.
++/// Reject links, hardlinked files and files replaced/modified during the read.
++fn full_file_hash(path: &Path, size: u64) -> Option<String> {
++    use sha2::{Digest, Sha256};
++    use std::io::Read;
++    use std::os::unix::fs::{MetadataExt, OpenOptionsExt};
++    let mut file = fs::OpenOptions::new().read(true).custom_flags(libc::O_NOFOLLOW).open(path).ok()?;
++    let before = file.metadata().ok()?;
++    if !before.is_file() || before.len() != size || before.nlink() != 1 { return None; }
++    let snapshot = |md: &fs::Metadata| (md.dev(), md.ino(), md.len(), md.mtime(), md.mtime_nsec(), md.ctime(), md.ctime_nsec());
++    let mut hasher = Sha256::new();
++    hasher.update(size.to_le_bytes());
++    let mut buffer = [0u8; 65536];
++    let mut remaining = size;
++    while remaining > 0 {
++        let limit = remaining.min(buffer.len() as u64) as usize;
++        let count = file.read(&mut buffer[..limit]).ok()?;
++        if count == 0 { return None; }
++        hasher.update(&buffer[..count]);
++        remaining -= count as u64;
++    }
++    let mut extra = [0u8; 1];
++    if file.read(&mut extra).ok()? != 0 { return None; }
++    #[cfg(target_os = "macos")]
++    hash_duplicate_attributes(&file, &mut hasher)?;
++    let after = file.metadata().ok()?;
++    let current_path = fs::symlink_metadata(path).ok()?;
++    if !current_path.is_file() || after.nlink() != 1 || current_path.nlink() != 1
++        || snapshot(&before) != snapshot(&after) || snapshot(&before) != snapshot(&current_path) { return None; }
++    Some(format!("{:x}", hasher.finalize()))
+ }
+ 
+ fn collect_all_files(
+@@ -4041,7 +4119,7 @@ fn collect_all_files(
+     by_size: &mut std::collections::HashMap<u64, Vec<PathBuf>>,
+     budget: &mut u64,
+ ) {
+-    if *budget == 0 {
++    if *budget == 0 || !fs::symlink_metadata(root).map(|md| md.is_dir()).unwrap_or(false) {
+         return;
+     }
+     let rd = match fs::read_dir(root) {
+@@ -4070,7 +4148,7 @@ fn collect_all_files(
+     }
+ }
+ 
+-/// Duplicate finder: group same-size files, confirm with a sampled hash, and
++/// Duplicate finder: group same-size files, confirm with a complete SHA-256, and
+ /// report each duplicate set with its reclaimable space (keep one, trash the rest).
+ #[tauri::command(async)]
+ pub fn disk_find_duplicates(input: ScopeInput) -> Result<Value, String> {
+@@ -4081,13 +4159,20 @@ pub fn disk_find_duplicates(input: ScopeInput) -> Result<Value, String> {
+     }
+ 
+     let mut groups: Vec<Value> = Vec::new();
+-    for (size, paths) in by_size {
++    let mut seen_files = HashSet::new();
++    for (size, mut paths) in by_size {
++        use std::os::unix::fs::MetadataExt;
++        // Overlapping input roots must not turn one file into several copies.
++        paths.sort();
++        paths.retain(|path| fs::symlink_metadata(path).map(|md| {
++            md.is_file() && md.nlink() == 1 && seen_files.insert((md.dev(), md.ino()))
++        }).unwrap_or(false));
+         if paths.len() < 2 {
+             continue;
+         }
+-        let mut by_hash: std::collections::HashMap<u64, Vec<String>> = std::collections::HashMap::new();
++        let mut by_hash: std::collections::HashMap<String, Vec<String>> = std::collections::HashMap::new();
+         for p in paths {
+-            if let Some(h) = sampled_hash(&p, size) {
++            if let Some(h) = full_file_hash(&p, size) {
+                 by_hash.entry(h).or_default().push(p.to_string_lossy().to_string());
+             }
+         }
+@@ -4464,20 +4549,69 @@ mod tests {
+         let _ = fs::remove_dir_all(&root);
+     }
+ 
++    #[test]
++    fn duplicates_do_not_confuse_matching_edges_with_identical_files() {
++        let root = temp_dir("duplicate-middle");
++        let a = root.join("a.bin");
++        let b = root.join("b.bin");
++        let c = root.join("c.bin");
++        let body = vec![42u8; 2 * 1024 * 1024];
++        fs::write(&a, &body).unwrap();
++        fs::write(&b, &body).unwrap();
++        let mut changed = body.clone();
++        changed[1024 * 1024] = 99;
++        fs::write(&c, changed).unwrap();
++        let report = disk_find_duplicates(ScopeInput { input_paths: vec![root.to_string_lossy().into_owned()] }).unwrap();
++        let groups = report["groups"].as_array().unwrap();
++        assert_eq!(groups.len(), 1);
++        assert_eq!(groups[0]["count"], 2, "a differing middle must never be selected for duplicate removal");
++        assert!(!groups[0]["paths"].as_array().unwrap().contains(&json!(c)));
++        assert_eq!(report["reclaimable"], body.len());
++        fs::remove_dir_all(root).unwrap();
++    }
++
++    #[test]
++    #[cfg(target_os = "macos")]
++    fn duplicates_preserve_distinct_resource_forks_and_annotations() {
++        let root = temp_dir("duplicate-resource-data");
++        let a = root.join("a.bin");
++        let b = root.join("b.bin");
++        let c = root.join("c.bin");
++        for file in [&a, &b, &c] { fs::write(file, vec![91u8; 1024 * 1024]).unwrap(); }
++        assert!(Command::new("/usr/bin/xattr").args(["-w", "com.apple.ResourceFork", "unique resource data"]).arg(&b).status().unwrap().success());
++        assert!(Command::new("/usr/bin/xattr").args(["-w", "com.reclaim.fixture", "unique annotation"]).arg(&c).status().unwrap().success());
++        let report = disk_find_duplicates(ScopeInput { input_paths: vec![root.to_string_lossy().into_owned()] }).unwrap();
++        assert!(report["groups"].as_array().unwrap().is_empty(), "equal data forks do not make unique metadata safe to discard");
++        fs::remove_dir_all(root).unwrap();
++    }
++
++    #[test]
++    fn duplicates_do_not_count_overlapping_roots_or_hardlinks_as_copies() {
++        let root = temp_dir("duplicate-alias");
++        let child = root.join("child");
++        fs::create_dir(&child).unwrap();
++        let a = child.join("a.bin");
++        fs::write(&a, vec![17u8; 1024 * 1024]).unwrap();
++        fs::hard_link(&a, child.join("alias.bin")).unwrap();
++        let report = disk_find_duplicates(ScopeInput { input_paths: vec![root.to_string_lossy().into_owned(), child.to_string_lossy().into_owned()] }).unwrap();
++        assert_eq!(report["groups"].as_array().unwrap().len(), 0, "multiple paths to one inode do not reclaim file bytes");
++        fs::remove_dir_all(root).unwrap();
++    }
++
+     #[test]
+     fn disk_duplicate_hash_matches_identical_and_differs_on_content() {
+         let root = temp_dir("disk-dup");
+         let a = root.join("a.bin");
+         let b = root.join("b.bin");
+         let c = root.join("c.bin");
+-        let body = "duplicate-body-".repeat(20000); // > 128 KiB so head+tail sampled
++        let body = "duplicate-body-".repeat(20000); // Multiple streamed read blocks
+         write_file(&a, &body);
+         write_file(&b, &body);
+         write_file(&c, &body.replace("duplicate", "different"));
+         let sa = fs::metadata(&a).unwrap().len();
+         let sc = fs::metadata(&c).unwrap().len();
+-        assert_eq!(sampled_hash(&a, sa), sampled_hash(&b, sa), "identical files hash equal");
+-        assert_ne!(sampled_hash(&a, sa), sampled_hash(&c, sc), "different content differs");
++        assert_eq!(full_file_hash(&a, sa), full_file_hash(&b, sa), "identical files hash equal");
++        assert_ne!(full_file_hash(&a, sa), full_file_hash(&c, sc), "different content differs");
+         let _ = fs::remove_dir_all(&root);
+     }
+ 
+@@ -4594,6 +4728,130 @@ mod tests {
+         id
+     }
+ 
++    // Run native engine operations in a separate OS process. No AppHandle mock,
++    // user folders, GUI permissions or physical devices are involved.
++    #[test]
++    #[ignore = "subprocess helper invoked only by the owned-fixture recovery test"]
++    fn quarantine_process_fixture_worker() {
++        let root = PathBuf::from(std::env::var_os("RECLAIM_FIXTURE_ROOT").expect("fixture root"));
++        assert_eq!(fs::read_to_string(root.join("owned-fixture")).unwrap(), "reclaim-process-test");
++        let base = root.join("quarantine");
++        if std::env::var("RECLAIM_FIXTURE_STAGE").unwrap() == "trash" {
++            let paths: Vec<String> = serde_json::from_slice(&fs::read(root.join("paths.json")).unwrap()).unwrap();
++            trash_in(&base, TrashInput { paths, confine_to_root: Some(root.join("source").to_string_lossy().into_owned()) }).unwrap();
++        } else {
++            for entry in fs::read_dir(&base).unwrap() {
++                let name = entry.unwrap().file_name().into_string().unwrap();
++                restore_batch_in(&base, &name).unwrap();
++            }
++        }
++    }
++
++    #[test]
++    fn quarantine_process_kill_restarts_and_restores_exact_fixture_bytes() {
++        use std::time::{Duration, Instant};
++        let root = temp_dir("q-process-crash");
++        fs::write(root.join("owned-fixture"), "reclaim-process-test").unwrap();
++        let source = root.join("source");
++        fs::create_dir_all(&source).unwrap();
++        let paths: Vec<String> = (0..5000).map(|i| {
++            let path = source.join(format!("folder-{}/same-name-{}.bin", i % 5, i / 5));
++            write_file(&path, &format!("owned fixture {i:05}: ").repeat(160));
++            path.to_string_lossy().into_owned()
++        }).collect();
++        fs::write(root.join("paths.json"), serde_json::to_vec(&paths).unwrap()).unwrap();
++        let command = |stage: &str| {
++            let mut cmd = Command::new(std::env::current_exe().unwrap());
++            cmd.args(["--ignored", "--exact", "batch_operator::tests::quarantine_process_fixture_worker", "--nocapture"])
++                .env("RECLAIM_FIXTURE_ROOT", &root).env("RECLAIM_FIXTURE_STAGE", stage);
++            cmd
++        };
++        let mut child = command("trash").spawn().unwrap();
++        let deadline = Instant::now() + Duration::from_secs(30);
++        let base = root.join("quarantine");
++        let mut committed_dir = None;
++        while Instant::now() < deadline {
++            if let Ok(entries) = fs::read_dir(&base) {
++                committed_dir = entries.flatten().map(|e| e.path()).find(|dir| dir.join("item-00000000").exists());
++            }
++            if committed_dir.is_some() { break; }
++            assert!(child.try_wait().unwrap().is_none(), "quarantine worker exited before observation");
++            std::thread::sleep(Duration::from_millis(1));
++        }
++        child.kill().unwrap();
++        assert!(!child.wait().unwrap().success(), "worker was actually terminated");
++        let dir = committed_dir.expect("observed actual committed move before killing process");
++        let manifest = read_manifest(&dir).expect("manifest survives interruption");
++        let items = validated_manifest_items(&dir, &manifest).unwrap();
++        let mut held = 0;
++        for (i, (original, trashed)) in items.iter().enumerate() {
++            assert_ne!(original.exists(), trashed.exists(), "exactly one copy before restart");
++            let path = if trashed.exists() { held += 1; trashed } else { original };
++            assert_eq!(fs::read(path).unwrap(), format!("owned fixture {i:05}: ").repeat(160).as_bytes());
++        }
++        assert!(held > 0 && held < paths.len(), "interrupted a partially moved batch, not an already completed operation");
++        let restarted = command("restore").output().unwrap();
++        assert!(restarted.status.success(), "{}", String::from_utf8_lossy(&restarted.stderr));
++        for (i, original) in paths.iter().enumerate() {
++            assert_eq!(fs::read(original).unwrap(), format!("owned fixture {i:05}: ").repeat(160).as_bytes());
++        }
++        assert_eq!(quarantine_info_in(&base)["totalBytes"], 0);
++        println!("RECOVERY_EVIDENCE {}", json!({ "fixtureFiles": paths.len(), "movedBeforeSigkill": held, "restoredByteExact": paths.len(), "realSubprocessRestart": true }));
++        fs::remove_dir_all(root).unwrap();
++    }
++
++    #[test]
++    #[ignore = "requires an explicitly mounted disposable 32 MiB test volume"]
++    fn quarantine_owned_volume_roundtrip_and_disk_full_preserve_source() {
++        use std::io::Write;
++        use std::os::unix::fs::MetadataExt;
++        let volume = PathBuf::from(std::env::var_os("RECLAIM_OWNED_TEST_VOLUME").expect("owned disposable volume required"));
++        assert_eq!(fs::read_to_string(volume.join("owned-fixture")).unwrap(), "reclaim-disposable-32mb-volume");
++        let root = temp_dir("q-real-enospc");
++        assert_ne!(fs::metadata(&root).unwrap().dev(), fs::metadata(&volume).unwrap().dev(), "must be a separate test filesystem, never fill the workspace disk");
++        let base = volume.join(format!("quarantine-{}", Uuid::new_v4()));
++        let source = root.join("source.bin");
++        let contents = vec![83u8; 8 * 1024 * 1024];
++        fs::write(&source, &contents).unwrap();
++        assert!(Command::new("/usr/bin/xattr").args(["-w", "com.apple.ResourceFork", "cross-volume resource data"]).arg(&source).status().unwrap().success());
++        let input = || TrashInput { paths: vec![source.to_string_lossy().into_owned()], confine_to_root: Some(root.to_string_lossy().into_owned()) };
++        let result = trash_in(&base, input()).unwrap();
++        assert_eq!(result.metadata["moved"], 1);
++        assert!(!source.exists());
++        let id = result.metadata["trashId"].as_str().unwrap();
++        assert_eq!(fs::read(base.join(id).join("item-00000000")).unwrap(), contents);
++        restore_batch_in(&base, id).unwrap();
++        assert_eq!(fs::read(&source).unwrap(), contents);
++        let resource = Command::new("/usr/bin/xattr").args(["-p", "com.apple.ResourceFork"]).arg(&source).output().unwrap();
++        assert!(resource.status.success());
++        assert_eq!(String::from_utf8(resource.stdout).unwrap().trim_end(), "cross-volume resource data");
++        let reserve = volume.join("owned-reserve.bin");
++        fs::write(&reserve, vec![0u8; 2 * 1024 * 1024]).unwrap();
++        let filler_path = volume.join("owned-filler.bin");
++        let mut filler = fs::File::create(&filler_path).unwrap();
++        let block = [0u8; 65536];
++        let mut disk_full = false;
++        for _ in 0..640 {
++            if let Err(error) = filler.write_all(&block) {
++                assert_eq!(error.raw_os_error(), Some(libc::ENOSPC));
++                disk_full = true;
++                break;
++            }
++        }
++        drop(filler);
++        assert!(disk_full, "volume must actually return ENOSPC within 40 MiB fixture bound");
++        fs::remove_file(reserve).unwrap(); // room for manifest and only a partial copy
++        let failed = trash_in(&base, input()).unwrap();
++        assert_eq!(failed.metadata["moved"], 0);
++        assert_eq!(failed.metadata["skipped"].as_array().unwrap().len(), 1);
++        assert_eq!(fs::read(&source).unwrap(), contents, "a real full-disk copy must never unlink or modify source");
++        assert_eq!(quarantine_info_in(&base)["totalBytes"], 0);
++        println!("DISK_PRESSURE_EVIDENCE {}", json!({"actualSeparateFilesystem": true, "actualEnospc": true, "crossVolumeRoundtripBytes": contents.len(), "sourceAfterCopyFailureByteExact": true, "failure": failed.metadata["skipped"]}));
++        fs::remove_file(filler_path).unwrap();
++        fs::remove_dir_all(base).unwrap();
++        fs::remove_dir_all(root).unwrap();
++    }
++
+     #[test]
+     fn quarantine_info_reports_held_items_and_skips_restored_ones() {
+         let base = temp_dir("q-info");
+@@ -4836,6 +5094,72 @@ mod tests {
+         fs::remove_dir_all(root).unwrap();
+     }
+ 
++    #[test]
++    fn quarantine_copy_refuses_concurrent_source_mutation_and_replacement() {
++        for replace in [false, true] {
++            let root = temp_dir(if replace { "q-copy-replaced" } else { "q-copy-mutated" });
++            let source = root.join("source.bin");
++            let destination = root.join("destination.bin");
++            let old = b"initial file contents";
++            let changed = b"changed file contents"; // same length: identity/timestamps matter
++            fs::write(&source, old).unwrap();
++            let mutator_source = source.clone();
++            let displaced = root.join("displaced.bin");
++            let mutator_displaced = displaced.clone();
++            let result = copy_then_remove_checked(&source, &destination, move || {
++                // A separate actual thread modifies/replaces the real file only
++                // after copying, making the previously destructive race reliable.
++                std::thread::spawn(move || {
++                    if replace { fs::rename(&mutator_source, &mutator_displaced).unwrap(); }
++                    fs::write(mutator_source, changed).unwrap();
++                }).join().unwrap();
++            });
++            assert!(result.is_err(), "source changes must fail closed");
++            assert_eq!(fs::read(&source).unwrap(), changed, "never unlink the new user data");
++            assert!(!destination.exists(), "do not publish stale copied bytes");
++            if replace { assert_eq!(fs::read(displaced).unwrap(), old); }
++            assert!(!fs::read_dir(&root).unwrap().any(|entry| entry.unwrap().file_name().to_string_lossy().starts_with(".reclaim-copy-")));
++            fs::remove_dir_all(root).unwrap();
++        }
++    }
++
++    #[test]
++    #[cfg(unix)]
++    fn duplicates_refuse_symbolically_linked_scan_roots() {
++        use std::os::unix::fs::symlink;
++        let root = temp_dir("duplicate-linked-root");
++        let outside = root.join("actual");
++        fs::create_dir(&outside).unwrap();
++        fs::write(outside.join("a.bin"), vec![12u8; 1024 * 1024]).unwrap();
++        fs::write(outside.join("b.bin"), vec![12u8; 1024 * 1024]).unwrap();
++        let link = root.join("link");
++        symlink(&outside, &link).unwrap();
++        let report = disk_find_duplicates(ScopeInput { input_paths: vec![link.to_string_lossy().into_owned()] }).unwrap();
++        assert!(report["groups"].as_array().unwrap().is_empty());
++        fs::remove_dir_all(root).unwrap();
++    }
++
++    #[test]
++    #[cfg(target_os = "macos")]
++    fn quarantine_copy_fallback_preserves_extended_attributes_and_resource_fork() {
++        let root = temp_dir("q-copy-metadata");
++        let source = root.join("original.bin");
++        let destination = root.join("recovered.bin");
++        fs::write(&source, b"owned data fork").unwrap();
++        for (name, value) in [("com.reclaim.fixture", "owned metadata"), ("com.apple.ResourceFork", "owned resource fork")] {
++            assert!(Command::new("/usr/bin/xattr").args(["-w", name, value]).arg(&source).status().unwrap().success());
++        }
++        copy_then_remove(&source, &destination).unwrap();
++        assert!(!source.exists());
++        assert_eq!(fs::read(&destination).unwrap(), b"owned data fork");
++        for (name, value) in [("com.reclaim.fixture", "owned metadata"), ("com.apple.ResourceFork", "owned resource fork")] {
++            let result = Command::new("/usr/bin/xattr").args(["-p", name]).arg(&destination).output().unwrap();
++            assert!(result.status.success(), "cross-volume fallback lost {name}");
++            assert_eq!(String::from_utf8(result.stdout).unwrap().trim_end(), value);
++        }
++        fs::remove_dir_all(root).unwrap();
++    }
++
+     #[test]
+     fn quarantine_copy_fallback_keeps_source_when_destination_is_occupied() {
+         let root = temp_dir("q-copy");
+diff --git a/src/components/DiskCleanerPanel.tsx b/src/components/DiskCleanerPanel.tsx
+index e871aaaf30f85ebe991b1f660ab9c3b6e7c47906..56eebb3aa2b6c7032a70977bc6eacd28bbfe251f 100644
+--- a/src/components/DiskCleanerPanel.tsx
++++ b/src/components/DiskCleanerPanel.tsx
+@@ -4,6 +4,7 @@ import {
+   cleanCategory,
+   cleanPaths,
+   DuplicateReport,
++  duplicateSelectionKeepsOriginal,
+   findDuplicates,
+   humanSize,
+   mergeProgress,
+@@ -663,10 +664,12 @@ function DuplicatesView({ expanded, onCleaned }: { expanded: boolean; onCleaned:
+   const [error, setError] = useState("");
+   const [remove, setRemove] = useState<Set<string>>(new Set());
+   const [phase, setPhase] = useState<"idle" | "cleaning" | "done">("idle");
+-  const [freed, setFreed] = useState(0);
++  const [outcome, setOutcome] = useState<{ moved: number; skipped: number } | null>(null);
+ 
+   const find = useCallback(async () => {
+     setLoading(true);
++    setReport(null);
++    setRemove(new Set());
+     setError("");
+     setPhase("idle");
+     try {
+@@ -699,24 +702,30 @@ function DuplicatesView({ expanded, onCleaned }: { expanded: boolean; onCleaned:
+     return total;
+   }, [report, remove]);
+ 
++  const keepsOriginal = !report || duplicateSelectionKeepsOriginal(report.groups, remove);
++
+   const clean = useCallback(async () => {
+-    if (remove.size === 0) return;
++    if (loading || remove.size === 0 || !report) return;
++    if (!duplicateSelectionKeepsOriginal(report.groups, remove)) {
++      setError("Keep at least one file in each duplicate group.");
++      return;
++    }
++    setError("");
+     setPhase("cleaning");
+     try {
+       const res = await cleanPaths([...remove]);
+       onCleaned();
+-      setFreed(selectedBytes);
++      setOutcome({ moved: res.moved, skipped: res.skipped.length });
+       setPhase("done");
+-      setReport((r) =>
+-        r ? { ...r, groups: r.groups.filter((g) => !g.paths.some((p) => remove.has(p))) } : r,
+-      );
++      // A partial move is not a full success. Discard stale analysis, not files;
++      // the quarantine card retains completed moves and a rescan reviews skips.
++      setReport(null);
+       setRemove(new Set());
+-      void res;
+     } catch (err) {
+       setError(String(err instanceof Error ? err.message : err));
+       setPhase("idle");
+     }
+-  }, [remove, selectedBytes]);
++  }, [loading, remove, report, onCleaned]);
+ 
+   return (
+     <div className={card}>
+@@ -724,13 +733,13 @@ function DuplicatesView({ expanded, onCleaned }: { expanded: boolean; onCleaned:
+         <div>
+           <div className="text-sm font-semibold text-slate-700">Find duplicate files</div>
+           <div className="text-xs text-slate-400">
+-            Scans Downloads, Desktop, Documents, Pictures, Movies — keeps one of each, trashes the rest.
++            Compares full contents in Downloads, Desktop, Documents, Pictures and Movies. Includes Mac extended attributes. Files below 1 MiB, symbolic/hard links, unreadable/changing files and metadata above 16 MiB are not compared. Review before quarantining; keep one copy.
+           </div>
+         </div>
+         <button
+           type="button"
+           onClick={() => void find()}
+-          disabled={loading}
++          disabled={loading || phase === "cleaning"}
+           className="rounded-xl bg-brand px-5 py-2.5 text-sm font-semibold text-white shadow-lift transition hover:bg-brand-600 disabled:opacity-50"
+         >
+           {loading ? "Scanning…" : "Find duplicates"}
+@@ -739,9 +748,9 @@ function DuplicatesView({ expanded, onCleaned }: { expanded: boolean; onCleaned:
+ 
+       {error && <div className="mt-3 rounded-xl border border-red-200 bg-red-50 p-3 text-sm text-red-600">{error}</div>}
+ 
+-      {phase === "done" && (
++      {phase === "done" && outcome && (
+         <div className="mt-4 flex items-center gap-2 rounded-2xl border border-mint/30 bg-mint/10 p-4 text-sm font-medium text-emerald-700">
+-          <CheckIcon className="h-4 w-4" /> Moved {humanSize(freed)} of duplicates to quarantine — restore anytime until it's emptied.
++          <CheckIcon className="h-4 w-4" /> Moved {outcome.moved} item(s) to quarantine; skipped {outcome.skipped}. Scan again to review remaining files. Quarantine does not free space until emptied; restore from the quarantine card.
+         </div>
+       )}
+ 
+@@ -764,6 +773,7 @@ function DuplicatesView({ expanded, onCleaned }: { expanded: boolean; onCleaned:
+                       <label key={p} className="flex items-center gap-2 py-1 text-xs">
+                         <input
+                           type="checkbox"
++                          disabled={loading || phase === "cleaning"}
+                           checked={remove.has(p)}
+                           onChange={() => toggle(p)}
+                           className="h-3.5 w-3.5 accent-brand"
+@@ -787,11 +797,12 @@ function DuplicatesView({ expanded, onCleaned }: { expanded: boolean; onCleaned:
+               <div className="mt-4 flex items-center justify-end gap-3">
+                 <span className="text-sm text-slate-500">
+                   {remove.size} to remove · <b className="text-slate-700">{humanSize(selectedBytes)}</b>
++                  {!keepsOriginal && <span className="block text-red-600">Keep at least one file in each group.</span>}
+                 </span>
+                 <button
+                   type="button"
+                   onClick={() => void clean()}
+-                  disabled={remove.size === 0 || phase === "cleaning"}
++                  disabled={loading || remove.size === 0 || phase === "cleaning" || !keepsOriginal}
+                   className="flex items-center gap-2 rounded-xl bg-brand px-5 py-2.5 text-sm font-semibold text-white shadow-lift transition hover:bg-brand-600 disabled:opacity-40"
+                 >
+                   <TrashIcon className="h-4 w-4" />
+diff --git a/src/operator/diskCleaner.ts b/src/operator/diskCleaner.ts
+index 3c841d4e0592741c811f170620899c3ac01a42c8..e56f01982dbb3a20d5feafffa84b8a02d591cc21 100644
+--- a/src/operator/diskCleaner.ts
++++ b/src/operator/diskCleaner.ts
+@@ -158,6 +158,11 @@ export interface DuplicateReport {
+   humanReclaimable: string;
+ }
+ 
++/** A duplicate cleanup must leave one reviewed source in every affected set. */
++export function duplicateSelectionKeepsOriginal(groups: DuplicateGroup[], selected: ReadonlySet<string>): boolean {
++  return groups.every((group) => group.paths.some((path) => !selected.has(path)));
++}
++
+ export async function findDuplicates(paths: string[]): Promise<DuplicateReport> {
+   return invoke<DuplicateReport>("disk_find_duplicates", { input: { inputPaths: paths } });
+ }
+diff --git a/tests/diskCleaner.test.ts b/tests/diskCleaner.test.ts
+index e7a29e08d97f7dec7c657892f9155d28a059dd7e..ace10de70e235a2ffd6e27c9a88c44c421c7b995 100644
+--- a/tests/diskCleaner.test.ts
++++ b/tests/diskCleaner.test.ts
+@@ -1,5 +1,5 @@
+ import { suite, test, assert, assertEqual } from "./harness";
+-import { CleanCategory, mergeProgress, scanContext, shortPath } from "../src/operator/diskCleaner";
++import { CleanCategory, duplicateSelectionKeepsOriginal, mergeProgress, scanContext, shortPath } from "../src/operator/diskCleaner";
+ 
+ const cat = (id: string, sizeBytes: number): CleanCategory => ({
+   id,
+@@ -66,3 +66,12 @@ test("the chat prompt lists at most six entries per category", () => {
+   assert(prompt.includes("f5"), "sixth entry kept");
+   assert(!prompt.includes("f6"), "seventh entry dropped");
+ });
++
++
++suite("disk cleaner — preserve duplicate originals");
++test("duplicate cleanup refuses selecting every copy, including mixed groups", () => {
++  const group = { sizeBytes: 10, humanSize: "10 B", count: 2, reclaimable: 10, paths: ["/a", "/b"] };
++  assert(duplicateSelectionKeepsOriginal([group], new Set(["/b"])), "one original remains");
++  assert(!duplicateSelectionKeepsOriginal([group], new Set(["/a", "/b"])), "all copies refused");
++  assert(!duplicateSelectionKeepsOriginal([group, { ...group, paths: ["/c", "/d"] }], new Set(["/b", "/c", "/d"])), "every group needs an original");
++});

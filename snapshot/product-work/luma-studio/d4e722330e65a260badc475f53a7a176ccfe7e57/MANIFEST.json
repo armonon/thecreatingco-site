@@ -1,0 +1,554 @@
+{
+  "sha": "d4e722330e65a260badc475f53a7a176ccfe7e57",
+  "base_sha": "8110bb57792c5f08324e59579ac9f7ba412f1688",
+  "scope": "Committed screened review delta, not a release or complete binary artifact",
+  "files": [
+    {
+      "path": ".gitignore",
+      "status": "present",
+      "sha256": "b6a62a5fbc78f830896aedf674004e3e8300298d56405c61e20d990cc1506baa",
+      "bytes": 726
+    },
+    {
+      "path": "app/desktop/menu-model.ts",
+      "status": "present",
+      "sha256": "8713dd3cbfc5a12618d118ecfbb143aab7b0a2ad761be3af97d1f685da375ec6",
+      "bytes": 13983
+    },
+    {
+      "path": "app/engine/document.ts",
+      "status": "present",
+      "sha256": "cdf8b297ea4d5b50f8f95033f5087c33b89e69762abd5fdce462ed9efa25349a",
+      "bytes": 88543
+    },
+    {
+      "path": "app/engine/figma-export.ts",
+      "status": "present",
+      "sha256": "41342b0cc1435eab6e2c99f76b72b463a9dc315a8c21f495bb5c6d52c8e89e5c",
+      "bytes": 16651
+    },
+    {
+      "path": "app/engine/figma-svg.ts",
+      "status": "present",
+      "sha256": "bf53ba10e8dd17af84fe16746435cfd63e09e2fa055181b9f5c0cbe920cb6284",
+      "bytes": 34989
+    },
+    {
+      "path": "app/engine/gl-renderer.ts",
+      "status": "present",
+      "sha256": "8d0e9d05bd22d7c7e70993bb9a8b915ccbc47cf59f56ac7b91d078340621ac21",
+      "bytes": 40538
+    },
+    {
+      "path": "app/engine/precision-renderer.ts",
+      "status": "present",
+      "sha256": "9ac1935f4051f6d56ec235bb58f8a12f848f2bdb6be6666a7b398b3ed65b9a51",
+      "bytes": 5447
+    },
+    {
+      "path": "app/engine/studio.ts",
+      "status": "present",
+      "sha256": "501829335e0bc5c46b047787adc080e2af475993f2bf2f2ccad3adb3d35c7851",
+      "bytes": 371281
+    },
+    {
+      "path": "app/engine/thumb-variants.ts",
+      "status": "present",
+      "sha256": "be549728968664aacd9f7f78a8d0eb90febd859d6c67090519bac7c39dfde773",
+      "bytes": 2338
+    },
+    {
+      "path": "app/engine/upscale-tiling.ts",
+      "status": "present",
+      "sha256": "be91796381b9fd751add3fff4513b7507a5e2e4e0f4175da2ad90d52775ed3fb",
+      "bytes": 3411
+    },
+    {
+      "path": "app/engine/upscale.ts",
+      "status": "present",
+      "sha256": "fbe7491440c27e7d239dfe098d2042d136b1b6e8126f703eec88b5adcfae9434",
+      "bytes": 7600
+    },
+    {
+      "path": "app/globals.css",
+      "status": "present",
+      "sha256": "592d211e8531d6dfb57587bf695fe7089f829ead3016874fc9ea863a624b4d83",
+      "bytes": 299377
+    },
+    {
+      "path": "app/ipad/layout.tsx",
+      "status": "present",
+      "sha256": "1ee929c750c750721d50c1f73a7894e9d002f9d8de92e802c98ad27d7add7f8b",
+      "bytes": 561
+    },
+    {
+      "path": "app/iphone/layout.tsx",
+      "status": "present",
+      "sha256": "63dc7f2b9beae1328f014a20373fba8921113a448bb82f9e71b2f8eeabf1627a",
+      "bytes": 567
+    },
+    {
+      "path": "app/studio/creative-tools.css",
+      "status": "present",
+      "sha256": "35c40bb9e9d229e644296d9631cb685b97dde409126f65694e351c2cbb97aca8",
+      "bytes": 8557
+    },
+    {
+      "path": "app/studio/export-popover.tsx",
+      "status": "present",
+      "sha256": "8f35af85df8e91a8936b7c68557bc2d04d30ff23163fc08ecacd788780b3a78e",
+      "bytes": 7072
+    },
+    {
+      "path": "app/studio/layout.tsx",
+      "status": "present",
+      "sha256": "3674aafa87eb0a33b4bc8bb467b0a18b8e0e5da61cfd64125cbdbab7f75d47b0",
+      "bytes": 487
+    },
+    {
+      "path": "app/studio/mockup-client.ts",
+      "status": "present",
+      "sha256": "45913b3a32b211e50bc7f2dad9a26629972d3089ceec7661d63957b548b875a6",
+      "bytes": 3469
+    },
+    {
+      "path": "app/studio/mockup-dialog.tsx",
+      "status": "present",
+      "sha256": "fd33c7c466cae852f489d58320eecf1f2d0d9f2263502a34024adc65d016ae92",
+      "bytes": 18808
+    },
+    {
+      "path": "app/studio/page.tsx",
+      "status": "present",
+      "sha256": "3b2db9e87cf6b4a3caa86a635543460e724d9dfa1ad3e061391ae6cb01810e9d",
+      "bytes": 359959
+    },
+    {
+      "path": "app/studio/phone-workspace.css",
+      "status": "present",
+      "sha256": "f7cae26262c2b23f305f024d3c07cad372c24ac8be9bbb344fa5ff0b007817eb",
+      "bytes": 13159
+    },
+    {
+      "path": "app/studio/pwa.tsx",
+      "status": "present",
+      "sha256": "2119ed6d7bd9375234ddf888cad758bd6148b9c7d73145198a80b890d930e257",
+      "bytes": 4887
+    },
+    {
+      "path": "app/studio/studio-titlebar.tsx",
+      "status": "present",
+      "sha256": "cc8ba88ecbdf0710c5071bfd2b158d5fc00673a4aa2726d828fbce6beaab31b3",
+      "bytes": 8819
+    },
+    {
+      "path": "app/studio/suite.ts",
+      "status": "present",
+      "sha256": "a33e4ea42d5208488afed14ca88f3f95c94704912beb41731bfa6a28782fafb1",
+      "bytes": 4405
+    },
+    {
+      "path": "app/studio/thumb-dialog.tsx",
+      "status": "present",
+      "sha256": "e3ce56f22035b827f83d298a5cc2e9657af050f4671d6ab1b3c815377c004586",
+      "bytes": 9723
+    },
+    {
+      "path": "app/studio/upscale-dialog.tsx",
+      "status": "present",
+      "sha256": "6c0ecb0c6851ba2771fa002bc50d5e22659064e61f2139dd3a796772509479c0",
+      "bytes": 5890
+    },
+    {
+      "path": "build/figma-export-fixture.ts",
+      "status": "present",
+      "sha256": "19d439c924400382dd7ee437becbed4c482f522fc6547113e3714dd9dfd653a5",
+      "bytes": 3492
+    },
+    {
+      "path": "build/generate-pwa-icons.mjs",
+      "status": "present",
+      "sha256": "7d4554dc16fa6d1f28fd7e7307d483c16ea2e13737e0f04d9e79da5c70c40565",
+      "bytes": 1646
+    },
+    {
+      "path": "build/generate-sw.mjs",
+      "status": "present",
+      "sha256": "29dca1c04e1129cdbc549ef138a40e977221c90627baac1ee46fb0fab5839270",
+      "bytes": 2768
+    },
+    {
+      "path": "build/kill-switch-sw.js",
+      "status": "present",
+      "sha256": "8a71fe7f47f059340330f77a3d63768c92cdece410174689494d84687697ccb0",
+      "bytes": 1274
+    },
+    {
+      "path": "build/qualify-raster-color.mjs",
+      "status": "present",
+      "sha256": "4f37760a2d7b00c5645a9b50a53bb08e63f369a780ea70fcba18a1473fc4cdad",
+      "bytes": 10984
+    },
+    {
+      "path": "build/sw-template.js",
+      "status": "present",
+      "sha256": "7700ca42df80057144f5018d030bb30849c7a873a1202c3f7ddffd627cc57437",
+      "bytes": 6530
+    },
+    {
+      "path": "build/verify-figma-export.mjs",
+      "status": "present",
+      "sha256": "07c4012b2b8265bfcf27a9c0d52ed7b80068c0e7b8ed478ac2976bd882ce5246",
+      "bytes": 7591
+    },
+    {
+      "path": "build/verify-pwa-upgrade.mjs",
+      "status": "present",
+      "sha256": "e90940a831552ef1c9cc078d51a7c276a02f218f320902ca800862f89b103d66",
+      "bytes": 2940
+    },
+    {
+      "path": "build/verify-pwa.mjs",
+      "status": "present",
+      "sha256": "09078438c7b627014132748b5fc05ea69360a852a936f35b3e7d8530296765b9",
+      "bytes": 9121
+    },
+    {
+      "path": "build/verify-suite.mjs",
+      "status": "present",
+      "sha256": "345a6fefb954e2bbeb3510eec28e7be762222dc7573c2cd78c730fa39fad90af",
+      "bytes": 7673
+    },
+    {
+      "path": "docs/release/live-static-overlay.md",
+      "status": "present",
+      "sha256": "ab60696c64da205c7241c7be1c4f145f87f495fd08a032d604868d3e0653bf55",
+      "bytes": 4321
+    },
+    {
+      "path": "docs/release/mockup-recovery-2026-10-06.md",
+      "status": "present",
+      "sha256": "1db1c634ee6bde980e41ee5bdce6b673563cc15189a081c4a25eb3d9ae8546d1",
+      "bytes": 1278
+    },
+    {
+      "path": "docs/release/pwa.md",
+      "status": "present",
+      "sha256": "67a361d03b168af6b950dfb4f6db375e4ee30a14d1a9426d97ff419521007ad7",
+      "bytes": 2972
+    },
+    {
+      "path": "docs/release/raster-color-qualification.md",
+      "status": "present",
+      "sha256": "2ad9fef6bc91d85d6ec36d3ce85f2a7441bdef5a5c6a1f29748f19bf998e7e48",
+      "bytes": 3298
+    },
+    {
+      "path": "live-static/_next/static/17yerx9wbocjj3wchczbw/_buildmanifest.js",
+      "status": "present",
+      "sha256": "9476e0afd3f9da68a64e6ec58631191fd3eaca62c9f5a377e7517fe9a89e59ea",
+      "bytes": 219
+    },
+    {
+      "path": "live-static/_next/static/17yerx9wbocjj3wchczbw/_clientmiddlewaremanifest.js",
+      "status": "present",
+      "sha256": "5483e3295dc35dfe29ea932efc85341c916f10ff78ff5b0e965e003710893a4a",
+      "bytes": 96
+    },
+    {
+      "path": "live-static/_next/static/17yerx9wbocjj3wchczbw/_ssgmanifest.js",
+      "status": "present",
+      "sha256": "678f6ce2cb80b1fe72fc67e7412be6e2ab6ada083111b64f7c40d35e3cba5e00",
+      "bytes": 80
+    },
+    {
+      "path": "live-static/_next/static/chunks/0aj6of9nqznux.js",
+      "status": "present",
+      "sha256": "47aa57b8d5d19aae5cbca757727ba52d01539738f640379e06c17519f28e34a1",
+      "bytes": 1713
+    },
+    {
+      "path": "live-static/_next/static/chunks/0fuziedxnut1i.js",
+      "status": "present",
+      "sha256": "e9ed083013feac56047fcdcdbb8982e68e2d507b691e90c1b93aadc65abbda7a",
+      "bytes": 7879
+    },
+    {
+      "path": "live-static/_next/static/chunks/0s8xnm3ev3l3k.js",
+      "status": "present",
+      "sha256": "3484cbca18593d0a14613f17e2f003dac8d8f9ed7deac744f3bdb45b1ed214d1",
+      "bytes": 5668
+    },
+    {
+      "path": "live-static/_next/static/chunks/0wby9_5fupekx.js",
+      "status": "present",
+      "sha256": "f2bb21bd7dd59fbfee72841196a6b7fd97d042a81b2b78d481cecdfdd6ada973",
+      "bytes": 338310
+    },
+    {
+      "path": "live-static/_next/static/chunks/0ysido4ci4oq_.css",
+      "status": "present",
+      "sha256": "08b8a586566706d3ab9ba44fb6522978741868e836b1a30ba7f1a5664e1210b1",
+      "bytes": 248910
+    },
+    {
+      "path": "live-static/_next/static/chunks/13_c5yoe4b807.js",
+      "status": "present",
+      "sha256": "13dc2e9ea3ece0dd030be106caf63f6ce5e19aa87fb48891827bee64ad0d3620",
+      "bytes": 103480
+    },
+    {
+      "path": "live-static/_next/static/chunks/15t9k-4rlx0-h.js",
+      "status": "present",
+      "sha256": "6710f810f1f0c6d6d54c7c5ce113e52e83eb6040ac6f7e065523c7ef5976ed35",
+      "bytes": 34849
+    },
+    {
+      "path": "live-static/_next/static/chunks/1s8hkqy-efrs3.js",
+      "status": "present",
+      "sha256": "f81ca571f7b38ac38a06c268e6bed1cfc9823b420d8c1a793e93ffabdca5bd16",
+      "bytes": 4660
+    },
+    {
+      "path": "live-static/_next/static/chunks/1vm7jcqjcgndx.js",
+      "status": "present",
+      "sha256": "cc0fa9790aec2f207c55c3bd40dcd0adc2149bff6c528561f324db1b8af123e5",
+      "bytes": 6038
+    },
+    {
+      "path": "live-static/_next/static/chunks/20p-87561en6h.js",
+      "status": "present",
+      "sha256": "29e6f466a35c407e3a94ff34cf39b27bcdcde2a6970c8f7e2f0114ef0e89aa6f",
+      "bytes": 50192
+    },
+    {
+      "path": "live-static/_next/static/chunks/29z5t3sob1orn.js",
+      "status": "present",
+      "sha256": "ccaed02a48335bb69f126fc9ce007b97797acde0f5b84f67a2728548ba4a3b21",
+      "bytes": 21999
+    },
+    {
+      "path": "live-static/_next/static/chunks/2c4hwslwl494r.js",
+      "status": "present",
+      "sha256": "a05e32a962710bb5505a400e4ce6bb347a5f570138aad1054e9c491b17d40e17",
+      "bytes": 13859
+    },
+    {
+      "path": "live-static/_next/static/chunks/2dim6j3ifdy8c.css",
+      "status": "present",
+      "sha256": "d3b9123231424798ee97411accea8d3c76d593e2bf093a295efb35213b14fcb0",
+      "bytes": 247029
+    },
+    {
+      "path": "live-static/_next/static/chunks/2qv_md7r-bd4h.css",
+      "status": "present",
+      "sha256": "97afcb17fa71dc8e78e60c8a2d552f9baac7471119b8f70fefa77c7f378ab15c",
+      "bytes": 94622
+    },
+    {
+      "path": "live-static/_next/static/chunks/2v_s93g3g1wh1.js",
+      "status": "present",
+      "sha256": "548f052a30fbce32b2e4fb7d1cae108d56987f5718fc3a94ce29769917e6b7d9",
+      "bytes": 17993
+    },
+    {
+      "path": "live-static/_next/static/chunks/2w37wsl_dbr5a.js",
+      "status": "present",
+      "sha256": "e33f98897c9cb3e3327ddfc7d2cd5329c5aa7ceacb3bb794019c67793e1340ae",
+      "bytes": 16352
+    },
+    {
+      "path": "live-static/_next/static/chunks/3aafmy5ubleva.js",
+      "status": "present",
+      "sha256": "954ee491d14148088d4a7058d1bac81b99379751ea00803405c2a5d58487e97c",
+      "bytes": 235014
+    },
+    {
+      "path": "live-static/_next/static/chunks/3chgr4t8g7kcz.js",
+      "status": "present",
+      "sha256": "ef305be87b49d8a934b53f25b99f9b389eb904c59a89850c7edf5f1a1139a66e",
+      "bytes": 274714
+    },
+    {
+      "path": "live-static/_next/static/chunks/3fxreosimo-tv.js",
+      "status": "present",
+      "sha256": "da0f74df3749a99dfd68517b546a96031d61d27c62a6510425852fcb7ecf96c0",
+      "bytes": 2167
+    },
+    {
+      "path": "live-static/_next/static/chunks/3grqetzoft1py.js",
+      "status": "present",
+      "sha256": "18043cd6d0014a947a6f8396746df436700df94c83c75f3b8950d81e552c92af",
+      "bytes": 20607
+    },
+    {
+      "path": "live-static/_next/static/chunks/3nyywe4c1lhdi.js",
+      "status": "present",
+      "sha256": "962a7c493a5e4186b37331732dbbbb826e44b1e844b2c31ff722a1035b9ca92e",
+      "bytes": 221818
+    },
+    {
+      "path": "live-static/_next/static/chunks/3uhwmydud65rl.js",
+      "status": "present",
+      "sha256": "1b4b671785fd98ae1c3cd57179708e97e06ce5425d8d487a159392831d61d21d",
+      "bytes": 332023
+    },
+    {
+      "path": "live-static/_next/static/chunks/turbopack-03o26f01j55de.js",
+      "status": "present",
+      "sha256": "420f58d613a2e07de34cc8c96d73a17802c5ef0ebd7cc44fe3b69bd1e743a78f",
+      "bytes": 10913
+    },
+    {
+      "path": "live-static/_next/static/chunks/turbopack-44iordt61fe4z.js",
+      "status": "present",
+      "sha256": "8dc234bafadbfda77125de18dfff7836c7fb7a5e2d7c8d6bc8ac103d2b98e726",
+      "bytes": 10879
+    },
+    {
+      "path": "live-static/_next/static/u-wzz_y1e9-vcr4wdbbiz/_buildmanifest.js",
+      "status": "present",
+      "sha256": "9476e0afd3f9da68a64e6ec58631191fd3eaca62c9f5a377e7517fe9a89e59ea",
+      "bytes": 219
+    },
+    {
+      "path": "live-static/_next/static/u-wzz_y1e9-vcr4wdbbiz/_clientmiddlewaremanifest.js",
+      "status": "present",
+      "sha256": "5483e3295dc35dfe29ea932efc85341c916f10ff78ff5b0e965e003710893a4a",
+      "bytes": 96
+    },
+    {
+      "path": "live-static/_next/static/u-wzz_y1e9-vcr4wdbbiz/_ssgmanifest.js",
+      "status": "present",
+      "sha256": "678f6ce2cb80b1fe72fc67e7412be6e2ab6ada083111b64f7c40d35e3cba5e00",
+      "bytes": 80
+    },
+    {
+      "path": "netlify.toml",
+      "status": "present",
+      "sha256": "fe6ad12bfd8785ef97c4b1c1055cb14d6fd35e2c3e4ffd549ba05d2f9980be7f",
+      "bytes": 1545
+    },
+    {
+      "path": "package-lock.json",
+      "status": "present",
+      "sha256": "845481a71d7b1f28628a936585d5a4d5d2f614d069a90d2aabecd5bac3195c6d",
+      "bytes": 406538
+    },
+    {
+      "path": "package.json",
+      "status": "present",
+      "sha256": "14b496ba28e19fe210b48bacc150a1b8019f53c99f86ea18d7cb8f4d60e3695b",
+      "bytes": 3977
+    },
+    {
+      "path": "src-tauri/src/main.rs",
+      "status": "present",
+      "sha256": "7bf4c8712320a1912ca78fbd4985cc278739648ffc68fa50a03e7c26bcbce72f",
+      "bytes": 45601
+    },
+    {
+      "path": "tests/figma-svg.test.ts",
+      "status": "present",
+      "sha256": "2d91079d10fa37c1806092440583c4de25972fd45466590d6fa0895db5486aed",
+      "bytes": 16659
+    },
+    {
+      "path": "tests/fixtures/form-contract/README.md",
+      "status": "present",
+      "sha256": "479c8c3c47c5988feda7fca180fb27ff869cbcc15059edd01972d1538d3f241e",
+      "bytes": 940
+    },
+    {
+      "path": "tests/fixtures/form-contract/luma-mesh-asset.ts",
+      "status": "present",
+      "sha256": "cfe59ff2725aeeb3d2732be7237a6876c6e081d312f3764a69423aa5007ef580",
+      "bytes": 3458
+    },
+    {
+      "path": "tests/fixtures/form-contract/provenance.json",
+      "status": "present",
+      "sha256": "19f8a966dec08f345eabef95de2cb7aa16ce49a3c1ebd1db6070f7c4bc8cb8e8",
+      "bytes": 233
+    },
+    {
+      "path": "tests/form-mesh.test.ts",
+      "status": "present",
+      "sha256": "5cdfcb713eca473f084339e2d746128fbc9f61920c656f6101b1caf88b860082",
+      "bytes": 7097
+    },
+    {
+      "path": "tests/mockup-client.test.ts",
+      "status": "present",
+      "sha256": "e3462357a066aec1d21ae6514fc62b931cbc5bca1bf3fb57744fe6628b83d1d9",
+      "bytes": 2906
+    },
+    {
+      "path": "tests/raster-export-fidelity.test.ts",
+      "status": "present",
+      "sha256": "cb20cae14ccc8401fcb795974b58b035f57b6bbd12bd3f5db2ad353d2ead4e0e",
+      "bytes": 5212
+    },
+    {
+      "path": "tests/thumb-variants.test.ts",
+      "status": "present",
+      "sha256": "985d66fd8e6320c68f6c8ab392c2455357f53ec7dc96152e8a528e9b9c8b6bb8",
+      "bytes": 1922
+    },
+    {
+      "path": "tests/transform-coordinates.test.ts",
+      "status": "present",
+      "sha256": "29693de3289fa4613793f61b261ac1ff89933cf3839feca9bdf1b9e49a36dca5",
+      "bytes": 4675
+    },
+    {
+      "path": "tests/upscale-tiling.test.ts",
+      "status": "present",
+      "sha256": "3366743afc6381a758c85d1bf0d129defbf9a99683f6e92dbc241ee9ff2e1293",
+      "bytes": 2718
+    },
+    {
+      "path": "types/tcc-suite.d.ts",
+      "status": "present",
+      "sha256": "696652b759a25d1e400a36e72167764b99699953511c8f3192a900e037b6d250",
+      "bytes": 319
+    }
+  ],
+  "omitted": [
+    {
+      "path": "public/icons/luma-192.png",
+      "reason": "non-source-or-binary-asset"
+    },
+    {
+      "path": "public/icons/luma-512.png",
+      "reason": "non-source-or-binary-asset"
+    },
+    {
+      "path": "public/icons/luma-maskable-192.png",
+      "reason": "non-source-or-binary-asset"
+    },
+    {
+      "path": "public/icons/luma-maskable-512.png",
+      "reason": "non-source-or-binary-asset"
+    },
+    {
+      "path": "public/luma-ipad.webmanifest",
+      "reason": "non-source-or-binary-asset"
+    },
+    {
+      "path": "public/luma-iphone.webmanifest",
+      "reason": "non-source-or-binary-asset"
+    },
+    {
+      "path": "public/luma.webmanifest",
+      "reason": "non-source-or-binary-asset"
+    }
+  ],
+  "patch_sha256": "186a1f31c0ea42af0e5ae882a59ce361178dc19aa363235b929d199b5cc8fd9a",
+  "repo": "https://github.com/armonon/luma-studio",
+  "branches": [
+    "fix/luma-cpu-export-color-20261007"
+  ],
+  "archive_path": "luma-studio/d4e722330e65a260badc475f53a7a176ccfe7e57",
+  "local_worktree_dirty": false
+}

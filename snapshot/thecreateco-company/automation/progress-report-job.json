@@ -1,0 +1,52 @@
+{
+  "created": true,
+  "job": {
+    "id": "99398759-74b2-4cb3-a096-beb54e44ceb4",
+    "declarationKey": "thecreateco-4geeks-progress",
+    "agentId": "main",
+    "name": "thecreateco #4geeks progress reports",
+    "enabled": true,
+    "createdAtMs": 1791421165850,
+    "schedule": {
+      "kind": "cron",
+      "expr": "20,50 8-22 * * *",
+      "tz": "America/Los_Angeles"
+    },
+    "sessionTarget": "isolated",
+    "wakeMode": "now",
+    "payload": {
+      "kind": "agentTurn",
+      "message": "Send the requested concise company/product progress report for Armon in #4geeks.\nWorkspace /Users/agentsattari/thecreateco-company. Read AUTONOMY.md and current\nCOMPANY_STATE.md, then TASK_QUEUE.json and core-product-lab/HEALTH.md only as needed.\nInspect at most three relevant latest result reports for exact commit/PR/test facts.\nThis is a read-only reporting task; do not claim tasks, code, run builds, publish,\nsend email, or change other schedules. Do not load private personal memory/CRM.\nUse automation/report-cursor.json for last reported task/completion IDs; update\nonly that cursor after preparing the report. Missing cursor means first report.\nReturn 3\u20135 concise bullets: what changed since last report; pushed PR/merged/deployed\nstatus distinguished; meaningful checks; exact blocker; next work. If no new result,\nsay so briefly and identify genuinely running work or next queued task, not invented\nactivity. Never infer a push/merge/deploy from a local commit or task COMPLETE.\nPrefer known GitHub links; wrap bare URLs in <>; no tables or secrets/contact data.\nIf PAUSE exists, report paused rather than implying work is running. Final response\nwill be delivered by cron to the configured Discord channel; do not call a send\ntool or duplicate the report. Keep under 150 words and finish within 3 minutes.",
+      "model": "openai/gpt-6-luna",
+      "fallbacks": [
+        "openai/gpt-6.1-sol"
+      ],
+      "thinking": "low",
+      "timeoutSeconds": 180,
+      "lightContext": true,
+      "toolsAllow": [
+        "*"
+      ]
+    },
+    "delivery": {
+      "mode": "announce",
+      "channel": "discord",
+      "to": "channel:1542939125366132819",
+      "accountId": "default"
+    },
+    "scheduledToolPolicy": {
+      "version": 1,
+      "mode": "trusted"
+    },
+    "state": {
+      "nextRunAtMs": 1791422400000
+    },
+    "updatedAtMs": 1791421165850,
+    "configRevision": "sha256:eYsTFy9ypGsZOcM8WKiKXkbmKoF7P9SNa9gVcKEo1S4",
+    "nextRunAtMs": 1791422400000
+  },
+  "deliveryPreview": {
+    "label": "announce -> discord:channel:1542939125366132819",
+    "detail": "explicit"
+  }
+}

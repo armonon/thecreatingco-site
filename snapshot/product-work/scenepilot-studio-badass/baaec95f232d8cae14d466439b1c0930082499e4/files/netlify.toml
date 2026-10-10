@@ -1,0 +1,26 @@
+# Root Netlify config for git-connected deploys. Keep the build root inside the
+# static marketing site so deploy previews do not install the desktop/editor
+# package tree just to publish HTML.
+
+[build]
+  base = "site"
+  publish = "."
+  command = ""
+
+# Long-cache the immutable media; keep HTML always fresh. Paths are relative to
+# the published root, so site/assets/* is served at /assets/*.
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"

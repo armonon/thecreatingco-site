@@ -1,0 +1,33 @@
+{
+  "task_id": "CORE-LUMA-AUD-002",
+  "title": "Qualify current-source import-through-export golden workflow",
+  "product": "luma",
+  "area": "workflow_gap",
+  "category": "workflow_gap",
+  "workstream": "CORE_PRODUCT_LAB",
+  "severity": "P2",
+  "scores": {
+    "impact": 8,
+    "severity": 7,
+    "workflow_importance": 10,
+    "competitive_value": 8,
+    "release_importance": 10,
+    "confidence": 9,
+    "effort": 7,
+    "risk": 3,
+    "user_value": 10
+  },
+  "dependencies": [
+    "P01"
+  ],
+  "status": "QUEUED",
+  "model": "gpt-6-luna",
+  "expected_value": "Flagship golden-workflow reliability; scores are planning estimates, not health metrics.",
+  "test_requirements": "Reproduce on isolated exact source; preserve baseline/fixed evidence, appropriate build/tests and golden path; source reading is not interactive sign-off.",
+  "source_evidence": [
+    "node build/check-release-evidence.mjs status: 1/10; source-bound local qualification and compatibility corpus evidence missing",
+    "interactive workflow not run in this audit",
+    "golden-projects/luma.md defines the fixture and acceptance receipt"
+  ],
+  "next_action": "Run the documented deterministic fixture in web and desktop and retain exact logs, project/export hashes, comparisons and limitations."
+}

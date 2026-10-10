@@ -1,0 +1,139 @@
+import { Link } from 'react-router-dom';
+import AboutSection from './AboutSection';
+import OptimizedProductImage from './OptimizedProductImage';
+import { SEO, StructuredData } from '../utils/seo';
+import { PAGE_SEO, SITE_ORIGIN, organizationSchema } from '../data/siteSeo';
+
+export default function AboutPage() {
+  return (
+    <>
+      <SEO {...PAGE_SEO.about} />
+      <StructuredData
+        data={{
+          '@context': 'https://schema.org',
+          '@type': 'AboutPage',
+          '@id': `${PAGE_SEO.about.url}#page`,
+          name: 'About Sattari Music',
+          url: PAGE_SEO.about.url,
+          about: { '@id': organizationSchema['@id'] },
+          isPartOf: { '@id': `${SITE_ORIGIN}/#website` },
+        }}
+      />
+      <section className="hero-section hero-shell">
+        <div className="container hero-grid hero-premium-grid">
+          <div className="hero-copy-panel">
+            <div className="hero-kicker-row">
+              <p className="eyebrow">California roots. Musicians worldwide.</p>
+              <Link to="/services" className="hero-status-pill hero-status-pill-link">
+                California-crafted support
+              </Link>
+            </div>
+            <h1>About Sattari Music</h1>
+            <p className="hero-copy">
+              Sattari is a music company for musicians worldwide. Buy instruments, learn guitar
+              online, create music in Sattari Studio, and separate stems. Our appointment-only
+              Woodland Hills shop brings it together with instrument repair, rentals, lessons and
+              rehearsal space for Encino, Calabasas and Los Angeles.
+            </p>
+            <div className="hero-actions">
+              <Link to="/shop" className="button button-solid">
+                Shop instruments &amp; gear
+              </Link>
+              <Link to="/services" className="button button-outline">
+                Services & Rentals
+              </Link>
+            </div>
+
+            <div className="hero-quick-links" aria-label="Popular paths">
+              <Link to="/shop/cymbals">Cymbals</Link>
+              <Link to="/shop/sticks">Sticks</Link>
+              <Link to="/shop/violins">Violins</Link>
+              <Link to="/shop/guitar-bass">Guitar &amp; Bass</Link>
+              <Link to="/shop/essentials">Practice essentials</Link>
+              <Link to="/learn">Learn guitar online</Link>
+              <Link to="/studio">Create music</Link>
+            </div>
+          </div>
+
+          <div className="hero-card-stack">
+            <Link
+              to="/shop"
+              className="hero-card hero-card-feature interactive-card-link"
+              aria-label="Shop premium drum gear"
+            >
+              <p className="card-kicker">Why shop here?</p>
+              <h2>Premium gear, direct guidance, and a more elevated buying experience.</h2>
+              <ul className="bullet-list hero-bullet-list">
+                <li>Curated gear from pros</li>
+                <li>30+ years of hands-on expertise</li>
+                <li>California-based brand support</li>
+                <li>Direct connection to the founder</li>
+              </ul>
+            </Link>
+
+            <Link
+              to="/services"
+              className="hero-mini-card interactive-card-link"
+              aria-label="Explore services for players, teachers, rehearsals, and events"
+            >
+              <p className="card-kicker">Built for</p>
+              <strong>Players, teachers, rehearsals, and event-ready setups.</strong>
+              <p>
+                Whether you are buying for your own kit or planning local support, the experience is
+                designed to feel considered and premium.
+              </p>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <AboutSection />
+
+      <section className="section hero-metrics-section">
+        <div className="container">
+          <div className="section-header narrow hero-metrics-header">
+            <p className="eyebrow">Shop by category</p>
+            <h2>Find your next instrument</h2>
+          </div>
+          <div className="hero-metrics hero-metrics-image" aria-label="Shop by category">
+            {[
+              {
+                to: '/shop/cymbals',
+                src: '/sattari site/crash.png',
+                alt: 'Handcrafted Sattari cymbals',
+                label: 'Cymbals & Drums',
+              },
+              {
+                to: '/shop/violins',
+                src: '/sattari site/violins/brescia-acoustic.jpg',
+                alt: 'Handcrafted Sattari acoustic violin',
+                label: 'Violins',
+              },
+              {
+                to: '/shop/guitar-bass',
+                src: '/sattari site/guitars/bass-guitar.jpg',
+                alt: 'Sattari bass guitar',
+                label: 'Guitar & Bass',
+              },
+            ].map((item) => (
+              <Link
+                key={item.to}
+                to={item.to}
+                className="hero-metric-card hero-metric-card-image interactive-card-link"
+                aria-label={`Shop ${item.label}`}
+              >
+                <OptimizedProductImage
+                  src={item.src}
+                  alt={item.alt}
+                  loading="lazy"
+                  sizes="(max-width: 760px) 100vw, 33vw"
+                />
+                <span className="hero-metric-card-label">{item.label}</span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}

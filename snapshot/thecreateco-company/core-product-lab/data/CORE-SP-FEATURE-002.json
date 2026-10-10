@@ -1,0 +1,29 @@
+{
+  "task_id": "CORE-SP-FEATURE-002",
+  "title": "Evaluate reverse/variable audio retiming and pitch-preserving stretch",
+  "product": "scenepilot",
+  "area": "professional_feature_gap",
+  "category": "professional_feature_gap",
+  "workstream": "CORE_PRODUCT_LAB",
+  "severity": "P4",
+  "scores": {
+    "impact": 6,
+    "severity": 3,
+    "workflow_importance": 6,
+    "competitive_value": 6,
+    "release_importance": 4,
+    "confidence": 8,
+    "effort": 7,
+    "risk": 4,
+    "user_value": 6
+  },
+  "dependencies": [],
+  "status": "WAITING",
+  "model": "gpt-6-luna",
+  "expected_value": "Flagship golden-workflow reliability; scores are planning estimates, not health metrics.",
+  "test_requirements": "Reproduce on isolated exact source; preserve baseline/fixed evidence, appropriate build/tests and golden path; source reading is not interactive sign-off.",
+  "source_evidence": [
+    "docs/audio-edit-reliability-2026-09-23.md:77 lists reverse/variable audio retiming and pitch-preserving stretch as not implemented."
+  ],
+  "next_action": "Verify current behavior before implementing; retain exact-source evidence."
+}

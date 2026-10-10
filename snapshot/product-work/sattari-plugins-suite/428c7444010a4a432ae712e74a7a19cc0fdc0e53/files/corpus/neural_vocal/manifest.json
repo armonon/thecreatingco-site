@@ -1,0 +1,2158 @@
+[
+  {
+    "name": "male_low_sustained_40",
+    "category": "male_low",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/male_low_sustained_40.wav",
+    "duration_s": 2.5,
+    "sr": 44100
+  },
+  {
+    "name": "male_low_vibrato_40",
+    "category": "male_low_vibrato",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/male_low_vibrato_40.wav",
+    "duration_s": 2.5,
+    "sr": 44100
+  },
+  {
+    "name": "male_low_scoop_40",
+    "category": "male_low_scoop",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/male_low_scoop_40.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "male_low_fall_40",
+    "category": "male_low_fall",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/male_low_fall_40.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "male_low_sustained_42",
+    "category": "male_low",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/male_low_sustained_42.wav",
+    "duration_s": 2.5,
+    "sr": 44100
+  },
+  {
+    "name": "male_low_vibrato_42",
+    "category": "male_low_vibrato",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/male_low_vibrato_42.wav",
+    "duration_s": 2.5,
+    "sr": 44100
+  },
+  {
+    "name": "male_low_scoop_42",
+    "category": "male_low_scoop",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/male_low_scoop_42.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "male_low_fall_42",
+    "category": "male_low_fall",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/male_low_fall_42.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "male_low_sustained_44",
+    "category": "male_low",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/male_low_sustained_44.wav",
+    "duration_s": 2.5,
+    "sr": 44100
+  },
+  {
+    "name": "male_low_vibrato_44",
+    "category": "male_low_vibrato",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/male_low_vibrato_44.wav",
+    "duration_s": 2.5,
+    "sr": 44100
+  },
+  {
+    "name": "male_low_scoop_44",
+    "category": "male_low_scoop",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/male_low_scoop_44.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "male_low_fall_44",
+    "category": "male_low_fall",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/male_low_fall_44.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "male_low_sustained_45",
+    "category": "male_low",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/male_low_sustained_45.wav",
+    "duration_s": 2.5,
+    "sr": 44100
+  },
+  {
+    "name": "male_low_vibrato_45",
+    "category": "male_low_vibrato",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/male_low_vibrato_45.wav",
+    "duration_s": 2.5,
+    "sr": 44100
+  },
+  {
+    "name": "male_low_scoop_45",
+    "category": "male_low_scoop",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/male_low_scoop_45.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "male_low_fall_45",
+    "category": "male_low_fall",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/male_low_fall_45.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "male_low_sustained_47",
+    "category": "male_low",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/male_low_sustained_47.wav",
+    "duration_s": 2.5,
+    "sr": 44100
+  },
+  {
+    "name": "male_low_vibrato_47",
+    "category": "male_low_vibrato",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/male_low_vibrato_47.wav",
+    "duration_s": 2.5,
+    "sr": 44100
+  },
+  {
+    "name": "male_low_scoop_47",
+    "category": "male_low_scoop",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/male_low_scoop_47.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "male_low_fall_47",
+    "category": "male_low_fall",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/male_low_fall_47.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "male_mid_sustained_48",
+    "category": "male_mid",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/male_mid_sustained_48.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "male_mid_vibrato_48",
+    "category": "male_mid_vibrato",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/male_mid_vibrato_48.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "male_mid_breathy_48",
+    "category": "male_mid_breathy",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/male_mid_breathy_48.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "male_mid_sustained_50",
+    "category": "male_mid",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/male_mid_sustained_50.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "male_mid_vibrato_50",
+    "category": "male_mid_vibrato",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/male_mid_vibrato_50.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "male_mid_breathy_50",
+    "category": "male_mid_breathy",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/male_mid_breathy_50.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "male_mid_sustained_52",
+    "category": "male_mid",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/male_mid_sustained_52.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "male_mid_vibrato_52",
+    "category": "male_mid_vibrato",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/male_mid_vibrato_52.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "male_mid_breathy_52",
+    "category": "male_mid_breathy",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/male_mid_breathy_52.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "male_mid_sustained_53",
+    "category": "male_mid",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/male_mid_sustained_53.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "male_mid_vibrato_53",
+    "category": "male_mid_vibrato",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/male_mid_vibrato_53.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "male_mid_breathy_53",
+    "category": "male_mid_breathy",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/male_mid_breathy_53.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "male_mid_sustained_55",
+    "category": "male_mid",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/male_mid_sustained_55.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "male_mid_vibrato_55",
+    "category": "male_mid_vibrato",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/male_mid_vibrato_55.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "male_mid_breathy_55",
+    "category": "male_mid_breathy",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/male_mid_breathy_55.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "male_high_sustained_57",
+    "category": "male_high",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/male_high_sustained_57.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "male_high_belted_57",
+    "category": "male_high_belted",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/male_high_belted_57.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "male_high_raspy_57",
+    "category": "male_high_raspy",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/male_high_raspy_57.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "male_high_sustained_59",
+    "category": "male_high",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/male_high_sustained_59.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "male_high_belted_59",
+    "category": "male_high_belted",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/male_high_belted_59.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "male_high_raspy_59",
+    "category": "male_high_raspy",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/male_high_raspy_59.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "male_high_sustained_60",
+    "category": "male_high",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/male_high_sustained_60.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "male_high_belted_60",
+    "category": "male_high_belted",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/male_high_belted_60.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "male_high_raspy_60",
+    "category": "male_high_raspy",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/male_high_raspy_60.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "male_high_sustained_62",
+    "category": "male_high",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/male_high_sustained_62.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "male_high_belted_62",
+    "category": "male_high_belted",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/male_high_belted_62.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "male_high_raspy_62",
+    "category": "male_high_raspy",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/male_high_raspy_62.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "male_high_sustained_64",
+    "category": "male_high",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/male_high_sustained_64.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "male_high_belted_64",
+    "category": "male_high_belted",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/male_high_belted_64.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "male_high_raspy_64",
+    "category": "male_high_raspy",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/male_high_raspy_64.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "falsetto_sustained_64",
+    "category": "falsetto",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/falsetto_sustained_64.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "falsetto_vibrato_64",
+    "category": "falsetto_vibrato",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/falsetto_vibrato_64.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "falsetto_sustained_67",
+    "category": "falsetto",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/falsetto_sustained_67.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "falsetto_vibrato_67",
+    "category": "falsetto_vibrato",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/falsetto_vibrato_67.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "falsetto_sustained_69",
+    "category": "falsetto",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/falsetto_sustained_69.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "falsetto_vibrato_69",
+    "category": "falsetto_vibrato",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/falsetto_vibrato_69.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "falsetto_sustained_72",
+    "category": "falsetto",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/falsetto_sustained_72.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "falsetto_vibrato_72",
+    "category": "falsetto_vibrato",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/falsetto_vibrato_72.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "female_low_sustained_53",
+    "category": "female_low",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/female_low_sustained_53.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "female_low_breathy_53",
+    "category": "female_low_breathy",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/female_low_breathy_53.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "female_low_sustained_55",
+    "category": "female_low",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/female_low_sustained_55.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "female_low_breathy_55",
+    "category": "female_low_breathy",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/female_low_breathy_55.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "female_low_sustained_57",
+    "category": "female_low",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/female_low_sustained_57.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "female_low_breathy_57",
+    "category": "female_low_breathy",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/female_low_breathy_57.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "female_low_sustained_59",
+    "category": "female_low",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/female_low_sustained_59.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "female_low_breathy_59",
+    "category": "female_low_breathy",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/female_low_breathy_59.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "female_mid_sustained_60",
+    "category": "female_mid",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/female_mid_sustained_60.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "female_mid_vibrato_60",
+    "category": "female_mid_vibrato",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/female_mid_vibrato_60.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "female_mid_soft_60",
+    "category": "female_mid_soft",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/female_mid_soft_60.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "female_mid_sustained_62",
+    "category": "female_mid",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/female_mid_sustained_62.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "female_mid_vibrato_62",
+    "category": "female_mid_vibrato",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/female_mid_vibrato_62.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "female_mid_soft_62",
+    "category": "female_mid_soft",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/female_mid_soft_62.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "female_mid_sustained_64",
+    "category": "female_mid",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/female_mid_sustained_64.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "female_mid_vibrato_64",
+    "category": "female_mid_vibrato",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/female_mid_vibrato_64.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "female_mid_soft_64",
+    "category": "female_mid_soft",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/female_mid_soft_64.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "female_mid_sustained_65",
+    "category": "female_mid",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/female_mid_sustained_65.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "female_mid_vibrato_65",
+    "category": "female_mid_vibrato",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/female_mid_vibrato_65.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "female_mid_soft_65",
+    "category": "female_mid_soft",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/female_mid_soft_65.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "female_mid_sustained_67",
+    "category": "female_mid",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/female_mid_sustained_67.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "female_mid_vibrato_67",
+    "category": "female_mid_vibrato",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/female_mid_vibrato_67.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "female_mid_soft_67",
+    "category": "female_mid_soft",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/female_mid_soft_67.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "female_high_sustained_69",
+    "category": "female_high",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/female_high_sustained_69.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "female_high_vibrato_heavy_69",
+    "category": "female_high_vibrato_heavy",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/female_high_vibrato_heavy_69.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "female_high_belted_69",
+    "category": "female_high_belted",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/female_high_belted_69.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "female_high_sustained_71",
+    "category": "female_high",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/female_high_sustained_71.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "female_high_vibrato_heavy_71",
+    "category": "female_high_vibrato_heavy",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/female_high_vibrato_heavy_71.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "female_high_belted_71",
+    "category": "female_high_belted",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/female_high_belted_71.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "female_high_sustained_72",
+    "category": "female_high",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/female_high_sustained_72.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "female_high_vibrato_heavy_72",
+    "category": "female_high_vibrato_heavy",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/female_high_vibrato_heavy_72.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "female_high_belted_72",
+    "category": "female_high_belted",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/female_high_belted_72.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "female_high_sustained_74",
+    "category": "female_high",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/female_high_sustained_74.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "female_high_vibrato_heavy_74",
+    "category": "female_high_vibrato_heavy",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/female_high_vibrato_heavy_74.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "female_high_belted_74",
+    "category": "female_high_belted",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/female_high_belted_74.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "female_high_sustained_76",
+    "category": "female_high",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/female_high_sustained_76.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "female_high_vibrato_heavy_76",
+    "category": "female_high_vibrato_heavy",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/female_high_vibrato_heavy_76.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "female_high_belted_76",
+    "category": "female_high_belted",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/female_high_belted_76.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "flat_50c_57",
+    "category": "deliberately_flat",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/flat_50c_57.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "sharp_50c_57",
+    "category": "deliberately_sharp",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/sharp_50c_57.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "flat_25c_57",
+    "category": "slightly_flat",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/flat_25c_57.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "sharp_25c_57",
+    "category": "slightly_sharp",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/sharp_25c_57.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "flat_50c_60",
+    "category": "deliberately_flat",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/flat_50c_60.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "sharp_50c_60",
+    "category": "deliberately_sharp",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/sharp_50c_60.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "flat_25c_60",
+    "category": "slightly_flat",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/flat_25c_60.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "sharp_25c_60",
+    "category": "slightly_sharp",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/sharp_25c_60.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "flat_50c_64",
+    "category": "deliberately_flat",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/flat_50c_64.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "sharp_50c_64",
+    "category": "deliberately_sharp",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/sharp_50c_64.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "flat_25c_64",
+    "category": "slightly_flat",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/flat_25c_64.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "sharp_25c_64",
+    "category": "slightly_sharp",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/sharp_25c_64.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "flat_50c_69",
+    "category": "deliberately_flat",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/flat_50c_69.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "sharp_50c_69",
+    "category": "deliberately_sharp",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/sharp_50c_69.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "flat_25c_69",
+    "category": "slightly_flat",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/flat_25c_69.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "sharp_25c_69",
+    "category": "slightly_sharp",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/sharp_25c_69.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "unstable_heavy_57",
+    "category": "unstable_beginner",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/unstable_heavy_57.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "unstable_light_57",
+    "category": "unstable_light",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/unstable_light_57.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "unstable_heavy_60",
+    "category": "unstable_beginner",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/unstable_heavy_60.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "unstable_light_60",
+    "category": "unstable_light",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/unstable_light_60.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "unstable_heavy_64",
+    "category": "unstable_beginner",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/unstable_heavy_64.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "unstable_light_64",
+    "category": "unstable_light",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/unstable_light_64.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "scoop_80c_52",
+    "category": "scoop",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/scoop_80c_52.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "scoop_120c_52",
+    "category": "scoop_large",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/scoop_120c_52.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "fall_60c_52",
+    "category": "fall",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/fall_60c_52.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "fall_100c_52",
+    "category": "fall_large",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/fall_100c_52.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "scoop_80c_57",
+    "category": "scoop",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/scoop_80c_57.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "scoop_120c_57",
+    "category": "scoop_large",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/scoop_120c_57.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "fall_60c_57",
+    "category": "fall",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/fall_60c_57.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "fall_100c_57",
+    "category": "fall_large",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/fall_100c_57.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "scoop_80c_60",
+    "category": "scoop",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/scoop_80c_60.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "scoop_120c_60",
+    "category": "scoop_large",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/scoop_120c_60.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "fall_60c_60",
+    "category": "fall",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/fall_60c_60.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "fall_100c_60",
+    "category": "fall_large",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/fall_100c_60.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "scoop_80c_64",
+    "category": "scoop",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/scoop_80c_64.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "scoop_120c_64",
+    "category": "scoop_large",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/scoop_120c_64.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "fall_60c_64",
+    "category": "fall",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/fall_60c_64.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "fall_100c_64",
+    "category": "fall_large",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/fall_100c_64.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "scoop_80c_69",
+    "category": "scoop",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/scoop_80c_69.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "scoop_120c_69",
+    "category": "scoop_large",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/scoop_120c_69.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "fall_60c_69",
+    "category": "fall",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/fall_60c_69.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "fall_100c_69",
+    "category": "fall_large",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/fall_100c_69.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "slide_semitone_up_57",
+    "category": "semitone_slide_up",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/slide_semitone_up_57.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "slide_semitone_down_57",
+    "category": "semitone_slide_down",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/slide_semitone_down_57.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "slide_wholetone_up_57",
+    "category": "wholetone_slide_up",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/slide_wholetone_up_57.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "slide_wholetone_down_57",
+    "category": "wholetone_slide_down",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/slide_wholetone_down_57.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "slide_semitone_up_60",
+    "category": "semitone_slide_up",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/slide_semitone_up_60.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "slide_semitone_down_60",
+    "category": "semitone_slide_down",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/slide_semitone_down_60.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "slide_wholetone_up_60",
+    "category": "wholetone_slide_up",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/slide_wholetone_up_60.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "slide_wholetone_down_60",
+    "category": "wholetone_slide_down",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/slide_wholetone_down_60.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "slide_semitone_up_64",
+    "category": "semitone_slide_up",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/slide_semitone_up_64.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "slide_semitone_down_64",
+    "category": "semitone_slide_down",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/slide_semitone_down_64.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "slide_wholetone_up_64",
+    "category": "wholetone_slide_up",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/slide_wholetone_up_64.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "slide_wholetone_down_64",
+    "category": "wholetone_slide_down",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/slide_wholetone_down_64.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "slide_semitone_up_69",
+    "category": "semitone_slide_up",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/slide_semitone_up_69.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "slide_semitone_down_69",
+    "category": "semitone_slide_down",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/slide_semitone_down_69.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "slide_wholetone_up_69",
+    "category": "wholetone_slide_up",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/slide_wholetone_up_69.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "slide_wholetone_down_69",
+    "category": "wholetone_slide_down",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/slide_wholetone_down_69.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "jump_maj3_52",
+    "category": "large_interval_3rd",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/jump_maj3_52.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "jump_p5_52",
+    "category": "large_interval_5th",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/jump_p5_52.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "jump_oct_52",
+    "category": "large_interval_octave",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/jump_oct_52.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "jump_maj6_52",
+    "category": "large_interval_6th",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/jump_maj6_52.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "jump_min7_52",
+    "category": "large_interval_7th",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/jump_min7_52.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "jump_maj3_57",
+    "category": "large_interval_3rd",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/jump_maj3_57.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "jump_p5_57",
+    "category": "large_interval_5th",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/jump_p5_57.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "jump_oct_57",
+    "category": "large_interval_octave",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/jump_oct_57.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "jump_maj6_57",
+    "category": "large_interval_6th",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/jump_maj6_57.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "jump_min7_57",
+    "category": "large_interval_7th",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/jump_min7_57.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "jump_maj3_60",
+    "category": "large_interval_3rd",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/jump_maj3_60.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "jump_p5_60",
+    "category": "large_interval_5th",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/jump_p5_60.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "jump_oct_60",
+    "category": "large_interval_octave",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/jump_oct_60.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "jump_maj6_60",
+    "category": "large_interval_6th",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/jump_maj6_60.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "jump_min7_60",
+    "category": "large_interval_7th",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/jump_min7_60.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "register_transition_male_60_72",
+    "category": "register_transition",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/register_transition_male_60_72.wav",
+    "duration_s": 1.6,
+    "sr": 44100
+  },
+  {
+    "name": "register_transition_female_64_76",
+    "category": "register_transition",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/register_transition_female_64_76.wav",
+    "duration_s": 1.6,
+    "sr": 44100
+  },
+  {
+    "name": "register_transition_male_52_64",
+    "category": "register_transition",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/register_transition_male_52_64.wav",
+    "duration_s": 1.6,
+    "sr": 44100
+  },
+  {
+    "name": "run_chromatic_up_fast_52",
+    "category": "fast_run_chromatic_up",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/run_chromatic_up_fast_52.wav",
+    "duration_s": 1.44,
+    "sr": 44100
+  },
+  {
+    "name": "run_chromatic_down_fast_52",
+    "category": "fast_run_chromatic_down",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/run_chromatic_down_fast_52.wav",
+    "duration_s": 1.44,
+    "sr": 44100
+  },
+  {
+    "name": "run_diatonic_up_fast_52",
+    "category": "fast_run_diatonic_up",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/run_diatonic_up_fast_52.wav",
+    "duration_s": 1.2,
+    "sr": 44100
+  },
+  {
+    "name": "run_chromatic_up_fast_57",
+    "category": "fast_run_chromatic_up",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/run_chromatic_up_fast_57.wav",
+    "duration_s": 1.44,
+    "sr": 44100
+  },
+  {
+    "name": "run_chromatic_down_fast_57",
+    "category": "fast_run_chromatic_down",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/run_chromatic_down_fast_57.wav",
+    "duration_s": 1.44,
+    "sr": 44100
+  },
+  {
+    "name": "run_diatonic_up_fast_57",
+    "category": "fast_run_diatonic_up",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/run_diatonic_up_fast_57.wav",
+    "duration_s": 1.2,
+    "sr": 44100
+  },
+  {
+    "name": "run_chromatic_up_fast_60",
+    "category": "fast_run_chromatic_up",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/run_chromatic_up_fast_60.wav",
+    "duration_s": 1.44,
+    "sr": 44100
+  },
+  {
+    "name": "run_chromatic_down_fast_60",
+    "category": "fast_run_chromatic_down",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/run_chromatic_down_fast_60.wav",
+    "duration_s": 1.44,
+    "sr": 44100
+  },
+  {
+    "name": "run_diatonic_up_fast_60",
+    "category": "fast_run_diatonic_up",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/run_diatonic_up_fast_60.wav",
+    "duration_s": 1.2,
+    "sr": 44100
+  },
+  {
+    "name": "run_chromatic_up_fast_64",
+    "category": "fast_run_chromatic_up",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/run_chromatic_up_fast_64.wav",
+    "duration_s": 1.44,
+    "sr": 44100
+  },
+  {
+    "name": "run_chromatic_down_fast_64",
+    "category": "fast_run_chromatic_down",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/run_chromatic_down_fast_64.wav",
+    "duration_s": 1.44,
+    "sr": 44100
+  },
+  {
+    "name": "run_diatonic_up_fast_64",
+    "category": "fast_run_diatonic_up",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/run_diatonic_up_fast_64.wav",
+    "duration_s": 1.2,
+    "sr": 44100
+  },
+  {
+    "name": "run_chromatic_up_slow_52",
+    "category": "slow_run_up",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/run_chromatic_up_slow_52.wav",
+    "duration_s": 3.6,
+    "sr": 44100
+  },
+  {
+    "name": "run_chromatic_down_slow_52",
+    "category": "slow_run_down",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/run_chromatic_down_slow_52.wav",
+    "duration_s": 3.6,
+    "sr": 44100
+  },
+  {
+    "name": "run_chromatic_up_slow_57",
+    "category": "slow_run_up",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/run_chromatic_up_slow_57.wav",
+    "duration_s": 3.6,
+    "sr": 44100
+  },
+  {
+    "name": "run_chromatic_down_slow_57",
+    "category": "slow_run_down",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/run_chromatic_down_slow_57.wav",
+    "duration_s": 3.6,
+    "sr": 44100
+  },
+  {
+    "name": "run_chromatic_up_slow_60",
+    "category": "slow_run_up",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/run_chromatic_up_slow_60.wav",
+    "duration_s": 3.6,
+    "sr": 44100
+  },
+  {
+    "name": "run_chromatic_down_slow_60",
+    "category": "slow_run_down",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/run_chromatic_down_slow_60.wav",
+    "duration_s": 3.6,
+    "sr": 44100
+  },
+  {
+    "name": "chrom_pass_below_57",
+    "category": "chromatic_passing",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/chrom_pass_below_57.wav",
+    "duration_s": 1.1,
+    "sr": 44100
+  },
+  {
+    "name": "chrom_pass_above_57",
+    "category": "chromatic_passing",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/chrom_pass_above_57.wav",
+    "duration_s": 1.6,
+    "sr": 44100
+  },
+  {
+    "name": "chrom_pass_below_60",
+    "category": "chromatic_passing",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/chrom_pass_below_60.wav",
+    "duration_s": 1.1,
+    "sr": 44100
+  },
+  {
+    "name": "chrom_pass_above_60",
+    "category": "chromatic_passing",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/chrom_pass_above_60.wav",
+    "duration_s": 1.6,
+    "sr": 44100
+  },
+  {
+    "name": "chrom_pass_below_64",
+    "category": "chromatic_passing",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/chrom_pass_below_64.wav",
+    "duration_s": 1.1,
+    "sr": 44100
+  },
+  {
+    "name": "chrom_pass_above_64",
+    "category": "chromatic_passing",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/chrom_pass_above_64.wav",
+    "duration_s": 1.6,
+    "sr": 44100
+  },
+  {
+    "name": "repeated_52_fast",
+    "category": "repeated_fast",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/repeated_52_fast.wav",
+    "duration_s": 1.14,
+    "sr": 44100
+  },
+  {
+    "name": "repeated_52_slow",
+    "category": "repeated_slow",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/repeated_52_slow.wav",
+    "duration_s": 1.92,
+    "sr": 44100
+  },
+  {
+    "name": "repeated_57_fast",
+    "category": "repeated_fast",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/repeated_57_fast.wav",
+    "duration_s": 1.14,
+    "sr": 44100
+  },
+  {
+    "name": "repeated_57_slow",
+    "category": "repeated_slow",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/repeated_57_slow.wav",
+    "duration_s": 1.92,
+    "sr": 44100
+  },
+  {
+    "name": "repeated_60_fast",
+    "category": "repeated_fast",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/repeated_60_fast.wav",
+    "duration_s": 1.14,
+    "sr": 44100
+  },
+  {
+    "name": "repeated_60_slow",
+    "category": "repeated_slow",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/repeated_60_slow.wav",
+    "duration_s": 1.92,
+    "sr": 44100
+  },
+  {
+    "name": "repeated_64_fast",
+    "category": "repeated_fast",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/repeated_64_fast.wav",
+    "duration_s": 1.14,
+    "sr": 44100
+  },
+  {
+    "name": "repeated_64_slow",
+    "category": "repeated_slow",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/repeated_64_slow.wav",
+    "duration_s": 1.92,
+    "sr": 44100
+  },
+  {
+    "name": "repeated_69_fast",
+    "category": "repeated_fast",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/repeated_69_fast.wav",
+    "duration_s": 1.14,
+    "sr": 44100
+  },
+  {
+    "name": "repeated_69_slow",
+    "category": "repeated_slow",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/repeated_69_slow.wav",
+    "duration_s": 1.92,
+    "sr": 44100
+  },
+  {
+    "name": "sustained_4s_45",
+    "category": "sustained_long",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/sustained_4s_45.wav",
+    "duration_s": 4.0,
+    "sr": 44100
+  },
+  {
+    "name": "sustained_vibrato_4s_45",
+    "category": "sustained_vibrato_long",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/sustained_vibrato_4s_45.wav",
+    "duration_s": 4.0,
+    "sr": 44100
+  },
+  {
+    "name": "sustained_4s_52",
+    "category": "sustained_long",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/sustained_4s_52.wav",
+    "duration_s": 4.0,
+    "sr": 44100
+  },
+  {
+    "name": "sustained_vibrato_4s_52",
+    "category": "sustained_vibrato_long",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/sustained_vibrato_4s_52.wav",
+    "duration_s": 4.0,
+    "sr": 44100
+  },
+  {
+    "name": "sustained_4s_57",
+    "category": "sustained_long",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/sustained_4s_57.wav",
+    "duration_s": 4.0,
+    "sr": 44100
+  },
+  {
+    "name": "sustained_vibrato_4s_57",
+    "category": "sustained_vibrato_long",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/sustained_vibrato_4s_57.wav",
+    "duration_s": 4.0,
+    "sr": 44100
+  },
+  {
+    "name": "sustained_4s_60",
+    "category": "sustained_long",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/sustained_4s_60.wav",
+    "duration_s": 4.0,
+    "sr": 44100
+  },
+  {
+    "name": "sustained_vibrato_4s_60",
+    "category": "sustained_vibrato_long",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/sustained_vibrato_4s_60.wav",
+    "duration_s": 4.0,
+    "sr": 44100
+  },
+  {
+    "name": "sustained_4s_64",
+    "category": "sustained_long",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/sustained_4s_64.wav",
+    "duration_s": 4.0,
+    "sr": 44100
+  },
+  {
+    "name": "sustained_vibrato_4s_64",
+    "category": "sustained_vibrato_long",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/sustained_vibrato_4s_64.wav",
+    "duration_s": 4.0,
+    "sr": 44100
+  },
+  {
+    "name": "sustained_4s_69",
+    "category": "sustained_long",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/sustained_4s_69.wav",
+    "duration_s": 4.0,
+    "sr": 44100
+  },
+  {
+    "name": "sustained_vibrato_4s_69",
+    "category": "sustained_vibrato_long",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/sustained_vibrato_4s_69.wav",
+    "duration_s": 4.0,
+    "sr": 44100
+  },
+  {
+    "name": "sustained_4s_72",
+    "category": "sustained_long",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/sustained_4s_72.wav",
+    "duration_s": 4.0,
+    "sr": 44100
+  },
+  {
+    "name": "sustained_vibrato_4s_72",
+    "category": "sustained_vibrato_long",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/sustained_vibrato_4s_72.wav",
+    "duration_s": 4.0,
+    "sr": 44100
+  },
+  {
+    "name": "vibrato_heavy_80c_57",
+    "category": "vibrato_heavy",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/vibrato_heavy_80c_57.wav",
+    "duration_s": 3.0,
+    "sr": 44100
+  },
+  {
+    "name": "vibrato_fast_5Hz_57",
+    "category": "vibrato_fast",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/vibrato_fast_5Hz_57.wav",
+    "duration_s": 2.5,
+    "sr": 44100
+  },
+  {
+    "name": "vibrato_slow_4Hz_57",
+    "category": "vibrato_slow",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/vibrato_slow_4Hz_57.wav",
+    "duration_s": 2.5,
+    "sr": 44100
+  },
+  {
+    "name": "vibrato_heavy_80c_60",
+    "category": "vibrato_heavy",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/vibrato_heavy_80c_60.wav",
+    "duration_s": 3.0,
+    "sr": 44100
+  },
+  {
+    "name": "vibrato_fast_5Hz_60",
+    "category": "vibrato_fast",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/vibrato_fast_5Hz_60.wav",
+    "duration_s": 2.5,
+    "sr": 44100
+  },
+  {
+    "name": "vibrato_slow_4Hz_60",
+    "category": "vibrato_slow",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/vibrato_slow_4Hz_60.wav",
+    "duration_s": 2.5,
+    "sr": 44100
+  },
+  {
+    "name": "vibrato_heavy_80c_64",
+    "category": "vibrato_heavy",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/vibrato_heavy_80c_64.wav",
+    "duration_s": 3.0,
+    "sr": 44100
+  },
+  {
+    "name": "vibrato_fast_5Hz_64",
+    "category": "vibrato_fast",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/vibrato_fast_5Hz_64.wav",
+    "duration_s": 2.5,
+    "sr": 44100
+  },
+  {
+    "name": "vibrato_slow_4Hz_64",
+    "category": "vibrato_slow",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/vibrato_slow_4Hz_64.wav",
+    "duration_s": 2.5,
+    "sr": 44100
+  },
+  {
+    "name": "vibrato_heavy_80c_69",
+    "category": "vibrato_heavy",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/vibrato_heavy_80c_69.wav",
+    "duration_s": 3.0,
+    "sr": 44100
+  },
+  {
+    "name": "vibrato_fast_5Hz_69",
+    "category": "vibrato_fast",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/vibrato_fast_5Hz_69.wav",
+    "duration_s": 2.5,
+    "sr": 44100
+  },
+  {
+    "name": "vibrato_slow_4Hz_69",
+    "category": "vibrato_slow",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/vibrato_slow_4Hz_69.wav",
+    "duration_s": 2.5,
+    "sr": 44100
+  },
+  {
+    "name": "straight_tone_57",
+    "category": "straight_tone",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/straight_tone_57.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "straight_tone_60",
+    "category": "straight_tone",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/straight_tone_60.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "straight_tone_64",
+    "category": "straight_tone",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/straight_tone_64.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "straight_tone_69",
+    "category": "straight_tone",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/straight_tone_69.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "head_voice_67",
+    "category": "head_voice",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/head_voice_67.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "head_voice_straight_67",
+    "category": "head_voice_straight",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/head_voice_straight_67.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "head_voice_69",
+    "category": "head_voice",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/head_voice_69.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "head_voice_straight_69",
+    "category": "head_voice_straight",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/head_voice_straight_69.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "head_voice_72",
+    "category": "head_voice",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/head_voice_72.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "head_voice_straight_72",
+    "category": "head_voice_straight",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/head_voice_straight_72.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "head_voice_74",
+    "category": "head_voice",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/head_voice_74.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "head_voice_straight_74",
+    "category": "head_voice_straight",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/head_voice_straight_74.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "head_voice_76",
+    "category": "head_voice",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/head_voice_76.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "head_voice_straight_76",
+    "category": "head_voice_straight",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/head_voice_straight_76.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "chest_heavy_48",
+    "category": "chest_voice_heavy",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/chest_heavy_48.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "chest_heavy_50",
+    "category": "chest_voice_heavy",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/chest_heavy_50.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "chest_heavy_52",
+    "category": "chest_voice_heavy",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/chest_heavy_52.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "chest_heavy_55",
+    "category": "chest_voice_heavy",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/chest_heavy_55.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "chest_heavy_57",
+    "category": "chest_voice_heavy",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/chest_heavy_57.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "rap_to_melody_52",
+    "category": "rap_melodic_transition",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/rap_to_melody_52.wav",
+    "duration_s": 1.6,
+    "sr": 44100
+  },
+  {
+    "name": "rap_to_melody_57",
+    "category": "rap_melodic_transition",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/rap_to_melody_57.wav",
+    "duration_s": 1.6,
+    "sr": 44100
+  },
+  {
+    "name": "rap_to_melody_60",
+    "category": "rap_melodic_transition",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/rap_to_melody_60.wav",
+    "duration_s": 1.6,
+    "sr": 44100
+  },
+  {
+    "name": "vibrato_ramp_60",
+    "category": "vibrato_ramp",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/vibrato_ramp_60.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "vibrato_operatic_60",
+    "category": "vibrato_operatic",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/vibrato_operatic_60.wav",
+    "duration_s": 2.5,
+    "sr": 44100
+  },
+  {
+    "name": "vibrato_ramp_64",
+    "category": "vibrato_ramp",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/vibrato_ramp_64.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "vibrato_operatic_64",
+    "category": "vibrato_operatic",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/vibrato_operatic_64.wav",
+    "duration_s": 2.5,
+    "sr": 44100
+  },
+  {
+    "name": "vibrato_ramp_69",
+    "category": "vibrato_ramp",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/vibrato_ramp_69.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "vibrato_operatic_69",
+    "category": "vibrato_operatic",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/vibrato_operatic_69.wav",
+    "duration_s": 2.5,
+    "sr": 44100
+  },
+  {
+    "name": "phrase_c_major_up",
+    "category": "scale_phrase",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/phrase_c_major_up.wav",
+    "duration_s": 2.4,
+    "sr": 44100
+  },
+  {
+    "name": "phrase_c_major_down",
+    "category": "scale_phrase",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/phrase_c_major_down.wav",
+    "duration_s": 2.4,
+    "sr": 44100
+  },
+  {
+    "name": "phrase_a_minor_up",
+    "category": "scale_phrase",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/phrase_a_minor_up.wav",
+    "duration_s": 2.4,
+    "sr": 44100
+  },
+  {
+    "name": "phrase_pent_up_fast",
+    "category": "pentatonic_run",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/phrase_pent_up_fast.wav",
+    "duration_s": 0.72,
+    "sr": 44100
+  },
+  {
+    "name": "phrase_pent_down_fast",
+    "category": "pentatonic_run",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/phrase_pent_down_fast.wav",
+    "duration_s": 0.72,
+    "sr": 44100
+  },
+  {
+    "name": "arp_major_48",
+    "category": "arpeggio_major",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/arp_major_48.wav",
+    "duration_s": 1.75,
+    "sr": 44100
+  },
+  {
+    "name": "arp_minor_48",
+    "category": "arpeggio_minor",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/arp_minor_48.wav",
+    "duration_s": 1.75,
+    "sr": 44100
+  },
+  {
+    "name": "arp_major_52",
+    "category": "arpeggio_major",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/arp_major_52.wav",
+    "duration_s": 1.75,
+    "sr": 44100
+  },
+  {
+    "name": "arp_minor_52",
+    "category": "arpeggio_minor",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/arp_minor_52.wav",
+    "duration_s": 1.75,
+    "sr": 44100
+  },
+  {
+    "name": "arp_major_57",
+    "category": "arpeggio_major",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/arp_major_57.wav",
+    "duration_s": 1.75,
+    "sr": 44100
+  },
+  {
+    "name": "arp_minor_57",
+    "category": "arpeggio_minor",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/arp_minor_57.wav",
+    "duration_s": 1.75,
+    "sr": 44100
+  },
+  {
+    "name": "arp_major_60",
+    "category": "arpeggio_major",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/arp_major_60.wav",
+    "duration_s": 1.75,
+    "sr": 44100
+  },
+  {
+    "name": "arp_minor_60",
+    "category": "arpeggio_minor",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/arp_minor_60.wav",
+    "duration_s": 1.75,
+    "sr": 44100
+  },
+  {
+    "name": "boundary_sil_voc_sil_57",
+    "category": "silence_voice_boundary",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/boundary_sil_voc_sil_57.wav",
+    "duration_s": 2.1,
+    "sr": 44100
+  },
+  {
+    "name": "boundary_gap_57",
+    "category": "note_gap_boundary",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/boundary_gap_57.wav",
+    "duration_s": 1.45,
+    "sr": 44100
+  },
+  {
+    "name": "rapid_attacks_57",
+    "category": "rapid_attack",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/rapid_attacks_57.wav",
+    "duration_s": 0.96,
+    "sr": 44100
+  },
+  {
+    "name": "boundary_sil_voc_sil_60",
+    "category": "silence_voice_boundary",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/boundary_sil_voc_sil_60.wav",
+    "duration_s": 2.1,
+    "sr": 44100
+  },
+  {
+    "name": "boundary_gap_60",
+    "category": "note_gap_boundary",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/boundary_gap_60.wav",
+    "duration_s": 1.45,
+    "sr": 44100
+  },
+  {
+    "name": "rapid_attacks_60",
+    "category": "rapid_attack",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/rapid_attacks_60.wav",
+    "duration_s": 0.96,
+    "sr": 44100
+  },
+  {
+    "name": "boundary_sil_voc_sil_64",
+    "category": "silence_voice_boundary",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/boundary_sil_voc_sil_64.wav",
+    "duration_s": 2.1,
+    "sr": 44100
+  },
+  {
+    "name": "boundary_gap_64",
+    "category": "note_gap_boundary",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/boundary_gap_64.wav",
+    "duration_s": 1.45,
+    "sr": 44100
+  },
+  {
+    "name": "rapid_attacks_64",
+    "category": "rapid_attack",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/rapid_attacks_64.wav",
+    "duration_s": 0.96,
+    "sr": 44100
+  },
+  {
+    "name": "vowel_iy_57",
+    "category": "vowel_iy",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/vowel_iy_57.wav",
+    "duration_s": 1.5,
+    "sr": 44100
+  },
+  {
+    "name": "vowel_uw_57",
+    "category": "vowel_uw",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/vowel_uw_57.wav",
+    "duration_s": 1.5,
+    "sr": 44100
+  },
+  {
+    "name": "vowel_ae_57",
+    "category": "vowel_ae",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/vowel_ae_57.wav",
+    "duration_s": 1.5,
+    "sr": 44100
+  },
+  {
+    "name": "vowel_iy_60",
+    "category": "vowel_iy",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/vowel_iy_60.wav",
+    "duration_s": 1.5,
+    "sr": 44100
+  },
+  {
+    "name": "vowel_uw_60",
+    "category": "vowel_uw",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/vowel_uw_60.wav",
+    "duration_s": 1.5,
+    "sr": 44100
+  },
+  {
+    "name": "vowel_ae_60",
+    "category": "vowel_ae",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/vowel_ae_60.wav",
+    "duration_s": 1.5,
+    "sr": 44100
+  },
+  {
+    "name": "vowel_iy_64",
+    "category": "vowel_iy",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/vowel_iy_64.wav",
+    "duration_s": 1.5,
+    "sr": 44100
+  },
+  {
+    "name": "vowel_uw_64",
+    "category": "vowel_uw",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/vowel_uw_64.wav",
+    "duration_s": 1.5,
+    "sr": 44100
+  },
+  {
+    "name": "vowel_ae_64",
+    "category": "vowel_ae",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/vowel_ae_64.wav",
+    "duration_s": 1.5,
+    "sr": 44100
+  },
+  {
+    "name": "vowel_iy_69",
+    "category": "vowel_iy",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/vowel_iy_69.wav",
+    "duration_s": 1.5,
+    "sr": 44100
+  },
+  {
+    "name": "vowel_uw_69",
+    "category": "vowel_uw",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/vowel_uw_69.wav",
+    "duration_s": 1.5,
+    "sr": 44100
+  },
+  {
+    "name": "vowel_ae_69",
+    "category": "vowel_ae",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/vowel_ae_69.wav",
+    "duration_s": 1.5,
+    "sr": 44100
+  },
+  {
+    "name": "tremolo_57",
+    "category": "tremolo",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/tremolo_57.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "tremolo_64",
+    "category": "tremolo",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/tremolo_64.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "tremolo_69",
+    "category": "tremolo",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/tremolo_69.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "slow_onset_57",
+    "category": "slow_onset",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/slow_onset_57.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "slow_onset_64",
+    "category": "slow_onset",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/slow_onset_64.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "low_level_57",
+    "category": "low_level",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/low_level_57.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "low_level_64",
+    "category": "low_level",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/low_level_64.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "extreme_high_b5",
+    "category": "extreme_high",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/extreme_high_b5.wav",
+    "duration_s": 1.5,
+    "sr": 44100
+  },
+  {
+    "name": "extreme_low_e1",
+    "category": "extreme_low",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/extreme_low_e1.wav",
+    "duration_s": 1.5,
+    "sr": 44100
+  },
+  {
+    "name": "on_scale_root_a4",
+    "category": "on_root",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/on_scale_root_a4.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "octave_bait_45",
+    "category": "octave_bait",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/octave_bait_45.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "octave_bait_57",
+    "category": "octave_bait",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/octave_bait_57.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "octave_bait_69",
+    "category": "octave_bait",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/octave_bait_69.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  },
+  {
+    "name": "octave_bait_81",
+    "category": "octave_bait",
+    "path": "/Users/agentsattari/code/sattari-worktrees/experiment-neural-vocal-corpus/corpus/neural_vocal/dry/octave_bait_81.wav",
+    "duration_s": 2.0,
+    "sr": 44100
+  }
+]

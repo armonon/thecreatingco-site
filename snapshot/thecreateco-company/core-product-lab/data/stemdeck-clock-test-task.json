@@ -1,0 +1,24 @@
+{
+  "task_id": "CORE-STEMDECK-TEST-001",
+  "title": "Stabilize revocation throttle test clock without changing authentication behavior",
+  "product": "stemdeck",
+  "area": "test isolation",
+  "category": "technical_debt",
+  "severity": "P3",
+  "workstream": "CORE_PRODUCT_LAB",
+  "model": "gpt-6-luna",
+  "scores": {
+    "impact": 5,
+    "user_value": 5,
+    "severity": 4,
+    "workflow_importance": 5,
+    "competitive_value": 1,
+    "release_importance": 7,
+    "confidence": 10,
+    "effort": 1,
+    "risk": 1
+  },
+  "source_evidence": "core-product-lab/reports/stemdeck-security-review.md",
+  "test_requirements": "Apply reviewed fixed Date.now clock inside affected test with finally restore; focused suite and deterministic window-rollover control. No auth implementation changes.",
+  "next_action": "Use exact reviewer-proposed isolated test patch; retain boundary-failure proof and existing security assertions."
+}

@@ -1,0 +1,112 @@
+{
+  "updated_at": "2026-10-08T01:08:57.576819+00:00",
+  "timezone": "America/Los_Angeles",
+  "metrics": {
+    "revenue": {
+      "definition": "Founder-reported current revenue baseline. Separate from audited today/7d/30d totals.",
+      "source_required": "Founder statement initially; verified ledger when available"
+    },
+    "revenue_today": {
+      "definition": "Recognized company revenue in USD, America/Los_Angeles calendar day; excludes sales tax, refunds and pass-through amounts.",
+      "source_required": "Authoritative aggregate accounting/payment/POS data for finance; consent-appropriate product analytics for use; existing Growth records for pipeline. Confirm attribution/coverage first."
+    },
+    "revenue_7d": {
+      "definition": "Recognized company revenue in USD for trailing 7 complete local days.",
+      "source_required": "Authoritative aggregate accounting/payment/POS data for finance; consent-appropriate product analytics for use; existing Growth records for pipeline. Confirm attribution/coverage first."
+    },
+    "revenue_30d": {
+      "definition": "Recognized company revenue in USD for trailing 30 complete local days.",
+      "source_required": "Authoritative aggregate accounting/payment/POS data for finance; consent-appropriate product analytics for use; existing Growth records for pipeline. Confirm attribution/coverage first."
+    },
+    "mrr": {
+      "definition": "Normalized monthly committed recurring revenue; exclude one-time licenses, pilot fees and merchandise sales.",
+      "source_required": "Authoritative aggregate accounting/payment/POS data for finance; consent-appropriate product analytics for use; existing Growth records for pipeline. Confirm attribution/coverage first."
+    },
+    "customers": {
+      "definition": "Unique paying company customers in trailing 30 days, not accounts or free users.",
+      "source_required": "Authoritative aggregate accounting/payment/POS data for finance; consent-appropriate product analytics for use; existing Growth records for pipeline. Confirm attribution/coverage first."
+    },
+    "new_customers": {
+      "definition": "First-ever paying customers whose first recognized purchase falls in interval.",
+      "source_required": "Authoritative aggregate accounting/payment/POS data for finance; consent-appropriate product analytics for use; existing Growth records for pipeline. Confirm attribution/coverage first."
+    },
+    "active_users": {
+      "definition": "Distinct users with meaningful workflow activity in interval; definition/version required, pageviews excluded.",
+      "source_required": "Authoritative aggregate accounting/payment/POS data for finance; consent-appropriate product analytics for use; existing Growth records for pipeline. Confirm attribution/coverage first."
+    },
+    "conversion_rate": {
+      "definition": "Explicit named numerator/eligible denominator for a stated funnel stage and cohort.",
+      "source_required": "Authoritative aggregate accounting/payment/POS data for finance; consent-appropriate product analytics for use; existing Growth records for pipeline. Confirm attribution/coverage first."
+    },
+    "average_order_value": {
+      "definition": "Net recognized sales value / completed paid orders in same period.",
+      "source_required": "Authoritative aggregate accounting/payment/POS data for finance; consent-appropriate product analytics for use; existing Growth records for pipeline. Confirm attribution/coverage first."
+    },
+    "leads": {
+      "definition": "Deduplicated consent-compatible interested prospects, not scraped addresses.",
+      "source_required": "Authoritative aggregate accounting/payment/POS data for finance; consent-appropriate product analytics for use; existing Growth records for pipeline. Confirm attribution/coverage first."
+    },
+    "qualified_pipeline": {
+      "definition": "Value of qualified opportunities with buyer, need, scope and next step; not booked revenue.",
+      "source_required": "Authoritative aggregate accounting/payment/POS data for finance; consent-appropriate product analytics for use; existing Growth records for pipeline. Confirm attribution/coverage first."
+    },
+    "top_product": {
+      "definition": "Highest observed company contribution or revenue product in a comparable stated interval.",
+      "source_required": "Authoritative aggregate accounting/payment/POS data for finance; consent-appropriate product analytics for use; existing Growth records for pipeline. Confirm attribution/coverage first."
+    },
+    "top_channel": {
+      "definition": "Highest attributed paying-customer contribution in comparable stated interval; unknown without attribution.",
+      "source_required": "Authoritative aggregate accounting/payment/POS data for finance; consent-appropriate product analytics for use; existing Growth records for pipeline. Confirm attribution/coverage first."
+    },
+    "cac": {
+      "definition": "Fully loaded attributable acquisition cost / new paying customers in matched interval.",
+      "source_required": "Authoritative aggregate accounting/payment/POS data for finance; consent-appropriate product analytics for use; existing Growth records for pipeline. Confirm attribution/coverage first."
+    },
+    "retention": {
+      "definition": "D1/D7/D30/M3/M6 meaningful activity or paid renewal by eligible acquisition cohort; denominator and censoring required.",
+      "source_required": "Authoritative aggregate accounting/payment/POS data for finance; consent-appropriate product analytics for use; existing Growth records for pipeline. Confirm attribution/coverage first."
+    },
+    "ai_cost": {
+      "definition": "Company-wide actual billed model cost in interval, separate from token/list-price estimates.",
+      "source_required": "Authoritative aggregate accounting/payment/POS data for finance; consent-appropriate product analytics for use; existing Growth records for pipeline. Confirm attribution/coverage first."
+    },
+    "operating_cost": {
+      "definition": "Hosting, software, AI, contractors, salaries and other operating expense in interval; excludes duplicated direct cost.",
+      "source_required": "Authoritative aggregate accounting/payment/POS data for finance; consent-appropriate product analytics for use; existing Growth records for pipeline. Confirm attribution/coverage first."
+    },
+    "profit": {
+      "definition": "Recognized revenue minus COGS, fulfillment, labor, fees and operating costs on a consistent basis.",
+      "source_required": "Authoritative aggregate accounting/payment/POS data for finance; consent-appropriate product analytics for use; existing Growth records for pipeline. Confirm attribution/coverage first."
+    },
+    "cash_collected": {
+      "definition": "Settled customer cash received, net refunds, distinct from recognized revenue.",
+      "source_required": "Authoritative aggregate accounting/payment/POS data for finance; consent-appropriate product analytics for use; existing Growth records for pipeline. Confirm attribution/coverage first."
+    },
+    "traffic": {
+      "definition": "Visitors/sessions defined by source and period; not inferred from marketing output.",
+      "source_required": "Authoritative aggregate accounting/payment/POS data for finance; consent-appropriate product analytics for use; existing Growth records for pipeline. Confirm attribution/coverage first."
+    },
+    "trials": {
+      "definition": "Distinct eligible trial starts, not founding-list subscriptions.",
+      "source_required": "Authoritative aggregate accounting/payment/POS data for finance; consent-appropriate product analytics for use; existing Growth records for pipeline. Confirm attribution/coverage first."
+    },
+    "marketing_ai_list_equivalent": {
+      "definition": "All recorded marketing calls only; excludes company engineering/research/current audit; token estimates may apply. Not AI ROI or actual billed cost."
+    },
+    "refunds": {
+      "definition": "Recognized customer refunds in same currency/reporting interval, linked to revenue convention; do not subtract twice.",
+      "source_required": "Attributed accounting/POS aggregate and actual delivery-hour records."
+    },
+    "direct_delivery_cost": {
+      "definition": "Direct fulfillment labor, COGS, payment fees, subcontractors and delivery tools in matched interval; avoid double counting operating expense.",
+      "source_required": "Attributed accounting/POS aggregate and actual delivery-hour records."
+    }
+  },
+  "rules": [
+    "Unknown is null, never zero",
+    "Do not sum Sattari gross sales without ownership/revenue attribution",
+    "MRR is not annualized one-time cash",
+    "Every rate needs numerator, denominator, period and cohort",
+    "No customer contacts or message bodies in aggregates"
+  ]
+}

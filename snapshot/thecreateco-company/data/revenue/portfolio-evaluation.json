@@ -1,0 +1,470 @@
+{
+  "scoring": "0–10 subjective planning estimates. Higher is favorable for pain/urgency/differentiation/access/retention/advantage; higher means harder for build effort/sales complexity/competition/time to revenue. null means unsupported, not neutral or zero. No composite ranking across unknowns. Product quality remains unscored per company policy; WTP, market size and margin require evidence. Classifications do not enact release/retirement.",
+  "module_policy": "27 modules inherit their parent evaluation unless a distinct buyer/outcome warrants a separate test. Four infrastructure entries enable distribution/operations, not separate SKUs. See full 44-entry registry.",
+  "opportunities": [
+    {
+      "opportunity_id": "workflow-service",
+      "classification": "VALIDATE",
+      "scores": {
+        "customer_pain": 7,
+        "willingness_to_pay": null,
+        "market_size": null,
+        "urgency": 6,
+        "product_quality": null,
+        "differentiation": 4,
+        "distribution_access": 2,
+        "margins": null,
+        "retention_potential": 5,
+        "build_effort": 3,
+        "sales_complexity": 6,
+        "competition": 7,
+        "time_to_revenue": 3,
+        "founder_advantage": 6
+      },
+      "basis": "One fixed-scope service avoids dependence on an unqualified release; delivery skill and demand still need a real pilot.",
+      "confidence": "LOW; directional director estimates, not observed business performance",
+      "observed_at": "2026-10-08T01:08:57.576819+00:00",
+      "sources": [
+        "PRODUCT_REGISTRY.json",
+        "core-product-lab/HEALTH.md",
+        "reports/revenue-2026-10-07/asset-audit.md",
+        "reports/revenue-2026-10-07/market-evidence.md"
+      ]
+    },
+    {
+      "opportunity_id": "scenepilot",
+      "classification": "IMPROVE",
+      "scores": {
+        "customer_pain": 6,
+        "willingness_to_pay": null,
+        "market_size": null,
+        "urgency": 5,
+        "product_quality": null,
+        "differentiation": 5,
+        "distribution_access": 2,
+        "margins": null,
+        "retention_potential": 6,
+        "build_effort": 6,
+        "sales_complexity": 4,
+        "competition": 9,
+        "time_to_revenue": 7,
+        "founder_advantage": 6
+      },
+      "basis": "Specific beat-aware first-cut workflow; qualify actual media/export before paid product positioning.",
+      "confidence": "LOW; directional director estimates, not observed business performance",
+      "observed_at": "2026-10-08T01:08:57.576819+00:00",
+      "sources": [
+        "PRODUCT_REGISTRY.json",
+        "core-product-lab/HEALTH.md",
+        "reports/revenue-2026-10-07/asset-audit.md",
+        "reports/revenue-2026-10-07/market-evidence.md"
+      ]
+    },
+    {
+      "opportunity_id": "luma",
+      "classification": "IMPROVE",
+      "scores": {
+        "customer_pain": 6,
+        "willingness_to_pay": null,
+        "market_size": null,
+        "urgency": 5,
+        "product_quality": null,
+        "differentiation": 4,
+        "distribution_access": 2,
+        "margins": null,
+        "retention_potential": 6,
+        "build_effort": 7,
+        "sales_complexity": 4,
+        "competition": 10,
+        "time_to_revenue": 8,
+        "founder_advantage": 6
+      },
+      "basis": "Strong visual workflow candidate; provenance and free competitors are material barriers.",
+      "confidence": "LOW; directional director estimates, not observed business performance",
+      "observed_at": "2026-10-08T01:08:57.576819+00:00",
+      "sources": [
+        "PRODUCT_REGISTRY.json",
+        "core-product-lab/HEALTH.md",
+        "reports/revenue-2026-10-07/asset-audit.md",
+        "reports/revenue-2026-10-07/market-evidence.md"
+      ]
+    },
+    {
+      "opportunity_id": "form",
+      "classification": "IMPROVE",
+      "scores": {
+        "customer_pain": 7,
+        "willingness_to_pay": null,
+        "market_size": null,
+        "urgency": 6,
+        "product_quality": null,
+        "differentiation": 5,
+        "distribution_access": 2,
+        "margins": null,
+        "retention_potential": 7,
+        "build_effort": 8,
+        "sales_complexity": 7,
+        "competition": 9,
+        "time_to_revenue": 8,
+        "founder_advantage": 5
+      },
+      "basis": "Jewelry/product niche possible; canonical release/export/manufacturing-claim qualification required.",
+      "confidence": "LOW; directional director estimates, not observed business performance",
+      "observed_at": "2026-10-08T01:08:57.576819+00:00",
+      "sources": [
+        "PRODUCT_REGISTRY.json",
+        "core-product-lab/HEALTH.md",
+        "reports/revenue-2026-10-07/asset-audit.md",
+        "reports/revenue-2026-10-07/market-evidence.md"
+      ]
+    },
+    {
+      "opportunity_id": "stemdeck",
+      "classification": "IMPROVE",
+      "scores": {
+        "customer_pain": 6,
+        "willingness_to_pay": null,
+        "market_size": null,
+        "urgency": 5,
+        "product_quality": null,
+        "differentiation": 5,
+        "distribution_access": 2,
+        "margins": null,
+        "retention_potential": 7,
+        "build_effort": 8,
+        "sales_complexity": 5,
+        "competition": 9,
+        "time_to_revenue": 8,
+        "founder_advantage": 6
+      },
+      "basis": "Prepared-stem workflow, not arbitrary separation; full golden workflow and licensing gates remain.",
+      "confidence": "LOW; directional director estimates, not observed business performance",
+      "observed_at": "2026-10-08T01:08:57.576819+00:00",
+      "sources": [
+        "PRODUCT_REGISTRY.json",
+        "core-product-lab/HEALTH.md",
+        "reports/revenue-2026-10-07/asset-audit.md",
+        "reports/revenue-2026-10-07/market-evidence.md"
+      ]
+    },
+    {
+      "opportunity_id": "glyph",
+      "classification": "VALIDATE",
+      "scores": {
+        "customer_pain": 5,
+        "willingness_to_pay": null,
+        "market_size": null,
+        "urgency": 4,
+        "product_quality": null,
+        "differentiation": 4,
+        "distribution_access": 2,
+        "margins": null,
+        "retention_potential": 4,
+        "build_effort": 5,
+        "sales_complexity": 4,
+        "competition": 8,
+        "time_to_revenue": 6,
+        "founder_advantage": 5
+      },
+      "basis": "Existing marketing attention is not evidence of sales; verify usable independent font output.",
+      "confidence": "LOW; directional director estimates, not observed business performance",
+      "observed_at": "2026-10-08T01:08:57.576819+00:00",
+      "sources": [
+        "PRODUCT_REGISTRY.json",
+        "core-product-lab/HEALTH.md",
+        "reports/revenue-2026-10-07/asset-audit.md",
+        "reports/revenue-2026-10-07/market-evidence.md"
+      ]
+    },
+    {
+      "opportunity_id": "reclaim",
+      "classification": "MAINTAIN",
+      "scores": {
+        "customer_pain": 6,
+        "willingness_to_pay": null,
+        "market_size": null,
+        "urgency": 5,
+        "product_quality": null,
+        "differentiation": 3,
+        "distribution_access": 2,
+        "margins": null,
+        "retention_potential": 4,
+        "build_effort": 5,
+        "sales_complexity": 3,
+        "competition": 9,
+        "time_to_revenue": 6,
+        "founder_advantage": 4
+      },
+      "basis": "Free native alpha exists; do not paywall existing free behavior; trust and restore safety first.",
+      "confidence": "LOW; directional director estimates, not observed business performance",
+      "observed_at": "2026-10-08T01:08:57.576819+00:00",
+      "sources": [
+        "PRODUCT_REGISTRY.json",
+        "core-product-lab/HEALTH.md",
+        "reports/revenue-2026-10-07/asset-audit.md",
+        "reports/revenue-2026-10-07/market-evidence.md"
+      ]
+    },
+    {
+      "opportunity_id": "ghost",
+      "classification": "VALIDATE",
+      "scores": {
+        "customer_pain": 5,
+        "willingness_to_pay": null,
+        "market_size": null,
+        "urgency": 4,
+        "product_quality": null,
+        "differentiation": 5,
+        "distribution_access": 2,
+        "margins": null,
+        "retention_potential": 4,
+        "build_effort": 6,
+        "sales_complexity": 5,
+        "competition": 7,
+        "time_to_revenue": 7,
+        "founder_advantage": 4
+      },
+      "basis": "Reference studies only, not exact patterns or fit; willingness to pay unverified.",
+      "confidence": "LOW; directional director estimates, not observed business performance",
+      "observed_at": "2026-10-08T01:08:57.576819+00:00",
+      "sources": [
+        "PRODUCT_REGISTRY.json",
+        "core-product-lab/HEALTH.md",
+        "reports/revenue-2026-10-07/asset-audit.md",
+        "reports/revenue-2026-10-07/market-evidence.md"
+      ]
+    },
+    {
+      "opportunity_id": "animate",
+      "classification": "IMPROVE",
+      "scores": {
+        "customer_pain": 5,
+        "willingness_to_pay": null,
+        "market_size": null,
+        "urgency": 4,
+        "product_quality": null,
+        "differentiation": 3,
+        "distribution_access": 2,
+        "margins": null,
+        "retention_potential": 5,
+        "build_effort": 6,
+        "sales_complexity": 4,
+        "competition": 9,
+        "time_to_revenue": 7,
+        "founder_advantage": 4
+      },
+      "basis": "Reported undo/recovery gap precedes commercial expansion.",
+      "confidence": "LOW; directional director estimates, not observed business performance",
+      "observed_at": "2026-10-08T01:08:57.576819+00:00",
+      "sources": [
+        "PRODUCT_REGISTRY.json",
+        "core-product-lab/HEALTH.md",
+        "reports/revenue-2026-10-07/asset-audit.md",
+        "reports/revenue-2026-10-07/market-evidence.md"
+      ]
+    },
+    {
+      "opportunity_id": "librarian",
+      "classification": "MAINTAIN",
+      "scores": {
+        "customer_pain": 4,
+        "willingness_to_pay": null,
+        "market_size": null,
+        "urgency": 3,
+        "product_quality": null,
+        "differentiation": 3,
+        "distribution_access": 2,
+        "margins": null,
+        "retention_potential": 5,
+        "build_effort": 5,
+        "sales_complexity": 3,
+        "competition": 9,
+        "time_to_revenue": 8,
+        "founder_advantage": 3
+      },
+      "basis": "Reported reader failure first; strong free alternatives, no paid wedge yet.",
+      "confidence": "LOW; directional director estimates, not observed business performance",
+      "observed_at": "2026-10-08T01:08:57.576819+00:00",
+      "sources": [
+        "PRODUCT_REGISTRY.json",
+        "core-product-lab/HEALTH.md",
+        "reports/revenue-2026-10-07/asset-audit.md",
+        "reports/revenue-2026-10-07/market-evidence.md"
+      ]
+    },
+    {
+      "opportunity_id": "bounce",
+      "classification": "MAINTAIN",
+      "scores": {
+        "customer_pain": 3,
+        "willingness_to_pay": null,
+        "market_size": null,
+        "urgency": 3,
+        "product_quality": null,
+        "differentiation": 2,
+        "distribution_access": 2,
+        "margins": null,
+        "retention_potential": 4,
+        "build_effort": 6,
+        "sales_complexity": 3,
+        "competition": 10,
+        "time_to_revenue": 8,
+        "founder_advantage": 4
+      },
+      "basis": "Local player category crowded; distribution obligations remain; no revenue investment yet.",
+      "confidence": "LOW; directional director estimates, not observed business performance",
+      "observed_at": "2026-10-08T01:08:57.576819+00:00",
+      "sources": [
+        "PRODUCT_REGISTRY.json",
+        "core-product-lab/HEALTH.md",
+        "reports/revenue-2026-10-07/asset-audit.md",
+        "reports/revenue-2026-10-07/market-evidence.md"
+      ]
+    },
+    {
+      "opportunity_id": "moodboard",
+      "classification": "PAUSE",
+      "scores": {
+        "customer_pain": 4,
+        "willingness_to_pay": null,
+        "market_size": null,
+        "urgency": 3,
+        "product_quality": null,
+        "differentiation": 2,
+        "distribution_access": 1,
+        "margins": null,
+        "retention_potential": 4,
+        "build_effort": 5,
+        "sales_complexity": 3,
+        "competition": 9,
+        "time_to_revenue": 8,
+        "founder_advantage": 3
+      },
+      "basis": "Pause incremental commercialization/new feature investment, not destructive shutdown; release and demand unknown.",
+      "confidence": "LOW; directional director estimates, not observed business performance",
+      "observed_at": "2026-10-08T01:08:57.576819+00:00",
+      "sources": [
+        "PRODUCT_REGISTRY.json",
+        "core-product-lab/HEALTH.md",
+        "reports/revenue-2026-10-07/asset-audit.md",
+        "reports/revenue-2026-10-07/market-evidence.md"
+      ]
+    },
+    {
+      "opportunity_id": "portfolio",
+      "classification": "PAUSE",
+      "scores": {
+        "customer_pain": 5,
+        "willingness_to_pay": null,
+        "market_size": null,
+        "urgency": 4,
+        "product_quality": null,
+        "differentiation": 2,
+        "distribution_access": 1,
+        "margins": null,
+        "retention_potential": 5,
+        "build_effort": 5,
+        "sales_complexity": 4,
+        "competition": 10,
+        "time_to_revenue": 8,
+        "founder_advantage": 4
+      },
+      "basis": "Avoid undifferentiated new builder investment; preserve source and existing users.",
+      "confidence": "LOW; directional director estimates, not observed business performance",
+      "observed_at": "2026-10-08T01:08:57.576819+00:00",
+      "sources": [
+        "PRODUCT_REGISTRY.json",
+        "core-product-lab/HEALTH.md",
+        "reports/revenue-2026-10-07/asset-audit.md",
+        "reports/revenue-2026-10-07/market-evidence.md"
+      ]
+    },
+    {
+      "opportunity_id": "sattari-audio",
+      "classification": "VALIDATE",
+      "scores": {
+        "customer_pain": 6,
+        "willingness_to_pay": null,
+        "market_size": null,
+        "urgency": 5,
+        "product_quality": null,
+        "differentiation": 4,
+        "distribution_access": 2,
+        "margins": null,
+        "retention_potential": 6,
+        "build_effort": 8,
+        "sales_complexity": 5,
+        "competition": 10,
+        "time_to_revenue": 9,
+        "founder_advantage": 6
+      },
+      "basis": "Research only under music hold; native licensing and physical QA qualification needed.",
+      "confidence": "LOW; directional director estimates, not observed business performance",
+      "observed_at": "2026-10-08T01:08:57.576819+00:00",
+      "sources": [
+        "PRODUCT_REGISTRY.json",
+        "core-product-lab/HEALTH.md",
+        "reports/revenue-2026-10-07/asset-audit.md",
+        "reports/revenue-2026-10-07/market-evidence.md"
+      ]
+    },
+    {
+      "opportunity_id": "education-onboarding",
+      "classification": "VALIDATE",
+      "scores": {
+        "customer_pain": 6,
+        "willingness_to_pay": null,
+        "market_size": null,
+        "urgency": 4,
+        "product_quality": null,
+        "differentiation": 5,
+        "distribution_access": 1,
+        "margins": null,
+        "retention_potential": 7,
+        "build_effort": 4,
+        "sales_complexity": 8,
+        "competition": 7,
+        "time_to_revenue": 7,
+        "founder_advantage": 5
+      },
+      "basis": "Sell implementation/curriculum value if validated, not licenses to free functionality.",
+      "confidence": "LOW; directional director estimates, not observed business performance",
+      "observed_at": "2026-10-08T01:08:57.576819+00:00",
+      "sources": [
+        "PRODUCT_REGISTRY.json",
+        "core-product-lab/HEALTH.md",
+        "reports/revenue-2026-10-07/asset-audit.md",
+        "reports/revenue-2026-10-07/market-evidence.md"
+      ]
+    },
+    {
+      "opportunity_id": "sattari-existing-commerce",
+      "classification": "VALIDATE",
+      "scores": {
+        "customer_pain": 6,
+        "willingness_to_pay": null,
+        "market_size": null,
+        "urgency": 5,
+        "product_quality": null,
+        "differentiation": 5,
+        "distribution_access": 3,
+        "margins": null,
+        "retention_potential": 5,
+        "build_effort": 2,
+        "sales_complexity": 4,
+        "competition": 7,
+        "time_to_revenue": 2,
+        "founder_advantage": 5
+      },
+      "basis": "Public shop and studio prices exist; ownership, inventory, capacity, contribution and holds unresolved.",
+      "confidence": "LOW; directional director estimates, not observed business performance",
+      "observed_at": "2026-10-08T01:08:57.576819+00:00",
+      "sources": [
+        "PRODUCT_REGISTRY.json",
+        "core-product-lab/HEALTH.md",
+        "reports/revenue-2026-10-07/asset-audit.md",
+        "reports/revenue-2026-10-07/market-evidence.md"
+      ]
+    }
+  ]
+}

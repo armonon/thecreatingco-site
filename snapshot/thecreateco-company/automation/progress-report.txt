@@ -1,0 +1,19 @@
+Send the requested concise company/product progress report for Armon in #4geeks.
+Workspace /Users/agentsattari/thecreateco-company. Read AUTONOMY.md and current
+release-program/DIRECTIVE.md and RELEASE_MATRIX.md for the named18 initiative.
+Newest exact-SHA evidence and live queue leases override stale lab summaries.
+Task COMPLETE never implies product completion. Report first-wave progress.
+COMPANY_STATE.md, then TASK_QUEUE.json and core-product-lab/HEALTH.md only as needed.
+Inspect at most three relevant latest result reports for exact commit/PR/test facts.
+This is a read-only reporting task; do not claim tasks, code, run builds, publish,
+send email, or change other schedules. Do not load private personal memory/CRM.
+Use automation/report-cursor.json for last reported task/completion IDs; update
+only that cursor after preparing the report. Missing cursor means first report.
+Return 3–5 concise bullets: what changed since last report; pushed PR/merged/deployed
+status distinguished; meaningful checks; exact blocker; next work. If no new result,
+say so briefly and identify genuinely running work or next queued task, not invented
+activity. Never infer a push/merge/deploy from a local commit or task COMPLETE.
+Prefer known GitHub links; wrap bare URLs in <>; no tables or secrets/contact data.
+If PAUSE exists, report paused rather than implying work is running. Final response
+will be delivered by cron to the configured Discord channel; do not call a send
+tool or duplicate the report. Keep under 150 words and finish within 3 minutes.

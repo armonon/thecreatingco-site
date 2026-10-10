@@ -1,0 +1,195 @@
+{
+  "sha": "caabef99c429f732676eb7d46143f595ddbfabca",
+  "base_sha": "abde931cd81634a54288177c9d40dfd65321a5d8",
+  "scope": "Committed screened review delta, not a release or complete binary artifact",
+  "files": [
+    {
+      "path": "docs/STUDIO_LABS_SPLIT_KEYBPM_VOX.md",
+      "status": "present",
+      "sha256": "c33cfe8f594b9b26d1d224cee4e1b9d28a9472fe6385630b0958ff6db7da0c1d",
+      "bytes": 4535
+    },
+    {
+      "path": "scripts/qualify-studio-labs.mjs",
+      "status": "present",
+      "sha256": "6dc25d10d9c1ffd0523a8022ffc37175ae2f7d89b067f45245f5baa0114dbc45",
+      "bytes": 12892
+    },
+    {
+      "path": "src/App.tsx",
+      "status": "present",
+      "sha256": "e6778fb61a62a43c1d2394cc6a6284e80e32a9a275244e082b9f43f68a2503c5",
+      "bytes": 12789
+    },
+    {
+      "path": "src/components/Navbar.jsx",
+      "status": "present",
+      "sha256": "1c667f7112d9dfd9536da3a8fe548f30ef31fa8f9b117f388205c4f208280bf5",
+      "bytes": 5851
+    },
+    {
+      "path": "src/entry-prerender.jsx",
+      "status": "present",
+      "sha256": "9887d6f1790789313dd70e1df6c37ceb887d667ccfe496a302f2287e781b277e",
+      "bytes": 4629
+    },
+    {
+      "path": "src/labs/audio/AudioLabParts.jsx",
+      "status": "present",
+      "sha256": "3a20d0268a265ef3ade8a26710abef8104ada374c280d97c02f3c6e5cec3e4bc",
+      "bytes": 3289
+    },
+    {
+      "path": "src/labs/audio/AudioLabShell.jsx",
+      "status": "present",
+      "sha256": "4b0541c4b812f7cac1aec9eb1d51a7ddfc6f3235e52cbba65a63ed8087b9dd1b",
+      "bytes": 2571
+    },
+    {
+      "path": "src/labs/audio/audioLabFiles.js",
+      "status": "present",
+      "sha256": "d12db04aadf37a32875e798cf22a0b07f24f407267ce915db94a4d9643c0e5b8",
+      "bytes": 2389
+    },
+    {
+      "path": "src/labs/audio/audioLabTools.js",
+      "status": "present",
+      "sha256": "0f29e297a0b62faf6cef072719ee4d1cc554760f308b18d377120dd140948e1e",
+      "bytes": 581
+    },
+    {
+      "path": "src/labs/audio/audioLabs.css",
+      "status": "present",
+      "sha256": "b3b5daabb1fb35c2e6ebad15e20159bd87bb5c8863714f97a64597b858616734",
+      "bytes": 12577
+    },
+    {
+      "path": "src/labs/audio/audioLabs.test.jsx",
+      "status": "present",
+      "sha256": "9aecfa33040cc83100b32047d58536f664f2636d46c4bc0b4994a5b22fe05670",
+      "bytes": 1607
+    },
+    {
+      "path": "src/labs/keybpm/KeyBpmPage.jsx",
+      "status": "present",
+      "sha256": "8e0c332d486b8088ef223d0df1bc971ed0d0718edf566e6b0e1e1817e73b2a33",
+      "bytes": 11719
+    },
+    {
+      "path": "src/labs/keybpm/keyBpm.js",
+      "status": "present",
+      "sha256": "44c20d560528c9ff758689a5986b6e5ebad798dcf9e5b92734cbbc530c3aaf4c",
+      "bytes": 5138
+    },
+    {
+      "path": "src/labs/keybpm/keyBpm.test.js",
+      "status": "present",
+      "sha256": "961d3bc4f7b7aa73d6eef203bcbf4cb2212315a1984b55df8850cd800dee45d5",
+      "bytes": 3621
+    },
+    {
+      "path": "src/labs/keybpm/keyBpm.worker.js",
+      "status": "present",
+      "sha256": "e967f2b9cd9114920f996118ec3f7056f96c8facb341e0b729b5e8f20c867a36",
+      "bytes": 762
+    },
+    {
+      "path": "src/labs/split/SplitPage.jsx",
+      "status": "present",
+      "sha256": "6586b55ca811f653c761c8ebbce9ccc79c01daf6413103f720b5e239a9d6444d",
+      "bytes": 9904
+    },
+    {
+      "path": "src/labs/split/StemMixer.jsx",
+      "status": "present",
+      "sha256": "8a82391ad22eecd5daac6e199ba7424acdf4665a884235fb2b2a9ba5647dc9a8",
+      "bytes": 8332
+    },
+    {
+      "path": "src/labs/vox/VoxPage.jsx",
+      "status": "present",
+      "sha256": "30320bfe903d0d3c8da8fa548cbf4a411a60cda59108db1d287ba020231575ec",
+      "bytes": 19208
+    },
+    {
+      "path": "src/labs/vox/useVoxRecorder.js",
+      "status": "present",
+      "sha256": "617ffea036c06d3cee7d28d2c428c735ddff15da495c6165c31ee0359fda545d",
+      "bytes": 3865
+    },
+    {
+      "path": "src/labs/vox/vox.worker.js",
+      "status": "present",
+      "sha256": "987da97be88b7871cbad0b94fe7c839d455e06854be5481b1225c7abaf3c9b71",
+      "bytes": 1444
+    },
+    {
+      "path": "src/labs/vox/voxDsp.js",
+      "status": "present",
+      "sha256": "e649c4325723dde1e4d39a20c34ee723e814b69283a85a6525e02ea949e3773e",
+      "bytes": 11337
+    },
+    {
+      "path": "src/labs/vox/voxDsp.test.js",
+      "status": "present",
+      "sha256": "1d0c90d814a9a3e0b6f4f6859761e219ef2a06c0e0b9b2f946959cc53aa41205",
+      "bytes": 5394
+    },
+    {
+      "path": "src/pages/SattariHubPage.jsx",
+      "status": "present",
+      "sha256": "92e02fcb00825c550dd87e1576bc55a13d64e953b212bd985aeb181524e7907a",
+      "bytes": 7795
+    },
+    {
+      "path": "src/pages/SattariHubPage.test.jsx",
+      "status": "present",
+      "sha256": "d147f7af00833b52774125f29676493363ee5ac1f5521e98c4cd5da28f299df2",
+      "bytes": 2671
+    },
+    {
+      "path": "src/pages/SattariStudioPage.jsx",
+      "status": "present",
+      "sha256": "aa46ebca868eb362c1e150a7502e9b46f0436d29cb98c4d3689e19d7ee02274f",
+      "bytes": 18081
+    },
+    {
+      "path": "src/studio/hooks/useStemHandoff.js",
+      "status": "present",
+      "sha256": "8053cf739494a13d0aacfd489887b62d1ed72c58a301fce8b827b8b0e1503498",
+      "bytes": 1921
+    },
+    {
+      "path": "src/studio/stemHandoff.js",
+      "status": "present",
+      "sha256": "836fe6d3595b89f8f7e041bcd1cb4917d111ed1088ae01ede31fc9af66783842",
+      "bytes": 975
+    },
+    {
+      "path": "src/studio/stemHandoff.test.js",
+      "status": "present",
+      "sha256": "a4ab6afbddb6e7feac1760234f81625e33c9e133885a5f271c81900c909aca5e",
+      "bytes": 3246
+    },
+    {
+      "path": "src/styles-hub.css",
+      "status": "present",
+      "sha256": "a6a7f26270915b3afc004f89cdb990cb79bab4b91a162ab5bd929560fd9b3905",
+      "bytes": 14375
+    },
+    {
+      "path": "src/utils/lazyComponents.tsx",
+      "status": "present",
+      "sha256": "e7af055d5c16d66329e0803509fc63727fb52954ec50e424f14df333f5aa61d8",
+      "bytes": 6703
+    }
+  ],
+  "omitted": [],
+  "patch_sha256": "826d3307d54786e72fa5db623582576ca56d6d8d491f3acc2731d54fa8e97240",
+  "repo": "https://github.com/armonon/sattari-custom-site",
+  "branches": [
+    "wave2/sattari-split-keybpm-vox"
+  ],
+  "archive_path": "sattari-custom-site/caabef99c429f732676eb7d46143f595ddbfabca",
+  "local_worktree_dirty": false
+}

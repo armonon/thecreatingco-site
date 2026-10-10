@@ -1,0 +1,11 @@
+{
+  "task_id": "CORE-SP-PERF-001",
+  "source_evidence": [
+    "npm run qa:performance passed at /Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-evidence/performance-benchmark.log with measured synthetic timing values in the report.",
+    "docs/release-today-0.1.16.md explicitly leaves sustained real-footage 4K, low-memory devices, multi-hour memory growth and path-backed export size envelope unverified."
+  ],
+  "evidence_sources": [
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-initial.md",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/products/scenepilot.json"
+  ]
+}

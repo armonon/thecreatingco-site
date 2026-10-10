@@ -1,0 +1,34 @@
+{
+  "task_id": "CORE-FORM-AUD-PERF-001",
+  "title": "Add current interactive and project lifecycle performance budgets",
+  "product": "form",
+  "area": "performance",
+  "category": "performance",
+  "workstream": "CORE_PRODUCT_LAB",
+  "severity": "P2",
+  "scores": {
+    "impact": 8,
+    "severity": 7,
+    "workflow_importance": 8,
+    "release_importance": 8,
+    "confidence": 9,
+    "effort": 5,
+    "risk": 3,
+    "user_value": 8,
+    "competitive_value": 7
+  },
+  "dependencies": [],
+  "status": "QUEUED",
+  "model": "gpt-6-luna",
+  "expected_value": "Flagship golden-workflow reliability; scores are planning estimates, not health metrics.",
+  "test_requirements": "Reproduce on isolated exact source; preserve baseline/fixed evidence, appropriate build/tests and golden path; source reading is not interactive sign-off.",
+  "source_evidence": {
+    "direct": [
+      "docs/PERFORMANCE_BUDGETS.md:12-31 lists historical native CAD/cloth gates and missing viewport/input, startup/open/save, cancellation and peak-memory budgets; KNOWN_ISSUES.md:28-32 reports multi-second dense rebuilds."
+    ],
+    "hypothesis": [
+      "Current released build may have performance regressions or headroom improvements; no fresh product benchmark was run."
+    ]
+  },
+  "next_action": "Benchmark a deterministic golden project on clean supported Apple Silicon with SHA, fixture hash, repetitions, units and environment; establish budgets and retain history."
+}

@@ -1,0 +1,57 @@
+{
+  "sha": "cbde0fdfd1820ce2c4f18269dd75133a2bdda681",
+  "base_sha": "b5abdd1de5f71fe0244ef9a651a6d983067541ff",
+  "scope": "Committed screened review delta, not a release or complete binary artifact",
+  "files": [
+    {
+      "path": "app/cad-phone.css",
+      "status": "present",
+      "sha256": "4bac0177512e0e10c086ab42d2f17d72327c4c281cc85fcf10cc9221b8758ec0",
+      "bytes": 18914
+    },
+    {
+      "path": "app/cad-workspace.tsx",
+      "status": "present",
+      "sha256": "d49e49abda6d6f0a854e515018870ce16fa0cff642302bb7edeab2f371561adc",
+      "bytes": 511515
+    },
+    {
+      "path": "app/cast-studio.css",
+      "status": "present",
+      "sha256": "654ee59e06153a58c16433e3ed246af70809b1e04fed7b74a911bb9a1c54c3ad",
+      "bytes": 8796
+    },
+    {
+      "path": "app/cast-studio.tsx",
+      "status": "present",
+      "sha256": "d20b7f719a771d178932709275b2671e0088807b8574da57b436754f702f4f47",
+      "bytes": 36913
+    },
+    {
+      "path": "app/form-ui-v2.css",
+      "status": "present",
+      "sha256": "b88ec2126cddbbc40189ad98cd71a22a870de23b2a347d19ab3146593757c2f2",
+      "bytes": 148319
+    },
+    {
+      "path": "app/studio-v2.tsx",
+      "status": "present",
+      "sha256": "b5c2abbb521acfdeda6f6517a6d83d96ed1115a6c74e3451a1ca078b575e8ac1",
+      "bytes": 297886
+    },
+    {
+      "path": "tests/workspace-smoke.test.mjs",
+      "status": "present",
+      "sha256": "577d304974029de1ce0dbd9218350541e37b1186081863c22e9d88e7af77d7e9",
+      "bytes": 194261
+    }
+  ],
+  "omitted": [],
+  "patch_sha256": "6f1fe99aaf18e2b207ebe986e5d3a96a75887442a71c97e0ff64da041d7fab43",
+  "repo": "https://github.com/armonon/form-studio",
+  "branches": [
+    "codex/form-company-backlink-20261009"
+  ],
+  "archive_path": "form-studio/cbde0fdfd1820ce2c4f18269dd75133a2bdda681",
+  "local_worktree_dirty": false
+}

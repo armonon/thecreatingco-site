@@ -1,0 +1,34 @@
+{
+  "task_id": "CORE-FORM-AUD-WF-002",
+  "title": "Qualify separate CAD and Rig persistence/history handoffs",
+  "product": "form",
+  "area": "workflow_gap",
+  "category": "workflow_gap",
+  "workstream": "CORE_PRODUCT_LAB",
+  "severity": "P2",
+  "scores": {
+    "impact": 8,
+    "severity": 7,
+    "workflow_importance": 8,
+    "release_importance": 8,
+    "confidence": 8,
+    "effort": 6,
+    "risk": 4,
+    "user_value": 8,
+    "competitive_value": 7
+  },
+  "dependencies": [],
+  "status": "QUEUED",
+  "model": "gpt-6-luna",
+  "expected_value": "Flagship golden-workflow reliability; scores are planning estimates, not health metrics.",
+  "test_requirements": "Reproduce on isolated exact source; preserve baseline/fixed evidence, appropriate build/tests and golden path; source reading is not interactive sign-off.",
+  "source_evidence": {
+    "direct": [
+      "app/PARKED.md:14-19 documents separate CAD/Rig schemas and recovery channels with explicit handoff; source includes individual workflow tests but no full cross-workspace close/reopen qualification was run."
+    ],
+    "hypothesis": [
+      "Users may expect more transparent cross-workspace persistence than current explicit boundary provides; usability impact not measured."
+    ]
+  },
+  "next_action": "Define/save/reopen supported handoff scenarios and explicit UI expectations; execute integration fixture across Model, Fabric, Animation and return to Model."
+}

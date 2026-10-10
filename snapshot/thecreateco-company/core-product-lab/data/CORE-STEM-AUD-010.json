@@ -1,0 +1,30 @@
+{
+  "task_id": "CORE-STEM-AUD-010",
+  "title": "Establish independent output/mastering vectors",
+  "product": "stemdeck",
+  "area": "professional_feature_gap",
+  "category": "professional_feature_gap",
+  "workstream": "CORE_PRODUCT_LAB",
+  "severity": "P2",
+  "scores": {
+    "impact": 8,
+    "severity": 7,
+    "workflow_importance": 9,
+    "competitive_value": 7,
+    "release_importance": 9,
+    "confidence": 9,
+    "effort": 6,
+    "risk": 3,
+    "user_value": 9
+  },
+  "dependencies": [],
+  "status": "QUEUED",
+  "model": "gpt-6-luna",
+  "expected_value": "Flagship golden-workflow reliability; scores are planning estimates, not health metrics.",
+  "test_requirements": "Reproduce on isolated exact source; preserve baseline/fixed evidence, appropriate build/tests and golden path; source reading is not interactive sign-off.",
+  "source_evidence": [
+    "docs/PROFESSIONAL_ACCEPTANCE.md",
+    "reports/stemdeck-golden-browser.json"
+  ],
+  "next_action": "Preserve actual PCM export comparisons; measure independent peak/LUFS/true-peak vectors, never advertise limiter threshold as guaranteed true-peak ceiling."
+}

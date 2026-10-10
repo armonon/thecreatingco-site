@@ -1,0 +1,523 @@
+#include "PluginProcessor.h"
+
+#include <cmath>
+#include <iostream>
+#include <vector>
+
+namespace
+{
+void setParameter (juce::AudioProcessorValueTreeState& apvts, const juce::String& id, float value)
+{
+    auto* parameter = apvts.getParameter (id);
+    if (parameter == nullptr)
+        throw std::runtime_error ("missing parameter: " + id.toStdString());
+
+    parameter->setValueNotifyingHost (parameter->convertTo0to1 (value));
+}
+
+double rmsDifference (const juce::AudioBuffer<float>& a, const juce::AudioBuffer<float>& b)
+{
+    double sum = 0.0;
+    int count = 0;
+    for (int channel = 0; channel < a.getNumChannels(); ++channel)
+    {
+        for (int i = 0; i < a.getNumSamples(); ++i)
+        {
+            const double diff = (double) a.getSample (channel, i) - (double) b.getSample (channel, i);
+            sum += diff * diff;
+            ++count;
+        }
+    }
+
+    return std::sqrt (sum / (double) juce::jmax (1, count));
+}
+
+double midiToHz (int midi)
+{
+    return 440.0 * std::pow (2.0, ((double) midi - 69.0) / 12.0);
+}
+
+double hzToMidi (double hz)
+{
+    return 69.0 + 12.0 * std::log2 (hz / 440.0);
+}
+
+double estimateFrequencyFromPositiveCrossings (const std::vector<float>& samples, double sampleRate)
+{
+    std::vector<double> crossings;
+    crossings.reserve (samples.size() / 80);
+
+    for (size_t i = 1; i < samples.size(); ++i)
+    {
+        const double prev = samples[i - 1];
+        const double cur = samples[i];
+        if (prev < 0.0 && cur >= 0.0)
+        {
+            const double denom = cur - prev;
+            const double frac = std::abs (denom) > 1.0e-12 ? -prev / denom : 0.0;
+            crossings.push_back ((double) (i - 1) + frac);
+        }
+    }
+
+    if (crossings.size() < 2)
+        return 0.0;
+
+    double periodSum = 0.0;
+    for (size_t i = 1; i < crossings.size(); ++i)
+        periodSum += crossings[i] - crossings[i - 1];
+
+    const double period = periodSum / (double) (crossings.size() - 1);
+    return period > 0.0 ? sampleRate / period : 0.0;
+}
+
+void feedAutoKeyNote (SattariAutoPitchAudioProcessor& processor,
+                      int midi,
+                      int blocks,
+                      double& phase)
+{
+    constexpr int blockSize = 512;
+    constexpr double sampleRate = 48000.0;
+    const double frequency = midiToHz (midi);
+
+    for (int block = 0; block < blocks; ++block)
+    {
+        juce::AudioBuffer<float> buffer (2, blockSize);
+        for (int i = 0; i < blockSize; ++i)
+        {
+            const float sample = 0.22f * std::sin ((float) phase);
+            phase += juce::MathConstants<double>::twoPi * frequency / sampleRate;
+            for (int channel = 0; channel < buffer.getNumChannels(); ++channel)
+                buffer.setSample (channel, i, sample);
+        }
+
+        juce::MidiBuffer midiBuffer;
+        processor.processBlock (buffer, midiBuffer);
+    }
+}
+
+bool runAutoKeyFixture (const juce::String& label,
+                        const std::vector<int>& notes,
+                        int scale,
+                        const juce::String& expectedStatusFragment)
+{
+    SattariAutoPitchAudioProcessor processor;
+    processor.prepareToPlay (48000.0, 512);
+    auto& apvts = processor.parameters();
+    setParameter (apvts, "autoKey", 1.0f);
+    setParameter (apvts, "scale", (float) scale);
+    setParameter (apvts, "enableCorrection", 0.0f);
+    setParameter (apvts, "doNoHarm", 0.0f);
+    setParameter (apvts, "vocalRange", 0.0f);
+
+    double phase = 0.0;
+    for (int pass = 0; pass < 5; ++pass)
+        for (int note : notes)
+            feedAutoKeyNote (processor, note, 18, phase);
+
+    const auto status = processor.getLiveStatusSummary();
+    if (! status.contains (expectedStatusFragment))
+    {
+        std::cerr << "AutoKey fixture failed for " << label << ": expected status to contain '"
+                  << expectedStatusFragment << "', got: " << status << "\n";
+        return false;
+    }
+
+    return true;
+}
+
+double renderAmountDeltaAtBlockSize (int blockSize)
+{
+    constexpr int blocks = 90;
+    constexpr double sampleRate = 48000.0;
+    const double detunedFrequency = 440.0 * std::pow (2.0, 45.0 / 1200.0);
+
+    auto configureProcessor = [blockSize] (SattariAutoPitchAudioProcessor& processor, float amount)
+    {
+        processor.prepareToPlay (sampleRate, blockSize);
+        auto& apvts = processor.parameters();
+        setParameter (apvts, "keyRoot", 0.0f); // C
+        setParameter (apvts, "scale", 2.0f); // chromatic
+        setParameter (apvts, "style", 2.0f); // Modern Rap
+        setParameter (apvts, "amount", amount);
+        setParameter (apvts, "speed", 1.0f);
+        setParameter (apvts, "enableCorrection", 1.0f);
+        setParameter (apvts, "doNoHarm", 0.0f);
+        setParameter (apvts, "formantPreserve", 1.0f);
+    };
+
+    SattariAutoPitchAudioProcessor zeroProcessor;
+    SattariAutoPitchAudioProcessor strongProcessor;
+    configureProcessor (zeroProcessor, 0.0f);
+    configureProcessor (strongProcessor, 1.0f);
+
+    double phase = 0.0;
+    double diffEnergy = 0.0;
+    for (int block = 0; block < blocks; ++block)
+    {
+        juce::AudioBuffer<float> input (2, blockSize);
+        for (int i = 0; i < blockSize; ++i)
+        {
+            const float sample = 0.18f * std::sin ((float) phase);
+            phase += juce::MathConstants<double>::twoPi * detunedFrequency / sampleRate;
+            for (int channel = 0; channel < input.getNumChannels(); ++channel)
+                input.setSample (channel, i, sample);
+        }
+
+        juce::AudioBuffer<float> amountZero;
+        amountZero.makeCopyOf (input);
+        juce::AudioBuffer<float> strong;
+        strong.makeCopyOf (input);
+
+        juce::MidiBuffer midi;
+        zeroProcessor.processBlock (amountZero, midi);
+        midi.clear();
+        strongProcessor.processBlock (strong, midi);
+
+        diffEnergy += rmsDifference (amountZero, strong);
+    }
+
+    return diffEnergy;
+}
+
+double renderCorrectionOffBaselineDelta (int blockSize)
+{
+    constexpr int blocks = 90;
+    constexpr double sampleRate = 48000.0;
+    const double detunedFrequency = 440.0 * std::pow (2.0, 45.0 / 1200.0);
+
+    auto configureProcessor = [blockSize] (SattariAutoPitchAudioProcessor& processor,
+                                           bool enableCorrection,
+                                           float amount)
+    {
+        processor.prepareToPlay (sampleRate, blockSize);
+        auto& apvts = processor.parameters();
+        setParameter (apvts, "keyRoot", 0.0f); // C
+        setParameter (apvts, "scale", 2.0f); // chromatic
+        setParameter (apvts, "style", 1.0f); // Classic
+        setParameter (apvts, "amount", amount);
+        setParameter (apvts, "speed", 1.0f);
+        setParameter (apvts, "enableCorrection", enableCorrection ? 1.0f : 0.0f);
+        setParameter (apvts, "doNoHarm", 0.0f);
+        setParameter (apvts, "formantPreserve", 1.0f);
+    };
+
+    SattariAutoPitchAudioProcessor offProcessor;
+    SattariAutoPitchAudioProcessor zeroProcessor;
+    configureProcessor (offProcessor, false, 1.0f);
+    configureProcessor (zeroProcessor, true, 0.0f);
+
+    double phase = 0.0;
+    double diffEnergy = 0.0;
+    for (int block = 0; block < blocks; ++block)
+    {
+        juce::AudioBuffer<float> input (2, blockSize);
+        for (int i = 0; i < blockSize; ++i)
+        {
+            const float sample = 0.18f * std::sin ((float) phase);
+            phase += juce::MathConstants<double>::twoPi * detunedFrequency / sampleRate;
+            for (int channel = 0; channel < input.getNumChannels(); ++channel)
+                input.setSample (channel, i, sample);
+        }
+
+        juce::AudioBuffer<float> off;
+        off.makeCopyOf (input);
+        juce::AudioBuffer<float> zero;
+        zero.makeCopyOf (input);
+
+        juce::MidiBuffer midi;
+        offProcessor.processBlock (off, midi);
+        midi.clear();
+        zeroProcessor.processBlock (zero, midi);
+
+        diffEnergy += rmsDifference (off, zero);
+    }
+
+    return diffEnergy;
+}
+
+double renderClassicStrongB3Plus45ErrorCents (bool lowLatency)
+{
+    constexpr int blockSize = 512;
+    constexpr int blocks = 170;
+    constexpr double sampleRate = 48000.0;
+    constexpr int targetMidi = 59; // B3
+    const double inputFrequency = midiToHz (targetMidi) * std::pow (2.0, 45.0 / 1200.0);
+
+    SattariAutoPitchAudioProcessor processor;
+    auto& apvts = processor.parameters();
+    setParameter (apvts, "lowLatency", lowLatency ? 1.0f : 0.0f);
+    setParameter (apvts, "keyRoot", 0.0f); // C
+    setParameter (apvts, "scale", 2.0f); // chromatic
+    setParameter (apvts, "style", 1.0f); // Classic style must hard-correct.
+    setParameter (apvts, "amount", 1.0f);
+    setParameter (apvts, "speed", 1.0f);
+    setParameter (apvts, "enableCorrection", 1.0f);
+    setParameter (apvts, "doNoHarm", 0.0f);
+    setParameter (apvts, "formantPreserve", 1.0f);
+    setParameter (apvts, "classicMode", 0.0f); // Regression: style alone must be enough.
+    processor.prepareToPlay (sampleRate, blockSize);
+
+    std::vector<float> steadyOutput;
+    steadyOutput.reserve (8192);
+
+    double phase = 0.0;
+    for (int block = 0; block < blocks; ++block)
+    {
+        juce::AudioBuffer<float> buffer (2, blockSize);
+        for (int i = 0; i < blockSize; ++i)
+        {
+            const float sample = 0.18f * std::sin ((float) phase);
+            phase += juce::MathConstants<double>::twoPi * inputFrequency / sampleRate;
+            for (int channel = 0; channel < buffer.getNumChannels(); ++channel)
+                buffer.setSample (channel, i, sample);
+        }
+
+        juce::MidiBuffer midi;
+        processor.processBlock (buffer, midi);
+
+        if (block >= blocks - 16)
+            for (int i = 0; i < blockSize; ++i)
+                steadyOutput.push_back (buffer.getSample (0, i));
+    }
+
+    const double outputFrequency = estimateFrequencyFromPositiveCrossings (steadyOutput, sampleRate);
+    if (outputFrequency <= 0.0)
+        return 999.0;
+
+    return std::abs ((hzToMidi (outputFrequency) - (double) targetMidi) * 100.0);
+}
+}
+
+int main()
+{
+    // Hosts may tear an instance down without ever preparing it (plugin scan,
+    // insert-then-remove). This used to segfault inside releaseResources().
+    for (int i = 0; i < 8; ++i)
+    {
+        SattariAutoPitchAudioProcessor unprepared;
+        unprepared.releaseResources();
+    }
+
+    SattariAutoPitchAudioProcessor processor;
+    processor.prepareToPlay (48000.0, 512);
+
+    auto& apvts = processor.parameters();
+    setParameter (apvts, "keyRoot", 0.0f); // C
+    setParameter (apvts, "scale", 0.0f); // major
+    setParameter (apvts, "style", 2.0f); // hard
+    setParameter (apvts, "amount", 1.0f);
+    setParameter (apvts, "speed", 1.0f);
+    setParameter (apvts, "enableCorrection", 1.0f);
+    setParameter (apvts, "doNoHarm", 0.0f);
+
+    constexpr int blockSize = 512;
+    constexpr int blocks = 60;
+    constexpr double sampleRate = 48000.0;
+    const double detunedFrequency = 440.0 * std::pow (2.0, 35.0 / 1200.0); // A4 +35 cents
+
+    double phase = 0.0;
+    double changedEnergy = 0.0;
+    for (int block = 0; block < blocks; ++block)
+    {
+        juce::AudioBuffer<float> buffer (2, blockSize);
+        for (int i = 0; i < blockSize; ++i)
+        {
+            const float sample = 0.18f * std::sin ((float) phase);
+            phase += juce::MathConstants<double>::twoPi * detunedFrequency / sampleRate;
+            for (int channel = 0; channel < buffer.getNumChannels(); ++channel)
+                buffer.setSample (channel, i, sample);
+        }
+
+        juce::AudioBuffer<float> dry;
+        dry.makeCopyOf (buffer);
+        juce::MidiBuffer midi;
+        processor.processBlock (buffer, midi);
+        changedEnergy += rmsDifference (buffer, dry);
+    }
+
+    const auto status = processor.getLiveStatusSummary();
+    // Assert on what proves the engine ran, not on marketing copy: the status
+    // must name an actual render engine.
+    if (! (status.containsIgnoreCase ("Signalsmith")
+           || status.containsIgnoreCase ("Rubber Band")
+           || status.containsIgnoreCase ("fallback")))
+    {
+        std::cerr << "unexpected status: " << status << "\n";
+        return 1;
+    }
+
+    const auto keyTabSummary = processor.getKeyDetectionTabSummary();
+    if (! keyTabSummary.containsIgnoreCase ("Sattari Wheel")
+        || ! keyTabSummary.containsIgnoreCase ("compatibility")
+        || ! keyTabSummary.containsIgnoreCase ("Send to Tune"))
+    {
+        std::cerr << "key detection tab did not expose harmonic-lab bridge: " << keyTabSummary << "\n";
+        return 1;
+    }
+
+    if (changedEnergy <= 0.01)
+    {
+        std::cerr << "pitch path did not audibly alter the detuned test signal; changedEnergy=" << changedEnergy << "\n";
+        return 1;
+    }
+
+    // --- YIN noise-robustness phase ------------------------------------------
+    // Feed a 220 Hz (A3) fundamental buried under a strong 2nd harmonic (440 Hz)
+    // AND broadband noise. Plain normalised autocorrelation tends to octave-jump
+    // here (the 440 Hz partial + noise pull the peak to the wrong lag). YIN's
+    // CMNDF + continuity prior should still report the A3 octave. We assert the
+    // detected input note name contains "A3" - i.e. correct octave under noise.
+    {
+        SattariAutoPitchAudioProcessor noiseProc;
+        noiseProc.prepareToPlay (48000.0, 512);
+        auto& nApvts = noiseProc.parameters();
+        setParameter (nApvts, "keyRoot", 9.0f);   // A
+        setParameter (nApvts, "scale", 0.0f);     // major
+        setParameter (nApvts, "enableCorrection", 1.0f);
+        setParameter (nApvts, "doNoHarm", 0.0f);
+        setParameter (nApvts, "vocalRange", 0.0f); // Wide
+
+        const double f0 = 220.0;                    // A3
+        double ph1 = 0.0, ph2 = 0.0;
+        unsigned int rngState = 0x12345u;
+        auto whiteNoise = [&rngState]() {
+            rngState = rngState * 1664525u + 1013904223u;
+            return ((double) rngState / (double) 0xFFFFFFFFu) * 2.0 - 1.0;
+        };
+        for (int block = 0; block < 80; ++block)
+        {
+            juce::AudioBuffer<float> buffer (2, blockSize);
+            for (int i = 0; i < blockSize; ++i)
+            {
+                const double fund = 0.16 * std::sin (ph1);
+                const double harm = 0.20 * std::sin (ph2);   // louder 2nd harmonic
+                const double noise = 0.07 * whiteNoise();     // broadband contamination
+                ph1 += juce::MathConstants<double>::twoPi * f0       / sampleRate;
+                ph2 += juce::MathConstants<double>::twoPi * (2.0*f0) / sampleRate;
+                const float s = (float) (fund + harm + noise);
+                for (int channel = 0; channel < buffer.getNumChannels(); ++channel)
+                    buffer.setSample (channel, i, s);
+            }
+            juce::MidiBuffer midi;
+            noiseProc.processBlock (buffer, midi);
+        }
+
+        const auto noiseStatus = noiseProc.getLiveStatusSummary();
+        if (! noiseStatus.contains (" in A3 "))
+        {
+            std::cerr << "YIN failed noise-robustness: expected detected note A3, got: "
+                      << noiseStatus << "\n";
+            return 1;
+        }
+        std::cout << "  noiseRobustness=PASS (tracked A3 through 2nd-harmonic + broadband noise)\n";
+    }
+
+    const juce::StringArray expectedModes { "Natural", "Classic", "Modern Rap", "Robot", "Big Harmony" };
+    for (int mode = 0; mode < expectedModes.size(); ++mode)
+    {
+        SattariAutoPitchAudioProcessor modeProcessor;
+        modeProcessor.prepareToPlay (48000.0, 512);
+        auto& modeApvts = modeProcessor.parameters();
+        setParameter (modeApvts, "keyRoot", 0.0f);
+        setParameter (modeApvts, "scale", 0.0f);
+        setParameter (modeApvts, "style", (float) mode);
+        setParameter (modeApvts, "amount", 1.0f);
+        setParameter (modeApvts, "speed", 1.0f);
+        setParameter (modeApvts, "enableCorrection", 1.0f);
+        setParameter (modeApvts, "doNoHarm", 0.0f);
+
+        double modePhase = 0.0;
+        double modeChangedEnergy = 0.0;
+        for (int block = 0; block < 30; ++block)
+        {
+            juce::AudioBuffer<float> buffer (2, blockSize);
+            for (int i = 0; i < blockSize; ++i)
+            {
+                const float sample = 0.18f * std::sin ((float) modePhase);
+                modePhase += juce::MathConstants<double>::twoPi * detunedFrequency / sampleRate;
+                for (int channel = 0; channel < buffer.getNumChannels(); ++channel)
+                    buffer.setSample (channel, i, sample);
+            }
+
+            juce::AudioBuffer<float> dry;
+            dry.makeCopyOf (buffer);
+            juce::MidiBuffer midi;
+            modeProcessor.processBlock (buffer, midi);
+            modeChangedEnergy += rmsDifference (buffer, dry);
+        }
+
+        const auto modeStatus = modeProcessor.getLiveStatusSummary();
+        if (! modeStatus.contains ("mode " + expectedModes[mode]))
+        {
+            std::cerr << "mode status missing " << expectedModes[mode] << ": " << modeStatus << "\n";
+            return 1;
+        }
+
+        if (modeChangedEnergy <= 0.005)
+        {
+            std::cerr << "mode did not produce audible correction: " << expectedModes[mode]
+                      << ", changedEnergy=" << modeChangedEnergy << "\n";
+            return 1;
+        }
+    }
+
+    const double block256Delta = renderAmountDeltaAtBlockSize (256);
+    if (block256Delta <= 0.01)
+    {
+        std::cerr << "256-sample render path ignored correction amount; delta="
+                  << block256Delta << "\n";
+        return 1;
+    }
+
+    const double correctionOffDelta = renderCorrectionOffBaselineDelta (256);
+    if (correctionOffDelta > 0.0001)
+    {
+        std::cerr << "Correction Off did not match amount-zero neutral baseline; delta="
+                  << correctionOffDelta << "\n";
+        return 1;
+    }
+
+    const double classicB3ErrorCents = renderClassicStrongB3Plus45ErrorCents (false);
+    if (classicB3ErrorCents > 25.0)
+    {
+        std::cerr << "Classic strong correction missed B3 +45c steady target; absErrorCents="
+                  << classicB3ErrorCents << "\n";
+        return 1;
+    }
+
+    const double liveClassicB3ErrorCents = renderClassicStrongB3Plus45ErrorCents (true);
+    if (liveClassicB3ErrorCents > 25.0)
+    {
+        std::cerr << "Live low-latency Classic strong correction missed B3 +45c steady target; absErrorCents="
+                  << liveClassicB3ErrorCents << "\n";
+        return 1;
+    }
+
+    if (! runAutoKeyFixture ("C major", { 60, 64, 67, 72, 67, 64, 60, 62, 65, 67 },
+                             0, "AutoKey C major"))
+        return 1;
+    if (! runAutoKeyFixture ("A minor", { 57, 60, 64, 69, 64, 60, 57, 59, 62, 64 },
+                             1, "AutoKey A minor"))
+        return 1;
+
+    std::cout << "Auto Pitch core contract ok\n";
+    std::cout << "  status=" << status << "\n";
+    std::cout << "  keyTab=" << keyTabSummary << "\n";
+    std::cout << "  changedEnergy=" << changedEnergy << "\n";
+    std::cout << "  block256AmountDelta=" << block256Delta << "\n";
+    std::cout << "  correctionOffBaselineDelta=" << correctionOffDelta << "\n";
+    std::cout << "  classicB3Plus45AbsErrorCents=" << classicB3ErrorCents << "\n";
+    std::cout << "  liveLowLatencyClassicB3Plus45AbsErrorCents=" << liveClassicB3ErrorCents << "\n";
+    std::cout << "  modes=Natural, Classic, Modern Rap, Robot, Big Harmony\n";
+    std::cout << "  autoKeyFixtures=C major, A minor\n";
+#if SATTARI_AUTOPITCH_HAS_ELASTIQUE
+    std::cout << "  engine=elastique\n";
+#elif SATTARI_AUTOPITCH_HAS_SIGNALSMITH
+    std::cout << "  engine=signalsmith\n";
+#elif SATTARI_AUTOPITCH_HAS_RUBBERBAND
+    std::cout << "  engine=rubberband\n";
+#else
+    std::cout << "  engine=fallback-guide\n";
+#endif
+    return 0;
+}

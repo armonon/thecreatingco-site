@@ -1,0 +1,14 @@
+{
+  "sha": "b2a54d1acaa902a06c2fd99a367deb7bbe5e42cf",
+  "base_sha": "b2a54d1acaa902a06c2fd99a367deb7bbe5e42cf",
+  "scope": "Committed screened review delta, not a release or complete binary artifact",
+  "files": [],
+  "omitted": [],
+  "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "repo": "https://github.com/armonon/moodboard",
+  "branches": [
+    "main"
+  ],
+  "archive_path": "moodboard/b2a54d1acaa902a06c2fd99a367deb7bbe5e42cf",
+  "local_worktree_dirty": false
+}

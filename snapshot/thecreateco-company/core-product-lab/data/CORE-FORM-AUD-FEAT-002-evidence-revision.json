@@ -1,0 +1,15 @@
+{
+  "task_id": "CORE-FORM-AUD-FEAT-002",
+  "source_evidence": {
+    "direct": [
+      "KNOWN_ISSUES.md:22-26 cites FreeCAD/Blender automation but says AutoCAD/Cinema4D/CLO need licensed installs and representative files; no external recipient app was run in this audit."
+    ],
+    "hypothesis": [
+      "There may be format-specific semantic/unit issues outside existing validation; none were reproduced here."
+    ]
+  },
+  "evidence_sources": [
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-initial.md",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/products/form.json"
+  ]
+}

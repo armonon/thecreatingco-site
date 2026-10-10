@@ -1,0 +1,11 @@
+import type { Metadata, Viewport } from "next";
+import type { ReactNode } from "react";
+
+export const metadata: Metadata = {
+  title: "Luma for iPhone",
+  manifest: "/luma-iphone.webmanifest",
+  icons: { icon: "/favicon.svg", apple: "/icons/luma-192.png" },
+  appleWebApp: { capable: true, title: "Luma", statusBarStyle: "black-translucent" },
+};
+export const viewport: Viewport = { width: "device-width", initialScale: 1, viewportFit: "cover", themeColor: "#141619" };
+export default function IPhoneLayout({ children }: { children: ReactNode }) { return children; }

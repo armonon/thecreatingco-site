@@ -1,0 +1,318 @@
+{
+  "reported_at": "2026-10-10T02:20:00Z",
+  "last_reported_task_id": "W10",
+  "last_reported_completion_id": "2026-10-10T02:13:44+00:00",
+  "reported_completions": [
+    {
+      "task_id": "REV-AUDIT-20261007",
+      "completed_at": "2026-10-08T01:17:56+00:00"
+    },
+    {
+      "task_id": "CORE-SP-A11Y-001",
+      "completed_at": "2026-10-08T01:02:15+00:00"
+    },
+    {
+      "task_id": "CORE-SP-SEC-001",
+      "completed_at": "2026-10-08T01:02:15+00:00"
+    },
+    {
+      "task_id": "OPS-AUTONOMY-20261007-1756",
+      "completed_at": "2026-10-08T01:00:18+00:00"
+    },
+    {
+      "task_id": "CORE-REVIEW-ROUTING-20261007",
+      "completed_at": "2026-10-08T00:57:36+00:00"
+    },
+    {
+      "task_id": "CORE-STEMDECK-SEC-001",
+      "completed_at": "2026-10-08T01:31:28+00:00"
+    },
+    {
+      "task_id": "CORE-STEM-AUD-006",
+      "completed_at": "2026-10-08T02:10:05+00:00"
+    },
+    {
+      "task_id": "CORE-FORM-AUD-TEST-001",
+      "completed_at": "2026-10-08T02:11:32+00:00"
+    },
+    {
+      "task_id": "CORE-FORM-LINT-001",
+      "completed_at": "2026-10-08T02:11:32+00:00"
+    },
+    {
+      "task_id": "CORE-LUMA-AUD-001",
+      "completed_at": "2026-10-08T02:09:17+00:00"
+    },
+    {
+      "task_id": "PROGRAM18-GLYPH-001",
+      "completed_at": "2026-10-08T02:15:54+00:00"
+    },
+    {
+      "task_id": "PROGRAM18-POCKET-SAVE-001",
+      "completed_at": "2026-10-08T02:33:10+00:00"
+    },
+    {
+      "task_id": "CORE-LUMA-EXPORT-COLOR-001",
+      "completed_at": "2026-10-08T03:31:57+00:00"
+    },
+    {
+      "task_id": "CORE-FORM-AUD-REL-001",
+      "completed_at": "2026-10-08T04:12:20+00:00"
+    },
+    {
+      "task_id": "CORE-LUMA-HIGH-DEPTH-DOC-001",
+      "completed_at": "2026-10-09T15:42:53+00:00"
+    },
+    {
+      "task_id": "CORE-REVIEW-20261009",
+      "completed_at": "2026-10-09T16:06:29+00:00"
+    },
+    {
+      "task_id": "OS-COST-ASTRA-REASON-NOT-EXPOSED-20261008",
+      "completed_at": "2026-10-09T16:12:07+00:00"
+    },
+    {
+      "task_id": "CORE-FORM-GARMENT-FIT-001",
+      "completed_at": "2026-10-09T16:37:53+00:00"
+    },
+    {
+      "task_id": "GROW-WEBTOOLS-DIRECTORY-20261009",
+      "completed_at": "2026-10-09T16:58:55+00:00"
+    },
+    {
+      "task_id": "GROW-CIRCLE-ACCOUNT-001",
+      "completed_at": "2026-10-09T17:26:54+00:00"
+    },
+    {
+      "task_id": "GROW-PRODUCT-PAGES-STORY-20261009",
+      "completed_at": "2026-10-09T17:46:23+00:00"
+    },
+    {
+      "task_id": "W05",
+      "completed_at": "2026-10-09T23:17:40+00:00"
+    },
+    {
+      "task_id": "M01",
+      "completed_at": "2026-10-10T00:12:18+00:00"
+    },
+    {
+      "task_id": "M05",
+      "completed_at": "2026-10-10T01:12:16+00:00"
+    },
+    {
+      "task_id": "GROW-SITE-NETLIFY-HANDOFF-20261009",
+      "completed_at": "2026-10-10T01:36:52+00:00"
+    },
+    {
+      "task_id": "W10",
+      "completed_at": "2026-10-10T02:13:44+00:00"
+    }
+  ],
+  "reported_task_results": [
+    {
+      "task_id": "CORE-LUMA-AUD-005",
+      "status": "BLOCKED",
+      "reported_at": "2026-10-08T01:50:00Z"
+    },
+    {
+      "task_id": "CORE-STEMDECK-SEC-001",
+      "status": "COMPLETE",
+      "completed_at": "2026-10-08T01:31:28+00:00",
+      "reported_at": "2026-10-08T01:50:00Z"
+    },
+    {
+      "task_id": "CORE-FORM-AUD-SEC-001",
+      "status": "BLOCKED",
+      "reported_at": "2026-10-08T01:50:00Z"
+    },
+    {
+      "task_id": "PROGRAM18-GLYPH-001",
+      "status": "NEEDS_REVIEW",
+      "completed_at": "2026-10-08T02:15:54+00:00",
+      "reported_at": "2026-10-08T02:50:00Z"
+    },
+    {
+      "task_id": "PROGRAM18-POCKETSTUDIO-001",
+      "status": "BLOCKED",
+      "reported_at": "2026-10-08T02:20:00Z"
+    },
+    {
+      "task_id": "PROGRAM18-POCKET-SAVE-001",
+      "status": "COMPLETE",
+      "reported_at": "2026-10-08T02:50:00Z",
+      "completed_at": "2026-10-08T02:33:10+00:00"
+    },
+    {
+      "task_id": "PROGRAM18-BOUNCE-001",
+      "status": "NEEDS_REVIEW",
+      "reported_at": "2026-10-08T02:50:00Z"
+    },
+    {
+      "task_id": "CORE-FORM-AUD-WF-001",
+      "status": "BLOCKED",
+      "reported_at": "2026-10-08T03:20:00Z"
+    },
+    {
+      "task_id": "PROGRAM18-KEYBPM-001",
+      "status": "BLOCKED",
+      "reported_at": "2026-10-08T03:20:00Z"
+    },
+    {
+      "task_id": "PROGRAM18-CAST-QUAL-001",
+      "status": "NEEDS_REVIEW",
+      "reported_at": "2026-10-08T03:50:00Z"
+    },
+    {
+      "task_id": "CORE-LUMA-EXPORT-COLOR-001",
+      "status": "COMPLETE",
+      "completed_at": "2026-10-08T03:31:57+00:00",
+      "reported_at": "2026-10-08T03:50:00Z"
+    },
+    {
+      "task_id": "PROGRAM18-LIBRARIAN-AUTH-001",
+      "status": "BLOCKED",
+      "reported_at": "2026-10-08T03:50:00Z"
+    },
+    {
+      "task_id": "CORE-FORM-AUD-REL-001",
+      "status": "COMPLETE",
+      "completed_at": "2026-10-08T04:12:20+00:00",
+      "reported_at": "2026-10-08T04:20:00Z"
+    },
+    {
+      "task_id": "CORE-STEM-REPLAY-DEADLINE-001",
+      "status": "NEEDS_REVIEW",
+      "reported_at": "2026-10-08T04:50:00Z"
+    },
+    {
+      "task_id": "CORE-STEM-WEBKIT-REFERENCE-001",
+      "status": "NEEDS_REVIEW",
+      "reported_at": "2026-10-08T05:50:00Z"
+    },
+    {
+      "task_id": "P08",
+      "status": "NEEDS_REVIEW",
+      "reported_at": "2026-10-08T05:50:00Z"
+    },
+    {
+      "task_id": "CORE-FORM-WORKER-IMAGE-BINDING-001",
+      "status": "BLOCKED",
+      "reported_at": "2026-10-08T16:50:00Z"
+    },
+    {
+      "task_id": "OPS-EXTERNAL-STORAGE-20261008",
+      "status": "BLOCKED",
+      "reported_at": "2026-10-08T16:50:00Z"
+    },
+    {
+      "task_id": "PROGRAM18-POCKET-QUALIFY-001",
+      "status": "BLOCKED",
+      "reported_at": "2026-10-09T15:20:00Z"
+    },
+    {
+      "task_id": "CORE-LUMA-HIGH-DEPTH-DOC-001",
+      "status": "COMPLETE",
+      "completed_at": "2026-10-09T15:42:53+00:00",
+      "reported_at": "2026-10-09T15:50:00Z"
+    },
+    {
+      "task_id": "CORE-REVIEW-20261009",
+      "status": "COMPLETE",
+      "completed_at": "2026-10-09T16:06:29+00:00",
+      "reported_at": "2026-10-09T16:20:00Z"
+    },
+    {
+      "task_id": "OS-COST-ASTRA-REASON-NOT-EXPOSED-20261008",
+      "status": "COMPLETE",
+      "completed_at": "2026-10-09T16:12:07+00:00",
+      "reported_at": "2026-10-09T16:20:00Z"
+    },
+    {
+      "task_id": "GROW-WEBTOOLS-DIRECTORY-20261009",
+      "status": "COMPLETE",
+      "completed_at": "2026-10-09T16:58:55+00:00",
+      "reported_at": "2026-10-09T17:20:00Z"
+    },
+    {
+      "task_id": "GROW-PRODUCT-PAGES-STORY-20261009",
+      "status": "RUNNING",
+      "reported_at": "2026-10-09T17:20:00Z"
+    },
+    {
+      "task_id": "GROW-CIRCLE-ACCOUNT-001",
+      "status": "COMPLETE",
+      "completed_at": "2026-10-09T17:26:54+00:00",
+      "reported_at": "2026-10-09T17:50:00Z"
+    },
+    {
+      "task_id": "GROW-PRODUCT-PAGES-STORY-20261009",
+      "status": "COMPLETE",
+      "completed_at": "2026-10-09T17:46:23+00:00",
+      "reported_at": "2026-10-09T17:50:00Z"
+    },
+    {
+      "task_id": "PROGRAM18-KEYBPM-001",
+      "status": "BLOCKED",
+      "reported_at": "2026-10-09T18:20:00Z"
+    },
+    {
+      "task_id": "CORE-FORM-HANDOFF-HISTORY-001",
+      "status": "BLOCKED",
+      "reported_at": "2026-10-09T19:20:00Z"
+    },
+    {
+      "task_id": "PROGRAM18-POCKET-QUALIFY-001",
+      "status": "BLOCKED",
+      "reported_at": "2026-10-09T20:20:00Z"
+    },
+    {
+      "task_id": "M04",
+      "status": "BLOCKED",
+      "reported_at": "2026-10-09T21:20:00Z"
+    },
+    {
+      "task_id": "M03",
+      "status": "NEEDS_REVIEW",
+      "reported_at": "2026-10-09T21:50:00Z"
+    },
+    {
+      "task_id": "GROW-SITE-NETLIFY-HANDOFF-20261009",
+      "status": "BLOCKED",
+      "reported_at": "2026-10-09T22:50:00Z"
+    },
+    {
+      "task_id": "W03",
+      "status": "BLOCKED",
+      "reported_at": "2026-10-09T22:50:00Z"
+    },
+    {
+      "task_id": "W05",
+      "status": "COMPLETE",
+      "completed_at": "2026-10-09T23:17:40+00:00",
+      "reported_at": "2026-10-09T23:20:00Z"
+    },
+    {
+      "task_id": "P06",
+      "status": "BLOCKED",
+      "reported_at": "2026-10-10T00:20:00Z"
+    },
+    {
+      "task_id": "M01",
+      "status": "COMPLETE",
+      "completed_at": "2026-10-10T00:12:18+00:00",
+      "reported_at": "2026-10-10T00:20:00Z"
+    },
+    {
+      "task_id": "M05",
+      "status": "COMPLETE",
+      "completed_at": "2026-10-10T01:12:16+00:00",
+      "reported_at": "2026-10-10T01:20:00Z"
+    },
+    {
+      "task_id": "W10",
+      "status": "COMPLETE",
+      "completed_at": "2026-10-10T02:13:44+00:00",
+      "reported_at": "2026-10-10T02:20:00Z"
+    }
+  ]
+}

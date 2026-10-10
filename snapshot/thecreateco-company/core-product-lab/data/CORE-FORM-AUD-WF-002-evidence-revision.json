@@ -1,0 +1,15 @@
+{
+  "task_id": "CORE-FORM-AUD-WF-002",
+  "source_evidence": {
+    "direct": [
+      "app/PARKED.md:14-19 documents separate CAD/Rig schemas and recovery channels with explicit handoff; source includes individual workflow tests but no full cross-workspace close/reopen qualification was run."
+    ],
+    "hypothesis": [
+      "Users may expect more transparent cross-workspace persistence than current explicit boundary provides; usability impact not measured."
+    ]
+  },
+  "evidence_sources": [
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-initial.md",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/products/form.json"
+  ]
+}

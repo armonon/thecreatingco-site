@@ -1,0 +1,14 @@
+{
+  "sha": "bc6b6d047d4bb0c1a988b3c820a3e7c367c6e5fa",
+  "base_sha": "bc6b6d047d4bb0c1a988b3c820a3e7c367c6e5fa",
+  "scope": "Committed screened review delta, not a release or complete binary artifact",
+  "files": [],
+  "omitted": [],
+  "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "repo": "https://github.com/armonon/glyph-studio",
+  "branches": [
+    "main"
+  ],
+  "archive_path": "glyph-studio/bc6b6d047d4bb0c1a988b3c820a3e7c367c6e5fa",
+  "local_worktree_dirty": true
+}

@@ -1,0 +1,120 @@
+{
+  "sha": "fec21b4e5807c670887c099aac58e48a8852ee31",
+  "base_sha": "696223a33113e008b23a0c04a93bdd2bdff93551",
+  "scope": "Committed screened review delta, not a release or complete binary artifact",
+  "files": [
+    {
+      "path": "deliverables/sattari-internal-download-surface-archive-2026-06-02/DownloadsPage.tsx",
+      "status": "present",
+      "sha256": "7f733c708fb8f645c143d4c711fbbe37e47b08f884d0bdde7a294cd88dd3e47d",
+      "bytes": 6819
+    },
+    {
+      "path": "deliverables/sattari-internal-download-surface-archive-2026-06-02/README.md",
+      "status": "present",
+      "sha256": "54fa4326d6e8db15ef8aa7d222b5c8e8224ef1beca3b59d78f87a0e3ac7a5982",
+      "bytes": 828
+    },
+    {
+      "path": "deliverables/sattari-internal-download-surface-archive-2026-06-02/public-download-archive.ls.txt",
+      "status": "present",
+      "sha256": "a2a6e241e759829fb2ce0022d37a01f6b70e5fda56a1f1e2b8fe44c972a7e07e",
+      "bytes": 394
+    },
+    {
+      "path": "public/404.html",
+      "status": "present",
+      "sha256": "1f5fc28238d2a1ac1cf90e54eb157343297c4bce71e2f3429fbe955c1feb921a",
+      "bytes": 432
+    },
+    {
+      "path": "public/robots.txt",
+      "status": "present",
+      "sha256": "971e5c1df11518ad85e5f959e4b818f3354017b06ea89458a491ff51be3989e0",
+      "bytes": 160
+    },
+    {
+      "path": "public/sitemap.xml",
+      "status": "present",
+      "sha256": "9fdf64fdac838644df30246e89304deabd4fa3e24e2f2b45c6cf8676e33acfc3",
+      "bytes": 3018
+    },
+    {
+      "path": "src/App.tsx",
+      "status": "present",
+      "sha256": "4993a6131fa22c83ea09d74d1b5089261987c855c1cd59dfd0b34c6fb2e07af5",
+      "bytes": 7027
+    },
+    {
+      "path": "src/components/Navbar.jsx",
+      "status": "present",
+      "sha256": "8e6300cf6e09da364dd2da5db9256211c07edf094d399691d201d6197d68674d",
+      "bytes": 2958
+    },
+    {
+      "path": "src/components/SattariMarketPage.jsx",
+      "status": "present",
+      "sha256": "fd8128815963dd1f5042fce9733a7fa66f0bb0d33e53204957b2f8e6348b7386",
+      "bytes": 5729
+    },
+    {
+      "path": "src/components/SattariMarketPage.route.test.jsx",
+      "status": "present",
+      "sha256": "29ba0f35fee4634da7de5c018a00ab37226fde56579b8f2af4b8087ecae7d302",
+      "bytes": 2204
+    },
+    {
+      "path": "src/utils/lazyComponents.tsx",
+      "status": "present",
+      "sha256": "858621e9271975d723951ec2341acd65c8f87775378f79a63189ce7599aaaab1",
+      "bytes": 1392
+    },
+    {
+      "path": "src/utils/seo.tsx",
+      "status": "present",
+      "sha256": "e4510eea35f2387c93aa4ce9b69c51a1e8a95dacd959355d9be8739723013468",
+      "bytes": 2901
+    }
+  ],
+  "omitted": [
+    {
+      "path": "deliverables/sattari-internal-download-surface-archive-2026-06-02/public-download-archive.sha256",
+      "reason": "non-source-or-binary-asset"
+    },
+    {
+      "path": "deliverables/sattari-internal-download-surface-archive-2026-06-02/sattari-audio-plugin-suite-alpha-v0.1.0-mac-installer.pkg.sha256",
+      "reason": "non-source-or-binary-asset"
+    },
+    {
+      "path": "deliverables/sattari-internal-download-surface-archive-2026-06-02/sattari-audio-plugin-suite-alpha-v0.1.0.sha256",
+      "reason": "non-source-or-binary-asset"
+    },
+    {
+      "path": "deliverables/sattari-internal-download-surface-archive-2026-06-02/sattari-auto-pitch-autokey-tester-v0.6.zip.sha256",
+      "reason": "non-source-or-binary-asset"
+    },
+    {
+      "path": "public/_redirects",
+      "reason": "non-source-or-binary-asset"
+    },
+    {
+      "path": "public/downloads/sattari-audio-plugin-suite-alpha-v0.1.0-mac-installer.pkg",
+      "reason": "non-source-or-binary-asset"
+    },
+    {
+      "path": "public/downloads/sattari-audio-plugin-suite-alpha-v0.1.0.tar.gz",
+      "reason": "non-source-or-binary-asset"
+    },
+    {
+      "path": "public/downloads/sattari-auto-pitch-autokey-tester-v0.6.zip",
+      "reason": "non-source-or-binary-asset"
+    }
+  ],
+  "patch_sha256": "665e192de07e05fb9d50a7370a751722a700fa6bbbdc49c73a71f74e6b859b26",
+  "repo": "https://github.com/armonon/sattari-custom-site",
+  "branches": [
+    "joey/public-surface-local-recovery-2026-06-02"
+  ],
+  "archive_path": "sattari-custom-site/fec21b4e5807c670887c099aac58e48a8852ee31",
+  "local_worktree_dirty": true
+}

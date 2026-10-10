@@ -1,0 +1,18 @@
+{
+  "experiment_id": null,
+  "hypothesis": null,
+  "audience": null,
+  "channel": null,
+  "message": null,
+  "cta": null,
+  "cost": null,
+  "success_metric": null,
+  "baseline": null,
+  "start_date": null,
+  "end_date": null,
+  "result": null,
+  "learning": null,
+  "next_action": null,
+  "evidence": null,
+  "publication_authorization": null
+}

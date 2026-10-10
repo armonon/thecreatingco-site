@@ -1,0 +1,142 @@
+[
+  {
+    "id": "2069305d-6f38-41ba-b31c-a0fdbfdc7ea4",
+    "declarationKey": "company-director",
+    "agentId": "main",
+    "name": "thecreateco company director",
+    "enabled": true,
+    "createdAtMs": 1791416407429,
+    "schedule": {
+      "kind": "cron",
+      "expr": "10 * * * *",
+      "tz": "America/Los_Angeles"
+    },
+    "sessionTarget": "isolated",
+    "wakeMode": "now",
+    "payload": {
+      "kind": "agentTurn",
+      "message": "Run one bounded thecreateco company-director cycle, not a marketing-only cycle.\nWorkspace: /Users/agentsattari/thecreateco-company.\nRead AGENTS.md, DIRECTIVE.md, engine/README.md and COMPANY_STATE.md. If PAUSE exists,\ndo nothing and stop. Use Python stdlib CLI engine/company.py, never edit SQLite.\nRecover expired leases, refresh state, then select the highest-value eligible safe\ntask. Honor active ownership and existing product-specific holds. Claim it with\na unique owner name for this run; preserve the returned lease_token and heartbeat\nas needed. Execute ONE bounded task or audit batch, not the entire backlog.\n\nUse GPT-6.1 Sol for direction and difficult engineering decisions; delegate\nindependent scoped volume/research to Luna and creative/UX review to ChatGPT/Sol. Read data/model-routing.json; record actual model and\nfallback. Marketing's existing engine handles marketing drafts, not engineering.\nConsequential decisions may justify a separate independent OpenAI/Sol review.\nDo not spawn ongoing workers without a durable task owner and completion path.\n\nInspect evidence relevant to the chosen task, run appropriate baseline checks,\nmake reversible local improvements in an isolated branch when needed, and test.\nKeep existing features; no blind rewrites, branch-protection bypass, production\nrollback/deploy, social posting, outreach sending, spend or account changes from\nthis scheduled company job. Prepare external changes for their existing review\npath. Local fixes, tests, evidence collection and drafts are authorized.\n\nWrite a dated report under reports/ with actual commands, observations, tests,\nlimitations and the next action. Finish the task via CLI using owner/token and\nevidence path. Use BLOCKED with an explicit reason when access is missing; do\nnot invent metrics or mark unverified work complete. Company metrics require\nsource, reporting period and observation time. Update products/context through\nthe CLI when evidence changes. Refresh after every meaningful batch.\n\nStop within 35 minutes, recording a checkpoint if incomplete. Do not create busywork\nwhen no useful safe work is available. Return a concise factual summary for run\nhistory only; do not send messages to any channel or person from this job.\n\nCore Product Lab amendment: read core-product-lab/DIRECTIVE.md and HEALTH.md.\nPrioritize its golden-workflow tasks above unrelated new app experiments; use\npython3 core-product-lab/lab.py next and respect active per-product ownership.\nStemDeck local development is reopened by the explicit Oct 7 flagship directive;\nunrelated Sattari/music scope and all release/licensing gates remain unchanged.\n\nOwner preference: no Claude/Sonnet/Opus reviews or review fallbacks; use ChatGPT/OpenAI.",
+      "model": "openai/gpt-6.1-sol",
+      "fallbacks": [
+        "openai/gpt-6-sol"
+      ],
+      "thinking": "medium",
+      "timeoutSeconds": 2100,
+      "toolsAllow": [
+        "*"
+      ]
+    },
+    "delivery": {
+      "mode": "none",
+      "channel": "last"
+    },
+    "scheduledToolPolicy": {
+      "version": 1,
+      "mode": "trusted"
+    },
+    "state": {
+      "nextRunAtMs": 1791421800000,
+      "lastRunAtMs": 1791418200015,
+      "lastRunStatus": "ok",
+      "lastStatus": "ok",
+      "lastDurationMs": 343309,
+      "lastDeliveryStatus": "not-requested",
+      "lastFailureNotificationDeliveryStatus": "not-requested",
+      "consecutiveErrors": 0,
+      "consecutiveSkipped": 0,
+      "lastDelivered": false
+    },
+    "updatedAtMs": 1791420979155,
+    "configRevision": "sha256:lUrqMTgJo4bHsvzL2lCLBXot2wM0Uh-WrDvK5qk6Nmc",
+    "nextRunAtMs": 1791421800000,
+    "lastRunAtMs": 1791418200015,
+    "lastRunStatus": "ok",
+    "lastDelivered": false,
+    "lastDeliveryStatus": "not-requested",
+    "lastFailureNotificationDeliveryStatus": "not-requested"
+  },
+  {
+    "id": "b98880fe-a5a5-410f-a7ca-7366239125d8",
+    "declarationKey": "core-product-lab-cycle",
+    "agentId": "main",
+    "name": "Core Product Lab cycle",
+    "enabled": true,
+    "createdAtMs": 1791417446006,
+    "schedule": {
+      "kind": "cron",
+      "expr": "40 */2 * * *",
+      "tz": "America/Los_Angeles"
+    },
+    "sessionTarget": "isolated",
+    "wakeMode": "now",
+    "payload": {
+      "kind": "agentTurn",
+      "message": "Run one bounded Core Product Lab cycle. Workspace:\n/Users/agentsattari/thecreateco-company/core-product-lab.\nRead AGENTS.md, DIRECTIVE.md, HEALTH.md, ../engine/README.md and data/model-routing.json.\nStop if PAUSE here or ../PAUSE exists. ScenePilot, Luma, Form and StemDeck ONLY;\ngolden-workflow reliability before unrelated features or new apps.\n\nRun company.py recover; python3 lab.py next. Select only one eligible task, by\nseverity then value, and claim its exact ID via ../engine/company.py with a unique\nowner and 45-minute lease. Read relevant product state and evidence only. Do not\nrace another worker on the same product. The company queue is authoritative;\nnever edit its SQLite or generated exports. Reuse existing tasks, not duplicates.\n\nExecute a substantive safe local task or useful qualification batch in an isolated\nworktree. Sol directs; Luna handles bounded routine work; use ChatGPT/Sol\nfor material UX/design/workflow review and a separate OpenAI reviewer for consequential\nindependent audit. Record actual model and fallbacks; model proportions are guidance, not quotas.\nNative Codex children for Codex legwork; max three workers. Keep dependent work with\nits owner. No claim of a review unless it ran and produced evidence.\n\nBuild/test and dogfood a synthetic/authorized golden project. Preserve failing logs,\nsource SHA, environment and exact command results; never relax assertions merely\nto pass. Unknown stays unknown. No deployments, rollback, public messages, physical\nrecording, payment/access/legal changes, production deletion or gate bypass.\nExisting explicit release approval must still pass the repository's release gates.\n\nWrite dated report and update products/<id>.json with measured results/limitations.\nFinish task via company CLI with evidence, or checkpoint it BLOCKED with concrete\nresume condition. Heartbeat long tasks. Update company products/context through CLI\nwithout overwriting unrelated fields. Run lab.py refresh. Queue only meaningful\ndeduplicated follow-up work, with repro/test requirements and estimated scores.\nStop within 35 minutes; if no safe useful work is available, record idle, not busywork.\nReturn short run-history summary; do not send messages to people/channels.\n\nOwner preference: no Claude/Sonnet/Opus reviews or review fallbacks; use ChatGPT/OpenAI.",
+      "model": "openai/gpt-6.1-sol",
+      "fallbacks": [
+        "openai/gpt-6-sol"
+      ],
+      "thinking": "medium",
+      "timeoutSeconds": 2100,
+      "toolsAllow": [
+        "*"
+      ]
+    },
+    "delivery": {
+      "mode": "none",
+      "channel": "last"
+    },
+    "scheduledToolPolicy": {
+      "version": 1,
+      "mode": "trusted"
+    },
+    "state": {
+      "nextRunAtMs": 1791423600000
+    },
+    "updatedAtMs": 1791421008392,
+    "configRevision": "sha256:GZeBEbHOKtoynOsgc9ZOg9V7AU51p6qDiP6Lo4Dj-IE",
+    "nextRunAtMs": 1791423600000
+  },
+  {
+    "id": "8f524ec8-f2ed-4809-a895-e5a8dca329b7",
+    "declarationKey": "core-product-lab-weekly",
+    "agentId": "main",
+    "name": "Core Product Lab weekly",
+    "enabled": true,
+    "createdAtMs": 1791417447537,
+    "schedule": {
+      "kind": "cron",
+      "expr": "35 9 * * 1",
+      "tz": "America/Los_Angeles"
+    },
+    "sessionTarget": "isolated",
+    "wakeMode": "now",
+    "payload": {
+      "kind": "agentTurn",
+      "message": "Perform weekly flagship review, at most 25 minutes. Workspace:\n/Users/agentsattari/thecreateco-company/core-product-lab. Read AGENTS.md, DIRECTIVE.md,\nHEALTH.md, relevant weekly reports and company queue; stop on PAUSE here or parent.\nCreate/claim a dated CORE-WEEKLY task through company.py. For ScenePilot, Luma, Form,\nStemDeck report evidence-backed scores or unknown, release readiness, up to five\nblockers and completed improvements, exact test status, benchmark changes or\nunmeasured, regressions, golden-workflow status, next milestone. Decide next cycle's\nallocation by severity/value, not equal rotation. Track real model/cost evidence or\nmark unavailable; don't derive spend/time from task counts. Request bounded ChatGPT/Sol\ndesign critique when material workflow/UI evidence exists; separate independent\nOpenAI review only for major decision/disagreement with rationale. Update shared queue/products, dated report,\nfinish with evidence, refresh lab views. No new apps, release/public messaging,\npayments/access/legal changes or physical recording. Return run-history summary only.\n\nOwner preference: no Claude/Sonnet/Opus reviews or review fallbacks; use ChatGPT/OpenAI.",
+      "model": "openai/gpt-6.1-sol",
+      "fallbacks": [
+        "openai/gpt-6-sol"
+      ],
+      "thinking": "medium",
+      "timeoutSeconds": 1500,
+      "toolsAllow": [
+        "*"
+      ]
+    },
+    "delivery": {
+      "mode": "none",
+      "channel": "last"
+    },
+    "scheduledToolPolicy": {
+      "version": 1,
+      "mode": "trusted"
+    },
+    "state": {
+      "nextRunAtMs": 1791822900000
+    },
+    "updatedAtMs": 1791421009344,
+    "configRevision": "sha256:N2WIS2OljwoV8mib7xJkXfBdwwoREBh1v4qXHTiGpG4",
+    "nextRunAtMs": 1791822900000
+  }
+]

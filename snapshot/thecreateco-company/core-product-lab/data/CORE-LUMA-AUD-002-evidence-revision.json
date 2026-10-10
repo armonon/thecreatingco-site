@@ -1,0 +1,12 @@
+{
+  "task_id": "CORE-LUMA-AUD-002",
+  "source_evidence": [
+    "node build/check-release-evidence.mjs status: 1/10; source-bound local qualification and compatibility corpus evidence missing",
+    "interactive workflow not run in this audit",
+    "golden-projects/luma.md defines the fixture and acceptance receipt"
+  ],
+  "evidence_sources": [
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/luma-initial.md",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/products/luma.json"
+  ]
+}

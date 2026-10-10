@@ -1,0 +1,1883 @@
+/*
+ * Form Studio — quiet, native-inspired creative workspace.
+ *
+ * Loaded last so this is the single visual contract for CAD, Rig Lab and
+ * Fabric while legacy feature styles continue to own geometry and behavior.
+ */
+
+/* Selection-first viewport tools. These own their layout rather than relying on legacy panel rules. */
+.form-selection-toolbar { position:absolute; top:66px; left:14px; right:14px; z-index:24; display:flex; flex-wrap:wrap; align-items:center; gap:4px; width:fit-content; max-width:calc(100% - 28px); padding:6px; border:1px solid var(--form-v2-border); border-radius:10px; background:var(--form-v2-surface); box-shadow:0 4px 18px #16352b12; }
+.form-selection-toolbar > span { padding:0 6px; font-size:9px; letter-spacing:.12em; color:var(--form-v2-text-muted); }
+.form-selection-toolbar button,.form-selection-toolbar label { min-height:28px; padding:4px 7px; border:0; border-radius:5px; background:transparent; font-size:11px; color:var(--form-v2-text); }
+.form-selection-toolbar label { display:flex; align-items:center; gap:4px; }
+.form-selection-toolbar input { accent-color:#387969; width:13px; }
+.form-selection-toolbar button[aria-pressed="true"] { background:var(--form-v2-accent-soft); color:#205d4e; }
+.form-selection-toolbar button:disabled { opacity:.4; cursor:not-allowed; }
+.cad-canvas-wrap:has(.form-selection-toolbar) .cad-pick-feedback { display:none; }
+.form-selection-hud { position:absolute; z-index:25; width:280px; max-height:calc(100% - 160px); overflow:auto; border:1px solid var(--form-v2-border); border-radius:14px; background:var(--form-v2-surface); color:var(--form-v2-text); box-shadow:0 12px 34px #123d2820; backdrop-filter:blur(18px); }
+.form-selection-hud section { padding:12px; }
+.form-selection-hud header { display:flex; align-items:center; justify-content:space-between; font-size:9px; letter-spacing:.14em; color:var(--form-v2-text-secondary); }
+.form-selection-hud header button { width:24px; height:24px; border:0; background:transparent; font-size:19px; color:inherit; }
+.form-selection-hud strong { display:block; margin:4px 0 10px; font-size:13px; font-weight:550; }
+.form-selection-hud nav { display:flex; flex-wrap:wrap; gap:4px; margin:10px 0; }
+.form-selection-hud nav button { flex:1 0 28%; border:1px solid var(--form-v2-border); border-radius:6px; background:var(--form-v2-surface-raised); color:var(--form-v2-text-secondary); padding:7px; font-size:11px; text-transform:capitalize; }
+.form-selection-hud nav button[aria-pressed="true"] { background:var(--form-v2-accent-soft); border-color:#75aa98; color:#234f3d; }
+.form-selection-brush-settings { display:grid; gap:5px; padding-bottom:8px; border-bottom:1px solid var(--form-v2-border); }
+.form-selection-brush-settings label { display:grid; grid-template-columns:48px 1fr 35px; gap:6px; align-items:center; font-size:10px; }
+.form-selection-brush-settings input { width:100%; accent-color:#3d8b73; }
+.form-selection-brush-settings output { text-align:right; font-variant-numeric:tabular-nums; }
+.form-selection-values { display:flex; gap:8px; }
+.form-selection-values label { display:flex; flex-wrap:wrap; flex:1; gap:4px; align-items:center; font-size:10px; }
+.form-selection-values input,.form-selection-values select { width:76px; min-width:0; border:1px solid var(--form-v2-border); background:var(--form-v2-surface-raised); border-radius:5px; color:var(--form-v2-text); padding:6px; font-size:12px; }
+.form-selection-hud footer { display:flex; gap:6px; margin-top:10px; }
+.form-selection-hud footer button { padding:7px 10px; border:1px solid var(--form-v2-border); border-radius:6px; font-size:11px; color:var(--form-v2-text-secondary); background:var(--form-v2-surface-raised); }
+.form-selection-hud footer .apply { flex:1; border-color:#3b7460; }
+.form-selection-hud button:disabled { opacity:.4; cursor:not-allowed; }
+.form-selection-hud p { margin:9px 0 0; font-size:10px; color:var(--form-v2-text-secondary); line-height:1.5; }
+.form-selection-hud :is(button,input,select):focus-visible,.form-selection-toolbar :is(button,input):focus-visible { outline:2px solid #218169; outline-offset:2px; }
+.form-selection-brush-cursor { position:absolute; pointer-events:none; z-index:23; border:1px solid #b6ffed; border-radius:50%; box-shadow:0 0 0 1px #164e4077; background:radial-gradient(circle,#6affe82b var(--brush-core),#6affe800 70%); }
+.form-selection-brush-cursor span { position:absolute; width:var(--brush-strength); height:var(--brush-strength); top:50%; left:50%; transform:translate(-50%,-50%); border:1px dashed #b6ffed88; border-radius:50%; }
+.form-selection-brush-cursor[data-mode="subtract"] { border-color:#ffac99; background:radial-gradient(circle,#ff8d752b var(--brush-core),#ff8d7500 70%); }
+.form-selection-brush-cursor[data-mode="smooth"] { border-color:#bfc8ff; }
+@media (max-width:900px) { .form-selection-toolbar { top:54px; } .form-selection-toolbar button,.form-selection-toolbar label { font-size:10px; padding:3px 5px; } }
+
+/* Contextual properties: the all-properties switch is the explicit escape hatch. */
+.cad-selection-context { display:grid; border-bottom:1px solid var(--form-v2-border); }
+.cad-selection-context strong { color:var(--form-v2-text); }
+.cad-selection-context span { color:var(--form-v2-text-secondary); }
+.cad-selection-context button { justify-self:start; padding:6px 10px; background:var(--form-v2-surface-raised); border:1px solid var(--form-v2-border); border-radius:6px; }
+.cad-inspector[data-property-scope="focused"] .cad-scroll > :is(.cad-pro-section,.cad-kernel-panel,.cad-nodes,.cad-graph,.cad-bom) { display:none; }
+.cad-inspector[data-property-scope="focused"][data-selection-context="sketch"] #inspector-constraints { display:block; }
+.cad-inspector[data-property-scope="focused"]:not([data-selection-context="mesh"]) .cad-sculpt-section { display:none; }
+.cad-inspector[data-property-scope="focused"][data-selection-context="mesh"] :is(#inspector-geometry,.cad-direct-transform) { display:none; }
+.cad-region-depth { display:flex; align-items:center; gap:6px; white-space:nowrap; }
+.cad-shell .cad-region-depth input { width:100px; min-width:80px; padding:7px; background:var(--form-v2-surface-raised); border:1px solid var(--form-v2-border); border-radius:6px; font-size:13px; color:var(--form-v2-text); }
+.cad-pick-feedback { position:absolute; top:108px; left:14px; z-index:21; display:grid; gap:4px; border:1px solid var(--form-v2-border); background:var(--form-v2-surface); color:var(--form-v2-text-secondary); pointer-events:none; }
+.cad-pick-feedback span,.cad-pick-feedback small { font-size:11px; line-height:1.4; }
+.cad-canvas-wrap:has(.cad-tool-shelf) .cad-pick-feedback,.embedded-sketch .cad-pick-feedback { display:none; }
+@media(max-width:1100px) { .cad-pick-feedback { top:110px; max-width:220px; } .cad-pick-feedback small { display:none; } }
+
+:root {
+  --form-v2-bg: #f0f1f4;
+  --form-v2-canvas: #e6e8ec;
+  --form-v2-surface: #f7f8fa;
+  --form-v2-surface-raised: #ffffff;
+  --form-v2-surface-hover: #e8ebf0;
+  --form-v2-border: #ced2d9;
+  --form-v2-border-soft: #e2e5ea;
+  --form-v2-text: #1d1d1f;
+  --form-v2-text-secondary: #484b52;
+  --form-v2-text-muted: #626670;
+  --form-v2-text-dim: #626670;
+  --form-v2-accent: #0050b8;
+  --form-v2-accent-soft: #e4eefc;
+  --form-v2-accent-ink: #ffffff;
+  --form-v2-chrome: rgb(250 251 253 / 94%);
+  --form-v2-danger: #ef806b;
+  --form-v2-warning: #e2b963;
+  --form-v2-control: 34px;
+  --form-v2-topbar: 64px;
+  --form-v2-status: 28px;
+  --form-v2-tools: 76px;
+  --form-v2-inspector: 320px;
+  --form-v2-radius-xs: 4px;
+  --form-v2-radius-sm: 6px;
+  --form-v2-radius-md: 8px;
+  --form-v2-space-1: 4px;
+  --form-v2-space-2: 8px;
+  --form-v2-space-3: 12px;
+  --form-v2-space-4: 16px;
+  --form-v2-shadow: 0 12px 36px rgb(27 37 56 / 12%), 0 1px 3px rgb(27 37 56 / 6%);
+}
+
+:where(.cad-shell,.fabric-shell,.studio-shell.v2) {
+  color-scheme: light;
+  background: var(--form-v2-bg);
+  color: var(--form-v2-text);
+  font-family: -apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",sans-serif;
+  font-size: 12px;
+}
+
+:where(.cad-shell,.fabric-shell,.studio-shell.v2) :where(button,input,select,textarea) {
+  font: inherit;
+}
+
+:where(.cad-shell,.fabric-shell,.studio-shell.v2) :where(input[type="number"],input[type="text"],input:not([type]),select,.cad-coordinates,.cad-statusbar) {
+  font-family: var(--font-geist-mono),ui-monospace,"SFMono-Regular",Consolas,monospace;
+}
+
+/* Shared compact desktop chrome ------------------------------------------------ */
+
+.cad-shell {
+  --cad-tools-width: var(--form-v2-tools);
+  --cad-inspector-width: var(--form-v2-inspector);
+  background: var(--form-v2-bg);
+}
+
+.cad-shell.cad-view-model {
+  --cad-timeline-height: 132px;
+}
+
+.cad-topbar,
+.fabric-topbar,
+.studio-shell.v2 .topbar {
+  height: var(--form-v2-topbar);
+  min-height: var(--form-v2-topbar);
+  padding: 0 var(--form-v2-space-3);
+  border-color: var(--form-v2-border-soft);
+  background: var(--form-v2-surface);
+  box-shadow: none;
+  color: var(--form-v2-text);
+}
+
+.cad-brand { gap: 8px; }
+.cad-brand > button,
+.fabric-brand > button,
+.workspace-back {
+  width: 28px !important;
+  height: 28px !important;
+  min-height: 28px !important;
+  border: 1px solid var(--form-v2-border) !important;
+  border-radius: var(--form-v2-radius-sm) !important;
+  background: transparent !important;
+  color: var(--form-v2-text-secondary) !important;
+}
+
+.cad-brand > span,
+.fabric-brand > span,
+.brand-mark {
+  width: 24px !important;
+  height: 24px !important;
+  border-radius: 5px !important;
+  background: var(--form-v2-accent) !important;
+  box-shadow: none !important;
+  color: var(--form-v2-text) !important;
+  font-size: 12px !important;
+}
+
+.cad-brand strong,
+.fabric-brand strong {
+  color: var(--form-v2-text);
+  font-size: 12px;
+  font-weight: 720;
+  letter-spacing: .11em;
+}
+
+.cad-brand em,
+.fabric-brand em {
+  max-width: 150px;
+  margin: 0;
+  padding-left: 10px;
+  border-left: 1px solid var(--form-v2-border);
+  color: var(--form-v2-text-muted);
+  font-size: 12px;
+  letter-spacing: .04em;
+}
+
+.cad-view-switch,
+.fabric-stages {
+  height: 100%;
+  gap: 18px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.cad-view-switch button,
+.cad-view-model .cad-view-switch button,
+.fabric-stages button {
+  position: relative;
+  height: 100%;
+  min-height: 0;
+  padding: 0 2px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  color: var(--form-v2-text-muted);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .03em;
+  text-transform: none;
+}
+
+.cad-view-switch button::after,
+.fabric-stages button::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  background: transparent;
+  content: "";
+}
+
+.cad-view-switch button:hover,
+.fabric-stages button:hover { background: transparent; color: var(--form-v2-text); }
+.cad-view-switch button.active,
+.fabric-stages button.active {
+  background: transparent;
+  box-shadow: none;
+  color: var(--form-v2-accent);
+}
+.cad-view-model .cad-view-switch button.active,
+.cad-view-drawing .cad-view-switch button.active,
+.cad-view-sketch .cad-view-switch button.active {
+  background: transparent;
+  box-shadow: none;
+  color: var(--form-v2-accent);
+}
+.cad-view-switch button.active::after,
+.fabric-stages button.active::after { background: var(--form-v2-accent); }
+.cad-view-switch .cad-workspace-jump {
+  border: 0;
+  border-radius: 0;
+  color: var(--form-v2-text-muted);
+}
+
+.cad-actions,
+.fabric-actions { gap: 5px; }
+.cad-actions > button,
+.fabric-actions > button,
+.cad-history button,
+.workspace-ui-controls button,
+.cad-project-menu > summary,
+.fabric-project-menu > summary {
+  display: inline-flex;
+  width: auto;
+  min-width: 30px;
+  height: var(--form-v2-control);
+  min-height: var(--form-v2-control);
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 0 8px;
+  border: 1px solid transparent;
+  border-radius: var(--form-v2-radius-sm);
+  background: transparent;
+  box-shadow: none;
+  color: var(--form-v2-text-secondary);
+  font-size: 12px;
+}
+.cad-actions > button:hover,
+.fabric-actions > button:hover,
+.cad-history button:hover,
+.workspace-ui-controls button:hover,
+.cad-project-menu > summary:hover,
+.fabric-project-menu > summary:hover {
+  border-color: var(--form-v2-border);
+  background: var(--form-v2-surface-hover);
+  color: var(--form-v2-text);
+}
+.cad-actions .accent,
+.fabric-actions .accent {
+  border-color: var(--form-v2-accent);
+  background: var(--form-v2-accent);
+  box-shadow: none;
+  color: var(--form-v2-text);
+  font-weight: 720;
+}
+.cad-actions .accent svg,
+.fabric-actions .accent svg { width: 14px; height: 14px; }
+.cad-history { margin: 0 2px 0 0; padding-right: 5px; border-right: 1px solid var(--form-v2-border-soft); }
+.cad-history button { width: 28px; padding: 0; border-color: transparent; background:transparent !important; color:var(--form-v2-text-secondary) !important; }
+.workspace-ui-controls { padding: 2px; border: 0; background: transparent; }
+.workspace-ui-controls button { width: 27px; min-width: 27px; height: 27px; min-height: 27px; padding: 0; }
+.workspace-ui-controls button span { display: none; }
+.cad-sync { min-height: 25px; padding: 0 7px; border-color: var(--form-v2-border); border-radius: 5px; color: var(--form-v2-text-muted); font-size: 12px; }
+
+.cad-project-menu,
+.fabric-project-menu { position: relative; }
+.cad-project-menu > summary,
+.fabric-project-menu > summary { box-sizing: border-box; list-style: none; cursor: pointer; }
+.cad-project-menu > summary::-webkit-details-marker,
+.fabric-project-menu > summary::-webkit-details-marker { display: none; }
+.cad-project-menu > div,
+.fabric-project-menu > div {
+  position: absolute;
+  z-index: 80;
+  top: calc(100% + 7px);
+  right: 0;
+  width: 224px;
+  overflow: hidden;
+  padding: 5px;
+  border: 1px solid var(--form-v2-border);
+  border-radius: var(--form-v2-radius-md);
+  background: var(--form-v2-surface);
+  box-shadow: var(--form-v2-shadow);
+  color: var(--form-v2-text);
+}
+.cad-project-menu section { padding: 5px; border: 0; }
+.cad-project-menu section + section { border-top: 1px solid var(--form-v2-border-soft); }
+.cad-project-menu strong { display: block; padding: 5px 7px; color: var(--form-v2-text-muted); font-size: 12px; letter-spacing: .12em; }
+.cad-project-menu button,
+.fabric-project-menu button {
+  width: 100%;
+  min-height: 29px;
+  padding: 0 8px;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  color: var(--form-v2-text-secondary);
+  text-align: left;
+}
+.cad-project-menu button:hover,
+.fabric-project-menu button:hover { background: var(--form-v2-surface-hover); color: var(--form-v2-text); }
+
+/* Workspace tool rail --------------------------------------------------------- */
+
+.cad-tools,
+.fabric-tools,
+.studio-shell.v2 .compact-rail {
+  gap: 2px;
+  padding: 7px 5px;
+  overflow-x: hidden;
+  border-color: var(--form-v2-border-soft);
+  background: var(--form-v2-surface);
+  box-shadow: none;
+}
+.cad-view-model .cad-tools,
+.cad-view-drawing .cad-tools,
+.cad-view-sketch .cad-tools { background: var(--form-v2-surface); }
+.cad-tools button,
+.cad-view-model .cad-tools button,
+.fabric-tools button,
+.studio-shell.v2 .panel-tabs.v2-tabs > button {
+  height: 46px;
+  min-height: 46px;
+  gap: 2px;
+  border: 1px solid transparent;
+  border-radius: var(--form-v2-radius-sm);
+  background: transparent;
+  box-shadow: none;
+  color: var(--form-v2-text-muted);
+}
+.cad-tools button:hover,
+.fabric-tools button:hover,
+.studio-shell.v2 .panel-tabs.v2-tabs > button:hover {
+  border-color: var(--form-v2-border);
+  background: var(--form-v2-surface);
+  box-shadow: none;
+  color: var(--form-v2-text);
+}
+.cad-tools button.active,
+.fabric-tools button.active,
+.studio-shell.v2 .panel-tabs.v2-tabs > button.active {
+  border-color: var(--form-v2-border);
+  background: var(--form-v2-accent-soft);
+  box-shadow: inset 2px 0 var(--form-v2-accent);
+  color: var(--form-v2-accent);
+}
+.cad-tools b,
+.cad-view-model .cad-tools b,
+.fabric-tools b { font-size: 17px; }
+.cad-tools span,
+.cad-view-model .cad-tools span,
+.fabric-tools span { font-size: 12px; font-weight: 570; }
+.cad-tools > i,
+.fabric-tools > i { margin: 4px 7px; background: var(--form-v2-border-soft); }
+
+/* Viewport-first CAD ----------------------------------------------------------- */
+
+.cad-canvas-wrap,
+.cad-3d { background: var(--form-v2-canvas); }
+.cad-view-sketch .cad-canvas-wrap { background: var(--form-v2-surface); }
+.cad-view-drawing .cad-command,
+.cad-view-drawing .cad-command-suggestions,
+.cad-view-drawing .cad-command-more { display: none; }
+.cad-view-model .cad-3d-tools { display: none; }
+.cad-model-selection-filter {
+  position: absolute;
+  z-index: 23;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  transform: translateX(-50%);
+  border: 1px solid var(--form-v2-border);
+  backdrop-filter: blur(12px);
+}
+.cad-model-selection-filter span { padding: 0 6px; font-weight: 760; letter-spacing: .12em; }
+.cad-model-selection-filter button { border: 0; border-radius: 4px; background: transparent; }
+.cad-model-selection-filter button:hover { background: var(--form-v2-surface-hover); color: var(--form-v2-text); }
+.cad-topology-edit {
+  position: absolute;
+  z-index: 25;
+  right: 18px;
+  display: grid;
+  grid-template-columns: minmax(132px, 1fr) auto auto;
+  gap: 6px;
+  width: min(390px, calc(100% - 36px));
+  padding: 10px;
+  border: 1px solid var(--form-v2-border);
+  border-radius: 9px;
+  background: var(--form-v2-chrome);
+  box-shadow: 0 16px 36px rgb(0 0 0 / 30%);
+  backdrop-filter: blur(14px);
+}
+.cad-topology-edit > header { grid-column: 1 / -1; display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 7px; }
+.cad-topology-edit > header span { color: var(--form-v2-accent); font-size: 12px; font-weight: 760; letter-spacing: .12em; }
+.cad-topology-edit > header strong { color: var(--form-v2-text); font-size: 12px; }
+.cad-topology-edit > header small { color: var(--form-v2-text-dim); font-size: 12px; }
+.cad-topology-edit > nav { grid-column: 1 / -1; display: flex; gap: 3px; }
+.cad-topology-edit > nav button { min-height: 24px; padding: 0 10px; border: 1px solid var(--form-v2-border); border-radius: 4px; background: var(--form-v2-surface); color: var(--form-v2-text-muted); font-size: 12px; }
+.cad-topology-edit > nav button.active { border-color: var(--form-v2-border); background: var(--form-v2-accent-soft); color: var(--form-v2-accent); }
+.cad-topology-edit > label { display: grid; grid-template-columns: auto minmax(0,1fr) auto; align-items: center; gap: 5px; min-width: 0; height: 28px; padding: 0 7px; border: 1px solid var(--form-v2-border); border-radius: 5px; background: var(--form-v2-surface); color: var(--form-v2-text-muted); font-size: 12px; }
+.cad-topology-edit > label input { min-width: 0; width: 100%; border: 0; background: transparent; color: var(--form-v2-text); font: 8px/1 var(--font-mono, monospace); text-align: right; outline: 0; }
+.cad-topology-edit > label em { color: var(--form-v2-text-dim); font-style: normal; }
+.cad-topology-edit > button { min-height: 28px; padding: 0 9px; border: 1px solid var(--form-v2-border); border-radius: 5px; background: var(--form-v2-surface); color: var(--form-v2-text-muted); font-size: 12px; }
+.cad-topology-edit > button.accent { border-color: var(--form-v2-accent); background: var(--form-v2-accent); color: var(--form-v2-text); }
+.cad-topology-edit > footer { grid-column: 1 / -1; color: var(--form-v2-text-dim); font-size: 12px; }
+.cad-direct-transform {
+  position: absolute;
+  z-index: 24;
+  left: 50%;
+  bottom: 84px;
+  width: min(560px, calc(100% - 44px));
+  padding: 9px 10px 7px;
+  transform: translateX(-50%);
+  border: 1px solid var(--form-v2-border);
+  border-radius: 9px;
+  background: var(--form-v2-chrome);
+  box-shadow: 0 14px 36px rgb(0 0 0 / 30%);
+  color: var(--form-v2-text);
+  backdrop-filter: blur(14px);
+}
+.cad-direct-transform > header {
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  margin: 0 1px 7px;
+}
+.cad-direct-transform > header span { font-weight: 760; }
+.cad-direct-transform > header strong { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.cad-direct-transform > header small { font-size: 12px; }
+.cad-direct-transform > div { display: grid; }
+.cad-direct-transform label {
+  align-items: center;
+  min-width: 0;
+  border-radius: 6px;
+}
+.cad-direct-transform label span { font-size: 12px; font-weight: 760; }
+.cad-direct-transform label:nth-child(1) span { color: #ff6b61; }
+.cad-direct-transform label:nth-child(2) span { color: var(--form-v2-text-muted); }
+.cad-direct-transform label:nth-child(3) span { color: #65a8ff; }
+.cad-direct-transform input { min-width: 0; width: 100%; border: 0; background: transparent; color: var(--form-v2-text-muted); font: 9px/1 var(--font-mono, monospace); text-align: right; outline: 0; }
+.cad-direct-transform label em { margin-left: 4px; color: var(--form-v2-text-dim); font-size: 12px; font-style: normal; }
+.cad-direct-transform > div > button { border: 1px solid var(--form-v2-border); border-radius: 6px; background: var(--form-v2-surface); color: var(--form-v2-text-muted); font-size: 12px; }
+.cad-direct-transform > div > button:disabled { opacity: .35; }
+.cad-direct-transform > footer { margin-top: 6px; }
+.cad-direct-transform kbd { color: var(--form-v2-text-muted); font: inherit; }
+.cad-view-model .cad-viewport-bar,
+.cad-viewport-bar {
+  top: 10px;
+  gap: 2px;
+  padding: 3px;
+  border: 1px solid var(--form-v2-border);
+  border-radius: var(--form-v2-radius-md);
+  background: var(--form-v2-chrome);
+  box-shadow: 0 8px 22px rgb(0 0 0 / 18%);
+  backdrop-filter: blur(12px);
+}
+.cad-shading-switch button,
+.cad-projection-toggle,
+.cad-standard-views button {
+  min-height: 27px !important;
+  padding: 0 8px !important;
+  border-radius: 5px !important;
+  background: transparent !important;
+  color: var(--form-v2-text-muted) !important;
+  font-size: 12px !important;
+}
+.cad-shading-switch button.active,
+.cad-projection-toggle.active,
+.cad-standard-views button.active {
+  background: var(--form-v2-accent-soft) !important;
+  box-shadow: inset 0 0 0 1px #52632f !important;
+  color: var(--form-v2-accent) !important;
+}
+.cad-command {
+  top: auto;
+  bottom: 39px;
+  width: min(570px,64%);
+  grid-template-columns: 36px minmax(0,1fr) 58px;
+  border: 1px solid var(--form-v2-border);
+  border-radius: var(--form-v2-radius-md);
+  background: var(--form-v2-chrome);
+  box-shadow: 0 12px 30px rgb(0 0 0 / 28%);
+  backdrop-filter: blur(14px);
+}
+.cad-command > span,
+.cad-view-model .cad-command > span,
+.cad-command input,
+.cad-view-model .cad-command input { height: 38px; color: var(--form-v2-text); }
+.cad-command > span { color: var(--form-v2-accent); }
+.cad-command > span svg { width: 16px; height: 16px; }
+.cad-command button,
+.cad-view-model .cad-command button {
+  height: 30px;
+  margin-right: 4px;
+  border-radius: 5px;
+  background: var(--form-v2-accent);
+  color: var(--form-v2-accent-ink);
+  font-size: 12px;
+}
+.cad-command-suggestions,
+.cad-view-model .cad-command-suggestions {
+  top: auto;
+  bottom: 83px;
+  width: min(570px,64%);
+  justify-content: center;
+}
+.cad-command-suggestions button,
+.cad-view-model .cad-command-suggestions button {
+  min-height: 24px;
+  padding: 0 8px;
+  border: 1px solid var(--form-v2-border);
+  border-radius: 5px;
+  background: var(--form-v2-chrome);
+  box-shadow: none;
+  color: var(--form-v2-text-secondary);
+  font-size: 12px;
+}
+.cad-command-more {
+  position: absolute;
+  z-index: 4;
+  right: 10px;
+  bottom: 43px;
+}
+.cad-command-more > summary {
+  padding: 5px 7px;
+  border: 1px solid var(--form-v2-border);
+  border-radius: 5px;
+  background: var(--form-v2-chrome);
+  color: var(--form-v2-text-muted);
+  cursor: pointer;
+  font-size: 12px;
+  list-style: none;
+}
+.cad-command-more > summary::-webkit-details-marker { display: none; }
+.cad-command-more > div {
+  position: absolute;
+  right: 0;
+  bottom: calc(100% + 6px);
+  display: grid;
+  width: 150px;
+  gap: 2px;
+  padding: 5px;
+  border: 1px solid var(--form-v2-border);
+  border-radius: 7px;
+  background: var(--form-v2-surface);
+  box-shadow: var(--form-v2-shadow);
+}
+.cad-command-more button { min-height: 27px; border: 0; border-radius: 4px; background: transparent; color: var(--form-v2-text-secondary); text-align: left; }
+.cad-command-more button:hover { background: var(--form-v2-surface-hover); color: var(--form-v2-text); }
+.cad-smart-hud,
+.cad-smart-shelf { font-family: var(--form-v2-font-ui); }
+.cad-smart-hud { border-color: rgb(145 160 144 / 34%); }
+.cad-smart-hud button,
+.cad-smart-shelf button { transition: border-color 100ms ease, background 100ms ease, color 100ms ease; }
+.cad-smart-hud button:focus-visible,
+.cad-smart-shelf button:focus-visible { outline: 2px solid var(--form-v2-accent); outline-offset: 1px; }
+.cad-smart-hud button.primary,
+.cad-smart-shelf button.primary { border-color: var(--form-v2-accent); background: var(--form-v2-accent); color: var(--form-v2-accent-ink); }
+.cad-production-briefs { display: none; }
+.cad-release-gate {
+  top: 10px;
+  right: 10px;
+  bottom: auto;
+  display: flex;
+  min-width: 0;
+  min-height: 28px;
+  align-items: center;
+  gap: 5px;
+  padding: 0 8px;
+  border: 1px solid var(--form-v2-border);
+  border-radius: 5px;
+  background: var(--form-v2-chrome);
+  box-shadow: none;
+  color: var(--form-v2-text-muted);
+}
+.cad-release-gate span { font-size: 12px; }
+.cad-release-gate strong { color: var(--form-v2-accent); font: 700 11px var(--font-geist-mono),monospace; }
+.cad-release-gate em { display: none; }
+.cad-plane-pill { top: 10px; left: 10px; border-color: var(--form-v2-border); border-radius: 5px; background: var(--form-v2-chrome); }
+.cad-view-model .cad-origin,
+.cad-view-drawing .cad-origin,
+.cad-view-sketch .cad-origin { min-height: 28px; padding: 0 8px; border: 1px solid var(--form-v2-border); border-radius: 5px; background: var(--form-v2-chrome); box-shadow: none; color: var(--form-v2-text-muted); backdrop-filter: blur(10px); }
+.cad-vector-dock { top: 47px; right: 10px; width: 230px; gap: 7px; padding: 9px; border-color: var(--form-v2-border); border-radius: 8px; box-shadow: 0 12px 28px rgb(0 0 0 / 22%); }
+
+/* Direct-solid core: Model is home and Sketch is an editing state inside it. */
+.cad-view-switch .cad-specialist-tab {
+  margin-left: 10px;
+  padding-left: 12px;
+  border-left: 1px solid var(--form-v2-border-soft);
+}
+.cad-canvas-wrap.embedded-sketch > .cad-3d {
+  z-index: 0;
+  opacity: .34;
+  filter: saturate(.62) brightness(.8);
+  transition: opacity 180ms ease,filter 180ms ease;
+}
+.cad-canvas-wrap.embedded-sketch > canvas {
+  position: relative;
+  z-index: 2;
+  background: transparent !important;
+}
+.cad-canvas-wrap.embedded-sketch .cad-viewport-bar,
+.cad-canvas-wrap.embedded-sketch .cad-release-gate,
+.cad-canvas-wrap.embedded-sketch .cad-origin { opacity: .35; pointer-events: none; }
+.cad-sketch-mode-bar,
+.cad-region-actions {
+  position: absolute;
+  z-index: 20;
+  top: 10px;
+  left: 50%;
+  display: flex;
+  min-height: 40px;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 6px 5px 10px;
+  border: 1px solid var(--form-v2-border);
+  border-radius: 8px;
+  background: var(--form-v2-chrome);
+  box-shadow: 0 12px 30px rgb(0 0 0 / 30%);
+  color: var(--form-v2-text-secondary);
+  transform: translateX(-50%);
+  backdrop-filter: blur(14px);
+}
+.cad-sketch-mode-bar { max-width:calc(100% - 32px); }
+.cad-sketch-mode-bar nav { display:flex; gap:3px; padding:2px; border:1px solid var(--form-v2-border-soft); border-radius:5px; background:var(--form-v2-surface); }
+.cad-sketch-mode-bar nav button { min-height:23px; padding:0 7px; border-color:transparent; background:transparent; font-size: 12px; }
+.cad-sketch-mode-bar nav button.active { border-color:var(--form-v2-border); background:var(--form-v2-accent-soft); color:var(--form-v2-accent); }
+.cad-sketch-mode-bar small.solved { color:var(--form-v2-accent); }
+.cad-sketch-mode-bar small.under { color:var(--form-v2-accent); }
+.cad-sketch-mode-bar small.conflict { color:#ff8d7a; }
+.cad-sketch-mode-bar > span,
+.cad-region-actions > span { display:flex; align-items:center; gap:5px; color:var(--form-v2-accent); font-size: 12px; font-weight:750; letter-spacing:.12em; white-space:nowrap; }
+.cad-sketch-mode-bar > span i,
+.cad-region-actions > span i { width:6px; height:6px; border-radius:50%; background:var(--form-v2-accent); box-shadow:0 0 0 3px rgb(200 244 95 / 12%); }
+.cad-sketch-mode-bar strong,
+.cad-region-actions strong { max-width:190px; overflow:hidden; color:var(--form-v2-text); font-size: 12px; text-overflow:ellipsis; white-space:nowrap; }
+.cad-sketch-mode-bar small,
+.cad-region-actions small { max-width:280px; color:var(--form-v2-text-muted); font-size: 12px; line-height:1.35; }
+.cad-sketch-mode-bar button,
+.cad-region-actions button { min-height:28px; padding:0 9px; border:1px solid var(--form-v2-border); border-radius:5px; background:var(--form-v2-surface); color:var(--form-v2-text-secondary); cursor:pointer; white-space:nowrap; }
+.cad-sketch-mode-bar button.accent,
+.cad-region-actions button.accent { border-color:var(--form-v2-accent); background:var(--form-v2-accent); color:var(--form-v2-text); font-weight:720; }
+.cad-region-actions { top:58px; }
+.cad-tool-feature-grid.cad-core-tools { grid-template-columns:repeat(4,minmax(108px,1fr)); }
+.cad-core-measure { display:flex; min-height:64px; align-items:center; gap:8px; padding:8px; }
+.cad-core-measure strong { color:var(--form-v2-text); font-size: 12px; }
+.cad-core-measure span { padding:6px 8px; border:1px solid var(--form-v2-border); border-radius:5px; background:var(--form-v2-surface); color:var(--form-v2-text-secondary); font-family:var(--font-geist-mono),monospace; }
+.cad-core-measure button { min-height:28px; margin-left:auto; border:1px solid var(--form-v2-border); border-radius:5px; background:var(--form-v2-surface); color:var(--form-v2-text-secondary); }
+.cad-selection-guide { display:grid; grid-template-columns:auto 1fr; gap:5px 12px; padding:9px; color:var(--form-v2-text-muted); font-size: 12px; line-height:1.45; }
+.cad-selection-guide strong { grid-row:1 / span 3; color:var(--form-v2-text); font-size: 12px; }
+.cad-selection-guide kbd { padding:1px 4px; border:1px solid var(--form-v2-border); border-radius:3px; background:var(--form-v2-surface-raised); color:var(--form-v2-text-secondary); }
+.cad-selection-guide > div { display:flex; gap:5px; }
+.cad-selection-guide > div button { min-height:25px; padding:0 9px; border:1px solid var(--form-v2-border); border-radius:5px; background:var(--form-v2-surface); color:var(--form-v2-text-muted); font-size: 12px; }
+.cad-selection-guide > div button:hover { border-color:var(--form-v2-border); color:var(--form-v2-text); }
+
+.cad-exact-recovery {
+  position:absolute;
+  z-index:24;
+  top:54px;
+  left:50%;
+  display:grid;
+  grid-template-columns:auto auto;
+  width:min(620px,calc(100% - 40px));
+  gap:5px 10px;
+  align-items:center;
+  padding:10px;
+  border:1px solid #925f45;
+  border-radius:8px;
+  background: var(--form-v2-chrome);
+  box-shadow:0 16px 42px rgb(0 0 0 / 40%);
+  transform:translateX(-50%);
+  backdrop-filter:blur(16px);
+}
+.cad-exact-recovery > span { grid-column:1 / -1; color:#ffad7e; font-size: 12px; font-weight:800; letter-spacing:.14em; }
+.cad-exact-recovery > strong { grid-column:1 / -1; color:var(--form-v2-text-muted); font-size: 12px; }
+.cad-exact-recovery > small { grid-column:1 / -1; color:var(--form-v2-text-muted); font-size: 12px; line-height:1.45; }
+.cad-exact-recovery > button { min-height:28px; border:1px solid #684b3b; border-radius:5px; background:var(--form-v2-bg); color:var(--form-v2-text-muted); }
+.cad-exact-recovery > button.accent { border-color:#d98655; background:#d98655; color:var(--form-v2-text); font-weight:750; }
+
+.cad-statusbar {
+  position: absolute;
+  z-index: 12;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+.cad-statusbar > * { box-sizing: border-box; height: 100%; border-right: 1px solid var(--form-v2-border-soft); }
+.cad-statusbar > span,
+.cad-statusbar > button,
+.cad-statusbar .cad-coordinates { display: flex; position: static; min-height: 0; align-items: center; padding: 0 8px; border-top: 0; border-bottom: 0; border-left: 0; border-radius: 0; background: transparent; box-shadow: none; color: inherit; transform: none; backdrop-filter: none; }
+.cad-statusbar > button { cursor: pointer; }
+.cad-statusbar > button.active { color: var(--form-v2-accent); }
+.cad-statusbar .cad-status { position: static; display: flex; min-width: 160px; max-width: 38%; flex: 1; align-items: center; overflow: hidden; padding: 0 9px; border: 0; border-right: 1px solid var(--form-v2-border-soft); border-radius: 0; background: transparent; box-shadow: none; color: var(--form-v2-text-secondary); text-overflow: ellipsis; white-space: nowrap; transform: none; backdrop-filter: none; }
+.cad-statusbar .cad-status i { flex: 0 0 auto; }
+.cad-statusbar .cad-zoom { position: static; display: flex; height: 100%; margin-left: auto; border: 0; border-radius: 0; background: transparent; box-shadow: none; color: inherit; backdrop-filter: none; }
+.cad-statusbar .cad-zoom button { width: 24px; height: 100%; }
+.cad-statusbar .cad-zoom span { min-width: 34px; }
+.cad-status-exact.ready { color: var(--form-v2-accent); }
+.cad-status-exact.building { color: var(--form-v2-warning); }
+.cad-status-exact.error { color: var(--form-v2-danger); }
+
+/* Compact graphite inspector -------------------------------------------------- */
+
+.cad-inspector {
+  border-color: var(--form-v2-border-soft);
+  background: var(--form-v2-surface);
+  box-shadow: none;
+  color: var(--form-v2-text-secondary);
+}
+.cad-panel-head,
+.cad-view-model .cad-panel-head {
+  height: 52px;
+  padding: 0 12px;
+  border-color: var(--form-v2-border-soft);
+  background: var(--form-v2-surface);
+}
+.cad-panel-head span { color: var(--form-v2-text-muted); font-size: 12px; }
+.cad-panel-head strong,
+.cad-view-model .cad-panel-head strong { color: var(--form-v2-text); font-size: 12px; }
+.cad-scroll,
+.cad-view-model .cad-scroll { height: calc(100% - 52px); scrollbar-color: var(--form-v2-border) transparent; }
+.cad-inspector-mode {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-bottom: 1px solid var(--form-v2-border-soft);
+}
+.cad-inspector-mode button {
+  display: grid;
+  min-width: 0;
+  min-height: 42px;
+  align-content: center;
+  gap: 2px;
+  background: transparent;
+  color: var(--form-v2-text-muted);
+  text-align: left;
+}
+.cad-inspector-mode button b { color: inherit; font-size: 12px; letter-spacing: .05em; text-transform: uppercase; }
+.cad-inspector-mode button small { overflow: hidden; color: inherit; font-size: 12px; text-overflow: ellipsis; white-space: nowrap; }
+.cad-inspector-mode button:hover { background: var(--form-v2-surface-hover); color: var(--form-v2-text); }
+.cad-inspector-mode button.active { border-color: var(--form-v2-border); background: var(--form-v2-accent-soft); color: var(--form-v2-accent); }
+.cad-inspector.core-mode .cad-domain-section,
+.cad-inspector.core-mode .cad-jewelry-pro,
+.cad-inspector.core-mode .cad-pro-systems,
+.cad-inspector.core-mode .cad-hardware-section,
+.cad-inspector.core-mode .cad-linked-section,
+.cad-inspector.core-mode .cad-extension-section { display: none; }
+.cad-inspector-nav {
+  border-color: var(--form-v2-border-soft);
+  box-shadow: none;
+}
+.cad-inspector-nav button {
+  color: var(--form-v2-text-muted);
+}
+.cad-inspector-nav button:hover { border-color: transparent; background: var(--form-v2-surface-hover); color: var(--form-v2-text); }
+.cad-inspector-nav button.active { border-color: transparent; }
+.cad-view-model .cad-scroll > section,
+.cad-scroll > section,
+.cad-scroll > [id^="inspector-"] {
+  padding: 12px;
+  border-color: var(--form-v2-border-soft);
+  background: var(--form-v2-surface);
+}
+.cad-inspector .cad-scroll h3,
+.cad-view-model .cad-scroll h3 {
+  margin-bottom: 9px;
+  color: var(--form-v2-text);
+  font-size: 12px;
+  font-weight: 680;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.cad-inspector .cad-scroll label,
+.cad-view-model .cad-scroll label {
+  grid-template-columns: 88px minmax(0,1fr) auto;
+  gap: 6px;
+  margin: 6px 0;
+  color: var(--form-v2-text-secondary);
+  font-size: 12px;
+  font-weight: 500;
+}
+.cad-inspector .cad-scroll input,
+.cad-inspector .cad-scroll select,
+.cad-inspector .cad-scroll textarea,
+.cad-view-model .cad-scroll input,
+.cad-view-model .cad-scroll select {
+  min-height: 28px;
+  padding: 0 7px;
+  border: 1px solid var(--form-v2-border);
+  border-radius: 5px;
+  background: var(--form-v2-surface-raised);
+  box-shadow: none;
+  color: var(--form-v2-text);
+  font-size: 12px;
+}
+.cad-inspector .cad-scroll textarea { padding-block: 6px; }
+.cad-inspector .cad-scroll input:hover,
+.cad-inspector .cad-scroll select:hover { border-color: var(--form-v2-border); }
+.cad-inspector .cad-scroll p,
+.cad-view-model .cad-scroll p { color: var(--form-v2-text-muted); font-size: 12px; line-height: 1.45; }
+.cad-inspector .cad-scroll small,
+.cad-inspector .cad-scroll em { color: var(--form-v2-text-muted); font-size: 12px; }
+.cad-appearance-studio,
+.cad-view-model .cad-appearance-studio { padding: 12px !important; background: var(--form-v2-surface) !important; }
+.cad-appearance-presets,
+.cad-view-model .cad-appearance-presets { grid-template-columns: repeat(4,1fr); gap: 4px; }
+.cad-appearance-presets button,
+.cad-view-model .cad-appearance-presets button {
+  min-height: 56px;
+  gap: 4px;
+  padding: 5px 2px;
+  border-color: var(--form-v2-border);
+  border-radius: 6px;
+  background: var(--form-v2-surface);
+  color: var(--form-v2-text-muted);
+  font-size: 12px;
+}
+.cad-appearance-presets button.active { border-color: var(--form-v2-border) !important; background: var(--form-v2-accent-soft) !important; box-shadow: none !important; color: var(--form-v2-accent) !important; }
+.cad-appearance-presets i,
+.cad-view-model .cad-appearance-presets i { width: 26px; height: 26px; }
+.cad-domain-tabs button,
+.cad-pro-tabs button,
+.cad-domain-recipes button,
+.cad-hardware-grid button,
+.cad-component-list button,
+.cad-drafting-actions button,
+.cad-drafting-export button,
+.cad-wide {
+  border-color: var(--form-v2-border) !important;
+  border-radius: 5px !important;
+  background: var(--form-v2-surface-raised) !important;
+  box-shadow: none !important;
+  color: var(--form-v2-text-secondary) !important;
+}
+.cad-domain-tabs button.active,
+.cad-pro-tabs button.active,
+.cad-domain-recipes button.active,
+.cad-hardware-grid button.active { border-color: var(--form-v2-border) !important; background: var(--form-v2-accent-soft) !important; color: var(--form-v2-accent) !important; }
+.cad-domain-tabs button,
+.cad-pro-tabs button { min-height: 42px; }
+.cad-domain-recipes button,
+.cad-hardware-grid button,
+.cad-component-list button { min-height: 40px; }
+.cad-section-title { margin-bottom: 8px; }
+.cad-domain-section,
+.cad-domain-section.architecture,
+.cad-domain-section.jewelry,
+.cad-domain-section.engineering {
+  --domain-accent: var(--form-v2-accent) !important;
+  background: var(--form-v2-surface) !important;
+}
+.cad-domain-parameters { border-color: var(--form-v2-border); background: var(--form-v2-surface-raised); }
+.cad-domain-checks span { background: var(--form-v2-accent-soft); color: var(--form-v2-accent); }
+.cad-domain-checks span.warning { background: var(--form-v2-bg); color: var(--form-v2-warning); }
+.cad-section-title > span { padding: 2px 5px; border-color: var(--form-v2-border); border-radius: 4px; background: transparent; color: var(--form-v2-text-muted); font-size: 12px; }
+.cad-bim-audit,
+.cad-bim-readiness,
+.cad-bim-editor,
+.cad-drawing-validation,
+.cad-kernel-card,
+.cad-audit,
+.cad-design-intelligence { border-color: var(--form-v2-border) !important; background: var(--form-v2-surface-raised) !important; box-shadow: none !important; color: var(--form-v2-text-secondary) !important; }
+.cad-bim-documents > button { border-color: var(--form-v2-border) !important; background: var(--form-v2-surface) !important; }
+.cad-exact-drawing,
+.cad-bim-sheet { inset: 18px; border: 0; border-radius: 4px; background: var(--form-v2-surface-raised); box-shadow: 0 16px 45px rgb(0 0 0 / 34%); }
+
+/* Timeline is useful but subordinate to the viewport. */
+.cad-timeline-dock { border-color: var(--form-v2-border-soft); background: var(--form-v2-surface); box-shadow: none; color: var(--form-v2-text-secondary); }
+.cad-timeline-dock .cad-timeline { background: var(--form-v2-surface); }
+.cad-timeline-dock .cad-nla-tracks { background-color: var(--form-v2-surface); }
+.cad-timeline-dock .cad-nla-empty > div { border-color: var(--form-v2-border-soft); }
+.cad-timeline-dock .cad-nla-empty > div > span { border-color: var(--form-v2-border-soft); background: var(--form-v2-surface); color: var(--form-v2-text-secondary); }
+.cad-timeline-dock .cad-nla-empty > div { background: var(--form-v2-surface); }
+.cad-timeline-dock .cad-nla-empty > div > button { border-color: var(--form-v2-border); background: var(--form-v2-surface-raised); color: var(--form-v2-text-muted); }
+.cad-timeline-dock .cad-dopesheet { background-color: var(--form-v2-surface); }
+
+/* Fabric uses the same shell and dense inspector while retaining its split view. */
+.fabric-shell {
+  --fabric-tools-width: var(--form-v2-tools);
+  --fabric-inspector-width: var(--form-v2-inspector);
+  --fabric-timeline-height: 44px;
+}
+.fabric-project-menu > div { display: grid; }
+.fabric-actions .accent.fabric-save-action { border-color: var(--form-v2-accent) !important; background: var(--form-v2-accent) !important; box-shadow: none !important; color: var(--form-v2-text) !important; }
+.fabric-inspector { border-color: var(--form-v2-border-soft); background: var(--form-v2-surface); color: var(--form-v2-text-secondary); box-shadow: none; }
+.fabric-panel-head { height: 52px; padding: 0 12px; border-color: var(--form-v2-border-soft); background: var(--form-v2-surface); }
+.fabric-panel-head span { color: var(--form-v2-text-muted); font-size: 12px; }
+.fabric-panel-head strong { color: var(--form-v2-text); font-size: 12px; }
+.fabric-scroll { height: calc(100% - 52px); scrollbar-color: var(--form-v2-border) transparent; }
+.fabric-scroll section { padding: 12px; border-color: var(--form-v2-border-soft); background: var(--form-v2-surface); }
+.fabric-scroll h3 { margin-bottom: 9px; color: var(--form-v2-text); font-size: 12px; text-transform: uppercase; letter-spacing: .08em; }
+.fabric-scroll label { grid-template-columns: 88px minmax(0,1fr) auto; gap: 6px; margin: 6px 0; color: var(--form-v2-text-secondary); font-size: 12px; }
+.fabric-scroll input,
+.fabric-scroll select,
+.fabric-scroll textarea { min-height: 28px; border-color: var(--form-v2-border); border-radius: 5px; background: var(--form-v2-surface-raised); color: var(--form-v2-text); font-size: 12px; }
+.fabric-scroll p,
+.fabric-scroll small { color: var(--form-v2-text-muted); font-size: 12px; line-height: 1.45; }
+.fabric-scroll button { border-color: var(--form-v2-border); border-radius: 5px; background: var(--form-v2-surface-raised); color: var(--form-v2-text-secondary); box-shadow: none; }
+.fabric-scroll button.active,
+.fabric-scroll button.primary { border-color: var(--form-v2-border); background: var(--form-v2-accent-soft); color: var(--form-v2-accent); }
+.fabric-pattern-board { background: var(--form-v2-surface); }
+.fabric-drape-view { background: var(--form-v2-canvas); }
+.fabric-viewport-title { top: 10px; left: 10px; padding: 5px 7px; border-color: var(--form-v2-border); border-radius: 5px; background: var(--form-v2-chrome); box-shadow: none; color: var(--form-v2-accent); }
+.fabric-preview-controls { right: 10px; bottom: 10px; border-color: var(--form-v2-border); background: var(--form-v2-chrome); }
+.fabric-timeline { min-height: 44px; border-color: var(--form-v2-border-soft); background: var(--form-v2-surface-raised); color: var(--form-v2-text-muted); }
+
+/* Rig Lab / direct model shell consistency. */
+.studio-shell.v2 {
+  --studio-tools-width: var(--form-v2-tools);
+  --studio-inspector-width: var(--form-v2-inspector);
+  --studio-timeline-height: 132px;
+}
+.studio-shell.v2 .topbar { border-bottom: 1px solid var(--form-v2-border-soft); }
+.studio-shell.v2 .compact-rail { overflow: visible; }
+/* Animation panels reserve canvas space: the human and timeline must not sit under drawers. */
+.studio-shell.v2.animation-workspace:not(.ui-tools-collapsed):not(.presentation-mode) {
+  grid-template-columns:calc(var(--studio-tools-width,76px) + var(--animation-drawer-width,0px)) minmax(0,1fr) var(--studio-inspector-width,360px) !important;
+}
+.studio-shell.v2.animation-workspace .viewport { height:calc(100% - var(--animation-timeline-height,180px)); }
+.studio-shell.v2.animation-workspace .compact-rail .motion-panel { width:300px; }
+.studio-shell.v2.animation-workspace .compact-rail .panel-tabs { width:var(--studio-tools-width,76px) !important; align-self:flex-start; }
+.studio-shell.v2.animation-workspace .timeline-tracks { max-height:calc(var(--animation-timeline-height,180px) - 72px); overflow-y:auto; }
+.studio-shell.v2.animation-workspace :is(.rig-bone-select,.rig-axis-sliders,.weight-brush,.vector-field label) { background:var(--form-v2-surface-raised) !important; border-color:var(--form-v2-border) !important; color:var(--form-v2-text) !important; }
+.studio-shell.v2.animation-workspace :is(.rig-bone-select span,.rig-axis-sliders label span) { color:var(--form-v2-text-secondary) !important; font-size:11px; }
+.studio-shell.v2.animation-workspace .rig-bone-select input { min-width:0; width:100%; }
+.studio-shell.v2.animation-workspace .rig-inline-actions button { color:var(--form-v2-text) !important; background:var(--form-v2-surface-raised) !important; border-color:var(--form-v2-border) !important; }
+.studio-shell.v2.animation-workspace .rig-section .tip-text { font-size:12px; line-height:1.5; color:var(--form-v2-text-muted); }
+/* Animation: selection-led direction, editable quick motion and an honest dope sheet. */
+.studio-shell.v2 .compact-rail .animation-workbench { width:310px; padding:18px 16px 24px; }
+.studio-shell.v2 .animation-workbench .panel-heading { display:block; margin-bottom:18px; padding-right:24px; }
+.studio-shell.v2 .animation-workbench .panel-heading p { font-size:22px; font-weight:650; letter-spacing:-.04em; color:var(--form-v2-text); margin:0 0 4px; }
+.studio-shell.v2 .animation-workbench .panel-heading span { font-size:12px; color:var(--form-v2-text-muted); }
+.animation-pages { display:flex; gap:3px; padding:4px; margin-bottom:20px; border:1px solid var(--form-v2-border); border-radius:10px; background:var(--form-v2-surface-raised); }
+.studio-shell.v2 .animation-pages button { flex:1; min-height:32px; border:0; border-radius:7px; background:transparent; color:var(--form-v2-text-secondary); font-size:12px; }
+.studio-shell.v2 .animation-pages button[aria-pressed="true"] { color:var(--form-v2-text); background:var(--form-v2-surface); box-shadow:0 1px 4px #0002; }
+.animation-director { display:grid; gap:12px; }
+.animation-director label { display:grid; gap:7px; font-size:12px; color:var(--form-v2-text-secondary); }
+.animation-director :is(select,input) { width:100%; min-width:0; min-height:34px; padding:6px 9px; font:inherit; }
+.animation-subject>span { font-weight:600; }
+.animation-guide { padding:15px; border:1px solid var(--form-v2-border); border-radius:12px; background:var(--form-v2-surface-raised); }
+.animation-guide>span { color:var(--form-v2-accent); font-size:10px; font-weight:600; letter-spacing:.08em; }
+.animation-guide h3 { margin:9px 0 7px; font-size:19px; line-height:1.2; letter-spacing:-.025em; color:var(--form-v2-text); }
+.animation-guide p,.animation-inspector-help p { margin:0; color:var(--form-v2-text-secondary); font-size:12px; line-height:1.6; }
+.animation-quick-actions { display:flex; gap:8px; }
+.studio-shell.v2 .animation-quick-actions button { flex:1; min-height:32px; border:1px solid var(--form-v2-border); border-radius:7px; background:transparent; font-size:11px; color:var(--form-v2-text-secondary); }
+.studio-shell.v2 .animation-record { display:flex; width:100%; flex-direction:column; align-items:flex-start; gap:5px; padding:12px 14px; border:0; border-radius:9px; background:var(--form-v2-accent); color:var(--form-v2-accent-ink,#fff); font-size:14px; font-weight:650; text-align:left; }
+.studio-shell.v2 .animation-record span { opacity:.85; font-weight:400; font-size:11px; }
+.animation-record-hint { margin:-4px 0 4px; font-size:11px; line-height:1.5; color:var(--form-v2-text-muted); }
+.animation-section-heading { display:flex; justify-content:space-between; align-items:center; gap:8px; margin-top:5px; font-size:12px; color:var(--form-v2-text); }
+.animation-section-heading>span { font-size:10px; color:var(--form-v2-text-muted); }
+.animation-preset-grid { display:grid; grid-template-columns:1fr 1fr; gap:7px; }
+.studio-shell.v2 .animation-preset-grid button { display:flex; gap:10px; align-items:center; min-height:52px; padding:10px; border:1px solid var(--form-v2-border); border-radius:9px; background:var(--form-v2-surface-raised); color:var(--form-v2-text-secondary); font-size:12px; }
+.animation-preset-grid b { font-size:22px; font-weight:400; color:var(--form-v2-accent); }
+.studio-shell.v2 .animation-preset-grid button[aria-pressed="true"] { border-color:var(--form-v2-accent); background:var(--form-v2-accent-soft); color:var(--form-v2-text); }
+.animation-parameters { display:flex; gap:8px; }.animation-parameters label { flex:1; min-width:0; }
+.studio-shell.v2 .animated-cloth-panel .rig-inline-actions { grid-template-columns:repeat(2,minmax(0,1fr)); }
+.studio-shell.v2 .animated-cloth-panel .rig-inline-actions button { min-height:36px; font-size:11px; }
+.studio-shell.v2 :is(.animation-apply,.animation-preview) { min-height:36px; padding:8px 10px; border:1px solid var(--form-v2-border); border-radius:8px; background:var(--form-v2-surface-raised); color:var(--form-v2-text); font-size:12px; }
+.studio-shell.v2 .animation-preview { display:flex; align-items:center; justify-content:space-between; margin-top:5px; }
+.animation-key-editor { display:grid; gap:10px; padding:12px; border:1px solid var(--form-v2-accent); border-radius:10px; }
+.animation-key-editor button { padding:7px; border:1px solid var(--form-v2-border); border-radius:6px; background:transparent; color:var(--form-v2-text-secondary); }
+.animation-disclosure { border-top:1px solid var(--form-v2-border); margin:14px 0; padding-top:12px; }
+.animation-disclosure>summary { cursor:pointer; font-size:12px; font-weight:600; color:var(--form-v2-text-secondary); padding:4px 0 12px; }
+.animation-inspector-help { padding:16px; border-top:1px solid var(--form-v2-border); }.animation-inspector-help strong { display:block; color:var(--form-v2-text); font-size:12px; margin-bottom:8px; }
+.studio-shell.v2 .animation-transport { display:flex; gap:5px; align-items:center; min-height:48px; padding:6px 12px; border-bottom:1px solid var(--form-v2-border); }
+.studio-shell.v2 .animation-transport button { flex-shrink:0; min-width:28px; height:30px; font-size:12px; color:var(--form-v2-text-secondary); }
+.studio-shell.v2 .animation-transport .animation-play { width:34px; border-radius:7px; background:var(--form-v2-text); color:var(--form-v2-surface); }
+.animation-timecode { display:flex; align-items:center; gap:4px; white-space:nowrap; }
+.studio-shell.v2 .animation-timecode input { width:58px; padding:5px 3px; border:1px solid var(--form-v2-border); border-radius:5px; font-size:12px; background:var(--form-v2-surface-raised); color:var(--form-v2-text); font-variant-numeric:tabular-nums; }
+.studio-shell.v2 .animation-timecode span { font-size:10px; color:var(--form-v2-text-muted); }
+.animation-scrubber { min-width:35px; flex:1; }
+.studio-shell.v2 .animation-transport .animation-timeline-record { padding:0 8px; color:var(--form-v2-accent); border:1px solid var(--form-v2-border); border-radius:6px; font-size:11px; }
+.animation-ruler { display:grid; grid-template-columns:150px 1fr; height:27px; align-items:center; border-bottom:1px solid var(--form-v2-border); padding:0 16px 0 12px; }
+.animation-ruler>div { display:flex; justify-content:space-between; padding-left:4px; }.studio-shell.v2 .animation-ruler span { font-size:10px; color:var(--form-v2-text-muted); }
+.studio-shell.v2 .animation-tracks .timeline-track { grid-template-columns:150px 1fr; height:38px; border-color:var(--form-v2-border); }
+.studio-shell.v2 .animation-tracks .track-name { height:37px!important; background:transparent!important; color:var(--form-v2-text-secondary)!important; border-color:var(--form-v2-border)!important; font-size:12px!important; }
+.animation-tracks .track-name span { overflow:hidden; text-overflow:ellipsis; color:inherit; font-size:inherit!important; }.animation-tracks .track-name small { margin-left:auto; font-size:10px; }
+.studio-shell.v2 .animation-tracks .is-selected { background:var(--form-v2-accent-soft); }
+.studio-shell.v2 .animation-tracks .track-line { height:22px; background:var(--form-v2-surface-raised); box-shadow:none; border-radius:3px; }
+.studio-shell.v2 .animation-tracks .keyframe { width:28px; height:28px!important; border:0!important; background:transparent!important; box-shadow:none; transform:translate(-50%,-50%); z-index:3; }
+.studio-shell.v2 .animation-tracks .keyframe::after { content:""; position:absolute; inset:8px; transform:rotate(45deg); border:2px solid var(--form-v2-surface); border-radius:2px; background:var(--track-color); box-shadow:0 0 0 1px var(--form-v2-border); pointer-events:none; }
+.studio-shell.v2 .animation-tracks .keyframe.selected { outline:0; }
+.studio-shell.v2 .animation-tracks .keyframe.selected::after { outline:2px solid var(--form-v2-accent); outline-offset:2px; }
+.studio-shell.v2 .animation-tracks .keyframe:focus-visible { outline:2px solid var(--form-v2-accent); outline-offset:0; }
+.studio-shell.v2 .animation-track-hint { position:absolute; top:5px; left:10px; font-size:10px; color:var(--form-v2-text-muted); }
+.studio-shell.v2 .animation-tracks .playhead { top:-7px; height:38px; background:var(--form-v2-accent); }
+.animation-empty-tracks { padding:10px 16px; font-size:12px; color:var(--form-v2-text-muted); }
+.studio-shell.v2 :is(.animation-workbench,.animation-transport,.animation-tracks) button:disabled { opacity:.4; cursor:not-allowed; }
+.studio-shell.v2 :is(.animation-workbench,.animation-transport,.animation-tracks) :is(button,input,select,summary):focus-visible { outline:2px solid var(--form-v2-accent); outline-offset:3px; }
+.studio-shell.v2.animation-workspace .command-dock { display:none; }
+.studio-shell.v2.animation-workspace .context-toolbar { display:none!important; }
+.animation-pages { position:sticky; top:0; z-index:3; }
+.animation-library>summary { cursor:pointer; color:var(--form-v2-text); font-size:13px; font-weight:600; }
+.animation-library>summary small { display:block; padding:5px 0 12px; color:var(--form-v2-text-muted); font-weight:400; font-size:11px; }
+.studio-shell.v2.animation-workspace .animation-record span { color:var(--form-v2-accent-ink)!important; }
+.studio-shell.v2.animation-workspace .rig-axis-sliders label b { color:var(--form-v2-accent)!important; }
+.studio-shell.v2.animation-workspace .rig-pose-grid button { background:var(--form-v2-surface-raised); border-color:var(--form-v2-border); color:var(--form-v2-text); }
+.studio-shell.v2.animation-workspace .brand>span:not(.brand-mark) { color:var(--form-v2-text); }
+.studio-shell.v2.animation-workspace .compact-rail .animation-workbench .panel-heading p { font-size:22px!important; line-height:1.25; }
+.studio-shell.v2.animation-workspace .animation-guide p { font-size:12px!important; }
+.studio-shell.v2.animation-workspace .vector-field>span { font-size:12px; }
+.studio-shell.v2.animation-workspace .timeline-tracks { max-height:calc(var(--animation-timeline-height,180px) - 76px); }
+.studio-shell.v2.animation-workspace.ui-inspector-collapsed:not(.ui-tools-collapsed):not(.presentation-mode) { grid-template-columns:calc(var(--studio-tools-width,76px) + var(--animation-drawer-width,0px)) minmax(0,1fr) 0!important; }
+.studio-shell.v2 .panel-tabs.v2-tabs { overflow-x: hidden; overflow-y: auto; }
+.studio-shell.v2 .workspace-title { font-size: 12px; letter-spacing: .12em; }
+.studio-shell.v2 .topbar-toolstrip { border-color: var(--form-v2-border); border-radius: 6px; background: var(--form-v2-surface); }
+.studio-shell.v2 .topbar-toolstrip button,
+.studio-shell.v2 .history-button,
+.studio-shell.v2 .topbar-actions > button { border-color: transparent; background: transparent; color: var(--form-v2-text-secondary); box-shadow: none; }
+.studio-shell.v2 .topbar-toolstrip button.active { background: var(--form-v2-accent-soft); color: var(--form-v2-accent); }
+.studio-shell.v2 .inspector,
+.studio-shell.v2 .rail-drawer,
+.studio-shell.v2 .timeline-bar { border-color: var(--form-v2-border-soft); background: var(--form-v2-surface); color: var(--form-v2-text-secondary); box-shadow: none; }
+.studio-shell.v2 .inspector :where(input,select,textarea),
+.studio-shell.v2 .rail-drawer :where(input,select,textarea) { border-color: var(--form-v2-border); border-radius: 5px; background: var(--form-v2-surface-raised); color: var(--form-v2-text); }
+.studio-shell.v2 .inspector :where(.inspector-section,.panel-section),
+.studio-shell.v2 .rig-section { border-color: var(--form-v2-border-soft); background: var(--form-v2-surface); box-shadow: none; }
+.studio-shell.v2 .rig-primary,
+.studio-shell.v2 .rig-secondary { border-color: var(--form-v2-border); border-radius: 6px; background: var(--form-v2-surface-raised); color: var(--form-v2-text-secondary); box-shadow: none; }
+.studio-shell.v2 .rig-primary:hover,
+.studio-shell.v2 .rig-secondary:hover { border-color: var(--form-v2-border); color: var(--form-v2-text); }
+
+/* Responsive desktop behavior ------------------------------------------------- */
+@media (max-width: 1180px) {
+  .cad-shell { --cad-inspector-width: 292px; --cad-tools-width: 54px; }
+  .cad-shell.cad-view-model { --cad-timeline-height: 118px; }
+  .fabric-shell { --fabric-inspector-width: 292px; --fabric-tools-width: 54px; }
+  .studio-shell.v2 { --studio-inspector-width: 292px; --studio-tools-width: 54px; }
+  .cad-view-switch,.fabric-stages { gap: 12px; }
+  .cad-brand em,.fabric-brand em { display: none; }
+  .cad-share-action { font-size: 0 !important; }
+  .cad-share-action svg { margin: 0; }
+}
+
+@media (max-width: 900px) {
+  .cad-shell,
+  .cad-shell.cad-view-model { grid-template-columns: var(--cad-tools-width) minmax(0,1fr) 0; }
+  .cad-inspector { position: absolute; z-index: 40; top: var(--form-v2-topbar); right: 0; bottom: var(--form-v2-status); width: min(320px,88vw); border: 1px solid var(--form-v2-border); box-shadow: var(--form-v2-shadow); }
+  .cad-shell.ui-inspector-collapsed .cad-inspector { display: none; }
+  .cad-view-switch { gap: 8px; }
+  .cad-view-switch .cad-workspace-jump { display: none; }
+  .cad-command,.cad-command-suggestions { width: min(520px,78%); }
+  .cad-statusbar > span:nth-of-type(n+2) { display: none; }
+  .fabric-shell { grid-template-columns: var(--fabric-tools-width) minmax(0,1fr) 0; }
+  .fabric-inspector { position: absolute; z-index: 40; top: var(--form-v2-topbar); right: 0; bottom: 44px; width: min(320px,88vw); border: 1px solid var(--form-v2-border); box-shadow: var(--form-v2-shadow); }
+  .fabric-shell.ui-inspector-collapsed .fabric-inspector { display: none; }
+}
+
+@media (max-width: 720px) {
+  .workspace-ui-controls { display: none; }
+  .cad-view-switch,.fabric-stages { gap: 7px; }
+  .cad-view-switch button,.fabric-stages button { font-size: 12px; }
+  .cad-actions .cad-sync,.fabric-actions .cad-sync { display: none; }
+  .cad-command { width: calc(100% - 24px); }
+  .cad-command-suggestions { width: calc(100% - 24px); overflow: hidden; }
+  .cad-command-more { display: none; }
+  .cad-statusbar .cad-coordinates { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :where(.cad-shell,.fabric-shell,.studio-shell.v2) * { scroll-behavior: auto !important; transition-duration: 0s !important; animation-duration: 0s !important; }
+}
+
+/* Creative modifier stack --------------------------------------------------- */
+.cad-shell .cad-modifier-stack { border-color: var(--form-v2-border-soft); }
+.cad-shell .cad-modifier { border-color: var(--form-v2-border); background: var(--form-v2-surface-raised); }
+.cad-shell .cad-modifier-title,
+.cad-shell .cad-modifier-head strong { color: var(--form-v2-text-secondary); }
+.cad-shell .cad-modifier-title button { color: var(--form-v2-text-muted); }
+.cad-shell .cad-modifier :where(input[type=number],input[type=text],select),
+.cad-shell .cad-modifier-head select { border-color: var(--form-v2-border); background: var(--form-v2-surface-raised); color: var(--form-v2-text); }
+.cad-shell .cad-modifier label { color: var(--form-v2-text-muted); }
+.cad-shell .cad-modifier-field,
+.cad-shell .cad-intent-locks { border-color: var(--form-v2-border-soft); }
+.cad-shell .cad-modifier-field summary,
+.cad-shell .cad-intent-locks summary { color: var(--form-v2-text-secondary); }
+.cad-shell .cad-modifier-output { border-color: var(--form-v2-border); background: var(--form-v2-surface); color: var(--form-v2-text-muted); }
+.cad-shell .cad-modifier-output.hybrid { border-color: var(--form-v2-border); background: var(--form-v2-bg); color: var(--form-v2-accent); }
+.cad-shell .cad-modifier-output.creative { border-color: #74539a; background: var(--form-v2-bg); color: #cda2f3; }
+/* Desktop composition: shared shell geometry, readable controls, quiet canvas. */
+.cad-shell :is(.cad-sketch-mode-bar,.cad-region-actions,.cad-topology-edit,.cad-vector-dock) { background:var(--form-v2-surface) !important; border-color:var(--form-v2-border) !important; color:var(--form-v2-text); }
+.cad-shell :is(.cad-sketch-mode-bar,.cad-region-actions,.cad-topology-edit,.cad-vector-dock) :is(button,strong,span,label) { font-size:12px !important; color:var(--form-v2-text-secondary); }
+.cad-shell :is(.cad-sketch-mode-bar,.cad-region-actions,.cad-topology-edit,.cad-vector-dock) :is(small,footer) { color:var(--form-v2-text-secondary); font-size:11px; }
+.cad-shell :is(.cad-sketch-mode-bar,.cad-region-actions,.cad-topology-edit,.cad-vector-dock) button { min-height:30px; background:var(--form-v2-surface-raised); border-color:var(--form-v2-border); }
+.cad-shell :is(.cad-sketch-mode-bar,.cad-region-actions,.cad-topology-edit) button.accent { background:var(--form-v2-surface); color:var(--form-v2-text); }
+.cad-shell .cad-topology-edit input { background:var(--form-v2-surface-raised); color:var(--form-v2-text); font-size:13px; }
+.cad-shell .cad-sketch-mode-bar { overflow-x:auto; }
+.cad-shell .cad-inspector .cad-direct-transform label { display:grid !important; grid-template-columns:minmax(0,1fr) !important; margin:0 !important; }
+.cad-shell .cad-inspector .cad-direct-transform input { width:100% !important; min-width:0 !important; box-sizing:border-box; }
+.cad-shell .cad-appearance-studio label :is(span,b,output) { font-size:12px !important; color:var(--form-v2-text-secondary); }
+.cad-shell .cad-appearance-presets button { white-space:normal !important; }
+.cad-shell .cad-appearance-presets button span { white-space:normal !important; font-size:12px !important; line-height:1.3; }
+.studio-shell.v2 .rail-drawer { background:var(--form-v2-surface) !important; color:var(--form-v2-text) !important; border-color:var(--form-v2-border) !important; }
+.studio-shell.v2 :is(.rig-section,.character-rig) { background:var(--form-v2-surface-raised) !important; border-color:var(--form-v2-border) !important; color:var(--form-v2-text) !important; }
+.studio-shell.v2 :is(.rig-section,.panel-heading) :is(strong,span,p) { color:var(--form-v2-text) !important; font-size:13px !important; }
+.studio-shell.v2 :is(.rig-section,.panel-heading) small { color:var(--form-v2-text-secondary) !important; font-size:12px !important; }
+.studio-shell.v2 :is(.rig-primary,.rig-secondary,.rig-forces button) { background:var(--form-v2-surface-raised) !important; border-color:var(--form-v2-border) !important; color:var(--form-v2-text) !important; min-height:40px; }
+.studio-shell.v2 :is(.rig-primary,.rig-secondary) :is(strong,span) { color:var(--form-v2-text) !important; font-size:13px !important; }
+.studio-shell.v2 :is(.rig-primary,.rig-secondary) small { color:var(--form-v2-text-secondary) !important; font-size:12px !important; }
+.studio-shell.v2 .inspector-title { background:var(--form-v2-surface) !important; color:var(--form-v2-text) !important; border-color:var(--form-v2-border) !important; }
+.studio-shell.v2 .inspector-title strong { font-size:16px !important; }
+.studio-shell.v2 .empty-inspector { background:var(--form-v2-surface) !important; color:var(--form-v2-text) !important; padding:24px; }
+.studio-shell.v2 .empty-inspector :is(strong,h3,p,span) { color:var(--form-v2-text-secondary) !important; }
+.studio-shell.v2 .workspace-title { color:var(--form-v2-accent) !important; }
+.studio-shell.v2 .panel-tabs.v2-tabs > button span { font-size:12px !important; }
+.fabric-shell { background:var(--form-v2-surface) !important; }
+.fabric-shell .fabric-scroll > section { background:var(--form-v2-surface) !important; color:var(--form-v2-text-secondary) !important; }
+.fabric-shell .fabric-scroll :is(button,.fabric-import) { background:var(--form-v2-surface-raised) !important; color:var(--form-v2-text-secondary) !important; border-color:var(--form-v2-border) !important; }
+.fabric-shell .fabric-scroll button.active { background:var(--form-v2-accent-soft) !important; }
+.fabric-shell .fabric-scroll :is(span,small,em) { font-size:12px !important; }
+.fabric-shell .fabric-scroll :is(h3,label,p) { color:var(--form-v2-text-secondary) !important; }
+.fabric-shell .fabric-scroll { height:calc(100% - 70px) !important; }
+.fabric-shell .fabric-panel-head { height:70px !important; background:var(--form-v2-surface) !important; }
+.fabric-shell .fabric-actions .fabric-save-action { background:var(--form-v2-accent) !important; border-color:var(--form-v2-accent) !important; }
+.fabric-shell .fabric-actions .workspace-ui-controls button { display:inline-flex !important; }
+.fabric-shell .fabric-workspace { min-width:0; grid-template-columns:minmax(0,1fr) minmax(0,1fr); }
+.fabric-shell .fabric-viewport-title { color:var(--form-v2-text-secondary); font-size:12px; }
+.fabric-shell .fabric-viewport-title :is(span,small) { font-size:11px; }
+.studio-shell.v2 .inspector :is(.inspector-section,.panel-section,.rig-section) { background:var(--form-v2-surface) !important; color:var(--form-v2-text-secondary); }
+.studio-shell.v2 .inspector :is(h3,label,p,small) { color:var(--form-v2-text-secondary); }
+.studio-shell.v2 .inspector :is(button,select,input) { background:var(--form-v2-surface-raised); color:var(--form-v2-text-secondary); }
+@media(max-width:900px) { .fabric-shell .fabric-inspector { top:0 !important; bottom:0; } }
+.cad-topbar .cad-view-switch button.active::after,.fabric-topbar .fabric-stages button.active::after { background:var(--form-v2-accent); }
+.cad-actions .accent,.fabric-actions .accent { background:var(--form-v2-accent) !important; border-color:var(--form-v2-accent) !important; }
+.cad-shell .cad-appearance-presets button.active { color:var(--form-v2-text) !important; }
+.cad-shell .cad-panel-head { height:70px !important; background:var(--form-v2-surface) !important; }
+.cad-shell .cad-panel-head strong { font-size:20px !important; }
+.cad-shell .cad-panel-head span { font-size:11px !important; }
+.cad-shell .cad-viewport-bar { background:var(--form-v2-surface) !important; color:var(--form-v2-text) !important; }
+.cad-shell .cad-viewport-bar button { color:var(--form-v2-text-secondary) !important; letter-spacing:0; }
+.cad-shell .cad-smart-hud button { flex:1; width:auto; max-width:none; }
+.cad-shell .cad-smart-hud button span { font-size:12px !important; }
+.cad-shell .cad-smart-hud > div { display:flex; }
+.cad-shell .cad-smart-hud { display:block !important; }
+.cad-shell .cad-smart-hud > div { width:100%; }
+.cad-shell .cad-scroll { height:calc(100% - 70px) !important; }
+.cad-shell .cad-inspector { overflow:clip; }
+.cad-shell .cad-scroll :is(.cad-material-presets,.cad-environment-presets) button { color:var(--form-v2-text) !important; }
+.cad-shell .cad-scroll :is(.cad-material-presets,.cad-environment-presets) button.active { color:var(--form-v2-text) !important; }
+.cad-shell .cad-scroll :is(.cad-section-title > span,.cad-appearance-title > span) { color:var(--form-v2-text-secondary); border-color:var(--form-v2-border); background:var(--form-v2-surface); }
+.cad-shell .cad-statusbar button.active { color:var(--form-v2-text) !important; background:var(--form-v2-accent-soft) !important; }
+.cad-shell .cad-tools { border-radius:0 !important; }
+.cad-shell .cad-tools button.active { color:var(--form-v2-text) !important; background:var(--form-v2-accent-soft) !important; box-shadow:none !important; }
+.cad-shell .cad-topbar .cad-brand strong { font-size:13px !important; }
+.cad-shell .cad-topbar .cad-brand em { font-size:12px !important; }
+.cad-shell .cad-command input { opacity:1 !important; }
+@media(max-width:900px) {
+ .cad-shell .cad-inspector { top:0 !important; bottom:0; }
+}
+:is(.cad-shell,.fabric-shell,.studio-shell.v2) {
+  --ui-topbar-height: 64px;
+  --form-v2-topbar: var(--ui-topbar-height);
+}
+:is(.cad-shell,.fabric-shell,.studio-shell.v2)[data-ui-density="compact"] { --ui-topbar-height: 56px; --form-v2-control: 30px; }
+:is(.cad-shell,.fabric-shell,.studio-shell.v2)[data-ui-density="comfortable"] { --ui-topbar-height: 70px; --form-v2-control: 38px; }
+.cad-shell { grid-template: "top top top" var(--ui-topbar-height) "tools canvas inspector" minmax(0,1fr) / var(--cad-tools-width,76px) minmax(0,1fr) var(--cad-inspector-width,370px) !important; }
+.cad-shell.cad-view-model { grid-template: "top top top" var(--ui-topbar-height) "tools canvas inspector" minmax(0,1fr) "timeline timeline timeline" var(--cad-timeline-height,176px) / var(--cad-tools-width,76px) minmax(0,1fr) var(--cad-inspector-width,370px) !important; }
+.fabric-shell { grid-template: "top top top" var(--ui-topbar-height) "tools work inspector" minmax(0,1fr) "timeline timeline timeline" var(--fabric-timeline-height,66px) / var(--fabric-tools-width,76px) minmax(0,1fr) var(--fabric-inspector-width,360px) !important; }
+.studio-shell.v2 { grid-template: "topbar topbar topbar" var(--ui-topbar-height) "left viewport inspector" minmax(0,1fr) / var(--studio-tools-width,76px) minmax(0,1fr) var(--studio-inspector-width,360px) !important; }
+:is(.cad-topbar,.fabric-topbar,.studio-shell.v2 .topbar) { padding:0 18px; height:var(--ui-topbar-height); min-height:var(--ui-topbar-height);
+}
+.cad-brand strong,.fabric-brand strong { color:var(--form-v2-text-muted); font-size:13px; letter-spacing:.06em; white-space:nowrap; }
+.cad-view-switch,.fabric-stages { flex-shrink:0; }
+.cad-view-switch .cad-specialist-tab { margin:0; padding:0 2px; border:0; color:var(--form-v2-text-muted); }
+.cad-actions,.fabric-actions { margin-left:auto; flex-shrink:0; }
+:is(.cad-topbar,.fabric-topbar,.studio-shell.v2 .topbar) :is(.workspace-ui-controls button,.cad-history button,.cad-icon-action,summary,.history-button) { color:var(--form-v2-text-muted); }
+.cad-actions .cad-sync { color:var(--form-v2-text-muted); border-color:var(--form-v2-border); }
+.cad-project-menu,.fabric-project-menu { display:block !important; }
+.cad-project-menu > div,.fabric-project-menu > div { width:260px; max-height:calc(100vh - 90px); overflow-y:auto; }
+.cad-project-menu button,.fabric-project-menu button { min-height:34px; font-size:13px; }
+.cad-tools,.fabric-tools { padding:12px 7px; gap:6px; }
+.cad-tools button.active,.fabric-tools button.active,.studio-shell.v2 .panel-tabs.v2-tabs > button.active { color:var(--form-v2-text); background:var(--form-v2-accent-soft); border-color:var(--form-v2-border); box-shadow:none; }
+.cad-inspector,.fabric-inspector,.studio-shell.v2 .inspector { min-width:0; }
+.cad-panel-head,.fabric-panel-head { height:70px; display:flex; flex-direction:column; align-items:flex-start; justify-content:center; }
+.cad-panel-head span,.fabric-panel-head span { color:var(--form-v2-text-secondary); }
+.cad-panel-head strong,.fabric-panel-head strong { color:var(--form-v2-text); font-size:20px; font-weight:600; }
+.cad-scroll,.fabric-scroll { height:calc(100% - 70px); overflow:auto; scrollbar-gutter:stable; }
+.cad-scroll > section,.fabric-scroll > section,.cad-scroll > div > section { border-color:var(--form-v2-border); }
+:is(.cad-inspector,.fabric-inspector,.studio-shell.v2 .inspector,.studio-shell.v2 .rail-drawer) :is(label,button,input,select,textarea) { font-size:13px !important; }
+:is(.cad-inspector,.fabric-inspector,.studio-shell.v2 .inspector) :is(p,small,em) { font-size:12px !important; line-height:1.5; }
+:is(.cad-inspector,.fabric-inspector,.studio-shell.v2 .inspector) h3 { color:var(--form-v2-text); text-transform:none; margin-bottom:14px; }
+:is(.cad-inspector,.fabric-inspector,.studio-shell.v2 .inspector) :is(input:not([type=range]):not([type=checkbox]):not([type=color]),select,textarea) { color:var(--form-v2-text); border:1px solid var(--form-v2-border); padding:5px 8px; }
+:is(.cad-inspector,.fabric-inspector,.studio-shell.v2 .inspector) button { min-height:32px; color:var(--form-v2-text); }
+:is(.cad-inspector,.fabric-inspector,.studio-shell.v2 .inspector) button.active { color:var(--form-v2-text); border-color:var(--form-v2-border); background:var(--form-v2-accent-soft); }
+.cad-inspector-mode { gap:6px; }
+.cad-inspector-mode button { padding:8px 10px; }
+.cad-inspector-mode small { display:none; }
+.cad-inspector-nav { top:0; display:flex; gap:4px; background:var(--form-v2-surface); z-index:4; border-bottom:1px solid var(--form-v2-border); }
+.cad-inspector-nav button { padding:5px 8px; border-radius:6px; min-height:30px; }
+.cad-inspector-nav button.active { color:var(--form-v2-text); background:var(--form-v2-accent-soft); box-shadow:none; }
+.cad-scroll [id^="inspector-"] { scroll-margin-top:86px; }
+.cad-inspector .cad-direct-transform { position:static; width:auto; max-width:none; transform:none; margin:0; border:0; border-bottom:1px solid var(--form-v2-border); border-radius:0; box-shadow:none; backdrop-filter:none; }
+.cad-direct-transform > header { display:flex; flex-wrap:wrap; gap:5px 8px; margin-bottom:12px; }
+.cad-direct-transform > header small { flex-basis:100%; color:var(--form-v2-text-secondary); }
+.cad-direct-transform > div { grid-template-columns:repeat(3,minmax(0,1fr)); gap:7px; }
+.cad-direct-transform label { display:grid; height:auto; min-height:34px; padding:0; background:transparent; border:0; grid-template-columns:minmax(0,1fr); gap:4px; }
+.cad-direct-transform label em { display:none; }
+.cad-direct-transform label input { padding:5px !important; text-align:left; font-size:12px !important; width:100%; }
+.cad-direct-transform > div > button { grid-column:1 / -1; min-height:26px; }
+.cad-direct-transform > header small,.cad-direct-transform > footer { display:none; }
+.cad-direct-transform > div > button { justify-self:end; padding:4px 12px; }
+.cad-direct-transform > footer { text-align:left; color:var(--form-v2-text-secondary); font-size:11px; line-height:1.5; }
+.cad-viewport-bar { top:16px; max-width:calc(100% - 24px); overflow-x:auto; background:var(--form-v2-surface); border-color:var(--form-v2-border); color:var(--form-v2-text); border-radius:10px; padding:5px; box-shadow:0 4px 14px #33442a12; }
+.cad-viewport-bar button { font-size:12px !important; min-height:30px; color:var(--form-v2-text-secondary); }
+.cad-viewport-bar button.active { background:var(--form-v2-accent-soft); color:var(--form-v2-text); }
+.cad-model-selection-filter { border-color:var(--form-v2-border); box-shadow:none; }
+.cad-model-selection-filter button { min-height:28px; color:var(--form-v2-text-secondary); }
+.cad-model-selection-filter button.active { color:var(--form-v2-text); background:var(--form-v2-accent-soft); }
+.cad-model-selection-filter span { color:var(--form-v2-text-secondary); font-size:10px; }
+.cad-smart-hud { top:auto !important; width:min(580px,calc(100% - 36px)); background:var(--form-v2-surface); border:1px solid var(--form-v2-border); box-shadow:0 8px 28px #2d3f2412; }
+.cad-smart-hud > header { display:none; }
+.cad-smart-hud > div { gap:5px; }
+.cad-smart-hud button { font-size:12px; background:transparent; color:var(--form-v2-text-secondary); }
+.cad-smart-hud button small { display:none; }
+.cad-view-model .cad-command,.cad-view-sketch .cad-command { width:min(580px,calc(100% - 36px)); }
+.cad-command button { min-height:34px; font-size:12px; }
+.cad-command-suggestions { display:none; }
+.cad-shell:not(.cad-view-drawing) .cad-command-more { display:block; top:106px; right:14px; bottom:auto; z-index:24; }
+.cad-shell .cad-command-more > summary { background:var(--form-v2-surface); color:var(--form-v2-text-secondary); border-color:var(--form-v2-border); padding:7px 10px; }
+.cad-shell .cad-command-more > div { top:calc(100% + 6px); bottom:auto; width:210px; max-height:50vh; overflow:auto; }
+.cad-statusbar { height:30px; border-color:var(--form-v2-border); }
+.cad-statusbar :is(span,button) { font-size:11px !important; }
+.cad-plane-pill,.cad-origin { color:var(--form-v2-text-muted) !important; }
+.cad-timeline-dock,.cad-timeline-dock .cad-timeline { background:var(--form-v2-surface); }
+.cad-timeline-dock :is(button,input,select) { font-size:12px !important; }
+.cad-timeline-dock :is(span,small) { font-size:11px; }
+.cad-timeline-dock .cad-nla-tracks,.cad-timeline-dock .cad-dopesheet,.cad-timeline-dock .cad-nla-empty > div { background-color:var(--form-v2-surface); }
+.cad-topology-edit { top:106px; }
+.cad-tool-shelf { max-height:calc(100% - 120px); overflow-y:auto; background:var(--form-v2-surface); color:var(--form-v2-text); }
+.cad-tool-shelf :is(button,input,select,span) { font-size:12px !important; }
+.cad-tool-shelf small { font-size:11px !important; }
+.cad-tool-shelf button { color:var(--form-v2-text); }
+:is(.cad-shell,.fabric-shell,.studio-shell.v2) button:disabled { opacity:.4; cursor:not-allowed; }
+.ui-tools-collapsed :is(.cad-tools,.fabric-tools,.compact-rail),.ui-inspector-collapsed :is(.cad-inspector,.fabric-inspector,.inspector),.ui-timeline-collapsed :is(.cad-timeline-dock,.fabric-timeline,.timeline-bar) { visibility:hidden; pointer-events:none; }
+@media(max-width:1300px) {
+ .cad-brand em,.fabric-brand em { display:none; }
+ .cad-topbar,.fabric-topbar { gap:16px; padding:0 12px; }
+ .cad-view-switch,.fabric-stages { gap:12px; }
+ .cad-actions .cad-sync { display:none; }
+}
+@media(max-width:1050px) {
+ .cad-brand strong,.fabric-brand strong { display:none; }
+ .cad-view-switch,.fabric-stages { gap:10px; }
+ .cad-shell { --cad-tools-width:66px; }
+ .cad-actions .workspace-ui-controls { gap:0; }
+}
+@media(max-width:900px) {
+ .cad-shell,.cad-shell.cad-view-model { grid-template-columns:var(--cad-tools-width,66px) minmax(0,1fr) 0 !important; }
+ .fabric-shell { grid-template-columns:var(--fabric-tools-width,66px) minmax(0,1fr) 0 !important; }
+ .cad-inspector,.fabric-inspector { top:var(--ui-topbar-height); width:min(370px,85vw); }
+ .cad-viewport-bar { left:12px; transform:none; }
+ .cad-inspector-nav { top:0; }
+}
+
+/* Native-inspired shell: layout controls are shared by every editor, not document data. */
+.cad-shell .cad-scroll button,.fabric-shell .fabric-scroll button,.studio-shell.v2 .inspector button { background:var(--form-v2-surface-raised); border-color:var(--form-v2-border); color:var(--form-v2-text-secondary); }
+.cad-shell .cad-scroll button.active,.fabric-shell .fabric-scroll button.active,.studio-shell.v2 .inspector button.active { background:var(--form-v2-accent-soft); color:var(--form-v2-accent); }
+.cad-timeline-dock .cad-dopesheet,.cad-timeline-dock .cad-nla-tracks { background:repeating-linear-gradient(90deg,var(--form-v2-surface) 0,var(--form-v2-surface) calc(10% - 1px),var(--form-v2-border-soft) calc(10% - 1px),var(--form-v2-border-soft) 10%); border-color:var(--form-v2-border); }
+.cad-timeline-dock .cad-transport :is(button,select) { background:var(--form-v2-surface-raised); color:var(--form-v2-text); border-color:var(--form-v2-border); }
+.cad-timeline-dock .cad-nla-track { border-color:var(--form-v2-border-soft); }
+.cad-timeline-dock .cad-nla-track > span { background:var(--form-v2-surface-raised); color:var(--form-v2-text-secondary); border-color:var(--form-v2-border); }
+.cad-timeline-dock .cad-nla-tracks > p { color:var(--form-v2-text-muted); font-size:12px; }
+.cad-product-backdrop { z-index:200; }
+.cad-product-center { color:var(--form-v2-text); border-color:var(--form-v2-border); min-height:min(480px,calc(100dvh - 24px)); }
+.cad-product-head { grid-template-columns:190px 1fr 32px; padding:18px 22px; }
+.cad-product-head > div span { font-size:10px; color:var(--form-v2-accent); }
+.cad-product-head nav button { font-size:13px; min-height:36px; color:var(--form-v2-text-muted); }
+.cad-product-center :is(button,input) { font-family:inherit; }
+.cad-product-center :is(p,small) { font-size:12px; line-height:1.6; }
+.cad-product-center :is(button,em,kbd,label) { font-size:12px; }
+.cad-product-center strong { font-size:14px; }
+.cad-onboarding-hero { border-radius:12px; }
+.cad-onboarding-hero h2 { line-height:1.15; margin:8px 0 12px; }
+.cad-onboarding-hero :is(button,.accent) { min-height:38px; padding:8px 14px; }
+.cad-workflow-lanes button { padding:16px; min-height:90px; }
+.cad-workflow-lanes b { font-size:13px; }
+.cad-library-head { margin:20px 0 12px; }
+.cad-library-head > span { font-size:10px; }
+.cad-template-grid { grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:12px; }
+.cad-template-grid > button { padding:16px; gap:6px; min-height:200px; }
+.cad-template-grid .discipline { font-size:10px; }
+.cad-template-grid em { font-size:10px; }
+.cad-command-search { border-color:var(--form-v2-border); }
+.cad-command-search:focus-within { border-color:var(--form-v2-accent); box-shadow:0 0 0 3px #0050b814; }
+.cad-command-search input { height:52px; font-size:16px; color:var(--form-v2-text); min-width:0; }
+.cad-command-search input::placeholder { color:var(--form-v2-text-muted); }
+.cad-command-results > button { min-height:66px; grid-template-columns:minmax(0,1fr) 100px auto; padding:12px; }
+.cad-command-results > button[aria-selected="true"] { background:var(--form-v2-accent-soft); }
+.cad-command-results :is(small,em) { color:var(--form-v2-text-muted); }
+.cad-command-center > footer { font-size:12px; gap:12px; align-items:center; }
+.cad-command-center > footer button { font-size:12px; min-height:36px; }
+.cad-guide-content h2 { font-size:26px; }
+.cad-guide-content :is(li,ol span) { font-size:13px; line-height:1.6; }
+.cad-shortcut-list > div { min-height:56px; }
+.cad-shortcut-content > footer { font-size:12px; }
+@media(max-width:650px) { .cad-product-head { grid-template-columns:1fr 32px; } .cad-product-head nav { grid-column:1 / -1; grid-row:2; } .cad-command-results > button { grid-template-columns:minmax(0,1fr) auto; } .cad-command-results em { display:none; } }
+.workspace-ui-controls { display:flex; align-items:center; gap:4px; }
+.workspace-layout-menu { position:relative; }
+.workspace-layout-menu > summary { display:flex; align-items:center; gap:7px; cursor:pointer; list-style:none; border:1px solid var(--form-v2-border); border-radius:7px; color:var(--form-v2-text-secondary); }
+.workspace-layout-menu > summary::-webkit-details-marker { display:none; }
+.workspace-layout-menu[open] > summary { background:var(--form-v2-surface-hover); color:var(--form-v2-text); }
+.workspace-layout-popover { position:absolute; top:calc(100% + 12px); right:0; z-index:250; width:290px; max-width:calc(100vw - 24px); padding:8px; border:1px solid var(--form-v2-border); }
+.workspace-layout-popover header { display:grid; gap:5px; padding:12px; border-bottom:1px solid var(--form-v2-border-soft); margin-bottom:6px; }
+.workspace-layout-popover header strong { font-size:14px; color:var(--form-v2-text); }
+.workspace-layout-popover small { display:block; font-size:12px; line-height:1.5; font-weight:400; color:var(--form-v2-text-muted); white-space:normal; }
+.workspace-layout-popover > button { display:grid !important; gap:3px; width:100% !important; height:auto !important; min-height:58px; padding:10px 12px !important; text-align:left; border:0 !important; background:transparent !important; color:var(--form-v2-text) !important; }
+.workspace-layout-popover > button:hover { background:var(--form-v2-surface-hover) !important; }
+.workspace-layout-popover > button strong { color:var(--form-v2-text); }
+.workspace-layout-popover .workspace-reset { display:block !important; min-height:36px; color:var(--form-v2-text-muted) !important; font-size:12px; }
+.workspace-panel-toggles { display:grid; grid-template-columns:1fr 1fr; gap:8px; padding:12px; border-block:1px solid var(--form-v2-border-soft); margin-top:6px; }
+.workspace-panel-toggles > button { display:flex; gap:6px; width:auto !important; min-width:0; height:36px !important; justify-content:center; align-items:center; border:1px solid var(--form-v2-border) !important; border-radius:6px; background:var(--form-v2-surface-raised); }
+.workspace-panel-toggles > button span { text-transform:capitalize; }
+.workspace-panel-toggles > button[aria-pressed="true"] { background:var(--form-v2-accent-soft); color:var(--form-v2-accent); }
+.workspace-ui-controls > .workspace-focus { display:inline-grid !important; }
+.workspace-focus[aria-pressed="true"] { background:var(--form-v2-accent-soft) !important; color:var(--form-v2-accent) !important; }
+:is(.cad-shell,.fabric-shell,.studio-shell.v2) { accent-color:var(--form-v2-accent); }
+:is(.cad-shell,.fabric-shell,.studio-shell.v2) :is(button,summary) { transition:background-color 120ms ease,color 120ms ease,border-color 120ms ease; }
+:is(.cad-shell,.fabric-shell,.studio-shell.v2) :is(button,summary):hover:not(:disabled) { border-color:var(--form-v2-text-muted); }
+.cad-topbar,.fabric-topbar,.studio-shell.v2 .topbar { box-shadow:0 1px 0 #0005; z-index:100; }
+.cad-actions .accent,.fabric-actions .accent { color:var(--form-v2-accent-ink) !important; }
+.cad-brand em,.fabric-brand em { border-radius:5px; font-style:normal; }
+.cad-view-switch button,.cad-view-model .cad-view-switch button,.fabric-stages button { display:inline-flex; align-items:center; justify-content:center; gap:6px; }
+.cad-view-switch button::after,.fabric-stages button::after { display:none !important; }
+.cad-tools,.fabric-tools { border-right:1px solid var(--form-v2-border-soft); }
+.cad-tools button,.fabric-tools button { border:1px solid transparent; border-radius:8px; }
+.cad-shell .cad-tools button.active,.fabric-tools button.active { color:var(--form-v2-accent) !important; background:var(--form-v2-accent-soft) !important; }
+.cad-tools button:hover,.fabric-tools button:hover { background:var(--form-v2-surface-hover); }
+.cad-panel-head,.fabric-panel-head { border-bottom:1px solid var(--form-v2-border-soft); }
+.cad-inspector-nav { flex-wrap:nowrap; overflow-x:auto; scrollbar-width:thin; padding:8px; }
+.cad-inspector-nav button { flex:none; font-size:11px !important; white-space:nowrap; }
+.cad-section-title,.cad-appearance-title { align-items:center; }
+.cad-shell .cad-viewport-bar,.cad-smart-hud,.cad-tool-shelf,.form-selection-hud { background:var(--form-v2-surface) !important; color:var(--form-v2-text); border-color:var(--form-v2-border) !important; box-shadow:0 6px 20px #0003; }
+.form-selection-hud :is(button,input,select),.form-selection-values :is(input,select) { background:var(--form-v2-surface-raised); color:var(--form-v2-text); }
+.form-selection-hud footer .apply { background:var(--form-v2-accent); color:var(--form-v2-accent-ink); }
+.form-selection-toolbar button[aria-pressed="true"],.form-selection-hud nav button[aria-pressed="true"] { background:var(--form-v2-accent-soft); color:var(--form-v2-accent); }
+.cad-model-selection-filter { background:var(--form-v2-surface); }
+.cad-view-model .cad-command,.cad-view-sketch .cad-command { border-color:var(--form-v2-border); }
+.cad-command input { background:transparent !important; color:var(--form-v2-text) !important; }
+.cad-command input::placeholder { color:var(--form-v2-text-muted); }
+.cad-project-menu > div,.fabric-project-menu > div { color:var(--form-v2-text); border:1px solid var(--form-v2-border); }
+.cad-project-menu button,.fabric-project-menu button { color:var(--form-v2-text-secondary); }
+.ui-resize-handle { touch-action:none; }
+.ui-resize-handle:hover,.ui-resize-handle:focus-visible { background:var(--form-v2-accent) !important; }
+@media(max-width:1300px) { .workspace-layout-menu > summary > span { display:none; } .cad-view-switch,.fabric-stages { gap:1px; } }
+@media(max-width:1050px) { .cad-topbar,.fabric-topbar { gap:8px; } .cad-view-switch button,.fabric-stages button { padding:7px; } }
+@media(max-width:650px) {
+  .cad-shell,.fabric-shell { --ui-topbar-height:104px !important; }
+  .cad-topbar,.fabric-topbar { flex-wrap:wrap; align-content:center; gap:5px; padding:5px 10px; }
+  .cad-view-switch,.fabric-stages { display:flex !important; order:3; width:100%; overflow-x:auto; justify-content:center; }
+  .cad-view-switch button,.fabric-stages button { display:inline-flex !important; }
+  .cad-actions,.fabric-actions { margin-left:auto; }
+}
+@media(prefers-reduced-motion:reduce) { :is(.cad-shell,.fabric-shell,.studio-shell.v2) :is(button,summary) { transition:none; } }
+
+/* Quiet chrome. Native system type, optical spacing and a restrained blue accent. */
+:is(.cad-shell,.fabric-shell,.studio-shell.v2) { --cad-accent:var(--form-v2-accent); font-size:14px; letter-spacing:-.012em; }
+:is(.cad-topbar,.fabric-topbar,.studio-shell.v2 .topbar) { background:var(--form-v2-chrome); color:var(--form-v2-text); border-bottom:1px solid #00000012; box-shadow:0 1px 8px #17223804; backdrop-filter:blur(24px) saturate(150%); -webkit-backdrop-filter:blur(24px) saturate(150%); gap:18px; }
+.cad-brand > span,.fabric-brand > span,.brand-mark { display:grid; place-items:center; width:30px; height:30px; border-radius:9px; font-size:19px; font-weight:650; background:var(--form-v2-accent) !important; color:white !important; box-shadow:inset 0 1px 0 #ffffff36; }
+.cad-brand strong,.fabric-brand strong { display:none; }
+.cad-brand em,.fabric-brand em { display:block; max-width:200px; border:0; padding:0 4px; color:var(--form-v2-text); font-size:14px !important; font-weight:600; letter-spacing:-.02em; }
+.cad-brand > button,.fabric-brand > button { background:transparent !important; border-color:transparent !important; color:var(--form-v2-text-secondary) !important; }
+.cad-view-switch,.fabric-stages { padding:3px; gap:2px; background:#e9ebef !important; border:1px solid #00000006; border-radius:10px; }
+.cad-shell .cad-topbar .cad-view-switch { background:#e9ebef !important; }
+.cad-view-switch button,.cad-view-model .cad-view-switch button,.fabric-stages button { padding:7px 13px; min-height:32px; border-radius:7px; font-size:14px; font-weight:500; color:var(--form-v2-text-secondary); }
+.cad-topbar .cad-view-switch button.active,.fabric-topbar .fabric-stages button.active { background:white !important; color:var(--form-v2-text) !important; box-shadow:0 1px 4px #1c25321a,0 0 0 1px #1c253205; }
+.cad-actions,.fabric-actions { gap:7px; }
+.cad-actions .accent,.fabric-actions .accent { min-height:34px; padding:0 16px; border-radius:9px; font-size:14px; font-weight:550; }
+.cad-actions .cad-sync { border:0; padding:0 3px; background:transparent; font-size:11px; }
+.workspace-layout-menu > summary { border-color:transparent; padding:7px 8px; font-size:13px; }
+.workspace-layout-menu > summary:hover { background:var(--form-v2-surface-hover); }
+.workspace-panel-toggles > button span { display:inline; font-size:12px; }
+.workspace-layout-popover { border-color:#00000012; border-radius:16px; background:var(--form-v2-chrome); box-shadow:var(--form-v2-shadow); backdrop-filter:blur(24px); }
+.workspace-layout-popover > button { border-radius:9px; }
+.workspace-layout-popover > button strong { font-size:14px; font-weight:550; }
+.cad-tools,.fabric-tools,.studio-shell.v2 .compact-rail { background:var(--form-v2-surface) !important; padding:12px 7px; border-right:1px solid #0000000d; gap:7px; }
+.cad-tools button,.cad-view-model .cad-tools button,.fabric-tools button { height:56px; min-height:56px; border-radius:12px; gap:4px; color:var(--form-v2-text-secondary); }
+.cad-tools span,.cad-view-model .cad-tools span,.fabric-tools span { font-size:12px; font-weight:500; letter-spacing:0; }
+.cad-tools button svg,.fabric-tools button svg { width:22px; height:22px; stroke-width:1.55; }
+.cad-shell .cad-tools button.active,.fabric-tools button.active { box-shadow:none !important; border-color:transparent !important; }
+.cad-inspector,.fabric-inspector,.studio-shell.v2 .inspector { border-left:1px solid #00000012; background:var(--form-v2-surface); }
+.cad-panel-head,.fabric-panel-head { padding:16px 20px; gap:4px; background:var(--form-v2-surface) !important; }
+.cad-panel-head span,.fabric-panel-head span { font-size:11px; letter-spacing:.07em; font-weight:550; }
+.cad-shell .cad-panel-head strong,.fabric-panel-head strong { font-size:19px !important; font-weight:600; letter-spacing:-.025em; }
+.cad-selection-context { padding:14px 18px; gap:6px; background:var(--form-v2-surface-raised); }
+.cad-selection-context strong { font-size:14px; font-weight:550; }
+.cad-selection-context span { font-size:13px; line-height:1.5; }
+.cad-inspector-mode { background:var(--form-v2-surface); padding:12px 16px 6px; }
+.cad-inspector-mode button { flex:1; font-size:12px !important; font-weight:500; letter-spacing:0; border:0; border-radius:8px; }
+.cad-shell .cad-inspector-nav { display:block; padding:8px 16px 12px; overflow:visible; background:var(--form-v2-surface); border-bottom:1px solid var(--form-v2-border-soft); }
+.cad-property-picker { display:grid !important; grid-template-columns:54px minmax(0,1fr) !important; align-items:center; gap:8px; width:100%; margin:0 !important; }
+.cad-property-picker > span { color:var(--form-v2-text-muted); font-size:12px; }
+.cad-shell .cad-property-picker select { width:100%; min-height:34px; border-radius:8px; background:var(--form-v2-surface-raised); padding:5px 10px; font-family:inherit; font-size:14px !important; }
+.cad-scroll,.fabric-scroll { scrollbar-width:thin; scrollbar-color:#bcc1ca transparent; }
+.cad-scroll > section,.fabric-scroll > section,.cad-scroll > div > section { padding:18px; border-bottom:1px solid var(--form-v2-border-soft); background:var(--form-v2-surface-raised); }
+:is(.cad-inspector,.fabric-inspector,.studio-shell.v2 .inspector) :is(label,button,input,select,textarea) { font-size:14px !important; }
+:is(.cad-inspector,.fabric-inspector,.studio-shell.v2 .inspector) h3 { font-weight:600; font-size:14px !important; letter-spacing:-.01em; }
+:is(.cad-inspector,.fabric-inspector,.studio-shell.v2 .inspector) :is(input:not([type=range]):not([type=checkbox]):not([type=color]),select,textarea) { min-height:34px; border-color:#dce0e6; border-radius:7px; background:var(--form-v2-surface); box-shadow:inset 0 1px 2px #1d253805; font-variant-numeric:tabular-nums; }
+.cad-shell .cad-scroll button,.fabric-shell .fabric-scroll button { border-radius:7px; box-shadow:none; }
+.cad-shell .cad-scroll button.danger { background:#fff0ef; border-color:#f3d4d0; color:#a42a22; }
+.cad-inspector .cad-direct-transform { padding:16px 18px; background:white; }
+.cad-direct-transform > header span { color:var(--form-v2-text-muted); letter-spacing:.04em; font-size:11px; }
+.cad-direct-transform > header strong { color:var(--form-v2-text); font-size:13px; }
+.cad-shell .cad-viewport-bar,.cad-smart-hud,.cad-tool-shelf,.form-selection-hud,.cad-model-selection-filter,.cad-pick-feedback { background:var(--form-v2-chrome) !important; border:1px solid #ffffffbd !important; color:var(--form-v2-text); box-shadow:0 3px 16px #17243a12,0 0 0 1px #17243a0a; backdrop-filter:blur(20px) saturate(145%); -webkit-backdrop-filter:blur(20px) saturate(145%); }
+.cad-shell .cad-viewport-bar { top:16px; border-radius:12px; padding:5px; }
+.cad-shell .cad-viewport-bar button { min-height:30px; padding:5px 8px; font:500 12px -apple-system,BlinkMacSystemFont,sans-serif !important; }
+.cad-shell .cad-viewport-bar button.active { background:var(--form-v2-accent-soft) !important; color:var(--form-v2-accent) !important; border-radius:7px; }
+.cad-model-selection-filter { border-radius:10px; top:68px; padding:4px 6px; }
+.cad-model-selection-filter button { font-size:13px; padding:5px 9px; }
+.cad-pick-feedback { border-radius:10px; max-width:210px; padding:10px 12px; }
+.cad-pick-feedback strong { font-size:12px; font-weight:550; }
+.cad-pick-feedback :is(span,small) { color:var(--form-v2-text-muted); }
+.cad-smart-hud { border-radius:14px; padding:6px; bottom:106px !important; }
+.cad-smart-hud button { border:0; border-radius:9px; padding:8px 12px; min-height:36px; }
+.cad-smart-hud button.primary { background:var(--form-v2-accent-soft); color:var(--form-v2-accent); border:0; }
+.cad-smart-hud button:hover { background:var(--form-v2-surface-hover); }
+.cad-view-model .cad-command,.cad-view-sketch .cad-command { bottom:44px; height:52px; padding:6px 7px 6px 16px; border:1px solid #ffffffdc; border-radius:15px; background:var(--form-v2-chrome); box-shadow:var(--form-v2-shadow); }
+.cad-command input { font-family:inherit !important; font-size:14px !important; }
+.cad-command button,.cad-view-model .cad-command button { border-radius:9px; min-height:36px; padding:0 14px; font-size:13px; font-weight:550; color:white; }
+.cad-statusbar { background:var(--form-v2-chrome); border-top:1px solid #0000000d; font-size:12px; color:var(--form-v2-text-secondary); }
+.cad-statusbar button.active { border-radius:5px; }
+.cad-project-menu > div,.fabric-project-menu > div { border-color:#00000014; border-radius:13px; background:var(--form-v2-chrome); box-shadow:var(--form-v2-shadow); backdrop-filter:blur(24px); }
+.cad-product-backdrop { background:#48556e42; backdrop-filter:blur(12px); }
+.cad-product-center { background:var(--form-v2-chrome); border:1px solid #ffffffa8; border-radius:22px; box-shadow:0 30px 100px #18294536; }
+.cad-product-head { background:transparent; border-color:var(--form-v2-border-soft); }
+.cad-product-head > div strong { font-family:inherit; letter-spacing:-.025em; font-size:18px; }
+.cad-product-head nav { padding:3px; border-radius:9px; background:var(--form-v2-surface-hover); }
+.cad-product-head nav button.active { background:white; color:var(--form-v2-text); box-shadow:0 1px 3px #00000012; }
+.cad-product-center :is(p,small,em) { color:var(--form-v2-text-muted); }
+.cad-product-center :is(button,strong,h2) { color:var(--form-v2-text); }
+.cad-onboarding-hero { border:0; padding:24px; background:linear-gradient(115deg,#ffffff,#edf3fc); }
+.cad-onboarding-hero h2 { font-size:32px; font-weight:600; letter-spacing:-.035em; }
+.cad-onboarding-hero :is(p,button),.cad-workflow-lanes strong { font-size:14px; }
+.cad-product-center .accent { background:var(--form-v2-accent); color:var(--form-v2-accent-ink) !important; border-color:var(--form-v2-accent); }
+.cad-onboarding-hero button:not(.accent),.cad-guide-actions button:not(.accent),.cad-recovery-guide button { background:white; color:var(--form-v2-text); border-color:var(--form-v2-border); }
+.cad-workflow-lanes button { background:white; border-color:var(--form-v2-border-soft); border-radius:12px; }
+.cad-template-grid > button { background:white; border-color:var(--form-v2-border-soft); border-radius:12px; box-shadow:0 2px 4px #18294503; }
+.cad-template-grid > button:hover { transform:none; border-color:var(--form-v2-accent); box-shadow:0 3px 12px #0050b80d; }
+.cad-template-grid .discipline { background:var(--form-v2-accent-soft); color:var(--form-v2-accent); }
+.cad-command-search { background:white; border-radius:12px; }
+.cad-command-results > button { border-radius:10px; }
+.cad-command-results kbd { color:var(--form-v2-text-secondary); background:white; border-color:var(--form-v2-border); }
+.cad-command-results > button[aria-selected="true"] { border-color:transparent; }
+.cad-topbar .cad-icon-action { background:transparent !important; color:var(--form-v2-text-secondary) !important; }
+.cad-topbar .cad-icon-action:hover { background:var(--form-v2-surface-hover) !important; }
+.cad-shell .cad-topbar .cad-view-switch .cad-workspace-jump { border:0; border-radius:7px; color:var(--form-v2-text-secondary); }
+:is(.cad-shell,.fabric-shell,.studio-shell.v2) :focus-visible { outline:3px solid #007aff80 !important; outline-offset:2px; }
+@media(max-width:1300px) { .cad-brand em,.fabric-brand em { max-width:145px; } }
+@media(max-width:1100px) { .cad-brand em,.fabric-brand em { display:none; } .cad-view-switch button,.fabric-stages button { padding:7px 9px; } }
+@media(prefers-reduced-transparency:reduce) { .cad-shell,.fabric-shell,.studio-shell.v2 { --form-v2-chrome:#fafbfd; } }
+@media(prefers-contrast:more) { .cad-shell,.fabric-shell,.studio-shell.v2 { --form-v2-border:#777d87; --form-v2-border-soft:#969ba5; --form-v2-text-muted:#41454d; } }
+
+/* One workspace language across Document, Sketch, Model and Fabric. */
+.cad-shell .cad-topbar .cad-view-switch .cad-specialist-tab { margin-left:0; padding-left:12px; border-left:0; }
+.cad-shell :is(.cad-tool-shelf,.cad-vector-dock,.cad-sketch-mode-bar,.cad-region-actions,.cad-topology-edit) {
+  border-radius:14px; background:var(--form-v2-chrome) !important; box-shadow:var(--form-v2-shadow); border-color:var(--form-v2-border-soft) !important;
+}
+.cad-shell :is(.cad-tool-shelf,.cad-vector-dock,.cad-sketch-mode-bar,.cad-region-actions,.cad-topology-edit) :is(button,input,select,label) { font-family:var(--form-v2-font-ui); font-size:13px !important; }
+.cad-shell :is(.cad-tool-shelf,.cad-vector-dock,.cad-sketch-mode-bar,.cad-region-actions,.cad-topology-edit) :is(input,select) { min-width:0; min-height:32px; padding:6px 8px; border:1px solid var(--form-v2-border); border-radius:7px; background:var(--form-v2-surface-raised); color:var(--form-v2-text); }
+.cad-shell :is(.cad-tool-shelf,.cad-vector-dock,.cad-sketch-mode-bar,.cad-region-actions,.cad-topology-edit) input[type="range"] { padding:0; border:0; accent-color:var(--form-v2-accent); }
+.cad-shell :is(.cad-tool-shelf,.cad-vector-dock,.cad-sketch-mode-bar,.cad-region-actions,.cad-topology-edit) button.accent { background:var(--form-v2-accent); border-color:var(--form-v2-accent); color:var(--form-v2-accent-ink) !important; }
+.cad-shell :is(.cad-tool-shelf,.cad-vector-dock,.cad-sketch-mode-bar,.cad-region-actions,.cad-topology-edit) button.accent :is(span,small,b) { color:inherit !important; }
+.cad-shell .cad-sketch-mode-bar { top:14px; width:max-content; max-width:calc(100% - 28px); flex-wrap:wrap; gap:8px; padding:10px; justify-content:center; }
+.cad-shell .cad-sketch-mode-bar > span { font-size:11px !important; letter-spacing:.04em; }
+.cad-shell .cad-sketch-mode-bar nav { flex-wrap:wrap; justify-content:center; border:0; background:var(--form-v2-surface-hover); border-radius:8px; }
+.cad-shell .cad-sketch-mode-bar nav button { border:0; background:transparent; border-radius:6px; }
+.cad-shell .cad-sketch-mode-bar nav button.active { background:var(--form-v2-surface-raised); color:var(--form-v2-accent); box-shadow:0 1px 3px #17243a14; }
+.cad-shell .cad-sketch-mode-bar small.conflict { color:#ac382d; }
+.cad-shell .cad-vector-dock { width:260px; padding:14px; gap:12px; }
+.cad-vector-dock > header { display:grid; gap:4px; }
+.cad-shell .cad-vector-dock > header strong { font-size:15px !important; font-weight:600; }
+.cad-shell .cad-vector-dock > header span { font-size:12px !important; line-height:1.45; color:var(--form-v2-text-muted); }
+.cad-shell .cad-vector-actions { display:flex; flex-wrap:wrap; gap:6px; }
+.cad-shell .cad-vector-actions button { flex:1; padding:8px; border-radius:8px; }
+.cad-shell .cad-make-3d { display:grid; grid-template-columns:1fr 60px auto; gap:7px; padding-top:12px; border-top:1px solid var(--form-v2-border-soft); }
+.cad-shell .cad-make-3d > span { display:grid; gap:4px; }
+.cad-shell .cad-make-3d button { grid-column:1/-1; border-radius:8px; }
+.cad-shell .cad-tool-shelf { width:min(590px,calc(100% - 32px)); max-height:calc(100% - 150px); }
+.cad-shell .cad-tool-shelf > header { padding:16px; background:transparent; border-bottom:1px solid var(--form-v2-border-soft); }
+.cad-shell .cad-tool-shelf > header strong { font-size:18px; letter-spacing:-.02em; color:var(--form-v2-text); }
+.cad-shell .cad-tool-shelf > header :is(small,span,kbd) { color:var(--form-v2-text-muted); font-size:12px; }
+.cad-shell .cad-tool-shelf > header button { border-color:var(--form-v2-border); background:var(--form-v2-surface-raised); color:var(--form-v2-text-secondary); min-width:30px; min-height:30px; border-radius:7px; }
+.cad-shell .cad-tool-shelf-body { padding:12px 16px; }
+.cad-shell .cad-tool-feature-grid { gap:8px; grid-template-columns:repeat(auto-fit,minmax(118px,1fr)); }
+.cad-shell .cad-tool-feature-grid button { min-height:78px; padding:12px; border:1px solid var(--form-v2-border-soft); border-radius:10px; background:var(--form-v2-surface-raised); color:var(--form-v2-text); box-shadow:none; }
+.cad-shell .cad-tool-feature-grid button:hover { border-color:var(--form-v2-border); background:var(--form-v2-surface-hover); }
+.cad-shell .cad-tool-feature-grid button :is(span,b) { color:inherit; }
+.cad-shell .cad-tool-feature-grid button small { color:var(--form-v2-text-muted); font-size:12px; line-height:1.4; }
+.cad-shell .cad-tool-feature-grid button.active { background:var(--form-v2-accent-soft); border-color:var(--form-v2-accent); color:var(--form-v2-accent); }
+.cad-shell :is(.cad-tool-feature-fields,.cad-tool-operation-row) label { min-height:38px; height:auto; padding:6px 8px; background:var(--form-v2-surface); border-color:var(--form-v2-border-soft); color:var(--form-v2-text-secondary); }
+.cad-shell :is(.cad-tool-feature-fields,.cad-tool-operation-row) em { color:var(--form-v2-text-muted); font-size:12px; }
+.cad-shell .cad-tool-shelf > footer { padding:12px 16px; border-color:var(--form-v2-border-soft); color:var(--form-v2-text-muted); font:12px var(--form-v2-font-ui); }
+.cad-shell .cad-tool-shelf > footer em { color:inherit; font:inherit; }
+.cad-shell .cad-smart-shelf { padding:12px 16px; border-color:var(--form-v2-border-soft); background:transparent; }
+.cad-shell .cad-smart-shelf :is(header,small,summary,p) { color:var(--form-v2-text-muted); font-size:12px; line-height:1.45; }
+.cad-shell .cad-smart-shelf header strong { color:var(--form-v2-text-secondary); font-size:13px; }
+.cad-shell .cad-smart-shelf button { border:1px solid var(--form-v2-border-soft); background:var(--form-v2-surface-raised); color:var(--form-v2-text); border-radius:9px; }
+.cad-shell .cad-smart-shelf button.primary { background:var(--form-v2-accent-soft); color:var(--form-v2-accent); }
+.cad-shell .cad-smart-shelf button.primary small { color:var(--form-v2-accent); }
+.cad-shell .cad-canvas-empty { background:var(--form-v2-chrome); border-color:var(--form-v2-border-soft); box-shadow:var(--form-v2-shadow); }
+.cad-shell .cad-canvas-empty :is(h2,span) { color:var(--form-v2-text); }
+.cad-shell .cad-canvas-empty p { color:var(--form-v2-text-muted); }
+.cad-shell .cad-canvas-empty button { color:var(--form-v2-text); background:var(--form-v2-surface-raised); border-color:var(--form-v2-border); }
+.cad-shell .cad-canvas-empty button.accent { color:var(--form-v2-accent-ink); background:var(--form-v2-accent); }
+
+/* Document: a paper surface with immediately available sheet actions. */
+.cad-view-drawing .cad-canvas-wrap { background:var(--form-v2-canvas); }
+.cad-document-toolbar { position:absolute; z-index:8; top:12px; left:16px; right:16px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px; padding:10px 12px; border:1px solid var(--form-v2-border-soft); border-radius:12px; background:var(--form-v2-chrome); box-shadow:0 2px 8px #17243a08; }
+.cad-document-toolbar > div { display:flex; align-items:center; gap:9px; }
+.cad-document-toolbar > div > span { display:grid; gap:3px; }
+.cad-document-toolbar strong { font-size:14px; font-weight:600; color:var(--form-v2-text); }
+.cad-document-toolbar small { font-size:12px; color:var(--form-v2-text-muted); }
+.cad-document-toolbar nav { display:flex; flex-wrap:wrap; gap:6px; }
+.cad-document-toolbar button { display:flex; align-items:center; gap:6px; min-height:34px; padding:6px 10px; border:1px solid var(--form-v2-border); border-radius:8px; font:13px var(--form-v2-font-ui); background:var(--form-v2-surface-raised); color:var(--form-v2-text); cursor:pointer; }
+.cad-document-toolbar button.accent { background:var(--form-v2-accent); border-color:var(--form-v2-accent); color:var(--form-v2-accent-ink); }
+.cad-document-toolbar button:disabled { opacity:.45; cursor:not-allowed; }
+.cad-view-drawing :is(.cad-exact-drawing,.cad-bim-sheet) { inset:86px 24px 110px; padding:18px; border:1px solid var(--form-v2-border-soft); border-radius:5px; box-shadow:0 8px 28px #17243a16; grid-template-rows:minmax(0,1fr) auto; }
+.cad-view-drawing :is(.cad-exact-drawing,.cad-bim-sheet) footer { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:5px 16px; padding:10px; margin-top:10px; background:var(--form-v2-surface); border:1px solid var(--form-v2-border-soft); border-radius:6px; color:var(--form-v2-text-secondary); font:12px/1.4 var(--form-v2-font-ui); }
+.cad-view-drawing :is(.cad-exact-drawing,.cad-bim-sheet) footer.review { background:#fff6e8; color:#805008; border-color:#ead5ad; }
+.cad-view-drawing :is(.cad-exact-drawing,.cad-bim-sheet) footer.ready { background:#edf7f1; color:#206344; border-color:#c4ddce; }
+.cad-view-drawing .cad-origin { display:none; }
+.cad-view-drawing .cad-command { bottom:44px; height:48px; border-radius:13px; box-shadow:var(--form-v2-shadow); }
+.cad-shell .cad-drafting-author { background:var(--form-v2-surface) !important; }
+.cad-shell .cad-drafting-author :is(input,select,textarea) { min-height:34px; font:14px var(--form-v2-font-ui); color:var(--form-v2-text); background:var(--form-v2-surface-raised); border:1px solid var(--form-v2-border); border-radius:7px; }
+.cad-shell .cad-drafting-author :is(button,label) { font:13px var(--form-v2-font-ui); }
+.cad-shell :is(.cad-drafting-actions,.cad-drafting-export,.cad-drafting-block) button { min-height:36px; padding:8px; border:1px solid var(--form-v2-border); border-radius:8px; background:var(--form-v2-surface-raised); color:var(--form-v2-text-secondary); }
+.cad-shell .cad-drafting-list > div { padding:10px; background:var(--form-v2-surface-raised); border:1px solid var(--form-v2-border-soft); border-radius:8px; color:var(--form-v2-text); }
+.cad-shell .cad-drafting-list small { color:var(--form-v2-text-muted); font-size:12px; }
+
+/* Fabric: neutral pattern paper, readable construction cards and quiet preview controls. */
+.fabric-shell .fabric-stages button { text-transform:capitalize; font-size:14px; gap:7px; }
+.fabric-shell .fabric-stages svg { width:17px; height:17px; }
+.fabric-shell .fabric-actions .fabric-save-action { color:var(--form-v2-accent-ink) !important; }
+.fabric-shell .fabric-workspace { gap:1px; background:var(--form-v2-border-soft); }
+.fabric-shell :is(.fabric-pattern-board,.fabric-drape-view) { min-width:0; border:0; background:var(--form-v2-bg); }
+.fabric-shell .fabric-viewport-title { top:14px; left:14px; right:14px; width:auto; display:grid; gap:5px; padding:10px 12px; border:1px solid #ffffffc9; border-radius:12px; background:var(--form-v2-chrome); box-shadow:0 2px 10px #17243a09; pointer-events:none; }
+.fabric-shell .fabric-viewport-title span { font:600 14px var(--form-v2-font-ui); letter-spacing:0; color:var(--form-v2-text); }
+.fabric-shell .fabric-viewport-title b { font:400 12px var(--form-v2-font-ui); color:var(--form-v2-text-muted); }
+.fabric-shell .fabric-viewport-title em { margin-left:6px; font:500 11px var(--form-v2-font-ui); color:#805008; background:#fff2d8; padding:3px 5px; border-radius:4px; }
+.fabric-shell .fabric-canvas-hint { left:14px; right:14px; padding:10px 12px; border:1px solid var(--form-v2-border-soft); border-radius:10px; background:var(--form-v2-chrome); color:var(--form-v2-text-muted); font:12px/1.45 var(--form-v2-font-ui); }
+.fabric-shell .fabric-preview-controls { left:12px; right:12px; display:flex; flex-wrap:wrap; justify-content:center; gap:5px; padding:6px; border:1px solid var(--form-v2-border-soft); border-radius:12px; background:var(--form-v2-chrome); box-shadow:var(--form-v2-shadow); }
+.fabric-shell .fabric-preview-controls button { flex:1 0 auto; min-height:32px; padding:6px 8px; border:0; border-radius:7px; background:transparent; color:var(--form-v2-text-secondary); font:12px var(--form-v2-font-ui); }
+.fabric-shell .fabric-preview-controls button.active { color:var(--form-v2-accent); background:var(--form-v2-accent-soft); }
+.fabric-shell .fabric-preview-controls :is(button.accent,button.live) { background:var(--form-v2-accent); color:var(--form-v2-accent-ink); }
+.fabric-shell .fabric-finish-draft { bottom:84px; min-height:36px; padding:8px 12px; border:0; border-radius:9px; background:var(--form-v2-accent); color:var(--form-v2-accent-ink); font:13px var(--form-v2-font-ui); }
+.fabric-shell .fabric-status { top:auto; bottom:0; left:0; max-width:100%; width:100%; border:0; border-radius:0; padding:5px 12px; background:var(--form-v2-chrome); color:var(--form-v2-text-secondary); font:12px/1.4 var(--form-v2-font-ui); pointer-events:none; }
+.fabric-shell .fabric-panel-head { padding:14px 18px; }
+.fabric-shell .fabric-panel-head strong { font-size:18px; letter-spacing:-.02em; }
+.fabric-shell .fabric-scroll > section { padding:18px; border-color:var(--form-v2-border-soft) !important; }
+.fabric-shell .fabric-scroll h3 { margin-bottom:12px; font-size:14px; font-weight:600; letter-spacing:0; text-transform:none; color:var(--form-v2-text) !important; }
+.fabric-shell .fabric-scroll label { grid-template-columns:minmax(86px,1fr) minmax(0,1.25fr) auto; font:13px var(--form-v2-font-ui); }
+.fabric-shell .fabric-scroll :is(input,select,textarea) { min-height:32px; border-radius:7px; padding:6px 8px; font:14px var(--form-v2-font-ui); font-variant-numeric:tabular-nums; accent-color:var(--form-v2-accent); }
+.fabric-shell .fabric-scroll :is(input[type="checkbox"],input[type="range"]) { padding:0; min-height:0; }
+.fabric-shell .fabric-scroll button { min-height:34px; padding:7px 9px; border-radius:8px; font:13px var(--form-v2-font-ui); }
+.fabric-shell .fabric-scroll button:hover:not(:disabled) { background:var(--form-v2-surface-hover) !important; }
+.fabric-shell .fabric-scroll button.active { color:var(--form-v2-accent) !important; border-color:var(--form-v2-accent) !important; }
+.fabric-shell .fabric-scroll button.primary { background:var(--form-v2-accent) !important; color:var(--form-v2-accent-ink) !important; }
+.fabric-shell .fabric-scroll :is(.fabric-piece-metrics span,.fabric-seam-physics,.fabric-seam-list > div,.fabric-detail-list > div,.fabric-model-card,.fabric-body-controls,.fabric-swatch-lab,.fabric-fit-metrics span,.fabric-solver-metrics span,.fabric-audit > div span,.fabric-correlation > div > span) { border-color:var(--form-v2-border-soft); border-radius:8px; background:var(--form-v2-surface-raised); color:var(--form-v2-text); }
+.fabric-shell .fabric-scroll :is(b,strong) { color:var(--form-v2-text); font-size:13px; }
+.fabric-shell .fabric-scroll :is(p,small,em,.fabric-seam-list span,.fabric-seam-physics span) { color:var(--form-v2-text-muted); font-family:var(--form-v2-font-ui); line-height:1.5; }
+.fabric-shell .fabric-scroll :is(.fabric-import,.fabric-model-import) { padding:12px; text-align:left; }
+.fabric-shell :is(.fabric-import,.fabric-model-import) > b { background:var(--form-v2-accent-soft); color:var(--form-v2-accent); border-radius:7px; }
+.fabric-shell .fabric-template-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; }
+.fabric-shell .fabric-template-grid button { min-height:60px; display:flex; align-items:center; justify-content:center; gap:8px; text-transform:capitalize; }
+.fabric-shell .fabric-template-grid button b { font-size:20px; font-weight:500; }
+.fabric-shell .fabric-body-choices > button { grid-template-columns:26px minmax(0,1fr); padding:10px 8px; }
+.fabric-shell .fabric-body-choices small { font-size:11px !important; }
+.fabric-shell .fabric-measurements { grid-template-columns:1fr; }
+.fabric-shell .fabric-measurements label { grid-template-columns:1fr minmax(60px,100px) 24px !important; padding:4px 0; }
+.fabric-shell .fabric-rights-confirm { background:var(--form-v2-accent-soft); border-color:var(--form-v2-border); color:var(--form-v2-text-secondary) !important; }
+.fabric-shell .fabric-swatches button { padding:4px; width:36px; height:36px; min-height:36px; }
+.fabric-shell .fabric-swatches button.active { box-shadow:0 0 0 2px var(--form-v2-accent-soft); }
+.fabric-shell .fabric-swatch-lab > div { grid-template-columns:1fr; }
+.fabric-shell .fabric-swatch-lab label { grid-template-columns:1fr minmax(60px,100px) 28px !important; }
+.fabric-shell .fabric-scroll .fabric-correlation { background:var(--form-v2-surface) !important; border-color:var(--form-v2-border) !important; }
+.fabric-shell .fabric-correlation > div > span { grid-template-columns:1fr auto; gap:4px 8px; padding:8px; }
+.fabric-shell .fabric-correlation > div > span small { grid-column:1/-1; }
+.fabric-shell .fabric-scroll :is(.fabric-audit p.error,.fabric-correlation.failed header strong,.fabric-fit-section.blocked header strong) { color:#a42a22 !important; }
+.fabric-shell .fabric-scroll :is(.fabric-audit p.warning,.fabric-correlation.review header strong,.fabric-fit-section.review header strong) { color:#805008 !important; }
+.fabric-shell .fabric-scroll :is(.fabric-audit p.pass,.fabric-correlation.correlated header strong,.fabric-audit.ready header strong) { color:#206344 !important; }
+.pro-studio .render-queue-list > div { align-items:start; padding:12px; gap:8px; }
+.pro-studio .render-queue-list span { min-width:0; gap:6px; font-size:13px; }
+.pro-studio .render-queue-list :is(small,em,summary) { font-size:11px; line-height:1.5; overflow-wrap:anywhere; }
+.pro-studio .render-queue-list .shot-actions { display:flex; flex-flow:row wrap; gap:6px; }
+.pro-studio .render-queue-list .shot-actions button { min-height:30px; padding:4px 8px; font-size:12px; }
+.pro-studio .render-queue-list details { min-width:0; }
+.pro-studio .render-queue-list details summary { cursor:pointer; }
+.fabric-shell .fabric-audit details { padding:9px 0; border-bottom:1px solid var(--form-v2-border-soft); overflow-wrap:anywhere; }
+.fabric-shell .fabric-audit details summary { font-size:12px; line-height:1.5; cursor:pointer; }
+.fabric-shell .fabric-audit details small { display:block; font-size:11px; line-height:1.6; }
+.fabric-shell .fabric-audit details.warning summary { color:#805008; }
+.fabric-shell .fabric-audit details.fail summary { color:#a42a22; }
+.fabric-shell .fabric-timeline { min-height:56px; padding:8px 16px; gap:12px; }
+.fabric-shell .fabric-timeline > button { border:1px solid var(--form-v2-border); border-radius:8px; background:var(--form-v2-surface-raised); color:var(--form-v2-text); font-size:13px; }
+.fabric-shell .fabric-timeline > button:first-child { background:var(--form-v2-accent); color:var(--form-v2-accent-ink); border-color:var(--form-v2-accent); }
+.fabric-shell .fabric-timeline b { font-size:13px; color:var(--form-v2-text); }
+.fabric-shell .fabric-timeline :is(small,em) { font:12px var(--form-v2-font-ui); color:var(--form-v2-text-muted); }
+.fabric-shell .fabric-timeline input { background:var(--form-v2-border); accent-color:var(--form-v2-accent); }
+.fabric-shell .fabric-timeline input::-webkit-slider-thumb { border:2px solid white; background:var(--form-v2-accent); box-shadow:0 0 0 1px var(--form-v2-border); }
+@media(max-width:1150px) {
+  .cad-view-drawing :is(.cad-exact-drawing,.cad-bim-sheet) { top:122px; left:14px; right:14px; padding:12px; }
+  .cad-document-toolbar { gap:8px; }
+  .cad-document-toolbar nav { width:100%; }
+  .cad-document-toolbar nav button { flex:1; justify-content:center; }
+  .fabric-shell .fabric-viewport-title em { display:block; width:fit-content; margin:4px 0 0; }
+}
+@media(max-width:760px) {
+  .fabric-shell .fabric-workspace { grid-template-columns:1fr; grid-template-rows:minmax(240px,1fr) minmax(280px,1fr); overflow-y:auto; }
+  .fabric-shell .fabric-pattern-board { display:block; }
+  .fabric-shell .fabric-viewport-title { top:8px; left:8px; right:8px; }
+  .fabric-shell .fabric-viewport-title em { display:inline; margin-left:6px; }
+  .cad-shell .cad-tool-feature-grid.cad-core-tools { grid-template-columns:repeat(2,minmax(0,1fr)); }
+}
+@media print { .cad-document-toolbar { display:none; } }
+
+/* Native visual-review corrections: keep nested legacy controls on the light surface. */
+.cad-shell .cad-tool-shelf > footer { background:var(--form-v2-surface); }
+.cad-shell .cad-tool-shelf > header kbd { padding:4px 6px; border:1px solid var(--form-v2-border); border-radius:5px; background:var(--form-v2-surface-raised); }
+.cad-shell .cad-smart-shelf header span { color:var(--form-v2-accent); font-size:11px; letter-spacing:.06em; }
+.cad-shell .cad-tool-shelf .cad-tool-feature-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
+.cad-shell .cad-tool-shelf .cad-tool-feature-grid button { min-height:86px; }
+.cad-shell .cad-tool-shelf .cad-tool-feature-grid button span { white-space:normal; font-size:13px; line-height:1.3; }
+.cad-shell .cad-tool-shelf .cad-tool-feature-grid button small { white-space:normal; overflow:visible; font-size:12px; line-height:1.35; }
+.cad-shell .cad-tool-operation-row { border-color:var(--form-v2-border-soft); }
+.cad-shell .cad-tool-operation-row button { min-height:34px; background:var(--form-v2-surface-raised); border:1px solid var(--form-v2-border); color:var(--form-v2-text-secondary); }
+.cad-shell .cad-drafting-author :is(h3,label,p) { color:var(--form-v2-text-secondary); }
+.cad-shell .cad-drafting-author h3 { color:var(--form-v2-text); }
+.fabric-shell .fabric-canvas-hint { transform:none; width:auto; bottom:34px; }
+.fabric-shell .fabric-preview-controls { bottom:34px; }
+.fabric-shell .fabric-preview-error { position:absolute; z-index:3; top:50%; left:20px; right:20px; transform:translateY(-50%); padding:20px; border:1px solid var(--form-v2-border); border-radius:14px; background:var(--form-v2-chrome); color:var(--form-v2-text); box-shadow:var(--form-v2-shadow); }
+.fabric-shell .fabric-preview-error strong { font-size:16px; }
+.fabric-shell .fabric-preview-error p { color:var(--form-v2-text-secondary); font-size:14px; line-height:1.5; }
+.fabric-shell .fabric-preview-error button { padding:9px 12px; border:0; border-radius:8px; background:var(--form-v2-accent); color:var(--form-v2-accent-ink); font-size:14px; }
+.fabric-shell .fabric-preview-error details { margin-top:14px; font-size:12px; color:var(--form-v2-text-muted); overflow-wrap:anywhere; }
+@media(max-width:760px) { .cad-shell .cad-tool-shelf .cad-tool-feature-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+
+/* Document is a sheet workspace, not a modeling viewport with paper on top. */
+.cad-shell.cad-view-drawing { grid-template-columns:0 minmax(0,1fr) var(--cad-inspector-width,320px) !important; }
+.cad-shell.cad-view-drawing.ui-inspector-collapsed { grid-template-columns:0 minmax(0,1fr) 0 !important; }
+.cad-view-drawing :is(.cad-tools,.cad-timeline-dock,.cad-release-gate) { display:none; }
+.cad-view-drawing .cad-statusbar > :not(.cad-status) { display:none; }
+.cad-view-drawing .cad-statusbar { justify-content:flex-start; }
+.form-document-workspace { position:absolute; inset:0 0 30px; display:grid; grid-template:"toolbar toolbar" auto "sheets stage" minmax(0,1fr) / 152px minmax(0,1fr); color:var(--form-v2-text); background:var(--form-v2-canvas); }
+.form-document-workspace.sheets-hidden { grid-template-columns:0 minmax(0,1fr); }
+.form-document-workspace button,.form-document-workspace select { font:12px var(--form-v2-font-ui); color:var(--form-v2-text-secondary); cursor:pointer; }
+.form-document-workspace button { display:inline-flex; align-items:center; justify-content:center; gap:6px; border:1px solid transparent; border-radius:7px; background:transparent; min-height:32px; padding:6px 9px; }
+.form-document-workspace button:hover { background:var(--form-v2-surface-hover); }
+.form-document-workspace button:disabled { opacity:.4; cursor:not-allowed; }
+.form-document-workspace button.accent { background:var(--form-v2-accent); color:var(--form-v2-accent-ink); }
+.form-document-workspace :is(button,select):focus-visible,.form-document-properties :is(button,input,select,textarea):focus-visible { outline:2px solid var(--form-v2-accent); outline-offset:2px; }
+.form-document-toolbar { grid-area:toolbar; display:flex; align-items:center; flex-wrap:wrap; gap:8px; min-height:56px; padding:8px 14px; border-bottom:1px solid var(--form-v2-border-soft); background:var(--form-v2-chrome); }
+.form-document-heading { display:flex; align-items:center; gap:10px; margin-right:auto; }
+.form-document-heading > .ui-icon { width:30px; height:30px; padding:5px; border:1px solid var(--form-v2-border); border-radius:8px; color:var(--form-v2-accent); }
+.form-document-heading > span { display:grid; gap:3px; }
+.form-document-heading strong { font-size:15px; font-weight:600; letter-spacing:-.02em; }
+.form-document-heading small { font-size:11px; color:var(--form-v2-text-muted); max-width:180px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.form-document-toolbar nav { display:flex; gap:3px; }
+.form-document-toolbar nav + nav { border-left:1px solid var(--form-v2-border-soft); padding-left:12px; }
+.form-document-toolbar [aria-pressed="true"] { background:var(--form-v2-accent-soft); color:var(--form-v2-accent); }
+.form-document-sheets { grid-area:sheets; display:flex; flex-direction:column; min-height:0; border-right:1px solid var(--form-v2-border-soft); background:var(--form-v2-surface); }
+.form-document-sheets > header { display:flex; align-items:center; justify-content:space-between; padding:21px 16px 12px; font-size:10px; font-weight:650; letter-spacing:.1em; color:var(--form-v2-text-muted); }
+.form-document-sheets > header small { font:11px var(--form-v2-font-ui); letter-spacing:0; }
+.form-document-sheets > div { overflow:auto; padding:0 10px 12px; }
+.form-document-sheets > div > button { display:flex; flex-direction:column; width:100%; padding:8px; margin-bottom:6px; text-align:left; border-radius:9px; }
+.form-document-sheets > div > button[aria-current="page"] { background:var(--form-v2-accent-soft); border-color:color-mix(in srgb,var(--form-v2-accent) 35%,transparent); }
+.form-document-thumbnail { display:grid; place-items:center; width:100%; aspect-ratio:420/297; background:white; border:1px solid #d5d8dd; box-shadow:0 2px 4px #1821320a; color:#aab1bc; overflow:hidden; }
+.form-document-thumbnail img { width:100%; height:100%; object-fit:contain; }
+.form-document-sheet-label { display:flex; gap:8px; width:100%; padding-top:5px; align-items:flex-start; }
+.form-document-sheet-label > b { font-size:10px; color:var(--form-v2-text-muted); padding-top:2px; }
+.form-document-sheet-label > span { display:grid; gap:4px; min-width:0; }
+.form-document-sheet-label strong { font-size:11px; font-weight:600; line-height:1.4; overflow-wrap:anywhere; }
+.form-document-sheet-label small { font-size:10px; color:var(--form-v2-text-muted); line-height:1.4; }
+.form-document-sheets > p { margin:auto 16px 18px; padding-top:20px; color:var(--form-v2-text-muted); font-size:11px; line-height:1.7; }
+.form-document-stage { grid-area:stage; display:grid; grid-template-rows:auto minmax(0,1fr) auto auto; min-height:0; min-width:0; background:#e5e8ed; }
+.form-document-page-meta { display:flex; align-items:center; justify-content:space-between; gap:8px; padding:8px 20px; color:var(--form-v2-text-muted); font-size:11px; }
+.form-document-page-meta button { font-size:11px; }
+.form-document-viewport { min-width:0; min-height:0; overflow:auto; overscroll-behavior:contain; scrollbar-gutter:stable; }
+.form-document-paper-space { display:flex; align-items:flex-start; justify-content:center; min-height:100%; padding:24px; }
+.form-document-paper { flex:none; background:white; box-shadow:0 2px 5px #27324612,0 16px 42px #2732461a; outline:1px solid #27324610; }
+.form-document-paper { position:relative; touch-action:none; }
+.form-document-paper > svg,.form-document-paper > div > svg { display:block; width:100%; height:auto; }
+.form-document-paper :is([data-sheet-view],[data-sheet-annotation]) { cursor:grab; }
+.form-document-paper [data-sheet-view]:hover > rect,.form-document-paper [data-document-selected] > rect { stroke:#438ce8; stroke-width:.4; stroke-dasharray:2 1; }
+.form-document-paper [data-sheet-annotation][data-document-selected] { filter:drop-shadow(0 0 1px #1678f0); }
+.form-document-paper [data-sheet-annotation][data-document-selected] text { fill:#145fc5; }
+.form-document-viewport[data-tool="pan"],.form-document-viewport[data-tool="pan"] * { cursor:grab; }
+.form-document-viewport[data-tool="note"] .form-document-paper * { cursor:crosshair; }
+.form-document-paper > .form-document-edge-overlay { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; }
+.form-document-edge-overlay [data-document-edge] { pointer-events:stroke; stroke:#387ed82b; stroke-width:8px; cursor:crosshair; }
+.form-document-edge-overlay [data-document-edge]:hover,.form-document-edge-overlay [data-active="true"] { stroke:#1678f0a0; }
+.form-document-paper .form-document-inline-note { position:absolute; z-index:2; width:200px; max-width:80%; transform:translate(-50%,-75%); padding:8px 10px; border:2px solid var(--form-v2-accent); border-radius:6px; background:white; color:#18202a; box-shadow:0 4px 16px #18213226; font:13px var(--form-v2-font-ui); }
+.form-document-workspace .form-document-add { margin:auto 10px 12px; border:1px solid var(--form-v2-border); background:var(--form-v2-surface-raised); }
+.form-document-page-meta > div { display:flex; align-items:center; flex-shrink:0; }
+.form-document-page-meta .needs-attention { color:#98611a; background:#f5e9d6; }
+.form-document-advanced { border-top:1px solid var(--form-v2-border-soft); padding-top:10px; }
+.form-document-advanced summary { cursor:pointer; font-size:11px; color:var(--form-v2-text-secondary); margin-bottom:8px; }
+.form-document-link summary { cursor:pointer; font-size:12px; font-weight:550; color:var(--form-v2-text-secondary); }
+.form-document-create-annotations > summary { cursor:pointer; padding:8px 0; font-size:12px; font-weight:550; }
+.form-document-create-annotations[open] { display:flex; flex-direction:column; gap:10px; }
+.form-document-sheets > div { min-height:0; flex:1; }
+.form-document-workspace .form-document-add { flex-shrink:0; margin-top:10px; white-space:nowrap; font-size:11px; }
+.cad-shell .form-document-property-content .form-sheet-editor label { display:flex; flex-direction:column; align-items:stretch; gap:5px; margin:0; }
+.cad-shell .form-document-property-content .form-sheet-check { flex-direction:row; align-items:center; }
+.cad-shell .form-document-property-content input[type="checkbox"] { width:14px; height:14px; margin:0; flex-shrink:0; }
+.form-sheet-drag-point { position:absolute; pointer-events:none; padding:5px 8px; background:#2671d9; color:white; border-radius:5px; font:11px system-ui; white-space:nowrap; }
+.form-sheet-editor { border-top:1px solid var(--ui-border,#dce1e6); padding:12px 0; display:flex; flex-direction:column; gap:10px; }
+.form-sheet-editor h3 { margin:3px 0; font-size:12px; }
+.form-sheet-editor label { display:flex; flex-direction:column; gap:5px; font-size:11px; color:#626b77; min-width:0; }
+.form-sheet-editor :is(input:not([type=checkbox]),select) { width:100%; min-width:0; height:30px; border:1px solid #d7dde4; border-radius:5px; background:var(--ui-panel,#fff); padding:4px 7px; color:var(--ui-text,#202733); }
+.form-sheet-row { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+.form-sheet-actions { display:flex; flex-wrap:wrap; gap:6px; }
+.form-sheet-editor button { min-height:29px; border:1px solid #d7dde4; border-radius:5px; padding:5px 8px; background:var(--ui-panel,#fff); font-size:11px; }
+.form-sheet-editor button[aria-pressed=true] { color:#155abb; background:#eaf2ff; border-color:#83b3f2; }
+.form-sheet-editor button:disabled { opacity:.4; cursor:not-allowed; }
+.form-sheet-editor p,.form-sheet-legacy p { font-size:11px; line-height:1.5; color:#65707d; margin:0; }
+.form-sheet-editor .form-sheet-check { flex-direction:row; align-items:center; }
+.form-sheet-editor fieldset { border:1px solid #dde2e8; border-radius:6px; margin:0; padding:8px; display:grid; gap:8px; min-width:0; }
+.form-sheet-editor legend { font-size:11px; padding:0 4px; }
+.form-sheet-issues { border-left:2px solid #c47f33; padding:5px 10px; display:grid; gap:6px; }
+.form-sheet-legacy { border-top:1px solid #dde2e8; margin-top:12px; padding-top:12px; }
+.form-sheet-legacy summary { font-size:11px; cursor:pointer; margin-bottom:12px; }
+@media print { .form-sheet-drag-point { display:none; } .form-document-paper [data-sheet-view] > rect { stroke:none !important; } }
+.form-document-viewbar { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:8px; min-height:48px; padding:8px 18px; border-top:1px solid #d8dce2; background:var(--form-v2-chrome); }
+.form-document-viewbar > span { display:flex; align-items:center; gap:10px; font-size:11px; color:var(--form-v2-text-muted); }
+.form-document-viewbar i { width:1px; height:10px; background:var(--form-v2-border); }
+.form-document-viewbar > div { display:flex; gap:3px; }
+.form-document-viewbar select { width:96px; border:0; background:transparent; padding:5px; }
+.form-document-viewbar button[aria-pressed="true"] { background:var(--form-v2-accent-soft); color:var(--form-v2-accent); }
+.form-document-review-strip { margin:0; padding:8px 18px; background:var(--form-v2-surface); border-top:1px solid var(--form-v2-border-soft); color:var(--form-v2-text-muted); font-size:10px; line-height:1.5; }
+.form-document-empty { display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:100%; padding:32px; text-align:center; }
+.form-document-empty > span { display:grid; place-items:center; height:64px; width:64px; background:var(--form-v2-chrome); border:1px solid #d1d7e0; border-radius:16px; color:var(--form-v2-accent); box-shadow:0 3px 12px #1c2b4510; }
+.form-document-empty h2 { margin:20px 0 8px; font-size:22px; letter-spacing:-.04em; font-weight:550; }
+.form-document-empty p { max-width:350px; font-size:13px; line-height:1.7; color:var(--form-v2-text-secondary); }
+.form-document-empty button { margin-top:14px; padding:9px 15px; color:var(--form-v2-accent-ink); background:var(--form-v2-accent); }
+.cad-view-drawing .cad-panel-head { height:56px; border-bottom:1px solid var(--form-v2-border-soft); }
+.cad-view-drawing .cad-scroll { padding:0; }
+.form-document-properties > nav { display:flex; gap:3px; position:sticky; top:0; z-index:2; margin:0; padding:12px; border-bottom:1px solid var(--form-v2-border-soft); background:var(--form-v2-surface); }
+.form-document-properties > nav button { flex:1; min-height:32px; padding:7px 9px; border:0; border-radius:7px; background:transparent; color:var(--form-v2-text-muted); font:12px var(--form-v2-font-ui); cursor:pointer; }
+.form-document-properties > nav button[aria-pressed="true"] { background:var(--form-v2-accent-soft); color:var(--form-v2-accent); font-weight:600; }
+.cad-shell .form-document-property-content > section { padding:16px; margin:0; border:0; border-bottom:1px solid var(--form-v2-border-soft); background:transparent; }
+.cad-shell .form-document-property-content h3 { font-size:13px; letter-spacing:0; text-transform:none; margin:0 0 14px; font-weight:600; }
+.cad-shell .form-document-property-content p { font-size:12px; line-height:1.65; color:var(--form-v2-text-muted); margin:8px 0; }
+.form-document-summary > .ui-icon { color:var(--form-v2-accent); margin-bottom:12px; }
+.cad-shell .form-document-property-content label { display:grid; grid-template-columns:70px minmax(0,1fr); gap:12px; margin:12px 0; align-items:center; color:var(--form-v2-text-secondary); font-size:12px; }
+.cad-shell .form-document-property-content :is(input,select,textarea) { min-width:0; width:100%; padding:9px 10px; border:1px solid var(--form-v2-border); border-radius:7px; color:var(--form-v2-text); background:var(--form-v2-surface-raised); font:12px var(--form-v2-font-ui); }
+.form-document-fields dl { margin:20px 0; padding-top:12px; border-top:1px solid var(--form-v2-border-soft); font-size:11px; }
+.form-document-fields dl > div { display:flex; justify-content:space-between; gap:12px; margin:12px 0; }
+.form-document-fields dt { color:var(--form-v2-text-muted); }
+.form-document-fields dd { margin:0; color:var(--form-v2-text-secondary); text-align:right; }
+.cad-shell .form-document-exports button { display:flex; align-items:center; gap:9px; width:100%; min-height:38px; margin:6px 0; padding:8px 10px; background:var(--form-v2-surface-raised); border:1px solid var(--form-v2-border); border-radius:7px; color:var(--form-v2-text); font-size:12px; text-align:left; cursor:pointer; }
+.form-document-exports small { margin-left:auto; color:var(--form-v2-text-muted); font-size:10px; }
+.form-document-checks { list-style:none; padding:8px 20px; margin:0; }
+.form-document-checks li { display:flex; align-items:flex-start; gap:10px; padding:13px 0; border-bottom:1px solid var(--form-v2-border-soft); }
+.form-document-checks li > span { color:#a86613; font-weight:600; }
+.form-document-checks li[data-state="pass"] > span { color:#267658; }
+.form-document-checks li > div { flex:1; min-width:0; }
+.form-document-checks strong { font-size:12px; font-weight:600; }
+.form-document-checks small { color:var(--form-v2-text-muted); text-transform:capitalize; font-size:10px; }
+.cad-shell .form-document-checks p { margin:5px 0 0; font-size:11px; }
+.form-document-review-export { display:block; margin:12px 20px; padding:10px 14px; border:0; border-radius:8px; background:var(--form-v2-accent); color:var(--form-v2-accent-ink); font:12px var(--form-v2-font-ui); cursor:pointer; }
+.cad-shell .form-document-property-content button:disabled { opacity:.4; cursor:not-allowed; }
+@media(max-width:1280px) {
+  .form-document-workspace { grid-template-columns:132px minmax(0,1fr); }
+  .form-document-toolbar { gap:8px; padding:10px 12px; }
+  .form-document-heading small { display:none; }
+  .form-document-toolbar nav + nav { margin-left:auto; }
+}
+@media(max-width:1100px) {
+  .cad-shell.cad-view-drawing { grid-template-columns:0 minmax(0,1fr) 300px !important; }
+  .cad-shell.cad-view-drawing .cad-inspector { position:relative !important; inset:auto !important; width:auto !important; max-width:none; box-shadow:none; }
+  .form-document-workspace { grid-template-columns:128px minmax(0,1fr); }
+  .form-document-toolbar nav + nav { border:0; padding-left:0; margin-left:0; }
+}
+@media(max-width:700px) {
+  .cad-shell.cad-view-drawing { grid-template-columns:0 minmax(0,1fr) 0 !important; }
+  .cad-shell.cad-view-drawing .cad-inspector { position:absolute !important; inset:var(--ui-topbar-height) 0 0 auto !important; width:min(320px,90vw) !important; box-shadow:-8px 0 30px #18213220; }
+  .form-document-workspace { grid-template-columns:112px minmax(0,1fr); }
+  .form-document-toolbar nav { flex-wrap:wrap; }
+  .form-document-toolbar nav + nav { border:0; padding:0; margin:0; }
+  .form-document-sheets > div { padding:0 4px; }
+  .form-document-page-meta { padding:6px 10px; flex-wrap:wrap; }
+  .form-document-viewbar { padding:6px 10px; }
+  .form-document-review-strip { padding:6px 10px; }
+}
+#form-document-print-root { display:none; }
+@media print {
+  html:has(#form-document-print-root), body:has(#form-document-print-root) { margin:0 !important; padding:0 !important; height:auto !important; min-height:0 !important; overflow:visible !important; background:white !important; }
+  body:has(#form-document-print-root) > :not(#form-document-print-root) { display:none !important; }
+  #form-document-print-root { display:block !important; width:var(--sheet-width); height:var(--sheet-height); margin:0; padding:0; border:0; overflow:hidden; line-height:0; }
+  #form-document-print-root > svg { display:block; width:100%; height:var(--sheet-content-height, 100%); }
+  /* Print only the sheet subtree. Invisible modeling canvases and resize
+     handles must not participate in pagination below a full-height page. */
+  html:has(.cad-view-drawing), body:has(.cad-view-drawing) { margin:0 !important; padding:0 !important; min-height:0 !important; height:auto !important; }
+  .cad-shell.cad-view-drawing > :not(.cad-canvas-wrap),
+  .cad-view-drawing .cad-canvas-wrap > :not(.form-document-workspace):not(style) { display:none !important; }
+  .cad-shell.cad-view-drawing,.cad-view-drawing .cad-canvas-wrap { margin:0 !important; padding:0 !important; border:0 !important; min-height:0 !important; gap:0 !important; }
+  .form-document-edge-overlay,.form-document-inline-note { display:none !important; }
+  .form-document-paper :is([data-sheet-view],[data-sheet-annotation]) { filter:none !important; translate:none !important; }
+  .form-document-paper [data-sheet-annotation][data-document-selected] text { fill:#18202a; }
+  .cad-view-drawing :is(.cad-statusbar,.cad-timeline-dock,.cad-recovery-notice,.cad-tool-shelf,.form-document-toolbar,.form-document-sheets,.form-document-page-meta,.form-document-viewbar,.form-document-review-strip) { display:none !important; }
+  .cad-shell.cad-view-drawing { position:static; display:block !important; height:auto; overflow:visible; }
+  .cad-view-drawing .cad-canvas-wrap,.form-document-workspace,.form-document-stage,.form-document-viewport,.form-document-paper-space { position:static; display:block; width:auto; height:auto; min-width:0 !important; min-height:0; padding:0; margin:0; overflow:visible; background:white; }
+  .form-document-paper { width:100% !important; margin:0; box-shadow:none; outline:0; break-inside:avoid; }
+}
+/* Selection-led SVG workflow. Tools live in the inspector, never over the artwork. */
+.fabric-flow > div { display:grid; grid-template-columns:1fr 1fr; gap:6px; }
+.fabric-shell .fabric-flow button { width:100%; min-height:36px; height:auto; padding:8px; text-align:left; white-space:normal; }
+.fabric-shell :is(.fabric-flow,.fabric-graphics-panel) :is(p,small) { display:block; font-size:11px; line-height:1.6; color:var(--form-v2-text-muted); }
+.fabric-shell .fabric-graphics-panel > button { width:100%; min-height:34px; margin:8px 0; }
+.fabric-shell .fabric-graphics-panel label { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:8px; align-items:center; }
+.fabric-shell .fabric-graphics-panel :is(input,select) { min-width:0; width:100%; }
+.cad-inspector.sketch-simple .cad-scroll > :not(.sketch-workbench):not(.sketch-advanced-toggle) { display:none !important; }
+.cad-shell .sketch-workbench { display:grid; gap:16px; padding:18px; color:var(--form-v2-text); }
+.sketch-workbench header > span { font-size:10px; letter-spacing:.12em; color:var(--form-v2-text-muted); }
+.sketch-workbench h3 { margin:0 0 6px; }
+.sketch-workbench p { margin:0; font-size:12px; line-height:1.55; color:var(--form-v2-text-secondary); }
+.sketch-workbench small { display:block; font-size:11px; line-height:1.5; color:var(--form-v2-text-muted); }
+.sketch-workbench-actions,.sketch-selection-mode,.sketch-transform-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:7px; }
+.sketch-workbench :is(button,input) { width:100%; min-width:0; }
+.cad-shell .sketch-workbench button { min-height:34px; padding:7px 9px; border:1px solid var(--form-v2-border); border-radius:7px; background:var(--form-v2-surface-raised); color:var(--form-v2-text); text-align:center; }
+.cad-shell .sketch-workbench button[aria-pressed=true] { border-color:var(--form-v2-accent); background:var(--form-v2-accent-soft); color:var(--form-v2-accent); }
+.cad-shell .sketch-workbench button.accent { background:var(--form-v2-accent) !important; color:var(--form-v2-accent-ink) !important; border-color:var(--form-v2-accent); }
+.sketch-workbench button:disabled { opacity:.45; cursor:not-allowed; }
+.sketch-workbench button:focus-visible { outline:2px solid var(--form-v2-accent); outline-offset:2px; }
+.cad-shell .sketch-workbench label { display:grid !important; grid-template-columns:minmax(0,1fr); gap:5px; margin:0; font-size:12px; min-width:0; }
+.cad-shell .sketch-workbench input { width:100%; max-width:none; min-width:0; height:34px; padding:6px 9px; box-sizing:border-box; }
+.sketch-extrusion-action { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:8px; align-items:end; }
+.sketch-import-options { padding-bottom:14px; border-bottom:1px solid var(--form-v2-border-soft); }
+.sketch-import-options summary { cursor:pointer; font-size:12px; color:var(--form-v2-text-secondary); }
+.sketch-import-options[open] > :not(summary) { margin-top:10px; }
+.sketch-list-heading { display:flex; align-items:center; gap:5px; font-size:12px; }
+.sketch-list-heading strong { margin-right:auto; white-space:nowrap; }
+.cad-shell .sketch-list-heading button { width:auto; padding:4px 7px; font-size:11px !important; min-height:28px; }
+.sketch-object-list { display:grid; gap:5px; max-height:190px; overflow:auto; }
+.cad-shell .cad-inspector .sketch-workbench .sketch-object-list button { text-align:left; display:grid; align-content:center; gap:3px; height:auto; min-height:52px; line-height:1.4; white-space:normal; }
+.sketch-edit-selection,.sketch-extrusion { border-top:1px solid var(--form-v2-border-soft); padding-top:16px; display:grid; gap:10px; }
+.sketch-edit-selection fieldset { padding:0; margin:0; border:0; min-width:0; display:grid; gap:10px; }
+.cad-shell .sketch-advanced-toggle { display:block; width:calc(100% - 36px); margin:0 18px 20px; padding:10px; border:1px solid var(--form-v2-border); border-radius:7px; }
+.sketch-canvas-toolbar { position:absolute; left:14px; right:14px; top:12px; display:flex; gap:12px; align-items:center; z-index:3; padding:8px; background:var(--form-v2-surface); border:1px solid var(--form-v2-border); border-radius:10px; box-shadow:0 3px 12px #17243a0a; }
+.sketch-canvas-toolbar span { flex:1; font-size:12px; color:var(--form-v2-text-muted); }
+.sketch-canvas-toolbar button { border:1px solid var(--form-v2-border); border-radius:6px; padding:7px 12px; background:var(--form-v2-surface-raised); color:var(--form-v2-text); }
+@media(max-width:1050px) { .sketch-canvas-toolbar span { display:none; } .sketch-canvas-toolbar { right:auto; } }
+.fabric-pattern-precision details { border-top:1px solid var(--form-v2-border-soft); margin-top:14px; padding-top:12px; }
+.fabric-pattern-precision summary { cursor:pointer; font-weight:600; padding:4px 0 10px; }
+.fabric-pattern-precision small { display:block; color:var(--form-v2-text-muted); line-height:1.5; }
+.fabric-pattern-row { display:flex; align-items:center; gap:8px; margin:8px 0; font-size:12px; }
+.fabric-pattern-row span { flex:1; overflow-wrap:anywhere; }
+.fabric-pattern-walk { display:grid; gap:5px; padding:12px 0; border-bottom:1px solid var(--form-v2-border-soft); font-size:12px; }
+.fabric-pattern-precision input,.fabric-pattern-precision select { min-width:0; }
+
+/* Keep the action column within the viewport: equal 1fr side columns let
+   their min-content widths push Project/Open/Export off-screen. */
+@media (min-width: 1101px) {
+  .cad-shell .cad-topbar { grid-template-columns: minmax(0, 1fr) auto auto; }
+  .cad-shell .cad-brand em { min-width: 0; }
+}

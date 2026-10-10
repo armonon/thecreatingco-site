@@ -1,0 +1,23 @@
+{
+  "task_id": "FILELAB-VALIDATE-001",
+  "title": "Validate FileLab focused MVP and local-first capability boundary",
+  "category": "RESEARCH",
+  "workstream": "NEW_PRODUCT_VALIDATION",
+  "product": "filelab",
+  "model": "openai/gpt-6-luna",
+  "status": "WAITING",
+  "dependencies": [],
+  "scores": {
+    "impact": 7,
+    "user_value": 8,
+    "confidence": 4,
+    "effort": 4,
+    "risk": 5
+  },
+  "expected_value": "Determine whether one local-first adaptive file workbench has enough differentiated demand and technical feasibility to justify a narrow prototype, without multiplying the portfolio by dozens of converters.",
+  "next_action": "Research comparable tools, select a 4-format MVP boundary, verify local browser/desktop transform feasibility, define privacy and failure boundaries, and return CONTINUE/PIVOT/KILL with evidence.",
+  "severity": "P4",
+  "area": "product-validation",
+  "test_requirements": "No prototype build. Evidence must distinguish sourced market facts from hypotheses and include an explicit capability matrix for image, video, audio and PDF paths.",
+  "source_evidence": "Founder direction in Discord #thecreativeco on 2026-10-09: upload-first FileLab concept covering conversion, compression, extraction and preparation across image/video/audio/PDF."
+}

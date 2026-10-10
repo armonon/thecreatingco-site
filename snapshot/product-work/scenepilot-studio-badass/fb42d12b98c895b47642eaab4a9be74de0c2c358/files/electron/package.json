@@ -1,0 +1,121 @@
+{
+  "name": "scenepilot-desktop",
+  "version": "0.1.16",
+  "description": "ScenePilot Pro: advanced beat-aware timeline and motion-composition editing for macOS",
+  "author": "ScenePilot Studio",
+  "repository": "https://github.com/armonon/scenepilot-studio-badass",
+  "main": "main.js",
+  "type": "module",
+  "build": {
+    "appId": "com.armonon.scenepilot",
+    "productName": "ScenePilot",
+    "electronVersion": "43.2.0",
+    "artifactName": "ScenePilot-${version}-${arch}.${ext}",
+    "asar": true,
+    "npmRebuild": false,
+    "afterSign": "electron/notarize.mjs",
+    "afterPack": "electron/verify-vendor-signatures.mjs",
+    "directories": {
+      "output": "../release"
+    },
+    "files": [
+      "main.js",
+      "render-launches.js",
+      "pcm-staging.js",
+      "atomic-file.js",
+      "generated-audio.js",
+      "desktop-io.js",
+      "media-engine.js",
+      "native-roto.js",
+      "neural-inpaint.js",
+      "roto-cache.js",
+      "inpaint-cache.js",
+      "diagnostics.js",
+      "preload.cjs",
+      "update-utils.js",
+      "app-icon-512.png",
+      "package.json",
+      "renderer/**/*"
+    ],
+    "extraResources": [
+      {
+        "from": "media-tools",
+        "to": "media-tools",
+        "filter": [
+          "ffmpeg",
+          "ffprobe",
+          "ffmpeg.exe",
+          "ffprobe.exe",
+          "*.txt",
+          "*.md"
+        ]
+      },
+      {
+        "from": "native-tools",
+        "to": "native-tools",
+        "filter": [
+          "scenepilot-vision-roto"
+        ]
+      },
+      {
+        "from": "native-models",
+        "to": "native-models",
+        "filter": [
+          "sam2-tiny/**/*"
+        ]
+      },
+      {
+        "from": "inpaint-provider",
+        "to": "inpaint-provider",
+        "filter": [
+          "ScenePilotInpaintProvider.mjs",
+          "ScenePilotInpaintProvider.mjs.json",
+          "*.txt",
+          "gmcnn-places2-tf/**/*",
+          "runtime/**/*"
+        ]
+      }
+    ],
+    "mac": {
+      "minimumSystemVersion": "13.0",
+      "category": "public.app-category.video",
+      "icon": "app-icon-512.png",
+      "identity": "Armon Nasiri (NJBZDU7XZX)",
+      "hardenedRuntime": true,
+      "notarize": false,
+      "entitlements": "electron/entitlements.mac.plist",
+      "entitlementsInherit": "electron/entitlements.mac.plist",
+      "target": [
+        {
+          "target": "dmg",
+          "arch": [
+            "arm64"
+          ]
+        }
+      ],
+      "signIgnore": [
+        "inpaint-provider/runtime/openvino-node/bin/.*\\.(dylib|node|so)$"
+      ]
+    },
+    "dmg": {
+      "title": "ScenePilot ${version}",
+      "iconSize": 112,
+      "window": {
+        "width": 540,
+        "height": 380
+      },
+      "contents": [
+        {
+          "x": 150,
+          "y": 190
+        },
+        {
+          "x": 390,
+          "y": 190,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    }
+  }
+}

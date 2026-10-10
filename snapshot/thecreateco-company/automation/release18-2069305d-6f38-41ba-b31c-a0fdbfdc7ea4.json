@@ -1,0 +1,70 @@
+{
+  "id": "2069305d-6f38-41ba-b31c-a0fdbfdc7ea4",
+  "declarationKey": "company-director",
+  "agentId": "main",
+  "name": "thecreateco company director",
+  "enabled": true,
+  "createdAtMs": 1791416407429,
+  "schedule": {
+    "kind": "cron",
+    "expr": "10 * * * *",
+    "tz": "America/Los_Angeles"
+  },
+  "sessionTarget": "isolated",
+  "wakeMode": "now",
+  "payload": {
+    "kind": "agentTurn",
+    "message": "Run one bounded thecreateco company-director cycle, not a marketing-only cycle.\nWorkspace: /Users/agentsattari/thecreateco-company.\nRead AGENTS.md, DIRECTIVE.md, engine/README.md and COMPANY_STATE.md. If PAUSE exists,\ndo nothing and stop. Use Python stdlib CLI engine/company.py, never edit SQLite.\nRecover expired leases, refresh state, then select the highest-value eligible safe\ntask. Honor active ownership and existing product-specific holds. Claim it with\na unique owner name for this run; preserve the returned lease_token and heartbeat\nas needed. Execute ONE bounded task or audit batch, not the entire backlog.\n\nUse GPT-6.1 Sol for direction and difficult engineering decisions; delegate\nindependent scoped volume/research to Luna and creative/UX review to ChatGPT/Sol. Read data/model-routing.json; record actual model and\nfallback. Marketing's existing engine handles marketing drafts, not engineering.\nConsequential decisions may justify a separate independent OpenAI/Sol review.\nDo not spawn ongoing workers without a durable task owner and completion path.\n\nInspect evidence relevant to the chosen task, run appropriate baseline checks,\nmake reversible local improvements in an isolated branch when needed, and test.\nKeep existing features; no blind rewrites, branch-protection bypass, production\nrollback/deploy, social posting, outreach sending, spend or account changes from\nthis scheduled company job. Prepare external changes for their existing review\npath. Local fixes, tests, evidence collection and drafts are authorized.\n\nWrite a dated report under reports/ with actual commands, observations, tests,\nlimitations and the next action. Finish the task via CLI using owner/token and\nevidence path. Use BLOCKED with an explicit reason when access is missing; do\nnot invent metrics or mark unverified work complete. Company metrics require\nsource, reporting period and observation time. Update products/context through\nthe CLI when evidence changes. Refresh after every meaningful batch.\n\nStop within 35 minutes, recording a checkpoint if incomplete. Do not create busywork\nwhen no useful safe work is available. Return a concise factual summary for run\nhistory only; do not send messages to any channel or person from this job.\n\nCore Product Lab amendment: read core-product-lab/DIRECTIVE.md and HEALTH.md.\nPrioritize its golden-workflow tasks above unrelated new app experiments; use\npython3 core-product-lab/lab.py next and respect active per-product ownership.\nStemDeck local development is reopened by the explicit Oct 7 flagship directive;\nunrelated Sattari/music scope and all release/licensing gates remain unchanged.\n\nOwner preference: no Claude/Sonnet/Opus reviews or review fallbacks; use ChatGPT/OpenAI.\n\n\nLATEST OWNER AUTHORIZATION (2026-10-07 17:56 Pacific): Before execution read /Users/agentsattari/thecreateco-company/AUTONOMY.md. Armon says do not wait for personal review; keep upgrading and pushing and send reports often. This overrides earlier local-only/no-push wording for routine scoped tested fixes: perform independent OpenAI review as appropriate, commit/push and follow normal PR/CI and stack gates without an extra Armon signoff. Do not bypass checks or merge unreviewed downstack work. Preserve source/deploy and high-risk boundaries. The dedicated 30-minute progress reporter handles channel reporting; this job retains its own delivery policy. Review-only weekly/monthly jobs remain reviews, not release jobs.\n\n\nNAMED18 RELEASE ASSIGNMENT: Read release-program/DIRECTIVE.md, manifest.json and RELEASE_MATRIX.md. Scope is now confirmed. Prioritize first wave Bounce, Pocket Studio, Key & BPM, Glyph Studio; preserve excluded apps, their data/site entries/shared dependencies. Continue via durable checkpoints across cycles; one wave or task COMPLETE is not product completion. Honor active owners and update exact-candidate evidence after milestones.",
+    "model": "openai/gpt-6.1-sol",
+    "fallbacks": [
+      "openai/gpt-6-sol"
+    ],
+    "thinking": "medium",
+    "timeoutSeconds": 2100,
+    "toolsAllow": [
+      "*"
+    ]
+  },
+  "delivery": {
+    "mode": "none",
+    "channel": "last"
+  },
+  "scheduledToolPolicy": {
+    "version": 1,
+    "mode": "trusted"
+  },
+  "state": {
+    "nextRunAtMs": 1791425400000,
+    "lastRunAtMs": 1791421800012,
+    "lastRunStatus": "error",
+    "lastStatus": "error",
+    "lastDurationMs": 636735,
+    "lastDeliveryStatus": "not-requested",
+    "lastFailureNotificationDeliveryStatus": "not-requested",
+    "consecutiveErrors": 1,
+    "consecutiveSkipped": 0,
+    "lastDelivered": false,
+    "lastError": "Luma security patch reviewed and pushed in [PR #5](https://github.com/armonon/luma-studio/pull/5). Production audit: 3 high findings → 0; three local builds and typecheck passed.\n\nGitHub CI never started due payment/spending-limit restrictions. Existing test/lint failures also remain. Task checkpointed BLOCKED; nothing merged or deployed.\n\n[Report](/Users/agentsattari/thecreateco-company/reports/luma-security-2026-10-07/README.md).",
+    "lastDiagnostics": {
+      "summary": "Luma security patch reviewed and pushed in [PR #5](https://github.com/armonon/luma-studio/pull/5). Production audit: 3 high findings → 0; three local builds and typecheck passed.\n\nGitHub CI never started due payment/spending-limit restrictions. Existing test/lint failures also remain. Task checkpointed BLOCKED; nothing merged or deployed.\n\n[Report](/Users/agentsattari/thecreateco-company/reports/luma-security-2026-10-07/README.md).",
+      "entries": [
+        {
+          "ts": 1791422436707,
+          "source": "agent-run",
+          "severity": "error",
+          "message": "Luma security patch reviewed and pushed in [PR #5](https://github.com/armonon/luma-studio/pull/5). Production audit: 3 high findings → 0; three local builds and typecheck passed.\n\nGitHub CI never started due payment/spending-limit restrictions. Existing test/lint failures also remain. Task checkpointed BLOCKED; nothing merged or deployed.\n\n[Report](/Users/agentsattari/thecreateco-company/reports/luma-security-2026-10-07/README.md)."
+        }
+      ]
+    },
+    "lastDiagnosticSummary": "Luma security patch reviewed and pushed in [PR #5](https://github.com/armonon/luma-studio/pull/5). Production audit: 3 high findings → 0; three local builds and typecheck passed.\n\nGitHub CI never started due payment/spending-limit restrictions. Existing test/lint failures also remain. Task checkpointed BLOCKED; nothing merged or deployed.\n\n[Report](/Users/agentsattari/thecreateco-company/reports/luma-security-2026-10-07/README.md)."
+  },
+  "updatedAtMs": 1791425393287,
+  "configRevision": "sha256:5u5flo-eeJaDcNqXVZK_Ur0htMtE4qn0bNFrIhEfPJA",
+  "nextRunAtMs": 1791425400000,
+  "lastRunAtMs": 1791421800012,
+  "lastRunStatus": "error",
+  "lastRunError": "Luma security patch reviewed and pushed in [PR #5](https://github.com/armonon/luma-studio/pull/5). Production audit: 3 high findings → 0; three local builds and typecheck passed.\n\nGitHub CI never started due payment/spending-limit restrictions. Existing test/lint failures also remain. Task checkpointed BLOCKED; nothing merged or deployed.\n\n[Report](/Users/agentsattari/thecreateco-company/reports/luma-security-2026-10-07/README.md).",
+  "lastDelivered": false,
+  "lastDeliveryStatus": "not-requested",
+  "lastFailureNotificationDeliveryStatus": "not-requested"
+}

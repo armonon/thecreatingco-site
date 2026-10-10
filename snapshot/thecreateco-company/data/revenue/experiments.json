@@ -1,0 +1,61 @@
+{
+  "updated_at": "2026-10-08T03:58:13.875181+00:00",
+  "experiments": [
+    {
+      "experiment_id": "E01",
+      "status": "DEFERRED_NOT_LAUNCHED",
+      "owner": "revenue-director/Growth",
+      "hypothesis": "3 of 5 qualified small studios report same weekly costly workflow; 2 request proposal",
+      "audience": "2\u201310 person content studios",
+      "channel": "Permissioned relationships; existing authorized Growth outreach only",
+      "offer": "Fixed-scope workflow diagnostic/pilot",
+      "message": "Non-leading workflow interview, not unsupported replacement claims",
+      "cta": "Discuss last concrete workflow failure",
+      "budget_usd": 0,
+      "labor_budget_hours": 6,
+      "success_metric": "5 completed interviews; 3 matched recent problems; 2 proposal requests; later 1 verified paid pilot",
+      "time_window": "48 active-work hours prep; 7 calendar days for responses after launch",
+      "start_date": null,
+      "end_date": null,
+      "result": null,
+      "decision": "Defer generic service research while focused web utility E02 is validated; not rejected by customer evidence.",
+      "kill_criteria": "No repeated pain after 5 completed interviews; no proposal requests after 10; contribution below 40% under explicit measured/estimated cost mix",
+      "dependencies": [
+        "Existing Growth permissions and real inspected personalization",
+        "Scope/price authority before paid offer",
+        "Delivery feasibility test"
+      ],
+      "artifact": "data/revenue/first-validation-pack.md"
+    },
+    {
+      "experiment_id": "E02",
+      "queue_task": "W03",
+      "status": "PREPARED_NOT_LAUNCHED",
+      "owner": "PRODUCT/QA + existing Growth, revenue director decision owner",
+      "hypothesis": "Creators can make and use an original font; a subset identifies the same genuinely additional paid-value workflow.",
+      "audience": "Five independent lettering/brand creators with a recent custom-font job",
+      "channel": "Existing authorized Growth research and opt-in testers; no new send authority",
+      "offer": "Free existing Glyph first-font workflow; paid extensions hypothetical only",
+      "message": "Make and use your own short lettering sample; show where the workflow breaks. Disclose alpha limitations.",
+      "cta": "Save, reopen, export, and use original glyphs in the actual destination app",
+      "budget_usd": 0,
+      "labor_budget_hours": 6,
+      "success_metric": "4/5 complete save/export/use; 3 name same unmet additional workflow; 2 request that extension at a shown internal price concept. Requests are not sales.",
+      "time_window": "48 active-work hours prep, then up to 7 calendar days for available cohort",
+      "start_date": null,
+      "end_date": null,
+      "result": null,
+      "decision": "NOT_RUN",
+      "kill_criteria": "Fix data loss/output blockers before further attempts. No useful unmet need in 5: keep free and do not build premium. No consistent paid-value request after 10 qualified attempts: stop extension hypothesis.",
+      "dependencies": [
+        "Narrow automated destination-app evidence verified; observe actual participant installation/GUI in disclosed alpha research",
+        "Existing consent and external-action permissions",
+        "M03 truthful demo; M04 prior outcome review before further outreach"
+      ],
+      "artifact": "reports/2026-10-07-web-utilities/README.md",
+      "source": "Discord #millions 1557600150824812625",
+      "technical_evidence": "/Users/agentsattari/thecreateco-company/reports/glyph-destination-20261007/README.md",
+      "validation_pack": "/Users/agentsattari/thecreateco-company/reports/glyph-destination-20261007/creator-validation-pack.md"
+    }
+  ]
+}

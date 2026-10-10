@@ -1,0 +1,1341 @@
+import {
+  Document,
+  Layer,
+  NEUTRAL_TONE,
+  ToneParams,
+  applyCurvesToImageData,
+  applyHslToImageData,
+  applyLevelsToImageData,
+  findClippingBase,
+  newCanvas,
+  resolvedBlendIf,
+  resolvedBlendPasses,
+  resolvedFillOpacity,
+} from "./document";
+import { drawLayerContentManaged } from "./precision-renderer";
+import { applySmartFilters, smartFilterInfluenceRadius } from "./filters";
+import { compositeBlendStack } from "./blend";
+import { isNeutralBlendIf } from "./blend";
+import { composeLayerWithEffects, FULL_BACKDROP_KINDS, layerEffectReach } from "./layer-effects";
+import { getDisplayCtx } from "./gl-renderer";
+import { softProofDisplayRgb } from "./color";
+import { DEFAULT_TILE_SIZE } from "./tile-store";
+import type { PixelRect } from "./tile-store";
+import type { DisplayViewport } from "./viewport";
+import {
+  DISPLAY_P3_PROFILE,
+  SRGB_PROFILE,
+  createProofingTransform,
+} from "./color-management";
+import { applyProAdjustmentToImageData } from "./pro-adjustments";
+import { hasLayerMask, layerMaskRegionCanvas } from "./layer-mask";
+import { pathContours, traceContours } from "./vector-path";
+import { requestTextFonts } from "./text-font-resources";
+
+type Scratch = {
+  a: HTMLCanvasElement;
+  b: HTMLCanvasElement;
+  layerBuf: HTMLCanvasElement;
+  contentBuf: HTMLCanvasElement;
+  effectBuf: HTMLCanvasElement;
+  clipBuf: HTMLCanvasElement;
+  /** The layer's full extent, for Transparency Shapes Layer when it is off. */
+  extentBuf: HTMLCanvasElement;
+  /** Reused by nesting depth; sibling groups never need distinct buffers. */
+  groupBufs: HTMLCanvasElement[];
+};
+
+type PreparedLayers = Map<string | undefined, Layer[]>;
+
+type RenderFrame = {
+  x: number;
+  y: number;
+  width: number;
+  height: number;
+  outputWidth: number;
+  outputHeight: number;
+};
+
+type ScratchCacheEntry = {
+  buffers: Scratch;
+  bytes: number;
+  used: number;
+};
+
+const scratchCache = new Map<string, ScratchCacheEntry>();
+const MAX_SCRATCH_CACHE_ENTRIES = 6;
+const MAX_SCRATCH_CACHE_BYTES = 32 * 1024 * 1024;
+let scratchCacheBytes = 0;
+let scratchCacheClock = 0;
+
+function trimScratchCache(protectedKey: string) {
+  while ((scratchCache.size > MAX_SCRATCH_CACHE_ENTRIES || scratchCacheBytes > MAX_SCRATCH_CACHE_BYTES) &&
+    scratchCache.size > 1) {
+    let oldestKey = "";
+    let oldestUse = Infinity;
+    for (const [candidate, entry] of scratchCache) {
+      if (candidate === protectedKey || entry.used >= oldestUse) continue;
+      oldestKey = candidate;
+      oldestUse = entry.used;
+    }
+    if (!oldestKey) break;
+    scratchCacheBytes -= scratchCache.get(oldestKey)!.bytes;
+    scratchCache.delete(oldestKey);
+  }
+  const protectedEntry = scratchCache.get(protectedKey);
+  if (protectedEntry && protectedEntry.bytes > MAX_SCRATCH_CACHE_BYTES) {
+    // The active render still owns the buffers, but an oversized full-document
+    // scratch set must not remain retained by the cache after the frame.
+    scratchCacheBytes -= protectedEntry.bytes;
+    scratchCache.delete(protectedKey);
+  }
+}
+
+function scratch(width: number, height: number): Scratch {
+  const key = `${width}:${height}`;
+  const hit = scratchCache.get(key);
+  if (hit) {
+    hit.used = ++scratchCacheClock;
+    return hit.buffers;
+  }
+  const buffers = {
+    a: newCanvas(width, height),
+    b: newCanvas(width, height),
+    layerBuf: newCanvas(width, height),
+    contentBuf: newCanvas(width, height),
+    effectBuf: newCanvas(width, height),
+    clipBuf: newCanvas(width, height),
+    extentBuf: newCanvas(width, height),
+    groupBufs: [],
+  };
+  const bytes = width * height * 4 * 7;
+  scratchCache.set(key, { buffers, bytes, used: ++scratchCacheClock });
+  scratchCacheBytes += bytes;
+  trimScratchCache(key);
+  return buffers;
+}
+
+function groupBuffer(s: Scratch, depth: number, width: number, height: number) {
+  let canvas = s.groupBufs[depth];
+  if (!canvas) {
+    canvas = newCanvas(width, height);
+    s.groupBufs[depth] = canvas;
+    const key = `${width}:${height}`;
+    const entry = scratchCache.get(key);
+    if (entry) {
+      const bytes = width * height * 4;
+      entry.bytes += bytes;
+      scratchCacheBytes += bytes;
+      trimScratchCache(key);
+    }
+  }
+  clearContext(canvas.getContext("2d")!, width, height);
+  return canvas;
+}
+
+function prepareLayers(doc: Document): PreparedLayers {
+  const knownGroups = new Set(doc.layers.filter((layer) => layer.kind === "group").map((layer) => layer.id));
+  const prepared: PreparedLayers = new Map();
+  for (const layer of doc.layers) {
+    const parentId = layer.parentId && knownGroups.has(layer.parentId) ? layer.parentId : undefined;
+    const siblings = prepared.get(parentId);
+    if (siblings) siblings.push(layer);
+    else prepared.set(parentId, [layer]);
+  }
+  return prepared;
+}
+
+const preparedLayerCache = new WeakMap<Document, { revision: number; layers: PreparedLayers }>();
+let preparedLayerCacheHits = 0;
+let preparedLayerCacheMisses = 0;
+
+function preparedLayersFor(doc: Document, hierarchyRevision?: number) {
+  if (hierarchyRevision === undefined) return prepareLayers(doc);
+  const cached = preparedLayerCache.get(doc);
+  if (cached?.revision === hierarchyRevision) {
+    preparedLayerCacheHits += 1;
+    return cached.layers;
+  }
+  preparedLayerCacheMisses += 1;
+  const layers = prepareLayers(doc);
+  preparedLayerCache.set(doc, { revision: hierarchyRevision, layers });
+  return layers;
+}
+
+export function rendererLayerPlanningStats() {
+  return { hits: preparedLayerCacheHits, misses: preparedLayerCacheMisses };
+}
+
+function clearContext(ctx: CanvasRenderingContext2D, width: number, height: number) {
+  ctx.save();
+  ctx.setTransform(1, 0, 0, 1, 0, 0);
+  ctx.globalCompositeOperation = "source-over";
+  ctx.globalAlpha = 1;
+  ctx.filter = "none";
+  ctx.clearRect(0, 0, width, height);
+  ctx.restore();
+}
+
+function frameScale(frame: RenderFrame) {
+  return {
+    x: frame.outputWidth / frame.width,
+    y: frame.outputHeight / frame.height,
+  };
+}
+
+function frameTransform(frame: RenderFrame) {
+  const scale = frameScale(frame);
+  return { a: scale.x, b: 0, c: 0, d: scale.y, e: -frame.x * scale.x, f: -frame.y * scale.y };
+}
+
+export function toneToFilter(tone: ToneParams): string {
+  const brightness = 1 + tone.exposure * 0.35;
+  const contrast = 1 + tone.contrast / 100;
+  const saturate = 1 + tone.vibrance / 200;
+  const hue = -tone.temperature * 0.4;
+  const sepia = Math.max(0, tone.temperature) / 200;
+  return `brightness(${brightness}) contrast(${contrast}) saturate(${saturate}) hue-rotate(${hue}deg) sepia(${sepia})`;
+}
+
+function applyHighlightsShadows(
+  target: CanvasRenderingContext2D,
+  width: number,
+  height: number,
+  highlights: number,
+  shadows: number,
+) {
+  if (highlights === 0 && shadows === 0) return;
+  const img = target.getImageData(0, 0, width, height);
+  const data = img.data;
+  const hi = highlights / 100;
+  const sh = shadows / 100;
+  for (let i = 0; i < data.length; i += 4) {
+    const r = data[i] / 255;
+    const g = data[i + 1] / 255;
+    const b = data[i + 2] / 255;
+    const l = 0.2126 * r + 0.7152 * g + 0.0722 * b;
+    const shift = sh * Math.pow(1 - l, 2) * 0.6 + hi * Math.pow(l, 2) * -0.6;
+    data[i] = clamp255((r + shift) * 255);
+    data[i + 1] = clamp255((g + shift) * 255);
+    data[i + 2] = clamp255((b + shift) * 255);
+  }
+  target.putImageData(img, 0, 0);
+}
+
+function clamp255(x: number) {
+  return x < 0 ? 0 : x > 255 ? 255 : x;
+}
+
+let antsOffset = 0;
+
+export type RenderOptions = {
+  /** File/processing pixels must not inherit the monitor's wide-gamut space. */
+  outputColorSpace?: "srgb";
+  checkerboard?: boolean;
+  selectionOverlay?: boolean;
+  proofing?: boolean;
+  /** Stable document-content revision. Enables bounded viewport tile reuse. */
+  cacheRevision?: number;
+  /** Changes only when layer order or parentage changes. Avoids O(layer-count)
+   * hierarchy rebuilding on brush, pan, zoom, and selection frames. */
+  hierarchyRevision?: number;
+  /** Document-space regions changed since the last frame on this target. */
+  dirtyRegions?: readonly PixelRect[];
+  /** Non-destructive channel inspection; omitted for the RGB composite. */
+  channelView?: "rgb" | "red" | "green" | "blue" | "alpha";
+  /** Interactive-only layer isolation. Export paths never set this option. */
+  focus?: FocusRenderOptions | null;
+};
+
+export type FocusRenderOptions = {
+  layerId: string;
+  target: "pixels" | "mask";
+  context: "off" | "ghost" | "full";
+};
+
+export const INTERACTIVE_PERFORMANCE_TARGETS = {
+  brushFrameMs: 16.7,
+  navigationFrameMs: 33.3,
+  maximumDocumentEdge: 50_000,
+} as const;
+
+type ViewportRenderSample = {
+  durationMs: number;
+  renderedTiles: number;
+  totalTiles: number;
+  partial: boolean;
+};
+
+const viewportRenderSamples: ViewportRenderSample[] = [];
+const MAX_RENDER_SAMPLES = 120;
+const viewportTargetState = new WeakMap<HTMLCanvasElement, { signature: string; document: Document }>();
+
+function viewportSignature(viewport: DisplayViewport) {
+  return [
+    viewport.x.toFixed(5),
+    viewport.y.toFixed(5),
+    viewport.width.toFixed(5),
+    viewport.height.toFixed(5),
+    viewport.outputWidth,
+    viewport.outputHeight,
+  ].join(":");
+}
+
+function recordViewportRender(sample: ViewportRenderSample) {
+  viewportRenderSamples.push(sample);
+  if (viewportRenderSamples.length > MAX_RENDER_SAMPLES) viewportRenderSamples.shift();
+}
+
+export function viewportRenderPerformanceStats() {
+  const durations = viewportRenderSamples.map((sample) => sample.durationMs).sort((a, b) => a - b);
+  const latest = viewportRenderSamples.at(-1);
+  const averageMs = durations.length
+    ? durations.reduce((sum, duration) => sum + duration, 0) / durations.length
+    : 0;
+  const p95Ms = durations.length
+    ? durations[Math.min(durations.length - 1, Math.floor(durations.length * 0.95))]
+    : 0;
+  return {
+    samples: durations.length,
+    latestMs: latest?.durationMs ?? 0,
+    averageMs,
+    p95Ms,
+    latestRenderedTiles: latest?.renderedTiles ?? 0,
+    latestTotalTiles: latest?.totalTiles ?? 0,
+    latestPartial: latest?.partial ?? false,
+    targets: INTERACTIVE_PERFORMANCE_TARGETS,
+  };
+}
+
+/** Screen-tile keys intersecting document-space dirty regions. */
+export function viewportTileKeysForDirtyRegions(
+  viewport: DisplayViewport,
+  dirtyRegions: readonly PixelRect[],
+  overscanPixels = 0,
+  tilePixels = DEFAULT_TILE_SIZE,
+) {
+  const keys = new Set<string>();
+  const scaleX = viewport.outputWidth / viewport.width;
+  const scaleY = viewport.outputHeight / viewport.height;
+  const columns = Math.ceil(viewport.outputWidth / tilePixels);
+  const rows = Math.ceil(viewport.outputHeight / tilePixels);
+  for (const region of dirtyRegions) {
+    if (region.width <= 0 || region.height <= 0) continue;
+    const left = (region.x - viewport.x) * scaleX - overscanPixels;
+    const top = (region.y - viewport.y) * scaleY - overscanPixels;
+    const right = (region.x + region.width - viewport.x) * scaleX + overscanPixels;
+    const bottom = (region.y + region.height - viewport.y) * scaleY + overscanPixels;
+    if (right <= 0 || bottom <= 0 || left >= viewport.outputWidth || top >= viewport.outputHeight) continue;
+    const firstColumn = Math.max(0, Math.floor(left / tilePixels));
+    const lastColumn = Math.min(columns - 1, Math.floor(Math.max(0, right - 0.000001) / tilePixels));
+    const firstRow = Math.max(0, Math.floor(top / tilePixels));
+    const lastRow = Math.min(rows - 1, Math.floor(Math.max(0, bottom - 0.000001) / tilePixels));
+    for (let row = firstRow; row <= lastRow; row += 1) {
+      for (let column = firstColumn; column <= lastColumn; column += 1) keys.add(`${column}:${row}`);
+    }
+  }
+  return keys;
+}
+
+type ViewportCacheEntry = { canvas: HTMLCanvasElement; used: number; bytes: number };
+type ViewportCacheState = { tiles: Map<string, ViewportCacheEntry>; bytes: number };
+const viewportCaches = new WeakMap<Document, ViewportCacheState>();
+const MAX_VIEWPORT_CACHE_TILES = 96;
+const MAX_VIEWPORT_CACHE_BYTES = 32 * 1024 * 1024;
+let viewportCacheClock = 0;
+let viewportCacheHits = 0;
+let viewportCacheMisses = 0;
+let viewportCacheEvictions = 0;
+
+function viewportCacheKey(frame: RenderFrame, options: RenderOptions) {
+  return [
+    options.cacheRevision,
+    frame.x.toFixed(5),
+    frame.y.toFixed(5),
+    frame.width.toFixed(5),
+    frame.height.toFixed(5),
+    frame.outputWidth,
+    frame.outputHeight,
+    options.proofing ?? true,
+    options.channelView ?? "rgb",
+    options.focus?.layerId ?? "project",
+    options.focus?.target ?? "pixels",
+    options.focus?.context ?? "full",
+  ].join(":");
+}
+
+function viewportTile(
+  doc: Document,
+  frame: RenderFrame,
+  options: RenderOptions,
+  preparedLayers: () => PreparedLayers,
+) {
+  if (options.cacheRevision === undefined) return renderCompositeRegion(doc, frame, options, preparedLayers());
+  let state = viewportCaches.get(doc);
+  if (!state) {
+    state = { tiles: new Map(), bytes: 0 };
+    viewportCaches.set(doc, state);
+  }
+  const cache = state.tiles;
+  const key = viewportCacheKey(frame, options);
+  viewportCacheClock += 1;
+  const hit = cache.get(key);
+  if (hit) {
+    hit.used = viewportCacheClock;
+    viewportCacheHits += 1;
+    return hit.canvas;
+  }
+  viewportCacheMisses += 1;
+  const rendered = renderCompositeRegion(doc, frame, options, preparedLayers());
+  const canvas = newCanvas(frame.outputWidth, frame.outputHeight);
+  canvas.getContext("2d")!.drawImage(rendered, 0, 0);
+  const bytes = frame.outputWidth * frame.outputHeight * 4;
+  cache.set(key, { canvas, used: viewportCacheClock, bytes });
+  state.bytes += bytes;
+  while ((cache.size > MAX_VIEWPORT_CACHE_TILES || state.bytes > MAX_VIEWPORT_CACHE_BYTES) && cache.size > 1) {
+    let oldestKey = "";
+    let oldestUse = Infinity;
+    for (const [candidate, entry] of cache) {
+      if (candidate === key || entry.used >= oldestUse) continue;
+      oldestKey = candidate;
+      oldestUse = entry.used;
+    }
+    if (oldestKey) {
+      state.bytes -= cache.get(oldestKey)!.bytes;
+      cache.delete(oldestKey);
+      viewportCacheEvictions += 1;
+    } else break;
+  }
+  return canvas;
+}
+
+export function viewportRenderCacheStats() {
+  return {
+    hits: viewportCacheHits,
+    misses: viewportCacheMisses,
+    evictions: viewportCacheEvictions,
+    maxTilesPerDocument: MAX_VIEWPORT_CACHE_TILES,
+    maxBytesPerDocument: MAX_VIEWPORT_CACHE_BYTES,
+    scratchCacheEntries: scratchCache.size,
+    scratchCacheBytes,
+    maxScratchCacheBytes: MAX_SCRATCH_CACHE_BYTES,
+  };
+}
+
+function renderCompositeRegion(
+  doc: Document,
+  frame: RenderFrame,
+  options: RenderOptions,
+  preparedLayers = prepareLayers(doc),
+) {
+  const s = scratch(frame.outputWidth, frame.outputHeight);
+  const composite = s.a.getContext("2d")!;
+  clearContext(composite, frame.outputWidth, frame.outputHeight);
+
+  const focus = options.focus;
+  const focusedLayer = focus ? doc.layers.find((layer) => layer.id === focus.layerId) : null;
+  if (!focus || !focusedLayer || focus.context === "full") {
+    renderLayerSequence(composite, s, doc, frame, preparedLayers, undefined, 0);
+    if (focus?.target === "mask" && focusedLayer && hasLayerMask(focusedLayer)) {
+      drawMaskOverlay(composite, s, doc, focusedLayer, frame, false);
+    }
+  } else if (focus.target === "mask" && hasLayerMask(focusedLayer)) {
+    if (focus.context === "ghost") {
+      renderLayerSequence(composite, s, doc, frame, preparedLayers, undefined, 0);
+      muteComposite(composite, s, frame);
+      drawMaskOverlay(composite, s, doc, focusedLayer, frame, true);
+    } else {
+      drawMaskSolo(composite, s, doc, focusedLayer, frame);
+    }
+  } else {
+    const included = focusLayerSet(doc, focusedLayer.id);
+    if (focus.context === "ghost") {
+      renderLayerSequence(composite, s, doc, frame, preparedLayers, undefined, 0);
+      muteComposite(composite, s, frame);
+      const focusedCanvas = groupBuffer(s, 31, frame.outputWidth, frame.outputHeight);
+      renderLayerSequence(focusedCanvas.getContext("2d")!, s, doc, frame, preparedLayers, undefined, 0, included);
+      composite.drawImage(focusedCanvas, 0, 0);
+    } else {
+      renderLayerSequence(composite, s, doc, frame, preparedLayers, undefined, 0, included);
+    }
+  }
+
+  if (options.proofing ?? true) applySoftProof(composite, doc, frame.outputWidth, frame.outputHeight);
+  applyChannelView(composite, frame.outputWidth, frame.outputHeight, options.channelView ?? "rgb");
+  return s.a;
+}
+
+function focusLayerSet(doc: Document, layerId: string) {
+  const byId = new Map(doc.layers.map((layer) => [layer.id, layer]));
+  const included = new Set<string>();
+  const target = byId.get(layerId);
+  if (!target) return included;
+  included.add(target.id);
+  if (target.kind === "group") {
+    let changed = true;
+    while (changed) {
+      changed = false;
+      for (const layer of doc.layers) {
+        if (!layer.parentId || !included.has(layer.parentId) || included.has(layer.id)) continue;
+        included.add(layer.id);
+        changed = true;
+      }
+    }
+  }
+  const seen = new Set<string>();
+  let parentId = target.parentId;
+  while (parentId && !seen.has(parentId)) {
+    seen.add(parentId);
+    included.add(parentId);
+    parentId = byId.get(parentId)?.parentId;
+  }
+  return included;
+}
+
+function muteComposite(composite: CanvasRenderingContext2D, s: Scratch, frame: RenderFrame) {
+  const snapshot = s.b.getContext("2d")!;
+  clearContext(snapshot, frame.outputWidth, frame.outputHeight);
+  snapshot.drawImage(composite.canvas, 0, 0);
+  clearContext(composite, frame.outputWidth, frame.outputHeight);
+  composite.save();
+  composite.globalAlpha = 0.34;
+  composite.filter = "grayscale(72%) saturate(55%)";
+  composite.drawImage(snapshot.canvas, 0, 0);
+  composite.restore();
+}
+
+function drawLayerMaskProjected(target: CanvasRenderingContext2D, doc: Document, layer: Layer, frame: RenderFrame) {
+  // readRegion floors the origin and ceils the extent, so the bitmap it returns
+  // covers whole document pixels — not the fractional rect asked for. Stretching
+  // it onto the output as though it did covered a slightly different area every
+  // tile (the per-tile frame is `viewport.x + expandedLeft / scaleX`, fractional
+  // for nearly all of them), which showed up as the mask sliding a pixel or two
+  // away from its own layer and seaming at tile boundaries. Export renders one
+  // untiled integral frame, so the preview disagreed with the file.
+  //
+  // Ask for the snapped rect explicitly and project *that*, so the mask lands on
+  // the same pixels the exact path (drawProjectedCanvas) puts the content on.
+  const left = Math.floor(frame.x);
+  const top = Math.floor(frame.y);
+  const region = {
+    x: left,
+    y: top,
+    width: Math.ceil(frame.x + frame.width) - left,
+    height: Math.ceil(frame.y + frame.height) - top,
+  };
+  const mask = layerMaskRegionCanvas(layer, doc.width, doc.height, region);
+  if (!mask) return;
+  const scale = frameScale(frame);
+  target.save();
+  target.setTransform(scale.x, 0, 0, scale.y, (left - frame.x) * scale.x, (top - frame.y) * scale.y);
+  target.drawImage(mask, 0, 0);
+  target.restore();
+}
+
+/** Trace vector alpha directly into the bounded frame, not a canvas-sized
+ * raster cache. This also makes vector masks on component groups effective. */
+function drawVectorMaskProjected(target: CanvasRenderingContext2D, layer: Layer, frame: RenderFrame) {
+  if(!layer.vectorMask)return;
+  const contours=pathContours(layer.vectorMask);
+  if(contours.every(contour=>contour.anchors.length<2))return;
+  const scale=frameScale(frame);
+  target.save();target.setTransform(1,0,0,1,0,0);
+  // Project coordinates before tracing. This keeps the destination-in clip
+  // in frame space on canvas backends with translated-composite limitations.
+  const x=(value:number)=>(value-frame.x)*scale.x,y=(value:number)=>(value-frame.y)*scale.y;
+  target.fillStyle="#ffffff";target.beginPath();
+  traceContours({moveTo:(px,py)=>target.moveTo(x(px),y(py)),bezierCurveTo:(ax,ay,bx,by,px,py)=>target.bezierCurveTo(x(ax),y(ay),x(bx),y(by),x(px),y(py)),closePath:()=>target.closePath()},contours,true);
+  target.fill(layer.vectorMask.fillRule??"nonzero");target.restore();
+}
+
+function drawMaskSource(target: CanvasRenderingContext2D, doc: Document, layer: Layer, frame: RenderFrame) {
+  if (!hasLayerMask(layer)) return;
+  drawLayerMaskProjected(target, doc, layer, frame);
+  target.save();
+  target.globalCompositeOperation = "source-in";
+  target.fillStyle = "white";
+  target.fillRect(0, 0, frame.outputWidth, frame.outputHeight);
+  target.restore();
+}
+
+function drawMaskSolo(composite: CanvasRenderingContext2D, s: Scratch, doc: Document, layer: Layer, frame: RenderFrame) {
+  composite.save();
+  composite.fillStyle = "#24262c";
+  composite.fillRect(0, 0, frame.outputWidth, frame.outputHeight);
+  composite.restore();
+  const maskCanvas = groupBuffer(s, 30, frame.outputWidth, frame.outputHeight);
+  drawMaskSource(maskCanvas.getContext("2d")!, doc, layer, frame);
+  composite.drawImage(maskCanvas, 0, 0);
+}
+
+function drawMaskOverlay(
+  composite: CanvasRenderingContext2D,
+  s: Scratch,
+  doc: Document,
+  layer: Layer,
+  frame: RenderFrame,
+  prominent: boolean,
+) {
+  const maskCanvas = groupBuffer(s, 30, frame.outputWidth, frame.outputHeight);
+  const maskContext = maskCanvas.getContext("2d")!;
+  drawMaskSource(maskContext, doc, layer, frame);
+  maskContext.save();
+  maskContext.globalCompositeOperation = "source-in";
+  maskContext.fillStyle = prominent ? "rgba(105,87,245,.58)" : "rgba(105,87,245,.34)";
+  maskContext.fillRect(0, 0, frame.outputWidth, frame.outputHeight);
+  maskContext.restore();
+  composite.drawImage(maskCanvas, 0, 0);
+}
+
+function applyChannelView(
+  context: CanvasRenderingContext2D,
+  width: number,
+  height: number,
+  channel: NonNullable<RenderOptions["channelView"]>,
+) {
+  if (channel === "rgb") return;
+  const image = context.getImageData(0, 0, width, height);
+  const index = channel === "red" ? 0 : channel === "green" ? 1 : channel === "blue" ? 2 : 3;
+  for (let offset = 0; offset < image.data.length; offset += 4) {
+    const value = image.data[offset + index];
+    image.data[offset] = value;
+    image.data[offset + 1] = value;
+    image.data[offset + 2] = value;
+    if (channel === "alpha") image.data[offset + 3] = 255;
+  }
+  context.putImageData(image, 0, 0);
+}
+
+function renderLayerSequence(
+  composite: CanvasRenderingContext2D,
+  s: Scratch,
+  doc: Document,
+  frame: RenderFrame,
+  preparedLayers: PreparedLayers,
+  parentId: string | undefined,
+  groupDepth: number,
+  included?: ReadonlySet<string>,
+  /** The document-level composite, so a deep knockout can reach it. */
+  rootComposite: CanvasRenderingContext2D = composite,
+) {
+  const siblings = preparedLayers.get(parentId) ?? [];
+  for (let i = siblings.length - 1; i >= 0; i--) {
+    const layer = siblings[i];
+    if (included && !included.has(layer.id)) continue;
+    if (!layer.visible || layer.opacity <= 0) continue;
+    // Resolve using the document-owned layer before blend passes create a
+    // temporary copy: preservation metadata lives in a layer-keyed WeakMap.
+    if (layer.text) requestTextFonts(layer.text, layer);
+    if (layer.kind === "group") {
+      if (groupIsPassThrough(layer)) {
+        renderLayerSequence(composite, s, doc, frame, preparedLayers, layer.id, groupDepth, included, rootComposite);
+      } else {
+        const groupCanvas = groupBuffer(s, groupDepth, frame.outputWidth, frame.outputHeight);
+        const groupContext = groupCanvas.getContext("2d")!;
+        renderLayerSequence(groupContext, s, doc, frame, preparedLayers, layer.id, groupDepth + 1, included, rootComposite);
+        const maskGroup=(context:CanvasRenderingContext2D,afterEffects:boolean)=>{
+          context.globalCompositeOperation="destination-in";
+          if(hasLayerMask(layer)&&Boolean(layer.maskHidesEffects)===afterEffects)drawLayerMaskProjected(context,doc,layer,frame);
+          if(layer.vectorMask&&Boolean(layer.vectorMaskHidesEffects)===afterEffects)drawVectorMaskProjected(context,layer,frame);
+          context.globalCompositeOperation="source-over";
+        };
+        maskGroup(groupContext,false);
+        // A group takes a layer style like any other layer — Photoshop styles
+        // whole compositions this way. groupIsPassThrough already refuses to
+        // flatten a styled group, so reaching here with effects is expected.
+        if (layer.effects?.some((effect) => effect.enabled)) {
+          const styled = s.layerBuf;
+          const styledContext = styled.getContext("2d")!;
+          clearContext(styledContext, frame.outputWidth, frame.outputHeight);
+          composeLayerWithEffects(
+            styledContext, groupCanvas, s.effectBuf, s.clipBuf, layer, frame, frameScale(frame),
+            doc.globalLight, composite.canvas,
+          );
+          maskGroup(styledContext,true);
+          // Fill opacity is already applied to the contents inside compose, and
+          // must not touch the effects, so only master opacity is passed on.
+          compositeBlendStack(composite, styled, resolvedBlendPasses(layer), layer.opacity, resolvedBlendIf(layer));
+        } else {
+          maskGroup(groupContext,true);
+          compositeBlendStack(
+            composite,
+            groupCanvas,
+            resolvedBlendPasses(layer),
+            layer.opacity * resolvedFillOpacity(layer),
+            resolvedBlendIf(layer),
+          );
+        }
+      }
+      continue;
+    }
+    if (layer.kind === "adjustment-tone" && layer.tone && isNoOpToneAdjustment(layer)) {
+      continue;
+    } else if (layer.kind === "adjustment-tone" && layer.tone) {
+      drawAdjustment(composite, s, doc, layer, frame);
+    } else if (layer.kind === "adjustment-curves" && layer.curves) {
+      drawPixelAdjustment(composite, s, doc, layer, frame, (img) => applyCurvesToImageData(img, layer.curves!));
+    } else if (layer.kind === "adjustment-levels" && layer.levels) {
+      drawPixelAdjustment(composite, s, doc, layer, frame, (img) => applyLevelsToImageData(img, layer.levels!));
+    } else if (layer.kind === "adjustment-hsl" && layer.hsl) {
+      drawPixelAdjustment(composite, s, doc, layer, frame, (img) => applyHslToImageData(img, layer.hsl!));
+    } else if (layer.kind === "adjustment-pro" && layer.proAdjustment) {
+      drawPixelAdjustment(composite, s, doc, layer, frame, (img) => applyProAdjustmentToImageData(img, layer.proAdjustment!, {
+        originX: frame.x,
+        originY: frame.y,
+        scaleX: frame.outputWidth / frame.width,
+        scaleY: frame.outputHeight / frame.height,
+        documentWidth: doc.width,
+        documentHeight: doc.height,
+      }));
+    } else {
+      // Blend Clipped Layers as Group: the base and everything clipped to it
+      // composite into one buffer and blend once, so the group's blend mode
+      // and opacity apply to the assembled result rather than to each layer in
+      // turn. Clipped layers sit *before* their base in the array, and this
+      // loop runs bottom-up, so they are the entries already passed over.
+      const clipped: Layer[] = [];
+      if ((layer.blendClippedAsGroup ?? true) && !layer.clipping) {
+        for (let above = i - 1; above >= 0; above -= 1) {
+          const candidate = siblings[above];
+          if (!candidate.clipping) break;
+          if (included && !included.has(candidate.id)) break;
+          if (!candidate.visible || candidate.opacity <= 0) break;
+          clipped.push(candidate);
+        }
+      }
+
+      if (clipped.length) {
+        const stackCanvas = groupBuffer(s, groupDepth, frame.outputWidth, frame.outputHeight);
+        const stackContext = stackCanvas.getContext("2d")!;
+        // rootComposite, not the stack: a deep knockout means "to the bottom
+        // of the document", and passing the stack made it stop at the group.
+        drawContentLayer(stackContext, s, doc, { ...layer, blendStack: undefined, blend: "source-over", opacity: 1 }, frame, rootComposite);
+        for (const member of clipped) {
+          drawContentLayer(stackContext, s, doc, member, frame, rootComposite);
+        }
+        compositeBlendStack(
+          composite,
+          stackCanvas,
+          resolvedBlendPasses(layer),
+          layer.opacity,
+          resolvedBlendIf(layer),
+        );
+        i -= clipped.length;
+      } else {
+        drawContentLayer(composite, s, doc, layer, frame, rootComposite);
+      }
+    }
+  }
+}
+
+function isNoOpToneAdjustment(layer: Layer) {
+  const tone = layer.tone;
+  if (!tone || Object.keys(NEUTRAL_TONE).some((key) => tone[key as keyof ToneParams] !== 0)) return false;
+  const passes = resolvedBlendPasses(layer);
+  return !hasLayerMask(layer)
+    && !layer.vectorMask
+    && !layer.clipping
+    && !layer.effects?.some((effect) => effect.enabled)
+    && isNeutralBlendIf(resolvedBlendIf(layer))
+    && passes.length === 1
+    && passes[0].enabled
+    && passes[0].mode === "source-over"
+    && passes[0].opacity === 1;
+}
+
+function groupIsPassThrough(layer: Layer) {
+  const passes = resolvedBlendPasses(layer);
+  return layer.opacity === 1 && resolvedFillOpacity(layer) === 1 && !hasLayerMask(layer) && !layer.vectorMask &&
+    !(layer.effects?.some((effect) => effect.enabled)) &&
+    !(layer.filters?.some((filter) => filter.enabled)) &&
+    passes.length === 1 && passes[0].enabled && passes[0].mode === "source-over" && passes[0].opacity === 1;
+}
+
+export function render(
+  doc: Document,
+  target: HTMLCanvasElement,
+  options: RenderOptions = {},
+) {
+  const frame: RenderFrame = {
+    x: 0,
+    y: 0,
+    width: doc.width,
+    height: doc.height,
+    outputWidth: doc.width,
+    outputHeight: doc.height,
+  };
+  if (target.width !== doc.width) target.width = doc.width;
+  if (target.height !== doc.height) target.height = doc.height;
+  const composite = renderCompositeRegion(doc, frame, options);
+  const out = renderTargetContext(target, options);
+  clearContext(out, target.width, target.height);
+  if (options.checkerboard ?? true) drawDocumentCheckerboard(out, doc, frame);
+  out.drawImage(composite, 0, 0);
+  if ((options.selectionOverlay ?? true) && doc.selection) drawProjectedSelection(out, doc, frame);
+}
+
+/**
+ * Production preview compositor. Its backing store is bounded to the visible
+ * stage and every layer is evaluated in small screen-space tiles. Overscan is
+ * cropped away after compositing, preserving blur and shadow continuity while
+ * keeping the working set independent of document dimensions.
+ */
+export function renderViewport(
+  doc: Document,
+  target: HTMLCanvasElement,
+  viewport: DisplayViewport,
+  options: RenderOptions = {},
+) {
+  const startedAt = typeof performance === "undefined" ? Date.now() : performance.now();
+  const signature = viewportSignature(viewport);
+  const previousTarget = viewportTargetState.get(target);
+  const sameViewport = previousTarget?.signature === signature && previousTarget.document === doc;
+  const resized = target.width !== viewport.outputWidth || target.height !== viewport.outputHeight;
+  if (target.width !== viewport.outputWidth) target.width = viewport.outputWidth;
+  if (target.height !== viewport.outputHeight) target.height = viewport.outputHeight;
+  const out = renderTargetContext(target, options);
+  const fullFrame: RenderFrame = viewport;
+  let preparedLayers: PreparedLayers | null = null;
+  // Resolve lazily so a frame served entirely from the tile cache never walks
+  // the layer hierarchy. Misses still share one prepared hierarchy per frame.
+  const getPreparedLayers = () => (preparedLayers ??= preparedLayersFor(doc, options.hierarchyRevision));
+
+  // A reflection samples the whole backdrop, and no tile margin covers that.
+  // One tile the size of the viewport is the honest answer: it costs the tile
+  // cache, and it is the only way the effect can be right.
+  const layerPlan = viewportLayerPlan(doc.layers, viewport.zoom);
+  const tilePixels = layerPlan.fullBackdrop
+    ? Math.max(viewport.outputWidth, viewport.outputHeight, 1)
+    : DEFAULT_TILE_SIZE;
+  const overscan = layerPlan.overscan;
+  const scaleX = viewport.outputWidth / viewport.width;
+  const scaleY = viewport.outputHeight / viewport.height;
+  const totalTiles = Math.ceil(viewport.outputWidth / tilePixels) * Math.ceil(viewport.outputHeight / tilePixels);
+  const dirtyTileKeys = options.dirtyRegions?.length
+    ? viewportTileKeysForDirtyRegions(viewport, options.dirtyRegions, overscan, tilePixels)
+    : null;
+  if (dirtyTileKeys && doc.selection) {
+    // The target canvas also carries marching ants. Repaint the tiles under
+    // the complete selection bounds so the old ant phase is erased before the
+    // current outline is drawn; content edits elsewhere remain incremental.
+    const bounds = doc.selection.bounds;
+    const selectionTiles = viewportTileKeysForDirtyRegions(viewport, [{
+      x: bounds.x,
+      y: bounds.y,
+      width: bounds.w,
+      height: bounds.h,
+    }], 4, tilePixels);
+    for (const key of selectionTiles) dirtyTileKeys.add(key);
+  }
+  // Dirty rendering is safe only when the target still contains the exact
+  // same viewport from the preceding frame. Selection-only animation requests
+  // have no dirty regions and continue to redraw from cached composite tiles.
+  const partial = !resized && sameViewport && !!dirtyTileKeys;
+
+  if (!partial) {
+    clearContext(out, viewport.outputWidth, viewport.outputHeight);
+    if (options.checkerboard ?? true) drawDocumentCheckerboard(out, doc, fullFrame);
+  }
+
+  let renderedTiles = 0;
+
+  for (let top = 0, row = 0; top < viewport.outputHeight; top += tilePixels, row += 1) {
+    const height = Math.min(tilePixels, viewport.outputHeight - top);
+    for (let left = 0, column = 0; left < viewport.outputWidth; left += tilePixels, column += 1) {
+      if (partial && !dirtyTileKeys!.has(`${column}:${row}`)) continue;
+      const width = Math.min(tilePixels, viewport.outputWidth - left);
+      if (partial) {
+        out.save();
+        out.beginPath();
+        out.rect(left, top, width, height);
+        out.clip();
+        clearContext(out, viewport.outputWidth, viewport.outputHeight);
+        if (options.checkerboard ?? true) drawDocumentCheckerboard(out, doc, fullFrame);
+      }
+      const expandedLeft = Math.max(0, left - overscan);
+      const expandedTop = Math.max(0, top - overscan);
+      const expandedRight = Math.min(viewport.outputWidth, left + width + overscan);
+      const expandedBottom = Math.min(viewport.outputHeight, top + height + overscan);
+      const expandedWidth = expandedRight - expandedLeft;
+      const expandedHeight = expandedBottom - expandedTop;
+      const frame: RenderFrame = {
+        x: viewport.x + expandedLeft / scaleX,
+        y: viewport.y + expandedTop / scaleY,
+        width: expandedWidth / scaleX,
+        height: expandedHeight / scaleY,
+        outputWidth: expandedWidth,
+        outputHeight: expandedHeight,
+      };
+      const composite = viewportTile(doc, frame, options, getPreparedLayers);
+      out.drawImage(
+        composite,
+        left - expandedLeft,
+        top - expandedTop,
+        width,
+        height,
+        left,
+        top,
+        width,
+        height,
+      );
+      if (partial) out.restore();
+      renderedTiles += 1;
+    }
+  }
+
+  if ((options.selectionOverlay ?? true) && doc.selection) drawProjectedSelection(out, doc, fullFrame);
+  viewportTargetState.set(target, { signature, document: doc });
+  const finishedAt = typeof performance === "undefined" ? Date.now() : performance.now();
+  recordViewportRender({
+    durationMs: Math.max(0, finishedAt - startedAt),
+    renderedTiles,
+    totalTiles,
+    partial,
+  });
+}
+
+/** Render only document pixels. UI chrome must never leak into files or batch output. */
+export function renderClean(doc: Document, target: HTMLCanvasElement) {
+  render(doc, target, { checkerboard: false, selectionOverlay: false, proofing: false, outputColorSpace: "srgb" });
+}
+
+function renderTargetContext(target: HTMLCanvasElement, options: RenderOptions) {
+  const context = options.outputColorSpace === "srgb" ? target.getContext("2d", { colorSpace: "srgb" }) : getDisplayCtx(target);
+  if (!context) throw new Error("Rendering requires a 2D canvas context");
+  if (options.outputColorSpace === "srgb" && context.getContextAttributes?.().colorSpace === "display-p3") {
+    // Canvas color space is fixed by its first context request. Reusing a P3
+    // viewport would silently relabel those samples in PSD/ICC/clipboard paths.
+    throw new Error("Clean rendering requires a fresh sRGB canvas, not a Display P3 viewport");
+  }
+  return context;
+}
+
+/** Destination + bounded tile caches + peak scratch (including nested groups).
+ * This is known-buffer admission, not a claim to bound total process RSS. */
+export function tiledCleanRenderBytes(doc: Document) {
+  const plan = viewportLayerPlan(doc.layers, 1);
+  const edge = cleanRenderNeedsFullFrame(doc) || plan.fullBackdrop ? Math.max(doc.width, doc.height) : DEFAULT_TILE_SIZE + 2 * plan.overscan;
+  const pixels = Math.min(doc.width, edge) * Math.min(doc.height, edge);
+  const groups = doc.layers.filter(layer => layer.kind === "group").length;
+  return doc.width * doc.height * 4 + MAX_VIEWPORT_CACHE_BYTES + MAX_SCRATCH_CACHE_BYTES + pixels * (64 + groups * 4);
+}
+
+export function renderTiledClean(doc: Document, target: HTMLCanvasElement) {
+  // Viewport overscan is capped. Baking a large-radius or spatial filter through
+  // that approximation could permanently introduce seams. Keep those merges
+  // exact, admitting the full-frame working set above before any allocation.
+  if (cleanRenderNeedsFullFrame(doc)) { renderClean(doc, target); return; }
+  renderViewport(doc, target, { x: 0, y: 0, width: doc.width, height: doc.height, outputWidth: doc.width, outputHeight: doc.height, zoom: 1, cssScale: 1, devicePixelRatio: 1 }, { checkerboard: false, selectionOverlay: false, proofing: false, outputColorSpace: "srgb" });
+}
+
+function cleanRenderNeedsFullFrame(doc: Document) {
+  return doc.layers.some(layer => layer.filters?.some(filter => filter.enabled));
+}
+
+export function viewportLayerPlan(layers: ReadonlyArray<Layer>, displayScale: number) {
+  let extent = 2;
+  let fullBackdrop = false;
+  for (const layer of layers) {
+    for (const filter of layer.filters ?? []) {
+      if (!filter.enabled) continue;
+      extent = Math.max(extent, smartFilterInfluenceRadius(filter, displayScale));
+    }
+    for (const effect of layer.effects ?? []) {
+      if (!effect.enabled) continue;
+      if (FULL_BACKDROP_KINDS.includes(effect.kind)) fullBackdrop = true;
+      // Every effect that can paint outside the layer silhouette has to widen
+      // the overscan, or it gets clipped at tile boundaries.
+      const reach = layerEffectReach(effect);
+      if (reach > 0) extent = Math.max(extent, reach * displayScale);
+    }
+  }
+  // Bounded so a runaway radius cannot make every tile enormous, but high
+  // enough for a heavy backdrop blur, whose seams are plainly visible.
+  return {
+    fullBackdrop,
+    overscan: Math.max(2, Math.min(192, Math.ceil(extent))),
+  };
+}
+
+function applySoftProof(ctx: CanvasRenderingContext2D, doc: Document, width: number, height: number) {
+  const settings = doc.proofing;
+  if (settings.profile === "none" && !settings.gamutWarning) return;
+  const managedProof = settings.profile === "srgb" || settings.profile === "display-p3"
+    ? createProofingTransform(
+      SRGB_PROFILE,
+      settings.profile === "display-p3" ? DISPLAY_P3_PROFILE : SRGB_PROFILE,
+      SRGB_PROFILE,
+      {
+        renderingIntent: settings.intent,
+        blackPointCompensation: settings.blackPointCompensation,
+      },
+    )
+    : null;
+  for (let y = 0; y < height; y += DEFAULT_TILE_SIZE) {
+    for (let x = 0; x < width; x += DEFAULT_TILE_SIZE) {
+      const tileWidth = Math.min(DEFAULT_TILE_SIZE, width - x);
+      const tileHeight = Math.min(DEFAULT_TILE_SIZE, height - y);
+      const image = ctx.getImageData(x, y, tileWidth, tileHeight);
+      for (let offset = 0; offset < image.data.length; offset += 4) {
+        if (image.data[offset + 3] === 0) continue;
+        const alpha = image.data[offset + 3] / 255;
+        const source = [
+          image.data[offset] / 255,
+          image.data[offset + 1] / 255,
+          image.data[offset + 2] / 255,
+        ] as [number, number, number];
+        const managed = managedProof?.applyRgba([source[0], source[1], source[2], alpha]);
+        const proof = managed ? {
+          rgb: managed.rgba.slice(0, 3) as [number, number, number],
+          outOfGamut: managed.outOfGamut,
+        } : softProofDisplayRgb(source, settings.profile, settings.intent, settings.blackPointCompensation);
+        if (settings.gamutWarning && proof.outOfGamut) {
+          image.data[offset] = 255;
+          image.data[offset + 1] = 0;
+          image.data[offset + 2] = 255;
+        } else if (settings.profile !== "none") {
+          image.data[offset] = Math.round(proof.rgb[0] * 255);
+          image.data[offset + 1] = Math.round(proof.rgb[1] * 255);
+          image.data[offset + 2] = Math.round(proof.rgb[2] * 255);
+        }
+      }
+      ctx.putImageData(image, x, y);
+    }
+  }
+}
+
+function drawContentLayer(
+  composite: CanvasRenderingContext2D,
+  scratchBuffers: Scratch,
+  doc: Document,
+  layer: Layer,
+  frame: RenderFrame,
+  rootComposite: CanvasRenderingContext2D = composite,
+) {
+  const { layerBuf, contentBuf, effectBuf, clipBuf, extentBuf } = scratchBuffers;
+  const bctx = layerBuf.getContext("2d")!;
+  const contentCtx = contentBuf.getContext("2d")!;
+  clearContext(bctx, frame.outputWidth, frame.outputHeight);
+  clearContext(contentCtx, frame.outputWidth, frame.outputHeight);
+
+  drawLayerContentManaged(contentCtx, layer, frameTransform(frame));
+  const scale = frameScale(frame);
+  applySmartFilters(contentBuf, layer.filters, Math.sqrt(scale.x * scale.y));
+
+  // Photoshop's "Layer Mask Hides Effects" is off by default: the mask shapes
+  // the pixels and the shadow still falls outside it. Masking the content
+  // before the style runs gives that; masking the finished buffer afterwards
+  // gives the "on" behaviour, which is all we used to do.
+  const maskHidesEffects = layer.maskHidesEffects ?? false;
+  if (hasLayerMask(layer) && !maskHidesEffects) {
+    contentCtx.globalCompositeOperation = "destination-in";
+    drawLayerMaskProjected(contentCtx, doc, layer, frame);
+    contentCtx.globalCompositeOperation = "source-over";
+  }
+  // The vector mask carries its own switch, because a layer can have both and
+  // Photoshop lets each hide effects independently.
+  const vectorMask = layer.vectorMask;
+  const vectorHidesEffects = layer.vectorMaskHidesEffects ?? false;
+  if (vectorMask && !vectorHidesEffects) {
+    contentCtx.globalCompositeOperation = "destination-in";
+    drawVectorMaskProjected(contentCtx, layer, frame);
+    contentCtx.globalCompositeOperation = "source-over";
+  }
+
+  // Transparency Shapes Layer, off: the style stops following the artwork and
+  // fills the layer's extent instead, which is how you get a solid overlay on
+  // a soft-edged layer.
+  const shapesLayer = layer.transparencyShapesLayer ?? true;
+  let effectShape = contentBuf;
+  if (!shapesLayer) {
+    // A dedicated scratch buffer, not clipBuf: that is the effect pipeline's
+    // own working canvas and would be cleared out from under this. Allocating
+    // a fresh one here instead cost a canvas per tile per frame.
+    const extentCtx = extentBuf.getContext("2d")!;
+    clearContext(extentCtx, frame.outputWidth, frame.outputHeight);
+    extentCtx.fillStyle = "#ffffff";
+    extentCtx.fillRect(0, 0, frame.outputWidth, frame.outputHeight);
+    effectShape = extentBuf;
+  }
+
+  // `composite` is a different canvas from layerBuf, so it is a stable view of
+  // everything already drawn beneath this layer — exactly what a blended
+  // effect has to composite against.
+  composeLayerWithEffects(
+    bctx, contentBuf, effectBuf, clipBuf, layer, frame, scale, doc.globalLight,
+    composite.canvas, effectShape,
+  );
+
+  if (layer.clipping) {
+    const base = findClippingBase(doc, layer);
+    if (base) {
+      const clipCtx = clipBuf.getContext("2d")!;
+      clearContext(clipCtx, frame.outputWidth, frame.outputHeight);
+      drawLayerContentManaged(clipCtx, base, frameTransform(frame));
+      bctx.globalCompositeOperation = "destination-in";
+      bctx.drawImage(clipBuf, 0, 0);
+      bctx.globalCompositeOperation = "source-over";
+    }
+  }
+  if (hasLayerMask(layer) && maskHidesEffects) {
+    bctx.globalCompositeOperation = "destination-in";
+    drawLayerMaskProjected(bctx, doc, layer, frame);
+    bctx.globalCompositeOperation = "source-over";
+  }
+  if (vectorMask && vectorHidesEffects) {
+    bctx.globalCompositeOperation = "destination-in";
+    drawVectorMaskProjected(bctx, layer, frame);
+    bctx.globalCompositeOperation = "source-over";
+  }
+
+  applyKnockout(composite, rootComposite, contentBuf, layer);
+  withChannelMask(composite, layer, frame, () => {
+    compositeBlendStack(composite, layerBuf, resolvedBlendPasses(layer), layer.opacity, resolvedBlendIf(layer));
+  });
+}
+
+/**
+ * Punch the layer's silhouette through what sits beneath it.
+ *
+ * "shallow" stops at the enclosing group, which is whatever `composite` is
+ * here; "deep" goes to the bottom of the document, so it needs the root
+ * canvas — the two would otherwise be the same operation wearing two names.
+ */
+function applyKnockout(
+  composite: CanvasRenderingContext2D,
+  rootComposite: CanvasRenderingContext2D,
+  contentBuf: HTMLCanvasElement,
+  layer: Layer,
+) {
+  const knockout = layer.knockout ?? "none";
+  if (knockout === "none") return;
+  const target = knockout === "deep" ? rootComposite : composite;
+  target.save();
+  target.globalCompositeOperation = "destination-out";
+  target.globalAlpha = layer.opacity;
+  target.drawImage(contentBuf, 0, 0);
+  target.restore();
+  if (knockout === "deep" && target !== composite) {
+    // The group buffer is composited over the root later, so the hole has to
+    // exist in both or the group would simply fill it back in.
+    composite.save();
+    composite.globalCompositeOperation = "destination-out";
+    composite.globalAlpha = layer.opacity;
+    composite.drawImage(contentBuf, 0, 0);
+    composite.restore();
+  }
+}
+
+/**
+ * Restrict a layer to a subset of channels by restoring the others afterwards.
+ *
+ * Canvas has no per-channel write mask, so this snapshots what is underneath
+ * and puts the excluded channels back. Only runs when a channel is actually
+ * switched off, which is rare enough that the two reads do not matter.
+ */
+function withChannelMask(
+  composite: CanvasRenderingContext2D,
+  layer: Layer,
+  frame: RenderFrame,
+  draw: () => void,
+) {
+  const channels = layer.blendChannels;
+  const restricted = channels && (!channels.r || !channels.g || !channels.b);
+  if (!restricted) {
+    draw();
+    return;
+  }
+  const width = frame.outputWidth;
+  const height = frame.outputHeight;
+  if (width <= 0 || height <= 0) {
+    draw();
+    return;
+  }
+  const before = composite.getImageData(0, 0, width, height);
+  draw();
+  const after = composite.getImageData(0, 0, width, height);
+  const keep = [channels.r, channels.g, channels.b];
+  for (let i = 0; i < after.data.length; i += 4) {
+    for (let c = 0; c < 3; c += 1) {
+      if (!keep[c]) after.data[i + c] = before.data[i + c];
+    }
+  }
+  composite.putImageData(after, 0, 0);
+}
+
+function drawAdjustment(
+  composite: CanvasRenderingContext2D,
+  s: Scratch,
+  doc: Document,
+  layer: Layer,
+  frame: RenderFrame,
+) {
+  if (!layer.tone) return;
+  const snap = s.b;
+  const sctx = snap.getContext("2d")!;
+  clearContext(sctx, frame.outputWidth, frame.outputHeight);
+  sctx.save();
+  sctx.filter = toneToFilter(layer.tone);
+  sctx.drawImage(composite.canvas, 0, 0);
+  sctx.filter = "none";
+  applyHighlightsShadows(sctx, frame.outputWidth, frame.outputHeight, layer.tone.highlights, layer.tone.shadows);
+  sctx.restore();
+  compositeAdjustment(composite, s, doc, snap, layer, frame);
+}
+
+function drawPixelAdjustment(
+  composite: CanvasRenderingContext2D,
+  s: Scratch,
+  doc: Document,
+  layer: Layer,
+  frame: RenderFrame,
+  op: (img: ImageData) => ImageData,
+) {
+  const snap = s.b;
+  const sctx = snap.getContext("2d")!;
+  clearContext(sctx, frame.outputWidth, frame.outputHeight);
+  sctx.drawImage(composite.canvas, 0, 0);
+  const img = sctx.getImageData(0, 0, frame.outputWidth, frame.outputHeight);
+  op(img);
+  sctx.putImageData(img, 0, 0);
+  compositeAdjustment(composite, s, doc, snap, layer, frame);
+}
+
+function compositeAdjustment(
+  composite: CanvasRenderingContext2D,
+  s: Scratch,
+  doc: Document,
+  source: HTMLCanvasElement,
+  layer: Layer,
+  frame: RenderFrame,
+) {
+  const vectorMask = layer.vectorMask;
+  const passes = resolvedBlendPasses(layer).filter(pass => pass.enabled);
+  if (!hasLayerMask(layer) && !vectorMask && !layer.effects?.some(effect => effect.enabled) &&
+      layer.opacity === 1 && resolvedFillOpacity(layer) === 1 && isNeutralBlendIf(resolvedBlendIf(layer)) &&
+      passes.length === 1 && passes[0].mode === "source-over" && passes[0].opacity === 1) {
+    // This is the fully adjusted backdrop, not a new layer of paint. Painting
+    // it source-over would apply the backdrop alpha twice (160 -> 220), making
+    // transparent artwork more opaque and attenuating the color adjustment.
+    composite.save();
+    composite.globalAlpha = 1;
+    composite.globalCompositeOperation = "copy";
+    composite.drawImage(source, 0, 0);
+    composite.restore();
+    return;
+  }
+  if (!layer.effects?.some(effect => effect.enabled) && isNeutralBlendIf(resolvedBlendIf(layer)) &&
+      passes.length === 1 && passes[0].mode === "source-over") {
+    // An adjustment changes color, not backdrop coverage. Make the adjusted
+    // colors opaque before masking, then source-atop interpolates them using
+    // only adjustment strength and mask coverage, preserving destination alpha.
+    // Retaining the backdrop alpha here would apply that alpha a second time.
+    const adjustedCtx = s.layerBuf.getContext("2d")!;
+    clearContext(adjustedCtx, frame.outputWidth, frame.outputHeight);
+    const colors = source.getContext("2d")!.getImageData(0, 0, frame.outputWidth, frame.outputHeight);
+    for (let i = 3; i < colors.data.length; i += 4) colors.data[i] = 255;
+    adjustedCtx.putImageData(colors, 0, 0);
+    adjustedCtx.globalCompositeOperation = "destination-in";
+    if (hasLayerMask(layer)) drawLayerMaskProjected(adjustedCtx, doc, layer, frame);
+    if (vectorMask) drawVectorMaskProjected(adjustedCtx, layer, frame);
+    adjustedCtx.globalCompositeOperation = "source-over";
+    composite.save();
+    composite.globalAlpha = layer.opacity * resolvedFillOpacity(layer) * passes[0].opacity;
+    composite.globalCompositeOperation = "source-atop";
+    composite.drawImage(s.layerBuf, 0, 0);
+    composite.restore();
+    return;
+  }
+  let adjusted = source;
+  if (hasLayerMask(layer) || vectorMask) {
+    const bctx = s.layerBuf.getContext("2d")!;
+    clearContext(bctx, frame.outputWidth, frame.outputHeight);
+    bctx.drawImage(source, 0, 0);
+    bctx.globalCompositeOperation = "destination-in";
+    if (hasLayerMask(layer)) drawLayerMaskProjected(bctx, doc, layer, frame);
+    if (vectorMask) drawVectorMaskProjected(bctx, layer, frame);
+    bctx.globalCompositeOperation = "source-over";
+    adjusted = s.layerBuf;
+  }
+
+  // An adjustment layer's shape is its mask, so a style on one draws around
+  // the masked region — a drop shadow off the edge of a Curves mask, a stroke
+  // outlining it. Unmasked, the shape is the whole canvas and the outside
+  // effects have nowhere to land, which is also what Photoshop does.
+  if (layer.effects?.some((effect) => effect.enabled)) {
+    // contentBuf, not layerBuf: layerBuf may be holding the masked result that
+    // is about to be the input here, and s.a is the root composite itself.
+    const styled = s.contentBuf;
+    const styledCtx = styled.getContext("2d")!;
+    clearContext(styledCtx, frame.outputWidth, frame.outputHeight);
+    composeLayerWithEffects(
+      styledCtx, adjusted, s.effectBuf, s.clipBuf, layer, frame, frameScale(frame),
+      doc.globalLight, composite.canvas,
+    );
+    // Fill opacity is applied to the contents inside compose and must not
+    // reach the effects, so only master opacity is passed on here.
+    compositeBlendStack(composite, styled, resolvedBlendPasses(layer), layer.opacity, resolvedBlendIf(layer));
+    return;
+  }
+
+  compositeBlendStack(
+    composite,
+    adjusted,
+    resolvedBlendPasses(layer),
+    layer.opacity * resolvedFillOpacity(layer),
+    resolvedBlendIf(layer),
+  );
+}
+
+function drawDocumentCheckerboard(
+  ctx: CanvasRenderingContext2D,
+  doc: Document,
+  frame: RenderFrame,
+) {
+  const scale = frameScale(frame);
+  const left = -frame.x * scale.x;
+  const top = -frame.y * scale.y;
+  const width = doc.width * scale.x;
+  const height = doc.height * scale.y;
+  const tile = 16;
+  ctx.save();
+  ctx.beginPath();
+  ctx.rect(left, top, width, height);
+  ctx.clip();
+  ctx.fillStyle = "#e9eaed";
+  ctx.fillRect(left, top, width, height);
+  ctx.fillStyle = "#dfe1e5";
+  const firstX = Math.floor(left / tile) * tile;
+  const firstY = Math.floor(top / tile) * tile;
+  for (let y = firstY; y < top + height; y += tile) {
+    for (let x = firstX; x < left + width; x += tile) {
+      if (((Math.floor((x - left) / tile)) ^ Math.floor((y - top) / tile)) & 1) {
+        ctx.fillRect(x, y, tile, tile);
+      }
+    }
+  }
+  ctx.restore();
+}
+
+function drawProjectedSelection(
+  ctx: CanvasRenderingContext2D,
+  doc: Document,
+  frame: RenderFrame,
+) {
+  if (!doc.selection) return;
+  const scale = frameScale(frame);
+  const bounds = doc.selection.bounds;
+  antsOffset = (antsOffset + 1) % 20;
+  ctx.save();
+  ctx.strokeStyle = "rgba(255,255,255,0.95)";
+  ctx.lineWidth = 1;
+  ctx.setLineDash([6, 4]);
+  ctx.lineDashOffset = -antsOffset;
+  ctx.strokeRect(
+    (bounds.x - frame.x) * scale.x + 0.5,
+    (bounds.y - frame.y) * scale.y + 0.5,
+    Math.max(1, bounds.w * scale.x - 1),
+    Math.max(1, bounds.h * scale.y - 1),
+  );
+  ctx.restore();
+}

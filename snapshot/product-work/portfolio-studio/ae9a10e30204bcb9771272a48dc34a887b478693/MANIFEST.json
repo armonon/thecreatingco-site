@@ -1,0 +1,14 @@
+{
+  "sha": "ae9a10e30204bcb9771272a48dc34a887b478693",
+  "base_sha": "ae9a10e30204bcb9771272a48dc34a887b478693",
+  "scope": "Committed screened review delta, not a release or complete binary artifact",
+  "files": [],
+  "omitted": [],
+  "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "repo": "https://github.com/armonon/portfolio-studio",
+  "branches": [
+    "main"
+  ],
+  "archive_path": "portfolio-studio/ae9a10e30204bcb9771272a48dc34a887b478693",
+  "local_worktree_dirty": false
+}

@@ -1,0 +1,164 @@
+{
+  "sha": "c292256227befffde4646f9ec4b6fad56419c7fa",
+  "base_sha": "b5abdd1de5f71fe0244ef9a651a6d983067541ff",
+  "scope": "Committed screened review delta, not a release or complete binary artifact",
+  "files": [
+    {
+      "path": ".github/workflows/ci.yml",
+      "status": "present",
+      "sha256": "1c93218e00c3545ccc45f9a912e11f5131c06ec901b54cfb3a2b7b3b48e580f6",
+      "bytes": 2287
+    },
+    {
+      "path": "KNOWN_ISSUES.md",
+      "status": "present",
+      "sha256": "59583b4b67f7172248c168a7e4cba9af0577b13b8e5d81078fbf5482939687f3",
+      "bytes": 2658
+    },
+    {
+      "path": "PRODUCTION_READINESS.md",
+      "status": "present",
+      "sha256": "d52d335795df647b2ef1f176e23eff7283b278a7280fc85ef49e9d4f0dfd901a",
+      "bytes": 18960
+    },
+    {
+      "path": "app/cad-phone.css",
+      "status": "present",
+      "sha256": "9c461bd0dbfe4f4442a7f904f9f06aabca116e560da45fef0e7412b00b3401d6",
+      "bytes": 19371
+    },
+    {
+      "path": "app/cad-viewport-3d.tsx",
+      "status": "present",
+      "sha256": "be8f90e4f6cdaebc49ea95e6a93706eba090104d50692526c2550e70ce9b22b7",
+      "bytes": 119469
+    },
+    {
+      "path": "app/cad-workspace.tsx",
+      "status": "present",
+      "sha256": "2505e2746e979b5d13f208b676a422d5faef9b4e6bfcf63ad46ed770cdc18adb",
+      "bytes": 511339
+    },
+    {
+      "path": "app/fabric-engine.ts",
+      "status": "present",
+      "sha256": "fe9fd4e677af5472150c3ed6c718554b2b2edb63e65a859e11e0dd225deab1ba",
+      "bytes": 40051
+    },
+    {
+      "path": "app/form-ui-v2.css",
+      "status": "present",
+      "sha256": "8a873f94646901a44ce49587292723b96eae07a3c205ceb11ce6b6b724059e4d",
+      "bytes": 148138
+    },
+    {
+      "path": "app/garment-export.ts",
+      "status": "present",
+      "sha256": "4c706345489bbce824c5f06b37ecf5fa5192340feb6d5b34827055bcaebf477f",
+      "bytes": 10012
+    },
+    {
+      "path": "app/garment-scan-pattern.ts",
+      "status": "present",
+      "sha256": "f91e55f2637eea2dd15696fcf51363d917860b10a72fb1a20ce9e4122ca9cc53",
+      "bytes": 5489
+    },
+    {
+      "path": "app/garment-scan-project.ts",
+      "status": "present",
+      "sha256": "4777cebc12ff307734f9339c0b07408639f6c46626aeb5f376546f46f2e55522",
+      "bytes": 4045
+    },
+    {
+      "path": "app/garment-scan-source.ts",
+      "status": "present",
+      "sha256": "e60dcfcca4858b77e3003ec79349f55670ba3718ac3f1d867d2db1a978120b47",
+      "bytes": 3205
+    },
+    {
+      "path": "app/paint-data-texture.ts",
+      "status": "present",
+      "sha256": "1ff2459044a1013d0e7c0820246c984d04f8432e71290d35e5006b421788c176",
+      "bytes": 487
+    },
+    {
+      "path": "app/project-format.ts",
+      "status": "present",
+      "sha256": "88e32501234e4f7e8c273b67bc109926acc0e1b56e9d3d2c047ae17ee7b49c59",
+      "bytes": 21358
+    },
+    {
+      "path": "package-lock.json",
+      "status": "present",
+      "sha256": "bd2219af132c72ee9bdb2d522512eb02e940743b6d2e06dcb5b256c9363b2cbd",
+      "bytes": 395949
+    },
+    {
+      "path": "package.json",
+      "status": "present",
+      "sha256": "458ed1a1d410f007ccb8cd5442ac40395e1c4e799dfed9c1059912eff213bd9f",
+      "bytes": 5793
+    },
+    {
+      "path": "scripts/verify-project-menu.mjs",
+      "status": "present",
+      "sha256": "d2de9e984188ed4ab6c01ada4fbd40ebf4467c583f9e45bb3e8ac9ad4548e398",
+      "bytes": 5461
+    },
+    {
+      "path": "tests/garment-scan-pattern.test.mjs",
+      "status": "present",
+      "sha256": "82d0c6ef813d877855b9694eebe2ff4028370c78994dc3b45c77d840f916d5c7",
+      "bytes": 3568
+    },
+    {
+      "path": "tests/garment-scan-project.test.mjs",
+      "status": "present",
+      "sha256": "c90d2f6b23e11a06972a950a2333e3ffd5afeb73ad47b0da14ee31a7b21d2ed7",
+      "bytes": 4143
+    },
+    {
+      "path": "tests/garment-scan-source.test.mjs",
+      "status": "present",
+      "sha256": "f9bdff8a684c6ff15ea553eaa46f1866ad05c38d37dc91f59ae1b46d5dd60909",
+      "bytes": 2992
+    },
+    {
+      "path": "tests/paint-data-texture.test.mjs",
+      "status": "present",
+      "sha256": "e5f3f1c3c32800fdf380cec565b018b7ca6265ff8e7a2b5a53af75a331019d76",
+      "bytes": 1504
+    },
+    {
+      "path": "tests/workspace-smoke.test.mjs",
+      "status": "present",
+      "sha256": "ec0db349fe2fb0828f8983de767b650a5d7dd18d5cf54ac2c61f12388519c36d",
+      "bytes": 195336
+    },
+    {
+      "path": "vite.config.ts",
+      "status": "present",
+      "sha256": "a59955895d7f6aef79d5d4aff17604388c81cdc677abbcf86bff2bbabf787c94",
+      "bytes": 1755
+    },
+    {
+      "path": "worker/index.ts",
+      "status": "present",
+      "sha256": "4283c69bf2ec961ac23c9cb7bcf6aa554452cf8c9c75b6d33c0d1363d2107ff9",
+      "bytes": 1821
+    }
+  ],
+  "omitted": [
+    {
+      "path": "scripts/test-worker-image-binding.mjs",
+      "reason": "non-fixture-email-content"
+    }
+  ],
+  "patch_sha256": "73fc910d9c341576fb7f7776685866bfd5c9f63694a3620570a1d9598a8f18ad",
+  "repo": "https://github.com/armonon/form-studio",
+  "branches": [
+    "feat/pattern-first-scan-20261009"
+  ],
+  "archive_path": "form-studio/c292256227befffde4646f9ec4b6fad56419c7fa",
+  "local_worktree_dirty": false
+}

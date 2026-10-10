@@ -1,0 +1,14 @@
+{
+  "product_id": "stemdeck",
+  "quality_score": null,
+  "release_readiness": "ALPHA / not qualified. Exact-source local synthetic reload/export passes; complete capture/replay and physical/native gates remain open.",
+  "evidence_sources": [
+    "/Users/agentsattari/thecreateco-marketing/PRODUCTS.md",
+    "/Users/agentsattari/code/wave4/WAVE4.md",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-initial.md"
+  ],
+  "observed_at": "2026-10-08T00:05:00Z",
+  "verification_level": "LOCAL_SOURCE_BUILD_TEST_AND_SYNTHETIC_BROWSER_SUBSET",
+  "next_milestone": "Resolve confirmed dependency advisories; qualify four-deck capture/replay/arrange/save/reopen/export golden workflow.",
+  "core_product_lab_state": "/Users/agentsattari/thecreateco-company/core-product-lab/products/stemdeck.json"
+}

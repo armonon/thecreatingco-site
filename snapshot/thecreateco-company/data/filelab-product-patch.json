@@ -1,0 +1,38 @@
+{
+  "product_id": "filelab",
+  "product_name": "FileLab",
+  "description": "A local-first adaptive file workbench that detects an uploaded file and offers relevant transforms, compression, extraction, cleanup and delivery presets.",
+  "target_user": "Creators and small teams who need fast, trustworthy preparation of images, video, audio and PDFs.",
+  "primary_problem": "File conversion and preparation are fragmented across many single-purpose utilities and destructive cloud upload flows.",
+  "kind": "standalone",
+  "parent_product_id": null,
+  "status": "FOUNDER_CONCEPT_RECORDED",
+  "maturity": "IDEA",
+  "quality_score": null,
+  "quality_scores": null,
+  "release_readiness": "Not assessed; no prototype or demand validation yet.",
+  "active_users": null,
+  "feedback": [],
+  "known_bugs": [],
+  "major_missing_features": [
+    "Demand and competitive validation",
+    "Local-processing architecture and browser capability matrix",
+    "Privacy, file-retention and failure-recovery design",
+    "Prototype and real-file qualification"
+  ],
+  "competitive_position": "Unassessed. Potential differentiation: one adaptive local-first workspace rather than many one-off converters.",
+  "strategic_value": "Potential acquisition surface and companion workflow; hypothesis pending validation.",
+  "growth_potential": null,
+  "maintenance_cost": null,
+  "next_milestone": "Validate the focused MVP, demand, local-processing feasibility and truthful capability boundary before prototyping.",
+  "priority": "VALIDATE",
+  "repo": null,
+  "local_path": null,
+  "evidence_sources": [
+    "Armon, Discord #thecreativeco, 2026-10-09: FileLab adaptive upload-and-operation concept"
+  ],
+  "observed_at": "2026-10-09T14:20:00+00:00",
+  "verification_level": "FOUNDER_DIRECTION_ONLY",
+  "evidence_freshness": "Founder concept; market, implementation and user validation absent.",
+  "execution_hold": "Do not build or publish before the validation task has evidence and an explicit CONTINUE/PIVOT/KILL decision."
+}

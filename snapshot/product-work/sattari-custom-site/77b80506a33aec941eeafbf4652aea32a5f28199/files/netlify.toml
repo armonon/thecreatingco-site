@@ -1,0 +1,159 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+  functions = "netlify/functions"
+  # One path to production. GitHub Actions deploys the exact build that passed
+  # the release gate (.github/workflows/build-deploy.yml); a Netlify build of
+  # the same push would race it with an unqualified build. So Netlify skips
+  # production builds (exit 0 = skip) unless the site's environment sets
+  # NETLIFY_PRODUCTION_BUILDS=on, for owners who deploy from Netlify instead.
+  # Deploy previews and branch deploys always build. See docs/DEPLOYMENT.md.
+  ignore = '[ "$CONTEXT" = "production" ] && [ "$NETLIFY_PRODUCTION_BUILDS" != "on" ]'
+
+# Pin the Node major so Netlify matches the version CI builds, tests and
+# qualifies. Node 20 reached end of life on 2026-04-30; 22 is LTS into 2027.
+[build.environment]
+  NODE_VERSION = "22"
+
+[[redirects]]
+  from = "/loop"
+  to = "/learn"
+  status = 301
+
+[[redirects]]
+  from = "/buy"
+  to = "/shop"
+  status = 301
+
+[[redirects]]
+  from = "/about-3"
+  to = "/about"
+  status = 301
+
+[[redirects]]
+  from = "/audio-suite"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/audio-suite/downloads"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/audio"
+  to = "/404.html"
+  status = 404
+  force = true
+
+# Retired alpha packages are preserved outside the publish directory.
+[[redirects]]
+  from = "/downloads"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/downloads/*"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/services/music-classes-los-angeles"
+  to = "/services/music-lessons-los-angeles"
+  status = 301
+
+[[redirects]]
+  from = "/services/drum-repair-los-angeles"
+  to = "/services/instrument-repair-los-angeles"
+  status = 301
+
+[[redirects]]
+  from = "/stem-seperator"
+  to = "/stem-separator"
+  status = 301
+
+# No /api/* or /product-images/* rules on purpose. Every function is a v2
+# function that declares its own routes in `config.path` (and its schedule in
+# `config.schedule`). Netlify matches those before any redirect, so a rule here
+# would be dead and could drift from the real route. v2 is also what gives a
+# function the strongly consistent Blobs reads stock and bookings rely on;
+# see server/blobs.js.
+
+# Site-wide security headers. The full Content-Security-Policy ships in
+# report-only mode first: browsers log what it would block (DevTools console)
+# without blocking anything, so a missed third party cannot break checkout.
+# Once production shows no violations, rename the header to
+# Content-Security-Policy to enforce it (docs/DEPLOYMENT.md). Framing is
+# enforced now. The script hashes are the day/night theme script in index.html
+# and the staff page's script (every enforced policy applies to a page, so this
+# one must allow it too); tests/security-headers.test.js fails if they drift.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    Content-Security-Policy = "frame-ancestors 'self'"
+    Permissions-Policy = "camera=(), geolocation=(), payment=(), usb=(), microphone=(self), midi=(self)"
+    Content-Security-Policy-Report-Only = "default-src 'self'; script-src 'self' 'sha256-8EcVp8/rZS/V1u4IjoMzdQxQA8+pQuBvF5vSFQ1DlE0=' 'sha256-WNofvJwKTZLiodQQIIs22BEFzn47xS6JwfSZqC8bg0U=' 'wasm-unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://*.cdninstagram.com https://*.fbcdn.net; media-src 'self' data: blob:; font-src 'self'; connect-src 'self' blob: data: https://*.sentry.io https://huggingface.co https://*.huggingface.co https://*.hf.co; worker-src 'self' blob:; frame-src https://www.google.com; form-action 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'self'; manifest-src 'self'"
+
+[[headers]]
+  for = "/studio-booking"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+    Referrer-Policy = "no-referrer"
+    Cache-Control = "no-store"
+
+# The staff page is unlisted, not secret, so it must stay out of search
+# results. This header does that WITHOUT naming the path in robots.txt —
+# robots.txt is public, and listing a private URL there hands it to anyone
+# who asks for the file.
+[[headers]]
+  for = "/staff-cc6436694e.html"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+    Referrer-Policy = "no-referrer"
+    Cache-Control = "no-store"
+    # Enforced: the staff page is one self-contained file. Its inline script
+    # is allowed by hash (tests/security-headers.test.js keeps it current), and
+    # it can never be framed, so staff actions cannot be clickjacked.
+    Content-Security-Policy = "default-src 'self'; script-src 'sha256-WNofvJwKTZLiodQQIIs22BEFzn47xS6JwfSZqC8bg0U='; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; connect-src 'self'; form-action 'self'; base-uri 'none'; object-src 'none'; frame-ancestors 'none'"
+
+# Same page without the extension (Netlify's pretty URLs).
+[[headers]]
+  for = "/staff-cc6436694e"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+    Referrer-Policy = "no-referrer"
+    Cache-Control = "no-store"
+    Content-Security-Policy = "default-src 'self'; script-src 'sha256-WNofvJwKTZLiodQQIIs22BEFzn47xS6JwfSZqC8bg0U='; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; connect-src 'self'; form-action 'self'; base-uri 'none'; object-src 'none'; frame-ancestors 'none'"
+
+# Products added by staff after a build still need the live catalog lookup.
+[[redirects]]
+  from = "/product/*"
+  to = "/app.html"
+  status = 200
+
+[[headers]]
+  for = "/cart"
+  [headers.values]
+    X-Robots-Tag = "noindex, follow"
+
+[[headers]]
+  for = "/checkout/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, follow"
+
+[[headers]]
+  for = "/instagram/callback"
+  [headers.values]
+    X-Robots-Tag = "noindex, follow"
+
+# Existing prerendered files take precedence; unknown URLs get a real 404.
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404

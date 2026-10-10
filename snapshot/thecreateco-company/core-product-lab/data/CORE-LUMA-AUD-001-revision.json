@@ -1,0 +1,4 @@
+{
+  "task_id": "CORE-LUMA-AUD-001",
+  "next_action": "Repair checkout-layout assumption with explicit Form dependency/portable contract fixture. Preserve required cross-app validation; never silently skip it to make tests green."
+}

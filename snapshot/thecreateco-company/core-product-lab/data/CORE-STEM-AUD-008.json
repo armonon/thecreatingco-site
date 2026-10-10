@@ -1,0 +1,30 @@
+{
+  "task_id": "CORE-STEM-AUD-008",
+  "title": "Qualify mobile/browser session portability",
+  "product": "stemdeck",
+  "area": "workflow_gap",
+  "category": "workflow_gap",
+  "workstream": "CORE_PRODUCT_LAB",
+  "severity": "P2",
+  "scores": {
+    "impact": 8,
+    "severity": 6,
+    "workflow_importance": 8,
+    "competitive_value": 7,
+    "release_importance": 8,
+    "confidence": 9,
+    "effort": 7,
+    "risk": 4,
+    "user_value": 8
+  },
+  "dependencies": [],
+  "status": "QUEUED",
+  "model": "gpt-6-luna",
+  "expected_value": "Flagship golden-workflow reliability; scores are planning estimates, not health metrics.",
+  "test_requirements": "Reproduce on isolated exact source; preserve baseline/fixed evidence, appropriate build/tests and golden path; source reading is not interactive sign-off.",
+  "source_evidence": [
+    "reports/stemdeck-ui/report.json",
+    "docs/PROFESSIONAL_ACCEPTANCE.md"
+  ],
+  "next_action": "Automated widths are not Safari/iOS/Android: portable project reopen and interruption on actual supported engines/devices."
+}

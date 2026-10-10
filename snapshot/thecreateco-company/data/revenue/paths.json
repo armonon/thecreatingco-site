@@ -1,0 +1,73 @@
+{
+  "updated_at": "2026-10-08T01:08:57.576819+00:00",
+  "status": "HYPOTHESES_NOT_FORECASTS",
+  "paths": [
+    {
+      "id": "A",
+      "role": "PRIMARY",
+      "name": "Productized creative-workflow services",
+      "customer": "2\u201310 person content/video studios",
+      "offer": "Repeatable fixed-scope implementation plus training in existing approved tools",
+      "price_hypothesis_usd": 10000,
+      "billing_basis": "one-time project revenue; not current price or MRR",
+      "customers_required": 100,
+      "annual_revenue_at_required": 1000000,
+      "acquisition": "Permissioned existing relationships, individually qualified studio conversations, referrals; no paid media initially",
+      "readiness": "Research-ready, not sales/delivery-qualified; $500 diagnostic/$2500 pilot hypotheses",
+      "risks": [
+        "Demand and delivery advantage unproven",
+        "Founder capacity",
+        "Bespoke work crowding out products",
+        "Price increase from pilot requires proven value, not assumed repricing"
+      ],
+      "time_to_signal": "48 active-work hours preparation, 7 calendar days response window; 2\u20134 weeks pilot estimate not promise",
+      "next_validation": "5 completed qualified interviews, 2 proposal requests, then 1 approved paid pilot with measured labor",
+      "probability": null
+    },
+    {
+      "id": "B",
+      "role": "SECONDARY",
+      "name": "Narrow ScenePilot Pro outcome; suite expansion only after proof",
+      "customer": "Independent video creators delivering repeat short-form edits",
+      "offer": "Qualified native/pro workflow with concrete advantage; free Lite unchanged",
+      "price_hypothesis_usd": 199,
+      "billing_basis": "one-time incremental license; hypothetical",
+      "customers_required": 5026,
+      "annual_revenue_at_required": 1000174,
+      "acquisition": "Real import-to-export demos, niche creator education, permissioned beta users and referrals",
+      "readiness": "Public Lite alpha; full golden workflow and paid licensing not qualified",
+      "risks": [
+        "Free Resolve and other incumbents",
+        "Acquisition volume",
+        "Release/support quality",
+        "No recurring revenue from one-time sales"
+      ],
+      "time_to_signal": "48 active-work hours prototype/offer comprehension preparation after a reliable sample; paid validation only after release gates",
+      "next_validation": "Reuse CORE-SP-WORKFLOW-001/W03/M05 to test one honest outcome with 5 qualified creators",
+      "probability": null
+    },
+    {
+      "id": "C",
+      "role": "EXPERIMENTAL",
+      "name": "Institutional creative-workflow onboarding",
+      "customer": "Small design/video schools and independent creative teams",
+      "offer": "Curriculum, onboarding, compatible templates and limited support; institutional licensing only where rights allow",
+      "price_hypothesis_usd": 5000,
+      "billing_basis": "annual institutional service contract; hypothetical",
+      "customers_required": 200,
+      "annual_revenue_at_required": 1000000,
+      "acquisition": "Teacher/department-head discovery, workshops, permissioned referrals",
+      "readiness": "Learning assets exist; institutional procurement, privacy, accessibility, uptime and support capacity unqualified",
+      "risks": [
+        "Long sales cycles",
+        "Free incumbent tools",
+        "Support cost",
+        "No established institutional buyer access"
+      ],
+      "time_to_signal": "48 active-work hours interview prep, 2\u20136 weeks buyer response/procurement discovery estimate",
+      "next_validation": "3 educator interviews and 1 scoped workshop request before any school feature development",
+      "probability": null
+    }
+  ],
+  "capacity_note": "100 service projects at 40 hours each require 4000 delivery hours, plus sales/support; 200 education accounts at 10 hours/year require 2000 hours. Software acquisition at an illustrative 2% visitor-to-purchase requires 251300 qualified visits for 5026 sales; 2% is NOT observed conversion. Fees/refunds/tax/cost are additional."
+}

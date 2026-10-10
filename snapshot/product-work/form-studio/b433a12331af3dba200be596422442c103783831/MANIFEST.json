@@ -1,0 +1,33 @@
+{
+  "sha": "b433a12331af3dba200be596422442c103783831",
+  "base_sha": "b5abdd1de5f71fe0244ef9a651a6d983067541ff",
+  "scope": "Committed screened review delta, not a release or complete binary artifact",
+  "files": [
+    {
+      "path": "KNOWN_ISSUES.md",
+      "status": "present",
+      "sha256": "f4b75334d991ba474321ba93367e4f64fd28dbbaa64f46f163f4c8cfef198cee",
+      "bytes": 2630
+    },
+    {
+      "path": "package-lock.json",
+      "status": "present",
+      "sha256": "a1850c8e76f295f688e6977f2cdd6a8f8adeada8e7a8eb5357fa4cf7a650476d",
+      "bytes": 414196
+    },
+    {
+      "path": "package.json",
+      "status": "present",
+      "sha256": "1e391a68e8066bf3b3ce96b0bb890e2c847fd63ccc9b79279422ba9fe3915548",
+      "bytes": 5626
+    }
+  ],
+  "omitted": [],
+  "patch_sha256": "e0a94d66f6d9310b5322c9cd3d6965591f1b7cdba761da9e801bb4bb0dab7415",
+  "repo": "https://github.com/armonon/form-studio",
+  "branches": [
+    "fix/core-form-security-20261007"
+  ],
+  "archive_path": "form-studio/b433a12331af3dba200be596422442c103783831",
+  "local_worktree_dirty": false
+}
