@@ -1,0 +1,20 @@
+{
+  "deploy": "6acaa108728c68e074310180",
+  "files": 2112,
+  "replaced": [
+    "/creating/project-catalog.json",
+    "/creating/project-tools.js",
+    "/creating/cohesion.css",
+    "/creating/workspace-core.js",
+    "/creating/fflate.js",
+    "/tools/index.html",
+    "/projects/index.html",
+    "/workspace/index.html"
+  ],
+  "guides_verified": 36,
+  "exact_manifest": true,
+  "effective_function_configuration_unchanged": true,
+  "function_artifact_unchanged": true,
+  "live": true,
+  "current_published_deploy": "6acaa18b07a551f8a923068d"
+}

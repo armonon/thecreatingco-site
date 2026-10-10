@@ -1,0 +1,18 @@
+{
+  "deploy": "6aca9f54728c68d664310180",
+  "files": 2112,
+  "replaced": [
+    "/creating/project-catalog.json",
+    "/creating/project-tools.js",
+    "/creating/cohesion.css",
+    "/creating/workspace-core.js",
+    "/creating/fflate.js",
+    "/tools/index.html",
+    "/projects/index.html",
+    "/workspace/index.html"
+  ],
+  "guides_verified": 36,
+  "exact_manifest": true,
+  "functions_unchanged": true,
+  "live": false
+}
