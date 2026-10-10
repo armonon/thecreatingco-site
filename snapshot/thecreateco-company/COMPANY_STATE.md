@@ -1,6 +1,6 @@
 # thecreateco — Current State
 
-Updated: 2026-10-09T23:41:54+00:00 | Seeds loaded: 2026-10-07T23:38:29+00:00
+Updated: 2026-10-10T00:40:04+00:00 | Seeds loaded: 2026-10-07T23:38:29+00:00
 
 ## COMPANY HEALTH
 Unknown / not scored — evidence-backed health rubric not yet measured.
@@ -9,7 +9,7 @@ Unknown / not scored — evidence-backed health rubric not yet measured.
 ["Reach $1M annual company revenue ethically; first verify the current baseline and next $1K milestone", "Preserve user work and qualify the four flagship workflows", "Validate one focused paid offer; measure contribution, conversion and retention"]
 
 ## TOP PRIORITY
-M01 — Draft evidence-led Reclaim native-alpha demonstration (priority 89.6; estimate)
+M05 — Prepare focused beta-testing invitations (priority 89.6; estimate)
 
 ## PRODUCTS
 47 registered entries; inventory may be incomplete.
@@ -29,7 +29,6 @@ Unknown / not measured: visitors, downloads, signups, beta_testers, active_users
 Unknown-metric reporting periods: {'type': 'source availability check, not financial reporting interval', 'as_of': '2026-10-09T20:11:37.276475+00:00'}. Individual source details retained in context.
 
 ## CURRENT WORK
-- M01 Draft evidence-led Reclaim native-alpha demonstration — QUEUED; priority 89.6 (estimate)
 - M05 Prepare focused beta-testing invitations — QUEUED; priority 89.6 (estimate)
 - W10 Verify first-use help and export-limit clarity — QUEUED; priority 89.6 (estimate)
 - M07 Repurpose one verified fix into a development story — QUEUED; priority 85.75 (estimate)
@@ -37,7 +36,8 @@ Unknown-metric reporting periods: {'type': 'source availability check, not finan
 - P03 Verify Animate save/export recovery and assess undo — QUEUED; priority 81.0 (estimate)
 - P04 Qualify Locker cross-app open/save failure behavior — QUEUED; priority 81.0 (estimate)
 - M10 Audit free-pack usefulness and product handoff — QUEUED; priority 78.4 (estimate)
-Queue totals: BLOCKED 43, COMPLETE 44, NEEDS_REVIEW 17, QUEUED 23, WAITING 22
+- W08 Measure critical-page performance before optimization — QUEUED; priority 78.4 (estimate)
+Queue totals: BLOCKED 43, COMPLETE 45, NEEDS_REVIEW 17, QUEUED 22, WAITING 22
 Showing up to 8 running + 8 eligible queued; full details: TASK_QUEUE.json.
 
 ## BIGGEST BOTTLENECK
@@ -54,14 +54,14 @@ Preserve active release owners. Revenue research: Glyph first-font validation vi
 82 tasks gated by review/validation/blockers; see TASK_QUEUE.json.
 
 ## RECENT RESULTS
+- 2026-10-10T00:12:18+00:00 M01 COMPLETE: Internal Reclaim alpha demo draft completed by requested Luna worker with independent Sol review; three director live GETs and me…
 - 2026-10-09T23:41:54+00:00 P06 BLOCKED: Read-only exact PR9 parity batch:52Cast/mesh tests and desktop frontend build PASS; review endpoints200, canonical/public endpoin…
 - 2026-10-09T23:17:40+00:00 W05 COMPLETE: Sol-directed Luna non-sending audit: seven mocked validation/success/error checks PASS with independent Sol rerun; seven live GET…
 - 2026-10-09T22:12:56+00:00 W03 BLOCKED: Deterministic E02 checks PASS: five null-only placeholders, not observed journeys. M04 blocked; consent-compatible participant ou…
 - 2026-10-09T21:55:55+00:00 GROW-SITE-NETLIFY-HANDOFF-20261009 BLOCKED: Pushed exact website source on 6354f944a46e13f324ac69cf08acae6c9bd7f9cd and opened PR #2. Source checks pass. Both exact-manifest…
-- 2026-10-09T21:50:41+00:00 PROGRAM18-LIBRARIAN-COLLECTIONS-001 NEEDS_REVIEW: Implemented and committed the first Librarian Collections curator-to-reader slice at b6e3ca098dc69b411fdb077982eaedba3742a073. Ev…
 
 ## MARKETING SUMMARY
-Read-only snapshot: read_only_snapshot; observed 2026-10-09T23:41:54+00:00.
+Read-only snapshot: read_only_snapshot; observed 2026-10-10T00:40:04+00:00.
 Queue statuses: {"tasks": {"COMPLETE": 26}}
 Campaign statuses: {"campaigns": {"active": 1}}
 Recorded outcomes: {"impressions": null, "clicks": null, "replies": null, "signups": null, "conversions": null, "engagement": null, "cost": null}
@@ -69,8 +69,8 @@ Outcome period: {"earliest_record": null, "latest_record": null}
 Marketing counts are NOT company traffic metrics. Source: /Users/agentsattari/thecreateco-marketing/engine/data/mktg.db
 
 ## AI COST / GOVERNOR
-Observed: 2026-10-09T23:22:01.503144+00:00
-Today: {"ledger_rows": 147, "records": 147, "records_known_rows": 147, "failures": 20, "failures_known_rows": 147, "input_tokens": 5771840, "input_tokens_known_rows": 146, "cached_tokens": 49988992, "cached_tokens_known_rows": 144, "cache_read_tokens": 49988992, "cache_read_tokens_known_rows": 139, "cache_write_tokens": null, "cache_write_tokens_known_ro…
+Observed: 2026-10-10T00:22:00.291849+00:00
+Today: {"ledger_rows": 157, "records": 157, "records_known_rows": 157, "failures": 21, "failures_known_rows": 157, "input_tokens": 6186545, "input_tokens_known_rows": 156, "cached_tokens": 52817536, "cached_tokens_known_rows": 154, "cache_read_tokens": 52817536, "cache_read_tokens_known_rows": 149, "cache_write_tokens": null, "cache_write_tokens_known_ro…
 Governor: {"mode": "normal", "advisory_only": true, "budgets": [{"name": "daily", "scope": "all", "key": "all", "window": "day", "metric": "list_estimated_usd", "observed": 0.00294499999999…
 Coverage gaps: ["interactive/native-child per-call usage not exposed by cron receipts", "scheduled receipt token counts may aggregate multiple model calls", "cache/input accounting differs by source; preserve explicit totals, do not subtract caches blindly", "scheduled latency is end-to-end run duration, not pure inference latency", "task/product/reasoning/escal…
 Details: data/cost-snapshot.json; list-price estimates are not billed spend.

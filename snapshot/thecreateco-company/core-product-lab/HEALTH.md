@@ -1,6 +1,6 @@
 # Core Product Health
 
-Updated: 2026-10-09T23:41:54+00:00
+Updated: 2026-10-10T00:22:03+00:00
 
 Quality scores: unknown until measured. Local checks are not release qualification.
 
