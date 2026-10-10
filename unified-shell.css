@@ -1,0 +1,79 @@
+/* Shared public-site shell. Embedded editor documents remain independent. */
+@font-face{font-family:CreatecoShell;src:url('/assets/form-origin/geist-98bbbccb.woff2') format('woff2');font-weight:100 900;font-display:swap}
+.site-unified{--cc-ink:#22271f;--cc-paper:#f6f7ef;--cc-line:#cdd2c6;--cc-muted:#525b4b;--cc-lime:#d8ff3e;--cc-focus:#5136b4;--cc-header-height:76px;-webkit-text-size-adjust:100%}
+.site-unified :is(.cc-header,.cc-footer,.mm-launch-dialog){font-family:CreatecoShell,Arial,sans-serif;letter-spacing:0}
+.site-unified :is(h1,h2,h3,h4,.eyebrow,.overline,.tp-eyebrow,.launch-kicker,.mm-kicker){letter-spacing:0!important}
+.site-unified :is(a,button,summary,input,select,textarea):focus-visible{outline:3px solid var(--cc-focus);outline-offset:4px}
+.site-unified :is(button,summary){touch-action:manipulation}
+.site-unified main{min-width:0}
+.site-unified main h1{font-size:64px!important;line-height:1.08!important;overflow-wrap:break-word;text-wrap:balance}
+.site-unified :is(.tp-primary,.launch-primary,.ph-open,.mm-solid){color:var(--cc-ink)!important;background:var(--cc-lime)!important;border:1px solid #626d40!important;border-radius:6px!important;min-height:48px;box-shadow:none}
+.site-unified :is(.tp-primary,.launch-primary,.ph-open,.mm-solid):hover{background:#c9ed38!important;transform:none}
+.site-unified :is(.hub-toolbar,.mini-bar,.tp-lesson-toolbar) :is(button,select){min-height:44px}
+.site-unified :is(.pf-group,.secondary-reference,.tp-lesson,.hub-studio,.mini-box,.ct-tool){border-radius:8px!important}
+.site-unified :is(.pf-search,.hub-search,.ct-filters) :is(input,select){min-height:48px;font-size:16px;border-radius:6px}
+.site-unified :is(.pr-nav,.tp-subnav) a{display:inline-flex;align-items:center;min-height:44px;line-height:1.4}
+.site-unified :is(.pr-nav,.tp-subnav){scroll-margin-top:var(--cc-header-height)}
+.site-unified main [id]{scroll-margin-top:calc(var(--cc-header-height) + 20px)}
+.site-unified .cc-header{position:sticky!important;top:0!important;z-index:1000!important;display:flex!important;align-items:center!important;justify-content:space-between!important;gap:24px!important;height:var(--cc-header-height)!important;min-height:var(--cc-header-height)!important;padding:0 28px!important;box-sizing:border-box!important;background:var(--cc-paper)!important;color:var(--cc-ink)!important;border:0!important;border-bottom:1px solid var(--cc-line)!important;transform:none!important}
+.site-unified .cc-header .wordmark{display:inline-flex!important;align-items:center;flex:none;font-size:26px!important;line-height:1!important;font-weight:850!important;letter-spacing:0!important;text-decoration:none!important;color:var(--cc-ink)!important;white-space:nowrap}
+.site-unified .cc-header .brand-period{color:#3538f3}
+.site-unified .cc-header>nav{display:flex!important;align-items:center!important;justify-content:center!important;gap:22px!important;margin:0!important}
+.site-unified .cc-header>nav a{position:relative;display:inline-flex!important;align-items:center;min-height:44px;font-size:14px!important;font-weight:650;line-height:1.25;color:var(--cc-ink)!important;text-decoration:none!important;white-space:nowrap}
+.site-unified .cc-header>nav a[aria-current]::after{content:'';position:absolute;bottom:4px;left:0;right:0;height:3px;background:#5354ed}
+.site-unified .cc-header>nav a:hover{color:#4134a0!important}
+.site-unified .cc-header-actions{display:flex;align-items:center;gap:12px;flex:none}
+.site-unified .cc-header .mm-launch-button{display:inline-flex!important;align-items:center;justify-content:center;min-height:44px!important;padding:10px 18px!important;border:1px solid #626d40!important;background:var(--cc-lime)!important;color:var(--cc-ink)!important;border-radius:6px!important;font-size:14px!important;font-weight:700;line-height:1.3;box-shadow:none!important;transform:none!important;white-space:nowrap;cursor:pointer}
+.site-unified .cc-header .site-menu{display:block!important;position:relative;margin:0!important}
+.site-unified .cc-header .site-menu>summary{list-style:none;display:grid!important;place-items:center;width:44px;height:44px;min-height:44px;padding:0!important;border:1px solid var(--cc-line);border-radius:6px;background:#fff;color:var(--cc-ink);cursor:pointer;box-sizing:border-box}
+.site-unified .cc-header .site-menu>summary::-webkit-details-marker{display:none}
+.site-unified .cc-header .site-menu>summary svg{width:22px;height:22px;display:block}
+.site-unified .cc-header .site-menu>nav{position:absolute!important;top:54px!important;right:0!important;left:auto!important;display:grid!important;grid-template-columns:1fr!important;gap:0!important;width:288px!important;max-width:calc(100vw - 32px)!important;max-height:calc(100dvh - 96px);overflow:auto;padding:12px!important;border:1px solid var(--cc-line)!important;border-radius:8px!important;background:var(--cc-paper)!important;box-shadow:0 16px 40px #17251c20;box-sizing:border-box}
+.site-unified .cc-header .site-menu:not([open])>nav{display:none!important}
+.site-unified .cc-header .site-menu nav a{display:flex!important;align-items:center;min-height:44px;padding:8px 12px!important;box-sizing:border-box;font-size:14px!important;line-height:1.4;color:var(--cc-ink)!important;text-decoration:none!important;white-space:normal!important;border-radius:4px}
+.site-unified .cc-header .site-menu nav a:is(:hover,[aria-current]){background:#e5ebd8!important}
+.site-unified.hub-expanded-body .cc-header{visibility:hidden!important;pointer-events:none!important}
+.site-unified .cc-footer{display:grid!important;grid-template-columns:minmax(180px,1fr) minmax(0,2fr)!important;gap:36px!important;background:var(--cc-paper)!important;color:var(--cc-ink)!important;border-top:1px solid var(--cc-line)!important;padding:48px max(24px,calc((100vw - 1240px)/2)) 28px!important;box-sizing:border-box}
+.site-unified .cc-footer .wordmark{font-size:28px!important;font-weight:800;letter-spacing:0;line-height:1.2;text-decoration:none;color:var(--cc-ink)}
+.site-unified .cc-footer p{max-width:29ch;font-size:15px;line-height:1.6;color:var(--cc-muted)}
+.site-unified .cc-footer nav{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:24px!important;grid-column:auto!important;grid-row:auto!important;margin:0!important}
+.site-unified .cc-footer nav section{min-width:0}
+.site-unified .cc-footer h2{font-size:12px!important;font-weight:750;line-height:1.5;margin:0 0 12px!important;color:var(--cc-muted)}
+.site-unified .cc-footer nav a{display:flex!important;align-items:center;min-height:44px;padding:6px 0;font-size:14px!important;line-height:1.4;box-sizing:border-box;color:var(--cc-ink)!important;text-decoration:none;overflow-wrap:break-word}
+.site-unified .cc-footer nav a:hover{text-decoration:underline;text-underline-offset:4px}
+.site-unified .cc-footer small{grid-column:1/-1;font-size:12px!important;line-height:1.5;color:var(--cc-muted);border-top:1px solid var(--cc-line);padding-top:20px}
+.site-unified .visually-hidden{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.site-unified>.skip{position:fixed;top:8px;left:12px;z-index:3000;transform:translateY(-200%);padding:12px 18px;background:#fff;color:var(--cc-ink);border:1px solid var(--cc-focus)}
+.site-unified>.skip:focus{transform:none}
+.site-unified .mm-launch-dialog:not([open]){display:none!important}
+.site-unified .mm-launch-dialog{margin:auto;letter-spacing:0}
+.site-unified .mm-launch-dialog :is(h2,h3,strong){letter-spacing:0!important}
+.site-unified .mm-launch-dialog [data-mm-close]{min-width:44px!important;min-height:44px!important}
+.site-unified .ql-clean .mm-launch-item{aspect-ratio:auto!important;min-height:264px!important;grid-template-rows:auto 1fr auto}
+.site-unified:has(.mm-launch-dialog[open]){overflow:hidden}
+.site-unified .hub-intro>p{white-space:normal;line-height:1.65}
+@media(min-width:1101px){.site-unified .ql-clean [data-mm-launch-group]{grid-template-columns:repeat(4,minmax(0,1fr))}.site-unified dialog.mm-launch-dialog.ql-clean{width:min(960px,calc(100vw - 48px))}}
+@media(max-width:1100px){.site-unified .cc-header>nav{display:none!important}.site-unified .cc-header .cc-header-actions{margin-left:auto}.site-unified .cc-header{gap:16px!important;padding-inline:24px!important}}
+@media(max-width:700px){
+ .site-unified{--cc-header-height:64px}
+ .site-unified .cc-header{gap:10px!important;padding-inline:16px!important}
+ .site-unified .cc-header .wordmark{font-size:22px!important}
+ .site-unified .cc-header-actions{gap:8px}
+ .site-unified .cc-header .mm-launch-button{font-size:12px!important;padding:10px 12px!important}
+ .site-unified main h1{font-size:40px!important;line-height:1.1!important}
+ .site-unified :is(.tp-subnav,.pr-nav){flex-wrap:wrap;gap:8px 16px}
+ .site-unified .cc-footer{grid-template-columns:1fr!important;padding:32px 20px 24px!important;gap:24px!important}
+ .site-unified .cc-footer nav{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:24px 20px!important}
+ .site-unified .cc-footer nav section:last-child{grid-column:1/-1}
+ .site-unified .cc-footer nav section:last-child a{width:fit-content}
+ .site-unified :is(.launch-actions,.ph-actions,.tp-actions){flex-wrap:wrap;gap:12px}
+ .site-unified :is(.hub-intro,.ct-directory-heading) p{line-height:1.65}
+ .site-unified .ql-clean .mm-launch-item{min-height:210px!important;aspect-ratio:auto!important}
+ .site-unified .mm-launch-dialog{max-height:calc(100dvh - 20px)!important}
+}
+@media(max-width:360px){.site-unified .cc-header{padding-inline:10px!important;gap:6px!important}.site-unified .cc-header .wordmark{font-size:19px!important}.site-unified .cc-header .mm-launch-button{padding-inline:10px!important}.site-unified main h1{font-size:34px!important}}
+@media(prefers-reduced-motion:reduce){.site-unified{scroll-behavior:auto}.site-unified :is(.cc-header,.cc-footer,.mm-launch-dialog,.mm-notable-card){transition:none!important;animation:none!important}}
+
+/* Keep section headings below both sticky navigation rows. */
+.site-unified:has(.pr-nav,.tp-subnav) main [id]{scroll-margin-top:calc(var(--cc-header-height) + 84px)!important}
+.site-unified .hub-intro>p br{display:block!important}
