@@ -1,0 +1,81 @@
+{
+  "observed_at": "2026-10-08T04:00:42.105Z",
+  "scope": "Hydrated UI inspection. Every Community API mutation intercepted locally and rejected; no public write, guest identity creation, upload or form submit permitted.",
+  "checks": [],
+  "blocked": [
+    {
+      "method": "POST",
+      "path": "/api/community/network",
+      "action": "guest-session"
+    }
+  ],
+  "errors": [],
+  "auth": {
+    "url": "https://thecreatingco.com/community/network",
+    "dialogs": [],
+    "headings": [
+      "Community",
+      "Your thecreateco account"
+    ],
+    "emailInputs": 1,
+    "buttons": [
+      "Home",
+      "Discover",
+      "Songs",
+      "Sessions",
+      "Pocket Studio",
+      "Create",
+      "Messages",
+      "Notifications",
+      "Saved",
+      "Profile",
+      "Settings",
+      "Sign in / join",
+      "Choose a name",
+      "Back to network",
+      "Email me a code"
+    ]
+  },
+  "escapeCloses": true,
+  "mobileMore": {
+    "buttons": [
+      "Home",
+      "Discover",
+      "Songs",
+      "Sessions",
+      "Pocket Studio",
+      "Create",
+      "Messages",
+      "Notifications",
+      "Saved",
+      "Profile",
+      "Close menu",
+      "Settings",
+      "Sign in / join",
+      "",
+      "Choose a name",
+      "Everyone",
+      "Following",
+      "+What’s on your mind?",
+      "S",
+      "SmoothCracka11@zionwilliamson · Guest · 10/7/2026",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "overflow": false
+  },
+  "composerGuard": {
+    "url": "https://thecreatingco.com/community/network?view=Create",
+    "headings": [
+      "Create",
+      "Make it yours."
+    ],
+    "inputs": [],
+    "notices": [
+      "Read-only qualification: write deliberately blocked by test harness.Retry"
+    ]
+  },
+  "browser": "154.0.8037.98"
+}

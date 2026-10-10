@@ -1,0 +1,16 @@
+{
+  "product_id": "stemdeck",
+  "performance_probe": {
+    "source_sha": "6bad0edaf198d80d44c9aa02c3e65970fe7d9148",
+    "observed_at": "2026-10-08T07:12:04.984750+00:00",
+    "evidence": "/Users/agentsattari/thecreateco-company/reports/stemdeck-performance-20261008T0710/README.md",
+    "status": "BLOCKED",
+    "capture_started": false,
+    "available_bytes": 1229836288,
+    "required_bytes": 2838683648,
+    "targeted_unit_tests_passed": 21,
+    "normal_heavy_coverage_complete": false,
+    "physical_hardware_measured": false,
+    "next_action": "Provide at least 2838683648 bytes headroom on the recording target; rerun unchanged 120-second soak once, then qualify documented normal/heavy profiles and authorized physical sessions separately."
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "expected_revenue_impact": "Unknown; validation-stage, not a forecast",
+  "cost": {
+    "new_spend_usd": 0,
+    "actual_labor_cost": null
+  },
+  "source_evidence": [
+    "REVENUE_DIRECTIVE.md",
+    "reports/revenue-2026-10-07/README.md"
+  ],
+  "result": null,
+  "task_id": "REV-COMMERCE-001",
+  "title": "Verify Sattari economic attribution, fulfillment capacity and existing funnel",
+  "category": "revenue_research",
+  "workstream": "OPERATIONS",
+  "accountable_owner": "revenue-director with existing Sattari operator",
+  "expected_value": "Determine whether existing local commerce beats new-service validation for near-term contribution",
+  "confidence": "Posted offer verified; ownership, stock, sales and margin unknown",
+  "effort": "One read-only reconciliation; no checkout charge or product implementation",
+  "time_to_signal": "One cycle after operator/records access",
+  "dependencies": [],
+  "next_action": "Inspect authorized aggregate stock/capacity/booking/settled-order evidence and economic entitlement. Respect Sattari/music hold; public page audit is already in asset-audit.md. Do not count another business gross or mutate shop/payment flow.",
+  "scores": {
+    "impact": 8,
+    "user_value": 8,
+    "confidence": 6,
+    "effort": 2,
+    "risk": 2
+  }
+}

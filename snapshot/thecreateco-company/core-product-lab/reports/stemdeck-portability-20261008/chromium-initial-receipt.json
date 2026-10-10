@@ -1,0 +1,13 @@
+{
+  "at": "2026-10-08T11:44:21.090434+00:00",
+  "engine": "chromium",
+  "command": "/opt/homebrew/opt/node@22/bin/node /Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-portability-20261008/qualify.mjs chromium",
+  "exit_code": 137,
+  "report_written": false,
+  "verified_artifacts": [
+    "chromium-edited.png",
+    "chromium-restored.wav"
+  ],
+  "cause": "unknown; process ended after export; no stderr or final JSON; differing WAV bytes observed separately",
+  "profile_cleanup": "unverified"
+}

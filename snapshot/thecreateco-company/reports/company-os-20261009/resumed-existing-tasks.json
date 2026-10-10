@@ -1,0 +1,26 @@
+[
+  {
+    "task_id": "CORE-STEM-ARCHIVE-WEBKIT-001",
+    "status": "QUEUED",
+    "attempts": 1,
+    "model": "gpt-6.1-sol"
+  },
+  {
+    "task_id": "CORE-SP-PERF-001",
+    "status": "QUEUED",
+    "attempts": 1,
+    "model": "gpt-6-luna"
+  },
+  {
+    "task_id": "CORE-LUMA-ADJUSTMENT-VARIANTS-001",
+    "status": "QUEUED",
+    "attempts": 2,
+    "model": "gpt-6.1-sol"
+  },
+  {
+    "task_id": "CORE-FORM-WORKER-IMAGE-BINDING-001",
+    "status": "QUEUED",
+    "attempts": 1,
+    "model": "gpt-6.1-sol"
+  }
+]

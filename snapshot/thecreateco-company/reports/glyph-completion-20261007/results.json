@@ -1,0 +1,75 @@
+{
+  "source_sha": "a3e50fa6d5fabdf499fd1592085c54d9710e42dc",
+  "observed_at": "2026-10-08T02:46:57.706031+00:00",
+  "core_workflow": "PASS",
+  "tests": {
+    "unit": {
+      "passed": 45,
+      "total": 45
+    },
+    "lint": "PASS",
+    "build": "PASS",
+    "recovery": "PASS",
+    "autosave": "PASS",
+    "pwa": "PASS",
+    "smoke": "PASS",
+    "font_browsers": [
+      "Chromium",
+      "Firefox",
+      "WebKit"
+    ],
+    "public_a11y_combinations": 12
+  },
+  "platforms": {
+    "status": "UNVERIFIED",
+    "summary": "macOS arm64 headlessChromium/Firefox/WebKit primary workflow passed; Windows/Linux/physical mobile/installed font hosts not exercised.",
+    "source_sha": "a3e50fa6d5fabdf499fd1592085c54d9710e42dc",
+    "observed_at": "2026-10-08T02:46:57.706031+00:00",
+    "coverage_complete": false,
+    "evidence": [
+      "/Users/agentsattari/thecreateco-company/reports/glyph-completion-20261007/font-workflow.log",
+      "/Users/agentsattari/thecreateco-company/reports/glyph-completion-20261007/font-firefox.log",
+      "/Users/agentsattari/thecreateco-company/reports/glyph-completion-20261007/font-webkit.log",
+      "/Users/agentsattari/thecreateco-company/reports/glyph-completion-20261007/README.md"
+    ],
+    "platform_results": {
+      "macOS arm64 Chromium": "PASS",
+      "macOS arm64 Firefox": "PASS",
+      "macOS arm64 WebKit": "PASS",
+      "Windows/Linux browsers": "UNVERIFIED",
+      "physical mobile/tablet": "UNVERIFIED"
+    }
+  },
+  "documentation": "PASS",
+  "critical_blockers": {
+    "status": "UNVERIFIED",
+    "summary": "No known critical blockers in verified standalone workflow after repairs; broader platform/security triage incomplete, so not whole-product release qualification.",
+    "source_sha": "a3e50fa6d5fabdf499fd1592085c54d9710e42dc",
+    "observed_at": "2026-10-08T02:46:57.706031+00:00",
+    "coverage_complete": false,
+    "evidence": [
+      "/Users/agentsattari/thecreateco-company/reports/glyph-completion-20261007/README.md",
+      "/Users/agentsattari/thecreateco-company/reports/glyph-completion-20261007/independent-review.md"
+    ]
+  },
+  "deployment": {
+    "status": "PASS",
+    "pr": "https://github.com/armonon/glyph-studio/pull/2",
+    "pushed_sha": "a3e50fa6d5fabdf499fd1592085c54d9710e42dc",
+    "merged": true,
+    "merged_sha": "0feefc7785d356f1862f23a96162bfd69f4d872e",
+    "tree_equal": true,
+    "deployed": true,
+    "deploy_id": "6ac702c6402f6654a7134732",
+    "rollback_deploy_id": "6ac5d2b39f450706b3f7dda1",
+    "public_url": "https://glyph-studio-610.netlify.app",
+    "public_workflow_verified": true,
+    "evidence": [
+      "/Users/agentsattari/thecreateco-company/reports/glyph-completion-20261007/publish-receipt.json",
+      "/Users/agentsattari/thecreateco-company/reports/glyph-completion-20261007/public-provenance.json",
+      "/Users/agentsattari/thecreateco-company/reports/glyph-completion-20261007/public-font-workflow.log",
+      "/Users/agentsattari/thecreateco-company/reports/glyph-completion-20261007/public-ui.json"
+    ]
+  },
+  "entire_product_complete": false
+}

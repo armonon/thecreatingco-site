@@ -1,0 +1,10 @@
+{
+  "core_product_lab_last_cycle": {
+    "task_id": "CORE-LUMA-AUD-003",
+    "product": "luma",
+    "observed_at": "2026-10-09T19:45:10.674048+00:00",
+    "status": "BLOCKED",
+    "report": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/luma-perf-20261009T1940/README.md",
+    "next_action": "Build a separately identified native qualification bundle/profile with isolated synthetic recovery state; execute dense/sparse brush/transform/open/save/reopen/export fixtures using validated input-to-paint instrumentation and process-tree RSS sampler; record raw samples and parity, p50/p95/p99 and peak RAM. Reuse this task, not a duplicate."
+  }
+}

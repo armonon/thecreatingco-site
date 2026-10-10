@@ -1,0 +1,22 @@
+{
+  "startedAt": "2026-10-08T07:52:58.752Z",
+  "profile": "/Users/agentsattari/.openclaw/tmp/sp-lite-golden-wJtgu7",
+  "source": "c7d2b4fc973861eba785f26e5f607671ac22deb4",
+  "server": "Vite dev localhost:5189, not production artifact",
+  "checks": [
+    {
+      "name": "Actual Lite import five generated assets and insert silent12s clip; IndexedDB retains all media byte hashes",
+      "status": "PASS"
+    }
+  ],
+  "errors": [],
+  "limits": [
+    "One Browser Lite local-development run; no release qualification",
+    "Silent video export subset; full audio/composite golden recipe not claimed",
+    "Destination picker harnessed, actual OPFS handle"
+  ],
+  "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36",
+  "status": "FAIL",
+  "error": "locator.click: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Video track', exact: true })\u001b[22m\n\u001b[2m    - locator resolved to <button>…</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <div class=\"inspector\">…</div> from <section class=\"workspace\">…</section> subtree intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <div class=\"inspector\">…</div> from <section class=\"workspace\">…</section> subtree intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    33 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is visible, enabled and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <div class=\"inspector\">…</div> from <section class=\"workspace\">…</section> subtree intercepts pointer events\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\n    at /Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-golden-20261008T0740/lite-workflow.mjs:8:133",
+  "finishedAt": "2026-10-08T07:53:21.785Z"
+}

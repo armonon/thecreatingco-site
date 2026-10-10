@@ -1,0 +1,35 @@
+{
+  "observed_at": "2026-10-08T01:16:06.078741+00:00",
+  "runtime": "Next 16.3.8 local production server, Node22",
+  "checks": [
+    {
+      "path": "/",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "bytes": 26790,
+      "sha256": "e95ce11c9b6d3b28d337843eb5722b4ed95be76a69345a8afa461755f251e7f3"
+    },
+    {
+      "path": "/studio",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "bytes": 44461,
+      "sha256": "ef202579b4d5978bdd9533a27f7ede335c30a1cc1ad89becdb1d63c3b1090b3b"
+    },
+    {
+      "path": "/_next/image?url=%2Fdesert.jpg&w=640&q=75",
+      "status": 200,
+      "content_type": "image/jpeg",
+      "bytes": 13323,
+      "sha256": "63e0f5c57b74bb50c14d3ad95bf74c76d51094488c6a1923d354b4c251e6f62b"
+    },
+    {
+      "path": "/_next/image?url=%2Fdesert.jpg&w=640&q=0",
+      "status": 400,
+      "content_type": "",
+      "bytes": 60,
+      "sha256": "6e1511cc3eba49763acaf92b26daf93bc55385366033a12ffa8e3f4a17a5a02c"
+    }
+  ],
+  "limitation": "Local route/image smoke only; not deployed exploitability or golden workflow qualification."
+}

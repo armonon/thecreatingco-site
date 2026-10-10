@@ -1,0 +1,11 @@
+{
+  "command": [
+    "python3",
+    "-c",
+    "import pyexpat;print(pyexpat.EXPAT_VERSION)"
+  ],
+  "started_at": "2026-10-08T02:52:26.256466+00:00",
+  "exit_code": 1,
+  "stdout": "",
+  "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n    import pyexpat;print(pyexpat.EXPAT_VERSION)\n    ^^^^^^^^^^^^^^\nImportError: dlopen(/opt/homebrew/Cellar/python@3.14/3.14.4_1/Frameworks/Python.framework/Versions/3.14/lib/python3.14/lib-dynload/pyexpat.cpython-314-darwin.so, 0x0002): Symbol not found: _XML_SetAllocTrackerActivationThreshold\n  Referenced from: <44AFDBDF-C9C3-35EF-A723-C0C54E2C9C3F> /opt/homebrew/Cellar/python@3.14/3.14.4_1/Frameworks/Python.framework/Versions/3.14/lib/python3.14/lib-dynload/pyexpat.cpython-314-darwin.so\n  Expected in:     <4D62FA9D-D86A-3DD0-98F2-C6D0718849E8> /usr/lib/libexpat.1.dylib\n"
+}

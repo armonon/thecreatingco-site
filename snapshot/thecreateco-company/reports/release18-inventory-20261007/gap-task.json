@@ -1,0 +1,17 @@
+{
+  "task_id": "PROGRAM18-INVENTORY-GAPS-001",
+  "title": "Read-only evidence gap and risk inventory for nine included non-first-wave products",
+  "product": null,
+  "workstream": "PRODUCT_COMPLETION",
+  "category": "audit",
+  "status": "QUEUED",
+  "model": "openai/gpt-6.1-sol",
+  "scores": {
+    "impact": 8,
+    "user_value": 8,
+    "confidence": 9,
+    "effort": 3,
+    "risk": 1
+  },
+  "next_action": "Inspect parent live interface inventory and exact-source docs/tests/security/persistence in Reclaim,Librarian,Ghost,Split,Captions,Reframe,AutoCut,Pocket,Cast; queue concrete gaps without source/deploy edits or unsupported tests."
+}

@@ -1,0 +1,9 @@
+{
+  "candidate_sha": "02c6eced0e572eafe5c5c2f8e4fe1b0e8b011b40",
+  "observed_at": "2026-10-09T08:15:25.947512+00:00",
+  "sha256": {
+    "lib/latest-request.ts": "caa21c79edcbbc4a61b2814effbec0ce6c41e245f05d6125e6724f2419d9eeea",
+    "tests/latest-request.test.mjs": "e85f26d78661d78d7ebd7b17b4036e035697903e5e38ac45b344fe3af76ab360",
+    "tools/src/captions/main.tsx": "ae58f3a4b5ec775857345510d1399bc5c137cc551126eada17c955b410c06479"
+  }
+}

@@ -1,0 +1,747 @@
+[
+  {
+    "path": "dist/server/vinext-server.json",
+    "sha256": "9d52a654717b9a3b330ffc193efd8cb6f1893e601b1be30d533f6d01ac8cab07",
+    "bytes": 86
+  },
+  {
+    "path": "dist/server/wrangler.json",
+    "sha256": "dc808d466739751f4f19f3062bc697bbe42f600b1c037e9f4ca46fdce9afe48c",
+    "bytes": 1381
+  },
+  {
+    "path": "dist/server/vinext-externals.json",
+    "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "bytes": 3
+  },
+  {
+    "path": "dist/server/index.js",
+    "sha256": "7f72bfde2e79c601e53aa3d8b78a701069bf58e55023b9291e2727882cc01b39",
+    "bytes": 691940
+  },
+  {
+    "path": "dist/server/__vite_rsc_assets_manifest.js",
+    "sha256": "bce2334db7a7d50109ad56ab0175ed0c49dd2a4906694ce58eaf80e728f4ab78",
+    "bytes": 2042
+  },
+  {
+    "path": "dist/server/image-config.json",
+    "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+    "bytes": 2
+  },
+  {
+    "path": "dist/.openai/hosting.json",
+    "sha256": "b82a5e355240ef1c7c1026b0dbdd02ef0d8bc2cfb78bdd23d72aeea25dc46919",
+    "bytes": 95
+  },
+  {
+    "path": "dist/client/og-marketing.png",
+    "sha256": "7334a5916482762af164cfebbbe4498b02c4a17b7f9f3abe9d52932bf7b59abb",
+    "bytes": 1899940
+  },
+  {
+    "path": "dist/client/file.svg",
+    "sha256": "2b67812c325c199a02536cdbeea0c593a72f707d323b72ee3e08dbab06753bd4",
+    "bytes": 391
+  },
+  {
+    "path": "dist/client/form-study-hero.png",
+    "sha256": "d1455486d202c32e690339c909fc6146ce6463f3ec276338898a44f86aa2fa3a",
+    "bytes": 2152564
+  },
+  {
+    "path": "dist/client/_headers",
+    "sha256": "9e55124bccd40b43dbc6e002daa777fa8f32a230420152910784ca65501d9e0f",
+    "bytes": 125
+  },
+  {
+    "path": "dist/client/.assetsignore",
+    "sha256": "4f83140d5f4293ab55bd1207327e995c83258f1e7d3145b1b5d7a3d17fdfe0a7",
+    "bytes": 24
+  },
+  {
+    "path": "dist/client/og.png",
+    "sha256": "5008b3b0d83508d9859f5efaae802c34b7ca236fe5f352442ecbbc1249296d07",
+    "bytes": 1504209
+  },
+  {
+    "path": "dist/client/globe.svg",
+    "sha256": "b614b9bf183925957661ac851498fe1d8029fd43a62fbfed86f9e2624a57e7cf",
+    "bytes": 1035
+  },
+  {
+    "path": "dist/client/window.svg",
+    "sha256": "644768c4aaeb4767bce293344eeb0c125fb804a94d801440424072202d85e3a1",
+    "bytes": 385
+  },
+  {
+    "path": "dist/client/favicon.svg",
+    "sha256": "e6d2e59b7b5bbb0342e0fb496dfc262decbfe4426bbb7b047aec8d467d1dc6f7",
+    "bytes": 712
+  },
+  {
+    "path": "dist/client/icons/form-512.png",
+    "sha256": "bc1d1235acc462f905b9a4772d52bee6ab4f9e31d1d2570a19ae0cb196c5f41d",
+    "bytes": 7168
+  },
+  {
+    "path": "dist/client/icons/apple-touch-icon.png",
+    "sha256": "b34062a4cc5e14b2c3344ea81accf3f7ba6591cc731ea98e2b4c720ab052bf01",
+    "bytes": 2405
+  },
+  {
+    "path": "dist/client/icons/form-maskable-192.png",
+    "sha256": "c33cf64bcb725a97b1c33389af8583c157fbe6c90232bac62ed2a1f45a754f6b",
+    "bytes": 2050
+  },
+  {
+    "path": "dist/client/icons/form-192.png",
+    "sha256": "301efe90eea0b795b510d5bfe182cd4d68990e0ba177716a9152491aeaa71cc0",
+    "bytes": 2537
+  },
+  {
+    "path": "dist/client/icons/form-maskable-512.png",
+    "sha256": "5cb80bf13c9868a8ec51403c8fdcf39bdfdeebd1067d9d7d9416d6efbd0ebddd",
+    "bytes": 5722
+  },
+  {
+    "path": "dist/client/assets/GLTFLoader-CvVkmsb9.js",
+    "sha256": "1ac00ad60279cd0c5b5b2ae5cd72bbacd240ac5c3faec732802089d761fd2397",
+    "bytes": 44258
+  },
+  {
+    "path": "dist/client/assets/garment-update-BLPSMS3e.js",
+    "sha256": "dda8dde73f644a6c07ac6f72eb2928ebfb8772450d5d9fc85b8ea738e44d6f5b",
+    "bytes": 3510
+  },
+  {
+    "path": "dist/client/assets/client-only-B6ZQyI_6.js",
+    "sha256": "d306e772bd918b9611afc1b8ef44c8eaeb95047f8024709030dbd701ddd88da4",
+    "bytes": 301
+  },
+  {
+    "path": "dist/client/assets/animation-body-BynSj1K5.js",
+    "sha256": "16eef662e89966574f597f40561fe62a13de31acb3951030cb1124e2fe671eed",
+    "bytes": 2532
+  },
+  {
+    "path": "dist/client/assets/openvdb-Bwd9R2Ux.js",
+    "sha256": "20d1df3434103fa1c600f7e80fa7e98409fc3488e5c1fc6ed1ea84dbf5f6dcd5",
+    "bytes": 498432
+  },
+  {
+    "path": "dist/client/assets/__vite-browser-external-2W3EstLn.js",
+    "sha256": "ef2c9f2a4d6ac427ec5ec3377c0141c1a4bfb1efcff8e3076d89b2c016062507",
+    "bytes": 103
+  },
+  {
+    "path": "dist/client/assets/dist-BLqYZWdi.js",
+    "sha256": "48dba1fccab7c49b946c39f4ce92a2824f1ac352c0ffa6552f0274f1c31b74af",
+    "bytes": 34716
+  },
+  {
+    "path": "dist/client/assets/garment-source-revision-DG7soYqN.js",
+    "sha256": "096de4c2ba11c4c438676382e6aed4e606cc4cd5b7827c9aeca3e979fbf078a3",
+    "bytes": 373
+  },
+  {
+    "path": "dist/client/assets/garment-exchange-check-BBOhhyqn.js",
+    "sha256": "8875cb8fdcdecce6a750e199dcb5b7f431394a1f1c0c5d4c34fb39e4d3d540c9",
+    "bytes": 2233
+  },
+  {
+    "path": "dist/client/assets/layout-segment-context-C9Vhaph8.js",
+    "sha256": "d449b63170fc68e0709745973d2314c9e431bd01ec6434bd66d31dd7270c4f72",
+    "bytes": 288
+  },
+  {
+    "path": "dist/client/assets/fabric-engine-kiQfz5xd.js",
+    "sha256": "f47f94571dacbfb1651dba0d43a2e903defa10133f844c615f49edfb2a5a7007",
+    "bytes": 51865
+  },
+  {
+    "path": "dist/client/assets/studio-entry-DYM9sxp1.js",
+    "sha256": "8db91054377d4ed94cf712718d145d323641256872c4447b0ac9dd5428db6a84",
+    "bytes": 1106176
+  },
+  {
+    "path": "dist/client/assets/fabric-pattern-geometry-bMrvfBYa.js",
+    "sha256": "fe3a27998e39bc465ff5fa610766b27bbc10b04144e095ab09aea55c389a8458",
+    "bytes": 3056
+  },
+  {
+    "path": "dist/client/assets/cad-kernel.worker-B0roJ15u.js",
+    "sha256": "87fa324881a78a6e8bc624dc66d8100bceaabc7abe32003f73a21e7e4881e773",
+    "bytes": 129098
+  },
+  {
+    "path": "dist/client/assets/occt-wasm-Bfew5lNQ.js",
+    "sha256": "cc451264bd2ecc86f0c537c3cf6bd088f1cc44dd9faa4931cf3d55e8ea344f68",
+    "bytes": 74419
+  },
+  {
+    "path": "dist/client/assets/index-x1U3r3Ib.js",
+    "sha256": "d8b45b897d1416a6bebd416c887621c847a31be93d621216c9efd0620c016ff1",
+    "bytes": 81661
+  },
+  {
+    "path": "dist/client/assets/cad-dxf-DHGerwel.js",
+    "sha256": "eef7fc21d89fad88c0f771a8e8261ee0b36cfe0a788dbe7eb0b04c1518e4f4f6",
+    "bytes": 22015
+  },
+  {
+    "path": "dist/client/assets/index-vYXv20Wh.css",
+    "sha256": "96cec1c95033afe5eb53ea2e6e7b0bf53869468d3aa09a0effb2ad888c79046c",
+    "bytes": 457569
+  },
+  {
+    "path": "dist/client/assets/fabric-solver.worker-BkjMI6xD.js",
+    "sha256": "6eba3e94cf82e7396fc32435ef2971124f3f3a163980cea0f07ea2935114f4c3",
+    "bytes": 9346
+  },
+  {
+    "path": "dist/client/assets/router-DITsKz5L.js",
+    "sha256": "3c6b3915a83ee7b92bc9df3f3435d3ea725ac0f30d5d157d9c11cd83e28f9ea2",
+    "bytes": 9066
+  },
+  {
+    "path": "dist/client/assets/link-j39lAOO9.js",
+    "sha256": "3022aef55b5524d6c41be85784d645950dd0a294a6c574f70bda034507bfc813",
+    "bytes": 9719
+  },
+  {
+    "path": "dist/client/assets/three.module-S0Mn2YSA.js",
+    "sha256": "70ccb91cc15e324948472068934bc2eba3f3848b05f06c709ce1db84bcca9157",
+    "bytes": 725618
+  },
+  {
+    "path": "dist/client/assets/occt-wasm-DGaK35CQ.wasm",
+    "sha256": "6b5392c5cbfec5f6372208ba0e5e37d3a6f4c14319d2016eadfbc0eb27a90827",
+    "bytes": 22088410
+  },
+  {
+    "path": "dist/client/assets/fitting-body-CvPsallI.js",
+    "sha256": "4eb01aee31d08270a18b62d945599fb3c10e9db905e7c85ded73731bdb4d5a8d",
+    "bytes": 1302232
+  },
+  {
+    "path": "dist/client/assets/garment-export-4pkd3k9o.js",
+    "sha256": "3dc00e6e2186a5911708a773a877901035fbc9556f92945bb9d14f84775fbd8a",
+    "bytes": 4850
+  },
+  {
+    "path": "dist/client/assets/studio-v2-B9pF5KOL.js",
+    "sha256": "850e55016a3386368d06538a698f0461080bb0ef986e32f435f80a8ee4fc0738",
+    "bytes": 396186
+  },
+  {
+    "path": "dist/client/assets/src-BuKuE_CL.js",
+    "sha256": "ec793ec0f7f13160ff5e7eef63f262906bf6d98ab0bf0f887901b832d4f783f7",
+    "bytes": 56192
+  },
+  {
+    "path": "dist/client/assets/dist-js-DBV1yAzU.js",
+    "sha256": "9f3008e87e8eb0ea08a195479aa0b9b231e16667b3c305e49e9d2ef6673b5a5a",
+    "bytes": 1053
+  },
+  {
+    "path": "dist/client/assets/rolldown-runtime-hePW80VL.js",
+    "sha256": "580ad8c58061a4dde99bde0a56905e382f0568516ee2f5b84dbfb52085709021",
+    "bytes": 716
+  },
+  {
+    "path": "dist/client/assets/fabric-studio-BL139vMu.js",
+    "sha256": "70fa18fd3e4ae1e4c6dbe48caa96e914c39b2dbf99795469ba84d48ca220de76",
+    "bytes": 158368
+  },
+  {
+    "path": "dist/client/assets/garment-animation-tIGcP6_W.js",
+    "sha256": "69b5a178f6068c1b8bd004a6defc7f497ac92de32a9ab6c0e0be8c11e70dcdc8",
+    "bytes": 11361
+  },
+  {
+    "path": "dist/client/assets/OBJLoader-Cu425wj_.js",
+    "sha256": "b89efbeb0f2f73005b5428a889bf17a7c92595f1aa1e5962aa2ab6674364ce4b",
+    "bytes": 8604
+  },
+  {
+    "path": "dist/client/assets/src-D20hBnQk.js",
+    "sha256": "83222b107c60f941c8fdfaaaa291754b4293c30b632d9826507795982ab1401b",
+    "bytes": 46509
+  },
+  {
+    "path": "dist/client/assets/event-CptVPVg9.js",
+    "sha256": "32f405321ef5a01f78e0ac51187528bdc613248ab6b3e5747dbcefc16078592e",
+    "bytes": 1064
+  },
+  {
+    "path": "dist/client/assets/openvdb.worker-BpYPuMQO.js",
+    "sha256": "15d69189f1725dc1ede693b561bab194946dcd4c2e40cd16dc94b0f8032bd43a",
+    "bytes": 591255
+  },
+  {
+    "path": "dist/client/assets/native-cloth-BdYxht97.js",
+    "sha256": "94c28f8dd82eeac26f56425775831bd7ce810ce6077c4ff03e7e88d7ef74f329",
+    "bytes": 17617
+  },
+  {
+    "path": "dist/client/assets/FBXLoader-D9xv3Foq.js",
+    "sha256": "8367c750f180f4cd02d471591c8f4e9e97c58fc74f6ae5becf8349972f0f3518",
+    "bytes": 45200
+  },
+  {
+    "path": "dist/client/assets/GLTFExporter-Be2uWEzr.js",
+    "sha256": "63fc2877da8fd53965f64cbfda184119599c959314e0f86d1d83380c83cafdb5",
+    "bytes": 73
+  },
+  {
+    "path": "dist/client/assets/framework-BA71VGQ6.js",
+    "sha256": "3ac4506845b561282fcc1bcd0d4d889ce5e5bc53d8b69dec28624c194edf6ee6",
+    "bytes": 189757
+  },
+  {
+    "path": "dist/client/assets/animated-cloth.worker-DmSR-Bid.js",
+    "sha256": "e60182d3205ff234758b9680703f4e8648cc31c133f39f00af67ad381898cc0a",
+    "bytes": 185747
+  },
+  {
+    "path": "dist/client/assets/STLLoader-C-Ik-Tlu.js",
+    "sha256": "f874b4afeb7a1a507a768b1ba766993a8e07b8b30f78556d64acab3400415c0f",
+    "bytes": 3077
+  },
+  {
+    "path": "dist/client/assets/dist-js-BMKJtzjQ.js",
+    "sha256": "59b44cb10c51be0c4ad1c4f9d715f1806b153f509a805e4e8d89a93ae2e19fda",
+    "bytes": 119
+  },
+  {
+    "path": "dist/client/assets/core-SwWLTXZB.js",
+    "sha256": "dc85f7a86c39d33c35fbe88fd339813a2c05c9ccf25a1bdd8691d7866355dd74",
+    "bytes": 2706
+  },
+  {
+    "path": "dist/client/assets/project-format-BDXuKek5.js",
+    "sha256": "e2336bca823d6d9dc59a6923586e2fbe5a2d8fe3e33aba0e5f5eacd9ef038efc",
+    "bytes": 15665
+  },
+  {
+    "path": "dist/client/assets/native-engine-2veDMH2h.js",
+    "sha256": "22caed5cb7408b5dea9ce25a7b03faf277f48ad1bbad2a0d36fdfb5293fd5631",
+    "bytes": 64743
+  },
+  {
+    "path": "dist/client/.vite/manifest.json",
+    "sha256": "31b9c1f644f02e2e0c37b46811337f0660fab57287d58192df38eda6b4cf154f",
+    "bytes": 13554
+  },
+  {
+    "path": "dist/client/assets/_vinext_fonts/geist-8ac0455e797f/geist-001175b1.woff2",
+    "sha256": "58a6b173d5ca1dec92166ea3c6cb1a84a4144556d10928ac14e8e6b40e4787bd",
+    "bytes": 16540
+  },
+  {
+    "path": "dist/client/assets/_vinext_fonts/geist-8ac0455e797f/geist-ff2310f5.woff2",
+    "sha256": "b7a545bbb08256bd809f11cfe66d88da3e22d169ea4407737b1ef0ec1ed3d791",
+    "bytes": 7252
+  },
+  {
+    "path": "dist/client/assets/_vinext_fonts/geist-8ac0455e797f/geist-875ccdd4.woff2",
+    "sha256": "6129fc8571c3e0cb0a4c41f5160c974a843b055009dc4ad8858bd808e18a2d86",
+    "bytes": 14900
+  },
+  {
+    "path": "dist/client/assets/_vinext_fonts/geist-8ac0455e797f/geist-52306abf.woff2",
+    "sha256": "f689f638f29fff460a2d5749edb5d5c38d7bef0389f32032d871f23fc6ebb008",
+    "bytes": 7968
+  },
+  {
+    "path": "dist/client/assets/_vinext_fonts/geist-8ac0455e797f/geist-98bbbccb.woff2",
+    "sha256": "9b6f5ff45b278c744b5f379a2c4ecbaf858a842b8eaf82ac8d21b699ca16c608",
+    "bytes": 29288
+  },
+  {
+    "path": "dist/client/assets/_vinext_fonts/geist-mono-00e989178794/geist-mono-44e03052.woff2",
+    "sha256": "75b3bedbebc35f347c0ae3b416aa871941555357e7b0f83767eb5987875589ed",
+    "bytes": 12872
+  },
+  {
+    "path": "dist/client/assets/_vinext_fonts/geist-mono-00e989178794/geist-mono-44745446.woff2",
+    "sha256": "745994b5cd950ec201b66526375f057d540847cccfc70f4f24f5f571d26d3923",
+    "bytes": 14712
+  },
+  {
+    "path": "dist/client/assets/_vinext_fonts/geist-mono-00e989178794/geist-mono-013b2f2f.woff2",
+    "sha256": "5f3d6ad60f29d6cb708414ec6887163d63bf197377ef5417d2483ff31ace6c3b",
+    "bytes": 23108
+  },
+  {
+    "path": "dist/client/assets/_vinext_fonts/geist-mono-00e989178794/geist-mono-f6b33328.woff2",
+    "sha256": "e27f657e38d52887baa3b6b2f812bef93dfdd356f0810e40edd4ee284cc7e9f6",
+    "bytes": 6204
+  },
+  {
+    "path": "dist/client/assets/_vinext_fonts/geist-mono-00e989178794/geist-mono-0638449e.woff2",
+    "sha256": "d67e4a94ba498635f764ddca7d1ec4271f5642f032eb24b426764480f66f8497",
+    "bytes": 5892
+  },
+  {
+    "path": "dist/client/assets/_vinext_fonts/geist-mono-00e989178794/geist-mono-971fb274.woff2",
+    "sha256": "16e1d48b6dd29eb240aec5db36184eb182933c082cd43de7f35af686d58087d2",
+    "bytes": 7728
+  },
+  {
+    "path": "dist/client/licenses/makehuman/provenance.json",
+    "sha256": "fea1c53828834b3de98d137794a6f21f6ba6cd8d598275afe76ae20eabbb126b",
+    "bytes": 2386
+  },
+  {
+    "path": "dist/client/licenses/makehuman/LICENSE.ASSETS.md",
+    "sha256": "f6089cba01cb570a24712b41ab8a586ccd3cc5ef53dc266ca50b95c288956d2c",
+    "bytes": 6962
+  },
+  {
+    "path": "dist/client/licenses/cloth-meshing/robust-sum.txt",
+    "sha256": "e67aed7df22dc8031e4fcf5338fe91cb33e3817e5c58a99a2a2802eea9069791",
+    "bytes": 1082
+  },
+  {
+    "path": "dist/client/licenses/cloth-meshing/robust-subtract.txt",
+    "sha256": "e67aed7df22dc8031e4fcf5338fe91cb33e3817e5c58a99a2a2802eea9069791",
+    "bytes": 1082
+  },
+  {
+    "path": "dist/client/licenses/cloth-meshing/two-product.txt",
+    "sha256": "e67aed7df22dc8031e4fcf5338fe91cb33e3817e5c58a99a2a2802eea9069791",
+    "bytes": 1082
+  },
+  {
+    "path": "dist/client/licenses/cloth-meshing/cdt2d.txt",
+    "sha256": "632d884bc3370b825072b2ba58896b727fbea1f8a81c6278babbc65d7dca4954",
+    "bytes": 1082
+  },
+  {
+    "path": "dist/client/licenses/cloth-meshing/two-sum.txt",
+    "sha256": "e67aed7df22dc8031e4fcf5338fe91cb33e3817e5c58a99a2a2802eea9069791",
+    "bytes": 1082
+  },
+  {
+    "path": "dist/client/licenses/cloth-meshing/binary-search-bounds.txt",
+    "sha256": "f2b10f2958d2724d6df0f16b1ea25d32cd7e6333ce88ac3c5cdff37c2c4222b8",
+    "bytes": 1087
+  },
+  {
+    "path": "dist/client/licenses/cloth-meshing/robust-scale.txt",
+    "sha256": "e67aed7df22dc8031e4fcf5338fe91cb33e3817e5c58a99a2a2802eea9069791",
+    "bytes": 1082
+  },
+  {
+    "path": "dist/client/licenses/cloth-meshing/robust-in-sphere.txt",
+    "sha256": "953a989b037b68597ebd16f3aec8b64bd1a357da149a58cc001f8784c3bf209a",
+    "bytes": 1082
+  },
+  {
+    "path": "dist/client/licenses/cloth-meshing/robust-orientation.txt",
+    "sha256": "e67aed7df22dc8031e4fcf5338fe91cb33e3817e5c58a99a2a2802eea9069791",
+    "bytes": 1082
+  },
+  {
+    "path": "dist/.openai/drizzle/0003_third_dreadnoughts.sql",
+    "sha256": "d7b724cff7b9ac678c5d0b83da9b2395c6f3747b275aa56ee882d85ce1b927be",
+    "bytes": 571
+  },
+  {
+    "path": "dist/.openai/drizzle/0002_sleepy_the_renegades.sql",
+    "sha256": "e8774d65286722a555dedf9d2cbba059eee903464e576994f5a561a9fd639665",
+    "bytes": 1014
+  },
+  {
+    "path": "dist/.openai/drizzle/0001_sticky_surge.sql",
+    "sha256": "2ad830e7932e519d892c913f4720905b48aeb9291a12b1d978fce0f14a63d75e",
+    "bytes": 84
+  },
+  {
+    "path": "dist/.openai/drizzle/0004_funny_turbo.sql",
+    "sha256": "c7565d5e78b91ca1dc5f15815061ff3ac17c8bea1802b02c5d9b06035a07e0a4",
+    "bytes": 543
+  },
+  {
+    "path": "dist/.openai/drizzle/0000_sharp_pixie.sql",
+    "sha256": "d694bc7bd206c4f352a9ba6e640b9a0907f3f8b15c9205e64b496538b8cb2f6c",
+    "bytes": 1015
+  },
+  {
+    "path": "dist/.openai/drizzle/meta/0003_snapshot.json",
+    "sha256": "ed7a35ae4e0e6db8d9987760899430231f356446d81b833043b5a497d856d653",
+    "bytes": 11719
+  },
+  {
+    "path": "dist/.openai/drizzle/meta/0004_snapshot.json",
+    "sha256": "9d4df63b539f4511888ca81a9047e2549881e0d3e61e5f79f9e1bcf022a7f799",
+    "bytes": 13822
+  },
+  {
+    "path": "dist/.openai/drizzle/meta/0000_snapshot.json",
+    "sha256": "784670cdc6841cb477d43c8d438d59527beb6e04d0f938fd5c86ae311f87b4a8",
+    "bytes": 5330
+  },
+  {
+    "path": "dist/.openai/drizzle/meta/_journal.json",
+    "sha256": "f34c652b754a3f01bfe9ece1adb729c1f3630f2e8052d432655492cbf620baeb",
+    "bytes": 774
+  },
+  {
+    "path": "dist/.openai/drizzle/meta/0001_snapshot.json",
+    "sha256": "d529cad5c63e1e7ef4d8ebd393b3bf7b7f7ec9ddefbc479c39fb8157614f99c8",
+    "bytes": 5535
+  },
+  {
+    "path": "dist/.openai/drizzle/meta/0002_snapshot.json",
+    "sha256": "ba76016abb2f284ad93288069aa47fc432ea105613c55721a09ddc73157bfe9f",
+    "bytes": 9613
+  },
+  {
+    "path": "dist/server/ssr/vinext-server.json",
+    "sha256": "9d52a654717b9a3b330ffc193efd8cb6f1893e601b1be30d533f6d01ac8cab07",
+    "bytes": 86
+  },
+  {
+    "path": "dist/server/ssr/index.js",
+    "sha256": "0fda13c3a050e9755859761f6e302b486ea26e93cf8d4914cd3e164e6d1dde16",
+    "bytes": 565518
+  },
+  {
+    "path": "dist/server/ssr/__vite_rsc_assets_manifest.js",
+    "sha256": "bce2334db7a7d50109ad56ab0175ed0c49dd2a4906694ce58eaf80e728f4ab78",
+    "bytes": 2042
+  },
+  {
+    "path": "dist/server/assets/index-vYXv20Wh.css",
+    "sha256": "96cec1c95033afe5eb53ea2e6e7b0bf53869468d3aa09a0effb2ad888c79046c",
+    "bytes": 457569
+  },
+  {
+    "path": "dist/server/.vite/manifest.json",
+    "sha256": "0da8b0621485aca144caa3bf067f1ddfb31d374f93ebe09365d21b5c1db4c753",
+    "bytes": 282
+  },
+  {
+    "path": "dist/server/ssr/assets/garment-animation-hsFnUAjY.js",
+    "sha256": "b4c91f7378dd54d3ae326ee4a401d5224d513750119b7de3e45fd9607052ceb5",
+    "bytes": 18963
+  },
+  {
+    "path": "dist/server/ssr/assets/link-Duy1Cqfv.js",
+    "sha256": "9746c51f7efd29b6c6445548e70ae821b3a6b0a6878017f619e3e37b238ddfff",
+    "bytes": 24772
+  },
+  {
+    "path": "dist/server/ssr/assets/src-D8XkkpQR.js",
+    "sha256": "9785b90c7a73f670a7b4ad867b45155184275a65c98d3459a4a5404f6be43943",
+    "bytes": 116711
+  },
+  {
+    "path": "dist/server/ssr/assets/studio-entry-DrElCPww.js",
+    "sha256": "9ec486009d8f3fc37c302aa616edf3d75bd695aa08ae050ebec003bd8e890dee",
+    "bytes": 2224089
+  },
+  {
+    "path": "dist/server/ssr/assets/fabric-pattern-geometry-GqXWasH6.js",
+    "sha256": "698a4effefb4b8afb59e9d54ae8be2915c15d732ec229fa134fd12be72adf00c",
+    "bytes": 5685
+  },
+  {
+    "path": "dist/server/ssr/assets/dist-BdY9u-w-.js",
+    "sha256": "772e2b1c128b09c3898c39af42392fabc92d2ffa086e4a08c9d0cc42ec9193e2",
+    "bytes": 79148
+  },
+  {
+    "path": "dist/server/ssr/assets/garment-source-revision-Dr7n7fMw.js",
+    "sha256": "c4fdab83ea1d37f89f10aee9031551bd6d3a53d3a75cd4e96f4b0cf05e7c06d8",
+    "bytes": 843
+  },
+  {
+    "path": "dist/server/ssr/assets/router-Buo6heFS.js",
+    "sha256": "5e740efb1f222fc2230aa8cb945c43fe172cb5dda5b7710660b45a5fba58b183",
+    "bytes": 23372
+  },
+  {
+    "path": "dist/server/ssr/assets/OBJLoader-CAlV70kP.js",
+    "sha256": "a7d01dffb88d329b8c3fdba22d771c8c2e12300b13c12bb919893c5320aa15ea",
+    "bytes": 17595
+  },
+  {
+    "path": "dist/server/ssr/assets/GLTFLoader-Cm2gejA7.js",
+    "sha256": "f0b1d8977707df7249a0a8f1848ffdb005dbbac2ee89e0b8edb9ff0df9906424",
+    "bytes": 101284
+  },
+  {
+    "path": "dist/server/ssr/assets/cad-kernel.worker-B0roJ15u.js",
+    "sha256": "87fa324881a78a6e8bc624dc66d8100bceaabc7abe32003f73a21e7e4881e773",
+    "bytes": 129098
+  },
+  {
+    "path": "dist/server/ssr/assets/animation-body-BozhFD9Q.js",
+    "sha256": "9c4dad59cc06e7abb8af26df74e0f3937a4fc8bdd3e19e2cae4fc13863cbb9ed",
+    "bytes": 4983
+  },
+  {
+    "path": "dist/server/ssr/assets/cad-dxf-aL85OGri.js",
+    "sha256": "2a50c5aee130170900b5815211ab397eb82d2a418d0d58dac6c7aa3b0f5cf660",
+    "bytes": 42798
+  },
+  {
+    "path": "dist/server/ssr/assets/layout-segment-context-LQdhyeUD.js",
+    "sha256": "00064733a4d476a0b94e389256527567cbc535d0ee510660d17ecffbc69f5099",
+    "bytes": 1828
+  },
+  {
+    "path": "dist/server/ssr/assets/garment-export-DtVZb5_M.js",
+    "sha256": "118678291a413091a5ef8394dff5b4b272c6d217983fb7304bdaccaae41da35c",
+    "bytes": 9315
+  },
+  {
+    "path": "dist/server/ssr/assets/native-engine-BQ5xfiYY.js",
+    "sha256": "ed6c37cd01712b0a4b379bf0125900ca1b6bd786d909617fa72f2a432960ee92",
+    "bytes": 116156
+  },
+  {
+    "path": "dist/server/ssr/assets/fabric-solver.worker-BkjMI6xD.js",
+    "sha256": "6eba3e94cf82e7396fc32435ef2971124f3f3a163980cea0f07ea2935114f4c3",
+    "bytes": 9346
+  },
+  {
+    "path": "dist/server/ssr/assets/project-format-DypnzZvE.js",
+    "sha256": "1f04afcf85b99808f816a370a83316ebba508940f2852b49f1600495d097e907",
+    "bytes": 25775
+  },
+  {
+    "path": "dist/server/ssr/assets/fabric-engine-Bsel_rz-.js",
+    "sha256": "6305a5a554d8b4e13c2ef3b0e94a0a45d955274effd12737da2474f956312b2c",
+    "bytes": 82296
+  },
+  {
+    "path": "dist/server/ssr/assets/react-DO8F-aK-.js",
+    "sha256": "ee4f1980217a825824e671467769dfe7f93d8d38604616fc24a4371a5575dd0e",
+    "bytes": 15681
+  },
+  {
+    "path": "dist/server/ssr/assets/three.module-DLgS7m7_.js",
+    "sha256": "29e6a2c92fe84e4562af35c3e68215286d72d47915c6865aaa1890e2bdb2d7f7",
+    "bytes": 1531704
+  },
+  {
+    "path": "dist/server/ssr/assets/occt-wasm-DGaK35CQ.wasm",
+    "sha256": "6b5392c5cbfec5f6372208ba0e5e37d3a6f4c14319d2016eadfbc0eb27a90827",
+    "bytes": 22088410
+  },
+  {
+    "path": "dist/server/ssr/assets/dist-js-kQZw0Z3z.js",
+    "sha256": "48cc040809b1a3a7e124105ce088b900aeeaff1825365adc5ba1192f471e92c0",
+    "bytes": 486
+  },
+  {
+    "path": "dist/server/ssr/assets/fitting-body-CE1NHJ6C.js",
+    "sha256": "3e3ed300e35da4c256b15b159622873234ed499a791d2e34ed6b363dcef10976",
+    "bytes": 1655923
+  },
+  {
+    "path": "dist/server/ssr/assets/occt-wasm-C-H77zWl.js",
+    "sha256": "83c759e515f0673dc35269a6a8285a6833463e0e3ca520cae67a462c109b1b37",
+    "bytes": 152304
+  },
+  {
+    "path": "dist/server/ssr/assets/error-boundary-ytpIlIoj.js",
+    "sha256": "c1da11d3a5aef7118ed5abc86b3996e6fc09230f16c1dee97bc19a9e37a00917",
+    "bytes": 8505
+  },
+  {
+    "path": "dist/server/ssr/assets/GLTFExporter-DkYb3YtL.js",
+    "sha256": "86cdc4dbce288391367b8ef9514c471b7a8a45e9e805fd61b0a643e023ee6219",
+    "bytes": 89
+  },
+  {
+    "path": "dist/server/ssr/assets/FBXLoader-BHyRK8cS.js",
+    "sha256": "d78b489a14b5adbcae2985e070d8900f48de531b379abb0eb94037edfac3ccfe",
+    "bytes": 95371
+  },
+  {
+    "path": "dist/server/ssr/assets/rolldown-runtime-DC62tzP2.js",
+    "sha256": "f74ce63fe4684f55be3ea69da3a4528da464f9d5f63cda903b76eb13e92d1954",
+    "bytes": 1445
+  },
+  {
+    "path": "dist/server/ssr/assets/url-utils-GEhRtWpk.js",
+    "sha256": "a5708b26a787433ebd5134b74f3f6b0f706e27e9fed331cb5ae808e32e941565",
+    "bytes": 4184
+  },
+  {
+    "path": "dist/server/ssr/assets/dist-js-BoXOf6bH.js",
+    "sha256": "fd0a7f5685341fb7f8bd2df5cb595c21b2c349f411c6e00fbeaef6407fa8723e",
+    "bytes": 2069
+  },
+  {
+    "path": "dist/server/ssr/assets/native-cloth-DKZJm4EH.js",
+    "sha256": "45a852e9b8d163baa075a5be740dba7327a6fa98fac4d6d83226b98773a38863",
+    "bytes": 33564
+  },
+  {
+    "path": "dist/server/ssr/assets/openvdb.worker-BpYPuMQO.js",
+    "sha256": "15d69189f1725dc1ede693b561bab194946dcd4c2e40cd16dc94b0f8032bd43a",
+    "bytes": 591255
+  },
+  {
+    "path": "dist/server/ssr/assets/core-DH5_dEP5.js",
+    "sha256": "395a4bbec9282922726b3fb8548745edb1b389e9f598694249e95e5354f66812",
+    "bytes": 10843
+  },
+  {
+    "path": "dist/server/ssr/assets/src-ClHBiemj.js",
+    "sha256": "bbe9d241ba58006d9d73ef739326fdae839a4e07b392f51f12ffc766d5c03498",
+    "bytes": 142902
+  },
+  {
+    "path": "dist/server/ssr/assets/event-DPe5FHSZ.js",
+    "sha256": "ac7e105e9ef621d9226390eb728e00fb1fb292d6eb61147f6ccd41288e4dc548",
+    "bytes": 3040
+  },
+  {
+    "path": "dist/server/ssr/assets/fabric-studio-BasH-liH.js",
+    "sha256": "a432348f55303920361e217f7ac730afef01317cb89677a344d12894b7402969",
+    "bytes": 308948
+  },
+  {
+    "path": "dist/server/ssr/assets/studio-v2-CCPNR-de.js",
+    "sha256": "14b6eda364ff8e78f1b8d253dedd9df3cc4b635a28ec4712a88d79109ef647de",
+    "bytes": 793550
+  },
+  {
+    "path": "dist/server/ssr/assets/garment-update-B_Knuf25.js",
+    "sha256": "caa03c5849f355321d554869eebc8d4387008f6853b8fcd79a009364bb0d2e81",
+    "bytes": 5493
+  },
+  {
+    "path": "dist/server/ssr/assets/openvdb-BAEzuJH5.js",
+    "sha256": "0db152598f20ca8507f08a831128f7cb57b636bef1287e7bd2c890ebb4c1582f",
+    "bytes": 533928
+  },
+  {
+    "path": "dist/server/ssr/assets/animated-cloth.worker-DmSR-Bid.js",
+    "sha256": "e60182d3205ff234758b9680703f4e8648cc31c133f39f00af67ad381898cc0a",
+    "bytes": 185747
+  },
+  {
+    "path": "dist/server/ssr/assets/client-only-CoxnkZkz.js",
+    "sha256": "dc8592112f7c30c625767957975472af09e7e23111f5b8e07c2892374fbb5a45",
+    "bytes": 1530
+  },
+  {
+    "path": "dist/server/ssr/assets/garment-exchange-check-TyM-aojg.js",
+    "sha256": "c43ebacdc7f2824cef309ca5b2fde7effcd0c03010a7c89f15bf3285f3ca0288",
+    "bytes": 4037
+  },
+  {
+    "path": "dist/server/ssr/assets/STLLoader-Dzri5X2n.js",
+    "sha256": "91f6a3f8977ae28bb91c94ad773abd77dd9fed06f601c5831268cd3e7bb59ec5",
+    "bytes": 8999
+  }
+]

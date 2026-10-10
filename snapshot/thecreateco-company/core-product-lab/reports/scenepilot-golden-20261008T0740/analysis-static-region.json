@@ -1,0 +1,618 @@
+{
+  "observed_at": "2026-10-08T07:47:54.794066+00:00",
+  "method": "Independent decoded regional RGB, linear guide geometry and stereo tone spectral analysis",
+  "limits": [
+    "No independent exact alpha blend/font raster parity",
+    "No sample-level absolute gain/audio DSP/mix parity",
+    "Not preview/export perceptual or full workflow qualification"
+  ],
+  "results": [
+    {
+      "repeat": 1,
+      "checks": [
+        {
+          "name": "regional cut/mixed-rate landmark",
+          "time": 4,
+          "source_time": 0,
+          "mae": 4.065125,
+          "fixed_tolerance": 6,
+          "passed": true
+        },
+        {
+          "name": "regional cut/mixed-rate landmark",
+          "time": 4.033333333333333,
+          "source_time": 0.041666666666666664,
+          "mae": 4.065057291666666,
+          "fixed_tolerance": 6,
+          "passed": true
+        },
+        {
+          "name": "regional cut/mixed-rate landmark",
+          "time": 7.966666666666667,
+          "source_time": 3.9583333333333335,
+          "mae": 4.064177083333333,
+          "fixed_tolerance": 6,
+          "passed": true
+        },
+        {
+          "name": "regional cut/mixed-rate landmark",
+          "time": 8,
+          "source_time": 8,
+          "mae": 2.6468489583333334,
+          "fixed_tolerance": 6,
+          "passed": true
+        },
+        {
+          "name": "animated cyan guide position",
+          "time": 2,
+          "expected_left": 162.13333333333333,
+          "actual_left": 162,
+          "cyan_pixels": 656,
+          "pixel_tolerance": 5,
+          "passed": true
+        },
+        {
+          "name": "animated cyan guide position",
+          "time": 3.5,
+          "expected_left": 290.1333333333333,
+          "actual_left": 288,
+          "cyan_pixels": 1444,
+          "pixel_tolerance": 5,
+          "passed": true
+        },
+        {
+          "name": "title regional appearance window",
+          "time": 8,
+          "new_white_pixels": 0,
+          "passed": true,
+          "scope": "presence/window only; typography/perceptual parity unverified"
+        },
+        {
+          "name": "title regional appearance window",
+          "time": 9,
+          "new_white_pixels": 4315,
+          "passed": true,
+          "scope": "presence/window only; typography/perceptual parity unverified"
+        },
+        {
+          "name": "title regional appearance window",
+          "time": 10,
+          "new_white_pixels": 0,
+          "passed": true,
+          "scope": "presence/window only; typography/perceptual parity unverified"
+        },
+        {
+          "name": "220Hz music fade envelope",
+          "channel": 0,
+          "fadein_to_steady": 0.5076072767465891,
+          "fadeout_to_steady": 0.5033255844640321,
+          "passed": true,
+          "scope": "spectral fade evidence, not sample-level gain/mix parity"
+        },
+        {
+          "name": "880Hz SFX onset/end",
+          "channel": 0,
+          "before": 2.539239723143669e-06,
+          "inside": 0.03813637198715193,
+          "after": 2.54911873720509e-06,
+          "passed": true
+        },
+        {
+          "name": "220Hz music fade envelope",
+          "channel": 1,
+          "fadein_to_steady": 0.5072849588454514,
+          "fadeout_to_steady": 0.503385637675529,
+          "passed": true,
+          "scope": "spectral fade evidence, not sample-level gain/mix parity"
+        },
+        {
+          "name": "880Hz SFX onset/end",
+          "channel": 1,
+          "before": 2.1223673204193633e-06,
+          "inside": 0.0381187132633395,
+          "after": 2.0413347354046833e-06,
+          "passed": true
+        },
+        {
+          "name": "music channel distinction",
+          "right_to_left_amplitude": 0.8000214324449475,
+          "passed": true,
+          "expected_source_ratio": 0.8,
+          "scope": "not complete stereo PCM parity"
+        }
+      ],
+      "spectra": {
+        "0.15": {
+          "220": [
+            0.02398849622536743,
+            0.019179125110757148
+          ],
+          "330": [
+            0.023998428745358694,
+            0.019159125480060327
+          ],
+          "880": [
+            6.399264380846014e-06,
+            4.885445413489219e-06
+          ]
+        },
+        "1.15": {
+          "220": [
+            0.047257983335300215,
+            0.037807399522366336
+          ],
+          "330": [
+            0.047228187747687604,
+            0.03781425261413926
+          ],
+          "880": [
+            2.504516630966777e-06,
+            1.9484467090686416e-06
+          ]
+        },
+        "5.15": {
+          "220": [
+            0.04722353789379114,
+            0.03777891090113391
+          ],
+          "330": [
+            0.04722631262649586,
+            0.03778184535804416
+          ],
+          "880": [
+            2.539239723143669e-06,
+            2.1223673204193633e-06
+          ]
+        },
+        "7.15": {
+          "220": [
+            0.04721967365811584,
+            0.0377852710898036
+          ],
+          "330": [
+            0.04723347590084961,
+            0.03778958044140053
+          ],
+          "880": [
+            0.03813637198715193,
+            0.0381187132633395
+          ]
+        },
+        "9.15": {
+          "220": [
+            0.047222341943563784,
+            0.03778540436072964
+          ],
+          "330": [
+            0.04722851080649222,
+            0.037783861882766244
+          ],
+          "880": [
+            2.54911873720509e-06,
+            2.0413347354046833e-06
+          ]
+        },
+        "11.65": {
+          "220": [
+            0.02378615208283147,
+            0.019031701917419867
+          ],
+          "330": [
+            0.023778288975138038,
+            0.019022181718447304
+          ],
+          "880": [
+            5.989721542369489e-06,
+            4.845640359077554e-06
+          ]
+        }
+      },
+      "passed": true
+    },
+    {
+      "repeat": 2,
+      "checks": [
+        {
+          "name": "regional cut/mixed-rate landmark",
+          "time": 4,
+          "source_time": 0,
+          "mae": 4.065125,
+          "fixed_tolerance": 6,
+          "passed": true
+        },
+        {
+          "name": "regional cut/mixed-rate landmark",
+          "time": 4.033333333333333,
+          "source_time": 0.041666666666666664,
+          "mae": 4.065057291666666,
+          "fixed_tolerance": 6,
+          "passed": true
+        },
+        {
+          "name": "regional cut/mixed-rate landmark",
+          "time": 7.966666666666667,
+          "source_time": 3.9583333333333335,
+          "mae": 4.064177083333333,
+          "fixed_tolerance": 6,
+          "passed": true
+        },
+        {
+          "name": "regional cut/mixed-rate landmark",
+          "time": 8,
+          "source_time": 8,
+          "mae": 2.6468489583333334,
+          "fixed_tolerance": 6,
+          "passed": true
+        },
+        {
+          "name": "animated cyan guide position",
+          "time": 2,
+          "expected_left": 162.13333333333333,
+          "actual_left": 162,
+          "cyan_pixels": 656,
+          "pixel_tolerance": 5,
+          "passed": true
+        },
+        {
+          "name": "animated cyan guide position",
+          "time": 3.5,
+          "expected_left": 290.1333333333333,
+          "actual_left": 288,
+          "cyan_pixels": 1444,
+          "pixel_tolerance": 5,
+          "passed": true
+        },
+        {
+          "name": "title regional appearance window",
+          "time": 8,
+          "new_white_pixels": 0,
+          "passed": true,
+          "scope": "presence/window only; typography/perceptual parity unverified"
+        },
+        {
+          "name": "title regional appearance window",
+          "time": 9,
+          "new_white_pixels": 4315,
+          "passed": true,
+          "scope": "presence/window only; typography/perceptual parity unverified"
+        },
+        {
+          "name": "title regional appearance window",
+          "time": 10,
+          "new_white_pixels": 0,
+          "passed": true,
+          "scope": "presence/window only; typography/perceptual parity unverified"
+        },
+        {
+          "name": "220Hz music fade envelope",
+          "channel": 0,
+          "fadein_to_steady": 0.5076072767465891,
+          "fadeout_to_steady": 0.5033255844640321,
+          "passed": true,
+          "scope": "spectral fade evidence, not sample-level gain/mix parity"
+        },
+        {
+          "name": "880Hz SFX onset/end",
+          "channel": 0,
+          "before": 2.539239723143669e-06,
+          "inside": 0.03813637198715193,
+          "after": 2.54911873720509e-06,
+          "passed": true
+        },
+        {
+          "name": "220Hz music fade envelope",
+          "channel": 1,
+          "fadein_to_steady": 0.5072849588454514,
+          "fadeout_to_steady": 0.503385637675529,
+          "passed": true,
+          "scope": "spectral fade evidence, not sample-level gain/mix parity"
+        },
+        {
+          "name": "880Hz SFX onset/end",
+          "channel": 1,
+          "before": 2.1223673204193633e-06,
+          "inside": 0.0381187132633395,
+          "after": 2.0413347354046833e-06,
+          "passed": true
+        },
+        {
+          "name": "music channel distinction",
+          "right_to_left_amplitude": 0.8000214324449475,
+          "passed": true,
+          "expected_source_ratio": 0.8,
+          "scope": "not complete stereo PCM parity"
+        }
+      ],
+      "spectra": {
+        "0.15": {
+          "220": [
+            0.02398849622536743,
+            0.019179125110757148
+          ],
+          "330": [
+            0.023998428745358694,
+            0.019159125480060327
+          ],
+          "880": [
+            6.399264380846014e-06,
+            4.885445413489219e-06
+          ]
+        },
+        "1.15": {
+          "220": [
+            0.047257983335300215,
+            0.037807399522366336
+          ],
+          "330": [
+            0.047228187747687604,
+            0.03781425261413926
+          ],
+          "880": [
+            2.504516630966777e-06,
+            1.9484467090686416e-06
+          ]
+        },
+        "5.15": {
+          "220": [
+            0.04722353789379114,
+            0.03777891090113391
+          ],
+          "330": [
+            0.04722631262649586,
+            0.03778184535804416
+          ],
+          "880": [
+            2.539239723143669e-06,
+            2.1223673204193633e-06
+          ]
+        },
+        "7.15": {
+          "220": [
+            0.04721967365811584,
+            0.0377852710898036
+          ],
+          "330": [
+            0.04723347590084961,
+            0.03778958044140053
+          ],
+          "880": [
+            0.03813637198715193,
+            0.0381187132633395
+          ]
+        },
+        "9.15": {
+          "220": [
+            0.047222341943563784,
+            0.03778540436072964
+          ],
+          "330": [
+            0.04722851080649222,
+            0.037783861882766244
+          ],
+          "880": [
+            2.54911873720509e-06,
+            2.0413347354046833e-06
+          ]
+        },
+        "11.65": {
+          "220": [
+            0.02378615208283147,
+            0.019031701917419867
+          ],
+          "330": [
+            0.023778288975138038,
+            0.019022181718447304
+          ],
+          "880": [
+            5.989721542369489e-06,
+            4.845640359077554e-06
+          ]
+        }
+      },
+      "passed": true
+    },
+    {
+      "repeat": 3,
+      "checks": [
+        {
+          "name": "regional cut/mixed-rate landmark",
+          "time": 4,
+          "source_time": 0,
+          "mae": 4.065125,
+          "fixed_tolerance": 6,
+          "passed": true
+        },
+        {
+          "name": "regional cut/mixed-rate landmark",
+          "time": 4.033333333333333,
+          "source_time": 0.041666666666666664,
+          "mae": 4.065057291666666,
+          "fixed_tolerance": 6,
+          "passed": true
+        },
+        {
+          "name": "regional cut/mixed-rate landmark",
+          "time": 7.966666666666667,
+          "source_time": 3.9583333333333335,
+          "mae": 4.064177083333333,
+          "fixed_tolerance": 6,
+          "passed": true
+        },
+        {
+          "name": "regional cut/mixed-rate landmark",
+          "time": 8,
+          "source_time": 8,
+          "mae": 2.6468489583333334,
+          "fixed_tolerance": 6,
+          "passed": true
+        },
+        {
+          "name": "animated cyan guide position",
+          "time": 2,
+          "expected_left": 162.13333333333333,
+          "actual_left": 162,
+          "cyan_pixels": 656,
+          "pixel_tolerance": 5,
+          "passed": true
+        },
+        {
+          "name": "animated cyan guide position",
+          "time": 3.5,
+          "expected_left": 290.1333333333333,
+          "actual_left": 288,
+          "cyan_pixels": 1444,
+          "pixel_tolerance": 5,
+          "passed": true
+        },
+        {
+          "name": "title regional appearance window",
+          "time": 8,
+          "new_white_pixels": 0,
+          "passed": true,
+          "scope": "presence/window only; typography/perceptual parity unverified"
+        },
+        {
+          "name": "title regional appearance window",
+          "time": 9,
+          "new_white_pixels": 4315,
+          "passed": true,
+          "scope": "presence/window only; typography/perceptual parity unverified"
+        },
+        {
+          "name": "title regional appearance window",
+          "time": 10,
+          "new_white_pixels": 0,
+          "passed": true,
+          "scope": "presence/window only; typography/perceptual parity unverified"
+        },
+        {
+          "name": "220Hz music fade envelope",
+          "channel": 0,
+          "fadein_to_steady": 0.5076072767465891,
+          "fadeout_to_steady": 0.5033255844640321,
+          "passed": true,
+          "scope": "spectral fade evidence, not sample-level gain/mix parity"
+        },
+        {
+          "name": "880Hz SFX onset/end",
+          "channel": 0,
+          "before": 2.539239723143669e-06,
+          "inside": 0.03813637198715193,
+          "after": 2.54911873720509e-06,
+          "passed": true
+        },
+        {
+          "name": "220Hz music fade envelope",
+          "channel": 1,
+          "fadein_to_steady": 0.5072849588454514,
+          "fadeout_to_steady": 0.503385637675529,
+          "passed": true,
+          "scope": "spectral fade evidence, not sample-level gain/mix parity"
+        },
+        {
+          "name": "880Hz SFX onset/end",
+          "channel": 1,
+          "before": 2.1223673204193633e-06,
+          "inside": 0.0381187132633395,
+          "after": 2.0413347354046833e-06,
+          "passed": true
+        },
+        {
+          "name": "music channel distinction",
+          "right_to_left_amplitude": 0.8000214324449475,
+          "passed": true,
+          "expected_source_ratio": 0.8,
+          "scope": "not complete stereo PCM parity"
+        }
+      ],
+      "spectra": {
+        "0.15": {
+          "220": [
+            0.02398849622536743,
+            0.019179125110757148
+          ],
+          "330": [
+            0.023998428745358694,
+            0.019159125480060327
+          ],
+          "880": [
+            6.399264380846014e-06,
+            4.885445413489219e-06
+          ]
+        },
+        "1.15": {
+          "220": [
+            0.047257983335300215,
+            0.037807399522366336
+          ],
+          "330": [
+            0.047228187747687604,
+            0.03781425261413926
+          ],
+          "880": [
+            2.504516630966777e-06,
+            1.9484467090686416e-06
+          ]
+        },
+        "5.15": {
+          "220": [
+            0.04722353789379114,
+            0.03777891090113391
+          ],
+          "330": [
+            0.04722631262649586,
+            0.03778184535804416
+          ],
+          "880": [
+            2.539239723143669e-06,
+            2.1223673204193633e-06
+          ]
+        },
+        "7.15": {
+          "220": [
+            0.04721967365811584,
+            0.0377852710898036
+          ],
+          "330": [
+            0.04723347590084961,
+            0.03778958044140053
+          ],
+          "880": [
+            0.03813637198715193,
+            0.0381187132633395
+          ]
+        },
+        "9.15": {
+          "220": [
+            0.047222341943563784,
+            0.03778540436072964
+          ],
+          "330": [
+            0.04722851080649222,
+            0.037783861882766244
+          ],
+          "880": [
+            2.54911873720509e-06,
+            2.0413347354046833e-06
+          ]
+        },
+        "11.65": {
+          "220": [
+            0.02378615208283147,
+            0.019031701917419867
+          ],
+          "330": [
+            0.023778288975138038,
+            0.019022181718447304
+          ],
+          "880": [
+            5.989721542369489e-06,
+            4.845640359077554e-06
+          ]
+        }
+      },
+      "passed": true
+    }
+  ],
+  "passed": true
+}

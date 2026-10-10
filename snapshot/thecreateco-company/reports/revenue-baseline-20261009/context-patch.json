@@ -1,0 +1,132 @@
+{
+  "metrics": {
+    "revenue_today": {
+      "value": null,
+      "source": "reports/revenue-baseline-20261009/source-audit.json",
+      "period": {
+        "type": "source availability check, not financial reporting interval",
+        "as_of": "2026-10-09T20:11:37.276475+00:00"
+      },
+      "observed_at": "2026-10-09T20:11:37.276475+00:00",
+      "status": "BLOCKED_SOURCE_UNVERIFIED",
+      "definition": "Recognized company revenue in USD, America/Los_Angeles calendar day; excludes sales tax, refunds and pass-through amounts.",
+      "source_required": "Authoritative aggregate accounting/payment/POS data for finance; consent-appropriate product analytics for use; existing Growth records for pipeline. Confirm attribution/coverage first.",
+      "status_reason": "Bounded 2026-10-09 source audit: no attributable accounting/settlement or billed expense aggregate in inspected company inputs; founder baseline and list estimates do not fill this metric."
+    },
+    "revenue_7d": {
+      "value": null,
+      "source": "reports/revenue-baseline-20261009/source-audit.json",
+      "period": {
+        "type": "source availability check, not financial reporting interval",
+        "as_of": "2026-10-09T20:11:37.276475+00:00"
+      },
+      "observed_at": "2026-10-09T20:11:37.276475+00:00",
+      "status": "BLOCKED_SOURCE_UNVERIFIED",
+      "definition": "Recognized company revenue in USD for trailing 7 complete local days.",
+      "source_required": "Authoritative aggregate accounting/payment/POS data for finance; consent-appropriate product analytics for use; existing Growth records for pipeline. Confirm attribution/coverage first.",
+      "status_reason": "Bounded 2026-10-09 source audit: no attributable accounting/settlement or billed expense aggregate in inspected company inputs; founder baseline and list estimates do not fill this metric."
+    },
+    "revenue_30d": {
+      "value": null,
+      "source": "reports/revenue-baseline-20261009/source-audit.json",
+      "period": {
+        "type": "source availability check, not financial reporting interval",
+        "as_of": "2026-10-09T20:11:37.276475+00:00"
+      },
+      "observed_at": "2026-10-09T20:11:37.276475+00:00",
+      "status": "BLOCKED_SOURCE_UNVERIFIED",
+      "definition": "Recognized company revenue in USD for trailing 30 complete local days.",
+      "source_required": "Authoritative aggregate accounting/payment/POS data for finance; consent-appropriate product analytics for use; existing Growth records for pipeline. Confirm attribution/coverage first.",
+      "status_reason": "Bounded 2026-10-09 source audit: no attributable accounting/settlement or billed expense aggregate in inspected company inputs; founder baseline and list estimates do not fill this metric."
+    },
+    "mrr": {
+      "value": null,
+      "source": "reports/revenue-baseline-20261009/source-audit.json",
+      "period": {
+        "type": "source availability check, not financial reporting interval",
+        "as_of": "2026-10-09T20:11:37.276475+00:00"
+      },
+      "observed_at": "2026-10-09T20:11:37.276475+00:00",
+      "status": "BLOCKED_SOURCE_UNVERIFIED",
+      "definition": "Normalized monthly committed recurring revenue; exclude one-time licenses, pilot fees and merchandise sales.",
+      "source_required": "Authoritative aggregate accounting/payment/POS data for finance; consent-appropriate product analytics for use; existing Growth records for pipeline. Confirm attribution/coverage first.",
+      "status_reason": "Bounded 2026-10-09 source audit: no attributable accounting/settlement or billed expense aggregate in inspected company inputs; founder baseline and list estimates do not fill this metric."
+    },
+    "cash_collected": {
+      "value": null,
+      "source": "reports/revenue-baseline-20261009/source-audit.json",
+      "period": {
+        "type": "source availability check, not financial reporting interval",
+        "as_of": "2026-10-09T20:11:37.276475+00:00"
+      },
+      "observed_at": "2026-10-09T20:11:37.276475+00:00",
+      "status": "BLOCKED_SOURCE_UNVERIFIED",
+      "definition": "Settled customer cash received, net refunds, distinct from recognized revenue.",
+      "source_required": "Authoritative aggregate accounting/payment/POS data for finance; consent-appropriate product analytics for use; existing Growth records for pipeline. Confirm attribution/coverage first.",
+      "status_reason": "Bounded 2026-10-09 source audit: no attributable accounting/settlement or billed expense aggregate in inspected company inputs; founder baseline and list estimates do not fill this metric."
+    },
+    "refunds": {
+      "value": null,
+      "source": "reports/revenue-baseline-20261009/source-audit.json",
+      "period": {
+        "type": "source availability check, not financial reporting interval",
+        "as_of": "2026-10-09T20:11:37.276475+00:00"
+      },
+      "observed_at": "2026-10-09T20:11:37.276475+00:00",
+      "status": "BLOCKED_SOURCE_UNVERIFIED",
+      "definition": "Recognized customer refunds in same currency/reporting interval, linked to revenue convention; do not subtract twice.",
+      "status_reason": "Bounded 2026-10-09 source audit: no attributable accounting/settlement or billed expense aggregate in inspected company inputs; founder baseline and list estimates do not fill this metric."
+    },
+    "ai_cost": {
+      "value": null,
+      "source": "reports/revenue-baseline-20261009/source-audit.json",
+      "period": {
+        "type": "source availability check, not financial reporting interval",
+        "as_of": "2026-10-09T20:11:37.276475+00:00"
+      },
+      "observed_at": "2026-10-09T20:11:37.276475+00:00",
+      "status": "BLOCKED_SOURCE_UNVERIFIED",
+      "definition": "Company-wide actual billed model cost in interval, separate from token/list-price estimates.",
+      "source_required": "Authoritative aggregate accounting/payment/POS data for finance; consent-appropriate product analytics for use; existing Growth records for pipeline. Confirm attribution/coverage first.",
+      "status_reason": "Bounded 2026-10-09 source audit: no attributable accounting/settlement or billed expense aggregate in inspected company inputs; founder baseline and list estimates do not fill this metric."
+    },
+    "operating_cost": {
+      "value": null,
+      "source": "reports/revenue-baseline-20261009/source-audit.json",
+      "period": {
+        "type": "source availability check, not financial reporting interval",
+        "as_of": "2026-10-09T20:11:37.276475+00:00"
+      },
+      "observed_at": "2026-10-09T20:11:37.276475+00:00",
+      "status": "BLOCKED_SOURCE_UNVERIFIED",
+      "definition": "Hosting, software, AI, contractors, salaries and other operating expense in interval; excludes duplicated direct cost.",
+      "source_required": "Authoritative aggregate accounting/payment/POS data for finance; consent-appropriate product analytics for use; existing Growth records for pipeline. Confirm attribution/coverage first.",
+      "status_reason": "Bounded 2026-10-09 source audit: no attributable accounting/settlement or billed expense aggregate in inspected company inputs; founder baseline and list estimates do not fill this metric."
+    },
+    "direct_delivery_cost": {
+      "value": null,
+      "source": "reports/revenue-baseline-20261009/source-audit.json",
+      "period": {
+        "type": "source availability check, not financial reporting interval",
+        "as_of": "2026-10-09T20:11:37.276475+00:00"
+      },
+      "observed_at": "2026-10-09T20:11:37.276475+00:00",
+      "status": "BLOCKED_SOURCE_UNVERIFIED",
+      "definition": "Direct fulfillment labor, COGS, payment fees, subcontractors and delivery tools in matched interval; avoid double counting operating expense.",
+      "status_reason": "Bounded 2026-10-09 source audit: no attributable accounting/settlement or billed expense aggregate in inspected company inputs; founder baseline and list estimates do not fill this metric."
+    },
+    "profit": {
+      "value": null,
+      "source": "reports/revenue-baseline-20261009/source-audit.json",
+      "period": {
+        "type": "source availability check, not financial reporting interval",
+        "as_of": "2026-10-09T20:11:37.276475+00:00"
+      },
+      "observed_at": "2026-10-09T20:11:37.276475+00:00",
+      "status": "BLOCKED_SOURCE_UNVERIFIED",
+      "definition": "Recognized revenue minus COGS, fulfillment, labor, fees and operating costs on a consistent basis.",
+      "source_required": "Authoritative aggregate accounting/payment/POS data for finance; consent-appropriate product analytics for use; existing Growth records for pipeline. Confirm attribution/coverage first.",
+      "status_reason": "Bounded 2026-10-09 source audit: no attributable accounting/settlement or billed expense aggregate in inspected company inputs; founder baseline and list estimates do not fill this metric."
+    }
+  }
+}

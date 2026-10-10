@@ -1,0 +1,23 @@
+{
+  "id": "51fe7ebd-5cac-47e3-973f-c2e9a5abf003",
+  "name": "glyph-studio-610",
+  "url": "http://glyph-studio-610.netlify.app",
+  "ssl_url": "https://glyph-studio-610.netlify.app",
+  "updated_at": "2026-10-07T05:06:20.233Z",
+  "build_settings": {
+    "repo_url": null,
+    "repo_branch": null,
+    "cmd": null,
+    "dir": null,
+    "stop_builds": null
+  },
+  "published_deploy": {
+    "id": "6ac5d2b39f450706b3f7dda1",
+    "state": "ready",
+    "commit_ref": null,
+    "branch": null,
+    "context": "deploy-preview",
+    "published_at": "2026-10-07T05:06:20.187Z",
+    "deploy_ssl_url": "https://6ac5d2b39f450706b3f7dda1--glyph-studio-610.netlify.app"
+  }
+}

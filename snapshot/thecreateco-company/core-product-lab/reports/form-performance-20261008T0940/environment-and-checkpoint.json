@@ -1,0 +1,87 @@
+{
+  "observed_at": "2026-10-08T09:41:51.568845+00:00",
+  "candidate_sha": "be1f7272c5689d6401194d643fa3eb09a2b0b73b",
+  "model": "openai/gpt-6.1-sol",
+  "fallback_used": false,
+  "worktree_command": [
+    "git",
+    "worktree",
+    "add",
+    "/Users/agentsattari/code/worktrees/form-perf-20261008T0940",
+    "-b",
+    "qa/form-perf-20261008T0940",
+    "be1f7272c5689d6401194d643fa3eb09a2b0b73b"
+  ],
+  "worktree_exit_code": null,
+  "exit_code_note": "Individual git exit was not captured; compound shell continued to diagnostics. Fatal ENOSPC and absent worktree prove checkout failure.",
+  "receipts": [
+    {
+      "command": [
+        "df",
+        "-k",
+        "."
+      ],
+      "exit_code": 0,
+      "stdout": "Filesystem   1024-blocks      Used Available Capacity iused   ifree %iused  Mounted on\n/dev/disk3s5   482797652 455253700    129020   100% 4503502 1290200   78%   /System/Volumes/Data\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "uname",
+        "-a"
+      ],
+      "exit_code": 0,
+      "stdout": "Darwin Mac.lan 25.2.0 Darwin Kernel Version 25.2.0: Tue Nov 18 21:08:48 PST 2025; root:xnu-12377.61.12~1/RELEASE_ARM64_T8132 arm64\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "node",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "v26.9.0\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "Python 3.14.4\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "worktree",
+        "list"
+      ],
+      "exit_code": 0,
+      "stdout": "/Users/agentsattari/code/wave2/form-D                                  b5abdd1 [wave5/form-room]\n/private/tmp/form-audit-CORE-FORM-001                                  b5abdd1 (detached HEAD)\n/Users/agentsattari/code/worktrees/form-cast-stl-20261007              d24f5d7 [fix/cast-stl-file-import-20261007]\n/Users/agentsattari/code/worktrees/form-completion-20261007            ea67346 [fix/form-workflow-gates-20261007]\n/Users/agentsattari/code/worktrees/form-golden-20261008T0310           1e7f6d1 [qa/form-golden-20261008T0310]\n/Users/agentsattari/code/worktrees/form-project-menu-20261007          1e7f6d1 [fix/form-project-menu-20261007]\n/Users/agentsattari/code/worktrees/form-runtime-security-20261008T0340 be1f727 [qa/form-runtime-security-20261008T0340]\n/Users/agentsattari/code/worktrees/form-security-20261007              b433a12 [fix/core-form-security-20261007]\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "show-ref",
+        "--verify",
+        "refs/heads/qa/form-perf-20261008T0940"
+      ],
+      "exit_code": 0,
+      "stdout": "be1f7272c5689d6401194d643fa3eb09a2b0b73b refs/heads/qa/form-perf-20261008T0940\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "status",
+        "--short"
+      ],
+      "exit_code": 0,
+      "stdout": " M app/cad-workspace.tsx\n M app/form-ui-v2.css\n M app/layout.tsx\n?? app/room-3d.ts\n?? app/room-brief.ts\n?? app/room-export.ts\n?? app/room-geometry.ts\n?? app/room-layout.ts\n?? app/room-studio.css\n?? app/room-studio.tsx\n?? tests/room-detection.test.mjs\n",
+      "stderr": ""
+    }
+  ]
+}

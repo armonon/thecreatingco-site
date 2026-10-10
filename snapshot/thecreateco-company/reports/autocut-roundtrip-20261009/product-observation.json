@@ -1,0 +1,14 @@
+{
+  "product_id": "autocut",
+  "autocut_roundtrip_observation": {
+    "observed_at": "2026-10-09T11:21:58.756209+00:00",
+    "source_sha": "8d740071cb9631cfa18d4d6c7faa4a806b8fa42a",
+    "evidence": [
+      "reports/autocut-roundtrip-20261009/README.md"
+    ],
+    "qualification": "SCOPED_SYNTHETIC_CHROMIUM_SESSION_PASS; OUTPUT_AUDIO_ALIGNMENT_FAIL_44MS; full workflow and release UNQUALIFIED",
+    "draft_pr": "https://github.com/armonon/scenepilot-studio-badass/pull/97",
+    "merged": false,
+    "deployed": false
+  }
+}

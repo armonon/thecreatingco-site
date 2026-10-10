@@ -1,0 +1,14 @@
+{
+  "name": "cost-preflight",
+  "command": [
+    "python3",
+    "engine/telemetry.py",
+    "preflight",
+    "--task-file",
+    "reports/company-os-20261009/scheduler-proof-task.json"
+  ],
+  "started_at": "2026-10-09T06:51:36.386189+00:00",
+  "finished_at": "2026-10-09T06:51:36.437043+00:00",
+  "exit_code": 0,
+  "output": "{\n  \"decision\": \"continue\",\n  \"advisory_only\": true,\n  \"mode\": \"normal\",\n  \"critical_override\": true,\n  \"budgets\": [\n    {\n      \"name\": \"daily\",\n      \"scope\": \"all\",\n      \"key\": \"all\",\n      \"window\": \"day\",\n      \"metric\": \"list_estimated_usd\",\n      \"observed\": null,\n      \"limit\": null,\n      \"exceeded\": false,\n      \"coverage\": \"partial\"\n    },\n    {\n      \"name\": \"weekly\",\n      \"scope\": \"all\",\n      \"key\": \"all\",\n      \"window\": \"week\",\n      \"metric\": \"list_estimated_usd\",\n      \"observed\": null,\n      \"limit\": null,\n      \"exceeded\": false,\n      \"coverage\": \"partial\"\n    },\n    {\n      \"name\": \"per-agent\",\n      \"scope\": \"agent\",\n      \"key\": \"unknown\",\n      \"window\": \"day\",\n      \"metric\": \"list_estimated_usd\",\n      \"observed\": null,\n      \"limit\": null,\n      \"exceeded\": false,\n      \"coverage\": \"partial\"\n    },\n    {\n      \"name\": \"per-product\",\n      \"scope\": \"product\",\n      \"key\": \"unknown\",\n      \"window\": \"week\",\n      \"metric\": \"list_estimated_usd\",\n      \"observed\": null,\n      \"limit\": null,\n      \"exceeded\": false,\n      \"coverage\": \"partial\"\n    },\n    {\n      \"name\": \"per-task\",\n      \"scope\": \"task\",\n      \"key\": \"OS-SCHEDULER-PROOF-20261009\",\n      \"window\": \"week\",\n      \"metric\": \"list_estimated_usd\",\n      \"observed\": null,\n      \"limit\": null,\n      \"exceeded\": false,\n      \"coverage\": \"partial\"\n    },\n    {\n      \"name\": \"astra\",\n      \"scope\": \"astra\",\n      \"key\": \"astra\",\n      \"window\": \"week\",\n      \"metric\": \"list_estimated_usd\",\n      \"observed\": null,\n      \"limit\": null,\n      \"exceeded\": false,\n      \"coverage\": \"partial\"\n    }\n  ],\n  \"astra_requested\": false,\n  \"astra_reason_recorded\": null,\n  \"next\": \"prefer deterministic tools and smallest adequate authorized model\"\n}\n"
+}

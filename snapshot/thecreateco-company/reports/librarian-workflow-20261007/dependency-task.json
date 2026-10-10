@@ -1,0 +1,26 @@
+{
+  "task_id": "PROGRAM18-LIBRARIAN-DEPENDENCIES-001",
+  "product": "librarian",
+  "title": "Triage and repair inherited build-tool dependency vulnerabilities without regressions",
+  "workstream": "ENGINEERING",
+  "category": "security",
+  "severity": "P1",
+  "model": "openai/gpt-6.1-sol",
+  "scores": {
+    "impact": 8,
+    "user_value": 7,
+    "confidence": 9,
+    "effort": 4,
+    "risk": 4
+  },
+  "next_action": "Inspect exact audit dependency paths; distinguish bundledruntime from native/build attack surfaces. Fix narrow compatible upgrades, test asset generation/web/iOS/nativeaffectedpaths; no npm audit fix --force or unsupported clean claim.",
+  "source_evidence": {
+    "direct": [
+      "/Users/agentsattari/thecreateco-company/reports/librarian-workflow-20261007/audit-full.json"
+    ]
+  },
+  "evidence_sources": [
+    "/Users/agentsattari/thecreateco-company/reports/librarian-workflow-20261007/README.md"
+  ],
+  "dependencies": []
+}

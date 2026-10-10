@@ -1,0 +1,10 @@
+{
+  "command": [
+    "/opt/homebrew/opt/node@22/bin/node",
+    "--version"
+  ],
+  "started_at": "2026-10-08T02:52:26.250109+00:00",
+  "exit_code": 0,
+  "stdout": "v22.23.2\n",
+  "stderr": ""
+}

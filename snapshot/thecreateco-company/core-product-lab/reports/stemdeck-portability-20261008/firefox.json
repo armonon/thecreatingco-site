@@ -1,0 +1,53 @@
+{
+  "at": "2026-10-08T11:44:21.431Z",
+  "engine": "firefox",
+  "profile": "/Users/agentsattari/.openclaw/tmp/stemdeck-portability-dhxyAy",
+  "pass": true,
+  "sourceSha": "b26c03be150e9ebb4dfcfa489bb57e62802011ec",
+  "sourceDirty": true,
+  "fixture": {
+    "path": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-archive-webkit-20261008/candidate-ui-final/portable.sattari",
+    "sha256": "a676f36efd9a9c79caed3016b8197521795b67f087ae92aa78ae177c771200ce",
+    "bytes": 88617122,
+    "assets": 39,
+    "provenance": "Previously generated synthetic four-deck capture; no physical inputs or licensed music"
+  },
+  "reference": {
+    "path": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-archive-webkit-20261008/candidate-ui-final/before-close.wav",
+    "sha256": "92e5f3e0c73489567714b91e1829418bf46bd5df13e311ce8d0501463a6bfd8f",
+    "sourceSha": "6bad0edaf198d80d44c9aa02c3e65970fe7d9148",
+    "role": "historical exact PCM regression oracle, not new capture evidence"
+  },
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "mobileDeviceEmulated": false,
+  "physicalDevice": false,
+  "mockedEndpoints": [
+    "/api/inventory"
+  ],
+  "steps": [
+    "Fresh-engine UI import: all archive assets SHA256 and complete arrangement/event semantics match independent Node archive oracle",
+    "Real UI edit/undo/redo persisted; all unrelated arrangement and original capture fields unchanged",
+    "Full normal browser-process close/reopen preserved edited arrangement/events and every referenced audio byte",
+    "Actual UI mixdown download byte-identical to original synthetic master"
+  ],
+  "pageErrors": [],
+  "command": "/opt/homebrew/opt/node@22/bin/node /Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-portability-20261008/qualify.mjs firefox",
+  "environment": {
+    "node": "v22.23.2",
+    "host": "Darwin Mac.lan 25.2.0 Darwin Kernel Version 25.2.0: Tue Nov 18 21:08:48 PST 2025; root:xnu-12377.61.12~1/RELEASE_ARM64_T8132 arm64",
+    "diskBefore": "Filesystem   1024-blocks      Used Available Capacity iused   ifree %iused  Mounted on\n/dev/disk3s5   482797652 455917080    514352   100% 4505886 5143520   47%   /System/Volumes/Data\n",
+    "diskAfter": "Filesystem   1024-blocks      Used Available Capacity iused   ifree %iused  Mounted on\n/dev/disk3s5   482797652 455921936    509496   100% 4505888 5094960   47%   /System/Volumes/Data\n"
+  },
+  "browserVersion": "153.0",
+  "verifiedAssets": 39,
+  "export": {
+    "bytes": 4010156,
+    "sha256": "92e5f3e0c73489567714b91e1829418bf46bd5df13e311ce8d0501463a6bfd8f",
+    "byteIdentical": true
+  },
+  "finishedAt": "2026-10-08T11:44:32.790Z",
+  "ownedProfileRemoved": true
+}

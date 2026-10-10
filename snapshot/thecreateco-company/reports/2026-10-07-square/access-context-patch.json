@@ -1,0 +1,18 @@
+{
+  "revenue_strategy": {
+    "source": "REVENUE_DIRECTIVE.md",
+    "report": "reports/revenue-2026-10-07/README.md",
+    "paths": "data/revenue/paths.json",
+    "dashboard": "REVENUE_DASHBOARD.md",
+    "experiments": "data/revenue/experiments.json",
+    "current_revenue_baseline_usd": 0,
+    "baseline_evidence": "Founder reported 2026-10-07; ledger not yet available",
+    "next_milestone": "First $1000 verified company revenue; one-time services separate from MRR",
+    "weekly_objective": "One qualified paid-pilot decision with buyer, scope and delivery economics",
+    "pricing_status": "New prices internal hypotheses",
+    "payment_status": "SQUARE_SELECTED; configuration blocked at account access/security verification; existing/new account choice pending",
+    "payment_provider": "Square",
+    "payment_setup": "data/revenue/square-setup.md",
+    "payment_decision_source": "Discord #millions message 1557568686842454037"
+  }
+}

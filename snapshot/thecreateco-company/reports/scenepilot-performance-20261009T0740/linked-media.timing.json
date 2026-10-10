@@ -1,0 +1,22 @@
+{
+  "command": [
+    "/bin/zsh",
+    "-lc",
+    "PATH=/opt/homebrew/opt/node@22/bin:$PATH npm run qa:linked-media"
+  ],
+  "timeout_seconds": 720,
+  "exit_code": 127,
+  "timed_out": false,
+  "elapsed_s": 0.275,
+  "memory_sampling_interval_s": 0.25,
+  "rss_sample_count": 1,
+  "peak_sampled_process_tree_rss_bytes": 2015232,
+  "child_max_rss_bytes": 58327040,
+  "samples": [
+    {
+      "elapsed_s": 0.019,
+      "tree_rss_bytes": 2015232,
+      "pids": 1
+    }
+  ]
+}

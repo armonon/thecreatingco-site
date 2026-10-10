@@ -1,0 +1,38 @@
+[
+  {
+    "name": "bounce",
+    "url": "https://thecreatingco.com/products/bounce/",
+    "observed_at": "2026-10-10T02:11:30.473964+00:00",
+    "status": 200,
+    "final_url": "https://thecreatingco.com/products/bounce/",
+    "sha256": "592e2824b7238c5651e4d33cd17f40a740cbf5880f283b148f9ee6872f17114a",
+    "bytes": 36482
+  },
+  {
+    "name": "pocket-studio",
+    "url": "https://thecreatingco.com/community/network?view=Pocket%20Studio",
+    "observed_at": "2026-10-10T02:11:30.908327+00:00",
+    "status": 200,
+    "final_url": "https://thecreatingco.com/community/network?view=Pocket%20Studio",
+    "sha256": "b1d23a95d8e59ddf3c8fb6e856e1d8e88aa6fad8e6445d17d527eeffa0372757",
+    "bytes": 18669
+  },
+  {
+    "name": "key-bpm",
+    "url": "https://thecreatingco.com/products/key-bpm/",
+    "observed_at": "2026-10-10T02:11:31.436528+00:00",
+    "status": 200,
+    "final_url": "https://thecreatingco.com/products/key-bpm/",
+    "sha256": "0d9018a5d65051c1dba5a11f6d55300e4e018aec1eba8eaecfa24a0d21f13254",
+    "bytes": 31609
+  },
+  {
+    "name": "glyph",
+    "url": "https://thecreatingco.com/products/glyph-studio/",
+    "observed_at": "2026-10-10T02:11:31.805737+00:00",
+    "status": 200,
+    "final_url": "https://thecreatingco.com/products/glyph-studio/",
+    "sha256": "026047c84f6a1b6f0b6459fd6b952c47e06860f3a520eb5d1588b7c90ed591b3",
+    "bytes": 29030
+  }
+]

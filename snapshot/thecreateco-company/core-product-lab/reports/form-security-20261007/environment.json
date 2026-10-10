@@ -1,0 +1,63 @@
+{
+  "platform": "Darwin-25.2.0-arm64-arm-64bit-Mach-O",
+  "node": "v22.23.2",
+  "npm": "10.9.8",
+  "source": "b5abdd1de5f71fe0244ef9a651a6d983067541ff",
+  "commands": [
+    [
+      "clean-ci",
+      [
+        "npm",
+        "ci"
+      ]
+    ],
+    [
+      "typecheck",
+      [
+        "npm",
+        "run",
+        "typecheck"
+      ]
+    ],
+    [
+      "build",
+      [
+        "npm",
+        "run",
+        "build"
+      ]
+    ],
+    [
+      "desktop-web-build",
+      [
+        "npm",
+        "run",
+        "desktop:web:build"
+      ]
+    ],
+    [
+      "unit",
+      [
+        "npm",
+        "run",
+        "test:unit"
+      ]
+    ],
+    [
+      "synthetic-projects",
+      [
+        "npm",
+        "run",
+        "release:projects"
+      ]
+    ],
+    [
+      "lint",
+      [
+        "npm",
+        "run",
+        "lint"
+      ]
+    ]
+  ]
+}

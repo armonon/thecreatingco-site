@@ -1,0 +1,513 @@
+{
+  "schema": "form-studio/five-project-certification@1",
+  "scope": "bounded-engineering-smoke",
+  "professionalAcceptance": false,
+  "limitations": [
+    "Persistence checks reopen report summaries, not full editable customer assets.",
+    "Creative scene uses a small generated mesh and 16px render, not a production asset.",
+    "Garment test covers 45 frames of engineering stability, not long motion or measured physical fit.",
+    "No 50–100-operation exact CAD lifecycle or independently printed drawing is qualified here.",
+    "Independent interchange, artist acceptance and clean-machine distribution remain separate gates."
+  ],
+  "passed": true,
+  "startedAt": "2026-10-08T01:45:41.300Z",
+  "finishedAt": "2026-10-08T01:45:46.218Z",
+  "projects": [
+    {
+      "id": "precision-cad",
+      "name": "Precision equipment bracket",
+      "passed": true,
+      "failures": [],
+      "elapsedMs": 42.02,
+      "projectBytes": 2310,
+      "evidence": {
+        "entities": 1800,
+        "constraints": 1200,
+        "gdtControls": 600,
+        "assemblyMates": 249,
+        "dxfRoundTripEntities": 2700,
+        "timingsMs": {
+          "constraintSolve": 10.23,
+          "parametricRebuild": 10.04,
+          "gdtValidation": 0.63,
+          "assemblySolve": 0.67,
+          "dxfExport": 1.01,
+          "dxfRoundTrip": 5.62,
+          "projectChecksum": 9.67,
+          "streamingPlan": 1.31,
+          "workingSet": 0.1
+        },
+        "persistence": {
+          "reopen": true,
+          "deterministicResave": true,
+          "integritySeal": true,
+          "tamperRejected": true
+        },
+        "revisionId": "revision-12tr1ww"
+      }
+    },
+    {
+      "id": "creative-scene",
+      "name": "Creative product scene",
+      "passed": true,
+      "failures": [],
+      "elapsedMs": 15.51,
+      "projectBytes": 1555,
+      "evidence": {
+        "diagnostics": {
+          "vertices": 58,
+          "faces": 56,
+          "edges": 112,
+          "boundaryEdges": 0,
+          "nonManifoldEdges": 0,
+          "degenerateFaces": 0,
+          "unusedVertices": 0,
+          "closed": true
+        },
+        "render": {
+          "width": 16,
+          "height": 16,
+          "samples": 12,
+          "finite": true,
+          "dynamicRange": {
+            "min": 0.07518503814935684,
+            "max": 0.9897511601448059
+          }
+        },
+        "persistence": {
+          "reopen": true,
+          "deterministicResave": true,
+          "integritySeal": true,
+          "tamperRejected": true
+        },
+        "revisionId": "revision-0fbi3yk"
+      }
+    },
+    {
+      "id": "garment",
+      "name": "Tailored garment fitting",
+      "passed": true,
+      "failures": [],
+      "elapsedMs": 4826.35,
+      "projectBytes": 1294,
+      "evidence": {
+        "cases": [
+          {
+            "id": "garment-layered-dress",
+            "name": "Layered silk evening dress",
+            "productionDecision": "review",
+            "pieces": 8,
+            "seams": 28,
+            "seamTypes": [
+              "plain",
+              "overlock"
+            ],
+            "details": 1,
+            "particles": 2110,
+            "triangles": 3732,
+            "constraints": 11552,
+            "seamSamples": 192,
+            "launchBoundsZ": [
+              -0.45287156105041504,
+              0.7014179229736328
+            ],
+            "solverProfile": {
+              "collisionThickness": 0.008,
+              "selfCollisionRadius": 0.01,
+              "dressingGuide": 0.1
+            },
+            "avatar": {
+              "sex": "female",
+              "build": 58,
+              "pose": "reach",
+              "heightMm": 1740
+            },
+            "frames": 45,
+            "peakStretch": 0.10912044619123895,
+            "collisions": 4232,
+            "selfCollisions": 63863,
+            "topologyMs": 980.681,
+            "preparationTiming": {
+              "wallMs": 677.089334,
+              "phases": [
+                {
+                  "phase": "body-launch-mapper",
+                  "cpuMs": 123.48399999999998,
+                  "wallMs": 71.358125
+                },
+                {
+                  "phase": "pattern-meshing",
+                  "cpuMs": 265.818,
+                  "wallMs": 191.657125
+                },
+                {
+                  "phase": "seam-sampling",
+                  "cpuMs": 14.610000000000014,
+                  "wallMs": 7.679874999999981
+                },
+                {
+                  "phase": "panel-placement",
+                  "cpuMs": 45.99599999999998,
+                  "wallMs": 21.000417000000027
+                },
+                {
+                  "phase": "sewn-surface-placement",
+                  "cpuMs": 255.81900000000007,
+                  "wallMs": 136.07737499999996
+                },
+                {
+                  "phase": "constraints",
+                  "cpuMs": 6.675999999999931,
+                  "wallMs": 3.8545420000000377
+                },
+                {
+                  "phase": "body-distance-field",
+                  "cpuMs": 268.2070000000001,
+                  "wallMs": 245.384458
+                }
+              ]
+            },
+            "simulationMs": 1401.341,
+            "finite": true,
+            "dxfBytes": 10271,
+            "pdfBytes": 123811,
+            "gradedSizes": 5,
+            "failures": [],
+            "pass": true
+          },
+          {
+            "id": "garment-lined-coat",
+            "name": "Lined denim work coat",
+            "productionDecision": "review",
+            "pieces": 8,
+            "seams": 28,
+            "seamTypes": [
+              "plain",
+              "flat-felled"
+            ],
+            "details": 0,
+            "particles": 1414,
+            "triangles": 2440,
+            "constraints": 7588,
+            "seamSamples": 148,
+            "launchBoundsZ": [
+              -0.04494656249880791,
+              0.6766711473464966
+            ],
+            "solverProfile": {
+              "collisionThickness": 0.012,
+              "selfCollisionRadius": 0.016,
+              "dressingGuide": 0.1
+            },
+            "avatar": {
+              "sex": "male",
+              "build": 68,
+              "pose": "walk",
+              "heightMm": 1860
+            },
+            "frames": 45,
+            "peakStretch": 0.3324864060288921,
+            "collisions": 19614,
+            "selfCollisions": 166859,
+            "topologyMs": 705.8089999999997,
+            "preparationTiming": {
+              "wallMs": 524.8516249999998,
+              "phases": [
+                {
+                  "phase": "body-launch-mapper",
+                  "cpuMs": 60.26899999999978,
+                  "wallMs": 39.54808299999968
+                },
+                {
+                  "phase": "pattern-meshing",
+                  "cpuMs": 99.98400000000038,
+                  "wallMs": 91.44970899999998
+                },
+                {
+                  "phase": "seam-sampling",
+                  "cpuMs": 3.687999999999647,
+                  "wallMs": 1.593333000000257
+                },
+                {
+                  "phase": "panel-placement",
+                  "cpuMs": 34.38500000000022,
+                  "wallMs": 12.466875000000073
+                },
+                {
+                  "phase": "sewn-surface-placement",
+                  "cpuMs": 125.74099999999999,
+                  "wallMs": 65.65249999999969
+                },
+                {
+                  "phase": "constraints",
+                  "cpuMs": 6.030999999999949,
+                  "wallMs": 1.7221250000002328
+                },
+                {
+                  "phase": "body-distance-field",
+                  "cpuMs": 375.70600000000013,
+                  "wallMs": 312.4124579999998
+                }
+              ]
+            },
+            "simulationMs": 1391.0969999999998,
+            "finite": true,
+            "dxfBytes": 10151,
+            "pdfBytes": 78359,
+            "gradedSizes": 5,
+            "failures": [],
+            "pass": true
+          },
+          {
+            "id": "garment-tailored-trousers",
+            "name": "Tailored wool trousers",
+            "productionDecision": "blocked",
+            "pieces": 4,
+            "seams": 12,
+            "seamTypes": [
+              "zipper",
+              "plain"
+            ],
+            "details": 1,
+            "particles": 884,
+            "triangles": 1504,
+            "constraints": 4642,
+            "seamSamples": 120,
+            "launchBoundsZ": [
+              -0.9217145442962646,
+              0.20833484828472137
+            ],
+            "solverProfile": {
+              "collisionThickness": 0.008,
+              "selfCollisionRadius": 0.01,
+              "dressingGuide": 0.1
+            },
+            "avatar": {
+              "sex": "male",
+              "build": 42,
+              "pose": "walk",
+              "heightMm": 1810
+            },
+            "frames": 45,
+            "peakStretch": 0.093390287755861,
+            "collisions": 2938,
+            "selfCollisions": 1868,
+            "topologyMs": 535.5540000000001,
+            "preparationTiming": {
+              "wallMs": 492.5060830000002,
+              "phases": [
+                {
+                  "phase": "body-launch-mapper",
+                  "cpuMs": 45.45300000000043,
+                  "wallMs": 30.63262500000019
+                },
+                {
+                  "phase": "pattern-meshing",
+                  "cpuMs": 100.48299999999927,
+                  "wallMs": 89.95600000000013
+                },
+                {
+                  "phase": "seam-sampling",
+                  "cpuMs": 0.875,
+                  "wallMs": 0.5885410000000775
+                },
+                {
+                  "phase": "panel-placement",
+                  "cpuMs": 14.629000000000815,
+                  "wallMs": 5.5567089999995005
+                },
+                {
+                  "phase": "sewn-surface-placement",
+                  "cpuMs": 73.67899999999918,
+                  "wallMs": 60.24433300000055
+                },
+                {
+                  "phase": "constraints",
+                  "cpuMs": 2.7270000000007713,
+                  "wallMs": 1.0994579999996859
+                },
+                {
+                  "phase": "body-distance-field",
+                  "cpuMs": 297.7029999999995,
+                  "wallMs": 304.4172090000002
+                }
+              ]
+            },
+            "simulationMs": 375.2579999999998,
+            "finite": true,
+            "dxfBytes": 4125,
+            "pdfBytes": 30225,
+            "gradedSizes": 5,
+            "failures": [],
+            "pass": true
+          }
+        ],
+        "elapsedMs": 5439.091,
+        "persistence": {
+          "reopen": true,
+          "deterministicResave": true,
+          "integritySeal": true,
+          "tamperRejected": true
+        },
+        "revisionId": "revision-1vrusgu"
+      }
+    },
+    {
+      "id": "motion",
+      "name": "Motion design ident",
+      "passed": true,
+      "failures": [],
+      "elapsedMs": 16.67,
+      "projectBytes": 1312,
+      "evidence": {
+        "evaluatedTransforms": 23520,
+        "cases": [
+          {
+            "id": "product-wall-reveal",
+            "signature": "c78c6bbf",
+            "millisecondsPerFrame": 0.07466551388888042
+          },
+          {
+            "id": "helix-title-build",
+            "signature": "ffd0e3ed",
+            "millisecondsPerFrame": 0.05567406666666809
+          },
+          {
+            "id": "radial-ident-burst",
+            "signature": "bd328a84",
+            "millisecondsPerFrame": 0.07899444999999711
+          }
+        ],
+        "persistence": {
+          "reopen": true,
+          "deterministicResave": true,
+          "integritySeal": true,
+          "tamperRejected": true
+        },
+        "revisionId": "revision-1i8cr3m"
+      }
+    },
+    {
+      "id": "architecture-bim",
+      "name": "Coordinated mixed-use building",
+      "passed": true,
+      "failures": [],
+      "elapsedMs": 16.65,
+      "projectBytes": 1548,
+      "evidence": {
+        "corpus": {
+          "levels": 4,
+          "rooms": 12,
+          "sourceEntities": 41,
+          "bimObjects": 48,
+          "ifcEntities": 1089
+        },
+        "checks": {
+          "graphAudit": true,
+          "documentAudit": true,
+          "ifcInternalGate": true,
+          "planPerLevel": true,
+          "roomsScheduled": true,
+          "hostedOpenings": true,
+          "coordinatedHeightEdit": true,
+          "coordinatedDocuments": true,
+          "exchangeRelations": true,
+          "deterministicIfc": true
+        },
+        "ifc": {
+          "ready": true,
+          "schema": "IFC4",
+          "modelView": "CoordinationView",
+          "score": 100,
+          "errors": [],
+          "warnings": [],
+          "entityCount": 1089,
+          "productCount": 29,
+          "relationshipCount": 120,
+          "geometryCoverage": 1,
+          "unresolvedReferences": []
+        },
+        "documents": {
+          "valid": true,
+          "score": 100,
+          "errors": [],
+          "warnings": [],
+          "checks": [
+            {
+              "id": "plans-per-level",
+              "passed": true,
+              "detail": "Every active storey must have exactly one unique plan."
+            },
+            {
+              "id": "room-cardinality",
+              "passed": true,
+              "detail": "Room schedules must contain every modeled space exactly once."
+            },
+            {
+              "id": "room-values",
+              "passed": true,
+              "detail": "Room areas and volumes must match the BIM dependency graph."
+            },
+            {
+              "id": "plan-membership",
+              "passed": true,
+              "detail": "Plan membership must match active elements in its storey."
+            },
+            {
+              "id": "schedule-cardinality",
+              "passed": true,
+              "detail": "Schedule categories and counts must exactly match the BIM model."
+            },
+            {
+              "id": "schedule-phasing",
+              "passed": true,
+              "detail": "Schedule phase totals must match the model."
+            },
+            {
+              "id": "quantity-totals",
+              "passed": true,
+              "detail": "Material quantities must reconcile with modeled products."
+            },
+            {
+              "id": "section-references",
+              "passed": true,
+              "detail": "Section spans must reference current model elevations."
+            },
+            {
+              "id": "safe-svg",
+              "passed": true,
+              "detail": "Generated BIM documents must be marked and contain no executable SVG content."
+            },
+            {
+              "id": "ifc-gate",
+              "passed": true,
+              "detail": "IFC exchange must pass the internal reference, GUID, unit, geometry and relationship gate."
+            },
+            {
+              "id": "spaces-present",
+              "passed": true,
+              "detail": "12 active spaces are coordinated into room deliverables."
+            }
+          ]
+        },
+        "timingsMs": {
+          "build": 0.42,
+          "documents": 2.69,
+          "coordinatedEdit": 3.09
+        },
+        "persistence": {
+          "reopen": true,
+          "deterministicResave": true,
+          "integritySeal": true,
+          "tamperRejected": true
+        },
+        "revisionId": "revision-1y01ben"
+      }
+    }
+  ],
+  "totals": {
+    "projects": 5,
+    "passed": 5,
+    "elapsedMs": 4917.21
+  }
+}

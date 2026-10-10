@@ -1,0 +1,10 @@
+{
+  "metrics": {
+    "form_full_dependency_audit_groups": {
+      "value": 12,
+      "source": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-runtime-security-20261008T0340/global-full-audit.log",
+      "period": "2026-10-08T03:48Z candidate-source audit",
+      "observed_at": "2026-10-08T03:51:13.088398+00:00"
+    }
+  }
+}

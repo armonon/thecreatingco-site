@@ -1,0 +1,47 @@
+{
+  "sourceSha": "c15bb06a87b150a966e8c563457de4f2786ba141",
+  "sourceDirty": true,
+  "profile": "/Users/agentsattari/.openclaw/tmp/stemdeck-fourdeck-mPGKl5",
+  "pass": false,
+  "physicalInputs": false,
+  "mockedEndpoints": [
+    "/api/inventory"
+  ],
+  "steps": [
+    "Four decks,20 real generated audio assets imported through project picker",
+    "Actual fullMix lane import and analyzer executed for all four decks"
+  ],
+  "errors": [],
+  "browser": "26.5",
+  "analysis": [
+    {
+      "id": "A",
+      "bpm": 118,
+      "key": "C maj",
+      "analysis": true
+    },
+    {
+      "id": "B",
+      "bpm": 118,
+      "key": "C# maj",
+      "analysis": true
+    },
+    {
+      "id": "C",
+      "bpm": 118,
+      "key": "D maj",
+      "analysis": true
+    },
+    {
+      "id": "D",
+      "bpm": 118,
+      "key": "D# maj",
+      "analysis": true
+    }
+  ],
+  "perform": {
+    "pass": true,
+    "unexpectedlyStoppedDecks": []
+  },
+  "error": "locator.waitFor: Timeout 60000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /Open performance in Arrange/ }) to be visible\u001b[22m\n\n    at /Users/agentsattari/thecreateco-company/reports/stemdeck-webkit-reference-20261007/webkit-ui-qa.mjs:176:6"
+}

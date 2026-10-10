@@ -1,0 +1,19 @@
+{
+  "observed_at": "2026-10-08T03:51:46.492247+00:00",
+  "head": "be1f7272c5689d6401194d643fa3eb09a2b0b73b",
+  "pr": 7,
+  "state": "OPEN",
+  "merged_at": null,
+  "run": 37724578530,
+  "web_job": 113139727449,
+  "web_steps": [],
+  "web_annotation": "The job was not started because recent account payments have failed or your spending limit needs to be increased. Please check the Billing & plans section in your settings",
+  "native_macos": "FAILURE",
+  "desktop_artifact": "SKIPPED",
+  "commands": [
+    "gh pr view 7 --repo armonon/form-studio --json url,state,headRefOid,baseRefName,mergedAt,statusCheckRollup",
+    "gh api repos/armonon/form-studio/actions/jobs/113139727449 --jq {name,conclusion,steps}",
+    "gh api repos/armonon/form-studio/check-runs/113139727449/annotations"
+  ],
+  "retry_performed": false
+}

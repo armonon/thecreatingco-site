@@ -1,0 +1,10 @@
+{
+  "command": [
+    "uname",
+    "-m"
+  ],
+  "started_at": "2026-10-08T02:52:26.248332+00:00",
+  "exit_code": 0,
+  "stdout": "arm64\n",
+  "stderr": ""
+}

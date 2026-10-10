@@ -1,0 +1,97 @@
+{
+  "at": "2026-10-08T05:47:21.295Z",
+  "cases": [
+    {
+      "profile": "/Users/agentsattari/.openclaw/tmp/core-archive-fault-CJJw05",
+      "mode": "denied",
+      "error": {
+        "name": "Error",
+        "message": "This browser refused temporary disk space for the export (private windows often do). Use a regular window or export a shorter range."
+      },
+      "assets": [
+        "old-owned-asset"
+      ],
+      "oldAsset": "old asset",
+      "sessionUnchanged": true,
+      "temporaries": 4,
+      "pass": false
+    },
+    {
+      "profile": "/Users/agentsattari/.openclaw/tmp/core-archive-fault-J1Yk0Z",
+      "mode": "quota",
+      "error": {
+        "name": "Error",
+        "message": "Not enough browser disk space for this export. Download and clear older export files, free disk space, or export a shorter range."
+      },
+      "assets": [
+        "old-owned-asset"
+      ],
+      "oldAsset": "old asset",
+      "sessionUnchanged": true,
+      "temporaries": 4,
+      "pass": false
+    },
+    {
+      "profile": "/Users/agentsattari/.openclaw/tmp/core-archive-fault-XiLGWs",
+      "mode": "transactionAbort",
+      "error": {
+        "name": "TransactionInactiveError",
+        "message": "Failed to store record in an IDBObjectStore: The transaction is inactive or finished."
+      },
+      "assets": [
+        "old-owned-asset"
+      ],
+      "oldAsset": "old asset",
+      "sessionUnchanged": true,
+      "temporaries": 4,
+      "pass": false
+    },
+    {
+      "profile": "/Users/agentsattari/.openclaw/tmp/core-archive-fault-UytYLM",
+      "mode": "lateTransactionAbort",
+      "error": {
+        "name": "Error",
+        "message": "Local audio storage was not saved."
+      },
+      "assets": [
+        "old-owned-asset"
+      ],
+      "oldAsset": "old asset",
+      "sessionUnchanged": true,
+      "temporaries": 4,
+      "pass": false
+    },
+    {
+      "profile": "/Users/agentsattari/.openclaw/tmp/core-archive-fault-Te0W9m",
+      "mode": "corruptRead",
+      "error": {
+        "name": "Error",
+        "message": "Restored project audio failed verification. The current session was not replaced."
+      },
+      "assets": [
+        "old-owned-asset"
+      ],
+      "oldAsset": "old asset",
+      "sessionUnchanged": true,
+      "temporaries": 5,
+      "pass": false
+    },
+    {
+      "profile": "/Users/agentsattari/.openclaw/tmp/core-archive-fault-nXTTCo",
+      "mode": "corruptReadReused",
+      "error": {
+        "name": "Error",
+        "message": "Restored project audio failed verification. The current session was not replaced."
+      },
+      "assets": [
+        "old-owned-asset",
+        "reused-existing"
+      ],
+      "oldAsset": "old asset",
+      "sessionUnchanged": true,
+      "temporaries": 5,
+      "pass": false
+    }
+  ],
+  "pass": false
+}

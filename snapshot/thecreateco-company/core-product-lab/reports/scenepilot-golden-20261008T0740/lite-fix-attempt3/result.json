@@ -1,0 +1,27 @@
+{
+  "startedAt": "2026-10-08T07:55:17.177Z",
+  "profile": "/Users/agentsattari/.openclaw/tmp/sp-lite-golden-UfWdKb",
+  "source": "c7d2b4fc973861eba785f26e5f607671ac22deb4",
+  "cssSha256": "56d04ed3cb11f1c0a825fa7ef377e14f455cf1be4405447736dd1c79b4e108d5  app/studio-workspace.css",
+  "server": "Vite dev localhost:5189, not production artifact",
+  "checks": [
+    {
+      "name": "Actual Lite import five generated assets and insert silent12s clip; IndexedDB retains all media byte hashes",
+      "status": "PASS"
+    },
+    {
+      "name": "Actual Lite added track Undo/Redo full saved-state and media-byte identity",
+      "status": "PASS"
+    }
+  ],
+  "errors": [],
+  "limits": [
+    "One Browser Lite local-development run; no release qualification",
+    "Silent video export subset; full audio/composite golden recipe not claimed",
+    "Destination picker harnessed, actual OPFS handle"
+  ],
+  "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36",
+  "status": "FAIL",
+  "error": "page.waitForFunction: Timeout 20000ms exceeded.\n    at /Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-golden-20261008T0740/lite-workflow.mjs:8:1469",
+  "finishedAt": "2026-10-08T07:55:43.992Z"
+}

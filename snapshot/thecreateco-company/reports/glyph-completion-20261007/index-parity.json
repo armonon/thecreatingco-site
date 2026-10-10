@@ -1,0 +1,5 @@
+{
+  "normalized_dom_equal_without_overlay": true,
+  "overlay_css": "h1,h2,h3{letter-spacing:0}.hero{padding:48px 24px 20px;width:100%;min-width:0;overflow-wrap:anywhere}.hero h1{font-size:58px}.site-header .cta,.btn-accent{color:var(--accent-ink)}@media(max-width:640px){.hero h1{font-size:34px}}",
+  "overlay_preserved_in_candidate": "src/styles/global.css"
+}

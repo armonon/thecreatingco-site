@@ -1,0 +1,10 @@
+{
+  "metrics": {
+    "luma_matching_deployed_overlay_files": {
+      "value": 1292,
+      "source": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/luma-provenance-20261009T2140/summary.json",
+      "period": "2026-10-09 deploy-pinned manifest comparison",
+      "observed_at": "2026-10-09T21:43:43.549590+00:00"
+    }
+  }
+}

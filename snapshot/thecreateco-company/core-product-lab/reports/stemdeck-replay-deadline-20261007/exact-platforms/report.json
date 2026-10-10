@@ -1,0 +1,33 @@
+{
+  "sourceSha": "c15bb06a87b150a966e8c563457de4f2786ba141",
+  "sourceDirty": false,
+  "results": [
+    {
+      "name": "chromium",
+      "version": "151.0.7922.34",
+      "profile": "/Users/agentsattari/.openclaw/tmp/stemdeck-chromium-qualification-CIYwCo",
+      "storageMode": "owned persistent profile",
+      "output": "Running…\nPASS ordered offline EQ retains the original crossover response at 44.1 and 48 kHz\nPASS real offline audio has the correct silent gap, duration, gain and stop\nPASS splitting a fade preserves rendered PCM\nPASS seek into silence retains future clips and uses audio-clock position\nPASS piano notes render actual non-silent polyphonic audio\nPASS master gain affects mixdown and produces a valid 24-bit WAV\nPASS more than four independent tracks render and export aligned stems\nPASS exact integer-frame renders and stem ZIP survive fractional-second roundoff\nPASS printed references bypass repeated processing but follow master level\nPASS range exports rebase source offsets and preserve requested length\nPASS live mute and gain changes do not restart arrangement transport\nPASS loop playback schedules repeated regions and preserves live mixer control\nPASS source capture produces aligned durable chunks and recoverable float WAV audio\nPASS recording captures playable audio and timestamped performance controls\n\nCOMPLETE: 14 passed, 0 failed",
+      "exactFramePass": true,
+      "fullSuitePass": true
+    },
+    {
+      "name": "firefox",
+      "version": "153.0",
+      "profile": "/Users/agentsattari/.openclaw/tmp/stemdeck-firefox-qualification-l4aVth",
+      "storageMode": "owned persistent profile",
+      "output": "Running…\nPASS ordered offline EQ retains the original crossover response at 44.1 and 48 kHz\nPASS real offline audio has the correct silent gap, duration, gain and stop\nPASS splitting a fade preserves rendered PCM\nPASS seek into silence retains future clips and uses audio-clock position\nPASS piano notes render actual non-silent polyphonic audio\nPASS master gain affects mixdown and produces a valid 24-bit WAV\nPASS more than four independent tracks render and export aligned stems\nPASS exact integer-frame renders and stem ZIP survive fractional-second roundoff\nPASS printed references bypass repeated processing but follow master level\nPASS range exports rebase source offsets and preserve requested length\nPASS live mute and gain changes do not restart arrangement transport\nPASS loop playback schedules repeated regions and preserves live mixer control\nPASS source capture produces aligned durable chunks and recoverable float WAV audio\nPASS recording captures playable audio and timestamped performance controls\n\nCOMPLETE: 14 passed, 0 failed",
+      "exactFramePass": true,
+      "fullSuitePass": true
+    },
+    {
+      "name": "webkit",
+      "version": "26.5",
+      "profile": "/Users/agentsattari/.openclaw/tmp/stemdeck-webkit-qualification-rJMrL7",
+      "storageMode": "owned persistent profile",
+      "output": "Running…\nPASS ordered offline EQ retains the original crossover response at 44.1 and 48 kHz\nPASS real offline audio has the correct silent gap, duration, gain and stop\nPASS splitting a fade preserves rendered PCM\nPASS seek into silence retains future clips and uses audio-clock position\nPASS piano notes render actual non-silent polyphonic audio\nPASS master gain affects mixdown and produces a valid 24-bit WAV\nPASS more than four independent tracks render and export aligned stems\nPASS exact integer-frame renders and stem ZIP survive fractional-second roundoff\nPASS printed references bypass repeated processing but follow master level\nPASS range exports rebase source offsets and preserve requested length\nPASS live mute and gain changes do not restart arrangement transport\nPASS loop playback schedules repeated regions and preserves live mixer control\nPASS source capture produces aligned durable chunks and recoverable float WAV audio\nFAIL recording captures playable audio and timestamped performance controls: Decoding failed\n\nCOMPLETE: 13 passed, 1 failed",
+      "exactFramePass": true,
+      "fullSuitePass": false
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "url": "https://librarian.thecreatingco.com/",
+  "started_at": "2026-10-08T03:27:11.532Z",
+  "errors": [],
+  "bad_responses": [
+    {
+      "url": "https://librarian.thecreatingco.com/assets/pdf-BbVnaTMr.js",
+      "status": 404
+    }
+  ],
+  "checks": [],
+  "status": "FAIL",
+  "error": "TimeoutError: locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.pdf-page').first() to be visible\u001b[22m\n",
+  "visible_text": "Librarian\nATLAS\nSearch\nLibrary1\nSources\nShelf\n\nPDF LIBRARY\n\nRead your books here — warmth slider, day or night.\n\nAdd PDFs you’ve downloaded and read them in-app. Slide from the file’s natural colors to a warm daytime tone, or flip on Dark — the slider fine-tunes brightness there too. Stored privately in this browser.\n\nAdd PDF\nOriginal reference\nImported · 1 KB\nRead\nDownload PDF\nRemove\nOriginal reference\n−\n100%\n+\nDark\n\nCould not open this PDF.",
+  "finished_at": "2026-10-08T03:27:33.440Z"
+}

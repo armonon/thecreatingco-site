@@ -1,0 +1,79 @@
+{
+  "observed_at": "2026-10-09T23:40:43.896207+00:00",
+  "environment": "Darwin-25.2.0-arm64-arm-64bit-Mach-O",
+  "requests": [
+    {
+      "host": "review",
+      "url": "https://form-studio-review.netlify.app/studio",
+      "command": "urllib.request.urlopen GET timeout=30",
+      "status": 200,
+      "final_url": "https://form-studio-review.netlify.app/studio",
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 1357,
+      "sha256": "fd4de2e635278e3387f567310d2fdccc33b2c6c6c1cd7b6631b3530d043f76e4",
+      "scripts": [
+        "/pwa.js",
+        "/assets/index-B9UL47J0.js"
+      ],
+      "title": [
+        "Form \u2014 3D Studio"
+      ]
+    },
+    {
+      "host": "review",
+      "url": "https://form-studio-review.netlify.app/manifest.webmanifest",
+      "command": "urllib.request.urlopen GET timeout=30",
+      "status": 200,
+      "final_url": "https://form-studio-review.netlify.app/manifest.webmanifest",
+      "content_type": "application/manifest+json",
+      "bytes": 912,
+      "sha256": "8f7c21825cfde433cf0e3214e603a3956b9a369e3522a20d5eb0c3f4a405d46d"
+    },
+    {
+      "host": "review",
+      "url": "https://form-studio-review.netlify.app/sw.js",
+      "command": "urllib.request.urlopen GET timeout=30",
+      "status": 200,
+      "final_url": "https://form-studio-review.netlify.app/sw.js",
+      "content_type": "application/javascript; charset=UTF-8",
+      "bytes": 4529,
+      "sha256": "36b85bf229e919a7c1ff91223e510a1eb8255e54b683714e685e5d16612da6ef"
+    },
+    {
+      "host": "canonical",
+      "url": "https://form-3d-studio.armonon.chatgpt.site/studio",
+      "command": "urllib.request.urlopen GET timeout=30",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "host": "canonical",
+      "url": "https://form-3d-studio.armonon.chatgpt.site/manifest.webmanifest",
+      "command": "urllib.request.urlopen GET timeout=30",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "host": "canonical",
+      "url": "https://form-3d-studio.armonon.chatgpt.site/sw.js",
+      "command": "urllib.request.urlopen GET timeout=30",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "host": "public",
+      "url": "https://form.thecreatingco.com/studio",
+      "command": "urllib.request.urlopen GET timeout=30",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "host": "public",
+      "url": "https://form.thecreatingco.com/manifest.webmanifest",
+      "command": "urllib.request.urlopen GET timeout=30",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "host": "public",
+      "url": "https://form.thecreatingco.com/sw.js",
+      "command": "urllib.request.urlopen GET timeout=30",
+      "error": "HTTP Error 403: Forbidden"
+    }
+  ]
+}

@@ -1,0 +1,731 @@
+{
+  "product_id": "form",
+  "product_name": "Form Studio",
+  "description": "3D/CAD modeling and interchange",
+  "target_user": "Designers, makers, architecture and jewelry creators",
+  "primary_problem": "3D/CAD modeling and interchange",
+  "kind": "standalone",
+  "parent_product_id": null,
+  "status": "PUBLIC_ALPHA_REPORTED",
+  "maturity": "ALPHA",
+  "quality_score": null,
+  "quality_scores": {
+    "functionality": null,
+    "reliability": null,
+    "design": null,
+    "performance": null,
+    "ux": null,
+    "onboarding": null,
+    "accessibility": null,
+    "documentation": null,
+    "competitive_differentiation": null,
+    "installation": null,
+    "error_handling": null,
+    "data_safety": null,
+    "mobile_responsiveness": null,
+    "user_value": null
+  },
+  "release_readiness": "PR5 1e7f6d1 reviewed/pushed; scoped Project menu fixed through320px,24realbrowser workflow variants; unit1527/1527,budgets15/15,types/lint/builds pass. MandatoryCI billing block; no merge/deploy/full product qualification.",
+  "active_users": null,
+  "feedback": [],
+  "known_bugs": [],
+  "major_missing_features": [
+    "Signed/notarized distribution, clean install/update, and current remote CI evidence remain unverified.",
+    "No current interactive desktop qualification of the full Sketch\u2192Model\u2192Refine\u2192Material\u2192Save\u2192Reopen\u2192Export flow was produced.",
+    "CAD and Rig use separate project/recovery channels with explicit handoffs; end-to-end cross-workspace persistence is not currently qualified.",
+    "Interactive viewport/input, startup/open/save/cancel, and peak-memory budgets are not yet established on clean supported hardware.",
+    "AutoCAD, Cinema 4D and CLO validation still depends on licensed installations and representative external files."
+  ],
+  "competitive_position": "Not independently assessed.",
+  "strategic_value": "Candidate for evaluation; not measured.",
+  "growth_potential": null,
+  "maintenance_cost": null,
+  "next_milestone": "Respect newfirstwave Bounce/PocketStudio/KeyBPM/Glyph priority; resume CORE-FORM-UI-EXPORT-001, native/IFC and fullworkflow qualification; accountadmin restores GitHubActions before exact-head requiredchecks.",
+  "priority": "MEDIUM",
+  "repo": "https://github.com/armonon/form-studio",
+  "local_path": "/Users/agentsattari/code/wave2/form-D",
+  "evidence_sources": [
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-initial.md",
+    "/Users/agentsattari/code/wave2/form-D/README.md",
+    "/Users/agentsattari/code/wave2/form-D/KNOWN_ISSUES.md",
+    "/Users/agentsattari/code/wave2/form-D/PRODUCTION_READINESS.md"
+  ],
+  "observed_at": "2026-10-08T01:49:00.301225+00:00",
+  "verification_level": "LOCAL_SOURCE_AND_HISTORICAL_REPORTS_ONLY",
+  "evidence_freshness": "Source commit b5abdd1 audited 2026-10-07; interactive workflow and current live deployment not reverified.",
+  "execution_hold": null,
+  "maturity_evidence": "README at source commit b5abdd1 describes Form Studio 0.40 as an active beta; product registry and older RC documents conflict and need reconciliation.",
+  "health": null,
+  "last_audited": "2026-10-07",
+  "audited_source": {
+    "repo": "/Users/agentsattari/code/wave2/form-D",
+    "ref": "wave5/form-room",
+    "clean_baseline_commit": "b5abdd1de5f71fe0244ef9a651a6d983067541ff",
+    "note": "Primary checkout had uncommitted app/room-studio and CAD UI changes. Audit/build/test baseline used a detached worktree at the clean HEAD commit; those dirty changes were not changed or treated as qualified."
+  },
+  "golden_workflow": [
+    "Sketch",
+    "Model",
+    "Refine",
+    "Material",
+    "Save",
+    "Reopen",
+    "Export"
+  ],
+  "golden_workflow_status": "REAL_BROWSER_SUBSET_PASS_WITH_1440_MENU_FAILURE; native/Fabric/Animation unqualified",
+  "release_status": "PR4_OPEN_NOT_MERGED_NOT_DEPLOYED",
+  "health_status": "UNKNOWN",
+  "updated_at": "2026-10-08T03:51:13+00:00",
+  "candidates": [
+    {
+      "id": "FORM-AUD-SEC-001",
+      "title": "Triage current production dependency advisories",
+      "category": "bug/security",
+      "priority": "P0",
+      "severity": "critical advisory / exploitability unconfirmed",
+      "scores": {
+        "impact": 8,
+        "severity": 9,
+        "workflow_importance": 4,
+        "competitive_importance": 3,
+        "release_importance": 9,
+        "confidence": 9,
+        "effort": 3,
+        "risk": 4
+      },
+      "evidence": {
+        "direct": [
+          "Isolated clean npm ci resolved next@16.3.4; npm audit --omit=dev reported 1 critical Next.js, 2 high dependency advisories (sharp, source-map-js). No next/og or ImageResponse reference found in source search. KNOWN_ISSUES.md:32 says no known high-severity production advisory."
+        ],
+        "hypothesis": [
+          "The Next.js RCE advisory may be unreachable if the vulnerable ImageResponse route is not exposed; exploitability and runtime dependency reachability are unverified."
+        ]
+      },
+      "next_action": "Inspect dependency path and deployed Next/Vinext routes; upgrade to an unaffected compatible release in isolation and rerun audit, build, and tests."
+    },
+    {
+      "id": "FORM-AUD-WF-001",
+      "title": "Qualify Sketch-to-independent-export golden workflow",
+      "category": "workflow_gap",
+      "priority": "P1",
+      "severity": "critical release evidence gap",
+      "scores": {
+        "impact": 9,
+        "severity": 8,
+        "workflow_importance": 10,
+        "competitive_importance": 8,
+        "release_importance": 10,
+        "confidence": 9,
+        "effort": 6,
+        "risk": 3
+      },
+      "evidence": {
+        "direct": [
+          "docs/RELEASE_ACCEPTANCE.md:40-50 and docs/RC_TEST_PLAN.md prescribe full save/close/reopen/export and external checks, but no current dated execution evidence was found during source audit."
+        ],
+        "hypothesis": [
+          "A user-visible defect may appear during actual qualification; no defect is asserted before reproduction."
+        ]
+      },
+      "next_action": "Create and run core-product-lab/golden-projects/form.md on the exact supported desktop build; compare geometry/materials and independent STEP/mesh import."
+    },
+    {
+      "id": "FORM-AUD-WF-002",
+      "title": "Qualify separate CAD and Rig persistence/history handoffs",
+      "category": "workflow_gap",
+      "priority": "P2",
+      "severity": "high workflow boundary",
+      "scores": {
+        "impact": 8,
+        "severity": 7,
+        "workflow_importance": 8,
+        "competitive_importance": 7,
+        "release_importance": 8,
+        "confidence": 8,
+        "effort": 6,
+        "risk": 4
+      },
+      "evidence": {
+        "direct": [
+          "app/PARKED.md:14-19 documents separate CAD/Rig schemas and recovery channels with explicit handoff; source includes individual workflow tests but no full cross-workspace close/reopen qualification was run."
+        ],
+        "hypothesis": [
+          "Users may expect more transparent cross-workspace persistence than current explicit boundary provides; usability impact not measured."
+        ]
+      },
+      "next_action": "Define/save/reopen supported handoff scenarios and explicit UI expectations; execute integration fixture across Model, Fabric, Animation and return to Model."
+    },
+    {
+      "id": "FORM-AUD-REL-001",
+      "title": "Reconcile release maturity and evidence date",
+      "category": "workflow_gap",
+      "priority": "P2",
+      "severity": "high release evidence inconsistency",
+      "scores": {
+        "impact": 7,
+        "severity": 6,
+        "workflow_importance": 7,
+        "competitive_importance": 5,
+        "release_importance": 9,
+        "confidence": 10,
+        "effort": 2,
+        "risk": 2
+      },
+      "evidence": {
+        "direct": [
+          "README.md:5 calls 0.40 active beta; KNOWN_ISSUES.md title calls 0.40.0 RC1; PRODUCTION_READINESS.md:5 last audited 2026-08-26; generated product registry reported ALPHA on 2026-10-07."
+        ],
+        "hypothesis": []
+      },
+      "next_action": "Confirm intended source/deployment ref and publish one dated evidence-backed maturity/release record; update registry without inventing readiness percentages."
+    },
+    {
+      "id": "FORM-AUD-PERF-001",
+      "title": "Add current interactive and project lifecycle performance budgets",
+      "category": "performance",
+      "priority": "P2",
+      "severity": "high release gap",
+      "scores": {
+        "impact": 8,
+        "severity": 7,
+        "workflow_importance": 8,
+        "competitive_importance": 7,
+        "release_importance": 8,
+        "confidence": 9,
+        "effort": 5,
+        "risk": 3
+      },
+      "evidence": {
+        "direct": [
+          "docs/PERFORMANCE_BUDGETS.md:12-31 lists historical native CAD/cloth gates and missing viewport/input, startup/open/save, cancellation and peak-memory budgets; KNOWN_ISSUES.md:28-32 reports multi-second dense rebuilds."
+        ],
+        "hypothesis": [
+          "Current released build may have performance regressions or headroom improvements; no fresh product benchmark was run."
+        ]
+      },
+      "next_action": "Benchmark a deterministic golden project on clean supported Apple Silicon with SHA, fixture hash, repetitions, units and environment; establish budgets and retain history."
+    },
+    {
+      "id": "FORM-AUD-FEAT-001",
+      "title": "Reconcile exact CAD operation support matrix and parity",
+      "category": "professional_feature_gap",
+      "priority": "P3",
+      "severity": "moderate professional depth gap",
+      "scores": {
+        "impact": 7,
+        "severity": 5,
+        "workflow_importance": 7,
+        "competitive_importance": 8,
+        "release_importance": 6,
+        "confidence": 8,
+        "effort": 8,
+        "risk": 4
+      },
+      "evidence": {
+        "direct": [
+          "KNOWN_ISSUES.md:18 disclaims full mature mechanical CAD operation parity; README.md:10 scopes exact operation coverage; older readiness ledger calls native operation gaps, but current commit may supersede those entries."
+        ],
+        "hypothesis": [
+          "Specific remaining user-critical operation gaps are unverified until current support matrix and representative corpus are reconciled."
+        ]
+      },
+      "next_action": "Audit current source/tests against versioned operation matrix, then run exact-geometry corpus before creating implementation tasks."
+    },
+    {
+      "id": "FORM-AUD-FEAT-002",
+      "title": "Expand independent interchange corpus for supported recipients",
+      "category": "professional_feature_gap",
+      "priority": "P3",
+      "severity": "moderate professional workflow gap",
+      "scores": {
+        "impact": 7,
+        "severity": 6,
+        "workflow_importance": 7,
+        "competitive_importance": 8,
+        "release_importance": 7,
+        "confidence": 8,
+        "effort": 6,
+        "risk": 3
+      },
+      "evidence": {
+        "direct": [
+          "KNOWN_ISSUES.md:22-26 cites FreeCAD/Blender automation but says AutoCAD/Cinema4D/CLO need licensed installs and representative files; no external recipient app was run in this audit."
+        ],
+        "hypothesis": [
+          "There may be format-specific semantic/unit issues outside existing validation; none were reproduced here."
+        ]
+      },
+      "next_action": "Run the documented interchange matrix on supported representative projects and recipient versions; record scale, bounds, topology and warnings."
+    },
+    {
+      "id": "FORM-AUD-TEST-001",
+      "title": "Update stale workspace smoke assertions after base64 archive migration and scope status queries",
+      "category": "test_gate",
+      "priority": "P3",
+      "severity": "significant verification gap",
+      "scores": {
+        "impact": 6,
+        "severity": 5,
+        "workflow_importance": 6,
+        "competitive_importance": 2,
+        "release_importance": 7,
+        "confidence": 9,
+        "effort": 2,
+        "risk": 2
+      },
+      "evidence": {
+        "direct": [
+          "Durable full Node 22 repeat: 1,518/1,526 pass, 8 fail; workspace smoke repeat 92/100 pass. Seven failures report ambiguous getByRole(\"status\") due implicit output roles. The baked-texture assertion reads legacy paintTexture.pixels; using the current pixelsBase64 field in a temporary local validation made the existing save/reopen comparison pass. Initial full run had one additional order/load-sensitive failure (1,517/1,526), not captured durably."
+        ],
+        "hypothesis": [
+          "The remaining failing assertions may be stale test selectors/contracts rather than application defects; inspect exact failure list before concluding."
+        ]
+      },
+      "next_action": "Review the durable workspace smoke log, update test expectations/selectors to current schema/UI semantics, then rerun entire suite. Do not suppress or weaken behavior assertions."
+    }
+  ],
+  "source_claimed_maturity": "BETA",
+  "maturity_conflict": "The checked-in README says active beta; the dated generated product registry says ALPHA, and older readiness/known-issues copy says 0.40 RC1. Preserve ALPHA until the current candidate and release evidence are reconciled.",
+  "validation": {
+    "typecheck": {
+      "command": "npm run typecheck",
+      "status": "PASS",
+      "runtime": "system Node 26.9.0"
+    },
+    "unit_tests": {
+      "command": "/opt/homebrew/opt/node@22/bin/node --experimental-strip-types --test --test-concurrency=2 tests/*.test.mjs",
+      "runtime": "Node 22.23.2",
+      "status": "FAIL",
+      "passed": 1518,
+      "failed": 8,
+      "skipped": 0,
+      "total": 1526,
+      "repeatability_note": "Initial full run: 1517/1526 passed, 9 failed. Durable repeat: 1518/1526 passed, 8 failed, all in workspace-smoke.test.mjs. Eight persistent failures were seven ambiguous getByRole(\"status\") queries and one legacy paintTexture.pixels assertion."
+    },
+    "web_build": {
+      "command": "env PATH=/opt/homebrew/opt/node@22/bin:$PATH npm run build",
+      "runtime": "Node 22.23.2",
+      "status": "PASS",
+      "warnings": [
+        "Large chunks >500 kB after minification",
+        "node:module externalized for browser compatibility",
+        "Vinext cannot statically classify some routes/API usage"
+      ]
+    },
+    "npm_ci": {
+      "command": "npm ci",
+      "status": "PASS",
+      "resolved_next": "16.3.4",
+      "full_tree_advisories": {
+        "moderate": 4,
+        "high": 16,
+        "critical": 1
+      }
+    },
+    "production_dependency_audit": {
+      "command": "npm audit --omit=dev --json",
+      "status": "FAIL",
+      "vulnerabilities": {
+        "moderate": 0,
+        "high": 2,
+        "critical": 1
+      }
+    },
+    "workspace_smoke_repeat": {
+      "command": "/opt/homebrew/opt/node@22/bin/node --experimental-strip-types --test tests/workspace-smoke.test.mjs",
+      "status": "FAIL",
+      "passed": 92,
+      "failed": 8,
+      "total": 100,
+      "log": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-evidence/workspace-smoke-node22.log"
+    },
+    "node26_unit_attempt": {
+      "runtime": "Node 26.9.0",
+      "status": "FAIL_IN_TEST_HARNESS",
+      "note": "Node 26 built-in localStorage global could not be shadowed by jsdom setup without --localstorage-file; app fallback then calls removeItem on unavailable storage. No supported-browser defect inferred."
+    }
+  },
+  "ui_inspection": {
+    "status": "LOCAL_BROWSER_VISUAL_CHECK",
+    "tool": "Google Chrome headless with SwiftShader WebGL",
+    "route": "http://localhost:3000/studio",
+    "screenshot": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-evidence/form-model-ui.png",
+    "notes": "Default Model workspace visible with exact-body selection, viewport, workspace tabs, properties and Appearance Studio. Chromium without SwiftShader first showed a WebGL creation runtime error. This is detached-worktree local dev, not desktop/live qualification."
+  },
+  "security_repair": {
+    "observed_at": "2026-10-08T01:49:00.301225+00:00",
+    "head": "b433a12331af3dba200be596422442c103783831",
+    "pr": "https://github.com/armonon/form-studio/pull/3",
+    "production_audit_groups": 0,
+    "full_audit_groups": {
+      "high": 15,
+      "moderate": 4
+    },
+    "unit_passed": 1518,
+    "unit_failed": 8,
+    "independent_review": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-security-20261007/review.md",
+    "evidence": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-security-2026-10-07.md",
+    "status": "PUSHED_NOT_MERGED_BLOCKED",
+    "limitations": [
+      "Deployed dependency/exploitability unknown",
+      "Native signed clean-machine checks not run",
+      "Full golden workflow unqualified"
+    ]
+  },
+  "release_initiative": "18-product-public-release",
+  "release_wave": "subsequent",
+  "release_inventory": {
+    "observed_at": "2026-10-08T02:11:40+00:00",
+    "source": {
+      "product_id": "form",
+      "product_name": "Form Studio",
+      "repo": "https://github.com/armonon/form-studio",
+      "local_path": "/Users/agentsattari/code/wave2/form-D",
+      "kind": "standalone",
+      "parent_product_id": null,
+      "primary_problem": "3D/CAD modeling and interchange",
+      "evidence_sources": [
+        "/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-initial.md",
+        "/Users/agentsattari/code/wave2/form-D/README.md",
+        "/Users/agentsattari/code/wave2/form-D/KNOWN_ISSUES.md",
+        "/Users/agentsattari/code/wave2/form-D/PRODUCTION_READINESS.md"
+      ],
+      "known_bugs": [],
+      "major_missing_features": [
+        "Signed/notarized distribution, clean install/update, and current remote CI evidence remain unverified.",
+        "No current interactive desktop qualification of the full Sketch\u2192Model\u2192Refine\u2192Material\u2192Save\u2192Reopen\u2192Export flow was produced.",
+        "CAD and Rig use separate project/recovery channels with explicit handoffs; end-to-end cross-workspace persistence is not currently qualified.",
+        "Interactive viewport/input, startup/open/save/cancel, and peak-memory budgets are not yet established on clean supported hardware.",
+        "AutoCAD, Cinema 4D and CLO validation still depends on licensed installations and representative external files."
+      ],
+      "application_url": "https://form.thecreatingco.com/studio",
+      "current_interface_verification": "in progress, see interfaces.json",
+      "local_head": "b5abdd1de5f71fe0244ef9a651a6d983067541ff",
+      "local_branch": "wave5/form-room",
+      "dirty_file_count": 11,
+      "root_documentation": [
+        "/Users/agentsattari/code/wave2/form-D/CHANGELOG.md",
+        "/Users/agentsattari/code/wave2/form-D/PRIVACY.md",
+        "/Users/agentsattari/code/wave2/form-D/THIRD_PARTY_NOTICES.md",
+        "/Users/agentsattari/code/wave2/form-D/README.md",
+        "/Users/agentsattari/code/wave2/form-D/SUPPORT.md",
+        "/Users/agentsattari/code/wave2/form-D/KNOWN_ISSUES.md",
+        "/Users/agentsattari/code/wave2/form-D/PRODUCTION_READINESS.md",
+        "/Users/agentsattari/code/wave2/form-D/HANDOFF.md",
+        "/Users/agentsattari/code/wave2/form-D/SECURITY.md"
+      ],
+      "test_locations": [
+        "/Users/agentsattari/code/wave2/form-D/tests",
+        "/Users/agentsattari/code/wave2/form-D/scripts",
+        "/Users/agentsattari/code/wave2/form-D/.github/workflows"
+      ],
+      "declared_checks": {
+        "postinstall": "node scripts/patch-three-bvh-csg.mjs",
+        "dev": "WRANGLER_LOG_PATH=.wrangler/wrangler.log vinext dev",
+        "build": "WRANGLER_LOG_PATH=.wrangler/wrangler.log vinext build",
+        "build:netlify-marketing": "node scripts/export-netlify-marketing.mjs",
+        "build:netlify-review": "node --experimental-strip-types scripts/export-netlify-review.mjs",
+        "start": "WRANGLER_LOG_PATH=.wrangler/wrangler.log vinext start",
+        "desktop:web:dev": "vite --config vite.desktop.config.ts",
+        "desktop:web:build": "vite build --config vite.desktop.config.ts",
+        "desktop:bundle:validate": "node scripts/validate-desktop-bundle.mjs",
+        "desktop:dev": "tauri dev",
+        "desktop:build": "tauri build",
+        "desktop:build:updater": "node scripts/create-updater-config.mjs && VITE_FORM_UPDATER_ENABLED=1 tauri build --config src-tauri/tauri.updater.conf.json",
+        "typecheck": "tsc --noEmit -p tsconfig.json",
+        "check": "npm run typecheck && npm run lint",
+        "test": "npm run check && npm run build && npm run test:unit && npm run test:budgets",
+        "test:unit": "node --experimental-strip-types --test --test-concurrency=2 tests/*.test.mjs",
+        "test:budgets": "node --experimental-strip-types --test --test-concurrency=1 tests/budgets/*.test.mjs",
+        "test:react": "node --experimental-strip-types --test tests/workspace-smoke.test.mjs",
+        "test:native": "cargo fmt --manifest-path src-tauri/Cargo.toml --all -- --check && cargo clippy --manifest-path src-tauri/Cargo.toml --all-targets --all-features -- -D warnings && cargo test --manifest-path src-tauri/Cargo.toml --no-fail-fast -- --test-threads=1",
+        "test:performance": "cargo test --manifest-path src-tauri/Cargo.toml medium_ -- --nocapture --test-threads=1",
+        "test:performance:js": "node --experimental-strip-types scripts/benchmark-rc.mjs",
+        "test:project-container": "node --experimental-strip-types scripts/benchmark-project-container.mjs",
+        "test:render": "node --experimental-strip-types scripts/benchmark-render.mjs",
+        "test:openvdb": "node --experimental-strip-types scripts/benchmark-openvdb.mjs",
+        "test:garment-performance": "node --experimental-strip-types scripts/benchmark-garment.mjs",
+        "test:production-cad": "node --experimental-strip-types scripts/benchmark-production-cad.mjs",
+        "test:production-drawing": "node --experimental-strip-types scripts/benchmark-production-drawing.mjs",
+        "test:production-garment": "node --experimental-strip-types scripts/benchmark-production-garment.mjs",
+        "test:production-motion": "node --experimental-strip-types scripts/benchmark-production-motion.mjs",
+        "test:bim-performance": "node --experimental-strip-types scripts/benchmark-bim.mjs",
+        "test:bim-ifc": "node --experimental-strip-types scripts/validate-bim-ifc.mjs",
+        "test:step:freecad": "node --experimental-strip-types scripts/validate-step-freecad.mjs",
+        "test:mesh:blender": "node --experimental-strip-types scripts/validate-blender-mesh.mjs",
+        "audit:native": "scripts/audit-native.sh",
+        "audit:wiring": "node scripts/audit-ui-wiring.mjs",
+        "audit:theme": "node scripts/audit-theme-cascade.mjs",
+        "audit:parity": "node --experimental-strip-types scripts/audit-product-parity.mjs",
+        "audit:parity:perfect": "node --experimental-strip-types scripts/audit-product-parity.mjs --require-perfect",
+        "extension:pack": "node --experimental-strip-types scripts/sign-extension-package.mjs",
+        "lint": "eslint . --ignore-pattern dist --ignore-pattern desktop-dist --ignore-pattern .next --ignore-pattern src-tauri/target",
+        "release:validate": "node scripts/validate-version.mjs",
+        "release:validate:macos": "node scripts/validate-version.mjs && scripts/validate-macos-release.sh",
+        "release:preflight:macos": "node scripts/preflight-macos-distribution.mjs",
+        "release:manifest": "node scripts/generate-rc-manifest.mjs",
+        "release:projects": "node --experimental-strip-types scripts/certify-five-projects.mjs",
+        "release:update-manifest": "node scripts/create-update-manifest.mjs",
+        "release:certify": "node scripts/certify-rc.mjs",
+        "release:rc": "npm run release:certify",
+        "test:desktop:launch": "scripts/smoke-macos-app.sh",
+        "db:generate": "drizzle-kit generate"
+      }
+    },
+    "interface": {
+      "status": "RENDERED_NOT_WORKFLOW_QUALIFIED",
+      "observed_at": "2026-10-08T03:05:52.134Z",
+      "url": "https://form.thecreatingco.com/studio",
+      "http_status": 200,
+      "visible_witness": {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "Back",
+        "width": 28,
+        "height": 28
+      },
+      "desktop_width": 1440,
+      "phone_width": 390,
+      "page_errors": [],
+      "evidence": "/Users/agentsattari/thecreateco-company/reports/form-cast-availability-20261007/interfaces.json",
+      "explanation": "Previous body visibility timeout was a probe false negative: body0height while fixed-position app controls render. No body-layout workaround applied."
+    },
+    "interface_history": [
+      {
+        "status": "BLOCKED",
+        "error": "locator.waitFor: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('body') to be visible\u001b[22m\n\u001b[2m    52 \u00d7 locator resolved to hidden <body class=\"__variable_geist_0tvmz3h __variable_geist_mono_1diim1n\">\u2026</body>\u001b[22m\n",
+        "url": "https://form.thecreatingco.com/studio",
+        "desktop_width": 1440,
+        "phone_width": 390,
+        "evidence": "/Users/agentsattari/thecreateco-company/reports/release18-inventory-20261007/interfaces.json"
+      }
+    ]
+  },
+  "completion_observations": {
+    "candidate_sha": "1e7f6d1c84a6c956ece3cfe6f74b665208bf069c",
+    "observed_at": "2026-10-08T03:18:30.414258+00:00",
+    "supported_platforms": [
+      "macOS arm64 native",
+      "web browser supported matrix pending"
+    ],
+    "gates": {
+      "core_workflow": {
+        "status": "UNVERIFIED",
+        "source_sha": "1e7f6d1c84a6c956ece3cfe6f74b665208bf069c",
+        "observed_at": "2026-10-08T03:18:30.414258+00:00",
+        "coverage_complete": false,
+        "summary": "Exact-head single-body Sketch\u219240mm resize\u219212mm extrude\u2192brass\u2192undo/redo\u2192save\u2192fullbrowserprocess close/relaunch\u2192reopen\u2192STEP/GLB subset PASS at1440. Full constrained/multibody/refinement/native/Fabric/Animation coverage unverified.",
+        "evidence": [
+          "/Users/agentsattari/thecreateco-company/reports/form-golden-20261008T0310/README.md",
+          "/Users/agentsattari/thecreateco-company/reports/form-golden-20261008T0310/browser-workflow-result.json",
+          "/Users/agentsattari/thecreateco-company/reports/form-golden-20261008T0310/step-verification.json",
+          "/Users/agentsattari/thecreateco-company/reports/form-golden-20261008T0310/export-verification.json"
+        ]
+      },
+      "save_reopen_export": {
+        "status": "UNVERIFIED",
+        "source_sha": "1e7f6d1c84a6c956ece3cfe6f74b665208bf069c",
+        "observed_at": "2026-10-08T03:18:30.414258+00:00",
+        "coverage_complete": false,
+        "summary": "Exact-head fullbrowserrestart preserves compared project fields; separate native STEP reader validates one40\u00d740\u00d712mm solid/19200mm3; independent GLB bytes/dimensions/brass match. Fullnative/complexfixture/recovery/recipientUI coverage incomplete.",
+        "evidence": [
+          "/Users/agentsattari/thecreateco-company/reports/form-golden-20261008T0310/README.md",
+          "/Users/agentsattari/thecreateco-company/reports/form-golden-20261008T0310/browser-workflow-result.json",
+          "/Users/agentsattari/thecreateco-company/reports/form-golden-20261008T0310/step-verification.json",
+          "/Users/agentsattari/thecreateco-company/reports/form-golden-20261008T0310/export-verification.json"
+        ]
+      },
+      "reliability_recovery": {
+        "status": "UNVERIFIED",
+        "source_sha": "ea6734638f72232676985f610daac18341fcd8ca",
+        "observed_at": "2026-10-08T02:12:13.773432+00:00",
+        "coverage_complete": false,
+        "summary": "All100workspace smoke pass incl denied/cancel/malformed/save races under jsdom/mocknative; realnative/crash/diskfull qualifications incomplete.",
+        "evidence": [
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-completion-20261007/unit-after-build.log"
+        ]
+      },
+      "performance": {
+        "status": "UNVERIFIED",
+        "source_sha": "ea6734638f72232676985f610daac18341fcd8ca",
+        "observed_at": "2026-10-08T02:12:13.773432+00:00",
+        "coverage_complete": false,
+        "summary": "15JSbudget tests pass; interactive/hardware/largeproject envelope unqualified.",
+        "evidence": [
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-completion-20261007/budgets.log"
+        ]
+      },
+      "usability_accessibility": {
+        "status": "UNVERIFIED",
+        "source_sha": "1e7f6d1c84a6c956ece3cfe6f74b665208bf069c",
+        "observed_at": "2026-10-08T03:18:30.414258+00:00",
+        "coverage_complete": false,
+        "summary": "Former offscreen Project trigger repaired on exact head; actual normal1440 exports PASS. Full accessibility/onboarding coverage unverified; first-run product center dismissed normally.",
+        "evidence": [
+          "/Users/agentsattari/thecreateco-company/reports/form-golden-20261008T0310/README.md",
+          "/Users/agentsattari/thecreateco-company/reports/form-golden-20261008T0310/browser-workflow-result.json",
+          "/Users/agentsattari/thecreateco-company/reports/form-golden-20261008T0310/step-verification.json",
+          "/Users/agentsattari/thecreateco-company/reports/form-golden-20261008T0310/export-verification.json"
+        ]
+      },
+      "responsive_behavior": {
+        "status": "UNVERIFIED",
+        "source_sha": "1e7f6d1c84a6c956ece3cfe6f74b665208bf069c",
+        "observed_at": "2026-10-08T03:18:30.414258+00:00",
+        "coverage_complete": false,
+        "summary": "Prior exact-head reviewed menu repair passes24browser variants320\u20131440px; current1440 fullbrowserrestart/export PASS. Former offscreen-menu defect repaired; fullproduct responsive qualification incomplete.",
+        "evidence": [
+          "/Users/agentsattari/thecreateco-company/reports/form-golden-20261008T0310/README.md",
+          "/Users/agentsattari/thecreateco-company/reports/form-golden-20261008T0310/browser-workflow-result.json",
+          "/Users/agentsattari/thecreateco-company/reports/form-golden-20261008T0310/step-verification.json",
+          "/Users/agentsattari/thecreateco-company/reports/form-golden-20261008T0310/export-verification.json"
+        ]
+      },
+      "security_privacy": {
+        "status": "UNVERIFIED",
+        "source_sha": "ea6734638f72232676985f610daac18341fcd8ca",
+        "observed_at": "2026-10-08T02:12:13.773432+00:00",
+        "coverage_complete": false,
+        "summary": "Productionnpm audit zero; development/native/Vinext runtime and deployedtree not fullyqualified.",
+        "evidence": [
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-completion-20261007/production-audit.json"
+        ]
+      },
+      "documentation_support": {
+        "status": "UNVERIFIED",
+        "source_sha": "ea6734638f72232676985f610daac18341fcd8ca",
+        "observed_at": "2026-10-08T02:12:13.773432+00:00",
+        "coverage_complete": false,
+        "summary": "Current docs distinguish historicalestimates from dated qualification and report realresponsiveblocker; completeproduct/docs/support acceptance remains open.",
+        "evidence": [
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-completion-20261007/pr-body.md"
+        ]
+      },
+      "tests": {
+        "status": "UNVERIFIED",
+        "source_sha": "ea6734638f72232676985f610daac18341fcd8ca",
+        "observed_at": "2026-10-08T02:12:13.773432+00:00",
+        "coverage_complete": false,
+        "summary": "Localfullunit1527/1527, smoke100/100, budgets15/15, lint/typecheck/web+desktopfrontendbuild pass. NativeRust/IfcOpenShell and remoteCI unverified.",
+        "evidence": [
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-completion-20261007/unit-after-build.log",
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-completion-20261007/lint.log",
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-completion-20261007/typecheck.log",
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-completion-20261007/build.log",
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-completion-20261007/desktop-build.log",
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-completion-20261007/budgets.log"
+        ]
+      },
+      "supported_platforms": {
+        "status": "UNVERIFIED",
+        "source_sha": "ea6734638f72232676985f610daac18341fcd8ca",
+        "observed_at": "2026-10-08T02:12:13.773432+00:00",
+        "coverage_complete": false,
+        "summary": "macOSarm64 realheadlessChromeSwiftShader subset tested. NativeAppleSilicon signing/install/update notqualified; Windows/IntelMac/Linux explicitlyunsupported/unvalidated.",
+        "evidence": [
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-completion-20261007/environment.json"
+        ]
+      },
+      "critical_blockers": {
+        "status": "BLOCKED",
+        "source_sha": "1e7f6d1c84a6c956ece3cfe6f74b665208bf069c",
+        "observed_at": "2026-10-08T03:18:30.414258+00:00",
+        "coverage_complete": false,
+        "summary": "Native qualification missing exact supported app/DMG, DeveloperID identity and notarization credentials; hosted mandatoryCI previously billing-blocked. No bypass. Former1440 menu defect repaired; broader data-loss/security triage unverified.",
+        "evidence": [
+          "/Users/agentsattari/thecreateco-company/reports/form-golden-20261008T0310/README.md",
+          "/Users/agentsattari/thecreateco-company/reports/form-golden-20261008T0310/browser-workflow-result.json",
+          "/Users/agentsattari/thecreateco-company/reports/form-golden-20261008T0310/step-verification.json",
+          "/Users/agentsattari/thecreateco-company/reports/form-golden-20261008T0310/export-verification.json"
+        ]
+      }
+    },
+    "deployment": {
+      "pr": "https://github.com/armonon/form-studio/pull/5",
+      "pushed": true,
+      "merged": false,
+      "deployed": false
+    },
+    "next_action": "Resume broader constrained/multibody/refinement/recovery fixture and exact native build; signing/notary/artifact access blocks native release qualification. Keep hosted CI/stack gates; firstwave owners continue independently.",
+    "report": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-completion-2026-10-07.md",
+    "menu_repair": {
+      "source_sha": "1e7f6d1c84a6c956ece3cfe6f74b665208bf069c",
+      "observed_at": "2026-10-08T03:03:52.214492+00:00",
+      "core_workflow": "PASS scoped menu-driven synthetic save/open/export",
+      "tests": {
+        "unit_passed": 1527,
+        "unit_total": 1527,
+        "budgets_passed": 15,
+        "budgets_total": 15,
+        "typecheck": "PASS",
+        "lint": "PASS",
+        "web_build": "PASS",
+        "desktop_frontend_build": "PASS",
+        "browser_variants": 24,
+        "production_advisories": 0
+      },
+      "platforms": "Chrome154/macOSarm64 softwareWebGL; fine/emulatedcoarse layouts only; native/physical/unexercised platforms UNVERIFIED",
+      "documentation": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-project-menu-20261007/README.md",
+      "critical_blockers": [
+        "Remote required CI billing/spending unavailable; full native/golden qualification remains UNVERIFIED"
+      ],
+      "deployment": {
+        "pr": "https://github.com/armonon/form-studio/pull/5",
+        "pushed": true,
+        "merged": false,
+        "deployed": false
+      }
+    },
+    "golden_checkpoint": {
+      "source_sha": "1e7f6d1c84a6c956ece3cfe6f74b665208bf069c",
+      "observed_at": "2026-10-08T03:18:30.414258+00:00",
+      "scope": "Single-body actual browser process restart and independent output bytes/native STEP import",
+      "report": "/Users/agentsattari/thecreateco-company/reports/form-golden-20261008T0310/README.md",
+      "task_status": "BLOCKED",
+      "full_qualification": false
+    }
+  },
+  "release_disposition": {
+    "status": "alpha",
+    "reason": "Working alpha source/interface evidence exists, but complete workflow, recovery, platform and security coverage remains partial; not a stable-release certification.",
+    "observed_at": "2026-10-08T02:24:00+00:00",
+    "evidence": [
+      "/Users/agentsattari/thecreateco-company/reports/release18-inventory-20261007/README.md",
+      "/Users/agentsattari/thecreateco-company/reports/release18-inventory-20261007/interfaces.json"
+    ]
+  },
+  "runtime_security_triage": {
+    "observed_at": "2026-10-08T03:51:13.088398+00:00",
+    "source_sha": "be1f7272c5689d6401194d643fa3eb09a2b0b73b",
+    "pr": "https://github.com/armonon/form-studio/pull/7",
+    "status": "REVIEWED_PUSHED_NOT_MERGED_NOT_DEPLOYED",
+    "full_audit": {
+      "high": 8,
+      "moderate": 4,
+      "total": 12
+    },
+    "baseline_full_audit": {
+      "high": 15,
+      "moderate": 4,
+      "total": 19
+    },
+    "production_audit_total": 0,
+    "unit": {
+      "passed": 1527,
+      "failed": 0,
+      "skipped": 0,
+      "timing": "precommit candidate installed graph; unchanged application/tests/lock"
+    },
+    "budget_passed": 15,
+    "exact_head_web_build": "PASS",
+    "exact_head_desktop_frontend_build": "PASS",
+    "browser_lifecycle": "SCOPED_SYNTHETIC_PASS",
+    "review": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-runtime-security-20261008T0340/review.md",
+    "report": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-runtime-security-20261008T0340/README.md",
+    "limitations": [
+      "Residual build/lint and Drizzle advisories remain",
+      "Local emitted Worker image500 reproduced; distinct followup queued",
+      "Mandatory CI/downstack/native/deployed artifact gates unresolved"
+    ]
+  }
+}

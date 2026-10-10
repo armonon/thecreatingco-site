@@ -1,0 +1,111 @@
+{
+  "sourceSha": "af10e31c9df8f1363d3945e3b1d39518cd858009",
+  "sourceDirty": false,
+  "profile": "/Users/agentsattari/.openclaw/tmp/stemdeck-fourdeck-eG3joQ",
+  "pass": false,
+  "physicalInputs": false,
+  "mockedEndpoints": [
+    "/api/inventory"
+  ],
+  "steps": [
+    "Four decks,20 real generated audio assets imported through project picker",
+    "Actual fullMix lane import and analyzer executed for all four decks",
+    "Deck A reached its natural end before final pause",
+    "Deck B reached its natural end before final pause",
+    "Deck C reached its natural end before final pause",
+    "Deck D reached its natural end before final pause",
+    "Actual UI started capture,played four decks,changed stem mute/crossfader,stopped all and finished capture",
+    "Actual captured events built into editable arrangement via UI",
+    "Reconstruction and real track edit undo/redo preserve original capture and lane state",
+    "Actual live-engine replay failed; original take retained and independent archive/export checks continue",
+    "Full browser process closed/relaunched; saved arrangement and original captured event history identical",
+    "Actual master and aligned stem downloads independently decoded; before/after PCM comparison passed",
+    "Portable project reopened into a fresh browser profile; original events and exported PCM preserved"
+  ],
+  "errors": [],
+  "browser": "151.0.7922.34",
+  "analysis": [
+    {
+      "id": "A",
+      "bpm": 118,
+      "key": "C maj",
+      "analysis": true
+    },
+    {
+      "id": "B",
+      "bpm": 118,
+      "key": "C# maj",
+      "analysis": true
+    },
+    {
+      "id": "C",
+      "bpm": 118,
+      "key": "D maj",
+      "analysis": true
+    },
+    {
+      "id": "D",
+      "bpm": 118,
+      "key": "D# maj",
+      "analysis": true
+    }
+  ],
+  "replayHostBefore": {
+    "loadAverage": [
+      15.0927734375,
+      15.22265625,
+      14.7451171875
+    ],
+    "freeMemoryBytes": 234192896
+  },
+  "printedTrackCount": 0,
+  "replay": {
+    "pass": false,
+    "status": "See replay-status.txt"
+  },
+  "portableBytes": 87091403,
+  "masterExport": {
+    "sampleRate": 48000,
+    "channels": 2,
+    "frames": 768960,
+    "maximumError": 0,
+    "peak": 0.017947673797607422
+  },
+  "stemArchiveBytes": 4614608,
+  "stems": [
+    {
+      "name": "01-Four-Deck-Actual-Capture-QA-take-1-m4a.wav",
+      "sampleRate": 48000,
+      "channels": 2,
+      "frames": 768960,
+      "maximumError": 0,
+      "peak": 0.03589522838592529
+    }
+  ],
+  "portableProfile": "/Users/agentsattari/.openclaw/tmp/stemdeck-portable-QkhBNF",
+  "portableExport": {
+    "sampleRate": 48000,
+    "channels": 2,
+    "frames": 768960,
+    "maximumError": 0,
+    "peak": 0.017947673797607422
+  },
+  "archiveRoundtripPass": true,
+  "verifiedPortableAssets": 41,
+  "trackCount": 28,
+  "capturedActionTypes": [
+    "setProjectTempo",
+    "initialState",
+    "playDeck",
+    "deckTransport",
+    "setDeckFader",
+    "setPlaybackRate",
+    "setDeckFilter",
+    "setDeckFx",
+    "pauseDeck",
+    "setLaneState",
+    "setCrossfaderCurve",
+    "setCrossfader"
+  ],
+  "scope": "Actual synthetic four-deck capture/arrange/edit/undo/save/full browser restart/export subset; physical/full musical qualification excluded"
+}

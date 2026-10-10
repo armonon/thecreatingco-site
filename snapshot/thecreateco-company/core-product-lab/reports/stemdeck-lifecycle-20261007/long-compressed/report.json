@@ -1,0 +1,38 @@
+{
+  "pass": true,
+  "browser": "151.0.7922.34",
+  "scope": "Representative finite local files, not universal size/time/cancellation guarantee",
+  "results": [
+    {
+      "name": "hour.mp3",
+      "encodedBytes": 28800566,
+      "duration": 3600,
+      "sampleRate": 44100,
+      "elapsedMs": 111.40000000223517,
+      "read": {
+        "bytes": 28808790,
+        "reads": 22,
+        "largestRead": 2097152
+      },
+      "gapless": {
+        "startFrames": 1105,
+        "trimFrames": 1728
+      },
+      "wholeFileArrayBufferForbidden": true
+    },
+    {
+      "name": "half-hour-fragmented.m4a",
+      "encodedBytes": 15055015,
+      "duration": 1800.0213333333334,
+      "sampleRate": 48000,
+      "elapsedMs": 5.300000000745058,
+      "read": {
+        "bytes": 1169607,
+        "reads": 9,
+        "largestRead": 983040
+      },
+      "gapless": null,
+      "wholeFileArrayBufferForbidden": true
+    }
+  ]
+}

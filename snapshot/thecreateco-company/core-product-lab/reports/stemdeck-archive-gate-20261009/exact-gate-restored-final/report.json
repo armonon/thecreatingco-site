@@ -1,0 +1,155 @@
+{
+  "environment": {
+    "node": "v22.23.2",
+    "platform": "darwin",
+    "architecture": "arm64",
+    "osRelease": "25.2.0",
+    "timezone": "America/Los_Angeles",
+    "logicalCpus": 10,
+    "totalMemoryBytes": 17179869184
+  },
+  "commit": "6bad0edaf198d80d44c9aa02c3e65970fe7d9148",
+  "lockfileSha256": "d28cbe495e6ba713c494108cce6aafe55fa32ee4e27ec90c01d33e46ff2ad588",
+  "configuration": {
+    "package.json": "128c4f7be5cd1365e655cd07aba22f33df181a01d14244418e66d58b1c6c031f",
+    "vite.config.js": "2761a8b265ae80abd51d047327b3dc4badbf2c83261f754d38dea328673a9941",
+    "vite.qa.config.mjs": "21be34faca2acff42fa3ead5f3e90a5e217c77197396cabea778722335018e25",
+    "vitest.config.ts": "f9a64d7fe0bb3a879d9d7ffe38193cb662333cc7e8f20d21ee5f8e641d0eda3f",
+    "netlify.toml": "92445c11cc231f984e767acf57eb15ce168e6b89e9da35c987a57943e3edb73e",
+    ".github/workflows/build-deploy.yml": "0fc6e55c60b8c4a3e64786ff92b0661b113b66fc6d03e6271b40ac2c0df53890"
+  },
+  "browserConfiguration": {
+    "playwrightVersion": "1.62.1",
+    "executable": "/Users/agentsattari/code/core-product-lab/stemdeck-archive-webkit/node_modules/.cache/ms-playwright/chromium-1234/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing",
+    "version": "Google Chrome for Testing 151.0.7922.34",
+    "executableSha256": "a596b1cfc6353e987fcec8d71a23a28cd6a9e7a6b4e20b908e4c4fcffe51158e",
+    "revisions": [
+      {
+        "name": "chromium",
+        "revision": "1234",
+        "installByDefault": true,
+        "browserVersion": "151.0.7922.34",
+        "title": "Chrome for Testing"
+      },
+      {
+        "name": "chromium-headless-shell",
+        "revision": "1234",
+        "installByDefault": true,
+        "browserVersion": "151.0.7922.34",
+        "title": "Chrome Headless Shell"
+      },
+      {
+        "name": "chromium-tip-of-tree",
+        "revision": "1433",
+        "installByDefault": false,
+        "browserVersion": "151.0.7893.0",
+        "title": "Chrome Canary for Testing"
+      },
+      {
+        "name": "chromium-tip-of-tree-headless-shell",
+        "revision": "1433",
+        "installByDefault": false,
+        "browserVersion": "151.0.7893.0",
+        "title": "Chrome Canary Headless Shell"
+      }
+    ],
+    "headless": true,
+    "args": [
+      "--mute-audio",
+      "--autoplay-policy=no-user-gesture-required"
+    ],
+    "audioOrigin": "http://127.0.0.1:4192",
+    "builtUiOrigin": "http://127.0.0.1:4193"
+  },
+  "preflight": {
+    "cleanTree": true,
+    "initialStatus": "",
+    "disk": {
+      "seconds": 120,
+      "sampleRate": 48000,
+      "channels": 10,
+      "copies": 3,
+      "recordingBytes": 691200000,
+      "reserveBytes": 2147483648,
+      "requiredBytes": 2838683648,
+      "path": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-archive-gate-20261009/exact-gate-restored-final",
+      "availableBytes": 51288367104,
+      "pass": true,
+      "note": "OS capacity check, not a browser quota reservation. Recheck browser quota and target volume before physical recording."
+    }
+  },
+  "sourceHash": "7453dde4a7932863228d05157ea2c858681413529d2d49289dfd2d103c1d12f7",
+  "unchanged": true,
+  "at": "2026-10-09T07:16:48.539Z",
+  "softwarePassed": false,
+  "audioChecked": false,
+  "builtArtifactUiChecked": false,
+  "releaseApproved": false,
+  "results": [
+    {
+      "name": "matrix",
+      "status": 0,
+      "seconds": 0.053,
+      "hostBefore": {
+        "loadAverage": [
+          19.3134765625,
+          10.3193359375,
+          9.291015625
+        ],
+        "freeMemoryBytes": 175046656
+      },
+      "hostAfter": {
+        "loadAverage": [
+          19.3134765625,
+          10.3193359375,
+          9.291015625
+        ],
+        "freeMemoryBytes": 175898624
+      }
+    },
+    {
+      "name": "lint",
+      "status": 0,
+      "seconds": 9.813,
+      "hostBefore": {
+        "loadAverage": [
+          19.3134765625,
+          10.3193359375,
+          9.291015625
+        ],
+        "freeMemoryBytes": 175931392
+      },
+      "hostAfter": {
+        "loadAverage": [
+          17.3525390625,
+          10.19384765625,
+          9.2578125
+        ],
+        "freeMemoryBytes": 1043398656
+      }
+    },
+    {
+      "name": "unit",
+      "status": 1,
+      "seconds": 168.694,
+      "hostBefore": {
+        "loadAverage": [
+          17.3525390625,
+          10.19384765625,
+          9.2578125
+        ],
+        "freeMemoryBytes": 1043611648
+      },
+      "hostAfter": {
+        "loadAverage": [
+          6.958984375,
+          9.796875,
+          9.37939453125
+        ],
+        "freeMemoryBytes": 1595080704
+      }
+    }
+  ],
+  "output": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-archive-gate-20261009/exact-gate-restored-final",
+  "artifact": null
+}

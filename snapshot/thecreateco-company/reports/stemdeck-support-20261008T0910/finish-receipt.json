@@ -1,0 +1,49 @@
+{
+  "task_id": "CORE-STEM-AUD-005",
+  "title": "Complete source/action reconstruction support matrix",
+  "product": "stemdeck",
+  "area": "professional_feature_gap",
+  "category": "professional_feature_gap",
+  "workstream": "CORE_PRODUCT_LAB",
+  "severity": "P2",
+  "scores": {
+    "impact": 9,
+    "severity": 7,
+    "workflow_importance": 10,
+    "competitive_value": 9,
+    "release_importance": 9,
+    "confidence": 10,
+    "effort": 8,
+    "risk": 5,
+    "user_value": 10
+  },
+  "dependencies": [],
+  "status": "BLOCKED",
+  "model": "gpt-6-luna",
+  "expected_value": "Flagship golden-workflow reliability; scores are planning estimates, not health metrics.",
+  "test_requirements": "Reproduce on isolated exact source; preserve baseline/fixed evidence, appropriate build/tests and golden path; source reading is not interactive sign-off.",
+  "source_evidence": [
+    "reports/stemdeck-matrix.log"
+  ],
+  "next_action": "Provide>=2838683648 free bytes; resume actual mixer capture/replay PCM/arrangement render/process-reopen/independent WAV verification preserving print/events. Source/test/docs independent review passed; normal hosted/downstack gates remain.",
+  "priority": 64.2857,
+  "priority_basis": "ESTIMATE: impact × user_value × confidence / (effort + risk + 1)",
+  "campaign": null,
+  "risk": 5,
+  "created_at": "2026-10-08T00:02:46+00:00",
+  "started_at": "2026-10-08T09:10:20+00:00",
+  "completed_at": null,
+  "result": "Scoped20-row source audit and independently reviewed mixer test/docs checkpoint b26c03b pushed PR35 onPR34;71tests10files PASS. Full actual action-family parity blocked: free187310080bytes<unchanged2838683648-byte mandatory reservation. No product PASS/merge/deploy.",
+  "attempts": 1,
+  "owner": null,
+  "lease_until": null,
+  "evidence_sources": [
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-initial.md",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/products/stemdeck.json"
+  ],
+  "result_evidence": {
+    "path": "/Users/agentsattari/thecreateco-company/reports/stemdeck-support-20261008T0910/README.md",
+    "recorded_at": "2026-10-08T09:18:04+00:00",
+    "bytes": 6868
+  }
+}

@@ -1,0 +1,37 @@
+[
+  {
+    "command": [
+      "npm",
+      "test"
+    ],
+    "exit_code": 0,
+    "log": "metadata-tests.log"
+  },
+  {
+    "command": [
+      "npm",
+      "run",
+      "lint"
+    ],
+    "exit_code": 0,
+    "log": "metadata-lint.log"
+  },
+  {
+    "command": [
+      "npm",
+      "run",
+      "build"
+    ],
+    "exit_code": 0,
+    "log": "metadata-build.log"
+  },
+  {
+    "command": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "exit_code": 0,
+    "log": "metadata-diff-check.log"
+  }
+]

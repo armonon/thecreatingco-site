@@ -1,0 +1,45 @@
+{
+  "source": "c7d2b4fc973861eba785f26e5f607671ac22deb4",
+  "profile": "/Users/agentsattari/.openclaw/tmp/sp-recovery-20261008-C3AaRw",
+  "trackedDirty": "",
+  "startedAt": "2026-10-08T06:18:49.917Z",
+  "checks": [
+    {
+      "name": "Real unsaved added track journals before SIGKILL",
+      "status": "PASS",
+      "pid": 81316,
+      "journalPath": "/Users/agentsattari/.openclaw/tmp/sp-recovery-20261008-C3AaRw/project-journals/document--Users-agentsattari--openclaw-tmp-sp-recovery-20261008-C3AaRw-documents-project-scenepilot-/1791440342892-0fa93478-d275-4cff-aeda-cefaac0f96cb.scenepilot.json",
+      "savedTracks": 2,
+      "journalTracks": 3
+    },
+    {
+      "name": "Actual same-profile fresh process disk recovery UI restores unsaved edit and project structure",
+      "status": "PASS"
+    },
+    {
+      "name": "Moved source reopens offline without losing authored structure",
+      "status": "PASS"
+    },
+    {
+      "name": "Actual file import relinks moved media by identity and preserves timing/effects/audio",
+      "status": "PASS"
+    },
+    {
+      "name": "Actual UI EACCES save reports failure and preserves previous disk document",
+      "status": "PASS"
+    },
+    {
+      "name": "UI retry after permission restoration persists latest edit",
+      "status": "PASS"
+    }
+  ],
+  "limits": [
+    "Development Electron renderer, not signed/packaged build",
+    "Native dialog paths supplied by harness; actual OS chooser unverified",
+    "No full golden or platform qualification"
+  ],
+  "errors": [],
+  "rendererUrl": "file:///Users/agentsattari/code/company-worktrees/scenepilot-recovery-20261008/electron/renderer/desktop/index.html",
+  "status": "PASS",
+  "finishedAt": "2026-10-08T06:19:08.353Z"
+}

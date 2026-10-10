@@ -1,0 +1,91 @@
+{
+  "environment": {
+    "node": "v22.23.2",
+    "platform": "darwin",
+    "architecture": "arm64",
+    "osRelease": "25.2.0",
+    "timezone": "America/Los_Angeles",
+    "logicalCpus": 10,
+    "totalMemoryBytes": 17179869184
+  },
+  "commit": "af10e31c9df8f1363d3945e3b1d39518cd858009",
+  "lockfileSha256": "d28cbe495e6ba713c494108cce6aafe55fa32ee4e27ec90c01d33e46ff2ad588",
+  "configuration": {
+    "package.json": "128c4f7be5cd1365e655cd07aba22f33df181a01d14244418e66d58b1c6c031f",
+    "vite.config.js": "2761a8b265ae80abd51d047327b3dc4badbf2c83261f754d38dea328673a9941",
+    "vite.qa.config.mjs": "21be34faca2acff42fa3ead5f3e90a5e217c77197396cabea778722335018e25",
+    "vitest.config.ts": "f9a64d7fe0bb3a879d9d7ffe38193cb662333cc7e8f20d21ee5f8e641d0eda3f",
+    "netlify.toml": "92445c11cc231f984e767acf57eb15ce168e6b89e9da35c987a57943e3edb73e",
+    ".github/workflows/build-deploy.yml": "0fc6e55c60b8c4a3e64786ff92b0661b113b66fc6d03e6271b40ac2c0df53890"
+  },
+  "browserConfiguration": {
+    "playwrightVersion": "1.62.1",
+    "executable": "/Users/agentsattari/Library/Caches/ms-playwright/chromium-1234/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing",
+    "version": "Google Chrome for Testing 151.0.7922.34",
+    "executableSha256": "a596b1cfc6353e987fcec8d71a23a28cd6a9e7a6b4e20b908e4c4fcffe51158e",
+    "revisions": [
+      {
+        "name": "chromium",
+        "revision": "1234",
+        "installByDefault": true,
+        "browserVersion": "151.0.7922.34",
+        "title": "Chrome for Testing"
+      },
+      {
+        "name": "chromium-headless-shell",
+        "revision": "1234",
+        "installByDefault": true,
+        "browserVersion": "151.0.7922.34",
+        "title": "Chrome Headless Shell"
+      },
+      {
+        "name": "chromium-tip-of-tree",
+        "revision": "1433",
+        "installByDefault": false,
+        "browserVersion": "151.0.7893.0",
+        "title": "Chrome Canary for Testing"
+      },
+      {
+        "name": "chromium-tip-of-tree-headless-shell",
+        "revision": "1433",
+        "installByDefault": false,
+        "browserVersion": "151.0.7893.0",
+        "title": "Chrome Canary Headless Shell"
+      }
+    ],
+    "headless": true,
+    "args": [
+      "--mute-audio",
+      "--autoplay-policy=no-user-gesture-required"
+    ],
+    "audioOrigin": "http://127.0.0.1:4192",
+    "builtUiOrigin": "http://127.0.0.1:4193"
+  },
+  "preflight": {
+    "cleanTree": false,
+    "initialStatus": " M package-lock.json\n M package.json\n M scripts/perform-lifecycle-qa.mjs\n?? scripts/apply-audio-cycle-precheck.mjs\n?? tests/audio-cycle-precheck.test.js\n",
+    "disk": {
+      "seconds": 120,
+      "sampleRate": 48000,
+      "channels": 10,
+      "copies": 3,
+      "recordingBytes": 691200000,
+      "reserveBytes": 2147483648,
+      "requiredBytes": 2838683648,
+      "path": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/candidate-gate",
+      "availableBytes": 6586912768,
+      "pass": true,
+      "note": "OS capacity check, not a browser quota reservation. Recheck browser quota and target volume before physical recording."
+    }
+  },
+  "sourceHash": "0bcea0313cc3d8230980f1e0cd4b6e205f550489ca56d55d73ce44292347a8f8",
+  "unchanged": false,
+  "at": "2026-10-08T04:08:11.437Z",
+  "softwarePassed": false,
+  "audioChecked": false,
+  "builtArtifactUiChecked": false,
+  "releaseApproved": false,
+  "results": [],
+  "output": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/candidate-gate",
+  "artifact": null
+}

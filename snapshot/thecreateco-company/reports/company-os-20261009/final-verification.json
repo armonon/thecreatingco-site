@@ -1,0 +1,87 @@
+{
+  "observed_at": "2026-10-09T07:03:32.811556+00:00",
+  "checks": [
+    {
+      "suite": "company",
+      "command": [
+        "python3",
+        "engine/test_company.py"
+      ],
+      "cwd": "/Users/agentsattari/thecreateco-company",
+      "exit_code": 0,
+      "output_tail": "........................\n----------------------------------------------------------------------\nRan 24 tests in 0.257s\n\nOK\n"
+    },
+    {
+      "suite": "telemetry",
+      "command": [
+        "python3",
+        "engine/test_telemetry.py"
+      ],
+      "cwd": "/Users/agentsattari/thecreateco-company",
+      "exit_code": 0,
+      "output_tail": "................\n----------------------------------------------------------------------\nRan 16 tests in 0.069s\n\nOK\n"
+    },
+    {
+      "suite": "os-cycle",
+      "command": [
+        "python3",
+        "engine/test_os_cycle.py"
+      ],
+      "cwd": "/Users/agentsattari/thecreateco-company",
+      "exit_code": 0,
+      "output_tail": "{\n  \"status\": \"partial\",\n  \"failed_steps\": [\n    \"telemetry_collect\"\n  ]\n}\n.......\n----------------------------------------------------------------------\nRan 7 tests in 0.030s\n\nOK\n"
+    },
+    {
+      "suite": "anomalies",
+      "command": [
+        "python3",
+        "engine/test_anomalies.py"
+      ],
+      "cwd": "/Users/agentsattari/thecreateco-company",
+      "exit_code": 0,
+      "output_tail": "...\n----------------------------------------------------------------------\nRan 3 tests in 0.010s\n\nOK\n"
+    },
+    {
+      "suite": "marketing",
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-q"
+      ],
+      "cwd": "/Users/agentsattari/thecreateco-marketing/engine",
+      "exit_code": 0,
+      "output_tail": "----------------------------------------------------------------------\nRan 26 tests in 1.013s\n\nOK\n"
+    },
+    {
+      "suite": "supervisor",
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-q"
+      ],
+      "cwd": "/Users/agentsattari/operations-supervisor",
+      "exit_code": 0,
+      "output_tail": "----------------------------------------------------------------------\nRan 13 tests in 0.021s\n\nOK\n"
+    },
+    {
+      "suite": "config",
+      "command": [
+        "openclaw",
+        "config",
+        "validate"
+      ],
+      "cwd": "/Users/agentsattari",
+      "exit_code": 0,
+      "output_tail": "Config valid: ~/.openclaw/openclaw.json\n"
+    }
+  ],
+  "all_passed": true
+}

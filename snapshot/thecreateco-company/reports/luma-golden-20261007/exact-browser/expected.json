@@ -1,0 +1,316 @@
+{
+  "width": 2048,
+  "height": 1536,
+  "colorSpace": "srgb",
+  "bitDepth": 8,
+  "layers": [
+    {
+      "id": "adj-d",
+      "name": "Tone",
+      "kind": "adjustment-tone",
+      "parentId": null,
+      "opacity": 1,
+      "visible": true,
+      "transform": {
+        "tx": 0,
+        "ty": 0,
+        "sx": 1,
+        "sy": 1,
+        "rotation": 0,
+        "skewX": 0
+      },
+      "tone": {
+        "exposure": 0.1,
+        "contrast": 0,
+        "highlights": 0,
+        "shadows": 0,
+        "temperature": 0,
+        "vibrance": 0
+      },
+      "mask": null
+    },
+    {
+      "id": "raster-b",
+      "name": "Overlay",
+      "kind": "raster",
+      "parentId": null,
+      "opacity": 0.63,
+      "visible": true,
+      "transform": {
+        "tx": 63.99991966580967,
+        "ty": 31.99995983290495,
+        "sx": 1,
+        "sy": 1,
+        "rotation": 0,
+        "skewX": 0
+      },
+      "tone": null,
+      "mask": [
+        0,
+        0,
+        0,
+        255
+      ]
+    },
+    {
+      "id": "raster-a",
+      "name": "Source",
+      "kind": "raster",
+      "parentId": null,
+      "opacity": 1,
+      "visible": true,
+      "transform": {
+        "tx": 0,
+        "ty": 0,
+        "sx": 1,
+        "sy": 1,
+        "rotation": 0,
+        "skewX": 0
+      },
+      "tone": null,
+      "mask": null
+    }
+  ],
+  "history": {
+    "currentId": "op-muz0d3xq-t",
+    "rootId": "history-root",
+    "operations": 22,
+    "branchPoints": 1,
+    "currentDepth": 20,
+    "byteBudget": 536870912,
+    "overBudget": false,
+    "nodes": [
+      {
+        "id": "history-root",
+        "parentId": null,
+        "label": "Document opened",
+        "createdAt": 1791431988759,
+        "depth": 0,
+        "childCount": 1,
+        "isCurrent": false,
+        "isOnCurrentPath": true
+      },
+      {
+        "id": "op-muz0cp8z-8",
+        "parentId": "history-root",
+        "label": "source imported",
+        "createdAt": 1791431988947,
+        "depth": 1,
+        "childCount": 1,
+        "isCurrent": false,
+        "isOnCurrentPath": true
+      },
+      {
+        "id": "op-muz0cq4o-9",
+        "parentId": "op-muz0cp8z-8",
+        "label": "Layer renamed",
+        "createdAt": 1791431990088,
+        "depth": 2,
+        "childCount": 1,
+        "isCurrent": false,
+        "isOnCurrentPath": true
+      },
+      {
+        "id": "op-muz0cqg8-a",
+        "parentId": "op-muz0cq4o-9",
+        "label": "overlay imported",
+        "createdAt": 1791431990504,
+        "depth": 3,
+        "childCount": 1,
+        "isCurrent": false,
+        "isOnCurrentPath": true
+      },
+      {
+        "id": "op-muz0cqvh-b",
+        "parentId": "op-muz0cqg8-a",
+        "label": "Layer renamed",
+        "createdAt": 1791431991053,
+        "depth": 4,
+        "childCount": 1,
+        "isCurrent": false,
+        "isOnCurrentPath": true
+      },
+      {
+        "id": "op-muz0cufb-c",
+        "parentId": "op-muz0cqvh-b",
+        "label": "Opacity",
+        "createdAt": 1791431995655,
+        "depth": 5,
+        "childCount": 1,
+        "isCurrent": false,
+        "isOnCurrentPath": true
+      },
+      {
+        "id": "op-muz0cui7-d",
+        "parentId": "op-muz0cufb-c",
+        "label": "Layers grouped",
+        "createdAt": 1791431995759,
+        "depth": 6,
+        "childCount": 1,
+        "isCurrent": false,
+        "isOnCurrentPath": true
+      },
+      {
+        "id": "op-muz0cupb-e",
+        "parentId": "op-muz0cui7-d",
+        "label": "Layers ungrouped",
+        "createdAt": 1791431996015,
+        "depth": 7,
+        "childCount": 1,
+        "isCurrent": false,
+        "isOnCurrentPath": true
+      },
+      {
+        "id": "op-muz0cvbp-f",
+        "parentId": "op-muz0cupb-e",
+        "label": "Transform",
+        "createdAt": 1791431996821,
+        "depth": 8,
+        "childCount": 1,
+        "isCurrent": false,
+        "isOnCurrentPath": true
+      },
+      {
+        "id": "op-muz0d0eb-g",
+        "parentId": "op-muz0cvbp-f",
+        "label": "Mask paint (remove)",
+        "createdAt": 1791432003395,
+        "depth": 9,
+        "childCount": 3,
+        "isCurrent": false,
+        "isOnCurrentPath": true
+      },
+      {
+        "id": "op-muz0d1tk-h",
+        "parentId": "op-muz0d0eb-g",
+        "label": "Layer hidden",
+        "createdAt": 1791432005240,
+        "depth": 10,
+        "childCount": 0,
+        "isCurrent": false,
+        "isOnCurrentPath": false
+      },
+      {
+        "id": "op-muz0d2gp-i",
+        "parentId": "op-muz0d0eb-g",
+        "label": "Layer reordered",
+        "createdAt": 1791432006073,
+        "depth": 10,
+        "childCount": 0,
+        "isCurrent": false,
+        "isOnCurrentPath": false
+      },
+      {
+        "id": "op-muz0d2qx-j",
+        "parentId": "op-muz0d0eb-g",
+        "label": "Tone added",
+        "createdAt": 1791432006441,
+        "depth": 10,
+        "childCount": 1,
+        "isCurrent": false,
+        "isOnCurrentPath": true
+      },
+      {
+        "id": "op-muz0d2w7-k",
+        "parentId": "op-muz0d2qx-j",
+        "label": "Tone adjusted",
+        "createdAt": 1791432006631,
+        "depth": 11,
+        "childCount": 1,
+        "isCurrent": false,
+        "isOnCurrentPath": true
+      },
+      {
+        "id": "op-muz0d345-l",
+        "parentId": "op-muz0d2w7-k",
+        "label": "Tone adjusted",
+        "createdAt": 1791432006917,
+        "depth": 12,
+        "childCount": 1,
+        "isCurrent": false,
+        "isOnCurrentPath": true
+      },
+      {
+        "id": "op-muz0d37i-m",
+        "parentId": "op-muz0d345-l",
+        "label": "Tone adjusted",
+        "createdAt": 1791432007038,
+        "depth": 13,
+        "childCount": 1,
+        "isCurrent": false,
+        "isOnCurrentPath": true
+      },
+      {
+        "id": "op-muz0d3ba-n",
+        "parentId": "op-muz0d37i-m",
+        "label": "Tone adjusted",
+        "createdAt": 1791432007174,
+        "depth": 14,
+        "childCount": 1,
+        "isCurrent": false,
+        "isOnCurrentPath": true
+      },
+      {
+        "id": "op-muz0d3dt-o",
+        "parentId": "op-muz0d3ba-n",
+        "label": "Tone adjusted",
+        "createdAt": 1791432007265,
+        "depth": 15,
+        "childCount": 1,
+        "isCurrent": false,
+        "isOnCurrentPath": true
+      },
+      {
+        "id": "op-muz0d3g9-p",
+        "parentId": "op-muz0d3dt-o",
+        "label": "Tone adjusted",
+        "createdAt": 1791432007353,
+        "depth": 16,
+        "childCount": 1,
+        "isCurrent": false,
+        "isOnCurrentPath": true
+      },
+      {
+        "id": "op-muz0d3iv-q",
+        "parentId": "op-muz0d3g9-p",
+        "label": "Tone adjusted",
+        "createdAt": 1791432007447,
+        "depth": 17,
+        "childCount": 1,
+        "isCurrent": false,
+        "isOnCurrentPath": true
+      },
+      {
+        "id": "op-muz0d3l8-r",
+        "parentId": "op-muz0d3iv-q",
+        "label": "Tone adjusted",
+        "createdAt": 1791432007532,
+        "depth": 18,
+        "childCount": 1,
+        "isCurrent": false,
+        "isOnCurrentPath": true
+      },
+      {
+        "id": "op-muz0d3qn-s",
+        "parentId": "op-muz0d3l8-r",
+        "label": "Tone adjusted",
+        "createdAt": 1791432007727,
+        "depth": 19,
+        "childCount": 1,
+        "isCurrent": false,
+        "isOnCurrentPath": true
+      },
+      {
+        "id": "op-muz0d3xq-t",
+        "parentId": "op-muz0d3qn-s",
+        "label": "Tone adjusted",
+        "createdAt": 1791432007982,
+        "depth": 20,
+        "childCount": 0,
+        "isCurrent": true,
+        "isOnCurrentPath": true
+      }
+    ],
+    "redoBranches": []
+  }
+}

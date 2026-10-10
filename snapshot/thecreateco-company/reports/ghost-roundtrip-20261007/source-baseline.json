@@ -1,0 +1,58 @@
+{
+  "source_sha": "bfad2ee98a5194cc84892cc7a13a43e28fefea9b",
+  "observed_at": "2026-10-08T03:55:12.158259+00:00",
+  "preserved_original_changes": [
+    {
+      "status": " M",
+      "path": "dist/app.js",
+      "sha256": "df65318fea78aa50ca354b94ca3ac1f3e9fcb7fc749b49dfd639e7698e4a0f97"
+    },
+    {
+      "status": " M",
+      "path": "dist/engine/drape-session.js",
+      "sha256": "340349f618c73c0e492bf6259bb6bf5c4fcfba63e81189fee05702ac4ddbabd1"
+    },
+    {
+      "status": " M",
+      "path": "dist/engine/silhouette.js",
+      "sha256": "34769a16ace05fd71276063b79709369c39ddd36d311b7f725b55ba2107abf04"
+    },
+    {
+      "status": "??",
+      "path": "dist/pattern-dxf.js",
+      "sha256": "0ca2fdaadd9e6a7bac701b7b273b0a0a6e5f2243436c03fd881bbe59a926ac23"
+    },
+    {
+      "status": "??",
+      "path": "dist/pattern-export.js",
+      "sha256": "fc015281f4985ea10b107a3ee65a2a723e9b2c23fa1657f0a8baba3756a411a2"
+    },
+    {
+      "status": "??",
+      "path": "dist/pattern-flatten.js",
+      "sha256": "0dfc1c97360ef8b94f6e9dfb6efe7dfcafd98740ea5f963be541542e9e33133e"
+    },
+    {
+      "status": "??",
+      "path": "dist/pattern-pdf.js",
+      "sha256": "0f584693a2e7802b40b7986ec6c3cdcf4a3bb5a24bcec3f7e75f1e1eb1b1e17f"
+    },
+    {
+      "status": "??",
+      "path": "dist/pattern-svg.js",
+      "sha256": "cc764f5af2270a1ebd713ba938476dbee43d93ef2ef81b56c778a7af1db4b1f4"
+    },
+    {
+      "status": "??",
+      "path": "tests/pattern-flatten.test.mjs",
+      "sha256": "9acce65c0a2f052cb3d5c03c5c1fa622bb3e9e200109d7c1f9f0bd039ec90a70"
+    },
+    {
+      "status": "??",
+      "path": "tests/pattern-seam-offset.test.mjs",
+      "sha256": "99036ec355c582544740746f8c2ecc3a8a6d9cc1c1d2c357abf785d350aca741"
+    }
+  ],
+  "candidate_worktree": "/Users/agentsattari/code/worktrees/ghost-roundtrip-20261007",
+  "scope": "Committed main workflow qualification; ten pending pattern feature files preserved and not silently incorporated."
+}

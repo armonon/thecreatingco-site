@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "method": "Independent Python GLB binary decoding; real POSITION bytes, not accessor metadata bounds",
+  "dimensions_metres_y_up": [
+    0.03999999910593033,
+    0.012000000104308128,
+    0.03999999910593033
+  ],
+  "vertices": 24,
+  "material_metallic": 0.94,
+  "material_roughness": 0.17,
+  "scope": "Synthetic single-body browser fixture; separate native STEP import results in step-verification.json, not a full native application qualification",
+  "artifacts": {
+    "golden-bracket.form": {
+      "sha256": "873096e63b79dc86a730667c77f86b1e5a1c3a693d4f5a989a98af962d4d4f59",
+      "bytes": 20149,
+      "provenance": "Synthetic original SVG, local real-browser UI"
+    },
+    "golden-bracket.glb": {
+      "sha256": "782777bfd22fc04d3b3b65058e3489263ff80602ab9b6a560ca7ecc193939f04",
+      "bytes": 2404,
+      "provenance": "Synthetic original SVG, local real-browser UI"
+    },
+    "golden-bracket.step": {
+      "sha256": "4e4950b4e41a158c546d2a6176b49ba71a03376303fd817d83c89ba36aaac05c",
+      "bytes": 15523,
+      "provenance": "Synthetic original SVG, local real-browser UI"
+    }
+  }
+}

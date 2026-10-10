@@ -1,0 +1,19 @@
+{
+  "goals": [
+    "Reach $1M annual company revenue ethically; first verify the current baseline and next $1K milestone",
+    "Preserve user work and qualify the four flagship workflows",
+    "Validate one focused paid offer; measure contribution, conversion and retention"
+  ],
+  "biggest_bottleneck": "Commercial decision bottleneck: attributable sales/costs and buyer demand are unverified. Product bottleneck: source/release provenance and full flagship golden workflows remain unqualified. Neither is a measured conversion diagnosis.",
+  "next_strategic_move": "Verify company financial baseline and Sattari attribution; execute E01 buyer-validation preparation after M04. Continue leased flagship security/reliability work. Primary service test; secondary narrow ScenePilot; experimental institution onboarding.",
+  "revenue_strategy": {
+    "source": "REVENUE_DIRECTIVE.md",
+    "report": "reports/revenue-2026-10-07/README.md",
+    "paths": "data/revenue/paths.json",
+    "dashboard": "REVENUE_DASHBOARD.md",
+    "experiments": "data/revenue/experiments.json",
+    "next_milestone": "First provisional $1000 verified trailing-30-day company revenue; revise after records. MRR separate.",
+    "weekly_objective": "One qualified paid-pilot decision; preparation and interview intent are not revenue.",
+    "pricing_status": "All novel prices internal hypotheses, not published or approved."
+  }
+}

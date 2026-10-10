@@ -1,0 +1,39 @@
+{
+  "product_id": "scenepilot",
+  "last_core_lab_cycle": {
+    "task_id": "CORE-SP-UX-001",
+    "observed_at": "2026-10-09T17:51:17.735242+00:00",
+    "source_sha": "02c6eced0e572eafe5c5c2f8e4fe1b0e8b011b40",
+    "director_model": "OpenAI Sol; exact runtime identifier not exposed",
+    "executor_model": "inherited OpenAI Sol; Luna not invoked",
+    "fallback": null,
+    "focused_tests_passed": 39,
+    "focused_tests_total": 39,
+    "renderer_build": "PASS",
+    "lite_golden": "FAIL: normal Video track click intercepted by inspector; existing c26d518 absent from divergent stack",
+    "desktop_golden": "PARTIAL: save/fresh-process reopen pass; final mixed export blocked by ffmpeg-static ENOENT",
+    "main_source_count_qualification": null,
+    "independent_review": null,
+    "report": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-ux-20261009T1740/REPORT.md",
+    "unqualified_local_artifact": "codex/scenepilot-ux-qualification-20261009T1740 at 8b6e91d; untested/unpushed",
+    "full_golden_qualification": false
+  },
+  "ux_qualification": {
+    "task_id": "CORE-SP-UX-001",
+    "observed_at": "2026-10-09T17:51:17.735242+00:00",
+    "source_sha": "02c6eced0e572eafe5c5c2f8e4fe1b0e8b011b40",
+    "director_model": "OpenAI Sol; exact runtime identifier not exposed",
+    "executor_model": "inherited OpenAI Sol; Luna not invoked",
+    "fallback": null,
+    "focused_tests_passed": 39,
+    "focused_tests_total": 39,
+    "renderer_build": "PASS",
+    "lite_golden": "FAIL: normal Video track click intercepted by inspector; existing c26d518 absent from divergent stack",
+    "desktop_golden": "PARTIAL: save/fresh-process reopen pass; final mixed export blocked by ffmpeg-static ENOENT",
+    "main_source_count_qualification": null,
+    "independent_review": null,
+    "report": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-ux-20261009T1740/REPORT.md",
+    "unqualified_local_artifact": "codex/scenepilot-ux-qualification-20261009T1740 at 8b6e91d; untested/unpushed",
+    "full_golden_qualification": false
+  }
+}

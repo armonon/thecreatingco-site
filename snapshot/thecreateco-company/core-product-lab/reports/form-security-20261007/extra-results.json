@@ -1,0 +1,17 @@
+[
+  {
+    "name": "marketing-build",
+    "command": "npm run build:netlify-marketing",
+    "exit_code": 0
+  },
+  {
+    "name": "review-build",
+    "command": "npm run build:netlify-review",
+    "exit_code": 0
+  },
+  {
+    "name": "release-validate",
+    "command": "npm run release:validate",
+    "exit_code": 0
+  }
+]

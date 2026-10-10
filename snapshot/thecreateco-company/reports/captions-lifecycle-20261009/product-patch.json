@@ -1,0 +1,10 @@
+{
+  "product_id": "captions",
+  "release_readiness": "Unqualified local candidate02c6ece:16 deterministic caption/lifecycle tests PASS; typecheck blocked (compiler missing), browser/codec/WebM/full editable save-reopen unverified. No push/release.",
+  "next_milestone": "Resume codex/captions-lifecycle-20261009 exact02c6ece: restore pinned local toolchain, type/lint/tools build and real browser races; implement portable media/timing/style roundtrip.",
+  "evidence_sources": [
+    "/Users/agentsattari/thecreateco-marketing/PRODUCTS.md",
+    "/Users/agentsattari/code/wave4/WAVE4.md",
+    "/Users/agentsattari/thecreateco-company/reports/captions-lifecycle-20261009/README.md"
+  ]
+}

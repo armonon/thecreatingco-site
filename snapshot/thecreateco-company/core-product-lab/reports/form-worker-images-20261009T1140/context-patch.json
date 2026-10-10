@@ -1,0 +1,10 @@
+{
+  "metrics": {
+    "form_worker_image_positive_width_http_status": {
+      "value": 200,
+      "source": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-worker-images-20261009T1140/worker-image-regression.log",
+      "period": "2026-10-09 exact b5f8b08 local emitted Worker synthetic PNG passthrough",
+      "observed_at": "2026-10-09T11:50:11.432951+00:00"
+    }
+  }
+}

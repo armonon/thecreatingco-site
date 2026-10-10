@@ -1,0 +1,19 @@
+{
+  "product_id": "stemdeck",
+  "lifecycle_qualification": {
+    "status": "RUNNING",
+    "base_sha": "f6f061c6e463a552c287e883cbd7fc9bb3e0867e",
+    "source_dirty": true,
+    "worktree": "/Users/agentsattari/code/core-product-lab/stemdeck-recovery",
+    "branch": "core-lab/stemdeck-lifecycle-20261007",
+    "confirmed_defect": "Positive stale fragmented-M4A metadata truncated capture clock and window decoder, blocking reconstruction then export. Fixed locally; full UI rerun pending.",
+    "tests": "Four initial timing/capture and three decoder regressions failed before; 34 targeted tests pass after.",
+    "partial_browser": "Actual four-deck capture, editable reconstruction and Undo/Redo passed; print/reopen/export qualification running.",
+    "evidence": [
+      "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-lifecycle-20261007/README.md",
+      "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-lifecycle-20261007/decoder-after.log",
+      "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-lifecycle-20261007/long-compressed/report.json"
+    ],
+    "next_action": "Finish frozen actual lifecycle, independent source review, exact-head gate, normal PR. Full musical/physical/platform coverage unverified."
+  }
+}

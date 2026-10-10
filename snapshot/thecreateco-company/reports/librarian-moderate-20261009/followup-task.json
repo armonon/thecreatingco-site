@@ -1,0 +1,26 @@
+{
+  "task_id": "PROGRAM18-LIBRARIAN-UUID-REPAIR-001",
+  "title": "Apply and qualify scoped Xcode UUID11 CommonJS security override",
+  "product": "librarian",
+  "category": "security",
+  "workstream": "ENGINEERING",
+  "severity": "P2",
+  "model": "openai/gpt-6-luna",
+  "token_budget": 8000,
+  "context_token_budget": 12000,
+  "tool_budget": 30,
+  "dependencies": [
+    "PROGRAM18-LIBRARIAN-MODERATE-DEPS-001"
+  ],
+  "scores": {
+    "impact": 5,
+    "user_value": 4,
+    "confidence": 9,
+    "effort": 2,
+    "risk": 2
+  },
+  "expected_value": "Remove uuid advisory propagation with a pinned scoped override; preserve existing critical/high repair and logger residual transparency.",
+  "source_evidence": "reports/librarian-moderate-20261009/README.md",
+  "test_requirements": "Own isolated branch from ca7e806 or verified reviewed descendant. Pin xcode -> uuid11.1.1 only, verify exact lock npm ci with scripts appropriately bounded. Repeat actual Xcode generation/project parse-write-reparse and short-buffer regression; qualify actual Capacitor asset/sync tooling using copied inputs, focused unit/build checks and full/prod audit. Independent OpenAI review before routine push; no merge/release with unresolved gates. Preserve sprintf residual.",
+  "next_action": "Bounded Luna worker capsule: owner/task/objective/files/current state/known failure/constraints/acceptance/budgets; implement tested two-file dependency patch, not new app work."
+}

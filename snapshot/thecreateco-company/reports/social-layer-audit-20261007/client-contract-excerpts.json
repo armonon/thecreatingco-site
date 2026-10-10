@@ -1,0 +1,50 @@
+{
+  "source": "Previously saved deployed public client view-B4F5Ki4D.js (not canonical source, not server verification)",
+  "terms": {
+    "guest-session": [
+      "Ref)(null);async function Tt(){if(o)return!0;if(f)return U(`Settings`),!1;try{return wt.current||=$(`guest-session`).then(()=>Ct()).finally(()=>{wt.current=null}),await wt.current,!0}catch(e){return y(e.message),!1}}function U(e){if(h(!1),v"
+    ],
+    "create-post": [],
+    "comment": [
+      "sage)),children:`More replies`}),(0,X.jsx)(Sn,{label:`Join the discussion`,submit:async e=>{await $(`comment`,{id:crypto.randomUUID(),post:je.id,body:e}),St()},error:y})]}),t===`Notifications`&&(0,X.jsxs)(X.Fragment,{children:[(0,X.jsx)(`bu",
+      "-notifications`,{target:e.id}).catch(e=>y(e.message)),e.kind===`follow`?K(String(e.handle)):[`like`,`comment`,`reply`,`repost`,`mention`].includes(String(e.kind))&&Q(`post`,{id:String(e.target)}).then(e=>Dt(e.posts[0])).catch(e=>y(e.message",
+      ")=>void i(`comment-action`,{target:t.id,operation:`delete`}),children:`Delete`}),(0,X.jsx)(Cn,{kind:`comment`,target:t.id,perform:i})]}),(0,X.jsxs)(`details`,{children:[(0,X.jsx)(`summary`,{children:`Reply`}),(0,X.jsx)(Sn,{label:`Reply to `",
+      "y`,{children:`Reply`}),(0,X.jsx)(Sn,{label:`Reply to `+t.name,error:()=>{},submit:async e=>{await $(`comment`,{id:crypto.randomUUID(),post:r,parent:t.id,body:e}),await i(`refresh`,{})}})]}),(0,X.jsxs)(`details`,{open:!0,children:[(0,X.jsx)("
+    ],
+    "reply": [
+      "ions`,{target:e.id}).catch(e=>y(e.message)),e.kind===`follow`?K(String(e.handle)):[`like`,`comment`,`reply`,`repost`,`mention`].includes(String(e.kind))&&Q(`post`,{id:String(e.target)}).then(e=>Dt(e.posts[0])).catch(e=>y(e.message))},childr"
+    ],
+    "follow": [
+      "ldren:`Export archive`})]}):(0,X.jsxs)(X.Fragment,{children:[(0,X.jsx)(`button`,{onClick:()=>void W(`follow`,{target:B.id,enabled:!B.followed}).then(()=>void K(B.handle)),children:B.followed?`Unfollow`:`Follow`}),(0,X.jsx)(`button`,{onClick",
+      "X.jsx)(`button`,{onClick:()=>{$(`read-notifications`,{target:e.id}).catch(e=>y(e.message)),e.kind===`follow`?K(String(e.handle)):[`like`,`comment`,`reply`,`repost`,`mention`].includes(String(e.kind))&&Q(`post`,{id:String(e.target)}).then(e="
+    ],
+    "block": [
+      "ation request has been sent.`:e===`report`?`Thank you. Your report is in the review queue.`:``),e===`block`&&t.enabled){Ge(null),U(`Home`);return}if(e===`delete-post`){A(e=>e.filter(e=>e.id!==t.target)),je?.id===t.target&&U(`Home`);return}i",
+      "ute`,{target:e.author,enabled:!0}),children:`Mute creator`}),(0,X.jsx)(`button`,{onClick:()=>void W(`block`,{target:e.author,enabled:!0}),children:`Block creator`}),(0,X.jsx)(Cn,{kind:`post`,target:e.id,perform:W})]})]})]}),_e===e.id?(0,X.j",
+      "h?ht[e].map(t=>(0,X.jsxs)(`p`,{children:[t.name,(0,X.jsx)(`button`,{onClick:()=>void W(e===`blocks`?`block`:`mute`,{target:t.id,enabled:!1}),children:e===`blocks`?`Unblock`:`Unmute`})]},t.id)):(0,X.jsx)(`p`,{children:`None.`})]},e)),(0,X.js"
+    ],
+    "mute": [
+      "children:`Delete post`})]}):(0,X.jsxs)(X.Fragment,{children:[(0,X.jsx)(`button`,{onClick:()=>void W(`mute`,{target:e.author,enabled:!0}),children:`Mute creator`}),(0,X.jsx)(`button`,{onClick:()=>void W(`block`,{target:e.author,enabled:!0}),",
+      "map(t=>(0,X.jsxs)(`p`,{children:[t.name,(0,X.jsx)(`button`,{onClick:()=>void W(e===`blocks`?`block`:`mute`,{target:t.id,enabled:!1}),children:e===`blocks`?`Unblock`:`Unmute`})]},t.id)):(0,X.jsx)(`p`,{children:`None.`})]},e)),(0,X.jsx)(`butt"
+    ],
+    "report": [
+      "if(e!==`refresh`&&await $(e,t),ge(e===`collaborate`?`Your collaboration request has been sent.`:e===`report`?`Thank you. Your report is in the review queue.`:``),e===`block`&&t.enabled){Ge(null),U(`Home`);return}if(e===`delete-post`){A(e=>e",
+      "}),(0,X.jsxs)(`select`,{\"aria-label\":`Report reason`,defaultValue:``,onChange:r=>{r.target.value&&n(`report`,{kind:e,target:t,reason:r.target.value})},children:[(0,X.jsx)(`option`,{value:``,children:`Choose reason`}),Z.reportReasons.map(e=>"
+    ],
+    "moderation": [
+      "``))}if(t===`Settings`&&o){let t=await Q(`preferences`);e&&gt(t)}if(t===`Moderation`){let t=await Q(`moderation`);e&&Ie(t.reports)}}catch(t){e&&y(t.message)}finally{e&&T(!1)}})()},t===`Discover`?250:0);return()=>{e=!1,clearTimeout(n)}},[t,E"
+    ],
+    "delete-post": [
+      ". Your report is in the review queue.`:``),e===`block`&&t.enabled){Ge(null),U(`Home`);return}if(e===`delete-post`){A(e=>e.filter(e=>e.id!==t.target)),je?.id===t.target&&U(`Home`);return}if([`like`,`bookmark`,`repost`].includes(e)){let e=awa",
+      "on`,{onClick:()=>{ve(e.id),C(e.body)},children:`Edit post`}),(0,X.jsx)(`button`,{onClick:()=>void W(`delete-post`,{target:e.id}),children:`Delete post`})]}):(0,X.jsxs)(X.Fragment,{children:[(0,X.jsx)(`button`,{onClick:()=>void W(`mute`,{tar"
+    ],
+    "message": [
+      "te(Number(e.created)).toLocaleTimeString([],{hour:`2-digit`,minute:`2-digit`})}),(0,X.jsx)(Cn,{kind:`message`,target:String(e.id),perform:W})]},e.id))}),(0,X.jsx)(Sn,{label:`Message`,error:y,submit:async e=>{await $(`message`,{id:crypto.ran",
+      ":String(e.id),perform:W})]},e.id))}),(0,X.jsx)(Sn,{label:`Message`,error:y,submit:async e=>{await $(`message`,{id:crypto.randomUUID(),conversation:ze,body:e}),St()}})]}):(0,X.jsxs)(X.Fragment,{children:[!Fe.length&&(0,X.jsx)(xn,{title:`Star"
+    ],
+    "notifications": [
+      "lice(0,20)),we(t.length>20?t[19].handle:``))}}if(t===`Notifications`){let[t,n]=await Promise.all([Q(`notifications`),Q(`requests`)]);e&&(Ie(t.slice(0,50)),I(t.length>50?`${t[49].created}|${t[49].id}`:``),Re(n.slice(0,50)),ke(n.length>50?`${",
+      "ng(e.kind),` `,e.read?``:`\u00b7 New`]})]},e.id)),Oe&&(0,X.jsx)(`button`,{disabled:w,onClick:()=>void Ot(`notifications`),children:`Earlier notifications`}),(0,X.jsx)(`h2`,{children:`Collaboration requests`}),!Le.length&&(0,X.jsx)(`p`,{children:"
+    ]
+  }
+}

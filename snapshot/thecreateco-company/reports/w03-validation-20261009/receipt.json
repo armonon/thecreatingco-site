@@ -1,0 +1,18 @@
+{
+  "task_id": "W03",
+  "observed_at": "2026-10-09T22:12:56.212798+00:00",
+  "director_model": "openai/gpt-6.1-sol",
+  "executor": "deterministic Python; no additional model requests",
+  "checks": "PASS: five unique null-only placeholders, prepared/not-launched experiment, zero new-spend budget, M04 blocked, live owner matches",
+  "observed_creator_journeys": null,
+  "template_records": 5,
+  "source_hashes": {
+    "reports/glyph-destination-20261007/creator-validation-pack.md": "796a9191ebeda2cf5dbf8b87e1092f34015dc1169463c137a1b2bec93fd0df7a",
+    "reports/glyph-destination-20261007/outcome-template.json": "067a536ad11cbdfbdf9009f87352354b002116928d64323618130d6700b7c25b",
+    "reports/m04-outcomes-20261009/README.md": "530f04f504721f2cb662fb4465541424bbb52b2a8a90a370a45af9b6e139da25",
+    "reports/m04-outcomes-20261009/aggregate-receipt.json": "9b1b89b2369f44d4ef2205dd2a8a7a0c4e1a1397ed68b66ce1272c4058533576",
+    "data/revenue/experiments.json": "3ce4bd183a1e6b0f89c5e2eb7d8bee5d6b231cf5be3714f0d00f7c46bef2a423"
+  },
+  "prior_aggregate_observed_at": "2026-10-09T21:11:37.510523+00:00",
+  "limitations": "Existing M04 receipt reused; no fresh marketing/provider collection or customer observation."
+}

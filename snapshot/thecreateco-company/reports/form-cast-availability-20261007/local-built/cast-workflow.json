@@ -1,0 +1,45 @@
+{
+  "url": "http://127.0.0.1:1434",
+  "published_deploy": null,
+  "scope": "Actual local built Cast synthetic mesh workflow subset; public deployment unchanged",
+  "units_export": {
+    "triangles": 12,
+    "extent": [
+      20,
+      10,
+      4
+    ],
+    "min": [
+      0,
+      0,
+      0
+    ],
+    "max": [
+      20,
+      10,
+      4
+    ],
+    "triangle_vertices": [
+      "0,0,0|0,0,4|0,10,0",
+      "0,0,0|0,0,4|20,0,4",
+      "0,0,0|0,10,0|20,10,0",
+      "0,0,0|20,0,0|20,0,4",
+      "0,0,0|20,0,0|20,10,0",
+      "0,0,4|0,10,0|0,10,4",
+      "0,0,4|0,10,4|20,10,4",
+      "0,0,4|20,0,4|20,10,4",
+      "0,10,0|0,10,4|20,10,0",
+      "0,10,4|20,10,0|20,10,4",
+      "20,0,0|20,0,4|20,10,4",
+      "20,0,0|20,10,0|20,10,4"
+    ]
+  },
+  "repair_undo": "PASS",
+  "invalid_import_preserves_mesh": "PASS",
+  "saved_mesh_close_reopen": "PASS",
+  "original_preserved": "PASS",
+  "errors": [],
+  "pass": true,
+  "input_encoding": "ascii",
+  "source_sha": "d24f5d76b4fd0e99c43e1cb8e5e2d9b63db6665e"
+}

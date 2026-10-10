@@ -1,0 +1,19 @@
+{
+  "task_id": "PROGRAM18-REFRAME-LIFECYCLE-001",
+  "candidate_sha": "08a64180df7ca80f64436437027d8fc10b5c65df",
+  "director_model": "openai/gpt-6.1-sol",
+  "executor_requested_model": "openai/gpt-6-luna",
+  "astra_requests": 0,
+  "tokens": null,
+  "billed_cost": null,
+  "per_call_receipt": "not exposed",
+  "observed_at": "2026-10-09T09:27:40.748790+00:00",
+  "pr": {
+    "baseRefName": "wave4/scenepilot-suite",
+    "headRefOid": "08a64180df7ca80f64436437027d8fc10b5c65df",
+    "isDraft": true,
+    "state": "OPEN",
+    "statusCheckRollup": [],
+    "url": "https://github.com/armonon/scenepilot-studio-badass/pull/96"
+  }
+}

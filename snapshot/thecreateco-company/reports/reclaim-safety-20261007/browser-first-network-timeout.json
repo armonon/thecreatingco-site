@@ -1,0 +1,23 @@
+[
+  {
+    "browser": "chromium",
+    "version": "151.0.7922.34",
+    "scope": "Actual browser read-only file selection, SHA256 comparison and report export; NOT native quarantine UI",
+    "pass": false,
+    "error": "page.goto: net::ERR_CONNECTION_TIMED_OUT at http://127.0.0.1:4294/browser/\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:4294/browser/\", waiting until \"load\"\u001b[22m\n\n    at /Users/agentsattari/thecreateco-company/reports/reclaim-safety-20261007/browser-qa.mjs:12:13"
+  },
+  {
+    "browser": "firefox",
+    "version": "153.0",
+    "scope": "Actual browser read-only file selection, SHA256 comparison and report export; NOT native quarantine UI",
+    "pass": false,
+    "error": "page.goto: NS_ERROR_NET_TIMEOUT\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:4294/browser/\", waiting until \"load\"\u001b[22m\n\n    at /Users/agentsattari/thecreateco-company/reports/reclaim-safety-20261007/browser-qa.mjs:12:13"
+  },
+  {
+    "browser": "webkit",
+    "version": "26.5",
+    "scope": "Actual browser read-only file selection, SHA256 comparison and report export; NOT native quarantine UI",
+    "pass": false,
+    "error": "page.goto: The request timed out.\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:4294/browser/\", waiting until \"load\"\u001b[22m\n\n    at /Users/agentsattari/thecreateco-company/reports/reclaim-safety-20261007/browser-qa.mjs:12:13"
+  }
+]

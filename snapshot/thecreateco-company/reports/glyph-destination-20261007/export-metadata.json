@@ -1,0 +1,973 @@
+{
+  "url": "https://glyph-studio-610.netlify.app",
+  "observedAt": "2026-10-08T05:35:59.849Z",
+  "family": "Glyph Proof Oct Seven",
+  "tester": "AVHo oHVA AV",
+  "project": {
+    "schema": "glyph-studio/1",
+    "familyName": "Glyph Proof Oct Seven",
+    "styleName": "Regular",
+    "metrics": {
+      "unitsPerEm": 1000,
+      "ascender": 800,
+      "descender": -200,
+      "xHeight": 500,
+      "capHeight": 700,
+      "defaultAdvance": 600
+    },
+    "glyphs": {
+      "A": {
+        "advanceWidth": 844,
+        "strokes": [
+          {
+            "kind": "brush",
+            "points": [
+              [
+                255.4,
+                -33.8
+              ],
+              [
+                283.2,
+                77.4
+              ],
+              [
+                311,
+                188.7
+              ],
+              [
+                338.8,
+                300
+              ],
+              [
+                366.7,
+                411.3
+              ],
+              [
+                394.5,
+                522.6
+              ],
+              [
+                422.3,
+                633.8
+              ],
+              [
+                450.1,
+                522.6
+              ],
+              [
+                477.9,
+                411.3
+              ],
+              [
+                505.8,
+                300
+              ],
+              [
+                533.6,
+                188.7
+              ],
+              [
+                561.4,
+                77.4
+              ],
+              [
+                589.2,
+                -33.8
+              ]
+            ],
+            "width": 70
+          },
+          {
+            "kind": "brush",
+            "points": [
+              [
+                315,
+                204.6
+              ],
+              [
+                350.8,
+                204.6
+              ],
+              [
+                386.5,
+                204.6
+              ],
+              [
+                422.3,
+                204.6
+              ],
+              [
+                458.1,
+                204.6
+              ],
+              [
+                493.8,
+                204.6
+              ],
+              [
+                529.6,
+                204.6
+              ]
+            ],
+            "width": 70
+          }
+        ]
+      },
+      "V": {
+        "advanceWidth": 846,
+        "strokes": [
+          {
+            "kind": "brush",
+            "points": [
+              [
+                255.4,
+                633.8
+              ],
+              [
+                283.2,
+                522.6
+              ],
+              [
+                311,
+                411.3
+              ],
+              [
+                338.8,
+                300
+              ],
+              [
+                366.7,
+                188.7
+              ],
+              [
+                394.5,
+                77.4
+              ],
+              [
+                422.3,
+                -33.8
+              ],
+              [
+                450.1,
+                77.4
+              ],
+              [
+                477.9,
+                188.7
+              ],
+              [
+                505.8,
+                300
+              ],
+              [
+                533.6,
+                411.3
+              ],
+              [
+                561.4,
+                522.6
+              ],
+              [
+                589.2,
+                633.8
+              ]
+            ],
+            "width": 70
+          }
+        ]
+      },
+      "H": {
+        "advanceWidth": 844,
+        "strokes": [
+          {
+            "kind": "brush",
+            "points": [
+              [
+                279.2,
+                633.8
+              ],
+              [
+                279.2,
+                522.6
+              ],
+              [
+                279.2,
+                411.3
+              ],
+              [
+                279.2,
+                300
+              ],
+              [
+                279.2,
+                188.7
+              ],
+              [
+                279.2,
+                77.4
+              ],
+              [
+                279.2,
+                -33.8
+              ]
+            ],
+            "width": 70
+          },
+          {
+            "kind": "brush",
+            "points": [
+              [
+                565.4,
+                633.8
+              ],
+              [
+                565.4,
+                522.6
+              ],
+              [
+                565.4,
+                411.3
+              ],
+              [
+                565.4,
+                300
+              ],
+              [
+                565.4,
+                188.7
+              ],
+              [
+                565.4,
+                77.4
+              ],
+              [
+                565.4,
+                -33.8
+              ]
+            ],
+            "width": 70
+          },
+          {
+            "kind": "brush",
+            "points": [
+              [
+                279.2,
+                300
+              ],
+              [
+                326.9,
+                300
+              ],
+              [
+                374.6,
+                300
+              ],
+              [
+                422.3,
+                300
+              ],
+              [
+                470,
+                300
+              ],
+              [
+                517.7,
+                300
+              ],
+              [
+                565.4,
+                300
+              ]
+            ],
+            "width": 70
+          }
+        ]
+      },
+      "o": {
+        "advanceWidth": 845,
+        "strokes": [
+          {
+            "kind": "brush",
+            "points": [
+              [
+                565.4,
+                133.1
+              ],
+              [
+                564.5,
+                122.2
+              ],
+              [
+                563.6,
+                111.4
+              ],
+              [
+                562.6,
+                100.5
+              ],
+              [
+                559.9,
+                90.1
+              ],
+              [
+                557.2,
+                79.6
+              ],
+              [
+                554.5,
+                69.2
+              ],
+              [
+                550.1,
+                59.6
+              ],
+              [
+                545.7,
+                50
+              ],
+              [
+                541.3,
+                40.3
+              ],
+              [
+                535.3,
+                31.9
+              ],
+              [
+                529.4,
+                23.5
+              ],
+              [
+                523.5,
+                15
+              ],
+              [
+                516.3,
+                8.1
+              ],
+              [
+                509,
+                1.2
+              ],
+              [
+                501.8,
+                -5.7
+              ],
+              [
+                493.6,
+                -10.9
+              ],
+              [
+                485.3,
+                -16
+              ],
+              [
+                477.1,
+                -21.1
+              ],
+              [
+                468.1,
+                -24.3
+              ],
+              [
+                454.7,
+                -29.1
+              ],
+              [
+                440.9,
+                -31.7
+              ],
+              [
+                427,
+                -33.3
+              ],
+              [
+                413,
+                -32.8
+              ],
+              [
+                399,
+                -31.2
+              ],
+              [
+                385.4,
+                -27.5
+              ],
+              [
+                372,
+                -22.7
+              ],
+              [
+                359.3,
+                -16
+              ],
+              [
+                351.1,
+                -10.9
+              ],
+              [
+                342.8,
+                -5.7
+              ],
+              [
+                335.6,
+                1.2
+              ],
+              [
+                328.4,
+                8.1
+              ],
+              [
+                321.1,
+                15
+              ],
+              [
+                315.2,
+                23.5
+              ],
+              [
+                309.3,
+                31.9
+              ],
+              [
+                303.3,
+                40.3
+              ],
+              [
+                298.9,
+                50
+              ],
+              [
+                294.5,
+                59.6
+              ],
+              [
+                290.1,
+                69.2
+              ],
+              [
+                287.4,
+                79.6
+              ],
+              [
+                284.7,
+                90.1
+              ],
+              [
+                282,
+                100.5
+              ],
+              [
+                281.1,
+                111.4
+              ],
+              [
+                280.1,
+                122.2
+              ],
+              [
+                279.2,
+                133.1
+              ],
+              [
+                280.1,
+                143.9
+              ],
+              [
+                281.1,
+                154.8
+              ],
+              [
+                282,
+                165.6
+              ],
+              [
+                284.7,
+                176.1
+              ],
+              [
+                287.4,
+                186.5
+              ],
+              [
+                290.1,
+                197
+              ],
+              [
+                294.5,
+                206.6
+              ],
+              [
+                298.9,
+                216.2
+              ],
+              [
+                303.3,
+                225.8
+              ],
+              [
+                309.3,
+                234.2
+              ],
+              [
+                315.2,
+                242.7
+              ],
+              [
+                321.1,
+                251.1
+              ],
+              [
+                328.4,
+                258
+              ],
+              [
+                335.6,
+                264.9
+              ],
+              [
+                342.8,
+                271.9
+              ],
+              [
+                351.1,
+                277
+              ],
+              [
+                359.3,
+                282.2
+              ],
+              [
+                367.6,
+                287.3
+              ],
+              [
+                381,
+                292
+              ],
+              [
+                394.4,
+                296.8
+              ],
+              [
+                408.4,
+                298.4
+              ],
+              [
+                422.3,
+                300
+              ],
+              [
+                436.3,
+                298.4
+              ],
+              [
+                450.2,
+                296.8
+              ],
+              [
+                459.2,
+                293.6
+              ],
+              [
+                472.6,
+                288.9
+              ],
+              [
+                481.2,
+                284.7
+              ],
+              [
+                489.4,
+                279.6
+              ],
+              [
+                497.7,
+                274.4
+              ],
+              [
+                505.4,
+                268.4
+              ],
+              [
+                512.6,
+                261.5
+              ],
+              [
+                519.9,
+                254.6
+              ],
+              [
+                526.4,
+                246.9
+              ],
+              [
+                532.4,
+                238.5
+              ],
+              [
+                538.3,
+                230
+              ],
+              [
+                543.5,
+                221
+              ],
+              [
+                547.9,
+                211.4
+              ],
+              [
+                552.3,
+                201.8
+              ],
+              [
+                555.9,
+                191.7
+              ],
+              [
+                558.6,
+                181.3
+              ],
+              [
+                561.3,
+                170.9
+              ],
+              [
+                563.1,
+                160.2
+              ],
+              [
+                564,
+                149.4
+              ],
+              [
+                564.9,
+                138.5
+              ]
+            ],
+            "width": 70
+          }
+        ]
+      }
+    },
+    "kerning": [
+      {
+        "left": "A",
+        "right": "V",
+        "value": -40
+      }
+    ],
+    "curveSmoothing": 0.35
+  },
+  "ttfNames": {
+    "macintosh": {
+      "copyright": {
+        "en": "Made with Glyph Studio \u0014 thecreateco"
+      },
+      "fontFamily": {
+        "en": "Glyph Proof Oct Seven"
+      },
+      "fontSubfamily": {
+        "en": "Regular"
+      },
+      "uniqueID": {
+        "en": "GlyphProofOctSeven-Regular;GlyphStudio;1.000"
+      },
+      "fullName": {
+        "en": "Glyph Proof Oct Seven Regular"
+      },
+      "version": {
+        "en": "Version 1.000"
+      },
+      "postScriptName": {
+        "en": "GlyphProofOctSeven-Regular"
+      }
+    },
+    "windows": {
+      "copyright": {
+        "en": "Made with Glyph Studio — thecreateco"
+      },
+      "fontFamily": {
+        "en": "Glyph Proof Oct Seven"
+      },
+      "fontSubfamily": {
+        "en": "Regular"
+      },
+      "uniqueID": {
+        "en": "GlyphProofOctSeven-Regular;GlyphStudio;1.000"
+      },
+      "fullName": {
+        "en": "Glyph Proof Oct Seven Regular"
+      },
+      "version": {
+        "en": "Version 1.000"
+      },
+      "postScriptName": {
+        "en": "GlyphProofOctSeven-Regular"
+      }
+    }
+  },
+  "otfNames": {
+    "unicode": {
+      "copyright": {
+        "en": " "
+      },
+      "fontFamily": {
+        "en": "Glyph Proof Oct Seven"
+      },
+      "fontSubfamily": {
+        "en": "Regular"
+      },
+      "uniqueID": {
+        "en": "thecreateco: Glyph Proof Oct Seven Regular"
+      },
+      "fullName": {
+        "en": "Glyph Proof Oct Seven Regular"
+      },
+      "version": {
+        "en": "Version 0.1"
+      },
+      "postScriptName": {
+        "en": "GlyphProofOctSevenRegular"
+      },
+      "trademark": {
+        "en": " "
+      },
+      "manufacturer": {
+        "en": "thecreateco"
+      },
+      "designer": {
+        "en": "Made with Glyph Studio"
+      },
+      "description": {
+        "en": " "
+      },
+      "manufacturerURL": {
+        "en": " "
+      },
+      "designerURL": {
+        "en": " "
+      },
+      "license": {
+        "en": " "
+      },
+      "licenseURL": {
+        "en": " "
+      },
+      "preferredFamily": {
+        "en": "Glyph Proof Oct Seven"
+      },
+      "preferredSubfamily": {
+        "en": "Regular"
+      }
+    },
+    "macintosh": {
+      "copyright": {
+        "en": " "
+      },
+      "fontFamily": {
+        "en": "Glyph Proof Oct Seven"
+      },
+      "fontSubfamily": {
+        "en": "Regular"
+      },
+      "uniqueID": {
+        "en": "thecreateco: Glyph Proof Oct Seven Regular"
+      },
+      "fullName": {
+        "en": "Glyph Proof Oct Seven Regular"
+      },
+      "version": {
+        "en": "Version 0.1"
+      },
+      "postScriptName": {
+        "en": "GlyphProofOctSevenRegular"
+      },
+      "trademark": {
+        "en": " "
+      },
+      "manufacturer": {
+        "en": "thecreateco"
+      },
+      "designer": {
+        "en": "Made with Glyph Studio"
+      },
+      "description": {
+        "en": " "
+      },
+      "manufacturerURL": {
+        "en": " "
+      },
+      "designerURL": {
+        "en": " "
+      },
+      "license": {
+        "en": " "
+      },
+      "licenseURL": {
+        "en": " "
+      },
+      "preferredFamily": {
+        "en": "Glyph Proof Oct Seven"
+      },
+      "preferredSubfamily": {
+        "en": "Regular"
+      }
+    },
+    "windows": {
+      "copyright": {
+        "en": " "
+      },
+      "fontFamily": {
+        "en": "Glyph Proof Oct Seven"
+      },
+      "fontSubfamily": {
+        "en": "Regular"
+      },
+      "uniqueID": {
+        "en": "thecreateco: Glyph Proof Oct Seven Regular"
+      },
+      "fullName": {
+        "en": "Glyph Proof Oct Seven Regular"
+      },
+      "version": {
+        "en": "Version 0.1"
+      },
+      "postScriptName": {
+        "en": "GlyphProofOctSevenRegular"
+      },
+      "trademark": {
+        "en": " "
+      },
+      "manufacturer": {
+        "en": "thecreateco"
+      },
+      "designer": {
+        "en": "Made with Glyph Studio"
+      },
+      "description": {
+        "en": " "
+      },
+      "manufacturerURL": {
+        "en": " "
+      },
+      "designerURL": {
+        "en": " "
+      },
+      "license": {
+        "en": " "
+      },
+      "licenseURL": {
+        "en": " "
+      },
+      "preferredFamily": {
+        "en": "Glyph Proof Oct Seven"
+      },
+      "preferredSubfamily": {
+        "en": "Regular"
+      }
+    }
+  },
+  "ttfOS2": {
+    "version": 4,
+    "xAvgCharWidth": 730,
+    "usWeightClass": 400,
+    "usWidthClass": 5,
+    "fsType": 0,
+    "ySubscriptXSize": 650,
+    "ySubscriptYSize": 600,
+    "ySubscriptXOffset": 0,
+    "ySubscriptYOffset": 75,
+    "ySuperscriptXSize": 650,
+    "ySuperscriptYSize": 600,
+    "ySuperscriptXOffset": 0,
+    "ySuperscriptYOffset": 350,
+    "yStrikeoutSize": 50,
+    "yStrikeoutPosition": 250,
+    "sFamilyClass": 0,
+    "panose": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "ulUnicodeRange1": 1,
+    "ulUnicodeRange2": 0,
+    "ulUnicodeRange3": 0,
+    "ulUnicodeRange4": 0,
+    "achVendID": "GLYS",
+    "fsSelection": 192,
+    "usFirstCharIndex": 32,
+    "usLastCharIndex": 111,
+    "sTypoAscender": 800,
+    "sTypoDescender": -200,
+    "sTypoLineGap": 0,
+    "usWinAscent": 800,
+    "usWinDescent": 200,
+    "ulCodePageRange1": 1,
+    "ulCodePageRange2": 0,
+    "sxHeight": 500,
+    "sCapHeight": 700,
+    "usDefaultChar": 0,
+    "usBreakChar": 32,
+    "usMaxContent": 0
+  },
+  "otfOS2": {
+    "version": 3,
+    "xAvgCharWidth": 730,
+    "usWeightClass": 500,
+    "usWidthClass": 5,
+    "fsType": 0,
+    "ySubscriptXSize": 650,
+    "ySubscriptYSize": 699,
+    "ySubscriptXOffset": 0,
+    "ySubscriptYOffset": 140,
+    "ySuperscriptXSize": 650,
+    "ySuperscriptYSize": 699,
+    "ySuperscriptXOffset": 0,
+    "ySuperscriptYOffset": 479,
+    "yStrikeoutSize": 49,
+    "yStrikeoutPosition": 258,
+    "sFamilyClass": 0,
+    "panose": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "ulUnicodeRange1": 1,
+    "ulUnicodeRange2": 0,
+    "ulUnicodeRange3": 0,
+    "ulUnicodeRange4": 0,
+    "achVendID": "XXXX",
+    "fsSelection": 64,
+    "usFirstCharIndex": 32,
+    "usLastCharIndex": 111,
+    "sTypoAscender": 800,
+    "sTypoDescender": -200,
+    "sTypoLineGap": 0,
+    "usWinAscent": 668,
+    "usWinDescent": 68,
+    "ulCodePageRange1": 1,
+    "ulCodePageRange2": 0,
+    "sxHeight": 500,
+    "sCapHeight": 700,
+    "usDefaultChar": 32,
+    "usBreakChar": 32,
+    "usMaxContent": 0
+  },
+  "consoleErrors": []
+}

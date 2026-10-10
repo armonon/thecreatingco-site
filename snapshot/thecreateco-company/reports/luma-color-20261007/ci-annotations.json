@@ -1,0 +1,92 @@
+[
+  {
+    "name": "Native core (luma-core)",
+    "steps": 0,
+    "annotations": [
+      {
+        "path": ".github",
+        "blob_href": "https://github.com/armonon/luma-studio/blob/d4e722330e65a260badc475f53a7a176ccfe7e57/.github",
+        "start_line": 1,
+        "start_column": null,
+        "end_line": 1,
+        "end_column": null,
+        "annotation_level": "failure",
+        "title": "",
+        "message": "The job was not started because recent account payments have failed or your spending limit needs to be increased. Please check the 'Billing & plans' section in your settings",
+        "raw_details": ""
+      },
+      {
+        "path": ".github",
+        "blob_href": "https://github.com/armonon/luma-studio/blob/d4e722330e65a260badc475f53a7a176ccfe7e57/.github",
+        "start_line": 1,
+        "start_column": null,
+        "end_line": 1,
+        "end_column": null,
+        "annotation_level": "notice",
+        "title": "",
+        "message": "\"The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748\"",
+        "raw_details": ""
+      }
+    ]
+  },
+  {
+    "name": "Desktop bridge (src-tauri)",
+    "steps": 0,
+    "annotations": [
+      {
+        "path": ".github",
+        "blob_href": "https://github.com/armonon/luma-studio/blob/d4e722330e65a260badc475f53a7a176ccfe7e57/.github",
+        "start_line": 1,
+        "start_column": null,
+        "end_line": 1,
+        "end_column": null,
+        "annotation_level": "failure",
+        "title": "",
+        "message": "The job was not started because recent account payments have failed or your spending limit needs to be increased. Please check the 'Billing & plans' section in your settings",
+        "raw_details": ""
+      },
+      {
+        "path": ".github",
+        "blob_href": "https://github.com/armonon/luma-studio/blob/d4e722330e65a260badc475f53a7a176ccfe7e57/.github",
+        "start_line": 1,
+        "start_column": null,
+        "end_line": 1,
+        "end_column": null,
+        "annotation_level": "notice",
+        "title": "",
+        "message": "\"The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748\"",
+        "raw_details": ""
+      }
+    ]
+  },
+  {
+    "name": "verify",
+    "steps": 0,
+    "annotations": [
+      {
+        "path": ".github",
+        "blob_href": "https://github.com/armonon/luma-studio/blob/d4e722330e65a260badc475f53a7a176ccfe7e57/.github",
+        "start_line": 1,
+        "start_column": null,
+        "end_line": 1,
+        "end_column": null,
+        "annotation_level": "failure",
+        "title": "",
+        "message": "The job was not started because recent account payments have failed or your spending limit needs to be increased. Please check the 'Billing & plans' section in your settings",
+        "raw_details": ""
+      },
+      {
+        "path": ".github",
+        "blob_href": "https://github.com/armonon/luma-studio/blob/d4e722330e65a260badc475f53a7a176ccfe7e57/.github",
+        "start_line": 1,
+        "start_column": null,
+        "end_line": 1,
+        "end_column": null,
+        "annotation_level": "notice",
+        "title": "",
+        "message": "\"The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748\"",
+        "raw_details": ""
+      }
+    ]
+  }
+]

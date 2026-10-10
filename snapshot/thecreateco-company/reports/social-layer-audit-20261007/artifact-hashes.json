@@ -1,0 +1,170 @@
+{
+  "hydrated-auth-desktop.png": {
+    "bytes": 74501,
+    "sha256": "d7199f751b7e3eff37fc9176c6776385b7cc2451169bfd78a4a04711b7d4ecf1"
+  },
+  "read-only-ui.cjs": {
+    "bytes": 2473,
+    "sha256": "0a985251e87bdf72f1413030153d93719adf71fc629392dff9e00a220b3c7638"
+  },
+  "mobile-auth-320.png": {
+    "bytes": 43460,
+    "sha256": "7ae08555589c3a9f70d29a74d02a7d73c28992e8a41c7bbe50927ac06701c457"
+  },
+  "mobile-auth.cjs": {
+    "bytes": 2139,
+    "sha256": "fa9eb6dcb1974f23fd8fb7bfe1b34e0ba727517da5a9b0e9f1fc2d55eef53ca5"
+  },
+  "discover.png": {
+    "bytes": 76835,
+    "sha256": "4362909cab26b7ebfb1208c815b1f6ed32081e8836a72dc4d3a2da7bc0999971"
+  },
+  "hydrated-controls.json": {
+    "bytes": 1749,
+    "sha256": "2e1f8866daaf4c49e40152ad4b927b49141127306845d286562e5c492490c5d0"
+  },
+  "a11y.json": {
+    "bytes": 653,
+    "sha256": "31c9ff2b6b0ee2b40043967562202ab3ca1d0f004324adb9e28c317c80912625"
+  },
+  "source-hashes.json": {
+    "bytes": 443,
+    "sha256": "86c8535a2bd5ca420027713af06b8dc4a2a38993fa32e1372b6c7b2032bd7dd0"
+  },
+  "settings.png": {
+    "bytes": 76913,
+    "sha256": "ff710c32314d21c7ab835c4abfd6697a5df44f05c4f40afd6bed999ca9dafd56"
+  },
+  "read-only-actions.log": {
+    "bytes": 189,
+    "sha256": "8a52a7481ee9ba1ab9870c2fa661d781a8fe5d71b9474b4d2c74962a7e14fa2a"
+  },
+  "network-phone.png": {
+    "bytes": 43362,
+    "sha256": "abdc7f6424535acb360a8fdcdaae323d3dd6af44e16920106d3ae55d4bd9758b"
+  },
+  "a11y-1440-auth.png": {
+    "bytes": 73577,
+    "sha256": "4f2b1c47052575e9bd9723cb9cc645781b7a13afb82740df65d9a5ea6eed4289"
+  },
+  "a11y-390-feed.png": {
+    "bytes": 46655,
+    "sha256": "2aa3bcbf1260620c991c109ba33b79a2bf412b157c1777e283233c29966572c9"
+  },
+  "read-only-ui.log": {
+    "bytes": 17565,
+    "sha256": "2c6790e2bd8af2ba0e714f085fb49fa74da95a1bbf5dcac8cdc31edcfbbc6f69"
+  },
+  "mobile-auth.log": {
+    "bytes": 965,
+    "sha256": "9b8d207af9569b95778d756330a1614c4f648afc166fd87ce23666895093d082"
+  },
+  "mobile-more.png": {
+    "bytes": 52171,
+    "sha256": "5c8e9f4c59e04adab973d502722625a0e53d160cf2eb10c50cbd2ae08365c930"
+  },
+  "mobile-auth-390.png": {
+    "bytes": 44627,
+    "sha256": "a0135042747dd55609f77118cf3433b822cbc0131c6f19e8f52dc409e45a6a1b"
+  },
+  "network-desktop.png": {
+    "bytes": 71785,
+    "sha256": "ed2d006e350b9b5f98c90ef4170f056a46a2555a994c76c1e3bafe919b421acf"
+  },
+  "a11y-1440-feed.png": {
+    "bytes": 63944,
+    "sha256": "cdeb0a4399c2cc1ef7f64efd5df3aa62abe7222cfd9e950ac6ccb07455c5216d"
+  },
+  "route-receipts.json": {
+    "bytes": 3024,
+    "sha256": "fd26f8e9c5fc2e70f76f1b464205bce143f3ad2794a9e2be7c99adf0a4d58139"
+  },
+  "read-only-actions.cjs": {
+    "bytes": 2235,
+    "sha256": "8b6506cc312efd3450c371c7573d1e1d7e9698aab10c59f81905e873df7d4a72"
+  },
+  "source-boundary.json": {
+    "bytes": 420,
+    "sha256": "7df56ff612bb548749f82e84332bcb8ebeb04fe98a73b0fdf90958a57bfcc69f"
+  },
+  "saved.png": {
+    "bytes": 76885,
+    "sha256": "f3e7eee58ef3d3e8795d9d5da88e28eabae5f4f1ece7051f9f22eaefba326684"
+  },
+  "create.png": {
+    "bytes": 64534,
+    "sha256": "49c7f9c7010cbfdedeb2fc6e1f9dc432105e2a5e5512ed2df9968b4070e166ec"
+  },
+  "open-discussion.png": {
+    "bytes": 72716,
+    "sha256": "d01284f5269cfec7ba57d9a34967ff7efa619276f8599cef87535028a9349d9f"
+  },
+  "README.md": {
+    "bytes": 6316,
+    "sha256": "53a12080066b9495fed4bf83099b2bcc00f4ae206dafddb9f0399fcc6cc0f708"
+  },
+  "read-only-actions.json": {
+    "bytes": 18594,
+    "sha256": "ae3eab3763fb0c202cd8fa7cfcbe94a9b488b2687ca8ffa05359207de74009fc"
+  },
+  "client-contract-excerpts.json": {
+    "bytes": 5933,
+    "sha256": "6776eee65f8be6c5cbb5c3c7a690d60240ead8669e210b63852dec1d629c8b50"
+  },
+  "notifications.png": {
+    "bytes": 76888,
+    "sha256": "ea2785ef78665deeeb018dbafb5a7070be1a3c6c25b7e689a21b9da155ef859d"
+  },
+  "hydrated-controls.cjs": {
+    "bytes": 3140,
+    "sha256": "629e363ed8a8dc78e53243ad4d6acd2c20a8f18c91090fd2e25ccb19d17c641d"
+  },
+  "profile.png": {
+    "bytes": 76869,
+    "sha256": "2a23e01a256bb2c3df0ddd001083ff78e7b8815596570aafd16ee0190a6a8508"
+  },
+  "a11y.log": {
+    "bytes": 418,
+    "sha256": "78fd24eaca7c52d8518fb6e2525bcccc4b438f916ee747d73cd69de57d5b9a93"
+  },
+  "composer-write-blocked.png": {
+    "bytes": 40046,
+    "sha256": "f9c9b9dac0887a7a404ff5873e3104320c4aedb1a62e7731cbf5f396c58bee05"
+  },
+  "read-only-ui.json": {
+    "bytes": 17564,
+    "sha256": "ef769d3f031f3486208331c26b9b4ad0ef1bcc8d340fc27df3a41b94b1c7ab1d"
+  },
+  "mobile-auth.json": {
+    "bytes": 964,
+    "sha256": "da75812375ab2b61747982ac096911e96883ae9c31e30baa733389f27b14894c"
+  },
+  "songs.png": {
+    "bytes": 68947,
+    "sha256": "111f1ebe598938e163983e36b030de31adb1d328277dc9158da680b2d9f1dd93"
+  },
+  "IMPLEMENTATION_ACCEPTANCE.md": {
+    "bytes": 3374,
+    "sha256": "7e37edb331e1222faa85b80ae4db4b6022caa11279184de03c5e66206dee6db3"
+  },
+  "sign-in-join.png": {
+    "bytes": 76930,
+    "sha256": "4c9a2ffe2eb9b04cae027c50f309a2589fd5b605f3b4eeb04fb4f2bcf4148ba9"
+  },
+  "home-desktop.png": {
+    "bytes": 1445679,
+    "sha256": "389e3d3cae36847f2bf0d793b37d4db56d27deafd4b5657cd3e62b58bc10e7b3"
+  },
+  "hydrated-controls.log": {
+    "bytes": 1750,
+    "sha256": "69aa0b545a5f89f9774de5e72fe7518e72bab32c755753e96abdfaf85970d637"
+  },
+  "messages.png": {
+    "bytes": 68927,
+    "sha256": "f29d52b8bfabb9c874aea39ee039c259710f5aca1c80e34cad2727ac482b2470"
+  },
+  "a11y.cjs": {
+    "bytes": 2007,
+    "sha256": "5a90231ba2fe53b3e531fd39d5b9672d5982e316b8194ea1ff9e693796744845"
+  }
+}

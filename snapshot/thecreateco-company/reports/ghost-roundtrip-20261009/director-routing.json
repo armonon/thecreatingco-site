@@ -1,0 +1,12 @@
+{
+  "observed_at": "2026-10-09T12:21:11.092351+00:00",
+  "director_model": "openai/gpt-6.1-sol",
+  "director_model_source": "OpenClaw session_status current observed 2026-10-09T12:21Z",
+  "worker_model": "gpt-6-luna",
+  "worker_model_source": "native spawn_agent explicit selected model",
+  "task_id": "PROGRAM18-GHOST-ROUNDTRIP-001",
+  "astra_calls": 0,
+  "new_external_spend": 0,
+  "actual_model_cost_usd": null,
+  "usage_coverage": "native child per-call usage unavailable; no billed cost inferred"
+}

@@ -1,0 +1,14 @@
+{
+  "diff_sha256": "0a03be28f48b2b4bd03bf30479039fdc86d8dc0a4267889b429d48a4a1c23bdb",
+  "package_lock_sha256": "bd2219af132c72ee9bdb2d522512eb02e940743b6d2e06dcb5b256c9363b2cbd",
+  "reviewer": "OpenAI GPT-6/Codex",
+  "reviewed_overrides": {
+    "vinext": {
+      "image-size": "2.0.4"
+    },
+    "sharp": "0.35.5"
+  },
+  "pinned_node": "22.23.2",
+  "pinned_npm": "10.9.8",
+  "reviewer_parser_tree_exit": 0
+}

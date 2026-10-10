@@ -1,0 +1,8 @@
+{
+  "command": [
+    "rustc",
+    "--version"
+  ],
+  "started_at": "2026-10-08T02:52:26.258122+00:00",
+  "error": "[Errno 2] No such file or directory: 'rustc'"
+}

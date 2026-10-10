@@ -1,0 +1,17 @@
+{
+  "at": "2026-10-07T23:57:50.847Z",
+  "browser": "installed Google Chrome (not pinned Playwright Chromium)",
+  "physicalHardwareMeasured": false,
+  "results": [
+    {
+      "name": "reference-lifecycle",
+      "output": "{\n  \"pass\": true,\n  \"scope\": \"synthetic reconstruction/reopen/export subset\",\n  \"physicalHardwareMeasured\": false,\n  \"fullReferenceProjectQualified\": false,\n  \"checks\": [\n    \"Reconstruction, split, MIDI, automation and action status survive document reload\",\n    \"Reopened render matches pre-close PCM SHA-256\",\n    \"Further MIDI edits persist after reopen\",\n    \"24-bit master export matches arrangement render within 2e-6\",\n    \"10 aligned track stems exported (pre-master)\"\n  ],\n  \"errors\": [],\n  \"reopenMaxError\": 0,\n  \"worstReopenFrame\": 0,\n  \"bitExactReopen\": true,\n  \"masterPcmMaxError\": 6.332993507385254e-8\n}",
+      "errors": []
+    },
+    {
+      "name": "arrangement-browser",
+      "output": "Running…\nPASS ordered offline EQ retains the original crossover response at 44.1 and 48 kHz\nPASS real offline audio has the correct silent gap, duration, gain and stop\nPASS splitting a fade preserves rendered PCM\nPASS seek into silence retains future clips and uses audio-clock position\nPASS piano notes render actual non-silent polyphonic audio\nPASS master gain affects mixdown and produces a valid 24-bit WAV\nPASS more than four independent tracks render and export aligned stems\nPASS printed references bypass repeated processing but follow master level\nPASS range exports rebase source offsets and preserve requested length\nPASS live mute and gain changes do not restart arrangement transport\nPASS loop playback schedules repeated regions and preserves live mixer control\nPASS source capture produces aligned durable chunks and recoverable float WAV audio\nPASS recording captures playable audio and timestamped performance controls\n\nCOMPLETE: 13 passed, 0 failed",
+      "errors": []
+    }
+  ]
+}

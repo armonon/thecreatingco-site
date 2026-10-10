@@ -1,0 +1,13 @@
+{
+  "metrics": {
+    "host_disk_free_bytes": {
+      "value": 67664506880,
+      "source": "Python shutil.disk_usage(/Users/agentsattari/thecreateco-company)",
+      "period": {
+        "type": "point_in_time",
+        "at": "2026-10-09T06:51:36.437275+00:00"
+      },
+      "observed_at": "2026-10-09T06:51:36.437275+00:00"
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "observed_at": "2026-10-08T04:02:43.528Z",
+  "scope": "Anonymous mobile auth navigation only, no email submitted; all Community mutations locally blocked",
+  "widths": [
+    {
+      "width": 390,
+      "headings": [
+        "Community",
+        "Your thecreateco account"
+      ],
+      "violations": [],
+      "passes": 21,
+      "overflow": false,
+      "emailBox": {
+        "x": 54,
+        "y": 603.6875,
+        "width": 282,
+        "height": 50,
+        "top": 603.6875,
+        "right": 336,
+        "bottom": 653.6875,
+        "left": 54
+      }
+    },
+    {
+      "width": 320,
+      "headings": [
+        "Community",
+        "Your thecreateco account"
+      ],
+      "violations": [],
+      "passes": 21,
+      "overflow": false,
+      "emailBox": {
+        "x": 50,
+        "y": 603.6875,
+        "width": 220,
+        "height": 50,
+        "top": 603.6875,
+        "right": 270,
+        "bottom": 653.6875,
+        "left": 50
+      }
+    }
+  ]
+}

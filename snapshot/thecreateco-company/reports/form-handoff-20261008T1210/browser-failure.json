@@ -1,0 +1,12 @@
+{
+  "observed_at": "2026-10-08T12:20:26.039Z",
+  "checks": [
+    "actual SVG import/extrude produces nonempty CAD source",
+    "Fabric T-shirt edit/back preserves CAD and adds Fabric workspace",
+    "direct Animation navigation does not silently copy CAD geometry",
+    "real Animation Create Cube and Record position author one key",
+    "Animation return preserves project identity/CAD/Fabric/keyframes and dirty state"
+  ],
+  "errors": [],
+  "error": "page.waitForFunction: Timeout 15000ms exceeded.\n    at /Users/agentsattari/thecreateco-company/reports/form-handoff-20261008T1210/handoff-workflow.cjs:20:63"
+}

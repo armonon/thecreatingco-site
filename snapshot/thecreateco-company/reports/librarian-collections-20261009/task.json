@@ -1,0 +1,23 @@
+{
+  "task_id": "PROGRAM18-LIBRARIAN-COLLECTIONS-001",
+  "title": "Build and qualify the first curator-to-reader collections workflow",
+  "product": "librarian",
+  "workstream": "PRODUCT_COMPLETION",
+  "category": "product",
+  "severity": "P2",
+  "model": "openai/gpt-6.1-sol",
+  "scores": { "impact": 8, "user_value": 9, "confidence": 8, "effort": 8, "risk": 5 },
+  "expected_value": "Enable curators to create and share secure PDF collections while preserving existing local discovery and reading workflows; adoption impact is unmeasured.",
+  "test_requirements": "Verify verified-account gating, ownership, private/unlisted/public visibility, PDF upload validation/quotas, public guest access, PDF.js rendering, and responsive browser workflow; keep live-provider/deployment status distinct from mocked tests.",
+  "acceptance_criteria": [
+    "Add secure collection metadata and private PDF storage architecture with public/unlisted/private visibility and server-side authorization.",
+    "Implement a responsive curator-to-guest first slice for create, upload, organize, customize, publish/share, and PDF.js read without regressing the existing local library.",
+    "Add automated security and browser tests for authentication, ownership, upload validation, permissions, rendering, and public access.",
+    "Run independent OpenAI review, local checks, and mobile browser verification; preserve production and required PR/release gates.",
+    "Document setup prerequisites, exact evidence, and unqualified/missing requirements; do not claim production readiness."
+  ],
+  "constraints": "Do not deploy, apply migrations, alter production accounts/storage, or claim real provider verification. Preserve the existing reader restoration blocker and local PDF behavior. Use a review branch and exact tested-head push workflow.",
+  "source_evidence": [ "Owner feature brief in Discord #librarian, 2026-10-09", "/Users/agentsattari/code/worktrees/librarian-collections" ],
+  "next_action": "Complete independent review, push the exact locally verified head, then configure the intended Supabase/Netlify environment and run real verified-account/browser qualification before any release.",
+  "status": "QUEUED"
+}

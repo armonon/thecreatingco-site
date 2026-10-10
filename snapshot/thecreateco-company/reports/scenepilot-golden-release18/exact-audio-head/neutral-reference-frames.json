@@ -1,0 +1,30 @@
+{
+  "at": "2026-10-08T03:53:30.185545+00:00",
+  "output_sha256": "954da884ef4224d19c9f30b6f3e51ff0c037fb8e8ff5a0dc065ea6b958c6b977",
+  "reference_sha256": "30b52bd8a5c97b265f610b5ea660666df66b3951ffb44a59278be3dfc0dbca07",
+  "checks": [
+    {
+      "output_time": 0.5,
+      "source_time": 0.5,
+      "rgb_mean_absolute_error": 1.2163194444444445,
+      "fixed_tolerance": 6,
+      "passed": true
+    },
+    {
+      "output_time": 2.0,
+      "source_time": 1.0,
+      "rgb_mean_absolute_error": 1.2381018518518518,
+      "fixed_tolerance": 6,
+      "passed": true
+    },
+    {
+      "output_time": 12.0,
+      "source_time": 11.0,
+      "rgb_mean_absolute_error": 1.2016898148148147,
+      "fixed_tolerance": 6,
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "scope": "Coarse frame identity/timing only; no full golden visual certification"
+}

@@ -1,0 +1,30 @@
+{
+  "task_id": "CORE-SP-SEC-002",
+  "title": "Triage and patch remaining shipped Electron/runtime and development-tool advisories",
+  "product": "scenepilot",
+  "area": "bug_reliability",
+  "category": "bug_reliability",
+  "workstream": "CORE_PRODUCT_LAB",
+  "severity": "P1",
+  "status": "QUEUED",
+  "model": "gpt-6.1-sol",
+  "dependencies": [],
+  "scores": {
+    "impact": 9,
+    "user_value": 8,
+    "confidence": 9,
+    "effort": 4,
+    "risk": 5,
+    "severity": 8,
+    "workflow_importance": 8,
+    "competitive_value": 3,
+    "release_importance": 10
+  },
+  "expected_value": "Release-security risk reduction; estimates, not observed health. npm omit=dev excludes shipped Electron runtime.",
+  "source_evidence": [
+    "/Users/agentsattari/thecreateco-company/reports/2026-10-07-sp-security/report.md",
+    "/Users/agentsattari/thecreateco-company/reports/2026-10-07-sp-security/audit-final-all.json"
+  ],
+  "test_requirements": "Isolated source; preserve baseline advisories; targeted runtime-exposure triage and patched full audit, build/check/tests, desktop sandbox/preload/protocol smoke where available. Do not blindly downgrade Vinext.",
+  "next_action": "Inspect Electron 43.2.0 advisories and relevant runtime paths; validate fixed compatible Electron candidate and scoped tooling updates without broad upgrades; retain package/install/release gates."
+}

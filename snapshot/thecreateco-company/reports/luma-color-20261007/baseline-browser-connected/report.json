@@ -1,0 +1,36 @@
+{
+  "source_sha": "772f082581e06e7a5783aff35ed859aace890394",
+  "source_status": "?? build/qualify-raster-color.mjs\n?? tests/raster-export-fidelity.test.ts",
+  "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "harness_sha256": "ce37bd08e54572cd3e471535e8b9b5acc6d976b13dd03ed740033601e06941fa",
+  "observed_at": "2026-10-08T03:15:06.871Z",
+  "node": "v22.23.2",
+  "checks": [
+    {
+      "name": "retained-gradient: independent decode versus imported bitmap",
+      "metrics": {
+        "maxRGB": 0,
+        "maxAlpha": 0,
+        "changedChannels": 0
+      },
+      "fixture_sha256": "d3e17c1546af1f7bbd6e13c137dd23cebea29b5db0262f8eb919de0bf8380112",
+      "status": "PASS"
+    },
+    {
+      "name": "retained-gradient: first CPU PNG",
+      "metrics": {
+        "maxRGB": 7,
+        "maxAlpha": 0,
+        "changedChannels": 2652270
+      },
+      "status": "FAIL"
+    }
+  ],
+  "pass": false,
+  "reference": "Independent browser decode to an sRGB canvas; RGB tolerance 2, alpha exact. PNGs also compared with independent native canvas decode. Invisible RGB is canonicalized by canvas, not claimed preserved.",
+  "scope": "Actual file-input import, PNG download twice, .luma save/download/confirm, actual close/reopen and PNG download. Synthetic opaque, partial-alpha, transparent and embedded matrix/TRC ICC images. CPU desktop shell in a local browser; not native, OS color calibration, every ICC profile or deployment qualification.",
+  "browser": "154.0.8037.98",
+  "error": "AssertionError [ERR_ASSERTION]: retained-gradient: first CPU PNG\n\n'FAIL' !== 'PASS'\n",
+  "stack": "AssertionError [ERR_ASSERTION]: retained-gradient: first CPU PNG\n\n'FAIL' !== 'PASS'\n\n    at check (/Users/agentsattari/code/company-worktrees/luma-color-20261007/build/qualify-raster-color.mjs:50:225)\n    at <anonymous> (/Users/agentsattari/code/company-worktrees/luma-color-20261007/build/qualify-raster-color.mjs:66:82)",
+  "errors": []
+}

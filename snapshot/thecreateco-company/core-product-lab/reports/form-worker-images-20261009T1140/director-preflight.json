@@ -1,0 +1,17 @@
+{
+  "observed_at": "2026-10-09T11:41:17.077870+00:00",
+  "model": "openai/gpt-6.1-sol",
+  "fallback": null,
+  "worker_requested": "gpt-6-luna",
+  "budget_unknown_not_spending_authority": true,
+  "pause_company": false,
+  "pause_lab": false,
+  "disk": {
+    "total": 494384795648,
+    "used": 452122685440,
+    "free": 42262110208
+  },
+  "environment": "Darwin-25.2.0-arm64-arm-64bit-Mach-O",
+  "task": "CORE-FORM-WORKER-IMAGE-BINDING-001",
+  "baseline": "be1f7272c5689d6401194d643fa3eb09a2b0b73b"
+}

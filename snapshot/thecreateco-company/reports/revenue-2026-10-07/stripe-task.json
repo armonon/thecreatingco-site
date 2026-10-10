@@ -1,0 +1,30 @@
+{
+  "task_id": "REV-STRIPE-001",
+  "title": "Set up and qualify Stripe sandbox for first approved one-time offer",
+  "category": "revenue_operations",
+  "workstream": "OPERATIONS",
+  "status": "WAITING",
+  "accountable_owner": "revenue-director; Armon for account ownership and verification",
+  "expected_value": "Shortest hosted payment path after a real buyer/offer; no custom billing build",
+  "expected_revenue_impact": "Enables collection, does not create demand or forecast sales",
+  "confidence": "Hosted Payment Links/invoices documented; account access absent",
+  "effort": "One bounded configuration/test cycle after owner account access",
+  "cost": {
+    "new_spend_usd": 0,
+    "payment_fees": "Determine from actual region/account before live sales"
+  },
+  "time_to_signal": "One sandbox acceptance pass after account access",
+  "dependencies": [],
+  "next_action": "Follow data/revenue/stripe-setup.md. Waiting on company account creation/login and actual offer terms before live setup. Do not collect sensitive identity/bank details in Discord. No live charge or account claimed.",
+  "source_evidence": [
+    "Armon #millions 2026-10-07: no revenue and we can make a Stripe",
+    "data/revenue/stripe-setup.md"
+  ],
+  "scores": {
+    "impact": 7,
+    "user_value": 7,
+    "confidence": 8,
+    "effort": 2,
+    "risk": 2
+  }
+}

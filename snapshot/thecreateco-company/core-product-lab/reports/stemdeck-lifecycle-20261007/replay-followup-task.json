@@ -1,0 +1,26 @@
+{
+  "task_id": "CORE-STEM-REPLAY-DEADLINE-001",
+  "title": "Diagnose and repair actual captured four-deck replay scheduling stop",
+  "product": "stemdeck",
+  "area": "core_workflow",
+  "category": "bug",
+  "workstream": "CORE_PRODUCT_LAB",
+  "severity": "P1",
+  "scores": {
+    "impact": 9,
+    "user_value": 10,
+    "confidence": 10,
+    "effort": 6,
+    "risk": 4
+  },
+  "dependencies": [],
+  "status": "QUEUED",
+  "model": "gpt-6.1-sol",
+  "expected_value": "Restore actual captured performance replay without discarding safety audio or loosening musical deadlines.",
+  "test_requirements": "Measure exact scheduler lateness, load and preparation/control queue bottleneck on owned captured fixture. Meaningful before/after tests; actual UI replay/print and PCM comparison; keep existing50ms grain deadline and mandatory soak unchanged. Independent OpenAI review before normal PR push.",
+  "source_evidence": [
+    "core-product-lab/reports/stemdeck-lifecycle-20261007/quiet-lifecycle/report.json",
+    "core-product-lab/reports/stemdeck-lifecycle-20261007/semantic-roundtrip/report.json"
+  ],
+  "next_action": "After reviewed capture timing/frame-count checkpoint, claim on isolated follow-up branch; inspect actual deadline diagnostics before changing code. No release until required gates pass."
+}

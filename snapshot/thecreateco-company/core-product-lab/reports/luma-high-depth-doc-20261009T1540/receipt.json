@@ -1,0 +1,19 @@
+{
+  "at": "2026-10-09T15:41:38.982864+00:00",
+  "command": [
+    "node_modules/.bin/tsx",
+    "--test",
+    "tests/high-depth-psd.test.ts",
+    "tests/psd.test.ts",
+    "tests/psd-project-preservation.test.ts",
+    "tests/color-management.test.ts",
+    "tests/embedded-color-profile.test.ts"
+  ],
+  "exit_code": 0,
+  "source_sha": "8c15f8537c1176b7d4c0076182b7501c92f714b5",
+  "environment": "Darwin-25.2.0-arm64-arm-64bit-Mach-O",
+  "node": "v26.9.0",
+  "dependency_source": "same-SHA qualification worktree reused via symlink",
+  "tracked_change": "README.md only",
+  "summary": "es it from the exported PSD (0.57675ms)\n\u2714 PSB export is explicit and 32-bit output remains an honest compatibility conversion (0.476834ms)\n\u2714 native 16-bit PSD and PSB exports round-trip precision samples without an 8-bit mirror (2.998542ms)\n\u2714 16-bit native export gate falls back explicitly when compositing would be required (0.66825ms)\n\u2714 16-bit PSD channel values enter the precision master without an 8-bit preview round trip (0.103291ms)\n\u2714 unhandled RGB ICC resources are retained byte-for-byte (0.540334ms)\n\u2714 color lookup is reported as unexportable rather than dropped in silence (0.102625ms)\n\u2139 tests 51\n\u2139 suites 0\n\u2139 pass 51\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 943.396084\n"
+}

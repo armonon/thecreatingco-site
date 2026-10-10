@@ -1,0 +1,229 @@
+{
+  "product_id": "form",
+  "maturity": "ALPHA",
+  "source_claimed_maturity": "BETA",
+  "maturity_conflict": null,
+  "maturity_evidence": "Dated reconciliation separates source-described active beta and intended private beta from evidence-backed ALPHA; no current supported-platform/native/full-workflow release qualification. Historical RC1 wording replaced at current source; no automatic maturity promotion. /Users/agentsattari/thecreateco-company/reports/form-release-reconciliation-20261008T0410/README.md",
+  "observed_at": "2026-10-08T04:12:00.917142+00:00",
+  "evidence_freshness": "PR7 source/stack/CI observed 2026-10-08T04:12:00.917142+00:00; current docs read at be1f7272c5689d6401194d643fa3eb09a2b0b73b; prior candidate checks reused with preserved dates; live-source identity unverified.",
+  "verification_level": "EXACT_SOURCE_AND_REMOTE_PR_METADATA_WITH_DATED_LOCAL_SUBSET_EVIDENCE",
+  "release_status": "PR7_OPEN_REVIEWED_PUSHED_CI_BLOCKED_NOT_MERGED_NOT_DEPLOYED",
+  "release_readiness": "PR7 be1f727 reviewed/pushed on PR5; local 1527 unit/15 budgets and scoped browser/build evidence reused with original timing. Mandatory hosted CI failed; native/full golden/platform/deployed artifact qualification incomplete; residual security and Worker image500 remain. Parallel PR6 Cast repair not included.",
+  "golden_workflow_status": "REAL_BROWSER_SCOPED_SAVE_REOPEN_EXPORT_AND_MENU_PASS; native/Fabric/Animation and full product qualification UNVERIFIED",
+  "next_milestone": "Repair queued Worker image binding defect; preserve independent PR6 Cast branch; qualify residual security, full native/workspace/platform and canonical deployment provenance; required CI and complete downstack review must pass before merge/deploy.",
+  "validation_evidence_scope": "Existing validation field retains historical b5abdd1 initial-audit failures; runtime_security_triage and completion_observations record subsequent candidate-specific results. Do not interpret historical fields as latest candidate test results.",
+  "completion_observations": {
+    "candidate_sha": "be1f7272c5689d6401194d643fa3eb09a2b0b73b",
+    "observed_at": "2026-10-08T04:12:00.917142+00:00",
+    "supported_platforms": [
+      "macOS arm64 native",
+      "web browser supported matrix pending"
+    ],
+    "gates": {
+      "core_workflow": {
+        "status": "UNVERIFIED",
+        "source_sha": "1e7f6d1c84a6c956ece3cfe6f74b665208bf069c",
+        "observed_at": "2026-10-08T03:18:30.414258+00:00",
+        "coverage_complete": false,
+        "summary": "Exact-head single-body Sketch\u219240mm resize\u219212mm extrude\u2192brass\u2192undo/redo\u2192save\u2192fullbrowserprocess close/relaunch\u2192reopen\u2192STEP/GLB subset PASS at1440. Full constrained/multibody/refinement/native/Fabric/Animation coverage unverified.",
+        "evidence": [
+          "/Users/agentsattari/thecreateco-company/reports/form-golden-20261008T0310/README.md",
+          "/Users/agentsattari/thecreateco-company/reports/form-golden-20261008T0310/browser-workflow-result.json",
+          "/Users/agentsattari/thecreateco-company/reports/form-golden-20261008T0310/step-verification.json",
+          "/Users/agentsattari/thecreateco-company/reports/form-golden-20261008T0310/export-verification.json"
+        ]
+      },
+      "save_reopen_export": {
+        "status": "UNVERIFIED",
+        "source_sha": "1e7f6d1c84a6c956ece3cfe6f74b665208bf069c",
+        "observed_at": "2026-10-08T03:18:30.414258+00:00",
+        "coverage_complete": false,
+        "summary": "Exact-head fullbrowserrestart preserves compared project fields; separate native STEP reader validates one40\u00d740\u00d712mm solid/19200mm3; independent GLB bytes/dimensions/brass match. Fullnative/complexfixture/recovery/recipientUI coverage incomplete.",
+        "evidence": [
+          "/Users/agentsattari/thecreateco-company/reports/form-golden-20261008T0310/README.md",
+          "/Users/agentsattari/thecreateco-company/reports/form-golden-20261008T0310/browser-workflow-result.json",
+          "/Users/agentsattari/thecreateco-company/reports/form-golden-20261008T0310/step-verification.json",
+          "/Users/agentsattari/thecreateco-company/reports/form-golden-20261008T0310/export-verification.json"
+        ]
+      },
+      "reliability_recovery": {
+        "status": "UNVERIFIED",
+        "source_sha": "ea6734638f72232676985f610daac18341fcd8ca",
+        "observed_at": "2026-10-08T02:12:13.773432+00:00",
+        "coverage_complete": false,
+        "summary": "All100workspace smoke pass incl denied/cancel/malformed/save races under jsdom/mocknative; realnative/crash/diskfull qualifications incomplete.",
+        "evidence": [
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-completion-20261007/unit-after-build.log"
+        ]
+      },
+      "performance": {
+        "status": "UNVERIFIED",
+        "source_sha": "ea6734638f72232676985f610daac18341fcd8ca",
+        "observed_at": "2026-10-08T02:12:13.773432+00:00",
+        "coverage_complete": false,
+        "summary": "15JSbudget tests pass; interactive/hardware/largeproject envelope unqualified.",
+        "evidence": [
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-completion-20261007/budgets.log"
+        ]
+      },
+      "usability_accessibility": {
+        "status": "UNVERIFIED",
+        "source_sha": "1e7f6d1c84a6c956ece3cfe6f74b665208bf069c",
+        "observed_at": "2026-10-08T03:18:30.414258+00:00",
+        "coverage_complete": false,
+        "summary": "Former offscreen Project trigger repaired on exact head; actual normal1440 exports PASS. Full accessibility/onboarding coverage unverified; first-run product center dismissed normally.",
+        "evidence": [
+          "/Users/agentsattari/thecreateco-company/reports/form-golden-20261008T0310/README.md",
+          "/Users/agentsattari/thecreateco-company/reports/form-golden-20261008T0310/browser-workflow-result.json",
+          "/Users/agentsattari/thecreateco-company/reports/form-golden-20261008T0310/step-verification.json",
+          "/Users/agentsattari/thecreateco-company/reports/form-golden-20261008T0310/export-verification.json"
+        ]
+      },
+      "responsive_behavior": {
+        "status": "UNVERIFIED",
+        "source_sha": "1e7f6d1c84a6c956ece3cfe6f74b665208bf069c",
+        "observed_at": "2026-10-08T03:18:30.414258+00:00",
+        "coverage_complete": false,
+        "summary": "Prior exact-head reviewed menu repair passes24browser variants320\u20131440px; current1440 fullbrowserrestart/export PASS. Former offscreen-menu defect repaired; fullproduct responsive qualification incomplete.",
+        "evidence": [
+          "/Users/agentsattari/thecreateco-company/reports/form-golden-20261008T0310/README.md",
+          "/Users/agentsattari/thecreateco-company/reports/form-golden-20261008T0310/browser-workflow-result.json",
+          "/Users/agentsattari/thecreateco-company/reports/form-golden-20261008T0310/step-verification.json",
+          "/Users/agentsattari/thecreateco-company/reports/form-golden-20261008T0310/export-verification.json"
+        ]
+      },
+      "security_privacy": {
+        "status": "UNVERIFIED",
+        "source_sha": "ea6734638f72232676985f610daac18341fcd8ca",
+        "observed_at": "2026-10-08T02:12:13.773432+00:00",
+        "coverage_complete": false,
+        "summary": "Productionnpm audit zero; development/native/Vinext runtime and deployedtree not fullyqualified.",
+        "evidence": [
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-completion-20261007/production-audit.json"
+        ]
+      },
+      "documentation_support": {
+        "status": "UNVERIFIED",
+        "source_sha": "ea6734638f72232676985f610daac18341fcd8ca",
+        "observed_at": "2026-10-08T02:12:13.773432+00:00",
+        "coverage_complete": false,
+        "summary": "Current docs distinguish historicalestimates from dated qualification and report realresponsiveblocker; completeproduct/docs/support acceptance remains open.",
+        "evidence": [
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-completion-20261007/pr-body.md"
+        ]
+      },
+      "tests": {
+        "status": "UNVERIFIED",
+        "source_sha": "ea6734638f72232676985f610daac18341fcd8ca",
+        "observed_at": "2026-10-08T02:12:13.773432+00:00",
+        "coverage_complete": false,
+        "summary": "Localfullunit1527/1527, smoke100/100, budgets15/15, lint/typecheck/web+desktopfrontendbuild pass. NativeRust/IfcOpenShell and remoteCI unverified.",
+        "evidence": [
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-completion-20261007/unit-after-build.log",
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-completion-20261007/lint.log",
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-completion-20261007/typecheck.log",
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-completion-20261007/build.log",
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-completion-20261007/desktop-build.log",
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-completion-20261007/budgets.log"
+        ]
+      },
+      "supported_platforms": {
+        "status": "UNVERIFIED",
+        "source_sha": "ea6734638f72232676985f610daac18341fcd8ca",
+        "observed_at": "2026-10-08T02:12:13.773432+00:00",
+        "coverage_complete": false,
+        "summary": "macOSarm64 realheadlessChromeSwiftShader subset tested. NativeAppleSilicon signing/install/update notqualified; Windows/IntelMac/Linux explicitlyunsupported/unvalidated.",
+        "evidence": [
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-completion-20261007/environment.json"
+        ]
+      },
+      "critical_blockers": {
+        "status": "BLOCKED",
+        "source_sha": "1e7f6d1c84a6c956ece3cfe6f74b665208bf069c",
+        "observed_at": "2026-10-08T03:18:30.414258+00:00",
+        "coverage_complete": false,
+        "summary": "Native qualification missing exact supported app/DMG, DeveloperID identity and notarization credentials; hosted mandatoryCI previously billing-blocked. No bypass. Former1440 menu defect repaired; broader data-loss/security triage unverified.",
+        "evidence": [
+          "/Users/agentsattari/thecreateco-company/reports/form-golden-20261008T0310/README.md",
+          "/Users/agentsattari/thecreateco-company/reports/form-golden-20261008T0310/browser-workflow-result.json",
+          "/Users/agentsattari/thecreateco-company/reports/form-golden-20261008T0310/step-verification.json",
+          "/Users/agentsattari/thecreateco-company/reports/form-golden-20261008T0310/export-verification.json"
+        ]
+      }
+    },
+    "deployment": {
+      "pr": "https://github.com/armonon/form-studio/pull/7",
+      "pushed": true,
+      "merged": false,
+      "deployed": false,
+      "source_sha": "be1f7272c5689d6401194d643fa3eb09a2b0b73b",
+      "published_source_sha": null,
+      "status": "REVIEWED_PUSHED_PR_OPEN_CI_BLOCKED_NOT_DEPLOYED"
+    },
+    "next_action": "Repair queued Worker image binding defect; preserve independent PR6 Cast branch; qualify residual security, full native/workspace/platform and canonical deployment provenance; required CI and complete downstack review must pass before merge/deploy.",
+    "report": "/Users/agentsattari/thecreateco-company/reports/form-release-reconciliation-20261008T0410/README.md",
+    "menu_repair": {
+      "source_sha": "1e7f6d1c84a6c956ece3cfe6f74b665208bf069c",
+      "observed_at": "2026-10-08T03:03:52.214492+00:00",
+      "core_workflow": "PASS scoped menu-driven synthetic save/open/export",
+      "tests": {
+        "unit_passed": 1527,
+        "unit_total": 1527,
+        "budgets_passed": 15,
+        "budgets_total": 15,
+        "typecheck": "PASS",
+        "lint": "PASS",
+        "web_build": "PASS",
+        "desktop_frontend_build": "PASS",
+        "browser_variants": 24,
+        "production_advisories": 0
+      },
+      "platforms": "Chrome154/macOSarm64 softwareWebGL; fine/emulatedcoarse layouts only; native/physical/unexercised platforms UNVERIFIED",
+      "documentation": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-project-menu-20261007/README.md",
+      "critical_blockers": [
+        "Remote required CI billing/spending unavailable; full native/golden qualification remains UNVERIFIED"
+      ],
+      "deployment": {
+        "pr": "https://github.com/armonon/form-studio/pull/5",
+        "pushed": true,
+        "merged": false,
+        "deployed": false
+      }
+    },
+    "golden_checkpoint": {
+      "source_sha": "1e7f6d1c84a6c956ece3cfe6f74b665208bf069c",
+      "observed_at": "2026-10-08T03:18:30.414258+00:00",
+      "scope": "Single-body actual browser process restart and independent output bytes/native STEP import",
+      "report": "/Users/agentsattari/thecreateco-company/reports/form-golden-20261008T0310/README.md",
+      "task_status": "BLOCKED",
+      "full_qualification": false
+    },
+    "reconciliation": {
+      "observed_at": "2026-10-08T04:12:00.917142+00:00",
+      "source_claimed_maturity": "BETA",
+      "intended_first_release": "Apple Silicon macOS desktop private beta",
+      "evidence_backed_maturity": "ALPHA",
+      "readiness": "NOT_QUALIFIED",
+      "parallel_candidate_sha": "d24f5d76b4fd0e99c43e1cb8e5e2d9b63db6665e",
+      "parallel_candidate_pr": 6,
+      "note": "PR7 security candidate inherits PR3/4/5, not parallel PR6 Cast repair. Older gate source SHAs are preserved as historical partial coverage, not upgraded or retested. Canonical live deployment source remains unknown."
+    }
+  },
+  "release_disposition": {
+    "status": "alpha",
+    "reason": "Source-described beta remains unqualified; dated evidence supports ALPHA only. No stable or production claim.",
+    "observed_at": "2026-10-08T04:12:00.917142+00:00",
+    "evidence": [
+      "/Users/agentsattari/thecreateco-company/reports/form-release-reconciliation-20261008T0410/README.md",
+      "/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-runtime-security-20261008T0340/README.md"
+    ]
+  },
+  "evidence_sources": [
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-initial.md",
+    "/Users/agentsattari/code/wave2/form-D/README.md",
+    "/Users/agentsattari/code/wave2/form-D/KNOWN_ISSUES.md",
+    "/Users/agentsattari/code/wave2/form-D/PRODUCTION_READINESS.md",
+    "/Users/agentsattari/thecreateco-company/reports/form-release-reconciliation-20261008T0410/README.md",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-runtime-security-20261008T0340/README.md"
+  ]
+}

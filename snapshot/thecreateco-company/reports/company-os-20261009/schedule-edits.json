@@ -1,0 +1,571 @@
+[
+  {
+    "id": "b98880fe-a5a5-410f-a7ca-7366239125d8",
+    "declarationKey": "core-product-lab-cycle",
+    "agentId": "main",
+    "name": "Core Product Lab cycle",
+    "enabled": true,
+    "createdAtMs": 1791417446006,
+    "schedule": {
+      "kind": "cron",
+      "expr": "40 */2 * * *",
+      "tz": "America/Los_Angeles"
+    },
+    "sessionTarget": "isolated",
+    "wakeMode": "now",
+    "payload": {
+      "kind": "agentTurn",
+      "message": "LATEST OWNER POLICY: Read /Users/agentsattari/thecreateco-company/OPERATING_POLICY.md. OpenAI ONLY; code first; Luna routine executor, Sol director, Astra deliberate invention only. Respect PAUSE, one queue and active product ownership. Run cost preflight if available; no unknown budget is spending approval.\n\nRun one bounded Core Product Lab cycle. Workspace:\n/Users/agentsattari/thecreateco-company/core-product-lab.\nRead AGENTS.md, DIRECTIVE.md, HEALTH.md, ../engine/README.md and data/model-routing.json.\nStop if PAUSE here or ../PAUSE exists. ScenePilot, Luma, Form and StemDeck ONLY;\ngolden-workflow reliability before unrelated features or new apps.\n\nRun company.py recover; python3 lab.py next. Select only one eligible task, by\nseverity then value, and claim its exact ID via ../engine/company.py with a unique\nowner and 45-minute lease. Read relevant product state and evidence only. Do not\nrace another worker on the same product. The company queue is authoritative;\nnever edit its SQLite or generated exports. Reuse existing tasks, not duplicates.\n\nExecute a substantive safe local task or useful qualification batch in an isolated\nworktree. Sol directs; Luna handles bounded routine work; use ChatGPT/Sol\nfor material UX/design/workflow review and a separate OpenAI reviewer for consequential\nindependent audit. Record actual model and fallbacks; model proportions are guidance, not quotas.\nNative Codex children for Codex legwork; max three workers. Keep dependent work with\nits owner. No claim of a review unless it ran and produced evidence.\n\nBuild/test and dogfood a synthetic/authorized golden project. Preserve failing logs,\nsource SHA, environment and exact command results; never relax assertions merely\nto pass. Unknown stays unknown. No deployments, rollback, public messages, physical\nrecording, payment/access/legal changes, production deletion or gate bypass.\nExisting explicit release approval must still pass the repository's release gates.\n\nWrite dated report and update products/<id>.json with measured results/limitations.\nFinish task via company CLI with evidence, or checkpoint it BLOCKED with concrete\nresume condition. Heartbeat long tasks. Update company products/context through CLI\nwithout overwriting unrelated fields. Run lab.py refresh. Queue only meaningful\ndeduplicated follow-up work, with repro/test requirements and estimated scores.\nStop within 35 minutes; if no safe useful work is available, record idle, not busywork.\nReturn short run-history summary; do not send messages to people/channels.\n\nOwner preference: no Claude/Sonnet/Opus reviews or review fallbacks; use ChatGPT/OpenAI.\n\nLATEST OWNER AUTHORIZATION (2026-10-07 17:56 Pacific): Before execution read /Users/agentsattari/thecreateco-company/AUTONOMY.md. Armon says do not wait for personal review; keep upgrading and pushing and send reports often. This overrides earlier local-only/no-push wording for routine scoped tested fixes: perform independent OpenAI review as appropriate, commit/push and follow normal PR/CI and stack gates without an extra Armon signoff. Do not bypass checks or merge unreviewed downstack work. Preserve source/deploy and high-risk boundaries. The dedicated 30-minute progress reporter handles channel reporting; this job retains its own delivery policy. Review-only weekly/monthly jobs remain reviews, not release jobs.",
+      "model": "openai/gpt-6-luna",
+      "fallbacks": [],
+      "thinking": "low",
+      "timeoutSeconds": 2100,
+      "toolsAllow": [
+        "*"
+      ],
+      "lightContext": true
+    },
+    "delivery": {
+      "mode": "none",
+      "channel": "last"
+    },
+    "scheduledToolPolicy": {
+      "version": 1,
+      "mode": "trusted"
+    },
+    "state": {
+      "nextRunAtMs": 1791531600000,
+      "lastRunAtMs": 1791488400031,
+      "lastRunStatus": "error",
+      "lastStatus": "error",
+      "lastDurationMs": 19,
+      "lastDeliveryStatus": "not-requested",
+      "lastFailureNotificationDeliveryStatus": "not-requested",
+      "consecutiveErrors": 2,
+      "consecutiveSkipped": 0,
+      "lastDiagnostics": {
+        "summary": "automation model override 'openai/gpt-6-astra' rejected by agents.defaults.modelPolicy.allow: openai/gpt-6-astra is not in [anthropic/claude-haiku-4-5, anthropic/claude-opus-4-6, anthropic/claude-opus-4-7, anthropic/claude-opus-4-8, anthropic/claude-sonnet-4-6, anthropic/claude-sonnet-5, ollama/qwen2.5-coder:7b, ollama/qwen2.5:7b, openai/gpt-5.4, openai/gpt-5.5, openai/gpt-5.6-terra, openai/gpt-6-luna, openai/gpt-6-sol, openai/gpt-6.1-sol, openai/sonnet]",
+        "entries": [
+          {
+            "ts": 1791488400050,
+            "source": "cron-preflight",
+            "severity": "error",
+            "message": "automation model override 'openai/gpt-6-astra' rejected by agents.defaults.modelPolicy.allow: openai/gpt-6-astra is not in [anthropic/claude-haiku-4-5, anthropic/claude-opus-4-6, anthropic/claude-opus-4-7, anthropic/claude-opus-4-8, anthropic/claude-sonnet-4-6, anthropic/claude-sonnet-5, ollama/qwen2.5-coder:7b, ollama/qwen2.5:7b, openai/gpt-5.4, openai/gpt-5.5, openai/gpt-5.6-terra, openai/gpt-6-luna, openai/gpt-6-sol, openai/gpt-6.1-sol, openai/sonnet]"
+          }
+        ]
+      },
+      "lastDiagnosticSummary": "automation model override 'openai/gpt-6-astra' rejected by agents.defaults.modelPolicy.allow: openai/gpt-6-astra is not in [anthropic/claude-haiku-4-5, anthropic/claude-opus-4-6, anthropic/claude-opus-4-7, anthropic/claude-opus-4-8, anthropic/claude-sonnet-4-6, anthropic/claude-sonnet-5, ollama/qwen2.5-coder:7b, ollama/qwen2.5:7b, openai/gpt-5.4, openai/gpt-5.5, openai/gpt-5.6-terra, openai/gpt-6-luna, openai/gpt-6-sol, openai/gpt-6.1-sol, openai/sonnet]",
+      "lastError": "automation model override 'openai/gpt-6-astra' rejected by agents.defaults.modelPolicy.allow: openai/gpt-6-astra is not in [anthropic/claude-haiku-4-5, anthropic/claude-opus-4-6, anthropic/claude-opus-4-7, anthropic/claude-opus-4-8, anthropic/claude-sonnet-4-6, anthropic/claude-sonnet-5, ollama/qwen2.5-coder:7b, ollama/qwen2.5:7b, openai/gpt-5.4, openai/gpt-5.5, openai/gpt-5.6-terra, openai/gpt-6-luna, openai/gpt-6-sol, openai/gpt-6.1-sol, openai/sonnet]"
+    },
+    "updatedAtMs": 1791528581713,
+    "configRevision": "sha256:Q77zkCRvRdQN424e-008f8FOMmixgTqD_qUmDxJ5_dM",
+    "nextRunAtMs": 1791531600000,
+    "lastRunAtMs": 1791488400031,
+    "lastRunStatus": "error",
+    "lastRunError": "automation model override 'openai/gpt-6-astra' rejected by agents.defaults.modelPolicy.allow: openai/gpt-6-astra is not in [anthropic/claude-haiku-4-5, anthropic/claude-opus-4-6, anthropic/claude-opus-4-7, anthropic/claude-opus-4-8, anthropic/claude-sonnet-4-6, anthropic/claude-sonnet-5, ollama/qwen2.5-coder:7b, ollama/qwen2.5:7b, openai/gpt-5.4, openai/gpt-5.5, openai/gpt-5.6-terra, openai/gpt-6-luna, openai/gpt-6-sol, openai/gpt-6.1-sol, openai/sonnet]",
+    "lastDeliveryStatus": "not-requested",
+    "lastFailureNotificationDeliveryStatus": "not-requested"
+  },
+  {
+    "id": "99398759-74b2-4cb3-a096-beb54e44ceb4",
+    "declarationKey": "thecreateco-4geeks-progress",
+    "agentId": "main",
+    "name": "thecreateco #4geeks progress reports",
+    "enabled": true,
+    "createdAtMs": 1791421165850,
+    "schedule": {
+      "kind": "cron",
+      "expr": "20,50 8-22 * * *",
+      "tz": "America/Los_Angeles"
+    },
+    "sessionTarget": "isolated",
+    "wakeMode": "now",
+    "payload": {
+      "kind": "agentTurn",
+      "message": "LATEST OWNER POLICY: Read /Users/agentsattari/thecreateco-company/OPERATING_POLICY.md. OpenAI ONLY; code first; Luna routine executor, Sol director, Astra deliberate invention only. Respect PAUSE, one queue and active product ownership. Run cost preflight if available; no unknown budget is spending approval.\n\nSend the requested concise company/product progress report for Armon in #4geeks.\nWorkspace /Users/agentsattari/thecreateco-company. Read AUTONOMY.md and current\nrelease-program/DIRECTIVE.md and RELEASE_MATRIX.md for the named18 initiative.\nNewest exact-SHA evidence and live queue leases override stale lab summaries.\nTask COMPLETE never implies product completion. Report first-wave progress.\nCOMPANY_STATE.md, then TASK_QUEUE.json and core-product-lab/HEALTH.md only as needed.\nInspect at most three relevant latest result reports for exact commit/PR/test facts.\nThis is a read-only reporting task; do not claim tasks, code, run builds, publish,\nsend email, or change other schedules. Do not load private personal memory/CRM.\nUse automation/report-cursor.json for last reported task/completion IDs; update\nonly that cursor after preparing the report. Missing cursor means first report.\nReturn 3\u20135 concise bullets: what changed since last report; pushed PR/merged/deployed\nstatus distinguished; meaningful checks; exact blocker; next work. If no new result,\nsay so briefly and identify genuinely running work or next queued task, not invented\nactivity. Never infer a push/merge/deploy from a local commit or task COMPLETE.\nPrefer known GitHub links; wrap bare URLs in <>; no tables or secrets/contact data.\nIf PAUSE exists, report paused rather than implying work is running. Final response\nwill be delivered by cron to the configured Discord channel; do not call a send\ntool or duplicate the report. Keep under 150 words and finish within 3 minutes.",
+      "model": "openai/gpt-6-luna",
+      "fallbacks": [],
+      "thinking": "low",
+      "timeoutSeconds": 180,
+      "lightContext": true,
+      "toolsAllow": [
+        "*"
+      ]
+    },
+    "delivery": {
+      "mode": "announce",
+      "channel": "discord",
+      "to": "channel:1542939125366132819",
+      "accountId": "default"
+    },
+    "scheduledToolPolicy": {
+      "version": 1,
+      "mode": "trusted"
+    },
+    "state": {
+      "nextRunAtMs": 1791559200000,
+      "lastRunAtMs": 1791487200044,
+      "lastRunStatus": "ok",
+      "lastStatus": "ok",
+      "lastDurationMs": 39576,
+      "lastDeliveryStatus": "delivered",
+      "lastFailureNotificationDeliveryStatus": "not-requested",
+      "consecutiveErrors": 0,
+      "consecutiveSkipped": 0,
+      "lastDelivered": true
+    },
+    "updatedAtMs": 1791528582211,
+    "configRevision": "sha256:cYcb69nvEqILd_WGsSR-6bR5YhGCEYr2gYH9ka2VUNA",
+    "nextRunAtMs": 1791559200000,
+    "lastRunAtMs": 1791487200044,
+    "lastRunStatus": "ok",
+    "lastDelivered": true,
+    "lastDeliveryStatus": "delivered",
+    "lastFailureNotificationDeliveryStatus": "not-requested"
+  },
+  {
+    "id": "d0d0df2e-14bd-444e-abd1-c189853fb494",
+    "owner": {
+      "agentId": "main",
+      "sessionKey": "agent:main:discord:channel:1556603586258145330",
+      "accountId": "default"
+    },
+    "agentId": "main",
+    "sessionKey": "agent:main:discord:channel:1556603586258145330",
+    "name": "thecreateco daily growth cycle",
+    "description": "Daily marketing cycle for thecreateco: research, update CRM/content/state, post a short brief to #thecreativeco.",
+    "enabled": true,
+    "createdAtMs": 1791209722626,
+    "schedule": {
+      "kind": "cron",
+      "expr": "0 9 * * *",
+      "tz": "America/Los_Angeles"
+    },
+    "sessionTarget": "current",
+    "wakeMode": "now",
+    "payload": {
+      "kind": "agentTurn",
+      "message": "LATEST OWNER POLICY: Read /Users/agentsattari/thecreateco-company/OPERATING_POLICY.md. OpenAI ONLY; code first; Luna routine executor, Sol director, Astra deliberate invention only. Respect PAUSE, one queue and active product ownership. Run cost preflight if available; no unknown budget is spending approval.\n\nDaily thecreateco growth cycle. Armon granted standing autonomy on 2026-10-05 (\"you have my ok, just work autonomously\") within the limits in DIRECTIVE.md.\n\nWorkspace: /Users/agentsattari/thecreateco-marketing. Read DIRECTIVE.md first \u2014 its operating overrides win over everything else. Then read DAILY_STATE.md, PRODUCTS.md (NEVER CLAIM + canonical links), BRAND.md, CREATOR_CRM.md, EMAIL_HISTORY.md, DO_NOT_CONTACT.md, COMMUNITY_RULES.md, EXPERIMENTS.md, LEARNINGS.md and the newest files in research/, content/, outreach/.\n\nRun the cycle: OBSERVE (hello@ replies via `himalaya envelope list -a thecreateco`; follow-ups due per EMAIL_HISTORY.md; new Discord input from Armon; site/product changes on thecreatingco.com) \u2192 THINK/PRIORITIZE (highest expected value; follow evidence, not equal attention) \u2192 EXECUTE autonomously within limits: research and verify new prospects (public business emails only), send up to 10 new personalized 1-to-1 emails/day plus due follow-ups (send with `perl -e 'alarm 60; exec @ARGV' himalaya message send -a thecreateco`, include Date and Message-ID headers, CAN-SPAM footer from BRAND.md), answer routine replies, find community opportunities (drafts only), and produce content/assets (captions, scripts, images via image_generate when useful) ready for Armon to post on @armon3. Use subagents for research fan-out. Escalate anything on DIRECTIVE.md's never-without-Armon list. LEARN: record outcomes in EXPERIMENTS.md/LEARNINGS.md; update CRM, EMAIL_HISTORY.md, CONTENT_HISTORY.md and DAILY_STATE.md before finishing.\n\nFinally post the daily brief in #thecreativeco: TOP RESULT / WHAT I LEARNED / OUTREACH / COMMUNITY / TOMORROW / NEEDS ARMON. Short, real numbers only, no tables. If nothing meaningful happened, say so in one or two lines.",
+      "toolsAllow": [
+        "dashboard",
+        "automations",
+        "sessions",
+        "theme",
+        "terminal",
+        "portal",
+        "image_generate",
+        "music_generate",
+        "video_generate",
+        "gateway",
+        "plugins",
+        "get_goal",
+        "create_goal",
+        "update_goal",
+        "skill_workshop",
+        "progress_card",
+        "ask_user",
+        "secrets",
+        "sessions_list",
+        "sessions_history",
+        "sessions_search",
+        "conversations_list",
+        "conversations_send",
+        "conversations_turn",
+        "sessions_send",
+        "sessions_spawn",
+        "agents_wait",
+        "sessions_yield",
+        "subagents",
+        "session_status",
+        "web_search",
+        "web_fetch",
+        "view_image",
+        "memory_search",
+        "memory_get",
+        "read",
+        "write",
+        "edit",
+        "exec"
+      ],
+      "toolsAllowIsDefault": true,
+      "model": "openai/gpt-6-luna",
+      "fallbacks": [],
+      "thinking": "low",
+      "lightContext": true
+    },
+    "delivery": {
+      "mode": "announce",
+      "to": "channel:1556603586258145330",
+      "channel": "discord",
+      "accountId": "default"
+    },
+    "scheduledToolPolicy": {
+      "version": 1,
+      "mode": "account",
+      "ownerSessionKey": "agent:main:discord:channel:1556603586258145330",
+      "ownerAccountId": "default"
+    },
+    "state": {
+      "nextRunAtMs": 1791561600000,
+      "lastRunAtMs": 1791475200038,
+      "lastRunStatus": "error",
+      "lastStatus": "error",
+      "lastError": "cron: job interrupted by gateway restart",
+      "lastDurationMs": 677082,
+      "consecutiveErrors": 1,
+      "lastDelivered": false,
+      "lastDeliveryStatus": "unknown",
+      "lastDeliveryError": "cron: job interrupted by gateway restart",
+      "lastFailureNotificationDeliveryStatus": "not-requested"
+    },
+    "updatedAtMs": 1791528582690,
+    "configRevision": "sha256:FVCZ496GQOddrRYPjRF5q5MmwjPd5K0ErO_wHKMYi9w",
+    "nextRunAtMs": 1791561600000,
+    "lastRunAtMs": 1791475200038,
+    "lastRunStatus": "error",
+    "lastRunError": "cron: job interrupted by gateway restart",
+    "lastDelivered": false,
+    "lastDeliveryStatus": "unknown",
+    "lastDeliveryError": "cron: job interrupted by gateway restart",
+    "lastFailureNotificationDeliveryStatus": "not-requested"
+  },
+  {
+    "id": "18441c61-15d1-4a67-8234-900437818f26",
+    "declarationKey": "core-product-lab-daily",
+    "agentId": "main",
+    "name": "Core Product Lab daily",
+    "enabled": true,
+    "createdAtMs": 1791417446785,
+    "schedule": {
+      "kind": "cron",
+      "expr": "5 9 * * *",
+      "tz": "America/Los_Angeles"
+    },
+    "sessionTarget": "isolated",
+    "wakeMode": "now",
+    "payload": {
+      "kind": "agentTurn",
+      "message": "LATEST OWNER POLICY: Read /Users/agentsattari/thecreateco-company/OPERATING_POLICY.md. OpenAI ONLY; code first; Luna routine executor, Sol director, Astra deliberate invention only. Respect PAUSE, one queue and active product ownership. Run cost preflight if available; no unknown budget is spending approval.\n\nPerform the daily Core Product Lab review, at most 15 minutes. Workspace:\n/Users/agentsattari/thecreateco-company/core-product-lab. Read AGENTS.md, DIRECTIVE.md,\nHEALTH.md. Stop on PAUSE here or parent. Create/claim a dated CORE-REVIEW task in the\nshared company queue. Inspect only new evidence since last review. For each flagship\nrecord what broke/improved, unmeasured or regressed performance, incomplete golden\npaths, nearest release, highest professional-use blocker and next task. Deduplicate\nand reprioritize tasks with company.py; do not manufacture bugs or scores, reopen\nstable areas, or implement a broad roadmap. Preserve active ownership. Write dated\nreport, finish with evidence, refresh lab views. Model guidance applies; no release,\nexternal messaging, hardware recording or unrelated app work. Summary to run history.\n\nLATEST OWNER AUTHORIZATION (2026-10-07 17:56 Pacific): Before execution read /Users/agentsattari/thecreateco-company/AUTONOMY.md. Armon says do not wait for personal review; keep upgrading and pushing and send reports often. This overrides earlier local-only/no-push wording for routine scoped tested fixes: perform independent OpenAI review as appropriate, commit/push and follow normal PR/CI and stack gates without an extra Armon signoff. Do not bypass checks or merge unreviewed downstack work. Preserve source/deploy and high-risk boundaries. The dedicated 30-minute progress reporter handles channel reporting; this job retains its own delivery policy. Review-only weekly/monthly jobs remain reviews, not release jobs.",
+      "model": "openai/gpt-6-luna",
+      "fallbacks": [],
+      "thinking": "low",
+      "timeoutSeconds": 900,
+      "toolsAllow": [
+        "*"
+      ],
+      "lightContext": true
+    },
+    "delivery": {
+      "mode": "none",
+      "channel": "last"
+    },
+    "scheduledToolPolicy": {
+      "version": 1,
+      "mode": "trusted"
+    },
+    "state": {
+      "nextRunAtMs": 1791561900000
+    },
+    "updatedAtMs": 1791528583175,
+    "configRevision": "sha256:ApBL3LX1u0HAEIvIAbrI6ysX_qjMK73mPN5Msd3FL_Y",
+    "nextRunAtMs": 1791561900000
+  },
+  {
+    "id": "985f39be-c3b2-423a-b214-120d79041ab2",
+    "owner": {
+      "agentId": "main",
+      "sessionKey": "agent:main:discord:channel:1556603586258145330",
+      "accountId": "default"
+    },
+    "agentId": "main",
+    "sessionKey": "agent:main:discord:channel:1556603586258145330",
+    "name": "thecreateco inbox watch",
+    "description": "Every 3h (9am-9pm PT) check hello@thecreatingco.com for replies; handle routine ones, log opt-outs, escalate the rest.",
+    "enabled": true,
+    "createdAtMs": 1791214896498,
+    "schedule": {
+      "kind": "cron",
+      "expr": "0 12,15,18,21 * * *",
+      "tz": "America/Los_Angeles"
+    },
+    "sessionTarget": "current",
+    "wakeMode": "now",
+    "payload": {
+      "kind": "agentTurn",
+      "message": "LATEST OWNER POLICY: Read /Users/agentsattari/thecreateco-company/OPERATING_POLICY.md. OpenAI ONLY; code first; Luna routine executor, Sol director, Astra deliberate invention only. Respect PAUSE, one queue and active product ownership. Run cost preflight if available; no unknown budget is spending approval.\n\nthecreateco inbox watch (standing autonomy from Armon, 2026-10-05). Workspace /Users/agentsattari/thecreateco-marketing \u2014 read DIRECTIVE.md overrides, PRODUCTS.md, EMAIL_HISTORY.md, DO_NOT_CONTACT.md. Check `himalaya envelope list -a thecreateco` for new mail since the last logged check (track the last-seen message ID in DAILY_STATE.md). For each reply from an outreach contact: opt-out/'no' \u2192 add to DO_NOT_CONTACT.md, mark CRM, don't reply; routine (wants access, questions about features, thanks) \u2192 reply truthfully per PRODUCTS.md from hello@ (send with `perl -e 'alarm 60; exec @ARGV' himalaya message send -a thecreateco`, keep the thread subject with Re:, include Date/Message-ID/In-Reply-To headers), log in EMAIL_HISTORY.md + CRM; anything about money, sponsorship, pricing, partnerships, press, legal, or anything sensitive \u2192 don't reply, post a short heads-up for Armon in #thecreativeco with the ask. Ignore newsletters/system mail. If there's nothing new or only routine items you handled, stay silent in Discord (they'll be in the daily brief).",
+      "toolsAllow": [
+        "dashboard",
+        "automations",
+        "sessions",
+        "theme",
+        "terminal",
+        "portal",
+        "image_generate",
+        "music_generate",
+        "video_generate",
+        "gateway",
+        "plugins",
+        "get_goal",
+        "create_goal",
+        "update_goal",
+        "skill_workshop",
+        "progress_card",
+        "ask_user",
+        "secrets",
+        "sessions_list",
+        "sessions_history",
+        "sessions_search",
+        "conversations_list",
+        "conversations_send",
+        "conversations_turn",
+        "sessions_send",
+        "sessions_spawn",
+        "agents_wait",
+        "sessions_yield",
+        "subagents",
+        "session_status",
+        "web_search",
+        "web_fetch",
+        "view_image",
+        "memory_search",
+        "memory_get",
+        "read",
+        "write",
+        "edit",
+        "exec"
+      ],
+      "toolsAllowIsDefault": true,
+      "model": "openai/gpt-6-luna",
+      "fallbacks": [],
+      "thinking": "low",
+      "lightContext": true
+    },
+    "delivery": {
+      "mode": "announce",
+      "to": "channel:1556603586258145330",
+      "channel": "discord",
+      "accountId": "default"
+    },
+    "scheduledToolPolicy": {
+      "version": 1,
+      "mode": "account",
+      "ownerSessionKey": "agent:main:discord:channel:1556603586258145330",
+      "ownerAccountId": "default"
+    },
+    "state": {
+      "nextRunAtMs": 1791572400000,
+      "lastRunAtMs": 1791486000033,
+      "lastRunStatus": "ok",
+      "lastStatus": "ok",
+      "lastDurationMs": 43544,
+      "lastDelivered": false,
+      "lastDeliveryStatus": "not-delivered",
+      "deliverySuppressionReason": "silent",
+      "lastFailureNotificationDeliveryStatus": "not-requested",
+      "consecutiveErrors": 0,
+      "consecutiveSkipped": 0
+    },
+    "updatedAtMs": 1791528583642,
+    "configRevision": "sha256:dVq-RUL-9UrjYtXP1alNY1bhih251DOwC_9FmURyepQ",
+    "nextRunAtMs": 1791572400000,
+    "lastRunAtMs": 1791486000033,
+    "lastRunStatus": "ok",
+    "lastDelivered": false,
+    "lastDeliveryStatus": "not-delivered",
+    "deliverySuppressionReason": "silent",
+    "lastFailureNotificationDeliveryStatus": "not-requested"
+  },
+  {
+    "id": "4a64dc91-9804-48aa-81b8-59cbc9b2cc6f",
+    "declarationKey": "company-weekly",
+    "agentId": "main",
+    "name": "thecreateco weekly CEO review",
+    "enabled": true,
+    "createdAtMs": 1791416407846,
+    "schedule": {
+      "kind": "cron",
+      "expr": "20 8 * * 1",
+      "tz": "America/Los_Angeles"
+    },
+    "sessionTarget": "isolated",
+    "wakeMode": "now",
+    "payload": {
+      "kind": "agentTurn",
+      "message": "LATEST OWNER POLICY: Read /Users/agentsattari/thecreateco-company/OPERATING_POLICY.md. OpenAI ONLY; code first; Luna routine executor, Sol director, Astra deliberate invention only. Respect PAUSE, one queue and active product ownership. Run cost preflight if available; no unknown budget is spending approval.\n\nPerform the weekly thecreateco CEO review. Workspace /Users/agentsattari/thecreateco-company.\nRead AGENTS.md, DIRECTIVE.md, engine/README.md and COMPANY_STATE.md. Stop if PAUSE exists.\nUse a durable uniquely dated review task and claim it before work; do not edit SQLite.\nInspect only the week's reports, task events, dated metrics and marketing outcomes.\nSeparate true outcomes from activities; unknown metrics stay unknown. Examine\nstrongest products, quality gaps, retention/onboarding, feedback, campaign results,\ncost/model usage, excessive portfolio breadth, what to stop and the next bottleneck.\nMeasure allocation against 60% existing/25% growth/15% validated experiments where\nexecution records support it; do not fake time shares from task counts. Distinguish\nmarketing model-call telemetry from company-wide model costs, which may be missing.\nWrite reports/weekly-YYYY-MM-DD.md, update context and task priorities through CLI,\nand finish with evidence. Product changes and marketing execution happen in their\nexisting queues; no releases, outreach, spend or public commitments in this review.\nReturn a short run-history summary; do not send messages. Limit 25 minutes.\n\nLATEST OWNER AUTHORIZATION (2026-10-07 17:56 Pacific): Before execution read /Users/agentsattari/thecreateco-company/AUTONOMY.md. Armon says do not wait for personal review; keep upgrading and pushing and send reports often. This overrides earlier local-only/no-push wording for routine scoped tested fixes: perform independent OpenAI review as appropriate, commit/push and follow normal PR/CI and stack gates without an extra Armon signoff. Do not bypass checks or merge unreviewed downstack work. Preserve source/deploy and high-risk boundaries. The dedicated 30-minute progress reporter handles channel reporting; this job retains its own delivery policy. Review-only weekly/monthly jobs remain reviews, not release jobs.",
+      "model": "openai/gpt-6.1-sol",
+      "fallbacks": [],
+      "thinking": "medium",
+      "timeoutSeconds": 1500,
+      "toolsAllow": [
+        "*"
+      ],
+      "lightContext": true
+    },
+    "delivery": {
+      "mode": "none",
+      "channel": "last"
+    },
+    "scheduledToolPolicy": {
+      "version": 1,
+      "mode": "trusted"
+    },
+    "state": {
+      "nextRunAtMs": 1791818400000
+    },
+    "updatedAtMs": 1791528584150,
+    "configRevision": "sha256:W3veETeBXI1cpwUFgD3USgQHZxRKFXD-679ifsiVAhk",
+    "nextRunAtMs": 1791818400000
+  },
+  {
+    "id": "8f524ec8-f2ed-4809-a895-e5a8dca329b7",
+    "declarationKey": "core-product-lab-weekly",
+    "agentId": "main",
+    "name": "Core Product Lab weekly",
+    "enabled": true,
+    "createdAtMs": 1791417447537,
+    "schedule": {
+      "kind": "cron",
+      "expr": "35 9 * * 1",
+      "tz": "America/Los_Angeles"
+    },
+    "sessionTarget": "isolated",
+    "wakeMode": "now",
+    "payload": {
+      "kind": "agentTurn",
+      "message": "LATEST OWNER POLICY: Read /Users/agentsattari/thecreateco-company/OPERATING_POLICY.md. OpenAI ONLY; code first; Luna routine executor, Sol director, Astra deliberate invention only. Respect PAUSE, one queue and active product ownership. Run cost preflight if available; no unknown budget is spending approval.\n\nPerform weekly flagship review, at most 25 minutes. Workspace:\n/Users/agentsattari/thecreateco-company/core-product-lab. Read AGENTS.md, DIRECTIVE.md,\nHEALTH.md, relevant weekly reports and company queue; stop on PAUSE here or parent.\nCreate/claim a dated CORE-WEEKLY task through company.py. For ScenePilot, Luma, Form,\nStemDeck report evidence-backed scores or unknown, release readiness, up to five\nblockers and completed improvements, exact test status, benchmark changes or\nunmeasured, regressions, golden-workflow status, next milestone. Decide next cycle's\nallocation by severity/value, not equal rotation. Track real model/cost evidence or\nmark unavailable; don't derive spend/time from task counts. Request bounded ChatGPT/Sol\ndesign critique when material workflow/UI evidence exists; separate independent\nOpenAI review only for major decision/disagreement with rationale. Update shared queue/products, dated report,\nfinish with evidence, refresh lab views. No new apps, release/public messaging,\npayments/access/legal changes or physical recording. Return run-history summary only.\n\nOwner preference: no Claude/Sonnet/Opus reviews or review fallbacks; use ChatGPT/OpenAI.\n\nLATEST OWNER AUTHORIZATION (2026-10-07 17:56 Pacific): Before execution read /Users/agentsattari/thecreateco-company/AUTONOMY.md. Armon says do not wait for personal review; keep upgrading and pushing and send reports often. This overrides earlier local-only/no-push wording for routine scoped tested fixes: perform independent OpenAI review as appropriate, commit/push and follow normal PR/CI and stack gates without an extra Armon signoff. Do not bypass checks or merge unreviewed downstack work. Preserve source/deploy and high-risk boundaries. The dedicated 30-minute progress reporter handles channel reporting; this job retains its own delivery policy. Review-only weekly/monthly jobs remain reviews, not release jobs.",
+      "model": "openai/gpt-6.1-sol",
+      "fallbacks": [],
+      "thinking": "medium",
+      "timeoutSeconds": 1500,
+      "toolsAllow": [
+        "*"
+      ],
+      "lightContext": true
+    },
+    "delivery": {
+      "mode": "none",
+      "channel": "last"
+    },
+    "scheduledToolPolicy": {
+      "version": 1,
+      "mode": "trusted"
+    },
+    "state": {
+      "nextRunAtMs": 1791822900000
+    },
+    "updatedAtMs": 1791528584637,
+    "configRevision": "sha256:oNaaG5bP1_iwDXC-wENpRzuMupt96fwX-6RuUqCfyFA",
+    "nextRunAtMs": 1791822900000
+  },
+  {
+    "id": "97cc83fa-1512-4b26-8bc3-0f80052740cc",
+    "declarationKey": "company-monthly",
+    "agentId": "main",
+    "name": "thecreateco monthly portfolio review",
+    "enabled": true,
+    "createdAtMs": 1791416408277,
+    "schedule": {
+      "kind": "cron",
+      "expr": "30 8 1 * *",
+      "tz": "America/Los_Angeles"
+    },
+    "sessionTarget": "isolated",
+    "wakeMode": "now",
+    "payload": {
+      "kind": "agentTurn",
+      "message": "LATEST OWNER POLICY: Read /Users/agentsattari/thecreateco-company/OPERATING_POLICY.md. OpenAI ONLY; code first; Luna routine executor, Sol director, Astra deliberate invention only. Respect PAUSE, one queue and active product ownership. Run cost preflight if available; no unknown budget is spending approval.\n\nPerform the monthly thecreateco portfolio review. Workspace /Users/agentsattari/thecreateco-company.\nRead AGENTS.md, DIRECTIVE.md, engine/README.md and COMPANY_STATE.md. Stop if PAUSE exists.\nCreate and claim a durable uniquely dated review task before work. Review the\nproduct registry against dated reports, genuine usage/feedback, quality, cost and\nstrategic fit. Recommend INVEST/MAINTAIN/REPOSITION/MERGE/PAUSE/RETIRE for each\nstandalone family; mark insufficient evidence instead of guessing. Do not confuse\nembedded modules with standalone apps or live alphas with production qualification.\nReassess the idea backlog's evidence gates; do not automatically prototype ideas.\nWrite reports/portfolio-YYYY-MM.md, update evidence-backed registry/context using\nCLI, finish the review task with evidence and refresh. Recommendations to retire,\nchange pricing or make commitments are not authorization to enact them.\nNo external actions or messaging. Return only a concise run-history summary. Limit 30 minutes.\n\nLATEST OWNER AUTHORIZATION (2026-10-07 17:56 Pacific): Before execution read /Users/agentsattari/thecreateco-company/AUTONOMY.md. Armon says do not wait for personal review; keep upgrading and pushing and send reports often. This overrides earlier local-only/no-push wording for routine scoped tested fixes: perform independent OpenAI review as appropriate, commit/push and follow normal PR/CI and stack gates without an extra Armon signoff. Do not bypass checks or merge unreviewed downstack work. Preserve source/deploy and high-risk boundaries. The dedicated 30-minute progress reporter handles channel reporting; this job retains its own delivery policy. Review-only weekly/monthly jobs remain reviews, not release jobs.",
+      "model": "openai/gpt-6.1-sol",
+      "fallbacks": [],
+      "thinking": "medium",
+      "timeoutSeconds": 1800,
+      "toolsAllow": [
+        "*"
+      ],
+      "lightContext": true
+    },
+    "delivery": {
+      "mode": "none",
+      "channel": "last"
+    },
+    "scheduledToolPolicy": {
+      "version": 1,
+      "mode": "trusted"
+    },
+    "state": {
+      "nextRunAtMs": 1793550600000
+    },
+    "updatedAtMs": 1791528585103,
+    "configRevision": "sha256:8O_Dl-472lnKJvG4aX-TnqcZ6fJrK1VsikYzQRS5nNg",
+    "nextRunAtMs": 1793550600000
+  },
+  {
+    "id": "2069305d-6f38-41ba-b31c-a0fdbfdc7ea4",
+    "declarationKey": "company-director",
+    "agentId": "main",
+    "name": "thecreateco company director",
+    "enabled": false,
+    "createdAtMs": 1791416407429,
+    "schedule": {
+      "kind": "cron",
+      "expr": "10 * * * *",
+      "tz": "America/Los_Angeles"
+    },
+    "sessionTarget": "isolated",
+    "wakeMode": "now",
+    "payload": {
+      "kind": "agentTurn",
+      "message": "LATEST OWNER POLICY: Read /Users/agentsattari/thecreateco-company/OPERATING_POLICY.md. OpenAI ONLY; code first; Luna routine executor, Sol director, Astra deliberate invention only. Respect PAUSE, one queue and active product ownership. Run cost preflight if available; no unknown budget is spending approval.\n\nWork in /Users/agentsattari/thecreateco-company. Read AGENTS.md, DIRECTIVE.md, COMPANY_STATE.md and engine/README.md. Stop if PAUSE. Recover leases. One bounded company cycle (max35min): select one highest-severity/value eligible task, honoring active product owners and existing gates; claim exact ID; route deterministic work to code and routine work to a bounded Luna worker capsule, complex strategy to Sol. No routine Astra use. Execute/test/checkpoint with evidence, finish via company.py owner/token, refresh state. If commissioning task OS-SCHEDULER-PROOF-20261009 is QUEUED, select it once before normal product work: its acceptance criteria prove this amended execution path. Read only task-related files. No external messages or releases from this job; prior scoped routine branch/PR authority remains. Return concise actual results including model and task ID, not a plan.",
+      "model": "openai/gpt-6.1-sol",
+      "fallbacks": [],
+      "thinking": "medium",
+      "timeoutSeconds": 2100,
+      "toolsAllow": [
+        "*"
+      ],
+      "lightContext": true
+    },
+    "delivery": {
+      "mode": "none",
+      "channel": "last"
+    },
+    "scheduledToolPolicy": {
+      "version": 1,
+      "mode": "trusted"
+    },
+    "state": {
+      "lastRunAtMs": 1791478228406,
+      "lastRunStatus": "error",
+      "lastStatus": "error",
+      "lastDurationMs": 27,
+      "lastDeliveryStatus": "not-requested",
+      "lastFailureNotificationDeliveryStatus": "not-requested",
+      "consecutiveErrors": 10,
+      "consecutiveSkipped": 0,
+      "lastDiagnostics": {
+        "summary": "automation model override 'openai/gpt-6-astra' rejected by agents.defaults.modelPolicy.allow: openai/gpt-6-astra is not in [anthropic/claude-haiku-4-5, anthropic/claude-opus-4-6, anthropic/claude-opus-4-7, anthropic/claude-opus-4-8, anthropic/claude-sonnet-4-6, anthropic/claude-sonnet-5, ollama/qwen2.5-coder:7b, ollama/qwen2.5:7b, openai/gpt-5.4, openai/gpt-5.5, openai/gpt-5.6-terra, openai/gpt-6-luna, openai/gpt-6-sol, openai/gpt-6.1-sol, openai/sonnet]",
+        "entries": [
+          {
+            "ts": 1791478228433,
+            "source": "cron-preflight",
+            "severity": "error",
+            "message": "automation model override 'openai/gpt-6-astra' rejected by agents.defaults.modelPolicy.allow: openai/gpt-6-astra is not in [anthropic/claude-haiku-4-5, anthropic/claude-opus-4-6, anthropic/claude-opus-4-7, anthropic/claude-opus-4-8, anthropic/claude-sonnet-4-6, anthropic/claude-sonnet-5, ollama/qwen2.5-coder:7b, ollama/qwen2.5:7b, openai/gpt-5.4, openai/gpt-5.5, openai/gpt-5.6-terra, openai/gpt-6-luna, openai/gpt-6-sol, openai/gpt-6.1-sol, openai/sonnet]"
+          }
+        ]
+      },
+      "lastDiagnosticSummary": "automation model override 'openai/gpt-6-astra' rejected by agents.defaults.modelPolicy.allow: openai/gpt-6-astra is not in [anthropic/claude-haiku-4-5, anthropic/claude-opus-4-6, anthropic/claude-opus-4-7, anthropic/claude-opus-4-8, anthropic/claude-sonnet-4-6, anthropic/claude-sonnet-5, ollama/qwen2.5-coder:7b, ollama/qwen2.5:7b, openai/gpt-5.4, openai/gpt-5.5, openai/gpt-5.6-terra, openai/gpt-6-luna, openai/gpt-6-sol, openai/gpt-6.1-sol, openai/sonnet]",
+      "lastError": "automation model override 'openai/gpt-6-astra' rejected by agents.defaults.modelPolicy.allow: openai/gpt-6-astra is not in [anthropic/claude-haiku-4-5, anthropic/claude-opus-4-6, anthropic/claude-opus-4-7, anthropic/claude-opus-4-8, anthropic/claude-sonnet-4-6, anthropic/claude-sonnet-5, ollama/qwen2.5-coder:7b, ollama/qwen2.5:7b, openai/gpt-5.4, openai/gpt-5.5, openai/gpt-5.6-terra, openai/gpt-6-luna, openai/gpt-6-sol, openai/gpt-6.1-sol, openai/sonnet]",
+      "autoDisabled": {
+        "reason": "consecutive-failures",
+        "atMs": 1791478228433,
+        "consecutiveErrors": 10
+      }
+    },
+    "updatedAtMs": 1791528585572,
+    "configRevision": "sha256:Ug1E4LlJhYU5DrWtnSCHxv9xp4_nkZzGm2zn2dfSwdU",
+    "lastRunAtMs": 1791478228406,
+    "lastRunStatus": "error",
+    "lastRunError": "automation model override 'openai/gpt-6-astra' rejected by agents.defaults.modelPolicy.allow: openai/gpt-6-astra is not in [anthropic/claude-haiku-4-5, anthropic/claude-opus-4-6, anthropic/claude-opus-4-7, anthropic/claude-opus-4-8, anthropic/claude-sonnet-4-6, anthropic/claude-sonnet-5, ollama/qwen2.5-coder:7b, ollama/qwen2.5:7b, openai/gpt-5.4, openai/gpt-5.5, openai/gpt-5.6-terra, openai/gpt-6-luna, openai/gpt-6-sol, openai/gpt-6.1-sol, openai/sonnet]",
+    "lastDeliveryStatus": "not-requested",
+    "lastFailureNotificationDeliveryStatus": "not-requested"
+  }
+]

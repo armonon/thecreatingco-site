@@ -1,0 +1,137 @@
+[
+  {
+    "product_id": "reclaim",
+    "inventory_gap_observation": {
+      "observed_at": "2026-10-08T02:21:28.315528+00:00",
+      "source_sha": "54d2c34d322323ad8ca9815e4368a84897d12ecd",
+      "working_tree_dirty": false,
+      "evidence": [
+        "/Users/agentsattari/thecreateco-company/reports/release18-inventory-gaps-20261007/README.md",
+        "/Users/agentsattari/thecreateco-company/reports/release18-inventory-gaps-20261007/source-snapshots.json"
+      ],
+      "qualification": "SOURCE_INSPECTION_AND_PARENT_LIVE_RENDER_ONLY; not full workflow/platform/release qualification",
+      "product_source_changed": false,
+      "deployment_changed": false
+    }
+  },
+  {
+    "product_id": "split",
+    "inventory_gap_observation": {
+      "observed_at": "2026-10-08T02:21:28.315528+00:00",
+      "source_sha": "a9a77e6ad21245a99c83b592ed2fb8a660e71a37",
+      "working_tree_dirty": true,
+      "evidence": [
+        "/Users/agentsattari/thecreateco-company/reports/release18-inventory-gaps-20261007/README.md",
+        "/Users/agentsattari/thecreateco-company/reports/release18-inventory-gaps-20261007/source-snapshots.json"
+      ],
+      "qualification": "SOURCE_INSPECTION_AND_PARENT_LIVE_RENDER_ONLY; not full workflow/platform/release qualification",
+      "product_source_changed": false,
+      "deployment_changed": false
+    }
+  },
+  {
+    "product_id": "captions",
+    "inventory_gap_observation": {
+      "observed_at": "2026-10-08T02:21:28.315528+00:00",
+      "source_sha": "fb42d12b98c895b47642eaab4a9be74de0c2c358",
+      "working_tree_dirty": true,
+      "evidence": [
+        "/Users/agentsattari/thecreateco-company/reports/release18-inventory-gaps-20261007/README.md",
+        "/Users/agentsattari/thecreateco-company/reports/release18-inventory-gaps-20261007/source-snapshots.json"
+      ],
+      "qualification": "SOURCE_INSPECTION_AND_PARENT_LIVE_RENDER_ONLY; not full workflow/platform/release qualification",
+      "product_source_changed": false,
+      "deployment_changed": false
+    }
+  },
+  {
+    "product_id": "reframe",
+    "inventory_gap_observation": {
+      "observed_at": "2026-10-08T02:21:28.315528+00:00",
+      "source_sha": "fb42d12b98c895b47642eaab4a9be74de0c2c358",
+      "working_tree_dirty": true,
+      "evidence": [
+        "/Users/agentsattari/thecreateco-company/reports/release18-inventory-gaps-20261007/README.md",
+        "/Users/agentsattari/thecreateco-company/reports/release18-inventory-gaps-20261007/source-snapshots.json"
+      ],
+      "qualification": "SOURCE_INSPECTION_AND_PARENT_LIVE_RENDER_ONLY; not full workflow/platform/release qualification",
+      "product_source_changed": false,
+      "deployment_changed": false
+    }
+  },
+  {
+    "product_id": "autocut",
+    "inventory_gap_observation": {
+      "observed_at": "2026-10-08T02:21:28.315528+00:00",
+      "source_sha": "fb42d12b98c895b47642eaab4a9be74de0c2c358",
+      "working_tree_dirty": true,
+      "evidence": [
+        "/Users/agentsattari/thecreateco-company/reports/release18-inventory-gaps-20261007/README.md",
+        "/Users/agentsattari/thecreateco-company/reports/release18-inventory-gaps-20261007/source-snapshots.json"
+      ],
+      "qualification": "SOURCE_INSPECTION_AND_PARENT_LIVE_RENDER_ONLY; not full workflow/platform/release qualification",
+      "product_source_changed": false,
+      "deployment_changed": false
+    }
+  },
+  {
+    "product_id": "librarian",
+    "inventory_gap_observation": {
+      "observed_at": "2026-10-08T02:21:28.315528+00:00",
+      "source_sha": "1ba7da455c348621218dd5f5423d4b0adbfbc491",
+      "working_tree_dirty": false,
+      "evidence": [
+        "/Users/agentsattari/thecreateco-company/reports/release18-inventory-gaps-20261007/README.md",
+        "/Users/agentsattari/thecreateco-company/reports/release18-inventory-gaps-20261007/source-snapshots.json"
+      ],
+      "qualification": "SOURCE_INSPECTION_AND_PARENT_LIVE_RENDER_ONLY; not full workflow/platform/release qualification",
+      "product_source_changed": false,
+      "deployment_changed": false
+    }
+  },
+  {
+    "product_id": "pocket",
+    "inventory_gap_observation": {
+      "observed_at": "2026-10-08T02:21:28.315528+00:00",
+      "source_sha": "a9a77e6ad21245a99c83b592ed2fb8a660e71a37",
+      "working_tree_dirty": true,
+      "evidence": [
+        "/Users/agentsattari/thecreateco-company/reports/release18-inventory-gaps-20261007/README.md",
+        "/Users/agentsattari/thecreateco-company/reports/release18-inventory-gaps-20261007/source-snapshots.json"
+      ],
+      "qualification": "SOURCE_INSPECTION_AND_PARENT_LIVE_RENDER_ONLY; not full workflow/platform/release qualification",
+      "product_source_changed": false,
+      "deployment_changed": false
+    }
+  },
+  {
+    "product_id": "ghost",
+    "inventory_gap_observation": {
+      "observed_at": "2026-10-08T02:21:28.315528+00:00",
+      "source_sha": "bfad2ee98a5194cc84892cc7a13a43e28fefea9b",
+      "working_tree_dirty": true,
+      "evidence": [
+        "/Users/agentsattari/thecreateco-company/reports/release18-inventory-gaps-20261007/README.md",
+        "/Users/agentsattari/thecreateco-company/reports/release18-inventory-gaps-20261007/source-snapshots.json"
+      ],
+      "qualification": "SOURCE_INSPECTION_AND_PARENT_LIVE_RENDER_ONLY; not full workflow/platform/release qualification",
+      "product_source_changed": false,
+      "deployment_changed": false
+    }
+  },
+  {
+    "product_id": "cast",
+    "inventory_gap_observation": {
+      "observed_at": "2026-10-08T02:21:28.315528+00:00",
+      "source_sha": "b5abdd1de5f71fe0244ef9a651a6d983067541ff",
+      "working_tree_dirty": true,
+      "evidence": [
+        "/Users/agentsattari/thecreateco-company/reports/release18-inventory-gaps-20261007/README.md",
+        "/Users/agentsattari/thecreateco-company/reports/release18-inventory-gaps-20261007/source-snapshots.json"
+      ],
+      "qualification": "SOURCE_INSPECTION_AND_PARENT_LIVE_RENDER_ONLY; not full workflow/platform/release qualification",
+      "product_source_changed": false,
+      "deployment_changed": false
+    }
+  }
+]

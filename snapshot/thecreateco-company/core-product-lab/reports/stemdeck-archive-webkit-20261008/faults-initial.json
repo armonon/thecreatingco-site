@@ -1,0 +1,57 @@
+{
+  "at": "2026-10-08T05:46:16.776Z",
+  "cases": [
+    {
+      "profile": "/Users/agentsattari/.openclaw/tmp/core-archive-fault-Lx3pge",
+      "mode": "denied",
+      "error": "page.evaluate: SecurityError: synthetic denied\n    at /Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-archive-webkit-20261008/faults.mjs:8:18",
+      "pass": false
+    },
+    {
+      "profile": "/Users/agentsattari/.openclaw/tmp/core-archive-fault-3bxEyh",
+      "mode": "quota",
+      "error": {
+        "name": "Error",
+        "message": "Not enough browser disk space for this export. Download and clear older export files, free disk space, or export a shorter range."
+      },
+      "assets": [
+        "old-owned-asset"
+      ],
+      "oldAsset": "old asset",
+      "sessionUnchanged": true,
+      "temporaries": 0,
+      "pass": true
+    },
+    {
+      "profile": "/Users/agentsattari/.openclaw/tmp/core-archive-fault-GZyK5B",
+      "mode": "transactionAbort",
+      "error": {
+        "name": "TransactionInactiveError",
+        "message": "Failed to store record in an IDBObjectStore: The transaction is inactive or finished."
+      },
+      "assets": [
+        "old-owned-asset"
+      ],
+      "oldAsset": "old asset",
+      "sessionUnchanged": true,
+      "temporaries": 0,
+      "pass": true
+    },
+    {
+      "profile": "/Users/agentsattari/.openclaw/tmp/core-archive-fault-7ATHAH",
+      "mode": "corruptRead",
+      "error": {
+        "name": "Error",
+        "message": "Restored project audio failed verification. The current session was not replaced."
+      },
+      "assets": [
+        "old-owned-asset"
+      ],
+      "oldAsset": "old asset",
+      "sessionUnchanged": true,
+      "temporaries": 0,
+      "pass": true
+    }
+  ],
+  "pass": false
+}

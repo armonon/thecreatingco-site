@@ -1,0 +1,18 @@
+{
+  "task_id": "REV-AUDIT-20261007",
+  "title": "Audit revenue assets, choose three paths and begin evidence-led validation",
+  "category": "revenue_strategy",
+  "workstream": "OPERATIONS",
+  "source_evidence": [
+    "Discord #millions message 1557558924968726649 owner revenue mandate"
+  ],
+  "expected_value": "One evidence-backed revenue strategy, same company queue, null-safe commercial baseline and concrete first validation package",
+  "next_action": "Audit assets and market evidence; preserve active flagship owners and existing authorization",
+  "scores": {
+    "impact": 9,
+    "user_value": 8,
+    "confidence": 8,
+    "effort": 3,
+    "risk": 1
+  }
+}

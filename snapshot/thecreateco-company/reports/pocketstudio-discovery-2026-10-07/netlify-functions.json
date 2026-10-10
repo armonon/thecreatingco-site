@@ -1,0 +1,12 @@
+{
+  "created_at": "2026-10-06T07:21:43.657Z",
+  "functions": [
+    {
+      "name": "community-proxy",
+      "digest": "74bd0204666b29a81c45e3c93c6d2f61b766e98657ba029eca31b52000a0f0ca",
+      "runtime": "nodejs24.x",
+      "size": 3833,
+      "endpoint": "https://6ac6eb6cbf814008db6578af--momentium-creative.netlify.app/.netlify/functions/community-proxy"
+    }
+  ]
+}

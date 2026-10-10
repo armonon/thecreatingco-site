@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "method": "Independent Python GLB binary decoding; real POSITION bytes, not accessor metadata bounds",
+  "dimensions_metres_y_up": [
+    0.03999999910593033,
+    0.012000000104308128,
+    0.03999999910593033
+  ],
+  "vertices": 24,
+  "material_metallic": 0.94,
+  "material_roughness": 0.17,
+  "scope": "Synthetic square extruded to box; STEP is real OCCT download/header only, no independent STEP reader used",
+  "artifacts": {
+    "golden-bracket.form": {
+      "sha256": "48a49282cde392cb785630cda6ae6eddf9c06c67f8caad8dcd94f6bbd9947dc6",
+      "bytes": 20149,
+      "provenance": "Synthetic original SVG, local real-browser UI"
+    },
+    "golden-bracket.glb": {
+      "sha256": "782777bfd22fc04d3b3b65058e3489263ff80602ab9b6a560ca7ecc193939f04",
+      "bytes": 2404,
+      "provenance": "Synthetic original SVG, local real-browser UI"
+    },
+    "golden-bracket.step": {
+      "sha256": "1fcaa3735eb36cb6004ddce9ee51e178ece86c9b9a269757d4ffc3bcb08e9420",
+      "bytes": 15523,
+      "provenance": "Synthetic original SVG, local real-browser UI"
+    }
+  }
+}

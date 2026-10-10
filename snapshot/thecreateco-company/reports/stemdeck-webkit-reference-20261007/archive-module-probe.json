@@ -1,0 +1,5 @@
+{
+  "profile": "/Users/agentsattari/.openclaw/tmp/stemdeck-archive-probe-0V7G60",
+  "version": "26.5",
+  "error": "page.evaluate: Error: Local audio storage failed.\n    at /Users/agentsattari/thecreateco-company/reports/stemdeck-webkit-reference-20261007/archive-module-probe.mjs:4:316"
+}

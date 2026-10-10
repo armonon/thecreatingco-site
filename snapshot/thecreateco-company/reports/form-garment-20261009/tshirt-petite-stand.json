@@ -1,0 +1,52 @@
+{
+  "schema": "form-studio/garment-proof@1",
+  "backend": "cpu-reference",
+  "timing": {
+    "version": 2,
+    "simulationSeconds": 1,
+    "animationSeconds": 1,
+    "motionFrames": 120,
+    "targetHz": 120
+  },
+  "scope": "CPU reference (not native runtime): 120-frame Fabric fitting followed by 1-second 120Hz-target motion regression at density 1; not full adaptive bake, desktop IPC/viewport playback, visual approval or physical validation.",
+  "releaseReady": false,
+  "cases": [
+    {
+      "id": "tshirt/female-petite/stand",
+      "backend": "cpu-reference",
+      "garment": "tshirt",
+      "body": "female-petite",
+      "motion": "stand",
+      "seconds": 1,
+      "density": 1,
+      "fittingFrames": 120,
+      "fittingPeakStretchPercent": 8.714259877955932,
+      "particles": 886,
+      "milliseconds": 7305.473415999999,
+      "engineeringPass": true,
+      "fitScreenPassed": true,
+      "physicalValidated": false,
+      "maximumSeamGapMm": 0.00003609833444743462,
+      "maxResidualBodyCorrectionMm": 0,
+      "peakStretchPercent": 10.000038424203472,
+      "worstStrain": {
+        "a": 428,
+        "b": 501,
+        "restM": 0.03040940634234594,
+        "lengthM": 0.0334503586611527,
+        "value": 0.10000038424203472,
+        "step": 52,
+        "seconds": 0.43333333333333335,
+        "panels": [
+          "Garment · Back"
+        ]
+      },
+      "worstBodyContact": null,
+      "belowFloorMm": 0,
+      "contacts": 7891,
+      "selfContacts": 5,
+      "findings": [],
+      "exchangePass": true
+    }
+  ]
+}

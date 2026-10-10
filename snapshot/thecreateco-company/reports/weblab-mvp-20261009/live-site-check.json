@@ -1,0 +1,2181 @@
+{
+  "url": "https://thecreatingco.com/",
+  "finalUrl": "https://thecreatingco.com/",
+  "startedAt": "2026-10-09T14:42:09.233Z",
+  "finishedAt": "2026-10-09T14:42:11.404Z",
+  "status": "complete",
+  "httpStatus": 200,
+  "contentType": "text/html; charset=UTF-8",
+  "homepage": {
+    "title": "thecreateco — Free tools for 3D, images, music and film",
+    "titleLength": 55,
+    "description": "Independent creative software for 3D, images, music and film. Try the public alphas and join thecreateco Kickstarter launch list.",
+    "descriptionLength": 129,
+    "canonical": "https://thecreatingco.com/",
+    "documentBase": "https://thecreatingco.com/",
+    "viewport": true,
+    "lang": "en",
+    "headingOutline": [
+      {
+        "level": 1,
+        "text": "Your ideas.Made real."
+      },
+      {
+        "level": 2,
+        "text": "Form → Luma → StemDeck → ScenePilot"
+      },
+      {
+        "level": 3,
+        "text": "Form"
+      },
+      {
+        "level": 3,
+        "text": "Luma"
+      },
+      {
+        "level": 3,
+        "text": "StemDeck"
+      },
+      {
+        "level": 3,
+        "text": "ScenePilot"
+      },
+      {
+        "level": 2,
+        "text": "More from thecreateco."
+      },
+      {
+        "level": 3,
+        "text": "Ghost"
+      },
+      {
+        "level": 3,
+        "text": "Librarian"
+      },
+      {
+        "level": 3,
+        "text": "Reclaim"
+      },
+      {
+        "level": 3,
+        "text": "Bounce"
+      },
+      {
+        "level": 3,
+        "text": "Glyph"
+      },
+      {
+        "level": 3,
+        "text": "Locker"
+      },
+      {
+        "level": 3,
+        "text": "Sessions"
+      },
+      {
+        "level": 3,
+        "text": "Pocket Studio"
+      },
+      {
+        "level": 3,
+        "text": "AutoCut"
+      },
+      {
+        "level": 3,
+        "text": "Captions"
+      },
+      {
+        "level": 3,
+        "text": "Board"
+      },
+      {
+        "level": 3,
+        "text": "Grade"
+      },
+      {
+        "level": 3,
+        "text": "Split"
+      },
+      {
+        "level": 3,
+        "text": "Key & BPM"
+      },
+      {
+        "level": 3,
+        "text": "Vox"
+      },
+      {
+        "level": 3,
+        "text": "Canvas"
+      },
+      {
+        "level": 3,
+        "text": "Pocket"
+      },
+      {
+        "level": 3,
+        "text": "Press"
+      },
+      {
+        "level": 3,
+        "text": "Mockups"
+      },
+      {
+        "level": 3,
+        "text": "Glyph"
+      },
+      {
+        "level": 3,
+        "text": "Cast"
+      },
+      {
+        "level": 2,
+        "text": "Find your next tool."
+      },
+      {
+        "level": 2,
+        "text": "Make the next chapter with us."
+      }
+    ],
+    "images": 26,
+    "links": [
+      {
+        "href": "https://thecreatingco.com/",
+        "displayHref": "https://thecreatingco.com/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Skip to content"
+      },
+      {
+        "href": "https://thecreatingco.com/start/",
+        "displayHref": "https://thecreatingco.com/start/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "thecreateco."
+      },
+      {
+        "href": "https://thecreatingco.com/",
+        "displayHref": "https://thecreatingco.com/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Creative Suite"
+      },
+      {
+        "href": "https://thecreatingco.com/",
+        "displayHref": "https://thecreatingco.com/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Apps"
+      },
+      {
+        "href": "https://thecreatingco.com/about/",
+        "displayHref": "https://thecreatingco.com/about/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "About"
+      },
+      {
+        "href": "https://thecreatingco.com/learn/",
+        "displayHref": "https://thecreatingco.com/learn/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Learn"
+      },
+      {
+        "href": "https://thecreatingco.com/kickstarter/",
+        "displayHref": "https://thecreatingco.com/kickstarter/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Kickstarter ↗"
+      },
+      {
+        "href": "https://thecreatingco.com/community/network",
+        "displayHref": "https://thecreatingco.com/community/network",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "The Circle"
+      },
+      {
+        "href": "https://thecreatingco.com/",
+        "displayHref": "https://thecreatingco.com/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "thecreateco home"
+      },
+      {
+        "href": "https://thecreatingco.com/",
+        "displayHref": "https://thecreatingco.com/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Creative Suite"
+      },
+      {
+        "href": "https://thecreatingco.com/",
+        "displayHref": "https://thecreatingco.com/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Other apps"
+      },
+      {
+        "href": "https://thecreatingco.com/about/",
+        "displayHref": "https://thecreatingco.com/about/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "About thecreateco"
+      },
+      {
+        "href": "https://thecreatingco.com/learn/",
+        "displayHref": "https://thecreatingco.com/learn/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Learning library"
+      },
+      {
+        "href": "https://thecreatingco.com/downloads/",
+        "displayHref": "https://thecreatingco.com/downloads/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Downloads & availability"
+      },
+      {
+        "href": "https://thecreatingco.com/testing/",
+        "displayHref": "https://thecreatingco.com/testing/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Support & feedback"
+      },
+      {
+        "href": "https://thecreatingco.com/privacy/",
+        "displayHref": "https://thecreatingco.com/privacy/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Privacy"
+      },
+      {
+        "href": "https://thecreatingco.com/work/",
+        "displayHref": "https://thecreatingco.com/work/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Your work"
+      },
+      {
+        "href": "https://thecreatingco.com/locker/",
+        "displayHref": "https://thecreatingco.com/locker/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Locker"
+      },
+      {
+        "href": "https://thecreatingco.com/community/network",
+        "displayHref": "https://thecreatingco.com/community/network",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "The Circle"
+      },
+      {
+        "href": "https://thecreatingco.com/kickstarter/",
+        "displayHref": "https://thecreatingco.com/kickstarter/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Kickstarter & launch list ↗"
+      },
+      {
+        "href": "https://thecreatingco.com/tools/",
+        "displayHref": "https://thecreatingco.com/tools/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Focused tools"
+      },
+      {
+        "href": "https://thecreatingco.com/products/form/",
+        "displayHref": "https://thecreatingco.com/products/form/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Try Form Studio ↗"
+      },
+      {
+        "href": "https://thecreatingco.com/",
+        "displayHref": "https://thecreatingco.com/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Join the launch list ↗"
+      },
+      {
+        "href": "https://thecreatingco.com/about/",
+        "displayHref": "https://thecreatingco.com/about/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Why we’re building thecreateco ↗"
+      },
+      {
+        "href": "https://thecreatingco.com/products/form/",
+        "displayHref": "https://thecreatingco.com/products/form/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Form"
+      },
+      {
+        "href": "https://thecreatingco.com/assets/product-artwork/form.png",
+        "displayHref": "https://thecreatingco.com/assets/product-artwork/form.png",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "View product artwork"
+      },
+      {
+        "href": "https://thecreatingco.com/assets/workflows/form-materials.png",
+        "displayHref": "https://thecreatingco.com/assets/workflows/form-materials.png",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "View Change the surface screenshot"
+      },
+      {
+        "href": "https://thecreatingco.com/assets/workflows/form-sketch.png",
+        "displayHref": "https://thecreatingco.com/assets/workflows/form-sketch.png",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "View Work in a sketch screenshot"
+      },
+      {
+        "href": "https://form-studio-review.netlify.app/studio",
+        "displayHref": "https://form-studio-review.netlify.app/studio",
+        "internal": false,
+        "source": "https://thecreatingco.com/",
+        "text": "Cast"
+      },
+      {
+        "href": "https://form.thecreatingco.com/studio",
+        "displayHref": "https://form.thecreatingco.com/studio",
+        "internal": false,
+        "source": "https://thecreatingco.com/",
+        "text": "Open App: Form"
+      },
+      {
+        "href": "https://thecreatingco.com/products/form/",
+        "displayHref": "https://thecreatingco.com/products/form/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Learn More: Form"
+      },
+      {
+        "href": "https://thecreatingco.com/products/luma/",
+        "displayHref": "https://thecreatingco.com/products/luma/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Luma"
+      },
+      {
+        "href": "https://thecreatingco.com/assets/product-artwork/luma.png",
+        "displayHref": "https://thecreatingco.com/assets/product-artwork/luma.png",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "View product artwork"
+      },
+      {
+        "href": "https://thecreatingco.com/assets/luma-workshops/visual-world-captures/weave.png",
+        "displayHref": "https://thecreatingco.com/assets/luma-workshops/visual-world-captures/weave.png",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "View Give your type depth screenshot"
+      },
+      {
+        "href": "https://thecreatingco.com/assets/luma-workshops/visual-world-captures/grade.png",
+        "displayHref": "https://thecreatingco.com/assets/luma-workshops/visual-world-captures/grade.png",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "View Develop the color screenshot"
+      },
+      {
+        "href": "https://luma.thecreatingco.com/studio",
+        "displayHref": "https://luma.thecreatingco.com/studio",
+        "internal": false,
+        "source": "https://thecreatingco.com/",
+        "text": "Mockup"
+      },
+      {
+        "href": "https://luma.thecreatingco.com/studio",
+        "displayHref": "https://luma.thecreatingco.com/studio",
+        "internal": false,
+        "source": "https://thecreatingco.com/",
+        "text": "Glyph"
+      },
+      {
+        "href": "https://luma.thecreatingco.com/studio",
+        "displayHref": "https://luma.thecreatingco.com/studio",
+        "internal": false,
+        "source": "https://thecreatingco.com/",
+        "text": "Open App: Luma"
+      },
+      {
+        "href": "https://thecreatingco.com/products/luma/",
+        "displayHref": "https://thecreatingco.com/products/luma/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Learn More: Luma"
+      },
+      {
+        "href": "https://thecreatingco.com/products/stemdeck/",
+        "displayHref": "https://thecreatingco.com/products/stemdeck/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "StemDeck"
+      },
+      {
+        "href": "https://thecreatingco.com/assets/product-artwork/stemdeck.png",
+        "displayHref": "https://thecreatingco.com/assets/product-artwork/stemdeck.png",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "View product artwork"
+      },
+      {
+        "href": "https://thecreatingco.com/assets/stemdeck-studio/arranger.png",
+        "displayHref": "https://thecreatingco.com/assets/stemdeck-studio/arranger.png",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "View Build an arrangement screenshot"
+      },
+      {
+        "href": "https://thecreatingco.com/assets/stemdeck-studio/mixer.png",
+        "displayHref": "https://thecreatingco.com/assets/stemdeck-studio/mixer.png",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "View Balance your session screenshot"
+      },
+      {
+        "href": "https://sattarimusic.com/studio/split",
+        "displayHref": "https://sattarimusic.com/studio/split",
+        "internal": false,
+        "source": "https://thecreatingco.com/",
+        "text": "Split"
+      },
+      {
+        "href": "https://sattarimusic.com/studio/keybpm",
+        "displayHref": "https://sattarimusic.com/studio/keybpm",
+        "internal": false,
+        "source": "https://thecreatingco.com/",
+        "text": "Key & BPM"
+      },
+      {
+        "href": "https://sattarimusic.com/studio/vox",
+        "displayHref": "https://sattarimusic.com/studio/vox",
+        "internal": false,
+        "source": "https://thecreatingco.com/",
+        "text": "Vox"
+      },
+      {
+        "href": "https://sattarimusic.com/studio/canvas",
+        "displayHref": "https://sattarimusic.com/studio/canvas",
+        "internal": false,
+        "source": "https://thecreatingco.com/",
+        "text": "Canvas"
+      },
+      {
+        "href": "https://sattarimusic.com/studio/pocket",
+        "displayHref": "https://sattarimusic.com/studio/pocket",
+        "internal": false,
+        "source": "https://thecreatingco.com/",
+        "text": "Pocket"
+      },
+      {
+        "href": "https://sattarimusic.com/press",
+        "displayHref": "https://sattarimusic.com/press",
+        "internal": false,
+        "source": "https://thecreatingco.com/",
+        "text": "Press"
+      },
+      {
+        "href": "https://stemdeck.thecreatingco.com/studio",
+        "displayHref": "https://stemdeck.thecreatingco.com/studio",
+        "internal": false,
+        "source": "https://thecreatingco.com/",
+        "text": "Open App: StemDeck"
+      },
+      {
+        "href": "https://thecreatingco.com/products/stemdeck/",
+        "displayHref": "https://thecreatingco.com/products/stemdeck/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Learn More: StemDeck"
+      },
+      {
+        "href": "https://thecreatingco.com/products/scenepilot/",
+        "displayHref": "https://thecreatingco.com/products/scenepilot/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "ScenePilot"
+      },
+      {
+        "href": "https://thecreatingco.com/assets/product-artwork/scenepilot.png",
+        "displayHref": "https://thecreatingco.com/assets/product-artwork/scenepilot.png",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "View product artwork"
+      },
+      {
+        "href": "https://thecreatingco.com/assets/workflows/scenepilot-analysis.png",
+        "displayHref": "https://thecreatingco.com/assets/workflows/scenepilot-analysis.png",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "View Find the rhythm screenshot"
+      },
+      {
+        "href": "https://thecreatingco.com/assets/workflows/scenepilot-timeline.png",
+        "displayHref": "https://thecreatingco.com/assets/workflows/scenepilot-timeline.png",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "View Refine the sequence screenshot"
+      },
+      {
+        "href": "https://scenepilot.thecreatingco.com/tools/autocut/",
+        "displayHref": "https://scenepilot.thecreatingco.com/tools/autocut/",
+        "internal": false,
+        "source": "https://thecreatingco.com/",
+        "text": "AutoCut"
+      },
+      {
+        "href": "https://scenepilot.thecreatingco.com/tools/captions/",
+        "displayHref": "https://scenepilot.thecreatingco.com/tools/captions/",
+        "internal": false,
+        "source": "https://thecreatingco.com/",
+        "text": "Captions"
+      },
+      {
+        "href": "https://scenepilot.thecreatingco.com/tools/board/",
+        "displayHref": "https://scenepilot.thecreatingco.com/tools/board/",
+        "internal": false,
+        "source": "https://thecreatingco.com/",
+        "text": "Board"
+      },
+      {
+        "href": "https://scenepilot.thecreatingco.com/tools/grade/",
+        "displayHref": "https://scenepilot.thecreatingco.com/tools/grade/",
+        "internal": false,
+        "source": "https://thecreatingco.com/",
+        "text": "Grade"
+      },
+      {
+        "href": "https://scenepilot.thecreatingco.com/app/",
+        "displayHref": "https://scenepilot.thecreatingco.com/app/",
+        "internal": false,
+        "source": "https://thecreatingco.com/",
+        "text": "Open App: ScenePilot"
+      },
+      {
+        "href": "https://thecreatingco.com/products/scenepilot/",
+        "displayHref": "https://thecreatingco.com/products/scenepilot/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Learn More: ScenePilot"
+      },
+      {
+        "href": "https://thecreatingco.com/products/ghost/",
+        "displayHref": "https://thecreatingco.com/products/ghost/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Learn More: Ghost"
+      },
+      {
+        "href": "https://thecreatingco.com/products/ghost/",
+        "displayHref": "https://thecreatingco.com/products/ghost/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Ghost"
+      },
+      {
+        "href": "https://ghost.thecreatingco.com/",
+        "displayHref": "https://ghost.thecreatingco.com/",
+        "internal": false,
+        "source": "https://thecreatingco.com/",
+        "text": "Open App: Ghost"
+      },
+      {
+        "href": "https://thecreatingco.com/products/ghost/",
+        "displayHref": "https://thecreatingco.com/products/ghost/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Learn More: Ghost"
+      },
+      {
+        "href": "https://thecreatingco.com/products/librarian/",
+        "displayHref": "https://thecreatingco.com/products/librarian/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Learn More: Librarian"
+      },
+      {
+        "href": "https://thecreatingco.com/products/librarian/",
+        "displayHref": "https://thecreatingco.com/products/librarian/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Librarian"
+      },
+      {
+        "href": "https://librarian.thecreatingco.com/",
+        "displayHref": "https://librarian.thecreatingco.com/",
+        "internal": false,
+        "source": "https://thecreatingco.com/",
+        "text": "Open App: Librarian"
+      },
+      {
+        "href": "https://thecreatingco.com/products/librarian/",
+        "displayHref": "https://thecreatingco.com/products/librarian/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Learn More: Librarian"
+      },
+      {
+        "href": "https://thecreatingco.com/products/reclaim/",
+        "displayHref": "https://thecreatingco.com/products/reclaim/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Learn More: Reclaim"
+      },
+      {
+        "href": "https://thecreatingco.com/products/reclaim/",
+        "displayHref": "https://thecreatingco.com/products/reclaim/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Reclaim"
+      },
+      {
+        "href": "https://reclaim.thecreatingco.com/browser/",
+        "displayHref": "https://reclaim.thecreatingco.com/browser/",
+        "internal": false,
+        "source": "https://thecreatingco.com/",
+        "text": "Open App: Reclaim"
+      },
+      {
+        "href": "https://thecreatingco.com/products/reclaim/",
+        "displayHref": "https://thecreatingco.com/products/reclaim/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Learn More: Reclaim"
+      },
+      {
+        "href": "https://thecreatingco.com/products/bounce/",
+        "displayHref": "https://thecreatingco.com/products/bounce/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Learn More: Bounce"
+      },
+      {
+        "href": "https://thecreatingco.com/products/bounce/",
+        "displayHref": "https://thecreatingco.com/products/bounce/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Bounce"
+      },
+      {
+        "href": "https://bounce.thecreatingco.com/browser/",
+        "displayHref": "https://bounce.thecreatingco.com/browser/",
+        "internal": false,
+        "source": "https://thecreatingco.com/",
+        "text": "Open App: Bounce"
+      },
+      {
+        "href": "https://thecreatingco.com/products/bounce/",
+        "displayHref": "https://thecreatingco.com/products/bounce/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Learn More: Bounce"
+      },
+      {
+        "href": "https://thecreatingco.com/products/glyph-studio/",
+        "displayHref": "https://thecreatingco.com/products/glyph-studio/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Learn More: Glyph"
+      },
+      {
+        "href": "https://thecreatingco.com/products/glyph-studio/",
+        "displayHref": "https://thecreatingco.com/products/glyph-studio/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Glyph"
+      },
+      {
+        "href": "https://glyph-studio-610.netlify.app/",
+        "displayHref": "https://glyph-studio-610.netlify.app/",
+        "internal": false,
+        "source": "https://thecreatingco.com/",
+        "text": "Open App: Glyph"
+      },
+      {
+        "href": "https://thecreatingco.com/products/glyph-studio/",
+        "displayHref": "https://thecreatingco.com/products/glyph-studio/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Learn More: Glyph"
+      },
+      {
+        "href": "https://thecreatingco.com/locker/",
+        "displayHref": "https://thecreatingco.com/locker/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Open Locker"
+      },
+      {
+        "href": "https://thecreatingco.com/locker/",
+        "displayHref": "https://thecreatingco.com/locker/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Locker"
+      },
+      {
+        "href": "https://thecreatingco.com/locker/",
+        "displayHref": "https://thecreatingco.com/locker/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Open App: Locker"
+      },
+      {
+        "href": "https://thecreatingco.com/community/network",
+        "displayHref": "https://thecreatingco.com/community/network",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Open Sessions"
+      },
+      {
+        "href": "https://thecreatingco.com/community/network",
+        "displayHref": "https://thecreatingco.com/community/network",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Sessions"
+      },
+      {
+        "href": "https://thecreatingco.com/community/network",
+        "displayHref": "https://thecreatingco.com/community/network",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Open App: Sessions"
+      },
+      {
+        "href": "https://thecreatingco.com/community/network",
+        "displayHref": "https://thecreatingco.com/community/network",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Open Pocket Studio"
+      },
+      {
+        "href": "https://thecreatingco.com/community/network",
+        "displayHref": "https://thecreatingco.com/community/network",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Pocket Studio"
+      },
+      {
+        "href": "https://thecreatingco.com/community/network",
+        "displayHref": "https://thecreatingco.com/community/network",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Open App: Pocket Studio"
+      },
+      {
+        "href": "https://thecreatingco.com/products/autocut/",
+        "displayHref": "https://thecreatingco.com/products/autocut/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "About AutoCut"
+      },
+      {
+        "href": "https://thecreatingco.com/products/autocut/",
+        "displayHref": "https://thecreatingco.com/products/autocut/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "AutoCut"
+      },
+      {
+        "href": "https://scenepilot.thecreatingco.com/tools/autocut/",
+        "displayHref": "https://scenepilot.thecreatingco.com/tools/autocut/",
+        "internal": false,
+        "source": "https://thecreatingco.com/",
+        "text": "Open App: AutoCut"
+      },
+      {
+        "href": "https://thecreatingco.com/products/autocut/",
+        "displayHref": "https://thecreatingco.com/products/autocut/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Learn More: AutoCut"
+      },
+      {
+        "href": "https://thecreatingco.com/products/captions/",
+        "displayHref": "https://thecreatingco.com/products/captions/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "About Captions"
+      },
+      {
+        "href": "https://thecreatingco.com/products/captions/",
+        "displayHref": "https://thecreatingco.com/products/captions/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Captions"
+      },
+      {
+        "href": "https://scenepilot.thecreatingco.com/tools/captions/",
+        "displayHref": "https://scenepilot.thecreatingco.com/tools/captions/",
+        "internal": false,
+        "source": "https://thecreatingco.com/",
+        "text": "Open App: Captions"
+      },
+      {
+        "href": "https://thecreatingco.com/products/captions/",
+        "displayHref": "https://thecreatingco.com/products/captions/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Learn More: Captions"
+      },
+      {
+        "href": "https://thecreatingco.com/products/board/",
+        "displayHref": "https://thecreatingco.com/products/board/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "About Board"
+      },
+      {
+        "href": "https://thecreatingco.com/products/board/",
+        "displayHref": "https://thecreatingco.com/products/board/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Board"
+      },
+      {
+        "href": "https://scenepilot.thecreatingco.com/tools/board/",
+        "displayHref": "https://scenepilot.thecreatingco.com/tools/board/",
+        "internal": false,
+        "source": "https://thecreatingco.com/",
+        "text": "Open App: Board"
+      },
+      {
+        "href": "https://thecreatingco.com/products/board/",
+        "displayHref": "https://thecreatingco.com/products/board/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Learn More: Board"
+      },
+      {
+        "href": "https://thecreatingco.com/products/grade/",
+        "displayHref": "https://thecreatingco.com/products/grade/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "About Grade"
+      },
+      {
+        "href": "https://thecreatingco.com/products/grade/",
+        "displayHref": "https://thecreatingco.com/products/grade/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Grade"
+      },
+      {
+        "href": "https://scenepilot.thecreatingco.com/tools/grade/",
+        "displayHref": "https://scenepilot.thecreatingco.com/tools/grade/",
+        "internal": false,
+        "source": "https://thecreatingco.com/",
+        "text": "Open App: Grade"
+      },
+      {
+        "href": "https://thecreatingco.com/products/grade/",
+        "displayHref": "https://thecreatingco.com/products/grade/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Learn More: Grade"
+      },
+      {
+        "href": "https://thecreatingco.com/products/split/",
+        "displayHref": "https://thecreatingco.com/products/split/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "About Split"
+      },
+      {
+        "href": "https://thecreatingco.com/products/split/",
+        "displayHref": "https://thecreatingco.com/products/split/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Split"
+      },
+      {
+        "href": "https://sattarimusic.com/studio/split",
+        "displayHref": "https://sattarimusic.com/studio/split",
+        "internal": false,
+        "source": "https://thecreatingco.com/",
+        "text": "Open App: Split"
+      },
+      {
+        "href": "https://thecreatingco.com/products/split/",
+        "displayHref": "https://thecreatingco.com/products/split/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Learn More: Split"
+      },
+      {
+        "href": "https://thecreatingco.com/products/key-bpm/",
+        "displayHref": "https://thecreatingco.com/products/key-bpm/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "About Key & BPM"
+      },
+      {
+        "href": "https://thecreatingco.com/products/key-bpm/",
+        "displayHref": "https://thecreatingco.com/products/key-bpm/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Key & BPM"
+      },
+      {
+        "href": "https://sattarimusic.com/studio/keybpm",
+        "displayHref": "https://sattarimusic.com/studio/keybpm",
+        "internal": false,
+        "source": "https://thecreatingco.com/",
+        "text": "Open App: Key & BPM"
+      },
+      {
+        "href": "https://thecreatingco.com/products/key-bpm/",
+        "displayHref": "https://thecreatingco.com/products/key-bpm/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Learn More: Key & BPM"
+      },
+      {
+        "href": "https://thecreatingco.com/products/vox/",
+        "displayHref": "https://thecreatingco.com/products/vox/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "About Vox"
+      },
+      {
+        "href": "https://thecreatingco.com/products/vox/",
+        "displayHref": "https://thecreatingco.com/products/vox/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Vox"
+      },
+      {
+        "href": "https://sattarimusic.com/studio/vox",
+        "displayHref": "https://sattarimusic.com/studio/vox",
+        "internal": false,
+        "source": "https://thecreatingco.com/",
+        "text": "Open App: Vox"
+      },
+      {
+        "href": "https://thecreatingco.com/products/vox/",
+        "displayHref": "https://thecreatingco.com/products/vox/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Learn More: Vox"
+      },
+      {
+        "href": "https://thecreatingco.com/products/canvas/",
+        "displayHref": "https://thecreatingco.com/products/canvas/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "About Canvas"
+      },
+      {
+        "href": "https://thecreatingco.com/products/canvas/",
+        "displayHref": "https://thecreatingco.com/products/canvas/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Canvas"
+      },
+      {
+        "href": "https://sattarimusic.com/studio/canvas",
+        "displayHref": "https://sattarimusic.com/studio/canvas",
+        "internal": false,
+        "source": "https://thecreatingco.com/",
+        "text": "Open App: Canvas"
+      },
+      {
+        "href": "https://thecreatingco.com/products/canvas/",
+        "displayHref": "https://thecreatingco.com/products/canvas/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Learn More: Canvas"
+      },
+      {
+        "href": "https://thecreatingco.com/products/pocket/",
+        "displayHref": "https://thecreatingco.com/products/pocket/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "About Pocket"
+      },
+      {
+        "href": "https://thecreatingco.com/products/pocket/",
+        "displayHref": "https://thecreatingco.com/products/pocket/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Pocket"
+      },
+      {
+        "href": "https://sattarimusic.com/studio/pocket",
+        "displayHref": "https://sattarimusic.com/studio/pocket",
+        "internal": false,
+        "source": "https://thecreatingco.com/",
+        "text": "Open App: Pocket"
+      },
+      {
+        "href": "https://thecreatingco.com/products/pocket/",
+        "displayHref": "https://thecreatingco.com/products/pocket/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Learn More: Pocket"
+      },
+      {
+        "href": "https://thecreatingco.com/products/press/",
+        "displayHref": "https://thecreatingco.com/products/press/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "About Press"
+      },
+      {
+        "href": "https://thecreatingco.com/products/press/",
+        "displayHref": "https://thecreatingco.com/products/press/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Press"
+      },
+      {
+        "href": "https://sattarimusic.com/press",
+        "displayHref": "https://sattarimusic.com/press",
+        "internal": false,
+        "source": "https://thecreatingco.com/",
+        "text": "Open App: Press"
+      },
+      {
+        "href": "https://thecreatingco.com/products/press/",
+        "displayHref": "https://thecreatingco.com/products/press/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Learn More: Press"
+      },
+      {
+        "href": "https://thecreatingco.com/products/mockup/",
+        "displayHref": "https://thecreatingco.com/products/mockup/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "About Mockups"
+      },
+      {
+        "href": "https://thecreatingco.com/products/mockup/",
+        "displayHref": "https://thecreatingco.com/products/mockup/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Mockups"
+      },
+      {
+        "href": "https://luma.thecreatingco.com/studio",
+        "displayHref": "https://luma.thecreatingco.com/studio",
+        "internal": false,
+        "source": "https://thecreatingco.com/",
+        "text": "Open App: Mockups"
+      },
+      {
+        "href": "https://thecreatingco.com/products/mockup/",
+        "displayHref": "https://thecreatingco.com/products/mockup/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Learn More: Mockups"
+      },
+      {
+        "href": "https://thecreatingco.com/products/glyph/",
+        "displayHref": "https://thecreatingco.com/products/glyph/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "About Glyph"
+      },
+      {
+        "href": "https://thecreatingco.com/products/glyph/",
+        "displayHref": "https://thecreatingco.com/products/glyph/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Glyph"
+      },
+      {
+        "href": "https://luma.thecreatingco.com/studio",
+        "displayHref": "https://luma.thecreatingco.com/studio",
+        "internal": false,
+        "source": "https://thecreatingco.com/",
+        "text": "Open App: Glyph"
+      },
+      {
+        "href": "https://thecreatingco.com/products/glyph/",
+        "displayHref": "https://thecreatingco.com/products/glyph/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Learn More: Glyph"
+      },
+      {
+        "href": "https://thecreatingco.com/products/form/",
+        "displayHref": "https://thecreatingco.com/products/form/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "About Cast"
+      },
+      {
+        "href": "https://thecreatingco.com/products/form/",
+        "displayHref": "https://thecreatingco.com/products/form/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Cast"
+      },
+      {
+        "href": "https://form-studio-review.netlify.app/studio",
+        "displayHref": "https://form-studio-review.netlify.app/studio",
+        "internal": false,
+        "source": "https://thecreatingco.com/",
+        "text": "Open App: Cast"
+      },
+      {
+        "href": "https://thecreatingco.com/products/form/",
+        "displayHref": "https://thecreatingco.com/products/form/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Learn More: Cast"
+      },
+      {
+        "href": "https://thecreatingco.com/downloads/",
+        "displayHref": "https://thecreatingco.com/downloads/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Availability"
+      },
+      {
+        "href": "https://thecreatingco.com/testing/",
+        "displayHref": "https://thecreatingco.com/testing/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Send Feedback"
+      },
+      {
+        "href": "https://thecreatingco.com/tools/",
+        "displayHref": "https://thecreatingco.com/tools/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Explore the tools ↗"
+      },
+      {
+        "href": "https://thecreatingco.com/kickstarter/",
+        "displayHref": "https://thecreatingco.com/kickstarter/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Explore the funding priorities ↗"
+      },
+      {
+        "href": "https://thecreatingco.com/privacy/",
+        "displayHref": "https://thecreatingco.com/privacy/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "How we use it"
+      },
+      {
+        "href": "https://thecreatingco.com/testing/",
+        "displayHref": "https://thecreatingco.com/testing/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Leave the list"
+      },
+      {
+        "href": "https://thecreatingco.com/start/",
+        "displayHref": "https://thecreatingco.com/start/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "thecreateco."
+      },
+      {
+        "href": "https://thecreatingco.com/start/",
+        "displayHref": "https://thecreatingco.com/start/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "thecreatingco.com"
+      },
+      {
+        "href": "https://thecreatingco.com/start/",
+        "displayHref": "https://thecreatingco.com/start/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Meet thecreateco"
+      },
+      {
+        "href": "https://thecreatingco.com/",
+        "displayHref": "https://thecreatingco.com/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Creative Suite"
+      },
+      {
+        "href": "https://thecreatingco.com/",
+        "displayHref": "https://thecreatingco.com/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Other apps"
+      },
+      {
+        "href": "https://thecreatingco.com/learn/",
+        "displayHref": "https://thecreatingco.com/learn/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Learning library"
+      },
+      {
+        "href": "https://thecreatingco.com/testing/",
+        "displayHref": "https://thecreatingco.com/testing/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Testing & feedback"
+      },
+      {
+        "href": "https://thecreatingco.com/downloads/",
+        "displayHref": "https://thecreatingco.com/downloads/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Release status"
+      },
+      {
+        "href": "https://thecreatingco.com/about/",
+        "displayHref": "https://thecreatingco.com/about/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "About thecreateco"
+      },
+      {
+        "href": "https://thecreatingco.com/privacy/",
+        "displayHref": "https://thecreatingco.com/privacy/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Data & privacy"
+      },
+      {
+        "href": "https://thecreatingco.com/work/",
+        "displayHref": "https://thecreatingco.com/work/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Your work"
+      },
+      {
+        "href": "https://thecreatingco.com/community/network",
+        "displayHref": "https://thecreatingco.com/community/network",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "The Circle"
+      },
+      {
+        "href": "https://thecreatingco.com/kickstarter/",
+        "displayHref": "https://thecreatingco.com/kickstarter/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Kickstarter & launch list ↗"
+      },
+      {
+        "href": "https://thecreatingco.com/tools/",
+        "displayHref": "https://thecreatingco.com/tools/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Focused tools"
+      },
+      {
+        "href": "https://form.thecreatingco.com/studio",
+        "displayHref": "https://form.thecreatingco.com/studio",
+        "internal": false,
+        "source": "https://thecreatingco.com/",
+        "text": "Open app: Form"
+      },
+      {
+        "href": "https://thecreatingco.com/products/form/",
+        "displayHref": "https://thecreatingco.com/products/form/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Product details: Form ↗"
+      },
+      {
+        "href": "https://thecreatingco.com/products/form/",
+        "displayHref": "https://thecreatingco.com/products/form/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Try a prepared project: Form ↗"
+      },
+      {
+        "href": "https://form-studio-review.netlify.app/studio",
+        "displayHref": "https://form-studio-review.netlify.app/studio",
+        "internal": false,
+        "source": "https://thecreatingco.com/",
+        "text": "Open app: Cast"
+      },
+      {
+        "href": "https://thecreatingco.com/products/form/",
+        "displayHref": "https://thecreatingco.com/products/form/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Product details: Cast ↗"
+      },
+      {
+        "href": "https://luma.thecreatingco.com/studio",
+        "displayHref": "https://luma.thecreatingco.com/studio",
+        "internal": false,
+        "source": "https://thecreatingco.com/",
+        "text": "Open app: Luma"
+      },
+      {
+        "href": "https://thecreatingco.com/products/luma/",
+        "displayHref": "https://thecreatingco.com/products/luma/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Product details: Luma ↗"
+      },
+      {
+        "href": "https://thecreatingco.com/products/luma/",
+        "displayHref": "https://thecreatingco.com/products/luma/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Try a prepared project: Luma ↗"
+      },
+      {
+        "href": "https://luma.thecreatingco.com/studio",
+        "displayHref": "https://luma.thecreatingco.com/studio",
+        "internal": false,
+        "source": "https://thecreatingco.com/",
+        "text": "Open app: Mockup"
+      },
+      {
+        "href": "https://thecreatingco.com/products/mockup/",
+        "displayHref": "https://thecreatingco.com/products/mockup/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Product details: Mockup ↗"
+      },
+      {
+        "href": "https://glyph-studio-610.netlify.app/",
+        "displayHref": "https://glyph-studio-610.netlify.app/",
+        "internal": false,
+        "source": "https://thecreatingco.com/",
+        "text": "Open app: Glyph"
+      },
+      {
+        "href": "https://thecreatingco.com/products/glyph-studio/",
+        "displayHref": "https://thecreatingco.com/products/glyph-studio/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Product details: Glyph ↗"
+      },
+      {
+        "href": "https://ghost.thecreatingco.com/",
+        "displayHref": "https://ghost.thecreatingco.com/",
+        "internal": false,
+        "source": "https://thecreatingco.com/",
+        "text": "Open app: Ghost"
+      },
+      {
+        "href": "https://thecreatingco.com/products/ghost/",
+        "displayHref": "https://thecreatingco.com/products/ghost/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Product details: Ghost ↗"
+      },
+      {
+        "href": "https://scenepilot.thecreatingco.com/app/",
+        "displayHref": "https://scenepilot.thecreatingco.com/app/",
+        "internal": false,
+        "source": "https://thecreatingco.com/",
+        "text": "Open app: ScenePilot"
+      },
+      {
+        "href": "https://thecreatingco.com/products/scenepilot/",
+        "displayHref": "https://thecreatingco.com/products/scenepilot/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Product details: ScenePilot ↗"
+      },
+      {
+        "href": "https://thecreatingco.com/products/scenepilot/",
+        "displayHref": "https://thecreatingco.com/products/scenepilot/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Try a prepared project: ScenePilot ↗"
+      },
+      {
+        "href": "https://scenepilot.thecreatingco.com/tools/autocut/",
+        "displayHref": "https://scenepilot.thecreatingco.com/tools/autocut/",
+        "internal": false,
+        "source": "https://thecreatingco.com/",
+        "text": "Open app: AutoCut"
+      },
+      {
+        "href": "https://thecreatingco.com/products/autocut/",
+        "displayHref": "https://thecreatingco.com/products/autocut/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Product details: AutoCut ↗"
+      },
+      {
+        "href": "https://scenepilot.thecreatingco.com/tools/captions/",
+        "displayHref": "https://scenepilot.thecreatingco.com/tools/captions/",
+        "internal": false,
+        "source": "https://thecreatingco.com/",
+        "text": "Open app: Captions"
+      },
+      {
+        "href": "https://thecreatingco.com/products/captions/",
+        "displayHref": "https://thecreatingco.com/products/captions/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Product details: Captions ↗"
+      },
+      {
+        "href": "https://scenepilot.thecreatingco.com/tools/board/",
+        "displayHref": "https://scenepilot.thecreatingco.com/tools/board/",
+        "internal": false,
+        "source": "https://thecreatingco.com/",
+        "text": "Open app: Board"
+      },
+      {
+        "href": "https://thecreatingco.com/products/board/",
+        "displayHref": "https://thecreatingco.com/products/board/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Product details: Board ↗"
+      },
+      {
+        "href": "https://scenepilot.thecreatingco.com/tools/grade/",
+        "displayHref": "https://scenepilot.thecreatingco.com/tools/grade/",
+        "internal": false,
+        "source": "https://thecreatingco.com/",
+        "text": "Open app: Grade"
+      },
+      {
+        "href": "https://thecreatingco.com/products/grade/",
+        "displayHref": "https://thecreatingco.com/products/grade/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Product details: Grade ↗"
+      },
+      {
+        "href": "https://scenepilot.thecreatingco.com/tools/reframe/",
+        "displayHref": "https://scenepilot.thecreatingco.com/tools/reframe/",
+        "internal": false,
+        "source": "https://thecreatingco.com/",
+        "text": "Open app: Reframe"
+      },
+      {
+        "href": "https://stemdeck.thecreatingco.com/studio",
+        "displayHref": "https://stemdeck.thecreatingco.com/studio",
+        "internal": false,
+        "source": "https://thecreatingco.com/",
+        "text": "Open app: StemDeck"
+      },
+      {
+        "href": "https://thecreatingco.com/products/stemdeck/",
+        "displayHref": "https://thecreatingco.com/products/stemdeck/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Product details: StemDeck ↗"
+      },
+      {
+        "href": "https://thecreatingco.com/products/stemdeck/",
+        "displayHref": "https://thecreatingco.com/products/stemdeck/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Try a prepared project: StemDeck ↗"
+      },
+      {
+        "href": "https://sattarimusic.com/studio/split",
+        "displayHref": "https://sattarimusic.com/studio/split",
+        "internal": false,
+        "source": "https://thecreatingco.com/",
+        "text": "Open app: Split"
+      },
+      {
+        "href": "https://thecreatingco.com/products/split/",
+        "displayHref": "https://thecreatingco.com/products/split/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Product details: Split ↗"
+      },
+      {
+        "href": "https://sattarimusic.com/studio/keybpm",
+        "displayHref": "https://sattarimusic.com/studio/keybpm",
+        "internal": false,
+        "source": "https://thecreatingco.com/",
+        "text": "Open app: Key & BPM"
+      },
+      {
+        "href": "https://thecreatingco.com/products/key-bpm/",
+        "displayHref": "https://thecreatingco.com/products/key-bpm/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Product details: Key & BPM ↗"
+      },
+      {
+        "href": "https://sattarimusic.com/studio/vox",
+        "displayHref": "https://sattarimusic.com/studio/vox",
+        "internal": false,
+        "source": "https://thecreatingco.com/",
+        "text": "Open app: Vox"
+      },
+      {
+        "href": "https://thecreatingco.com/products/vox/",
+        "displayHref": "https://thecreatingco.com/products/vox/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Product details: Vox ↗"
+      },
+      {
+        "href": "https://sattarimusic.com/studio/canvas",
+        "displayHref": "https://sattarimusic.com/studio/canvas",
+        "internal": false,
+        "source": "https://thecreatingco.com/",
+        "text": "Open app: Canvas"
+      },
+      {
+        "href": "https://thecreatingco.com/products/canvas/",
+        "displayHref": "https://thecreatingco.com/products/canvas/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Product details: Canvas ↗"
+      },
+      {
+        "href": "https://sattarimusic.com/studio/pocket",
+        "displayHref": "https://sattarimusic.com/studio/pocket",
+        "internal": false,
+        "source": "https://thecreatingco.com/",
+        "text": "Open app: Pocket"
+      },
+      {
+        "href": "https://thecreatingco.com/products/pocket/",
+        "displayHref": "https://thecreatingco.com/products/pocket/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Product details: Pocket ↗"
+      },
+      {
+        "href": "https://sattarimusic.com/press",
+        "displayHref": "https://sattarimusic.com/press",
+        "internal": false,
+        "source": "https://thecreatingco.com/",
+        "text": "Open app: Press"
+      },
+      {
+        "href": "https://thecreatingco.com/products/press/",
+        "displayHref": "https://thecreatingco.com/products/press/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Product details: Press ↗"
+      },
+      {
+        "href": "https://librarian.thecreatingco.com/",
+        "displayHref": "https://librarian.thecreatingco.com/",
+        "internal": false,
+        "source": "https://thecreatingco.com/",
+        "text": "Open app: Librarian"
+      },
+      {
+        "href": "https://thecreatingco.com/products/librarian/",
+        "displayHref": "https://thecreatingco.com/products/librarian/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Product details: Librarian ↗"
+      },
+      {
+        "href": "https://reclaim.thecreatingco.com/browser/",
+        "displayHref": "https://reclaim.thecreatingco.com/browser/",
+        "internal": false,
+        "source": "https://thecreatingco.com/",
+        "text": "Open app: Reclaim"
+      },
+      {
+        "href": "https://thecreatingco.com/products/reclaim/",
+        "displayHref": "https://thecreatingco.com/products/reclaim/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Product details: Reclaim ↗"
+      },
+      {
+        "href": "https://bounce.thecreatingco.com/browser/",
+        "displayHref": "https://bounce.thecreatingco.com/browser/",
+        "internal": false,
+        "source": "https://thecreatingco.com/",
+        "text": "Open app: Bounce"
+      },
+      {
+        "href": "https://thecreatingco.com/products/bounce/",
+        "displayHref": "https://thecreatingco.com/products/bounce/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Product details: Bounce ↗"
+      },
+      {
+        "href": "https://thecreatingco.com/locker/",
+        "displayHref": "https://thecreatingco.com/locker/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Open app: Locker"
+      },
+      {
+        "href": "https://thecreatingco.com/community/network",
+        "displayHref": "https://thecreatingco.com/community/network",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Open app: Sessions"
+      },
+      {
+        "href": "https://thecreatingco.com/community/network",
+        "displayHref": "https://thecreatingco.com/community/network",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Open app: Pocket Studio"
+      },
+      {
+        "href": "https://thecreatingco.com/privacy/",
+        "displayHref": "https://thecreatingco.com/privacy/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Privacy"
+      },
+      {
+        "href": "https://thecreatingco.com/testing/",
+        "displayHref": "https://thecreatingco.com/testing/",
+        "internal": true,
+        "source": "https://thecreatingco.com/",
+        "text": "Full support form"
+      }
+    ],
+    "forms": [
+      {
+        "method": "POST",
+        "action": "https://thecreatingco.com/",
+        "fields": [
+          {
+            "tag": "input",
+            "type": "hidden",
+            "name": "form-name",
+            "label": ""
+          },
+          {
+            "tag": "input",
+            "type": "hidden",
+            "name": "category",
+            "label": ""
+          },
+          {
+            "tag": "input",
+            "type": "hidden",
+            "name": "product",
+            "label": ""
+          },
+          {
+            "tag": "input",
+            "type": "hidden",
+            "name": "task",
+            "label": ""
+          },
+          {
+            "tag": "input",
+            "type": "hidden",
+            "name": "reference",
+            "label": ""
+          },
+          {
+            "tag": "input",
+            "type": "input",
+            "name": "bot-field",
+            "label": ""
+          },
+          {
+            "tag": "input",
+            "type": "email",
+            "name": "email",
+            "label": "you@example.com"
+          },
+          {
+            "tag": "input",
+            "type": "checkbox",
+            "name": "expected",
+            "label": ""
+          },
+          {
+            "tag": "input",
+            "type": "hidden",
+            "name": "result",
+            "label": ""
+          },
+          {
+            "tag": "button",
+            "type": "submit",
+            "name": "",
+            "label": ""
+          }
+        ]
+      },
+      {
+        "method": "POST",
+        "action": "https://thecreatingco.com/testing/received/",
+        "fields": [
+          {
+            "tag": "input",
+            "type": "hidden",
+            "name": "form-name",
+            "label": ""
+          },
+          {
+            "tag": "input",
+            "type": "hidden",
+            "name": "reference",
+            "label": ""
+          },
+          {
+            "tag": "input",
+            "type": "hidden",
+            "name": "category",
+            "label": ""
+          },
+          {
+            "tag": "input",
+            "type": "input",
+            "name": "bot-field",
+            "label": ""
+          },
+          {
+            "tag": "select",
+            "type": "select",
+            "name": "product",
+            "label": ""
+          },
+          {
+            "tag": "input",
+            "type": "input",
+            "name": "task",
+            "label": "What worked—or got in your way?"
+          },
+          {
+            "tag": "textarea",
+            "type": "textarea",
+            "name": "result",
+            "label": ""
+          },
+          {
+            "tag": "input",
+            "type": "email",
+            "name": "email",
+            "label": ""
+          },
+          {
+            "tag": "button",
+            "type": "submit",
+            "name": "",
+            "label": ""
+          }
+        ]
+      }
+    ]
+  },
+  "linkChecks": [
+    {
+      "url": "https://thecreatingco.com/",
+      "status": 200,
+      "internal": true
+    },
+    {
+      "url": "https://thecreatingco.com/start/",
+      "status": 200,
+      "internal": true
+    },
+    {
+      "url": "https://thecreatingco.com/",
+      "status": 200,
+      "internal": true
+    },
+    {
+      "url": "https://thecreatingco.com/",
+      "status": 200,
+      "internal": true
+    },
+    {
+      "url": "https://thecreatingco.com/about/",
+      "status": 200,
+      "internal": true
+    },
+    {
+      "url": "https://thecreatingco.com/learn/",
+      "status": 200,
+      "internal": true
+    },
+    {
+      "url": "https://thecreatingco.com/kickstarter/",
+      "status": 200,
+      "internal": true
+    },
+    {
+      "url": "https://thecreatingco.com/community/network",
+      "status": 200,
+      "internal": true
+    },
+    {
+      "url": "https://thecreatingco.com/",
+      "status": 200,
+      "internal": true
+    },
+    {
+      "url": "https://thecreatingco.com/downloads/",
+      "status": 200,
+      "internal": true
+    },
+    {
+      "url": "https://thecreatingco.com/testing/",
+      "status": 200,
+      "internal": true
+    },
+    {
+      "url": "https://thecreatingco.com/privacy/",
+      "status": 200,
+      "internal": true
+    },
+    {
+      "url": "https://thecreatingco.com/work/",
+      "status": 200,
+      "internal": true
+    },
+    {
+      "url": "https://thecreatingco.com/locker/",
+      "status": 200,
+      "internal": true
+    },
+    {
+      "url": "https://thecreatingco.com/tools/",
+      "status": 200,
+      "internal": true
+    },
+    {
+      "url": "https://thecreatingco.com/products/form/",
+      "status": 200,
+      "internal": true
+    },
+    {
+      "url": "https://thecreatingco.com/",
+      "status": 200,
+      "internal": true
+    },
+    {
+      "url": "https://thecreatingco.com/products/form/",
+      "status": 200,
+      "internal": true
+    },
+    {
+      "url": "https://thecreatingco.com/assets/product-artwork/form.png",
+      "status": null,
+      "error": "Page exceeds the safe scan-size limit.",
+      "internal": true
+    },
+    {
+      "url": "https://thecreatingco.com/assets/workflows/form-materials.png",
+      "status": 200,
+      "internal": true
+    },
+    {
+      "url": "https://thecreatingco.com/assets/workflows/form-sketch.png",
+      "status": 200,
+      "internal": true
+    },
+    {
+      "url": "https://form-studio-review.netlify.app/studio",
+      "status": 200,
+      "internal": false
+    },
+    {
+      "url": "https://form.thecreatingco.com/studio",
+      "status": 200,
+      "internal": false
+    },
+    {
+      "url": "https://thecreatingco.com/products/luma/",
+      "status": 200,
+      "internal": true
+    }
+  ],
+  "performance": {
+    "initialHtmlResponseMs": 68,
+    "scope": "One bounded HTML GET from this server; not Lighthouse, Core Web Vitals, synthetic user timing or a regional performance guarantee."
+  },
+  "browser": {
+    "status": "checked",
+    "accessibility": {
+      "violations": [
+        {
+          "id": "aria-prohibited-attr",
+          "impact": "serious",
+          "description": "Ensure ARIA attributes are not prohibited for an element's role",
+          "nodes": [
+            {
+              "target": [
+                "section[data-product-carousel=\"form\"] > .pc-stage > div[aria-label=\"1 of 5\"][data-pc-label=\"Product artwork\"][data-pc-kind=\"artwork\"] > .pc-inspect[aria-label=\"View product artwork\"][title=\"View full artwork\"]"
+              ],
+              "summary": "Fix all of the following:\n  aria-label attribute cannot be used on \"a\" elements with no valid role attribute."
+            },
+            {
+              "target": [
+                "section[data-product-carousel=\"luma\"] > .pc-stage > div[aria-label=\"1 of 5\"][data-pc-label=\"Product artwork\"][data-pc-kind=\"artwork\"] > .pc-inspect[aria-label=\"View product artwork\"][title=\"View full artwork\"]"
+              ],
+              "summary": "Fix all of the following:\n  aria-label attribute cannot be used on \"a\" elements with no valid role attribute."
+            },
+            {
+              "target": [
+                "section[data-product-carousel=\"stemdeck\"] > .pc-stage > div[aria-label=\"1 of 5\"][data-pc-label=\"Product artwork\"][data-pc-kind=\"artwork\"] > .pc-inspect[aria-label=\"View product artwork\"][title=\"View full artwork\"]"
+              ],
+              "summary": "Fix all of the following:\n  aria-label attribute cannot be used on \"a\" elements with no valid role attribute."
+            },
+            {
+              "target": [
+                "section[data-product-carousel=\"scenepilot\"] > .pc-stage > div[aria-label=\"1 of 5\"][data-pc-label=\"Product artwork\"][data-pc-kind=\"artwork\"] > .pc-inspect[aria-label=\"View product artwork\"][title=\"View full artwork\"]"
+              ],
+              "summary": "Fix all of the following:\n  aria-label attribute cannot be used on \"a\" elements with no valid role attribute."
+            },
+            {
+              "target": [
+                "a[aria-label=\"Learn More: Ghost\"]"
+              ],
+              "summary": "Fix all of the following:\n  aria-label attribute cannot be used on \"a\" elements with no valid role attribute."
+            }
+          ]
+        },
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "nodes": [
+            {
+              "target": [
+                "article[data-cc-logo=\"form\"] > .mm-tool-top > span:nth-child(2)"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.35 (foreground color: #4a508d, background color: #bdc3f6, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                "article[data-cc-logo=\"luma\"] > .mm-tool-top > span:nth-child(2)"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.35 (foreground color: #4a508d, background color: #bdc3f6, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                "article[data-cc-logo=\"stemdeck\"] > .mm-tool-top > span:nth-child(2)"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.35 (foreground color: #4a508d, background color: #bdc3f6, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                "article[data-mm-product=\"scenepilot\"] > .mm-tool-top > span:nth-child(2)"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.35 (foreground color: #4a508d, background color: #bdc3f6, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                "article[data-mm-search=\"form 3d cad design make\"] > .hero-launch-lesson"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 2.01 (foreground color: #4f436f, background color: #17171a, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1"
+            }
+          ]
+        },
+        {
+          "id": "landmark-no-duplicate-banner",
+          "impact": "moderate",
+          "description": "Ensure the document has at most one banner landmark",
+          "nodes": [
+            {
+              "target": [
+                ".header"
+              ],
+              "summary": "Fix any of the following:\n  Document has more than one banner landmark"
+            }
+          ]
+        },
+        {
+          "id": "landmark-unique",
+          "impact": "moderate",
+          "description": "Ensure landmarks are unique",
+          "nodes": [
+            {
+              "target": [
+                ".header"
+              ],
+              "summary": "Fix any of the following:\n  The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable"
+            }
+          ]
+        },
+        {
+          "id": "region",
+          "impact": "moderate",
+          "description": "Ensure all page content is contained by landmarks",
+          "nodes": [
+            {
+              "target": [
+                ".skip"
+              ],
+              "summary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+            },
+            {
+              "target": [
+                "#mm-launch-title"
+              ],
+              "summary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+            },
+            {
+              "target": [
+                "label[for=\"mm-launch-search\"]"
+              ],
+              "summary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+            },
+            {
+              "target": [
+                "#mm-launch-search"
+              ],
+              "summary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+            },
+            {
+              "target": [
+                "p:nth-child(14)"
+              ],
+              "summary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+            }
+          ]
+        }
+      ],
+      "passes": 41,
+      "incomplete": 3,
+      "engine": "axe-core",
+      "scope": "Static response HTML in isolated browser; page scripts removed; not an authenticated or interaction audit."
+    },
+    "responsive": {
+      "viewports": [
+        {
+          "width": 320,
+          "documentWidth": 320,
+          "bodyWidth": 320,
+          "overflow": false
+        },
+        {
+          "width": 375,
+          "documentWidth": 375,
+          "bodyWidth": 375,
+          "overflow": false
+        },
+        {
+          "width": 768,
+          "documentWidth": 768,
+          "bodyWidth": 768,
+          "overflow": false
+        },
+        {
+          "width": 1024,
+          "documentWidth": 1024,
+          "bodyWidth": 1024,
+          "overflow": false
+        },
+        {
+          "width": 1440,
+          "documentWidth": 1440,
+          "bodyWidth": 1440,
+          "overflow": false
+        }
+      ],
+      "scope": "Static response HTML/CSS only; JavaScript-driven layout and interactive navigation were not executed."
+    },
+    "security": {
+      "remoteScriptsExecuted": false,
+      "executionProbe": null,
+      "construction": "Remote markup was parsed and reconstructed from an inert semantic allowlist; scripts, event handlers, SVG, embedded content and URL-bearing attributes were omitted. A per-scan CSP nonce permits only the local axe engine."
+    }
+  },
+  "findings": [
+    {
+      "category": "Forms",
+      "severity": "info",
+      "title": "Forms found; WebLab did not submit them.",
+      "evidence": "2 form(s) inspected structurally; submission, validation and success/error flows were not exercised.",
+      "fix": "Use the dedicated form-flow check in a safe staging environment; never submit a production form as part of this scan.",
+      "url": "https://thecreatingco.com/"
+    },
+    {
+      "category": "Links",
+      "severity": "medium",
+      "title": "Link could not be checked.",
+      "evidence": "Page exceeds the safe scan-size limit.",
+      "fix": "Review the destination, update the link, or remove it if no longer relevant.",
+      "url": "https://thecreatingco.com/assets/product-artwork/form.png"
+    },
+    {
+      "category": "Coverage",
+      "severity": "info",
+      "title": "Some stylesheet files were not included in the responsive check.",
+      "evidence": "Found 15 stylesheet links; WebLab checks up to 6 and does not follow CSS @import rules.",
+      "fix": "Treat responsive findings as a sampled check; inspect remaining and imported stylesheets for a complete result.",
+      "url": "https://thecreatingco.com/"
+    },
+    {
+      "category": "Accessibility",
+      "severity": "high",
+      "title": "Accessibility: aria-prohibited-attr.",
+      "evidence": "Ensure ARIA attributes are not prohibited for an element's role",
+      "fix": "Inspect the affected elements (section[data-product-carousel=\"form\"] > .pc-stage > div[aria-label=\"1 of 5\"][data-pc-label=\"Product artwork\"][data-pc-kind=\"artwork\"] > .pc-inspect[aria-label=\"View product artwork\"][title=\"View full artwork\"], section[data-product-carousel=\"luma\"] > .pc-stage > div[aria-label=\"1 of 5\"][data-pc-label=\"Product artwork\"][data-pc-kind=\"artwork\"] > .pc-inspect[aria-label=\"View product artwork\"][title=\"View full artwork\"], section[data-product-carousel=\"stemdeck\"] > .pc-stage > div[aria-label=\"1 of 5\"][data-pc-label=\"Product artwork\"][data-pc-kind=\"artwork\"] > .pc-inspect[aria-label=\"View product artwork\"][title=\"View full artwork\"], section[data-product-carousel=\"scenepilot\"] > .pc-stage > div[aria-label=\"1 of 5\"][data-pc-label=\"Product artwork\"][data-pc-kind=\"artwork\"] > .pc-inspect[aria-label=\"View product artwork\"][title=\"View full artwork\"]) and make the smallest WCAG-aligned correction.",
+      "url": "https://thecreatingco.com/"
+    },
+    {
+      "category": "Accessibility",
+      "severity": "high",
+      "title": "Accessibility: color-contrast.",
+      "evidence": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+      "fix": "Inspect the affected elements (article[data-cc-logo=\"form\"] > .mm-tool-top > span:nth-child(2), article[data-cc-logo=\"luma\"] > .mm-tool-top > span:nth-child(2), article[data-cc-logo=\"stemdeck\"] > .mm-tool-top > span:nth-child(2), article[data-mm-product=\"scenepilot\"] > .mm-tool-top > span:nth-child(2)) and make the smallest WCAG-aligned correction.",
+      "url": "https://thecreatingco.com/"
+    },
+    {
+      "category": "Accessibility",
+      "severity": "medium",
+      "title": "Accessibility: landmark-no-duplicate-banner.",
+      "evidence": "Ensure the document has at most one banner landmark",
+      "fix": "Inspect the affected elements (.header) and make the smallest WCAG-aligned correction.",
+      "url": "https://thecreatingco.com/"
+    },
+    {
+      "category": "Accessibility",
+      "severity": "medium",
+      "title": "Accessibility: landmark-unique.",
+      "evidence": "Ensure landmarks are unique",
+      "fix": "Inspect the affected elements (.header) and make the smallest WCAG-aligned correction.",
+      "url": "https://thecreatingco.com/"
+    },
+    {
+      "category": "Accessibility",
+      "severity": "medium",
+      "title": "Accessibility: region.",
+      "evidence": "Ensure all page content is contained by landmarks",
+      "fix": "Inspect the affected elements (.skip, #mm-launch-title, label[for=\"mm-launch-search\"], #mm-launch-search) and make the smallest WCAG-aligned correction.",
+      "url": "https://thecreatingco.com/"
+    }
+  ],
+  "findingsTruncated": false,
+  "omittedFindings": 0,
+  "findingsByCategory": {
+    "SEO": 0,
+    "Metadata": 0,
+    "Links": 1,
+    "Responsive": 0,
+    "Forms": 1,
+    "Accessibility": 5,
+    "Performance": 0,
+    "Reliability": 0,
+    "Security": 0,
+    "Coverage": 1
+  },
+  "coverage": {
+    "pagesChecked": 1,
+    "linksChecked": 24,
+    "linkLimit": 24,
+    "formsSubmitted": 0,
+    "siteFilesChanged": 0,
+    "authenticatedRoutesTested": 0,
+    "launchReadiness": "PARTIAL — see missing dynamic, source, platform and deployment checks"
+  },
+  "summary": {
+    "total": 8,
+    "high": 2,
+    "medium": 4,
+    "low": 0,
+    "omitted": 0
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "task_id": "CORE-FORM-AUD-SEC-002",
+  "title": "Triage remaining toolchain and Vinext runtime dependency advisories",
+  "product": "form",
+  "workstream": "CORE_PRODUCT_LAB",
+  "category": "bug/security",
+  "area": "bug/security",
+  "severity": "P1",
+  "model": "gpt-6.1-sol",
+  "scores": {
+    "impact": 7,
+    "severity": 7,
+    "workflow_importance": 4,
+    "release_importance": 8,
+    "confidence": 8,
+    "effort": 4,
+    "risk": 4,
+    "user_value": 5,
+    "competitive_value": 2
+  },
+  "dependencies": [],
+  "source_evidence": {
+    "direct": [
+      "Candidate full npm audit retains 15 high and 4 moderate package groups. Miniflare uses sharp 0.35.2. Cloudflare Worker ships Vinext app-router and separate /_vinext/image handler; package dev classification alone is not runtime reachability evidence."
+    ],
+    "hypothesis": [
+      "Whether reported Vinext/toolchain advisory paths enter deployed worker bundles is unverified."
+    ]
+  },
+  "evidence_sources": [
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-security-20261007/fixed-full-audit.json",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-security-20261007/review.md"
+  ],
+  "test_requirements": "Reproduce exact-head clean install/full audit; map each advisory to deployed worker/dev/desktop paths. Patch compatible versions in isolated worktree, preserve baseline failures, rerun all affected builds/unit/golden subset and independent OpenAI review; no forced breaking updates or gate bypass.",
+  "next_action": "Inspect full advisory dependency paths and emitted Worker bundle; deduplicate runtime-applicable findings and repair supported dependency versions.",
+  "expected_value": "Resolve evidenced remaining security triage without claiming dev-only classification makes bundled dependencies harmless; scores are planning estimates."
+}

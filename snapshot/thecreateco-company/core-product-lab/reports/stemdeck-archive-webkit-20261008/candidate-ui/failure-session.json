@@ -1,0 +1,2956 @@
+{
+  "uiSchemaVersion": 2,
+  "sessionName": "Four Deck Actual Capture QA",
+  "decks": [
+    {
+      "id": "A",
+      "accent": "#4ad9c4",
+      "side": "left",
+      "cfSide": "center",
+      "title": "A-fullMix",
+      "keyName": "C maj",
+      "sourceKeyName": "C maj",
+      "bpm": 118,
+      "beatOffset": 0,
+      "downbeat": 1,
+      "gain": 55,
+      "fader": 100,
+      "pitch": 0,
+      "filter": 50,
+      "eq": {
+        "low": 50,
+        "mid": 50,
+        "high": 50
+      },
+      "fx": {
+        "reverb": 0,
+        "echo": 0,
+        "macro": 0
+      },
+      "stemFx": {
+        "drums": {
+          "filter": 50,
+          "send": 0,
+          "pitch": 0
+        },
+        "bass": {
+          "filter": 50,
+          "send": 0,
+          "pitch": 0
+        },
+        "music": {
+          "filter": 50,
+          "send": 0,
+          "pitch": 0
+        },
+        "vocals": {
+          "filter": 50,
+          "send": 0,
+          "pitch": 0
+        }
+      },
+      "looping": false,
+      "loopStart": 0,
+      "loopEnd": 2.0338983050847457,
+      "synced": false,
+      "keyLock": true,
+      "liveKey": false,
+      "slip": false,
+      "tempoInterpretation": "Straight",
+      "syncMode": "BPM",
+      "activeToolTab": "CUES",
+      "hotCues": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "introEnd": null,
+      "outroStart": null,
+      "muted": false,
+      "solo": false,
+      "sends": {
+        "a": 0,
+        "b": 0
+      },
+      "inserts": [],
+      "cue": false,
+      "playing": false,
+      "duration": 32,
+      "waveform": [
+        23,
+        22,
+        18,
+        23,
+        22,
+        18,
+        23,
+        22,
+        18,
+        22,
+        23,
+        18,
+        22,
+        23,
+        18,
+        22,
+        22,
+        18,
+        23,
+        22,
+        18,
+        23,
+        21,
+        18,
+        22,
+        23,
+        18,
+        22,
+        23,
+        18,
+        21,
+        22,
+        18,
+        23,
+        22,
+        18,
+        23,
+        21,
+        18,
+        23,
+        23,
+        18,
+        22,
+        23,
+        18,
+        21,
+        23,
+        18,
+        23,
+        22,
+        18,
+        23,
+        21,
+        18,
+        23,
+        22,
+        18,
+        22,
+        23,
+        18,
+        22,
+        23,
+        18,
+        22,
+        22,
+        18,
+        23,
+        22,
+        18,
+        23,
+        21,
+        18,
+        23,
+        23,
+        18,
+        22,
+        23,
+        18,
+        21,
+        23,
+        18,
+        23,
+        22,
+        18,
+        23,
+        21,
+        18,
+        23,
+        22,
+        18,
+        22,
+        23,
+        18,
+        21,
+        23,
+        18
+      ],
+      "analysis": {
+        "source": "windowed-local-analysis-v1",
+        "duration": 32,
+        "durationLabel": "0:32",
+        "sampleRate": 44100,
+        "channels": 1,
+        "key": "C major",
+        "tonic": "C",
+        "mode": "major",
+        "bpm": 118,
+        "tempoMap": {
+          "beats": [
+            {
+              "time": 0,
+              "inferred": false
+            },
+            {
+              "time": 0.4810884353741497,
+              "inferred": false
+            },
+            {
+              "time": 0.9822222222222223,
+              "inferred": false
+            },
+            {
+              "time": 1.5034013605442178,
+              "inferred": false
+            },
+            {
+              "time": 1.9844897959183674,
+              "inferred": false
+            },
+            {
+              "time": 2.465578231292517,
+              "inferred": false
+            },
+            {
+              "time": 2.9867573696145127,
+              "inferred": false
+            },
+            {
+              "time": 3.4878911564625854,
+              "inferred": false
+            },
+            {
+              "time": 4.009070294784581,
+              "inferred": false
+            },
+            {
+              "time": 4.49015873015873,
+              "inferred": false
+            },
+            {
+              "time": 4.991292517006803,
+              "inferred": false
+            },
+            {
+              "time": 5.4924263038548755,
+              "inferred": false
+            },
+            {
+              "time": 5.973514739229025,
+              "inferred": false
+            },
+            {
+              "time": 6.494693877551021,
+              "inferred": false
+            },
+            {
+              "time": 6.975782312925171,
+              "inferred": false
+            },
+            {
+              "time": 7.476916099773243,
+              "inferred": false
+            },
+            {
+              "time": 7.978049886621315,
+              "inferred": false
+            },
+            {
+              "time": 8.479183673469388,
+              "inferred": false
+            },
+            {
+              "time": 8.98031746031746,
+              "inferred": false
+            },
+            {
+              "time": 9.481451247165534,
+              "inferred": false
+            },
+            {
+              "time": 9.982585034013606,
+              "inferred": false
+            },
+            {
+              "time": 10.483718820861679,
+              "inferred": false
+            },
+            {
+              "time": 10.984852607709751,
+              "inferred": false
+            },
+            {
+              "time": 11.506031746031747,
+              "inferred": false
+            },
+            {
+              "time": 11.987120181405896,
+              "inferred": false
+            },
+            {
+              "time": 12.508299319727891,
+              "inferred": false
+            },
+            {
+              "time": 12.989387755102042,
+              "inferred": false
+            },
+            {
+              "time": 13.470476190476191,
+              "inferred": false
+            },
+            {
+              "time": 13.991655328798187,
+              "inferred": false
+            },
+            {
+              "time": 14.472743764172337,
+              "inferred": false
+            },
+            {
+              "time": 14.993922902494331,
+              "inferred": false
+            },
+            {
+              "time": 15.495056689342405,
+              "inferred": false
+            },
+            {
+              "time": 15.976145124716554,
+              "inferred": false
+            },
+            {
+              "time": 16.49732426303855,
+              "inferred": false
+            },
+            {
+              "time": 16.9784126984127,
+              "inferred": false
+            },
+            {
+              "time": 17.479546485260773,
+              "inferred": false
+            },
+            {
+              "time": 17.980680272108845,
+              "inferred": false
+            },
+            {
+              "time": 18.481814058956918,
+              "inferred": false
+            },
+            {
+              "time": 18.98294784580499,
+              "inferred": false
+            },
+            {
+              "time": 19.484081632653062,
+              "inferred": false
+            },
+            {
+              "time": 20.00526077097506,
+              "inferred": false
+            },
+            {
+              "time": 20.486349206349207,
+              "inferred": false
+            },
+            {
+              "time": 20.967437641723357,
+              "inferred": false
+            },
+            {
+              "time": 21.48861678004535,
+              "inferred": false
+            },
+            {
+              "time": 21.989750566893424,
+              "inferred": false
+            },
+            {
+              "time": 22.4908843537415,
+              "inferred": false
+            },
+            {
+              "time": 22.992018140589572,
+              "inferred": false
+            },
+            {
+              "time": 23.493151927437644,
+              "inferred": false
+            },
+            {
+              "time": 23.994285714285716,
+              "inferred": false
+            },
+            {
+              "time": 24.475374149659867,
+              "inferred": false
+            },
+            {
+              "time": 24.99655328798186,
+              "inferred": false
+            },
+            {
+              "time": 25.47764172335601,
+              "inferred": false
+            },
+            {
+              "time": 25.978775510204084,
+              "inferred": false
+            },
+            {
+              "time": 26.479909297052156,
+              "inferred": false
+            },
+            {
+              "time": 26.98104308390023,
+              "inferred": false
+            },
+            {
+              "time": 27.502222222222223,
+              "inferred": false
+            },
+            {
+              "time": 27.983310657596373,
+              "inferred": false
+            },
+            {
+              "time": 28.50448979591837,
+              "inferred": false
+            },
+            {
+              "time": 28.985578231292518,
+              "inferred": false
+            },
+            {
+              "time": 29.46666666666667,
+              "inferred": false
+            },
+            {
+              "time": 29.987845804988662,
+              "inferred": false
+            },
+            {
+              "time": 30.48897959183674,
+              "inferred": false
+            },
+            {
+              "time": 30.99011337868481,
+              "inferred": false
+            },
+            {
+              "time": 31.491247165532883,
+              "inferred": false
+            },
+            {
+              "time": 31.932244897959187,
+              "inferred": true
+            }
+          ],
+          "confidence": 0.9623607913161973,
+          "method": "windowed-tempo-state-onset-v1"
+        },
+        "feel": "Driving pulse",
+        "chords": [
+          "C",
+          "C",
+          "C",
+          "C"
+        ],
+        "sections": [
+          {
+            "name": "Opening",
+            "start": 0,
+            "end": 9,
+            "range": "0:00 - 0:09",
+            "width": 28.13
+          },
+          {
+            "name": "Part A",
+            "start": 9,
+            "end": 15,
+            "range": "0:09 - 0:15",
+            "width": 18.75
+          },
+          {
+            "name": "Part B",
+            "start": 15,
+            "end": 22.5,
+            "range": "0:15 - 0:23",
+            "width": 23.44
+          },
+          {
+            "name": "Closing",
+            "start": 22.5,
+            "end": 32,
+            "range": "0:23 - 0:32",
+            "width": 29.69
+          }
+        ],
+        "waveform": [
+          23,
+          22,
+          18,
+          23,
+          22,
+          18,
+          23,
+          22,
+          18,
+          22,
+          23,
+          18,
+          22,
+          23,
+          18,
+          22,
+          22,
+          18,
+          23,
+          22,
+          18,
+          23,
+          21,
+          18,
+          22,
+          23,
+          18,
+          22,
+          23,
+          18,
+          21,
+          22,
+          18,
+          23,
+          22,
+          18,
+          23,
+          21,
+          18,
+          23,
+          23,
+          18,
+          22,
+          23,
+          18,
+          21,
+          23,
+          18,
+          23,
+          22,
+          18,
+          23,
+          21,
+          18,
+          23,
+          22,
+          18,
+          22,
+          23,
+          18,
+          22,
+          23,
+          18,
+          22,
+          22,
+          18,
+          23,
+          22,
+          18,
+          23,
+          21,
+          18,
+          23,
+          23,
+          18,
+          22,
+          23,
+          18,
+          21,
+          23,
+          18,
+          23,
+          22,
+          18,
+          23,
+          21,
+          18,
+          23,
+          22,
+          18,
+          22,
+          23,
+          18,
+          21,
+          23,
+          18
+        ],
+        "level": {
+          "rmsDb": -24.7,
+          "peakDb": -14.1
+        },
+        "confidence": {
+          "tempo": 1,
+          "key": 0.53,
+          "chords": 0.69
+        },
+        "analysisCoverage": {
+          "seconds": 32,
+          "blockSeconds": 124,
+          "overlapSeconds": 4,
+          "maxWindowPcmBytes": 16777216,
+          "wholeSourceDecoded": false
+        }
+      },
+      "arrangement": {
+        "enabled": true,
+        "start": 0,
+        "trimStart": 0,
+        "trimEnd": 32,
+        "gain": 100,
+        "fadeIn": 0,
+        "fadeOut": 0,
+        "automationTarget": "volume",
+        "automation": {
+          "volume": [
+            {
+              "position": 0,
+              "value": 100
+            },
+            {
+              "position": 1,
+              "value": 100
+            }
+          ],
+          "filter": [
+            {
+              "position": 0,
+              "value": 50
+            },
+            {
+              "position": 1,
+              "value": 50
+            }
+          ],
+          "reverb": [
+            {
+              "position": 0,
+              "value": 15
+            },
+            {
+              "position": 1,
+              "value": 15
+            }
+          ]
+        }
+      },
+      "lanes": {
+        "fullMix": {
+          "id": "fullMix",
+          "label": "Full mix",
+          "assetId": "audio-d85558ad-75c6-4839-a19a-6038f1ec187c",
+          "name": "A-fullMix",
+          "level": 100,
+          "muted": true,
+          "solo": false,
+          "pitch": 0,
+          "duration": 32,
+          "status": "ready"
+        },
+        "drums": {
+          "id": "drums",
+          "label": "Drums",
+          "assetId": "audio-5f47e3be-6226-4129-af9f-36d57be95a79",
+          "name": "A-drums.wav",
+          "level": 100,
+          "muted": false,
+          "solo": false,
+          "pitch": 0,
+          "duration": 32,
+          "status": "ready"
+        },
+        "bass": {
+          "id": "bass",
+          "label": "Bass",
+          "assetId": "audio-26e83cd4-0f21-4d4b-b8a2-a92848d7bf45",
+          "name": "A-bass.wav",
+          "level": 100,
+          "muted": false,
+          "solo": false,
+          "pitch": 0,
+          "duration": 32,
+          "status": "ready"
+        },
+        "music": {
+          "id": "music",
+          "label": "Music",
+          "assetId": "audio-b1e8c361-34bf-46fd-80a3-b3044953d0b1",
+          "name": "A-music.wav",
+          "level": 100,
+          "muted": false,
+          "solo": false,
+          "pitch": 0,
+          "duration": 32,
+          "status": "ready"
+        },
+        "vocals": {
+          "id": "vocals",
+          "label": "Vocals",
+          "assetId": "audio-315a7e15-7830-46c9-ad7d-561fef82cdce",
+          "name": "A-vocals.wav",
+          "level": 100,
+          "muted": false,
+          "solo": false,
+          "pitch": 0,
+          "duration": 32,
+          "status": "ready"
+        }
+      },
+      "followTempoMap": false
+    },
+    {
+      "id": "B",
+      "accent": "#4a9eff",
+      "side": "right",
+      "cfSide": "center",
+      "title": "B-fullMix",
+      "keyName": "C# maj",
+      "sourceKeyName": "C# maj",
+      "bpm": 118,
+      "beatOffset": 0,
+      "downbeat": 1,
+      "gain": 55,
+      "fader": 100,
+      "pitch": 0,
+      "filter": 50,
+      "eq": {
+        "low": 50,
+        "mid": 50,
+        "high": 50
+      },
+      "fx": {
+        "reverb": 0,
+        "echo": 0,
+        "macro": 0
+      },
+      "stemFx": {
+        "drums": {
+          "filter": 50,
+          "send": 0,
+          "pitch": 0
+        },
+        "bass": {
+          "filter": 50,
+          "send": 0,
+          "pitch": 0
+        },
+        "music": {
+          "filter": 50,
+          "send": 0,
+          "pitch": 0
+        },
+        "vocals": {
+          "filter": 50,
+          "send": 0,
+          "pitch": 0
+        }
+      },
+      "looping": false,
+      "loopStart": 0,
+      "loopEnd": 2.0338983050847457,
+      "synced": false,
+      "keyLock": true,
+      "liveKey": false,
+      "slip": false,
+      "tempoInterpretation": "Straight",
+      "syncMode": "BPM",
+      "activeToolTab": "CUES",
+      "hotCues": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "introEnd": null,
+      "outroStart": null,
+      "muted": false,
+      "solo": false,
+      "sends": {
+        "a": 0,
+        "b": 0
+      },
+      "inserts": [],
+      "cue": false,
+      "playing": false,
+      "duration": 32,
+      "waveform": [
+        23,
+        22,
+        18,
+        24,
+        23,
+        18,
+        21,
+        21,
+        18,
+        24,
+        21,
+        18,
+        22,
+        22,
+        18,
+        22,
+        21,
+        18,
+        22,
+        22,
+        18,
+        22,
+        21,
+        18,
+        21,
+        22,
+        18,
+        23,
+        22,
+        18,
+        22,
+        22,
+        18,
+        23,
+        23,
+        18,
+        23,
+        23,
+        18,
+        22,
+        23,
+        18,
+        24,
+        24,
+        18,
+        23,
+        22,
+        18,
+        24,
+        25,
+        18,
+        24,
+        23,
+        18,
+        23,
+        24,
+        18,
+        24,
+        24,
+        18,
+        24,
+        24,
+        18,
+        24,
+        25,
+        18,
+        21,
+        21,
+        18,
+        23,
+        23,
+        18,
+        22,
+        22,
+        18,
+        22,
+        21,
+        18,
+        21,
+        22,
+        18,
+        22,
+        22,
+        18,
+        21,
+        22,
+        18,
+        23,
+        22,
+        18,
+        22,
+        22,
+        18,
+        22,
+        22,
+        18
+      ],
+      "analysis": {
+        "source": "windowed-local-analysis-v1",
+        "duration": 32,
+        "durationLabel": "0:32",
+        "sampleRate": 44100,
+        "channels": 1,
+        "key": "C# major",
+        "tonic": "C#",
+        "mode": "major",
+        "bpm": 118,
+        "tempoMap": {
+          "beats": [
+            {
+              "time": 0,
+              "inferred": false
+            },
+            {
+              "time": 0.4810884353741497,
+              "inferred": false
+            },
+            {
+              "time": 0.9822222222222223,
+              "inferred": false
+            },
+            {
+              "time": 1.5034013605442178,
+              "inferred": false
+            },
+            {
+              "time": 2.0045351473922906,
+              "inferred": false
+            },
+            {
+              "time": 2.465578231292517,
+              "inferred": false
+            },
+            {
+              "time": 2.9667120181405897,
+              "inferred": false
+            },
+            {
+              "time": 3.4878911564625854,
+              "inferred": false
+            },
+            {
+              "time": 3.9890249433106577,
+              "inferred": false
+            },
+            {
+              "time": 4.49015873015873,
+              "inferred": false
+            },
+            {
+              "time": 4.991292517006803,
+              "inferred": false
+            },
+            {
+              "time": 5.4924263038548755,
+              "inferred": false
+            },
+            {
+              "time": 5.993560090702948,
+              "inferred": false
+            },
+            {
+              "time": 6.494693877551021,
+              "inferred": false
+            },
+            {
+              "time": 6.995827664399093,
+              "inferred": false
+            },
+            {
+              "time": 7.496961451247166,
+              "inferred": false
+            },
+            {
+              "time": 7.998095238095239,
+              "inferred": false
+            },
+            {
+              "time": 8.499229024943311,
+              "inferred": false
+            },
+            {
+              "time": 9.000362811791383,
+              "inferred": false
+            },
+            {
+              "time": 9.501496598639456,
+              "inferred": false
+            },
+            {
+              "time": 9.982585034013606,
+              "inferred": false
+            },
+            {
+              "time": 10.483718820861679,
+              "inferred": false
+            },
+            {
+              "time": 10.984852607709751,
+              "inferred": false
+            },
+            {
+              "time": 11.485986394557823,
+              "inferred": false
+            },
+            {
+              "time": 11.987120181405896,
+              "inferred": false
+            },
+            {
+              "time": 12.48825396825397,
+              "inferred": false
+            },
+            {
+              "time": 12.989387755102042,
+              "inferred": false
+            },
+            {
+              "time": 13.470476190476191,
+              "inferred": false
+            },
+            {
+              "time": 13.971609977324263,
+              "inferred": false
+            },
+            {
+              "time": 14.472743764172337,
+              "inferred": false
+            },
+            {
+              "time": 14.97387755102041,
+              "inferred": false
+            },
+            {
+              "time": 15.475011337868482,
+              "inferred": false
+            },
+            {
+              "time": 15.976145124716554,
+              "inferred": false
+            },
+            {
+              "time": 16.47727891156463,
+              "inferred": false
+            },
+            {
+              "time": 16.9784126984127,
+              "inferred": false
+            },
+            {
+              "time": 17.479546485260773,
+              "inferred": false
+            },
+            {
+              "time": 17.980680272108845,
+              "inferred": false
+            },
+            {
+              "time": 18.481814058956918,
+              "inferred": false
+            },
+            {
+              "time": 18.98294784580499,
+              "inferred": false
+            },
+            {
+              "time": 19.484081632653062,
+              "inferred": false
+            },
+            {
+              "time": 19.965170068027213,
+              "inferred": false
+            },
+            {
+              "time": 20.466303854875285,
+              "inferred": false
+            },
+            {
+              "time": 20.967437641723357,
+              "inferred": false
+            },
+            {
+              "time": 21.46857142857143,
+              "inferred": false
+            },
+            {
+              "time": 21.969705215419502,
+              "inferred": false
+            },
+            {
+              "time": 22.4908843537415,
+              "inferred": false
+            },
+            {
+              "time": 22.971972789115647,
+              "inferred": false
+            },
+            {
+              "time": 23.493151927437644,
+              "inferred": false
+            },
+            {
+              "time": 23.994285714285716,
+              "inferred": false
+            },
+            {
+              "time": 24.49541950113379,
+              "inferred": false
+            },
+            {
+              "time": 24.99655328798186,
+              "inferred": false
+            },
+            {
+              "time": 25.497687074829933,
+              "inferred": false
+            },
+            {
+              "time": 25.998820861678006,
+              "inferred": false
+            },
+            {
+              "time": 26.499954648526078,
+              "inferred": false
+            },
+            {
+              "time": 27.00108843537415,
+              "inferred": false
+            },
+            {
+              "time": 27.502222222222223,
+              "inferred": false
+            },
+            {
+              "time": 28.003356009070295,
+              "inferred": false
+            },
+            {
+              "time": 28.484444444444446,
+              "inferred": false
+            },
+            {
+              "time": 28.985578231292518,
+              "inferred": false
+            },
+            {
+              "time": 29.48671201814059,
+              "inferred": false
+            },
+            {
+              "time": 29.987845804988662,
+              "inferred": false
+            },
+            {
+              "time": 30.48897959183674,
+              "inferred": false
+            },
+            {
+              "time": 30.99011337868481,
+              "inferred": false
+            },
+            {
+              "time": 31.491247165532883,
+              "inferred": false
+            }
+          ],
+          "confidence": 0.99,
+          "method": "windowed-tempo-state-onset-v1"
+        },
+        "feel": "Driving pulse",
+        "chords": [
+          "C#",
+          "C#",
+          "C#",
+          "C#"
+        ],
+        "sections": [
+          {
+            "name": "Opening",
+            "start": 0,
+            "end": 4.5,
+            "range": "0:00 - 0:05",
+            "width": 14.06
+          },
+          {
+            "name": "Part A",
+            "start": 4.5,
+            "end": 12,
+            "range": "0:05 - 0:12",
+            "width": 23.44
+          },
+          {
+            "name": "Part B",
+            "start": 12,
+            "end": 21,
+            "range": "0:12 - 0:21",
+            "width": 28.13
+          },
+          {
+            "name": "Closing",
+            "start": 21,
+            "end": 32,
+            "range": "0:21 - 0:32",
+            "width": 34.38
+          }
+        ],
+        "waveform": [
+          23,
+          22,
+          18,
+          24,
+          23,
+          18,
+          21,
+          21,
+          18,
+          24,
+          21,
+          18,
+          22,
+          22,
+          18,
+          22,
+          21,
+          18,
+          22,
+          22,
+          18,
+          22,
+          21,
+          18,
+          21,
+          22,
+          18,
+          23,
+          22,
+          18,
+          22,
+          22,
+          18,
+          23,
+          23,
+          18,
+          23,
+          23,
+          18,
+          22,
+          23,
+          18,
+          24,
+          24,
+          18,
+          23,
+          22,
+          18,
+          24,
+          25,
+          18,
+          24,
+          23,
+          18,
+          23,
+          24,
+          18,
+          24,
+          24,
+          18,
+          24,
+          24,
+          18,
+          24,
+          25,
+          18,
+          21,
+          21,
+          18,
+          23,
+          23,
+          18,
+          22,
+          22,
+          18,
+          22,
+          21,
+          18,
+          21,
+          22,
+          18,
+          22,
+          22,
+          18,
+          21,
+          22,
+          18,
+          23,
+          22,
+          18,
+          22,
+          22,
+          18,
+          22,
+          22,
+          18
+        ],
+        "level": {
+          "rmsDb": -24.7,
+          "peakDb": -13
+        },
+        "confidence": {
+          "tempo": 1,
+          "key": 0.53,
+          "chords": 0.69
+        },
+        "analysisCoverage": {
+          "seconds": 32,
+          "blockSeconds": 124,
+          "overlapSeconds": 4,
+          "maxWindowPcmBytes": 16777216,
+          "wholeSourceDecoded": false
+        }
+      },
+      "arrangement": {
+        "enabled": true,
+        "start": 0,
+        "trimStart": 0,
+        "trimEnd": 32,
+        "gain": 100,
+        "fadeIn": 0,
+        "fadeOut": 0,
+        "automationTarget": "volume",
+        "automation": {
+          "volume": [
+            {
+              "position": 0,
+              "value": 100
+            },
+            {
+              "position": 1,
+              "value": 100
+            }
+          ],
+          "filter": [
+            {
+              "position": 0,
+              "value": 50
+            },
+            {
+              "position": 1,
+              "value": 50
+            }
+          ],
+          "reverb": [
+            {
+              "position": 0,
+              "value": 15
+            },
+            {
+              "position": 1,
+              "value": 15
+            }
+          ]
+        }
+      },
+      "lanes": {
+        "fullMix": {
+          "id": "fullMix",
+          "label": "Full mix",
+          "assetId": "audio-55c060a2-092a-4ef4-9198-8cdfc17bbc46",
+          "name": "B-fullMix",
+          "level": 100,
+          "muted": true,
+          "solo": false,
+          "pitch": 0,
+          "duration": 32,
+          "status": "ready"
+        },
+        "drums": {
+          "id": "drums",
+          "label": "Drums",
+          "assetId": "audio-95d07642-4fe0-472e-8902-43d5f950408a",
+          "name": "B-drums.wav",
+          "level": 100,
+          "muted": false,
+          "solo": false,
+          "pitch": 0,
+          "duration": 32,
+          "status": "ready"
+        },
+        "bass": {
+          "id": "bass",
+          "label": "Bass",
+          "assetId": "audio-d1cb5d4f-2dd2-437c-8075-2093c443aac2",
+          "name": "B-bass.wav",
+          "level": 100,
+          "muted": false,
+          "solo": false,
+          "pitch": 0,
+          "duration": 32,
+          "status": "ready"
+        },
+        "music": {
+          "id": "music",
+          "label": "Music",
+          "assetId": "audio-4c2cb050-55ef-45d9-8c4e-77f55075ba28",
+          "name": "B-music.wav",
+          "level": 100,
+          "muted": false,
+          "solo": false,
+          "pitch": 0,
+          "duration": 32,
+          "status": "ready"
+        },
+        "vocals": {
+          "id": "vocals",
+          "label": "Vocals",
+          "assetId": "audio-788995e9-0a0a-4d1c-941a-b254146bb186",
+          "name": "B-vocals.wav",
+          "level": 100,
+          "muted": false,
+          "solo": false,
+          "pitch": 0,
+          "duration": 32,
+          "status": "ready"
+        }
+      },
+      "followTempoMap": false
+    },
+    {
+      "id": "C",
+      "accent": "#b47aff",
+      "side": "left",
+      "cfSide": "center",
+      "title": "C-fullMix",
+      "keyName": "D maj",
+      "sourceKeyName": "D maj",
+      "bpm": 118,
+      "beatOffset": 0,
+      "downbeat": 1,
+      "gain": 55,
+      "fader": 100,
+      "pitch": 0,
+      "filter": 50,
+      "eq": {
+        "low": 50,
+        "mid": 50,
+        "high": 50
+      },
+      "fx": {
+        "reverb": 0,
+        "echo": 0,
+        "macro": 0
+      },
+      "stemFx": {
+        "drums": {
+          "filter": 50,
+          "send": 0,
+          "pitch": 0
+        },
+        "bass": {
+          "filter": 50,
+          "send": 0,
+          "pitch": 0
+        },
+        "music": {
+          "filter": 50,
+          "send": 0,
+          "pitch": 0
+        },
+        "vocals": {
+          "filter": 50,
+          "send": 0,
+          "pitch": 0
+        }
+      },
+      "looping": false,
+      "loopStart": 0,
+      "loopEnd": 2.0338983050847457,
+      "synced": false,
+      "keyLock": true,
+      "liveKey": false,
+      "slip": false,
+      "tempoInterpretation": "Straight",
+      "syncMode": "BPM",
+      "activeToolTab": "CUES",
+      "hotCues": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "introEnd": null,
+      "outroStart": null,
+      "muted": false,
+      "solo": false,
+      "sends": {
+        "a": 0,
+        "b": 0
+      },
+      "inserts": [],
+      "cue": false,
+      "playing": false,
+      "duration": 32,
+      "waveform": [
+        23,
+        23,
+        18,
+        22,
+        22,
+        18,
+        24,
+        22,
+        18,
+        24,
+        23,
+        18,
+        22,
+        22,
+        18,
+        23,
+        22,
+        18,
+        22,
+        23,
+        18,
+        23,
+        21,
+        18,
+        24,
+        23,
+        18,
+        22,
+        22,
+        18,
+        22,
+        22,
+        18,
+        24,
+        23,
+        18,
+        21,
+        22,
+        18,
+        24,
+        23,
+        18,
+        22,
+        23,
+        18,
+        22,
+        22,
+        18,
+        24,
+        22,
+        18,
+        23,
+        24,
+        18,
+        23,
+        22,
+        18,
+        22,
+        22,
+        18,
+        22,
+        24,
+        18,
+        23,
+        22,
+        18,
+        23,
+        23,
+        18,
+        22,
+        23,
+        18,
+        23,
+        22,
+        18,
+        23,
+        24,
+        18,
+        22,
+        23,
+        18,
+        23,
+        22,
+        18,
+        21,
+        23,
+        18,
+        22,
+        23,
+        18,
+        25,
+        23,
+        18,
+        22,
+        23,
+        18
+      ],
+      "analysis": {
+        "source": "windowed-local-analysis-v1",
+        "duration": 32,
+        "durationLabel": "0:32",
+        "sampleRate": 44100,
+        "channels": 1,
+        "key": "D major",
+        "tonic": "D",
+        "mode": "major",
+        "bpm": 118,
+        "tempoMap": {
+          "beats": [
+            {
+              "time": 0,
+              "inferred": false
+            },
+            {
+              "time": 0.4810884353741497,
+              "inferred": false
+            },
+            {
+              "time": 1.0022675736961453,
+              "inferred": false
+            },
+            {
+              "time": 1.4833560090702949,
+              "inferred": false
+            },
+            {
+              "time": 1.9844897959183674,
+              "inferred": false
+            },
+            {
+              "time": 2.48562358276644,
+              "inferred": false
+            },
+            {
+              "time": 2.9867573696145127,
+              "inferred": false
+            },
+            {
+              "time": 3.4878911564625854,
+              "inferred": false
+            },
+            {
+              "time": 3.9890249433106577,
+              "inferred": false
+            },
+            {
+              "time": 4.4701133786848075,
+              "inferred": false
+            },
+            {
+              "time": 4.97124716553288,
+              "inferred": false
+            },
+            {
+              "time": 5.4924263038548755,
+              "inferred": false
+            },
+            {
+              "time": 5.993560090702948,
+              "inferred": false
+            },
+            {
+              "time": 6.474648526077098,
+              "inferred": false
+            },
+            {
+              "time": 6.995827664399093,
+              "inferred": false
+            },
+            {
+              "time": 7.496961451247166,
+              "inferred": false
+            },
+            {
+              "time": 7.978049886621315,
+              "inferred": false
+            },
+            {
+              "time": 8.479183673469388,
+              "inferred": false
+            },
+            {
+              "time": 9.000362811791383,
+              "inferred": false
+            },
+            {
+              "time": 9.481451247165534,
+              "inferred": false
+            },
+            {
+              "time": 9.982585034013606,
+              "inferred": false
+            },
+            {
+              "time": 10.483718820861679,
+              "inferred": false
+            },
+            {
+              "time": 10.984852607709751,
+              "inferred": false
+            },
+            {
+              "time": 11.485986394557823,
+              "inferred": false
+            },
+            {
+              "time": 11.987120181405896,
+              "inferred": false
+            },
+            {
+              "time": 12.468208616780046,
+              "inferred": false
+            },
+            {
+              "time": 12.969342403628119,
+              "inferred": false
+            },
+            {
+              "time": 13.490521541950114,
+              "inferred": false
+            },
+            {
+              "time": 13.971609977324263,
+              "inferred": false
+            },
+            {
+              "time": 14.472743764172337,
+              "inferred": false
+            },
+            {
+              "time": 14.993922902494331,
+              "inferred": false
+            },
+            {
+              "time": 15.475011337868482,
+              "inferred": false
+            },
+            {
+              "time": 15.976145124716554,
+              "inferred": false
+            },
+            {
+              "time": 16.49732426303855,
+              "inferred": false
+            },
+            {
+              "time": 16.9784126984127,
+              "inferred": false
+            },
+            {
+              "time": 17.479546485260773,
+              "inferred": false
+            },
+            {
+              "time": 17.980680272108845,
+              "inferred": false
+            },
+            {
+              "time": 18.50185941043084,
+              "inferred": false
+            },
+            {
+              "time": 18.98294784580499,
+              "inferred": false
+            },
+            {
+              "time": 19.484081632653062,
+              "inferred": false
+            },
+            {
+              "time": 19.985215419501134,
+              "inferred": false
+            },
+            {
+              "time": 20.466303854875285,
+              "inferred": false
+            },
+            {
+              "time": 20.98748299319728,
+              "inferred": false
+            },
+            {
+              "time": 21.48861678004535,
+              "inferred": false
+            },
+            {
+              "time": 21.969705215419502,
+              "inferred": false
+            },
+            {
+              "time": 22.4908843537415,
+              "inferred": false
+            },
+            {
+              "time": 22.992018140589572,
+              "inferred": false
+            },
+            {
+              "time": 23.47310657596372,
+              "inferred": false
+            },
+            {
+              "time": 23.97424036281179,
+              "inferred": false
+            },
+            {
+              "time": 24.49541950113379,
+              "inferred": false
+            },
+            {
+              "time": 24.97650793650794,
+              "inferred": false
+            },
+            {
+              "time": 25.47764172335601,
+              "inferred": false
+            },
+            {
+              "time": 25.998820861678006,
+              "inferred": false
+            },
+            {
+              "time": 26.479909297052156,
+              "inferred": false
+            },
+            {
+              "time": 26.98104308390023,
+              "inferred": false
+            },
+            {
+              "time": 27.502222222222223,
+              "inferred": false
+            },
+            {
+              "time": 27.983310657596373,
+              "inferred": false
+            },
+            {
+              "time": 28.484444444444446,
+              "inferred": false
+            },
+            {
+              "time": 28.985578231292518,
+              "inferred": false
+            },
+            {
+              "time": 29.46666666666667,
+              "inferred": false
+            },
+            {
+              "time": 29.96780045351474,
+              "inferred": false
+            },
+            {
+              "time": 30.48897959183674,
+              "inferred": false
+            },
+            {
+              "time": 30.99011337868481,
+              "inferred": false
+            },
+            {
+              "time": 31.471201814058958,
+              "inferred": false
+            },
+            {
+              "time": 31.95229024943311,
+              "inferred": true
+            }
+          ],
+          "confidence": 0.9641276715940121,
+          "method": "windowed-tempo-state-onset-v1"
+        },
+        "feel": "Driving pulse",
+        "chords": [
+          "D",
+          "D",
+          "D",
+          "D"
+        ],
+        "sections": [
+          {
+            "name": "Opening",
+            "start": 0,
+            "end": 6,
+            "range": "0:00 - 0:06",
+            "width": 18.75
+          },
+          {
+            "name": "Part A",
+            "start": 6,
+            "end": 15,
+            "range": "0:06 - 0:15",
+            "width": 28.13
+          },
+          {
+            "name": "Part B",
+            "start": 15,
+            "end": 21,
+            "range": "0:15 - 0:21",
+            "width": 18.75
+          },
+          {
+            "name": "Closing",
+            "start": 21,
+            "end": 32,
+            "range": "0:21 - 0:32",
+            "width": 34.38
+          }
+        ],
+        "waveform": [
+          23,
+          23,
+          18,
+          22,
+          22,
+          18,
+          24,
+          22,
+          18,
+          24,
+          23,
+          18,
+          22,
+          22,
+          18,
+          23,
+          22,
+          18,
+          22,
+          23,
+          18,
+          23,
+          21,
+          18,
+          24,
+          23,
+          18,
+          22,
+          22,
+          18,
+          22,
+          22,
+          18,
+          24,
+          23,
+          18,
+          21,
+          22,
+          18,
+          24,
+          23,
+          18,
+          22,
+          23,
+          18,
+          22,
+          22,
+          18,
+          24,
+          22,
+          18,
+          23,
+          24,
+          18,
+          23,
+          22,
+          18,
+          22,
+          22,
+          18,
+          22,
+          24,
+          18,
+          23,
+          22,
+          18,
+          23,
+          23,
+          18,
+          22,
+          23,
+          18,
+          23,
+          22,
+          18,
+          23,
+          24,
+          18,
+          22,
+          23,
+          18,
+          23,
+          22,
+          18,
+          21,
+          23,
+          18,
+          22,
+          23,
+          18,
+          25,
+          23,
+          18,
+          22,
+          23,
+          18
+        ],
+        "level": {
+          "rmsDb": -24.7,
+          "peakDb": -13.1
+        },
+        "confidence": {
+          "tempo": 1,
+          "key": 0.53,
+          "chords": 0.69
+        },
+        "analysisCoverage": {
+          "seconds": 32,
+          "blockSeconds": 124,
+          "overlapSeconds": 4,
+          "maxWindowPcmBytes": 16777216,
+          "wholeSourceDecoded": false
+        }
+      },
+      "arrangement": {
+        "enabled": true,
+        "start": 0,
+        "trimStart": 0,
+        "trimEnd": 32,
+        "gain": 100,
+        "fadeIn": 0,
+        "fadeOut": 0,
+        "automationTarget": "volume",
+        "automation": {
+          "volume": [
+            {
+              "position": 0,
+              "value": 100
+            },
+            {
+              "position": 1,
+              "value": 100
+            }
+          ],
+          "filter": [
+            {
+              "position": 0,
+              "value": 50
+            },
+            {
+              "position": 1,
+              "value": 50
+            }
+          ],
+          "reverb": [
+            {
+              "position": 0,
+              "value": 15
+            },
+            {
+              "position": 1,
+              "value": 15
+            }
+          ]
+        }
+      },
+      "lanes": {
+        "fullMix": {
+          "id": "fullMix",
+          "label": "Full mix",
+          "assetId": "audio-5c23eb2f-3839-439d-8717-eaaa05961d1a",
+          "name": "C-fullMix",
+          "level": 100,
+          "muted": true,
+          "solo": false,
+          "pitch": 0,
+          "duration": 32,
+          "status": "ready"
+        },
+        "drums": {
+          "id": "drums",
+          "label": "Drums",
+          "assetId": "audio-ed7d20a1-4d6e-4323-808b-95fbe4c2215a",
+          "name": "C-drums.wav",
+          "level": 100,
+          "muted": false,
+          "solo": false,
+          "pitch": 0,
+          "duration": 32,
+          "status": "ready"
+        },
+        "bass": {
+          "id": "bass",
+          "label": "Bass",
+          "assetId": "audio-de7d7d96-baca-4705-9347-69da269c538d",
+          "name": "C-bass.wav",
+          "level": 100,
+          "muted": false,
+          "solo": false,
+          "pitch": 0,
+          "duration": 32,
+          "status": "ready"
+        },
+        "music": {
+          "id": "music",
+          "label": "Music",
+          "assetId": "audio-f7a3cf7e-56e3-4f48-8060-1211867ef4f1",
+          "name": "C-music.wav",
+          "level": 100,
+          "muted": false,
+          "solo": false,
+          "pitch": 0,
+          "duration": 32,
+          "status": "ready"
+        },
+        "vocals": {
+          "id": "vocals",
+          "label": "Vocals",
+          "assetId": "audio-b6027e78-0e99-41fa-9980-f341a6e18f0d",
+          "name": "C-vocals.wav",
+          "level": 100,
+          "muted": false,
+          "solo": false,
+          "pitch": 0,
+          "duration": 32,
+          "status": "ready"
+        }
+      },
+      "followTempoMap": false
+    },
+    {
+      "id": "D",
+      "accent": "#e8a54a",
+      "side": "right",
+      "cfSide": "center",
+      "title": "D-fullMix",
+      "keyName": "D# maj",
+      "sourceKeyName": "D# maj",
+      "bpm": 118,
+      "beatOffset": 0,
+      "downbeat": 1,
+      "gain": 55,
+      "fader": 100,
+      "pitch": 0,
+      "filter": 50,
+      "eq": {
+        "low": 50,
+        "mid": 50,
+        "high": 50
+      },
+      "fx": {
+        "reverb": 0,
+        "echo": 0,
+        "macro": 0
+      },
+      "stemFx": {
+        "drums": {
+          "filter": 50,
+          "send": 0,
+          "pitch": 0
+        },
+        "bass": {
+          "filter": 50,
+          "send": 0,
+          "pitch": 0
+        },
+        "music": {
+          "filter": 50,
+          "send": 0,
+          "pitch": 0
+        },
+        "vocals": {
+          "filter": 50,
+          "send": 0,
+          "pitch": 0
+        }
+      },
+      "looping": false,
+      "loopStart": 0,
+      "loopEnd": 2.0338983050847457,
+      "synced": false,
+      "keyLock": true,
+      "liveKey": false,
+      "slip": false,
+      "tempoInterpretation": "Straight",
+      "syncMode": "BPM",
+      "activeToolTab": "CUES",
+      "hotCues": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "introEnd": null,
+      "outroStart": null,
+      "muted": false,
+      "solo": false,
+      "sends": {
+        "a": 0,
+        "b": 0
+      },
+      "inserts": [],
+      "cue": false,
+      "playing": false,
+      "duration": 32,
+      "waveform": [
+        23,
+        22,
+        18,
+        23,
+        21,
+        18,
+        22,
+        22,
+        18,
+        22,
+        24,
+        18,
+        22,
+        22,
+        18,
+        24,
+        24,
+        18,
+        23,
+        23,
+        18,
+        21,
+        22,
+        18,
+        25,
+        22,
+        18,
+        23,
+        22,
+        18,
+        23,
+        23,
+        18,
+        22,
+        22,
+        18,
+        24,
+        22,
+        18,
+        23,
+        22,
+        18,
+        22,
+        24,
+        18,
+        23,
+        23,
+        18,
+        24,
+        22,
+        18,
+        24,
+        21,
+        18,
+        22,
+        23,
+        18,
+        22,
+        23,
+        18,
+        22,
+        22,
+        18,
+        24,
+        22,
+        18,
+        23,
+        22,
+        18,
+        21,
+        23,
+        18,
+        25,
+        22,
+        18,
+        22,
+        23,
+        18,
+        23,
+        23,
+        18,
+        22,
+        23,
+        18,
+        23,
+        22,
+        18,
+        23,
+        23,
+        18,
+        22,
+        24,
+        18,
+        22,
+        23,
+        18
+      ],
+      "analysis": {
+        "source": "windowed-local-analysis-v1",
+        "duration": 32,
+        "durationLabel": "0:32",
+        "sampleRate": 44100,
+        "channels": 1,
+        "key": "D# major",
+        "tonic": "D#",
+        "mode": "major",
+        "bpm": 118,
+        "tempoMap": {
+          "beats": [
+            {
+              "time": 0,
+              "inferred": false
+            },
+            {
+              "time": 0.4810884353741497,
+              "inferred": false
+            },
+            {
+              "time": 0.9822222222222223,
+              "inferred": false
+            },
+            {
+              "time": 1.4833560090702949,
+              "inferred": false
+            },
+            {
+              "time": 1.9844897959183674,
+              "inferred": false
+            },
+            {
+              "time": 2.48562358276644,
+              "inferred": false
+            },
+            {
+              "time": 3.0068027210884356,
+              "inferred": false
+            },
+            {
+              "time": 3.4878911564625854,
+              "inferred": false
+            },
+            {
+              "time": 3.9689795918367348,
+              "inferred": false
+            },
+            {
+              "time": 4.49015873015873,
+              "inferred": false
+            },
+            {
+              "time": 4.97124716553288,
+              "inferred": false
+            },
+            {
+              "time": 5.472380952380953,
+              "inferred": false
+            },
+            {
+              "time": 5.993560090702948,
+              "inferred": false
+            },
+            {
+              "time": 6.474648526077098,
+              "inferred": false
+            },
+            {
+              "time": 6.995827664399093,
+              "inferred": false
+            },
+            {
+              "time": 7.476916099773243,
+              "inferred": false
+            },
+            {
+              "time": 7.978049886621315,
+              "inferred": false
+            },
+            {
+              "time": 8.479183673469388,
+              "inferred": false
+            },
+            {
+              "time": 8.98031746031746,
+              "inferred": false
+            },
+            {
+              "time": 9.481451247165534,
+              "inferred": false
+            },
+            {
+              "time": 9.982585034013606,
+              "inferred": false
+            },
+            {
+              "time": 10.483718820861679,
+              "inferred": false
+            },
+            {
+              "time": 11.004897959183674,
+              "inferred": false
+            },
+            {
+              "time": 11.485986394557823,
+              "inferred": false
+            },
+            {
+              "time": 11.967074829931974,
+              "inferred": false
+            },
+            {
+              "time": 12.48825396825397,
+              "inferred": false
+            },
+            {
+              "time": 12.989387755102042,
+              "inferred": false
+            },
+            {
+              "time": 13.490521541950114,
+              "inferred": false
+            },
+            {
+              "time": 13.991655328798187,
+              "inferred": false
+            },
+            {
+              "time": 14.472743764172337,
+              "inferred": false
+            },
+            {
+              "time": 14.97387755102041,
+              "inferred": false
+            },
+            {
+              "time": 15.475011337868482,
+              "inferred": false
+            },
+            {
+              "time": 15.976145124716554,
+              "inferred": false
+            },
+            {
+              "time": 16.49732426303855,
+              "inferred": false
+            },
+            {
+              "time": 16.9784126984127,
+              "inferred": false
+            },
+            {
+              "time": 17.499591836734695,
+              "inferred": false
+            },
+            {
+              "time": 17.980680272108845,
+              "inferred": false
+            },
+            {
+              "time": 18.481814058956918,
+              "inferred": false
+            },
+            {
+              "time": 18.98294784580499,
+              "inferred": false
+            },
+            {
+              "time": 19.484081632653062,
+              "inferred": false
+            },
+            {
+              "time": 19.985215419501134,
+              "inferred": false
+            },
+            {
+              "time": 20.486349206349207,
+              "inferred": false
+            },
+            {
+              "time": 20.98748299319728,
+              "inferred": false
+            },
+            {
+              "time": 21.46857142857143,
+              "inferred": false
+            },
+            {
+              "time": 21.989750566893424,
+              "inferred": false
+            },
+            {
+              "time": 22.470839002267574,
+              "inferred": false
+            },
+            {
+              "time": 22.992018140589572,
+              "inferred": false
+            },
+            {
+              "time": 23.493151927437644,
+              "inferred": false
+            },
+            {
+              "time": 23.97424036281179,
+              "inferred": false
+            },
+            {
+              "time": 24.49541950113379,
+              "inferred": false
+            },
+            {
+              "time": 24.97650793650794,
+              "inferred": false
+            },
+            {
+              "time": 25.497687074829933,
+              "inferred": false
+            },
+            {
+              "time": 25.978775510204084,
+              "inferred": false
+            },
+            {
+              "time": 26.479909297052156,
+              "inferred": false
+            },
+            {
+              "time": 26.98104308390023,
+              "inferred": false
+            },
+            {
+              "time": 27.4821768707483,
+              "inferred": false
+            },
+            {
+              "time": 27.983310657596373,
+              "inferred": false
+            },
+            {
+              "time": 28.484444444444446,
+              "inferred": false
+            },
+            {
+              "time": 28.985578231292518,
+              "inferred": false
+            },
+            {
+              "time": 29.46666666666667,
+              "inferred": false
+            },
+            {
+              "time": 29.987845804988662,
+              "inferred": false
+            },
+            {
+              "time": 30.468934240362813,
+              "inferred": false
+            },
+            {
+              "time": 30.99011337868481,
+              "inferred": false
+            },
+            {
+              "time": 31.471201814058958,
+              "inferred": false
+            },
+            {
+              "time": 31.95229024943311,
+              "inferred": true
+            }
+          ],
+          "confidence": 0.9641276715940119,
+          "method": "windowed-tempo-state-onset-v1"
+        },
+        "feel": "Driving pulse",
+        "chords": [
+          "D#",
+          "D#",
+          "D#",
+          "D#"
+        ],
+        "sections": [
+          {
+            "name": "Opening",
+            "start": 0,
+            "end": 9,
+            "range": "0:00 - 0:09",
+            "width": 28.13
+          },
+          {
+            "name": "Part A",
+            "start": 9,
+            "end": 16.5,
+            "range": "0:09 - 0:17",
+            "width": 23.44
+          },
+          {
+            "name": "Part B",
+            "start": 16.5,
+            "end": 25.5,
+            "range": "0:17 - 0:26",
+            "width": 28.13
+          },
+          {
+            "name": "Closing",
+            "start": 25.5,
+            "end": 32,
+            "range": "0:26 - 0:32",
+            "width": 20.31
+          }
+        ],
+        "waveform": [
+          23,
+          22,
+          18,
+          23,
+          21,
+          18,
+          22,
+          22,
+          18,
+          22,
+          24,
+          18,
+          22,
+          22,
+          18,
+          24,
+          24,
+          18,
+          23,
+          23,
+          18,
+          21,
+          22,
+          18,
+          25,
+          22,
+          18,
+          23,
+          22,
+          18,
+          23,
+          23,
+          18,
+          22,
+          22,
+          18,
+          24,
+          22,
+          18,
+          23,
+          22,
+          18,
+          22,
+          24,
+          18,
+          23,
+          23,
+          18,
+          24,
+          22,
+          18,
+          24,
+          21,
+          18,
+          22,
+          23,
+          18,
+          22,
+          23,
+          18,
+          22,
+          22,
+          18,
+          24,
+          22,
+          18,
+          23,
+          22,
+          18,
+          21,
+          23,
+          18,
+          25,
+          22,
+          18,
+          22,
+          23,
+          18,
+          23,
+          23,
+          18,
+          22,
+          23,
+          18,
+          23,
+          22,
+          18,
+          23,
+          23,
+          18,
+          22,
+          24,
+          18,
+          22,
+          23,
+          18
+        ],
+        "level": {
+          "rmsDb": -24.7,
+          "peakDb": -13.2
+        },
+        "confidence": {
+          "tempo": 1,
+          "key": 0.53,
+          "chords": 0.69
+        },
+        "analysisCoverage": {
+          "seconds": 32,
+          "blockSeconds": 124,
+          "overlapSeconds": 4,
+          "maxWindowPcmBytes": 16777216,
+          "wholeSourceDecoded": false
+        }
+      },
+      "arrangement": {
+        "enabled": true,
+        "start": 0,
+        "trimStart": 0,
+        "trimEnd": 32,
+        "gain": 100,
+        "fadeIn": 0,
+        "fadeOut": 0,
+        "automationTarget": "volume",
+        "automation": {
+          "volume": [
+            {
+              "position": 0,
+              "value": 100
+            },
+            {
+              "position": 1,
+              "value": 100
+            }
+          ],
+          "filter": [
+            {
+              "position": 0,
+              "value": 50
+            },
+            {
+              "position": 1,
+              "value": 50
+            }
+          ],
+          "reverb": [
+            {
+              "position": 0,
+              "value": 15
+            },
+            {
+              "position": 1,
+              "value": 15
+            }
+          ]
+        }
+      },
+      "lanes": {
+        "fullMix": {
+          "id": "fullMix",
+          "label": "Full mix",
+          "assetId": "audio-17111d0a-8f64-4798-b127-9084a3451584",
+          "name": "D-fullMix",
+          "level": 100,
+          "muted": true,
+          "solo": false,
+          "pitch": 0,
+          "duration": 32,
+          "status": "ready"
+        },
+        "drums": {
+          "id": "drums",
+          "label": "Drums",
+          "assetId": "audio-3e051a2e-8b67-49a1-b46d-d430d7108a65",
+          "name": "D-drums.wav",
+          "level": 100,
+          "muted": false,
+          "solo": false,
+          "pitch": 0,
+          "duration": 32,
+          "status": "ready"
+        },
+        "bass": {
+          "id": "bass",
+          "label": "Bass",
+          "assetId": "audio-26ac1910-0c43-4dbb-bc1b-4a095c5b726b",
+          "name": "D-bass.wav",
+          "level": 100,
+          "muted": false,
+          "solo": false,
+          "pitch": 0,
+          "duration": 32,
+          "status": "ready"
+        },
+        "music": {
+          "id": "music",
+          "label": "Music",
+          "assetId": "audio-69a0834f-15b3-4e37-9d11-1294eff3d9c3",
+          "name": "D-music.wav",
+          "level": 100,
+          "muted": false,
+          "solo": false,
+          "pitch": 0,
+          "duration": 32,
+          "status": "ready"
+        },
+        "vocals": {
+          "id": "vocals",
+          "label": "Vocals",
+          "assetId": "audio-699b847b-9ccd-4e7f-9718-8568d9501897",
+          "name": "D-vocals.wav",
+          "level": 100,
+          "muted": false,
+          "solo": false,
+          "pitch": 0,
+          "duration": 32,
+          "status": "ready"
+        }
+      },
+      "followTempoMap": false
+    }
+  ],
+  "pads": [
+    {
+      "name": "Kick",
+      "frequency": 72,
+      "accent": "#26d9ff",
+      "gain": 82,
+      "assetId": ""
+    },
+    {
+      "name": "Snare",
+      "frequency": 180,
+      "accent": "#62f5c8",
+      "gain": 82,
+      "assetId": ""
+    },
+    {
+      "name": "Hat",
+      "frequency": 420,
+      "accent": "#4a90e2",
+      "gain": 82,
+      "assetId": ""
+    },
+    {
+      "name": "Clap",
+      "frequency": 260,
+      "accent": "#9b7bff",
+      "gain": 82,
+      "assetId": ""
+    },
+    {
+      "name": "Low",
+      "frequency": 110,
+      "accent": "#ffb020",
+      "gain": 82,
+      "assetId": ""
+    },
+    {
+      "name": "Rise",
+      "frequency": 760,
+      "accent": "#e0742b",
+      "gain": 82,
+      "assetId": ""
+    },
+    {
+      "name": "Perc",
+      "frequency": 330,
+      "accent": "#e03030",
+      "gain": 82,
+      "assetId": ""
+    },
+    {
+      "name": "Tone",
+      "frequency": 610,
+      "accent": "#d44fc8",
+      "gain": 82,
+      "assetId": ""
+    }
+  ],
+  "recordings": [],
+  "crossfader": 35,
+  "crossfaderCurve": "Smooth",
+  "crossfaderReverse": false,
+  "masterLevel": 50,
+  "masterProcessing": {
+    "inputTrim": 0,
+    "limiterDrive": 0,
+    "lowFrequency": 250,
+    "highFrequency": 2500,
+    "targetLufs": -14,
+    "targetPeak": -1,
+    "low": 0,
+    "mid": 0,
+    "high": 0,
+    "lowCut": 20,
+    "width": 100,
+    "ceiling": -1,
+    "bypass": false
+  },
+  "masterBpm": 120,
+  "projectKey": "Off",
+  "limiter": true,
+  "aiMaster": false,
+  "aiMasterMode": "Streaming -14",
+  "transfer": null,
+  "pianoNotes": [],
+  "arranger": {
+    "version": 1,
+    "tracks": [],
+    "captures": []
+  },
+  "mixer": {
+    "returns": {
+      "a": {
+        "size": 45,
+        "decay": 2.4,
+        "preDelay": 12,
+        "tone": 50,
+        "level": 70,
+        "muted": false
+      },
+      "b": {
+        "division": "1/4",
+        "feedback": 35,
+        "tone": 50,
+        "pingPong": false,
+        "level": 70,
+        "muted": false
+      }
+    }
+  }
+}

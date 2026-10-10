@@ -1,0 +1,64 @@
+{
+  "product_id": "stemdeck",
+  "browser_portability_qualification": {
+    "observed_at": "2026-10-08T11:48:29.884513+00:00",
+    "task_id": "CORE-STEM-AUD-008",
+    "source_sha": "b26c03be150e9ebb4dfcfa489bb57e62802011ec",
+    "report": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-portability-20261008/README.md",
+    "status": "BLOCKED_FULL_MOBILE_PORTABILITY_UNQUALIFIED",
+    "engines": {
+      "Chromium151.0.7922.34": {
+        "verified_assets": 39,
+        "arrangement_events_edit_undo_redo_restart": "PASS",
+        "strict_export_byte_identity": "FAIL",
+        "maximum_pcm_lsb_error": 1,
+        "maximum_normalized_pcm_error": 1.1920928955078125e-07,
+        "within_existing_pcm_tolerance": true,
+        "exit_code": 1
+      },
+      "Firefox153.0": {
+        "verified_assets": 39,
+        "scoped_archive_edit_restart_export": "PASS",
+        "strict_export_byte_identity": "PASS",
+        "exit_code": 0
+      },
+      "WebKit26.5": {
+        "verified_assets": 39,
+        "scoped_archive_edit_restart_export": "PASS",
+        "strict_export_byte_identity": "PASS",
+        "exit_code": 0
+      }
+    },
+    "tests": {
+      "archive_storage": {
+        "passed": 40,
+        "files": 4,
+        "exit_code": 0
+      },
+      "vite_build": 0,
+      "prerender": 0,
+      "service_worker_after_prerequisite": 0
+    },
+    "retained_failures": [
+      "initial Chromium exit137 unknown cause",
+      "Chromium strict cross-engine WAV byte mismatch1LSB",
+      "initial service worker invoked before prerender completed; corrected order passes"
+    ],
+    "physical_platforms": {
+      "Safari_iOS": "UNVERIFIED",
+      "Android": "UNVERIFIED"
+    },
+    "limitations": [
+      "only normalized arrangement/event fields compared; other session fields unqualified",
+      "metadata rename only; sound-changing edit unqualified",
+      "normal committed close/reopen only; crash/in-flight interruption unqualified",
+      "no return portable archive transfer",
+      "local source UI, not deployed/packaged artifact"
+    ],
+    "independent_review": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-portability-20261008/independent-review.md",
+    "actual_model": "openai/gpt-6.1-sol",
+    "reviewer_configured_model": "openai/gpt-6.1-sol",
+    "fallbacks_used": [],
+    "resume_condition": "Authorized actual supported Safari/iOS/Android environment, fixture transfer and sufficient headroom; full relevant session state/meaningful edits/return portable transfer plus in-flight interruption preserving last-good project. Reuse same task; preserve mandatory release gates."
+  }
+}

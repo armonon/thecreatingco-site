@@ -1,0 +1,14 @@
+[
+  {
+    "port": 4298,
+    "pid": 74089,
+    "owned_cwd_verified": true,
+    "signal": "SIGTERM"
+  },
+  {
+    "port": 4299,
+    "pid": 75777,
+    "owned_cwd_verified": true,
+    "signal": "SIGTERM"
+  }
+]

@@ -1,0 +1,28 @@
+{
+  "task_id": "CORE-LUMA-EXPORT-COLOR-001",
+  "title": "Preserve unedited raster RGB through CPU PNG export",
+  "product": "luma",
+  "area": "output_fidelity",
+  "category": "bug",
+  "workstream": "CORE_PRODUCT_LAB",
+  "severity": "P2",
+  "model": "gpt-6.1-sol",
+  "status": "QUEUED",
+  "dependencies": [],
+  "scores": {
+    "impact": 7,
+    "user_value": 8,
+    "strategic_value": 7,
+    "urgency": 6,
+    "confidence": 9,
+    "effort": 5,
+    "risk": 4
+  },
+  "expected_value": "Prevent color changes on unedited images and meet explicit output-fidelity gate; severity/priority are planning estimates.",
+  "test_requirements": "Source-controlled regression using retained synthetic2048x1536 fixture. Source PNG\u2192browser\u2192imported bitmap exact; CPU export must meet fixed maxRGB2/alpha0 tolerance, do not loosen without justified independent semantics. Test opaque/partial alpha, repeated export and save/reopen.",
+  "source_evidence": [
+    "reports/luma-completion-2026-10-07/color-diagnostic.json",
+    "reports/luma-completion-2026-10-07/golden/report.json"
+  ],
+  "next_action": "After founder first-wave tasks, reproduce from772f082 using retained color-diagnostic.mjs; trace imported bitmap\u2192surface/CPU renderer\u2192PNG. GPU false, identity transform, opacity1. Fix root cause with independent regression/review."
+}

@@ -1,0 +1,37 @@
+{
+  "product_id": "form",
+  "runtime_security_triage": {
+    "observed_at": "2026-10-08T03:51:13.088398+00:00",
+    "source_sha": "be1f7272c5689d6401194d643fa3eb09a2b0b73b",
+    "pr": "https://github.com/armonon/form-studio/pull/7",
+    "status": "REVIEWED_PUSHED_NOT_MERGED_NOT_DEPLOYED",
+    "full_audit": {
+      "high": 8,
+      "moderate": 4,
+      "total": 12
+    },
+    "baseline_full_audit": {
+      "high": 15,
+      "moderate": 4,
+      "total": 19
+    },
+    "production_audit_total": 0,
+    "unit": {
+      "passed": 1527,
+      "failed": 0,
+      "skipped": 0,
+      "timing": "precommit candidate installed graph; unchanged application/tests/lock"
+    },
+    "budget_passed": 15,
+    "exact_head_web_build": "PASS",
+    "exact_head_desktop_frontend_build": "PASS",
+    "browser_lifecycle": "SCOPED_SYNTHETIC_PASS",
+    "review": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-runtime-security-20261008T0340/review.md",
+    "report": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-runtime-security-20261008T0340/README.md",
+    "limitations": [
+      "Residual build/lint and Drizzle advisories remain",
+      "Local emitted Worker image500 reproduced; distinct followup queued",
+      "Mandatory CI/downstack/native/deployed artifact gates unresolved"
+    ]
+  }
+}

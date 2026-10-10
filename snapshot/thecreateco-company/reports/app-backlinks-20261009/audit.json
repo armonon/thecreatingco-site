@@ -1,0 +1,159 @@
+{
+  "observed_at": "2026-10-09T16:58:00Z",
+  "method": "Headless Chromium; navigated to actual public product endpoints; checked HTTP status and resolved anchors including the open-shadow-root shared app menu after clicking its trigger.",
+  "target": "Publicly reachable, independently hosted thecreateco web app endpoints found in current Netlify account and the company's published suite registry. Same-origin company-site modules are excluded from external-link scoring.",
+  "summary": {
+    "endpoints_checked": 21,
+    "http_200": 21,
+    "company_site_link_available": 17,
+    "no_company_site_link_in_live_ui": 4,
+    "draft_preview_links_verified": 1,
+    "reviewable_source_changes": 2
+  },
+  "linked": [
+    {
+      "app": "Animate",
+      "url": "https://animate-thecreatingco.netlify.app/",
+      "via": "footer and shared app menu"
+    },
+    {
+      "app": "Moodboard",
+      "url": "https://moodboard-tcc.netlify.app/",
+      "via": "footer and shared app menu"
+    },
+    {
+      "app": "Portfolio",
+      "url": "https://portfolio-studio-384.netlify.app/",
+      "via": "footer and shared app menu"
+    },
+    {
+      "app": "Glyph Studio",
+      "url": "https://glyph-studio-610.netlify.app/studio",
+      "via": "shared app menu; company home anchor present after opening menu"
+    },
+    {
+      "app": "Bounce",
+      "url": "https://bounce.thecreatingco.com/browser/",
+      "via": "shared app menu; separate website link is same product host"
+    },
+    {
+      "app": "Ghost Studio",
+      "url": "https://ghost.thecreatingco.com/",
+      "via": "shared app menu"
+    },
+    {
+      "app": "StemDeck",
+      "url": "https://stemdeck.thecreatingco.com/studio",
+      "via": "shared app menu"
+    },
+    {
+      "app": "Sattari Music tools",
+      "url": "https://sattarimusic.com/studio",
+      "via": "shared app menu"
+    },
+    {
+      "app": "Split",
+      "url": "https://sattarimusic.com/studio/split",
+      "via": "shared app menu"
+    },
+    {
+      "app": "Key & BPM",
+      "url": "https://sattarimusic.com/studio/keybpm",
+      "via": "shared app menu"
+    },
+    {
+      "app": "Pocket",
+      "url": "https://sattarimusic.com/studio/pocket",
+      "via": "shared app menu"
+    },
+    {
+      "app": "Luma Studio",
+      "url": "https://luma.thecreatingco.com/studio",
+      "via": "shared app menu"
+    },
+    {
+      "app": "ScenePilot",
+      "url": "https://scenepilot.thecreatingco.com/app/",
+      "via": "shared app menu"
+    },
+    {
+      "app": "AutoCut",
+      "url": "https://scenepilot.thecreatingco.com/tools/autocut/",
+      "via": "shared app menu"
+    },
+    {
+      "app": "Captions",
+      "url": "https://scenepilot.thecreatingco.com/tools/captions/",
+      "via": "shared app menu"
+    },
+    {
+      "app": "Reframe",
+      "url": "https://scenepilot.thecreatingco.com/tools/reframe/",
+      "via": "shared app menu"
+    },
+    {
+      "app": "Reclaim",
+      "url": "https://reclaim.thecreatingco.com/browser/",
+      "via": "shared app menu"
+    }
+  ],
+  "missing_or_not_live": [
+    {
+      "app": "Form Studio",
+      "url": "https://form.thecreatingco.com/studio",
+      "http": 200,
+      "evidence": "Added direct accessible company-home links to the Form web and CAD headers on isolated branch codex/form-company-backlink-20261009, commit cbde0fd; draft PR #11 open, not merged or deployed. Focused Cast/company backlink test, Node 22 typecheck and production build passed locally. Full test:react suite has unrelated failures; hosted checks not claimed. Live UI still lacks link pending gates/deploy."
+    },
+    {
+      "app": "Cast",
+      "url": "https://form-studio-review.netlify.app/studio",
+      "http": 200,
+      "evidence": "Added accessible company-home link to Cast dialog in Form draft PR #11 (commit cbde0fd); keyboard tab trap updated. Focused Cast/company backlink test passed locally. Current review URL remains without a deployed change; do not treat source branch as live."
+    },
+    {
+      "app": "Librarian",
+      "url": "https://librarian.thecreatingco.com/",
+      "http": 200,
+      "evidence": "Current live page still lacks link. Existing draft PR #1 already adds shared suite-menu wiring with a company-home destination. PR is intentionally draft; its documented deployment blocker includes missing function secrets/access and a broken live PDF asset, so no deployment attempted."
+    },
+    {
+      "app": "WebLab",
+      "url": "https://6ac9198c96879eb55d2917bd--weblab-preview-tcc.netlify.app/",
+      "http": 200,
+      "evidence": "Draft Netlify preview now exposes a visible accessible footer link to https://thecreatingco.com/. Source commit 8d51ea2c3387df3f49808e2bdf9510c6d37b5c67 is on draft PR #1; not production."
+    }
+  ],
+  "notes": [
+    "The shared suite menu links to https://thecreatingco.com/ after the user opens the app menu; direct footer links are not duplicated where that menu is functional.",
+    "Community, Sessions, Pocket Studio and other pages served on thecreatingco.com are already on the company origin, not separate external web apps.",
+    "This is an interface-link audit only, not product workflow or release qualification.",
+    "Reviewable changes are distinct from the public-live inventory. Three live UI exceptions remain pending release: Form, Cast review app, Librarian. WebLab draft preview is fixed but production remains unreleased."
+  ],
+  "changes_and_release_state": {
+    "Form and Cast": {
+      "commit": "cbde0fd",
+      "branch": "codex/form-company-backlink-20261009",
+      "pull_request": "https://github.com/armonon/form-studio/pull/11",
+      "state": "open draft; not merged or deployed",
+      "local_evidence": [
+        "Node 22.23.2 typecheck passed",
+        "focused backlink/Cast browser smoke passed 1/1",
+        "production build passed",
+        "git diff --check passed",
+        "full test:react suite has unrelated failures; see work log; not represented as passing",
+        "hosted CI not claimed"
+      ]
+    },
+    "WebLab": {
+      "commit": "8d51ea2c3387df3f49808e2bdf9510c6d37b5c67",
+      "pull_request": "https://github.com/armonon/weblab/pull/1",
+      "preview": "https://6ac9198c96879eb55d2917bd--weblab-preview-tcc.netlify.app/",
+      "state": "draft preview updated and verified; not production"
+    },
+    "Librarian": {
+      "pull_request": "https://github.com/armonon/librarian/pull/1",
+      "state": "existing draft source contains suite menu; live deployment blocked; no changes/deploy made"
+    },
+    "others": "17/21 public endpoints had working company-home link via footer or shared app menu during live audit; no duplication added."
+  }
+}

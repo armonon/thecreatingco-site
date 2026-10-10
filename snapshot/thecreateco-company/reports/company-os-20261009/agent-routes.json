@@ -1,0 +1,13 @@
+{
+  "name": "agent-routes",
+  "command": [
+    "openclaw",
+    "agents",
+    "list",
+    "--json"
+  ],
+  "started_at": "2026-10-09T06:51:34.088495+00:00",
+  "finished_at": "2026-10-09T06:51:36.385939+00:00",
+  "exit_code": 0,
+  "output": "[\n  {\n    \"id\": \"main\",\n    \"model\": \"openai/gpt-6-luna\",\n    \"isDefault\": true,\n    \"bindings\": 1\n  },\n  {\n    \"id\": \"machine\",\n    \"name\": \"machine\",\n    \"model\": \"openai/gpt-6-luna\",\n    \"isDefault\": false,\n    \"bindings\": 0\n  },\n  {\n    \"id\": \"claude\",\n    \"name\": \"claude\",\n    \"model\": \"openai/gpt-6-luna\",\n    \"isDefault\": false,\n    \"bindings\": 1\n  },\n  {\n    \"id\": \"local\",\n    \"name\": \"local\",\n    \"model\": \"openai/gpt-6-luna\",\n    \"isDefault\": false,\n    \"bindings\": 0\n  },\n  {\n    \"id\": \"leila\",\n    \"name\": \"leila\",\n    \"model\": \"openai/gpt-6-luna\",\n    \"isDefault\": false,\n    \"bindings\": 1\n  },\n  {\n    \"id\": \"operations-supervisor\",\n    \"name\": \"operations-supervisor\",\n    \"model\": \"openai/gpt-6-luna\",\n    \"isDefault\": false,\n    \"bindings\": 0\n  }\n]"
+}

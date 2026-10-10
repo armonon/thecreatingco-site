@@ -1,0 +1,10 @@
+{
+  "README.md": "53e3f71c6a003fb7c2a845668cdbcb1a60cf12ef1d302c8bc3914c66daa81248",
+  "app/engine/high-depth-psd.ts": "e5c3b3f99904c178a12fc88a81fb62f53c6e94bd9b2106b2f3862f8da7a612c3",
+  "tests/high-depth-psd.test.ts": "0d09324843f8e408ebf41d929c9ec2be2181c461ecc79170632e3cee06145da8",
+  "tests/psd.test.ts": "5a5b5f524d2273c6bea85510ce03da22e514e6e5035d31364bf9d97f3658c655",
+  "tests/psd-project-preservation.test.ts": "5776d9db6aa4aac2865dfee290195a63f344bbc199ee7f93dca570d5dcd5712e",
+  "tests/color-management.test.ts": "988ce9448611a7406d09607453a287f2d303b7caae6973991cc81eeff3c28f04",
+  "tests/embedded-color-profile.test.ts": "2848bc133a32ba7d0f1c2ca2064fa9be93f5aaea973fffe1cbcd6dd42c73d86d",
+  "package-lock.json": "845481a71d7b1f28628a936585d5a4d5d2f614d069a90d2aabecd5bac3195c6d"
+}

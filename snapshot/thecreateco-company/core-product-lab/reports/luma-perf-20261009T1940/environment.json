@@ -1,0 +1,9 @@
+{
+  "date": "2026-10-09T19:41:38.399326+00:00",
+  "source_sha": "30bea20f862c4302887b79b89f364f2d7bdf5710",
+  "node": "v26.9.0",
+  "uname": "Darwin Mac.lan 25.2.0 Darwin Kernel Version 25.2.0: Tue Nov 18 21:08:48 PST 2025; root:xnu-12377.61.12~1/RELEASE_ARM64_T8132 arm64",
+  "dependency_donor": "/Users/agentsattari/code/company-worktrees/luma-high-depth-20261009T1540",
+  "lock_sha256": "845481a71d7b1f28628a936585d5a4d5d2f614d069a90d2aabecd5bac3195c6d",
+  "limitations": "shared existing dependencies, exact lock match; no fresh clean install"
+}

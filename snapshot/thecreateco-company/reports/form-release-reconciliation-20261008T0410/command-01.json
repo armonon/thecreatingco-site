@@ -1,0 +1,13 @@
+{
+  "command": [
+    "git",
+    "worktree",
+    "list",
+    "--porcelain"
+  ],
+  "cwd": "/Users/agentsattari/code/wave2/form-D",
+  "observed_at": "2026-10-08T04:10:57.845647+00:00",
+  "exit_code": 0,
+  "stdout": "worktree /Users/agentsattari/code/wave2/form-D\nHEAD b5abdd1de5f71fe0244ef9a651a6d983067541ff\nbranch refs/heads/wave5/form-room\n\nworktree /private/tmp/form-audit-CORE-FORM-001\nHEAD b5abdd1de5f71fe0244ef9a651a6d983067541ff\ndetached\n\nworktree /Users/agentsattari/code/worktrees/form-cast-stl-20261007\nHEAD d24f5d76b4fd0e99c43e1cb8e5e2d9b63db6665e\nbranch refs/heads/fix/cast-stl-file-import-20261007\n\nworktree /Users/agentsattari/code/worktrees/form-completion-20261007\nHEAD ea6734638f72232676985f610daac18341fcd8ca\nbranch refs/heads/fix/form-workflow-gates-20261007\n\nworktree /Users/agentsattari/code/worktrees/form-golden-20261008T0310\nHEAD 1e7f6d1c84a6c956ece3cfe6f74b665208bf069c\nbranch refs/heads/qa/form-golden-20261008T0310\n\nworktree /Users/agentsattari/code/worktrees/form-project-menu-20261007\nHEAD 1e7f6d1c84a6c956ece3cfe6f74b665208bf069c\nbranch refs/heads/fix/form-project-menu-20261007\n\nworktree /Users/agentsattari/code/worktrees/form-runtime-security-20261008T0340\nHEAD be1f7272c5689d6401194d643fa3eb09a2b0b73b\nbranch refs/heads/qa/form-runtime-security-20261008T0340\n\nworktree /Users/agentsattari/code/worktrees/form-security-20261007\nHEAD b433a12331af3dba200be596422442c103783831\nbranch refs/heads/fix/core-form-security-20261007\n\n",
+  "stderr": ""
+}

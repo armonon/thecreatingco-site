@@ -1,0 +1,51 @@
+[
+  {
+    "name": "clean-ci",
+    "command": "npm ci",
+    "started": "2026-10-08T01:41:49.081461+00:00",
+    "finished": "2026-10-08T01:41:57.841296+00:00",
+    "exit_code": 0
+  },
+  {
+    "name": "typecheck",
+    "command": "npm run typecheck",
+    "started": "2026-10-08T01:41:57.841577+00:00",
+    "finished": "2026-10-08T01:42:04.830749+00:00",
+    "exit_code": 0
+  },
+  {
+    "name": "build",
+    "command": "npm run build",
+    "started": "2026-10-08T01:42:04.831011+00:00",
+    "finished": "2026-10-08T01:42:10.825164+00:00",
+    "exit_code": 0
+  },
+  {
+    "name": "desktop-web-build",
+    "command": "npm run desktop:web:build",
+    "started": "2026-10-08T01:42:10.825484+00:00",
+    "finished": "2026-10-08T01:42:12.060297+00:00",
+    "exit_code": 0
+  },
+  {
+    "name": "unit",
+    "command": "npm run test:unit",
+    "started": "2026-10-08T01:42:12.060556+00:00",
+    "finished": "2026-10-08T01:45:41.023308+00:00",
+    "exit_code": 1
+  },
+  {
+    "name": "synthetic-projects",
+    "command": "npm run release:projects",
+    "started": "2026-10-08T01:45:41.023623+00:00",
+    "finished": "2026-10-08T01:45:46.230841+00:00",
+    "exit_code": 0
+  },
+  {
+    "name": "lint",
+    "command": "npm run lint",
+    "started": "2026-10-08T01:45:46.231080+00:00",
+    "finished": "2026-10-08T01:46:16.885128+00:00",
+    "exit_code": 1
+  }
+]

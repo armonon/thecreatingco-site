@@ -1,0 +1,43 @@
+[
+  {
+    "name": "unit",
+    "command": [
+      "npm",
+      "test",
+      "--",
+      "--maxWorkers=2"
+    ],
+    "exit_code": 1,
+    "wall_seconds": 96.29
+  },
+  {
+    "name": "types",
+    "command": [
+      "npm",
+      "run",
+      "type-check"
+    ],
+    "exit_code": 0,
+    "wall_seconds": 2.73
+  },
+  {
+    "name": "build",
+    "command": [
+      "npm",
+      "run",
+      "build"
+    ],
+    "exit_code": 0,
+    "wall_seconds": 12.51
+  },
+  {
+    "name": "matrix",
+    "command": [
+      "node",
+      "scripts/report-performance-support.mjs",
+      "--json"
+    ],
+    "exit_code": 0,
+    "wall_seconds": 0.08
+  }
+]

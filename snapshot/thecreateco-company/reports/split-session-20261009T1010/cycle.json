@@ -1,0 +1,11 @@
+{
+  "recorded_at": "2026-10-09T10:11:12.530864+00:00",
+  "task_id": "PROGRAM18-SPLIT-SESSION-001",
+  "owner": "company-director-20261009T1010",
+  "director_model": "openai/gpt-6.1-sol",
+  "executor_requested": "openai/gpt-6-luna",
+  "commissioning_task": "already COMPLETE; not repeated",
+  "selection": "highest eligible P1, no active product owners; company/lab PAUSE absent",
+  "spending": "No new external spend authorized; null budgets remain unknown",
+  "boundary": "No external messages, merge, deploy, release; local code pending independent review"
+}

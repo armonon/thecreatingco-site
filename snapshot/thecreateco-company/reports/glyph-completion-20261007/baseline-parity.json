@@ -1,0 +1,127 @@
+{
+  "source_sha": "bc6b6d047d4bb0c1a988b3c820a3e7c367c6e5fa",
+  "published_deploy": "6ac5d2b39f450706b3f7dda1",
+  "matched": 15,
+  "total": 19,
+  "files": [
+    {
+      "path": "/sw.js",
+      "published_sha1": "fe1218a84ee1b561423a6ba65d6135559fbfabb7",
+      "rebuilt_sha1": "fe1218a84ee1b561423a6ba65d6135559fbfabb7",
+      "match": true
+    },
+    {
+      "path": "/sitemap.xml",
+      "published_sha1": "8c46bec2d0cae3c93c0afe3d0dad0f678b5a3386",
+      "rebuilt_sha1": "8c46bec2d0cae3c93c0afe3d0dad0f678b5a3386",
+      "match": true
+    },
+    {
+      "path": "/robots.txt",
+      "published_sha1": "472a2cc19cbff65edc720dcc4860e03ad184d257",
+      "rebuilt_sha1": "472a2cc19cbff65edc720dcc4860e03ad184d257",
+      "match": true
+    },
+    {
+      "path": "/og-image.png",
+      "published_sha1": "2f3ca86a7d3b5d1c23a84e769190516aeb12a048",
+      "rebuilt_sha1": "2f3ca86a7d3b5d1c23a84e769190516aeb12a048",
+      "match": true
+    },
+    {
+      "path": "/manifest.webmanifest",
+      "published_sha1": "64269768af0f2baad779f670ec32f5d764ed17c9",
+      "rebuilt_sha1": "64269768af0f2baad779f670ec32f5d764ed17c9",
+      "match": true
+    },
+    {
+      "path": "/index.html",
+      "published_sha1": "ec04caa864ef7351dbe2ea70aae8ee85d3de19b0",
+      "rebuilt_sha1": "68722dec8b3d52e95365f9f30b9ef7c738ccd72c",
+      "match": false
+    },
+    {
+      "path": "/icons/icon-maskable-512.png",
+      "published_sha1": "55f408520c36943d742754d1c7fa8105b28ee620",
+      "rebuilt_sha1": "55f408520c36943d742754d1c7fa8105b28ee620",
+      "match": true
+    },
+    {
+      "path": "/icons/icon-maskable-192.png",
+      "published_sha1": "f4b36b7ea2936def082d74e39463bff40341dbc1",
+      "rebuilt_sha1": "f4b36b7ea2936def082d74e39463bff40341dbc1",
+      "match": true
+    },
+    {
+      "path": "/icons/icon-512.png",
+      "published_sha1": "a05d1a1a88be4d6294b96c0289b980bcfe17b740",
+      "rebuilt_sha1": "a05d1a1a88be4d6294b96c0289b980bcfe17b740",
+      "match": true
+    },
+    {
+      "path": "/icons/icon-192.png",
+      "published_sha1": "4e36142b9e0a0b0a5d157609837683372ba17a0a",
+      "rebuilt_sha1": "4e36142b9e0a0b0a5d157609837683372ba17a0a",
+      "match": true
+    },
+    {
+      "path": "/favicon.svg",
+      "published_sha1": "fb854abaa4782f79de84844ad83d8198d2b4e3b8",
+      "rebuilt_sha1": "fb854abaa4782f79de84844ad83d8198d2b4e3b8",
+      "match": true
+    },
+    {
+      "path": "/assets/workbox-window.prod.es5-bd17z0yl.js",
+      "published_sha1": "08f0e7d3afc43b7a63e8ab9d5f3e6e319d059212",
+      "rebuilt_sha1": "08f0e7d3afc43b7a63e8ab9d5f3e6e319d059212",
+      "match": true
+    },
+    {
+      "path": "/assets/index-crjnd8qc.js",
+      "published_sha1": "17b15c98230ad03ee747357179b666f883195343",
+      "rebuilt_sha1": null,
+      "match": false
+    },
+    {
+      "path": "/assets/index-bcenydvw.css",
+      "published_sha1": "0dd93f33ce66d9df8489b2a00226874a18119e6f",
+      "rebuilt_sha1": null,
+      "match": false
+    },
+    {
+      "path": "/netlify.toml",
+      "published_sha1": "6b22bb6cdd77135066b952b574e0528670faf0a0",
+      "rebuilt_sha1": null,
+      "match": false
+    },
+    {
+      "path": "/_redirects",
+      "published_sha1": "21d22af2d2cd96f057d4fd27002cf1063fb84239",
+      "rebuilt_sha1": "21d22af2d2cd96f057d4fd27002cf1063fb84239",
+      "match": true
+    },
+    {
+      "path": "/_headers",
+      "published_sha1": "38c1004dd6863b622b08739b8d73af3b54e69aba",
+      "rebuilt_sha1": "38c1004dd6863b622b08739b8d73af3b54e69aba",
+      "match": true
+    },
+    {
+      "path": "/assets/index-c51tutdl.js",
+      "published_sha1": "1363c11e944c2f74792deb994251ab80043dbd07",
+      "rebuilt_sha1": "1363c11e944c2f74792deb994251ab80043dbd07",
+      "match": true
+    },
+    {
+      "path": "/assets/index-ceavgabe.css",
+      "published_sha1": "5cbd72eef429b96d86d3ac21718462271b101955",
+      "rebuilt_sha1": "5cbd72eef429b96d86d3ac21718462271b101955",
+      "match": true
+    }
+  ],
+  "extra_local_files": [
+    "assets/workbox-window.prod.es5-Bd17z0YL.js",
+    "assets/index-C51tutDL.js",
+    "assets/index-CEavgAbE.css"
+  ]
+}

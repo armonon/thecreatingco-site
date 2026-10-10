@@ -1,0 +1,39 @@
+{
+  "entry": "roundtrip-coat-source-qa/models/001-coat.glb",
+  "bytes": 8671768,
+  "magic": "glTF",
+  "version": 2,
+  "lengthHeaderMatches": true,
+  "asset": {
+    "version": "2.0",
+    "generator": "Ghost (three.js GLTFExporter)"
+  },
+  "meshCount": 13,
+  "textureCount": 2,
+  "materialTextureRefs": [
+    {
+      "name": "Front fabric material",
+      "baseColorTexture": 0
+    },
+    {
+      "name": "Back fabric material",
+      "baseColorTexture": 1
+    }
+  ],
+  "imageCount": 2,
+  "images": [
+    {
+      "mimeType": "image/png",
+      "bytes": 2935240,
+      "signature": "89504e470d0a1a0a",
+      "sha256": "070073807838221c2379aa7a0c0b88498ef21e6f93bab56fca3ce76a3036216f"
+    },
+    {
+      "mimeType": "image/png",
+      "bytes": 2793184,
+      "signature": "89504e470d0a1a0a",
+      "sha256": "f7e5e24de2fc1ae06d8e19db644c7993315b6eca1e748ff29e0adaaa03c99f84"
+    }
+  ],
+  "positionAccessorCount": 26
+}

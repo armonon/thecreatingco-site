@@ -1,0 +1,170 @@
+{
+  "product_id": "stemdeck",
+  "completion_observations": {
+    "candidate_sha": "c15bb06a87b150a966e8c563457de4f2786ba141",
+    "supported_platforms": [
+      "macOS Chromium",
+      "Safari/iOS",
+      "Android"
+    ],
+    "gates": {
+      "core_workflow": {
+        "status": "UNVERIFIED",
+        "coverage_complete": false,
+        "source_sha": "c15bb06a87b150a966e8c563457de4f2786ba141",
+        "observed_at": "2026-10-08T05:23:44.236284+00:00",
+        "summary": "Actual clean-head synthetic four-deck load/analyze/12-second continuous perform/capture/replay-print/arrange/undo-redo/save/close/reopen/export passes. Actual production-bundle replay also passes with no late controls and original event history preserved. Full musical/physical/input/platform workflow coverage incomplete. Current local-source WebKit actual four-deck capture, arrangement reconstruction/edit undo-redo and live replay-print PASS (0 late controls); fresh portable restore FAIL, so whole workflow remains unqualified.",
+        "evidence": [
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/exact-ui/report.json",
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/exact-production-replay/report.json",
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/README.md",
+          "/Users/agentsattari/thecreateco-company/reports/stemdeck-webkit-reference-20261007/README.md"
+        ]
+      },
+      "save_reopen_export": {
+        "status": "FAIL",
+        "coverage_complete": false,
+        "source_sha": "c15bb06a87b150a966e8c563457de4f2786ba141",
+        "observed_at": "2026-10-08T05:23:44.236284+00:00",
+        "summary": "Current exact-source WebKit normal capture and explicit long-session WAV same-profile browser restart/export PASS: 658368 and 660416 frames at48kHz stereo, maximum PCM error0. Fresh portable profile: normal import returns entire SATPROJ6 archive for individual audio blobs; lossless import fails local storage. Disk pressure affects bulk import failures; wrong bytes directly observed. Whole-product qualification incomplete.",
+        "evidence": [
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/exact-ui/report.json",
+          "/Users/agentsattari/thecreateco-company/reports/stemdeck-webkit-reference-20261007/README.md"
+        ]
+      },
+      "reliability_recovery": {
+        "status": "FAIL",
+        "coverage_complete": false,
+        "source_sha": "c15bb06a87b150a966e8c563457de4f2786ba141",
+        "observed_at": "2026-10-08T05:23:44.236284+00:00",
+        "summary": "Current normal full-browser restart, portable archive and mandatory captured-recovery suite pass. Earlier f6f061c SIGKILL/quota evidence is historical; current-head power-loss/full-platform qualification incomplete. Current local WebKit fresh-profile portable restore fails asset byte identity; imported audio reads begin SATPROJ6 rather than RIFF. Original generated archive/capture kept. No real user data was involved.",
+        "evidence": [
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/exact-ui/report.json",
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/exact-gate/report.json",
+          "/Users/agentsattari/thecreateco-company/reports/stemdeck-webkit-reference-20261007/README.md"
+        ]
+      },
+      "performance": {
+        "status": "UNVERIFIED",
+        "coverage_complete": false,
+        "source_sha": "c15bb06a87b150a966e8c563457de4f2786ba141",
+        "observed_at": "2026-10-08T04:26:37.749814+00:00",
+        "summary": "Measured dependency path-enumeration bottleneck repaired locally without changing 50 ms grain or 250 ms control guards. Actual UI/production replay passes, mandatory unchanged 120-second soak passes. Original lossless capture versus actual print middle interval has zero-sample lag and maximum sample error 9.32e-9. Full musical/hardware envelope unverified.",
+        "evidence": [
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/exact-gate/report.json",
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/exact-ui/report.json",
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/exact-capture-print-comparison.json",
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/actual-modules/cpu-profile.json",
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/reachability-probe/diagnostics.json"
+        ]
+      },
+      "usability_accessibility": {
+        "status": "UNVERIFIED",
+        "coverage_complete": false,
+        "source_sha": "c15bb06a87b150a966e8c563457de4f2786ba141",
+        "observed_at": "2026-10-08T04:26:37.749814+00:00",
+        "summary": "Actual desktop file controls, perform/print/arrange and undo/redo exercised. Whole-product artist/accessibility qualification incomplete.",
+        "evidence": [
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/exact-ui/report.json",
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/exact-gate/report.json"
+        ]
+      },
+      "responsive_behavior": {
+        "status": "UNVERIFIED",
+        "coverage_complete": false,
+        "source_sha": "c15bb06a87b150a966e8c563457de4f2786ba141",
+        "observed_at": "2026-10-08T04:26:37.749814+00:00",
+        "summary": "Mandatory built UI viewport checks pass. Real mobile/tablet behavior remains unverified.",
+        "evidence": [
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/exact-gate/report.json"
+        ]
+      },
+      "security_privacy": {
+        "status": "UNVERIFIED",
+        "coverage_complete": false,
+        "source_sha": "c15bb06a87b150a966e8c563457de4f2786ba141",
+        "observed_at": "2026-10-08T04:26:37.749814+00:00",
+        "summary": "Version/source-fenced dependency repair changes no source media, network authorization or security gate. Uses owned synthetic fixtures only. Independent source review remains pending; whole-product privacy/security provenance not complete.",
+        "evidence": [
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/review-request.json",
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/clean-install.log",
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/README.md"
+        ]
+      },
+      "documentation_support": {
+        "status": "UNVERIFIED",
+        "coverage_complete": false,
+        "source_sha": "c15bb06a87b150a966e8c563457de4f2786ba141",
+        "observed_at": "2026-10-08T04:26:37.749814+00:00",
+        "summary": "Scoped repair, reproducible install and qualification limits documented. Current work log distinguishes ephemeral WebKit Blob failure from persistent reference-decode failure. Full support/release documentation incomplete.",
+        "evidence": [
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/README.md",
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/review-request.json"
+        ]
+      },
+      "tests": {
+        "status": "FAIL",
+        "coverage_complete": false,
+        "source_sha": "c15bb06a87b150a966e8c563457de4f2786ba141",
+        "observed_at": "2026-10-08T05:23:44.236284+00:00",
+        "summary": "Mandatory exact clean Node 22 gate passes 2,250 tests, lint/types/build/native/browser and unchanged 120-second soak. Supplemental exact UI and actual production replay pass. Persistent platform suites: Chromium 14/14, Firefox 14/14, WebKit 13/14; native MediaRecorder reference decode fails in WebKit. Do not replace that remaining failed check with mandatory-gate PASS. Additional actual WebKit normal-ui and lossless-ui suites exit1 at fresh portable restoration; earlier passing subsets retained. No native-test waiver or source change.",
+        "evidence": [
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/exact-gate/report.json",
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/exact-ui/report.json",
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/exact-platforms/report.json",
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/exact-production-replay/report.json",
+          "/Users/agentsattari/thecreateco-company/reports/stemdeck-webkit-reference-20261007/README.md"
+        ]
+      },
+      "supported_platforms": {
+        "status": "FAIL",
+        "coverage_complete": false,
+        "source_sha": "c15bb06a87b150a966e8c563457de4f2786ba141",
+        "observed_at": "2026-10-08T05:23:44.236284+00:00",
+        "summary": "Persistent Chromium 151 and Firefox 153 native arrangement suites pass 14/14. Persistent WebKit 26.5 passes 13/14 including exact frame/WAV/ZIP and lossless source capture; MediaRecorder reference fails native decodeAudioData. Ephemeral WebKit rejects even a 3-byte Blob while persistent storage succeeds. Real Safari/iOS/Android/native devices unverified. Same WebKit M4A successfully decodes through the real bounded product decoder despite native failure. Explicit WAV and same-profile reopen/export pass; fresh portable restore fails. Do not label Safari universally broken or qualified from Playwright alone.",
+        "evidence": [
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/exact-platforms/report.json",
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/webkit-storage-probe.json",
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/webkit-persistent-storage-probe.json",
+          "/Users/agentsattari/thecreateco-company/reports/stemdeck-webkit-reference-20261007/README.md"
+        ],
+        "platform_results": {
+          "macOS Chromium": "UNVERIFIED",
+          "Safari/iOS": "UNVERIFIED",
+          "Android": "UNVERIFIED"
+        }
+      },
+      "critical_blockers": {
+        "status": "FAIL",
+        "coverage_complete": false,
+        "source_sha": "c15bb06a87b150a966e8c563457de4f2786ba141",
+        "observed_at": "2026-10-08T05:23:44.236284+00:00",
+        "summary": "Native reference decoder failure is retained but real bounded product decoder succeeds, so native failure alone is not a proven core blocker. Actual fresh-profile WebKit portable restore byte corruption is a confirmed synthetic-fixture failure; full39-asset imports can also fail local storage with disk-pressure confound. Smaller slice probes pass; root cause remains a hypothesis, no patch approved. Independent review, hosted gates, remaining device/platform/source-live qualification unresolved.",
+        "evidence": [
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/exact-ui/report.json",
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/exact-platforms/report.json",
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/review-request.json",
+          "/Users/agentsattari/thecreateco-company/reports/stemdeck-webkit-reference-20261007/README.md"
+        ],
+        "known_critical_blockers": [
+          "Exact-candidate local WebKit fresh portable import restores archive bytes instead of individual audio bytes; bounded safe repair and actual restart/export proof pending."
+        ],
+        "triage_complete": false
+      }
+    },
+    "deployment": {
+      "status": "LOCAL_ONLY_NEEDS_INDEPENDENT_REVIEW",
+      "branch": "core-lab/stemdeck-replay-deadline-20261007",
+      "base_pr": "https://github.com/armonon/sattari-custom-site/pull/33",
+      "pushed": false,
+      "merged": false,
+      "deployed": false,
+      "local_exact_gate": "PASS",
+      "remote_gate_status": "NOT_REQUESTED_UNPUSHED_REVIEW_PENDING",
+      "review_status": "PENDING",
+      "last_pushed_candidate": "af10e31c9df8f1363d3945e3b1d39518cd858009"
+    },
+    "next_action": "Execute queued CORE-STEM-ARCHIVE-WEBKIT-001 P0 repair: reproduce real39-asset portable roundtrip with disk baseline; use bounded detached-storage candidate only after proof, verify every hash/browser restart/PCM/failure atomicity, retain native failure, obtain independent OpenAI source review and normal stack/CI gates. Qualification audit CORE-STEM-WEBKIT-REFERENCE-001 is NEEDS_REVIEW, not product completion."
+  },
+  "release_readiness": "ALPHA / NOT QUALIFIED. c15bb06 unchanged local parent. Actual WebKit capture/replay and explicit WAV same-profile restart/export PASS; native decode failure retained while bounded product decodePASS. Fresh portable import byte corruption FAIL/P0 follow-up; independent parent review/push and hosted/full-platform/source-live gates unresolved."
+}

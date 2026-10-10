@@ -1,0 +1,9 @@
+{
+  "observed_at": "2026-10-09T21:41:26.469009+00:00",
+  "source_sha": "30bea20f862c4302887b79b89f364f2d7bdf5710",
+  "git_status": "",
+  "environment": "Darwin-25.2.0-arm64-arm-64bit-Mach-O",
+  "python": "3.14.4",
+  "worktree": "/Users/agentsattari/code/company-worktrees/luma-provenance-20261009T2140",
+  "command": "python3 /Users/agentsattari/thecreateco-company/core-product-lab/reports/luma-provenance-20261009T2140/qualify.py"
+}

@@ -1,0 +1,305 @@
+{
+  "observed_at": "2026-10-09T16:12:07.230041+00:00",
+  "cutoff": "2026-10-09T06:52:18+00:00",
+  "checks": {
+    "historical_astra_count_40": true,
+    "all_astra_before_recovery": true,
+    "missing_reason_remains_unknown": true,
+    "post_recovery_no_astra": true,
+    "six_luna_agents": true,
+    "director_sol_route": true,
+    "no_enabled_explicit_astra_route": true
+  },
+  "astra_first": "2026-10-07T22:50:57.795000+00:00",
+  "astra_last": "2026-10-08T19:20:57.915000+00:00",
+  "post_recovery_receipt_count": 76,
+  "post_recovery_models": {
+    "gpt-5.6-terra": 15,
+    "gpt-6-luna": 42,
+    "gpt-6.1-sol": 14,
+    "openai/gpt-6.1-sol": 2,
+    "openai/gpt-6-luna": 3
+  },
+  "sanitized_astra_receipts": [
+    {
+      "id": "cron:fcf6aa299ecfdfce5dcd06a38cbc317b",
+      "at": "2026-10-08T19:20:57.915000+00:00",
+      "model": "gpt-6-astra",
+      "provider": "openai",
+      "escalation_reason": null
+    },
+    {
+      "id": "cron:2b3fb1fe629a8728cbbac7a4e52345b0",
+      "at": "2026-10-08T18:50:57.895000+00:00",
+      "model": "gpt-6-astra",
+      "provider": "openai",
+      "escalation_reason": null
+    },
+    {
+      "id": "cron:b7a17344bfd1da8301195731f0c17412",
+      "at": "2026-10-08T18:20:57.865000+00:00",
+      "model": "gpt-6-astra",
+      "provider": "openai",
+      "escalation_reason": null
+    },
+    {
+      "id": "cron:765d4241ee2629492f74782b7c5b3487",
+      "at": "2026-10-08T17:50:57.822000+00:00",
+      "model": "gpt-6-astra",
+      "provider": "openai",
+      "escalation_reason": null
+    },
+    {
+      "id": "cron:c4434ce3bb4d62257b7350dabc818086",
+      "at": "2026-10-08T17:20:57.793000+00:00",
+      "model": "gpt-6-astra",
+      "provider": "openai",
+      "escalation_reason": null
+    },
+    {
+      "id": "cron:549f344bfefde0304fd3230082b470b6",
+      "at": "2026-10-08T17:15:00.047000+00:00",
+      "model": "gpt-6-astra",
+      "provider": "openai",
+      "escalation_reason": null
+    },
+    {
+      "id": "cron:a701b691edf8861bd65dcfee6b3a73a3",
+      "at": "2026-10-08T16:50:57.870000+00:00",
+      "model": "gpt-6-astra",
+      "provider": "openai",
+      "escalation_reason": null
+    },
+    {
+      "id": "cron:e4e6a8e0b360cadc4070a30ab2b24a26",
+      "at": "2026-10-08T16:20:57.829000+00:00",
+      "model": "gpt-6-astra",
+      "provider": "openai",
+      "escalation_reason": null
+    },
+    {
+      "id": "cron:d7452de6caa7c2119cbbbd3f78f656e5",
+      "at": "2026-10-08T15:50:57.790000+00:00",
+      "model": "gpt-6-astra",
+      "provider": "openai",
+      "escalation_reason": null
+    },
+    {
+      "id": "cron:719d0dbbaea6dfe97e1cce954d77c7f6",
+      "at": "2026-10-08T14:50:58.891000+00:00",
+      "model": "gpt-6-astra",
+      "provider": "openai",
+      "escalation_reason": null
+    },
+    {
+      "id": "cron:7d900a8e5e9d0ad2d9bbdda26d399b14",
+      "at": "2026-10-08T14:20:58.862000+00:00",
+      "model": "gpt-6-astra",
+      "provider": "openai",
+      "escalation_reason": null
+    },
+    {
+      "id": "cron:a33fc248ba97816c482fa53269e7b4b1",
+      "at": "2026-10-08T13:50:58.839000+00:00",
+      "model": "gpt-6-astra",
+      "provider": "openai",
+      "escalation_reason": null
+    },
+    {
+      "id": "cron:d8b3ae609d7cc1ce71a9ad3e1dcf55cd",
+      "at": "2026-10-08T13:20:58.798000+00:00",
+      "model": "gpt-6-astra",
+      "provider": "openai",
+      "escalation_reason": null
+    },
+    {
+      "id": "cron:9e09319fde3ac929654d591b8f5d9cc5",
+      "at": "2026-10-08T12:50:58.761000+00:00",
+      "model": "gpt-6-astra",
+      "provider": "openai",
+      "escalation_reason": null
+    },
+    {
+      "id": "cron:d1f713f960fe92bb6a540415d09ecc7f",
+      "at": "2026-10-08T12:20:58.733000+00:00",
+      "model": "gpt-6-astra",
+      "provider": "openai",
+      "escalation_reason": null
+    },
+    {
+      "id": "cron:4d5e00826d8f12354be0a7f7bf22b1f6",
+      "at": "2026-10-08T11:50:57.786000+00:00",
+      "model": "gpt-6-astra",
+      "provider": "openai",
+      "escalation_reason": null
+    },
+    {
+      "id": "cron:79276ec9d6b1fece3d24dbf1eacffc01",
+      "at": "2026-10-08T10:21:01.518000+00:00",
+      "model": "gpt-6-astra",
+      "provider": "openai",
+      "escalation_reason": null
+    },
+    {
+      "id": "cron:dbf29359df7de33a06558ed54ea2ef3d",
+      "at": "2026-10-08T09:51:01.479000+00:00",
+      "model": "gpt-6-astra",
+      "provider": "openai",
+      "escalation_reason": null
+    },
+    {
+      "id": "cron:2b80ac9b10703bce8cf086f73e8c9d97",
+      "at": "2026-10-08T09:21:01.447000+00:00",
+      "model": "gpt-6-astra",
+      "provider": "openai",
+      "escalation_reason": null
+    },
+    {
+      "id": "cron:9e839cad79391afd155f57442fc85074",
+      "at": "2026-10-08T08:51:01.415000+00:00",
+      "model": "gpt-6-astra",
+      "provider": "openai",
+      "escalation_reason": null
+    },
+    {
+      "id": "cron:2eaa67deda3a7b0dd74326a7370afa7a",
+      "at": "2026-10-08T08:21:01.382000+00:00",
+      "model": "gpt-6-astra",
+      "provider": "openai",
+      "escalation_reason": null
+    },
+    {
+      "id": "cron:6291110a4ea8217b9827d9d50a1ce696",
+      "at": "2026-10-08T07:51:00.544000+00:00",
+      "model": "gpt-6-astra",
+      "provider": "openai",
+      "escalation_reason": null
+    },
+    {
+      "id": "cron:4cf9dbdbdccc76efd647be7f16b16f7d",
+      "at": "2026-10-08T07:21:00.443000+00:00",
+      "model": "gpt-6-astra",
+      "provider": "openai",
+      "escalation_reason": null
+    },
+    {
+      "id": "cron:c75402371301503b02869f5790df26e4",
+      "at": "2026-10-08T06:51:00.408000+00:00",
+      "model": "gpt-6-astra",
+      "provider": "openai",
+      "escalation_reason": null
+    },
+    {
+      "id": "cron:be1791b315405cd2b802c8e80868a799",
+      "at": "2026-10-08T06:21:00.376000+00:00",
+      "model": "gpt-6-astra",
+      "provider": "openai",
+      "escalation_reason": null
+    },
+    {
+      "id": "cron:e8d07cf3b3c7eeb85acba423b5c83b2e",
+      "at": "2026-10-08T05:51:00.205000+00:00",
+      "model": "gpt-6-astra",
+      "provider": "openai",
+      "escalation_reason": null
+    },
+    {
+      "id": "cron:0c34879a11999438683c4753e43e7e5d",
+      "at": "2026-10-08T05:20:58.970000+00:00",
+      "model": "gpt-6-astra",
+      "provider": "openai",
+      "escalation_reason": null
+    },
+    {
+      "id": "cron:74e6c3dd462eebcb6b18c6bfc77c4803",
+      "at": "2026-10-08T04:50:58.909000+00:00",
+      "model": "gpt-6-astra",
+      "provider": "openai",
+      "escalation_reason": null
+    },
+    {
+      "id": "cron:b4432ebd55252afc7ad97b4f4931a407",
+      "at": "2026-10-08T04:20:58.879000+00:00",
+      "model": "gpt-6-astra",
+      "provider": "openai",
+      "escalation_reason": null
+    },
+    {
+      "id": "cron:460df33ebb635b46a2bfed462af24927",
+      "at": "2026-10-08T03:50:58.847000+00:00",
+      "model": "gpt-6-astra",
+      "provider": "openai",
+      "escalation_reason": null
+    },
+    {
+      "id": "cron:11caf348fb2582af048ca5374a13714a",
+      "at": "2026-10-08T03:20:58.006000+00:00",
+      "model": "gpt-6-astra",
+      "provider": "openai",
+      "escalation_reason": null
+    },
+    {
+      "id": "cron:0366d7ce3062e4630753395ef1aca00a",
+      "at": "2026-10-08T02:50:57.988000+00:00",
+      "model": "gpt-6-astra",
+      "provider": "openai",
+      "escalation_reason": null
+    },
+    {
+      "id": "cron:de4768091ff6ea85240a3130ff3d7a12",
+      "at": "2026-10-08T02:20:57.977000+00:00",
+      "model": "gpt-6-astra",
+      "provider": "openai",
+      "escalation_reason": null
+    },
+    {
+      "id": "cron:a845d3bb60ba62f690ddbfac68e26b28",
+      "at": "2026-10-08T01:50:57.945000+00:00",
+      "model": "gpt-6-astra",
+      "provider": "openai",
+      "escalation_reason": null
+    },
+    {
+      "id": "cron:8ce5d2e3ca407b7ca737ad4671ad30d9",
+      "at": "2026-10-08T01:20:57.918000+00:00",
+      "model": "gpt-6-astra",
+      "provider": "openai",
+      "escalation_reason": null
+    },
+    {
+      "id": "cron:5eb86006422c38e84a9cd6fcf39e6896",
+      "at": "2026-10-08T00:50:57.894000+00:00",
+      "model": "gpt-6-astra",
+      "provider": "openai",
+      "escalation_reason": null
+    },
+    {
+      "id": "cron:276058221cbf4febaa86f8313630411e",
+      "at": "2026-10-08T00:20:57.866000+00:00",
+      "model": "gpt-6-astra",
+      "provider": "openai",
+      "escalation_reason": null
+    },
+    {
+      "id": "cron:86cc2a6ac7356ffd641d9d0d77ee7e54",
+      "at": "2026-10-07T23:50:57.836000+00:00",
+      "model": "gpt-6-astra",
+      "provider": "openai",
+      "escalation_reason": null
+    },
+    {
+      "id": "cron:12eb1f75ec61f269692bfa635a47eb6c",
+      "at": "2026-10-07T23:20:57.796000+00:00",
+      "model": "gpt-6-astra",
+      "provider": "openai",
+      "escalation_reason": null
+    },
+    {
+      "id": "cron:7162f554059fb0045388b8085da1e6c5",
+      "at": "2026-10-07T22:50:57.795000+00:00",
+      "model": "gpt-6-astra",
+      "provider": "openai",
+      "escalation_reason": null
+    }
+  ]
+}

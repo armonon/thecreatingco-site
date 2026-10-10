@@ -1,0 +1,26 @@
+{
+  "observed_at": "2026-10-09T13:16:08.323Z",
+  "source_sha": "4bd196d65c7fd56f5de038179978e3eae47ab6b7",
+  "browser": "153.0.8010.12",
+  "profile": "/Users/agentsattari/.openclaw/tmp/pocket-quota-iASd6K",
+  "checks": [
+    {
+      "name": "real localStorage quota exhaustion: save fails visibly, current name edit remains, original library/draft remain byte-identical",
+      "status": "PASS",
+      "currentName": "New under pressure",
+      "library_sha256": "1649901683a06088a835e8bab1c3cefb72f1719c5367263b533197a80bae48aa",
+      "draft_sha256": "b029c264c65b1e6e5d05184e837fb4efa8b54969a5c4ce2c9b83d4d24d1a5071"
+    }
+  ],
+  "pass": true,
+  "pressure": {
+    "chunks": 159,
+    "fillerChars": 5210112,
+    "tailChars": 28928,
+    "quotaError": "QuotaExceededError: Failed to execute 'setItem' on 'Storage': Setting the value of 'pressure_159' exceeded the quota.",
+    "tailError": "QuotaExceededError: Failed to execute 'setItem' on 'Storage': Setting the value of 'pressure_tail' exceeded the quota."
+  },
+  "errors": [],
+  "source_sha_qualification": "REFERENCE_SOURCE_ONLY; existing served dist correspondence UNVERIFIED",
+  "artifact_pocket_chunk_sha256": "7bde1dba7dd33746b079d88b0e09c17ffe55172c6d51dbf031fa4c6c993b5f78"
+}

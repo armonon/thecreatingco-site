@@ -1,0 +1,31 @@
+{
+  "edition": "Reclaim browser file review",
+  "createdAt": "2026-10-08T02:58:10.466Z",
+  "readOnly": true,
+  "files": [
+    {
+      "id": 0,
+      "name": "same-a.bin",
+      "size": 2097152,
+      "state": "Compared",
+      "hash": "52d434cbc3b76fa5ce4480fefe3c7769b6be2708434ed3ea735c31b1213c1d38",
+      "group": 1
+    },
+    {
+      "id": 1,
+      "name": "same-b.bin",
+      "size": 2097152,
+      "state": "Compared",
+      "hash": "52d434cbc3b76fa5ce4480fefe3c7769b6be2708434ed3ea735c31b1213c1d38",
+      "group": 1
+    },
+    {
+      "id": 2,
+      "name": "unique-middle.bin",
+      "size": 2097152,
+      "state": "Compared",
+      "hash": "d9fcc741ecc86af25fbee6dc354bfec3f8a0b8ea8b87461252bb6f8d9958c920",
+      "group": null
+    }
+  ]
+}

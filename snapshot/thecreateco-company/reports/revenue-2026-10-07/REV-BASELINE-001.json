@@ -1,0 +1,30 @@
+{
+  "expected_revenue_impact": "Unknown; validation-stage, not a forecast",
+  "cost": {
+    "new_spend_usd": 0,
+    "actual_labor_cost": null
+  },
+  "source_evidence": [
+    "REVENUE_DIRECTIVE.md",
+    "reports/revenue-2026-10-07/README.md"
+  ],
+  "result": null,
+  "task_id": "REV-BASELINE-001",
+  "title": "Establish attributable company sales, costs and cash baseline",
+  "category": "revenue_measurement",
+  "workstream": "OPERATIONS",
+  "accountable_owner": "revenue-director",
+  "expected_value": "Determine actual next revenue milestone and viable unit economics before optimizing offers",
+  "confidence": "High value of measurement; source access unknown",
+  "effort": "One bounded read-only source discovery/import cycle",
+  "time_to_signal": "One cycle after aggregate financial source is identified",
+  "dependencies": [],
+  "next_action": "Identify authorized accounting/Stripe/POS source, owner entitlement and timezone/currency; retrieve redacted today/7d/30d aggregates. Never infer sales from checkout code or campaign activity. Confirm Sattari attribution separately. Ask for aggregate export only if existing authorized access cannot resolve.",
+  "scores": {
+    "impact": 9,
+    "user_value": 8,
+    "confidence": 8,
+    "effort": 2,
+    "risk": 1
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "core_product_lab_last_cycle": {
+    "task_id": "CORE-SP-WORKFLOW-001",
+    "observed_at": "2026-10-08T08:07:32.389718+00:00",
+    "source_sha": "c26d518bc3d05f0adbf7287f79c5f5f15ac25220",
+    "baseline_golden_sha": "c7d2b4fc973861eba785f26e5f607671ac22deb4",
+    "pr_url": "https://github.com/armonon/scenepilot-studio-badass/pull/95",
+    "model": "openai/gpt-6.1-sol",
+    "fallback": null,
+    "desktop_golden_checks": {
+      "passed": 12,
+      "total": 12
+    },
+    "independent_sampled_output_checks": {
+      "passed": 42,
+      "total": 42
+    },
+    "lite_checks": {
+      "passed": 4,
+      "total": 4
+    },
+    "menu_viewports": {
+      "passed": 2,
+      "total": 2
+    },
+    "qualification_complete": false,
+    "report": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-golden-20261008T0740/README.md"
+  }
+}

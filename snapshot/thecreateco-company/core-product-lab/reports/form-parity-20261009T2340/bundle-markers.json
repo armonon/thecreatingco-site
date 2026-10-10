@@ -1,0 +1,32 @@
+[
+  {
+    "url": "https://form-studio-review.netlify.app/assets/index-B9UL47J0.js",
+    "bytes": 1086883,
+    "sha256": "9049a13c48208857ccb0e542884e875b06579dae38e6dc251eab283885dfe0eb",
+    "markers": {
+      "Cast": true,
+      "cast-studio": true,
+      "Open Cast": true,
+      "Room Studio": false,
+      "room-studio": false,
+      "hostedCloud": false,
+      "tcc-open": false,
+      "Blender": true
+    }
+  },
+  {
+    "url": "https://form-studio-review.netlify.app/pwa.js",
+    "bytes": 2982,
+    "sha256": "91d5da2fb2a75248af6fcdba6f973497e0047860e3bf48b57dbc1b6106c586f9",
+    "markers": {
+      "Cast": false,
+      "cast-studio": false,
+      "Open Cast": false,
+      "Room Studio": false,
+      "room-studio": false,
+      "hostedCloud": false,
+      "tcc-open": false,
+      "Blender": false
+    }
+  }
+]

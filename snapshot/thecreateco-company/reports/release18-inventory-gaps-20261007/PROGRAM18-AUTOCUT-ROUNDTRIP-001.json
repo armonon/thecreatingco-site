@@ -1,0 +1,27 @@
+{
+  "task_id": "PROGRAM18-AUTOCUT-ROUNDTRIP-001",
+  "product": "autocut",
+  "title": "Preserve AutoCut locked edits through portable save/reopen and verify real exports",
+  "workstream": "PRODUCT_COMPLETION",
+  "category": "reliability",
+  "severity": "P1",
+  "status": "QUEUED",
+  "model": "openai/gpt-6.1-sol",
+  "scores": {
+    "impact": 8,
+    "user_value": 8,
+    "confidence": 8,
+    "effort": 5,
+    "risk": 3
+  },
+  "source_evidence": {
+    "direct": [
+      "Onlymediafolderpersisted in entry; ScenePilot/csv/timelineexports do not establish same-tool media/lockedcutsroundtrip; source/productionoverlaydiffers."
+    ]
+  },
+  "next_action": "Licensed/syntheticA/V edit/lock/save/reopen/relink/output verify withhonest unsupportedencoderfallback; inspectsharedsource/additiveparity before release.",
+  "test_requirements": "Deterministiccut/audioalignment, missingmedia recovery, lockedcutpreservation, independentMP4/WebM/timelineparser, cancel/largeclips.",
+  "evidence_sources": [
+    "/Users/agentsattari/thecreateco-company/reports/release18-inventory-gaps-20261007/README.md"
+  ]
+}

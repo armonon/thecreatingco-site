@@ -1,0 +1,10 @@
+{
+  "patch_persisted": true,
+  "maturity_stays_alpha": true,
+  "no_gate_upgrade": true,
+  "historical_validation_preserved": true,
+  "parallel_cast_not_included": true,
+  "no_deployment_claim": true,
+  "matrix_contains_candidate": true,
+  "lab_status_current": false
+}

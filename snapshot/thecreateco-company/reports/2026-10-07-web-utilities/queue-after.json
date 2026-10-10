@@ -1,0 +1,263 @@
+{
+  "P08": {
+    "task_id": "P08",
+    "title": "Test Glyph generated fonts and Brand Kit exports",
+    "category": "product",
+    "workstream": "ENGINEERING",
+    "product": "glyph",
+    "campaign": null,
+    "status": "QUEUED",
+    "model": "gpt-6.1-sol",
+    "dependencies": [],
+    "scores": {
+      "impact": 8,
+      "user_value": 8,
+      "strategic_value": 8,
+      "urgency": 5,
+      "confidence": 7,
+      "effort": 3,
+      "risk": 2
+    },
+    "expected_value": "Validate real outputs, licensing metadata and reopen behavior; separate standalone and embedded Glyph.",
+    "next_action": "Reconcile fresh standalone Glyph exact-candidate export/reopen/deploy evidence from web-utilities asset-readiness.md; do not rerun unchanged checks. Verify exported original font in the actual intended destination app and licensing metadata. Browser parser tests alone do not prove OS/design-app use; TTF kerning does not imply OTF kerning. Coordinate existing PROGRAM18-GLYPH-001 owner; keep embedded Luma Glyph/Brand Kit qualification separate.",
+    "evidence_sources": [
+      "/Users/agentsattari/code/wave5/WAVE5.md",
+      "/Users/agentsattari/thecreateco-company/reports/2026-10-07-web-utilities/README.md"
+    ],
+    "score_basis": "Provisional director estimate; evidence-backed opportunity, not measured ROI. Recheck before execution.",
+    "result": null,
+    "priority": 74.6667,
+    "priority_basis": "ESTIMATE: impact \u00d7 user_value \u00d7 confidence / (effort + risk + 1)",
+    "risk": 2,
+    "created_at": "2026-10-07T23:38:29+00:00",
+    "started_at": null,
+    "completed_at": null,
+    "attempts": 0,
+    "owner": null,
+    "lease_until": null
+  },
+  "M03": {
+    "task_id": "M03",
+    "title": "Turn verified Glyph outputs into a useful tutorial",
+    "category": "marketing",
+    "workstream": "GROWTH",
+    "product": "glyph",
+    "campaign": null,
+    "status": "QUEUED",
+    "model": "gpt-6-luna",
+    "dependencies": [
+      "P08"
+    ],
+    "scores": {
+      "impact": 7,
+      "user_value": 8,
+      "strategic_value": 7,
+      "urgency": 5,
+      "confidence": 8,
+      "effort": 2,
+      "risk": 1
+    },
+    "expected_value": "Show an actual validated font/export workflow and one concrete creator use case.",
+    "next_action": "Use P08 verified original draw\u2192save/reopen\u2192export\u2192actual destination-app evidence for one honest Glyph tutorial/demo. Disclose alpha limits. No professional completeness, speed or paid claims without proof; preserve existing publication gates. Support E02/W03, not a new campaign engine.",
+    "evidence_sources": [
+      "/Users/agentsattari/thecreateco-marketing/STATE.md",
+      "/Users/agentsattari/thecreateco-company/reports/2026-10-07-web-utilities/README.md"
+    ],
+    "score_basis": "Provisional director estimate; evidence-backed opportunity, not measured ROI. Recheck before execution.",
+    "result": null,
+    "priority": 112.0,
+    "priority_basis": "ESTIMATE: impact \u00d7 user_value \u00d7 confidence / (effort + risk + 1)",
+    "risk": 1,
+    "created_at": "2026-10-07T23:38:29+00:00",
+    "started_at": null,
+    "completed_at": null,
+    "attempts": 0,
+    "owner": null,
+    "lease_until": null
+  },
+  "W03": {
+    "task_id": "W03",
+    "title": "Validate Glyph first-font activation and additional customer value (E02)",
+    "category": "website_growth",
+    "workstream": "PRODUCT",
+    "product": "glyph",
+    "campaign": null,
+    "status": "QUEUED",
+    "model": "gpt-6.1-sol",
+    "dependencies": [
+      "P08"
+    ],
+    "scores": {
+      "impact": 9,
+      "user_value": 9,
+      "strategic_value": 9,
+      "urgency": 5,
+      "confidence": 7,
+      "effort": 4,
+      "risk": 1
+    },
+    "expected_value": "Owner PRODUCT/QA with existing Growth. Find a useful narrow browser workflow and repeated additional customer need before a premium build. Revenue impact unknown; 48 active-work-hour prep and up to 7 calendar days for an available cohort; $0 new spend; existing scores are estimates.",
+    "next_action": "Execute prepared E02 in data/revenue/experiments.json: five consent-compatible creators make/save/reopen/export/use original glyphs in a real destination app. Prep cap six hours, $0 new spend; preserve existing Growth permissions and review M04 outcomes before new outreach. Record actual failures/time/help and unmet additional value. No messages sent or users tested by preparation. Requests are not sales; existing free core stays free. Coordinate M03 demo; go/iterate/stop rules in report.",
+    "evidence_sources": [
+      "/Users/agentsattari/code/wave2/thecreatingco-live/maintenance/AGENTS.md",
+      "/Users/agentsattari/thecreateco-company/reports/2026-10-07-web-utilities/README.md"
+    ],
+    "score_basis": "Provisional director estimate; evidence-backed opportunity, not measured ROI. Recheck before execution.",
+    "result": null,
+    "priority": 94.5,
+    "priority_basis": "ESTIMATE: impact \u00d7 user_value \u00d7 confidence / (effort + risk + 1)",
+    "risk": 1,
+    "created_at": "2026-10-07T23:38:29+00:00",
+    "started_at": null,
+    "completed_at": null,
+    "attempts": 0,
+    "owner": null,
+    "lease_until": null,
+    "source_evidence": [
+      "reports/revenue-2026-10-07/README.md",
+      "reports/revenue-2026-10-07/asset-audit.md"
+    ]
+  },
+  "PROGRAM18-SPLIT-SESSION-001": {
+    "task_id": "PROGRAM18-SPLIT-SESSION-001",
+    "product": "split",
+    "title": "Qualify Split real audio lifecycle and recoverable results before navigation",
+    "workstream": "PRODUCT_COMPLETION",
+    "category": "reliability",
+    "severity": "P1",
+    "status": "QUEUED",
+    "model": "openai/gpt-6.1-sol",
+    "scores": {
+      "impact": 8,
+      "user_value": 8,
+      "confidence": 9,
+      "effort": 5,
+      "risk": 3
+    },
+    "source_evidence": {
+      "direct": [
+        "UI/source says resultsnot saved; existingOct6decode/starttimeouts alreadyimplemented; liveoverlay drift documented."
+      ]
+    },
+    "next_action": "Reuse currentcancellationfix; verifyrealcurrent fourWAVs/handoff, addcompleteportable/restorable session or explicit durable recovery; preserve allshared/excluded modules. Add bounded twelve-mixture rights-cleared quality/performance benchmark from reports/2026-10-07-web-utilities/README.md. Record exact source/deploy, available devices, cold/warm bytes, model load, separation RTF, output usefulness, failures and recovery. Do not infer mobile support or paid readiness. No hosted spend. Benchmark is proposed, not run.",
+    "test_requirements": "Real model withlicensed/syntheticaudio, finite/nonblank outputduration/channels, cancellation/retry/quotafailure/reload, supportedcodec matrix; no phonepassfromrender. Include level-matched bleed/damage listening and real export usability; report missing hardware coverage, all failures and actual cost assumptions.",
+    "evidence_sources": [
+      "/Users/agentsattari/thecreateco-company/reports/release18-inventory-gaps-20261007/README.md",
+      "/Users/agentsattari/thecreateco-company/reports/2026-10-07-web-utilities/README.md"
+    ],
+    "dependencies": [],
+    "priority": 64.0,
+    "priority_basis": "ESTIMATE: impact \u00d7 user_value \u00d7 confidence / (effort + risk + 1)",
+    "campaign": null,
+    "expected_value": null,
+    "risk": 3,
+    "created_at": "2026-10-08T02:20:57+00:00",
+    "started_at": null,
+    "completed_at": null,
+    "result": null,
+    "attempts": 0,
+    "owner": null,
+    "lease_until": null
+  },
+  "REV-E01-001": {
+    "expected_revenue_impact": "Unknown; validation-stage, not a forecast",
+    "cost": {
+      "new_spend_usd": 0,
+      "actual_labor_cost": null
+    },
+    "source_evidence": [
+      "REVENUE_DIRECTIVE.md",
+      "reports/revenue-2026-10-07/README.md"
+    ],
+    "result": null,
+    "task_id": "REV-E01-001",
+    "title": "Validate one scoped creative-workflow service with qualified buyer evidence",
+    "category": "revenue_validation",
+    "workstream": "GROWTH",
+    "accountable_owner": "Growth with revenue-director decision owner",
+    "expected_value": "Find recurring buyer pain and a paid-pilot decision before major builds",
+    "confidence": "Low; vendor stories only, no direct buyer validation",
+    "effort": "Maximum 6 preparation/research hours; one concurrent pilot later",
+    "time_to_signal": "48 active-work hours preparation; 7 days response window after authorized launch",
+    "dependencies": [
+      "M04"
+    ],
+    "next_action": "Deferred, not disproven: user requested focused existing web utility research (1557600150824812625); E02/W03 is current commercial validation. Revisit the service hypothesis after E02 outcome or clear contrary evidence; retain M04 dependency, original pack, existing send/price/delivery gates. No sale or outreach inferred.",
+    "scores": {
+      "impact": 9,
+      "user_value": 8,
+      "confidence": 6,
+      "effort": 3,
+      "risk": 2
+    },
+    "status": "WAITING",
+    "priority": 72.0,
+    "priority_basis": "ESTIMATE: impact \u00d7 user_value \u00d7 confidence / (effort + risk + 1)",
+    "product": null,
+    "campaign": null,
+    "model": null,
+    "risk": 2,
+    "created_at": "2026-10-08T01:11:16+00:00",
+    "started_at": null,
+    "completed_at": null,
+    "attempts": 0,
+    "owner": null,
+    "lease_until": null,
+    "evidence_sources": [
+      "/Users/agentsattari/thecreateco-company/reports/2026-10-07-web-utilities/README.md"
+    ]
+  },
+  "REV-STRIPE-001": {
+    "task_id": "REV-STRIPE-001",
+    "title": "Prepare autonomous Square fulfillment; hold paid listings until product readiness",
+    "category": "revenue_operations",
+    "workstream": "OPERATIONS",
+    "status": "WAITING",
+    "accountable_owner": "revenue-director; Armon for account ownership and verification",
+    "expected_value": "Agent-owned checkout and automatic digital delivery after an actual offering qualifies; no founder catalog walkthrough or premature sale",
+    "expected_revenue_impact": "Enables collection, does not create demand or forecast sales",
+    "confidence": "Hosted Payment Links/invoices documented; account access absent",
+    "effort": "One bounded configuration/test cycle after owner account access",
+    "cost": {
+      "new_spend_usd": 0,
+      "payment_fees": "Determine from actual region/account before live sales"
+    },
+    "time_to_signal": "One sandbox acceptance pass after account access",
+    "dependencies": [],
+    "next_action": "Armon says apps not ready and everything must be autonomous (1557584649482665997). Stop manual listing/login/product-choice prompts. Preserve Square choice. Current product owners continue release qualification. Agent may prepare non-live integration requirements; resume catalog only for one qualified paid offering with concrete terms and verified automatic delivery. Then consolidate truly owner-only account/identity steps; do not block unrelated work. For a future web utility, fulfillment may be a workspace capability, job credit or original asset entitlement rather than a desktop download. Match the actual validated offer; no new paid listing or account work now.",
+    "source_evidence": [
+      "Discord #millions 1557584649482665997",
+      "REVENUE_DIRECTIVE.md",
+      "release-program/DIRECTIVE.md",
+      "data/revenue/square-setup.md"
+    ],
+    "scores": {
+      "impact": 7,
+      "user_value": 7,
+      "confidence": 8,
+      "effort": 2,
+      "risk": 2
+    },
+    "priority": 78.4,
+    "priority_basis": "ESTIMATE: impact \u00d7 user_value \u00d7 confidence / (effort + risk + 1)",
+    "product": null,
+    "campaign": null,
+    "model": null,
+    "risk": 2,
+    "created_at": "2026-10-08T01:16:24+00:00",
+    "started_at": "2026-10-08T01:42:39+00:00",
+    "completed_at": null,
+    "result": "Square supersedes Stripe; digital software setup and draft prepared. Square login remains at Performing security verification; account choice/access pending. No account/item/checkout/payment/delivery created.",
+    "attempts": 1,
+    "owner": null,
+    "lease_until": null,
+    "result_evidence": {
+      "path": "/Users/agentsattari/thecreateco-company/reports/2026-10-07-square/report.md",
+      "recorded_at": "2026-10-08T01:45:20+00:00",
+      "bytes": 2346
+    },
+    "evidence_sources": [
+      "/Users/agentsattari/thecreateco-company/reports/2026-10-07-web-utilities/README.md"
+    ]
+  }
+}

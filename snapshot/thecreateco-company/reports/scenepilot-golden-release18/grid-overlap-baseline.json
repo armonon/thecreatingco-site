@@ -1,0 +1,76 @@
+[
+  {
+    "name": "sp-golden-broll-24fps.mp4",
+    "box": {
+      "x": 19,
+      "y": 277,
+      "width": 134,
+      "height": 197.5
+    },
+    "style": {
+      "display": "grid",
+      "height": "197.5px",
+      "gridRow": "auto"
+    },
+    "centerOwner": "sp-golden-sfx-44k.wav"
+  },
+  {
+    "name": "sp-golden-main-30fps.mp4",
+    "box": {
+      "x": 163,
+      "y": 277,
+      "width": 134,
+      "height": 197.5
+    },
+    "style": {
+      "display": "grid",
+      "height": "197.5px",
+      "gridRow": "auto"
+    },
+    "centerOwner": "sp-golden-overlay.png"
+  },
+  {
+    "name": "sp-golden-music-48k.wav",
+    "box": {
+      "x": 19,
+      "y": 324.65625,
+      "width": 134,
+      "height": 197.5
+    },
+    "style": {
+      "display": "grid",
+      "height": "197.5px",
+      "gridRow": "auto"
+    },
+    "centerOwner": "sp-golden-sfx-44k.wav"
+  },
+  {
+    "name": "sp-golden-overlay.png",
+    "box": {
+      "x": 163,
+      "y": 324.65625,
+      "width": 134,
+      "height": 197.5
+    },
+    "style": {
+      "display": "grid",
+      "height": "197.5px",
+      "gridRow": "auto"
+    },
+    "centerOwner": "sp-golden-overlay.png"
+  },
+  {
+    "name": "sp-golden-sfx-44k.wav",
+    "box": {
+      "x": 19,
+      "y": 372.328125,
+      "width": 134,
+      "height": 197.5
+    },
+    "style": {
+      "display": "grid",
+      "height": "197.5px",
+      "gridRow": "auto"
+    }
+  }
+]

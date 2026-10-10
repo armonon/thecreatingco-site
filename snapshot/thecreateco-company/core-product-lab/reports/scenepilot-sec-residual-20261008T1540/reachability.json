@@ -1,0 +1,48 @@
+{
+  "main": {
+    "inputs": 13,
+    "affected_inputs": [],
+    "emitted_output_external_imports": [
+      "electron",
+      "node:child_process",
+      "node:crypto",
+      "node:fs",
+      "node:fs/promises",
+      "node:os",
+      "node:path",
+      "node:url",
+      "node:util",
+      "node:zlib"
+    ],
+    "input_metadata_external_marked_paths": [
+      "electron",
+      "node:child_process",
+      "node:crypto",
+      "node:fs",
+      "node:fs/promises",
+      "node:os",
+      "node:path",
+      "node:url",
+      "node:util",
+      "node:zlib"
+    ]
+  },
+  "renderer": {
+    "inputs": 2081,
+    "affected_inputs": [],
+    "emitted_output_external_imports": [],
+    "input_metadata_external_marked_paths": [
+      "../lib/audio-mixer",
+      "../lib/clip-effects",
+      "../lib/dynamic-trim",
+      "../lib/extension-pack",
+      "../lib/keyframes",
+      "../lib/motion",
+      "../lib/pro-editor",
+      "../lib/pro-workflows",
+      "../lib/speed",
+      "../lib/stutter",
+      "./editor-foundation"
+    ]
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "at": "2026-10-08T02:57:53.415Z",
+  "sourceSha": "e547d7d4eef74d533795cea493a426b091b92d2a",
+  "sourceDirty": false,
+  "scope": "Actual Chromium process death and browser quota denial; not physical disk exhaustion or hardware qualification",
+  "profile": "/Users/agentsattari/.openclaw/tmp/stemdeck-process-recovery-5MaHAB",
+  "pass": true,
+  "checks": [
+    {
+      "name": "SIGKILL while generated capture is active; reopen same profile",
+      "result": {
+        "projectExact": true,
+        "assetsExact": 2,
+        "journalEvents": [
+          2
+        ],
+        "portableBytes": 144964
+      }
+    },
+    {
+      "name": "Actual quota denial preserves last-good session, audio and portable backup",
+      "result": {
+        "saveError": {
+          "name": "QuotaExceededError",
+          "message": ""
+        },
+        "assetError": {
+          "name": "QuotaExceededError",
+          "message": ""
+        },
+        "projectExact": true,
+        "assetsExact": 2,
+        "journalEvents": [
+          2
+        ],
+        "portableBytes": 144964
+      }
+    }
+  ],
+  "browserVersion": "154.0.8037.98",
+  "killed": {
+    "code": null,
+    "signal": "SIGKILL"
+  },
+  "captureQuota": {
+    "finished": true,
+    "error": "Source capture storage is full or unavailable. Completed chunks are recoverable; stop and save a portable backup.",
+    "health": {
+      "contextState": "running",
+      "visibility": "visible",
+      "wallSeconds": 30.276199999999253,
+      "capturedFrames": 1440000,
+      "error": "Source capture storage is full or unavailable. Completed chunks are recoverable; stop and save a portable backup.",
+      "clockLag": 0.18019999999925318,
+      "duration": 30.096,
+      "pendingBytes": 0,
+      "pendingEvents": 0,
+      "committedEvents": 1,
+      "durableAudioSeconds": 25
+    }
+  },
+  "quotaRecovered": {
+    "captureId": "75f0a0e2-14c0-4b5b-a6db-5af33aa06a8f",
+    "completedClips": 5,
+    "assets": [
+      {
+        "id": "audio-cd6723cb-64d8-4a84-a64f-86bf42552f7d",
+        "hash": "54448f53b0698dcd91aa90b3e3e543050ea3c22b7def1518e82c62bc09793f53"
+      },
+      {
+        "id": "audio-0a324c50-0da7-44ca-b98e-00b229adb8ef",
+        "hash": "8ae15cdad899d471210f19641ef8b7409ef40d002797afe3992ec5ebefedeb64"
+      },
+      {
+        "id": "audio-6f8cfa20-0ad1-4219-a6fc-a00ce19fc820",
+        "hash": "60c74dc9ccfd6da29399fac7bf2cfc8c375f6ce0ad234f667e93ca031c7d5da0"
+      },
+      {
+        "id": "audio-aa4e0408-4d34-47f6-9695-f23b97554eb3",
+        "hash": "ed8b937dbc79adbc1f0db42cf0e0941a76a694b48b7ca102c4d76f8af948d9e5"
+      },
+      {
+        "id": "audio-2ba32614-1193-4ddb-9952-e541d28cc56e",
+        "hash": "cbb56822d2e53cb2df185aa0e48bf55345e7d1ca64f0309ad7fea3fef08e86d5"
+      }
+    ]
+  }
+}

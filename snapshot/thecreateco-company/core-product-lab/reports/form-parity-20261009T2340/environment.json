@@ -1,0 +1,35 @@
+{
+  "observed_at": "2026-10-09T23:41:47.986874+00:00",
+  "source_sha": "b5f8b08832dc7961b097ce2ae7a0c29db2fc0055",
+  "worktree": "/Users/agentsattari/code/worktrees/form-parity-20261009T2340",
+  "status": "",
+  "environment": "Darwin-25.2.0-arm64-arm-64bit-Mach-O",
+  "node": "v26.9.0",
+  "dependency_source": "read-only symlink to existing exact b5f8b08 worker-image node_modules; no install or mutation",
+  "lock_sha256": "bd2219af132c72ee9bdb2d522512eb02e940743b6d2e06dcb5b256c9363b2cbd",
+  "commands": [
+    {
+      "command": "node --experimental-strip-types --test tests/cast-prep.test.mjs",
+      "exit": 1,
+      "log": "cast-tests.log",
+      "reason": "missing three before dependency reuse"
+    },
+    {
+      "command": "node --experimental-strip-types --test tests/cast-prep.test.mjs tests/mesh-interchange.test.mjs",
+      "exit": 0,
+      "log": "geometry-tests.log",
+      "passed": 52
+    },
+    {
+      "command": "npm run desktop:web:build",
+      "exit": 0,
+      "log": "desktop-build.log"
+    }
+  ],
+  "model": "openai/gpt-6.1-sol",
+  "fallback": null,
+  "child_models": [],
+  "independent_review": "not invoked: read-only qualification; no code change",
+  "budget": "advisory preflight continue; all limits unknown; no additional paid model request",
+  "push": "no code commit; no push needed"
+}

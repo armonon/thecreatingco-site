@@ -1,0 +1,242 @@
+[
+  {
+    "task_id": "M04",
+    "title": "Review existing outreach outcomes before drafting more",
+    "category": "marketing",
+    "workstream": "GROWTH",
+    "product": null,
+    "campaign": null,
+    "status": "QUEUED",
+    "model": "gpt-6-luna",
+    "dependencies": [],
+    "scores": {
+      "impact": 8,
+      "user_value": 8,
+      "strategic_value": 8,
+      "urgency": 5,
+      "confidence": 8,
+      "effort": 2,
+      "risk": 1
+    },
+    "expected_value": "Owner: Growth. Revenue impact: Avoid unmeasured repeated outreach; revenue impact unknown. Time to signal: One bounded outcome reconciliation. New spend: $0; labor cost unknown. Existing scores remain provisional.",
+    "next_action": "Read permitted aggregate outreach results before E01 or more Glyph volume. 2026-10-07 aggregate has zero recorded outcome rows, not proof of zero replies. Summarize known/unknown reply, opt-out and qualified-interest coverage; no new sends in this task.",
+    "evidence_sources": [
+      "/Users/agentsattari/thecreateco-marketing/STATE.md"
+    ],
+    "score_basis": "Provisional director estimate; evidence-backed opportunity, not measured ROI. Recheck before execution.",
+    "result": null,
+    "priority": 128.0,
+    "priority_basis": "ESTIMATE: impact \u00d7 user_value \u00d7 confidence / (effort + risk + 1)",
+    "risk": 1,
+    "created_at": "2026-10-07T23:38:29+00:00",
+    "started_at": null,
+    "completed_at": null,
+    "attempts": 0,
+    "owner": null,
+    "lease_until": null,
+    "source_evidence": [
+      "reports/revenue-2026-10-07/README.md",
+      "reports/revenue-2026-10-07/asset-audit.md"
+    ]
+  },
+  {
+    "task_id": "M10",
+    "title": "Audit free-pack usefulness and product handoff",
+    "category": "marketing",
+    "workstream": "GROWTH",
+    "product": null,
+    "campaign": null,
+    "status": "QUEUED",
+    "model": "gpt-6-luna",
+    "dependencies": [],
+    "scores": {
+      "impact": 7,
+      "user_value": 8,
+      "strategic_value": 7,
+      "urgency": 5,
+      "confidence": 7,
+      "effort": 3,
+      "risk": 1
+    },
+    "expected_value": "Owner: Growth/PRODUCT. Revenue impact: Recover useful distribution artifact; acquisition benefit unknown. Time to signal: One source/route/license audit. New spend: $0; labor cost unknown. Existing scores remain provisional.",
+    "next_action": "Recheck /packs/ 404 observed 2026-10-07 and reconcile draft CC BY-all claim against Pocket Grotesk SIL OFL 1.1 (cannot be sold alone). Verify pack files/licenses and existing free promise before publishing or claiming downloads. Do not create paid pack checkout.",
+    "evidence_sources": [
+      "/Users/agentsattari/thecreateco-marketing/STATE.md"
+    ],
+    "score_basis": "Provisional director estimate; evidence-backed opportunity, not measured ROI. Recheck before execution.",
+    "result": null,
+    "priority": 78.4,
+    "priority_basis": "ESTIMATE: impact \u00d7 user_value \u00d7 confidence / (effort + risk + 1)",
+    "risk": 1,
+    "created_at": "2026-10-07T23:38:29+00:00",
+    "started_at": null,
+    "completed_at": null,
+    "attempts": 0,
+    "owner": null,
+    "lease_until": null,
+    "source_evidence": [
+      "reports/revenue-2026-10-07/README.md",
+      "reports/revenue-2026-10-07/asset-audit.md"
+    ]
+  },
+  {
+    "task_id": "W01",
+    "title": "Reconcile hub launch registry with actually available products",
+    "category": "website_growth",
+    "workstream": "PRODUCT",
+    "product": "company-site",
+    "campaign": null,
+    "status": "QUEUED",
+    "model": "gpt-6.1-sol",
+    "dependencies": [],
+    "scores": {
+      "impact": 8,
+      "user_value": 8,
+      "strategic_value": 8,
+      "urgency": 8,
+      "confidence": 8,
+      "effort": 2,
+      "risk": 1
+    },
+    "expected_value": "Owner: Website/PRODUCT. Revenue impact: Correct observed trust friction; no measured conversion lift. Time to signal: One reviewed scoped copy repair. New spend: $0; labor cost unknown. Existing scores remain provisional.",
+    "next_action": "Reconcile current hub availability: fresh 2026-10-07 /testing and /kickstarter say no public Mac/native downloads while /downloads offers Reclaim 0.1.1 free Mac alpha. About has same conflict. Preserve alpha caveats, Lite free promise, exact-source/PR/release gates. See revenue audit conversion section.",
+    "evidence_sources": [
+      "/Users/agentsattari/code/wave2/thecreatingco-live/maintenance/AGENTS.md"
+    ],
+    "score_basis": "Provisional director estimate; evidence-backed opportunity, not measured ROI. Recheck before execution.",
+    "result": null,
+    "priority": 128.0,
+    "priority_basis": "ESTIMATE: impact \u00d7 user_value \u00d7 confidence / (effort + risk + 1)",
+    "risk": 1,
+    "created_at": "2026-10-07T23:38:29+00:00",
+    "started_at": null,
+    "completed_at": null,
+    "attempts": 0,
+    "owner": null,
+    "lease_until": null,
+    "source_evidence": [
+      "reports/revenue-2026-10-07/README.md",
+      "reports/revenue-2026-10-07/asset-audit.md"
+    ]
+  },
+  {
+    "task_id": "W02",
+    "title": "Retrieve verified aggregate analytics and define a weekly funnel baseline",
+    "category": "website_growth",
+    "workstream": "PRODUCT",
+    "product": "company-site",
+    "campaign": null,
+    "status": "QUEUED",
+    "model": "gpt-6.1-sol",
+    "dependencies": [],
+    "scores": {
+      "impact": 9,
+      "user_value": 9,
+      "strategic_value": 9,
+      "urgency": 8,
+      "confidence": 8,
+      "effort": 3,
+      "risk": 1
+    },
+    "expected_value": "Owner: Analytics/PRODUCT. Revenue impact: Highest-leverage missing funnel baseline; no conversion lift forecast. Time to signal: One cycle after source access. New spend: $0; labor cost unknown. Existing scores remain provisional.",
+    "next_action": "Existing Netlify Analytics/Forms; preserve no analytics=unknown distinction. Retrieve dated aggregate visitors/signups and explicit event coverage; pageviews are not active users. Write context metrics and refresh revenue dashboard.",
+    "evidence_sources": [
+      "/Users/agentsattari/code/wave2/thecreatingco-live/maintenance/AGENTS.md"
+    ],
+    "score_basis": "Provisional director estimate; evidence-backed opportunity, not measured ROI. Recheck before execution.",
+    "result": null,
+    "priority": 129.6,
+    "priority_basis": "ESTIMATE: impact \u00d7 user_value \u00d7 confidence / (effort + risk + 1)",
+    "risk": 1,
+    "created_at": "2026-10-07T23:38:29+00:00",
+    "started_at": null,
+    "completed_at": null,
+    "attempts": 0,
+    "owner": null,
+    "lease_until": null,
+    "source_evidence": [
+      "reports/revenue-2026-10-07/README.md",
+      "reports/revenue-2026-10-07/asset-audit.md"
+    ]
+  },
+  {
+    "task_id": "W03",
+    "title": "Audit the first-project journey for the strongest existing product",
+    "category": "website_growth",
+    "workstream": "PRODUCT",
+    "product": "company-site",
+    "campaign": null,
+    "status": "QUEUED",
+    "model": "gpt-6.1-sol",
+    "dependencies": [],
+    "scores": {
+      "impact": 9,
+      "user_value": 9,
+      "strategic_value": 9,
+      "urgency": 5,
+      "confidence": 7,
+      "effort": 4,
+      "risk": 1
+    },
+    "expected_value": "Owner: PRODUCT/QA. Revenue impact: Identify activation barrier before traffic or paywalls. Time to signal: 5 observed attempts after qualification/access. New spend: $0; labor cost unknown. Existing scores remain provisional.",
+    "next_action": "Reuse a newly qualified flagship workflow and observe visit\u2192launch\u2192first saved/exported project; coordinate active product owner. ScenePilot is the provisional secondary commercial path, not strongest measured traction. Report actual samples/failures and consent-safe aggregates.",
+    "evidence_sources": [
+      "/Users/agentsattari/code/wave2/thecreatingco-live/maintenance/AGENTS.md"
+    ],
+    "score_basis": "Provisional director estimate; evidence-backed opportunity, not measured ROI. Recheck before execution.",
+    "result": null,
+    "priority": 94.5,
+    "priority_basis": "ESTIMATE: impact \u00d7 user_value \u00d7 confidence / (effort + risk + 1)",
+    "risk": 1,
+    "created_at": "2026-10-07T23:38:29+00:00",
+    "started_at": null,
+    "completed_at": null,
+    "attempts": 0,
+    "owner": null,
+    "lease_until": null,
+    "source_evidence": [
+      "reports/revenue-2026-10-07/README.md",
+      "reports/revenue-2026-10-07/asset-audit.md"
+    ]
+  },
+  {
+    "task_id": "W05",
+    "title": "Verify hub forms, consent and success/error paths",
+    "category": "website_growth",
+    "workstream": "PRODUCT",
+    "product": "company-site",
+    "campaign": null,
+    "status": "QUEUED",
+    "model": "gpt-6.1-sol",
+    "dependencies": [],
+    "scores": {
+      "impact": 9,
+      "user_value": 9,
+      "strategic_value": 9,
+      "urgency": 5,
+      "confidence": 7,
+      "effort": 3,
+      "risk": 2
+    },
+    "expected_value": "Owner: PRODUCT/QA. Revenue impact: Prevent losing genuine intent; impact unmeasured. Time to signal: One non-sending form verification. New spend: $0; labor cost unknown. Existing scores remain provisional.",
+    "next_action": "Inspect current form schema, consent, errors and success paths without production submissions. Map event denominators for launch-list/support separately. Do not repurpose launch-update consent for unrelated sales.",
+    "evidence_sources": [
+      "/Users/agentsattari/code/wave2/thecreatingco-live/maintenance/AGENTS.md"
+    ],
+    "score_basis": "Provisional director estimate; evidence-backed opportunity, not measured ROI. Recheck before execution.",
+    "result": null,
+    "priority": 94.5,
+    "priority_basis": "ESTIMATE: impact \u00d7 user_value \u00d7 confidence / (effort + risk + 1)",
+    "risk": 2,
+    "created_at": "2026-10-07T23:38:29+00:00",
+    "started_at": null,
+    "completed_at": null,
+    "attempts": 0,
+    "owner": null,
+    "lease_until": null,
+    "source_evidence": [
+      "reports/revenue-2026-10-07/README.md",
+      "reports/revenue-2026-10-07/asset-audit.md"
+    ]
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "path": "/api/account",
+    "method": "GET",
+    "status": 405,
+    "body": ""
+  },
+  {
+    "path": "/api/community/network/media?upload=start",
+    "method": "POST",
+    "status": 401,
+    "body": "{\"error\":\"Sign in to continue.\"}"
+  },
+  {
+    "path": "/api/community/network/video?capabilities=1",
+    "method": "GET",
+    "status": 200,
+    "body": "{\"directVideo\":false}"
+  }
+]

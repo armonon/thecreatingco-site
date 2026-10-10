@@ -1,0 +1,9 @@
+{
+  "core_lab_portability_last_run": {
+    "observed_at": "2026-10-08T11:48:29.884513+00:00",
+    "product": "stemdeck",
+    "task_id": "CORE-STEM-AUD-008",
+    "report": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-portability-20261008/README.md",
+    "result": "Three-engine39-asset/state/edit/restart subset verified; Firefox/WebKit WAV byte-identical; Chromium strict byte mismatch max1LSB, below existing PCM tolerance; full mobile/interruption qualification BLOCKED"
+  }
+}

@@ -1,0 +1,176 @@
+{
+  "width": 2048,
+  "height": 1536,
+  "colorSpace": "srgb",
+  "layers": [
+    {
+      "id": "adj-d",
+      "name": "Exposure",
+      "kind": "adjustment-tone",
+      "opacity": 1,
+      "visible": true,
+      "tone": {
+        "exposure": 0.1,
+        "contrast": 0,
+        "highlights": 0,
+        "shadows": 0,
+        "temperature": 0,
+        "vibrance": 0
+      },
+      "mask": null
+    },
+    {
+      "id": "raster-b",
+      "name": "Overlay",
+      "kind": "raster",
+      "opacity": 0.63,
+      "visible": true,
+      "mask": [
+        0,
+        0,
+        255
+      ]
+    },
+    {
+      "id": "raster-a",
+      "name": "Source",
+      "kind": "raster",
+      "opacity": 1,
+      "visible": true,
+      "mask": null
+    }
+  ],
+  "history": {
+    "currentId": "op-muyw8g9t-i",
+    "rootId": "history-root",
+    "operations": 11,
+    "branchPoints": 1,
+    "currentDepth": 9,
+    "bytes": 114034720,
+    "byteBudget": 536870912,
+    "overBudget": false,
+    "nodes": [
+      {
+        "id": "history-root",
+        "parentId": null,
+        "label": "Document opened",
+        "createdAt": 1791425071019,
+        "depth": 0,
+        "childCount": 1,
+        "isCurrent": false,
+        "isOnCurrentPath": true
+      },
+      {
+        "id": "op-muyw8fh7-8",
+        "parentId": "history-root",
+        "label": "source imported",
+        "createdAt": 1791425071195,
+        "depth": 1,
+        "childCount": 1,
+        "isCurrent": false,
+        "isOnCurrentPath": true
+      },
+      {
+        "id": "op-muyw8g5b-9",
+        "parentId": "op-muyw8fh7-8",
+        "label": "overlay imported",
+        "createdAt": 1791425072063,
+        "depth": 2,
+        "childCount": 1,
+        "isCurrent": false,
+        "isOnCurrentPath": true
+      },
+      {
+        "id": "op-muyw8g8u-a",
+        "parentId": "op-muyw8g5b-9",
+        "label": "name changed",
+        "createdAt": 1791425072190,
+        "depth": 3,
+        "childCount": 1,
+        "isCurrent": false,
+        "isOnCurrentPath": true
+      },
+      {
+        "id": "op-muyw8g8u-b",
+        "parentId": "op-muyw8g8u-a",
+        "label": "name changed",
+        "createdAt": 1791425072190,
+        "depth": 4,
+        "childCount": 1,
+        "isCurrent": false,
+        "isOnCurrentPath": true
+      },
+      {
+        "id": "op-muyw8g8u-c",
+        "parentId": "op-muyw8g8u-b",
+        "label": "opacity changed",
+        "createdAt": 1791425072190,
+        "depth": 5,
+        "childCount": 1,
+        "isCurrent": false,
+        "isOnCurrentPath": true
+      },
+      {
+        "id": "op-muyw8g91-d",
+        "parentId": "op-muyw8g8u-c",
+        "label": "Layers grouped",
+        "createdAt": 1791425072197,
+        "depth": 6,
+        "childCount": 1,
+        "isCurrent": false,
+        "isOnCurrentPath": true
+      },
+      {
+        "id": "op-muyw8g97-e",
+        "parentId": "op-muyw8g91-d",
+        "label": "Layers ungrouped",
+        "createdAt": 1791425072203,
+        "depth": 7,
+        "childCount": 1,
+        "isCurrent": false,
+        "isOnCurrentPath": true
+      },
+      {
+        "id": "op-muyw8g9n-f",
+        "parentId": "op-muyw8g97-e",
+        "label": "Mask paint (remove)",
+        "createdAt": 1791425072219,
+        "depth": 8,
+        "childCount": 3,
+        "isCurrent": false,
+        "isOnCurrentPath": true
+      },
+      {
+        "id": "op-muyw8g9n-g",
+        "parentId": "op-muyw8g9n-f",
+        "label": "visible changed",
+        "createdAt": 1791425072219,
+        "depth": 9,
+        "childCount": 0,
+        "isCurrent": false,
+        "isOnCurrentPath": false
+      },
+      {
+        "id": "op-muyw8g9n-h",
+        "parentId": "op-muyw8g9n-f",
+        "label": "Layer reordered",
+        "createdAt": 1791425072219,
+        "depth": 9,
+        "childCount": 0,
+        "isCurrent": false,
+        "isOnCurrentPath": false
+      },
+      {
+        "id": "op-muyw8g9t-i",
+        "parentId": "op-muyw8g9n-f",
+        "label": "Exposure added",
+        "createdAt": 1791425072225,
+        "depth": 9,
+        "childCount": 0,
+        "isCurrent": true,
+        "isOnCurrentPath": true
+      }
+    ],
+    "redoBranches": []
+  }
+}

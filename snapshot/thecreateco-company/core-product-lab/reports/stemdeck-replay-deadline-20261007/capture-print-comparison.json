@@ -1,0 +1,27 @@
+{
+  "scope": "Measured original lossless master capture versus actual live-engine print, same saved original event history; no substituted audio",
+  "seconds": 13.365333333333336,
+  "frames": 641536,
+  "rate": 48000,
+  "originalTrack": "QA edited source",
+  "printTrack": "Four Deck Actual Capture QA take 1.m4a · edited performance",
+  "zeroLag": {
+    "correlation": 0.9999999999999709,
+    "rmsOriginal": 0.004722711332941904,
+    "rmsPrint": 0.0047227118945159866,
+    "gain": 0.9999998810907307
+  },
+  "aligned": {
+    "correlation": 0.9999999999999709,
+    "rmsOriginal": 0.004722711332941904,
+    "rmsPrint": 0.0047227118945159866,
+    "gain": 0.9999998810907307,
+    "lag": 0,
+    "lagSeconds": 0,
+    "relativeRmsError": 2.5268555338183005e-7,
+    "rmsError": 1.1935526663122756e-9,
+    "maximumSampleError": 1.1175870895385742e-8
+  },
+  "sampleIdentityQualified": false,
+  "browser": "151.0.7922.34"
+}

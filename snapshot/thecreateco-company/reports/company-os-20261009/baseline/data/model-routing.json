@@ -1,0 +1,45 @@
+{
+  "director": {
+    "preferred": "openai/gpt-6.1-sol",
+    "fallback": "openai/gpt-6-sol",
+    "thinking": "medium"
+  },
+  "product": {
+    "research": "gpt-6-luna",
+    "ux": "openai/gpt-6.1-sol"
+  },
+  "engineering": {
+    "routine": "gpt-6-luna",
+    "complex": "gpt-6.1-sol"
+  },
+  "qa": {
+    "routine": "gpt-6-luna",
+    "high_impact": "gpt-6.1-sol"
+  },
+  "research": "gpt-6-luna",
+  "growth": "../thecreateco-marketing/engine/config/routing.json",
+  "executive_review": {
+    "role": "Independent ChatGPT/Sol reviewer",
+    "preferred": "openai/gpt-6.1-sol",
+    "fallback": "openai/gpt-6-sol",
+    "only_when": "major launch, architecture, high-impact portfolio decision or unresolved disagreement",
+    "require_available_model": true
+  },
+  "allocation": {
+    "existing_products_infrastructure": 0.6,
+    "growth": 0.25,
+    "validated_experiments": 0.15
+  },
+  "limits": {
+    "tasks_per_cycle": 1,
+    "workers_per_cycle": 3,
+    "cycle_minutes": 35
+  },
+  "live_proof": "2026-10-07: openclaw infer model run --model openai/gpt-6.1-sol returned COMPANY_DIRECTOR_OK via OpenAI local transport. Worker/reviewer routes are selected and verified when used, not implied by this proof.",
+  "review_policy": {
+    "provider": "openai",
+    "claude_reviews_allowed": false,
+    "source_message": "1557556492570464297",
+    "independence": "Separate reviewer/context; preserve gates"
+  }
+}

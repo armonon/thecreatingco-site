@@ -1,0 +1,74 @@
+[
+  {
+    "width": 390,
+    "route": "/",
+    "overflow": 0,
+    "violations": []
+  },
+  {
+    "width": 390,
+    "route": "/studio",
+    "overflow": 0,
+    "violations": []
+  },
+  {
+    "width": 390,
+    "route": "/guide",
+    "overflow": 0,
+    "violations": []
+  },
+  {
+    "width": 390,
+    "route": "/privacy",
+    "overflow": 0,
+    "violations": []
+  },
+  {
+    "width": 768,
+    "route": "/",
+    "overflow": 0,
+    "violations": []
+  },
+  {
+    "width": 768,
+    "route": "/studio",
+    "overflow": 0,
+    "violations": []
+  },
+  {
+    "width": 768,
+    "route": "/guide",
+    "overflow": 0,
+    "violations": []
+  },
+  {
+    "width": 768,
+    "route": "/privacy",
+    "overflow": 0,
+    "violations": []
+  },
+  {
+    "width": 1440,
+    "route": "/",
+    "overflow": 0,
+    "violations": []
+  },
+  {
+    "width": 1440,
+    "route": "/studio",
+    "overflow": 0,
+    "violations": []
+  },
+  {
+    "width": 1440,
+    "route": "/guide",
+    "overflow": 0,
+    "violations": []
+  },
+  {
+    "width": 1440,
+    "route": "/privacy",
+    "overflow": 0,
+    "violations": []
+  }
+]

@@ -1,0 +1,498 @@
+{
+  "observed_at": "2026-10-08T08:12:57.569Z",
+  "candidate_sha": "6bad0edaf198d80d44c9aa02c3e65970fe7d9148",
+  "browser": "151.0.7922.34",
+  "ffmpeg": "ffmpeg version 8.1.1 Copyright (c) 2000-2026 the FFmpeg developers",
+  "scope": "Synthetic independent vector/output subset only; not whole-product, EBU, hardware or platform certification",
+  "tolerances": {
+    "integrated_lu": 0.2,
+    "sample_peak_db": 0.11,
+    "estimated_true_peak_db": 0.5,
+    "export_pcm_max_error": 3e-7
+  },
+  "baseline": {
+    "output": "PASS fixed export low-cut renders the defined live-filter magnitude and phase\nPASS fixed export low-cut preserves gain cancellation for stereo composite audio\nPASS input trim and pre-limiter trim each change rendered amplitude by exactly -6 dB\nPASS equal and opposite trims cancel with dynamics disabled\nPASS EQ crossover frequency changes the actual rendered sound\nPASS live and exported master processing agree after smoothing settles\nPASS speaker mute/mono/dim do not alter program output\nPASS raw stem export excludes new master trims and EQ\nPASS delivery references do not change exported audio\n\n9 passed, 0 failed",
+    "errors": []
+  },
+  "results": [
+    {
+      "id": "sine",
+      "mode": "neutral",
+      "seconds": 20,
+      "settings": {
+        "level": 100,
+        "limiter": false,
+        "compression": false,
+        "processing": {
+          "ceiling": -3,
+          "limiterDrive": 0
+        }
+      },
+      "sourceFrames": 960000,
+      "exportFrames": 964800,
+      "format": {
+        "sampleRate": 48000,
+        "channels": 2,
+        "bits": 24
+      },
+      "max_pcm_export_error": 6.705522537231445e-8,
+      "invalid": 0,
+      "wav_sha256": "e9b82a3f6ec1bb8603e3612a47cf11e9df5f6fe5a6570569adfedd68d432d638",
+      "app": {
+        "momentary": -25.087491793600844,
+        "shortTerm": -23.974646381900023,
+        "integrated": -23.835874017776288,
+        "maxMomentary": -23.824635400346324,
+        "maxShortTerm": -23.826287962153334,
+        "loudnessRange": 0,
+        "rangeStable": false,
+        "measuring": true,
+        "measurementSeconds": 20.1,
+        "truePeak": -23.81742306046943,
+        "samplePeak": -23.826292771409527,
+        "seconds": 20.1,
+        "invalidSamples": 0,
+        "available": true
+      },
+      "rms_linear": [
+        0.04532797655379971,
+        0.04532797655379971
+      ],
+      "direct_sample_peak_db": -23.826292771409527,
+      "frames": 964800,
+      "oracle": {
+        "integrated": -23.8,
+        "samplePeak": -23.8,
+        "truePeak": -23.8
+      },
+      "differences": {
+        "integrated_lu": -0.03587401777628685,
+        "sample_peak_db": -0.02629277140952624,
+        "estimated_true_peak_db": -0.01742306046942943
+      },
+      "limiter_overshoot_db": null,
+      "pass": true
+    },
+    {
+      "id": "sine",
+      "mode": "limiter",
+      "seconds": 20,
+      "settings": {
+        "level": 100,
+        "limiter": true,
+        "compression": false,
+        "processing": {
+          "ceiling": -3,
+          "limiterDrive": 3
+        }
+      },
+      "sourceFrames": 960000,
+      "exportFrames": 964800,
+      "format": {
+        "sampleRate": 48000,
+        "channels": 2,
+        "bits": 24
+      },
+      "max_pcm_export_error": 6.705522537231445e-8,
+      "invalid": 0,
+      "wav_sha256": "0005f294d1b1ba3ea8faa3685a61dfa23d2ee42ed6b5226526cf47c76af6019c",
+      "app": {
+        "momentary": -21.956952354396538,
+        "shortTerm": -20.921596786033366,
+        "integrated": -20.791830465525987,
+        "maxMomentary": -20.780537401092314,
+        "maxShortTerm": -20.782189738090796,
+        "loudnessRange": 0,
+        "rangeStable": false,
+        "measuring": true,
+        "measurementSeconds": 20.1,
+        "truePeak": -20.773315923412206,
+        "samplePeak": -20.782195101890252,
+        "seconds": 20.1,
+        "invalidSamples": 0,
+        "available": true
+      },
+      "rms_linear": [
+        0.06435203570019327,
+        0.06435203570019327
+      ],
+      "direct_sample_peak_db": -20.782195101890252,
+      "frames": 964800,
+      "oracle": {
+        "integrated": -20.8,
+        "samplePeak": -20.8,
+        "truePeak": -20.8
+      },
+      "differences": {
+        "integrated_lu": 0.008169534474014029,
+        "sample_peak_db": 0.01780489810974828,
+        "estimated_true_peak_db": 0.026684076587795147
+      },
+      "limiter_overshoot_db": -17.8,
+      "pass": true
+    },
+    {
+      "id": "transient",
+      "mode": "neutral",
+      "seconds": 20,
+      "settings": {
+        "level": 100,
+        "limiter": false,
+        "compression": false,
+        "processing": {
+          "ceiling": -3,
+          "limiterDrive": 0
+        }
+      },
+      "sourceFrames": 960000,
+      "exportFrames": 964800,
+      "format": {
+        "sampleRate": 48000,
+        "channels": 2,
+        "bits": 24
+      },
+      "max_pcm_export_error": 1.1920928955078125e-7,
+      "invalid": 0,
+      "wav_sha256": "67d6a3654b60715617efe4838fdc35a9eb0412da271d7b9468d81db31bb83425",
+      "app": {
+        "momentary": -36.06689208941575,
+        "shortTerm": -31.903401129252853,
+        "integrated": -31.101386597854194,
+        "maxMomentary": -25.57128022133089,
+        "maxShortTerm": -30.03995319854221,
+        "loudnessRange": 1.79,
+        "rangeStable": false,
+        "measuring": true,
+        "measurementSeconds": 20.1,
+        "truePeak": -5.646382410361227,
+        "samplePeak": -5.646382410361227,
+        "seconds": 20.1,
+        "invalidSamples": 0,
+        "available": true
+      },
+      "rms_linear": [
+        0.015437383831150352,
+        0.017436418589019648
+      ],
+      "direct_sample_peak_db": -5.646382410361227,
+      "frames": 964800,
+      "oracle": {
+        "integrated": -31.1,
+        "samplePeak": -5.6,
+        "truePeak": -5.6
+      },
+      "differences": {
+        "integrated_lu": -0.001386597854192928,
+        "sample_peak_db": -0.046382410361227144,
+        "estimated_true_peak_db": -0.046382410361227144
+      },
+      "limiter_overshoot_db": null,
+      "pass": true
+    },
+    {
+      "id": "transient",
+      "mode": "limiter",
+      "seconds": 20,
+      "settings": {
+        "level": 100,
+        "limiter": true,
+        "compression": false,
+        "processing": {
+          "ceiling": -3,
+          "limiterDrive": 3
+        }
+      },
+      "sourceFrames": 960000,
+      "exportFrames": 964800,
+      "format": {
+        "sampleRate": 48000,
+        "channels": 2,
+        "bits": 24
+      },
+      "max_pcm_export_error": 1.1920928955078125e-7,
+      "invalid": 0,
+      "wav_sha256": "aee4fc407ba5e7838c76856c78c0eb9872382559f9ce4e00400a6593bc4a9880",
+      "app": {
+        "momentary": -32.93635209574681,
+        "shortTerm": -28.854866003163842,
+        "integrated": -28.058284571281018,
+        "maxMomentary": -22.52718200865583,
+        "maxShortTerm": -26.995858432431685,
+        "loudnessRange": 1.79,
+        "rangeStable": false,
+        "measuring": true,
+        "measurementSeconds": 20.1,
+        "truePeak": -2.6026668691339507,
+        "samplePeak": -2.6026668691339507,
+        "seconds": 20.1,
+        "invalidSamples": 0,
+        "available": true
+      },
+      "rms_linear": [
+        0.021911397146788945,
+        0.02474580608728185
+      ],
+      "direct_sample_peak_db": -2.6026668691339507,
+      "frames": 964800,
+      "oracle": {
+        "integrated": -28.1,
+        "samplePeak": -2.6,
+        "truePeak": -2.6
+      },
+      "differences": {
+        "integrated_lu": 0.041715428718983816,
+        "sample_peak_db": -0.0026668691339506445,
+        "estimated_true_peak_db": -0.0026668691339506445
+      },
+      "limiter_overshoot_db": 0.3999999999999999,
+      "pass": true
+    },
+    {
+      "id": "intersample",
+      "mode": "neutral",
+      "seconds": 20,
+      "settings": {
+        "level": 100,
+        "limiter": false,
+        "compression": false,
+        "processing": {
+          "ceiling": -3,
+          "limiterDrive": 0
+        }
+      },
+      "sourceFrames": 960000,
+      "exportFrames": 964800,
+      "format": {
+        "sampleRate": 48000,
+        "channels": 2,
+        "bits": 24
+      },
+      "max_pcm_export_error": 1.1920928955078125e-7,
+      "invalid": 0,
+      "wav_sha256": "314ce27d64307b2e0bbb1e818cf50414d5a3174ed3cc797808c9087b376daf67",
+      "app": {
+        "momentary": 1.9052456473991848,
+        "shortTerm": 3.0182320125271134,
+        "integrated": 3.1571186144888035,
+        "maxMomentary": 3.1667138564065223,
+        "maxShortTerm": 3.1667128025066122,
+        "loudnessRange": 0,
+        "rangeStable": false,
+        "measuring": true,
+        "measurementSeconds": 20.1,
+        "truePeak": 0.024918654332953673,
+        "samplePeak": -2.064841201321358,
+        "seconds": 20.1,
+        "invalidSamples": 0,
+        "available": true
+      },
+      "rms_linear": [
+        0.6893392205361552,
+        0.6893392205361552
+      ],
+      "direct_sample_peak_db": -2.064841201321358,
+      "frames": 964800,
+      "oracle": {
+        "integrated": 3.2,
+        "samplePeak": -2.1,
+        "truePeak": -0.3
+      },
+      "differences": {
+        "integrated_lu": -0.04288138551119669,
+        "sample_peak_db": 0.03515879867864191,
+        "estimated_true_peak_db": 0.32491865433295364
+      },
+      "limiter_overshoot_db": null,
+      "pass": true
+    },
+    {
+      "id": "intersample",
+      "mode": "limiter",
+      "error": "Error: Export clips above 0 dBFS. Lower gain or enable the mix limiter. Track stems are pre-master.\n    at worker.onmessage (http://127.0.0.1:4318/src/utils/arrangementPackaging.js:42:27)",
+      "pass": false
+    },
+    {
+      "id": "dense",
+      "mode": "neutral",
+      "seconds": 60,
+      "settings": {
+        "level": 100,
+        "limiter": false,
+        "compression": false,
+        "processing": {
+          "ceiling": -3,
+          "limiterDrive": 0
+        }
+      },
+      "sourceFrames": 2880000,
+      "exportFrames": 2884800,
+      "format": {
+        "sampleRate": 48000,
+        "channels": 2,
+        "bits": 24
+      },
+      "max_pcm_export_error": 8.940696716308594e-8,
+      "invalid": 0,
+      "wav_sha256": "ffbaca0c455452c6d0d90bd6238a147e5fe4ddc91f63a7b16d3d77d646ad916d",
+      "app": {
+        "momentary": -18.29705419823158,
+        "shortTerm": -17.184612034057572,
+        "integrated": -17.039544295217045,
+        "maxMomentary": -17.0276785248149,
+        "maxShortTerm": -17.03637252705019,
+        "loudnessRange": 0,
+        "rangeStable": true,
+        "measuring": true,
+        "measurementSeconds": 60.1,
+        "truePeak": -8.65614336309788,
+        "samplePeak": -8.689373205686737,
+        "seconds": 60.1,
+        "invalidSamples": 0,
+        "available": true
+      },
+      "rms_linear": [
+        0.08132348857171219,
+        0.08132348971473839
+      ],
+      "direct_sample_peak_db": -8.689373205686737,
+      "frames": 2884800,
+      "oracle": {
+        "integrated": -17,
+        "samplePeak": -8.7,
+        "truePeak": -8.6
+      },
+      "differences": {
+        "integrated_lu": -0.039544295217044834,
+        "sample_peak_db": 0.010626794313262522,
+        "estimated_true_peak_db": -0.05614336309788115
+      },
+      "limiter_overshoot_db": null,
+      "pass": true
+    },
+    {
+      "id": "dense",
+      "mode": "limiter",
+      "seconds": 60,
+      "settings": {
+        "level": 100,
+        "limiter": true,
+        "compression": false,
+        "processing": {
+          "ceiling": -3,
+          "limiterDrive": 3
+        }
+      },
+      "sourceFrames": 2880000,
+      "exportFrames": 2884800,
+      "format": {
+        "sampleRate": 48000,
+        "channels": 2,
+        "bits": 24
+      },
+      "max_pcm_export_error": 1.1920928955078125e-7,
+      "invalid": 0,
+      "wav_sha256": "909751a9637b9f9226847ecbb5a3413aa7abfb4e0c96a1bb3b4b5895c42fcfae",
+      "app": {
+        "momentary": -15.1616386384919,
+        "shortTerm": -14.131985430179622,
+        "integrated": -13.995462321236808,
+        "maxMomentary": -13.986282108682365,
+        "maxShortTerm": -13.992274250023394,
+        "loudnessRange": 0,
+        "rangeStable": true,
+        "measuring": true,
+        "measurementSeconds": 60.1,
+        "truePeak": -5.612044170492723,
+        "samplePeak": -5.645273675720945,
+        "seconds": 60.1,
+        "invalidSamples": 0,
+        "available": true
+      },
+      "rms_linear": [
+        0.11545638068858861,
+        0.11545638107023228
+      ],
+      "direct_sample_peak_db": -5.645273675720945,
+      "frames": 2884800,
+      "oracle": {
+        "integrated": -14,
+        "samplePeak": -5.6,
+        "truePeak": -5.6
+      },
+      "differences": {
+        "integrated_lu": 0.004537678763192332,
+        "sample_peak_db": -0.04527367572094576,
+        "estimated_true_peak_db": -0.012044170492723438
+      },
+      "limiter_overshoot_db": -2.5999999999999996,
+      "pass": true
+    },
+    {
+      "id": "bass-heavy",
+      "mode": "neutral",
+      "seconds": 60,
+      "settings": {
+        "level": 100,
+        "limiter": false,
+        "compression": false,
+        "processing": {
+          "ceiling": -3,
+          "limiterDrive": 0
+        }
+      },
+      "sourceFrames": 2880000,
+      "exportFrames": 2884800,
+      "format": {
+        "sampleRate": 48000,
+        "channels": 2,
+        "bits": 24
+      },
+      "max_pcm_export_error": 1.1920928955078125e-7,
+      "invalid": 0,
+      "wav_sha256": "eb4505ed4857c074899772ba653d99f28d090b31125f0eec8b545005a16c268b",
+      "app": {
+        "momentary": -11.53377025619411,
+        "shortTerm": -10.485253254081401,
+        "integrated": -10.34744999296394,
+        "maxMomentary": -10.341724635695126,
+        "maxShortTerm": -10.343894090473496,
+        "loudnessRange": 0,
+        "rangeStable": true,
+        "measuring": true,
+        "measurementSeconds": 60.1,
+        "truePeak": -2.2245856406540816,
+        "samplePeak": -2.2382521173095244,
+        "seconds": 60.1,
+        "invalidSamples": 0,
+        "available": true
+      },
+      "rms_linear": [
+        0.407860436580148,
+        0.4078600988882183
+      ],
+      "direct_sample_peak_db": -2.2382521173095244,
+      "frames": 2884800,
+      "oracle": {
+        "integrated": -10.4,
+        "samplePeak": -2.2,
+        "truePeak": -2.2
+      },
+      "differences": {
+        "integrated_lu": 0.05255000703606072,
+        "sample_peak_db": -0.03825211730952427,
+        "estimated_true_peak_db": -0.02458564065408142
+      },
+      "limiter_overshoot_db": null,
+      "pass": true
+    },
+    {
+      "id": "bass-heavy",
+      "mode": "limiter",
+      "error": "Error: Export clips above 0 dBFS. Lower gain or enable the mix limiter. Track stems are pre-master.\n    at worker.onmessage (http://127.0.0.1:4318/src/utils/arrangementPackaging.js:42:27)",
+      "pass": false
+    }
+  ],
+  "finished_at": "2026-10-08T08:15:45.891Z",
+  "page_errors": [],
+  "pass": false
+}

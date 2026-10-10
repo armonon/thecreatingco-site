@@ -1,0 +1,40 @@
+{
+  "passed_unshifted": false,
+  "rms_threshold": 0.03,
+  "candidates": [
+    {
+      "shift_samples": 0,
+      "rms": 0.2523095951194414
+    },
+    {
+      "shift_samples": 512,
+      "rms": 0.2601027369843571
+    },
+    {
+      "shift_samples": 1024,
+      "rms": 0.09478478161641438
+    },
+    {
+      "shift_samples": 1536,
+      "rms": 0.28006765995472194
+    },
+    {
+      "shift_samples": 2048,
+      "rms": 0.25003805042380467
+    },
+    {
+      "shift_samples": 2112,
+      "rms": 0.0003277321919542618
+    },
+    {
+      "shift_samples": 3072,
+      "rms": 0.28799825606613855
+    },
+    {
+      "shift_samples": 4096,
+      "rms": 0.14480919319211333
+    }
+  ],
+  "actual_samples": 387072,
+  "expected_samples": 384000
+}

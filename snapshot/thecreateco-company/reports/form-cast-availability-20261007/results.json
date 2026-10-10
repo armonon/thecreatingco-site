@@ -1,0 +1,65 @@
+{
+  "observed_at": "2026-10-08T03:22:40.099528+00:00",
+  "source_sha": "d24f5d76b4fd0e99c43e1cb8e5e2d9b63db6665e",
+  "source_tree": "/Users/agentsattari/code/worktrees/form-cast-stl-20261007",
+  "pr": "https://github.com/armonon/form-studio/pull/6",
+  "core_workflow": {
+    "status": "UNVERIFIED",
+    "passed_subset": "Built real Chrome ASCII STL cm import, exact triangle geometry export, repair/Undo, bad-import preservation, unchanged Form parent and exported mesh close/reopen. Public binary workflow separately passes.",
+    "remaining": "Ring fit/resize, thickness, orientation, OBJ and larger/hollow geometries not fully qualified."
+  },
+  "tests": {
+    "status": "PASS",
+    "unit": {
+      "passed": 1528,
+      "total": 1528
+    },
+    "budgets": {
+      "passed": 15,
+      "total": 15
+    },
+    "typecheck": "PASS",
+    "lint": "PASS",
+    "web_build": "PASS",
+    "desktop_frontend_build": "PASS",
+    "production_audit_vulnerabilities": 0,
+    "built_browser": "PASS",
+    "dev_browser": "FAIL: OCCT resource response is not WASM; retained separately",
+    "evidence": [
+      "/Users/agentsattari/thecreateco-company/reports/form-cast-availability-20261007/unit.log",
+      "/Users/agentsattari/thecreateco-company/reports/form-cast-availability-20261007/budgets.log",
+      "/Users/agentsattari/thecreateco-company/reports/form-cast-availability-20261007/check.log",
+      "/Users/agentsattari/thecreateco-company/reports/form-cast-availability-20261007/build.log",
+      "/Users/agentsattari/thecreateco-company/reports/form-cast-availability-20261007/desktop-build.log",
+      "/Users/agentsattari/thecreateco-company/reports/form-cast-availability-20261007/production-audit.json",
+      "/Users/agentsattari/thecreateco-company/reports/form-cast-availability-20261007/local-built/cast-workflow.json"
+    ]
+  },
+  "platforms": {
+    "status": "UNVERIFIED",
+    "verified_subset": "Chrome154.0.8037.98 on macOS Darwin25.2arm64 with SwiftShader,1440x1000 built frontend",
+    "remaining": "Safari/Firefox/Windows/Linux/native/hardware graphics and mobile interaction"
+  },
+  "documentation": {
+    "status": "PASS",
+    "scope": "Factual qualification and limitations recorded in README.md; no physical caster certification or complete-product claim",
+    "evidence": "/Users/agentsattari/thecreateco-company/reports/form-cast-availability-20261007/README.md"
+  },
+  "critical_blockers": {
+    "status": "BLOCKED",
+    "items": [
+      "Public ASCII STL geometry corruption persists pending release; candidate repaired.",
+      "Required Form hosted checks remain billing-blocked; no merge/deploy permitted.",
+      "Broader nonfinite/large/interrupted input and project parameter persistence remain UNVERIFIED."
+    ]
+  },
+  "deployment": {
+    "status": "NOT_DEPLOYED",
+    "source_pushed": true,
+    "merged": false,
+    "published_deploy": "6ac5ba1aaeefd1fa9121aa8a",
+    "published_source_sha": null,
+    "published_url": "https://form-studio-review.netlify.app/studio",
+    "config_functions_data_changed": false
+  }
+}

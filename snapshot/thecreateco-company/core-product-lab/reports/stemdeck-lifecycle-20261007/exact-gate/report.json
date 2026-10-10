@@ -1,0 +1,349 @@
+{
+  "environment": {
+    "node": "v22.23.2",
+    "platform": "darwin",
+    "architecture": "arm64",
+    "osRelease": "25.2.0",
+    "timezone": "America/Los_Angeles",
+    "logicalCpus": 10,
+    "totalMemoryBytes": 17179869184
+  },
+  "commit": "af10e31c9df8f1363d3945e3b1d39518cd858009",
+  "lockfileSha256": "dcaaaaa496434e6e79f47c8bd0de97c7177191842bb9848c059c8178126c4048",
+  "configuration": {
+    "package.json": "3eba463d5cf0a29ed80cee2009501e5220e3b5256ab61be966746f5412370af0",
+    "vite.config.js": "2761a8b265ae80abd51d047327b3dc4badbf2c83261f754d38dea328673a9941",
+    "vite.qa.config.mjs": "21be34faca2acff42fa3ead5f3e90a5e217c77197396cabea778722335018e25",
+    "vitest.config.ts": "f9a64d7fe0bb3a879d9d7ffe38193cb662333cc7e8f20d21ee5f8e641d0eda3f",
+    "netlify.toml": "92445c11cc231f984e767acf57eb15ce168e6b89e9da35c987a57943e3edb73e",
+    ".github/workflows/build-deploy.yml": "0fc6e55c60b8c4a3e64786ff92b0661b113b66fc6d03e6271b40ac2c0df53890"
+  },
+  "browserConfiguration": {
+    "playwrightVersion": "1.62.1",
+    "executable": "/Users/agentsattari/Library/Caches/ms-playwright/chromium-1234/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing",
+    "version": "Google Chrome for Testing 151.0.7922.34",
+    "executableSha256": "a596b1cfc6353e987fcec8d71a23a28cd6a9e7a6b4e20b908e4c4fcffe51158e",
+    "revisions": [
+      {
+        "name": "chromium",
+        "revision": "1234",
+        "installByDefault": true,
+        "browserVersion": "151.0.7922.34",
+        "title": "Chrome for Testing"
+      },
+      {
+        "name": "chromium-headless-shell",
+        "revision": "1234",
+        "installByDefault": true,
+        "browserVersion": "151.0.7922.34",
+        "title": "Chrome Headless Shell"
+      },
+      {
+        "name": "chromium-tip-of-tree",
+        "revision": "1433",
+        "installByDefault": false,
+        "browserVersion": "151.0.7893.0",
+        "title": "Chrome Canary for Testing"
+      },
+      {
+        "name": "chromium-tip-of-tree-headless-shell",
+        "revision": "1433",
+        "installByDefault": false,
+        "browserVersion": "151.0.7893.0",
+        "title": "Chrome Canary Headless Shell"
+      }
+    ],
+    "headless": true,
+    "args": [
+      "--mute-audio",
+      "--autoplay-policy=no-user-gesture-required"
+    ],
+    "audioOrigin": "http://127.0.0.1:4192",
+    "builtUiOrigin": "http://127.0.0.1:4193"
+  },
+  "preflight": {
+    "cleanTree": true,
+    "initialStatus": "",
+    "disk": {
+      "seconds": 120,
+      "sampleRate": 48000,
+      "channels": 10,
+      "copies": 3,
+      "recordingBytes": 691200000,
+      "reserveBytes": 2147483648,
+      "requiredBytes": 2838683648,
+      "path": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-lifecycle-20261007/exact-gate",
+      "availableBytes": 13598965760,
+      "pass": true,
+      "note": "OS capacity check, not a browser quota reservation. Recheck browser quota and target volume before physical recording."
+    }
+  },
+  "sourceHash": "583e10811714cca12c936258f2096e1372f5390f35a183d1f2f8103227fcf941",
+  "unchanged": true,
+  "at": "2026-10-08T03:46:14.316Z",
+  "softwarePassed": true,
+  "audioChecked": true,
+  "builtArtifactUiChecked": true,
+  "releaseApproved": false,
+  "results": [
+    {
+      "name": "matrix",
+      "status": 0,
+      "seconds": 0.049,
+      "hostBefore": {
+        "loadAverage": [
+          8.47314453125,
+          11.74365234375,
+          14.498046875
+        ],
+        "freeMemoryBytes": 256851968
+      },
+      "hostAfter": {
+        "loadAverage": [
+          8.47314453125,
+          11.74365234375,
+          14.498046875
+        ],
+        "freeMemoryBytes": 253329408
+      }
+    },
+    {
+      "name": "lint",
+      "status": 0,
+      "seconds": 9.263,
+      "hostBefore": {
+        "loadAverage": [
+          8.47314453125,
+          11.74365234375,
+          14.498046875
+        ],
+        "freeMemoryBytes": 253329408
+      },
+      "hostAfter": {
+        "loadAverage": [
+          7.72412109375,
+          11.47216796875,
+          14.369140625
+        ],
+        "freeMemoryBytes": 1108951040
+      }
+    },
+    {
+      "name": "unit",
+      "status": 0,
+      "seconds": 183.196,
+      "hostBefore": {
+        "loadAverage": [
+          7.72412109375,
+          11.47216796875,
+          14.369140625
+        ],
+        "freeMemoryBytes": 1109229568
+      },
+      "hostAfter": {
+        "loadAverage": [
+          14.69140625,
+          11.39306640625,
+          13.61474609375
+        ],
+        "freeMemoryBytes": 1677148160
+      }
+    },
+    {
+      "name": "types",
+      "status": 0,
+      "seconds": 2.491,
+      "hostBefore": {
+        "loadAverage": [
+          14.69140625,
+          11.39306640625,
+          13.61474609375
+        ],
+        "freeMemoryBytes": 1673625600
+      },
+      "hostAfter": {
+        "loadAverage": [
+          14.69140625,
+          11.39306640625,
+          13.61474609375
+        ],
+        "freeMemoryBytes": 4603969536
+      }
+    },
+    {
+      "name": "meter",
+      "status": 0,
+      "seconds": 8.604,
+      "hostBefore": {
+        "loadAverage": [
+          14.69140625,
+          11.39306640625,
+          13.61474609375
+        ],
+        "freeMemoryBytes": 4604100608
+      },
+      "hostAfter": {
+        "loadAverage": [
+          16.134765625,
+          11.80810546875,
+          13.73583984375
+        ],
+        "freeMemoryBytes": 2575319040
+      }
+    },
+    {
+      "name": "tempo",
+      "status": 0,
+      "seconds": 0.176,
+      "hostBefore": {
+        "loadAverage": [
+          16.134765625,
+          11.80810546875,
+          13.73583984375
+        ],
+        "freeMemoryBytes": 2575417344
+      },
+      "hostAfter": {
+        "loadAverage": [
+          16.134765625,
+          11.80810546875,
+          13.73583984375
+        ],
+        "freeMemoryBytes": 2456879104
+      }
+    },
+    {
+      "name": "build",
+      "status": 0,
+      "seconds": 7.738,
+      "hostBefore": {
+        "loadAverage": [
+          16.134765625,
+          11.80810546875,
+          13.73583984375
+        ],
+        "freeMemoryBytes": 2456944640
+      },
+      "hostAfter": {
+        "loadAverage": [
+          15.24267578125,
+          11.69482421875,
+          13.6845703125
+        ],
+        "freeMemoryBytes": 3795451904
+      }
+    },
+    {
+      "name": "prerender",
+      "status": 0,
+      "seconds": 2.442,
+      "hostBefore": {
+        "loadAverage": [
+          15.24267578125,
+          11.69482421875,
+          13.6845703125
+        ],
+        "freeMemoryBytes": 3795632128
+      },
+      "hostAfter": {
+        "loadAverage": [
+          14.50244140625,
+          11.60009765625,
+          13.63916015625
+        ],
+        "freeMemoryBytes": 3737255936
+      }
+    },
+    {
+      "name": "service-worker",
+      "status": 0,
+      "seconds": 0.065,
+      "hostBefore": {
+        "loadAverage": [
+          14.50244140625,
+          11.60009765625,
+          13.63916015625
+        ],
+        "freeMemoryBytes": 3737649152
+      },
+      "hostAfter": {
+        "loadAverage": [
+          14.50244140625,
+          11.60009765625,
+          13.63916015625
+        ],
+        "freeMemoryBytes": 3720462336
+      }
+    },
+    {
+      "name": "seo",
+      "status": 0,
+      "seconds": 1.495,
+      "hostBefore": {
+        "loadAverage": [
+          14.50244140625,
+          11.60009765625,
+          13.63916015625
+        ],
+        "freeMemoryBytes": 3720609792
+      },
+      "hostAfter": {
+        "loadAverage": [
+          14.50244140625,
+          11.60009765625,
+          13.63916015625
+        ],
+        "freeMemoryBytes": 3785342976
+      }
+    },
+    {
+      "name": "browser",
+      "status": 0,
+      "seconds": 162.974,
+      "hostBefore": {
+        "loadAverage": [
+          14.50244140625,
+          11.60009765625,
+          13.63916015625
+        ],
+        "freeMemoryBytes": 3785408512
+      },
+      "hostAfter": {
+        "loadAverage": [
+          19.98779296875,
+          14.4716796875,
+          14.3701171875
+        ],
+        "freeMemoryBytes": 1161347072
+      }
+    },
+    {
+      "name": "soak",
+      "status": 0,
+      "seconds": 125.011,
+      "hostBefore": {
+        "loadAverage": [
+          19.98779296875,
+          14.4716796875,
+          14.3701171875
+        ],
+        "freeMemoryBytes": 1161494528
+      },
+      "hostAfter": {
+        "loadAverage": [
+          16.6708984375,
+          15.3876953125,
+          14.7734375
+        ],
+        "freeMemoryBytes": 915095552
+      }
+    }
+  ],
+  "output": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-lifecycle-20261007/exact-gate",
+  "artifact": {
+    "algorithm": "sha256-path-size-content-v1",
+    "sha256": "3ca76461fd3b1df8940154110af2317b8a779f5c2d1d197088a40adb71547f63",
+    "files": 548,
+    "bytes": 229482675
+  }
+}

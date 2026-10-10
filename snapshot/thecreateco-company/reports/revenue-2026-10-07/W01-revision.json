@@ -1,0 +1,9 @@
+{
+  "task_id": "W01",
+  "next_action": "Reconcile current hub availability: fresh 2026-10-07 /testing and /kickstarter say no public Mac/native downloads while /downloads offers Reclaim 0.1.1 free Mac alpha. About has same conflict. Preserve alpha caveats, Lite free promise, exact-source/PR/release gates. See revenue audit conversion section.",
+  "source_evidence": [
+    "reports/revenue-2026-10-07/README.md",
+    "reports/revenue-2026-10-07/asset-audit.md"
+  ],
+  "expected_value": "Owner: Website/PRODUCT. Revenue impact: Correct observed trust friction; no measured conversion lift. Time to signal: One reviewed scoped copy repair. New spend: $0; labor cost unknown. Existing scores remain provisional."
+}

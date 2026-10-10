@@ -1,0 +1,27 @@
+{
+  "task_id": "PROGRAM18-LIBRARIAN-AUTH-001",
+  "product": "librarian",
+  "title": "Connect verified account session to protected recommendations and reconcile docs",
+  "workstream": "PRODUCT_COMPLETION",
+  "category": "reliability",
+  "severity": "P1",
+  "status": "QUEUED",
+  "model": "openai/gpt-6.1-sol",
+  "scores": {
+    "impact": 7,
+    "user_value": 7,
+    "confidence": 9,
+    "effort": 4,
+    "risk": 3
+  },
+  "source_evidence": {
+    "direct": [
+      "src/main.js623 sends no Bearer; backend ai-guard requires verified account before configuration/quota/provider; README says offline heuristic."
+    ]
+  },
+  "next_action": "Reproduce in controlled environment, wire approved verified-session token without weakening backend; preserve guest search/PDF; recoveredlivefunctions/configneeded before release.",
+  "test_requirements": "Unauthenticated/expired/unverified/validsession/quota/providerfail cases and localPDF unaffected; no paidcalls unless alreadyauthorized.",
+  "evidence_sources": [
+    "/Users/agentsattari/thecreateco-company/reports/release18-inventory-gaps-20261007/README.md"
+  ]
+}

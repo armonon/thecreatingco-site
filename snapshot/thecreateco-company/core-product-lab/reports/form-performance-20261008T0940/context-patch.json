@@ -1,0 +1,18 @@
+{
+  "core_lab_storage_checkpoint": {
+    "observed_at": "2026-10-08T09:41:51.568845+00:00",
+    "task_id": "CORE-FORM-AUD-PERF-001",
+    "status": "BLOCKED",
+    "source_sha": "be1f7272c5689d6401194d643fa3eb09a2b0b73b",
+    "model": "openai/gpt-6.1-sol",
+    "fallback_used": false,
+    "worktree_created": false,
+    "builds_run": false,
+    "tests_run": false,
+    "golden_dogfood_run": false,
+    "measurements": null,
+    "reason": "Isolated checkout failed ENOSPC; follow-up df available 130396 KiB (100% capacity).",
+    "resume_condition": "Adequate verified free disk for isolated checkout/dependencies/builds/artifacts and noncompeting supported-hardware benchmark execution.",
+    "report": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-performance-20261008T0940/README.md"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "task_id": "PROGRAM18-GHOST-ROUNDTRIP-001",
+  "product": "ghost",
+  "title": "Qualify exact-source Ghost collection recovery and independent textured exports",
+  "workstream": "PRODUCT_COMPLETION",
+  "category": "reliability",
+  "severity": "P1",
+  "status": "QUEUED",
+  "model": "openai/gpt-6.1-sol",
+  "scores": {
+    "impact": 8,
+    "user_value": 8,
+    "confidence": 8,
+    "effort": 5,
+    "risk": 3
+  },
+  "source_evidence": {
+    "direct": [
+      "Original-photo/settings/output IndexedDB recovery documented; README94 contradicts README40;10dirty pendingpatternfiles prevent treatingHEAD asdeployed."
+    ]
+  },
+  "next_action": "Freeze intendedsource preservingpendingwork; originalsyntheticphotos\u2192adjust\u2192saveclose/reopen\u2192GLB byte/texture/geometry compare; quota/cancel/engineversionmigrations; honest inferredgeometrydocs.",
+  "test_requirements": "Actualworker/browser and independentGLB parser; originalsourcebytes preserved; no garmentfit claims.",
+  "evidence_sources": [
+    "/Users/agentsattari/thecreateco-company/reports/release18-inventory-gaps-20261007/README.md"
+  ]
+}

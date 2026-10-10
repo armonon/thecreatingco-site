@@ -1,0 +1,11 @@
+{
+  "observed_at": "2026-10-08T12:19:16.428Z",
+  "checks": [
+    "actual SVG import/extrude produces nonempty CAD source",
+    "Fabric T-shirt edit/back preserves CAD and adds Fabric workspace",
+    "direct Animation navigation does not silently copy CAD geometry",
+    "real Animation Create Cube and Record position author one key"
+  ],
+  "errors": [],
+  "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n... Skipped lines\n\n  {\n    avatar: {\n      armLength: 610,\n      bust: 920,\n      height: 1700,\n...\n    size: 'M',\n+   updatedAt: '2026-10-08T12:19:13.931Z',\n-   updatedAt: '2026-10-08T12:19:06.176Z',\n    version: 1\n  }\n\n    at /Users/agentsattari/thecreateco-company/reports/form-handoff-20261008T1210/handoff-workflow.cjs:18:244"
+}

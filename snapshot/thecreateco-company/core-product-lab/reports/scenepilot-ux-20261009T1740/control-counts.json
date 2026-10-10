@@ -1,0 +1,11 @@
+{
+  "source": "02c6eced0e572eafe5c5c2f8e4fe1b0e8b011b40",
+  "checks": [],
+  "limits": [
+    "localhost edition=pro capability override is not packaged desktop",
+    "Counts refer to asset bin, not separately loaded main source",
+    "No material UX/design review claimed"
+  ],
+  "status": "FAIL",
+  "error": "page.waitForFunction: Timeout 30000ms exceeded.\n    at /Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-ux-20261009T1740/control-counts.mjs:2:1055"
+}

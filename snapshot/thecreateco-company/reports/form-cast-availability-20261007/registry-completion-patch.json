@@ -1,0 +1,173 @@
+[
+  {
+    "product_id": "cast",
+    "status": "REVIEW_ALPHA_WITH_CANDIDATE_FIX",
+    "release_readiness": "Reviewed ASCII STL repair pushed PR6; public still affected, required CI blocked; full Cast qualification incomplete.",
+    "known_bugs": [
+      {
+        "id": "CAST-STL-ASCII-BYTES",
+        "severity": "P1",
+        "status": "FIXED_CANDIDATE_NOT_DEPLOYED",
+        "summary": "ASCII STL browser bytes misread as binary geometry",
+        "source_sha": "d24f5d76b4fd0e99c43e1cb8e5e2d9b63db6665e",
+        "pr": "https://github.com/armonon/form-studio/pull/6",
+        "evidence": "/Users/agentsattari/thecreateco-company/reports/form-cast-availability-20261007/observed-public-ascii-failure.log"
+      }
+    ],
+    "completion_observations": {
+      "candidate_sha": "d24f5d76b4fd0e99c43e1cb8e5e2d9b63db6665e",
+      "observed_at": "2026-10-08T03:22:40.099528+00:00",
+      "supported_platforms": [],
+      "gates": {
+        "core_workflow": {
+          "status": "UNVERIFIED",
+          "source_sha": "d24f5d76b4fd0e99c43e1cb8e5e2d9b63db6665e",
+          "observed_at": "2026-10-08T03:22:40.099528+00:00",
+          "coverage_complete": false,
+          "summary": "Built real Chrome ASCII STL cm import, exact triangle geometry export, repair/Undo, bad-import preservation, unchanged Form parent and exported mesh close/reopen. Public binary workflow separately passes. Remaining: Ring fit/resize, thickness, orientation, OBJ and larger/hollow geometries not fully qualified.",
+          "evidence": [
+            "/Users/agentsattari/thecreateco-company/reports/form-cast-availability-20261007/README.md",
+            "/Users/agentsattari/thecreateco-company/reports/form-cast-availability-20261007/results.json"
+          ]
+        },
+        "save_reopen_export": {
+          "status": "UNVERIFIED",
+          "source_sha": "d24f5d76b4fd0e99c43e1cb8e5e2d9b63db6665e",
+          "observed_at": "2026-10-08T03:22:40.099528+00:00",
+          "coverage_complete": false,
+          "summary": "Exported STL geometry close/reopen exactly matched; editable Cast analysis/session settings persistence remains unqualified.",
+          "evidence": [
+            "/Users/agentsattari/thecreateco-company/reports/form-cast-availability-20261007/README.md",
+            "/Users/agentsattari/thecreateco-company/reports/form-cast-availability-20261007/results.json"
+          ]
+        },
+        "reliability_recovery": {
+          "status": "UNVERIFIED",
+          "source_sha": "d24f5d76b4fd0e99c43e1cb8e5e2d9b63db6665e",
+          "observed_at": "2026-10-08T03:22:40.099528+00:00",
+          "coverage_complete": false,
+          "summary": "Malformed input preserves previous mesh, repair Undo and original parent project verified. Nonfinite/large/aborted/racing imports unverified.",
+          "evidence": [
+            "/Users/agentsattari/thecreateco-company/reports/form-cast-availability-20261007/README.md",
+            "/Users/agentsattari/thecreateco-company/reports/form-cast-availability-20261007/results.json"
+          ]
+        },
+        "performance": {
+          "status": "UNVERIFIED",
+          "source_sha": "d24f5d76b4fd0e99c43e1cb8e5e2d9b63db6665e",
+          "observed_at": "2026-10-08T03:22:40.099528+00:00",
+          "coverage_complete": false,
+          "summary": "15 generic Form budgets pass; Cast-specific large mesh latency/memory and physical GPU unverified.",
+          "evidence": [
+            "/Users/agentsattari/thecreateco-company/reports/form-cast-availability-20261007/README.md",
+            "/Users/agentsattari/thecreateco-company/reports/form-cast-availability-20261007/results.json"
+          ]
+        },
+        "usability_accessibility": {
+          "status": "UNVERIFIED",
+          "source_sha": "d24f5d76b4fd0e99c43e1cb8e5e2d9b63db6665e",
+          "observed_at": "2026-10-08T03:22:40.099528+00:00",
+          "coverage_complete": false,
+          "summary": "Actual Cast desktop pointer workflow used; manual keyboard/assistive-tech qualification incomplete.",
+          "evidence": [
+            "/Users/agentsattari/thecreateco-company/reports/form-cast-availability-20261007/README.md",
+            "/Users/agentsattari/thecreateco-company/reports/form-cast-availability-20261007/results.json"
+          ]
+        },
+        "responsive_behavior": {
+          "status": "UNVERIFIED",
+          "source_sha": "d24f5d76b4fd0e99c43e1cb8e5e2d9b63db6665e",
+          "observed_at": "2026-10-08T03:22:40.099528+00:00",
+          "coverage_complete": false,
+          "summary": "1440\u00d71000 built Chrome workflow passed; Cast phone/tablet interaction unverified.",
+          "evidence": [
+            "/Users/agentsattari/thecreateco-company/reports/form-cast-availability-20261007/README.md",
+            "/Users/agentsattari/thecreateco-company/reports/form-cast-availability-20261007/results.json"
+          ]
+        },
+        "security_privacy": {
+          "status": "UNVERIFIED",
+          "source_sha": "d24f5d76b4fd0e99c43e1cb8e5e2d9b63db6665e",
+          "observed_at": "2026-10-08T03:22:40.099528+00:00",
+          "coverage_complete": false,
+          "summary": "Production dependency audit0; input-hardening boundaries and full app authorization/privacy not qualified in this change.",
+          "evidence": [
+            "/Users/agentsattari/thecreateco-company/reports/form-cast-availability-20261007/README.md",
+            "/Users/agentsattari/thecreateco-company/reports/form-cast-availability-20261007/results.json"
+          ]
+        },
+        "documentation_support": {
+          "status": "UNVERIFIED",
+          "source_sha": "d24f5d76b4fd0e99c43e1cb8e5e2d9b63db6665e",
+          "observed_at": "2026-10-08T03:22:40.099528+00:00",
+          "coverage_complete": false,
+          "summary": "Qualification report records reality/limitations; complete end-user Cast support documentation not audited.",
+          "evidence": [
+            "/Users/agentsattari/thecreateco-company/reports/form-cast-availability-20261007/README.md",
+            "/Users/agentsattari/thecreateco-company/reports/form-cast-availability-20261007/results.json"
+          ]
+        },
+        "supported_platforms": {
+          "status": "UNVERIFIED",
+          "source_sha": "d24f5d76b4fd0e99c43e1cb8e5e2d9b63db6665e",
+          "observed_at": "2026-10-08T03:22:40.099528+00:00",
+          "coverage_complete": false,
+          "summary": "Chrome154.0.8037.98 on macOS Darwin25.2arm64 with SwiftShader,1440x1000 built frontend; remaining Safari/Firefox/Windows/Linux/native/hardware graphics and mobile interaction",
+          "evidence": [
+            "/Users/agentsattari/thecreateco-company/reports/form-cast-availability-20261007/README.md",
+            "/Users/agentsattari/thecreateco-company/reports/form-cast-availability-20261007/results.json"
+          ]
+        },
+        "critical_blockers": {
+          "status": "BLOCKED",
+          "source_sha": "d24f5d76b4fd0e99c43e1cb8e5e2d9b63db6665e",
+          "observed_at": "2026-10-08T03:22:40.099528+00:00",
+          "coverage_complete": false,
+          "summary": "Candidate repairs ASCII geometry corruption, but public version still affected. Mandatory Form CI blocked; broader input/recovery triage incomplete.",
+          "evidence": [
+            "/Users/agentsattari/thecreateco-company/reports/form-cast-availability-20261007/README.md",
+            "/Users/agentsattari/thecreateco-company/reports/form-cast-availability-20261007/results.json"
+          ]
+        },
+        "tests": {
+          "status": "UNVERIFIED",
+          "source_sha": "d24f5d76b4fd0e99c43e1cb8e5e2d9b63db6665e",
+          "observed_at": "2026-10-08T03:22:40.099528+00:00",
+          "coverage_complete": false,
+          "summary": "Local Node22 types/lint/web+desktop builds1528/1528units15/15budgets/audit0 and built realbrowser workflow passed. Required hosted/native gates unresolved; no full test-gate certification.",
+          "evidence": [
+            "/Users/agentsattari/thecreateco-company/reports/form-cast-availability-20261007/unit.log",
+            "/Users/agentsattari/thecreateco-company/reports/form-cast-availability-20261007/budgets.log",
+            "/Users/agentsattari/thecreateco-company/reports/form-cast-availability-20261007/check.log",
+            "/Users/agentsattari/thecreateco-company/reports/form-cast-availability-20261007/build.log",
+            "/Users/agentsattari/thecreateco-company/reports/form-cast-availability-20261007/desktop-build.log",
+            "/Users/agentsattari/thecreateco-company/reports/form-cast-availability-20261007/production-audit.json",
+            "/Users/agentsattari/thecreateco-company/reports/form-cast-availability-20261007/local-built/cast-workflow.json"
+          ]
+        }
+      },
+      "deployment": {
+        "status": "NOT_DEPLOYED",
+        "source_pushed": true,
+        "merged": false,
+        "published_deploy": "6ac5ba1aaeefd1fa9121aa8a",
+        "published_source_sha": null,
+        "published_url": "https://form-studio-review.netlify.app/studio",
+        "config_functions_data_changed": false
+      },
+      "next_action": "Resume Cast ring/thickness/orientation/OBJ/adversarial-input/platform qualification independently; account owner resolves hosted CI then normal exact-head checks/stacked merges; reconcile live manifest before release."
+    },
+    "release_disposition": {
+      "status": "blocked",
+      "reason": "Public ASCII STL corruption repaired in reviewed candidate PR6; mandatory CI and incomplete qualification prevent release readiness.",
+      "observed_at": "2026-10-08T03:22:40.099528+00:00",
+      "evidence": [
+        "/Users/agentsattari/thecreateco-company/reports/form-cast-availability-20261007/README.md",
+        "/Users/agentsattari/thecreateco-company/reports/form-cast-availability-20261007/results.json"
+      ]
+    },
+    "next_milestone": "Resume Cast ring/thickness/orientation/OBJ/adversarial-input/platform qualification independently; account owner resolves hosted CI then normal exact-head checks/stacked merges; reconcile live manifest before release.",
+    "verification_level": "PUBLIC_BINARY_WORKFLOW_AND_EXACT_CANDIDATE_ASCII_WORKFLOW_SUBSET",
+    "evidence_freshness": "2026-10-08T03:22:40.099528+00:00"
+  }
+]

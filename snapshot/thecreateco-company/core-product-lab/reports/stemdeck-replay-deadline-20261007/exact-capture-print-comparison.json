@@ -1,0 +1,33 @@
+{
+  "scope": "Measured original lossless master capture versus actual live-engine print, same saved original event history; no substituted audio",
+  "seconds": 13.333333333333332,
+  "frames": 640000,
+  "rate": 48000,
+  "originalTrack": "QA edited source",
+  "printTrack": "Four Deck Actual Capture QA take 1.m4a \u00b7 edited performance",
+  "zeroLag": {
+    "correlation": 0.9999999999999596,
+    "rmsOriginal": 0.004642104808692038,
+    "rmsPrint": 0.0046421053451117175,
+    "gain": 0.9999998844447021
+  },
+  "aligned": {
+    "correlation": 0.9999999999999596,
+    "rmsOriginal": 0.004642104808692038,
+    "rmsPrint": 0.0046421053451117175,
+    "gain": 0.9999998844447021,
+    "lag": 0,
+    "lagSeconds": 0,
+    "relativeRmsError": 2.554971693947881e-07,
+    "rmsError": 1.1862022317806032e-09,
+    "maximumSampleError": 9.313225746154785e-09
+  },
+  "sampleIdentityQualified": false,
+  "browser": "151.0.7922.34",
+  "source_sha": "c15bb06a87b150a966e8c563457de4f2786ba141",
+  "source_binding": "Same unchanged clean candidate and owned profile as exact-ui/report.json; comparison performed immediately after that run",
+  "measured_interval_seconds": [
+    0.75,
+    12.933333333333332
+  ]
+}

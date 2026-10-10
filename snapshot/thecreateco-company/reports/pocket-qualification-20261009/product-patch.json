@@ -1,0 +1,17 @@
+{
+  "product_id": "pocket",
+  "release_readiness": "ALPHA; prior reviewed repair4bd196d PR30 not certified deployed. New existing-artifact Chromium5checks+actual quota preservation pass; exact source/build correspondence and full platform/release gates UNVERIFIED.",
+  "verification_level": "REVIEWED_LOCAL_SOURCE_AND_EXISTING_ARTIFACT_CHROMIUM_PARTIAL_QUALIFICATION",
+  "qualification_batch_20261009": {
+    "task_id": "PROGRAM18-POCKET-QUALIFY-001",
+    "model": "gpt-6-luna",
+    "reference_source_sha": "4bd196d65c7fd56f5de038179978e3eae47ab6b7",
+    "artifact_sha256": "7bde1dba7dd33746b079d88b0e09c17ffe55172c6d51dbf031fa4c6c993b5f78",
+    "source_build_correspondence": "UNVERIFIED",
+    "observed_at": "2026-10-09T13:16:08.323Z",
+    "checks_passed": 6,
+    "evidence": "/Users/agentsattari/thecreateco-company/reports/pocket-qualification-20261009/README.md",
+    "status": "PARTIAL; full qualification BLOCKED"
+  },
+  "next_milestone": "Establish exact-source build identity; supported-browser interruption/reopen, accessibility/performance, mobile and required stack/live release gates remain."
+}

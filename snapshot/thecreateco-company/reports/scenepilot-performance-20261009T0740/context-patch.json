@@ -1,0 +1,9 @@
+{
+  "core_lab_latest_cycle": {
+    "product": "scenepilot",
+    "task_id": "CORE-SP-PERF-001",
+    "observed_at": "2026-10-09T07:43:28.864929+00:00",
+    "status": "BLOCKED",
+    "evidence": "/Users/agentsattari/thecreateco-company/reports/scenepilot-performance-20261009T0740/README.md"
+  }
+}

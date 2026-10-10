@@ -1,0 +1,21 @@
+{
+  "product_id": "scenepilot",
+  "performance_qualification": {
+    "task_id": "CORE-SP-PERF-001",
+    "observed_at": "2026-10-09T07:43:28.864929+00:00",
+    "source_sha": "c26d518bc3d05f0adbf7287f79c5f5f15ac25220",
+    "director_model": "openai/gpt-6.1-sol",
+    "executor_requested_model": "gpt-6-luna",
+    "executor_serving_model": null,
+    "fallback": null,
+    "benchmark_repetitions_passed": 3,
+    "linked_media_exit_code": 127,
+    "full_golden_qualification": false,
+    "report": "/Users/agentsattari/thecreateco-company/reports/scenepilot-performance-20261009T0740/README.md",
+    "limitations": [
+      "Synthetic metadata/planner/one-second PCM only; not app-process-tree memory or real-media playback/export",
+      "Electron executable absent from shared dependency tree; linked-media not executed",
+      "Multi-hour/low-memory/platform/perceptual/hosted stack gates remain unresolved"
+    ]
+  }
+}

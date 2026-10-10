@@ -1,0 +1,35 @@
+{
+  "task_id": "CORE-FORM-LINT-001",
+  "title": "Repair source workspace texture mutation lint gate without changing texture semantics",
+  "product": "form",
+  "workstream": "CORE_PRODUCT_LAB",
+  "category": "test_gate",
+  "area": "test_gate",
+  "severity": "P2",
+  "model": "gpt-6.1-sol",
+  "scores": {
+    "impact": 6,
+    "severity": 6,
+    "workflow_importance": 7,
+    "release_importance": 8,
+    "confidence": 9,
+    "effort": 3,
+    "risk": 3,
+    "user_value": 5,
+    "competitive_value": 2
+  },
+  "source_evidence": {
+    "direct": [
+      "Source-only npm run lint exits 1 with exactly one react-hooks/immutability error app/cad-workspace.tsx:2174 on Three texture map.image.data mutation; no source edit in security patch."
+    ],
+    "hypothesis": [
+      "Likely mutable Three object access through React ref trips immutability analysis; root cause/repair must be verified."
+    ]
+  },
+  "evidence_sources": [
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-security-20261007/lint-source-only.log"
+  ],
+  "test_requirements": "Reproduce exact-head npm ci and source-only npm run lint, retain failing log; refactor mutable texture update without disabling lint rules; verify actual texture edit/upload, undo and save/reopen with current archive contract; full suite and builds, independent OpenAI review.",
+  "next_action": "Inspect Three texture update and React ref ownership; make semantically equivalent rule-compliant update and test persistence.",
+  "expected_value": "Restore source lint release gate; scores are planning estimates."
+}

@@ -1,0 +1,48 @@
+{
+  "sha256": "f799f83a4f8e3d77b3435a0cd98d0f41780344529ee1ce3547fcde77df5e9494",
+  "frames": [
+    {
+      "outputTime": 0.5,
+      "sourceTime": 0.5,
+      "source": "/Users/agentsattari/thecreateco-company/reports/scenepilot-golden-release18/fixtures/sp-golden-main-30fps.mp4",
+      "mae": 1.2556712962962964,
+      "fixedTolerance": 6,
+      "passed": true
+    },
+    {
+      "outputTime": 5,
+      "sourceTime": 1,
+      "source": "/Users/agentsattari/thecreateco-company/reports/scenepilot-golden-release18/fixtures/sp-golden-broll-24fps.mp4",
+      "mae": 1.5513194444444445,
+      "fixedTolerance": 6,
+      "passed": true
+    },
+    {
+      "outputTime": 11,
+      "sourceTime": 11,
+      "source": "/Users/agentsattari/thecreateco-company/reports/scenepilot-golden-release18/fixtures/sp-golden-main-30fps.mp4",
+      "mae": 1.2048379629629629,
+      "fixedTolerance": 6,
+      "passed": true
+    }
+  ],
+  "audio": [
+    {
+      "time": 0.1,
+      "rms": 0.018625654581411733
+    },
+    {
+      "time": 1,
+      "rms": 0.06309085554895284
+    },
+    {
+      "time": 6.5,
+      "rms": 0.07381732324217373
+    },
+    {
+      "time": 11.8,
+      "rms": 0.018604369447336004
+    }
+  ],
+  "queue": "golden-repeat-3\nRender complete\nCOMPLETED · 1920px / 30fps · 100%"
+}

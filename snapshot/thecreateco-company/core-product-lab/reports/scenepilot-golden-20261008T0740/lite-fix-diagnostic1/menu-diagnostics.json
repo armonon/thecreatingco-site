@@ -1,0 +1,216 @@
+{
+  "bounds": {
+    "x": 1123.046875,
+    "y": 735,
+    "width": 176,
+    "height": 32,
+    "top": 735,
+    "right": 1299.046875,
+    "bottom": 767,
+    "left": 1123.046875
+  },
+  "target": [
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "z": "auto",
+      "position": "static",
+      "contain": "none",
+      "filter": "none",
+      "backdrop": "none",
+      "overflow": "visible"
+    },
+    {
+      "tag": "DIV",
+      "class": "shell-disclosure-content",
+      "z": "80",
+      "position": "absolute",
+      "contain": "none",
+      "filter": "none",
+      "backdrop": "none",
+      "overflow": "auto"
+    },
+    {
+      "tag": "DETAILS",
+      "class": "shell-disclosure ",
+      "z": "auto",
+      "position": "relative",
+      "contain": "none",
+      "filter": "none",
+      "backdrop": "none",
+      "overflow": "visible"
+    },
+    {
+      "tag": "DIV",
+      "class": "timeline-legend",
+      "z": "auto",
+      "position": "static",
+      "contain": "none",
+      "filter": "none",
+      "backdrop": "none",
+      "overflow": "visible"
+    },
+    {
+      "tag": "DIV",
+      "class": "timeline-toolbar",
+      "z": "auto",
+      "position": "static",
+      "contain": "none",
+      "filter": "none",
+      "backdrop": "none",
+      "overflow": "visible"
+    },
+    {
+      "tag": "DIV",
+      "class": "timeline-control-deck",
+      "z": "20",
+      "position": "relative",
+      "contain": "none",
+      "filter": "none",
+      "backdrop": "none",
+      "overflow": "visible"
+    },
+    {
+      "tag": "SECTION",
+      "class": "timeline-wrap",
+      "z": "15",
+      "position": "relative",
+      "contain": "none",
+      "filter": "none",
+      "backdrop": "blur(18px)",
+      "overflow": "hidden"
+    },
+    {
+      "tag": "MAIN",
+      "class": "studio-shell lite-shell mode-pro view-sequence workspace-edit  studio-adaptive-shell",
+      "z": "auto",
+      "position": "static",
+      "contain": "none",
+      "filter": "none",
+      "backdrop": "none",
+      "overflow": "hidden"
+    },
+    {
+      "tag": "DIV",
+      "class": "",
+      "z": "auto",
+      "position": "static",
+      "contain": "none",
+      "filter": "none",
+      "backdrop": "none",
+      "overflow": "visible"
+    },
+    {
+      "tag": "DIV",
+      "class": "",
+      "z": "auto",
+      "position": "static",
+      "contain": "none",
+      "filter": "none",
+      "backdrop": "none",
+      "overflow": "visible"
+    },
+    {
+      "tag": "BODY",
+      "class": "",
+      "z": "auto",
+      "position": "static",
+      "contain": "none",
+      "filter": "none",
+      "backdrop": "none",
+      "overflow": "hidden auto"
+    },
+    {
+      "tag": "HTML",
+      "class": "",
+      "z": "auto",
+      "position": "static",
+      "contain": "none",
+      "filter": "none",
+      "backdrop": "none",
+      "overflow": "visible"
+    }
+  ],
+  "interceptor": [
+    {
+      "tag": "DIV",
+      "class": "inspector",
+      "z": "auto",
+      "position": "static",
+      "contain": "none",
+      "filter": "none",
+      "backdrop": "none",
+      "overflow": "visible"
+    },
+    {
+      "tag": "ASIDE",
+      "class": "control-column",
+      "z": "auto",
+      "position": "static",
+      "contain": "none",
+      "filter": "none",
+      "backdrop": "blur(18px)",
+      "overflow": "auto"
+    },
+    {
+      "tag": "SECTION",
+      "class": "workspace",
+      "z": "auto",
+      "position": "static",
+      "contain": "none",
+      "filter": "none",
+      "backdrop": "none",
+      "overflow": "hidden"
+    },
+    {
+      "tag": "MAIN",
+      "class": "studio-shell lite-shell mode-pro view-sequence workspace-edit  studio-adaptive-shell",
+      "z": "auto",
+      "position": "static",
+      "contain": "none",
+      "filter": "none",
+      "backdrop": "none",
+      "overflow": "hidden"
+    },
+    {
+      "tag": "DIV",
+      "class": "",
+      "z": "auto",
+      "position": "static",
+      "contain": "none",
+      "filter": "none",
+      "backdrop": "none",
+      "overflow": "visible"
+    },
+    {
+      "tag": "DIV",
+      "class": "",
+      "z": "auto",
+      "position": "static",
+      "contain": "none",
+      "filter": "none",
+      "backdrop": "none",
+      "overflow": "visible"
+    },
+    {
+      "tag": "BODY",
+      "class": "",
+      "z": "auto",
+      "position": "static",
+      "contain": "none",
+      "filter": "none",
+      "backdrop": "none",
+      "overflow": "hidden auto"
+    },
+    {
+      "tag": "HTML",
+      "class": "",
+      "z": "auto",
+      "position": "static",
+      "contain": "none",
+      "filter": "none",
+      "backdrop": "none",
+      "overflow": "visible"
+    }
+  ]
+}

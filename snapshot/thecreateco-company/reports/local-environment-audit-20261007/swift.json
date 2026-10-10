@@ -1,0 +1,10 @@
+{
+  "command": [
+    "swift",
+    "--version"
+  ],
+  "started_at": "2026-10-08T02:52:26.263210+00:00",
+  "exit_code": 0,
+  "stdout": "Apple Swift version 6.3.1 (swiftlang-6.3.1.1.2 clang-2100.0.123.102)\nTarget: arm64-apple-macosx26.0\n",
+  "stderr": "swift-driver version: 1.148.6 "
+}

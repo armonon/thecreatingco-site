@@ -1,0 +1,8 @@
+{
+  "published_deploy": "6ac6fe7a70a37106cdf27df7",
+  "all47_manifest_hashes_match": true,
+  "public_files": {
+    "/test/bounce.js": true,
+    "/sw.js": true
+  }
+}

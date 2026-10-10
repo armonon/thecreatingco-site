@@ -1,0 +1,69 @@
+{
+  "at": "2026-10-08T02:12:19.665Z",
+  "sourceSha": "1569ef377f6d3e079936116b1d8e5c4fe7586f48",
+  "sourceDirty": true,
+  "engine": "chromium",
+  "pass": false,
+  "scope": "Generated-fixture browser workflow; not labelled-music accuracy or physical mobile qualification",
+  "checks": [
+    {
+      "name": "Import -> actual decoder/worker -> key/Camelot/tempo and silence refusal",
+      "pass": true,
+      "rows": [
+        [
+          "C major 120.wav",
+          "0:14",
+          "C major",
+          "8B",
+          "120",
+          "-17.8 dB RMS",
+          "Alt. G major."
+        ],
+        [
+          "A minor 100.wav",
+          "0:14",
+          "A minortentative",
+          "8A",
+          "100rough",
+          "-17.8 dB RMS",
+          "Alt. A major. BPM: No steady pulse found (rough value shown)"
+        ],
+        [
+          "silence.wav",
+          "0:04",
+          "—",
+          "—",
+          "—",
+          "—",
+          "Key: Too quiet; BPM: Too quiet"
+        ]
+      ],
+      "elapsedMs": 790
+    }
+  ],
+  "errors": [
+    "WebSocket closed without opened."
+  ],
+  "fixtures": [
+    {
+      "name": "C major 120.wav",
+      "bytes": 1852244,
+      "sha256": "505b45f770431befd0fa8494e1bacdc333a7ea8f6dc6273396401adb84eec920",
+      "provenance": "Original deterministic synthesis in this script"
+    },
+    {
+      "name": "A minor 100.wav",
+      "bytes": 1852244,
+      "sha256": "67d7b02e5a4415bc87352e0fc4ef7197d94bd7e3f2e42f262d04bbbae6147b32",
+      "provenance": "Original deterministic synthesis in this script"
+    },
+    {
+      "name": "silence.wav",
+      "bytes": 529244,
+      "sha256": "f9ab3a72a1740b3935f2435611fd2a5e577652990afd66f520b67504fae26e0d",
+      "provenance": "Original deterministic synthesis in this script"
+    }
+  ],
+  "browserVersion": "153.0.8010.12",
+  "error": "locator.selectOption: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByLabel('Sort', { exact: true })\u001b[22m\n\n    at /Users/agentsattari/code/core-product-lab/key-bpm/scripts/qualify-key-bpm.mjs:43:45"
+}

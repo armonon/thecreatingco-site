@@ -1,0 +1,8 @@
+{
+  "source": "02c6eced0e572eafe5c5c2f8e4fe1b0e8b011b40",
+  "platform": "Darwin-25.2.0-arm64-arm-64bit-Mach-O",
+  "node": "v26.9.0",
+  "model": "OpenAI inherited Sol (parent confirmed); exact runtime model ID not exposed",
+  "deps": "read-only reuse /Users/agentsattari/code/company-worktrees/scenepilot-reframe-lifecycle-20261009/node_modules",
+  "time": "2026-10-09T17:41:43.617875+00:00"
+}

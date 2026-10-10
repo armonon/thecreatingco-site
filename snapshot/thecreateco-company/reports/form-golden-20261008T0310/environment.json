@@ -1,0 +1,14 @@
+{
+  "observed_at": "2026-10-08T03:16:16.240730+00:00",
+  "source_sha": "1e7f6d1c84a6c956ece3cfe6f74b665208bf069c",
+  "tracked_changes": "",
+  "branch": "qa/form-golden-20261008T0310",
+  "host": "Darwin-25.2.0-arm64-arm-64bit-Mach-O",
+  "node": "v22.23.2",
+  "actual_model": "openai/gpt-6.1-sol",
+  "model_evidence": "session_status current, runtime OpenAI Codex",
+  "fallback_used": null,
+  "review": "No product-code change or consequential architecture/release decision; independent model review not invoked. Native STEP reader is a geometry check, not a model review.",
+  "test_mode": "Actual headless Chrome/SwiftShader, isolated desktop:web:dev target, actual OCCT worker; no native API mocks",
+  "native_toolchain": "Cargo1.99.0 in code/toolchains/reclaim-rust; rustfmt component absent; no global toolchain edits"
+}

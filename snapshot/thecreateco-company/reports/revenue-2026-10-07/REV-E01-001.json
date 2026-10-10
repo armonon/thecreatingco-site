@@ -1,0 +1,32 @@
+{
+  "expected_revenue_impact": "Unknown; validation-stage, not a forecast",
+  "cost": {
+    "new_spend_usd": 0,
+    "actual_labor_cost": null
+  },
+  "source_evidence": [
+    "REVENUE_DIRECTIVE.md",
+    "reports/revenue-2026-10-07/README.md"
+  ],
+  "result": null,
+  "task_id": "REV-E01-001",
+  "title": "Validate one scoped creative-workflow service with qualified buyer evidence",
+  "category": "revenue_validation",
+  "workstream": "GROWTH",
+  "accountable_owner": "Growth with revenue-director decision owner",
+  "expected_value": "Find recurring buyer pain and a paid-pilot decision before major builds",
+  "confidence": "Low; vendor stories only, no direct buyer validation",
+  "effort": "Maximum 6 preparation/research hours; one concurrent pilot later",
+  "time_to_signal": "48 active-work hours preparation; 7 days response window after authorized launch",
+  "dependencies": [
+    "M04"
+  ],
+  "next_action": "Use data/revenue/first-validation-pack.md. Research 5 genuinely qualified buyer opportunities, prepare inspected personalization and synthetic delivery evidence. Existing Growth gates govern any send. Prices internal until approved; report interviews/proposal requests/paid receipts separately.",
+  "scores": {
+    "impact": 9,
+    "user_value": 8,
+    "confidence": 6,
+    "effort": 3,
+    "risk": 2
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "error": null,
+  "pending": [
+    "blob:http://127.0.0.1:4197/a5e4807a-6a16-4525-9efd-b3af44fbd06f"
+  ],
+  "failed": [],
+  "errors": [],
+  "qa": true,
+  "readyState": "complete"
+}

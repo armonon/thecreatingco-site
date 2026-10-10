@@ -1,0 +1,53 @@
+{
+  "product_id": "ghost",
+  "next_milestone": "Instrument natural-close/abrupt-exit recovery timing; verify latest snapshot/output is durable without synthetic preflush, then broaden garment/platform qualification.",
+  "completion_observations": {
+    "candidate_sha": "bfad2ee98a5194cc84892cc7a13a43e28fefea9b",
+    "observed_at": "2026-10-09T12:31:29.034715+00:00",
+    "gates": {
+      "core_workflow": {
+        "status": "UNVERIFIED",
+        "source_sha": "bfad2ee98a5194cc84892cc7a13a43e28fefea9b",
+        "observed_at": "2026-10-09T12:31:29.034715+00:00",
+        "coverage_complete": false,
+        "summary": "Chrome bundled jacket actual garment worker/import/adjust/generate/portable reopen PASS subset; no representative real-fixture/fidelity/full-platform qualification.",
+        "evidence": [
+          "/Users/agentsattari/thecreateco-company/reports/ghost-roundtrip-20261009/README.md",
+          "/Users/agentsattari/thecreateco-company/reports/ghost-roundtrip-20261009/browser-output/browser-roundtrip.json",
+          "/Users/agentsattari/thecreateco-company/reports/ghost-roundtrip-20261009/director-verification.json"
+        ]
+      },
+      "save_reopen_export": {
+        "status": "UNVERIFIED",
+        "source_sha": "bfad2ee98a5194cc84892cc7a13a43e28fefea9b",
+        "observed_at": "2026-10-09T12:31:29.034715+00:00",
+        "coverage_complete": false,
+        "summary": "Portable fresh-context editable collection record/settings and two original photo hashes identical; independent Python GLB2 parse 13meshes/54678 finite vertices/2embedded PNG material refs PASS subset. Full workflow/platform/release unqualified.",
+        "evidence": [
+          "/Users/agentsattari/thecreateco-company/reports/ghost-roundtrip-20261009/README.md",
+          "/Users/agentsattari/thecreateco-company/reports/ghost-roundtrip-20261009/browser-output/browser-roundtrip.json",
+          "/Users/agentsattari/thecreateco-company/reports/ghost-roundtrip-20261009/director-verification.json"
+        ]
+      },
+      "reliability_recovery": {
+        "status": "UNVERIFIED",
+        "source_sha": "bfad2ee98a5194cc84892cc7a13a43e28fefea9b",
+        "observed_at": "2026-10-09T12:31:29.034715+00:00",
+        "coverage_complete": false,
+        "summary": "Completed stored snapshot survives full persistent Chrome process restart and UI restore/resave; one intermittent0-model observation with unmeasured debounce/commit timing is inconclusive. Natural-close/crash/migration/quota/cancel unqualified.",
+        "evidence": [
+          "/Users/agentsattari/thecreateco-company/reports/ghost-roundtrip-20261009/README.md",
+          "/Users/agentsattari/thecreateco-company/reports/ghost-roundtrip-20261009/browser-output/browser-roundtrip.json",
+          "/Users/agentsattari/thecreateco-company/reports/ghost-roundtrip-20261009/director-verification.json",
+          "/Users/agentsattari/thecreateco-company/reports/ghost-roundtrip-20261009/recovery-process-cycle.json",
+          "/Users/agentsattari/thecreateco-company/reports/ghost-roundtrip-20261009/recovery-untriggered-close.json"
+        ]
+      }
+    },
+    "deployment": {
+      "status": "UNVERIFIED",
+      "changed": false
+    },
+    "next_action": "Instrument recovery sync/debounce/transaction completion and close timing before accepting or diagnosing lost latest output. Preserve portable backup workaround and existing product/release gates."
+  }
+}

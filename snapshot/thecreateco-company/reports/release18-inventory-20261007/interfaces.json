@@ -1,0 +1,3856 @@
+[
+  {
+    "id": "luma",
+    "url": "https://luma.thecreatingco.com/studio",
+    "observed_at": "2026-10-08T02:08:06.908Z",
+    "scope": "Read-only rendered public interface; not workflow qualification",
+    "browser": "153.0.8010.12",
+    "http_status": 200,
+    "final_url": "https://luma.thecreatingco.com/studio",
+    "title": "Luma",
+    "visible_text": "Skip to canvas\nL\nLuma\nDunes\nUnsaved changes\nWorkspace\nFit\n46.22%\nExport\nBrush\nBrushes\nSize\n48px\nHard\n70%\nFlow\n32%\nOpacity\n90%\nSmooth\n18%\nMirror\nOff\nLeft / right\nTop / bottom\nFour-way\nRadial\nKaleidoscope\nFit\nGuides\nFocus\nDunes\n×\n＋\npx\n0\n200\n400\n600\n800\n1000\n1200\n1400\n1600\n1800\n2000\n2200\n0\n200\n400\n600\n800\n1000\n1200\n1400\n48 px\nFOCUS\nProject\nDunes\n⌄\nDunes\nRaster\nFocus\nAdd\nProperties\nNeural Lab\nBrush library\nCustom settings · 24 brushes\nAll\nInk\nDry\nPaint\nAir\nTexture\nPattern\nFine liner\nInk\nMonoline\nInk\nBrush pen\nInk\nBroad nib\nInk\nGraphite\nDry\nCharcoal\nDry\nChalk\nDry\nDry flat\nDry\nSolid round\nPaint\nSoft round\nPaint\nFlat color\nPaint\nGlaze\nPaint\nAirbrush\nAir\nMist\nAir\nLight glaze\nAir\nVelvet\nAir\nSpeckle\nTexture\nGrain cloud\nTexture\nConfetti\nTexture\nScumble\nTexture\nPearls\nPattern\nStitch\nPattern\nRibbon\nPattern\nPetal trail\nPattern\nPreviews show pen pressure. Fingers paint at full pressure.\n＋ Make a brush from an image\nMirror & repeat\nOff\nOff\nLeft / right\nTop / bottom\nFour-way\nRadial\nKaleidoscope\nBrush\nSize\n48px\nHardness\n70%\nOpacity\n90%\nFlow\n32%\nStabilizer\n18%\nSpacing\n12%\nRoundness\n100%\nAngle\n0°\nTilt shape\n55%\nScatter\n0%\nTexture\n0%\nBlend\nNormal\nMultiply\nScreen\nOverlay\nnormal\nPressure size\nPressure opacity\nAirbrush buildup\nLayers\nLayers 1\n＋ Adjustment\nTone\nCurves\nLevels\nHue / Saturation\nBlack & White\nColor Balance\nPhoto Filter\nChannel Mixer\nColor Lookup\nGradient Map\nRelight Field\nThreshold\nPosterize\nInvert\nDunes\nRaster\nfx\nOpacity\n100%\nBLEND GRAPH\n1 of 8 passes\n＋ Add blend mode\nDetail\nGlow\nDepth\nColor\nCinema\n◉\nPASS 1\n↑\n↓\n×\nNormal\nDissolve\nDarken\nMultiply\nColor Burn\nLinear Burn\nDarker Color\nLighten\nScreen\nColor Dodge\nLinear Dodge (Add)\nLighter Color\nOverlay\nSoft Light\nHard Light\nVivid Light\nLinear Light\nPin Light\nHard Mix\nDifference\nExclusion\nSubtract\nDivide\nHue\nSaturation\nColor\nLuminosity\nPass opacity\n100%\nAdvanced blending\nFill · Blend If\nLock layer\nClip below\n◇ Smart object\nfx Layer style…",
+    "controls": [
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "thecreateco apps",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Back to Luma home",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Start shared editing",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Workspaces & shortcuts",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Undo",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Redo",
+        "disabled": true
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Fit",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Export",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Move tools",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Paint tools",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Select tools",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Retouch tools",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Create tools",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "AI tools",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "More tools and command search",
+        "disabled": false
+      },
+      {
+        "tag": "INPUT",
+        "type": "color",
+        "label": "Foreground paint color",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Swap foreground and background colors",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Open brush library",
+        "disabled": false
+      },
+      {
+        "tag": "INPUT",
+        "type": "color",
+        "label": "Foreground color",
+        "disabled": false
+      },
+      {
+        "tag": "INPUT",
+        "type": "range",
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "INPUT",
+        "type": "range",
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "INPUT",
+        "type": "range",
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "INPUT",
+        "type": "range",
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "INPUT",
+        "type": "range",
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "SELECT",
+        "type": null,
+        "label": "Off\nLeft / right\nTop / bottom\nFour-way\nRadial\nKaleidoscope",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Fit",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Guides",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Focus",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Dunes",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Close Dunes",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "New document",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Collapse Focus panel",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Select Dunes. Double-click to focus.",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Focus",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Pin in Focus",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Properties",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Close Properties",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Neural Lab",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Close Neural Lab",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Collapse right panel group",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Properties panel options",
+        "disabled": false
+      },
+      {
+        "tag": "INPUT",
+        "type": "search",
+        "label": "Search brushes",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "All",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Ink",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Dry",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Paint",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Air",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Texture",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Pattern",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Fine liner\nInk",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Monoline\nInk",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Brush pen\nInk",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Broad nib\nInk",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Graphite\nDry",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Charcoal\nDry",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Chalk\nDry",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Dry flat\nDry",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Solid round\nPaint",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Soft round\nPaint",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Flat color\nPaint",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Glaze\nPaint",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Airbrush\nAir",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Mist\nAir",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Light glaze\nAir",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Velvet\nAir",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Speckle\nTexture",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Grain cloud\nTexture",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Confetti\nTexture",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Scumble\nTexture",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Pearls\nPattern",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Stitch\nPattern",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Ribbon\nPattern",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Petal trail\nPattern",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "＋ Make a brush from an image",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Off",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Left / right",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Top / bottom",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Four-way",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Radial",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Kaleidoscope",
+        "disabled": false
+      },
+      {
+        "tag": "INPUT",
+        "type": "color",
+        "label": "Brush color",
+        "disabled": false
+      },
+      {
+        "tag": "INPUT",
+        "type": "range",
+        "label": null,
+        "disabled": false
+      }
+    ],
+    "horizontal_overflow": false,
+    "phone_horizontal_overflow": false,
+    "page_errors": []
+  },
+  {
+    "id": "form",
+    "url": "https://form.thecreatingco.com/studio",
+    "observed_at": "2026-10-08T02:08:13.327Z",
+    "scope": "Read-only rendered public interface; not workflow qualification",
+    "browser": "153.0.8010.12",
+    "error": "locator.waitFor: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('body') to be visible\u001b[22m\n\u001b[2m    52 × locator resolved to hidden <body class=\"__variable_geist_0tvmz3h __variable_geist_mono_1diim1n\">…</body>\u001b[22m\n",
+    "page_errors": []
+  },
+  {
+    "id": "stemdeck",
+    "url": "https://stemdeck.thecreatingco.com/studio",
+    "observed_at": "2026-10-08T02:08:45.796Z",
+    "scope": "Read-only rendered public interface; not workflow qualification",
+    "browser": "153.0.8010.12",
+    "http_status": 200,
+    "final_url": "https://stemdeck.thecreatingco.com/studio",
+    "title": "Online Music Studio & Browser DAW | StemDeck | Sattari Music",
+    "visible_text": "Skip to workspace\nLibrary\nPerform\nArrange\nMixer\nPlay All\nTempo\nBPM\nKey\nOff\nC\nDb\nD\nEb\nE\nF\nF#\nG\nAb\nA\nBb\nB\nSTEMDECK\nCapture\nInput inspector\nMaster\n−∞\nUI 4 ms\nTools\nSettings\nPerform\nUntitled session\nLayout\nImport audio\nSave project\nDrop a track to begin\nCrossfade\nSmooth\nSharp\nLinear\nREV\nSync all\nKey sync\nA\nB\nC\nD\nAuto mix\nVOX\nDRM\nBAS\nOTH\nYOUR LIVE WORKSPACE\nYour next set starts here.\nDrop a track, shape the stems, and capture the moment.\nAdd Source\nMic, input, or track · Everything stays on this device\nPads & FX\nPERFORMANCE PADS\nBANK A\n01\nKick\n02\nSnare\n03\nHat\n04\nClap\n05\nLow\n06\nRise\n07\nPerc\n08\nTone\nGLOBAL FX\nECHO\nSPACE\n\nAllow anonymous usage counts to help improve Sattari? No audio or form contents. Privacy choices\n\nNo thanks\nAllow counts",
+    "controls": [
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Close cart",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Library",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Perform",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Arrange",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Mixer",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Play all decks",
+        "disabled": true
+      },
+      {
+        "tag": "INPUT",
+        "type": "number",
+        "label": "Global tempo",
+        "disabled": false
+      },
+      {
+        "tag": "SELECT",
+        "type": null,
+        "label": "Project key",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "thecreateco apps",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Record live set",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Input inspector",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Master inspector",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Tools",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Settings",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Import audio",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Save project file",
+        "disabled": false
+      },
+      {
+        "tag": "INPUT",
+        "type": "range",
+        "label": "Performance crossfader",
+        "disabled": false
+      },
+      {
+        "tag": "SELECT",
+        "type": null,
+        "label": "Crossfader curve",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "REV",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Sync all",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Key sync",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "A",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "B",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "C",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "D",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Auto mix",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Add source",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Collapse Pads & FX",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "01\nKick",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Load Pad 1",
+        "disabled": false
+      },
+      {
+        "tag": "INPUT",
+        "type": "range",
+        "label": "Pad 1 gain",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "02\nSnare",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Load Pad 2",
+        "disabled": false
+      },
+      {
+        "tag": "INPUT",
+        "type": "range",
+        "label": "Pad 2 gain",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "03\nHat",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Load Pad 3",
+        "disabled": false
+      },
+      {
+        "tag": "INPUT",
+        "type": "range",
+        "label": "Pad 3 gain",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "04\nClap",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Load Pad 4",
+        "disabled": false
+      },
+      {
+        "tag": "INPUT",
+        "type": "range",
+        "label": "Pad 4 gain",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "05\nLow",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Load Pad 5",
+        "disabled": false
+      },
+      {
+        "tag": "INPUT",
+        "type": "range",
+        "label": "Pad 5 gain",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "06\nRise",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Load Pad 6",
+        "disabled": false
+      },
+      {
+        "tag": "INPUT",
+        "type": "range",
+        "label": "Pad 6 gain",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "07\nPerc",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Load Pad 7",
+        "disabled": false
+      },
+      {
+        "tag": "INPUT",
+        "type": "range",
+        "label": "Pad 7 gain",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "08\nTone",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Load Pad 8",
+        "disabled": false
+      },
+      {
+        "tag": "INPUT",
+        "type": "range",
+        "label": "Pad 8 gain",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Global effects XY pad",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "No thanks",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Allow counts",
+        "disabled": false
+      }
+    ],
+    "horizontal_overflow": false,
+    "phone_horizontal_overflow": false,
+    "page_errors": []
+  },
+  {
+    "id": "scenepilot",
+    "url": "https://scenepilot.thecreatingco.com/app/",
+    "observed_at": "2026-10-08T02:08:48.513Z",
+    "scope": "Read-only rendered public interface; not workflow qualification",
+    "browser": "153.0.8010.12",
+    "http_status": 200,
+    "final_url": "https://scenepilot.thecreatingco.com/app/",
+    "title": "ScenePilot Studio",
+    "visible_text": "SCENEPILOT\nBROWSER LITE\nAuto Edit\nFile\nRender MP4\nNEW PROJECT\nSet up your video\n\nGive your project a name and start creating. You can change the canvas and export settings later.\n\nPROJECT NAME\nCanvas & export settings\nSource · 30 fps\nOUTPUT\n1280 × 720\nSource · 30 fps\nStart editing\nUntitled project\nBROWSER PROJECT\nEdit\nAuto Cut\nTools\nSTART HERE\nBring in your song and shots\nImport media\nSimple\nAdvanced\nLIVE ENGINE\nAUTO DIRECTOR\n120 BPM · 0 HITS\nAUTO DIRECTOR\nYour footage. Your first cut.\n\nAnalyze the song, generate an editable sequence, then finish the timing in Edit. Desktop Pro adds layered motion compositions.\n\n1 Media\n2 Timing & style\n3 Generate\n4 Review & apply\nDROP VIDEO OR SONG\nor choose a file\nWAITING FOR MEDIA\n1. Choose media\n01 / SONG\nYour song (or video)\n02 / CLIPS\nYour footage & lights\n2. Timing & style\nSTART WITH AN OUTCOME\nYour direction. A reviewable first cut.\nChoose timing and constraints, generate a draft, then review and apply it to a normal editable timeline. Your explicit choices stay in control.\nMusic video\nFull song · beat edit · editable effects\nSocial cut\nVertical · fast hook · captions\nLyric video\nBeat-timed words · cinematic motion\nCinematic\nLonger shots · restrained motion\nStory cut\nTalking video · dead air removed · auto rough cut\nTiming & constraints\n\nGeneration creates a separate saved draft. The timeline changes only when you apply it; Undo restores the previous edit.\n\nEditorial intent\nTiming approach\nSuggest from evidence\nFollow music\nFollow scenes / action\nFollow dialogue\nDialogue + music\n\nNo reliable rhythm or transcript: follow visual scenes and action.\n\nTarget duration (seconds; 0 = automatic)\nFine-tune editing rules\nReview scene boundaries · 0\nSTYLE\nLet AUTO pick, or choose a look\nAUTO ✨\nReads the tempo, energy and drop — picks the vibe for you\nCINEMATIC\nLong holds, teal shadows, a slow push on the beat\nHYPERPOP\nCuts on every beat, blown-out neon, strobes on every drum hit\nRETRO VHS\nTape grain and whip pans, like a dubbed cassette\nSTROBE\nRelentless every-beat strobe and flash cuts — built for the drop\nNOIR\nBlack and white, crushed contrast, no tricks\nOUTPUT\nPick the aspect ratio\nSource\n9:16\n1:1\n4:5\n16:9\n2.39:1\n21:9\nMatch the footage\nBrowser Lite renders H.264 MP4 at 1080p / 30 fps. Desktop Pro adds 4K and film-rate profiles.\nENERGY\nHow hard should it hit?\nSMOOTH\nDYNAMIC\nMAXIMUM\n3. Generate your draft\nAdd media to get started\n\nCreates a reviewable draft. Apply it below when you’re happy, then refine it in Edit.\n\n4. Review & apply\nDraft versions · 0/8\n\nNo draft yet. Choose your timing approach, add media and generate a first cut.\n\nOptional refinements · lighting, lyrics & advanced tools\n120\nBPM\n0\nHITS\n0\nCUTS\n\nImport media and place it on the timeline, or choose Auto Cut for an assisted edit.\n\nImport cut",
+    "controls": [
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "thecreateco apps",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "New project",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Restore saved project",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Open command palette",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Save project",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Undo",
+        "disabled": true
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Redo",
+        "disabled": true
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Render MP4",
+        "disabled": true
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Close",
+        "disabled": false
+      },
+      {
+        "tag": "INPUT",
+        "type": null,
+        "label": "My project",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Start editing",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Edit",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Auto Cut",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": true
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": true
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": true
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": true
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "START HERE\nBring in your song and shots\nImport media",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Simple",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Advanced",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "DROP VIDEO OR SONG\nor choose a file",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Play",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "01 / SONG\nYour song (or video)",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "02 / CLIPS\nYour footage & lights",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Music video\nFull song · beat edit · editable effects",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Social cut\nVertical · fast hook · captions",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Lyric video\nBeat-timed words · cinematic motion",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Cinematic\nLonger shots · restrained motion",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Story cut\nTalking video · dead air removed · auto rough cut",
+        "disabled": false
+      },
+      {
+        "tag": "SELECT",
+        "type": null,
+        "label": "Suggest from evidence\nFollow music\nFollow scenes / action\nFollow dialogue\nDialogue + music",
+        "disabled": false
+      },
+      {
+        "tag": "INPUT",
+        "type": "number",
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "INPUT",
+        "type": "number",
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "INPUT",
+        "type": "number",
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "INPUT",
+        "type": "checkbox",
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "INPUT",
+        "type": "checkbox",
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "INPUT",
+        "type": "checkbox",
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "INPUT",
+        "type": "number",
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "AUTO ✨\nReads the tempo, energy and drop — picks the vibe for you",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "CINEMATIC\nLong holds, teal shadows, a slow push on the beat",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "HYPERPOP\nCuts on every beat, blown-out neon, strobes on every drum hit",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "RETRO VHS\nTape grain and whip pans, like a dubbed cassette",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "STROBE\nRelentless every-beat strobe and flash cuts — built for the drop",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "NOIR\nBlack and white, crushed contrast, no tricks",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Source",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "9:16",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "1:1",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "4:5",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "16:9",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "2.39:1",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "21:9",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "SMOOTH",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "DYNAMIC",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "MAXIMUM",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Add media to get started",
+        "disabled": false
+      },
+      {
+        "tag": "SELECT",
+        "type": null,
+        "label": "Strobe light pattern",
+        "disabled": false
+      },
+      {
+        "tag": "INPUT",
+        "type": "text",
+        "label": "Tell the director what to change…",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": true
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "SELECT",
+        "type": null,
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": true
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": true
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": false
+      }
+    ],
+    "horizontal_overflow": false,
+    "phone_horizontal_overflow": true,
+    "page_errors": []
+  },
+  {
+    "id": "reclaim",
+    "url": "https://reclaim.thecreatingco.com/browser/",
+    "observed_at": "2026-10-08T02:08:52.189Z",
+    "scope": "Read-only rendered public interface; not workflow qualification",
+    "browser": "153.0.8010.12",
+    "http_status": 200,
+    "final_url": "https://reclaim.thecreatingco.com/browser/",
+    "title": "Reclaim · File Review · Browser testing",
+    "visible_text": "Skip to workspace\nReclaim · File Review\nAbout this edition\nTesting notes\nReclaim home\n\nREAD-ONLY BROWSER COMPANION\n\nA clearer view of your files.\n\nSelect files or a folder to compare sizes and find byte-identical copies. Nothing is changed or removed.\n\nChoose files\nChoose a folder\nTry sample files\nExport review report\n\nReady when you are.\n\n0\nSelected files\n0 B\nTotal selected size\n0 B\nExtra identical copies · no deletion\nSearch filenames\nFilter files\nAll selected files\nIdentical-copy groups\nNot compared\nFile\tSize\tContent comparison\nStart with a small folder, or try the original sample files.\n\nEqual-size files up to 64 MB each are compared using SHA-256. Larger files are listed as “Not compared”; they are never called duplicates. The browser cannot inspect system caches, other apps or your entire Mac. Works offline after your first visit — install it as an app from your browser.\n\nTesting notes\n\nThis browser companion reads only the files you select. It does not upload file contents, remove files or collect feedback. The exported report contains filenames and sizes; review it before sharing it with your testing contact. Public support contact details are still being confirmed.\n\nBrowser testing companion · Files are processed on this device. Data notes · Edition limits",
+    "controls": [
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "thecreateco apps",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Choose files",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Choose a folder",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Try sample files",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Export review report",
+        "disabled": true
+      },
+      {
+        "tag": "INPUT",
+        "type": null,
+        "label": "Search filenames",
+        "disabled": false
+      },
+      {
+        "tag": "SELECT",
+        "type": null,
+        "label": "All selected files\nIdentical-copy groups\nNot compared",
+        "disabled": false
+      }
+    ],
+    "horizontal_overflow": false,
+    "phone_horizontal_overflow": false,
+    "page_errors": []
+  },
+  {
+    "id": "glyph",
+    "url": "https://glyph-studio-610.netlify.app/studio",
+    "observed_at": "2026-10-08T02:08:54.760Z",
+    "scope": "Read-only rendered public interface; not workflow qualification",
+    "browser": "153.0.8010.12",
+    "http_status": 200,
+    "final_url": "https://glyph-studio-610.netlify.app/studio",
+    "title": "Studio — Glyph Studio",
+    "visible_text": "Glyph\nALPHA\nMy Glyph Font · 0 of 85 glyphs · autosaved in this browser\nSave\nOpen\nOTF\nTTF\nSVG for Figma\nDraw\nKerning\nType tester\nUPPERCASE\nA\nB\nC\nD\nE\nF\nG\nH\nI\nJ\nK\nL\nM\nN\nO\nP\nQ\nR\nS\nT\nU\nV\nW\nX\nY\nZ\nLOWERCASE\na\nb\nc\nd\ne\nf\ng\nh\ni\nj\nk\nl\nm\nn\no\np\nq\nr\ns\nt\nu\nv\nw\nx\ny\nz\nFIGURES\n0\n1\n2\n3\n4\n5\n6\n7\n8\n9\nPUNCTUATION\n.\n,\n;\n:\n!\n?\n'\n\"\n-\n(\n)\n&\n@\n#\n/\n*\n+\n=\n%\n$\n_\n[\n]\nBrush\nPen\nErase\nWidth\n70\nA\nU+0041\nAdvance\nAuto-fit\nCopy from…\nReference letter\nClear\nLive preview\nSize\n56\nFont\nName\nAscender\nCap height\nx-height\nDescender\nDefault advance\nCurve smoothing\n35%\nUse elsewhere\n\nExport a TTF above, then open it in Luma Studio  through its Glyph tool or font picker to typeset with it there.\n\nFigma: \"SVG for Figma\" exports a glyph sheet — drag it onto a Figma canvas (or File → Import) and every glyph arrives as its own named vector layer, measured in font units.\n\nLocker\n\nKeep exports in your thecreateco Locker — stored in this browser on this device, no account or cloud.\n\nOTF\nTTF\nSVG\n.glyph\nSend to Luma\n\nAlpha. 31-character family names, no ligatures or accented characters yet. Undrawn characters fall back to the next typeface.\n\nNew project — start drawing, it autosaves as you go.",
+    "controls": [
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "thecreateco apps",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": true
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": true
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Save",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Open",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "OTF",
+        "disabled": true
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "TTF",
+        "disabled": true
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "SVG for Figma",
+        "disabled": true
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Draw",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Kerning",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Type tester",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Glyph A",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Glyph B",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Glyph C",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Glyph D",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Glyph E",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Glyph F",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Glyph G",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Glyph H",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Glyph I",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Glyph J",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Glyph K",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Glyph L",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Glyph M",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Glyph N",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Glyph O",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Glyph P",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Glyph Q",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Glyph R",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Glyph S",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Glyph T",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Glyph U",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Glyph V",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Glyph W",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Glyph X",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Glyph Y",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Glyph Z",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Glyph a",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Glyph b",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Glyph c",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Glyph d",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Glyph e",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Glyph f",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Glyph g",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Glyph h",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Glyph i",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Glyph j",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Glyph k",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Glyph l",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Glyph m",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Glyph n",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Glyph o",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Glyph p",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Glyph q",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Glyph r",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Glyph s",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Glyph t",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Glyph u",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Glyph v",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Glyph w",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Glyph x",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Glyph y",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Glyph z",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Glyph 0",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Glyph 1",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Glyph 2",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Glyph 3",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Glyph 4",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Glyph 5",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Glyph 6",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Glyph 7",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Glyph 8",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Glyph 9",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Glyph .",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Glyph ,",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Glyph ;",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Glyph :",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Glyph !",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Glyph ?",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Glyph '",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Glyph \"",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Glyph -",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Glyph (",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Glyph )",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Glyph &",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Glyph @",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Glyph #",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Glyph /",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Glyph *",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Glyph +",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Glyph =",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Glyph %",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Glyph $",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Glyph _",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Glyph [",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Glyph ]",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Brush",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Pen",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Erase",
+        "disabled": false
+      },
+      {
+        "tag": "INPUT",
+        "type": "range",
+        "label": null,
+        "disabled": false
+      }
+    ],
+    "horizontal_overflow": false,
+    "phone_horizontal_overflow": false,
+    "page_errors": []
+  },
+  {
+    "id": "split",
+    "url": "https://sattarimusic.com/studio/split",
+    "observed_at": "2026-10-08T02:08:56.979Z",
+    "scope": "Read-only rendered public interface; not workflow qualification",
+    "browser": "153.0.8010.12",
+    "http_status": 200,
+    "final_url": "https://sattarimusic.com/studio/split",
+    "title": "Split Stems On-Device: Vocals, Drums & Bass | Sattari Music",
+    "visible_text": "Skip to content\nHome\nAbout\nShop\nLocal Services\nDownloads\nSattari Hub\nCart\nSattari Hub\nOpen StemDeck\n\nSATTARI STUDIO LAB\n\nSplit\nALPHA\n\nDrop a song and split it into vocals, drums, bass and instruments with the HTDemucs model running in your browser. Mute the vocals, solo the bass, download WAV stems or open them straight in StemDeck.\n\nRuns on your device. No uploads.\nAdd a song\n\nWAV, MP3, FLAC, M4A, OGG · one song · up to 10 min\n\nChoose audio\nTry the 8-second demo\n\nModel: HTDemucs by Meta (MIT License), ONNX conversion by demucs-web (MIT), fetched from Hugging Face at a pinned revision and SHA-256 checked before use. Credits and licenses\n\nUse Split offline (optional)\n\nOffline Split needs the installed studio app. Reload this page once it has finished loading, or install the Sattari app, to turn it on.\n\nAlpha: what it does not do yet\nQuality is HTDemucs-class, not studio grade: expect some bleed between stems and artifacts on dense mixes.\n\"Instruments\" is everything that is not vocals, drums or bass (guitars, keys, synths together).\nFirst run downloads a 172 MB model from Hugging Face (cached afterwards). Desktop Chrome/Edge with WebGPU is fastest; CPU mode can take several minutes per song.\nOne song at a time, up to 10 minutes and 100 MB. Phones and tablets are untested.\nUse it on your own tracks or for practice; you are responsible for having the rights to what you separate.\nResults are not saved: download the WAVs or send them to StemDeck before leaving the page.\nSplit\nSeparate a song into vocals, drums, bass and instruments on your device.\nKey & BPM\nDrop a folder of tracks, get key, Camelot and tempo, export CSV.\nVox\nRecord or drop a vocal, tune it to the key, add a harmony, export WAV.\n\nAllow anonymous usage counts to help improve Sattari? No audio or form contents. Privacy choices\n\nNo thanks\nAllow counts",
+    "controls": [
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Switch to night mode",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Open cart",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Close cart",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "thecreateco apps",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Choose audio",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Try the 8-second demo",
+        "disabled": false
+      },
+      {
+        "tag": "INPUT",
+        "type": "file",
+        "label": "Add a song",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "No thanks",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Allow counts",
+        "disabled": false
+      }
+    ],
+    "horizontal_overflow": false,
+    "phone_horizontal_overflow": false,
+    "page_errors": []
+  },
+  {
+    "id": "captions",
+    "url": "https://scenepilot.thecreatingco.com/tools/captions/",
+    "observed_at": "2026-10-08T02:08:58.816Z",
+    "scope": "Read-only rendered public interface; not workflow qualification",
+    "browser": "153.0.8010.12",
+    "http_status": 200,
+    "final_url": "https://scenepilot.thecreatingco.com/tools/captions/",
+    "title": "Captions: Free Auto Subtitles, Animated Captions & SRT/VTT | ScenePilot",
+    "visible_text": "Skip to the tool\nSCENEPILOT\nCAPTIONS\nALPHA\nLOOP\nAUTOCUT\nREFRAME\nCAPTIONS\nBOARD\nGRADE\nOpen the editor\nON-DEVICE SPEECH-TO-TEXT · ALPHA\nCaptions\n\nDrop a talking clip, get word-timed captions in a few seconds, fix any word, pick a style, and export a burned-in WebM or SRT/VTT — then carry them into ScenePilot.\n\nPREVIEW\nNO CLIP\nDrop a video or audio clip\nMP4, MOV, WebM, MP3, WAV, M4A · up to 15 minutes · stays on this device\nChoose clip\n\nDrop a short video or audio clip to start.\n\n01 · TRANSCRIBE\nON THIS DEVICE\nMODEL\nFast · English (≈40 MB)\nAccurate · English (≈80 MB)\nMultilingual · tiny (≈40 MB)\nENGINE\nCPU · WASM (recommended)\nWebGPU · experimental, CPU fallback\nTranscribe\nImport SRT / VTT\nCAPTION LENGTH · 28 CHARACTERS\nbalanced\n02 · STYLE\nBOLD POP\nBold pop\nWORD POP\nHighlight box\nWORD BOX\nKaraoke\nKARAOKE FILL\nWord reveal\nWORD REVEAL\nClean subtitle\nSTATIC\n03 · EXPORT\nTRANSCRIBE FIRST\nBurn-in WebM\nSRT\nVTT (word timed)\nScenePilot cut\nHand off to ScenePilot\nExisting project: download the SRT, then in the editor run Import SRT / VTT captions from the command palette (⇧⌘P). Captions land as editable title cues.\nNew project: open the editor with this clip as the main media, then Import cut the .scenepilot.json. It replaces the open cut.\nALPHA · WHAT WORKS AND WHAT DOESN’T YET\n\nRuns in this browser tab. Your media is not uploaded. Works offline after the first visit. Chrome or Edge recommended.",
+    "controls": [
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "thecreateco apps",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Drop a video or audio clip\nMP4, MOV, WebM, MP3, WAV, M4A · up to 15 minutes · stays on this device",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Choose clip",
+        "disabled": false
+      },
+      {
+        "tag": "SELECT",
+        "type": null,
+        "label": "Fast · English (≈40 MB)\nAccurate · English (≈80 MB)\nMultilingual · tiny (≈40 MB)",
+        "disabled": false
+      },
+      {
+        "tag": "SELECT",
+        "type": null,
+        "label": "CPU · WASM (recommended)\nWebGPU · experimental, CPU fallback",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Transcribe",
+        "disabled": true
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Import SRT / VTT",
+        "disabled": false
+      },
+      {
+        "tag": "INPUT",
+        "type": "range",
+        "label": null,
+        "disabled": true
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Bold pop\nWORD POP",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Highlight box\nWORD BOX",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Karaoke\nKARAOKE FILL",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Word reveal\nWORD REVEAL",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Clean subtitle\nSTATIC",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Burn-in WebM",
+        "disabled": true
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "SRT",
+        "disabled": true
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "VTT (word timed)",
+        "disabled": true
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "ScenePilot cut",
+        "disabled": true
+      }
+    ],
+    "horizontal_overflow": false,
+    "phone_horizontal_overflow": false,
+    "page_errors": []
+  },
+  {
+    "id": "reframe",
+    "url": "https://scenepilot.thecreatingco.com/tools/reframe/",
+    "observed_at": "2026-10-08T02:09:00.528Z",
+    "scope": "Read-only rendered public interface; not workflow qualification",
+    "browser": "153.0.8010.12",
+    "http_status": 200,
+    "final_url": "https://scenepilot.thecreatingco.com/tools/reframe/",
+    "title": "Reframe: Free 9:16 / 4:5 / 1:1 Auto-Crop for Video | ScenePilot",
+    "visible_text": "Skip to the tool\nSCENEPILOT\nREFRAME\nALPHA\nLOOP\nAUTOCUT\nREFRAME\nCAPTIONS\nBOARD\nGRADE\nOpen the editor\n\nDrop a horizontal video here, or click to choose one.\n\nNothing is uploaded — it stays in this browser tab.\n\nDrop a horizontal video to start.\n\nALPHA · WHAT WORKS AND WHAT DOESN’T YET\n\nRuns in this browser tab. Your media is not uploaded. Works offline after the first visit. Chrome or Edge recommended.",
+    "controls": [
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "thecreateco apps",
+        "disabled": false
+      },
+      {
+        "tag": "DIV",
+        "type": null,
+        "label": "Drop a horizontal video here, or click to choose one.\n\nNothing is uploaded — it stays in this browser tab."
+      }
+    ],
+    "horizontal_overflow": false,
+    "phone_horizontal_overflow": false,
+    "page_errors": []
+  },
+  {
+    "id": "pocket-studio",
+    "url": "https://thecreatingco.com/community/network?view=Pocket%20Studio",
+    "observed_at": "2026-10-08T02:09:01.913Z",
+    "scope": "Read-only rendered public interface; not workflow qualification",
+    "browser": "153.0.8010.12",
+    "http_status": 200,
+    "final_url": "https://thecreatingco.com/community/network?view=Pocket%20Studio",
+    "title": "Community · thecreateco",
+    "visible_text": "thecreateco\nCOMMUNITY\nHome\nDiscover\nSongs\nSessions\nPocket Studio\nCreate\nMessages\nNotifications\nSaved\nProfile\nSettings\nEarlier discussions\nSign in / join\nTHECREATECO / COMMUNITY\nPocket Studio\nNo account needed to join in\nChoose a name\nAbout guest access\nCatch the idea.\n\nVoice, melody, sound. Record up to two minutes.\n\nMicrophone\nDefault microphone\nMicrophone 1\n00:00\nRecord\n\nMicrophone access starts only when you press Record.\n\nOn this device 0/20\n\nOriginals are stored in this browser. Download a copy to keep them if browser data is cleared.\n\nYour recordings will appear here.\n\nCommunity guidelines\nPrivacy\nAbout thecreateco",
+    "controls": [
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Home",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Discover",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Songs",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Sessions",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Pocket Studio",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Create",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Messages",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Notifications",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Saved",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Profile",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Settings",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Sign in / join",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Choose a name",
+        "disabled": false
+      },
+      {
+        "tag": "SELECT",
+        "type": null,
+        "label": "Default microphone\nMicrophone 1",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Record",
+        "disabled": false
+      }
+    ],
+    "horizontal_overflow": false,
+    "phone_horizontal_overflow": false,
+    "page_errors": []
+  },
+  {
+    "id": "autocut",
+    "url": "https://scenepilot.thecreatingco.com/tools/autocut/",
+    "observed_at": "2026-10-08T02:09:06.698Z",
+    "scope": "Read-only rendered public interface; not workflow qualification",
+    "browser": "153.0.8010.12",
+    "http_status": 200,
+    "final_url": "https://scenepilot.thecreatingco.com/tools/autocut/",
+    "title": "AutoCut: Free Auto Music Video Editor That Cuts to the Beat | ScenePilot",
+    "visible_text": "Skip to the tool\nSCENEPILOT\nAUTOCUT\nALPHA\nLOOP\nAUTOCUT\nREFRAME\nCAPTIONS\nBOARD\nGRADE\nOpen the editor\nMUSIC VIDEO · EDIT · TRAILER · ALPHA\nAutoCut.\n\nDrop a song and a pile of clips. AutoCut finds the beat, the bars and the drop, picks the usable moments of every clip and cuts them to the music — calm where the song breathes, fast where it hits. Re-roll, lock the shots you love, export.\n\nDrop a song and your clips — or a whole folder\nMP3/WAV/M4A + MP4/MOV/WebM. No song file? AutoCut uses the soundtrack of your longest clip (a performance take).\nChoose files\nChoose folder\n\nDrop a song and your clips — or a whole folder — to start.\n\nALPHA · WHAT WORKS AND WHAT DOESN’T YET\n\nRuns in this browser tab. Your media is not uploaded. Works offline after the first visit. Chrome or Edge recommended.",
+    "controls": [
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "thecreateco apps",
+        "disabled": false
+      },
+      {
+        "tag": "DIV",
+        "type": null,
+        "label": "Drop a song and your clips — or a whole folder\nMP3/WAV/M4A + MP4/MOV/WebM. No song file? AutoCut uses the soundtrack of your longest clip (a performance take).\nChoose files\nChoose folder"
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Choose files",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Choose folder",
+        "disabled": false
+      }
+    ],
+    "horizontal_overflow": false,
+    "phone_horizontal_overflow": false,
+    "page_errors": []
+  },
+  {
+    "id": "key-bpm",
+    "url": "https://sattarimusic.com/studio/keybpm",
+    "observed_at": "2026-10-08T02:09:08.175Z",
+    "scope": "Read-only rendered public interface; not workflow qualification",
+    "browser": "153.0.8010.12",
+    "http_status": 200,
+    "final_url": "https://sattarimusic.com/studio/keybpm",
+    "title": "Key & BPM Finder: Batch Detect Key, Camelot & Tempo | Sattari Music",
+    "visible_text": "Skip to content\nHome\nAbout\nShop\nLocal Services\nDownloads\nSattari Hub\nCart\nSattari Hub\nOpen StemDeck\n\nSATTARI STUDIO LAB\n\nKey & BPM\nALPHA\n\nDrop a folder of tracks and get the key, Camelot code and tempo of each, measured in your browser with Sattari AutoKey. Export everything as CSV for your DJ crates.\n\nRuns on your device. No uploads.\nAdd tracks\n\nDrop many files at once · WAV, MP3, FLAC, M4A, OGG · up to 10 min each\n\nChoose audio\nTracks 0\nSort\nAs added\nName\nBPM\nCamelot\nExport CSV\nClear\n\nNo tracks yet. Results appear here as each file is measured.\n\nAlpha: what it does not do yet\nKey is one global estimate per track (Sattari AutoKey). Key changes, modal or atonal music are not reported separately.\nBPM can land on half or double time. \"Rough\" means the strict estimator declined and a single 60-second pass was used, folded into 70–180 BPM.\nUp to 10 minutes and 200 MB per file, mono or stereo, in formats your browser can decode.\nResults live only in this tab. Export the CSV before leaving.\nFixture-tested, not benchmarked on a labelled music corpus yet: treat values as starting points.\nSplit\nSeparate a song into vocals, drums, bass and instruments on your device.\nKey & BPM\nDrop a folder of tracks, get key, Camelot and tempo, export CSV.\nVox\nRecord or drop a vocal, tune it to the key, add a harmony, export WAV.\n\nAllow anonymous usage counts to help improve Sattari? No audio or form contents. Privacy choices\n\nNo thanks\nAllow counts",
+    "controls": [
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Switch to night mode",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Open cart",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Close cart",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "thecreateco apps",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Choose audio",
+        "disabled": false
+      },
+      {
+        "tag": "INPUT",
+        "type": "file",
+        "label": "Add tracks",
+        "disabled": false
+      },
+      {
+        "tag": "SELECT",
+        "type": null,
+        "label": "As added\nName\nBPM\nCamelot",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Export CSV",
+        "disabled": true
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Clear",
+        "disabled": true
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "No thanks",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Allow counts",
+        "disabled": false
+      }
+    ],
+    "horizontal_overflow": false,
+    "phone_horizontal_overflow": false,
+    "page_errors": []
+  },
+  {
+    "id": "librarian",
+    "url": "https://librarian.thecreatingco.com/",
+    "observed_at": "2026-10-08T02:09:09.571Z",
+    "scope": "Read-only rendered public interface; not workflow qualification",
+    "browser": "153.0.8010.12",
+    "http_status": 200,
+    "final_url": "https://librarian.thecreatingco.com/",
+    "title": "Librarian — the open book atlas",
+    "visible_text": "Librarian\nATLAS\nSearch\nLibrary\nSources\nShelf\n\nLIBRARIAN V0.1 · OPEN BOOK ATLAS\n\nSearch every public book catalog at once.\n\nOne query fans out across open catalogs, public-domain libraries, and commercial-scale metadata — merged, scored, and traced back to every source.\n\nSearch\noctavia butler\npersian poetry\nsystems thinking\njames baldwin\npublic domain astronomy\nisbn:9780140328721\n\nWHAT IT DOES\n\nNot just search — an organization layer for books.\nAtlas search\n\nOne query fans out to 15 catalogs — trade, academic, archive, and national libraries — then merges duplicate editions across sources by ISBN and a fuzzy title/author fingerprint.\n\nMetadata quality score\n\nEvery result is scored by completeness so the most complete catalog record naturally rises to the top.\n\nAvailability first\n\nFilter toward free ebooks, public-domain downloads, previews, borrowable scans, or catalog-only records.\n\nPersonal stacks\n\nSave discoveries into a working shelf for research, shopping, or syllabus building — stored in your browser.\n\nSource provenance\n\nEvery card shows which APIs supplied the record and links straight back to each source to verify it.\n\nExpansion playbook\n\nA ranked source map and architecture for turning this into a serious, canonical book graph.",
+    "controls": [
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Search",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Library",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Sources",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Shelf",
+        "disabled": false
+      },
+      {
+        "tag": "INPUT",
+        "type": null,
+        "label": "Search title, author, subject, or ISBN…",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Search",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "octavia butler",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "persian poetry",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "systems thinking",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "james baldwin",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "public domain astronomy",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "isbn:9780140328721",
+        "disabled": false
+      }
+    ],
+    "horizontal_overflow": false,
+    "phone_horizontal_overflow": false,
+    "page_errors": []
+  },
+  {
+    "id": "sessions",
+    "url": "https://thecreatingco.com/community/network?view=Sessions",
+    "observed_at": "2026-10-08T02:09:11.757Z",
+    "scope": "Read-only rendered public interface; not workflow qualification",
+    "browser": "153.0.8010.12",
+    "http_status": 200,
+    "final_url": "https://thecreatingco.com/community/network?view=Sessions",
+    "title": "Community · thecreateco",
+    "visible_text": "thecreateco\nCOMMUNITY\nHome\nDiscover\nSongs\nSessions\nPocket Studio\nCreate\nMessages\nNotifications\nSaved\nProfile\nSettings\nEarlier discussions\nSign in / join\nTHECREATECO / COMMUNITY\nSessions\nNo account needed to join in\nChoose a name\nAbout guest access\nListen together.\n\nA shared queue. A room for the conversation.\n\nRoom name\nWho can find it?\nPublic — discoverable\nUnlisted — anyone with the link\nCreate a session\nOpen rooms\n\nNo open rooms yet. Start one and invite someone in.\n\nCommunity guidelines\nPrivacy\nAbout thecreateco",
+    "controls": [
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Home",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Discover",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Songs",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Sessions",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Pocket Studio",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Create",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Messages",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Notifications",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Saved",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Profile",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Settings",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Sign in / join",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Choose a name",
+        "disabled": false
+      },
+      {
+        "tag": "INPUT",
+        "type": null,
+        "label": "Friday night listening",
+        "disabled": false
+      },
+      {
+        "tag": "SELECT",
+        "type": null,
+        "label": "Public — discoverable\nUnlisted — anyone with the link",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Create a session",
+        "disabled": false
+      }
+    ],
+    "horizontal_overflow": false,
+    "phone_horizontal_overflow": false,
+    "page_errors": []
+  },
+  {
+    "id": "pocket",
+    "url": "https://sattarimusic.com/studio/pocket",
+    "observed_at": "2026-10-08T02:09:14.290Z",
+    "scope": "Read-only rendered public interface; not workflow qualification",
+    "browser": "153.0.8010.12",
+    "http_status": 200,
+    "final_url": "https://sattarimusic.com/studio/pocket",
+    "title": "Pocket: Online Beat Maker & Loop Sketchpad | Sattari Music",
+    "visible_text": "Skip to content\nHome\nAbout\nShop\nLocal Services\nDownloads\nSattari Hub\nCart\nSattari Hub\nOpen StemDeck\n\nSATTARI MUSIC TOOLS\n\nPocket\nALPHA\n\nA beat sketchpad for your phone. Tap a groove, add a bass line, export the loop or its stems.\n\nRuns in your browser. Nothing is uploaded.\nTempo\n92 BPM\nSwing\n15%\nKey\nC\nC#\nD\nD#\nE\nF\nF#\nG\nG#\nA\nA#\nB\nScale\nMinor\nMinor pentatonic\nDorian\nMajor\nM\nKick\nM\nSnare\nM\nClap\nM\nHat\nM\nOpen\nM\nRim\nM\nBass\nTone\n900 Hz\nA\nG\nF\nE\nD\nC\nB\nA\nPattern\nName\nSave\nClear\nStarter\nExport\nLoop length\n1 bar\n2 bars\n4 bars\nWAV loop\nStems (ZIP)\nExport for Ableton\nSend to StemDeck\n\nTap steps to build a beat, then press play.\n\nMixer\nKick\n80%\nSnare\n80%\nClap\n60%\nHat\n55%\nOpen\n50%\nRim\n50%\nBass\n80%\nAlpha: what this does not do yet\n\nAllow anonymous usage counts to help improve Sattari? No audio or form contents. Privacy choices\n\nNo thanks\nAllow counts",
+    "controls": [
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Switch to night mode",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Open cart",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Close cart",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "thecreateco apps",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Play",
+        "disabled": false
+      },
+      {
+        "tag": "INPUT",
+        "type": "range",
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "INPUT",
+        "type": "range",
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "SELECT",
+        "type": null,
+        "label": "C\nC#\nD\nD#\nE\nF\nF#\nG\nG#\nA\nA#\nB",
+        "disabled": false
+      },
+      {
+        "tag": "SELECT",
+        "type": null,
+        "label": "Minor\nMinor pentatonic\nDorian\nMajor",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Mute Kick",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Kick step 1",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Kick step 2",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Kick step 3",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Kick step 4",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Kick step 5",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Kick step 6",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Kick step 7",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Kick step 8",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Kick step 9",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Kick step 10",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Kick step 11",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Kick step 12",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Kick step 13",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Kick step 14",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Kick step 15",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Kick step 16",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Mute Snare",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Snare step 1",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Snare step 2",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Snare step 3",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Snare step 4",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Snare step 5",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Snare step 6",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Snare step 7",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Snare step 8",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Snare step 9",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Snare step 10",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Snare step 11",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Snare step 12",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Snare step 13",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Snare step 14",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Snare step 15",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Snare step 16",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Mute Clap",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Clap step 1",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Clap step 2",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Clap step 3",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Clap step 4",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Clap step 5",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Clap step 6",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Clap step 7",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Clap step 8",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Clap step 9",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Clap step 10",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Clap step 11",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Clap step 12",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Clap step 13",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Clap step 14",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Clap step 15",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Clap step 16",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Mute Hat",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Hat step 1",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Hat step 2",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Hat step 3",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Hat step 4",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Hat step 5",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Hat step 6",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Hat step 7",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Hat step 8",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Hat step 9",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Hat step 10",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Hat step 11",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Hat step 12",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Hat step 13",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Hat step 14",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Hat step 15",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Hat step 16",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Mute Open",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Open step 1",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Open step 2",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Open step 3",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Open step 4",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Open step 5",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Open step 6",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Open step 7",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Open step 8",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Open step 9",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Open step 10",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Open step 11",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Open step 12",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Open step 13",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Open step 14",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Open step 15",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Open step 16",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Mute Rim",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Rim step 1",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Rim step 2",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Rim step 3",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Rim step 4",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "Rim step 5",
+        "disabled": false
+      }
+    ],
+    "horizontal_overflow": false,
+    "phone_horizontal_overflow": false,
+    "page_errors": []
+  },
+  {
+    "id": "ghost",
+    "url": "https://ghost.thecreatingco.com/",
+    "observed_at": "2026-10-08T02:09:15.606Z",
+    "scope": "Read-only rendered public interface; not workflow qualification",
+    "browser": "153.0.8010.12",
+    "http_status": 200,
+    "final_url": "https://ghost.thecreatingco.com/",
+    "title": "Ghost — from photo to form · thecreatingco",
+    "visible_text": "g\nghost\nstudio\nFORM LAB\nOpen\nSave collection\nExport\n↗\n\nYOUR WORKSPACE\n\nFrom photo.\nTo form.\n\nGarments and objects, from every angle.\n\n1\nAdd photos\n2\nAdjust\n3\nExport\nAdd a collection\n\nOne photo set for each thing you’re creating.\n\nWhat are you creating?\nClothes\nObjects · furniture, products, vessels\nBuildings\n\nPair the front and back of each garment.\n\nGarment type\nAuto · from photos\nT-shirt / polo\nShirt / blouse\nTank / camisole\nSweater / knitwear\nSweatshirt\nHoodie\nJacket / blazer\nCoat / trench\nVest / waistcoat\nCardigan\nDress / gown\nTunic / kaftan / robe\nJumpsuit / overalls\nRomper / playsuit\nBodysuit / leotard\nTrousers / pants\nJeans\nShorts\nLeggings / tights\nSkirt\nSwimwear\nBriefs / underwear\nBra / bralette\nActivewear / sportswear\nCape / poncho\nWrap / sari / sarong\nScarf / shawl\nOther garment · use photo shape\nStand-collar jacket · fitted template\n\nUse Auto for a mixed batch, then review each item’s type. Use clear, isolated front/back photos in the same pose.\n\n＋\nAdd photos\nSelect or drop multiple images\n40 photos → 20 garment pairs\nCollection name\nMatch filenames\nPair in import order\nSuggest similar pairs\n\nNames such as coat-01-front.jpg and coat-01-back.jpg suggest pairs. Review each match before generating.\n\nGenerate 1 model\n\n1 ready to generate\n\nExport models folder\n→\n\nPhotos stay on this device. Save your collection to keep every pair and setting.\n\nAutosave ready · stored on this device.\n\nRecovery drafts\nAdd sample jacket\nGet the app\ng.\n\nA little less work.\nA new dimension.\n\nPHOTO SETS\n\nMy collection\n\n2 photos · 1 photo sets · 0 models ready\n\nAdd photo set\nConfirm complete sets\nRepent jacket\nClothes\nGarment type\nAuto · from photos\nT-shirt / polo\nShirt / blouse\nTank / camisole\nSweater / knitwear\nSweatshirt\nHoodie\nJacket / blazer\nCoat / trench\nVest / waistcoat\nCardigan\nDress / gown\nTunic / kaftan / robe\nJumpsuit / overalls\nRomper / playsuit\nBodysuit / leotard\nTrousers / pants\nJeans\nShorts\nLeggings / tights\nSkirt\nSwimwear\nBriefs / underwear\nBra / bralette\nActivewear / sportswear\nCape / poncho\nWrap / sari / sarong\nScarf / shawl\nOther garment · use photo shape\nStand-collar jacket · fitted template\nFront\nRepent jacket front.png\nBack\nRepent jacket back.png\nReady to generate\nShared settings\nFront / back checked\nReview checklist · 1 note\nEdit photos\nClean up\nSwap\nTweak & review\n×\nExplore Ghost Studio workflows ↗",
+    "controls": [
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "thecreateco apps",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Open",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Save collection",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Export\n↗",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "1\nAdd photos",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "2\nAdjust",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "3\nExport",
+        "disabled": false
+      },
+      {
+        "tag": "SELECT",
+        "type": null,
+        "label": "Clothes\nObjects · furniture, products, vessels\nBuildings",
+        "disabled": false
+      },
+      {
+        "tag": "SELECT",
+        "type": null,
+        "label": "Auto · from photos\nT-shirt / polo\nShirt / blouse\nTank / camisole\nSweater / knitwear\nSweatshirt\nHoodie\nJacket / blazer\nCoat / trench\nVest / waistcoat\nCardigan\nDress / gown\nTunic / kaftan / robe\nJumpsuit / overalls\nRomper / playsuit\nBodysuit / leotard\nTrousers / pants\nJeans\nShorts\nLeggings / tights\nSkirt\nSwimwear\nBriefs / underwear\nBra / bralette\nActivewear / sportswear\nCape / poncho\nWrap / sari / sarong\nScarf / shawl\nOther garment · use photo shape\nStand-collar jacket · fitted template",
+        "disabled": false
+      },
+      {
+        "tag": "INPUT",
+        "type": "file",
+        "label": "Add multiple reference photos",
+        "disabled": false
+      },
+      {
+        "tag": "INPUT",
+        "type": "text",
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Match filenames",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Pair in import order",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Suggest similar pairs",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Generate 1 model",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Export models folder\n→",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Recovery drafts",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Add sample jacket",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Get the app",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Add photo set",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Confirm complete sets",
+        "disabled": true
+      },
+      {
+        "tag": "SELECT",
+        "type": null,
+        "label": "Auto · from photos\nT-shirt / polo\nShirt / blouse\nTank / camisole\nSweater / knitwear\nSweatshirt\nHoodie\nJacket / blazer\nCoat / trench\nVest / waistcoat\nCardigan\nDress / gown\nTunic / kaftan / robe\nJumpsuit / overalls\nRomper / playsuit\nBodysuit / leotard\nTrousers / pants\nJeans\nShorts\nLeggings / tights\nSkirt\nSwimwear\nBriefs / underwear\nBra / bralette\nActivewear / sportswear\nCape / poncho\nWrap / sari / sarong\nScarf / shawl\nOther garment · use photo shape\nStand-collar jacket · fitted template",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Assign front for Repent jacket",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Assign back for Repent jacket",
+        "disabled": false
+      },
+      {
+        "tag": "INPUT",
+        "type": "checkbox",
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": true
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Edit photos",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Clean up",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Swap",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Tweak & review",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Remove Repent jacket photo set",
+        "disabled": false
+      }
+    ],
+    "horizontal_overflow": false,
+    "phone_horizontal_overflow": false,
+    "page_errors": []
+  },
+  {
+    "id": "cast",
+    "url": "https://form-studio-review.netlify.app/studio",
+    "observed_at": "2026-10-08T02:09:19.007Z",
+    "scope": "Read-only rendered public interface; not workflow qualification",
+    "browser": "153.0.8010.12",
+    "error": "locator.waitFor: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('body') to be visible\u001b[22m\n\u001b[2m    50 × locator resolved to hidden <body>…</body>\u001b[22m\n",
+    "page_errors": []
+  },
+  {
+    "id": "bounce",
+    "url": "https://bounce.thecreatingco.com/browser/",
+    "observed_at": "2026-10-08T02:09:50.544Z",
+    "scope": "Read-only rendered public interface; not workflow qualification",
+    "browser": "153.0.8010.12",
+    "http_status": 200,
+    "final_url": "https://bounce.thecreatingco.com/browser/",
+    "title": "Bounce · Browser Player · Browser testing",
+    "visible_text": "Skip to workspace\nBounce · Browser Player\nAbout this edition\nFeedback\nBounce website\n\nYOUR FILES, YOUR LISTENING\n\nSettle into your next track.\n\nA browser companion for local listening. Add your own files, build a queue, and keep a playlist on this device.\n\nAdd audio files\nLoad original studies\nSave library here\nClear browser library\n\nYour library is empty. Start with a few tracks.\n\nSearch tracks\nAdd audio files or try the three original studies.\n\nUse Move up and Move down to arrange your queue. Saved copies are local to this browser and may be cleared or evicted. Keep your originals. The player works offline after your first visit.\n\nNOW PLAYING\n\nNothing queued yet.\nPrevious\nNext\nShuffle\nRepeat: off\nShape the sound\nBass 0 dB\nMid 0 dB\nTreble 0 dB\n\nBrowser codec support varies. EQ uses Web Audio; the native JUCE engine and tag reader are not part of this edition. Volume starts low.\n\nPlaylist nameDownload library with audio\nOpen library file\nBrowser testing companion · Files are processed on this device. Data notes · Edition limits",
+    "controls": [
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "thecreateco apps",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Add audio files",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Load original studies",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Save library here",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Clear browser library",
+        "disabled": false
+      },
+      {
+        "tag": "INPUT",
+        "type": "search",
+        "label": "Search your tracks",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Previous",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Next",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Shuffle",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Repeat: off",
+        "disabled": false
+      },
+      {
+        "tag": "INPUT",
+        "type": "range",
+        "label": "Bass equalizer",
+        "disabled": false
+      },
+      {
+        "tag": "INPUT",
+        "type": "range",
+        "label": "Mid equalizer",
+        "disabled": false
+      },
+      {
+        "tag": "INPUT",
+        "type": "range",
+        "label": "Treble equalizer",
+        "disabled": false
+      },
+      {
+        "tag": "INPUT",
+        "type": null,
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Download library with audio",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Open library file",
+        "disabled": false
+      }
+    ],
+    "horizontal_overflow": false,
+    "phone_horizontal_overflow": false,
+    "page_errors": []
+  }
+]

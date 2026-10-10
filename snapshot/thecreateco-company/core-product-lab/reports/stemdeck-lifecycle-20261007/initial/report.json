@@ -1,0 +1,14 @@
+{
+  "sourceSha": "f6f061c6e463a552c287e883cbd7fc9bb3e0867e",
+  "sourceDirty": true,
+  "profile": "/Users/agentsattari/.openclaw/tmp/stemdeck-fourdeck-zeT6U5",
+  "pass": false,
+  "physicalInputs": false,
+  "mockedEndpoints": [
+    "/api/inventory"
+  ],
+  "steps": [],
+  "errors": [],
+  "browser": "151.0.7922.34",
+  "error": "locator.waitFor: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByText('Local session', { exact: true }) to be visible\u001b[22m\n\u001b[2m    58 × locator resolved to hidden <small>…</small>\u001b[22m\n\n    at launch (/Users/agentsattari/code/core-product-lab/stemdeck-recovery/scripts/perform-lifecycle-qa.mjs:14:612)\n    at async file:///Users/agentsattari/code/core-product-lab/stemdeck-recovery/scripts/perform-lifecycle-qa.mjs:18:2"
+}

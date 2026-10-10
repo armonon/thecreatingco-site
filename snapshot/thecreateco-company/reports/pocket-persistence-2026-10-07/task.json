@@ -1,0 +1,27 @@
+{
+  "task_id": "PROGRAM18-POCKET-SAVE-001",
+  "title": "Prevent Pocket saved-pattern capacity eviction and corrupt-storage overwrite",
+  "product": "pocket",
+  "workstream": "PRODUCT_COMPLETION",
+  "category": "bug",
+  "area": "persistence",
+  "severity": "P0",
+  "model": "openai/gpt-6.1-sol",
+  "status": "QUEUED",
+  "dependencies": [],
+  "scores": {
+    "impact": 9,
+    "user_value": 10,
+    "confidence": 10,
+    "effort": 3,
+    "risk": 3,
+    "urgency": 9,
+    "strategic_value": 8
+  },
+  "expected_value": "Preserve existing user beat sketches and report storage/capacity failures without silently deleting patterns.",
+  "source_evidence": [
+    "src/labs/pocket/pocketPattern.js at1569ef3 savePattern slice0MAX_SAVED dropsoldest; listSaved catchesJSON then save writesnewarray"
+  ],
+  "test_requirements": "Capacity40\u219241 rejection no byte changes, same-name explicit update at capacity, malformed/unsupported/readfailure storage preserved by save/delete, clear user errors; real local browser save/reopen/export and regression.",
+  "next_action": "Own isolated Sattari worktree from reviewed1569ef3; implement non-destructive storage boundary and UI errors, regression/full relevant tests, browser roundtrip, independentOpenAIreview and normalPRpush; preserve unrelatedmodules."
+}

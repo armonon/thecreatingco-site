@@ -1,0 +1,11 @@
+{
+  "command": [
+    "/opt/homebrew/opt/node@22/bin/node",
+    "scripts/studio-release-gate.mjs"
+  ],
+  "cwd": "/Users/agentsattari/code/core-product-lab/stemdeck-archive-webkit",
+  "STUDIO_GATE_OUTPUT": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-archive-gate-20261009/exact-gate-restored",
+  "startUtc": "2026-10-09T07:12:25.741768+00:00",
+  "endUtc": "2026-10-09T07:12:26.507925+00:00",
+  "exitCode": 1
+}

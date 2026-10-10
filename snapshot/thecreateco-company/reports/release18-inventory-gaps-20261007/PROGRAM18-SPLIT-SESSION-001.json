@@ -1,0 +1,27 @@
+{
+  "task_id": "PROGRAM18-SPLIT-SESSION-001",
+  "product": "split",
+  "title": "Qualify Split real audio lifecycle and recoverable results before navigation",
+  "workstream": "PRODUCT_COMPLETION",
+  "category": "reliability",
+  "severity": "P1",
+  "status": "QUEUED",
+  "model": "openai/gpt-6.1-sol",
+  "scores": {
+    "impact": 8,
+    "user_value": 8,
+    "confidence": 9,
+    "effort": 5,
+    "risk": 3
+  },
+  "source_evidence": {
+    "direct": [
+      "UI/source says resultsnot saved; existingOct6decode/starttimeouts alreadyimplemented; liveoverlay drift documented."
+    ]
+  },
+  "next_action": "Reuse currentcancellationfix; verifyrealcurrent fourWAVs/handoff, addcompleteportable/restorable session or explicit durable recovery; preserve allshared/excluded modules.",
+  "test_requirements": "Real model withlicensed/syntheticaudio, finite/nonblank outputduration/channels, cancellation/retry/quotafailure/reload, supportedcodec matrix; no phonepassfromrender.",
+  "evidence_sources": [
+    "/Users/agentsattari/thecreateco-company/reports/release18-inventory-gaps-20261007/README.md"
+  ]
+}

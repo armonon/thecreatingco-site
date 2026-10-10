@@ -1,0 +1,622 @@
+{
+  "observed_at": "2026-10-09T18:10:59.499190+00:00",
+  "command": [
+    "openclaw",
+    "cron",
+    "runs",
+    "--all",
+    "--sort",
+    "desc",
+    "--limit",
+    "200",
+    "--json"
+  ],
+  "exit_code": 0,
+  "has_more": true,
+  "bounded_model_receipts": 73,
+  "bounded_errors": 9,
+  "previous_observed_at": "2026-10-09T17:11:09.862662+00:00",
+  "new_since_previous_audit": {
+    "True": 8,
+    "False": 1
+  },
+  "latest_observed_failure": "2026-10-09T17:40:00.014000+00:00",
+  "structured_failure_codes": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "source_hash": "54ad9015eec003614da1836fc1a5f1eff8ac5e17806a16b182585a9fd47ba7ff",
+  "receipts": [
+    {
+      "at": "2026-10-09T18:07:00.032000+00:00",
+      "model": "gpt-6-luna",
+      "provider": "openai",
+      "success": true,
+      "latency_ms": 21519,
+      "escalation_reason": null
+    },
+    {
+      "at": "2026-10-09T18:00:10.731000+00:00",
+      "model": "gpt-5.6-terra",
+      "provider": "openai",
+      "success": true,
+      "latency_ms": 46815,
+      "escalation_reason": null
+    },
+    {
+      "at": "2026-10-09T17:51:03.417000+00:00",
+      "model": "gpt-6-luna",
+      "provider": "openai",
+      "success": true,
+      "latency_ms": 26854,
+      "escalation_reason": null
+    },
+    {
+      "at": "2026-10-09T17:40:00.014000+00:00",
+      "model": "gpt-6.1-sol",
+      "provider": "openai",
+      "success": false,
+      "latency_ms": 687665,
+      "escalation_reason": null
+    },
+    {
+      "at": "2026-10-09T17:50:00.817000+00:00",
+      "model": "gpt-6-luna",
+      "provider": "openai",
+      "success": true,
+      "latency_ms": 69583,
+      "escalation_reason": null
+    },
+    {
+      "at": "2026-10-09T17:21:02.293000+00:00",
+      "model": "gpt-6-luna",
+      "provider": "openai",
+      "success": true,
+      "latency_ms": 33012,
+      "escalation_reason": null
+    },
+    {
+      "at": "2026-10-09T17:20:00.015000+00:00",
+      "model": "gpt-6-luna",
+      "provider": "openai",
+      "success": true,
+      "latency_ms": 67735,
+      "escalation_reason": null
+    },
+    {
+      "at": "2026-10-09T17:15:00.043000+00:00",
+      "model": "gpt-6-luna",
+      "provider": "openai",
+      "success": true,
+      "latency_ms": 90673,
+      "escalation_reason": null
+    },
+    {
+      "at": "2026-10-09T17:12:42.489000+00:00",
+      "model": "gpt-6-luna",
+      "provider": "openai",
+      "success": true,
+      "latency_ms": 57675,
+      "escalation_reason": null
+    },
+    {
+      "at": "2026-10-09T17:10:00.015000+00:00",
+      "model": "gpt-6.1-sol",
+      "provider": "openai",
+      "success": false,
+      "latency_ms": 129652,
+      "escalation_reason": null
+    },
+    {
+      "at": "2026-10-09T17:07:00.012000+00:00",
+      "model": "gpt-6-luna",
+      "provider": "openai",
+      "success": true,
+      "latency_ms": 19265,
+      "escalation_reason": null
+    },
+    {
+      "at": "2026-10-09T17:00:10.714000+00:00",
+      "model": "gpt-5.6-terra",
+      "provider": "openai",
+      "success": true,
+      "latency_ms": 116925,
+      "escalation_reason": null
+    },
+    {
+      "at": "2026-10-09T16:51:02.034000+00:00",
+      "model": "gpt-6-luna",
+      "provider": "openai",
+      "success": true,
+      "latency_ms": 24852,
+      "escalation_reason": null
+    },
+    {
+      "at": "2026-10-09T16:50:00.024000+00:00",
+      "model": "gpt-6-luna",
+      "provider": "openai",
+      "success": true,
+      "latency_ms": 28059,
+      "escalation_reason": null
+    },
+    {
+      "at": "2026-10-09T16:21:01.993000+00:00",
+      "model": "gpt-6-luna",
+      "provider": "openai",
+      "success": true,
+      "latency_ms": 35972,
+      "escalation_reason": null
+    },
+    {
+      "at": "2026-10-09T16:20:00.012000+00:00",
+      "model": "gpt-6-luna",
+      "provider": "openai",
+      "success": true,
+      "latency_ms": 49290,
+      "escalation_reason": null
+    },
+    {
+      "at": "2026-10-09T16:12:42.494000+00:00",
+      "model": "gpt-6-luna",
+      "provider": "openai",
+      "success": true,
+      "latency_ms": 96928,
+      "escalation_reason": null
+    },
+    {
+      "at": "2026-10-09T16:10:00.019000+00:00",
+      "model": "gpt-6.1-sol",
+      "provider": "openai",
+      "success": true,
+      "latency_ms": 131702,
+      "escalation_reason": null
+    },
+    {
+      "at": "2026-10-09T16:07:00.013000+00:00",
+      "model": "gpt-6-luna",
+      "provider": "openai",
+      "success": true,
+      "latency_ms": 21637,
+      "escalation_reason": null
+    },
+    {
+      "at": "2026-10-09T16:05:00.016000+00:00",
+      "model": "gpt-6-luna",
+      "provider": "openai",
+      "success": true,
+      "latency_ms": 92686,
+      "escalation_reason": null
+    },
+    {
+      "at": "2026-10-09T16:00:12.074000+00:00",
+      "model": "gpt-5.6-terra",
+      "provider": "openai",
+      "success": true,
+      "latency_ms": 51144,
+      "escalation_reason": null
+    },
+    {
+      "at": "2026-10-09T16:00:00.017000+00:00",
+      "model": "gpt-6-luna",
+      "provider": "openai",
+      "success": true,
+      "latency_ms": 59656,
+      "escalation_reason": null
+    },
+    {
+      "at": "2026-10-09T15:51:01.985000+00:00",
+      "model": "gpt-6-luna",
+      "provider": "openai",
+      "success": true,
+      "latency_ms": 30621,
+      "escalation_reason": null
+    },
+    {
+      "at": "2026-10-09T15:50:00.016000+00:00",
+      "model": "gpt-6-luna",
+      "provider": "openai",
+      "success": true,
+      "latency_ms": 59940,
+      "escalation_reason": null
+    },
+    {
+      "at": "2026-10-09T15:40:00.019000+00:00",
+      "model": "gpt-6.1-sol",
+      "provider": "openai",
+      "success": false,
+      "latency_ms": 206670,
+      "escalation_reason": null
+    },
+    {
+      "at": "2026-10-09T15:30:00.014000+00:00",
+      "model": "gpt-5.6-terra",
+      "provider": "openai",
+      "success": true,
+      "latency_ms": 48413,
+      "escalation_reason": null
+    },
+    {
+      "at": "2026-10-09T15:20:59.759000+00:00",
+      "model": "gpt-6-luna",
+      "provider": "openai",
+      "success": true,
+      "latency_ms": 12294,
+      "escalation_reason": null
+    },
+    {
+      "at": "2026-10-09T15:20:00.013000+00:00",
+      "model": "gpt-6-luna",
+      "provider": "openai",
+      "success": true,
+      "latency_ms": 41322,
+      "escalation_reason": null
+    },
+    {
+      "at": "2026-10-09T15:10:00.018000+00:00",
+      "model": "gpt-6.1-sol",
+      "provider": "openai",
+      "success": true,
+      "latency_ms": 316347,
+      "escalation_reason": null
+    },
+    {
+      "at": "2026-10-09T15:12:42.927000+00:00",
+      "model": "gpt-6-luna",
+      "provider": "openai",
+      "success": true,
+      "latency_ms": 70014,
+      "escalation_reason": null
+    },
+    {
+      "at": "2026-10-09T15:07:00.016000+00:00",
+      "model": "gpt-6-luna",
+      "provider": "openai",
+      "success": true,
+      "latency_ms": 16635,
+      "escalation_reason": null
+    },
+    {
+      "at": "2026-10-09T15:00:10.714000+00:00",
+      "model": "gpt-5.6-terra",
+      "provider": "openai",
+      "success": true,
+      "latency_ms": 101599,
+      "escalation_reason": null
+    },
+    {
+      "at": "2026-10-09T14:50:59.746000+00:00",
+      "model": "gpt-6-luna",
+      "provider": "openai",
+      "success": true,
+      "latency_ms": 28753,
+      "escalation_reason": null
+    },
+    {
+      "at": "2026-10-09T14:20:59.729000+00:00",
+      "model": "gpt-6-luna",
+      "provider": "openai",
+      "success": true,
+      "latency_ms": 25449,
+      "escalation_reason": null
+    },
+    {
+      "at": "2026-10-09T14:10:00.015000+00:00",
+      "model": "gpt-6.1-sol",
+      "provider": "openai",
+      "success": true,
+      "latency_ms": 347778,
+      "escalation_reason": null
+    },
+    {
+      "at": "2026-10-09T14:12:42.801000+00:00",
+      "model": "gpt-6-luna",
+      "provider": "openai",
+      "success": true,
+      "latency_ms": 50039,
+      "escalation_reason": null
+    },
+    {
+      "at": "2026-10-09T14:07:00.017000+00:00",
+      "model": "gpt-6-luna",
+      "provider": "openai",
+      "success": true,
+      "latency_ms": 17944,
+      "escalation_reason": null
+    },
+    {
+      "at": "2026-10-09T14:00:10.718000+00:00",
+      "model": "gpt-5.6-terra",
+      "provider": "openai",
+      "success": true,
+      "latency_ms": 23835,
+      "escalation_reason": null
+    },
+    {
+      "at": "2026-10-09T13:50:59.718000+00:00",
+      "model": "gpt-6-luna",
+      "provider": "openai",
+      "success": true,
+      "latency_ms": 25861,
+      "escalation_reason": null
+    },
+    {
+      "at": "2026-10-09T13:40:00.017000+00:00",
+      "model": "gpt-6.1-sol",
+      "provider": "openai",
+      "success": true,
+      "latency_ms": 142959,
+      "escalation_reason": null
+    },
+    {
+      "at": "2026-10-09T13:36:24.666000+00:00",
+      "model": "gpt-5.6-terra",
+      "provider": "openai",
+      "success": true,
+      "latency_ms": 60353,
+      "escalation_reason": null
+    },
+    {
+      "at": "2026-10-09T13:20:59.701000+00:00",
+      "model": "gpt-6-luna",
+      "provider": "openai",
+      "success": true,
+      "latency_ms": 18419,
+      "escalation_reason": null
+    },
+    {
+      "at": "2026-10-09T13:10:00.015000+00:00",
+      "model": "gpt-6.1-sol",
+      "provider": "openai",
+      "success": false,
+      "latency_ms": 471393,
+      "escalation_reason": null
+    },
+    {
+      "at": "2026-10-09T13:15:01.295000+00:00",
+      "model": "gpt-5.6-terra",
+      "provider": "openai",
+      "success": true,
+      "latency_ms": 68253,
+      "escalation_reason": null
+    },
+    {
+      "at": "2026-10-09T13:12:42.706000+00:00",
+      "model": "gpt-6-luna",
+      "provider": "openai",
+      "success": true,
+      "latency_ms": 55867,
+      "escalation_reason": null
+    },
+    {
+      "at": "2026-10-09T13:07:00.016000+00:00",
+      "model": "gpt-6-luna",
+      "provider": "openai",
+      "success": true,
+      "latency_ms": 16991,
+      "escalation_reason": null
+    },
+    {
+      "at": "2026-10-09T13:00:00.014000+00:00",
+      "model": "gpt-5.6-terra",
+      "provider": "openai",
+      "success": true,
+      "latency_ms": 359983,
+      "escalation_reason": null
+    },
+    {
+      "at": "2026-10-09T13:00:12.072000+00:00",
+      "model": "gpt-5.6-terra",
+      "provider": "openai",
+      "success": true,
+      "latency_ms": 92619,
+      "escalation_reason": null
+    },
+    {
+      "at": "2026-10-09T12:50:59.684000+00:00",
+      "model": "gpt-6-luna",
+      "provider": "openai",
+      "success": true,
+      "latency_ms": 28171,
+      "escalation_reason": null
+    },
+    {
+      "at": "2026-10-09T12:10:00.017000+00:00",
+      "model": "gpt-6.1-sol",
+      "provider": "openai",
+      "success": false,
+      "latency_ms": 1313081,
+      "escalation_reason": null
+    },
+    {
+      "at": "2026-10-09T12:20:59.667000+00:00",
+      "model": "gpt-6-luna",
+      "provider": "openai",
+      "success": true,
+      "latency_ms": 29657,
+      "escalation_reason": null
+    },
+    {
+      "at": "2026-10-09T12:12:42.741000+00:00",
+      "model": "gpt-6-luna",
+      "provider": "openai",
+      "success": true,
+      "latency_ms": 62745,
+      "escalation_reason": null
+    },
+    {
+      "at": "2026-10-09T12:07:00.019000+00:00",
+      "model": "gpt-6-luna",
+      "provider": "openai",
+      "success": true,
+      "latency_ms": 17435,
+      "escalation_reason": null
+    },
+    {
+      "at": "2026-10-09T12:00:10.716000+00:00",
+      "model": "gpt-5.6-terra",
+      "provider": "openai",
+      "success": true,
+      "latency_ms": 44761,
+      "escalation_reason": null
+    },
+    {
+      "at": "2026-10-09T11:50:59.523000+00:00",
+      "model": "gpt-6-luna",
+      "provider": "openai",
+      "success": true,
+      "latency_ms": 28702,
+      "escalation_reason": null
+    },
+    {
+      "at": "2026-10-09T11:40:00.016000+00:00",
+      "model": "gpt-6.1-sol",
+      "provider": "openai",
+      "success": false,
+      "latency_ms": 623632,
+      "escalation_reason": null
+    },
+    {
+      "at": "2026-10-09T11:10:00.043000+00:00",
+      "model": "gpt-6.1-sol",
+      "provider": "openai",
+      "success": false,
+      "latency_ms": 738042,
+      "escalation_reason": null
+    },
+    {
+      "at": "2026-10-09T11:20:59.508000+00:00",
+      "model": "gpt-6-luna",
+      "provider": "openai",
+      "success": true,
+      "latency_ms": 19664,
+      "escalation_reason": null
+    },
+    {
+      "at": "2026-10-09T11:12:43.687000+00:00",
+      "model": "gpt-6-luna",
+      "provider": "openai",
+      "success": true,
+      "latency_ms": 32905,
+      "escalation_reason": null
+    },
+    {
+      "at": "2026-10-09T11:07:00.041000+00:00",
+      "model": "gpt-6-luna",
+      "provider": "openai",
+      "success": true,
+      "latency_ms": 15195,
+      "escalation_reason": null
+    },
+    {
+      "at": "2026-10-09T11:00:10.741000+00:00",
+      "model": "gpt-5.6-terra",
+      "provider": "openai",
+      "success": true,
+      "latency_ms": 54429,
+      "escalation_reason": null
+    },
+    {
+      "at": "2026-10-09T10:50:58.374000+00:00",
+      "model": "gpt-6-luna",
+      "provider": "openai",
+      "success": true,
+      "latency_ms": 34968,
+      "escalation_reason": null
+    },
+    {
+      "at": "2026-10-09T10:20:58.340000+00:00",
+      "model": "gpt-6-luna",
+      "provider": "openai",
+      "success": true,
+      "latency_ms": 18988,
+      "escalation_reason": null
+    },
+    {
+      "at": "2026-10-09T10:10:00.042000+00:00",
+      "model": "gpt-6.1-sol",
+      "provider": "openai",
+      "success": false,
+      "latency_ms": 626738,
+      "escalation_reason": null
+    },
+    {
+      "at": "2026-10-09T10:12:43.663000+00:00",
+      "model": "gpt-6-luna",
+      "provider": "openai",
+      "success": true,
+      "latency_ms": 40299,
+      "escalation_reason": null
+    },
+    {
+      "at": "2026-10-09T10:07:00.041000+00:00",
+      "model": "gpt-6-luna",
+      "provider": "openai",
+      "success": true,
+      "latency_ms": 18165,
+      "escalation_reason": null
+    },
+    {
+      "at": "2026-10-09T10:00:12.180000+00:00",
+      "model": "gpt-5.6-terra",
+      "provider": "openai",
+      "success": true,
+      "latency_ms": 77767,
+      "escalation_reason": null
+    },
+    {
+      "at": "2026-10-09T10:00:00.041000+00:00",
+      "model": "gpt-6-luna",
+      "provider": "openai",
+      "success": true,
+      "latency_ms": 12116,
+      "escalation_reason": null
+    },
+    {
+      "at": "2026-10-09T09:50:58.327000+00:00",
+      "model": "gpt-6-luna",
+      "provider": "openai",
+      "success": true,
+      "latency_ms": 22419,
+      "escalation_reason": null
+    },
+    {
+      "at": "2026-10-09T09:40:00.044000+00:00",
+      "model": "gpt-6.1-sol",
+      "provider": "openai",
+      "success": false,
+      "latency_ms": 327266,
+      "escalation_reason": null
+    },
+    {
+      "at": "2026-10-09T09:10:00.040000+00:00",
+      "model": "gpt-6.1-sol",
+      "provider": "openai",
+      "success": true,
+      "latency_ms": 1098673,
+      "escalation_reason": null
+    },
+    {
+      "at": "2026-10-09T09:20:58.291000+00:00",
+      "model": "gpt-6-luna",
+      "provider": "openai",
+      "success": true,
+      "latency_ms": 15589,
+      "escalation_reason": null
+    },
+    {
+      "at": "2026-10-09T09:12:43.626000+00:00",
+      "model": "gpt-6-luna",
+      "provider": "openai",
+      "success": true,
+      "latency_ms": 35741,
+      "escalation_reason": null
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "task_id": "CORE-FORM-HANDOFF-HISTORY-001",
+  "title": "Investigate extra navigation history checkpoint on Animation-to-CAD return",
+  "product": "form",
+  "workstream": "CORE_PRODUCT_LAB",
+  "category": "workflow_gap",
+  "area": "history",
+  "severity": "P3",
+  "status": "QUEUED",
+  "model": "gpt-6-luna",
+  "dependencies": [],
+  "scores": {
+    "impact": 6,
+    "user_value": 7,
+    "confidence": 8,
+    "effort": 3,
+    "risk": 3
+  },
+  "expected_value": "Remove or explain non-authored history steps without losing authored edits; planning scores are estimates.",
+  "test_requirements": "Reproduce exactcurrent StudioEntry/CAD/Fabric/Animation flow in realbuiltbrowser, compare pre/post Undo authored content, add meaningful regression and run relevant save/history/UI checks; no indiscriminate fingerprint exclusion.",
+  "source_evidence": {
+    "direct": [
+      "Exact779d61d builtChromium audit repeated two Undo steps to remove last Animation key after CAD return; preserved CAD/Fabric/scene and zero errors. /Users/agentsattari/thecreateco-company/reports/form-handoff-20261008T1210/history-traversal.json",
+      "project-format.ts:342-356 excludes wrapper updatedAt but not inner Fabric data.updatedAt."
+    ],
+    "hypothesis": [
+      "Fabric hydration updatedAt may create non-authored checkpoint; exact root cause not yet confirmed."
+    ]
+  },
+  "evidence_sources": [
+    "/Users/agentsattari/thecreateco-company/reports/form-handoff-20261008T1210/README.md",
+    "/Users/agentsattari/thecreateco-company/reports/form-handoff-20261008T1210/browser-result.json",
+    "/Users/agentsattari/thecreateco-company/reports/form-handoff-20261008T1210/final-artifact-manifest.json",
+    "/Users/agentsattari/thecreateco-company/reports/form-handoff-20261008T1210/history-traversal.json"
+  ],
+  "next_action": "Pin current source and compare journal pre/post return; distinguish camera/authored edits from metadata-only changes, then fix only reproduced redundant checkpoint."
+}

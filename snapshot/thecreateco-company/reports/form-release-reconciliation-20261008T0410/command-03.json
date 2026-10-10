@@ -1,0 +1,17 @@
+{
+  "command": [
+    "gh",
+    "pr",
+    "view",
+    "7",
+    "--repo",
+    "armonon/form-studio",
+    "--json",
+    "number,state,headRefOid,baseRefName,statusCheckRollup,url"
+  ],
+  "cwd": "/Users/agentsattari/code/wave2/form-D",
+  "observed_at": "2026-10-08T04:10:58.838565+00:00",
+  "exit_code": 0,
+  "stdout": "{\"baseRefName\":\"fix/form-project-menu-20261007\",\"headRefOid\":\"be1f7272c5689d6401194d643fa3eb09a2b0b73b\",\"number\":7,\"state\":\"OPEN\",\"statusCheckRollup\":[{\"__typename\":\"CheckRun\",\"completedAt\":\"2026-10-08T03:50:00Z\",\"conclusion\":\"FAILURE\",\"detailsUrl\":\"https://github.com/armonon/form-studio/actions/runs/37724578530/job/113139727449\",\"name\":\"web\",\"startedAt\":\"2026-10-08T03:49:57Z\",\"status\":\"COMPLETED\",\"workflowName\":\"CI\"},{\"__typename\":\"CheckRun\",\"completedAt\":\"2026-10-08T03:50:03Z\",\"conclusion\":\"FAILURE\",\"detailsUrl\":\"https://github.com/armonon/form-studio/actions/runs/37724578530/job/113139727744\",\"name\":\"native-macos\",\"startedAt\":\"2026-10-08T03:49:57Z\",\"status\":\"COMPLETED\",\"workflowName\":\"CI\"},{\"__typename\":\"CheckRun\",\"completedAt\":\"2026-10-08T03:50:03Z\",\"conclusion\":\"SKIPPED\",\"detailsUrl\":\"https://github.com/armonon/form-studio/actions/runs/37724578530/job/113139755180\",\"name\":\"desktop-artifact\",\"startedAt\":\"2026-10-08T03:50:04Z\",\"status\":\"COMPLETED\",\"workflowName\":\"CI\"}],\"url\":\"https://github.com/armonon/form-studio/pull/7\"}\n",
+  "stderr": ""
+}

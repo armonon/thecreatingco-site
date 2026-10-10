@@ -1,0 +1,17 @@
+{
+  "task_id": "PROGRAM18-CAPTIONS-LIFECYCLE-001",
+  "objective": "Fence Captions media replacement and preserve editable authored state",
+  "severity": "P1",
+  "selection_reason": "Highest eligible P1 priority 64; scheduler commissioning task already COMPLETE; no RUNNING products in refreshed queue; core lab next is P2. Captions/Reframe tie resolved by existing queue order.",
+  "director_model": "openai/gpt-6.1-sol",
+  "worker_model_requested": "openai/gpt-6-luna",
+  "owner": "company-director-sol",
+  "token_budget": 18000,
+  "tool_budget": 55,
+  "context_budget": 8000,
+  "time_budget_minutes": 22,
+  "new_external_cost_usd": 0,
+  "budget_limits": "unknown; not spending approval",
+  "acceptance": "Deliberately delayeddecode A/B replacement, malformedclip, repeatedwordediting/timing, recovery, SRT/VTT/WebM parse and codecvisibility handling.",
+  "started_at": "2026-10-09T08:11:13.080455+00:00"
+}

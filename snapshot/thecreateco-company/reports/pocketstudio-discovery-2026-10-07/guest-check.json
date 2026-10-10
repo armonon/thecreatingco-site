@@ -1,0 +1,72 @@
+{
+  "observed_at": "2026-10-08T02:14:33.954Z",
+  "scope": "Fresh anonymous browser, no account creation, no recording grant, no media upload or public content",
+  "checks": [
+    {
+      "name": "Pocket Studio deep link hydrates actual recorder",
+      "status": "PASS"
+    },
+    {
+      "name": "Denied microphone does not record",
+      "status": "OBSERVED"
+    }
+  ],
+  "errors": [],
+  "pocketText": "THECREATECO / COMMUNITY\nPocket Studio\nNo account needed to join in\nChoose a name\nAbout guest access\nCatch the idea.\n\nVoice, melody, sound. Record up to two minutes.\n\nMicrophone\nDefault microphone\nMicrophone 1\n00:00\nRecord\n\nMicrophone access starts only when you press Record.\n\nOn this device 0/20\n\nOriginals are stored in this browser. Download a copy to keep them if browser data is cleared.\n\nYour recordings will appear here.",
+  "buttons": [
+    "Home",
+    "Discover",
+    "Songs",
+    "Sessions",
+    "Pocket Studio",
+    "Create",
+    "Messages",
+    "Notifications",
+    "Saved",
+    "Profile",
+    "Settings",
+    "Sign in / join",
+    "Choose a name",
+    "Record"
+  ],
+  "permissionText": "THECREATECO / COMMUNITY\nPocket Studio\nNo account needed to join in\nChoose a name\nAbout guest access\nCatch the idea.\n\nVoice, melody, sound. Record up to two minutes.\n\nMicrophone access was not granted. Allow it in your browser settings, then try again.\n\nMicrophone\nDefault microphone\nMicrophone 1\n00:00\nRecord\n\nMicrophone access starts only when you press Record.\n\nOn this device 0/20\n\nOriginals are stored in this browser. Download a copy to keep them if browser data is cleared.\n\nYour recordings will appear here.",
+  "phoneOverflow": false,
+  "sessionsText": "THECREATECO / COMMUNITY\nSessions\nNo account needed to join in\nChoose a name\nAbout guest access\nListen together.\n\nA shared queue. A room for the conversation.\n\nRoom name\nWho can find it?\nPublic — discoverable\nUnlisted — anyone with the link\nCreate a session\nOpen rooms\n\nNo open rooms yet. Start one and invite someone in.",
+  "authDialog": [],
+  "requests": [
+    {
+      "method": "POST",
+      "path": "/api/account"
+    },
+    {
+      "method": "GET",
+      "path": "/api/community/network"
+    },
+    {
+      "method": "GET",
+      "path": "/api/community/network"
+    },
+    {
+      "method": "POST",
+      "path": "/api/account"
+    },
+    {
+      "method": "GET",
+      "path": "/api/community/network"
+    },
+    {
+      "method": "GET",
+      "path": "/api/community/network"
+    },
+    {
+      "method": "GET",
+      "path": "/api/community/network"
+    },
+    {
+      "method": "GET",
+      "path": "/api/community/network"
+    }
+  ],
+  "browser": "153.0.8010.12",
+  "pass": true
+}

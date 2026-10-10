@@ -1,0 +1,71 @@
+{
+  "method": "Independent native Inkscape raster versus opentype.js-parsed outlines; symmetric 1px ink tolerance; fallback negative control; not a quality/user score",
+  "results": [
+    {
+      "format": "ttf",
+      "editableTextPreserved": [
+        "AVHo oHVA AV",
+        "A V H o"
+      ],
+      "width": 1200,
+      "height": 440,
+      "reference": {
+        "inkPixelsCompared": 44548,
+        "unmatchedInkPixels": 0,
+        "tolerantAgreement": 1,
+        "exactMaskDifferencePixels": 2
+      },
+      "reopened": {
+        "inkPixelsCompared": 44548,
+        "unmatchedInkPixels": 0,
+        "tolerantAgreement": 1,
+        "exactMaskDifferencePixels": 0
+      },
+      "missingFontControl": {
+        "inkPixelsCompared": 58725,
+        "unmatchedInkPixels": 46028,
+        "tolerantAgreement": 0.21621115368241806,
+        "exactMaskDifferencePixels": 48145
+      },
+      "editableReopened": {
+        "inkPixelsCompared": 44548,
+        "unmatchedInkPixels": 0,
+        "tolerantAgreement": 1,
+        "exactMaskDifferencePixels": 0
+      }
+    },
+    {
+      "format": "otf",
+      "editableTextPreserved": [
+        "AVHo oHVA AV",
+        "A V H o"
+      ],
+      "width": 1200,
+      "height": 440,
+      "reference": {
+        "inkPixelsCompared": 44539,
+        "unmatchedInkPixels": 0,
+        "tolerantAgreement": 1,
+        "exactMaskDifferencePixels": 1
+      },
+      "reopened": {
+        "inkPixelsCompared": 44540,
+        "unmatchedInkPixels": 0,
+        "tolerantAgreement": 1,
+        "exactMaskDifferencePixels": 0
+      },
+      "missingFontControl": {
+        "inkPixelsCompared": 58721,
+        "unmatchedInkPixels": 46361,
+        "tolerantAgreement": 0.21048687862945115,
+        "exactMaskDifferencePixels": 48619
+      },
+      "editableReopened": {
+        "inkPixelsCompared": 44540,
+        "unmatchedInkPixels": 0,
+        "tolerantAgreement": 1,
+        "exactMaskDifferencePixels": 0
+      }
+    }
+  ]
+}

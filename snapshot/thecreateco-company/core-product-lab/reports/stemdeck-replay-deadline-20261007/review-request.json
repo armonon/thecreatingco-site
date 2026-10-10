@@ -1,0 +1,24 @@
+{
+  "source_sha": "c15bb06a87b150a966e8c563457de4f2786ba141",
+  "base_sha": "af10e31c9df8f1363d3945e3b1d39518cd858009",
+  "patch_sha256": "6f2331cde77101f4140f639ebe0fd07fe7d2ad2d1a9d9faa72c6e9d2e2b6cc3a",
+  "review_status": "PENDING",
+  "reviewer": "parent OpenAI independent context requested; parent interrupted at checkpoint",
+  "deployment": "LOCAL_ONLY_NOT_PUSHED",
+  "paths": [
+    "package.json",
+    "package-lock.json",
+    "scripts/apply-audio-cycle-precheck.mjs",
+    "scripts/perform-lifecycle-qa.mjs",
+    "tests/audio-cycle-precheck.test.js",
+    "docs/REPLAY_DEADLINES_2026-10-07.md"
+  ],
+  "gates": "Exact clean Node22 mandatory gate PASS, 2250 tests, unchanged120-second soak; actual UI and production replay PASS; Chromium/Firefox14/14, WebKit13/14 reference decode FAIL remains",
+  "evidence": [
+    "exact-gate/report.json",
+    "exact-ui/report.json",
+    "exact-production-replay/report.json",
+    "exact-platforms/report.json",
+    "exact-capture-print-comparison.json"
+  ]
+}

@@ -1,0 +1,488 @@
+{
+  "format": "scenepilot-cut",
+  "version": 2,
+  "project": "Synthetic Golden Composite 12s",
+  "duration": 12,
+  "bpm": 120,
+  "beatOffset": 0,
+  "beats": [],
+  "sections": [],
+  "tracks": [
+    {
+      "id": "clip-track-1",
+      "name": "V2 · LIGHT HITS",
+      "color": "#34d6c7",
+      "enabled": true,
+      "locked": false,
+      "target": true,
+      "sourcePatch": true,
+      "syncLock": true,
+      "blend": "normal",
+      "opacity": 100,
+      "hue": 0,
+      "saturation": 100,
+      "brightness": 100,
+      "glow": 0,
+      "fadeIn": 0,
+      "fadeOut": 0
+    },
+    {
+      "id": "clip-track-2",
+      "name": "V3 · OVERLAYS",
+      "color": "#ff695d",
+      "enabled": true,
+      "locked": false,
+      "target": false,
+      "sourcePatch": false,
+      "syncLock": true,
+      "blend": "normal",
+      "opacity": 100,
+      "hue": 0,
+      "saturation": 100,
+      "brightness": 100,
+      "glow": 0,
+      "fadeIn": 0,
+      "fadeOut": 0
+    }
+  ],
+  "videoClips": [
+    {
+      "id": "golden-main-a",
+      "assetId": "media-046a556eadda5a1aee197a1c",
+      "sectionId": "manual",
+      "start": 0,
+      "sourceStart": 0,
+      "duration": 4,
+      "playbackRate": 1,
+      "linked": true,
+      "transitionType": "none",
+      "trackId": "__base__"
+    },
+    {
+      "id": "golden-broll",
+      "assetId": "media-63a566f5c5f0db370038a4c4",
+      "sectionId": "manual",
+      "start": 4,
+      "sourceStart": 0,
+      "duration": 4,
+      "playbackRate": 1,
+      "linked": true,
+      "transitionType": "none",
+      "trackId": "__base__"
+    },
+    {
+      "id": "golden-main-b",
+      "assetId": "media-046a556eadda5a1aee197a1c",
+      "sectionId": "manual",
+      "start": 8,
+      "sourceStart": 8,
+      "duration": 4,
+      "playbackRate": 1,
+      "linked": true,
+      "transitionType": "none",
+      "trackId": "__base__"
+    },
+    {
+      "id": "golden-overlay",
+      "assetId": "media-a180d08e943fee27b10a7990",
+      "sectionId": "manual",
+      "start": 1,
+      "sourceStart": 0,
+      "duration": 3,
+      "linked": false,
+      "trackId": "clip-track-1",
+      "transformKeyframes": [
+        {
+          "id": "golden-kf-a",
+          "time": 0,
+          "x": -0.2,
+          "y": 0,
+          "scale": 1,
+          "rotation": 0,
+          "opacity": 0,
+          "easing": "linear"
+        },
+        {
+          "id": "golden-kf-b",
+          "time": 3,
+          "x": 0.2,
+          "y": 0,
+          "scale": 1,
+          "rotation": 0,
+          "opacity": 1,
+          "easing": "linear"
+        }
+      ],
+      "overlay": {
+        "scale": 40,
+        "opacity": 100
+      }
+    }
+  ],
+  "baseCuts": [
+    {
+      "id": "golden-main-a",
+      "assetId": "media-046a556eadda5a1aee197a1c",
+      "sectionId": "manual",
+      "start": 0,
+      "sourceStart": 0,
+      "duration": 4,
+      "playbackRate": 1,
+      "linked": true,
+      "transitionType": "none"
+    },
+    {
+      "id": "golden-broll",
+      "assetId": "media-63a566f5c5f0db370038a4c4",
+      "sectionId": "manual",
+      "start": 4,
+      "sourceStart": 0,
+      "duration": 4,
+      "playbackRate": 1,
+      "linked": true,
+      "transitionType": "none"
+    },
+    {
+      "id": "golden-main-b",
+      "assetId": "media-046a556eadda5a1aee197a1c",
+      "sectionId": "manual",
+      "start": 8,
+      "sourceStart": 8,
+      "duration": 4,
+      "playbackRate": 1,
+      "linked": true,
+      "transitionType": "none"
+    }
+  ],
+  "titles": [
+    {
+      "id": "golden-title",
+      "text": "GOLDEN TITLE",
+      "start": 8,
+      "duration": 2,
+      "y": 0.5,
+      "size": 0.12,
+      "color": "#ffffff",
+      "style": "rise",
+      "animator": "none"
+    }
+  ],
+  "projectIntelligence": null,
+  "projectTranscripts": {},
+  "storyBrief": "",
+  "assets": [
+    {
+      "id": "media-046a556eadda5a1aee197a1c",
+      "name": "sp-golden-main-30fps.mp4",
+      "kind": "video",
+      "size": 938381,
+      "lastModified": 1791427963757,
+      "sourcePath": "/Users/agentsattari/thecreateco-company/reports/scenepilot-golden-release18/fixtures/sp-golden-main-30fps.mp4",
+      "folderId": "bin-footage"
+    },
+    {
+      "id": "media-63a566f5c5f0db370038a4c4",
+      "name": "sp-golden-broll-24fps.mp4",
+      "kind": "video",
+      "size": 563635,
+      "lastModified": 1791427964269,
+      "sourcePath": "/Users/agentsattari/thecreateco-company/reports/scenepilot-golden-release18/fixtures/sp-golden-broll-24fps.mp4",
+      "folderId": "bin-footage"
+    },
+    {
+      "id": "media-a180d08e943fee27b10a7990",
+      "name": "sp-golden-overlay.png",
+      "kind": "image",
+      "size": 6662,
+      "lastModified": 1791427964289,
+      "sourcePath": "/Users/agentsattari/thecreateco-company/reports/scenepilot-golden-release18/fixtures/sp-golden-overlay.png",
+      "folderId": "bin-graphics"
+    },
+    {
+      "id": "media-643f66de0d95a0fa1ca8c095",
+      "name": "sp-golden-music-48k.wav",
+      "kind": "audio",
+      "size": 3840044,
+      "lastModified": 1791427964335,
+      "sourcePath": "/Users/agentsattari/thecreateco-company/reports/scenepilot-golden-release18/fixtures/sp-golden-music-48k.wav",
+      "folderId": "bin-audio"
+    },
+    {
+      "id": "media-00ed93e0d09754fbb7b51ff6",
+      "name": "sp-golden-sfx-44k.wav",
+      "kind": "audio",
+      "size": 264644,
+      "lastModified": 1791427964375,
+      "sourcePath": "/Users/agentsattari/thecreateco-company/reports/scenepilot-golden-release18/fixtures/sp-golden-sfx-44k.wav",
+      "folderId": "bin-audio"
+    }
+  ],
+  "placements": [
+    {
+      "id": "golden-overlay",
+      "assetId": "media-a180d08e943fee27b10a7990",
+      "sectionId": "manual",
+      "start": 1,
+      "sourceStart": 0,
+      "duration": 3,
+      "scale": 40,
+      "opacity": 100,
+      "linked": false,
+      "trackId": "clip-track-1",
+      "transformKeyframes": [
+        {
+          "id": "golden-kf-a",
+          "time": 0,
+          "x": -0.2,
+          "y": 0,
+          "scale": 1,
+          "rotation": 0,
+          "opacity": 0,
+          "easing": "linear"
+        },
+        {
+          "id": "golden-kf-b",
+          "time": 3,
+          "x": 0.2,
+          "y": 0,
+          "scale": 1,
+          "rotation": 0,
+          "opacity": 1,
+          "easing": "linear"
+        }
+      ]
+    }
+  ],
+  "compositions": [],
+  "effects": {
+    "styleId": "auto",
+    "autoEnergy": "smooth",
+    "montageEnabled": true,
+    "montagePace": "cinematic",
+    "punchPreset": "subtle",
+    "transitionType": "none",
+    "strobePreset": "off",
+    "strobeColor": "#ffffff",
+    "strobeSecondaryColor": "#ff334f",
+    "strobeAlternate": false,
+    "strobeIntensity": 0.7,
+    "strobeAttack": 0,
+    "strobeHold": 0.008,
+    "strobeDecay": 0.08,
+    "strobeShape": "exponential",
+    "strobeMode": "full",
+    "strobeBlend": "screen",
+    "strobeX": 0.5,
+    "strobeY": 0.5,
+    "strobeSize": 0.75,
+    "strobeSoftness": 0.65,
+    "strobeAngle": 0,
+    "strobeSafeMode": true,
+    "strobeTiming": "song",
+    "strobeBpm": 120,
+    "strobeSensitivity": 0.5,
+    "strobeBand": "all",
+    "stutterPreset": "off",
+    "speedPreset": "off",
+    "dropRampEnabled": false,
+    "audioReactive": false,
+    "shakePreset": "off",
+    "lookPreset": "none",
+    "manualGrade": {
+      "exposure": 1,
+      "contrast": 1,
+      "saturation": 1,
+      "temperature": 0,
+      "tint": 0,
+      "bloom": 0,
+      "vignette": 0,
+      "grain": 0,
+      "aberration": 0
+    },
+    "mirrorMode": 0,
+    "streak": 0,
+    "echoPreset": "off"
+  },
+  "settings": {
+    "aspect": "16:9",
+    "customSize": {
+      "width": 1080,
+      "height": 1080
+    },
+    "sourceDims": {
+      "w": 1920,
+      "h": 1080
+    },
+    "exportFrameRate": 30,
+    "exportMaxDimension": 1920,
+    "exportFormat": "mp4-h264",
+    "colorCurve": "none",
+    "lut3dSource": null,
+    "lut3dMix": 1
+  },
+  "proState": {
+    "autoPolicy": {
+      "timing": "auto",
+      "targetDuration": 0,
+      "minShot": 0.25,
+      "maxShot": 12,
+      "noRepeat": false,
+      "preserveDialogue": true,
+      "sources": []
+    },
+    "autoVersions": [],
+    "creatorGoal": "music-video",
+    "inferredCreatorGoal": null,
+    "audioTracks": [
+      {
+        "id": "audio-track-1",
+        "name": "A1 · MUSIC",
+        "color": "#5eb8ff",
+        "muted": false,
+        "solo": false,
+        "locked": false,
+        "target": true,
+        "syncLock": true,
+        "busId": "bus-music",
+        "gain": 1,
+        "pan": 0,
+        "processing": {
+          "highPassHz": 20,
+          "lowDb": 0,
+          "midDb": 0,
+          "highDb": 0,
+          "compressorThreshold": -18,
+          "compressorRatio": 2,
+          "limiter": true,
+          "makeupGain": 1
+        }
+      },
+      {
+        "id": "audio-track-2",
+        "name": "A2 · SFX",
+        "color": "#f7c84b",
+        "muted": false,
+        "solo": false,
+        "locked": false,
+        "target": false,
+        "syncLock": true,
+        "busId": "bus-sfx",
+        "gain": 0.9,
+        "pan": 0,
+        "processing": {
+          "highPassHz": 20,
+          "lowDb": 0,
+          "midDb": 0,
+          "highDb": 0,
+          "compressorThreshold": -24,
+          "compressorRatio": 1,
+          "limiter": true,
+          "makeupGain": 1
+        }
+      }
+    ],
+    "audioBuses": [
+      {
+        "id": "bus-music",
+        "name": "MUSIC",
+        "color": "#5eb8ff",
+        "gain": 1,
+        "muted": false,
+        "solo": false
+      },
+      {
+        "id": "bus-dialogue",
+        "name": "DIALOGUE",
+        "color": "#34d6c7",
+        "gain": 1,
+        "muted": false,
+        "solo": false
+      },
+      {
+        "id": "bus-sfx",
+        "name": "SFX",
+        "color": "#f7c84b",
+        "gain": 1,
+        "muted": false,
+        "solo": false
+      }
+    ],
+    "masterGain": 1,
+    "colorManagement": {
+      "workingSpace": "rec709",
+      "displayTransform": "rec709-100",
+      "toneMap": "bt2390"
+    },
+    "audioClips": [
+      {
+        "id": "golden-music",
+        "assetId": "media-643f66de0d95a0fa1ca8c095",
+        "trackId": "audio-track-1",
+        "name": "sp-golden-music-48k.wav",
+        "start": 0,
+        "sourceStart": 0,
+        "duration": 12,
+        "playbackRate": 1,
+        "gain": 0.4,
+        "pan": 0,
+        "fadeIn": 0.5,
+        "fadeOut": 0.5,
+        "muted": false,
+        "automation": []
+      },
+      {
+        "id": "golden-sfx",
+        "assetId": "media-00ed93e0d09754fbb7b51ff6",
+        "trackId": "audio-track-2",
+        "name": "sp-golden-sfx-44k.wav",
+        "start": 6,
+        "sourceStart": 0,
+        "duration": 3,
+        "playbackRate": 1,
+        "gain": 0.2,
+        "pan": 0,
+        "fadeIn": 0.5,
+        "fadeOut": 0.5,
+        "muted": false,
+        "automation": []
+      }
+    ],
+    "transcriptWords": [],
+    "projectIntelligence": null,
+    "projectTranscripts": {},
+    "storyBrief": "",
+    "markers": [],
+    "timelineRange": {
+      "inPoint": 0,
+      "outPoint": 12
+    },
+    "mediaBins": [
+      {
+        "id": "bin-root",
+        "name": "ALL MEDIA",
+        "parentId": null
+      },
+      {
+        "id": "bin-footage",
+        "name": "FOOTAGE",
+        "parentId": "bin-root"
+      },
+      {
+        "id": "bin-audio",
+        "name": "AUDIO",
+        "parentId": "bin-root"
+      },
+      {
+        "id": "bin-graphics",
+        "name": "GRAPHICS",
+        "parentId": "bin-root"
+      }
+    ],
+    "snapping": true,
+    "linkedSelection": true,
+    "manualDropTime": null
+  },
+  "renderAnalysis": null,
+  "analysis": null,
+  "savedAt": 1791431632318
+}

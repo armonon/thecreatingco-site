@@ -1,0 +1,26 @@
+{
+  "baseline_sha": "b5abdd1de5f71fe0244ef9a651a6d983067541ff",
+  "baseline_log": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-evidence/unit-node22.log",
+  "candidate_failed_tests": [
+    "Open cancellation and malformed files preserve the current document; accepted Open clears old meshes",
+    "native Open requires explicit confirmation and rejects intervening edits",
+    "native Save As handles cancel, failure, duplicate clicks and edits made during the dialog",
+    "baked texture pixels and UV ownership survive saving and reopening the real workspace",
+    "scene-only native Open preserves cancellation, routes to Animation and visits empty Model without changing the file",
+    "an exact body becomes a persistent linked creative copy with live modifiers",
+    "spoken component selection, marquee, and selection extrusion are wired into the workspace",
+    "selection-first controls apply a saved weighted modifier and Undo removes it"
+  ],
+  "baseline_failed_tests": [
+    "Open cancellation and malformed files preserve the current document; accepted Open clears old meshes",
+    "native Open requires explicit confirmation and rejects intervening edits",
+    "native Save As handles cancel, failure, duplicate clicks and edits made during the dialog",
+    "baked texture pixels and UV ownership survive saving and reopening the real workspace",
+    "scene-only native Open preserves cancellation, routes to Animation and visits empty Model without changing the file",
+    "an exact body becomes a persistent linked creative copy with live modifiers",
+    "spoken component selection, marquee, and selection extrusion are wired into the workspace",
+    "selection-first controls apply a saved weighted modifier and Undo removes it"
+  ],
+  "same_failures": true,
+  "qualification": "Comparison to prior dated durable baseline; baseline not freshly rerun in this cycle"
+}

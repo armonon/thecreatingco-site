@@ -1,0 +1,74 @@
+[
+  {
+    "baseRefName": "main",
+    "headRefName": "codex/form-company-backlink-20261009",
+    "headRefOid": "cbde0fdfd1820ce2c4f18269dd75133a2bdda681",
+    "number": 11,
+    "title": "feat: add company backlinks to Form and Cast",
+    "url": "https://github.com/armonon/form-studio/pull/11"
+  },
+  {
+    "baseRefName": "fix/form-worker-images-20261009",
+    "headRefName": "feat/pattern-first-scan-20261009",
+    "headRefOid": "c292256227befffde4646f9ec4b6fad56419c7fa",
+    "number": 10,
+    "title": "feat(garment): pattern-first scan draft for simple skirts",
+    "url": "https://github.com/armonon/form-studio/pull/10"
+  },
+  {
+    "baseRefName": "qa/form-runtime-security-20261008T0340",
+    "headRefName": "fix/form-worker-images-20261009",
+    "headRefOid": "b5f8b08832dc7961b097ce2ae7a0c29db2fc0055",
+    "number": 9,
+    "title": "fix(worker): separate static image Fetcher from R2 assets",
+    "url": "https://github.com/armonon/form-studio/pull/9"
+  },
+  {
+    "baseRefName": "qa/form-runtime-security-20261008T0340",
+    "headRefName": "qa/form-handoff-20261008T1210",
+    "headRefOid": "779d61d324a6f5f8a6813b51735d4495dbfabc08",
+    "number": 8,
+    "title": "docs: clarify shared Form workspace handoff and recovery boundaries",
+    "url": "https://github.com/armonon/form-studio/pull/8"
+  },
+  {
+    "baseRefName": "fix/form-project-menu-20261007",
+    "headRefName": "qa/form-runtime-security-20261008T0340",
+    "headRefOid": "be1f7272c5689d6401194d643fa3eb09a2b0b73b",
+    "number": 7,
+    "title": "fix(security): patch Form image parsers and Worker tooling",
+    "url": "https://github.com/armonon/form-studio/pull/7"
+  },
+  {
+    "baseRefName": "fix/form-project-menu-20261007",
+    "headRefName": "fix/cast-stl-file-import-20261007",
+    "headRefOid": "d24f5d76b4fd0e99c43e1cb8e5e2d9b63db6665e",
+    "number": 6,
+    "title": "fix: recognize ASCII STL browser file bytes",
+    "url": "https://github.com/armonon/form-studio/pull/6"
+  },
+  {
+    "baseRefName": "fix/form-workflow-gates-20261007",
+    "headRefName": "fix/form-project-menu-20261007",
+    "headRefOid": "1e7f6d1c84a6c956ece3cfe6f74b665208bf069c",
+    "number": 5,
+    "title": "Keep Form project actions reachable at desktop and compact widths",
+    "url": "https://github.com/armonon/form-studio/pull/5"
+  },
+  {
+    "baseRefName": "fix/core-form-security-20261007",
+    "headRefName": "fix/form-workflow-gates-20261007",
+    "headRefOid": "ea6734638f72232676985f610daac18341fcd8ca",
+    "number": 4,
+    "title": "fix: restore Form workflow verification and texture lint gates",
+    "url": "https://github.com/armonon/form-studio/pull/4"
+  },
+  {
+    "baseRefName": "main",
+    "headRefName": "fix/core-form-security-20261007",
+    "headRefOid": "b433a12331af3dba200be596422442c103783831",
+    "number": 3,
+    "title": "fix(security): patch Form production dependency advisories",
+    "url": "https://github.com/armonon/form-studio/pull/3"
+  }
+]

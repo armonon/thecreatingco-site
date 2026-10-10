@@ -1,0 +1,1 @@
+{"task_id": "PROGRAM18-POCKET-PERSIST-001", "status": "WAITING", "next_action": "Duplicate inventory task: implementation is actively owned under PROGRAM18-POCKET-SAVE-001 by luma_completion. Do not execute this duplicate; use that task and the shared inventory reproduction evidence.", "dependencies": ["PROGRAM18-POCKET-SAVE-001"]}

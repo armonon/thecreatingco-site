@@ -1,0 +1,13 @@
+{
+  "command": "node /Users/agentsattari/thecreateco-company/core-product-lab/reports/luma-provenance-20261009T2140/overlay-check.cjs",
+  "source_sha": "30bea20f862c4302887b79b89f364f2d7bdf5710",
+  "fixture": "synthetic temporary publish tree; no production modification",
+  "total_overlay_files": 1292,
+  "exact_copies": 1291,
+  "intentional_collision_preserved": "_next/static/17yerx9wbocjj3wchczbw/_buildmanifest.js",
+  "home_overwrite": "PASS",
+  "new_app_file_preserved": "PASS",
+  "additive_collision": "PASS",
+  "status": "PASS",
+  "limitations": "Not official Netlify plugin/function assembly; not an app golden workflow"
+}

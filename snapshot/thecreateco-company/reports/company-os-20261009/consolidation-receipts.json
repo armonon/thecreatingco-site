@@ -1,0 +1,186 @@
+[
+  {
+    "id": "43dc5580-e47c-4a4e-95d7-190263e6896a",
+    "agentId": "main",
+    "sessionKey": "agent:main:discord:channel:1502312350273900678",
+    "name": "Project Radar autonomous blocker cycle",
+    "description": "Repeating safe scan \u2192 classify blockers \u2192 apply explicit autofix rules \u2192 public Radar sync/verification \u2192 notify project systems when material changes or gated blockers appear.",
+    "enabled": true,
+    "createdAtMs": 1779569457751,
+    "schedule": {
+      "kind": "every",
+      "everyMs": 1800000,
+      "anchorMs": 1779569457751
+    },
+    "sessionTarget": "isolated",
+    "wakeMode": "now",
+    "payload": {
+      "kind": "agentTurn",
+      "message": "COMPANY OWNERSHIP AMENDMENT 2026-10-08: thecreateco-company/engine/company.sqlite3 is the only company priority queue. Do not independently select or mutate company-managed products (ScenePilot, Luma, Form, StemDeck, hub, other company registry products) from legacy Radar cards. Preserve those cards as pointers to the company queue; company director/lab owns execution. Other non-paused personal scopes retain their existing rules.\n\nRun one safe Project Radar blocker cycle from /Users/agentsattari/.openclaw/workspace. First read `wiki/operations/2026-06-01-paused-lanes.md`. Armon paused Jobs / money, Digital Human MVP, and MNR / Docta on 2026-06-01; do not select, advance, scan, apply, PR/merge/deploy, or propose active next steps for those lanes until he explicitly resumes them. Use the existing loop: `python3 agents/project-radar/cycle.py` only if it will respect the pause directive; otherwise do a docs/state-only no-op noting the pause. If it succeeds with no material change, keep the update short or silent. If it applies a safe blocker fix outside paused lanes, pushes a verified portfolio change, or hits a review-gated blocker, summarize the evidence, artifact path, commit/deploy if any, and next blocker. Respect autonomy guardrails: do not handle secrets, payments, destructive actions, external outreach, regulated medical/financial/legal claims, or unsupported sale-ready/public-launch claims without Armon approval. Deliver concise updates to the Projects channel.",
+      "timeoutSeconds": 900,
+      "lightContext": true,
+      "model": "openai/gpt-6-luna",
+      "fallbacks": []
+    },
+    "delivery": {
+      "mode": "announce",
+      "channel": "discord",
+      "to": "1502312350273900678",
+      "bestEffort": true
+    },
+    "state": {
+      "nextRunAtMs": 1791530457770,
+      "lastRunAtMs": 1791528657770,
+      "lastRunStatus": "ok",
+      "lastStatus": "ok",
+      "lastDurationMs": 16321,
+      "lastDeliveryStatus": "not-delivered",
+      "consecutiveErrors": 0,
+      "consecutiveSkipped": 0,
+      "lastFailureNotificationDeliveryStatus": "not-requested",
+      "lastDelivered": false,
+      "deliverySuppressionReason": "silent"
+    },
+    "updatedAtMs": 1791528723804,
+    "configRevision": "sha256:oIiH86ccGXvM_UjITEcfN8srMqLlrwYBp_fw4PEPZPs",
+    "nextRunAtMs": 1791530457770,
+    "lastRunAtMs": 1791528657770,
+    "lastRunStatus": "ok",
+    "lastDelivered": false,
+    "lastDeliveryStatus": "not-delivered",
+    "deliverySuppressionReason": "silent",
+    "lastFailureNotificationDeliveryStatus": "not-requested"
+  },
+  {
+    "id": "e28ce23e-2691-4cee-a806-71bb3e3ae137",
+    "agentId": "main",
+    "sessionKey": "agent:main:discord:channel:1503497005979144282",
+    "name": "Project Radar hourly operating loop",
+    "description": "Hourly Project Radar scan for Armon: repo/wiki state, health, blockers, next build sequence, idea feed, and safe automatic docs/state updates.",
+    "enabled": true,
+    "createdAtMs": 1778733906367,
+    "schedule": {
+      "kind": "cron",
+      "expr": "12 * * * *",
+      "tz": "America/Los_Angeles",
+      "staggerMs": 180000
+    },
+    "sessionTarget": "isolated",
+    "wakeMode": "now",
+    "payload": {
+      "kind": "agentTurn",
+      "message": "COMPANY OWNERSHIP AMENDMENT 2026-10-08: thecreateco-company/engine/company.sqlite3 is the only company priority queue. Do not independently select or mutate company-managed products (ScenePilot, Luma, Form, StemDeck, hub, other company registry products) from legacy Radar cards. Preserve those cards as pointers to the company queue; company director/lab owns execution. Other non-paused personal scopes retain their existing rules.\n\nYou are Joey's Project Radar hourly command-center operating loop for Armon. Work in `/Users/agentsattari/.openclaw/workspace`.\n\nIMPORTANT PAUSE DIRECTIVE (2026-06-01): First read `wiki/operations/2026-06-01-paused-lanes.md`. Armon paused Jobs / money, Digital Human MVP, and MNR / Docta. Do not select, advance, scan, auto-apply, PR/merge/deploy, or propose active next steps for those lanes until explicitly resumed. You may mark them as paused/no-active-work only.\n\nPROJECT EVOLUTION DIRECTIVE (AUTO-004): Read `wiki/operations/2026-06-03-project-evolution-system-upgrade.md` and `data/autonomy/project-evolution-cards.md`. Use the card layer to rank active non-paused projects by impact, shippability, bottleneck removal, evidence strength, and momentum. Radar should highlight capability movement and user-reviewable proof, not only blockers/status.\n\nFollow `agents/project-radar/prompt.md` for Project Radar mechanics, but exclude paused lanes from dispatch/action selection. Current allowed active lanes include NOW/Market, Sattari, COMPOSITOR/video, Trader, Personal/Librarian, security read-only checks, Garment Photo Studio, Font Finder, SoulSignal, and system/memory maintenance unless Armon pauses them separately.\n\nCore steps:\n1. Read `agents/project-radar/config.json`, the pause directive, and the evolution cards.\n2. Run `python3 agents/project-radar/snapshot.py`.\n3. Run `python3 agents/project-radar/command_center.py` only if it will not dispatch paused lanes; otherwise produce a no-dispatch alignment note.\n4. Inspect the snapshot, command-center state/ledger, persistent state/changelog/roadmap/build queue/idea feed, and active non-paused project source pages.\n5. Keep Product Radar, command-center directives, next build sequence, idea feed, and cross-project source-of-truth pages synchronized with Project Evolution Card priorities.\n6. Do not do heavy builds, deploys, or L4 actions from this reporting loop.\n\nFinal Discord output:\n- Start with `Project Radar:`.\n- 4-7 bullets max, no tables.\n- Include report path, health, top active evolution card outside paused lanes, what evolved / what Armon can review, blocker, and highest-value next step.",
+      "model": "openai/gpt-6-luna",
+      "thinking": "medium",
+      "timeoutSeconds": 900,
+      "toolsAllow": [
+        "read",
+        "write",
+        "edit",
+        "exec",
+        "cron",
+        "memory_search",
+        "memory_get",
+        "sessions_spawn",
+        "subagents"
+      ],
+      "fallbacks": [],
+      "lightContext": true
+    },
+    "delivery": {
+      "mode": "announce",
+      "channel": "discord",
+      "to": "channel:1502312350273900678",
+      "bestEffort": true
+    },
+    "state": {
+      "nextRunAtMs": 1791529962479,
+      "lastRunAtMs": 1791486762514,
+      "lastRunStatus": "ok",
+      "lastStatus": "ok",
+      "lastDurationMs": 109994,
+      "lastDeliveryStatus": "delivered",
+      "consecutiveErrors": 0,
+      "consecutiveSkipped": 0,
+      "lastFailureNotificationDeliveryStatus": "not-requested",
+      "lastDelivered": true
+    },
+    "updatedAtMs": 1791528724391,
+    "configRevision": "sha256:9ac0nLaSrV_ddS2N7dTjz36zMjlBB_9ATtV9_81jiWQ",
+    "nextRunAtMs": 1791529962479,
+    "lastRunAtMs": 1791486762514,
+    "lastRunStatus": "ok",
+    "lastDelivered": true,
+    "lastDeliveryStatus": "delivered",
+    "lastFailureNotificationDeliveryStatus": "not-requested"
+  },
+  {
+    "id": "0a32de18-7225-4832-90f2-c4d4c5647f64",
+    "agentId": "main",
+    "sessionKey": "agent:main:discord:channel:1501138899752194130",
+    "name": "Daily visionary app idea",
+    "description": "Superseded by company Sol weekly review and evidence-triggered Astra creative brief; preserve history, no daily random-app generation",
+    "enabled": false,
+    "createdAtMs": 1778728493752,
+    "schedule": {
+      "kind": "cron",
+      "expr": "15 9 * * *",
+      "tz": "America/Los_Angeles",
+      "staggerMs": 300000
+    },
+    "sessionTarget": "isolated",
+    "wakeMode": "now",
+    "payload": {
+      "kind": "agentTurn",
+      "message": "You are Joey's daily visionary app-idea scout for Armon. Work in /Users/agentsattari/.openclaw/workspace. Each day, generate one forward-thinking app/product idea Armon could realistically build from the ingredients already emerging across his projects.\n\nBefore writing, lightly inspect current context:\n- read wiki/index.md and wiki/projects/index.md\n- read recent wiki/log.md entries and memory/YYYY-MM-DD.md if present\n- skim the most relevant project page(s) for today's chosen idea (Sattari, MNR/Botanica, Trader, Video, Personal/Librarian, Jobs/client work, site/ads)\n- optional: use web_search only if a quick current-market signal would sharpen the idea\n\nOutput for Discord #general:\n- Start with `Daily app idea:`\n- Keep it visionary but buildable, not generic.\n- 4-7 bullets max, no markdown tables.\n- Include: idea name, one-line vision, why it fits what Armon is already creating, MVP we can build first, unfair advantage/edge, and the next tiny build step.\n- Rotate domains across the week so ideas do not all cluster in one project.\n- Be honest: label speculative parts clearly, do not claim revenue/market certainty, do not expose secrets or sensitive personal details.\n- If the idea touches trading, frame it as research/education only; no personalized financial advice or guaranteed returns.\n- If the idea touches health/herbal products, avoid disease-treatment claims, dosing, or medical advice.",
+      "model": "openai/gpt-5.6-terra",
+      "thinking": "medium",
+      "timeoutSeconds": 600,
+      "toolsAllow": [
+        "read",
+        "web_search",
+        "memory_search"
+      ]
+    },
+    "delivery": {
+      "mode": "announce",
+      "channel": "discord",
+      "to": "channel:1501138899752194130",
+      "bestEffort": true
+    },
+    "state": {
+      "lastRunAtMs": 1791476247119,
+      "lastRunStatus": "error",
+      "lastStatus": "error",
+      "lastDurationMs": 738,
+      "lastDeliveryStatus": "unknown",
+      "consecutiveErrors": 1,
+      "consecutiveSkipped": 0,
+      "lastError": "SQLite read-only worker exited with code 1\nstderr (tail): node:internal/modules/package_json_reader:343\n  throw new ERR_MODULE_NOT_FOUND(packageName, fileURLToPath(base), null);\n        ^\n\nError [ERR_MODULE_NOT_FOUND]: Cannot find package 'tslog' imported from /Users/agentsattari/openclaw/dist/infra/sqlite-readonly-location.worker.js\n    at Object.getPackageJSONURL (node:internal/modules/package_json_reader:343:9)\n    at packageResolve (node:internal/modules/esm/resolve:751:25)\n    at moduleResolve (node:internal/modules/esm/resolve:840:18)\n    at defaultResolve (node:internal/modules/esm/resolve:973:11)\n    at #cachedDefaultResolve (node:internal/modules/esm/loader:708:20)\n    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:728:38)\n    at ModuleLoader.resolveSync (node:internal/modules/esm/loader:766:56)\n    at #resolve (node:internal/modules/esm/loader:690:17)\n    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:610:35)\n    at ModuleJob.syncLink (node:internal/modules/esm/module_job:277:33) {\n  code: 'ERR_MODULE_NOT_FOUND'\n}\n\nNode.js v26.9.0",
+      "lastDiagnostics": {
+        "summary": "SQLite read-only worker exited with code 1\nstderr (tail): node:internal/modules/package_json_reader:343\n  throw new ERR_MODULE_NOT_FOUND(packageName, fileURLToPath(base), null);\n        ^\n\nError [ERR_MODULE_NOT_FOUND]: Cannot find package 'tslog' imported from /Users/agentsattari/openclaw/dist/infra/sqlite-readonly-location.worker.js\n    at Object.getPackageJSONURL (node:internal/modules/package_json_reader:343:9)\n    at packageResolve (node:internal/modules/esm/resolve:751:25)\n    at moduleResolve (node:internal/modules/esm/resolve:840:18)\n    at defaultResolve (node:internal/modules/esm/resolve:973:11)\n    at #cachedDefaultResolve (node:internal/modules/esm/loader:708:20)\n    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:728:38)\n    at ModuleLoader.resolveSync (node:internal/modules/esm/loader:766:56)\n    at #resolve (node:internal/modules/esm/loader:690:17)\n    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:610:35)\n    at ModuleJob.syncLink (node:internal/modules/esm/module_job:277:33) {\n  code: 'ERR_MODULE_NOT_FOUND'\n}\n\nNode.js v26.9.0",
+        "entries": [
+          {
+            "ts": 1791476247856,
+            "source": "cron-setup",
+            "severity": "error",
+            "message": "SQLite read-only worker exited with code 1\nstderr (tail): node:internal/modules/package_json_reader:343\n  throw new ERR_MODULE_NOT_FOUND(packageName, fileURLToPath(base), null);\n        ^\n\nError [ERR_MODULE_NOT_FOUND]: Cannot find package 'tslog' imported from /Users/agentsattari/openclaw/dist/infra/sqlite-readonly-location.worker.js\n    at Object.getPackageJSONURL (node:internal/modules/package_json_reader:343:9)\n    at packageResolve (node:internal/modules/esm/resolve:751:25)\n    at moduleResolve (node:internal/modules/esm/resolve:840:18)\n    at defaultResolve (node:internal/modules/esm/resolve:973:11)\n    at #cachedDefaultResolve (node:internal/modules/esm/loader:708:20)\n    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:728:38)\n    at ModuleLoader.resolveSync (node:internal/modules/esm/loader:766:56)\n    at #resolve (node:internal/modules/esm/loader:690:17)\n    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:610:35)\n    at ModuleJob\u2026",
+            "truncated": true
+          }
+        ]
+      },
+      "lastDiagnosticSummary": "SQLite read-only worker exited with code 1\nstderr (tail): node:internal/modules/package_json_reader:343\n  throw new ERR_MODULE_NOT_FOUND(packageName, fileURLToPath(base), null);\n        ^\n\nError [ERR_MODULE_NOT_FOUND]: Cannot find package 'tslog' imported from /Users/agentsattari/openclaw/dist/infra/sqlite-readonly-location.worker.js\n    at Object.getPackageJSONURL (node:internal/modules/package_json_reader:343:9)\n    at packageResolve (node:internal/modules/esm/resolve:751:25)\n    at moduleResolve (node:internal/modules/esm/resolve:840:18)\n    at defaultResolve (node:internal/modules/esm/resolve:973:11)\n    at #cachedDefaultResolve (node:internal/modules/esm/loader:708:20)\n    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:728:38)\n    at ModuleLoader.resolveSync (node:internal/modules/esm/loader:766:56)\n    at #resolve (node:internal/modules/esm/loader:690:17)\n    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:610:35)\n    at ModuleJob.syncLink (node:internal/modules/esm/module_job:277:33) {\n  code: 'ERR_MODULE_NOT_FOUND'\n}\n\nNode.js v26.9.0",
+      "lastDeliveryError": "SQLite read-only worker exited with code 1\nstderr (tail): node:internal/modules/package_json_reader:343\n  throw new ERR_MODULE_NOT_FOUND(packageName, fileURLToPath(base), null);\n        ^\n\nError [ERR_MODULE_NOT_FOUND]: Cannot find package 'tslog' imported from /Users/agentsattari/openclaw/dist/infra/sqlite-readonly-location.worker.js\n    at Object.getPackageJSONURL (node:internal/modules/package_json_reader:343:9)\n    at packageResolve (node:internal/modules/esm/resolve:751:25)\n    at moduleResolve (node:internal/modules/esm/resolve:840:18)\n    at defaultResolve (node:internal/modules/esm/resolve:973:11)\n    at #cachedDefaultResolve (node:internal/modules/esm/loader:708:20)\n    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:728:38)\n    at ModuleLoader.resolveSync (node:internal/modules/esm/loader:766:56)\n    at #resolve (node:internal/modules/esm/loader:690:17)\n    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:610:35)\n    at ModuleJob.syncLink (node:internal/modules/esm/module_job:277:33) {\n  code: 'ERR_MODULE_NOT_FOUND'\n}\n\nNode.js v26.9.0",
+      "lastFailureNotificationDeliveryStatus": "not-requested",
+      "scheduleActivatedAtMs": 1791528724980
+    },
+    "updatedAtMs": 1791528724980,
+    "configRevision": "sha256:8CGMDue7xngQQR_gb1gM4asLAvBqVrWtUv7HSmNEEus",
+    "lastRunAtMs": 1791476247119,
+    "lastRunStatus": "error",
+    "lastRunError": "SQLite read-only worker exited with code 1\nstderr (tail): node:internal/modules/package_json_reader:343\n  throw new ERR_MODULE_NOT_FOUND(packageName, fileURLToPath(base), null);\n        ^\n\nError [ERR_MODULE_NOT_FOUND]: Cannot find package 'tslog' imported from /Users/agentsattari/openclaw/dist/infra/sqlite-readonly-location.worker.js\n    at Object.getPackageJSONURL (node:internal/modules/package_json_reader:343:9)\n    at packageResolve (node:internal/modules/esm/resolve:751:25)\n    at moduleResolve (node:internal/modules/esm/resolve:840:18)\n    at defaultResolve (node:internal/modules/esm/resolve:973:11)\n    at #cachedDefaultResolve (node:internal/modules/esm/loader:708:20)\n    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:728:38)\n    at ModuleLoader.resolveSync (node:internal/modules/esm/loader:766:56)\n    at #resolve (node:internal/modules/esm/loader:690:17)\n    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:610:35)\n    at ModuleJob.syncLink (node:internal/modules/esm/module_job:277:33) {\n  code: 'ERR_MODULE_NOT_FOUND'\n}\n\nNode.js v26.9.0",
+    "lastDeliveryStatus": "unknown",
+    "lastDeliveryError": "SQLite read-only worker exited with code 1\nstderr (tail): node:internal/modules/package_json_reader:343\n  throw new ERR_MODULE_NOT_FOUND(packageName, fileURLToPath(base), null);\n        ^\n\nError [ERR_MODULE_NOT_FOUND]: Cannot find package 'tslog' imported from /Users/agentsattari/openclaw/dist/infra/sqlite-readonly-location.worker.js\n    at Object.getPackageJSONURL (node:internal/modules/package_json_reader:343:9)\n    at packageResolve (node:internal/modules/esm/resolve:751:25)\n    at moduleResolve (node:internal/modules/esm/resolve:840:18)\n    at defaultResolve (node:internal/modules/esm/resolve:973:11)\n    at #cachedDefaultResolve (node:internal/modules/esm/loader:708:20)\n    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:728:38)\n    at ModuleLoader.resolveSync (node:internal/modules/esm/loader:766:56)\n    at #resolve (node:internal/modules/esm/loader:690:17)\n    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:610:35)\n    at ModuleJob.syncLink (node:internal/modules/esm/module_job:277:33) {\n  code: 'ERR_MODULE_NOT_FOUND'\n}\n\nNode.js v26.9.0",
+    "lastFailureNotificationDeliveryStatus": "not-requested"
+  }
+]

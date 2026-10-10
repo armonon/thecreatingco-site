@@ -1,0 +1,8 @@
+{
+  "command": [
+    "node",
+    "build/check-release-evidence.mjs",
+    "status"
+  ],
+  "exit_code": 0
+}

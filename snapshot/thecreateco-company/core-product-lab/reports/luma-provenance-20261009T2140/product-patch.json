@@ -1,0 +1,33 @@
+{
+  "product_id": "luma",
+  "production_provenance_qualification": {
+    "observed_at": "2026-10-09T21:43:43.549590+00:00",
+    "report": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/luma-provenance-20261009T2140/README.md",
+    "source_sha": "30bea20f862c4302887b79b89f364f2d7bdf5710",
+    "published_deploy": "6ac5d1a6d2965007d3910de2",
+    "published_commit_ref": null,
+    "published_manifest_files": 1692,
+    "matching_overlay_files": 1292,
+    "matching_public_files": 277,
+    "downloaded_app_files_verified": 122,
+    "config_matches": false,
+    "source_deploy_identity": "UNKNOWN",
+    "overlay_synthetic_check": "PASS",
+    "build_exit_codes": [
+      1,
+      1
+    ],
+    "build_blocker": "out-of-root node_modules symlink; copy retry preserved symlink",
+    "full_golden": "NOT_RUN",
+    "status": "BLOCKED",
+    "resume_condition": "Reuse P01. Recover the original build input/receipt for published deploy 6ac5d1a6d2965007d3910de2 or independently establish a reviewed complete replacement candidate. Resolve dependency symlink via actual private dependencies on supported Node22/24, rerun npm run build:netlify, assemble Netlify functions/redirects, preserve all1692manifest paths, qualify synthetic UI save/reopen/export, and pass exact-source independent OpenAI/stack/CI gates before any promotion. Do not rollback or carry opaque compiled app chunks forward as source.",
+    "models": {
+      "director": "openai/gpt-6.1-sol",
+      "executor": "deterministic tools",
+      "additional_model_calls": 0,
+      "fallback": null,
+      "independent_review": "NOT_RUN",
+      "billed_cost": null
+    }
+  }
+}

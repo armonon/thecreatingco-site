@@ -1,0 +1,3364 @@
+{
+  "source_sha": "779d61d324a6f5f8a6813b51735d4495dbfabc08",
+  "observed_at": "2026-10-08T12:24:39.532Z",
+  "browser": "153.0.8010.12",
+  "environment": "macOS arm64 / Playwright bundled Chromium / SwiftShader / exact-source built desktop frontend; no native or GPU mocks",
+  "checks": [
+    "actual SVG import/extrude produces nonempty CAD source",
+    "Fabric T-shirt edit/back preserves CAD and adds Fabric workspace",
+    "direct Animation navigation does not silently copy CAD geometry",
+    "real Animation Create Cube and Record position author one key",
+    "Animation return preserves project identity/CAD/Fabric/keyframes and dirty state",
+    "project-level Animation key Undo/Redo after CAD return preserves authored Fabric/CAD; steps=2",
+    "CAD material Undo/Redo retains authored Animation and Fabric",
+    "actual .form Save download includes all three workspace payloads",
+    "full Chromium process close/fresh relaunch/file reopen preserves CAD/Fabric/scene and resets old history",
+    "reopened file rehydrates actual Animation cube/keyframe runtime",
+    "reopened file rehydrates Fabric UI then returns without losing patterns",
+    "zero uncaught page errors"
+  ],
+  "errors": [],
+  "fixture_sha256": "9655a5f86e20a01286961dff44e52028b5e9fc66c4866b3f77b18897311300a7",
+  "expected": {
+    "kind": "form-studio-project",
+    "version": 2,
+    "projectId": "project-190o5vb",
+    "revisionId": "revision-1o21ic8",
+    "name": "Form Project",
+    "createdAt": 1791462212605,
+    "updatedAt": 1791462253145,
+    "common": {
+      "canonicalUnits": "mm",
+      "displayUnits": "mm",
+      "upAxis": "Y",
+      "handedness": "right"
+    },
+    "workspaces": {
+      "cad": {
+        "schema": "form-studio/cad@14",
+        "objectIds": [
+          "base-profile",
+          "mount-hole",
+          "vector-muzicntc-iirqh-0",
+          "vector-muzicntc-iirqh-1",
+          "vector-muzicntc-iirqh-2",
+          "vector-muzicntc-iirqh-3",
+          "extrude-1",
+          "fillet-1",
+          "cut-1",
+          "muzicon5-p3ykp"
+        ],
+        "data": {
+          "version": 17,
+          "roomId": "form-eb5bch29ep90bvhlgkgfjka5",
+          "meshFeatures": [],
+          "sceneNodes": [],
+          "animation": {
+            "actions": [],
+            "tracks": [],
+            "fps": 24,
+            "range": {
+              "start": 0,
+              "end": 48
+            },
+            "speed": 1,
+            "loop": "loop",
+            "playhead": 0,
+            "playing": false
+          },
+          "geometryGraph": {
+            "nodes": [
+              {
+                "id": "box",
+                "kind": "box",
+                "params": {
+                  "width": 20,
+                  "height": 20,
+                  "depth": 20
+                },
+                "options": {},
+                "position": {
+                  "x": 0,
+                  "y": 0
+                }
+              },
+              {
+                "id": "bar",
+                "kind": "cylinder",
+                "params": {
+                  "radius": 6,
+                  "height": 60,
+                  "segments": 16
+                },
+                "options": {},
+                "position": {
+                  "x": 0,
+                  "y": 120
+                }
+              },
+              {
+                "id": "cut",
+                "kind": "boolean",
+                "params": {},
+                "options": {
+                  "operation": "difference"
+                },
+                "position": {
+                  "x": 220,
+                  "y": 40
+                }
+              },
+              {
+                "id": "out",
+                "kind": "output",
+                "params": {},
+                "options": {},
+                "position": {
+                  "x": 440,
+                  "y": 40
+                }
+              }
+            ],
+            "links": [
+              {
+                "from": {
+                  "node": "box",
+                  "socket": "geometry"
+                },
+                "to": {
+                  "node": "cut",
+                  "socket": "a"
+                }
+              },
+              {
+                "from": {
+                  "node": "bar",
+                  "socket": "geometry"
+                },
+                "to": {
+                  "node": "cut",
+                  "socket": "b"
+                }
+              },
+              {
+                "from": {
+                  "node": "cut",
+                  "socket": "geometry"
+                },
+                "to": {
+                  "node": "out",
+                  "socket": "geometry"
+                }
+              }
+            ],
+            "output": "out"
+          },
+          "materialGraph": {
+            "nodes": [
+              {
+                "id": "uv",
+                "kind": "coordinates",
+                "params": {
+                  "scale": 1
+                },
+                "options": {},
+                "position": {
+                  "x": 0,
+                  "y": 0
+                }
+              },
+              {
+                "id": "check",
+                "kind": "checker",
+                "params": {
+                  "u": 0,
+                  "v": 0,
+                  "squares": 8
+                },
+                "options": {},
+                "position": {
+                  "x": 180,
+                  "y": 0
+                }
+              },
+              {
+                "id": "colour",
+                "kind": "ramp",
+                "params": {
+                  "value": 0,
+                  "from": [
+                    0.05,
+                    0.05,
+                    0.06
+                  ],
+                  "to": [
+                    0.85,
+                    0.95,
+                    0.55
+                  ]
+                },
+                "options": {},
+                "position": {
+                  "x": 360,
+                  "y": 0
+                }
+              },
+              {
+                "id": "surface",
+                "kind": "output",
+                "params": {
+                  "base color": [
+                    0.8,
+                    0.8,
+                    0.8
+                  ],
+                  "roughness": 0.5,
+                  "metalness": 0,
+                  "bump": 0
+                },
+                "options": {},
+                "position": {
+                  "x": 540,
+                  "y": 0
+                }
+              }
+            ],
+            "links": [
+              {
+                "from": {
+                  "node": "uv",
+                  "socket": "u"
+                },
+                "to": {
+                  "node": "check",
+                  "socket": "u"
+                }
+              },
+              {
+                "from": {
+                  "node": "uv",
+                  "socket": "v"
+                },
+                "to": {
+                  "node": "check",
+                  "socket": "v"
+                }
+              },
+              {
+                "from": {
+                  "node": "check",
+                  "socket": "value"
+                },
+                "to": {
+                  "node": "colour",
+                  "socket": "value"
+                }
+              },
+              {
+                "from": {
+                  "node": "colour",
+                  "socket": "color"
+                },
+                "to": {
+                  "node": "surface",
+                  "socket": "base color"
+                }
+              }
+            ],
+            "output": "surface"
+          },
+          "viewport": {
+            "shading": "shaded",
+            "projection": null
+          },
+          "canonicalUnits": "mm",
+          "displayUnits": "mm",
+          "entities": [
+            {
+              "id": "base-profile",
+              "type": "rectangle",
+              "a": {
+                "x": -40,
+                "y": -25
+              },
+              "b": {
+                "x": 40,
+                "y": 25
+              },
+              "rotation": 0,
+              "layer": "model",
+              "constraints": [
+                "Horizontal",
+                "Vertical",
+                "80.00 mm",
+                "50.00 mm"
+              ]
+            },
+            {
+              "id": "mount-hole",
+              "type": "circle",
+              "a": {
+                "x": 0,
+                "y": 0
+              },
+              "b": {
+                "x": 8,
+                "y": 0
+              },
+              "rotation": 0,
+              "layer": "holes",
+              "constraints": [
+                "Concentric",
+                "Ø16.00 mm"
+              ]
+            },
+            {
+              "id": "vector-muzicntc-iirqh-0",
+              "type": "line",
+              "a": {
+                "x": -45,
+                "y": 20
+              },
+              "b": {
+                "x": -25,
+                "y": 20
+              },
+              "rotation": 0,
+              "layer": "model",
+              "constraints": [
+                "Coincident"
+              ],
+              "sketchPlaneId": "world-xy",
+              "strokeOpacity": 1
+            },
+            {
+              "id": "vector-muzicntc-iirqh-1",
+              "type": "line",
+              "a": {
+                "x": -25,
+                "y": 20
+              },
+              "b": {
+                "x": -25,
+                "y": 0
+              },
+              "rotation": 0,
+              "layer": "model",
+              "constraints": [
+                "Coincident"
+              ],
+              "sketchPlaneId": "world-xy",
+              "strokeOpacity": 1
+            },
+            {
+              "id": "vector-muzicntc-iirqh-2",
+              "type": "line",
+              "a": {
+                "x": -25,
+                "y": 0
+              },
+              "b": {
+                "x": -45,
+                "y": 0
+              },
+              "rotation": 0,
+              "layer": "model",
+              "constraints": [
+                "Coincident"
+              ],
+              "sketchPlaneId": "world-xy",
+              "strokeOpacity": 1
+            },
+            {
+              "id": "vector-muzicntc-iirqh-3",
+              "type": "line",
+              "a": {
+                "x": -45,
+                "y": 0
+              },
+              "b": {
+                "x": -45,
+                "y": 20
+              },
+              "rotation": 0,
+              "layer": "model",
+              "constraints": [
+                "Coincident"
+              ],
+              "sketchPlaneId": "world-xy",
+              "strokeOpacity": 1
+            }
+          ],
+          "features": [
+            {
+              "id": "extrude-1",
+              "type": "Extrude",
+              "value": 24,
+              "unit": "mm",
+              "enabled": true
+            },
+            {
+              "id": "fillet-1",
+              "type": "Fillet",
+              "value": 3,
+              "unit": "mm",
+              "enabled": true,
+              "sourceEntityIds": [
+                "base-profile"
+              ],
+              "topologyIds": [
+                "base-profile:edge:line-z-xmin-ymin-zmid"
+              ]
+            },
+            {
+              "id": "cut-1",
+              "type": "Cut",
+              "value": 0,
+              "unit": "mm",
+              "enabled": true,
+              "sourceEntityIds": [
+                "base-profile",
+                "mount-hole"
+              ]
+            },
+            {
+              "id": "muzicon5-p3ykp",
+              "type": "Extrude",
+              "value": 24,
+              "enabled": true,
+              "unit": "mm",
+              "sourceEntityId": "vector-muzicntc-iirqh-0"
+            }
+          ],
+          "layers": [
+            {
+              "id": "model",
+              "name": "Model",
+              "color": "#7f9165",
+              "visible": true,
+              "locked": false
+            },
+            {
+              "id": "holes",
+              "name": "Holes",
+              "color": "#67a8ff",
+              "visible": true,
+              "locked": false
+            },
+            {
+              "id": "construction",
+              "name": "Construction",
+              "color": "#e5a95d",
+              "visible": true,
+              "locked": false
+            }
+          ],
+          "geometricConstraints": [],
+          "parameters": [
+            {
+              "id": "parameter-width",
+              "name": "width",
+              "expression": "24 in",
+              "value": 609.6
+            },
+            {
+              "id": "parameter-wall",
+              "name": "wall",
+              "expression": "0.125 in",
+              "value": 3.175
+            }
+          ],
+          "gdt": [],
+          "components": [],
+          "assemblyInstances": [],
+          "assemblyMates": [],
+          "linkedGroups": [],
+          "importedBodies": [],
+          "volumes": [],
+          "drafting": {
+            "schema": "form-studio-drafting-v1",
+            "texts": [],
+            "dimensions": [],
+            "leaders": [],
+            "hatches": [],
+            "blockDefinitions": [],
+            "blockInstances": [],
+            "layouts": [
+              {
+                "id": "model",
+                "name": "Model",
+                "paperWidthMm": 420,
+                "paperHeightMm": 297,
+                "marginMm": 5,
+                "scale": "1:1",
+                "orientation": "landscape",
+                "modelSpace": true
+              }
+            ],
+            "activeLayoutId": "model"
+          },
+          "sketchPlanes": [
+            {
+              "id": "world-xy",
+              "name": "World XY",
+              "origin": [
+                0,
+                0,
+                0
+              ],
+              "u": [
+                1,
+                0,
+                0
+              ],
+              "v": [
+                0,
+                1,
+                0
+              ],
+              "normal": [
+                0,
+                0,
+                1
+              ]
+            }
+          ],
+          "rollbackIndex": 4,
+          "material": "Aluminum 6061",
+          "density": 2.7,
+          "drawingScale": "1:1",
+          "drawingRevision": "A",
+          "drawingBook": {
+            "schema": "form-drawing-book-v1",
+            "sheets": [
+              {
+                "id": "production",
+                "title": "Production drawing",
+                "paper": "A3",
+                "orientation": "landscape",
+                "template": "engineering",
+                "author": "Form Studio",
+                "drawingNumber": "",
+                "views": {
+                  "Front": {
+                    "x": 90,
+                    "y": 155,
+                    "visible": true
+                  },
+                  "Top": {
+                    "x": 90,
+                    "y": 65,
+                    "visible": true
+                  },
+                  "Right": {
+                    "x": 230,
+                    "y": 155,
+                    "visible": true
+                  },
+                  "Iso": {
+                    "x": 230,
+                    "y": 65,
+                    "visible": true
+                  },
+                  "Section A-A": {
+                    "x": 350,
+                    "y": 110,
+                    "visible": true
+                  }
+                },
+                "annotations": []
+              }
+            ]
+          },
+          "configurations": [],
+          "activeConfigurationId": null,
+          "bimNodes": [
+            {
+              "id": "bim-project",
+              "kind": "project",
+              "name": "Form BIM Project",
+              "parentId": null,
+              "phase": "existing",
+              "properties": {
+                "schema": "IFC4",
+                "units": "mm"
+              },
+              "entityIds": []
+            },
+            {
+              "id": "bim-site",
+              "kind": "site",
+              "name": "Site",
+              "parentId": "bim-project",
+              "phase": "existing",
+              "properties": {
+                "elevation": 0
+              },
+              "entityIds": []
+            },
+            {
+              "id": "bim-building",
+              "kind": "building",
+              "name": "Building",
+              "parentId": "bim-site",
+              "phase": "new",
+              "properties": {
+                "storeys": 1,
+                "grossFloorArea": 0
+              },
+              "entityIds": []
+            },
+            {
+              "id": "bim-storey-1",
+              "kind": "storey",
+              "name": "Level 01",
+              "parentId": "bim-building",
+              "phase": "new",
+              "properties": {
+                "elevation": 0,
+                "height": 3000,
+                "levelId": "bim-storey-1"
+              },
+              "entityIds": []
+            },
+            {
+              "id": "bim-base-profile",
+              "kind": "element",
+              "name": "Element 1",
+              "parentId": "bim-storey-1",
+              "phase": "new",
+              "properties": {
+                "xMin": -40,
+                "yMin": -25,
+                "xMax": 40,
+                "yMax": 25,
+                "width": 80,
+                "depth": 50,
+                "footprintArea": 4000,
+                "area": 4000,
+                "layer": "model",
+                "material": "Unassigned",
+                "levelId": "bim-storey-1",
+                "volume": 1200000,
+                "baseElevation": 0,
+                "topElevation": 300
+              },
+              "entityIds": [
+                "base-profile"
+              ]
+            },
+            {
+              "id": "bim-mount-hole",
+              "kind": "element",
+              "name": "Element 2",
+              "parentId": "bim-storey-1",
+              "phase": "new",
+              "properties": {
+                "xMin": -8,
+                "yMin": -8,
+                "xMax": 8,
+                "yMax": 8,
+                "width": 16,
+                "depth": 16,
+                "footprintArea": 256,
+                "area": 256,
+                "layer": "holes",
+                "material": "Unassigned",
+                "levelId": "bim-storey-1",
+                "volume": 76800,
+                "baseElevation": 0,
+                "topElevation": 300
+              },
+              "entityIds": [
+                "mount-hole"
+              ]
+            },
+            {
+              "id": "bim-vector-muzicntc-iirqh-0",
+              "kind": "element",
+              "name": "Element 3",
+              "parentId": "bim-storey-1",
+              "phase": "new",
+              "properties": {
+                "xMin": -45,
+                "yMin": 20,
+                "xMax": -25,
+                "yMax": 20,
+                "width": 20,
+                "depth": 0.001,
+                "footprintArea": 0.02,
+                "area": 0.02,
+                "layer": "model",
+                "material": "Unassigned",
+                "levelId": "bim-storey-1",
+                "volume": 6,
+                "baseElevation": 0,
+                "topElevation": 300
+              },
+              "entityIds": [
+                "vector-muzicntc-iirqh-0"
+              ]
+            },
+            {
+              "id": "bim-vector-muzicntc-iirqh-1",
+              "kind": "element",
+              "name": "Element 4",
+              "parentId": "bim-storey-1",
+              "phase": "new",
+              "properties": {
+                "xMin": -25,
+                "yMin": 0,
+                "xMax": -25,
+                "yMax": 20,
+                "width": 0.001,
+                "depth": 20,
+                "footprintArea": 0.02,
+                "area": 0.02,
+                "layer": "model",
+                "material": "Unassigned",
+                "levelId": "bim-storey-1",
+                "volume": 6,
+                "baseElevation": 0,
+                "topElevation": 300
+              },
+              "entityIds": [
+                "vector-muzicntc-iirqh-1"
+              ]
+            },
+            {
+              "id": "bim-vector-muzicntc-iirqh-2",
+              "kind": "element",
+              "name": "Element 5",
+              "parentId": "bim-storey-1",
+              "phase": "new",
+              "properties": {
+                "xMin": -45,
+                "yMin": 0,
+                "xMax": -25,
+                "yMax": 0,
+                "width": 20,
+                "depth": 0.001,
+                "footprintArea": 0.02,
+                "area": 0.02,
+                "layer": "model",
+                "material": "Unassigned",
+                "levelId": "bim-storey-1",
+                "volume": 6,
+                "baseElevation": 0,
+                "topElevation": 300
+              },
+              "entityIds": [
+                "vector-muzicntc-iirqh-2"
+              ]
+            },
+            {
+              "id": "bim-vector-muzicntc-iirqh-3",
+              "kind": "element",
+              "name": "Element 6",
+              "parentId": "bim-storey-1",
+              "phase": "new",
+              "properties": {
+                "xMin": -45,
+                "yMin": 0,
+                "xMax": -45,
+                "yMax": 20,
+                "width": 0.001,
+                "depth": 20,
+                "footprintArea": 0.02,
+                "area": 0.02,
+                "layer": "model",
+                "material": "Unassigned",
+                "levelId": "bim-storey-1",
+                "volume": 6,
+                "baseElevation": 0,
+                "topElevation": 300
+              },
+              "entityIds": [
+                "vector-muzicntc-iirqh-3"
+              ]
+            }
+          ],
+          "recipeGraphs": [
+            {
+              "id": "recipe-parametric-disc",
+              "name": "Parametric Mounting Disc",
+              "version": 1,
+              "author": "Form Studio",
+              "shared": true,
+              "nodes": [
+                {
+                  "id": "diameter",
+                  "kind": "parameter",
+                  "inputs": [],
+                  "values": {
+                    "value": 40
+                  }
+                },
+                {
+                  "id": "depth",
+                  "kind": "parameter",
+                  "inputs": [],
+                  "values": {
+                    "value": 6
+                  }
+                },
+                {
+                  "id": "profile",
+                  "kind": "circle",
+                  "inputs": [
+                    "diameter"
+                  ],
+                  "values": {}
+                },
+                {
+                  "id": "solid",
+                  "kind": "extrude",
+                  "inputs": [
+                    "profile",
+                    "depth"
+                  ],
+                  "values": {}
+                },
+                {
+                  "id": "result",
+                  "kind": "output",
+                  "inputs": [
+                    "solid"
+                  ],
+                  "values": {}
+                }
+              ]
+            }
+          ],
+          "revisions": [],
+          "marketplace": [
+            {
+              "id": "market-gear",
+              "name": "Precision Gear Family",
+              "category": "Engineering",
+              "version": 3,
+              "downloads": 2840,
+              "rating": 4.9
+            },
+            {
+              "id": "market-stair",
+              "name": "Code-Aware Stair",
+              "category": "Architecture",
+              "version": 2,
+              "downloads": 1922,
+              "rating": 4.8
+            },
+            {
+              "id": "market-disc",
+              "name": "Parametric Mounting Disc",
+              "category": "Recipe Graph",
+              "version": 1,
+              "downloads": 906,
+              "rating": 4.7,
+              "graph": {
+                "id": "recipe-parametric-disc",
+                "name": "Parametric Mounting Disc",
+                "version": 1,
+                "author": "Form Studio",
+                "shared": true,
+                "nodes": [
+                  {
+                    "id": "diameter",
+                    "kind": "parameter",
+                    "inputs": [],
+                    "values": {
+                      "value": 40
+                    }
+                  },
+                  {
+                    "id": "depth",
+                    "kind": "parameter",
+                    "inputs": [],
+                    "values": {
+                      "value": 6
+                    }
+                  },
+                  {
+                    "id": "profile",
+                    "kind": "circle",
+                    "inputs": [
+                      "diameter"
+                    ],
+                    "values": {}
+                  },
+                  {
+                    "id": "solid",
+                    "kind": "extrude",
+                    "inputs": [
+                      "profile",
+                      "depth"
+                    ],
+                    "values": {}
+                  },
+                  {
+                    "id": "result",
+                    "kind": "output",
+                    "inputs": [
+                      "solid"
+                    ],
+                    "values": {}
+                  }
+                ]
+              }
+            }
+          ],
+          "appearance": {
+            "preset": "brass",
+            "baseColor": "#c9953f",
+            "useLayerColor": false,
+            "metalness": 0.94,
+            "roughness": 0.17,
+            "clearcoat": 0.32,
+            "clearcoatRoughness": 0.12,
+            "transmission": 0,
+            "ior": 1.45,
+            "attenuationDistance": 500,
+            "volumeScatter": 0,
+            "volumeVariation": 0,
+            "opacity": 1,
+            "environment": "studio",
+            "exposure": 1,
+            "groundShadow": true
+          },
+          "kernel": "Open CASCADE B-Rep",
+          "checksum": "fnv1a128-ddc8629df8eb67fd18edf9ac2f686846"
+        },
+        "coordinateSystem": {
+          "units": "mm",
+          "upAxis": "Z",
+          "handedness": "right",
+          "toCommonAxes": [
+            "+X",
+            "-Z",
+            "+Y"
+          ]
+        },
+        "updatedAt": 1791462253145
+      },
+      "fabric": {
+        "schema": "form-studio/fabric@1",
+        "objectIds": [
+          "piece-i6bdqut",
+          "piece-e33hu6d",
+          "piece-jax92f6",
+          "piece-2lmpo78",
+          "seam-v972zg6",
+          "seam-sdctkft",
+          "seam-675irs9",
+          "seam-znuhwyx",
+          "seam-uyzpy6n",
+          "seam-phu8053",
+          "seam-8ho59x6",
+          "seam-627tqtt",
+          "seam-7kxdrln",
+          "seam-n8h5gso",
+          "seam-aig8aom",
+          "seam-wrjjr4t",
+          "seam-2m0z2ht",
+          "seam-236kee3"
+        ],
+        "data": {
+          "version": 1,
+          "id": "garment-0oq8eqe",
+          "name": "T-shirt M",
+          "kind": "tshirt",
+          "size": "M",
+          "fabric": {
+            "id": "jersey",
+            "name": "Cotton jersey",
+            "color": "#759083",
+            "weight": 180,
+            "thickness": 0.48,
+            "stretchWarp": 18,
+            "stretchWeft": 42,
+            "stretchBias": 35,
+            "bend": 0.35,
+            "friction": 0.48,
+            "shrinkage": 5
+          },
+          "avatar": {
+            "height": 1700,
+            "bust": 920,
+            "waist": 760,
+            "hip": 990,
+            "neck": 370,
+            "shoulder": 410,
+            "armLength": 610,
+            "inseam": 790
+          },
+          "avatarProfile": {
+            "sex": "female",
+            "build": 50,
+            "pose": "neutral"
+          },
+          "fitBody": {
+            "kind": "procedural-reference",
+            "name": "Form anatomical fitting reference",
+            "surfaceReady": false,
+            "rightsConfirmed": true
+          },
+          "pieces": [
+            {
+              "id": "piece-i6bdqut",
+              "name": "Front",
+              "role": "front",
+              "points": [
+                {
+                  "x": -74,
+                  "y": 510
+                },
+                {
+                  "x": -205,
+                  "y": 489.6
+                },
+                {
+                  "x": -243.75,
+                  "y": 331.5
+                },
+                {
+                  "x": -212.5,
+                  "y": 195.5
+                },
+                {
+                  "x": -261.25,
+                  "y": 0
+                },
+                {
+                  "x": -261.25,
+                  "y": -25.5
+                },
+                {
+                  "x": 261.25,
+                  "y": -25.5
+                },
+                {
+                  "x": 261.25,
+                  "y": 0
+                },
+                {
+                  "x": 212.5,
+                  "y": 195.5
+                },
+                {
+                  "x": 243.75,
+                  "y": 331.5
+                },
+                {
+                  "x": 205,
+                  "y": 489.6
+                },
+                {
+                  "x": 74,
+                  "y": 510
+                },
+                {
+                  "x": 55.5,
+                  "y": 459.4000061758897
+                },
+                {
+                  "x": 37,
+                  "y": 443.74905661049047
+                },
+                {
+                  "x": 18.5,
+                  "y": 435.92919350378315
+                },
+                {
+                  "x": 0,
+                  "y": 433.5
+                },
+                {
+                  "x": -18.5,
+                  "y": 435.92919350378315
+                },
+                {
+                  "x": -37,
+                  "y": 443.74905661049047
+                },
+                {
+                  "x": -55.5,
+                  "y": 459.4000061758897
+                }
+              ],
+              "edgeNames": [
+                "shoulder-right",
+                "attach-right-front",
+                "right-side-chest",
+                "right-side-waist",
+                "right-side-hem",
+                "hem",
+                "left-side-hem",
+                "left-side-waist",
+                "left-side-chest",
+                "attach-left-front",
+                "shoulder-left",
+                "neck-0",
+                "neck-1",
+                "neck-2",
+                "neck-3",
+                "neck-4",
+                "neck-5",
+                "neck-6",
+                "neck-7"
+              ],
+              "grainAngle": 0,
+              "seamAllowance": 10,
+              "cutQuantity": 1,
+              "mirror": false,
+              "rotation": 0,
+              "position": {
+                "x": -311.25,
+                "y": -510
+              },
+              "stockPlacement": {
+                "region": "torso"
+              }
+            },
+            {
+              "id": "piece-e33hu6d",
+              "name": "Back",
+              "role": "back",
+              "points": [
+                {
+                  "x": -74,
+                  "y": 510
+                },
+                {
+                  "x": -205,
+                  "y": 489.6
+                },
+                {
+                  "x": -243.75,
+                  "y": 331.5
+                },
+                {
+                  "x": -212.5,
+                  "y": 195.5
+                },
+                {
+                  "x": -261.25,
+                  "y": 0
+                },
+                {
+                  "x": -261.25,
+                  "y": -25.5
+                },
+                {
+                  "x": 261.25,
+                  "y": -25.5
+                },
+                {
+                  "x": 261.25,
+                  "y": 0
+                },
+                {
+                  "x": 212.5,
+                  "y": 195.5
+                },
+                {
+                  "x": 243.75,
+                  "y": 331.5
+                },
+                {
+                  "x": 205,
+                  "y": 489.6
+                },
+                {
+                  "x": 74,
+                  "y": 510
+                },
+                {
+                  "x": 55.5,
+                  "y": 494.25777969916567
+                },
+                {
+                  "x": 37,
+                  "y": 489.38859538993034
+                },
+                {
+                  "x": 18.5,
+                  "y": 486.95574909006586
+                },
+                {
+                  "x": 0,
+                  "y": 486.2
+                },
+                {
+                  "x": -18.5,
+                  "y": 486.95574909006586
+                },
+                {
+                  "x": -37,
+                  "y": 489.38859538993034
+                },
+                {
+                  "x": -55.5,
+                  "y": 494.25777969916567
+                }
+              ],
+              "edgeNames": [
+                "shoulder-right",
+                "attach-right-back",
+                "right-side-chest",
+                "right-side-waist",
+                "right-side-hem",
+                "hem",
+                "left-side-hem",
+                "left-side-waist",
+                "left-side-chest",
+                "attach-left-back",
+                "shoulder-left",
+                "neck-0",
+                "neck-1",
+                "neck-2",
+                "neck-3",
+                "neck-4",
+                "neck-5",
+                "neck-6",
+                "neck-7"
+              ],
+              "grainAngle": 0,
+              "seamAllowance": 10,
+              "cutQuantity": 1,
+              "mirror": false,
+              "rotation": 0,
+              "position": {
+                "x": 311.25,
+                "y": -510
+              },
+              "stockPlacement": {
+                "region": "torso"
+              }
+            },
+            {
+              "id": "piece-jax92f6",
+              "name": "Right sleeve",
+              "role": "free",
+              "points": [
+                {
+                  "x": 0,
+                  "y": 78.13417014341421
+                },
+                {
+                  "x": -142.80134437742524,
+                  "y": 0
+                },
+                {
+                  "x": -131.37723682723123,
+                  "y": -183
+                },
+                {
+                  "x": 131.37723682723123,
+                  "y": -183
+                },
+                {
+                  "x": 142.80134437742524,
+                  "y": 0
+                }
+              ],
+              "edgeNames": [
+                "attach-right-front",
+                "under-right",
+                "hem",
+                "under-right",
+                "attach-right-back"
+              ],
+              "grainAngle": 0,
+              "seamAllowance": 10,
+              "cutQuantity": 1,
+              "mirror": false,
+              "rotation": 0,
+              "position": {
+                "x": -192.80134437742524,
+                "y": -733.6341701434142
+              },
+              "stockPlacement": {
+                "region": "sleeve",
+                "side": -1
+              }
+            },
+            {
+              "id": "piece-2lmpo78",
+              "name": "Left sleeve",
+              "role": "free",
+              "points": [
+                {
+                  "x": 0,
+                  "y": 78.13417014341421
+                },
+                {
+                  "x": -142.80134437742524,
+                  "y": 0
+                },
+                {
+                  "x": -131.37723682723123,
+                  "y": -183
+                },
+                {
+                  "x": 131.37723682723123,
+                  "y": -183
+                },
+                {
+                  "x": 142.80134437742524,
+                  "y": 0
+                }
+              ],
+              "edgeNames": [
+                "attach-left-front",
+                "under-left",
+                "hem",
+                "under-left",
+                "attach-left-back"
+              ],
+              "grainAngle": 0,
+              "seamAllowance": 10,
+              "cutQuantity": 1,
+              "mirror": false,
+              "rotation": 0,
+              "position": {
+                "x": 192.80134437742524,
+                "y": -733.6341701434142
+              },
+              "stockPlacement": {
+                "region": "sleeve",
+                "side": 1
+              }
+            }
+          ],
+          "seams": [
+            {
+              "id": "seam-v972zg6",
+              "name": "shoulder right",
+              "a": {
+                "pieceId": "piece-i6bdqut",
+                "edgeIndex": 0
+              },
+              "b": {
+                "pieceId": "piece-e33hu6d",
+                "edgeIndex": 0
+              },
+              "type": "plain",
+              "easeRatio": 1,
+              "enabled": true
+            },
+            {
+              "id": "seam-sdctkft",
+              "name": "attach right front",
+              "a": {
+                "pieceId": "piece-i6bdqut",
+                "edgeIndex": 1
+              },
+              "b": {
+                "pieceId": "piece-jax92f6",
+                "edgeIndex": 0
+              },
+              "type": "plain",
+              "easeRatio": 1,
+              "enabled": true
+            },
+            {
+              "id": "seam-675irs9",
+              "name": "right side chest",
+              "a": {
+                "pieceId": "piece-i6bdqut",
+                "edgeIndex": 2
+              },
+              "b": {
+                "pieceId": "piece-e33hu6d",
+                "edgeIndex": 2
+              },
+              "type": "plain",
+              "easeRatio": 1,
+              "enabled": true
+            },
+            {
+              "id": "seam-znuhwyx",
+              "name": "right side waist",
+              "a": {
+                "pieceId": "piece-i6bdqut",
+                "edgeIndex": 3
+              },
+              "b": {
+                "pieceId": "piece-e33hu6d",
+                "edgeIndex": 3
+              },
+              "type": "plain",
+              "easeRatio": 1,
+              "enabled": true
+            },
+            {
+              "id": "seam-uyzpy6n",
+              "name": "right side hem",
+              "a": {
+                "pieceId": "piece-i6bdqut",
+                "edgeIndex": 4
+              },
+              "b": {
+                "pieceId": "piece-e33hu6d",
+                "edgeIndex": 4
+              },
+              "type": "plain",
+              "easeRatio": 1,
+              "enabled": true
+            },
+            {
+              "id": "seam-phu8053",
+              "name": "left side hem",
+              "a": {
+                "pieceId": "piece-i6bdqut",
+                "edgeIndex": 6
+              },
+              "b": {
+                "pieceId": "piece-e33hu6d",
+                "edgeIndex": 6
+              },
+              "type": "plain",
+              "easeRatio": 1,
+              "enabled": true
+            },
+            {
+              "id": "seam-8ho59x6",
+              "name": "left side waist",
+              "a": {
+                "pieceId": "piece-i6bdqut",
+                "edgeIndex": 7
+              },
+              "b": {
+                "pieceId": "piece-e33hu6d",
+                "edgeIndex": 7
+              },
+              "type": "plain",
+              "easeRatio": 1,
+              "enabled": true
+            },
+            {
+              "id": "seam-627tqtt",
+              "name": "left side chest",
+              "a": {
+                "pieceId": "piece-i6bdqut",
+                "edgeIndex": 8
+              },
+              "b": {
+                "pieceId": "piece-e33hu6d",
+                "edgeIndex": 8
+              },
+              "type": "plain",
+              "easeRatio": 1,
+              "enabled": true
+            },
+            {
+              "id": "seam-7kxdrln",
+              "name": "attach left front",
+              "a": {
+                "pieceId": "piece-i6bdqut",
+                "edgeIndex": 9
+              },
+              "b": {
+                "pieceId": "piece-2lmpo78",
+                "edgeIndex": 0
+              },
+              "type": "plain",
+              "easeRatio": 1,
+              "enabled": true
+            },
+            {
+              "id": "seam-n8h5gso",
+              "name": "shoulder left",
+              "a": {
+                "pieceId": "piece-i6bdqut",
+                "edgeIndex": 10
+              },
+              "b": {
+                "pieceId": "piece-e33hu6d",
+                "edgeIndex": 10
+              },
+              "type": "plain",
+              "easeRatio": 1,
+              "enabled": true
+            },
+            {
+              "id": "seam-aig8aom",
+              "name": "attach right back",
+              "a": {
+                "pieceId": "piece-e33hu6d",
+                "edgeIndex": 1
+              },
+              "b": {
+                "pieceId": "piece-jax92f6",
+                "edgeIndex": 4
+              },
+              "type": "plain",
+              "easeRatio": 1,
+              "enabled": true
+            },
+            {
+              "id": "seam-wrjjr4t",
+              "name": "attach left back",
+              "a": {
+                "pieceId": "piece-e33hu6d",
+                "edgeIndex": 9
+              },
+              "b": {
+                "pieceId": "piece-2lmpo78",
+                "edgeIndex": 4
+              },
+              "type": "plain",
+              "easeRatio": 1,
+              "enabled": true
+            },
+            {
+              "id": "seam-2m0z2ht",
+              "name": "under right",
+              "a": {
+                "pieceId": "piece-jax92f6",
+                "edgeIndex": 1
+              },
+              "b": {
+                "pieceId": "piece-jax92f6",
+                "edgeIndex": 3
+              },
+              "type": "plain",
+              "easeRatio": 1,
+              "enabled": true
+            },
+            {
+              "id": "seam-236kee3",
+              "name": "under left",
+              "a": {
+                "pieceId": "piece-2lmpo78",
+                "edgeIndex": 1
+              },
+              "b": {
+                "pieceId": "piece-2lmpo78",
+                "edgeIndex": 3
+              },
+              "type": "plain",
+              "easeRatio": 1,
+              "enabled": true
+            }
+          ],
+          "details": [],
+          "createdAt": "2026-10-08T12:23:45.518Z",
+          "updatedAt": "2026-10-08T12:24:13.145Z"
+        },
+        "coordinateSystem": {
+          "units": "mm",
+          "upAxis": "Y",
+          "handedness": "right",
+          "toCommonAxes": [
+            "+X",
+            "+Y",
+            "+Z"
+          ]
+        },
+        "updatedAt": 1791462253145
+      },
+      "scene": {
+        "schema": "form-studio/scene@1",
+        "objectIds": [
+          "object-a3c76140-0b0f-4008-97b2-c5bb8b5f3bfb"
+        ],
+        "data": {
+          "scene": [
+            {
+              "id": "object-a3c76140-0b0f-4008-97b2-c5bb8b5f3bfb",
+              "name": "Box 1",
+              "type": "box",
+              "position": [
+                0,
+                0.72,
+                0
+              ],
+              "rotation": [
+                0,
+                0,
+                0
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "color": "#dfe8e7",
+              "roughness": 0.38,
+              "metalness": 0.08,
+              "clearcoat": 0.2,
+              "sheen": 0.15,
+              "transmission": 0,
+              "thickness": 0,
+              "iridescence": 0,
+              "visible": true,
+              "locked": false,
+              "groupId": null,
+              "parentId": null,
+              "instanceSourceId": null,
+              "animation": "none",
+              "modifiers": {
+                "bevel": false,
+                "mirror": false,
+                "array": 1,
+                "bend": 0
+              },
+              "operations": [],
+              "constraints": [],
+              "sketchPoints": [],
+              "keyframes": [
+                {
+                  "id": "key-0eea6282-3ab0-40d6-b387-5d3dc51e99b6",
+                  "time": 0,
+                  "position": [
+                    0,
+                    0.72,
+                    0
+                  ],
+                  "rotation": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "scale": [
+                    1,
+                    1,
+                    1
+                  ],
+                  "easing": "ease-in-out",
+                  "pose": {}
+                }
+              ],
+              "asset": null,
+              "clothBake": null,
+              "autoRig": null,
+              "meshEdits": [],
+              "modelControls": [],
+              "shaderGraph": {
+                "procedural": "none",
+                "uvProjection": "original",
+                "scale": 5,
+                "contrast": 0.5,
+                "emission": 0,
+                "fresnel": 0
+              },
+              "lumaMeshAsset": null,
+              "lumaTextAsset": null,
+              "lumaSpatialAsset": null
+            }
+          ],
+          "workspace": {
+            "environment": "Studio",
+            "gridVisible": true,
+            "snap": true,
+            "avoidCollisions": true,
+            "bloom": false,
+            "depthOfField": false,
+            "qualityMode": "Studio",
+            "timeline": 0
+          },
+          "camera": {
+            "position": [
+              7.000000000000001,
+              4,
+              8
+            ],
+            "target": [
+              0,
+              1,
+              0
+            ]
+          },
+          "cameraShots": [],
+          "groups": []
+        },
+        "coordinateSystem": {
+          "units": "mm",
+          "upAxis": "Y",
+          "handedness": "right",
+          "toCommonAxes": [
+            "+X",
+            "+Y",
+            "+Z"
+          ]
+        },
+        "updatedAt": 1791462232223
+      }
+    },
+    "relationships": [],
+    "assets": [],
+    "checksum": "fnv1a128-67b8ca09f329c4a887c5fe2e04daa640"
+  },
+  "reopened": {
+    "kind": "form-studio-project",
+    "version": 2,
+    "projectId": "project-190o5vb",
+    "revisionId": "revision-0pjtw4p",
+    "name": "Form Project",
+    "createdAt": 1791462212605,
+    "updatedAt": 1791462265842,
+    "common": {
+      "canonicalUnits": "mm",
+      "displayUnits": "mm",
+      "upAxis": "Y",
+      "handedness": "right"
+    },
+    "workspaces": {
+      "cad": {
+        "schema": "form-studio/cad@14",
+        "objectIds": [
+          "base-profile",
+          "mount-hole",
+          "vector-muzicntc-iirqh-0",
+          "vector-muzicntc-iirqh-1",
+          "vector-muzicntc-iirqh-2",
+          "vector-muzicntc-iirqh-3",
+          "extrude-1",
+          "fillet-1",
+          "cut-1",
+          "muzicon5-p3ykp"
+        ],
+        "data": {
+          "version": 17,
+          "roomId": "form-eb5bch29ep90bvhlgkgfjka5",
+          "meshFeatures": [],
+          "sceneNodes": [],
+          "animation": {
+            "actions": [],
+            "tracks": [],
+            "fps": 24,
+            "range": {
+              "start": 0,
+              "end": 48
+            },
+            "speed": 1,
+            "loop": "loop",
+            "playhead": 0,
+            "playing": false
+          },
+          "geometryGraph": {
+            "nodes": [
+              {
+                "id": "box",
+                "kind": "box",
+                "params": {
+                  "width": 20,
+                  "height": 20,
+                  "depth": 20
+                },
+                "options": {},
+                "position": {
+                  "x": 0,
+                  "y": 0
+                }
+              },
+              {
+                "id": "bar",
+                "kind": "cylinder",
+                "params": {
+                  "radius": 6,
+                  "height": 60,
+                  "segments": 16
+                },
+                "options": {},
+                "position": {
+                  "x": 0,
+                  "y": 120
+                }
+              },
+              {
+                "id": "cut",
+                "kind": "boolean",
+                "params": {},
+                "options": {
+                  "operation": "difference"
+                },
+                "position": {
+                  "x": 220,
+                  "y": 40
+                }
+              },
+              {
+                "id": "out",
+                "kind": "output",
+                "params": {},
+                "options": {},
+                "position": {
+                  "x": 440,
+                  "y": 40
+                }
+              }
+            ],
+            "links": [
+              {
+                "from": {
+                  "node": "box",
+                  "socket": "geometry"
+                },
+                "to": {
+                  "node": "cut",
+                  "socket": "a"
+                }
+              },
+              {
+                "from": {
+                  "node": "bar",
+                  "socket": "geometry"
+                },
+                "to": {
+                  "node": "cut",
+                  "socket": "b"
+                }
+              },
+              {
+                "from": {
+                  "node": "cut",
+                  "socket": "geometry"
+                },
+                "to": {
+                  "node": "out",
+                  "socket": "geometry"
+                }
+              }
+            ],
+            "output": "out"
+          },
+          "materialGraph": {
+            "nodes": [
+              {
+                "id": "uv",
+                "kind": "coordinates",
+                "params": {
+                  "scale": 1
+                },
+                "options": {},
+                "position": {
+                  "x": 0,
+                  "y": 0
+                }
+              },
+              {
+                "id": "check",
+                "kind": "checker",
+                "params": {
+                  "u": 0,
+                  "v": 0,
+                  "squares": 8
+                },
+                "options": {},
+                "position": {
+                  "x": 180,
+                  "y": 0
+                }
+              },
+              {
+                "id": "colour",
+                "kind": "ramp",
+                "params": {
+                  "value": 0,
+                  "from": [
+                    0.05,
+                    0.05,
+                    0.06
+                  ],
+                  "to": [
+                    0.85,
+                    0.95,
+                    0.55
+                  ]
+                },
+                "options": {},
+                "position": {
+                  "x": 360,
+                  "y": 0
+                }
+              },
+              {
+                "id": "surface",
+                "kind": "output",
+                "params": {
+                  "base color": [
+                    0.8,
+                    0.8,
+                    0.8
+                  ],
+                  "roughness": 0.5,
+                  "metalness": 0,
+                  "bump": 0
+                },
+                "options": {},
+                "position": {
+                  "x": 540,
+                  "y": 0
+                }
+              }
+            ],
+            "links": [
+              {
+                "from": {
+                  "node": "uv",
+                  "socket": "u"
+                },
+                "to": {
+                  "node": "check",
+                  "socket": "u"
+                }
+              },
+              {
+                "from": {
+                  "node": "uv",
+                  "socket": "v"
+                },
+                "to": {
+                  "node": "check",
+                  "socket": "v"
+                }
+              },
+              {
+                "from": {
+                  "node": "check",
+                  "socket": "value"
+                },
+                "to": {
+                  "node": "colour",
+                  "socket": "value"
+                }
+              },
+              {
+                "from": {
+                  "node": "colour",
+                  "socket": "color"
+                },
+                "to": {
+                  "node": "surface",
+                  "socket": "base color"
+                }
+              }
+            ],
+            "output": "surface"
+          },
+          "viewport": {
+            "shading": "shaded",
+            "projection": null
+          },
+          "canonicalUnits": "mm",
+          "displayUnits": "mm",
+          "entities": [
+            {
+              "id": "base-profile",
+              "type": "rectangle",
+              "a": {
+                "x": -40,
+                "y": -25
+              },
+              "b": {
+                "x": 40,
+                "y": 25
+              },
+              "rotation": 0,
+              "layer": "model",
+              "constraints": [
+                "Horizontal",
+                "Vertical",
+                "80.00 mm",
+                "50.00 mm"
+              ]
+            },
+            {
+              "id": "mount-hole",
+              "type": "circle",
+              "a": {
+                "x": 0,
+                "y": 0
+              },
+              "b": {
+                "x": 8,
+                "y": 0
+              },
+              "rotation": 0,
+              "layer": "holes",
+              "constraints": [
+                "Concentric",
+                "Ø16.00 mm"
+              ]
+            },
+            {
+              "id": "vector-muzicntc-iirqh-0",
+              "type": "line",
+              "a": {
+                "x": -45,
+                "y": 20
+              },
+              "b": {
+                "x": -25,
+                "y": 20
+              },
+              "rotation": 0,
+              "layer": "model",
+              "constraints": [
+                "Coincident"
+              ],
+              "sketchPlaneId": "world-xy",
+              "strokeOpacity": 1
+            },
+            {
+              "id": "vector-muzicntc-iirqh-1",
+              "type": "line",
+              "a": {
+                "x": -25,
+                "y": 20
+              },
+              "b": {
+                "x": -25,
+                "y": 0
+              },
+              "rotation": 0,
+              "layer": "model",
+              "constraints": [
+                "Coincident"
+              ],
+              "sketchPlaneId": "world-xy",
+              "strokeOpacity": 1
+            },
+            {
+              "id": "vector-muzicntc-iirqh-2",
+              "type": "line",
+              "a": {
+                "x": -25,
+                "y": 0
+              },
+              "b": {
+                "x": -45,
+                "y": 0
+              },
+              "rotation": 0,
+              "layer": "model",
+              "constraints": [
+                "Coincident"
+              ],
+              "sketchPlaneId": "world-xy",
+              "strokeOpacity": 1
+            },
+            {
+              "id": "vector-muzicntc-iirqh-3",
+              "type": "line",
+              "a": {
+                "x": -45,
+                "y": 0
+              },
+              "b": {
+                "x": -45,
+                "y": 20
+              },
+              "rotation": 0,
+              "layer": "model",
+              "constraints": [
+                "Coincident"
+              ],
+              "sketchPlaneId": "world-xy",
+              "strokeOpacity": 1
+            }
+          ],
+          "features": [
+            {
+              "id": "extrude-1",
+              "type": "Extrude",
+              "value": 24,
+              "unit": "mm",
+              "enabled": true
+            },
+            {
+              "id": "fillet-1",
+              "type": "Fillet",
+              "value": 3,
+              "unit": "mm",
+              "enabled": true,
+              "sourceEntityIds": [
+                "base-profile"
+              ],
+              "topologyIds": [
+                "base-profile:edge:line-z-xmin-ymin-zmid"
+              ]
+            },
+            {
+              "id": "cut-1",
+              "type": "Cut",
+              "value": 0,
+              "unit": "mm",
+              "enabled": true,
+              "sourceEntityIds": [
+                "base-profile",
+                "mount-hole"
+              ]
+            },
+            {
+              "id": "muzicon5-p3ykp",
+              "type": "Extrude",
+              "value": 24,
+              "enabled": true,
+              "unit": "mm",
+              "sourceEntityId": "vector-muzicntc-iirqh-0"
+            }
+          ],
+          "layers": [
+            {
+              "id": "model",
+              "name": "Model",
+              "color": "#7f9165",
+              "visible": true,
+              "locked": false
+            },
+            {
+              "id": "holes",
+              "name": "Holes",
+              "color": "#67a8ff",
+              "visible": true,
+              "locked": false
+            },
+            {
+              "id": "construction",
+              "name": "Construction",
+              "color": "#e5a95d",
+              "visible": true,
+              "locked": false
+            }
+          ],
+          "geometricConstraints": [],
+          "parameters": [
+            {
+              "id": "parameter-width",
+              "name": "width",
+              "expression": "24 in",
+              "value": 609.6
+            },
+            {
+              "id": "parameter-wall",
+              "name": "wall",
+              "expression": "0.125 in",
+              "value": 3.175
+            }
+          ],
+          "gdt": [],
+          "components": [],
+          "assemblyInstances": [],
+          "assemblyMates": [],
+          "linkedGroups": [],
+          "importedBodies": [],
+          "volumes": [],
+          "drafting": {
+            "schema": "form-studio-drafting-v1",
+            "texts": [],
+            "dimensions": [],
+            "leaders": [],
+            "hatches": [],
+            "blockDefinitions": [],
+            "blockInstances": [],
+            "layouts": [
+              {
+                "id": "model",
+                "name": "Model",
+                "paperWidthMm": 420,
+                "paperHeightMm": 297,
+                "marginMm": 5,
+                "scale": "1:1",
+                "orientation": "landscape",
+                "modelSpace": true
+              }
+            ],
+            "activeLayoutId": "model"
+          },
+          "sketchPlanes": [
+            {
+              "id": "world-xy",
+              "name": "World XY",
+              "origin": [
+                0,
+                0,
+                0
+              ],
+              "u": [
+                1,
+                0,
+                0
+              ],
+              "v": [
+                0,
+                1,
+                0
+              ],
+              "normal": [
+                0,
+                0,
+                1
+              ]
+            }
+          ],
+          "rollbackIndex": 4,
+          "material": "Aluminum 6061",
+          "density": 2.7,
+          "drawingScale": "1:1",
+          "drawingRevision": "A",
+          "drawingBook": {
+            "schema": "form-drawing-book-v1",
+            "sheets": [
+              {
+                "id": "production",
+                "title": "Production drawing",
+                "paper": "A3",
+                "orientation": "landscape",
+                "template": "engineering",
+                "author": "Form Studio",
+                "drawingNumber": "",
+                "views": {
+                  "Front": {
+                    "x": 90,
+                    "y": 155,
+                    "visible": true
+                  },
+                  "Top": {
+                    "x": 90,
+                    "y": 65,
+                    "visible": true
+                  },
+                  "Right": {
+                    "x": 230,
+                    "y": 155,
+                    "visible": true
+                  },
+                  "Iso": {
+                    "x": 230,
+                    "y": 65,
+                    "visible": true
+                  },
+                  "Section A-A": {
+                    "x": 350,
+                    "y": 110,
+                    "visible": true
+                  }
+                },
+                "annotations": []
+              }
+            ]
+          },
+          "configurations": [],
+          "activeConfigurationId": null,
+          "bimNodes": [
+            {
+              "id": "bim-project",
+              "kind": "project",
+              "name": "Form BIM Project",
+              "parentId": null,
+              "phase": "existing",
+              "properties": {
+                "schema": "IFC4",
+                "units": "mm"
+              },
+              "entityIds": []
+            },
+            {
+              "id": "bim-site",
+              "kind": "site",
+              "name": "Site",
+              "parentId": "bim-project",
+              "phase": "existing",
+              "properties": {
+                "elevation": 0
+              },
+              "entityIds": []
+            },
+            {
+              "id": "bim-building",
+              "kind": "building",
+              "name": "Building",
+              "parentId": "bim-site",
+              "phase": "new",
+              "properties": {
+                "storeys": 1,
+                "grossFloorArea": 0
+              },
+              "entityIds": []
+            },
+            {
+              "id": "bim-storey-1",
+              "kind": "storey",
+              "name": "Level 01",
+              "parentId": "bim-building",
+              "phase": "new",
+              "properties": {
+                "elevation": 0,
+                "height": 3000,
+                "levelId": "bim-storey-1"
+              },
+              "entityIds": []
+            },
+            {
+              "id": "bim-base-profile",
+              "kind": "element",
+              "name": "Element 1",
+              "parentId": "bim-storey-1",
+              "phase": "new",
+              "properties": {
+                "xMin": -40,
+                "yMin": -25,
+                "xMax": 40,
+                "yMax": 25,
+                "width": 80,
+                "depth": 50,
+                "footprintArea": 4000,
+                "area": 4000,
+                "layer": "model",
+                "material": "Unassigned",
+                "levelId": "bim-storey-1",
+                "volume": 1200000,
+                "baseElevation": 0,
+                "topElevation": 300
+              },
+              "entityIds": [
+                "base-profile"
+              ]
+            },
+            {
+              "id": "bim-mount-hole",
+              "kind": "element",
+              "name": "Element 2",
+              "parentId": "bim-storey-1",
+              "phase": "new",
+              "properties": {
+                "xMin": -8,
+                "yMin": -8,
+                "xMax": 8,
+                "yMax": 8,
+                "width": 16,
+                "depth": 16,
+                "footprintArea": 256,
+                "area": 256,
+                "layer": "holes",
+                "material": "Unassigned",
+                "levelId": "bim-storey-1",
+                "volume": 76800,
+                "baseElevation": 0,
+                "topElevation": 300
+              },
+              "entityIds": [
+                "mount-hole"
+              ]
+            },
+            {
+              "id": "bim-vector-muzicntc-iirqh-0",
+              "kind": "element",
+              "name": "Element 3",
+              "parentId": "bim-storey-1",
+              "phase": "new",
+              "properties": {
+                "xMin": -45,
+                "yMin": 20,
+                "xMax": -25,
+                "yMax": 20,
+                "width": 20,
+                "depth": 0.001,
+                "footprintArea": 0.02,
+                "area": 0.02,
+                "layer": "model",
+                "material": "Unassigned",
+                "levelId": "bim-storey-1",
+                "volume": 6,
+                "baseElevation": 0,
+                "topElevation": 300
+              },
+              "entityIds": [
+                "vector-muzicntc-iirqh-0"
+              ]
+            },
+            {
+              "id": "bim-vector-muzicntc-iirqh-1",
+              "kind": "element",
+              "name": "Element 4",
+              "parentId": "bim-storey-1",
+              "phase": "new",
+              "properties": {
+                "xMin": -25,
+                "yMin": 0,
+                "xMax": -25,
+                "yMax": 20,
+                "width": 0.001,
+                "depth": 20,
+                "footprintArea": 0.02,
+                "area": 0.02,
+                "layer": "model",
+                "material": "Unassigned",
+                "levelId": "bim-storey-1",
+                "volume": 6,
+                "baseElevation": 0,
+                "topElevation": 300
+              },
+              "entityIds": [
+                "vector-muzicntc-iirqh-1"
+              ]
+            },
+            {
+              "id": "bim-vector-muzicntc-iirqh-2",
+              "kind": "element",
+              "name": "Element 5",
+              "parentId": "bim-storey-1",
+              "phase": "new",
+              "properties": {
+                "xMin": -45,
+                "yMin": 0,
+                "xMax": -25,
+                "yMax": 0,
+                "width": 20,
+                "depth": 0.001,
+                "footprintArea": 0.02,
+                "area": 0.02,
+                "layer": "model",
+                "material": "Unassigned",
+                "levelId": "bim-storey-1",
+                "volume": 6,
+                "baseElevation": 0,
+                "topElevation": 300
+              },
+              "entityIds": [
+                "vector-muzicntc-iirqh-2"
+              ]
+            },
+            {
+              "id": "bim-vector-muzicntc-iirqh-3",
+              "kind": "element",
+              "name": "Element 6",
+              "parentId": "bim-storey-1",
+              "phase": "new",
+              "properties": {
+                "xMin": -45,
+                "yMin": 0,
+                "xMax": -45,
+                "yMax": 20,
+                "width": 0.001,
+                "depth": 20,
+                "footprintArea": 0.02,
+                "area": 0.02,
+                "layer": "model",
+                "material": "Unassigned",
+                "levelId": "bim-storey-1",
+                "volume": 6,
+                "baseElevation": 0,
+                "topElevation": 300
+              },
+              "entityIds": [
+                "vector-muzicntc-iirqh-3"
+              ]
+            }
+          ],
+          "recipeGraphs": [
+            {
+              "id": "recipe-parametric-disc",
+              "name": "Parametric Mounting Disc",
+              "version": 1,
+              "author": "Form Studio",
+              "shared": true,
+              "nodes": [
+                {
+                  "id": "diameter",
+                  "kind": "parameter",
+                  "inputs": [],
+                  "values": {
+                    "value": 40
+                  }
+                },
+                {
+                  "id": "depth",
+                  "kind": "parameter",
+                  "inputs": [],
+                  "values": {
+                    "value": 6
+                  }
+                },
+                {
+                  "id": "profile",
+                  "kind": "circle",
+                  "inputs": [
+                    "diameter"
+                  ],
+                  "values": {}
+                },
+                {
+                  "id": "solid",
+                  "kind": "extrude",
+                  "inputs": [
+                    "profile",
+                    "depth"
+                  ],
+                  "values": {}
+                },
+                {
+                  "id": "result",
+                  "kind": "output",
+                  "inputs": [
+                    "solid"
+                  ],
+                  "values": {}
+                }
+              ]
+            }
+          ],
+          "revisions": [],
+          "marketplace": [
+            {
+              "id": "market-gear",
+              "name": "Precision Gear Family",
+              "category": "Engineering",
+              "version": 3,
+              "downloads": 2840,
+              "rating": 4.9
+            },
+            {
+              "id": "market-stair",
+              "name": "Code-Aware Stair",
+              "category": "Architecture",
+              "version": 2,
+              "downloads": 1922,
+              "rating": 4.8
+            },
+            {
+              "id": "market-disc",
+              "name": "Parametric Mounting Disc",
+              "category": "Recipe Graph",
+              "version": 1,
+              "downloads": 906,
+              "rating": 4.7,
+              "graph": {
+                "id": "recipe-parametric-disc",
+                "name": "Parametric Mounting Disc",
+                "version": 1,
+                "author": "Form Studio",
+                "shared": true,
+                "nodes": [
+                  {
+                    "id": "diameter",
+                    "kind": "parameter",
+                    "inputs": [],
+                    "values": {
+                      "value": 40
+                    }
+                  },
+                  {
+                    "id": "depth",
+                    "kind": "parameter",
+                    "inputs": [],
+                    "values": {
+                      "value": 6
+                    }
+                  },
+                  {
+                    "id": "profile",
+                    "kind": "circle",
+                    "inputs": [
+                      "diameter"
+                    ],
+                    "values": {}
+                  },
+                  {
+                    "id": "solid",
+                    "kind": "extrude",
+                    "inputs": [
+                      "profile",
+                      "depth"
+                    ],
+                    "values": {}
+                  },
+                  {
+                    "id": "result",
+                    "kind": "output",
+                    "inputs": [
+                      "solid"
+                    ],
+                    "values": {}
+                  }
+                ]
+              }
+            }
+          ],
+          "appearance": {
+            "preset": "brass",
+            "baseColor": "#c9953f",
+            "useLayerColor": false,
+            "metalness": 0.94,
+            "roughness": 0.17,
+            "clearcoat": 0.32,
+            "clearcoatRoughness": 0.12,
+            "transmission": 0,
+            "ior": 1.45,
+            "attenuationDistance": 500,
+            "volumeScatter": 0,
+            "volumeVariation": 0,
+            "opacity": 1,
+            "environment": "studio",
+            "exposure": 1,
+            "groundShadow": true
+          },
+          "kernel": "Open CASCADE B-Rep",
+          "checksum": "fnv1a128-ddc8629df8eb67fd18edf9ac2f686846"
+        },
+        "coordinateSystem": {
+          "units": "mm",
+          "upAxis": "Z",
+          "handedness": "right",
+          "toCommonAxes": [
+            "+X",
+            "-Z",
+            "+Y"
+          ]
+        },
+        "updatedAt": 1791462265842
+      },
+      "fabric": {
+        "schema": "form-studio/fabric@1",
+        "objectIds": [
+          "piece-i6bdqut",
+          "piece-e33hu6d",
+          "piece-jax92f6",
+          "piece-2lmpo78",
+          "seam-v972zg6",
+          "seam-sdctkft",
+          "seam-675irs9",
+          "seam-znuhwyx",
+          "seam-uyzpy6n",
+          "seam-phu8053",
+          "seam-8ho59x6",
+          "seam-627tqtt",
+          "seam-7kxdrln",
+          "seam-n8h5gso",
+          "seam-aig8aom",
+          "seam-wrjjr4t",
+          "seam-2m0z2ht",
+          "seam-236kee3"
+        ],
+        "data": {
+          "version": 1,
+          "id": "garment-0oq8eqe",
+          "name": "T-shirt M",
+          "kind": "tshirt",
+          "size": "M",
+          "fabric": {
+            "id": "jersey",
+            "name": "Cotton jersey",
+            "color": "#759083",
+            "weight": 180,
+            "thickness": 0.48,
+            "stretchWarp": 18,
+            "stretchWeft": 42,
+            "stretchBias": 35,
+            "bend": 0.35,
+            "friction": 0.48,
+            "shrinkage": 5
+          },
+          "avatar": {
+            "height": 1700,
+            "bust": 920,
+            "waist": 760,
+            "hip": 990,
+            "neck": 370,
+            "shoulder": 410,
+            "armLength": 610,
+            "inseam": 790
+          },
+          "avatarProfile": {
+            "sex": "female",
+            "build": 50,
+            "pose": "neutral"
+          },
+          "fitBody": {
+            "kind": "procedural-reference",
+            "name": "Form anatomical fitting reference",
+            "surfaceReady": false,
+            "rightsConfirmed": true
+          },
+          "pieces": [
+            {
+              "id": "piece-i6bdqut",
+              "name": "Front",
+              "role": "front",
+              "points": [
+                {
+                  "x": -74,
+                  "y": 510
+                },
+                {
+                  "x": -205,
+                  "y": 489.6
+                },
+                {
+                  "x": -243.75,
+                  "y": 331.5
+                },
+                {
+                  "x": -212.5,
+                  "y": 195.5
+                },
+                {
+                  "x": -261.25,
+                  "y": 0
+                },
+                {
+                  "x": -261.25,
+                  "y": -25.5
+                },
+                {
+                  "x": 261.25,
+                  "y": -25.5
+                },
+                {
+                  "x": 261.25,
+                  "y": 0
+                },
+                {
+                  "x": 212.5,
+                  "y": 195.5
+                },
+                {
+                  "x": 243.75,
+                  "y": 331.5
+                },
+                {
+                  "x": 205,
+                  "y": 489.6
+                },
+                {
+                  "x": 74,
+                  "y": 510
+                },
+                {
+                  "x": 55.5,
+                  "y": 459.4000061758897
+                },
+                {
+                  "x": 37,
+                  "y": 443.74905661049047
+                },
+                {
+                  "x": 18.5,
+                  "y": 435.92919350378315
+                },
+                {
+                  "x": 0,
+                  "y": 433.5
+                },
+                {
+                  "x": -18.5,
+                  "y": 435.92919350378315
+                },
+                {
+                  "x": -37,
+                  "y": 443.74905661049047
+                },
+                {
+                  "x": -55.5,
+                  "y": 459.4000061758897
+                }
+              ],
+              "edgeNames": [
+                "shoulder-right",
+                "attach-right-front",
+                "right-side-chest",
+                "right-side-waist",
+                "right-side-hem",
+                "hem",
+                "left-side-hem",
+                "left-side-waist",
+                "left-side-chest",
+                "attach-left-front",
+                "shoulder-left",
+                "neck-0",
+                "neck-1",
+                "neck-2",
+                "neck-3",
+                "neck-4",
+                "neck-5",
+                "neck-6",
+                "neck-7"
+              ],
+              "grainAngle": 0,
+              "seamAllowance": 10,
+              "cutQuantity": 1,
+              "mirror": false,
+              "rotation": 0,
+              "position": {
+                "x": -311.25,
+                "y": -510
+              },
+              "stockPlacement": {
+                "region": "torso"
+              }
+            },
+            {
+              "id": "piece-e33hu6d",
+              "name": "Back",
+              "role": "back",
+              "points": [
+                {
+                  "x": -74,
+                  "y": 510
+                },
+                {
+                  "x": -205,
+                  "y": 489.6
+                },
+                {
+                  "x": -243.75,
+                  "y": 331.5
+                },
+                {
+                  "x": -212.5,
+                  "y": 195.5
+                },
+                {
+                  "x": -261.25,
+                  "y": 0
+                },
+                {
+                  "x": -261.25,
+                  "y": -25.5
+                },
+                {
+                  "x": 261.25,
+                  "y": -25.5
+                },
+                {
+                  "x": 261.25,
+                  "y": 0
+                },
+                {
+                  "x": 212.5,
+                  "y": 195.5
+                },
+                {
+                  "x": 243.75,
+                  "y": 331.5
+                },
+                {
+                  "x": 205,
+                  "y": 489.6
+                },
+                {
+                  "x": 74,
+                  "y": 510
+                },
+                {
+                  "x": 55.5,
+                  "y": 494.25777969916567
+                },
+                {
+                  "x": 37,
+                  "y": 489.38859538993034
+                },
+                {
+                  "x": 18.5,
+                  "y": 486.95574909006586
+                },
+                {
+                  "x": 0,
+                  "y": 486.2
+                },
+                {
+                  "x": -18.5,
+                  "y": 486.95574909006586
+                },
+                {
+                  "x": -37,
+                  "y": 489.38859538993034
+                },
+                {
+                  "x": -55.5,
+                  "y": 494.25777969916567
+                }
+              ],
+              "edgeNames": [
+                "shoulder-right",
+                "attach-right-back",
+                "right-side-chest",
+                "right-side-waist",
+                "right-side-hem",
+                "hem",
+                "left-side-hem",
+                "left-side-waist",
+                "left-side-chest",
+                "attach-left-back",
+                "shoulder-left",
+                "neck-0",
+                "neck-1",
+                "neck-2",
+                "neck-3",
+                "neck-4",
+                "neck-5",
+                "neck-6",
+                "neck-7"
+              ],
+              "grainAngle": 0,
+              "seamAllowance": 10,
+              "cutQuantity": 1,
+              "mirror": false,
+              "rotation": 0,
+              "position": {
+                "x": 311.25,
+                "y": -510
+              },
+              "stockPlacement": {
+                "region": "torso"
+              }
+            },
+            {
+              "id": "piece-jax92f6",
+              "name": "Right sleeve",
+              "role": "free",
+              "points": [
+                {
+                  "x": 0,
+                  "y": 78.13417014341421
+                },
+                {
+                  "x": -142.80134437742524,
+                  "y": 0
+                },
+                {
+                  "x": -131.37723682723123,
+                  "y": -183
+                },
+                {
+                  "x": 131.37723682723123,
+                  "y": -183
+                },
+                {
+                  "x": 142.80134437742524,
+                  "y": 0
+                }
+              ],
+              "edgeNames": [
+                "attach-right-front",
+                "under-right",
+                "hem",
+                "under-right",
+                "attach-right-back"
+              ],
+              "grainAngle": 0,
+              "seamAllowance": 10,
+              "cutQuantity": 1,
+              "mirror": false,
+              "rotation": 0,
+              "position": {
+                "x": -192.80134437742524,
+                "y": -733.6341701434142
+              },
+              "stockPlacement": {
+                "region": "sleeve",
+                "side": -1
+              }
+            },
+            {
+              "id": "piece-2lmpo78",
+              "name": "Left sleeve",
+              "role": "free",
+              "points": [
+                {
+                  "x": 0,
+                  "y": 78.13417014341421
+                },
+                {
+                  "x": -142.80134437742524,
+                  "y": 0
+                },
+                {
+                  "x": -131.37723682723123,
+                  "y": -183
+                },
+                {
+                  "x": 131.37723682723123,
+                  "y": -183
+                },
+                {
+                  "x": 142.80134437742524,
+                  "y": 0
+                }
+              ],
+              "edgeNames": [
+                "attach-left-front",
+                "under-left",
+                "hem",
+                "under-left",
+                "attach-left-back"
+              ],
+              "grainAngle": 0,
+              "seamAllowance": 10,
+              "cutQuantity": 1,
+              "mirror": false,
+              "rotation": 0,
+              "position": {
+                "x": 192.80134437742524,
+                "y": -733.6341701434142
+              },
+              "stockPlacement": {
+                "region": "sleeve",
+                "side": 1
+              }
+            }
+          ],
+          "seams": [
+            {
+              "id": "seam-v972zg6",
+              "name": "shoulder right",
+              "a": {
+                "pieceId": "piece-i6bdqut",
+                "edgeIndex": 0
+              },
+              "b": {
+                "pieceId": "piece-e33hu6d",
+                "edgeIndex": 0
+              },
+              "type": "plain",
+              "easeRatio": 1,
+              "enabled": true
+            },
+            {
+              "id": "seam-sdctkft",
+              "name": "attach right front",
+              "a": {
+                "pieceId": "piece-i6bdqut",
+                "edgeIndex": 1
+              },
+              "b": {
+                "pieceId": "piece-jax92f6",
+                "edgeIndex": 0
+              },
+              "type": "plain",
+              "easeRatio": 1,
+              "enabled": true
+            },
+            {
+              "id": "seam-675irs9",
+              "name": "right side chest",
+              "a": {
+                "pieceId": "piece-i6bdqut",
+                "edgeIndex": 2
+              },
+              "b": {
+                "pieceId": "piece-e33hu6d",
+                "edgeIndex": 2
+              },
+              "type": "plain",
+              "easeRatio": 1,
+              "enabled": true
+            },
+            {
+              "id": "seam-znuhwyx",
+              "name": "right side waist",
+              "a": {
+                "pieceId": "piece-i6bdqut",
+                "edgeIndex": 3
+              },
+              "b": {
+                "pieceId": "piece-e33hu6d",
+                "edgeIndex": 3
+              },
+              "type": "plain",
+              "easeRatio": 1,
+              "enabled": true
+            },
+            {
+              "id": "seam-uyzpy6n",
+              "name": "right side hem",
+              "a": {
+                "pieceId": "piece-i6bdqut",
+                "edgeIndex": 4
+              },
+              "b": {
+                "pieceId": "piece-e33hu6d",
+                "edgeIndex": 4
+              },
+              "type": "plain",
+              "easeRatio": 1,
+              "enabled": true
+            },
+            {
+              "id": "seam-phu8053",
+              "name": "left side hem",
+              "a": {
+                "pieceId": "piece-i6bdqut",
+                "edgeIndex": 6
+              },
+              "b": {
+                "pieceId": "piece-e33hu6d",
+                "edgeIndex": 6
+              },
+              "type": "plain",
+              "easeRatio": 1,
+              "enabled": true
+            },
+            {
+              "id": "seam-8ho59x6",
+              "name": "left side waist",
+              "a": {
+                "pieceId": "piece-i6bdqut",
+                "edgeIndex": 7
+              },
+              "b": {
+                "pieceId": "piece-e33hu6d",
+                "edgeIndex": 7
+              },
+              "type": "plain",
+              "easeRatio": 1,
+              "enabled": true
+            },
+            {
+              "id": "seam-627tqtt",
+              "name": "left side chest",
+              "a": {
+                "pieceId": "piece-i6bdqut",
+                "edgeIndex": 8
+              },
+              "b": {
+                "pieceId": "piece-e33hu6d",
+                "edgeIndex": 8
+              },
+              "type": "plain",
+              "easeRatio": 1,
+              "enabled": true
+            },
+            {
+              "id": "seam-7kxdrln",
+              "name": "attach left front",
+              "a": {
+                "pieceId": "piece-i6bdqut",
+                "edgeIndex": 9
+              },
+              "b": {
+                "pieceId": "piece-2lmpo78",
+                "edgeIndex": 0
+              },
+              "type": "plain",
+              "easeRatio": 1,
+              "enabled": true
+            },
+            {
+              "id": "seam-n8h5gso",
+              "name": "shoulder left",
+              "a": {
+                "pieceId": "piece-i6bdqut",
+                "edgeIndex": 10
+              },
+              "b": {
+                "pieceId": "piece-e33hu6d",
+                "edgeIndex": 10
+              },
+              "type": "plain",
+              "easeRatio": 1,
+              "enabled": true
+            },
+            {
+              "id": "seam-aig8aom",
+              "name": "attach right back",
+              "a": {
+                "pieceId": "piece-e33hu6d",
+                "edgeIndex": 1
+              },
+              "b": {
+                "pieceId": "piece-jax92f6",
+                "edgeIndex": 4
+              },
+              "type": "plain",
+              "easeRatio": 1,
+              "enabled": true
+            },
+            {
+              "id": "seam-wrjjr4t",
+              "name": "attach left back",
+              "a": {
+                "pieceId": "piece-e33hu6d",
+                "edgeIndex": 9
+              },
+              "b": {
+                "pieceId": "piece-2lmpo78",
+                "edgeIndex": 4
+              },
+              "type": "plain",
+              "easeRatio": 1,
+              "enabled": true
+            },
+            {
+              "id": "seam-2m0z2ht",
+              "name": "under right",
+              "a": {
+                "pieceId": "piece-jax92f6",
+                "edgeIndex": 1
+              },
+              "b": {
+                "pieceId": "piece-jax92f6",
+                "edgeIndex": 3
+              },
+              "type": "plain",
+              "easeRatio": 1,
+              "enabled": true
+            },
+            {
+              "id": "seam-236kee3",
+              "name": "under left",
+              "a": {
+                "pieceId": "piece-2lmpo78",
+                "edgeIndex": 1
+              },
+              "b": {
+                "pieceId": "piece-2lmpo78",
+                "edgeIndex": 3
+              },
+              "type": "plain",
+              "easeRatio": 1,
+              "enabled": true
+            }
+          ],
+          "details": [],
+          "createdAt": "2026-10-08T12:23:45.518Z",
+          "updatedAt": "2026-10-08T12:24:25.842Z"
+        },
+        "coordinateSystem": {
+          "units": "mm",
+          "upAxis": "Y",
+          "handedness": "right",
+          "toCommonAxes": [
+            "+X",
+            "+Y",
+            "+Z"
+          ]
+        },
+        "updatedAt": 1791462265842
+      },
+      "scene": {
+        "schema": "form-studio/scene@1",
+        "objectIds": [
+          "object-a3c76140-0b0f-4008-97b2-c5bb8b5f3bfb"
+        ],
+        "data": {
+          "scene": [
+            {
+              "id": "object-a3c76140-0b0f-4008-97b2-c5bb8b5f3bfb",
+              "name": "Box 1",
+              "type": "box",
+              "position": [
+                0,
+                0.72,
+                0
+              ],
+              "rotation": [
+                0,
+                0,
+                0
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "color": "#dfe8e7",
+              "roughness": 0.38,
+              "metalness": 0.08,
+              "clearcoat": 0.2,
+              "sheen": 0.15,
+              "transmission": 0,
+              "thickness": 0,
+              "iridescence": 0,
+              "visible": true,
+              "locked": false,
+              "groupId": null,
+              "parentId": null,
+              "instanceSourceId": null,
+              "animation": "none",
+              "modifiers": {
+                "bevel": false,
+                "mirror": false,
+                "array": 1,
+                "bend": 0
+              },
+              "operations": [],
+              "constraints": [],
+              "sketchPoints": [],
+              "keyframes": [
+                {
+                  "id": "key-0eea6282-3ab0-40d6-b387-5d3dc51e99b6",
+                  "time": 0,
+                  "position": [
+                    0,
+                    0.72,
+                    0
+                  ],
+                  "rotation": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "scale": [
+                    1,
+                    1,
+                    1
+                  ],
+                  "easing": "ease-in-out",
+                  "pose": {}
+                }
+              ],
+              "asset": null,
+              "clothBake": null,
+              "autoRig": null,
+              "meshEdits": [],
+              "modelControls": [],
+              "shaderGraph": {
+                "procedural": "none",
+                "uvProjection": "original",
+                "scale": 5,
+                "contrast": 0.5,
+                "emission": 0,
+                "fresnel": 0
+              },
+              "lumaMeshAsset": null,
+              "lumaTextAsset": null,
+              "lumaSpatialAsset": null
+            }
+          ],
+          "workspace": {
+            "environment": "Studio",
+            "gridVisible": true,
+            "snap": true,
+            "avoidCollisions": true,
+            "bloom": false,
+            "depthOfField": false,
+            "qualityMode": "Studio",
+            "timeline": 0
+          },
+          "camera": {
+            "position": [
+              7.000000000000001,
+              4,
+              8
+            ],
+            "target": [
+              0,
+              1,
+              0
+            ]
+          },
+          "cameraShots": [],
+          "groups": []
+        },
+        "coordinateSystem": {
+          "units": "mm",
+          "upAxis": "Y",
+          "handedness": "right",
+          "toCommonAxes": [
+            "+X",
+            "+Y",
+            "+Z"
+          ]
+        },
+        "updatedAt": 1791462232223
+      }
+    },
+    "relationships": [],
+    "assets": [],
+    "checksum": "fnv1a128-d409b3b7f35d447e7c4e92f983ee2d67"
+  }
+}

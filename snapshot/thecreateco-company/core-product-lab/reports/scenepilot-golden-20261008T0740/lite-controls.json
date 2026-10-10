@@ -1,0 +1,1031 @@
+[
+  {
+    "tag": "BUTTON",
+    "type": "button",
+    "text": "",
+    "aria": "thecreateco apps",
+    "accept": null
+  },
+  {
+    "tag": "SUMMARY",
+    "type": null,
+    "text": "File",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": " New project",
+    "aria": "New project",
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": " Open project",
+    "aria": "Restore saved project",
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "",
+    "aria": "Open command palette",
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "",
+    "aria": "Save project",
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "",
+    "aria": "Undo",
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "",
+    "aria": "Redo",
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": " Render MP4",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "INPUT",
+    "type": "file",
+    "text": "",
+    "aria": null,
+    "accept": ".srt,.vtt,text/vtt,application/x-subrip"
+  },
+  {
+    "tag": "INPUT",
+    "type": "file",
+    "text": "",
+    "aria": null,
+    "accept": ".cube"
+  },
+  {
+    "tag": "INPUT",
+    "type": "file",
+    "text": "",
+    "aria": null,
+    "accept": ".json,.scenepilot-pack.json,application/json,application/vnd.scenepilot.extension+json"
+  },
+  {
+    "tag": "INPUT",
+    "type": "file",
+    "text": "",
+    "aria": null,
+    "accept": ".json,.scenepilot-effect.json,application/json,application/vnd.scenepilot.effect+json"
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "EditSource + timeline",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "Auto CutAnalyze + build an edit",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "SUMMARY",
+    "type": null,
+    "text": "Tools",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "MotionDesktop Pro",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "ColorDesktop Pro",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "AudioDesktop Pro",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "DeliverDesktop Pro",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "START HEREBring in your song and shotsImport media",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "Simple",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "Advanced",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "DROP VIDEO OR SONGor choose a file",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "",
+    "aria": "Play",
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "01 / SONGYour song (or video)",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "02 / CLIPSYour footage & lights",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "INPUT",
+    "type": "file",
+    "text": "",
+    "aria": null,
+    "accept": "video/*,audio/*"
+  },
+  {
+    "tag": "INPUT",
+    "type": "file",
+    "text": "",
+    "aria": null,
+    "accept": "image/*,video/*"
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "Music videoFull song · beat edit · editable effects",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "Social cutVertical · fast hook · captions",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "Lyric videoBeat-timed words · cinematic motion",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "CinematicLonger shots · restrained motion",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "Story cutTalking video · dead air removed · auto rough cut",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "INPUT",
+    "type": "number",
+    "text": "",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "SUMMARY",
+    "type": null,
+    "text": "Fine-tune editing rules",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "INPUT",
+    "type": "number",
+    "text": "",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "INPUT",
+    "type": "number",
+    "text": "",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "INPUT",
+    "type": "checkbox",
+    "text": "",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "INPUT",
+    "type": "checkbox",
+    "text": "",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "INPUT",
+    "type": "checkbox",
+    "text": "",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "SUMMARY",
+    "type": null,
+    "text": "Source priorities & keep ranges",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "SUMMARY",
+    "type": null,
+    "text": "Review scene boundaries · 0",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "INPUT",
+    "type": "number",
+    "text": "",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "Add boundary",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "Auto ✨Reads the tempo, energy and drop — picks the vibe for you",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "CinematicLong holds, teal shadows, a slow push on the beat",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "HyperpopCuts on every beat, blown-out neon, strobes on every drum hit",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "Retro VHSTape grain and whip pans, like a dubbed cassette",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "StrobeRelentless every-beat strobe and flash cuts — built for the drop",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "NoirBlack and white, crushed contrast, no tricks",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "Source",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "9:16",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "1:1",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "4:5",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "16:9",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "2.39:1",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "21:9",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "SMOOTH",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "DYNAMIC",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "MAXIMUM",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "Add media to get started",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "SUMMARY",
+    "type": null,
+    "text": "Optional refinements · lighting, lyrics & advanced tools",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "INPUT",
+    "type": "text",
+    "text": "",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": " Apply",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "punchier",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "more cuts",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "warmer",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "cinematic",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "add captions",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "slow-mo",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "SUMMARY",
+    "type": null,
+    "text": "Creative controlsMontage, camera, strobe, look and titles",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "INPUT",
+    "type": "checkbox",
+    "text": "",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "CINEMATIC",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "BALANCED",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "FRENETIC",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": " Reroll",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "HARD",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "FLASH",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "ZOOM",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "WHIP",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "GLITCH",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "DISSOLVE",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "DIP",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "SLIDE",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "OFF",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "DRUMS",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "PULSE",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "RAVE",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "MACHINE",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "POLICE",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "WARM",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "OFF",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "HANDHELD",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "KICK",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "RIOT",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "OFF",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "DRIFT",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "SLOWMO",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "LAUNCH",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "WHIP",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "OFF",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "STEP",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "CHOP",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "ROLL",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "REWIND",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "ROBOT",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "RAW",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "CINEMATIC",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "NEON",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "VHS",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "NOIR",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "INPUT",
+    "type": "range",
+    "text": "",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "INPUT",
+    "type": "range",
+    "text": "",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "INPUT",
+    "type": "range",
+    "text": "",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "INPUT",
+    "type": "range",
+    "text": "",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "INPUT",
+    "type": "range",
+    "text": "",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "INPUT",
+    "type": "range",
+    "text": "",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "INPUT",
+    "type": "range",
+    "text": "",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "INPUT",
+    "type": "range",
+    "text": "",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "INPUT",
+    "type": "range",
+    "text": "",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "Reset colour",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": " Import .cube LUT",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "NONE",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "HORIZONTAL",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "VERTICAL",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "QUAD",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "INPUT",
+    "type": "range",
+    "text": "",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "OFF",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "GHOST",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "TRAILS",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "PULSE",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "SMEAR",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "INPUT",
+    "type": "text",
+    "text": "",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": " Drop",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "SLAM",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "POP",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "RISE",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "WHOLE",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "TYPEWRITER",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "CASCADE",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "SCALE",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "WAVE",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "SLIDE",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": "DROP",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "text": " Import cut",
+    "aria": null,
+    "accept": null
+  },
+  {
+    "tag": "INPUT",
+    "type": "file",
+    "text": "",
+    "aria": null,
+    "accept": "application/json,.json,.otio"
+  }
+]

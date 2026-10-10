@@ -1,0 +1,11 @@
+{
+  "published_deploy": "6ac5d1a6d2965007d3910de2",
+  "commit_ref": null,
+  "branch": null,
+  "manifest_files": 1692,
+  "local_overlay_files": 1292,
+  "matching_overlay_files": 1292,
+  "different_overlay_files": 0,
+  "published_files_not_in_overlay": 400,
+  "overlay_files_not_in_published": 0
+}

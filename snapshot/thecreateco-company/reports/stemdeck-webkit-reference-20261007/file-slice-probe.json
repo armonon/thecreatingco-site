@@ -1,0 +1,80 @@
+[
+  {
+    "name": "webkit",
+    "version": "26.5",
+    "profile": "/Users/agentsattari/.openclaw/tmp/stemdeck-slice-Nr4bDG",
+    "rows": [
+      {
+        "name": "slice",
+        "beforeBytes": 4,
+        "afterDeclaredBytes": 4,
+        "afterReadBytes": 4,
+        "text": "defg",
+        "pass": true
+      },
+      {
+        "name": "composed",
+        "beforeBytes": 4,
+        "afterDeclaredBytes": 4,
+        "afterReadBytes": 4,
+        "text": "defg",
+        "pass": true
+      },
+      {
+        "name": "materialized",
+        "beforeBytes": 4,
+        "afterDeclaredBytes": 4,
+        "afterReadBytes": 4,
+        "text": "defg",
+        "pass": true
+      },
+      {
+        "name": "bytes",
+        "beforeBytes": 4,
+        "afterDeclaredBytes": 4,
+        "afterReadBytes": 4,
+        "text": "defg",
+        "pass": true
+      }
+    ]
+  },
+  {
+    "name": "chromium",
+    "version": "151.0.7922.34",
+    "profile": "/Users/agentsattari/.openclaw/tmp/stemdeck-slice-9htxmP",
+    "rows": [
+      {
+        "name": "slice",
+        "beforeBytes": 4,
+        "afterDeclaredBytes": 4,
+        "afterReadBytes": 4,
+        "text": "defg",
+        "pass": true
+      },
+      {
+        "name": "composed",
+        "beforeBytes": 4,
+        "afterDeclaredBytes": 4,
+        "afterReadBytes": 4,
+        "text": "defg",
+        "pass": true
+      },
+      {
+        "name": "materialized",
+        "beforeBytes": 4,
+        "afterDeclaredBytes": 4,
+        "afterReadBytes": 4,
+        "text": "defg",
+        "pass": true
+      },
+      {
+        "name": "bytes",
+        "beforeBytes": 4,
+        "afterDeclaredBytes": 4,
+        "afterReadBytes": 4,
+        "text": "defg",
+        "pass": true
+      }
+    ]
+  }
+]

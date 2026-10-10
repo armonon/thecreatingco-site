@@ -1,0 +1,179 @@
+{
+  "task_id": "REV-BASELINE-001",
+  "observed_at": "2026-10-09T20:11:37.276475+00:00",
+  "execution": "Python standard-library deterministic source audit; no worker call",
+  "sources": [
+    {
+      "path": "reports/revenue-2026-10-07/founder-baseline-patch.json",
+      "sha256": "2db96eb7a9e5e34488c2fbdfbf55a8bf894eef3a4b0441e846ab95dca9e70508",
+      "bytes": 1306
+    },
+    {
+      "path": "data/revenue/square-setup.md",
+      "sha256": "c133e99f423a40be8efb1094fc78f237b0ffbb51be72f498331f490df1b85ce5",
+      "bytes": 6145
+    },
+    {
+      "path": "data/revenue/metric-definitions.json",
+      "sha256": "77b58f503a06a4a63b719f43cbe474245920ef18ab624c34137d032be923d90e",
+      "bytes": 8842
+    },
+    {
+      "path": "data/cost-snapshot.json",
+      "sha256": "022940e667e7003e767772072714ee2863ac4840e44ac18dd1ce0d8e081836d5",
+      "bytes": 15769
+    }
+  ],
+  "scope": "Company data directory and existing revenue policy/evidence only; no global account/access search",
+  "source_filename_matches": [
+    "data/cost-policy.json",
+    "data/cost-snapshot.json"
+  ],
+  "baseline": {
+    "value": 0,
+    "currency": "USD",
+    "source": "Armon, Discord #millions, 2026-10-07: we have no revenue at the moment",
+    "period": {
+      "as_of": "2026-10-07",
+      "type": "Current founder-reported baseline; not audited daily/7d/30d accounting totals"
+    },
+    "observed_at": "2026-10-08T01:15:19.407251+00:00",
+    "status": "FOUNDER_REPORTED_NOT_LEDGER_VERIFIED",
+    "definition": "Current company revenue baseline reported by founder; no historical interval or payment ledger verified."
+  },
+  "cost_snapshot_observed_at": "2026-10-09T19:22:00.275733+00:00",
+  "partial_cost_daily": {
+    "ledger_rows": 108,
+    "records": 108,
+    "records_known_rows": 108,
+    "failures": 15,
+    "failures_known_rows": 108,
+    "input_tokens": 4285621,
+    "input_tokens_known_rows": 107,
+    "cached_tokens": 40622720,
+    "cached_tokens_known_rows": 105,
+    "cache_read_tokens": 40622720,
+    "cache_read_tokens_known_rows": 100,
+    "cache_write_tokens": null,
+    "cache_write_tokens_known_rows": 0,
+    "output_tokens": 302664,
+    "output_tokens_known_rows": 107,
+    "total_tokens": 45211005,
+    "total_tokens_known_rows": 107,
+    "list_estimated_usd": 0.0029449999999999997,
+    "list_estimated_usd_known_rows": 3,
+    "billed_usd": null,
+    "billed_usd_known_rows": 0
+  },
+  "partial_cost_weekly": {
+    "ledger_rows": 279,
+    "records": 279,
+    "records_known_rows": 279,
+    "failures": 35,
+    "failures_known_rows": 279,
+    "input_tokens": 11230525,
+    "input_tokens_known_rows": 275,
+    "cached_tokens": 128849582,
+    "cached_tokens_known_rows": 272,
+    "cache_read_tokens": 128842368,
+    "cache_read_tokens_known_rows": 245,
+    "cache_write_tokens": null,
+    "cache_write_tokens_known_rows": 0,
+    "output_tokens": 937396,
+    "output_tokens_known_rows": 275,
+    "total_tokens": 141010289,
+    "total_tokens_known_rows": 275,
+    "list_estimated_usd": 0.36702479999999993,
+    "list_estimated_usd_known_rows": 25,
+    "billed_usd": null,
+    "billed_usd_known_rows": 0
+  },
+  "coverage_gaps": [
+    "interactive/native-child per-call usage not exposed by cron receipts",
+    "scheduled receipt token counts may aggregate multiple model calls",
+    "cache/input accounting differs by source; preserve explicit totals, do not subtract caches blindly",
+    "scheduled latency is end-to-end run duration, not pure inference latency",
+    "task/product/reasoning/escalation and billed cost often not exposed",
+    "marketing tokens and cost can be source estimates, not reconciled billing",
+    "visible receipts may overlap marketing calls; combined sums are not reconciled billing"
+  ],
+  "preflight": {
+    "decision": "continue",
+    "advisory_only": true,
+    "mode": "normal",
+    "critical_override": false,
+    "budgets": [
+      {
+        "name": "daily",
+        "scope": "all",
+        "key": "all",
+        "window": "day",
+        "metric": "list_estimated_usd",
+        "observed": 0.002945,
+        "limit": null,
+        "exceeded": false,
+        "coverage": "partial"
+      },
+      {
+        "name": "weekly",
+        "scope": "all",
+        "key": "all",
+        "window": "week",
+        "metric": "list_estimated_usd",
+        "observed": 0.3670248,
+        "limit": null,
+        "exceeded": false,
+        "coverage": "partial"
+      },
+      {
+        "name": "per-agent",
+        "scope": "agent",
+        "key": "company-director",
+        "window": "day",
+        "metric": "list_estimated_usd",
+        "observed": null,
+        "limit": null,
+        "exceeded": false,
+        "coverage": "partial"
+      },
+      {
+        "name": "per-product",
+        "scope": "product",
+        "key": "unknown",
+        "window": "week",
+        "metric": "list_estimated_usd",
+        "observed": null,
+        "limit": null,
+        "exceeded": false,
+        "coverage": "partial"
+      },
+      {
+        "name": "per-task",
+        "scope": "task",
+        "key": "REV-BASELINE-001",
+        "window": "week",
+        "metric": "list_estimated_usd",
+        "observed": null,
+        "limit": null,
+        "exceeded": false,
+        "coverage": "partial"
+      },
+      {
+        "name": "astra",
+        "scope": "astra",
+        "key": "astra",
+        "window": "week",
+        "metric": "list_estimated_usd",
+        "observed": null,
+        "limit": null,
+        "exceeded": false,
+        "coverage": "partial"
+      }
+    ],
+    "astra_requested": false,
+    "astra_reason_recorded": null,
+    "next": "prefer deterministic tools and smallest adequate authorized model"
+  },
+  "payment_provider": "Square",
+  "result": "BLOCKED: no attributable settled-payment/accounting aggregate or billed operating/direct-delivery cost source in inspected inputs; no claim that sources do not exist elsewhere"
+}

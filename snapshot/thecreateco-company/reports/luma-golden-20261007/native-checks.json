@@ -1,0 +1,27 @@
+{
+  "source_sha": "d18aef51086b50708cb9cb3a33fddc21d792dc58",
+  "source_status": "",
+  "observed_at": "2026-10-08T04:04:22.037778+00:00",
+  "toolchain": "Existing isolated Rust1.99.0 /Users/agentsattari/code/toolchains/reclaim-rust; no toolchain installation",
+  "checks": [
+    {
+      "name": "native-core",
+      "status": "PASS",
+      "tests_passed": 9,
+      "command": "cargo test --locked --manifest-path crates/luma-core/Cargo.toml",
+      "evidence": "/Users/agentsattari/thecreateco-company/reports/luma-golden-20261007/native-core.log"
+    },
+    {
+      "name": "native-bridge",
+      "status": "PASS",
+      "tests_passed": 28,
+      "command": "cargo test --locked --manifest-path src-tauri/Cargo.toml",
+      "evidence": "/Users/agentsattari/thecreateco-company/reports/luma-golden-20261007/native-bridge-after-desktop.log"
+    }
+  ],
+  "limitations": [
+    "Native unit/integration suites, not packaged UI/OS dialog/physical platform qualification",
+    "Initial bridge compilation required dist-desktop; actual desktop build prerequisite completed before successful run",
+    "Initial offline core attempt lacked cached rayon; normal locked dependency fetch succeeded"
+  ]
+}

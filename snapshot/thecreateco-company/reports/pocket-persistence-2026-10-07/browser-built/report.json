@@ -1,0 +1,40 @@
+{
+  "observed_at": "2026-10-08T02:25:49.433Z",
+  "source_sha": "1569ef377f6d3e079936116b1d8e5c4fe7586f48",
+  "source_hashes": {
+    "src/labs/pocket/PocketPage.jsx": "8fc3a3572fbaad2fef6e30c62ee92f885dce9419c0f912491d9f2e298b47da32",
+    "src/labs/pocket/pocketPattern.js": "114381c4be50123831ddbb8193a5555249c3bf03a99b51d25e9660c9f7cbb68e",
+    "scripts/pocket-persistence-check.mjs": "2e3c248d5f7892411aa906d3b1c7536186387f6c3c2d3145e44813ceaa50f8d7"
+  },
+  "browser": "153.0.8010.12",
+  "scope": "Local Chromium real storage/UI and synthetic Web Audio export; not physical audio, mobile hardware or deployed-artifact qualification.",
+  "checks": [
+    {
+      "name": "named beat save, actual close/reopen and editable drum/bass state",
+      "status": "PASS"
+    },
+    {
+      "name": "real synthesis starts and user WAV export is non-silent stereo24-bit at correct duration",
+      "status": "PASS"
+    },
+    {
+      "name": "41st named save refuses with every previous byte intact; same-name update works",
+      "status": "PASS"
+    },
+    {
+      "name": "corrupt named library and draft are not overwritten by save or autosave",
+      "status": "PASS"
+    }
+  ],
+  "pass": true,
+  "wav": {
+    "sha256": "89c01fec3e0eed641c2c8766772e8a6469e11c6bf85c05476e037cc0b8376a1d",
+    "rate": 44100,
+    "frames": 115043,
+    "seconds": 2.608684807256236,
+    "channels": 2,
+    "bits": 24
+  },
+  "phoneOverflow": false,
+  "errors": []
+}

@@ -1,0 +1,170 @@
+[
+  {
+    "name": "admin-orders",
+    "sha256": "1d4edd2a0d9576a180fb53c7ba9d377706c773624c64b4f2947325a2fce1e4a9",
+    "live_digest": "aaeb457f487691099ab8c294ab9edfbda0aba5316841238aaff277d995dc9cb9",
+    "exact_match": false,
+    "zip_path": "/Users/agentsattari/code/wave2/sattari-all/.netlify/functions/admin-orders.zip"
+  },
+  {
+    "name": "checkout-maintenance",
+    "sha256": "a67197e44b9e9ab0d25b96482d7a67146dbbbd1ce31d055e331fcfa60655f9ac",
+    "live_digest": "66c5238ed440a29f7b98fd1f6ef10eda033eae6127b1deee43e9f97dfe23dd72",
+    "exact_match": false,
+    "zip_path": "/Users/agentsattari/code/wave2/sattari-all/.netlify/functions/checkout-maintenance.zip"
+  },
+  {
+    "name": "checkout-release",
+    "sha256": "a9db122a88de948f0b406a14d14990cb654c5cc5f518947dbd016347941a5b5b",
+    "live_digest": "b1b4612a66581cbaf34e2dfd8beb3062a0bdf6f1c98f0ae62882a128346659d0",
+    "exact_match": false,
+    "zip_path": "/Users/agentsattari/code/wave2/sattari-all/.netlify/functions/checkout-release.zip"
+  },
+  {
+    "name": "checkout-session-status",
+    "sha256": "d81d32c79258caf6c2df005c94c164b3295d8ad3ee902afd55c6fa9878900f44",
+    "live_digest": "69c55c69fa72202dd716ba2469ba64dd1582da01c77bf4cdc0ebc891398d9e10",
+    "exact_match": false,
+    "zip_path": "/Users/agentsattari/code/wave2/sattari-all/.netlify/functions/checkout-session-status.zip"
+  },
+  {
+    "name": "create-checkout-session",
+    "sha256": "78dad22ff8d20e5930d03bfee6cc83f4fae2adc672375e3eb6e766db75df74c9",
+    "live_digest": "4ad0aa19065f70a5b6abce2dcb6503b9172dde2901a48916142ac9d28f848ec8",
+    "exact_match": false,
+    "zip_path": "/Users/agentsattari/code/wave2/sattari-all/.netlify/functions/create-checkout-session.zip"
+  },
+  {
+    "name": "instagram-feed",
+    "sha256": "9d111fe75c9549e7e637622c366c9ea9bd4ee1bf2d4c2075b53140c64fa5b341",
+    "live_digest": "8c336616b52b6a1b0f3054fd4bd7053b8d0688e089af7657b9d9fd515fd9503c",
+    "exact_match": false,
+    "zip_path": "/Users/agentsattari/code/wave2/sattari-all/.netlify/functions/instagram-feed.zip"
+  },
+  {
+    "name": "inventory",
+    "sha256": "ed6b1ca7cd219cdda1a117253551758925e97ffec0564994a06a4208f5961bd2",
+    "live_digest": "8077e80e52f5de41c0fbd8f73f6b48797703bb4e5deb64534fe5239996c6dce4",
+    "exact_match": false,
+    "zip_path": "/Users/agentsattari/code/wave2/sattari-all/.netlify/functions/inventory.zip"
+  },
+  {
+    "name": "nightly-backup",
+    "sha256": "07533b9a9914400bc345a0e4ae5000a444e812abb9dd69ae0287f3ef9eee110c",
+    "live_digest": "f06c113c12287da2692ba24ce3f185e6e5ce0279c4fe94c5a5e0dbd27d39adbb",
+    "exact_match": false,
+    "zip_path": "/Users/agentsattari/code/wave2/sattari-all/.netlify/functions/nightly-backup.zip"
+  },
+  {
+    "name": "product-image",
+    "sha256": "fec69e12e8a19a5191cbd6261a7e845ce91dab83e7b56f36c8132b2fe7460c15",
+    "live_digest": "64af2bfb2dd693ea4d3443a7e15734b524e6413b1f103f975700d69dbc9ebb01",
+    "exact_match": false,
+    "zip_path": "/Users/agentsattari/code/wave2/sattari-all/.netlify/functions/product-image.zip"
+  },
+  {
+    "name": "service-inquiry",
+    "sha256": "9c890ebd64bbca6e38484595a729a84848c929d0110f0e3fe61e95a79a68eec5",
+    "live_digest": "cbb0ae1e86fd504bfb9269b3ef6758c6a7b613cc01aa35aa7d052347cb382db1",
+    "exact_match": false,
+    "zip_path": "/Users/agentsattari/code/wave2/sattari-all/.netlify/functions/service-inquiry.zip"
+  },
+  {
+    "name": "site-event",
+    "sha256": "32f8859bb8654e0271982f1f105c60ea37fb382b40b2b928870090e7606163e3",
+    "live_digest": "07956bd01d3dbcc750371c957e305a6aee34ceae3fdf32e5e17a5f199b7b3ee4",
+    "exact_match": false,
+    "zip_path": "/Users/agentsattari/code/wave2/sattari-all/.netlify/functions/site-event.zip"
+  },
+  {
+    "name": "staff-backup",
+    "sha256": "252d9dde7e8c7b40e5d72878830965e4224317b3ffbe0895c8f5686611a88e89",
+    "live_digest": "375f62a838a48f826e34f6515a7694241fb358644227509790f9c905b8b0f31e",
+    "exact_match": false,
+    "zip_path": "/Users/agentsattari/code/wave2/sattari-all/.netlify/functions/staff-backup.zip"
+  },
+  {
+    "name": "staff-bookings",
+    "sha256": "a4be635cb54789879b10c672b83dd305617bc18023add9a82a3cb2105f13291c",
+    "live_digest": "83b9645679044482ddf8994387a9456621c2d0f501ba7a9ee98374e2734d6bdf",
+    "exact_match": false,
+    "zip_path": "/Users/agentsattari/code/wave2/sattari-all/.netlify/functions/staff-bookings.zip"
+  },
+  {
+    "name": "staff-catalog",
+    "sha256": "8430f07a253c8b021b1f88f955a1890446af7462812254f94f362d64ce5c85b9",
+    "live_digest": "686d33ee13dbf5bd60a7482df5ec693c13795537cfa1ee98581966739b4088d2",
+    "exact_match": false,
+    "zip_path": "/Users/agentsattari/code/wave2/sattari-all/.netlify/functions/staff-catalog.zip"
+  },
+  {
+    "name": "staff-image",
+    "sha256": "d7624263748d3959e1f7d27bd65c7c61878335380799f1c35076cb7c010d2fa2",
+    "live_digest": "3a3b7cecc30509c4ea7415ea4a609b40acbcfa40467e6cfd4c245ee1026ecb17",
+    "exact_match": false,
+    "zip_path": "/Users/agentsattari/code/wave2/sattari-all/.netlify/functions/staff-image.zip"
+  },
+  {
+    "name": "staff-inquiries",
+    "sha256": "a5e57e1d46f7a12031b8590db1e56946c0f26e2ecce80e31b0d95cc487441663",
+    "live_digest": "74a621163a1ec9a8dc68ed1907b6289f161538431155bb34744f2bf850d2e6cd",
+    "exact_match": false,
+    "zip_path": "/Users/agentsattari/code/wave2/sattari-all/.netlify/functions/staff-inquiries.zip"
+  },
+  {
+    "name": "staff-insights",
+    "sha256": "8a2f98e1bdbbae0f385664ac8443e8296c302d30e3ed7a61538491bba85ae63f",
+    "live_digest": "0e87e87927bf8195bade1a375f5a440a3922141e3002b9d74c96311826085a89",
+    "exact_match": false,
+    "zip_path": "/Users/agentsattari/code/wave2/sattari-all/.netlify/functions/staff-insights.zip"
+  },
+  {
+    "name": "staff-login",
+    "sha256": "3b10281ce5d44c04bed6c7c4977b7a6fb9e49c59c9ffbcdcfea7acecbde87933",
+    "live_digest": "fa7caecdbdc36c925fd571c7fe5362e91c5f586340b2f117f4ff8d503a3a93c0",
+    "exact_match": false,
+    "zip_path": "/Users/agentsattari/code/wave2/sattari-all/.netlify/functions/staff-login.zip"
+  },
+  {
+    "name": "staff-logout",
+    "sha256": "5f495078cc535dc33847c2621f9462e15ffa4da79f520b22e8159fd126cfc0ca",
+    "live_digest": "bb3eecce8b9c5a8535c3ffdb73be5b86592d50fa19777f990b5560edac72faf5",
+    "exact_match": false,
+    "zip_path": "/Users/agentsattari/code/wave2/sattari-all/.netlify/functions/staff-logout.zip"
+  },
+  {
+    "name": "staff-orders",
+    "sha256": "9588afecd2d6662b6049dfca34c7136537b58a84d316df61ac03395af1a06784",
+    "live_digest": "d5d8cb2481007a8cd97d3544f458147e4d6c3c56a8d0e4235c1fd6763eeb74b3",
+    "exact_match": false,
+    "zip_path": "/Users/agentsattari/code/wave2/sattari-all/.netlify/functions/staff-orders.zip"
+  },
+  {
+    "name": "staff-stock",
+    "sha256": "a5155e1bb652a7c4f43afe9703c27e9bc840aa45a0b20b02ac064ae6a0436bc3",
+    "live_digest": "e7e15b8d2c8628a7de9474e8cb886d086f9abe0dff40a743343bad105c71c8ec",
+    "exact_match": false,
+    "zip_path": "/Users/agentsattari/code/wave2/sattari-all/.netlify/functions/staff-stock.zip"
+  },
+  {
+    "name": "stripe-webhook",
+    "sha256": "ccbc2e4be4c928f420844af14055e3d4bce197ab78922aa997e99af39b8361c2",
+    "live_digest": "7dcd37db9f11b5ff5934b33d38f3e38355ba36fdb57e7a70e7ddcb95d73af4e4",
+    "exact_match": false,
+    "zip_path": "/Users/agentsattari/code/wave2/sattari-all/.netlify/functions/stripe-webhook.zip"
+  },
+  {
+    "name": "studio-booking-maintenance",
+    "sha256": "f07cbc13095b50df7b66954e68788cb2df99d2552f081a84e3c29b7a4b76cebf",
+    "live_digest": "bad18a9231b8c2afe2a670c4bbb22202258feb510fb50a53b34d3b9a47f1a7f4",
+    "exact_match": false,
+    "zip_path": "/Users/agentsattari/code/wave2/sattari-all/.netlify/functions/studio-booking-maintenance.zip"
+  },
+  {
+    "name": "studio-bookings",
+    "sha256": "af437b2460890b883b5c4fbdd0d494647ced8f1f8d8244def0751852f71ae6ed",
+    "live_digest": "780992dadcdd381942033226c23f81bb7320d73cec705a5e485cc5ff5838b124",
+    "exact_match": false,
+    "zip_path": "/Users/agentsattari/code/wave2/sattari-all/.netlify/functions/studio-bookings.zip"
+  }
+]

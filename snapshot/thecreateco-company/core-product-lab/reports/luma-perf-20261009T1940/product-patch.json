@@ -1,0 +1,38 @@
+{
+  "product_id": "luma",
+  "packaged_performance_qualification": {
+    "observed_at": "2026-10-09T19:45:10.674048+00:00",
+    "source_sha": "30bea20f862c4302887b79b89f364f2d7bdf5710",
+    "report": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/luma-perf-20261009T1940/README.md",
+    "status": "BLOCKED_PACKAGED_RUNTIME_MEASUREMENTS",
+    "packaged_build_exit": 0,
+    "packaged_build_elapsed_seconds": 127.22453784942627,
+    "codesign_verify_exit": 0,
+    "signing": "ad-hoc; not notarized",
+    "focused_tests": {
+      "passed": 20,
+      "failed": 0,
+      "skipped": 0
+    },
+    "cpu_brush_microbenchmark": {
+      "baseline_median_ms": 346.253458,
+      "incremental_median_ms": 52.80341700000008,
+      "pixel_parity": "exact",
+      "samples": 3,
+      "process_max_rss_bytes": 145309696,
+      "scope": "Node synthetic engine subprocess; not packaged app or process-tree RAM"
+    },
+    "packaged_input_to_paint_percentiles": null,
+    "packaged_peak_process_tree_ram": null,
+    "packaged_golden_workflow": "NOT_RUN",
+    "models": {
+      "director": "openai/gpt-6.1-sol",
+      "routine_executor": "deterministic tools; no Luna invocation",
+      "review": "not run; no source change",
+      "fallback": null,
+      "additional_model_calls": 0,
+      "billed_cost": null
+    },
+    "resume_condition": "Build a separately identified native qualification bundle/profile with isolated synthetic recovery state; execute dense/sparse brush/transform/open/save/reopen/export fixtures using validated input-to-paint instrumentation and process-tree RSS sampler; record raw samples and parity, p50/p95/p99 and peak RAM. Reuse this task, not a duplicate."
+  }
+}

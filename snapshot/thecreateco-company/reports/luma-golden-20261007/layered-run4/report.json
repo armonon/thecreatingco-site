@@ -1,0 +1,187 @@
+{
+  "source_sha": "d4e722330e65a260badc475f53a7a176ccfe7e57",
+  "source_status": "M app/engine/project.ts\n M app/engine/renderer.ts\n M app/engine/studio.ts\n?? build/qualify-layered-golden.mjs\n?? tests/adjustment-composite-alpha.test.ts\n?? tests/live-layer-property.test.ts\n?? tests/project-precision-admission.test.ts",
+  "harness_sha256": "6f677a70110728c846a1efc684e7e4065b85b2ae87dd18f8ba230b3fdb545ba3",
+  "observed_at": "2026-10-08T03:55:58.585Z",
+  "node": "v22.23.2",
+  "checks": [
+    {
+      "name": "Actual image import, layer rename and63% opacity",
+      "status": "PASS"
+    },
+    {
+      "name": "Actual group and ungroup restore two-layer hierarchy",
+      "status": "PASS"
+    },
+    {
+      "name": "Real pointer move and Undo/Redo preserve nonzero transform",
+      "status": "PASS",
+      "transform": {
+        "tx": 63.99991966580967,
+        "ty": 31.99995983290495,
+        "sx": 1,
+        "sy": 1,
+        "rotation": 0,
+        "skewX": 0
+      }
+    },
+    {
+      "name": "Real pointer diagonal mask removes overlapping overlay pixels",
+      "status": "PASS",
+      "geometry": {
+        "rect": {
+          "x": 79,
+          "y": 153,
+          "width": 1196,
+          "height": 778
+        },
+        "view": {
+          "x": -156.6272493573265,
+          "y": 0,
+          "width": 2361.254498714653,
+          "height": 1536,
+          "zoom": 0.5065104166666666,
+          "outputWidth": 1196,
+          "outputHeight": 778,
+          "cssScale": 0.5065104166666666,
+          "devicePixelRatio": 1
+        }
+      },
+      "maskSamples": [
+        0,
+        0,
+        0,
+        255
+      ]
+    },
+    {
+      "name": "Real mask Undo/Redo restores mask control points and layer state",
+      "status": "PASS"
+    },
+    {
+      "name": "Layer visibility Undo/Redo is non-destructive",
+      "status": "PASS"
+    },
+    {
+      "name": "Layer reorder Undo/Redo preserves both layers",
+      "status": "PASS"
+    },
+    {
+      "name": "UI nondestructive tonal adjustment and Undo/Redo preserve parameters",
+      "status": "PASS"
+    },
+    {
+      "name": "Real save/download/confirm/close/reopen retains layer tree, transforms, masks, adjustment and complete history",
+      "status": "PASS",
+      "archive_sha256": "aff1da56fe8d09e71eb7073dc51049d313f08a6ec672375e5a05ba5a1190f7b8"
+    },
+    {
+      "name": "Corrupt archive is rejected visibly without replacing active document",
+      "status": "PASS"
+    },
+    {
+      "name": "Cancelled export chooser preserves state",
+      "status": "PASS"
+    },
+    {
+      "name": "Undo/Redo remains usable after reopen and rejected import",
+      "status": "PASS"
+    },
+    {
+      "name": "Independent Canvas2D fixture composition and exact saved/reopened pixels",
+      "status": "PASS"
+    }
+  ],
+  "qualification_complete": false,
+  "scope": "Layered golden work in progress; this receipt covers only executed checks, not full product qualification.",
+  "pass": true,
+  "source": {
+    "width": 2048,
+    "height": 1536,
+    "sha256": "d3e17c1546af1f7bbd6e13c137dd23cebea29b5db0262f8eb919de0bf8380112"
+  },
+  "overlay": {
+    "width": 1024,
+    "height": 768,
+    "sha256": "0ba689cc9f0ec733938ed43d2a3a14a4273845d5a36bc7b957a6f7931ec1d3b4"
+  },
+  "browser": "154.0.8037.98",
+  "thumbnailChanged": false,
+  "preSaveHistoryBytes": 114036128,
+  "reopenedHistoryBytes": 202116512,
+  "pixels": [
+    {
+      "actual": "masked.png",
+      "expected": "mask-redone.png",
+      "maxRgb": 0,
+      "maxAlpha": 0,
+      "meanRgb": 0,
+      "changedPixels": 0,
+      "tolerance": {
+        "rgb": 0,
+        "alpha": 0
+      }
+    },
+    {
+      "actual": "before.png",
+      "expected": "export.png",
+      "maxRgb": 0,
+      "maxAlpha": 0,
+      "meanRgb": 0,
+      "changedPixels": 0,
+      "tolerance": {
+        "rgb": 0,
+        "alpha": 0
+      }
+    },
+    {
+      "actual": "hidden.png",
+      "expected": "source.png",
+      "maxRgb": 0,
+      "maxAlpha": 0,
+      "meanRgb": 0,
+      "changedPixels": 0,
+      "tolerance": {
+        "rgb": 0,
+        "alpha": 0
+      }
+    },
+    {
+      "actual": "mask-undone.png",
+      "expected": "unmasked.png",
+      "maxRgb": 0,
+      "maxAlpha": 0,
+      "meanRgb": 0,
+      "changedPixels": 0,
+      "tolerance": {
+        "rgb": 2,
+        "alpha": 0
+      }
+    },
+    {
+      "actual": "masked.png",
+      "expected": "reference.png",
+      "maxRgb": 0,
+      "maxAlpha": 0,
+      "meanRgb": 0,
+      "changedPixels": 0,
+      "tolerance": {
+        "rgb": 2,
+        "alpha": 0
+      }
+    },
+    {
+      "actual": "export.png",
+      "expected": "toned.png",
+      "maxRgb": 0,
+      "maxAlpha": 0,
+      "meanRgb": 0,
+      "changedPixels": 0,
+      "tolerance": {
+        "rgb": 2,
+        "alpha": 0
+      }
+    }
+  ],
+  "errors": []
+}

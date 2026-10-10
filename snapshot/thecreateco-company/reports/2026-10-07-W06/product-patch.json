@@ -1,0 +1,16 @@
+{
+  "product_id": "reclaim",
+  "status": "PUBLIC_WEB_AND_MAC_ALPHA_DOWNLOAD_VERIFIED",
+  "release_readiness": "Public Mac alpha 0.1.1 DMG reachable on 2026-10-07; 13,679,161 bytes and SHA-256 match live manifest. Accepted notarization is publisher-reported, not independently rerun. Physical Intel, clean-machine installation and macOS 13 qualification remain outstanding.",
+  "next_milestone": "Qualify native install, quarantine and restore on clean machines, physical Intel and macOS 13 before stronger readiness claims.",
+  "evidence_sources": [
+    "/Users/agentsattari/code/wave4/WAVE4.md",
+    "/Users/agentsattari/code/wave2/thecreatingco-live/downloads/index.html",
+    "/Users/agentsattari/code/wave2/thecreatingco-live/products/reclaim/index.html",
+    "/Users/agentsattari/thecreateco-company/reports/2026-10-07-W06/live-observations.json",
+    "https://thecreatingco.com/downloads/reclaim/reclaim-0.1.1.json"
+  ],
+  "observed_at": "2026-10-07T23:45:55.743640+00:00",
+  "verification_level": "LIVE_HTTP_AND_DOWNLOAD_DIGEST_ONLY",
+  "evidence_freshness": "Live pages, release manifest, checksum and DMG observed 2026-10-07T23:45 UTC; app workflows and installation not tested."
+}

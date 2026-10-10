@@ -1,0 +1,12 @@
+{
+  "command": [
+    "git",
+    "status",
+    "--short"
+  ],
+  "cwd": "/Users/agentsattari/code/wave2/form-D",
+  "observed_at": "2026-10-08T04:10:57.839642+00:00",
+  "exit_code": 0,
+  "stdout": " M app/cad-workspace.tsx\n M app/form-ui-v2.css\n M app/layout.tsx\n?? app/room-3d.ts\n?? app/room-brief.ts\n?? app/room-export.ts\n?? app/room-geometry.ts\n?? app/room-layout.ts\n?? app/room-studio.css\n?? app/room-studio.tsx\n?? tests/room-detection.test.mjs\n",
+  "stderr": ""
+}

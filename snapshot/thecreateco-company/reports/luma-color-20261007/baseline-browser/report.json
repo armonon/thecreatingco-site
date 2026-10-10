@@ -1,0 +1,18 @@
+{
+  "source_sha": "772f082581e06e7a5783aff35ed859aace890394",
+  "source_status": "?? build/qualify-raster-color.mjs\n?? tests/raster-export-fidelity.test.ts",
+  "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "harness_sha256": "1f68bd9239f2c1f73f9b85f6d08c4d37a64a3d81b62fee23ccd3945aadb91444",
+  "observed_at": "2026-10-08T03:14:39.014Z",
+  "node": "v22.23.2",
+  "checks": [],
+  "pass": false,
+  "reference": "Independent browser decode to an sRGB canvas; RGB tolerance 2, alpha exact. PNGs also compared with independent native canvas decode. Invisible RGB is canonicalized by canvas, not claimed preserved.",
+  "scope": "Actual file-input import, PNG download twice, .luma save/download/confirm, actual close/reopen and PNG download. Synthetic opaque, partial-alpha, transparent and embedded matrix/TRC ICC images. CPU desktop shell in a local browser; not native, OS color calibration, every ICC profile or deployment qualification.",
+  "browser": "154.0.8037.98",
+  "error": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:4187/\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:4187/\", waiting until \"domcontentloaded\"\u001b[22m\n",
+  "stack": "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:4187/\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:4187/\", waiting until \"domcontentloaded\"\u001b[22m\n\n    at <anonymous> (/Users/agentsattari/code/company-worktrees/luma-color-20261007/build/qualify-raster-color.mjs:57:14)",
+  "errors": [
+    "Failed to read the 'localStorage' property from 'Window': Access is denied for this document."
+  ]
+}

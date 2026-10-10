@@ -1,0 +1,77 @@
+{
+  "decision": "continue",
+  "advisory_only": true,
+  "mode": "normal",
+  "critical_override": false,
+  "budgets": [
+    {
+      "name": "daily",
+      "scope": "all",
+      "key": "all",
+      "window": "day",
+      "metric": "list_estimated_usd",
+      "observed": null,
+      "limit": null,
+      "exceeded": false,
+      "coverage": "partial"
+    },
+    {
+      "name": "weekly",
+      "scope": "all",
+      "key": "all",
+      "window": "week",
+      "metric": "list_estimated_usd",
+      "observed": 0.3640798,
+      "limit": null,
+      "exceeded": false,
+      "coverage": "partial"
+    },
+    {
+      "name": "per-agent",
+      "scope": "agent",
+      "key": "company-director-20261009T1510",
+      "window": "day",
+      "metric": "list_estimated_usd",
+      "observed": null,
+      "limit": null,
+      "exceeded": false,
+      "coverage": "partial"
+    },
+    {
+      "name": "per-product",
+      "scope": "product",
+      "key": "librarian",
+      "window": "week",
+      "metric": "list_estimated_usd",
+      "observed": null,
+      "limit": null,
+      "exceeded": false,
+      "coverage": "partial"
+    },
+    {
+      "name": "per-task",
+      "scope": "task",
+      "key": "PROGRAM18-LIBRARIAN-UUID-REPAIR-001",
+      "window": "week",
+      "metric": "list_estimated_usd",
+      "observed": null,
+      "limit": null,
+      "exceeded": false,
+      "coverage": "partial"
+    },
+    {
+      "name": "astra",
+      "scope": "astra",
+      "key": "astra",
+      "window": "week",
+      "metric": "list_estimated_usd",
+      "observed": null,
+      "limit": null,
+      "exceeded": false,
+      "coverage": "partial"
+    }
+  ],
+  "astra_requested": false,
+  "astra_reason_recorded": null,
+  "next": "prefer deterministic tools and smallest adequate authorized model"
+}

@@ -1,0 +1,17 @@
+{
+  "product_id": "stemdeck",
+  "source_action_support_checkpoint": {
+    "source_sha": "b26c03be150e9ebb4dfcfa489bb57e62802011ec",
+    "implementation_baseline_sha": "6bad0edaf198d80d44c9aa02c3e65970fe7d9148",
+    "observed_at": "2026-10-08T09:17:39.235708+00:00",
+    "status": "SCOPED_TEST_DOCS_PUSHED_FULL_PARITY_BLOCKED",
+    "action_families_audited": 20,
+    "coverage_complete": false,
+    "pr": "https://github.com/armonon/sattari-custom-site/pull/35",
+    "evidence_sources": [
+      "/Users/agentsattari/thecreateco-company/reports/stemdeck-support-20261008T0910/README.md",
+      "/Users/agentsattari/thecreateco-company/reports/stemdeck-support-20261008T0910/candidate-receipt.json"
+    ],
+    "next_action": "Provide at least2838683648 available bytes for unchanged mandatory gate; resume actual mixer capture/replay/render/process-reopen/export parity. No PASS promotion or release bypass."
+  }
+}

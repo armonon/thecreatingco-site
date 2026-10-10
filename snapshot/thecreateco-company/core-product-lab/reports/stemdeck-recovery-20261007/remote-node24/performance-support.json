@@ -1,0 +1,413 @@
+{
+  "schemaVersion": 1,
+  "commit": "f6f061c6e463a552c287e883cbd7fc9bb3e0867e",
+  "fullyQualified": false,
+  "states": [
+    "PASS",
+    "PARTIAL",
+    "PRINTED ONLY",
+    "UNSUPPORTED"
+  ],
+  "rows": [
+    {
+      "id": "transport",
+      "action": "Deck launch / stop / cue / seek",
+      "destination": "Source clip regions",
+      "stages": {
+        "capture": "PARTIAL",
+        "replay": "PARTIAL",
+        "arrange": "PARTIAL",
+        "reopen": "PARTIAL",
+        "export": "PARTIAL"
+      },
+      "limitations": "Confirmed deckTransport uses audible time. Legacy requested times and opening DSP state are not exact.",
+      "stageEvidence": {
+        "capture": [],
+        "replay": [],
+        "arrange": [],
+        "reopen": [],
+        "export": []
+      }
+    },
+    {
+      "id": "sources",
+      "action": "Source replacement / removal",
+      "destination": "Clips referencing retained source assets",
+      "stages": {
+        "capture": "PARTIAL",
+        "replay": "PARTIAL",
+        "arrange": "PARTIAL",
+        "reopen": "PARTIAL",
+        "export": "PARTIAL"
+      },
+      "limitations": "Sources must remain available. Changing sources during replay still requires real-time dispatch.",
+      "stageEvidence": {
+        "capture": [],
+        "replay": [],
+        "arrange": [],
+        "reopen": [],
+        "export": []
+      }
+    },
+    {
+      "id": "loop",
+      "action": "Loop / loop length",
+      "destination": "Repeated source regions and loop metadata",
+      "stages": {
+        "capture": "PARTIAL",
+        "replay": "PARTIAL",
+        "arrange": "PARTIAL",
+        "reopen": "PARTIAL",
+        "export": "PARTIAL"
+      },
+      "limitations": "Tiny fragments and expansion limits require the print; live effect history across loops is not fully reconstructed.",
+      "stageEvidence": {
+        "capture": [],
+        "replay": [],
+        "arrange": [],
+        "reopen": [],
+        "export": []
+      }
+    },
+    {
+      "id": "rate",
+      "action": "Tempo / playback rate",
+      "destination": "Clip playback rate",
+      "stages": {
+        "capture": "PARTIAL",
+        "replay": "PARTIAL",
+        "arrange": "PARTIAL",
+        "reopen": "PARTIAL",
+        "export": "PARTIAL"
+      },
+      "limitations": "Rate is represented, not a project tempo map. Key-locked and pitch-processed audio still needs the print.",
+      "stageEvidence": {
+        "capture": [],
+        "replay": [],
+        "arrange": [],
+        "reopen": [],
+        "export": []
+      }
+    },
+    {
+      "id": "sync",
+      "action": "Beat sync / project tempo / tempo-map follow",
+      "destination": "Re-derived clip playback rates",
+      "stages": {
+        "capture": "PARTIAL",
+        "replay": "PARTIAL",
+        "arrange": "PARTIAL",
+        "reopen": "PARTIAL",
+        "export": "PARTIAL"
+      },
+      "limitations": "Sync intent is journaled, not each correction. Replay re-runs the live controller; Arrange approximates its slews as constant-rate regions within 0.1%.",
+      "stageEvidence": {
+        "capture": [],
+        "replay": [],
+        "arrange": [],
+        "reopen": [],
+        "export": []
+      }
+    },
+    {
+      "id": "pitch",
+      "action": "Deck / stem pitch and key lock",
+      "destination": "Replay event controls; printed sound in Arrange",
+      "stages": {
+        "capture": "PARTIAL",
+        "replay": "PARTIAL",
+        "arrange": "PRINTED ONLY",
+        "reopen": "PARTIAL",
+        "export": "PRINTED ONLY"
+      },
+      "limitations": "Fixed-source replay has compiled pitch commands; no equivalent editable arrangement pitch reconstruction.",
+      "stageEvidence": {
+        "capture": [],
+        "replay": [],
+        "arrange": [],
+        "reopen": [],
+        "export": []
+      }
+    },
+    {
+      "id": "mixer",
+      "action": "Deck gain / fader / crossfader",
+      "destination": "Combined lane volume automation",
+      "stages": {
+        "capture": "PARTIAL",
+        "replay": "PARTIAL",
+        "arrange": "PARTIAL",
+        "reopen": "PARTIAL",
+        "export": "PARTIAL"
+      },
+      "limitations": "Individual controls are folded into a single volume envelope; full live/export parity remains unqualified.",
+      "stageEvidence": {
+        "capture": [],
+        "replay": [],
+        "arrange": [],
+        "reopen": [],
+        "export": []
+      }
+    },
+    {
+      "id": "stems",
+      "action": "Stem gain / mute / solo",
+      "destination": "Combined lane volume automation",
+      "stages": {
+        "capture": "PARTIAL",
+        "replay": "PARTIAL",
+        "arrange": "PARTIAL",
+        "reopen": "PARTIAL",
+        "export": "PARTIAL"
+      },
+      "limitations": "Stem mix is editable as volume, not independent original control lanes. Lane FX remain printed.",
+      "stageEvidence": {
+        "capture": [],
+        "replay": [],
+        "arrange": [],
+        "reopen": [],
+        "export": []
+      }
+    },
+    {
+      "id": "eq",
+      "action": "Deck EQ",
+      "destination": "Replay event controls; printed EQ in Arrange",
+      "stages": {
+        "capture": "PARTIAL",
+        "replay": "PARTIAL",
+        "arrange": "PRINTED ONLY",
+        "reopen": "PARTIAL",
+        "export": "PRINTED ONLY"
+      },
+      "limitations": "Recorded EQ is not converted to arrangement devices or envelopes.",
+      "stageEvidence": {
+        "capture": [],
+        "replay": [],
+        "arrange": [],
+        "reopen": [],
+        "export": []
+      }
+    },
+    {
+      "id": "filter",
+      "action": "Deck filter",
+      "destination": "Replay event controls; printed filter in Arrange",
+      "stages": {
+        "capture": "PARTIAL",
+        "replay": "PARTIAL",
+        "arrange": "PRINTED ONLY",
+        "reopen": "PARTIAL",
+        "export": "PRINTED ONLY"
+      },
+      "limitations": "Stable filter types can schedule replay sweeps; arrangement reconstruction does not create their automation.",
+      "stageEvidence": {
+        "capture": [],
+        "replay": [],
+        "arrange": [],
+        "reopen": [],
+        "export": []
+      }
+    },
+    {
+      "id": "fx",
+      "action": "Deck / stem FX parameters",
+      "destination": "Replay event controls; printed effects in Arrange",
+      "stages": {
+        "capture": "PARTIAL",
+        "replay": "PARTIAL",
+        "arrange": "PRINTED ONLY",
+        "reopen": "PARTIAL",
+        "export": "PRINTED ONLY"
+      },
+      "limitations": "Opening tails, legacy effects and DSP graph changes are not certified exact.",
+      "stageEvidence": {
+        "capture": [],
+        "replay": [],
+        "arrange": [],
+        "reopen": [],
+        "export": []
+      }
+    },
+    {
+      "id": "sends",
+      "action": "Mixer sends / returns / channel inserts",
+      "destination": "Replay event controls; printed returns and inserts in Arrange",
+      "stages": {
+        "capture": "PARTIAL",
+        "replay": "PARTIAL",
+        "arrange": "PRINTED ONLY",
+        "reopen": "PARTIAL",
+        "export": "PRINTED ONLY"
+      },
+      "limitations": "Headphone cue is monitoring only and is never recorded. Reconstructed sources use the current return settings.",
+      "stageEvidence": {
+        "capture": [],
+        "replay": [],
+        "arrange": [],
+        "reopen": [],
+        "export": []
+      }
+    },
+    {
+      "id": "master",
+      "action": "Master processing / devices / output level",
+      "destination": "Replay event controls; printed master processing",
+      "stages": {
+        "capture": "PARTIAL",
+        "replay": "PARTIAL",
+        "arrange": "PRINTED ONLY",
+        "reopen": "PARTIAL",
+        "export": "PRINTED ONLY"
+      },
+      "limitations": "Reconstructed sources use the current master settings, not a reconstructed historical master chain.",
+      "stageEvidence": {
+        "capture": [],
+        "replay": [],
+        "arrange": [],
+        "reopen": [],
+        "export": []
+      }
+    },
+    {
+      "id": "pads",
+      "action": "Pad trigger / gain",
+      "destination": "Printed pad recording; optional event rebuild",
+      "stages": {
+        "capture": "PARTIAL",
+        "replay": "PARTIAL",
+        "arrange": "PRINTED ONLY",
+        "reopen": "PARTIAL",
+        "export": "PRINTED ONLY"
+      },
+      "limitations": "Rebuilt synthesized noise can differ from the captured sound.",
+      "stageEvidence": {
+        "capture": [],
+        "replay": [],
+        "arrange": [],
+        "reopen": [],
+        "export": []
+      }
+    },
+    {
+      "id": "inputGain",
+      "action": "Input gain / effects",
+      "destination": "Aligned captured input; versioned processing replay",
+      "stages": {
+        "capture": "PARTIAL",
+        "replay": "PARTIAL",
+        "arrange": "PARTIAL",
+        "reopen": "PARTIAL",
+        "export": "PARTIAL"
+      },
+      "limitations": "Editable processing requires version-1 input capture and its dry lane. Legacy inputs remain printed.",
+      "stageEvidence": {
+        "capture": [],
+        "replay": [],
+        "arrange": [],
+        "reopen": [],
+        "export": []
+      }
+    },
+    {
+      "id": "inputMonitor",
+      "action": "Input monitoring / connection",
+      "destination": "Recorded input intervals plus history",
+      "stages": {
+        "capture": "PARTIAL",
+        "replay": "PARTIAL",
+        "arrange": "PARTIAL",
+        "reopen": "PARTIAL",
+        "export": "PARTIAL"
+      },
+      "limitations": "Device changes are not recreated. Unarmed, unmonitored input cannot be recovered.",
+      "stageEvidence": {
+        "capture": [],
+        "replay": [],
+        "arrange": [],
+        "reopen": [],
+        "export": []
+      }
+    },
+    {
+      "id": "midi",
+      "action": "MIDI notes",
+      "destination": "MIDI clips via the arrangement recorder",
+      "stages": {
+        "capture": "PARTIAL",
+        "replay": "PARTIAL",
+        "arrange": "PARTIAL",
+        "reopen": "PARTIAL",
+        "export": "PARTIAL"
+      },
+      "limitations": "Separate MIDI recording path; full live-performance-to-MIDI lifecycle still needs qualification.",
+      "stageEvidence": {
+        "capture": [],
+        "replay": [],
+        "arrange": [],
+        "reopen": [],
+        "export": []
+      }
+    },
+    {
+      "id": "pan",
+      "action": "Pan",
+      "destination": "Authored arrangement pan envelopes; live history not reconstructed",
+      "stages": {
+        "capture": "UNSUPPORTED",
+        "replay": "UNSUPPORTED",
+        "arrange": "PARTIAL",
+        "reopen": "PARTIAL",
+        "export": "PARTIAL"
+      },
+      "limitations": "Arrangement pan is available, but no qualified captured live-pan lifecycle exists.",
+      "stageEvidence": {
+        "capture": [],
+        "replay": [],
+        "arrange": [],
+        "reopen": [],
+        "export": []
+      }
+    },
+    {
+      "id": "routing",
+      "action": "Output / cue / input routing",
+      "destination": "Printed sound and local device configuration",
+      "stages": {
+        "capture": "PARTIAL",
+        "replay": "PARTIAL",
+        "arrange": "PRINTED ONLY",
+        "reopen": "PARTIAL",
+        "export": "PRINTED ONLY"
+      },
+      "limitations": "Physical device and cue topology are not reconstructed. Printed output preserves only the signal actually captured.",
+      "stageEvidence": {
+        "capture": [],
+        "replay": [],
+        "arrange": [],
+        "reopen": [],
+        "export": []
+      }
+    },
+    {
+      "id": "deviceAutomation",
+      "action": "Arrangement device automation",
+      "destination": "Track/device envelopes",
+      "stages": {
+        "capture": "PARTIAL",
+        "replay": "PARTIAL",
+        "arrange": "PARTIAL",
+        "reopen": "PARTIAL",
+        "export": "PARTIAL"
+      },
+      "limitations": "Authored arrangement envelopes exist; this does not imply conversion of every live FX mutation.",
+      "stageEvidence": {
+        "capture": [],
+        "replay": [],
+        "arrange": [],
+        "reopen": [],
+        "export": []
+      }
+    }
+  ]
+}

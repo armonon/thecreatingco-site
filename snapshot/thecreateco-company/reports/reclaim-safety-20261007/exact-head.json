@@ -1,0 +1,76 @@
+{
+  "source_sha": "c46f9811c7fd34a00625541178d1f1e0d2b2456b",
+  "source_dirty": false,
+  "observed_at": "2026-10-08T02:57:02.931462+00:00",
+  "host": "Darwin 25.2.0 arm64",
+  "rust": "rustc 1.99.0 (b940084d7 2026-09-28)",
+  "node": "v22.23.2",
+  "checks": [
+    {
+      "name": "native",
+      "command": [
+        "cargo",
+        "test",
+        "--locked",
+        "--manifest-path",
+        "src-tauri/Cargo.toml",
+        "--",
+        "--nocapture"
+      ],
+      "exit_code": 0,
+      "seconds": 4.03,
+      "evidence": "/Users/agentsattari/thecreateco-company/reports/reclaim-safety-20261007/exact-native.log"
+    },
+    {
+      "name": "disk-pressure",
+      "command": [
+        "cargo",
+        "test",
+        "--locked",
+        "--manifest-path",
+        "src-tauri/Cargo.toml",
+        "quarantine_owned_volume_roundtrip_and_disk_full_preserve_source",
+        "--",
+        "--ignored",
+        "--nocapture"
+      ],
+      "exit_code": 0,
+      "seconds": 0.251,
+      "evidence": "/Users/agentsattari/thecreateco-company/reports/reclaim-safety-20261007/exact-disk-pressure.log"
+    },
+    {
+      "name": "typescript-tests",
+      "command": [
+        "npm",
+        "test"
+      ],
+      "exit_code": 0,
+      "seconds": 1.568,
+      "evidence": "/Users/agentsattari/thecreateco-company/reports/reclaim-safety-20261007/exact-typescript-tests.log"
+    },
+    {
+      "name": "typecheck",
+      "command": [
+        "npm",
+        "run",
+        "typecheck"
+      ],
+      "exit_code": 0,
+      "seconds": 1.066,
+      "evidence": "/Users/agentsattari/thecreateco-company/reports/reclaim-safety-20261007/exact-typecheck.log"
+    },
+    {
+      "name": "build",
+      "command": [
+        "npm",
+        "run",
+        "build"
+      ],
+      "exit_code": 0,
+      "seconds": 0.945,
+      "evidence": "/Users/agentsattari/thecreateco-company/reports/reclaim-safety-20261007/exact-build.log"
+    }
+  ],
+  "source_dirty_after": false,
+  "pass": true
+}

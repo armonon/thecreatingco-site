@@ -1,0 +1,27 @@
+{
+  "status": "complete",
+  "steps": [
+    {
+      "step": "company_recover",
+      "ok": true
+    },
+    {
+      "step": "company_refresh",
+      "ok": true
+    },
+    {
+      "step": "telemetry_collect",
+      "ok": true
+    },
+    {
+      "step": "anomaly_sync",
+      "ok": true
+    },
+    {
+      "step": "lab_refresh",
+      "ok": true
+    }
+  ],
+  "failed_steps": [],
+  "dashboard_at": "2026-10-09T07:05:33+00:00"
+}

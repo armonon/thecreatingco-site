@@ -1,0 +1,35 @@
+{
+  "method": "Independent ffmpeg source crop/scale vs decoded browser export; 108x108 RGB sample frames; thresholds MAE<15 and colored centroid delta<4px when present",
+  "candidate_sha": "08a64180df7ca80f64436437027d8fc10b5c65df",
+  "frames": [
+    {
+      "time_s": 0.5,
+      "reference_filter": "scale=108:61,pad=108:108:0:23:black",
+      "mean_absolute_rgb_error_0_255": 0.000257201646090535,
+      "actual_colored_subject_centroid": null,
+      "reference_colored_subject_centroid": null
+    },
+    {
+      "time_s": 1.5,
+      "reference_filter": "crop=360:360:275.11111111111114:0,scale=108:108",
+      "mean_absolute_rgb_error_0_255": 0.000257201646090535,
+      "actual_colored_subject_centroid": null,
+      "reference_colored_subject_centroid": null
+    },
+    {
+      "time_s": 2.0,
+      "reference_filter": "crop=360:360:140.0:0,scale=108:108",
+      "mean_absolute_rgb_error_0_255": 0.0,
+      "actual_colored_subject_centroid": null,
+      "reference_colored_subject_centroid": null
+    },
+    {
+      "time_s": 4.0,
+      "reference_filter": "crop=360:360:140.0:0,scale=108:108",
+      "mean_absolute_rgb_error_0_255": 2.0,
+      "actual_colored_subject_centroid": null,
+      "reference_colored_subject_centroid": null
+    }
+  ],
+  "export_sha256": "8a991c7f52efa7e5f3c6499ed875c46d3e58ad37dbd2fa8b7c88e585689d0352"
+}

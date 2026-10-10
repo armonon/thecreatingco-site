@@ -1,0 +1,17 @@
+{
+  "cleanTree": true,
+  "initialStatus": "",
+  "disk": {
+    "seconds": 120,
+    "sampleRate": 48000,
+    "channels": 10,
+    "copies": 3,
+    "recordingBytes": 691200000,
+    "reserveBytes": 2147483648,
+    "requiredBytes": 2838683648,
+    "path": "/tmp/stemdeck-gate-1791427428629",
+    "availableBytes": 25647202304,
+    "pass": true,
+    "note": "OS capacity check, not a browser quota reservation. Recheck browser quota and target volume before physical recording."
+  }
+}

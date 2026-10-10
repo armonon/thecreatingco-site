@@ -1,0 +1,54 @@
+[
+  {
+    "check": "HTTP receipt/body/hash bounce",
+    "status": "PASS"
+  },
+  {
+    "check": "HTTP receipt/body/hash pocket-studio",
+    "status": "PASS"
+  },
+  {
+    "check": "HTTP receipt/body/hash key-bpm",
+    "status": "PASS"
+  },
+  {
+    "check": "HTTP receipt/body/hash glyph",
+    "status": "PASS"
+  },
+  {
+    "check": "HTTP receipt/body/hash bounce-app",
+    "status": "PASS"
+  },
+  {
+    "check": "HTTP receipt/body/hash key-bpm-app",
+    "status": "PASS"
+  },
+  {
+    "check": "HTTP receipt/body/hash glyph-app",
+    "status": "PASS"
+  },
+  {
+    "check": "immutable source web/test/bounce.js",
+    "status": "PASS"
+  },
+  {
+    "check": "immutable source src/App.tsx",
+    "status": "PASS"
+  },
+  {
+    "check": "immutable source docs/KEY_BPM_REPORTS.md",
+    "status": "PASS"
+  },
+  {
+    "check": "immutable source src/engine/font-export.ts",
+    "status": "PASS"
+  },
+  {
+    "check": "immutable source src/engine/project-store.ts",
+    "status": "PASS"
+  },
+  {
+    "check": "four-product report coverage",
+    "status": "PASS"
+  }
+]

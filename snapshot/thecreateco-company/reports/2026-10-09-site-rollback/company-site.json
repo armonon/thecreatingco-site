@@ -1,0 +1,29 @@
+{
+  "published": "6ac9a117d2e01be1e2cc3c67",
+  "previous": "6ac99fc60f83c20e10e6c332",
+  "baseline": "6ac97a65200ed978b194366e",
+  "paths": 1868,
+  "changed": [
+    "/tools/index.html",
+    "/start/index.html"
+  ],
+  "removed": [
+    "/assets/app-logos/messages.svg"
+  ],
+  "community_function_preserved": "dc7305d70ea9f8178e908dd5823d913716a70539a6cee4e0ffebc9d95043e1e5",
+  "headers_redirects_preserved": true,
+  "weblab_and_latest_captures_preserved": true,
+  "smoke": {
+    "/tools/": {
+      "status": 200,
+      "messages_preview_absent": true,
+      "messages_logo_absent": true
+    },
+    "/start/": {
+      "status": 200,
+      "messages_preview_absent": true,
+      "messages_logo_absent": true
+    }
+  },
+  "published_at": "2026-10-10T02:22:44.796Z"
+}

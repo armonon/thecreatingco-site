@@ -1,0 +1,69 @@
+{
+  "candidate_sha": "08a64180df7ca80f64436437027d8fc10b5c65df",
+  "method": "Independent ffmpeg reference crop/letterbox from source vs decoded browser export;108x108 RGB samples; MAE<15 AND red-subject centroid delta<4px",
+  "source_sha256": "3977b6b48ea290127d5bc575cee5d7ca13f1ba379682814083ae8d73262a4e4f",
+  "export_sha256": "7568392af2762d70e00664a9112946b39d09854b3343fd0673b0b313d05468f8",
+  "fixture_provenance": "Generated locally black background + moving80x80red square, synthetic/no licensed media",
+  "frames": [
+    {
+      "time_s": 0.5,
+      "reference_filter": "scale=108:61,pad=108:108:0:23:black",
+      "mean_absolute_rgb_error_0_255": 0.22805212620027435,
+      "decoded_subject_centroid": [
+        23.066666666666666,
+        53.5,
+        180
+      ],
+      "reference_subject_centroid": [
+        23.0,
+        53.0,
+        169
+      ]
+    },
+    {
+      "time_s": 1.5,
+      "reference_filter": "crop=360:360:275.11111111111114:0,scale=108:108",
+      "mean_absolute_rgb_error_0_255": 0.18209876543209877,
+      "decoded_subject_centroid": [
+        3.463157894736842,
+        53.5,
+        190
+      ],
+      "reference_subject_centroid": [
+        3.5,
+        53.5,
+        192
+      ]
+    },
+    {
+      "time_s": 2.0,
+      "reference_filter": "crop=360:360:140.0:0,scale=108:108",
+      "mean_absolute_rgb_error_0_255": 0.4272119341563786,
+      "decoded_subject_centroid": [
+        53.5,
+        53.5,
+        576
+      ],
+      "reference_subject_centroid": [
+        53.5,
+        53.5,
+        576
+      ]
+    },
+    {
+      "time_s": 2.5,
+      "reference_filter": "crop=360:360:140.0:0,scale=108:108",
+      "mean_absolute_rgb_error_0_255": 0.425497256515775,
+      "decoded_subject_centroid": [
+        71.5,
+        53.5,
+        576
+      ],
+      "reference_subject_centroid": [
+        71.5,
+        53.5,
+        576
+      ]
+    }
+  ]
+}

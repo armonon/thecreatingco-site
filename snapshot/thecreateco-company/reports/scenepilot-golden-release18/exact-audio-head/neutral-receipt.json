@@ -1,0 +1,18 @@
+{
+  "at": "2026-10-08T03:54:43.614520+00:00",
+  "source_sha": "a47417bc4b3390bc30697cc2b7d3d573ad14e4d6",
+  "actions": [
+    "Actual Grade Reset all",
+    "Actual Export video to genuine OPFS file handle",
+    "Actual native project Save (OS dialog choice harnessed)",
+    "python3 compare-neutral-reference.py"
+  ],
+  "artifacts": {
+    "neutral-project.scenepilot.json": "8dcdf48a51c3d16bd061b8f95a34c3e100e5d3fd43820c6c61250d6772afd26f",
+    "neutral-ui-master.mp4": "954da884ef4224d19c9f30b6f3e51ff0c037fb8e8ff5a0dc065ea6b958c6b977",
+    "exact-audio-head/neutral-reference-frames.json": "c9d1b5627c12fbc827df4c68c977a13cb7d61cce17e3b53591ad9bc7055eccbd",
+    "compare-neutral-reference.py": "d3decac1d24c0f16007165942160dfd0441a2d65d85283fd6dfd9ebd941b00ac",
+    "16-neutral-export-complete.png": "c8172be04bc8a60862948657a6585ab22ee9024d07ec040e6e8a89a19b20e668"
+  },
+  "scope": "Three reference frames only; complete golden recipe and native chooser interaction unverified"
+}

@@ -1,0 +1,16 @@
+{
+  "task_id": "CORE-LUMA-AUD-001",
+  "title": "Restore standalone Luma CI: portable required mesh contract and local-image lint",
+  "next_action": "Repair sibling-checkout assumption without silently skipping required cross-app parity; fix the pre-existing local-image lint warning with a justified browser-local image treatment. See security PR5 evidence; then rerun tests/lint/typecheck and exact-head CI once account execution is restored. Do not change billing or bypass stack gates.",
+  "test_requirements": "Isolated checkout npm test, npx tsc --noEmit -p ., npx eslint app tests --max-warnings 0; explicit cross-app contract mismatch/missing-source coverage. Preserve required cross-app validation.",
+  "source_evidence": [
+    "npm test: 1 failure in 1383 tests",
+    "tests/form-mesh.test.ts:21 resolves ../../sculptor-studio/app/luma-mesh-asset.ts; absent at /private/tmp/sculptor-studio in isolated worktree",
+    "2026-10-08T01:16Z security patch and baseline both: 1372pass/1fail/10skip; zero-warning lint fails upscale-dialog.tsx:98. Report reports/luma-security-2026-10-07/README.md"
+  ],
+  "evidence_sources": [
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/luma-initial.md",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/products/luma.json",
+    "reports/luma-security-2026-10-07/README.md"
+  ]
+}

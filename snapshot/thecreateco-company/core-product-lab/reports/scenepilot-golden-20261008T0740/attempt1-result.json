@@ -1,0 +1,15 @@
+{
+  "startedAt": "2026-10-08T07:43:43.121Z",
+  "source": "c7d2b4fc973861eba785f26e5f607671ac22deb4",
+  "model": "OpenAI Codex director; serving model not independently exposed",
+  "checks": [],
+  "errors": [],
+  "limits": [
+    "Schema-constructed synthetic edit; not UI authoring of animation/audio/title",
+    "Development Electron, OS dialog selections harnessed",
+    "No Browser Lite, packaged/platform/perceptual signoff"
+  ],
+  "status": "FAIL",
+  "error": "AssertionError [ERR_ASSERTION]: Disk save revision not updated\n    at save (file:///Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-golden-20261008T0740/session.mjs:10:456)\n    at async file:///Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-golden-20261008T0740/session.mjs:16:15",
+  "finishedAt": "2026-10-08T07:43:59.695Z"
+}

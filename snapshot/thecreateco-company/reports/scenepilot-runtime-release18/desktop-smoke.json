@@ -1,0 +1,39 @@
+{
+  "profile": "/Users/agentsattari/.openclaw/tmp/scenepilot-runtime-EY09a0",
+  "scope": "Actual desktop startup and sandbox boundary, not full native workflow",
+  "pass": true,
+  "main": {
+    "electron": "43.7.9",
+    "userData": "/Users/agentsattari/.openclaw/tmp/scenepilot-runtime-EY09a0",
+    "windows": [
+      {
+        "preferences": {
+          "allowRunningInsecureContent": false,
+          "contextIsolation": true,
+          "disableDialogs": false,
+          "disablePopups": false,
+          "enableBlinkFeatures": "",
+          "experimentalFeatures": false,
+          "javascript": true,
+          "nodeIntegration": false,
+          "nodeIntegrationInSubFrames": false,
+          "nodeIntegrationInWorker": false,
+          "safeDialogs": false,
+          "safeDialogsMessage": "",
+          "sandbox": true,
+          "webSecurity": true,
+          "webviewTag": false
+        },
+        "url": "file:///Users/agentsattari/code/company-worktrees/scenepilot-runtime-release18/electron/renderer/desktop/index.html"
+      }
+    ]
+  },
+  "renderer": {
+    "require": "undefined",
+    "process": "undefined",
+    "bridge": "object",
+    "popupDenied": true
+  },
+  "title": "ScenePilot Pro",
+  "controls": 124
+}

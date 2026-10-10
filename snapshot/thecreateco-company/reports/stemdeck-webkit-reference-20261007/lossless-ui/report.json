@@ -1,0 +1,124 @@
+{
+  "sourceSha": "c15bb06a87b150a966e8c563457de4f2786ba141",
+  "sourceDirty": true,
+  "profile": "/Users/agentsattari/.openclaw/tmp/stemdeck-webkit-lossless-KAdNhy",
+  "pass": false,
+  "physicalInputs": false,
+  "mockedEndpoints": [
+    "/api/inventory"
+  ],
+  "steps": [
+    "Four decks,20 real generated audio assets imported through project picker",
+    "Actual fullMix lane import and analyzer executed for all four decks",
+    "Actual UI started capture,played four decks,changed stem mute/crossfader,stopped all and finished capture",
+    "Explicit long-session WAV path produces active lossless master safety lane without compressed recorder asset",
+    "Full browser process closed/relaunched; saved arrangement and original captured event history identical",
+    "Actual master and aligned stem downloads independently decoded; before/after PCM comparison passed"
+  ],
+  "errors": [],
+  "browser": "26.5",
+  "analysis": [
+    {
+      "id": "A",
+      "bpm": 118,
+      "key": "C maj",
+      "analysis": true
+    },
+    {
+      "id": "B",
+      "bpm": 118,
+      "key": "C# maj",
+      "analysis": true
+    },
+    {
+      "id": "C",
+      "bpm": 118,
+      "key": "D maj",
+      "analysis": true
+    },
+    {
+      "id": "D",
+      "bpm": 118,
+      "key": "D# maj",
+      "analysis": true
+    }
+  ],
+  "perform": {
+    "pass": true,
+    "unexpectedlyStoppedDecks": []
+  },
+  "longSession": {
+    "compressedAssetId": "",
+    "tracks": [
+      {
+        "name": "Four Deck Actual Capture QA take 1.wav chunks · Master safety",
+        "role": "reference",
+        "muted": false,
+        "offline": false,
+        "clips": 3
+      },
+      {
+        "name": "Four Deck Actual Capture QA take 1.wav chunks · Deck A · performed",
+        "muted": true,
+        "offline": true,
+        "clips": 3
+      },
+      {
+        "name": "Four Deck Actual Capture QA take 1.wav chunks · Deck B · performed",
+        "muted": true,
+        "offline": true,
+        "clips": 3
+      },
+      {
+        "name": "Four Deck Actual Capture QA take 1.wav chunks · Deck C · performed",
+        "muted": true,
+        "offline": true,
+        "clips": 3
+      },
+      {
+        "name": "Four Deck Actual Capture QA take 1.wav chunks · Deck D · performed",
+        "muted": true,
+        "offline": true,
+        "clips": 3
+      },
+      {
+        "name": "Four Deck Actual Capture QA take 1.wav chunks · Mic / input · performed monitor",
+        "muted": true,
+        "offline": true,
+        "clips": 0
+      },
+      {
+        "name": "Four Deck Actual Capture QA take 1.wav chunks · Mic / input · editable source",
+        "muted": true,
+        "offline": true,
+        "clips": 0
+      }
+    ]
+  },
+  "replay": {
+    "pass": true,
+    "notRun": true,
+    "scope": "This probe exports actual lossless master safety chunks, not live replay or reconstructed sources."
+  },
+  "portableBytes": 82599827,
+  "masterExport": {
+    "sampleRate": 48000,
+    "channels": 2,
+    "frames": 660416,
+    "maximumError": 0,
+    "peak": 0.017149925231933594
+  },
+  "stemArchiveBytes": 3963390,
+  "stems": [
+    {
+      "name": "01-Four-Deck-Actual-Capture-QA-take-1-wav-chunks---Master-safety.wav",
+      "sampleRate": 48000,
+      "channels": 2,
+      "frames": 660416,
+      "maximumError": 0,
+      "peak": 0.03429985046386719
+    }
+  ],
+  "portableProfile": "/Users/agentsattari/.openclaw/tmp/stemdeck-portable-dbNCYD",
+  "error": "Error: Saved-session postcondition timed out\n    at waitSaved (file:///Users/agentsattari/thecreateco-company/reports/stemdeck-webkit-reference-20261007/webkit-lossless-ui-qa.mjs:95:9)\n    at async file:///Users/agentsattari/thecreateco-company/reports/stemdeck-webkit-reference-20261007/webkit-lossless-ui-qa.mjs:268:3"
+}

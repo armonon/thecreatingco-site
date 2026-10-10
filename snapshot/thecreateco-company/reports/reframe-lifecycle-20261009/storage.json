@@ -1,0 +1,9 @@
+{
+  "observed_at": "2026-10-09T09:11:46.982064+00:00",
+  "source": "shutil.disk_usage company workspace",
+  "bytes": {
+    "total": 494384795648,
+    "used": 444694814720,
+    "free": 49689980928
+  }
+}

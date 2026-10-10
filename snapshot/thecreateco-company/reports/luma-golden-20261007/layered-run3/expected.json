@@ -1,0 +1,316 @@
+{
+  "width": 2048,
+  "height": 1536,
+  "colorSpace": "srgb",
+  "bitDepth": 8,
+  "layers": [
+    {
+      "id": "adj-d",
+      "name": "Tone",
+      "kind": "adjustment-tone",
+      "parentId": null,
+      "opacity": 1,
+      "visible": true,
+      "transform": {
+        "tx": 0,
+        "ty": 0,
+        "sx": 1,
+        "sy": 1,
+        "rotation": 0,
+        "skewX": 0
+      },
+      "tone": {
+        "exposure": 0.1,
+        "contrast": 0,
+        "highlights": 0,
+        "shadows": 0,
+        "temperature": 0,
+        "vibrance": 0
+      },
+      "mask": null
+    },
+    {
+      "id": "raster-b",
+      "name": "Overlay",
+      "kind": "raster",
+      "parentId": null,
+      "opacity": 0.63,
+      "visible": true,
+      "transform": {
+        "tx": 63.99991966580967,
+        "ty": 31.99995983290495,
+        "sx": 1,
+        "sy": 1,
+        "rotation": 0,
+        "skewX": 0
+      },
+      "tone": null,
+      "mask": [
+        0,
+        0,
+        0,
+        255
+      ]
+    },
+    {
+      "id": "raster-a",
+      "name": "Source",
+      "kind": "raster",
+      "parentId": null,
+      "opacity": 1,
+      "visible": true,
+      "transform": {
+        "tx": 0,
+        "ty": 0,
+        "sx": 1,
+        "sy": 1,
+        "rotation": 0,
+        "skewX": 0
+      },
+      "tone": null,
+      "mask": null
+    }
+  ],
+  "history": {
+    "currentId": "op-muz05epn-t",
+    "rootId": "history-root",
+    "operations": 22,
+    "branchPoints": 1,
+    "currentDepth": 20,
+    "byteBudget": 536870912,
+    "overBudget": false,
+    "nodes": [
+      {
+        "id": "history-root",
+        "parentId": null,
+        "label": "Document opened",
+        "createdAt": 1791431632664,
+        "depth": 0,
+        "childCount": 1,
+        "isCurrent": false,
+        "isOnCurrentPath": true
+      },
+      {
+        "id": "op-muz052ha-8",
+        "parentId": "history-root",
+        "label": "source imported",
+        "createdAt": 1791431632846,
+        "depth": 1,
+        "childCount": 1,
+        "isCurrent": false,
+        "isOnCurrentPath": true
+      },
+      {
+        "id": "op-muz053aa-9",
+        "parentId": "op-muz052ha-8",
+        "label": "Layer renamed",
+        "createdAt": 1791431633890,
+        "depth": 2,
+        "childCount": 1,
+        "isCurrent": false,
+        "isOnCurrentPath": true
+      },
+      {
+        "id": "op-muz053im-a",
+        "parentId": "op-muz053aa-9",
+        "label": "overlay imported",
+        "createdAt": 1791431634190,
+        "depth": 3,
+        "childCount": 1,
+        "isCurrent": false,
+        "isOnCurrentPath": true
+      },
+      {
+        "id": "op-muz053r0-b",
+        "parentId": "op-muz053im-a",
+        "label": "Layer renamed",
+        "createdAt": 1791431634492,
+        "depth": 4,
+        "childCount": 1,
+        "isCurrent": false,
+        "isOnCurrentPath": true
+      },
+      {
+        "id": "op-muz0571c-c",
+        "parentId": "op-muz053r0-b",
+        "label": "Opacity",
+        "createdAt": 1791431638752,
+        "depth": 5,
+        "childCount": 1,
+        "isCurrent": false,
+        "isOnCurrentPath": true
+      },
+      {
+        "id": "op-muz0574k-d",
+        "parentId": "op-muz0571c-c",
+        "label": "Layers grouped",
+        "createdAt": 1791431638868,
+        "depth": 6,
+        "childCount": 1,
+        "isCurrent": false,
+        "isOnCurrentPath": true
+      },
+      {
+        "id": "op-muz05781-e",
+        "parentId": "op-muz0574k-d",
+        "label": "Layers ungrouped",
+        "createdAt": 1791431638993,
+        "depth": 7,
+        "childCount": 1,
+        "isCurrent": false,
+        "isOnCurrentPath": true
+      },
+      {
+        "id": "op-muz057qe-f",
+        "parentId": "op-muz05781-e",
+        "label": "Transform",
+        "createdAt": 1791431639654,
+        "depth": 8,
+        "childCount": 1,
+        "isCurrent": false,
+        "isOnCurrentPath": true
+      },
+      {
+        "id": "op-muz05c0b-g",
+        "parentId": "op-muz057qe-f",
+        "label": "Mask paint (remove)",
+        "createdAt": 1791431645195,
+        "depth": 9,
+        "childCount": 3,
+        "isCurrent": false,
+        "isOnCurrentPath": true
+      },
+      {
+        "id": "op-muz05d7c-h",
+        "parentId": "op-muz05c0b-g",
+        "label": "Layer hidden",
+        "createdAt": 1791431646744,
+        "depth": 10,
+        "childCount": 0,
+        "isCurrent": false,
+        "isOnCurrentPath": false
+      },
+      {
+        "id": "op-muz05djs-i",
+        "parentId": "op-muz05c0b-g",
+        "label": "Layer reordered",
+        "createdAt": 1791431647192,
+        "depth": 10,
+        "childCount": 0,
+        "isCurrent": false,
+        "isOnCurrentPath": false
+      },
+      {
+        "id": "op-muz05dxj-j",
+        "parentId": "op-muz05c0b-g",
+        "label": "Tone added",
+        "createdAt": 1791431647687,
+        "depth": 10,
+        "childCount": 1,
+        "isCurrent": false,
+        "isOnCurrentPath": true
+      },
+      {
+        "id": "op-muz05dzp-k",
+        "parentId": "op-muz05dxj-j",
+        "label": "Tone adjusted",
+        "createdAt": 1791431647765,
+        "depth": 11,
+        "childCount": 1,
+        "isCurrent": false,
+        "isOnCurrentPath": true
+      },
+      {
+        "id": "op-muz05e2d-l",
+        "parentId": "op-muz05dzp-k",
+        "label": "Tone adjusted",
+        "createdAt": 1791431647861,
+        "depth": 12,
+        "childCount": 1,
+        "isCurrent": false,
+        "isOnCurrentPath": true
+      },
+      {
+        "id": "op-muz05e4c-m",
+        "parentId": "op-muz05e2d-l",
+        "label": "Tone adjusted",
+        "createdAt": 1791431647932,
+        "depth": 13,
+        "childCount": 1,
+        "isCurrent": false,
+        "isOnCurrentPath": true
+      },
+      {
+        "id": "op-muz05e62-n",
+        "parentId": "op-muz05e4c-m",
+        "label": "Tone adjusted",
+        "createdAt": 1791431647994,
+        "depth": 14,
+        "childCount": 1,
+        "isCurrent": false,
+        "isOnCurrentPath": true
+      },
+      {
+        "id": "op-muz05e80-o",
+        "parentId": "op-muz05e62-n",
+        "label": "Tone adjusted",
+        "createdAt": 1791431648064,
+        "depth": 15,
+        "childCount": 1,
+        "isCurrent": false,
+        "isOnCurrentPath": true
+      },
+      {
+        "id": "op-muz05e9x-p",
+        "parentId": "op-muz05e80-o",
+        "label": "Tone adjusted",
+        "createdAt": 1791431648133,
+        "depth": 16,
+        "childCount": 1,
+        "isCurrent": false,
+        "isOnCurrentPath": true
+      },
+      {
+        "id": "op-muz05ebv-q",
+        "parentId": "op-muz05e9x-p",
+        "label": "Tone adjusted",
+        "createdAt": 1791431648203,
+        "depth": 17,
+        "childCount": 1,
+        "isCurrent": false,
+        "isOnCurrentPath": true
+      },
+      {
+        "id": "op-muz05efl-r",
+        "parentId": "op-muz05ebv-q",
+        "label": "Tone adjusted",
+        "createdAt": 1791431648337,
+        "depth": 18,
+        "childCount": 1,
+        "isCurrent": false,
+        "isOnCurrentPath": true
+      },
+      {
+        "id": "op-muz05elq-s",
+        "parentId": "op-muz05efl-r",
+        "label": "Tone adjusted",
+        "createdAt": 1791431648558,
+        "depth": 19,
+        "childCount": 1,
+        "isCurrent": false,
+        "isOnCurrentPath": true
+      },
+      {
+        "id": "op-muz05epn-t",
+        "parentId": "op-muz05elq-s",
+        "label": "Tone adjusted",
+        "createdAt": 1791431648699,
+        "depth": 20,
+        "childCount": 0,
+        "isCurrent": true,
+        "isOnCurrentPath": true
+      }
+    ],
+    "redoBranches": []
+  }
+}

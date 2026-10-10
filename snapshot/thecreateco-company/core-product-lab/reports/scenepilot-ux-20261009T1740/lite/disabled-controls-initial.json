@@ -1,0 +1,86 @@
+[
+  {
+    "tag": "BUTTON",
+    "text": "",
+    "aria": "Undo",
+    "title": "Undo",
+    "near": "File New project Open project Render MP4"
+  },
+  {
+    "tag": "BUTTON",
+    "text": "",
+    "aria": "Redo",
+    "title": "Redo",
+    "near": "File New project Open project Render MP4"
+  },
+  {
+    "tag": "BUTTON",
+    "text": " Render MP4",
+    "aria": null,
+    "title": "",
+    "near": "File New project Open project Render MP4"
+  },
+  {
+    "tag": "BUTTON",
+    "text": "MotionDesktop Pro",
+    "aria": null,
+    "title": "Motion is available in Desktop Pro",
+    "near": "MotionDesktop ProColorDesktop ProAudioDesktop ProDeliverDesktop Pro"
+  },
+  {
+    "tag": "BUTTON",
+    "text": "ColorDesktop Pro",
+    "aria": null,
+    "title": "Color is available in Desktop Pro",
+    "near": "MotionDesktop ProColorDesktop ProAudioDesktop ProDeliverDesktop Pro"
+  },
+  {
+    "tag": "BUTTON",
+    "text": "AudioDesktop Pro",
+    "aria": null,
+    "title": "Audio is available in Desktop Pro",
+    "near": "MotionDesktop ProColorDesktop ProAudioDesktop ProDeliverDesktop Pro"
+  },
+  {
+    "tag": "BUTTON",
+    "text": "DeliverDesktop Pro",
+    "aria": null,
+    "title": "Deliver is available in Desktop Pro",
+    "near": "MotionDesktop ProColorDesktop ProAudioDesktop ProDeliverDesktop Pro"
+  },
+  {
+    "tag": "BUTTON",
+    "text": " Apply",
+    "aria": null,
+    "title": "",
+    "near": " Apply"
+  },
+  {
+    "tag": "BUTTON",
+    "text": " Reroll",
+    "aria": null,
+    "title": "Generate a different cut",
+    "near": "Beat punchOffSubtleDynamicSlam Reroll"
+  },
+  {
+    "tag": "BUTTON",
+    "text": "DRUMS",
+    "aria": null,
+    "title": "Analyze first so it can read the drums",
+    "near": "OFFDRUMSPULSERAVEMACHINEPOLICEWARM"
+  },
+  {
+    "tag": "BUTTON",
+    "text": "Reset colour",
+    "aria": null,
+    "title": "",
+    "near": "Exposure1.00Contrast1.00Saturation1.00Warmth0.00Tint0.00Bloom0.00Vignette0.00Grain0.00RGB split0.00Reset colour"
+  },
+  {
+    "tag": "BUTTON",
+    "text": " Drop",
+    "aria": null,
+    "title": "",
+    "near": " Drop"
+  }
+]

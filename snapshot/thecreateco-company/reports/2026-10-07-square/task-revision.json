@@ -1,0 +1,11 @@
+{
+  "task_id": "REV-STRIPE-001",
+  "title": "Set up Square digital-software checkout and verified delivery (supersedes Stripe plan)",
+  "status": "QUEUED",
+  "next_action": "Armon selected Square in #millions message 1557568686842454037. Check current account access, prepare one-time digital software catalog/checkout and delivery flow; preserve free Lite and qualified-release gates. Do not create another Stripe account or use unrelated Sattari merchant credentials. Existing task ID retained for history.",
+  "source_evidence": [
+    "Discord #millions 1557568686842454037",
+    "https://squareup.com/help/us/en/article/6873-sell-non-physical-items-in-square-online-store"
+  ],
+  "expected_value": "Square takes payment for digital software; delivery must be separately configured and verified. Initial manual delivery is possible; paid automation is not assumed. No new subscription spend or live charges."
+}

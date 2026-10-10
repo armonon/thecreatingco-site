@@ -1,0 +1,49 @@
+{
+  "created": true,
+  "job": {
+    "id": "387166db-ad22-42de-8884-51c97a9d0a6e",
+    "declarationKey": "company-os-daily-ceo",
+    "agentId": "operations-supervisor",
+    "name": "thecreateco daily CEO report",
+    "enabled": true,
+    "createdAtMs": 1791528954106,
+    "schedule": {
+      "kind": "cron",
+      "expr": "5 18 * * *",
+      "tz": "America/Los_Angeles"
+    },
+    "sessionTarget": "isolated",
+    "wakeMode": "now",
+    "payload": {
+      "kind": "agentTurn",
+      "message": "Run python3 /Users/agentsattari/thecreateco-company/engine/os_cycle.py daily once. Summarize its evidence in at most 8 short Discord bullets: shipped/improved/tests, marketing and known metrics, AI/Astra with coverage caveats, blockers and top next priority. Do not invent outcomes or prices, call other models, inspect private contacts, edit products or send separately. Final response is delivered once by scheduler.",
+      "model": "openai/gpt-6-luna",
+      "fallbacks": [],
+      "thinking": "low",
+      "timeoutSeconds": 180,
+      "lightContext": true,
+      "toolsAllow": [
+        "exec"
+      ]
+    },
+    "delivery": {
+      "mode": "announce",
+      "channel": "discord",
+      "to": "channel:1542939125366132819"
+    },
+    "scheduledToolPolicy": {
+      "version": 1,
+      "mode": "trusted"
+    },
+    "state": {
+      "nextRunAtMs": 1791594300000
+    },
+    "updatedAtMs": 1791528954106,
+    "configRevision": "sha256:c-QPEF_QK4NEJ6DEVQevxtuGJ3XEuxvWadPM1IiiZuk",
+    "nextRunAtMs": 1791594300000
+  },
+  "deliveryPreview": {
+    "label": "announce -> discord:channel:1542939125366132819",
+    "detail": "explicit"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "core_product_lab_archive_checkpoint": {
+    "observed_at": "2026-10-08T05:55:55.982385+00:00",
+    "task_id": "CORE-STEM-ARCHIVE-WEBKIT-001",
+    "product": "stemdeck",
+    "source_sha": "6bad0edaf198d80d44c9aa02c3e65970fe7d9148",
+    "pr": "https://github.com/armonon/sattari-custom-site/pull/34",
+    "status": "BLOCKED_MANDATORY_DISK_QUALIFICATION",
+    "report": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-archive-webkit-20261008/README.md",
+    "next_action": "Provide>=2838683648 free bytes and rerun exact6bad mandatory gate; preserve hosted/stack gates and native/physical limitations"
+  }
+}

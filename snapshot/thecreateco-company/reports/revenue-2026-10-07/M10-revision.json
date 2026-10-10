@@ -1,0 +1,9 @@
+{
+  "task_id": "M10",
+  "next_action": "Recheck /packs/ 404 observed 2026-10-07 and reconcile draft CC BY-all claim against Pocket Grotesk SIL OFL 1.1 (cannot be sold alone). Verify pack files/licenses and existing free promise before publishing or claiming downloads. Do not create paid pack checkout.",
+  "source_evidence": [
+    "reports/revenue-2026-10-07/README.md",
+    "reports/revenue-2026-10-07/asset-audit.md"
+  ],
+  "expected_value": "Owner: Growth/PRODUCT. Revenue impact: Recover useful distribution artifact; acquisition benefit unknown. Time to signal: One source/route/license audit. New spend: $0; labor cost unknown. Existing scores remain provisional."
+}

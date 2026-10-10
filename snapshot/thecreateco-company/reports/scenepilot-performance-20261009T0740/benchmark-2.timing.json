@@ -1,0 +1,23 @@
+{
+  "command": [
+    "/opt/homebrew/opt/node@22/bin/node",
+    "--experimental-strip-types",
+    "scripts/benchmark-editor.mjs",
+    "--report=/Users/agentsattari/thecreateco-company/reports/scenepilot-performance-20261009T0740/benchmark-2.json"
+  ],
+  "timeout_seconds": 720,
+  "exit_code": 0,
+  "timed_out": false,
+  "elapsed_s": 0.269,
+  "memory_sampling_interval_s": 0.25,
+  "rss_sample_count": 1,
+  "peak_sampled_process_tree_rss_bytes": 1441792,
+  "child_max_rss_bytes": 111296512,
+  "samples": [
+    {
+      "elapsed_s": 0.019,
+      "tree_rss_bytes": 1441792,
+      "pids": 1
+    }
+  ]
+}

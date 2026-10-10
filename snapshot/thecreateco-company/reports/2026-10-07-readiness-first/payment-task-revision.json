@@ -1,0 +1,13 @@
+{
+  "task_id": "REV-STRIPE-001",
+  "title": "Prepare autonomous Square fulfillment; hold paid listings until product readiness",
+  "status": "WAITING",
+  "expected_value": "Agent-owned checkout and automatic digital delivery after an actual offering qualifies; no founder catalog walkthrough or premature sale",
+  "next_action": "Armon says apps not ready and everything must be autonomous (1557584649482665997). Stop manual listing/login/product-choice prompts. Preserve Square choice. Current product owners continue release qualification. Agent may prepare non-live integration requirements; resume catalog only for one qualified paid offering with concrete terms and verified automatic delivery. Then consolidate truly owner-only account/identity steps; do not block unrelated work.",
+  "source_evidence": [
+    "Discord #millions 1557584649482665997",
+    "REVENUE_DIRECTIVE.md",
+    "release-program/DIRECTIVE.md",
+    "data/revenue/square-setup.md"
+  ]
+}

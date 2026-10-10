@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "checks": [
+    "Asset generator resolves approved Capacitor8 template extractor with patched tar7, original file bytes preserved",
+    "Traversal member rejected without preventing safe member extraction",
+    "Private response is not storable; Vary-aware max-stale respects synthetic authorization contexts"
+  ],
+  "fixture_dir": "/Users/agentsattari/.openclaw/tmp/librarian-tooling-wQyJY7"
+}

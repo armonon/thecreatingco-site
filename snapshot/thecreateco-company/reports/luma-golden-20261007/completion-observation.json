@@ -1,0 +1,54 @@
+{
+  "observed_at": "2026-10-08T04:05:58.685470+00:00",
+  "source_sha": {
+    "status": "PASS",
+    "value": "d18aef51086b50708cb9cb3a33fddc21d792dc58",
+    "evidence": "/Users/agentsattari/thecreateco-company/reports/luma-golden-20261007/pr-state.json"
+  },
+  "core_workflow": {
+    "status": "UNVERIFIED",
+    "details": "Layered import/group/move/mask/tone/history/save/close/reopen/export and recovery subset13checks PASS. Full golden mask switch/thumbnail semantics, missing-file/actual OS failure and native platforms remain unqualified.",
+    "evidence": [
+      "/Users/agentsattari/thecreateco-company/reports/luma-golden-20261007/exact-browser/report.json"
+    ]
+  },
+  "tests": {
+    "status": "PASS",
+    "details": "Exact clean Node22:1404 engine pass/10skip,4 rendered checks, types/strict/full lint, Vinext/Netlify/desktop builds and production audit0. Chrome154 layered13checks pass. Existing Rust1.99 native core9 and bridge28 pass; not native GUI/platform qualification.",
+    "evidence": [
+      "/Users/agentsattari/thecreateco-company/reports/luma-golden-20261007/exact-web-gates.json",
+      "/Users/agentsattari/thecreateco-company/reports/luma-golden-20261007/exact-browser/report.json",
+      "/Users/agentsattari/thecreateco-company/reports/luma-golden-20261007/native-checks.json"
+    ]
+  },
+  "platforms": {
+    "status": "UNVERIFIED",
+    "details": "Local macOS Chrome154 and native core/bridge suites pass; actual packaged UI/GPU/physical platforms not qualified.",
+    "evidence": [
+      "/Users/agentsattari/thecreateco-company/reports/luma-golden-20261007/native-checks.json",
+      "/Users/agentsattari/thecreateco-company/reports/luma-golden-20261007/exact-browser/report.json"
+    ]
+  },
+  "documentation": {
+    "status": "PASS",
+    "details": "Scoped source-controlled layered reproduction, admission accounting and adjustment limits documented; not full support gate.",
+    "evidence": [
+      "/Users/agentsattari/thecreateco-company/reports/luma-golden-20261007/README.md"
+    ]
+  },
+  "critical_blockers": {
+    "status": "BLOCKED",
+    "details": "Mandatory Actions37725744179 all3jobs0steps; payments/spending. Remaining full golden/native/source-live requirements remain unverified.",
+    "evidence": [
+      "/Users/agentsattari/thecreateco-company/reports/luma-golden-20261007/ci-jobs.json",
+      "/Users/agentsattari/thecreateco-company/reports/luma-golden-20261007/ci-annotations.json"
+    ]
+  },
+  "deployment": {
+    "status": "UNVERIFIED",
+    "details": "Reviewed PR8 open abovePR7; no merge/deploy; live artifact provenance unresolved.",
+    "evidence": [
+      "/Users/agentsattari/thecreateco-company/reports/luma-golden-20261007/pr-state.json"
+    ]
+  }
+}

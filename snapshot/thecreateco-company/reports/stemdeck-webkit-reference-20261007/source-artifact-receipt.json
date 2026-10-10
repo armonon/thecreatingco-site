@@ -1,0 +1,53 @@
+{
+  "observed_at": "2026-10-08T05:22:45.259087+00:00",
+  "source_sha": "c15bb06a87b150a966e8c563457de4f2786ba141",
+  "tracked_source_changed": false,
+  "untracked": "node_modules symlink in isolated worktree only",
+  "platform": "Darwin-25.2.0-arm64-arm-64bit-Mach-O",
+  "artifacts": {
+    "native-recorder.m4a": {
+      "bytes": 2189,
+      "sha256": "97b801a3f0b037329de377e91a42e80e59281e3d893fbcfc5a819c567f6549cd"
+    },
+    "normal-ui/before-close.wav": {
+      "bytes": 3950252,
+      "sha256": "67818b6a4b0ec11b3ce74edfdebab2a71e397c83c31cabf65f6766a8a5634c0d"
+    },
+    "normal-ui/portable.sattari": {
+      "bytes": 88146200,
+      "sha256": "c8fd775fec5dad53d67218fef0f1915946d0b7dc5056b47404fcdc3164f9389c"
+    },
+    "normal-ui/after-reopen.wav": {
+      "bytes": 3950252,
+      "sha256": "67818b6a4b0ec11b3ce74edfdebab2a71e397c83c31cabf65f6766a8a5634c0d"
+    },
+    "normal-ui/track-stems.zip": {
+      "bytes": 3951056,
+      "sha256": "cab1bb68081ce72a6ef01181dd41f8e69f75994e4f43eca068f649ffcbb7f1df"
+    },
+    "normal-ui/four-deck.sattari": {
+      "bytes": 75270067,
+      "sha256": "594b1e4d38e5cf4e8de561057a212553b2931d48f24dddbeba0da94c4b051871"
+    },
+    "lossless-ui/before-close.wav": {
+      "bytes": 3962540,
+      "sha256": "6cfc6402dcaf59b3e4f89622d1d3d71b24890fd469161b72cf6c503b370c723c"
+    },
+    "lossless-ui/portable.sattari": {
+      "bytes": 82599827,
+      "sha256": "404b819ed93eb3f584fd108458f8c5fcf359268a6d8f26c69630469d24008f3e"
+    },
+    "lossless-ui/after-reopen.wav": {
+      "bytes": 3962540,
+      "sha256": "6cfc6402dcaf59b3e4f89622d1d3d71b24890fd469161b72cf6c503b370c723c"
+    },
+    "lossless-ui/track-stems.zip": {
+      "bytes": 3963390,
+      "sha256": "f0302b0bd955e10e7b1b6b80015c91ef10b963f4729e9b198d5b836f33e66c49"
+    },
+    "lossless-ui/four-deck.sattari": {
+      "bytes": 75270067,
+      "sha256": "594b1e4d38e5cf4e8de561057a212553b2931d48f24dddbeba0da94c4b051871"
+    }
+  }
+}

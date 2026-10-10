@@ -1,0 +1,21 @@
+{
+  "task": "M01 — Draft evidence-led Reclaim native-alpha demonstration",
+  "observed_at_utc": "2026-10-10T00:10:45Z–2026-10-10T00:11:02Z",
+  "method": "Read-only HTTPS GETs and GitHub API lookup; HEAD for the DMG asset. No asset bytes downloaded, binary launched, install performed, or files changed.",
+  "observations": [
+    {"url":"https://thecreatingco.com/downloads/","observed_at_utc":"2026-10-10T00:10:45.963411Z","method":"GET","status":200,"bytes":41910,"sha256":"5f05f09c50649b2875a58073d64a7f1272029474b0d030f886f9e5439364adcf"},
+    {"url":"https://thecreatingco.com/products/reclaim/","observed_at_utc":"2026-10-10T00:10:46.738182Z","method":"GET","status":200,"bytes":49173,"sha256":"5597ced9abf585bdabeb4f612e0059135d46aa0d8e2cb8c97dfda2467b80bcd7"},
+    {"url":"https://thecreatingco.com/downloads/reclaim/reclaim-0.1.1.json","observed_at_utc":"2026-10-10T00:10:47.222145Z","method":"GET","status":200,"bytes":952,"sha256":"1d0bd77c290c31b9bffa89ffb669365b73922e9fe0c6b39f3659a6c5c6c8d3af","fields":{"version":"0.1.1","channel":"public-alpha","publishedDate":"2026-10-06","minimumMacOS":"13.0","architectures":["x86_64","arm64"],"bytes":13679161,"sha256":"163ca0b9d302a3895eafd15ea14ffe673451d0a3c7d1b93b5978bd6e2a9f9e5a","qualification":"Automated tests and local verification passed. Physical Intel, clean-machine installation, and macOS 13 testing remain outstanding."}},
+    {"url":"https://thecreatingco.com/downloads/reclaim/SHA256SUMS.txt","observed_at_utc":"2026-10-10T00:10:47.598706Z","method":"GET","status":200,"bytes":100,"sha256":"e9c85d192c635f24fd201737d74ad0fafa7f2ca59c8563e52587df003115b130","content":"163ca0b9d302a3895eafd15ea14ffe673451d0a3c7d1b93b5978bd6e2a9f9e5a  Reclaim-0.1.1-macOS-universal.dmg"},
+    {"url":"https://github.com/armonon/studio-downloads/releases/tag/reclaim-v0.1.1","observed_at_utc":"2026-10-10T00:10:56.860637Z","method":"GET","status":200,"bytes":198042,"release_api_url":"https://api.github.com/repos/armonon/studio-downloads/releases/tags/reclaim-v0.1.1","api_observed_at_utc":"2026-10-10T00:10:56.622856Z","api_status":200,"tag":"reclaim-v0.1.1","draft":false,"prerelease":true,"published_at":"2026-10-07T00:45:05Z","assets":["Reclaim-0.1.1-macOS-universal.dmg","reclaim-0.1.1.json","SHA256SUMS.txt"]},
+    {"url":"https://github.com/armonon/studio-downloads/releases/download/reclaim-v0.1.1/Reclaim-0.1.1-macOS-universal.dmg","observed_at_utc":"2026-10-10T00:11:02.333371Z","method":"HEAD","status":200,"content_length":13679161,"content_type":"application/octet-stream","note":"Redirected to a signed release-assets URL; that ephemeral URL is intentionally not retained."},
+    {"url":"https://reclaim.thecreatingco.com/browser/","observed_at_utc":"2026-10-10T00:10:47.957322Z","method":"GET","status":200,"bytes":4011,"sha256":"19283b2c65ec83f6f2f803b35620a3b607d88b253b4d34d1c0634f1e90a9d121","scope":"Read-only browser preview page availability only; no interactive workflow tested."}
+  ],
+  "crosscheck": "Fresh manifest SHA-256 and byte count agree with the public checksum and the DMG HEAD Content-Length. The prior W06 report (2026-10-07) records a streamed DMG GET whose bytes matched the manifest; this worker did not repeat the binary download.",
+  "prior_evidence": {
+    "source":"/Users/agentsattari/thecreateco-company/reports/2026-10-07-W06/report.md",
+    "observed_utc":"2026-10-07T23:45:02Z–2026-10-07T23:45:05Z",
+    "claim":"Six public page/manifest/checksum fetches and one streamed DMG fetch returned HTTP 200; streamed bytes matched manifest/checksum (13,679,161 bytes; SHA-256 163ca0b9d302a3895eafd15ea14ffe673451d0a3c7d1b93b5978bd6e2a9f9e5a). No installer executed."
+  },
+  "scope_limit": "Availability and release-byte consistency only. No download/install/runtime/restore workflow was performed. Native GUI, clean-machine, physical Intel, macOS 13, and final product-safety qualifications remain unverified per current release manifest and P05 evidence."
+}

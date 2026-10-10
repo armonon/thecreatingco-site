@@ -1,0 +1,143 @@
+{
+  "source_sha": "772f082581e06e7a5783aff35ed859aace890394",
+  "source_status": "M app/engine/document.ts\n M app/engine/gl-renderer.ts\n M app/engine/precision-renderer.ts\n M app/engine/studio.ts\n M app/studio/page.tsx\n M tests/transform-coordinates.test.ts\n?? build/qualify-raster-color.mjs\n?? docs/release/raster-color-qualification.md\n?? tests/raster-export-fidelity.test.ts",
+  "diff_sha256": "c30d85092101981a20e8cf9c412abc111e1dfeaa7401e9e2947759d5b7c55e6b",
+  "harness_sha256": "8471c8805d0dc9ca16ff76528e0c67df7d7aaf5b4c1d66d822b541b643ba09a3",
+  "observed_at": "2026-10-08T03:22:48.701Z",
+  "node": "v22.23.2",
+  "checks": [
+    {
+      "name": "retained-gradient: independent decode versus imported bitmap",
+      "metrics": {
+        "maxRGB": 0,
+        "maxAlpha": 0,
+        "changedChannels": 0
+      },
+      "fixture_sha256": "d3e17c1546af1f7bbd6e13c137dd23cebea29b5db0262f8eb919de0bf8380112",
+      "status": "PASS"
+    },
+    {
+      "name": "retained-gradient: first CPU PNG",
+      "metrics": {
+        "maxRGB": 0,
+        "maxAlpha": 0,
+        "changedChannels": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "retained-gradient: repeat CPU PNG",
+      "metrics": {
+        "maxRGB": 0,
+        "maxAlpha": 0,
+        "changedChannels": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "retained-gradient: saved/closed/reopened CPU PNG",
+      "metrics": {
+        "maxRGB": 0,
+        "maxAlpha": 0,
+        "changedChannels": 0
+      },
+      "archive_sha256": "174b2754d418b5db531e3f977b843669edcea412a2fc8590c25e516fbc12281c",
+      "status": "PASS"
+    },
+    {
+      "name": "Embedded ICC recognized before comparison",
+      "profile": {
+        "id": "icc:de6ee84f",
+        "name": "Synthetic sRGB matrix profile",
+        "version": "4.3.0",
+        "colorSpace": "RGB",
+        "model": "matrix-trc",
+        "canTransform": true,
+        "browserDecoded": true,
+        "warnings": []
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "opaque-icc: independent decode versus imported bitmap",
+      "metrics": {
+        "maxRGB": 0,
+        "maxAlpha": 0,
+        "changedChannels": 0
+      },
+      "fixture_sha256": "291d9fcfc68861ea2accbd49f6c66de69ac50a5a8fe722a698c5275de03ac041",
+      "status": "PASS"
+    },
+    {
+      "name": "opaque-icc: first CPU PNG",
+      "metrics": {
+        "maxRGB": 0,
+        "maxAlpha": 0,
+        "changedChannels": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "opaque-icc: repeat CPU PNG",
+      "metrics": {
+        "maxRGB": 0,
+        "maxAlpha": 0,
+        "changedChannels": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "opaque-icc: saved/closed/reopened CPU PNG",
+      "metrics": {
+        "maxRGB": 0,
+        "maxAlpha": 0,
+        "changedChannels": 0
+      },
+      "archive_sha256": "5ddcce8228dee8032e4514469bda77cf1d5b3edf7ce8a88bcf58516459ade87d",
+      "status": "PASS"
+    },
+    {
+      "name": "transparent-alpha: independent decode versus imported bitmap",
+      "metrics": {
+        "maxRGB": 0,
+        "maxAlpha": 0,
+        "changedChannels": 0
+      },
+      "fixture_sha256": "90361ad89e3c8ff746deb978c23ff2c5db5054ae738e33a4ed356250d2f058fd",
+      "status": "PASS"
+    },
+    {
+      "name": "transparent-alpha: first CPU PNG",
+      "metrics": {
+        "maxRGB": 0,
+        "maxAlpha": 0,
+        "changedChannels": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "transparent-alpha: repeat CPU PNG",
+      "metrics": {
+        "maxRGB": 0,
+        "maxAlpha": 0,
+        "changedChannels": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "transparent-alpha: saved/closed/reopened CPU PNG",
+      "metrics": {
+        "maxRGB": 0,
+        "maxAlpha": 0,
+        "changedChannels": 0
+      },
+      "archive_sha256": "c5cb8c3392d8540c06094d4f6983a1df893db12abf46e2140699216d2136f02e",
+      "status": "PASS"
+    }
+  ],
+  "pass": true,
+  "reference": "Independent browser decode to an sRGB canvas; RGB tolerance 2, alpha exact. PNGs also compared with independent native canvas decode. Invisible RGB is canonicalized by canvas, not claimed preserved.",
+  "scope": "Actual file-input import, PNG download twice, .luma save/download/confirm, actual close/reopen and PNG download. Synthetic opaque, partial-alpha, transparent and embedded matrix/TRC ICC images. CPU desktop shell in a local browser; not native, OS color calibration, every ICC profile or deployment qualification.",
+  "browser": "154.0.8037.98",
+  "errors": []
+}

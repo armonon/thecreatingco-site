@@ -1,0 +1,32 @@
+{
+  "product_id": "luma",
+  "release_readiness": "ALPHA / unqualified. Exact PR9 8c15f85 Vinext build/types,7focused tests and24Chromium renderer cases pass. Extended synthetic oracle fails6/15: Multiply/multipass/no-op style inflate partial alpha; archive reopen preserves defect. Hosted/stack/native/fullUI/source-live gates unresolved.",
+  "adjustment_qualification": {
+    "observed_at": "2026-10-09T09:45:13.663694+00:00",
+    "source_sha": "8c15f8537c1176b7d4c0076182b7501c92f714b5",
+    "report": "/Users/agentsattari/thecreateco-company/reports/luma-adjustment-20261009T0940/README.md",
+    "status": "BLOCKED",
+    "results": {
+      "focused_tests_passed": 7,
+      "chromium_renderer_cases_passed": 24,
+      "chromium_page_errors": 0,
+      "alpha_regression_samples_failed": 6,
+      "alpha_probe_total_samples": 15,
+      "typecheck_exit": 0,
+      "vinext_build_exit": 0,
+      "synthetic_archive_roundtrip": "exact render and adjustment metadata preserved; alpha160 remains incorrectly220"
+    },
+    "limitations": [
+      "No full UI/native/Firefox/WebKit qualification",
+      "Hosted mandatory CI previously billing-blocked; not retried",
+      "Non-normal/multipass/no-op styled compositor fix not implemented",
+      "Netlify/desktop builds not run this cycle"
+    ],
+    "models": {
+      "director": "openai/gpt-6.1-sol",
+      "executor": "openai/gpt-6-luna",
+      "fallback": null,
+      "billed_cost": null
+    }
+  }
+}

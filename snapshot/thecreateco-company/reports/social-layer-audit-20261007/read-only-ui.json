@@ -1,0 +1,774 @@
+{
+  "observed_at": "2026-10-08T03:58:35.478Z",
+  "scope": "Fresh anonymous read-only browser; no posts/uploads/accounts/permissions changed",
+  "pages": [
+    {
+      "label": "home",
+      "url": "https://thecreatingco.com/",
+      "status": 200,
+      "controls": {
+        "title": "thecreateco — Free tools for 3D, images, music and film",
+        "headings": [
+          "Your ideas.Made real.",
+          "Form → Luma → StemDeck → ScenePilot",
+          "Form",
+          "Luma",
+          "StemDeck",
+          "ScenePilot",
+          "More from thecreateco.",
+          "Ghost",
+          "Librarian",
+          "Reclaim",
+          "Bounce",
+          "Glyph",
+          "Locker",
+          "Sessions",
+          "Pocket Studio",
+          "AutoCut",
+          "Captions",
+          "Board",
+          "Grade",
+          "Split",
+          "Key & BPM",
+          "Vox",
+          "Canvas",
+          "Pocket",
+          "Press"
+        ],
+        "buttons": [
+          {
+            "name": "Quick launch",
+            "disabled": false
+          },
+          {
+            "name": "Play film",
+            "disabled": false
+          },
+          {
+            "name": "All tools",
+            "disabled": false
+          },
+          {
+            "name": "Design",
+            "disabled": false
+          },
+          {
+            "name": "Image",
+            "disabled": false
+          },
+          {
+            "name": "Film",
+            "disabled": false
+          },
+          {
+            "name": "Sound",
+            "disabled": false
+          },
+          {
+            "name": "Read & organize",
+            "disabled": false
+          },
+          {
+            "name": "Try lesson",
+            "disabled": false
+          },
+          {
+            "name": "Try lesson",
+            "disabled": false
+          },
+          {
+            "name": "Previous Form Studio preview",
+            "disabled": false
+          },
+          {
+            "name": "Play slideshow",
+            "disabled": false
+          },
+          {
+            "name": "Next Form Studio preview",
+            "disabled": false
+          },
+          {
+            "name": "Artwork: Product artwork",
+            "disabled": false
+          },
+          {
+            "name": "Screenshot: Change the surface",
+            "disabled": false
+          },
+          {
+            "name": "Screenshot: Work in a sketch",
+            "disabled": false
+          },
+          {
+            "name": "Lesson: Sketch a pendant",
+            "disabled": false
+          },
+          {
+            "name": "Lesson: Draw a garment",
+            "disabled": false
+          },
+          {
+            "name": "Try lesson",
+            "disabled": false
+          },
+          {
+            "name": "Try lesson",
+            "disabled": false
+          },
+          {
+            "name": "Previous Luma Studio preview",
+            "disabled": false
+          },
+          {
+            "name": "Play slideshow",
+            "disabled": false
+          },
+          {
+            "name": "Next Luma Studio preview",
+            "disabled": false
+          },
+          {
+            "name": "Artwork: Product artwork",
+            "disabled": false
+          },
+          {
+            "name": "Screenshot: Give your type depth",
+            "disabled": false
+          },
+          {
+            "name": "Screenshot: Develop the color",
+            "disabled": false
+          },
+          {
+            "name": "Lesson: Build a signature print",
+            "disabled": false
+          },
+          {
+            "name": "Lesson: Weave type through a photo",
+            "disabled": false
+          },
+          {
+            "name": "Try lesson",
+            "disabled": false
+          },
+          {
+            "name": "Try lesson",
+            "disabled": false
+          },
+          {
+            "name": "Previous StemDeck preview",
+            "disabled": false
+          },
+          {
+            "name": "Play slideshow",
+            "disabled": false
+          },
+          {
+            "name": "Next StemDeck preview",
+            "disabled": false
+          },
+          {
+            "name": "Artwork: Product artwork",
+            "disabled": false
+          },
+          {
+            "name": "Screenshot: Build an arrangement",
+            "disabled": false
+          },
+          {
+            "name": "Screenshot: Balance your session",
+            "disabled": false
+          },
+          {
+            "name": "Lesson: Shape the stems",
+            "disabled": false
+          },
+          {
+            "name": "Lesson: Arrange your own edit",
+            "disabled": false
+          },
+          {
+            "name": "Try lesson",
+            "disabled": false
+          },
+          {
+            "name": "Try lesson",
+            "disabled": false
+          },
+          {
+            "name": "Previous ScenePilot preview",
+            "disabled": false
+          },
+          {
+            "name": "Play slideshow",
+            "disabled": false
+          },
+          {
+            "name": "Next ScenePilot preview",
+            "disabled": false
+          },
+          {
+            "name": "Artwork: Product artwork",
+            "disabled": false
+          },
+          {
+            "name": "Screenshot: Find the rhythm",
+            "disabled": false
+          },
+          {
+            "name": "Screenshot: Refine the sequence",
+            "disabled": false
+          },
+          {
+            "name": "Lesson: Blend two scenes",
+            "disabled": false
+          },
+          {
+            "name": "Lesson: Find a film's feeling",
+            "disabled": false
+          },
+          {
+            "name": "Previous apps",
+            "disabled": true
+          },
+          {
+            "name": "Next apps",
+            "disabled": false
+          },
+          {
+            "name": "Join the launch list ↗",
+            "disabled": false
+          },
+          {
+            "name": "Close quick launch",
+            "disabled": false
+          },
+          {
+            "name": "Back to top",
+            "disabled": false
+          },
+          {
+            "name": "Feedback ↗",
+            "disabled": false
+          },
+          {
+            "name": "Close feedback",
+            "disabled": false
+          },
+          {
+            "name": "Send feedback ↗",
+            "disabled": false
+          }
+        ],
+        "links": [
+          {
+            "name": "Community",
+            "href": "/community/network"
+          },
+          {
+            "name": "Privacy",
+            "href": "/privacy/"
+          },
+          {
+            "name": "Community",
+            "href": "/community/network"
+          },
+          {
+            "name": "Open Sessions",
+            "href": "/community/network?view=Sessions"
+          },
+          {
+            "name": "Sessions",
+            "href": "/community/network?view=Sessions"
+          },
+          {
+            "name": "Open App: Sessions",
+            "href": "/community/network?view=Sessions"
+          },
+          {
+            "name": "Open Pocket Studio",
+            "href": "/community/network?view=Pocket%20Studio"
+          },
+          {
+            "name": "Pocket Studio",
+            "href": "/community/network?view=Pocket%20Studio"
+          },
+          {
+            "name": "Open App: Pocket Studio",
+            "href": "/community/network?view=Pocket%20Studio"
+          },
+          {
+            "name": "How we use it",
+            "href": "/privacy/#launch-list"
+          },
+          {
+            "name": "Leave the list",
+            "href": "/testing/?category=privacy#feedback"
+          },
+          {
+            "name": "Data & privacy",
+            "href": "/privacy/"
+          },
+          {
+            "name": "Community",
+            "href": "/community/network"
+          },
+          {
+            "name": "Open Sessions",
+            "href": "/community/network?view=Sessions"
+          },
+          {
+            "name": "Open Pocket Studio",
+            "href": "/community/network?view=Pocket%20Studio"
+          },
+          {
+            "name": "Privacy",
+            "href": "/privacy/"
+          }
+        ],
+        "inputs": [
+          {
+            "tag": "INPUT",
+            "type": "range",
+            "name": "Creative journey position"
+          },
+          {
+            "tag": "INPUT",
+            "type": "hidden",
+            "name": ""
+          },
+          {
+            "tag": "INPUT",
+            "type": "hidden",
+            "name": ""
+          },
+          {
+            "tag": "INPUT",
+            "type": "hidden",
+            "name": ""
+          },
+          {
+            "tag": "INPUT",
+            "type": "hidden",
+            "name": ""
+          },
+          {
+            "tag": "INPUT",
+            "type": "hidden",
+            "name": ""
+          },
+          {
+            "tag": "INPUT",
+            "type": "text",
+            "name": ""
+          },
+          {
+            "tag": "INPUT",
+            "type": "email",
+            "name": "you@example.com"
+          },
+          {
+            "tag": "INPUT",
+            "type": "checkbox",
+            "name": ""
+          },
+          {
+            "tag": "INPUT",
+            "type": "hidden",
+            "name": ""
+          },
+          {
+            "tag": "INPUT",
+            "type": "search",
+            "name": "Search apps or what you want to make…"
+          },
+          {
+            "tag": "INPUT",
+            "type": "hidden",
+            "name": ""
+          },
+          {
+            "tag": "INPUT",
+            "type": "hidden",
+            "name": ""
+          },
+          {
+            "tag": "INPUT",
+            "type": "hidden",
+            "name": ""
+          },
+          {
+            "tag": "INPUT",
+            "type": "text",
+            "name": ""
+          },
+          {
+            "tag": "SELECT",
+            "type": "select-one",
+            "name": ""
+          },
+          {
+            "tag": "INPUT",
+            "type": "text",
+            "name": "What worked—or got in your way?"
+          },
+          {
+            "tag": "TEXTAREA",
+            "type": "textarea",
+            "name": ""
+          },
+          {
+            "tag": "INPUT",
+            "type": "email",
+            "name": ""
+          }
+        ],
+        "overflow": false
+      }
+    },
+    {
+      "label": "network",
+      "url": "https://thecreatingco.com/community/network",
+      "status": 200,
+      "controls": {
+        "title": "Community · thecreateco",
+        "headings": [
+          "Community"
+        ],
+        "buttons": [
+          {
+            "name": "Home",
+            "disabled": false
+          },
+          {
+            "name": "Discover",
+            "disabled": false
+          },
+          {
+            "name": "Songs",
+            "disabled": false
+          },
+          {
+            "name": "Sessions",
+            "disabled": false
+          },
+          {
+            "name": "Pocket Studio",
+            "disabled": false
+          },
+          {
+            "name": "Create",
+            "disabled": false
+          },
+          {
+            "name": "Messages",
+            "disabled": false
+          },
+          {
+            "name": "Notifications",
+            "disabled": false
+          },
+          {
+            "name": "Saved",
+            "disabled": false
+          },
+          {
+            "name": "Profile",
+            "disabled": false
+          },
+          {
+            "name": "More",
+            "disabled": false
+          },
+          {
+            "name": "Settings",
+            "disabled": false
+          },
+          {
+            "name": "Sign in / join",
+            "disabled": false
+          },
+          {
+            "name": "Notifications",
+            "disabled": false
+          },
+          {
+            "name": "Choose a name",
+            "disabled": false
+          },
+          {
+            "name": "Everyone",
+            "disabled": false
+          },
+          {
+            "name": "Following",
+            "disabled": false
+          },
+          {
+            "name": "+What’s on your mind?",
+            "disabled": false
+          },
+          {
+            "name": "View SmoothCracka11",
+            "disabled": false
+          },
+          {
+            "name": "SmoothCracka11@zionwilliamson · Guest · 10/7/2026",
+            "disabled": false
+          },
+          {
+            "name": "Copy link",
+            "disabled": false
+          },
+          {
+            "name": "Mute creator",
+            "disabled": false
+          },
+          {
+            "name": "Block creator",
+            "disabled": false
+          },
+          {
+            "name": "Like post",
+            "disabled": false
+          },
+          {
+            "name": "Open discussion",
+            "disabled": false
+          },
+          {
+            "name": "Repost",
+            "disabled": false
+          },
+          {
+            "name": "Save post",
+            "disabled": false
+          }
+        ],
+        "links": [
+          {
+            "name": "thecreatecoCommunity",
+            "href": "https://thecreatingco.com"
+          },
+          {
+            "name": "Earlier discussions",
+            "href": "/community?legacy=1"
+          },
+          {
+            "name": "Community guidelines",
+            "href": "/community/rules"
+          },
+          {
+            "name": "Privacy",
+            "href": "/privacy/"
+          }
+        ],
+        "inputs": [
+          {
+            "tag": "SELECT",
+            "type": "select-one",
+            "name": "Report reason"
+          }
+        ],
+        "overflow": false
+      }
+    }
+  ],
+  "errors": [],
+  "phone": {
+    "overflow": false,
+    "buttons": [
+      {
+        "name": "Home",
+        "rect": {
+          "x": 8,
+          "y": 780,
+          "width": 71.59375,
+          "height": 56
+        }
+      },
+      {
+        "name": "Discover",
+        "rect": {
+          "x": 83.59375,
+          "y": 780,
+          "width": 71.59375,
+          "height": 56
+        }
+      },
+      {
+        "name": "Songs",
+        "rect": {
+          "x": 159.1875,
+          "y": 780,
+          "width": 71.609375,
+          "height": 56
+        }
+      },
+      {
+        "name": "Create",
+        "rect": {
+          "x": 234.796875,
+          "y": 780,
+          "width": 71.59375,
+          "height": 56
+        }
+      },
+      {
+        "name": "More",
+        "rect": {
+          "x": 310.390625,
+          "y": 780,
+          "width": 71.59375,
+          "height": 56
+        }
+      },
+      {
+        "name": "Settings",
+        "rect": {
+          "x": 297.96875,
+          "y": 16,
+          "width": 76.03125,
+          "height": 36
+        }
+      },
+      {
+        "name": "Sign in / join",
+        "rect": {
+          "x": 297.96875,
+          "y": 52,
+          "width": 76.03125,
+          "height": 36
+        }
+      },
+      {
+        "name": "Notifications",
+        "rect": {
+          "x": 322,
+          "y": 116,
+          "width": 52,
+          "height": 44
+        }
+      },
+      {
+        "name": "Choose a name",
+        "rect": {
+          "x": 211.921875,
+          "y": 199,
+          "width": 103.25,
+          "height": 36
+        }
+      },
+      {
+        "name": "Everyone",
+        "rect": {
+          "x": 16,
+          "y": 288.5,
+          "width": 90.8125,
+          "height": 44
+        }
+      },
+      {
+        "name": "Following",
+        "rect": {
+          "x": 112.8125,
+          "y": 288.5,
+          "width": 93.671875,
+          "height": 44
+        }
+      },
+      {
+        "name": "+What’s on your mind?",
+        "rect": {
+          "x": 16,
+          "y": 363.5,
+          "width": 358,
+          "height": 68
+        }
+      },
+      {
+        "name": "View SmoothCracka11",
+        "rect": {
+          "x": 16,
+          "y": 455.5,
+          "width": 40,
+          "height": 44
+        }
+      },
+      {
+        "name": "SmoothCracka11@zionwilliamson · Guest · 10/7/2026",
+        "rect": {
+          "x": 66,
+          "y": 455.5,
+          "width": 199.84375,
+          "height": 44
+        }
+      },
+      {
+        "name": "Copy link",
+        "rect": {
+          "x": 330,
+          "y": 503.5,
+          "width": 44,
+          "height": 152.234375
+        }
+      },
+      {
+        "name": "Mute creator",
+        "rect": {
+          "x": 330,
+          "y": 655.734375,
+          "width": 44,
+          "height": 152.234375
+        }
+      },
+      {
+        "name": "Block creator",
+        "rect": {
+          "x": 330,
+          "y": 807.96875,
+          "width": 44,
+          "height": 171.125
+        }
+      },
+      {
+        "name": "Like post",
+        "rect": {
+          "x": 16,
+          "y": 615.09375,
+          "width": 46,
+          "height": 44
+        }
+      },
+      {
+        "name": "Open discussion",
+        "rect": {
+          "x": 120,
+          "y": 615.09375,
+          "width": 46,
+          "height": 44
+        }
+      },
+      {
+        "name": "Repost",
+        "rect": {
+          "x": 224,
+          "y": 615.09375,
+          "width": 46,
+          "height": 44
+        }
+      },
+      {
+        "name": "Save post",
+        "rect": {
+          "x": 328,
+          "y": 615.09375,
+          "width": 46,
+          "height": 44
+        }
+      }
+    ]
+  },
+  "browser": "154.0.8037.98"
+}

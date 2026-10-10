@@ -1,0 +1,34 @@
+{
+  "startedAt": "2026-10-08T08:03:16.538Z",
+  "profile": "/Users/agentsattari/.openclaw/tmp/sp-lite-golden-99uDxa",
+  "source": "c26d518bc3d05f0adbf7287f79c5f5f15ac25220",
+  "cssSha256": "56d04ed3cb11f1c0a825fa7ef377e14f455cf1be4405447736dd1c79b4e108d5  app/studio-workspace.css",
+  "server": "Vite dev localhost:5189, not production artifact",
+  "checks": [
+    {
+      "name": "Actual Lite import five generated assets and insert silent12s clip; IndexedDB retains all media byte hashes",
+      "status": "PASS"
+    },
+    {
+      "name": "Actual Lite added track Undo/Redo full saved-state and media-byte identity",
+      "status": "PASS"
+    },
+    {
+      "name": "Actual Lite full browser-process restart restores saved state and five media byte hashes",
+      "status": "PASS"
+    },
+    {
+      "name": "Actual Lite silent12s UI export to real OPFS handle; H264/duration independently probed",
+      "status": "PASS"
+    }
+  ],
+  "errors": [],
+  "limits": [
+    "One Browser Lite local-development run; no release qualification",
+    "Silent video subset; duration12 set through supported cut import, not UI-authored full golden",
+    "Destination picker harnessed, actual OPFS handle"
+  ],
+  "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36",
+  "status": "PASS",
+  "finishedAt": "2026-10-08T08:04:39.706Z"
+}

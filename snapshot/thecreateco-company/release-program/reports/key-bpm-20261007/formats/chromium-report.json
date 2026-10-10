@@ -1,0 +1,102 @@
+{
+  "at": "2026-10-08T02:30:06.130Z",
+  "sourceSha": "1569ef377f6d3e079936116b1d8e5c4fe7586f48",
+  "sourceDirty": true,
+  "engine": "chromium",
+  "pass": false,
+  "scope": "Generated-fixture browser workflow; not labelled-music accuracy or physical mobile qualification",
+  "checks": [
+    {
+      "name": "Import -> actual decoder/worker -> key/Camelot/tempo and silence refusal",
+      "pass": true,
+      "rows": [
+        [
+          "C major 120.wav",
+          "0:14",
+          "C major",
+          "8B",
+          "120",
+          "-17.8 dB RMS",
+          "Alt. G major."
+        ],
+        [
+          "A minor 100.wav",
+          "0:14",
+          "A minortentative",
+          "8A",
+          "100rough",
+          "-17.8 dB RMS",
+          "Alt. A major. BPM: No steady pulse found (rough value shown)"
+        ],
+        [
+          "silence.wav",
+          "0:04",
+          "—",
+          "—",
+          "—",
+          "—",
+          "Key: Too quiet; BPM: Too quiet"
+        ]
+      ],
+      "elapsedMs": 370
+    },
+    {
+      "name": "Sort and real CSV download/readback",
+      "pass": true,
+      "bytes": 532
+    },
+    {
+      "name": "Malformed input fails clearly without dropping completed results",
+      "pass": true
+    },
+    {
+      "name": "Save real report -> fresh context -> reopen -> exact measurements/confidence/time -> reexport; malformed/oversized imports atomic",
+      "pass": true
+    },
+    {
+      "name": "Different audio files sharing filename/byte length both analyzed",
+      "pass": true
+    }
+  ],
+  "errors": [],
+  "fixtures": [
+    {
+      "name": "C major 120.wav",
+      "bytes": 1852244,
+      "sha256": "505b45f770431befd0fa8494e1bacdc333a7ea8f6dc6273396401adb84eec920",
+      "provenance": "Original deterministic synthesis in this script"
+    },
+    {
+      "name": "A minor 100.wav",
+      "bytes": 1852244,
+      "sha256": "67d7b02e5a4415bc87352e0fc4ef7197d94bd7e3f2e42f262d04bbbae6147b32",
+      "provenance": "Original deterministic synthesis in this script"
+    },
+    {
+      "name": "silence.wav",
+      "bytes": 529244,
+      "sha256": "f9ab3a72a1740b3935f2435611fd2a5e577652990afd66f520b67504fae26e0d",
+      "provenance": "Original deterministic synthesis in this script"
+    },
+    {
+      "name": "generated-reference.mp3",
+      "bytes": 112449,
+      "sha256": "ff6970017b14e44ff7ebe91236265769f4153af754b40791a252001e53f31cd2",
+      "provenance": "FFmpeg encoding of original generated reference WAV"
+    },
+    {
+      "name": "generated-reference.flac",
+      "bytes": 638266,
+      "sha256": "62a8d08e62c6d11516722a63d01a1a2e1887f5c0796d7ee3ac6bd2f1ba309200",
+      "provenance": "FFmpeg encoding of original generated reference WAV"
+    },
+    {
+      "name": "generated-reference.m4a",
+      "bytes": 134634,
+      "sha256": "90f3bfa15d492d1e736c77a47f82e4b1fc23540ab259e972bbe466b1d22ada9a",
+      "provenance": "FFmpeg encoding of original generated reference WAV"
+    }
+  ],
+  "browserVersion": "151.0.7922.34",
+  "error": "Error: Command failed: ffmpeg -nostdin -loglevel error -y -i /Users/agentsattari/thecreateco-company/release-program/reports/key-bpm-20261007/formats/generated-reference.wav -c:a libvorbis /Users/agentsattari/thecreateco-company/release-program/reports/key-bpm-20261007/formats/generated-reference.ogg\n[aost#0:0 @ 0xc67060000] Unknown encoder 'libvorbis'\n[aost#0:0 @ 0xc67060000] Error selecting an encoder\nError opening output file /Users/agentsattari/thecreateco-company/release-program/reports/key-bpm-20261007/formats/generated-reference.ogg.\nError opening output files: Encoder not found\n\n    at genericNodeError (node:internal/errors:983:15)\n    at wrappedFn (node:internal/errors:537:14)\n    at checkExecSyncError (node:child_process:916:11)\n    at execFileSync (node:child_process:952:15)\n    at file:///Users/agentsattari/code/core-product-lab/key-bpm/scripts/qualify-key-bpm.mjs:266:7"
+}

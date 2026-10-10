@@ -1,0 +1,15 @@
+{
+  "source": "a47417bc4b3390bc30697cc2b7d3d573ad14e4d6",
+  "profile": "/Users/agentsattari/.openclaw/tmp/sp-recovery-20261008-wgssot",
+  "startedAt": "2026-10-08T06:14:02.177Z",
+  "checks": [],
+  "limits": [
+    "Development Electron renderer, not signed/packaged build",
+    "Native dialog paths supplied by harness; actual OS chooser unverified",
+    "No full golden or platform qualification"
+  ],
+  "errors": [],
+  "status": "FAIL",
+  "error": "locator.click: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('summary').filter({ hasText: /^Add track$/ })\u001b[22m\n\n    at /Users/agentsattari/thecreateco-company/reports/scenepilot-recovery-20261008/recovery-session.mjs:27:64",
+  "finishedAt": "2026-10-08T06:14:18.367Z"
+}

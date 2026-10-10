@@ -1,0 +1,92 @@
+{
+  "observed_at": "2026-10-08T01:05:04+00:00",
+  "status": "read_only_snapshot",
+  "queue_statuses": {
+    "tasks": {
+      "COMPLETE": 17
+    }
+  },
+  "campaign_statuses": {
+    "campaigns": {
+      "active": 1
+    }
+  },
+  "outcomes": {
+    "impressions": {
+      "recorded_values": 0,
+      "sum_of_recorded_values": null,
+      "scope": "all recorded marketing outcomes; missing observations excluded"
+    },
+    "clicks": {
+      "recorded_values": 0,
+      "sum_of_recorded_values": null,
+      "scope": "all recorded marketing outcomes; missing observations excluded"
+    },
+    "replies": {
+      "recorded_values": 0,
+      "sum_of_recorded_values": null,
+      "scope": "all recorded marketing outcomes; missing observations excluded"
+    },
+    "signups": {
+      "recorded_values": 0,
+      "sum_of_recorded_values": null,
+      "scope": "all recorded marketing outcomes; missing observations excluded"
+    },
+    "conversions": {
+      "recorded_values": 0,
+      "sum_of_recorded_values": null,
+      "scope": "all recorded marketing outcomes; missing observations excluded"
+    },
+    "engagement": {
+      "recorded_values": 0,
+      "sum_of_recorded_values": null,
+      "scope": "all recorded marketing outcomes; missing observations excluded"
+    },
+    "cost": {
+      "recorded_values": 0,
+      "sum_of_recorded_values": null,
+      "scope": "all recorded marketing outcomes; missing observations excluded"
+    }
+  },
+  "outcome_period": {
+    "earliest_record": null,
+    "latest_record": null
+  },
+  "campaigns": [
+    {
+      "campaign_id": "wave2-glyph",
+      "name": "Wave 2: Glyph Studio launch",
+      "product": "Glyph Studio",
+      "status": "active",
+      "goal": "Lettering artists try Glyph Studio and join the launch list",
+      "updated_at": "2026-10-06T19:20:59-07:00"
+    }
+  ],
+  "model_usage": [
+    {
+      "model": "anthropic/claude-opus-5-5",
+      "calls": 1,
+      "successful_calls": 1,
+      "estimated_cost_recorded": 0.06826399999999999
+    },
+    {
+      "model": "anthropic/claude-sonnet-5",
+      "calls": 5,
+      "successful_calls": 5,
+      "estimated_cost_recorded": 0.13709179999999999
+    },
+    {
+      "model": "openai/gpt-6-luna",
+      "calls": 6,
+      "successful_calls": 6,
+      "estimated_cost_recorded": 0.003528
+    },
+    {
+      "model": "openai/gpt-6-sol",
+      "calls": 6,
+      "successful_calls": 6,
+      "estimated_cost_recorded": 0.06212
+    }
+  ],
+  "scope": "Marketing records only; not company visitor/download/signup metrics"
+}

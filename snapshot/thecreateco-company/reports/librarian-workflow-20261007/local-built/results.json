@@ -1,0 +1,13 @@
+{
+  "url": "http://127.0.0.1:1441",
+  "started_at": "2026-10-08T03:28:34.736Z",
+  "errors": [],
+  "bad_responses": [],
+  "checks": [
+    "real PDF reader painted",
+    "close/new-page/reopen and download exact original bytes"
+  ],
+  "sha256": "66dc7f1aa7431f2715aad89702ad5808e9b65d43f649c222903dff1a7a19b5ea",
+  "status": "PASS",
+  "finished_at": "2026-10-08T03:28:36.228Z"
+}

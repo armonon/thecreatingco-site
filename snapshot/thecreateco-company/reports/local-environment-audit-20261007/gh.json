@@ -1,0 +1,10 @@
+{
+  "command": [
+    "gh",
+    "--version"
+  ],
+  "started_at": "2026-10-08T02:52:26.266822+00:00",
+  "exit_code": 0,
+  "stdout": "gh version 2.92.0 (2026-04-28)\nhttps://github.com/cli/cli/releases/tag/v2.92.0\n",
+  "stderr": ""
+}

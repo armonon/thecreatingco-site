@@ -1,0 +1,4 @@
+{
+  "output": "PASS fixed export low-cut renders the defined live-filter magnitude and phase\nPASS fixed export low-cut preserves gain cancellation for stereo composite audio\nPASS input trim and pre-limiter trim each change rendered amplitude by exactly -6 dB\nPASS equal and opposite trims cancel with dynamics disabled\nPASS EQ crossover frequency changes the actual rendered sound\nPASS live and exported master processing agree after smoothing settles\nPASS speaker mute/mono/dim do not alter program output\nPASS raw stem export excludes new master trims and EQ\nPASS delivery references do not change exported audio\n\n9 passed, 0 failed",
+  "errors": []
+}

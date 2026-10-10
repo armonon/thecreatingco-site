@@ -1,0 +1,732 @@
+[
+  {
+    "tag": "SUMMARY",
+    "text": "File",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": " New project",
+    "aria": "New project"
+  },
+  {
+    "tag": "BUTTON",
+    "text": " Open project",
+    "aria": "Restore saved project"
+  },
+  {
+    "tag": "BUTTON",
+    "text": " Autosave history",
+    "aria": "Open autosave history"
+  },
+  {
+    "tag": "BUTTON",
+    "text": " Export queue · 0",
+    "aria": "Open delivery workspace"
+  },
+  {
+    "tag": "BUTTON",
+    "text": " Export for Premiere (XML)",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": " Export EDL (CMX3600)",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": "",
+    "aria": "Open command palette"
+  },
+  {
+    "tag": "BUTTON",
+    "text": "",
+    "aria": "Save project"
+  },
+  {
+    "tag": "BUTTON",
+    "text": "",
+    "aria": "Undo"
+  },
+  {
+    "tag": "BUTTON",
+    "text": "",
+    "aria": "Redo"
+  },
+  {
+    "tag": "BUTTON",
+    "text": " Export",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": "EditSource + timeline",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": "Auto CutAnalyze + build an edit",
+    "aria": null
+  },
+  {
+    "tag": "SUMMARY",
+    "text": "Tools",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": "MotionCompositions + keyframes",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": "ColorGrade + scopes",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": "AudioMix + automate",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": "DeliverQueue + export",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": "NEXT · ELEVATETurn a shot into a compositionNew composition",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": "Simple",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": "Advanced",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": "",
+    "aria": "Focus viewer"
+  },
+  {
+    "tag": "SUMMARY",
+    "text": " Layout",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": "Focus timeline",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": " Reset workspace",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": "Main sequenceMedia grid regression",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": "",
+    "aria": "New composition"
+  },
+  {
+    "tag": "BUTTON",
+    "text": "Media6",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": "Comps0",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": "Effects27",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": "Transcript0",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": "New compositionClick to create · drop media to match1920×1080 · 30p",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": " Import",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": "",
+    "aria": "New media bin"
+  },
+  {
+    "tag": "SUMMARY",
+    "text": "Organize & filter",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": "",
+    "aria": "List view"
+  },
+  {
+    "tag": "BUTTON",
+    "text": "",
+    "aria": "Grid view"
+  },
+  {
+    "tag": "BUTTON",
+    "text": "ALL MEDIA6",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": "FOOTAGE3",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": "AUDIO2",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": "GRAPHICS1",
+    "aria": null
+  },
+  {
+    "tag": "SUMMARY",
+    "text": "Media options",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": "NATIVE PROXY",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": "",
+    "aria": "Open positive-av.mp4 in Source monitor"
+  },
+  {
+    "tag": "BUTTON",
+    "text": "",
+    "aria": "New composition from positive-av.mp4"
+  },
+  {
+    "tag": "BUTTON",
+    "text": "",
+    "aria": "Add positive-av.mp4 to favorites"
+  },
+  {
+    "tag": "BUTTON",
+    "text": "",
+    "aria": "Remove positive-av.mp4"
+  },
+  {
+    "tag": "SUMMARY",
+    "text": "Media options",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": "NATIVE PROXY",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": "",
+    "aria": "Open sp-golden-broll-24fps.mp4 in Source monitor"
+  },
+  {
+    "tag": "BUTTON",
+    "text": "",
+    "aria": "New composition from sp-golden-broll-24fps.mp4"
+  },
+  {
+    "tag": "BUTTON",
+    "text": "",
+    "aria": "Add sp-golden-broll-24fps.mp4 to favorites"
+  },
+  {
+    "tag": "BUTTON",
+    "text": "",
+    "aria": "Remove sp-golden-broll-24fps.mp4"
+  },
+  {
+    "tag": "BUTTON",
+    "text": "RELINK",
+    "aria": "Relink sp-golden-main-30fps.mp4"
+  },
+  {
+    "tag": "SUMMARY",
+    "text": "Media options",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": "",
+    "aria": "Open sp-golden-main-30fps.mp4 in Source monitor"
+  },
+  {
+    "tag": "BUTTON",
+    "text": "",
+    "aria": "New composition from sp-golden-main-30fps.mp4"
+  },
+  {
+    "tag": "BUTTON",
+    "text": "",
+    "aria": "Add sp-golden-main-30fps.mp4 to favorites"
+  },
+  {
+    "tag": "BUTTON",
+    "text": "",
+    "aria": "Remove sp-golden-main-30fps.mp4"
+  },
+  {
+    "tag": "SUMMARY",
+    "text": "Media options",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": "",
+    "aria": "Open sp-golden-music-48k.wav in Source monitor"
+  },
+  {
+    "tag": "BUTTON",
+    "text": "",
+    "aria": "Add sp-golden-music-48k.wav to favorites"
+  },
+  {
+    "tag": "BUTTON",
+    "text": "",
+    "aria": "Remove sp-golden-music-48k.wav"
+  },
+  {
+    "tag": "SUMMARY",
+    "text": "Media options",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": "",
+    "aria": "Open sp-golden-overlay.png in Source monitor"
+  },
+  {
+    "tag": "BUTTON",
+    "text": "",
+    "aria": "New composition from sp-golden-overlay.png"
+  },
+  {
+    "tag": "BUTTON",
+    "text": "",
+    "aria": "Add sp-golden-overlay.png to favorites"
+  },
+  {
+    "tag": "BUTTON",
+    "text": "",
+    "aria": "Remove sp-golden-overlay.png"
+  },
+  {
+    "tag": "SUMMARY",
+    "text": "Media options",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": "",
+    "aria": "Open sp-golden-sfx-44k.wav in Source monitor"
+  },
+  {
+    "tag": "BUTTON",
+    "text": "",
+    "aria": "Add sp-golden-sfx-44k.wav to favorites"
+  },
+  {
+    "tag": "BUTTON",
+    "text": "",
+    "aria": "Remove sp-golden-sfx-44k.wav"
+  },
+  {
+    "tag": "BUTTON",
+    "text": " New",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": "No compositions yetCreate a composition or drop a source onto New Composition.",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": "Explore sample compositions",
+    "aria": null
+  },
+  {
+    "tag": "SUMMARY",
+    "text": "Plugins & creator packs · 0",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": " Import pack",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": " Install FX plugin",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": " Export creator pack",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": "SOURCE ",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": "PROGRAM",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": " MULTICAM · 2",
+    "aria": null
+  },
+  {
+    "tag": "SUMMARY",
+    "text": "Preview quality",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": "",
+    "aria": "Back five seconds"
+  },
+  {
+    "tag": "BUTTON",
+    "text": "",
+    "aria": "Play"
+  },
+  {
+    "tag": "BUTTON",
+    "text": "",
+    "aria": "Fullscreen preview"
+  },
+  {
+    "tag": "SUMMARY",
+    "text": "Rhythm tools · not analyzed",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": " Analyze media",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": "−",
+    "aria": "Decrease BPM"
+  },
+  {
+    "tag": "BUTTON",
+    "text": "+",
+    "aria": "Increase BPM"
+  },
+  {
+    "tag": "BUTTON",
+    "text": "TAP",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": "",
+    "aria": "Restore analyzed beat grid"
+  },
+  {
+    "tag": "SUMMARY",
+    "text": "Inspect a different target",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": " Section",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": " V1 clip",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": " Overlay",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": " Track FX",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": " Audio",
+    "aria": null
+  },
+  {
+    "tag": "SUMMARY",
+    "text": " Add track",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": " Video track",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": " Audio track",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": " Build multicam",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": "Hide unused tracks",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": "SelectionV",
+    "aria": "Selection tool, shortcut V"
+  },
+  {
+    "tag": "BUTTON",
+    "text": "RazorC",
+    "aria": "Razor tool, shortcut C"
+  },
+  {
+    "tag": "BUTTON",
+    "text": "FadeF",
+    "aria": "Fade tool, shortcut F"
+  },
+  {
+    "tag": "SUMMARY",
+    "text": "More tools",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": "Rate StretchR",
+    "aria": "Rate Stretch tool, shortcut R"
+  },
+  {
+    "tag": "BUTTON",
+    "text": "SlipY",
+    "aria": "Slip tool, shortcut Y"
+  },
+  {
+    "tag": "BUTTON",
+    "text": "SlideU",
+    "aria": "Slide tool, shortcut U"
+  },
+  {
+    "tag": "BUTTON",
+    "text": "Rolling editN",
+    "aria": "Rolling edit tool, shortcut N"
+  },
+  {
+    "tag": "BUTTON",
+    "text": "HandH",
+    "aria": "Hand tool, shortcut H"
+  },
+  {
+    "tag": "BUTTON",
+    "text": "ZoomZ",
+    "aria": "Zoom tool, shortcut Z"
+  },
+  {
+    "tag": "SUMMARY",
+    "text": "Timeline settings",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": " Snap",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": " Linked",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": " Marker",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": "I · In",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": "O · Out",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": "Clear range",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": "Extract",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": "Fit to fill",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": " Loop",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": " Scope",
+    "aria": null
+  },
+  {
+    "tag": "SUMMARY",
+    "text": "Clip actions",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": " Group",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": " Ungroup",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": " Nest",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": " To overlay",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": "Close gaps",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": "Match frame",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": "positive-av.mp41.0s",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": "zoomsp-golden-main-30fps.mp412.0s",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": "V3 · OVERLAYSoverlay · 82% · live",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": "",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": "",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": "V2 · LIGHT HITSscreen · 100% · live",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": "",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": "",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": "A1 · MUSIC100% · C",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": "",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": "S",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": "A2 · SFX90% · C",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": "",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": "S",
+    "aria": null
+  }
+]

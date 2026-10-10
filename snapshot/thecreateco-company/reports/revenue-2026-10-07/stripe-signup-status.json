@@ -1,0 +1,15 @@
+{
+  "observed_at": "2026-10-08T01:18:27.520638+00:00",
+  "url": "https://dashboard.stripe.com/register",
+  "state": "Registration form visible; no account created",
+  "required_fields": [
+    "Email",
+    "Full name",
+    "Password",
+    "Country"
+  ],
+  "create_account_button": "disabled while required inputs empty",
+  "manual_owner_steps": "Owner account choice/credentials and subsequent email/identity/payout verification remain; no values supplied or submitted",
+  "charges_created": false,
+  "payment_links_created": false
+}

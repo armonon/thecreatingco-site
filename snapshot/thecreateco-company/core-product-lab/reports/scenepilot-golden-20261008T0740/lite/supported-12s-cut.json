@@ -1,0 +1,314 @@
+{
+  "format": "scenepilot-cut",
+  "version": 2,
+  "project": "Lite golden qualification",
+  "duration": 12,
+  "bpm": 120,
+  "beatOffset": 0,
+  "beats": [],
+  "sections": [],
+  "tracks": [
+    {
+      "id": "clip-track-1",
+      "name": "V2 · LIGHT HITS",
+      "color": "#34d6c7",
+      "enabled": true,
+      "locked": false,
+      "target": true,
+      "sourcePatch": true,
+      "syncLock": true,
+      "blend": "screen",
+      "opacity": 100,
+      "hue": 0,
+      "saturation": 110,
+      "brightness": 105,
+      "glow": 12,
+      "fadeIn": 0.03,
+      "fadeOut": 0.1
+    },
+    {
+      "id": "clip-track-2",
+      "name": "V3 · OVERLAYS",
+      "color": "#ff695d",
+      "enabled": true,
+      "locked": false,
+      "target": false,
+      "sourcePatch": false,
+      "syncLock": true,
+      "blend": "overlay",
+      "opacity": 82,
+      "hue": 0,
+      "saturation": 100,
+      "brightness": 100,
+      "glow": 0,
+      "fadeIn": 0.08,
+      "fadeOut": 0.18
+    }
+  ],
+  "videoClips": [
+    {
+      "id": "base-cut-705cf413-ffa8-4ddb-bff9-3bc2498e9520",
+      "assetId": "media-046a556eadda5a1aee197a1c",
+      "sectionId": "manual",
+      "start": 0,
+      "sourceStart": 0,
+      "duration": 12,
+      "playbackRate": 1,
+      "linked": true,
+      "trackId": "__base__"
+    }
+  ],
+  "baseCuts": [
+    {
+      "id": "base-cut-705cf413-ffa8-4ddb-bff9-3bc2498e9520",
+      "assetId": "media-046a556eadda5a1aee197a1c",
+      "sectionId": "manual",
+      "start": 0,
+      "sourceStart": 0,
+      "duration": 12,
+      "playbackRate": 1,
+      "linked": true
+    }
+  ],
+  "titles": [],
+  "placements": [],
+  "compositions": [],
+  "effects": {
+    "styleId": "auto",
+    "autoEnergy": "smooth",
+    "montageEnabled": true,
+    "montagePace": "cinematic",
+    "punchPreset": "subtle",
+    "transitionType": "zoom",
+    "strobePreset": "off",
+    "strobeColor": "#ffffff",
+    "strobeSecondaryColor": "#ff334f",
+    "strobeAlternate": false,
+    "strobeIntensity": 0.7,
+    "strobeAttack": 0,
+    "strobeHold": 0.008,
+    "strobeDecay": 0.08,
+    "strobeShape": "exponential",
+    "strobeMode": "full",
+    "strobeBlend": "screen",
+    "strobeX": 0.5,
+    "strobeY": 0.5,
+    "strobeSize": 0.75,
+    "strobeSoftness": 0.65,
+    "strobeAngle": 0,
+    "strobeSafeMode": true,
+    "strobeTiming": "song",
+    "strobeBpm": 120,
+    "strobeSensitivity": 0.5,
+    "strobeBand": "all",
+    "stutterPreset": "off",
+    "speedPreset": "off",
+    "dropRampEnabled": true,
+    "audioReactive": false,
+    "shakePreset": "off",
+    "lookPreset": "cinematic",
+    "manualGrade": {
+      "exposure": 1,
+      "contrast": 1,
+      "saturation": 1,
+      "temperature": 0,
+      "tint": 0,
+      "bloom": 0,
+      "vignette": 0,
+      "grain": 0,
+      "aberration": 0
+    },
+    "mirrorMode": 0,
+    "streak": 0,
+    "echoPreset": "off"
+  },
+  "settings": {
+    "aspect": "source",
+    "customSize": {
+      "width": 1080,
+      "height": 1080
+    },
+    "sourceDims": {
+      "w": 1280,
+      "h": 720
+    },
+    "exportFrameRate": 30,
+    "exportMaxDimension": 1920,
+    "exportFormat": "mp4-h264",
+    "colorCurve": "none",
+    "lut3dSource": null,
+    "lut3dMix": 1
+  },
+  "proState": {
+    "autoPolicy": {
+      "timing": "auto",
+      "targetDuration": 0,
+      "minShot": 0.25,
+      "maxShot": 12,
+      "noRepeat": false,
+      "preserveDialogue": true,
+      "sources": []
+    },
+    "autoVersions": [],
+    "creatorGoal": "music-video",
+    "inferredCreatorGoal": null,
+    "audioTracks": [
+      {
+        "id": "audio-track-1",
+        "name": "A1 · MUSIC",
+        "color": "#5eb8ff",
+        "muted": false,
+        "solo": false,
+        "locked": false,
+        "target": true,
+        "syncLock": true,
+        "busId": "bus-music",
+        "gain": 1,
+        "pan": 0,
+        "processing": {
+          "highPassHz": 20,
+          "lowDb": 0,
+          "midDb": 0,
+          "highDb": 0,
+          "compressorThreshold": -18,
+          "compressorRatio": 2,
+          "limiter": true,
+          "makeupGain": 1
+        }
+      },
+      {
+        "id": "audio-track-2",
+        "name": "A2 · SFX",
+        "color": "#f7c84b",
+        "muted": false,
+        "solo": false,
+        "locked": false,
+        "target": false,
+        "syncLock": true,
+        "busId": "bus-sfx",
+        "gain": 0.9,
+        "pan": 0,
+        "processing": {
+          "highPassHz": 20,
+          "lowDb": 0,
+          "midDb": 0,
+          "highDb": 0,
+          "compressorThreshold": -24,
+          "compressorRatio": 1,
+          "limiter": true,
+          "makeupGain": 1
+        }
+      }
+    ],
+    "audioBuses": [
+      {
+        "id": "bus-music",
+        "name": "MUSIC",
+        "color": "#5eb8ff",
+        "gain": 1,
+        "muted": false,
+        "solo": false
+      },
+      {
+        "id": "bus-dialogue",
+        "name": "DIALOGUE",
+        "color": "#34d6c7",
+        "gain": 1,
+        "muted": false,
+        "solo": false
+      },
+      {
+        "id": "bus-sfx",
+        "name": "SFX",
+        "color": "#f7c84b",
+        "gain": 1,
+        "muted": false,
+        "solo": false
+      }
+    ],
+    "masterGain": 1,
+    "colorManagement": {
+      "workingSpace": "rec709",
+      "displayTransform": "rec709-100",
+      "toneMap": "bt2390"
+    },
+    "audioClips": [],
+    "transcriptWords": [],
+    "projectIntelligence": null,
+    "projectTranscripts": {},
+    "storyBrief": "",
+    "markers": [],
+    "timelineRange": {
+      "inPoint": null,
+      "outPoint": null
+    },
+    "mediaBins": [
+      {
+        "id": "bin-root",
+        "name": "ALL MEDIA",
+        "parentId": null
+      },
+      {
+        "id": "bin-footage",
+        "name": "FOOTAGE",
+        "parentId": "bin-root"
+      },
+      {
+        "id": "bin-audio",
+        "name": "AUDIO",
+        "parentId": "bin-root"
+      },
+      {
+        "id": "bin-graphics",
+        "name": "GRAPHICS",
+        "parentId": "bin-root"
+      }
+    ],
+    "snapping": true,
+    "linkedSelection": true,
+    "manualDropTime": null,
+    "renderAnalysis": null
+  },
+  "assets": [
+    {
+      "id": "media-046a556eadda5a1aee197a1c",
+      "name": "sp-golden-main-30fps.mp4",
+      "kind": "video",
+      "size": 938381,
+      "lastModified": 1791427963757,
+      "folderId": "bin-footage"
+    },
+    {
+      "id": "media-63a566f5c5f0db370038a4c4",
+      "name": "sp-golden-broll-24fps.mp4",
+      "kind": "video",
+      "size": 563635,
+      "lastModified": 1791427964269,
+      "folderId": "bin-footage"
+    },
+    {
+      "id": "media-a180d08e943fee27b10a7990",
+      "name": "sp-golden-overlay.png",
+      "kind": "image",
+      "size": 6662,
+      "lastModified": 1791427964289,
+      "folderId": "bin-graphics"
+    },
+    {
+      "id": "media-643f66de0d95a0fa1ca8c095",
+      "name": "sp-golden-music-48k.wav",
+      "kind": "audio",
+      "size": 3840044,
+      "lastModified": 1791427964335,
+      "folderId": "bin-audio"
+    },
+    {
+      "id": "media-00ed93e0d09754fbb7b51ff6",
+      "name": "sp-golden-sfx-44k.wav",
+      "kind": "audio",
+      "size": 264644,
+      "lastModified": 1791427964375,
+      "folderId": "bin-audio"
+    }
+  ]
+}

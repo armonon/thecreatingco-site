@@ -1,0 +1,11 @@
+{
+  "pass": true,
+  "commit": "e547d7d4eef74d533795cea493a426b091b92d2a",
+  "artifact": {
+    "algorithm": "sha256-path-size-content-v1",
+    "sha256": "e8de491d9e7b183039175866eb34e1c850ea59d8ed248f93f8a7d6d654be9eaa",
+    "files": 549,
+    "bytes": 229493727
+  },
+  "releaseApproved": false
+}

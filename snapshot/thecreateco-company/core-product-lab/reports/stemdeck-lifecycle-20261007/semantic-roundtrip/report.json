@@ -1,0 +1,73 @@
+{
+  "sourceSha": "f6f061c6e463a552c287e883cbd7fc9bb3e0867e",
+  "sourceDirty": true,
+  "profile": "/Users/agentsattari/.openclaw/tmp/stemdeck-fourdeck-UtwLIR",
+  "pass": false,
+  "physicalInputs": false,
+  "mockedEndpoints": [
+    "/api/inventory"
+  ],
+  "steps": [
+    "Four decks,20 real generated audio assets imported through project picker",
+    "Actual fullMix lane import and analyzer executed for all four decks",
+    "Deck A reached its natural end before final pause",
+    "Deck B reached its natural end before final pause",
+    "Deck C reached its natural end before final pause",
+    "Deck D reached its natural end before final pause",
+    "Actual UI started capture,played four decks,changed stem mute/crossfader,stopped all and finished capture",
+    "Actual captured events built into editable arrangement via UI",
+    "Reconstruction and real track edit undo/redo preserve original capture and lane state",
+    "Actual live-engine replay failed; original take retained and independent archive/export checks continue",
+    "Full browser process closed/relaunched; saved arrangement and original captured event history identical"
+  ],
+  "errors": [],
+  "browser": "151.0.7922.34",
+  "analysis": [
+    {
+      "id": "A",
+      "bpm": 118,
+      "key": "C maj",
+      "analysis": true
+    },
+    {
+      "id": "B",
+      "bpm": 118,
+      "key": "C# maj",
+      "analysis": true
+    },
+    {
+      "id": "C",
+      "bpm": 118,
+      "key": "D maj",
+      "analysis": true
+    },
+    {
+      "id": "D",
+      "bpm": 118,
+      "key": "D# maj",
+      "analysis": true
+    }
+  ],
+  "replayHostBefore": {
+    "loadAverage": [
+      11.83203125,
+      14.38427734375,
+      17.5615234375
+    ],
+    "freeMemoryBytes": 936722432
+  },
+  "printedTrackCount": 0,
+  "replay": {
+    "pass": false,
+    "status": "Audio scheduling fell behind under system load. Playback stopped; check the recording status before continuing."
+  },
+  "portableBytes": 75962578,
+  "masterExport": {
+    "sampleRate": 48000,
+    "channels": 2,
+    "frames": 779447,
+    "maximumError": 0,
+    "peak": 0.0176466703414917
+  },
+  "error": "page.waitForEvent: Timeout 120000ms exceeded while waiting for event \"download\"\n=========================== logs ===========================\nwaiting for event \"download\"\n============================================================\n    at download (/Users/agentsattari/code/core-product-lab/stemdeck-recovery/scripts/perform-lifecycle-qa.mjs:218:26)\n    at /Users/agentsattari/code/core-product-lab/stemdeck-recovery/scripts/perform-lifecycle-qa.mjs:284:23"
+}

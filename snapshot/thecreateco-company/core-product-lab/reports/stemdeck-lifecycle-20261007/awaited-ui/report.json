@@ -1,0 +1,45 @@
+{
+  "sourceSha": "f6f061c6e463a552c287e883cbd7fc9bb3e0867e",
+  "sourceDirty": true,
+  "profile": "/Users/agentsattari/.openclaw/tmp/stemdeck-fourdeck-HbLUkH",
+  "pass": false,
+  "physicalInputs": false,
+  "mockedEndpoints": [
+    "/api/inventory"
+  ],
+  "steps": [
+    "Four decks,20 real generated audio assets imported through project picker",
+    "Actual fullMix lane import and analyzer executed for all four decks",
+    "Actual UI started capture,played four decks,changed stem mute/crossfader,stopped all and finished capture",
+    "Actual captured events built into editable arrangement via UI"
+  ],
+  "errors": [],
+  "browser": "151.0.7922.34",
+  "analysis": [
+    {
+      "id": "A",
+      "bpm": 118,
+      "key": "C maj",
+      "analysis": true
+    },
+    {
+      "id": "B",
+      "bpm": 118,
+      "key": "C# maj",
+      "analysis": true
+    },
+    {
+      "id": "C",
+      "bpm": 118,
+      "key": "D maj",
+      "analysis": true
+    },
+    {
+      "id": "D",
+      "bpm": 118,
+      "key": "D# maj",
+      "analysis": true
+    }
+  ],
+  "error": "AssertionError [ERR_ASSERTION]: actual captured events must add reconstructed source lanes\n    at file:///Users/agentsattari/code/core-product-lab/stemdeck-recovery/scripts/perform-lifecycle-qa.mjs:53:2\n    at runNextTicks (node:internal/process/task_queues:64:5)\n    at process.processImmediate (node:internal/timers:452:9)\n    at process.callbackTrampoline (node:internal/async_hooks:130:17)"
+}

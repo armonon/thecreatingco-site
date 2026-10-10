@@ -1,0 +1,29 @@
+{
+  "task_id": "PROGRAM18-POCKET-QUALIFY-001",
+  "title": "Qualify Pocket remaining browser, recovery and release gates",
+  "product": "pocket",
+  "workstream": "PRODUCT_COMPLETION",
+  "category": "qualification",
+  "severity": "P2",
+  "status": "QUEUED",
+  "model": "openai/gpt-6.1-sol",
+  "dependencies": [
+    "PROGRAM18-POCKET-SAVE-001"
+  ],
+  "scores": {
+    "impact": 7,
+    "user_value": 8,
+    "confidence": 8,
+    "effort": 6,
+    "risk": 3,
+    "urgency": 5,
+    "strategic_value": 7
+  },
+  "expected_value": "Evidence-backed safe release beyond narrow repaired persistence subset.",
+  "source_evidence": [
+    "/Users/agentsattari/thecreateco-company/reports/pocket-persistence-2026-10-07/README.md",
+    "/Users/agentsattari/thecreateco-company/reports/pocket-persistence-2026-10-07/browser-exact-head/report.json"
+  ],
+  "test_requirements": "Actual supportedbrowser/mobile matrix, storagepressure/interruptedwrites/recovery, meaningfulstress/performance, accessibility, currentlive provenance and exact-headnormalchecks. No native/cloud/undo/chaining claims unlessimplemented.",
+  "next_action": "Follow PROGRAM18-POCKET-QUALIFY-001 after founder firstwave: supportedbrowser/mobile, storagepressure/interruption, accessibility/performance and exacthead/stack release gates; no bypass or whole-site replacement."
+}

@@ -1,0 +1,26 @@
+{
+  "browser": "26.5",
+  "persistent": true,
+  "profile": "/Users/agentsattari/.openclaw/tmp/stemdeck-webkit-storage-jgdKMI",
+  "scope": "Isolated localhost disposable storage only; no app mutation or user data",
+  "results": {
+    "rows": [
+      {
+        "name": "string",
+        "pass": true
+      },
+      {
+        "name": "arraybuffer",
+        "pass": true
+      },
+      {
+        "name": "blob",
+        "pass": true
+      }
+    ],
+    "estimate": {
+      "quota": 20615843021,
+      "usage": 373
+    }
+  }
+}

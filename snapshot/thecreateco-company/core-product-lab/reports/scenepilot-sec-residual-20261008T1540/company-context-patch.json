@@ -1,0 +1,10 @@
+{
+  "metrics": {
+    "scenepilot_full_dependency_audit_groups": {
+      "value": 16,
+      "source": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-sec-residual-20261008T1540/audit-full.log",
+      "period": "2026-10-08T15:41Z exact c26d518 lockfile",
+      "observed_at": "2026-10-08T15:43:40.492515+00:00"
+    }
+  }
+}

@@ -1,0 +1,83 @@
+[
+  {
+    "path": "agents.defaults.model",
+    "value": {
+      "primary": "openai/gpt-6-luna",
+      "fallbacks": []
+    },
+    "old": {
+      "fallbacks": [
+        "anthropic/claude-sonnet-4-6",
+        "anthropic/claude-opus-4-6"
+      ],
+      "primary": "openai/gpt-6-astra"
+    }
+  },
+  {
+    "path": "agents.defaults.modelPolicy.allow",
+    "value": [
+      "openai/gpt-5.4",
+      "openai/gpt-5.6-terra",
+      "openai/gpt-5.5",
+      "openai/gpt-6-sol",
+      "openai/gpt-6-luna",
+      "openai/gpt-6.1-sol",
+      "openai/gpt-6-astra"
+    ],
+    "old": [
+      "anthropic/claude-haiku-4-5",
+      "anthropic/claude-opus-4-6",
+      "anthropic/claude-opus-4-7",
+      "anthropic/claude-opus-4-8",
+      "anthropic/claude-sonnet-4-6",
+      "anthropic/claude-sonnet-5",
+      "ollama/qwen2.5-coder:7b",
+      "ollama/qwen2.5:7b",
+      "openai/gpt-5.4",
+      "openai/gpt-5.6-terra",
+      "openai/gpt-5.5",
+      "openai/sonnet",
+      "openai/gpt-6-sol",
+      "openai/gpt-6-luna",
+      "openai/gpt-6.1-sol"
+    ]
+  },
+  {
+    "path": "agents.entries.machine.model",
+    "value": {
+      "primary": "openai/gpt-6-luna",
+      "fallbacks": []
+    },
+    "old": "ollama/qwen2.5:7b"
+  },
+  {
+    "path": "agents.entries.claude.model",
+    "value": {
+      "primary": "openai/gpt-6-luna",
+      "fallbacks": []
+    },
+    "old": {
+      "fallbacks": [],
+      "primary": "anthropic/claude-opus-4-7"
+    }
+  },
+  {
+    "path": "agents.entries.local.model",
+    "value": {
+      "primary": "openai/gpt-6-luna",
+      "fallbacks": []
+    },
+    "old": "ollama/qwen2.5-coder:7b"
+  },
+  {
+    "path": "agents.entries.leila.model",
+    "value": {
+      "primary": "openai/gpt-6-luna",
+      "fallbacks": []
+    },
+    "old": {
+      "fallbacks": [],
+      "primary": "ollama/qwen2.5:7b"
+    }
+  }
+]

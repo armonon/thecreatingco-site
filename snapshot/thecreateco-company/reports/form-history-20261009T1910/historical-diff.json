@@ -1,0 +1,50 @@
+{
+  "observed_at": "2026-10-09T19:11:12.776833+00:00",
+  "source": "/Users/agentsattari/thecreateco-company/reports/form-handoff-20261008T1210/history-traversal.json",
+  "source_sha256": "73f903a62b3cc8fcc8824b5a4a238269262d0cd3cf920009ecdbdee35f7bdae7",
+  "historical_undoSteps": 2,
+  "historical_step_count": 2,
+  "adjacent_step_differences": [
+    {
+      "path": "/checksum",
+      "before": "fnv1a128-7f4c8b7ffe5ca757aeb5441eafc7856d",
+      "after": "fnv1a128-1144a2745375df4a4740db2f564e2808"
+    },
+    {
+      "path": "/revisionId",
+      "before": "revision-0uym5qd",
+      "after": "revision-13ludac"
+    },
+    {
+      "path": "/updatedAt",
+      "before": 1791462236855,
+      "after": 1791462239987
+    },
+    {
+      "path": "/workspaces/cad/updatedAt",
+      "before": 1791462236855,
+      "after": 1791462239987
+    },
+    {
+      "path": "/workspaces/fabric/data/updatedAt",
+      "before": "2026-10-08T12:23:56.855Z",
+      "after": "2026-10-08T12:23:59.987Z"
+    },
+    {
+      "path": "/workspaces/fabric/updatedAt",
+      "before": 1791462236855,
+      "after": 1791462239987
+    },
+    {
+      "path": "/workspaces/scene/data/scene/0/keyframes",
+      "before_length": 1,
+      "after_length": 0
+    },
+    {
+      "path": "/workspaces/scene/updatedAt",
+      "before": 1791462231739,
+      "after": 1791462231077
+    }
+  ],
+  "limitation": "Historical artifact analysis, not fresh browser reproduction; root cause remains unconfirmed."
+}

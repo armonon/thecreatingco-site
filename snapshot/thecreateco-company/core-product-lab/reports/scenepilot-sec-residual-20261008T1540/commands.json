@@ -1,0 +1,135 @@
+[
+  {
+    "name": "environment",
+    "command": [
+      "sh",
+      "-c",
+      "git rev-parse HEAD; git status --short; node --version; npm --version; sw_vers; df -k ."
+    ],
+    "exit_code": 0,
+    "observed_at": "2026-10-08T15:40:58.702347+00:00"
+  },
+  {
+    "name": "audit-full",
+    "command": [
+      "npm",
+      "audit",
+      "--json"
+    ],
+    "exit_code": 1,
+    "observed_at": "2026-10-08T15:41:00.352522+00:00"
+  },
+  {
+    "name": "audit-production",
+    "command": [
+      "npm",
+      "audit",
+      "--omit=dev",
+      "--json"
+    ],
+    "exit_code": 0,
+    "observed_at": "2026-10-08T15:41:00.784412+00:00"
+  },
+  {
+    "name": "dependency-paths",
+    "command": [
+      "npm",
+      "ls",
+      "braces",
+      "sprintf-js",
+      "micromatch",
+      "roarr",
+      "--all",
+      "--json"
+    ],
+    "exit_code": 0,
+    "observed_at": "2026-10-08T15:41:01.071723+00:00"
+  },
+  {
+    "name": "registry-braces",
+    "command": [
+      "npm",
+      "view",
+      "braces",
+      "version",
+      "--json"
+    ],
+    "exit_code": 0,
+    "observed_at": "2026-10-08T15:41:01.402232+00:00"
+  },
+  {
+    "name": "registry-sprintf",
+    "command": [
+      "npm",
+      "view",
+      "sprintf-js",
+      "version",
+      "--json"
+    ],
+    "exit_code": 0,
+    "observed_at": "2026-10-08T15:41:01.647960+00:00"
+  },
+  {
+    "name": "scoped-build",
+    "command": [
+      "node_modules/.bin/esbuild",
+      "electron/main.js",
+      "--bundle",
+      "--platform=node",
+      "--format=esm",
+      "--external:electron",
+      "--outfile=/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-sec-residual-20261008T1540/main.bundle.mjs",
+      "--metafile=/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-sec-residual-20261008T1540/main.metafile.json"
+    ],
+    "exit_code": 0,
+    "observed_at": "2026-10-08T15:41:43.720846+00:00"
+  },
+  {
+    "name": "golden-components",
+    "command": [
+      "node",
+      "--experimental-strip-types",
+      "--test",
+      "tests/project-store.test.mjs",
+      "tests/release-persistence.test.mjs",
+      "tests/autocut-export.test.mjs",
+      "tests/composition-editing.test.mjs",
+      "tests/composition-audio.test.mjs"
+    ],
+    "exit_code": 0,
+    "observed_at": "2026-10-08T15:41:44.419049+00:00"
+  },
+  {
+    "name": "renderer-build",
+    "command": [
+      "node_modules/.bin/esbuild",
+      "desktop/renderer.tsx",
+      "--bundle",
+      "--platform=browser",
+      "--format=esm",
+      "--loader:.png=file",
+      "--loader:.svg=file",
+      "--outdir=/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-sec-residual-20261008T1540/renderer-build",
+      "--metafile=/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-sec-residual-20261008T1540/renderer.metafile.json"
+    ],
+    "exit_code": 1,
+    "observed_at": "2026-10-08T15:42:14.394471+00:00"
+  },
+  {
+    "name": "renderer-build-style",
+    "command": [
+      "node_modules/.bin/esbuild",
+      "desktop/renderer.tsx",
+      "--bundle",
+      "--platform=browser",
+      "--format=esm",
+      "--loader:.png=file",
+      "--loader:.svg=file",
+      "--outdir=/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-sec-residual-20261008T1540/renderer-build",
+      "--metafile=/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-sec-residual-20261008T1540/renderer.metafile.json",
+      "--conditions=style"
+    ],
+    "exit_code": 0,
+    "observed_at": "2026-10-08T15:42:23.515864+00:00"
+  }
+]

@@ -1,0 +1,59 @@
+{
+  "task_id": "PROGRAM18-POCKET-QUALIFY-001",
+  "observed_at": "2026-10-09T13:16:08.323Z",
+  "owner": "company-director-20261009T1310",
+  "source": {
+    "worktree": "/Users/agentsattari/code/company-worktrees/pocket-persistence-20261007",
+    "sha": "4bd196d65c7fd56f5de038179978e3eae47ab6b7",
+    "clean_at_end": true,
+    "files": {
+      "src/labs/pocket/PocketPage.jsx": "71f4abfbca53648ac509ea851723975f2640a153a60f4389b7be906fcb2061e2",
+      "src/labs/pocket/pocketPattern.js": "5032a6cb1381c8d60ca0d1225dc0246d9deade75806125d48a04d8f2eb64f331",
+      "scripts/pocket-persistence-check.mjs": "df2fe786d4df40bff4780d9aba734aba7583051782e95223b83460398e8b621f"
+    }
+  },
+  "artifact": {
+    "path": "/Users/agentsattari/code/company-worktrees/pocket-persistence-20261007/dist",
+    "entry": "studio/pocket.html",
+    "pocket_chunk": "assets/PocketPage-Ch1W27DA.js",
+    "pocket_chunk_sha256": "7bde1dba7dd33746b079d88b0e09c17ffe55172c6d51dbf031fa4c6c993b5f78",
+    "provenance": "UNVERIFIED: build output has no source map or recorded dist/source hash attestation linking this bundle byte-for-byte to the exact source tree. The chunk was inspected for this repair's UI text/controls, but new browser evidence remains scoped to the existing local dist artifact, not exact-source qualification."
+  },
+  "environment": {
+    "os": "macOS arm64 (local machine)",
+    "node": "v26.9.0",
+    "playwright_module_version": "1.63.0 (already present in npm npx cache; no install/download)",
+    "browser": "Chromium for Testing 153.0.8010.12 (Playwright persistent context)",
+    "server": "report-local Python static server, 127.0.0.1:4188; /studio/pocket mapped to dist/studio/pocket.html",
+    "profile_scope": "fresh disposable persistent profiles; local only; no account or production data"
+  },
+  "results": {
+    "unchanged_existing_harness": { "status": "PASS", "report": "chromium-baseline/report.json", "checks_passed": 5, "page_errors": 0, "phone_width_390_horizontal_overflow": false, "wav_sha256": "89c01fec3e0eed641c2c8766772e8a6469e11c6bf85c05476e037cc0b8376a1d" },
+    "actual_storage_quota_pressure": { "status": "PASS", "report": "quota-pressure.json", "successful_filler_ascii_chars": 5210112, "tail_chars": 28928, "quota_error": "QuotaExceededError", "save_error_visible": true, "current_name_edit_retained": "New under pressure", "original_library_and_draft_byte_identical": true, "page_errors": 0, "library_sha256": "1649901683a06088a835e8bab1c3cefb72f1719c5367263b533197a80bae48aa", "draft_sha256": "b029c264c65b1e6e5d05184e837fb4efa8b54969a5c4ce2c9b83d4d24d1a5071" }
+  },
+  "browser_matrix": {
+    "chromium_153": "EXERCISED as existing local build artifact",
+    "chrome_stable": "Installed, not separately exercised",
+    "safari": "Application installed, not exercised; WebKit automation driver not present in Playwright cache",
+    "firefox": "Not installed/present in inspected Playwright browser cache; unverified"
+  },
+  "commands": [
+    { "at": "2026-10-09T13:11:55Z", "command": "python3 -m http.server 4188 --bind 127.0.0.1 --directory <worktree>/dist; curl -I http://127.0.0.1:4188/studio/pocket.html", "exit": 0, "note": "HTTP server's plain static route returned 404 for harness route /studio/pocket; diagnostic only, no app result." },
+    { "at": "2026-10-09T13:11:58Z", "command": "PLAYWRIGHT_PATH=<existing cached playwright/index.mjs> POCKET_REPORT_DIR=<report>/chromium-baseline node scripts/pocket-persistence-check.mjs http://127.0.0.1:4188", "exit": 1, "note": "Expected static-route 404 prevented the harness from reaching the app; retained as a failed harness setup attempt." },
+    { "at": "2026-10-09T13:12:43Z", "command": "PLAYWRIGHT_PATH=<existing cached playwright/index.mjs> POCKET_REPORT_DIR=<report>/chromium-baseline node scripts/pocket-persistence-check.mjs http://127.0.0.1:4188", "exit": 0, "note": "After report-local server mapped /studio/pocket to the existing built entry; five checks pass. No product source/harness edits." },
+    { "at": "2026-10-09T13:13:25Z", "command": "node <report>/quota-pressure.mjs", "exit": 1, "note": "Actual pressure induced the expected save failure, but first assertion queried role=alert for status text; retained screenshot demonstrates visible quota error. Instrumentation selector corrected to role=status." },
+    { "at": "2026-10-09T13:13:44Z", "command": "node <report>/quota-pressure.mjs", "exit": 1, "note": "Same assertion-selector mismatch; app save failure still visible. Screenshot preserved." },
+    { "at": "2026-10-09T13:14:25Z", "command": "node <report>/quota-pressure.mjs", "exit": 0, "note": "Correct role=status selector; actual quota failure shown; byte identity verified." },
+    { "at": "2026-10-09T13:16:03Z", "command": "node <report>/quota-pressure.mjs", "exit": 1, "note": "Connection refused because the report-local server had been deliberately stopped after the first successful runs; restarted server and reran." },
+    { "at": "2026-10-09T13:16:08Z", "command": "node <report>/quota-pressure.mjs", "exit": 0, "note": "Final quota rerun explicitly asserted current name edit retained in addition to save failure and byte-identity checks." },
+    { "at": "2026-10-09T13:14:25Z", "command": "git -C <worktree> status --porcelain=v1", "exit": 0, "note": "No product worktree changes." }
+  ],
+  "unverified": [
+    "Exact source-to-existing-dist correspondence; no fresh build run because dependencies were absent locally and installation/download was disallowed.",
+    "Firefox and Safari/WebKit matrix, physical/mobile devices, hosted stack/live provenance and required PR checks.",
+    "Interrupted process/write recovery; real quota exhaustion was exercised, but abrupt termination during/after a write was not.",
+    "Broader performance/stress budgets and accessibility/assistive-technology qualification (beyond existing role-based interactions and 390px overflow check).",
+    "Physical audio, production persistence, deployment and release qualification."
+  ],
+  "status_recommendation": "BLOCKED"
+}

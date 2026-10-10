@@ -1,0 +1,12 @@
+{
+  "product_id": "luma",
+  "release_readiness": "Unqualified: reviewed standalone CI/lint repair772f082 pushed PR6;1374 tests pass/10skip, types/lint/three builds pass. Exact-head Actions jobs did not start due billing/spending. Synthetic CPU PNG export RGB discrepancy max7 confirmed versus unchanged imported bitmap; full save/close/reopen/native/live qualification incomplete.",
+  "observed_at": "2026-10-08T02:08:12.090950+00:00",
+  "verification_level": "LOCAL_REVIEWED_CI_REPAIR_AND_PARTIAL_BROWSER_EVIDENCE",
+  "known_bugs": [
+    "CPU PNG export changes unedited identity-transform sRGB raster: max RGB7, mean0.369613; alpha exact. Source decode and imported bitmap exact; output-stage cause unresolved.",
+    "Previous sibling-contract and image lint blockers repaired in PR6; not merged/deployed.",
+    "Save-download exploratory harness timed out; not yet attributed to product."
+  ],
+  "next_milestone": "Respect new first-wave priority; later reproduce/export-color root cause, instrument save/download timeout, complete golden workflow, restore exact-head CI via account admin, qualify stack and native/live source."
+}

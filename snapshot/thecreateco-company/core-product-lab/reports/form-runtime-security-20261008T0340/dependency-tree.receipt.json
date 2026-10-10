@@ -1,0 +1,21 @@
+{
+  "command": [
+    "npm",
+    "ls",
+    "image-size",
+    "sharp",
+    "undici",
+    "braces",
+    "brace-expansion",
+    "miniflare",
+    "wrangler",
+    "vinext",
+    "--all"
+  ],
+  "cwd": "/Users/agentsattari/code/worktrees/form-runtime-security-20261008T0340",
+  "started_at": "2026-10-08T03:41:05.860724+00:00",
+  "ended_at": "2026-10-08T03:41:06.277220+00:00",
+  "exit_code": 0,
+  "platform": "Darwin-25.2.0-arm64-arm-64bit-Mach-O",
+  "source_sha": "1e7f6d1c84a6c956ece3cfe6f74b665208bf069c"
+}

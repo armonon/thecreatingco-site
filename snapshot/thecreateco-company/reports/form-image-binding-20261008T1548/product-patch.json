@@ -1,0 +1,11 @@
+{
+  "product_id": "form",
+  "worker_image_binding_checkpoint": {
+    "observed_at": "2026-10-08T15:49:16.315027+00:00",
+    "source_sha": "be1f7272c5689d6401194d643fa3eb09a2b0b73b",
+    "status": "BLOCKED",
+    "reason": "Workspace volume free170614784bytes; isolated repair/build verification deferred. Existing R2/static Fetcher mismatch remains.",
+    "evidence": "reports/form-image-binding-20261008T1548/README.md",
+    "next_action": "Restore qualified build capacity; requeue same task, isolate repair, test actual Worker and R2 CRUD, independent OpenAI review and normal PR/CI gates."
+  }
+}

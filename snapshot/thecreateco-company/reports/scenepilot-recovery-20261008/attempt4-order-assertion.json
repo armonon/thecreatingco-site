@@ -1,0 +1,28 @@
+{
+  "source": "a47417bc4b3390bc30697cc2b7d3d573ad14e4d6",
+  "profile": "/Users/agentsattari/.openclaw/tmp/sp-recovery-20261008-A0AHGi",
+  "startedAt": "2026-10-08T06:14:38.893Z",
+  "checks": [
+    {
+      "name": "Real unsaved added track journals before SIGKILL",
+      "status": "PASS",
+      "pid": 79930,
+      "journalPath": "/Users/agentsattari/.openclaw/tmp/sp-recovery-20261008-A0AHGi/project-journals/document--Users-agentsattari--openclaw-tmp-sp-recovery-20261008-A0AHGi-documents-project-scenepilot-/1791440091873-d9c6fe0c-1c6d-4ac5-9e52-c7a6957c40b6.scenepilot.json",
+      "savedTracks": 2,
+      "journalTracks": 3
+    },
+    {
+      "name": "Actual same-profile fresh process disk recovery UI restores unsaved edit and project structure",
+      "status": "PASS"
+    }
+  ],
+  "limits": [
+    "Development Electron renderer, not signed/packaged build",
+    "Native dialog paths supplied by harness; actual OS chooser unverified",
+    "No full golden or platform qualification"
+  ],
+  "errors": [],
+  "status": "FAIL",
+  "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n... Skipped lines\n\n  [\n    {\n-     id: 'media-046a556eadda5a1aee197a1c',\n-     kind: 'video',\n-     name: 'sp-golden-main-30fps.mp4'\n-   },\n-   {\n      id: 'media-63a566f5c5f0db370038a4c4',\n      kind: 'video',\n      name: 'sp-golden-broll-24fps.mp4'\n    },\n    {\n...\n    },\n+   {\n+     id: 'media-046a556eadda5a1aee197a1c',\n+     kind: 'video',\n+     name: 'sp-golden-main-30fps.mp4'\n+   }\n  ]\n\n    at compare (file:///Users/agentsattari/thecreateco-company/reports/scenepilot-recovery-20261008/recovery-session.mjs:24:90)\n    at file:///Users/agentsattari/thecreateco-company/reports/scenepilot-recovery-20261008/recovery-session.mjs:50:41",
+  "finishedAt": "2026-10-08T06:14:56.483Z"
+}

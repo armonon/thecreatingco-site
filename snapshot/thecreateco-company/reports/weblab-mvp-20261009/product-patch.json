@@ -1,0 +1,23 @@
+{
+  "product_id": "weblab",
+  "status": "DRAFT_PREVIEW_DEPLOYED_PR_OPEN",
+  "maturity": "ALPHA",
+  "release_readiness": "Separate Netlify draft preview deployed from pushed commit 808cd644d6e7fa88d7aad1d826ff5e48a6c2e5af; draft PR #1 remains open. Local build, 6/6 tests, 0 production audit advisories, Netlify Dev UI workflow, deployed static/function smoke and SSRF rejection passed. No production domain changed. Hosted browser responsive/axe checks are unavailable; no GitHub Actions workflow or hosted CI result.",
+  "major_missing_features": [
+    "No multi-page crawl or sitemap support.",
+    "No form submission/validation, authenticated-route checks, interactive JavaScript behavior, or automatic fixes.",
+    "No full-page performance/Core Web Vitals or cross-browser/device release qualification.",
+    "No hosted browser QA in the Netlify function; responsive/accessibility results for audited sites are explicitly unverified there.",
+    "No GitHub Actions workflow or required hosted checks; draft PR #1 remains open, unmerged. Netlify preview is not production."
+  ],
+  "next_milestone": "Add an independent reproducible CI gate and review draft PR #1. Address/triage the verified live-site accessibility findings. Add durable abuse controls before broad public availability; qualify supported browsers and runtime limits before any production release.",
+  "evidence_sources": [
+    "/Users/agentsattari/thecreateco-company/reports/weblab-mvp-20261009/README.md",
+    "/Users/agentsattari/thecreateco-company/reports/weblab-mvp-20261009/live-site-check.json",
+    "https://github.com/armonon/weblab/pull/1",
+    "https://6ac90820c15d9115073c0953--weblab-preview-tcc.netlify.app"
+  ],
+  "observed_at": "2026-10-09T15:32:00Z",
+  "verification_level": "LOCAL_GATES_NETLIFY_DRAFT_LIVE_SMOKE",
+  "evidence_freshness": "Exact source commit 808cd644d6e7fa88d7aad1d826ff5e48a6c2e5af verified locally and as Netlify draft preview 2026-10-09; hosted GitHub CI and browser auditing remain unverified."
+}

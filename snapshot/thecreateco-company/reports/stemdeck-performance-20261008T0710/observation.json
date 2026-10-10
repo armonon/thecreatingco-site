@@ -1,0 +1,42 @@
+{
+  "observed_at": "2026-10-08T07:12:04.984750+00:00",
+  "source_sha": "6bad0edaf198d80d44c9aa02c3e65970fe7d9148",
+  "source_checkout": "/Users/agentsattari/code/core-product-lab/stemdeck-archive-webkit",
+  "source_dirty": false,
+  "host": "Darwin-25.2.0-arm64-arm-64bit-Mach-O",
+  "machine": "arm64",
+  "node": "v22.23.2",
+  "hashes": {
+    "scripts/run-windowed-soak.mjs": "da2028eb15298c48a0ed74c7d321f515615d8ba2669df42539d60925e203ff83",
+    "scripts/windowed-replay-qa.html": "b65096e78379b71f72a264a967f4c7d19cee40fcc465cdeeac8e52486db43033",
+    "scripts/recording-preflight.mjs": "7a219eff91beb5170edc29fd6ccffe82d3a229ea71dcfea25a19fcb7b927ebb7",
+    "src/utils/windowedSource.test.js": "4d19ceed88f874a5ffb100c6b6b4a271c2e11abc357599cfa3186c7ba776117f",
+    "src/utils/performanceClock.test.js": "f726449bfb749ffba544d659c08a915412819867eb79fd3fe16e3cfc913ceffd",
+    "src/utils/sourceCapture.soak.test.js": "1f1d6206cd9e1a9185ce53c7e900b47e266ceacfb2b81b97d701de7763be132b",
+    "scripts/fixtures/window-source.mp3": "44b301f9390949ec836d6aadc381c9776348f86f3c3f120965c0f869fe6e34c7"
+  },
+  "director_model": "openai/gpt-6.1-sol",
+  "actual_fallback": null,
+  "review_models_used": [],
+  "soak_exit": 1,
+  "capture_started": false,
+  "disk_preflight": {
+    "seconds": 120,
+    "sampleRate": 48000,
+    "channels": 10,
+    "copies": 3,
+    "recordingBytes": 691200000,
+    "reserveBytes": 2147483648,
+    "requiredBytes": 2838683648,
+    "path": "/Users/agentsattari/thecreateco-company/reports/stemdeck-performance-20261008T0710/browser",
+    "availableBytes": 1229836288,
+    "pass": false,
+    "note": "OS capacity check, not a browser quota reservation. Recheck browser quota and target volume before physical recording."
+  },
+  "targeted_unit_exit": 0,
+  "targeted_test_files": 3,
+  "targeted_tests_passed": 21,
+  "full_normal_heavy_profiles": "UNVERIFIED",
+  "physical_30_60_120_min": "BLOCKED: no authorized physical capture/equipment session in this scheduled run",
+  "runtime_cpu_rss_heap_swap_drift": "UNMEASURED"
+}

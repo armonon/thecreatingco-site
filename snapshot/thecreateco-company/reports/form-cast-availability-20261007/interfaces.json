@@ -1,0 +1,1250 @@
+[
+  {
+    "id": "form",
+    "url": "https://form.thecreatingco.com/studio",
+    "observed_at": "2026-10-08T03:05:52.134Z",
+    "scope": "Read-only rendered public interface; not workflow qualification",
+    "browser": "153.0.8010.12",
+    "status": "RENDERED_NOT_WORKFLOW_QUALIFIED",
+    "render_probe": {
+      "tag": "BUTTON",
+      "role": null,
+      "label": "Back",
+      "width": 28,
+      "height": 28
+    },
+    "http_status": 200,
+    "final_url": "https://form.thecreatingco.com/studio",
+    "title": "Form Studio — Web Editor",
+    "visible_text": "F\nUNTITLED.FORM •\nModel\nSketch\nDocument\nFabric\nAnimation\nAnimate model\nWorkspace\nShare\nSave\nSigned out — saving to this device only.\nFORM STUDIO\nStart Center\nStart\nCommands\nGuides\nShortcuts\n×\nDESKTOP-FIRST · LOCAL BY DEFAULT\nBuild the idea. Keep the precision.\n\nStart with an original procedural recipe, or move directly into sketching, solid modeling, documentation or garment simulation.\n\nStart sketching\nOpen a project\nTake the 60-second tour\n01\nPrecision CAD\nSketch → constrain → exact solid → drawing\n02\n3D Studio\nModel → sculpt → shade → render\n03\nGarment Studio\nPattern → seam → avatar → simulate\nProfessional starters\nEvery item is generated locally from a Form Studio original recipe.\n8 VERIFIED RECIPES\nENGINEERING\nBlank precision part\n\nA clean millimeter document for constrained mechanical work.\n\nEmpty exact-CAD workspace\n◆ Form Studio original\nENGINEERING\nMounting bracket\n\nEditable width, height, depth, wall and clearance rules.\n\nParametric component + drawing data\n◆ Form Studio original\nENGINEERING\nBolt flange\n\nA production-minded flange with configurable fastener pattern.\n\nExact solid + hole pattern\n◆ Form Studio original\nPRODUCT\nSmart screw\n\nTrue-thread-ready fastener with mates and manufacturing metadata.\n\nReusable hardware component\n◆ Form Studio original\nPRODUCT\nParametric buckle\n\nOne-click editable buckle with mount behavior and clearances.\n\nEditable buckle system\n◆ Form Studio original\nJEWELRY\nLinked necklace\n\nA bound chain whose count, span and drop regenerate together.\n\n42-link responsive necklace\n◆ Form Studio original\nGARMENT\nT-shirt fit block\n\nFront, back, sleeves and semantic seams on an adjustable avatar.\n\nSimulation-ready pattern\n◆ Form Studio original\nGARMENT\nDress fit block\n\nA clean fitted block for silhouette, ease and fabric iteration.\n\nSimulation-ready dress\n◆ Form Studio original\nSelect\nCreate\nSketch\nModify\nMeasure\nBody selection\nMove over geometry to preview selection\nShift adds/removes · Esc clears\nTECHNICAL\nSHADED\nRENDERED\nPERSP\nISO\nF\nB\nL\nR\nT\nB\nSELECT\nBody\nFace\nEdge\nMarquee\nDESIGN\n89\nX  Y\nPush / Pull\nSketch on face\nCreative copy\nApply\nGenerators\nUnder-constrained · 8 degrees of freedom\nX 0.00   Y 0.00   Z 0.00\nSnap\nOrtho\nGrid 5.00 mm\nWorld XY\n1 exact body\n−\n101%\n＋\nPROPERTIES\nRectangle\n1 object selected\nSelect a body to move it, or switch to Face to push and pull.\nShow all properties\nDIRECT MOVE\nbase-profile\nX\nY\nZ\nReset\nCORE\nSPECIALIST\nSection\nAppearance\nDesign\nGeometry\nConstraints\nManufacturing\nExact geometry\nOrigin X\nmm\nOrigin Y\nmm\nWidth\nmm\nHeight\nmm\nAngle\n°\n＋ Fix geometry\nNo driving constraints · dimensions remain editableDelete entity\nAppearance Studio\nLIVE PBR\nDesign colors\nSatin aluminum\nBrushed steel\nPolished brass\nSoft ceramic\nMatte polymer\nOptical glass\nFrosted glass\nBase color\nUse layer colors\nRoughness\n0.42\nMetal\n0.08\nClearcoat\n0.18\nTransmission\n0.00\nVolume haze\n0.00\nHaze variation\n0.00\nIOR\n1.450\nAbsorption distance\n500 mm\nSoft studio\nDaylight\nWorkshop\nDramatic\nExposure\n1.00\nGround shadow\nRender PNG\n\nPhysically based finish, lighting and exposure persist with exact geometry, undo/redo and shared revisions.\n\nDocument precision\nUnits\nMillimeters\nCentimeters\nMeters\nInches\nFeet\nPrecision\n0\n0.0\n0.00\n0.000\n0.0000\nGrid\nmm\n\nCanonical geometry: millimeters · display conversion is non-destructive.\n\nFeature history\nExtrude\nCut\nFuse\nIntersect\nRevolve\nLoft\nSweep\nShell\nOffset\nFillet\nChamfer\nDraft\nPattern\n\nBoolean features use the first bound source as the target. Shift-click ◆ while selecting other bodies to add tool sources.\n\n●\n1\nExtrude\nmm\n◇\n↑\n↓\n✕\nDepth 24\n●\n2\nFillet\nmm\n◆\n↑\n↓\n✕\nR3\n●\n3\nCut\nmm\n▣2\n↑\n↓\n✕\nExact cut\n▸ ROLLBACK\nRebuild · 3 active / 3 · rollback 3/3\nLayers\nModel\n◉\n◌\nHoles\n◉\n◌\nConstruction\n◉\n◌",
+    "controls": [
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Back",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "2 Model",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "1 Sketch",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "3 Document",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Fabric",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Animation",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Animate model",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": true
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": true
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Interface density comfortable",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Hide tool rail",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Hide inspector",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Show timeline",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Focus on canvas",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Search commands",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Share",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Save",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Start",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Commands",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Guides",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Shortcuts",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Close product center",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Start sketching",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Open a project",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Take the 60-second tour",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "01\nPrecision CAD\nSketch → constrain → exact solid → drawing",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "02\n3D Studio\nModel → sculpt → shade → render",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "03\nGarment Studio\nPattern → seam → avatar → simulate",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "ENGINEERING\nBlank precision part\n\nA clean millimeter document for constrained mechanical work.\n\nEmpty exact-CAD workspace\n◆ Form Studio original",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "ENGINEERING\nMounting bracket\n\nEditable width, height, depth, wall and clearance rules.\n\nParametric component + drawing data\n◆ Form Studio original",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "ENGINEERING\nBolt flange\n\nA production-minded flange with configurable fastener pattern.\n\nExact solid + hole pattern\n◆ Form Studio original",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "PRODUCT\nSmart screw\n\nTrue-thread-ready fastener with mates and manufacturing metadata.\n\nReusable hardware component\n◆ Form Studio original",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "PRODUCT\nParametric buckle\n\nOne-click editable buckle with mount behavior and clearances.\n\nEditable buckle system\n◆ Form Studio original",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "JEWELRY\nLinked necklace\n\nA bound chain whose count, span and drop regenerate together.\n\n42-link responsive necklace\n◆ Form Studio original",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "GARMENT\nT-shirt fit block\n\nFront, back, sleeves and semantic seams on an adjustable avatar.\n\nSimulation-ready pattern\n◆ Form Studio original",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "GARMENT\nDress fit block\n\nA clean fitted block for silhouette, ease and fabric iteration.\n\nSimulation-ready dress\n◆ Form Studio original",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Select",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Create",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Sketch",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Modify",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Measure",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "TECHNICAL",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "SHADED",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "RENDERED",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "PERSP",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "ISO",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "F",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "B",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "L",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "R",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "T",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "B",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Body",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Face",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Edge",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Marquee",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "DESIGN\n89",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Next action 1: Pick a face, drag, or type a distance",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Next action 2: Create a feature in the selected body's context",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Next action 3: Preserve the exact source and add deformers",
+        "disabled": false
+      },
+      {
+        "tag": "INPUT",
+        "type": null,
+        "label": "Precision CAD command",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Apply",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Snap",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Ortho",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Zoom out",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Zoom in",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Show all properties",
+        "disabled": false
+      },
+      {
+        "tag": "INPUT",
+        "type": null,
+        "label": "Body position X",
+        "disabled": false
+      },
+      {
+        "tag": "INPUT",
+        "type": null,
+        "label": "Body position Y",
+        "disabled": false
+      },
+      {
+        "tag": "INPUT",
+        "type": null,
+        "label": "Body position Z",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Reset",
+        "disabled": true
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "CORE",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "SPECIALIST",
+        "disabled": false
+      },
+      {
+        "tag": "SELECT",
+        "type": null,
+        "label": "Property section",
+        "disabled": false
+      },
+      {
+        "tag": "INPUT",
+        "type": null,
+        "label": "Origin X",
+        "disabled": false
+      },
+      {
+        "tag": "INPUT",
+        "type": null,
+        "label": "Origin Y",
+        "disabled": false
+      },
+      {
+        "tag": "INPUT",
+        "type": null,
+        "label": "Width",
+        "disabled": false
+      },
+      {
+        "tag": "INPUT",
+        "type": null,
+        "label": "Height",
+        "disabled": false
+      }
+    ],
+    "horizontal_overflow": false,
+    "phone_horizontal_overflow": false,
+    "page_errors": []
+  },
+  {
+    "id": "cast",
+    "url": "https://form-studio-review.netlify.app/studio",
+    "observed_at": "2026-10-08T03:06:02.864Z",
+    "scope": "Read-only rendered public interface; not workflow qualification",
+    "browser": "153.0.8010.12",
+    "status": "RENDERED_NOT_WORKFLOW_QUALIFIED",
+    "render_probe": {
+      "tag": "BUTTON",
+      "role": null,
+      "label": "Back",
+      "width": 28,
+      "height": 28
+    },
+    "http_status": 200,
+    "final_url": "https://form-studio-review.netlify.app/studio",
+    "title": "Form — 3D Studio",
+    "visible_text": "UNTITLED.FORM •\nModel\nSketch\nDocument\nFabric\nAnimation\nAnimate model\nWorkspace\nSave\nLOCAL\nFORM STUDIO\nStart Center\nStart\nCommands\nGuides\nShortcuts\n×\nDESKTOP-FIRST · LOCAL BY DEFAULT\nBuild the idea. Keep the precision.\n\nStart with an original procedural recipe, or move directly into sketching, solid modeling, documentation or garment simulation.\n\nStart sketching\nOpen a project\nTake the 60-second tour\n01\nPrecision CAD\nSketch → constrain → exact solid → drawing\n02\n3D Studio\nModel → sculpt → shade → render\n03\nGarment Studio\nPattern → seam → avatar → simulate\nProfessional starters\nEvery item is generated locally from a Form Studio original recipe.\n8 VERIFIED RECIPES\nENGINEERING\nBlank precision part\n\nA clean millimeter document for constrained mechanical work.\n\nEmpty exact-CAD workspace\n◆ Form Studio original\nENGINEERING\nMounting bracket\n\nEditable width, height, depth, wall and clearance rules.\n\nParametric component + drawing data\n◆ Form Studio original\nENGINEERING\nBolt flange\n\nA production-minded flange with configurable fastener pattern.\n\nExact solid + hole pattern\n◆ Form Studio original\nPRODUCT\nSmart screw\n\nTrue-thread-ready fastener with mates and manufacturing metadata.\n\nReusable hardware component\n◆ Form Studio original\nPRODUCT\nParametric buckle\n\nOne-click editable buckle with mount behavior and clearances.\n\nEditable buckle system\n◆ Form Studio original\nJEWELRY\nLinked necklace\n\nA bound chain whose count, span and drop regenerate together.\n\n42-link responsive necklace\n◆ Form Studio original\nGARMENT\nT-shirt fit block\n\nFront, back, sleeves and semantic seams on an adjustable avatar.\n\nSimulation-ready pattern\n◆ Form Studio original\nGARMENT\nDress fit block\n\nA clean fitted block for silhouette, ease and fabric iteration.\n\nSimulation-ready dress\n◆ Form Studio original\nSelect\nCreate\nImages\nCast\nSketch\nModify\nSculpt\nPaint\nMeasure\nBody selection\nMove over geometry to preview selection\nShift adds/removes · Esc clears\nTECHNICAL\nSHADED\nRENDERED\nPERSP\nISO\nF\nB\nL\nR\nT\nB\nSELECT\nBody\nFace\nEdge\nMarquee\nDESIGN\n89\nX  Y\nPush / Pull\nSketch on face\nCreative copy\nApply\nGenerators\nUnder-constrained · 8 degrees of freedom\nX 0.00   Y 0.00   Z 0.00\nSnap\nOrtho\nGrid 5.00 mm\nWorld XY\n1 exact body\n−\n101%\n＋\nPROPERTIES\nRectangle\n1 object selected\nSelect a body to move it, or switch to Face to push and pull.\nShow all properties\nDIRECT MOVE\nbase-profile\nX\nY\nZ\nReset\nCORE\nSPECIALIST\nSection\nAppearance\nDesign\nGeometry\nConstraints\nManufacturing\nExact geometry\nOrigin X\nmm\nOrigin Y\nmm\nWidth\nmm\nHeight\nmm\nAngle\n°\n＋ Fix geometry\nNo driving constraints · dimensions remain editableDelete entity\nAppearance Studio\nLIVE PBR\nDesign colors\nSatin aluminum\nBrushed steel\nPolished brass\nSoft ceramic\nMatte polymer\nOptical glass\nFrosted glass\nBase color\nUse layer colors\nRoughness\n0.42\nMetal\n0.08\nClearcoat\n0.18\nTransmission\n0.00\nVolume haze\n0.00\nHaze variation\n0.00\nIOR\n1.450\nAbsorption distance\n500 mm\nSoft studio\nDaylight\nWorkshop\nDramatic\nExposure\n1.00\nGround shadow\nRender PNG\n\nPhysically based finish, lighting and exposure persist with exact geometry, undo/redo and shared revisions.\n\nDocument precision\nUnits\nMillimeters\nCentimeters\nMeters\nInches\nFeet\nPrecision\n0\n0.0\n0.00\n0.000\n0.0000\nGrid\nmm\n\nCanonical geometry: millimeters · display conversion is non-destructive.\n\nFeature history\nExtrude\nCut\nFuse\nIntersect\nRevolve\nLoft\nSweep\nShell\nOffset\nFillet\nChamfer\nDraft\nPattern\n\nBoolean features use the first bound source as the target. Shift-click ◆ while selecting other bodies to add tool sources.\n\n●\n1\nExtrude\nmm\n◇\n↑\n↓\n✕\nDepth 24\n●\n2\nFillet\nmm\n◆\n↑\n↓\n✕\nR3\n●\n3\nCut\nmm\n▣2\n↑\n↓\n✕\nExact cut\n▸ ROLLBACK\nRebuild · 3 active / 3 · rollback 3/3\nLayers\nModel\n◉\n◌\nHoles\n◉\n◌\nConstruction\n◉\n◌\nForm now works offline on this device. Your projects stay on this device; the exact CAD (STEP) engine is saved for offline the first time you use it.\n×",
+    "controls": [
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Back",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "2 Model",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "1 Sketch",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "3 Document",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Fabric",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Animation",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Animate model",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": true
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": true
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Interface density comfortable",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Hide tool rail",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Hide inspector",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Show timeline",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Focus on canvas",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Search commands",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Save",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Start shared editing",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "thecreateco apps",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Start",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Commands",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Guides",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Shortcuts",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Close product center",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Start sketching",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Open a project",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Take the 60-second tour",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "01\nPrecision CAD\nSketch → constrain → exact solid → drawing",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "02\n3D Studio\nModel → sculpt → shade → render",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "03\nGarment Studio\nPattern → seam → avatar → simulate",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "ENGINEERING\nBlank precision part\n\nA clean millimeter document for constrained mechanical work.\n\nEmpty exact-CAD workspace\n◆ Form Studio original",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "ENGINEERING\nMounting bracket\n\nEditable width, height, depth, wall and clearance rules.\n\nParametric component + drawing data\n◆ Form Studio original",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "ENGINEERING\nBolt flange\n\nA production-minded flange with configurable fastener pattern.\n\nExact solid + hole pattern\n◆ Form Studio original",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "PRODUCT\nSmart screw\n\nTrue-thread-ready fastener with mates and manufacturing metadata.\n\nReusable hardware component\n◆ Form Studio original",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "PRODUCT\nParametric buckle\n\nOne-click editable buckle with mount behavior and clearances.\n\nEditable buckle system\n◆ Form Studio original",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "JEWELRY\nLinked necklace\n\nA bound chain whose count, span and drop regenerate together.\n\n42-link responsive necklace\n◆ Form Studio original",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "GARMENT\nT-shirt fit block\n\nFront, back, sleeves and semantic seams on an adjustable avatar.\n\nSimulation-ready pattern\n◆ Form Studio original",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "GARMENT\nDress fit block\n\nA clean fitted block for silhouette, ease and fabric iteration.\n\nSimulation-ready dress\n◆ Form Studio original",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Select",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Create",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Import image to Model",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Open Cast print and cast prep",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Sketch",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Modify",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Sculpt",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Paint mode",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Measure",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "TECHNICAL",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "SHADED",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "RENDERED",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "PERSP",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "ISO",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "F",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "B",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "L",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "R",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "T",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "label": "B",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Body",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Face",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Edge",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Marquee",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "DESIGN\n89",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Next action 1: Pick a face, drag, or type a distance",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Next action 2: Create a feature in the selected body's context",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Next action 3: Preserve the exact source and add deformers",
+        "disabled": false
+      },
+      {
+        "tag": "INPUT",
+        "type": null,
+        "label": "Precision CAD command",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Apply",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": null,
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Snap",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Ortho",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Zoom out",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Zoom in",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Show all properties",
+        "disabled": false
+      },
+      {
+        "tag": "INPUT",
+        "type": null,
+        "label": "Body position X",
+        "disabled": false
+      },
+      {
+        "tag": "INPUT",
+        "type": null,
+        "label": "Body position Y",
+        "disabled": false
+      },
+      {
+        "tag": "INPUT",
+        "type": null,
+        "label": "Body position Z",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Reset",
+        "disabled": true
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "CORE",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "SPECIALIST",
+        "disabled": false
+      },
+      {
+        "tag": "SELECT",
+        "type": null,
+        "label": "Property section",
+        "disabled": false
+      }
+    ],
+    "horizontal_overflow": false,
+    "phone_horizontal_overflow": false,
+    "page_errors": []
+  }
+]

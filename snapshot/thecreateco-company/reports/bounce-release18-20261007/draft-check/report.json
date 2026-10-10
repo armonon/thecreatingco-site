@@ -1,0 +1,44 @@
+{
+  "at": "2026-10-08T02:23:26.175Z",
+  "sourceSha": "8c8c2541e8d8861a53f102ef8b985e4e35950f3e",
+  "sourceDirty": false,
+  "browserName": "chromium",
+  "browser": "153.0.8010.12",
+  "profile": "/Users/agentsattari/.openclaw/tmp/bounce-workflow-msmnkf",
+  "checks": [
+    {
+      "name": "import, actual media playback and reorder",
+      "status": "PASS"
+    },
+    {
+      "name": "save, reload and restore browser library",
+      "status": "PASS"
+    },
+    {
+      "name": "portable export bytes and independent manifest parser",
+      "status": "PASS"
+    },
+    {
+      "name": "damaged archive cannot replace current queue",
+      "status": "PASS"
+    },
+    {
+      "name": "save snapshots metadata before async file reads; later edits stay unsaved",
+      "status": "PASS"
+    },
+    {
+      "name": "actual browser quota rejection preserves last saved library",
+      "status": "PASS"
+    },
+    {
+      "name": "published original musical studies load and play through actual audio element",
+      "status": "PASS"
+    },
+    {
+      "name": "phone controls fit viewport and keyboard labels remain present",
+      "status": "PASS"
+    }
+  ],
+  "pass": true,
+  "archive_sha256": "180fb5d85e350a8c1b009d3b1c2ab1433d1e74a58cc94611ade244b753fe04fd"
+}

@@ -1,0 +1,28 @@
+{
+  "source": "a47417bc4b3390bc30697cc2b7d3d573ad14e4d6",
+  "profile": "/Users/agentsattari/.openclaw/tmp/sp-recovery-20261008-AQ3siZ",
+  "startedAt": "2026-10-08T06:15:46.941Z",
+  "checks": [
+    {
+      "name": "Real unsaved added track journals before SIGKILL",
+      "status": "PASS",
+      "pid": 80111,
+      "journalPath": "/Users/agentsattari/.openclaw/tmp/sp-recovery-20261008-AQ3siZ/project-journals/document--Users-agentsattari--openclaw-tmp-sp-recovery-20261008-AQ3siZ-documents-project-scenepilot-/1791440159908-ec7d876f-f859-43c5-9a6e-2fa1d753ee2a.scenepilot.json",
+      "savedTracks": 2,
+      "journalTracks": 3
+    },
+    {
+      "name": "Actual same-profile fresh process disk recovery UI restores unsaved edit and project structure",
+      "status": "PASS"
+    }
+  ],
+  "limits": [
+    "Development Electron renderer, not signed/packaged build",
+    "Native dialog paths supplied by harness; actual OS chooser unverified",
+    "No full golden or platform qualification"
+  ],
+  "errors": [],
+  "status": "FAIL",
+  "error": "AssertionError [ERR_ASSERTION]: Serialized project identity differs\n+ actual - expected\n... Skipped lines\n\n  {\n    analysis: null,\n    assets: [\n      {\n        folderId: 'bin-audio',\n...\n        size: 938381,\n-       sourcePath: '/Users/agentsattari/.openclaw/tmp/sp-recovery-20261008-AQ3siZ/media/sp-golden-main-30fps.mp4'\n      },\n      {\n        folderId: 'bin-footage',\n        id: 'media-63a566f5c5f0db370038a4c4',\n        kind: 'video',\n\n    at compare (file:///Users/agentsattari/thecreateco-company/reports/scenepilot-recovery-20261008/recovery-session.mjs:25:9)\n    at file:///Users/agentsattari/thecreateco-company/reports/scenepilot-recovery-20261008/recovery-session.mjs:53:41",
+  "finishedAt": "2026-10-08T06:16:04.231Z"
+}

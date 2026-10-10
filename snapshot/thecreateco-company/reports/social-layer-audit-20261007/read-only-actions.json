@@ -1,0 +1,838 @@
+{
+  "observed_at": "2026-10-08T03:59:22.466Z",
+  "scope": "Only navigation and opening dialogs; no form submissions, follows, likes, posts, room creation, recordings or uploads",
+  "actions": [
+    {
+      "name": "Discover",
+      "url": "https://thecreatingco.com/community/network",
+      "surface": {
+        "headings": [
+          "Community",
+          "Start a conversation."
+        ],
+        "buttons": [
+          {
+            "name": "Home",
+            "disabled": false
+          },
+          {
+            "name": "Discover",
+            "disabled": false
+          },
+          {
+            "name": "Songs",
+            "disabled": false
+          },
+          {
+            "name": "Sessions",
+            "disabled": false
+          },
+          {
+            "name": "Pocket Studio",
+            "disabled": false
+          },
+          {
+            "name": "Create",
+            "disabled": false
+          },
+          {
+            "name": "Messages",
+            "disabled": false
+          },
+          {
+            "name": "Notifications",
+            "disabled": false
+          },
+          {
+            "name": "Saved",
+            "disabled": false
+          },
+          {
+            "name": "Profile",
+            "disabled": false
+          },
+          {
+            "name": "Settings",
+            "disabled": false
+          },
+          {
+            "name": "Sign in / join",
+            "disabled": false
+          },
+          {
+            "name": "Choose a name",
+            "disabled": false
+          },
+          {
+            "name": "Everyone",
+            "disabled": false
+          },
+          {
+            "name": "Following",
+            "disabled": false
+          },
+          {
+            "name": "+What’s on your mind?",
+            "disabled": false
+          }
+        ],
+        "inputs": [],
+        "dialogCount": 0,
+        "alerts": [],
+        "overflow": false
+      }
+    },
+    {
+      "name": "Songs",
+      "url": "https://thecreatingco.com/community/network?view=Songs",
+      "surface": {
+        "headings": [
+          "Songs"
+        ],
+        "buttons": [
+          {
+            "name": "Home",
+            "disabled": false
+          },
+          {
+            "name": "Discover",
+            "disabled": false
+          },
+          {
+            "name": "Songs",
+            "disabled": false
+          },
+          {
+            "name": "Sessions",
+            "disabled": false
+          },
+          {
+            "name": "Pocket Studio",
+            "disabled": false
+          },
+          {
+            "name": "Create",
+            "disabled": false
+          },
+          {
+            "name": "Messages",
+            "disabled": false
+          },
+          {
+            "name": "Notifications",
+            "disabled": false
+          },
+          {
+            "name": "Saved",
+            "disabled": false
+          },
+          {
+            "name": "Profile",
+            "disabled": false
+          },
+          {
+            "name": "Settings",
+            "disabled": false
+          },
+          {
+            "name": "Sign in / join",
+            "disabled": false
+          },
+          {
+            "name": "Choose a name",
+            "disabled": false
+          },
+          {
+            "name": "Upload a track or music video",
+            "disabled": false
+          },
+          {
+            "name": "All music",
+            "disabled": false
+          },
+          {
+            "name": "Tracks",
+            "disabled": false
+          },
+          {
+            "name": "Music videos",
+            "disabled": false
+          }
+        ],
+        "inputs": [
+          {
+            "tag": "INPUT",
+            "type": "search",
+            "label": "Title, artist, genre or caption",
+            "required": false,
+            "disabled": false
+          }
+        ],
+        "dialogCount": 0,
+        "alerts": [
+          "Loading posts…"
+        ],
+        "overflow": false
+      }
+    },
+    {
+      "name": "Create",
+      "url": "https://thecreatingco.com/community/network",
+      "surface": {
+        "headings": [
+          "Community"
+        ],
+        "buttons": [
+          {
+            "name": "Home",
+            "disabled": false
+          },
+          {
+            "name": "Discover",
+            "disabled": false
+          },
+          {
+            "name": "Songs",
+            "disabled": false
+          },
+          {
+            "name": "Sessions",
+            "disabled": false
+          },
+          {
+            "name": "Pocket Studio",
+            "disabled": false
+          },
+          {
+            "name": "Create",
+            "disabled": false
+          },
+          {
+            "name": "Messages",
+            "disabled": false
+          },
+          {
+            "name": "Notifications",
+            "disabled": false
+          },
+          {
+            "name": "Saved",
+            "disabled": false
+          },
+          {
+            "name": "Profile",
+            "disabled": false
+          },
+          {
+            "name": "Settings",
+            "disabled": false
+          },
+          {
+            "name": "Sign in / join",
+            "disabled": false
+          },
+          {
+            "name": "Choose a name",
+            "disabled": false
+          },
+          {
+            "name": "Everyone",
+            "disabled": false
+          },
+          {
+            "name": "Following",
+            "disabled": false
+          },
+          {
+            "name": "+What’s on your mind?",
+            "disabled": false
+          }
+        ],
+        "inputs": [],
+        "dialogCount": 0,
+        "alerts": [
+          "Loading posts…"
+        ],
+        "overflow": false
+      }
+    },
+    {
+      "name": "Messages",
+      "url": "https://thecreatingco.com/community/network?view=Messages",
+      "surface": {
+        "headings": [
+          "Messages",
+          "Start a conversation."
+        ],
+        "buttons": [
+          {
+            "name": "Home",
+            "disabled": false
+          },
+          {
+            "name": "Discover",
+            "disabled": false
+          },
+          {
+            "name": "Songs",
+            "disabled": false
+          },
+          {
+            "name": "Sessions",
+            "disabled": false
+          },
+          {
+            "name": "Pocket Studio",
+            "disabled": false
+          },
+          {
+            "name": "Create",
+            "disabled": false
+          },
+          {
+            "name": "Messages",
+            "disabled": false
+          },
+          {
+            "name": "Notifications",
+            "disabled": false
+          },
+          {
+            "name": "Saved",
+            "disabled": false
+          },
+          {
+            "name": "Profile",
+            "disabled": false
+          },
+          {
+            "name": "Settings",
+            "disabled": false
+          },
+          {
+            "name": "Sign in / join",
+            "disabled": false
+          },
+          {
+            "name": "Choose a name",
+            "disabled": false
+          }
+        ],
+        "inputs": [],
+        "dialogCount": 0,
+        "alerts": [],
+        "overflow": false
+      }
+    },
+    {
+      "name": "Notifications",
+      "url": "https://thecreatingco.com/community/network",
+      "surface": {
+        "headings": [
+          "Community",
+          "Start a conversation."
+        ],
+        "buttons": [
+          {
+            "name": "Home",
+            "disabled": false
+          },
+          {
+            "name": "Discover",
+            "disabled": false
+          },
+          {
+            "name": "Songs",
+            "disabled": false
+          },
+          {
+            "name": "Sessions",
+            "disabled": false
+          },
+          {
+            "name": "Pocket Studio",
+            "disabled": false
+          },
+          {
+            "name": "Create",
+            "disabled": false
+          },
+          {
+            "name": "Messages",
+            "disabled": false
+          },
+          {
+            "name": "Notifications",
+            "disabled": false
+          },
+          {
+            "name": "Saved",
+            "disabled": false
+          },
+          {
+            "name": "Profile",
+            "disabled": false
+          },
+          {
+            "name": "Settings",
+            "disabled": false
+          },
+          {
+            "name": "Sign in / join",
+            "disabled": false
+          },
+          {
+            "name": "Choose a name",
+            "disabled": false
+          },
+          {
+            "name": "Everyone",
+            "disabled": false
+          },
+          {
+            "name": "Following",
+            "disabled": false
+          },
+          {
+            "name": "+What’s on your mind?",
+            "disabled": false
+          }
+        ],
+        "inputs": [],
+        "dialogCount": 0,
+        "alerts": [],
+        "overflow": false
+      }
+    },
+    {
+      "name": "Saved",
+      "url": "https://thecreatingco.com/community/network",
+      "surface": {
+        "headings": [
+          "Community",
+          "Start a conversation."
+        ],
+        "buttons": [
+          {
+            "name": "Home",
+            "disabled": false
+          },
+          {
+            "name": "Discover",
+            "disabled": false
+          },
+          {
+            "name": "Songs",
+            "disabled": false
+          },
+          {
+            "name": "Sessions",
+            "disabled": false
+          },
+          {
+            "name": "Pocket Studio",
+            "disabled": false
+          },
+          {
+            "name": "Create",
+            "disabled": false
+          },
+          {
+            "name": "Messages",
+            "disabled": false
+          },
+          {
+            "name": "Notifications",
+            "disabled": false
+          },
+          {
+            "name": "Saved",
+            "disabled": false
+          },
+          {
+            "name": "Profile",
+            "disabled": false
+          },
+          {
+            "name": "Settings",
+            "disabled": false
+          },
+          {
+            "name": "Sign in / join",
+            "disabled": false
+          },
+          {
+            "name": "Choose a name",
+            "disabled": false
+          },
+          {
+            "name": "Everyone",
+            "disabled": false
+          },
+          {
+            "name": "Following",
+            "disabled": false
+          },
+          {
+            "name": "+What’s on your mind?",
+            "disabled": false
+          }
+        ],
+        "inputs": [],
+        "dialogCount": 0,
+        "alerts": [],
+        "overflow": false
+      }
+    },
+    {
+      "name": "Profile",
+      "url": "https://thecreatingco.com/community/network",
+      "surface": {
+        "headings": [
+          "Community",
+          "Start a conversation."
+        ],
+        "buttons": [
+          {
+            "name": "Home",
+            "disabled": false
+          },
+          {
+            "name": "Discover",
+            "disabled": false
+          },
+          {
+            "name": "Songs",
+            "disabled": false
+          },
+          {
+            "name": "Sessions",
+            "disabled": false
+          },
+          {
+            "name": "Pocket Studio",
+            "disabled": false
+          },
+          {
+            "name": "Create",
+            "disabled": false
+          },
+          {
+            "name": "Messages",
+            "disabled": false
+          },
+          {
+            "name": "Notifications",
+            "disabled": false
+          },
+          {
+            "name": "Saved",
+            "disabled": false
+          },
+          {
+            "name": "Profile",
+            "disabled": false
+          },
+          {
+            "name": "Settings",
+            "disabled": false
+          },
+          {
+            "name": "Sign in / join",
+            "disabled": false
+          },
+          {
+            "name": "Choose a name",
+            "disabled": false
+          },
+          {
+            "name": "Everyone",
+            "disabled": false
+          },
+          {
+            "name": "Following",
+            "disabled": false
+          },
+          {
+            "name": "+What’s on your mind?",
+            "disabled": false
+          }
+        ],
+        "inputs": [],
+        "dialogCount": 0,
+        "alerts": [],
+        "overflow": false
+      }
+    },
+    {
+      "name": "Settings",
+      "url": "https://thecreatingco.com/community/network",
+      "surface": {
+        "headings": [
+          "Community",
+          "Start a conversation."
+        ],
+        "buttons": [
+          {
+            "name": "Home",
+            "disabled": false
+          },
+          {
+            "name": "Discover",
+            "disabled": false
+          },
+          {
+            "name": "Songs",
+            "disabled": false
+          },
+          {
+            "name": "Sessions",
+            "disabled": false
+          },
+          {
+            "name": "Pocket Studio",
+            "disabled": false
+          },
+          {
+            "name": "Create",
+            "disabled": false
+          },
+          {
+            "name": "Messages",
+            "disabled": false
+          },
+          {
+            "name": "Notifications",
+            "disabled": false
+          },
+          {
+            "name": "Saved",
+            "disabled": false
+          },
+          {
+            "name": "Profile",
+            "disabled": false
+          },
+          {
+            "name": "Settings",
+            "disabled": false
+          },
+          {
+            "name": "Sign in / join",
+            "disabled": false
+          },
+          {
+            "name": "Choose a name",
+            "disabled": false
+          },
+          {
+            "name": "Everyone",
+            "disabled": false
+          },
+          {
+            "name": "Following",
+            "disabled": false
+          },
+          {
+            "name": "+What’s on your mind?",
+            "disabled": false
+          }
+        ],
+        "inputs": [],
+        "dialogCount": 0,
+        "alerts": [],
+        "overflow": false
+      }
+    },
+    {
+      "name": "Sign in / join",
+      "url": "https://thecreatingco.com/community/network",
+      "surface": {
+        "headings": [
+          "Community",
+          "Start a conversation."
+        ],
+        "buttons": [
+          {
+            "name": "Home",
+            "disabled": false
+          },
+          {
+            "name": "Discover",
+            "disabled": false
+          },
+          {
+            "name": "Songs",
+            "disabled": false
+          },
+          {
+            "name": "Sessions",
+            "disabled": false
+          },
+          {
+            "name": "Pocket Studio",
+            "disabled": false
+          },
+          {
+            "name": "Create",
+            "disabled": false
+          },
+          {
+            "name": "Messages",
+            "disabled": false
+          },
+          {
+            "name": "Notifications",
+            "disabled": false
+          },
+          {
+            "name": "Saved",
+            "disabled": false
+          },
+          {
+            "name": "Profile",
+            "disabled": false
+          },
+          {
+            "name": "Settings",
+            "disabled": false
+          },
+          {
+            "name": "Sign in / join",
+            "disabled": false
+          },
+          {
+            "name": "Choose a name",
+            "disabled": false
+          },
+          {
+            "name": "Everyone",
+            "disabled": false
+          },
+          {
+            "name": "Following",
+            "disabled": false
+          },
+          {
+            "name": "+What’s on your mind?",
+            "disabled": false
+          }
+        ],
+        "inputs": [],
+        "dialogCount": 0,
+        "alerts": [],
+        "overflow": false
+      }
+    },
+    {
+      "name": "Open discussion",
+      "url": "https://thecreatingco.com/community/network?post=60411e2f-3be7-4322-b21f-f4900c9b4878",
+      "surface": {
+        "headings": [
+          "The conversation",
+          "Discussion"
+        ],
+        "buttons": [
+          {
+            "name": "Home",
+            "disabled": false
+          },
+          {
+            "name": "Discover",
+            "disabled": false
+          },
+          {
+            "name": "Songs",
+            "disabled": false
+          },
+          {
+            "name": "Sessions",
+            "disabled": false
+          },
+          {
+            "name": "Pocket Studio",
+            "disabled": false
+          },
+          {
+            "name": "Create",
+            "disabled": false
+          },
+          {
+            "name": "Messages",
+            "disabled": false
+          },
+          {
+            "name": "Notifications",
+            "disabled": false
+          },
+          {
+            "name": "Saved",
+            "disabled": false
+          },
+          {
+            "name": "Profile",
+            "disabled": false
+          },
+          {
+            "name": "Settings",
+            "disabled": false
+          },
+          {
+            "name": "Sign in / join",
+            "disabled": false
+          },
+          {
+            "name": "Choose a name",
+            "disabled": false
+          },
+          {
+            "name": "Back to feed",
+            "disabled": false
+          },
+          {
+            "name": "View SmoothCracka11",
+            "disabled": false
+          },
+          {
+            "name": "SmoothCracka11@zionwilliamson · Guest · 10/7/2026",
+            "disabled": false
+          },
+          {
+            "name": "Like post",
+            "disabled": false
+          },
+          {
+            "name": "Open discussion",
+            "disabled": false
+          },
+          {
+            "name": "Repost",
+            "disabled": false
+          },
+          {
+            "name": "Save post",
+            "disabled": false
+          },
+          {
+            "name": "Send",
+            "disabled": false
+          }
+        ],
+        "inputs": [
+          {
+            "tag": "TEXTAREA",
+            "type": "textarea",
+            "label": "",
+            "required": true,
+            "disabled": false
+          }
+        ],
+        "dialogCount": 0,
+        "alerts": [],
+        "overflow": false
+      }
+    }
+  ],
+  "errors": [],
+  "browser": "154.0.8037.98"
+}

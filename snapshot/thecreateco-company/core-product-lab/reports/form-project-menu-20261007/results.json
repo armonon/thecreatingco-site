@@ -1,0 +1,28 @@
+{
+  "source_sha": "1e7f6d1c84a6c956ece3cfe6f74b665208bf069c",
+  "observed_at": "2026-10-08T03:03:52.214492+00:00",
+  "core_workflow": "PASS scoped menu-driven synthetic save/open/export",
+  "tests": {
+    "unit_passed": 1527,
+    "unit_total": 1527,
+    "budgets_passed": 15,
+    "budgets_total": 15,
+    "typecheck": "PASS",
+    "lint": "PASS",
+    "web_build": "PASS",
+    "desktop_frontend_build": "PASS",
+    "browser_variants": 24,
+    "production_advisories": 0
+  },
+  "platforms": "Chrome154/macOSarm64 softwareWebGL; fine/emulatedcoarse layouts only; native/physical/unexercised platforms UNVERIFIED",
+  "documentation": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-project-menu-20261007/README.md",
+  "critical_blockers": [
+    "Remote required CI billing/spending unavailable; full native/golden qualification remains UNVERIFIED"
+  ],
+  "deployment": {
+    "pr": "https://github.com/armonon/form-studio/pull/5",
+    "pushed": true,
+    "merged": false,
+    "deployed": false
+  }
+}

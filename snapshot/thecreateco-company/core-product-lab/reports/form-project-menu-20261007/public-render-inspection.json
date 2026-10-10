@@ -1,0 +1,61 @@
+[
+  {
+    "url": "https://form.thecreatingco.com/studio",
+    "status": 200,
+    "navError": null,
+    "dom": {
+      "url": "https://form.thecreatingco.com/studio",
+      "title": "Form Studio — Web Editor",
+      "ready": "complete",
+      "bodyStyle": "",
+      "bodyVisibility": "visible",
+      "bodyDisplay": "block",
+      "bodyRect": {
+        "w": 1440,
+        "h": 0
+      },
+      "bodyText": "F\nUNTITLED.FORM •\nModel\nSketch\nDocument\nFabric\nAnimation\nAnimate model\nWorkspace\nShare\nSave\nUnsaved changes\nFORM STUDIO\nStart Center\nStart\nCommands\nGuides\nShortcuts\n×\nDESKTOP-FIRST · LOCAL BY DEFAULT\nBuild the idea. Keep the precision.\n\nStart with an original procedural recipe, or move directly into sketching, solid modeling, documentation or garment simulation.\n\nStart sketching\nOpen a project\nTake the 60-second tour\n01\nPrecision CAD\nSketch → constrain → exact solid → drawing\n02\n3D Studio\nModel → sculpt → shade → render\n03\nGarment Studio\nPattern → seam → avatar → simulate\nProfessional starters\nEvery item is generated locally from a Form Studio original recipe.\n8 VERIFIED RECIPES\nENGINEERING\nBlank precision part\n\nA clean millimeter document for constrained mechanical work.\n\nEmpty exact-CAD workspace\n◆ Form Studio original\nENGINEERING\nMounting bracket\n\nEditable width, height, depth, wall and clearance rules.\n\nParametric component + drawing data\n◆ Form Studio original\nENGINEERING\nBolt flange\n\nA production-minded flange with configurable fastener pattern.\n\nExact solid + hole pattern\n◆ Form Studio original\nPRODUCT\nSmart screw\n\nTrue-thread-ready fastener with mates and manufacturing meta",
+      "html": "<html lang=\"en\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><link rel=\"stylesheet\" href=\"/assets/index-qi5uOJow.css\" data-rsc-css-href=\"/assets/index-qi5uOJow.css\" data-precedence=\"vite-rsc/importer-resources\"><link rel=\"modulepreload\" href=\"/assets/layout-segment-context-BejtcPDy.js\" crossorigin=\"\"><link rel=\"modulepreload\" href=\"/assets/rolldown-runtime-hePW80VL.js\" crossorigin=\"\"><link rel=\"modulepreload\" href=\"/assets/framework-BA71VGQ6.js\" crossorigin=\"\"><link rel=\"modulepreload\" href=\"/assets/index-BgbJKuXU.js\" crossorigin=\"\"><link rel=\"modulepreload\" href=\"/assets/client-only-B6ZQyI_6.js\" crossorigin=\"\"><title>Form Studio — Web Editor</title><meta name=\"description\" content=\"Open the Form precision CAD and garment design workspace.\"><meta property=\"og:title\" content=\"Form Studio — Make the exact thing you have in mind\"><meta property=\"og:description\" content=\"Precision CAD + garment design, made intuitive.\"><meta property=\"og:image\" content=\"https://form-3d-studio.armonon.chatgpt.site/og-marketing.png\"><meta property=\"og:image:width\" content=\"1728\"><meta property=\"og:image:height\" content=\"910\"><meta property=\"og:image:alt\" content=\"Form Studio precision CAD and garment design\"><meta name=\"twitter:card\" content=\"summary_large_image\"><meta name=\"twitter:title\" content=\"Form Studio — Make the exact thing you have in mind\"><meta name=\"twitter:description\" content=\"Precision CAD + garment design, made intuitive.\"><meta name=\"twitter:image\" content=\"https://form-3d-studio.armonon.chatgpt.site/og-marketing.png\"><script>self.__VINEXT_RSC_PARAMS__={}</script><script>self.__VINEXT_RSC_NAV__={\"pathname\":\"/studio\",\"searchParams\":[]}</script><link rel=\"modulepreload\" href=\"/assets/index-BgbJKuXU.js\">\n<link rel=\"preload\" href=\"/assets/_vinext_fonts/geist-8ac0455e797f/geist-ff2310f5.woff2\" as=\"font\" type=\"font/woff2\" crossorigin=\"\">\n<link rel=\"preload\" href=\"/assets/_vinext_fonts/geist-8ac0455e797f/geist-875ccdd4.woff2\" as=\"font\" type=\"font/woff2\" crossorigin=\"\">\n<link rel=\"preload\" href=\"/assets/_vinext_fonts/geist-8ac0455e797f/geist-52306abf.woff2\" as=\"font\" type=\"font/woff2\" crossorigin=\"\">\n<link rel=\"preload\" href=\"/assets/_vinext_fonts/geist-8ac0455e797f/geist-001175b1.woff2\" as=\"font\" type=\"font/woff2\" crossorigin=\"\">\n<link rel=\"preload\" href=\"/assets/_vinext_fonts/geist-8ac0455e797f/geist-98bbbccb.woff2\" as=\"font\" type=\"font/woff2\" crossorigin=\"\">\n<link rel=\"preload\" href=\"/assets/_vinext_fonts/geist-mono-00e989178794/geist-mono-f6b33328.woff2\" as=\"font\" type=\"font/woff2\" crossorigin=\"\">\n<link rel=\"preload\" href=\"/assets/_vinext_fonts/geist-mono-00e989178794/geist-mono-44e03052.woff2\" as=\"font\" type=\"font/woff2\" crossorigin=\"\">\n<link rel=\"preload\" href=\"/assets/_vinext_fonts/geist-mono-00e989178794/geist-mono-0638449e.woff2\" as=\"font\" type=\"font/woff2\" crossorigin=\"\">\n<link rel=\"preload\" href=\"/assets/_vinext_fonts/geist-mono-00e989178794/geist-mono-971fb274.woff2\" as=\"font\" type=\"font/woff2\" crossorigin=\"\">\n<link rel=\"preload\" href=\"/assets/_vinext_fonts/geist-mono-00e989178794/geist-mono-44745446.woff2\" as=\"font\" type=\"font/woff2\" crossorigin=\"\">\n<link rel=\"preload\" href=\"/assets/_vinext_fonts/geist-mono-00e989178794/geist-mono-013b2f2f.woff2\" as=\"font\" type=\"font/woff2\" crossorigin=\"\">\n<style data-vinext-fonts=\"\">/* cyrillic-ext */\n@font-face {\n  font-family: 'Geist';\n  font-style: normal;\n  font-weight: 100 900;\n  font-display: swap;\n  src: url(/assets/_vinext_fonts/geist-8ac0455e7",
+      "scripts": [
+        "self.__VINEXT_RSC_PARAMS__={}",
+        "self.__VINEXT_RSC_NAV__={\"pathname\":\"/studio\",\"searchParams\":[]}",
+        "import(\"/assets/index-BgbJKuXU.js\")",
+        "(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML=\"window.__CF$cv$params={r:'a471e4142ca2c8d2',t:'MTc5MTQy",
+        "self.__VINEXT_RSC_CHUNKS__=self.__VINEXT_RSC_CHUNKS__||[];self.__VINEXT_RSC_CHUNKS__.push(\"2:I[\\\"76327c99846e\\\",[],\\\"Children\\\",1]\\n3:I[\\\"eb507221cc96\\\",[],\\\"LayoutSegmentProvider\\\",1]\\n4:I[\\\"76327c99",
+        "self.__VINEXT_RSC_CHUNKS__=self.__VINEXT_RSC_CHUNKS__||[];self.__VINEXT_RSC_CHUNKS__.push(\"0:{\\\"__route\\\":\\\"route:/studio\\\",\\\"__interceptionContext\\\":null,\\\"__layoutIds\\\":[\\\"layout:/\\\"],\\\"__rootLayout",
+        "self.__VINEXT_RSC_CHUNKS__=self.__VINEXT_RSC_CHUNKS__||[];self.__VINEXT_RSC_CHUNKS__.push(\"1:[\\\"$\\\",\\\"$L6\\\",null,{\\\"fallback\\\":[\\\"$\\\",\\\"section\\\",null,{\\\"className\\\":\\\"cad-shell cad-skeleton\\\",\\\"aria-",
+        "self.__VINEXT_RSC_DONE__=true"
+      ]
+    },
+    "errors": [],
+    "failed": [],
+    "bad": []
+  },
+  {
+    "url": "https://form-studio-review.netlify.app/studio",
+    "status": 200,
+    "navError": null,
+    "dom": {
+      "url": "https://form-studio-review.netlify.app/studio",
+      "title": "Form — 3D Studio",
+      "ready": "complete",
+      "bodyStyle": "",
+      "bodyVisibility": "visible",
+      "bodyDisplay": "block",
+      "bodyRect": {
+        "w": 1440,
+        "h": 0
+      },
+      "bodyText": "UNTITLED.FORM •\nModel\nSketch\nDocument\nFabric\nAnimation\nAnimate model\nWorkspace\nSave\nLOCAL\nFORM STUDIO\nStart Center\nStart\nCommands\nGuides\nShortcuts\n×\nDESKTOP-FIRST · LOCAL BY DEFAULT\nBuild the idea. Keep the precision.\n\nStart with an original procedural recipe, or move directly into sketching, solid modeling, documentation or garment simulation.\n\nStart sketching\nOpen a project\nTake the 60-second tour\n01\nPrecision CAD\nSketch → constrain → exact solid → drawing\n02\n3D Studio\nModel → sculpt → shade → render\n03\nGarment Studio\nPattern → seam → avatar → simulate\nProfessional starters\nEvery item is generated locally from a Form Studio original recipe.\n8 VERIFIED RECIPES\nENGINEERING\nBlank precision part\n\nA clean millimeter document for constrained mechanical work.\n\nEmpty exact-CAD workspace\n◆ Form Studio original\nENGINEERING\nMounting bracket\n\nEditable width, height, depth, wall and clearance rules.\n\nParametric component + drawing data\n◆ Form Studio original\nENGINEERING\nBolt flange\n\nA production-minded flange with configurable fastener pattern.\n\nExact solid + hole pattern\n◆ Form Studio original\nPRODUCT\nSmart screw\n\nTrue-thread-ready fastener with mates and manufacturing metadata.\n\nReusable ha",
+      "html": "<html lang=\"en\"><head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, viewport-fit=cover\">\n    <meta name=\"theme-color\" content=\"#f5f6f8\">\n    <meta name=\"apple-mobile-web-app-capable\" content=\"yes\">\n    <meta name=\"apple-mobile-web-app-title\" content=\"Form\">\n    <meta name=\"apple-mobile-web-app-status-bar-style\" content=\"default\">\n    <title>Form — 3D Studio</title>\n    <link rel=\"manifest\" href=\"/manifest.webmanifest\">\n    <link rel=\"apple-touch-icon\" href=\"/icons/apple-touch-icon.png\">\n    <script src=\"/pwa.js\" defer=\"\"></script>\n    <script type=\"module\" crossorigin=\"\" src=\"/assets/index-B9UL47J0.js\"></script>\n    <link rel=\"modulepreload\" crossorigin=\"\" href=\"/assets/rolldown-runtime-hePW80VL.js\">\n    <link rel=\"modulepreload\" crossorigin=\"\" href=\"/assets/vendor-react-DHQQvKuQ.js\">\n    <link rel=\"modulepreload\" crossorigin=\"\" href=\"/assets/vendor-occt-Dhk5jspY.js\">\n    <link rel=\"modulepreload\" crossorigin=\"\" href=\"/assets/vendor-three-C-81tCF6.js\">\n    <link rel=\"modulepreload\" crossorigin=\"\" href=\"/assets/fabric-pattern-geometry-bMrvfBYa.js\">\n    <link rel=\"modulepreload\" crossorigin=\"\" href=\"/assets/fabric-engine-CaLnyFmB.js\">\n    <link rel=\"stylesheet\" crossorigin=\"\" href=\"/assets/index-BrTM-WzL.css\">\n  <style>.form-pwa-note{position:fixed;left:50%;top:14px;transform:translateX(-50%);z-index:2147483001;display:flex;gap:10px;align-items:center;max-width:calc(100vw - 24px);padding:9px 9px 9px 15px;border-radius:12px;background:#fff;color:#15181b;border:1px solid #dfe3ea;box-shadow:0 10px 30px #0002;font:13px/1.35 system-ui,sans-serif}.form-pwa-note button{border:0;border-radius:8px;padding:8px 12px;font:inherit;font-weight:600;cursor:pointer;background:#0c79d8;color:#fff}.form-pwa-note button.later{background:transparent;color:#15181b;padding:8px}</style><style id=\"tcc-suite-style\">tcc-suite-menu{display:inline-block;width:32px;height:32px;flex:none;align-self:center;color:inherit}.tcc-locker-offer{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);z-index:2147483000;display:flex;gap:10px;align-items:center;padding:10px 10px 10px 16px;border-radius:12px;background:#15181b;color:#f5f6f8;font:13px/1.3 system-ui,sans-serif;box-shadow:0 10px 30px #0004;max-width:calc(100vw - 32px)}.tcc-locker-offer span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.tcc-locker-offer button{border:0;border-radius:8px;padding:8px 12px;font:inherit;cursor:pointer;background:#d7ff78;color:#111}.tcc-locker-offer button+button{background:transparent;color:#f5f6f8;padding:8px}</style><script src=\"https://thecreatingco.com/suite/v1/suite.js\" defer=\"\" data-app=\"form\"></script></head>\n  <body>\n    <div id=\"root\"><section class=\"cad-shell cad-view-model ui-timeline-collapsed\" data-ui-density=\"comfortable\" style=\"--cad-inspector-width: 370px; --cad-timeline-height: 0px;\"><header class=\"cad-topbar\"><div class=\"cad-brand\"><button aria-label=\"Back\" title=\"Start center\"><svg class=\"ui-icon\" width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" aria-hidden=\"true\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"m15 18-6-6 6-6\"></path></svg></button><svg class=\"form-brand-logo brand-mark\" width=\"32\" height=\"32\" viewBox=\"0 0 40 40\" role=\"img\" aria-label=\"Form Studio\" focusable=\"false\"><rect width=\"40\" height=\"40\" rx=\"11\" fill=\"#2954b6\"></rect><path d=\"M10 10h21l-4 5H16v6h10l-4 5h-6v7l-6-4Z\" fill=\"#fff\"></path><path d=\"m10 10 5-4h20l-4 4Z\" fill=",
+      "scripts": [
+        "https://form-studio-review.netlify.app/pwa.js",
+        "https://form-studio-review.netlify.app/assets/index-B9UL47J0.js",
+        "https://thecreatingco.com/suite/v1/suite.js"
+      ]
+    },
+    "errors": [],
+    "failed": [],
+    "bad": []
+  }
+]

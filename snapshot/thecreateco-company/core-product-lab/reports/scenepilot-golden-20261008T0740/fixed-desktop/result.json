@@ -1,0 +1,308 @@
+{
+  "startedAt": "2026-10-08T07:55:32.649Z",
+  "source": "c7d2b4fc973861eba785f26e5f607671ac22deb4",
+  "dirty": " M app/studio-workspace.css\n?? .grid-qa-87759.mjs\n",
+  "nativeDialogInteraction": "UNVERIFIED: dialog choices supplied by harness",
+  "checks": [
+    {
+      "name": "five media cards do not overlap; normal double-click and source insertion",
+      "status": "PASS",
+      "boxes": [
+        {
+          "x": 19,
+          "y": 342,
+          "width": 134,
+          "height": 197.5,
+          "name": "sp-golden-broll-24fps.mp4"
+        },
+        {
+          "x": 163,
+          "y": 342,
+          "width": 134,
+          "height": 197.5,
+          "name": "sp-golden-main-30fps.mp4"
+        },
+        {
+          "x": 19,
+          "y": 553.5,
+          "width": 134,
+          "height": 197.5,
+          "name": "sp-golden-music-48k.wav"
+        },
+        {
+          "x": 163,
+          "y": 553.5,
+          "width": 134,
+          "height": 197.5,
+          "name": "sp-golden-overlay.png"
+        },
+        {
+          "x": 19,
+          "y": 765,
+          "width": 134,
+          "height": 197.5,
+          "name": "sp-golden-sfx-44k.wav"
+        }
+      ]
+    },
+    {
+      "name": "native IPC default Videos directory and real 1s/30-frame H264 output",
+      "status": "PASS",
+      "rendered": {
+        "outputPath": "/Users/agentsattari/.openclaw/tmp/scenepilot-grid-tohDCC/documents/native.mp4",
+        "encoder": "h264_videotoolbox",
+        "hardware": true
+      },
+      "probe": {
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "h264",
+            "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+            "profile": "High",
+            "codec_type": "video",
+            "codec_tag_string": "avc1",
+            "codec_tag": "0x31637661",
+            "mime_codec_string": "avc1.64001e",
+            "width": 320,
+            "height": 180,
+            "coded_width": 320,
+            "coded_height": 180,
+            "has_b_frames": 0,
+            "sample_aspect_ratio": "1:1",
+            "display_aspect_ratio": "16:9",
+            "pix_fmt": "yuv420p",
+            "level": 30,
+            "field_order": "progressive",
+            "is_avc": "true",
+            "nal_length_size": "4",
+            "id": "0x1",
+            "r_frame_rate": "30/1",
+            "avg_frame_rate": "30/1",
+            "time_base": "1/15360",
+            "start_pts": 0,
+            "start_time": "0.000000",
+            "duration_ts": 15360,
+            "duration": "1.000000",
+            "bit_rate": "277280",
+            "bits_per_raw_sample": "8",
+            "nb_frames": "30",
+            "extradata_size": 29,
+            "disposition": {
+              "default": 1,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            },
+            "tags": {
+              "language": "und",
+              "handler_name": "VideoHandler",
+              "encoder": "Lavc62.28.101 h264_videotoolbox"
+            }
+          }
+        ],
+        "format": {
+          "filename": "/Users/agentsattari/.openclaw/tmp/scenepilot-grid-tohDCC/documents/native.mp4",
+          "nb_streams": 1,
+          "nb_programs": 0,
+          "nb_stream_groups": 0,
+          "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+          "format_long_name": "QuickTime / MOV",
+          "start_time": "0.000000",
+          "duration": "1.000000",
+          "size": "35630",
+          "bit_rate": "285040",
+          "probe_score": 100,
+          "tags": {
+            "major_brand": "isom",
+            "minor_version": "512",
+            "compatible_brands": "isomiso2avc1mp41",
+            "encoder": "Lavf62.12.101"
+          }
+        }
+      },
+      "dialogs": [
+        {
+          "title": "Render with ScenePilot Native Engine",
+          "defaultPath": "/Users/agentsattari/.openclaw/tmp/scenepilot-grid-tohDCC/videos/native.mp4",
+          "filePath": "/Users/agentsattari/.openclaw/tmp/scenepilot-grid-tohDCC/documents/native.mp4"
+        }
+      ]
+    },
+    {
+      "name": "UI Save writes actual project JSON with imported media",
+      "status": "PASS"
+    },
+    {
+      "name": "File menu opens disk project in fresh process/profile; re-saved clip/settings/media identity match",
+      "status": "PASS"
+    },
+    {
+      "name": "Silent insert creates no phantom audio; actual audio-bearing video retains linked clip",
+      "status": "PASS"
+    },
+    {
+      "name": "Actual mixed silent/AV timeline UI export retains picture and nonzero audio",
+      "status": "PASS",
+      "destination": "real OPFS disk handle",
+      "queueText": "owned-ui-master\nRender complete\nCOMPLETED · 1920px / 30fps · 100%",
+      "rms": 0.09388863842795402,
+      "probe": {
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "h264",
+            "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+            "profile": "High",
+            "codec_type": "video",
+            "codec_tag_string": "avc1",
+            "codec_tag": "0x31637661",
+            "mime_codec_string": "avc1.640028",
+            "width": 1920,
+            "height": 1080,
+            "coded_width": 1920,
+            "coded_height": 1080,
+            "has_b_frames": 0,
+            "pix_fmt": "yuv420p",
+            "level": 40,
+            "color_range": "tv",
+            "color_space": "bt709",
+            "color_transfer": "bt709",
+            "color_primaries": "bt709",
+            "chroma_location": "left",
+            "field_order": "progressive",
+            "is_avc": "true",
+            "nal_length_size": "4",
+            "id": "0x1",
+            "r_frame_rate": "30/1",
+            "avg_frame_rate": "30/1",
+            "time_base": "1/30",
+            "start_pts": 0,
+            "start_time": "0.000000",
+            "duration_ts": 390,
+            "duration": "13.000000",
+            "bit_rate": "6120539",
+            "bits_per_raw_sample": "8",
+            "nb_frames": "390",
+            "extradata_size": 35,
+            "disposition": {
+              "default": 1,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            },
+            "tags": {
+              "creation_time": "2026-10-08T07:55:37.000000Z",
+              "language": "und",
+              "handler_name": "MediabunnyVideoHandler"
+            }
+          },
+          {
+            "index": 1,
+            "codec_name": "aac",
+            "codec_long_name": "AAC (Advanced Audio Coding)",
+            "profile": "LC",
+            "codec_type": "audio",
+            "codec_tag_string": "mp4a",
+            "codec_tag": "0x6134706d",
+            "mime_codec_string": "mp4a.40.2",
+            "sample_fmt": "fltp",
+            "sample_rate": "48000",
+            "channels": 2,
+            "channel_layout": "stereo",
+            "bits_per_sample": 0,
+            "initial_padding": 0,
+            "id": "0x2",
+            "r_frame_rate": "0/0",
+            "avg_frame_rate": "0/0",
+            "time_base": "1/48000",
+            "start_pts": 0,
+            "start_time": "0.000000",
+            "duration_ts": 624000,
+            "duration": "13.000000",
+            "bit_rate": "11932",
+            "nb_frames": "613",
+            "extradata_size": 2,
+            "disposition": {
+              "default": 1,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            },
+            "tags": {
+              "creation_time": "2026-10-08T07:55:37.000000Z",
+              "language": "und",
+              "handler_name": "MediabunnySoundHandler"
+            }
+          }
+        ],
+        "format": {
+          "filename": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-golden-20261008T0740/fixed-desktop/ui-master.mp4",
+          "nb_streams": 2,
+          "nb_programs": 0,
+          "nb_stream_groups": 0,
+          "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+          "format_long_name": "QuickTime / MOV",
+          "start_time": "0.000000",
+          "duration": "13.000000",
+          "size": "10045376",
+          "bit_rate": "6181769",
+          "probe_score": 100,
+          "tags": {
+            "major_brand": "isom",
+            "minor_version": "512",
+            "compatible_brands": "isomavc1mp41",
+            "creation_time": "2026-10-08T07:55:37.000000Z"
+          }
+        }
+      }
+    }
+  ],
+  "status": "PASS",
+  "finishedAt": "2026-10-08T07:56:16.328Z"
+}

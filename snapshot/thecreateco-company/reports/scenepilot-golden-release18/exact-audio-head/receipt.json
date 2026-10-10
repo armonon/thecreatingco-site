@@ -1,0 +1,50 @@
+{
+  "sha": "a47417bc4b3390bc30697cc2b7d3d573ad14e4d6",
+  "steps": [
+    {
+      "command": [
+        "npm",
+        "run",
+        "check"
+      ],
+      "started_at": "2026-10-08T03:43:03.145926+00:00",
+      "exit_code": 0,
+      "duration_seconds": 21.409053416999086,
+      "log": "/Users/agentsattari/thecreateco-company/reports/scenepilot-golden-release18/exact-audio-head/check.log"
+    },
+    {
+      "command": [
+        "npm",
+        "run",
+        "test:quick"
+      ],
+      "started_at": "2026-10-08T03:43:24.555461+00:00",
+      "exit_code": 0,
+      "duration_seconds": 5.031193750000966,
+      "log": "/Users/agentsattari/thecreateco-company/reports/scenepilot-golden-release18/exact-audio-head/unit.log"
+    },
+    {
+      "command": [
+        "npm",
+        "run",
+        "desktop:renderer"
+      ],
+      "started_at": "2026-10-08T03:43:29.586942+00:00",
+      "exit_code": 0,
+      "duration_seconds": 1.1145191670002532,
+      "log": "/Users/agentsattari/thecreateco-company/reports/scenepilot-golden-release18/exact-audio-head/desktop-build.log"
+    },
+    {
+      "command": [
+        "node",
+        "scripts/certify-media-grid.mjs",
+        "/Users/agentsattari/thecreateco-company/reports/scenepilot-golden-release18/fixtures",
+        "/Users/agentsattari/thecreateco-company/reports/scenepilot-golden-release18/exact-audio-head/workflow"
+      ],
+      "started_at": "2026-10-08T03:43:30.701780+00:00",
+      "exit_code": 0,
+      "duration_seconds": 55.48462491600003,
+      "log": "/Users/agentsattari/thecreateco-company/reports/scenepilot-golden-release18/exact-audio-head/workflow.log"
+    }
+  ]
+}

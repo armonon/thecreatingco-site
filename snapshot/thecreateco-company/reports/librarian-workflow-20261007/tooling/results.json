@@ -1,0 +1,62 @@
+{
+  "observed_at": "2026-10-08T03:50:37.650063+00:00",
+  "source_sha": "ca7e806c86d376e707c0afdefc8a0e84ff40b35e",
+  "pr": "https://github.com/armonon/librarian/pull/3",
+  "changes": [
+    "assets sharp0.32.6\u21920.35.5",
+    "cache-semantics4.2.0\u21924.3.0",
+    "align nestedCLI5 with declaredrootCLI8 (resolved8.5.3); no direct tar7-underCLI5 override"
+  ],
+  "review": "Independent OpenAI parent approved final overrides and lock resolution",
+  "audit_before": {
+    "critical": 1,
+    "high": 4,
+    "moderate": 11
+  },
+  "audit_after": {
+    "info": 0,
+    "low": 0,
+    "moderate": 13,
+    "high": 0,
+    "critical": 0,
+    "total": 13
+  },
+  "production_audit": {
+    "info": 0,
+    "low": 0,
+    "moderate": 0,
+    "high": 0,
+    "critical": 0,
+    "total": 0
+  },
+  "tests": {
+    "clean_install": "PASS: Electron/unrelated install scripts skipped",
+    "unit": {
+      "pass": 44,
+      "total": 44
+    },
+    "web_build": "PASS",
+    "ios_mode_build": "PASS",
+    "webkit_reading": {
+      "pass": 6,
+      "total": 6
+    },
+    "web_bundle_parity": true,
+    "web_files": 216,
+    "asset_generation": "PASS:13 generated writes produce7finalPNG files, each decoded pixel-identical to baseline",
+    "template_extraction_and_cache_contract": "PASS: see compatibility-results.json"
+  },
+  "limitations": [
+    "Not native packaging/notarization/Windows/physicaliOS/Android qualification",
+    "Full audit still13moderate rooted in uuid andsprintf-js; not clean audit",
+    "Source PR open, no merge/deployment; publicPDF404 unchanged pending functionartifactpreservation",
+    "Discarded incompatible tar7-underCLI5 attempt retained; finalconfigurationusesCLI8 compatible named tar API"
+  ],
+  "evidence": [
+    "/Users/agentsattari/thecreateco-company/reports/librarian-workflow-20261007/dependency-unit-final.log",
+    "/Users/agentsattari/thecreateco-company/reports/librarian-workflow-20261007/dependency-reading-webkit.log",
+    "/Users/agentsattari/thecreateco-company/reports/librarian-workflow-20261007/tooling/asset-compatibility.json",
+    "/Users/agentsattari/thecreateco-company/reports/librarian-workflow-20261007/tooling/compatibility-results.json",
+    "/Users/agentsattari/thecreateco-company/reports/librarian-workflow-20261007/tooling/web-build-parity.json"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "task_id": "PROGRAM18-POCKET-PERSIST-001",
+  "product": "pocket",
+  "title": "Prevent silent Pocket named-pattern eviction and corrupt-store overwrite",
+  "workstream": "PRODUCT_COMPLETION",
+  "category": "reliability",
+  "severity": "P1",
+  "status": "QUEUED",
+  "model": "openai/gpt-6.1-sol",
+  "scores": {
+    "impact": 10,
+    "user_value": 10,
+    "confidence": 10,
+    "effort": 3,
+    "risk": 3
+  },
+  "source_evidence": {
+    "direct": [
+      "Executed actual pure helper against synthetic memory:41stdistinct save silently drops oldest; malformed existing JSON overwritten on nextsave."
+    ]
+  },
+  "next_action": "Preserve oldbytes and allnamedwork, reject/explicitly manage capacity and malformed reads; quota feedback/reversible delete; independently reviewed normalPR.",
+  "test_requirements": "Memory repro plus unit/browser storage failure,40/41stcapacity, reload/export checks; no realuserdata modifications.",
+  "evidence_sources": [
+    "/Users/agentsattari/thecreateco-company/reports/release18-inventory-gaps-20261007/README.md",
+    "/Users/agentsattari/thecreateco-company/reports/release18-inventory-gaps-20261007/pocket-memory-repro.json"
+  ]
+}

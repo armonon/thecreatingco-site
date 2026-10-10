@@ -1,0 +1,40 @@
+{
+  "observed_at": "2026-10-09T11:50:11.432951+00:00",
+  "source_sha": "b5f8b08832dc7961b097ce2ae7a0c29db2fc0055",
+  "source_base": "be1f7272c5689d6401194d643fa3eb09a2b0b73b",
+  "clean_checkout": true,
+  "remote_sha": "b5f8b08832dc7961b097ce2ae7a0c29db2fc0055",
+  "reviewed_hashes_unchanged": true,
+  "commands": [
+    {
+      "command": "git diff --check",
+      "exit_code": 0
+    },
+    {
+      "command": "git commit -m fix(worker): separate static image fetcher from R2 assets",
+      "exit_code": 0
+    },
+    {
+      "command": "git push -u origin fix/form-worker-images-20261009",
+      "exit_code": 0
+    },
+    {
+      "command": "gh pr create --draft --base qa/form-runtime-security-20261008T0340 --head fix/form-worker-images-20261009 --body-file pr-body.md",
+      "exit_code": 0
+    }
+  ],
+  "models": {
+    "director": "openai/gpt-6.1-sol",
+    "routine_worker": "openai/gpt-6-luna",
+    "independent_reviewer": "openai/gpt-6.1-sol",
+    "fallback": null,
+    "astra": null,
+    "usage_and_cost": null
+  },
+  "pr": "https://github.com/armonon/form-studio/pull/9",
+  "pushed": true,
+  "merged": false,
+  "deployed": false,
+  "task_disposition": "BLOCKED",
+  "resume_condition": "Evidence of GitHub billing/access resolution, then one bounded exact-head mandatory CI qualification; qualify/review downstack before merge. Preserve native/full golden/source-live gates."
+}

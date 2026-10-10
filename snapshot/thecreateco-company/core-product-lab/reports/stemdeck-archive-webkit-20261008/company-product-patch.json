@@ -1,0 +1,24 @@
+{
+  "product_id": "stemdeck",
+  "observed_at": "2026-10-08T05:55:55.982385+00:00",
+  "release_readiness": "ALPHA / NOT QUALIFIED. Independently reviewed6bad0ed pushed PR34 (on PR33);2259 unit tests, standalone build/types/lint and actual WebKit39-asset UI/restart/zero-error PCM pass. Mandatory exact-head local gate BLOCKED at disk1.203GB<2.838GB; hosted/stack/native13-of14/physical/source-live gates unresolved.",
+  "golden_workflow_status": "LOCAL SYNTHETIC WEBKIT SUBSET PASS: four-deck capture/replay/arrange/edit/undo/save/full process reopen/portable39-asset restore/export. Physical/full musical/platform/release qualification UNVERIFIED.",
+  "portable_archive_candidate": {
+    "source_sha": "6bad0edaf198d80d44c9aa02c3e65970fe7d9148",
+    "branch": "core-lab/stemdeck-archive-webkit-20261008",
+    "pr": "https://github.com/armonon/sattari-custom-site/pull/34",
+    "status": "PUSHED_OPEN_PR_QUALIFICATION_BLOCKED",
+    "report": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-archive-webkit-20261008/README.md",
+    "independent_reviews": "PASS scoped source and c15 prerequisite; OpenAI Sol separate contexts",
+    "webkit_assets_verified": 39,
+    "chromium_assets_verified": 39,
+    "webkit_master_pcm_max_error": 0,
+    "webkit_master_frames": 668352,
+    "storage_fault_cases_passed": 6,
+    "unit_tests_passed": 2259,
+    "mandatory_local_gate": "BLOCKED: disk1203224576<2838683648 bytes; no checks ran",
+    "hosted_checks_observed": [],
+    "resume_condition": "Provide>=2838683648 free bytes and rerun exact6bad mandatory gate; preserve hosted/stack gates and native/physical limitations",
+    "observed_at": "2026-10-08T05:55:55.982385+00:00"
+  }
+}

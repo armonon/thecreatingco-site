@@ -1,0 +1,39 @@
+{
+  "sha": "ef026076196831d69be0696cacdc4091a97e0f46",
+  "steps": [
+    {
+      "command": [
+        "npm",
+        "run",
+        "check"
+      ],
+      "started_at": "2026-10-08T03:29:07.406852+00:00",
+      "exit_code": 0,
+      "duration_seconds": 21.391989749998174,
+      "log": "/Users/agentsattari/thecreateco-company/reports/scenepilot-golden-release18/exact-reopen-head/check.log"
+    },
+    {
+      "command": [
+        "npm",
+        "run",
+        "test:quick"
+      ],
+      "started_at": "2026-10-08T03:29:28.799359+00:00",
+      "exit_code": 0,
+      "duration_seconds": 4.544451417001255,
+      "log": "/Users/agentsattari/thecreateco-company/reports/scenepilot-golden-release18/exact-reopen-head/unit.log"
+    },
+    {
+      "command": [
+        "node",
+        "scripts/certify-media-grid.mjs",
+        "/Users/agentsattari/thecreateco-company/reports/scenepilot-golden-release18/fixtures",
+        "/Users/agentsattari/thecreateco-company/reports/scenepilot-golden-release18/exact-reopen-head/workflow"
+      ],
+      "started_at": "2026-10-08T03:29:33.344069+00:00",
+      "exit_code": 0,
+      "duration_seconds": 6.897124749997602,
+      "log": "/Users/agentsattari/thecreateco-company/reports/scenepilot-golden-release18/exact-reopen-head/workflow.log"
+    }
+  ]
+}

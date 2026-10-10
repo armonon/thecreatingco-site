@@ -1,0 +1,35 @@
+{
+  "task_id": "CORE-FORM-UI-EXPORT-001",
+  "title": "Keep project open/export menu reachable at 1440px desktop width",
+  "product": "form",
+  "workstream": "CORE_PRODUCT_LAB",
+  "category": "core_workflow",
+  "area": "responsive_navigation",
+  "severity": "P1",
+  "status": "QUEUED",
+  "model": "gpt-6.1-sol",
+  "scores": {
+    "impact": 8,
+    "user_value": 8,
+    "strategic_value": 7,
+    "urgency": 7,
+    "confidence": 10,
+    "effort": 3,
+    "risk": 3
+  },
+  "source_evidence": {
+    "direct": [
+      "Real Chrome1440x1000: topbar extends off rightedge; Project and workspace actions summary lies outside viewport. Playwright user-level click timesout despite scrollIntoView.1920x1080 same menu works and real STEP/GLB downloads pass. Screenshot browser-before-close.png and browser-workflow.log preserve observed failure."
+    ],
+    "hypothesis": [
+      "Nonshrinking topbar actions plus navigation exceed1440 available width."
+    ]
+  },
+  "test_requirements": "Preserve all actions/navigation; responsive topbar regression realbrowser1440 and narrower; no forced clicks; save/open/export reachable; normal lint/build/tests.",
+  "next_action": "After new firstwave priority checkpoint, inspect topbar layout and fit/overflow solution without removing actions; verify1440/1280/mobile navigation.",
+  "evidence_sources": [
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-completion-20261007/browser-before-close.png",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-completion-20261007/browser-workflow.log",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-completion-20261007/browser-workflow-wide.log"
+  ]
+}

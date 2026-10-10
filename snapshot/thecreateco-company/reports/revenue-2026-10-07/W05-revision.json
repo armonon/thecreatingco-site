@@ -1,0 +1,9 @@
+{
+  "task_id": "W05",
+  "next_action": "Inspect current form schema, consent, errors and success paths without production submissions. Map event denominators for launch-list/support separately. Do not repurpose launch-update consent for unrelated sales.",
+  "source_evidence": [
+    "reports/revenue-2026-10-07/README.md",
+    "reports/revenue-2026-10-07/asset-audit.md"
+  ],
+  "expected_value": "Owner: PRODUCT/QA. Revenue impact: Prevent losing genuine intent; impact unmeasured. Time to signal: One non-sending form verification. New spend: $0; labor cost unknown. Existing scores remain provisional."
+}

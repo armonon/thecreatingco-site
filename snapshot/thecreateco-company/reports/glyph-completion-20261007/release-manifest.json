@@ -1,0 +1,34 @@
+{
+  "previous": "6ac5d2b39f450706b3f7dda1",
+  "files": {
+    "/sw.js": "ed62def847baff1bd289c87aee72346a1835bed3",
+    "/sitemap.xml": "8c46bec2d0cae3c93c0afe3d0dad0f678b5a3386",
+    "/robots.txt": "472a2cc19cbff65edc720dcc4860e03ad184d257",
+    "/og-image.png": "2f3ca86a7d3b5d1c23a84e769190516aeb12a048",
+    "/manifest.webmanifest": "64269768af0f2baad779f670ec32f5d764ed17c9",
+    "/index.html": "e2038dda09410d13700a878303e6db798f0bd54d",
+    "/icons/icon-maskable-512.png": "55f408520c36943d742754d1c7fa8105b28ee620",
+    "/icons/icon-maskable-192.png": "f4b36b7ea2936def082d74e39463bff40341dbc1",
+    "/icons/icon-512.png": "a05d1a1a88be4d6294b96c0289b980bcfe17b740",
+    "/icons/icon-192.png": "4e36142b9e0a0b0a5d157609837683372ba17a0a",
+    "/favicon.svg": "fb854abaa4782f79de84844ad83d8198d2b4e3b8",
+    "/assets/workbox-window.prod.es5-bd17z0yl.js": "08f0e7d3afc43b7a63e8ab9d5f3e6e319d059212",
+    "/assets/index-crjnd8qc.js": "17b15c98230ad03ee747357179b666f883195343",
+    "/assets/index-bcenydvw.css": "0dd93f33ce66d9df8489b2a00226874a18119e6f",
+    "/netlify.toml": "6b22bb6cdd77135066b952b574e0528670faf0a0",
+    "/_redirects": "21d22af2d2cd96f057d4fd27002cf1063fb84239",
+    "/_headers": "38c1004dd6863b622b08739b8d73af3b54e69aba",
+    "/assets/index-c51tutdl.js": "1363c11e944c2f74792deb994251ab80043dbd07",
+    "/assets/index-ceavgabe.css": "5cbd72eef429b96d86d3ac21718462271b101955",
+    "/assets/index-dvkjzzcr.css": "ff8c66c9eb38f3084ef6d0fe333b0707144fce0f",
+    "/assets/index-dvu7ypfe.js": "aed99d1497f0852b1fead283dd3870800238dec6"
+  },
+  "changed": {
+    "/index.html": "e2038dda09410d13700a878303e6db798f0bd54d",
+    "/sw.js": "ed62def847baff1bd289c87aee72346a1835bed3",
+    "/assets/index-dvkjzzcr.css": "ff8c66c9eb38f3084ef6d0fe333b0707144fce0f",
+    "/assets/index-dvu7ypfe.js": "aed99d1497f0852b1fead283dd3870800238dec6"
+  },
+  "source_sha": "a3e50fa6d5fabdf499fd1592085c54d9710e42dc",
+  "preserved_count": 17
+}

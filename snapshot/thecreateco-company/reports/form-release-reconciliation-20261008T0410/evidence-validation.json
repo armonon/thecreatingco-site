@@ -1,0 +1,19 @@
+{
+  "observed_at": "2026-10-08T04:12:00.917142+00:00",
+  "source_hashes": [
+    {
+      "file": "package.json",
+      "expected": "4a1183e3a9db4843e1628b73977fb0167bee33778bd35753dd09323faee59ecd",
+      "actual": "4a1183e3a9db4843e1628b73977fb0167bee33778bd35753dd09323faee59ecd",
+      "matches": true
+    },
+    {
+      "file": "package-lock.json",
+      "expected": "bd2219af132c72ee9bdb2d522512eb02e940743b6d2e06dcb5b256c9363b2cbd",
+      "actual": "bd2219af132c72ee9bdb2d522512eb02e940743b6d2e06dcb5b256c9363b2cbd",
+      "matches": true
+    }
+  ],
+  "missing_gate_evidence": [],
+  "prior_manifest": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-runtime-security-20261008T0340/candidate-manifest.json"
+}

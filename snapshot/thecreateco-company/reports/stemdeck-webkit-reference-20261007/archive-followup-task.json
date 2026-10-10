@@ -1,0 +1,29 @@
+{
+  "task_id": "CORE-STEM-ARCHIVE-WEBKIT-001",
+  "title": "Repair and qualify WebKit portable archive asset byte identity",
+  "product": "stemdeck",
+  "area": "save_reopen_export",
+  "category": "bug",
+  "workstream": "CORE_PRODUCT_LAB",
+  "severity": "P0",
+  "status": "QUEUED",
+  "model": "gpt-6.1-sol",
+  "scores": {
+    "impact": 10,
+    "user_value": 10,
+    "confidence": 8,
+    "effort": 6,
+    "risk": 4
+  },
+  "dependencies": [],
+  "expected_value": "Preserve user-owned audio bytes and events across portable project restoration; scores are estimates based on confirmed local synthetic corruption, not observed users or universal Safari defect.",
+  "test_requirements": "Exact-source own generated39-asset archive; sufficient free disk baseline; reproduce actual UI import and inspect all asset bytes/hashes, capture original events, full browser restart and exact PCM export. Smaller2-asset/4KiB/2.8MiB slices currently pass and must remain counterexamples. Materialized39-asset diagnostic first4 reads pass, but no whole-song memory allocation allowed as blind fix. Qualify bounded detached storage and denied/quota/failure atomicity. Keep native WebKit decode failure; product bounded decoder already works. Independent OpenAI review before source push, normal parent-stack/mandatory CI and release gates. No physical input or customer data.",
+  "source_evidence": [
+    "/Users/agentsattari/thecreateco-company/reports/stemdeck-webkit-reference-20261007/README.md",
+    "/Users/agentsattari/thecreateco-company/reports/stemdeck-webkit-reference-20261007/normal-ui/report.json",
+    "/Users/agentsattari/thecreateco-company/reports/stemdeck-webkit-reference-20261007/inspect-restored.json",
+    "/Users/agentsattari/thecreateco-company/reports/stemdeck-webkit-reference-20261007/archive-module-materialized.json",
+    "/Users/agentsattari/thecreateco-company/reports/stemdeck-webkit-reference-20261007/independent-diagnosis.md"
+  ],
+  "next_action": "Execute queued CORE-STEM-ARCHIVE-WEBKIT-001 P0 repair: reproduce real39-asset portable roundtrip with disk baseline; use bounded detached-storage candidate only after proof, verify every hash/browser restart/PCM/failure atomicity, retain native failure, obtain independent OpenAI source review and normal stack/CI gates. Qualification audit CORE-STEM-WEBKIT-REFERENCE-001 is NEEDS_REVIEW, not product completion."
+}

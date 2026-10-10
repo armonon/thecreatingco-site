@@ -1,0 +1,5 @@
+{
+  "exit_code": 0,
+  "stderr": "",
+  "method": "cp -cR APFS copy-on-write; independent dependency directory"
+}

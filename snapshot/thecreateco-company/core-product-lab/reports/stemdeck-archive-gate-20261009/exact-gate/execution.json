@@ -1,0 +1,10 @@
+{
+  "command": [
+    "/opt/homebrew/opt/node@22/bin/node",
+    "scripts/studio-release-gate.mjs"
+  ],
+  "cwd": "/Users/agentsattari/code/core-product-lab/stemdeck-archive-webkit",
+  "startUtc": "2026-10-09T07:11:16.315356+00:00",
+  "endUtc": "2026-10-09T07:11:16.459803+00:00",
+  "exitCode": 1
+}

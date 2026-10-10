@@ -1,0 +1,27 @@
+{
+  "task_id": "PROGRAM18-REFRAME-LIFECYCLE-001",
+  "product": "reframe",
+  "title": "Fence Reframe analysis and roundtrip editable crop paths/settings",
+  "workstream": "PRODUCT_COMPLETION",
+  "category": "reliability",
+  "severity": "P1",
+  "status": "QUEUED",
+  "model": "openai/gpt-6.1-sol",
+  "scores": {
+    "impact": 8,
+    "user_value": 8,
+    "confidence": 8,
+    "effort": 4,
+    "risk": 3
+  },
+  "source_evidence": {
+    "direct": [
+      "Source loadFile unfencedasyncanalysis; enabledface checkboxstartsanotherloadandclears overrides. ExportpathJSONexists; importnotfound. Needs controlledrepro."
+    ]
+  },
+  "next_action": "Reproduceoverlap, preserveauthoredoverrides, implementversionedcropstate/relink close/reopen and independentknownsubject outputverification; additiveonlyrelease.",
+  "test_requirements": "Twooverlappinganalyses, faces toggle/failedmodel, manualkeyframe roundtrip, decoder/exportframe dimensions/subjectpath.",
+  "evidence_sources": [
+    "/Users/agentsattari/thecreateco-company/reports/release18-inventory-gaps-20261007/README.md"
+  ]
+}

@@ -1,0 +1,198 @@
+{
+  "startedAt": "2026-10-08T07:45:17.039Z",
+  "source": "c7d2b4fc973861eba785f26e5f607671ac22deb4",
+  "model": "openai/gpt-6.1-sol; session_status verified; no fallback used",
+  "checks": [
+    {
+      "name": "Repeat 1: authored mixed-rate/overlay/keyframes/title/audio document Open/Save full identity",
+      "status": "PASS"
+    },
+    {
+      "name": "Repeat 1: actual added track / Undo / Redo exact full-document identity",
+      "status": "PASS"
+    },
+    {
+      "name": "Repeat 1: fresh process/profile Open/Save full authored identity",
+      "status": "PASS"
+    },
+    {
+      "name": "Repeat 1: actual UI 12s/360frame H264 + stereo48k export, independent cut landmarks and nonzero PCM",
+      "status": "PASS",
+      "frames": [
+        {
+          "outputTime": 0.5,
+          "sourceTime": 0.5,
+          "source": "/Users/agentsattari/thecreateco-company/reports/scenepilot-golden-release18/fixtures/sp-golden-main-30fps.mp4",
+          "mae": 1.2556712962962964,
+          "fixedTolerance": 6,
+          "passed": true
+        },
+        {
+          "outputTime": 5,
+          "sourceTime": 1,
+          "source": "/Users/agentsattari/thecreateco-company/reports/scenepilot-golden-release18/fixtures/sp-golden-broll-24fps.mp4",
+          "mae": 1.5513194444444445,
+          "fixedTolerance": 6,
+          "passed": true
+        },
+        {
+          "outputTime": 11,
+          "sourceTime": 11,
+          "source": "/Users/agentsattari/thecreateco-company/reports/scenepilot-golden-release18/fixtures/sp-golden-main-30fps.mp4",
+          "mae": 1.2048379629629629,
+          "fixedTolerance": 6,
+          "passed": true
+        }
+      ],
+      "audio": [
+        {
+          "time": 0.1,
+          "rms": 0.018625654581411733
+        },
+        {
+          "time": 1,
+          "rms": 0.06309085554895284
+        },
+        {
+          "time": 6.5,
+          "rms": 0.07381732324217373
+        },
+        {
+          "time": 11.8,
+          "rms": 0.018604369447336004
+        }
+      ],
+      "sha256": "0fd2e22637d374480c63e44c730df3d488944bc13cb3b57686f86db2a9e56987"
+    },
+    {
+      "name": "Repeat 2: authored mixed-rate/overlay/keyframes/title/audio document Open/Save full identity",
+      "status": "PASS"
+    },
+    {
+      "name": "Repeat 2: actual added track / Undo / Redo exact full-document identity",
+      "status": "PASS"
+    },
+    {
+      "name": "Repeat 2: fresh process/profile Open/Save full authored identity",
+      "status": "PASS"
+    },
+    {
+      "name": "Repeat 2: actual UI 12s/360frame H264 + stereo48k export, independent cut landmarks and nonzero PCM",
+      "status": "PASS",
+      "frames": [
+        {
+          "outputTime": 0.5,
+          "sourceTime": 0.5,
+          "source": "/Users/agentsattari/thecreateco-company/reports/scenepilot-golden-release18/fixtures/sp-golden-main-30fps.mp4",
+          "mae": 1.2556712962962964,
+          "fixedTolerance": 6,
+          "passed": true
+        },
+        {
+          "outputTime": 5,
+          "sourceTime": 1,
+          "source": "/Users/agentsattari/thecreateco-company/reports/scenepilot-golden-release18/fixtures/sp-golden-broll-24fps.mp4",
+          "mae": 1.5513194444444445,
+          "fixedTolerance": 6,
+          "passed": true
+        },
+        {
+          "outputTime": 11,
+          "sourceTime": 11,
+          "source": "/Users/agentsattari/thecreateco-company/reports/scenepilot-golden-release18/fixtures/sp-golden-main-30fps.mp4",
+          "mae": 1.2048379629629629,
+          "fixedTolerance": 6,
+          "passed": true
+        }
+      ],
+      "audio": [
+        {
+          "time": 0.1,
+          "rms": 0.018625654581411733
+        },
+        {
+          "time": 1,
+          "rms": 0.06309085554895284
+        },
+        {
+          "time": 6.5,
+          "rms": 0.07381732324217373
+        },
+        {
+          "time": 11.8,
+          "rms": 0.018604369447336004
+        }
+      ],
+      "sha256": "a8c1b1616ea1b03c60cc352fdc2d68e71d96a06f61445630699cdba5ab9f11e5"
+    },
+    {
+      "name": "Repeat 3: authored mixed-rate/overlay/keyframes/title/audio document Open/Save full identity",
+      "status": "PASS"
+    },
+    {
+      "name": "Repeat 3: actual added track / Undo / Redo exact full-document identity",
+      "status": "PASS"
+    },
+    {
+      "name": "Repeat 3: fresh process/profile Open/Save full authored identity",
+      "status": "PASS"
+    },
+    {
+      "name": "Repeat 3: actual UI 12s/360frame H264 + stereo48k export, independent cut landmarks and nonzero PCM",
+      "status": "PASS",
+      "frames": [
+        {
+          "outputTime": 0.5,
+          "sourceTime": 0.5,
+          "source": "/Users/agentsattari/thecreateco-company/reports/scenepilot-golden-release18/fixtures/sp-golden-main-30fps.mp4",
+          "mae": 1.2556712962962964,
+          "fixedTolerance": 6,
+          "passed": true
+        },
+        {
+          "outputTime": 5,
+          "sourceTime": 1,
+          "source": "/Users/agentsattari/thecreateco-company/reports/scenepilot-golden-release18/fixtures/sp-golden-broll-24fps.mp4",
+          "mae": 1.5513194444444445,
+          "fixedTolerance": 6,
+          "passed": true
+        },
+        {
+          "outputTime": 11,
+          "sourceTime": 11,
+          "source": "/Users/agentsattari/thecreateco-company/reports/scenepilot-golden-release18/fixtures/sp-golden-main-30fps.mp4",
+          "mae": 1.2048379629629629,
+          "fixedTolerance": 6,
+          "passed": true
+        }
+      ],
+      "audio": [
+        {
+          "time": 0.1,
+          "rms": 0.018625654581411733
+        },
+        {
+          "time": 1,
+          "rms": 0.06309085554895284
+        },
+        {
+          "time": 6.5,
+          "rms": 0.07381732324217373
+        },
+        {
+          "time": 11.8,
+          "rms": 0.018604369447336004
+        }
+      ],
+      "sha256": "f799f83a4f8e3d77b3435a0cd98d0f41780344529ee1ce3547fcde77df5e9494"
+    }
+  ],
+  "errors": [],
+  "limits": [
+    "Schema-constructed synthetic edit; not UI authoring of animation/audio/title",
+    "Development Electron, OS dialog selections harnessed",
+    "No Browser Lite, packaged/platform/perceptual signoff"
+  ],
+  "status": "PASS",
+  "finishedAt": "2026-10-08T07:46:01.824Z"
+}

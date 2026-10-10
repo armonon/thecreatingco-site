@@ -1,0 +1,13 @@
+{
+  "observed_utc_approx": "2026-10-09T12:24Z",
+  "profile": "recovery-profile-20261009-run4",
+  "browser": "Chrome persistent profile; context/process closed then relaunched",
+  "before_close_ui": "Collection showed 1 generated model ready; portable archive captured separately.",
+  "close_trigger": "No synthetic pagehide/visibilitychange event. The harness closed the persistent context after its Save-collection archive step.",
+  "after_relaunch_recovery_row": "Recovery process-cycle QA · 1 items · 0 models",
+  "after_restore_ui_observation": "0 models ready; preview controls showed default 50 stiffness / ghost mannequin.",
+  "harness_outcome": "Timed out waiting for the expected 1 models ready after restore; direct Recovery-drafts inspection then confirmed the row had 0 models. This was more than a hidden-selector timeout.",
+  "elapsed_from_generation_to_close_or_commit": "Not measured; the recovery status wait could have matched a stale earlier Saved label.",
+  "interpretation": "Intermittent observation only. Other fresh profiles restored one model without the synthetic trigger. Source has a 700 ms debounce on collection sync; close/write timing is a hypothesis, not a confirmed product root cause.",
+  "privacy": "Profile was created by this harness under the evidence directory; it contains only local Ghost test data, not a user Chrome profile."
+}

@@ -1,0 +1,169 @@
+{
+  "product_id": "stemdeck",
+  "completion_observations": {
+    "candidate_sha": "af10e31c9df8f1363d3945e3b1d39518cd858009",
+    "supported_platforms": [
+      "macOS Chromium",
+      "Safari/iOS",
+      "Android"
+    ],
+    "gates": {
+      "core_workflow": {
+        "status": "FAIL",
+        "coverage_complete": false,
+        "source_sha": "af10e31c9df8f1363d3945e3b1d39518cd858009",
+        "observed_at": "2026-10-08T03:51:04.725341+00:00",
+        "summary": "Actual generated four-deck load/analyze/capture/reconstruct/edit/Undo/Redo/save/reopen/export subset passed, but live-engine replay print stops on scheduler/source deadlines. Continuous musical/physical performance remains unqualified.",
+        "evidence": [
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-lifecycle-20261007/exact-ui/report.json",
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-lifecycle-20261007/README.md"
+        ]
+      },
+      "save_reopen_export": {
+        "status": "UNVERIFIED",
+        "coverage_complete": false,
+        "source_sha": "af10e31c9df8f1363d3945e3b1d39518cd858009",
+        "observed_at": "2026-10-08T03:51:04.725341+00:00",
+        "summary": "Actual Chromium full-process restart and fresh-profile portable restore preserve all41 referenced asset SHA-256 hashes, semantic state/original events, and768960-frame48kHz stereo master PCM (max error0). Aligned audible stem ZIP validated. Broader MIDI/pad/physical/platform coverage not complete.",
+        "evidence": [
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-lifecycle-20261007/exact-ui/report.json",
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-lifecycle-20261007/README.md"
+        ]
+      },
+      "reliability_recovery": {
+        "status": "UNVERIFIED",
+        "coverage_complete": false,
+        "source_sha": "af10e31c9df8f1363d3945e3b1d39518cd858009",
+        "observed_at": "2026-10-08T03:51:04.725341+00:00",
+        "summary": "Current whole-browser normal restart roundtrip passed. Prior f6f061c SIGKILL/quota evidence remains historical; additional current-head fault/cancellation/physical disk/power-loss coverage not complete.",
+        "evidence": [
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-lifecycle-20261007/exact-ui/report.json",
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-recovery-20261007.md"
+        ]
+      },
+      "performance": {
+        "status": "FAIL",
+        "coverage_complete": false,
+        "source_sha": "af10e31c9df8f1363d3945e3b1d39518cd858009",
+        "observed_at": "2026-10-08T03:51:04.725341+00:00",
+        "summary": "Exact clean Node22 unchanged120-second soak passed, but actual four-deck UI replay stops under scheduler/source-read deadlines, including prior quiet trial. Original takes retained; dedicated diagnosis queued without threshold changes.",
+        "evidence": [
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-lifecycle-20261007/exact-gate/report.json",
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-lifecycle-20261007/exact-ui/report.json",
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-lifecycle-20261007/quiet-lifecycle/report.json"
+        ]
+      },
+      "usability_accessibility": {
+        "status": "UNVERIFIED",
+        "coverage_complete": false,
+        "source_sha": "af10e31c9df8f1363d3945e3b1d39518cd858009",
+        "observed_at": "2026-10-08T03:51:04.725341+00:00",
+        "summary": "Actual desktop controls/file pickers/Undo/Redo exercised; complete artist usability/accessibility qualification incomplete.",
+        "evidence": [
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-lifecycle-20261007/exact-ui/report.json",
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-lifecycle-20261007/exact-gate/report.json"
+        ]
+      },
+      "responsive_behavior": {
+        "status": "UNVERIFIED",
+        "coverage_complete": false,
+        "source_sha": "af10e31c9df8f1363d3945e3b1d39518cd858009",
+        "observed_at": "2026-10-08T03:51:04.725341+00:00",
+        "summary": "Mandatory built-UI scripted viewport checks passed; real mobile/tablet behavior remains unverified.",
+        "evidence": [
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-lifecycle-20261007/exact-gate/report.json"
+        ]
+      },
+      "security_privacy": {
+        "status": "UNVERIFIED",
+        "coverage_complete": false,
+        "source_sha": "af10e31c9df8f1363d3945e3b1d39518cd858009",
+        "observed_at": "2026-10-08T03:51:04.725341+00:00",
+        "summary": "Reviewed timing/fallback admission repair; no external audio uploads or physical capture. Whole-product production privacy/security provenance coverage incomplete.",
+        "evidence": [
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-lifecycle-20261007/README.md",
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-lifecycle-20261007/independent-review.md"
+        ]
+      },
+      "documentation_support": {
+        "status": "UNVERIFIED",
+        "coverage_complete": false,
+        "source_sha": "af10e31c9df8f1363d3945e3b1d39518cd858009",
+        "observed_at": "2026-10-08T03:51:04.725341+00:00",
+        "summary": "Scoped capture timing/exact-frame repair, reproducible QA and retained replay/platform/cancellation limits documented. Complete support/release documentation still incomplete.",
+        "evidence": [
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-lifecycle-20261007/README.md",
+          "/Users/agentsattari/code/core-product-lab/stemdeck-recovery/docs/CAPTURE_TIMING_2026-10-07.md"
+        ]
+      },
+      "tests": {
+        "status": "FAIL",
+        "coverage_complete": false,
+        "source_sha": "af10e31c9df8f1363d3945e3b1d39518cd858009",
+        "observed_at": "2026-10-08T03:51:04.725341+00:00",
+        "summary": "Mandatory exact af10e31 Node22 gate passes2242 tests/lint/types/build/native/browser/120s soak. Supplemental real-UI lifecycle intentionally exits1 for actual replay failure; WebKit native suite aborts at storage setup. Do not replace these failures with automated-gate PASS.",
+        "evidence": [
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-lifecycle-20261007/exact-gate/report.json",
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-lifecycle-20261007/exact-ui/report.json",
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-lifecycle-20261007/exact-platforms/report.json"
+        ]
+      },
+      "supported_platforms": {
+        "status": "UNVERIFIED",
+        "coverage_complete": false,
+        "source_sha": "af10e31c9df8f1363d3945e3b1d39518cd858009",
+        "observed_at": "2026-10-08T03:51:04.725341+00:00",
+        "summary": "Actual native arrangement14/14 Chromium151 and Firefox153. WebKit26.5 setup fails at real IndexedDB asset write before any test; exact-frame render/export unverified there. Safari/iOS/Android/hardware installation remain unqualified.",
+        "evidence": [
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-lifecycle-20261007/exact-platforms/report.json",
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-lifecycle-20261007/exact-ui/report.json"
+        ],
+        "platform_results": {
+          "macOS Chromium": "UNVERIFIED",
+          "Safari/iOS": "UNVERIFIED",
+          "Android": "UNVERIFIED"
+        }
+      },
+      "critical_blockers": {
+        "status": "FAIL",
+        "coverage_complete": false,
+        "source_sha": "af10e31c9df8f1363d3945e3b1d39518cd858009",
+        "observed_at": "2026-10-08T03:51:04.725341+00:00",
+        "summary": "Timing truncation and one-frame export defects repaired. Actual replay deadline/source-read failures and unresolved WebKit storage qualification prevent complete core workflow sign-off.",
+        "evidence": [
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-lifecycle-20261007/exact-ui/report.json",
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-lifecycle-20261007/exact-platforms/report.json",
+          "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-lifecycle-20261007/README.md"
+        ],
+        "known_critical_blockers": [
+          "Actual captured four-deck replay/print stops on scheduler/source-read deadline",
+          "WebKit audio-asset storage setup fails; cause and Safari/iOS support unqualified"
+        ],
+        "triage_complete": false
+      }
+    },
+    "deployment": {
+      "status": "OPEN_PR_NOT_DEPLOYED",
+      "pr": "https://github.com/armonon/sattari-custom-site/pull/33",
+      "base_pr": "https://github.com/armonon/sattari-custom-site/pull/29",
+      "merged": false,
+      "deployed": false,
+      "local_exact_gate": "PASS",
+      "remote_gate_status": "NOT_STARTED_STACK_BASE_OUTSIDE_TRIGGER",
+      "remote_evidence": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-lifecycle-20261007/remote-pr.json"
+    },
+    "next_action": "Active CORE-STEM-REPLAY-DEADLINE-001 baseline CPU/queue/deadline diagnostics; preserve existing50ms guard and all source/master data. Hosted checks unresolved/no outage retry. WebKit storage setup remains unverified."
+  },
+  "lifecycle_qualification": {
+    "status": "SCOPED_REPAIR_PUSHED_FULL_WORKFLOW_FAIL",
+    "source_sha": "af10e31c9df8f1363d3945e3b1d39518cd858009",
+    "pr": "https://github.com/armonon/sattari-custom-site/pull/33",
+    "evidence": [
+      "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-lifecycle-20261007/exact-gate/report.json",
+      "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-lifecycle-20261007/exact-ui/report.json",
+      "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-lifecycle-20261007/exact-platforms/report.json",
+      "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-lifecycle-20261007/README.md"
+    ],
+    "next_action": "Continue CORE-STEM-REPLAY-DEADLINE-001 measured diagnosis on follow-up branch; preserve all safety audio, existing50ms guard, CI/stack release gates. Investigate WebKit setup separately; no product-complete claim."
+  }
+}

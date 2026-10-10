@@ -1,0 +1,159 @@
+{
+  "startedAt": "2026-10-09T17:43:58.693Z",
+  "source": "02c6eced0e572eafe5c5c2f8e4fe1b0e8b011b40",
+  "dirty": "?? .grid-qa-41135.mjs\n",
+  "nativeDialogInteraction": "UNVERIFIED: dialog choices supplied by harness",
+  "checks": [
+    {
+      "name": "five media cards do not overlap; normal double-click and source insertion",
+      "status": "PASS",
+      "boxes": [
+        {
+          "x": 19,
+          "y": 342,
+          "width": 134,
+          "height": 197.5,
+          "name": "sp-golden-broll-24fps.mp4"
+        },
+        {
+          "x": 163,
+          "y": 342,
+          "width": 134,
+          "height": 197.5,
+          "name": "sp-golden-main-30fps.mp4"
+        },
+        {
+          "x": 19,
+          "y": 553.5,
+          "width": 134,
+          "height": 197.5,
+          "name": "sp-golden-music-48k.wav"
+        },
+        {
+          "x": 163,
+          "y": 553.5,
+          "width": 134,
+          "height": 197.5,
+          "name": "sp-golden-overlay.png"
+        },
+        {
+          "x": 19,
+          "y": 765,
+          "width": 134,
+          "height": 197.5,
+          "name": "sp-golden-sfx-44k.wav"
+        }
+      ]
+    },
+    {
+      "name": "native IPC default Videos directory and real 1s/30-frame H264 output",
+      "status": "PASS",
+      "rendered": {
+        "outputPath": "/Users/agentsattari/.openclaw/tmp/scenepilot-grid-3Bwi24/documents/native.mp4",
+        "encoder": "h264_videotoolbox",
+        "hardware": true
+      },
+      "probe": {
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "h264",
+            "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+            "profile": "High",
+            "codec_type": "video",
+            "codec_tag_string": "avc1",
+            "codec_tag": "0x31637661",
+            "mime_codec_string": "avc1.64001e",
+            "width": 320,
+            "height": 180,
+            "coded_width": 320,
+            "coded_height": 180,
+            "has_b_frames": 0,
+            "sample_aspect_ratio": "1:1",
+            "display_aspect_ratio": "16:9",
+            "pix_fmt": "yuv420p",
+            "level": 30,
+            "field_order": "progressive",
+            "is_avc": "true",
+            "nal_length_size": "4",
+            "id": "0x1",
+            "r_frame_rate": "30/1",
+            "avg_frame_rate": "30/1",
+            "time_base": "1/15360",
+            "start_pts": 0,
+            "start_time": "0.000000",
+            "duration_ts": 15360,
+            "duration": "1.000000",
+            "bit_rate": "277280",
+            "bits_per_raw_sample": "8",
+            "nb_frames": "30",
+            "extradata_size": 29,
+            "disposition": {
+              "default": 1,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            },
+            "tags": {
+              "language": "und",
+              "handler_name": "VideoHandler",
+              "encoder": "Lavc62.28.101 h264_videotoolbox"
+            }
+          }
+        ],
+        "format": {
+          "filename": "/Users/agentsattari/.openclaw/tmp/scenepilot-grid-3Bwi24/documents/native.mp4",
+          "nb_streams": 1,
+          "nb_programs": 0,
+          "nb_stream_groups": 0,
+          "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+          "format_long_name": "QuickTime / MOV",
+          "start_time": "0.000000",
+          "duration": "1.000000",
+          "size": "35630",
+          "bit_rate": "285040",
+          "probe_score": 100,
+          "tags": {
+            "major_brand": "isom",
+            "minor_version": "512",
+            "compatible_brands": "isomiso2avc1mp41",
+            "encoder": "Lavf62.12.101"
+          }
+        }
+      },
+      "dialogs": [
+        {
+          "title": "Render with ScenePilot Native Engine",
+          "defaultPath": "/Users/agentsattari/.openclaw/tmp/scenepilot-grid-3Bwi24/videos/native.mp4",
+          "filePath": "/Users/agentsattari/.openclaw/tmp/scenepilot-grid-3Bwi24/documents/native.mp4"
+        }
+      ]
+    },
+    {
+      "name": "UI Save writes actual project JSON with imported media",
+      "status": "PASS"
+    },
+    {
+      "name": "File menu opens disk project in fresh process/profile; re-saved clip/settings/media identity match",
+      "status": "PASS"
+    }
+  ],
+  "status": "FAIL",
+  "error": "Error: spawnSync /Users/agentsattari/code/company-worktrees/scenepilot-reframe-lifecycle-20261009/node_modules/ffmpeg-static/ffmpeg ENOENT\n    at Object.spawnSync (node:internal/child_process:1144:20)\n    at spawnSync (node:child_process:928:24)\n    at execFileSync (node:child_process:971:15)\n    at file:///Users/agentsattari/code/company-worktrees/scenepilot-ux-20261009T1740/scripts/certify-media-grid.mjs:110:3",
+  "finishedAt": "2026-10-09T17:44:06.229Z"
+}

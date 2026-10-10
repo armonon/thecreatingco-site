@@ -1,0 +1,81 @@
+{
+  "schema": "form-studio-macos-distribution-preflight/v1",
+  "product": "Form Studio",
+  "version": "0.40.0",
+  "distributionPreflightPassed": false,
+  "publicDistributionReady": false,
+  "remainingQualification": "Exact DMG contents, clean installation, upgrade and product review must also pass.",
+  "checks": [
+    {
+      "id": "macos-host",
+      "pass": true,
+      "detail": "Signing and notarization must run on macOS"
+    },
+    {
+      "id": "developer-id-certificate",
+      "pass": false,
+      "detail": "Developer ID Application certificate and private key are installed"
+    },
+    {
+      "id": "notarytool",
+      "pass": true,
+      "detail": "Apple notarytool is available"
+    },
+    {
+      "id": "notary-credentials",
+      "pass": false,
+      "detail": "Notarization credentials or a Keychain profile name must be configured; profile validity is established during submission"
+    },
+    {
+      "id": "release-identity",
+      "pass": false,
+      "detail": "Release signing identity is selected"
+    },
+    {
+      "id": "app-artifact",
+      "pass": false,
+      "detail": "Form Studio 0.40.0 main app identity and version match"
+    },
+    {
+      "id": "developer-id-signature",
+      "pass": false,
+      "detail": "App carries a Developer ID signature, not an ad-hoc signature"
+    },
+    {
+      "id": "gatekeeper",
+      "pass": false,
+      "detail": "Gatekeeper accepts the app"
+    },
+    {
+      "id": "notarization-staple",
+      "pass": false,
+      "detail": "Apple notarization ticket is stapled and validates"
+    },
+    {
+      "id": "updater-trust-root",
+      "pass": true,
+      "detail": "Manual-download build; updater is disabled"
+    },
+    {
+      "id": "dmg-artifact",
+      "pass": false,
+      "detail": "Current-version DMGs must have valid team signatures and stapled tickets"
+    }
+  ],
+  "blockers": [
+    "developer-id-certificate",
+    "notary-credentials",
+    "release-identity",
+    "app-artifact",
+    "developer-id-signature",
+    "gatekeeper",
+    "notarization-staple",
+    "dmg-artifact"
+  ],
+  "externalActions": [
+    "Enroll in the paid Apple Developer Program and install a Developer ID Application certificate.",
+    "Provide notarization credentials through the release secret store.",
+    "Build, sign, submit, staple, and validate on a clean release commit.",
+    "Install and upgrade the notarized DMG on a clean Mac before public release."
+  ]
+}

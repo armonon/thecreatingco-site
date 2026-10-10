@@ -1,0 +1,98 @@
+[
+  {
+    "name": "source",
+    "command": "git status --porcelain=v1",
+    "cwd": "/Users/agentsattari/code/worktrees/librarian-moderate-assess-20261009",
+    "exit_code": 0,
+    "observed_at": "2026-10-09T14:13:24.252422+00:00",
+    "log": "reports/librarian-moderate-20261009/source.log"
+  },
+  {
+    "name": "head",
+    "command": "git rev-parse HEAD",
+    "cwd": "/Users/agentsattari/code/worktrees/librarian-moderate-assess-20261009",
+    "exit_code": 0,
+    "observed_at": "2026-10-09T14:13:24.259461+00:00",
+    "log": "reports/librarian-moderate-20261009/head.log"
+  },
+  {
+    "name": "tree",
+    "command": "npm ls uuid sprintf-js --json",
+    "cwd": "/Users/agentsattari/code/worktrees/librarian-moderate-assess-20261009",
+    "exit_code": 0,
+    "observed_at": "2026-10-09T14:13:24.499804+00:00",
+    "log": "reports/librarian-moderate-20261009/tree.log"
+  },
+  {
+    "name": "uuid-registry",
+    "command": "npm view uuid@11.1.1 version main type exports --json",
+    "cwd": "/Users/agentsattari/code/worktrees/librarian-moderate-assess-20261009",
+    "exit_code": 0,
+    "observed_at": "2026-10-09T14:13:24.767304+00:00",
+    "log": "reports/librarian-moderate-20261009/uuid-registry.log"
+  },
+  {
+    "name": "sprintf-registry",
+    "command": "npm view sprintf-js version --json",
+    "cwd": "/Users/agentsattari/code/worktrees/librarian-moderate-assess-20261009",
+    "exit_code": 0,
+    "observed_at": "2026-10-09T14:13:25.029197+00:00",
+    "log": "reports/librarian-moderate-20261009/sprintf-registry.log"
+  },
+  {
+    "name": "audit",
+    "command": "npm audit --json",
+    "cwd": "/Users/agentsattari/code/worktrees/librarian-moderate-assess-20261009",
+    "exit_code": 1,
+    "observed_at": "2026-10-09T14:13:26.230078+00:00",
+    "log": "reports/librarian-moderate-20261009/audit.log"
+  },
+  {
+    "name": "audit-production",
+    "command": "npm audit --omit=dev --json",
+    "cwd": "/Users/agentsattari/code/worktrees/librarian-moderate-assess-20261009",
+    "exit_code": 0,
+    "observed_at": "2026-10-09T14:13:26.564530+00:00",
+    "log": "reports/librarian-moderate-20261009/audit-production.log"
+  },
+  {
+    "name": "xcode-calls",
+    "command": "rg -n \"uuid\\.\" node_modules/xcode/lib --glob *.js",
+    "cwd": "/Users/agentsattari/code/worktrees/librarian-moderate-assess-20261009",
+    "exit_code": 1,
+    "observed_at": "2026-10-09T14:13:26.573736+00:00",
+    "log": "reports/librarian-moderate-20261009/xcode-calls.log"
+  },
+  {
+    "name": "global-agent-source",
+    "command": "rg -n -A 7 -B 2 \"log\\.(debug|trace|info|warn|error|fatal)\\(\" node_modules/global-agent/dist --glob *.js",
+    "cwd": "/Users/agentsattari/code/worktrees/librarian-moderate-assess-20261009",
+    "exit_code": 1,
+    "observed_at": "2026-10-09T14:13:26.580531+00:00",
+    "log": "reports/librarian-moderate-20261009/global-agent-source.log"
+  },
+  {
+    "name": "xcode-calls-corrected",
+    "command": "rg -n 'uuid\\.' node_modules/xcode/lib --glob '*.js'",
+    "cwd": "/Users/agentsattari/code/worktrees/librarian-moderate-assess-20261009",
+    "exit_code": 0,
+    "observed_at": "2026-10-09T14:13:52.842948+00:00",
+    "log": "reports/librarian-moderate-20261009/xcode-calls-corrected.log"
+  },
+  {
+    "name": "global-agent-source-corrected",
+    "command": "rg -n -A 7 -B 2 'log\\.(debug|trace|info|warn|error|fatal)\\(' node_modules/global-agent/dist --glob '*.js'",
+    "cwd": "/Users/agentsattari/code/worktrees/librarian-moderate-assess-20261009",
+    "exit_code": 0,
+    "observed_at": "2026-10-09T14:13:52.852539+00:00",
+    "log": "reports/librarian-moderate-20261009/global-agent-source-corrected.log"
+  },
+  {
+    "name": "harness",
+    "command": "node /Users/agentsattari/thecreateco-company/reports/librarian-moderate-20261009/verify.cjs",
+    "cwd": "/Users/agentsattari/code/worktrees/librarian-moderate-assess-20261009",
+    "exit_code": 0,
+    "observed_at": "2026-10-09T14:13:52.967949+00:00",
+    "log": "reports/librarian-moderate-20261009/harness.log"
+  }
+]

@@ -1,0 +1,25 @@
+{
+  "preserved_failures": [
+    {
+      "at": "2026-10-09T13:11:58Z",
+      "attempt": "unchanged harness against plain Python static server",
+      "result": "FAIL: /studio/pocket was 404; app was not reached. Fixed with report-local route mapping, no source edits."
+    },
+    {
+      "at": "2026-10-09T13:13:25Z",
+      "attempt": "real quota-pressure probe with initial alert selector",
+      "result": "ASSERTION FAILURE in probe: the app correctly showed QuotaExceededError but status text lives in role=status, not the queried role=alert. screenshot quota-pressure-failure.png preserved."
+    },
+    {
+      "at": "2026-10-09T13:13:44Z",
+      "attempt": "real quota-pressure probe repeated with same selector",
+      "result": "Same probe assertion-selector failure; app behavior unchanged and visible in preserved screenshot. Corrected selector and reran successfully."
+    }
+  ],
+  "successful_reruns": [
+    { "at": "2026-10-09T13:12:43Z", "result": "Unchanged exact-source browser harness: 5/5 checks pass against existing local dist." },
+    { "at": "2026-10-09T13:14:25Z", "result": "Actual storage quota failure surfaced; original library and draft byte-identical; 0 page errors." },
+    { "at": "2026-10-09T13:16:03Z", "result": "Connection refused because the local report server had been stopped after initial evidence; restarted server." },
+    { "at": "2026-10-09T13:16:08Z", "result": "Final quota rerun asserted the edited name remains in the UI; byte-identical storage and visible error confirmed." }
+  ]
+}

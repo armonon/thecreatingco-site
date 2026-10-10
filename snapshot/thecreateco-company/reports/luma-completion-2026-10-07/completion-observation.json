@@ -1,0 +1,53 @@
+{
+  "observed_at": "2026-10-08T02:08:12.090950+00:00",
+  "source_sha": {
+    "status": "PASS",
+    "value": "772f082581e06e7a5783aff35ed859aace890394",
+    "evidence": "pr-state.json"
+  },
+  "core_workflow": {
+    "status": "FAIL",
+    "evidence": [
+      "golden/report.json",
+      "golden-r2.log",
+      "color-diagnostic.json"
+    ],
+    "details": "Partial actual UI import/edit/export exercised. Unedited imported bitmap versus CPU PNG export max RGB delta7/mean0.369613 exceeds fixed tolerance2; alpha exact. Source/browser/imported bitmap equality verified separately. Save-download timed out in exploratory harness; not yet isolated as product failure. Close/reopen/full workflow unverified."
+  },
+  "tests": {
+    "status": "PASS",
+    "evidence": [
+      "test.log",
+      "contract.log",
+      "contract-current-form.log",
+      "typecheck.log",
+      "lint.log",
+      "netlify-build.log",
+      "desktop-build.log"
+    ],
+    "details": "npm test build/rendered4 pass; engine1384 total,1374pass,10skip,0fail. Node22.23.2 macOS. Types/lint/three build targets pass. Native tests not run."
+  },
+  "platforms": {
+    "status": "UNVERIFIED",
+    "evidence": "README.md",
+    "details": "Chromium153 local desktop-shell subset only. cargo absent; native/package/mobile/clean-install unverified."
+  },
+  "documentation": {
+    "status": "PASS",
+    "evidence": "tests/fixtures/form-contract/README.md at source_sha; README.md in this report",
+    "details": "Narrow contract validation documents actual pin/current override and update procedure. Broader release docs not qualified."
+  },
+  "critical_blockers": {
+    "status": "BLOCKED",
+    "evidence": [
+      "ci-annotations.json",
+      "color-diagnostic.json"
+    ],
+    "details": "Exact-head Actions jobs did not start due account payments/spending. Product/output/persistence/native/source-live gates remain."
+  },
+  "deployment": {
+    "status": "UNVERIFIED",
+    "evidence": "pr-state.json",
+    "details": "PR6 OPEN stacked onPR5. Not merged/deployed; live source mismatch not reconciled."
+  }
+}

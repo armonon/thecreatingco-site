@@ -1,0 +1,15 @@
+{
+  "observed_date": "2026-10-09",
+  "method": "HTTP GET only; no POST",
+  "base": "https://thecreatingco.com",
+  "routes": [
+    {"path": "/", "status": 200, "bytes": 100088, "sha256": "8a51d6bd7e8a4a0359a73cec7f7dbb6fad451b1b1be00a89d3dceb86edb062fa", "content_type": "text/html; charset=UTF-8"},
+    {"path": "/kickstarter/", "status": 200, "bytes": 35556, "sha256": "4b9249f999997611fa98ced4e7571d8f283bd717ee3dce143c5252e3f00cbc8d", "content_type": "text/html; charset=UTF-8"},
+    {"path": "/testing/", "status": 200, "bytes": 29643, "sha256": "f241e5045f41b56b2f31b44efb440bc5d4f5e4e822ff56a29ea108349fd12115", "content_type": "text/html; charset=UTF-8"},
+    {"path": "/testing/received/", "status": 200, "bytes": 24291, "sha256": "b9b815672bb6ec82c58391654adaa206cc25ac70c53c86cf25777ef2a8461c26", "content_type": "text/html; charset=UTF-8"},
+    {"path": "/privacy/", "status": 200, "bytes": 37038, "sha256": "414bc896ad534827c4bb2cc11671b91fc078b83fda9648242166d40c5f967492", "content_type": "text/html; charset=UTF-8"},
+    {"path": "/launch-season.js", "status": 200, "bytes": 2645, "sha256": "daf26c1a9f328c1147a2cce9237d98adb5847b9020249088896ba9bb09881a998", "content_type": "application/javascript; charset=UTF-8"},
+    {"path": "/site.js", "status": 200, "bytes": 3225, "sha256": "f5921ff40f2d180cd3109b11cfc500bb0182b1be70faae5238c5398e57b3ce48", "content_type": "application/javascript; charset=UTF-8"}
+  ],
+  "qualification": "Static GET fingerprints are dated observations, not proof of source identity, POST acceptance, storage, or analytics counts."
+}

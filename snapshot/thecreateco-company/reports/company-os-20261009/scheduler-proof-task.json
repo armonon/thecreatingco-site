@@ -1,0 +1,20 @@
+{
+  "task_id": "OS-SCHEDULER-PROOF-20261009",
+  "title": "Prove amended Sol scheduler, queue fencing and fresh storage readiness",
+  "category": "OPERATIONS",
+  "workstream": "COMPANY_OS",
+  "model": "openai/gpt-6.1-sol",
+  "severity": "P1",
+  "scores": {
+    "impact": 10,
+    "user_value": 9,
+    "confidence": 10,
+    "effort": 1,
+    "risk": 1
+  },
+  "token_budget": 8000,
+  "tool_budget": 20,
+  "expected_value": "Verify real scheduled execution and replace stale storage blocker observation, without running product builds",
+  "test_requirements": "Run python3 engine/test_company.py; openclaw config validate; sanitized openclaw agents list --json routes; shutil.disk_usage workspace. Record actual exit codes and source/time. Existing disk blockers remain unqualified until exact gate rerun. No product edits.",
+  "next_action": "Claim with owner and lease. Run deterministic tests/config route checks and disk_usage. Write reports/company-os-20261009/scheduled-proof.md with provider/model as exposed, exact checks and limitations. Update context metric host_disk_free_bytes via company CLI with source/period/observed_at. Finish COMPLETE if checks pass, else BLOCKED. Refresh. No build, install, model delegation or external send needed: deterministic execution. Stop within 5 minutes."
+}

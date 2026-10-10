@@ -1,0 +1,18 @@
+{
+  "observed_at": "2026-10-08T08:19:05.351464+00:00",
+  "candidate_sha": "6bad0edaf198d80d44c9aa02c3e65970fe7d9148",
+  "tracked_and_untracked_status": "",
+  "platform": "Darwin arm64",
+  "node": "v22.23.2",
+  "source_sha256": {
+    "src/utils/loudnessDSP.js": "e14d97c87bef590372f7cac6b5a73b4d6f2ba657ee25da290258067078054575",
+    "src/utils/arrangementEngine.js": "e12cecdf196ca136b03a272fb004687785fdeca956c5b987350b0cbabc286b07",
+    "src/utils/arrangementStreamExport.js": "047538c8b34912057d9b42d5308e85dc6bf18e81385bb7a0b219a36c4307c68d",
+    "src/utils/masterOutput.js": "9e5cfc860f61c7f70f9a76ea6f36da5621d1fb3b5444a7161343fced31f381c9",
+    "src/components/studio/MasterOutput.jsx": "4801402e60f3ac4a7fbc1801b49341d22104c3da04a260e21ccf938127dd83b3",
+    "scripts/master-pro-browser-qa.html": "07336799f4ec2e97f42a0605f0f8522684139e456efe581dc4e6d9a41f928339",
+    "package-lock.json": "d28cbe495e6ba713c494108cce6aafe55fa32ee4e27ec90c01d33e46ff2ad588"
+  },
+  "server_stopped": true,
+  "dependency_link_removed": true
+}

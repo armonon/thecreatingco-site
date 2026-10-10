@@ -1,0 +1,435 @@
+{
+  "format": "scenepilot-cut",
+  "version": 2,
+  "project": "owned-song · AutoCut",
+  "duration": 8,
+  "bpm": 240,
+  "beatOffset": 0,
+  "beats": [
+    0,
+    0.2453,
+    0.4907,
+    0.7467,
+    1.0027,
+    1.248,
+    1.4933,
+    1.7387,
+    1.984,
+    2.24,
+    2.496,
+    2.7413,
+    2.9867,
+    3.2427,
+    3.4987,
+    3.744,
+    3.9893,
+    4.2453,
+    4.5013,
+    4.7467,
+    4.992,
+    5.248,
+    5.504,
+    5.7493,
+    5.9947,
+    6.2507,
+    6.5067,
+    6.752,
+    6.9973,
+    7.2427,
+    7.488,
+    7.7333,
+    7.9787
+  ],
+  "sections": [
+    {
+      "id": "autocut-section-0",
+      "name": "DROP",
+      "start": 0,
+      "end": 4.5013,
+      "every": 4,
+      "duration": 0.5,
+      "scale": 100,
+      "enabled": true,
+      "color": "#ff334f",
+      "energy": 0.492,
+      "rhythm": "normal",
+      "pattern": "burst"
+    },
+    {
+      "id": "autocut-section-1",
+      "name": "BREAK",
+      "start": 4.5013,
+      "end": 8,
+      "every": 8,
+      "duration": 0.5,
+      "scale": 100,
+      "enabled": true,
+      "color": "#b79cff",
+      "energy": 0.234,
+      "rhythm": "normal",
+      "pattern": "release"
+    }
+  ],
+  "placements": [],
+  "compositions": [],
+  "tracks": [],
+  "baseCuts": [
+    {
+      "id": "autocut-shot-1-0",
+      "assetId": "clip-1-restore-1791544702209-0",
+      "sectionId": "autocut-section-0",
+      "start": 0,
+      "duration": 0.4907,
+      "sourceStart": 5.632,
+      "transitionType": "none",
+      "transitionDuration": 0,
+      "locked": true
+    },
+    {
+      "id": "autocut-shot-2-491",
+      "assetId": "clip-1-restore-1791544702209-0",
+      "sectionId": "autocut-section-0",
+      "start": 0.4907,
+      "duration": 0.512,
+      "sourceStart": 0,
+      "transitionType": "none",
+      "transitionDuration": 0
+    },
+    {
+      "id": "autocut-shot-3-1003",
+      "assetId": "clip-1-restore-1791544702209-0",
+      "sectionId": "autocut-section-0",
+      "start": 1.0027,
+      "duration": 0.4907,
+      "sourceStart": 1.8773,
+      "transitionType": "none",
+      "transitionDuration": 0
+    },
+    {
+      "id": "autocut-shot-4-1493",
+      "assetId": "clip-1-restore-1791544702209-0",
+      "sectionId": "autocut-section-0",
+      "start": 1.4933,
+      "duration": 1.0027,
+      "sourceStart": 3.4987,
+      "transitionType": "none",
+      "transitionDuration": 0
+    },
+    {
+      "id": "autocut-shot-5-2496",
+      "assetId": "clip-1-restore-1791544702209-0",
+      "sectionId": "autocut-section-0",
+      "start": 2.496,
+      "duration": 0.4907,
+      "sourceStart": 7.5093,
+      "transitionType": "none",
+      "transitionDuration": 0
+    },
+    {
+      "id": "autocut-shot-6-2987",
+      "assetId": "clip-1-restore-1791544702209-0",
+      "sectionId": "autocut-section-0",
+      "start": 2.9867,
+      "duration": 0.512,
+      "sourceStart": 3.1393,
+      "transitionType": "none",
+      "transitionDuration": 0
+    },
+    {
+      "id": "autocut-shot-7-3499",
+      "assetId": "clip-1-restore-1791544702209-0",
+      "sectionId": "autocut-section-0",
+      "start": 3.4987,
+      "duration": 0.4907,
+      "sourceStart": 1.0796,
+      "transitionType": "none",
+      "transitionDuration": 0
+    },
+    {
+      "id": "autocut-shot-8-3989",
+      "assetId": "clip-1-restore-1791544702209-0",
+      "sectionId": "autocut-section-0",
+      "start": 3.9893,
+      "duration": 0.512,
+      "sourceStart": 4.1483,
+      "transitionType": "none",
+      "transitionDuration": 0
+    },
+    {
+      "id": "autocut-shot-9-4501",
+      "assetId": "clip-1-restore-1791544702209-0",
+      "sectionId": "autocut-section-1",
+      "start": 4.5013,
+      "duration": 1.0027,
+      "sourceStart": 0.09,
+      "transitionType": "none",
+      "transitionDuration": 0
+    },
+    {
+      "id": "autocut-shot-10-5504",
+      "assetId": "clip-1-restore-1791544702209-0",
+      "sectionId": "autocut-section-1",
+      "start": 5.504,
+      "duration": 1.0027,
+      "sourceStart": 1.7493,
+      "transitionType": "none",
+      "transitionDuration": 0
+    },
+    {
+      "id": "autocut-shot-11-6507",
+      "assetId": "clip-1-restore-1791544702209-0",
+      "sectionId": "autocut-section-1",
+      "start": 6.5067,
+      "duration": 1.4933,
+      "sourceStart": 4.88,
+      "transitionType": "none",
+      "transitionDuration": 0
+    }
+  ],
+  "titles": [],
+  "storyBrief": "AutoCut music-video · seed 2 · density 50%\n11 shots from 1 clips · 240 BPM",
+  "mainAsset": {
+    "name": "owned-song.wav",
+    "kind": "audio",
+    "size": 768044,
+    "lastModified": 1791544313865
+  },
+  "assets": [
+    {
+      "id": "clip-1-restore-1791544702209-0",
+      "name": "renamed-clip.mp4",
+      "kind": "video",
+      "size": 328391,
+      "lastModified": 1791544671668,
+      "folderId": "bin-footage"
+    }
+  ],
+  "effects": {
+    "styleId": "cinematic",
+    "autoEnergy": "dynamic",
+    "montageEnabled": true,
+    "montagePace": "balanced",
+    "punchPreset": "off",
+    "transitionType": "none",
+    "strobePreset": "off",
+    "strobeColor": "#ffffff",
+    "strobeSecondaryColor": "#ff334f",
+    "strobeAlternate": false,
+    "strobeIntensity": 0.7,
+    "strobeAttack": 0,
+    "strobeHold": 0.008,
+    "strobeDecay": 0.08,
+    "strobeShape": "exponential",
+    "strobeMode": "full",
+    "strobeBlend": "screen",
+    "strobeX": 0.5,
+    "strobeY": 0.5,
+    "strobeSize": 0.75,
+    "strobeSoftness": 0.65,
+    "strobeAngle": 0,
+    "strobeSafeMode": true,
+    "strobeTiming": "song",
+    "strobeBpm": 120,
+    "strobeSensitivity": 0.5,
+    "strobeBand": "all",
+    "stutterPreset": "off",
+    "speedPreset": "off",
+    "dropRampEnabled": false,
+    "audioReactive": false,
+    "shakePreset": "off",
+    "lookPreset": "none",
+    "manualGrade": {
+      "exposure": 1,
+      "contrast": 1,
+      "saturation": 1,
+      "temperature": 0,
+      "tint": 0,
+      "bloom": 0,
+      "vignette": 0,
+      "grain": 0,
+      "aberration": 0
+    },
+    "mirrorMode": 0,
+    "streak": 0,
+    "echoPreset": "off"
+  },
+  "proState": {
+    "markers": [
+      {
+        "id": "autocut-marker-section-0",
+        "time": 0,
+        "label": "Drop (guess)",
+        "color": "#ff334f",
+        "kind": "chapter",
+        "duration": 4.5013
+      },
+      {
+        "id": "autocut-marker-section-1",
+        "time": 4.5013,
+        "label": "Break (guess)",
+        "color": "#b79cff",
+        "kind": "chapter",
+        "duration": 3.4987
+      },
+      {
+        "id": "autocut-marker-drop",
+        "time": 0,
+        "label": "Drop",
+        "color": "#ff334f",
+        "kind": "marker"
+      }
+    ],
+    "storyBrief": "AutoCut music-video · seed 2 · density 50%\n11 shots from 1 clips · 240 BPM"
+  },
+  "autocut": {
+    "version": 1,
+    "preset": "music-video",
+    "density": 0.5,
+    "seed": 2,
+    "performance": false,
+    "brollMix": 0.25,
+    "aspect": "16:9",
+    "range": {
+      "start": 0,
+      "end": 8
+    },
+    "downbeats": [
+      0.4907,
+      2.496,
+      4.5013,
+      6.5067
+    ],
+    "shots": [
+      {
+        "id": "shot-1-0",
+        "clipId": "clip-1-restore-1791544702209-0",
+        "start": 0,
+        "duration": 0.4907,
+        "sourceStart": 5.632,
+        "label": "drop",
+        "hero": true,
+        "synced": false,
+        "locked": true
+      },
+      {
+        "id": "shot-2-491",
+        "clipId": "clip-1-restore-1791544702209-0",
+        "start": 0.4907,
+        "duration": 0.512,
+        "sourceStart": 0,
+        "label": "drop",
+        "hero": false,
+        "synced": false,
+        "locked": false
+      },
+      {
+        "id": "shot-3-1003",
+        "clipId": "clip-1-restore-1791544702209-0",
+        "start": 1.0027,
+        "duration": 0.4907,
+        "sourceStart": 1.8773,
+        "label": "drop",
+        "hero": false,
+        "synced": false,
+        "locked": false
+      },
+      {
+        "id": "shot-4-1493",
+        "clipId": "clip-1-restore-1791544702209-0",
+        "start": 1.4933,
+        "duration": 1.0027,
+        "sourceStart": 3.4987,
+        "label": "drop",
+        "hero": false,
+        "synced": false,
+        "locked": false
+      },
+      {
+        "id": "shot-5-2496",
+        "clipId": "clip-1-restore-1791544702209-0",
+        "start": 2.496,
+        "duration": 0.4907,
+        "sourceStart": 7.5093,
+        "label": "drop",
+        "hero": false,
+        "synced": false,
+        "locked": false
+      },
+      {
+        "id": "shot-6-2987",
+        "clipId": "clip-1-restore-1791544702209-0",
+        "start": 2.9867,
+        "duration": 0.512,
+        "sourceStart": 3.1393,
+        "label": "drop",
+        "hero": false,
+        "synced": false,
+        "locked": false
+      },
+      {
+        "id": "shot-7-3499",
+        "clipId": "clip-1-restore-1791544702209-0",
+        "start": 3.4987,
+        "duration": 0.4907,
+        "sourceStart": 1.0796,
+        "label": "drop",
+        "hero": false,
+        "synced": false,
+        "locked": false
+      },
+      {
+        "id": "shot-8-3989",
+        "clipId": "clip-1-restore-1791544702209-0",
+        "start": 3.9893,
+        "duration": 0.512,
+        "sourceStart": 4.1483,
+        "label": "drop",
+        "hero": false,
+        "synced": false,
+        "locked": false
+      },
+      {
+        "id": "shot-9-4501",
+        "clipId": "clip-1-restore-1791544702209-0",
+        "start": 4.5013,
+        "duration": 1.0027,
+        "sourceStart": 0.09,
+        "label": "break",
+        "hero": true,
+        "synced": false,
+        "locked": false
+      },
+      {
+        "id": "shot-10-5504",
+        "clipId": "clip-1-restore-1791544702209-0",
+        "start": 5.504,
+        "duration": 1.0027,
+        "sourceStart": 1.7493,
+        "label": "break",
+        "hero": false,
+        "synced": false,
+        "locked": false
+      },
+      {
+        "id": "shot-11-6507",
+        "clipId": "clip-1-restore-1791544702209-0",
+        "start": 6.5067,
+        "duration": 1.4933,
+        "sourceStart": 4.88,
+        "label": "break",
+        "hero": false,
+        "synced": false,
+        "locked": false
+      }
+    ],
+    "clips": [
+      {
+        "id": "clip-1-restore-1791544702209-0",
+        "name": "renamed-clip.mp4",
+        "offset": 3.9893,
+        "synced": false
+      }
+    ]
+  },
+  "savedAt": 1791544702359
+}

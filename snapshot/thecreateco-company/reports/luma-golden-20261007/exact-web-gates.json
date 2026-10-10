@@ -1,0 +1,93 @@
+{
+  "source_sha": "d18aef51086b50708cb9cb3a33fddc21d792dc58",
+  "source_status_before": "",
+  "node": "v22.23.2",
+  "started_at": "2026-10-08T03:59:28.597207+00:00",
+  "checks": [
+    {
+      "name": "types",
+      "command": [
+        "node_modules/.bin/tsc",
+        "--noEmit",
+        "-p",
+        "."
+      ],
+      "exit_code": 0,
+      "pass": true,
+      "log": "exact-types.log"
+    },
+    {
+      "name": "lint-strict",
+      "command": [
+        "node_modules/.bin/eslint",
+        "app",
+        "tests",
+        "--max-warnings",
+        "0"
+      ],
+      "exit_code": 0,
+      "pass": true,
+      "log": "exact-lint-strict.log"
+    },
+    {
+      "name": "lint-all",
+      "command": [
+        "npm",
+        "run",
+        "lint"
+      ],
+      "exit_code": 0,
+      "pass": true,
+      "log": "exact-lint-all.log"
+    },
+    {
+      "name": "npm-test",
+      "command": [
+        "npm",
+        "test"
+      ],
+      "exit_code": 0,
+      "pass": true,
+      "log": "exact-npm-test.log"
+    },
+    {
+      "name": "build-netlify",
+      "command": [
+        "npm",
+        "run",
+        "build:netlify"
+      ],
+      "exit_code": 0,
+      "pass": true,
+      "log": "exact-build-netlify.log"
+    },
+    {
+      "name": "build-desktop",
+      "command": [
+        "npm",
+        "run",
+        "desktop:build"
+      ],
+      "exit_code": 0,
+      "pass": true,
+      "log": "exact-build-desktop.log"
+    },
+    {
+      "name": "audit-production",
+      "command": [
+        "npm",
+        "audit",
+        "--omit=dev",
+        "--json"
+      ],
+      "exit_code": 0,
+      "pass": true,
+      "log": "exact-audit-production.log"
+    }
+  ],
+  "scope": "Local Node22 hosted verify-job equivalents, plus full lint and production audit; not native jobs or hosted execution.",
+  "source_status_after": "",
+  "source_unchanged": true,
+  "pass": true,
+  "finished_at": "2026-10-08T04:03:25.396037+00:00"
+}

@@ -1,0 +1,234 @@
+{
+  "observedAt": "2026-10-08T05:37:07.731372+00:00",
+  "application": "Inkscape 1.4.2 macOS command-line",
+  "font_loading": "Per-process FONTCONFIG_FILE; no system font install or UI interaction",
+  "results": [
+    {
+      "kind": "ttf",
+      "command": [
+        "/Applications/Inkscape.app/Contents/MacOS/inkscape",
+        "/Users/agentsattari/thecreateco-company/reports/glyph-destination-20261007/ttf/specimen.svg",
+        "--export-filename=/Users/agentsattari/thecreateco-company/reports/glyph-destination-20261007/ttf/specimen.png"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "\n(<unknown>:73379): Gdk-WARNING **: 22:37:05.120: Failed to initialize CVDisplayLink!\n",
+      "environment_override": {
+        "FONTCONFIG_FILE": "/Users/agentsattari/thecreateco-company/reports/glyph-destination-20261007/ttf/fonts.conf"
+      }
+    },
+    {
+      "kind": "ttf",
+      "command": [
+        "/Applications/Inkscape.app/Contents/MacOS/inkscape",
+        "/Users/agentsattari/thecreateco-company/reports/glyph-destination-20261007/ttf/reference.svg",
+        "--export-filename=/Users/agentsattari/thecreateco-company/reports/glyph-destination-20261007/ttf/reference.png"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "\n(<unknown>:73380): Gdk-WARNING **: 22:37:05.307: Failed to initialize CVDisplayLink!\n",
+      "environment_override": {
+        "FONTCONFIG_FILE": "/Users/agentsattari/thecreateco-company/reports/glyph-destination-20261007/ttf/fonts.conf"
+      }
+    },
+    {
+      "kind": "ttf",
+      "command": [
+        "/Applications/Inkscape.app/Contents/MacOS/inkscape",
+        "/Users/agentsattari/thecreateco-company/reports/glyph-destination-20261007/ttf/specimen.svg",
+        "--export-filename=/Users/agentsattari/thecreateco-company/reports/glyph-destination-20261007/ttf/specimen.pdf"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "\n(<unknown>:73381): Gdk-WARNING **: 22:37:05.489: Failed to initialize CVDisplayLink!\n",
+      "environment_override": {
+        "FONTCONFIG_FILE": "/Users/agentsattari/thecreateco-company/reports/glyph-destination-20261007/ttf/fonts.conf"
+      }
+    },
+    {
+      "kind": "ttf",
+      "command": [
+        "/Applications/Inkscape.app/Contents/MacOS/inkscape",
+        "/Users/agentsattari/thecreateco-company/reports/glyph-destination-20261007/ttf/specimen.svg",
+        "--export-filename=/Users/agentsattari/thecreateco-company/reports/glyph-destination-20261007/ttf/outlined.svg",
+        "--export-text-to-path",
+        "--export-plain-svg"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "\n(<unknown>:73382): Gdk-WARNING **: 22:37:05.663: Failed to initialize CVDisplayLink!\n",
+      "environment_override": {
+        "FONTCONFIG_FILE": "/Users/agentsattari/thecreateco-company/reports/glyph-destination-20261007/ttf/fonts.conf"
+      }
+    },
+    {
+      "kind": "ttf",
+      "command": [
+        "/Applications/Inkscape.app/Contents/MacOS/inkscape",
+        "/Users/agentsattari/thecreateco-company/reports/glyph-destination-20261007/ttf/outlined.svg",
+        "--export-filename=/Users/agentsattari/thecreateco-company/reports/glyph-destination-20261007/ttf/reopened.png"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "\n(<unknown>:73383): Gdk-WARNING **: 22:37:05.839: Failed to initialize CVDisplayLink!\n",
+      "environment_override": {
+        "FONTCONFIG_FILE": "/Users/agentsattari/thecreateco-company/reports/glyph-destination-20261007/ttf/fonts.conf"
+      }
+    },
+    {
+      "kind": "ttf",
+      "control": true,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "\n(<unknown>:73384): Gdk-WARNING **: 22:37:06.020: Failed to initialize CVDisplayLink!\n",
+      "environment_override": {
+        "FONTCONFIG_FILE": "/Users/agentsattari/thecreateco-company/reports/glyph-destination-20261007/control/fonts.conf"
+      }
+    },
+    {
+      "kind": "otf",
+      "command": [
+        "/Applications/Inkscape.app/Contents/MacOS/inkscape",
+        "/Users/agentsattari/thecreateco-company/reports/glyph-destination-20261007/otf/specimen.svg",
+        "--export-filename=/Users/agentsattari/thecreateco-company/reports/glyph-destination-20261007/otf/specimen.png"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "\n(<unknown>:73385): Gdk-WARNING **: 22:37:06.313: Failed to initialize CVDisplayLink!\n",
+      "environment_override": {
+        "FONTCONFIG_FILE": "/Users/agentsattari/thecreateco-company/reports/glyph-destination-20261007/otf/fonts.conf"
+      }
+    },
+    {
+      "kind": "otf",
+      "command": [
+        "/Applications/Inkscape.app/Contents/MacOS/inkscape",
+        "/Users/agentsattari/thecreateco-company/reports/glyph-destination-20261007/otf/reference.svg",
+        "--export-filename=/Users/agentsattari/thecreateco-company/reports/glyph-destination-20261007/otf/reference.png"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "\n(<unknown>:73386): Gdk-WARNING **: 22:37:06.599: Failed to initialize CVDisplayLink!\n",
+      "environment_override": {
+        "FONTCONFIG_FILE": "/Users/agentsattari/thecreateco-company/reports/glyph-destination-20261007/otf/fonts.conf"
+      }
+    },
+    {
+      "kind": "otf",
+      "command": [
+        "/Applications/Inkscape.app/Contents/MacOS/inkscape",
+        "/Users/agentsattari/thecreateco-company/reports/glyph-destination-20261007/otf/specimen.svg",
+        "--export-filename=/Users/agentsattari/thecreateco-company/reports/glyph-destination-20261007/otf/specimen.pdf"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "\n(<unknown>:73387): Gdk-WARNING **: 22:37:06.782: Failed to initialize CVDisplayLink!\n",
+      "environment_override": {
+        "FONTCONFIG_FILE": "/Users/agentsattari/thecreateco-company/reports/glyph-destination-20261007/otf/fonts.conf"
+      }
+    },
+    {
+      "kind": "otf",
+      "command": [
+        "/Applications/Inkscape.app/Contents/MacOS/inkscape",
+        "/Users/agentsattari/thecreateco-company/reports/glyph-destination-20261007/otf/specimen.svg",
+        "--export-filename=/Users/agentsattari/thecreateco-company/reports/glyph-destination-20261007/otf/outlined.svg",
+        "--export-text-to-path",
+        "--export-plain-svg"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "\n(<unknown>:73388): Gdk-WARNING **: 22:37:06.956: Failed to initialize CVDisplayLink!\n",
+      "environment_override": {
+        "FONTCONFIG_FILE": "/Users/agentsattari/thecreateco-company/reports/glyph-destination-20261007/otf/fonts.conf"
+      }
+    },
+    {
+      "kind": "otf",
+      "command": [
+        "/Applications/Inkscape.app/Contents/MacOS/inkscape",
+        "/Users/agentsattari/thecreateco-company/reports/glyph-destination-20261007/otf/outlined.svg",
+        "--export-filename=/Users/agentsattari/thecreateco-company/reports/glyph-destination-20261007/otf/reopened.png"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "\n(<unknown>:73389): Gdk-WARNING **: 22:37:07.131: Failed to initialize CVDisplayLink!\n",
+      "environment_override": {
+        "FONTCONFIG_FILE": "/Users/agentsattari/thecreateco-company/reports/glyph-destination-20261007/otf/fonts.conf"
+      }
+    },
+    {
+      "kind": "otf",
+      "control": true,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "\n(<unknown>:73390): Gdk-WARNING **: 22:37:07.313: Failed to initialize CVDisplayLink!\n",
+      "environment_override": {
+        "FONTCONFIG_FILE": "/Users/agentsattari/thecreateco-company/reports/glyph-destination-20261007/control/fonts.conf"
+      }
+    },
+    {
+      "glyph_sheet": true,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "\n(<unknown>:73391): Gdk-WARNING **: 22:37:07.499: Failed to initialize CVDisplayLink!\n",
+      "environment_override": {}
+    },
+    {
+      "kind": "ttf",
+      "command": [
+        "/Applications/Inkscape.app/Contents/MacOS/inkscape",
+        "/Users/agentsattari/thecreateco-company/reports/glyph-destination-20261007/ttf/specimen.svg",
+        "--export-filename=/Users/agentsattari/thecreateco-company/reports/glyph-destination-20261007/ttf/editable-saved.svg"
+      ],
+      "environment_override": {
+        "FONTCONFIG_FILE": "/Users/agentsattari/thecreateco-company/reports/glyph-destination-20261007/ttf/fonts.conf"
+      },
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "\n(<unknown>:74418): Gdk-WARNING **: 22:42:18.744: Failed to initialize CVDisplayLink!\n"
+    },
+    {
+      "kind": "ttf",
+      "command": [
+        "/Applications/Inkscape.app/Contents/MacOS/inkscape",
+        "/Users/agentsattari/thecreateco-company/reports/glyph-destination-20261007/ttf/editable-saved.svg",
+        "--export-filename=/Users/agentsattari/thecreateco-company/reports/glyph-destination-20261007/ttf/editable-reopened.png"
+      ],
+      "environment_override": {
+        "FONTCONFIG_FILE": "/Users/agentsattari/thecreateco-company/reports/glyph-destination-20261007/ttf/fonts.conf"
+      },
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "\n(<unknown>:74433): Gdk-WARNING **: 22:42:18.930: Failed to initialize CVDisplayLink!\n"
+    },
+    {
+      "kind": "otf",
+      "command": [
+        "/Applications/Inkscape.app/Contents/MacOS/inkscape",
+        "/Users/agentsattari/thecreateco-company/reports/glyph-destination-20261007/otf/specimen.svg",
+        "--export-filename=/Users/agentsattari/thecreateco-company/reports/glyph-destination-20261007/otf/editable-saved.svg"
+      ],
+      "environment_override": {
+        "FONTCONFIG_FILE": "/Users/agentsattari/thecreateco-company/reports/glyph-destination-20261007/otf/fonts.conf"
+      },
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "\n(<unknown>:74434): Gdk-WARNING **: 22:42:19.111: Failed to initialize CVDisplayLink!\n"
+    },
+    {
+      "kind": "otf",
+      "command": [
+        "/Applications/Inkscape.app/Contents/MacOS/inkscape",
+        "/Users/agentsattari/thecreateco-company/reports/glyph-destination-20261007/otf/editable-saved.svg",
+        "--export-filename=/Users/agentsattari/thecreateco-company/reports/glyph-destination-20261007/otf/editable-reopened.png"
+      ],
+      "environment_override": {
+        "FONTCONFIG_FILE": "/Users/agentsattari/thecreateco-company/reports/glyph-destination-20261007/otf/fonts.conf"
+      },
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "\n(<unknown>:74436): Gdk-WARNING **: 22:42:19.285: Failed to initialize CVDisplayLink!\n"
+    }
+  ]
+}

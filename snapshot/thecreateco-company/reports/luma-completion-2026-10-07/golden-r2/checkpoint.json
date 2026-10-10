@@ -1,0 +1,15 @@
+{
+  "status": "INCOMPLETE",
+  "source_base_sha": "5afa61c3febc1bb12acf156889b147e5fd51e41a",
+  "tested_source_final_sha": "772f082581e06e7a5783aff35ed859aace890394",
+  "completed_steps": [
+    "UI import",
+    "UI PNG export",
+    "engine layer/group/opacity/mask/adjustment edits",
+    "engine undo/redo"
+  ],
+  "failed_assertion": "Independent imported-bitmap-versus-CPU-export RGB max7 > tolerance2; alpha exact",
+  "interruption": "page.waitForEvent download timeout45s while attempting Save project; unhandled promise; harness failed before report-finally; no native project or reopen evidence produced",
+  "evidence": "../golden-r2.log",
+  "not_a_proven_product_defect": "Save timeout needs instrumented reproduction and scoped UI failure capture"
+}

@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "uuidVersion": "11.1.1",
+  "xcode": {
+    "calls": 101,
+    "uniqueIds": 100,
+    "outputSha256": "b9e9b3c6cdff1fbb68b91fd414a0bd48f0abf2049454cd4c8cc58223ff854aab"
+  }
+}

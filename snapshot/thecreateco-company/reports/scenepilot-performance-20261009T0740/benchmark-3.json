@@ -1,0 +1,72 @@
+{
+  "schema": "scenepilot-editor-performance/v1",
+  "createdAt": "2026-10-09T07:41:46.141Z",
+  "passed": true,
+  "machine": {
+    "platform": "darwin",
+    "architecture": "arm64",
+    "node": "v22.23.2",
+    "cpus": 10,
+    "memoryBytes": 17179869184
+  },
+  "fixture": {
+    "assets": 256,
+    "baseCuts": 10000,
+    "overlays": 10000,
+    "tracks": 8,
+    "output": "3840x2160"
+  },
+  "compilation": {
+    "name": "20000-clip-context-compilation",
+    "elapsedMs": 1.7693,
+    "budgetMs": 80,
+    "heapGrowthBytes": 0,
+    "heapBudgetBytes": 134217728,
+    "passed": true
+  },
+  "audio": {
+    "name": "eight-track-worker-pcm-realtime",
+    "programSeconds": 1,
+    "tracks": 8,
+    "elapsedMs": 58.9997,
+    "budgetMs": 1000,
+    "realtimeFactor": 16.95,
+    "passed": true
+  },
+  "cases": [
+    {
+      "name": "4k-10000-cuts-prepared",
+      "iterations": 900,
+      "budgetP95Ms": 2,
+      "meanMs": 0.0102,
+      "p50Ms": 0.0086,
+      "p95Ms": 0.0135,
+      "p99Ms": 0.0212,
+      "maxMs": 0.1992,
+      "passed": true
+    },
+    {
+      "name": "4k-10000-overlays-prepared",
+      "iterations": 900,
+      "budgetP95Ms": 2,
+      "meanMs": 0.0067,
+      "p50Ms": 0.0064,
+      "p95Ms": 0.007,
+      "p99Ms": 0.0086,
+      "maxMs": 0.0889,
+      "passed": true
+    },
+    {
+      "name": "4k-10000-cuts-unprepared-reference",
+      "iterations": 120,
+      "budgetP95Ms": 25,
+      "meanMs": 0.092,
+      "p50Ms": 0.0911,
+      "p95Ms": 0.1148,
+      "p99Ms": 0.1287,
+      "maxMs": 0.1566,
+      "passed": true
+    }
+  ],
+  "preparedSpeedup": 9.02
+}

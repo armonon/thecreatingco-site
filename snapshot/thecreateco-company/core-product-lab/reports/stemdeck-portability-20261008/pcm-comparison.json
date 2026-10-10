@@ -1,0 +1,65 @@
+{
+  "chromium": {
+    "sha256": "377a1eab0835def64eb721b09c01d59cd6ac69e9473d3a21df6eb7877265b687",
+    "format": [
+      1,
+      2,
+      48000,
+      288000,
+      6,
+      24
+    ],
+    "frames": 668352,
+    "samples": 1336704,
+    "differing_samples": 5005,
+    "maximum_lsb_error": 1,
+    "maximum_normalized_error": 1.1920928955078125e-07,
+    "rms_normalized_error": 7.29448300538804e-09,
+    "byte_identical": false,
+    "historical_pcm_tolerance": 2e-06,
+    "within_existing_pcm_tolerance": true,
+    "scope": "Supplemental metric; original strict byte-identity failure retained, not replaced"
+  },
+  "firefox": {
+    "sha256": "92e5f3e0c73489567714b91e1829418bf46bd5df13e311ce8d0501463a6bfd8f",
+    "format": [
+      1,
+      2,
+      48000,
+      288000,
+      6,
+      24
+    ],
+    "frames": 668352,
+    "samples": 1336704,
+    "differing_samples": 0,
+    "maximum_lsb_error": 0,
+    "maximum_normalized_error": 0.0,
+    "rms_normalized_error": 0.0,
+    "byte_identical": true,
+    "historical_pcm_tolerance": 2e-06,
+    "within_existing_pcm_tolerance": true,
+    "scope": "Supplemental metric; original strict byte-identity failure retained, not replaced"
+  },
+  "webkit": {
+    "sha256": "92e5f3e0c73489567714b91e1829418bf46bd5df13e311ce8d0501463a6bfd8f",
+    "format": [
+      1,
+      2,
+      48000,
+      288000,
+      6,
+      24
+    ],
+    "frames": 668352,
+    "samples": 1336704,
+    "differing_samples": 0,
+    "maximum_lsb_error": 0,
+    "maximum_normalized_error": 0.0,
+    "rms_normalized_error": 0.0,
+    "byte_identical": true,
+    "historical_pcm_tolerance": 2e-06,
+    "within_existing_pcm_tolerance": true,
+    "scope": "Supplemental metric; original strict byte-identity failure retained, not replaced"
+  }
+}

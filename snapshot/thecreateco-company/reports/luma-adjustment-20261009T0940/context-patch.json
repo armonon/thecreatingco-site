@@ -1,0 +1,10 @@
+{
+  "metrics": {
+    "luma_adjustment_alpha_failed_samples": {
+      "value": 6,
+      "source": "/Users/agentsattari/thecreateco-company/reports/luma-adjustment-20261009T0940/variant-probe.json",
+      "period": "2026-10-09 exact8c15f85 synthetic15samples",
+      "observed_at": "2026-10-09T09:45:13.663694+00:00"
+    }
+  }
+}

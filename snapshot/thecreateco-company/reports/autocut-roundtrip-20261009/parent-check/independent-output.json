@@ -1,0 +1,39 @@
+{
+  "source_sha": "8d740071cb9631cfa18d4d6c7faa4a806b8fa42a",
+  "video_samples": [
+    {
+      "output_seconds": 0.2,
+      "source_seconds": 5.832,
+      "mae_255": 13.746741898148148,
+      "pass": true
+    },
+    {
+      "output_seconds": 2.2,
+      "source_seconds": 4.205400000000001,
+      "mae_255": 15.021359953703703,
+      "pass": true
+    },
+    {
+      "output_seconds": 4.7,
+      "source_seconds": 0.2887000000000004,
+      "mae_255": 13.12386574074074,
+      "pass": true
+    },
+    {
+      "output_seconds": 7.5,
+      "source_seconds": 5.873299999999999,
+      "mae_255": 15.544820601851852,
+      "pass": true
+    }
+  ],
+  "video_sampled_pass": true,
+  "audio_unshifted_pass": false,
+  "audio_unshifted_rms_error_normalized": 0.2523095951194414,
+  "audio_observed_shift_samples": 2112,
+  "audio_observed_shift_ms": 44,
+  "audio_shifted_rms_error_normalized": 0.0003277321919542618,
+  "audio_identity_after_shift_pass": true,
+  "full_decode_exit": 0,
+  "root_cause": "UNKNOWN; AAC priming/metadata hypothesis, not yet baseline reproduced",
+  "artifact_sha256": "bc9d207130f4b24b4a96cd027e818b47868f4ef1e5623e15f4f0477590ad4cb3"
+}

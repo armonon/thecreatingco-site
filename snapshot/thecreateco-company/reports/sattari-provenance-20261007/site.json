@@ -1,0 +1,27 @@
+{
+  "id": "53a43ab7-fd89-4b5b-902e-6bc0e36c58b2",
+  "name": "sattari",
+  "url": "https://sattarimusic.com",
+  "ssl_url": "https://sattarimusic.com",
+  "custom_domain": "sattarimusic.com",
+  "domain_aliases": [
+    "stemdeck.thecreatingco.com"
+  ],
+  "build_settings": {
+    "repo_url": "https://github.com/armonon/sattari-custom-site",
+    "repo_branch": "main",
+    "dir": "dist",
+    "cmd": "npm run build",
+    "functions_dir": null
+  },
+  "published_deploy": {
+    "id": "6ac5bec218287de1ebe8e1c3",
+    "state": "ready",
+    "published_at": "2026-10-07T03:47:44.555Z",
+    "commit_ref": null,
+    "branch": "wave4-suite-candidate",
+    "context": "branch-deploy",
+    "deploy_ssl_url": "https://wave4-suite-candidate--sattari.netlify.app",
+    "title": "Wave 4: Export for Ableton, installable/offline StemDeck + Sattari tools, suite menu + Locker (overlay on 6ac51608)"
+  }
+}

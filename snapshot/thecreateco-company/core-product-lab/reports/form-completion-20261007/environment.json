@@ -1,0 +1,9 @@
+{
+  "observed_at": "2026-10-08T02:09:41.195744+00:00",
+  "platform": "Darwin 25.2.0 arm64",
+  "node": "v22.23.2",
+  "chrome": "Google Chrome 154.0.8037.98",
+  "gpu": "headless SwiftShader software WebGL; not hardware/native GPU qualification",
+  "browser_server": "Vite desktop frontend localhost1427 actual workers",
+  "base_sha": "b433a12331af3dba200be596422442c103783831"
+}

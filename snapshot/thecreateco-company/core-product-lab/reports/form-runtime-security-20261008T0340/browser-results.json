@@ -1,0 +1,60 @@
+{
+  "touch": false,
+  "results": [
+    {
+      "width": 1440,
+      "menu": "PASS",
+      "mouse_save_open": "PASS",
+      "keyboard_step": "PASS",
+      "glb": "PASS",
+      "step_bytes": 15499,
+      "glb_bytes": 2404
+    },
+    {
+      "width": 1280,
+      "menu": "PASS",
+      "mouse_save_open": "PASS",
+      "keyboard_step": "PASS",
+      "glb": "PASS",
+      "step_bytes": 15499,
+      "glb_bytes": 2404
+    },
+    {
+      "width": 1100,
+      "menu": "PASS",
+      "mouse_save_open": "PASS",
+      "keyboard_step": "PASS",
+      "glb": "PASS",
+      "step_bytes": 15499,
+      "glb_bytes": 2404
+    },
+    {
+      "width": 768,
+      "menu": "PASS",
+      "mouse_save_open": "PASS",
+      "keyboard_step": "PASS",
+      "glb": "PASS",
+      "step_bytes": 15499,
+      "glb_bytes": 2404
+    },
+    {
+      "width": 390,
+      "menu": "PASS",
+      "mouse_save_open": "PASS",
+      "keyboard_step": "PASS",
+      "glb": "PASS",
+      "step_bytes": 15499,
+      "glb_bytes": 2404
+    },
+    {
+      "width": 320,
+      "menu": "PASS",
+      "mouse_save_open": "PASS",
+      "keyboard_step": "PASS",
+      "glb": "PASS",
+      "step_bytes": 15499,
+      "glb_bytes": 2404
+    }
+  ],
+  "errors": []
+}

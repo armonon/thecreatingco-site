@@ -1,0 +1,60 @@
+{
+  "at": "2026-10-08T02:03:34.947Z",
+  "scope": "Actual Chromium process death and browser quota denial; not physical disk exhaustion or hardware qualification",
+  "profile": "/Users/agentsattari/.openclaw/tmp/stemdeck-process-recovery-HlTv18",
+  "pass": false,
+  "checks": [
+    {
+      "name": "SIGKILL while generated capture is active; reopen same profile",
+      "result": {
+        "projectExact": true,
+        "assetsExact": 2,
+        "journalEvents": [
+          2
+        ],
+        "portableBytes": 144964
+      }
+    },
+    {
+      "name": "Actual quota denial preserves last-good session, audio and portable backup",
+      "result": {
+        "saveError": {
+          "name": "QuotaExceededError",
+          "message": ""
+        },
+        "assetError": {
+          "name": "QuotaExceededError",
+          "message": ""
+        },
+        "projectExact": true,
+        "assetsExact": 2,
+        "journalEvents": [
+          2
+        ],
+        "portableBytes": 144964
+      }
+    }
+  ],
+  "killed": {
+    "code": null,
+    "signal": "SIGKILL"
+  },
+  "captureQuota": {
+    "finished": false,
+    "error": null,
+    "health": {
+      "contextState": "running",
+      "visibility": "visible",
+      "wallSeconds": 20.03889999999851,
+      "capturedFrames": 912000,
+      "error": null,
+      "clockLag": 0.19356666666517697,
+      "duration": 19.845333333333333,
+      "pendingBytes": 0,
+      "pendingEvents": 0,
+      "committedEvents": 1,
+      "durableAudioSeconds": 15
+    }
+  },
+  "error": "page.waitForFunction: Timeout 20000ms exceeded.\n    at /Users/agentsattari/code/core-product-lab/stemdeck-recovery/scripts/run-process-recovery-qa.mjs:84:14"
+}

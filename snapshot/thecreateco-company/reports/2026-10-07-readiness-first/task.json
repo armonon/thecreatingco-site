@@ -1,0 +1,11 @@
+{
+  "task_id": "REV-READINESS-20261007",
+  "title": "Apply autonomous readiness-first revenue correction",
+  "category": "revenue_operations",
+  "workstream": "OPERATIONS",
+  "expected_value": "Stop premature paid listings and founder-operated checkout setup; preserve release ownership and require automated fulfillment",
+  "source_evidence": [
+    "Discord #millions message 1557584649482665997"
+  ],
+  "next_action": "Update existing Square task, revenue directive and fulfillment requirements; no product claims or live catalog changes"
+}

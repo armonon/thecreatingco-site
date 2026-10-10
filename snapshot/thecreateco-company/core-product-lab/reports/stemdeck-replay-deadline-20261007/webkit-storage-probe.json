@@ -1,0 +1,32 @@
+{
+  "browser": "26.5",
+  "scope": "Isolated localhost disposable storage only; no app mutation or user data",
+  "results": {
+    "rows": [
+      {
+        "name": "string",
+        "pass": true
+      },
+      {
+        "name": "arraybuffer",
+        "pass": true
+      },
+      {
+        "name": "blob",
+        "pass": false,
+        "transactionError": {
+          "name": "UnknownError",
+          "message": "Error preparing Blob/File data to be stored in object store"
+        },
+        "requestError": {
+          "name": "UnknownError",
+          "message": "Error preparing Blob/File data to be stored in object store"
+        }
+      }
+    ],
+    "estimate": {
+      "quota": 1048576000,
+      "usage": 96
+    }
+  }
+}

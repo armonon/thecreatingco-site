@@ -1,0 +1,38 @@
+{
+  "reviewer_model": "openai/gpt-6.1-sol",
+  "observed_at": "2026-10-09T15:14:25.602223+00:00",
+  "independent_review": "PASS for scoped dependency change, not release approval",
+  "sha": "dce2f0f7e7e6a235967ccc19e55db3fcf8af1056",
+  "changed_lock_entries": [
+    "node_modules/uuid"
+  ],
+  "manifest_exact_scope": true,
+  "full_audit": {
+    "info": 0,
+    "low": 0,
+    "moderate": 8,
+    "high": 0,
+    "critical": 0,
+    "total": 8
+  },
+  "prod_audit": {
+    "info": 0,
+    "low": 0,
+    "moderate": 0,
+    "high": 0,
+    "critical": 0,
+    "total": 0
+  },
+  "test_rerun": {
+    "command": "npm test",
+    "exit": 0,
+    "passed": 44
+  },
+  "notes": [
+    "Actual Xcode/CommonJS/v5 regression script inspected; no runtime production change",
+    "Actual copied assets/direct cap sync log PASS; wrapper fixture failures correctly preserved",
+    "No native build/device/full app qualification",
+    "PR3 merged at 2026-10-09T08:06:53Z per live gh view; not merged by this job",
+    "Luna explicitly selected in spawn receipt; child actual route not independently exposed"
+  ]
+}

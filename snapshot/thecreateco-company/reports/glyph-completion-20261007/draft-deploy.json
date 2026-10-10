@@ -1,0 +1,14 @@
+{
+  "id": "6ac702c6402f6654a7134732",
+  "state": "uploading",
+  "draft": null,
+  "deploy_ssl_url": "https://6ac702c6402f6654a7134732--glyph-studio-610.netlify.app",
+  "published_at": null,
+  "required": [
+    "ed62def847baff1bd289c87aee72346a1835bed3",
+    "e2038dda09410d13700a878303e6db798f0bd54d",
+    "ff8c66c9eb38f3084ef6d0fe333b0707144fce0f",
+    "aed99d1497f0852b1fead283dd3870800238dec6"
+  ],
+  "error_message": null
+}

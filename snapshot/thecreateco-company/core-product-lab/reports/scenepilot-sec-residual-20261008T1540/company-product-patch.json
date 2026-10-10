@@ -1,0 +1,32 @@
+{
+  "product_id": "scenepilot",
+  "security_residual_qualification": {
+    "task_id": "CORE-SP-SEC-RESIDUAL-001",
+    "observed_at": "2026-10-08T15:43:40.492515+00:00",
+    "source_sha": "c26d518bc3d05f0adbf7287f79c5f5f15ac25220",
+    "model": "openai/gpt-6.1-sol",
+    "fallback": null,
+    "full_audit_groups": {
+      "high": 8,
+      "moderate": 8,
+      "total": 16
+    },
+    "production_audit_groups": 0,
+    "scoped_main_inputs": 13,
+    "scoped_renderer_inputs": 2081,
+    "affected_scoped_bundle_inputs": 0,
+    "component_tests": {
+      "passed": 39,
+      "total": 39
+    },
+    "packaged_runtime_exposure": null,
+    "full_golden_qualification": false,
+    "limitations": [
+      "Sparse isolated checkout; shared dependency tree read-only, not clean install",
+      "Scoped esbuild graph builds, not configured production/package builds",
+      "No UI dogfood this cycle: approximately159MiB disk free",
+      "Upstream latest braces3.0.3/sprintf-js1.1.3 still affected"
+    ],
+    "report": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-sec-residual-20261008T1540/README.md"
+  }
+}

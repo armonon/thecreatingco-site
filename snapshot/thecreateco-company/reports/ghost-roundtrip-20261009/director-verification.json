@@ -1,0 +1,39 @@
+{
+  "reviewer_model": "openai/gpt-6.1-sol",
+  "method": "Python stdlib zipfile/struct/math independent artifact inspection; no app parser",
+  "observed_at": "2026-10-09T12:18:38.303762+00:00",
+  "source_sha": "bfad2ee98a5194cc84892cc7a13a43e28fefea9b",
+  "clean_worktree": true,
+  "canonical_records_equal": true,
+  "source_bytes_preserved": [
+    {
+      "name": "coat-front.png",
+      "sha256": "f1fd7dcc0e66758a4cc8f15e30a06ee6e44088e86c98d8893403b1d724815778"
+    },
+    {
+      "name": "coat-back.png",
+      "sha256": "de672b42c19f5917184a37c98caa006da83c239ebfbcc0291d28ccceeed7f017"
+    }
+  ],
+  "distinct_settings_preserved": true,
+  "models": [
+    {
+      "entry": "roundtrip-coat-source-qa/models/001-coat.glb",
+      "meshes": 13,
+      "finite_position_vertices": 54678,
+      "embedded_pngs": 2,
+      "material_texture_indices": [
+        0,
+        1
+      ]
+    }
+  ],
+  "result": "PASS_SCOPED_ARTIFACT_CHECK_ONLY",
+  "recovery_artifact_check": {
+    "observed_at": "2026-10-09T12:29:53.400743+00:00",
+    "records_equal": true,
+    "original_photos_preserved": true,
+    "settings_preserved": true,
+    "coverage": "Completed stored snapshot survived persistent Chrome process restart/restore; original trigger not conclusively pinned. Corrected synthetic-pagehide harness syntax-checked only. Natural close/crash latest-write behavior UNQUALIFIED."
+  }
+}

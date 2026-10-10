@@ -1,0 +1,14 @@
+{
+  "synthetic": true,
+  "creation": "Constructed supported project schema, not claimed UI authoring",
+  "media_manifest": "/Users/agentsattari/thecreateco-company/reports/scenepilot-golden-release18/fixtures/manifest.json",
+  "assets_sha256": {
+    "/Users/agentsattari/thecreateco-company/reports/scenepilot-golden-release18/fixtures/sp-golden-main-30fps.mp4": "30b52bd8a5c97b265f610b5ea660666df66b3951ffb44a59278be3dfc0dbca07",
+    "/Users/agentsattari/thecreateco-company/reports/scenepilot-golden-release18/fixtures/sp-golden-broll-24fps.mp4": "773884ab81932967f93899e4fad56816b1238307245d42a3234b24c744e035a2",
+    "/Users/agentsattari/thecreateco-company/reports/scenepilot-golden-release18/fixtures/sp-golden-overlay.png": "5fc491e4f3729087d060c077b57b3fc954aa8e54d0bc412e6b4fdbdf4b4e6665",
+    "/Users/agentsattari/thecreateco-company/reports/scenepilot-golden-release18/fixtures/sp-golden-music-48k.wav": "e47ce0b8bf772d2268d4dda3e6e2cfd70c49898bc1309989697a0ded0903c791",
+    "/Users/agentsattari/thecreateco-company/reports/scenepilot-golden-release18/fixtures/sp-golden-sfx-44k.wav": "9467b7fa47627d0e1925cc390cc1675d1fb06d7b3e07a483cf920d0330288234"
+  },
+  "project_sha256": "05e99b91114aa992ea7626304066e7f108ca616e620b417c94fc6054784ebd11",
+  "limitations": "Initial harness project used unsupported cut value and rounded source mtimes; both corrected to none and actual file mtimes. Failed attempts preserved; no assertions/tolerances relaxed."
+}

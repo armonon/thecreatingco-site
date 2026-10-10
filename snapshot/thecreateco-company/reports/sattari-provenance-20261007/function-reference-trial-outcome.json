@@ -1,0 +1,14 @@
+{
+  "observed_at": "2026-10-08T03:03:47.287574+00:00",
+  "trial": "PUT existing unpublished draft with exact live oid reference map",
+  "http_status": 500,
+  "field_semantics": "UNVERIFIED; installed OpenAPI and public CLI do not document d/id/oid mapping",
+  "draft_state": "prepared",
+  "draft_published_at": null,
+  "required_functions_count": 24,
+  "still_requests_original_d_map": true,
+  "available_functions_count": 0,
+  "current_published_id": "6ac5bec218287de1ebe8e1c3",
+  "function_identity_preservation_verified": false,
+  "next_action": "Provider documentation or exact live original function artifacts needed before any upload/promotion; no id trial or blind rebuild after500"
+}

@@ -1,0 +1,37 @@
+{
+  "baseline": "e9c62eba1fd17de7ce5c3b1ac4710a14f72088f4",
+  "runtime_before": "43.2.0",
+  "runtime_candidate": "43.7.9",
+  "advisories_before": [
+    "GHSA-gr2m-v5gq-v685",
+    "GHSA-j84w-jfhq-vhvj",
+    "GHSA-9qh4-3jw8-366w",
+    "GHSA-qmv3-fv6v-rmhq"
+  ],
+  "runtime_advisories_after": [],
+  "remaining_npm_groups": {
+    "moderate": 12,
+    "high": 17
+  },
+  "remaining_direct": [
+    "@cloudflare/vite-plugin",
+    "electron-builder",
+    "eslint",
+    "eslint-config-next",
+    "vinext",
+    "wrangler"
+  ],
+  "guards_inspected": [
+    "sandbox true",
+    "contextIsolation true",
+    "nodeIntegration false",
+    "webSecurity true",
+    "permission requests denied",
+    "new in-app windows denied"
+  ],
+  "initial_verify": "1090/1091 unit pass; rendered-html failed because clean checkout lacked dist/server/index.js. No runtime regression inferred. Running verify:full with actual build prerequisite.",
+  "desktop_renderer": "PASS",
+  "status": "VERIFIED_PENDING_INDEPENDENT_REVIEW",
+  "full_verification": "PASS exit0: npm run verify:full (build, types/lint, 1091 unit tests and specified QA)",
+  "actual_desktop": "PASS: Electron43.7.9 actual window, isolated test profile, sandbox/contextIsolation/webSecurity enabled, renderer Node unavailable, popup denied"
+}

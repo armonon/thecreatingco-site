@@ -1,0 +1,11 @@
+{
+  "task_id": "REV-WEBTOOLS-20261007",
+  "title": "Research focused web utility revenue opportunity against demand, cost and readiness",
+  "workstream": "RESEARCH",
+  "category": "revenue_strategy",
+  "expected_value": "Select narrow web-tool validation candidate without waiting for full desktop suite or selling unready tools",
+  "source_evidence": [
+    "Discord #millions 1557600150824812625"
+  ],
+  "next_action": "Audit existing Split/Glyph and comparable web utilities, official competitors and buyer evidence; rank narrow launch hypotheses and preserve active implementation owners"
+}

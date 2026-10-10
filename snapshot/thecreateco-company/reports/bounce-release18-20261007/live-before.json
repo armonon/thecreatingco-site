@@ -1,0 +1,19 @@
+{
+  "site_id": "80c0c62e-559e-4201-91ab-b752171496fb",
+  "name": "bounce-music-player",
+  "url": "https://bounce.thecreatingco.com",
+  "deploy": {
+    "id": "6ac56c60e16a70e7cc60bd7a",
+    "state": "ready",
+    "commit_ref": null,
+    "branch": null,
+    "published_at": "2026-10-06T21:53:06.805Z"
+  },
+  "build": {
+    "repo_url": null,
+    "repo_path": null,
+    "repo_branch": null,
+    "dir": null,
+    "cmd": null
+  }
+}

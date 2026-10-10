@@ -1,0 +1,46 @@
+{
+  "observed_at": "2026-10-08T02:17:36.546656+00:00",
+  "matrix_sha256": "e16b47ad12b87372f3d3180ca116432e4992f461193c05187799b59a1f10697a",
+  "test_file_sha256": "c2b7badb9e9d9f6a88d6adc56e60943bd87a7e927e661c43808030b338fc42e8",
+  "provided_unit_tests": "4 passed",
+  "additional_fail_closed_checks": [
+    {
+      "case": "unknown candidate",
+      "complete": false
+    },
+    {
+      "case": "incomplete coverage",
+      "complete": false
+    },
+    {
+      "case": "missing timestamp",
+      "complete": false
+    },
+    {
+      "case": "old source",
+      "complete": false
+    },
+    {
+      "case": "empty platforms",
+      "complete": false
+    },
+    {
+      "case": "unknown platform",
+      "complete": false
+    },
+    {
+      "case": "known blocker",
+      "complete": false
+    },
+    {
+      "case": "triage incomplete",
+      "complete": false
+    }
+  ],
+  "blocking_findings": [],
+  "limitations": [
+    "Declarative structural validator, not semantic source/evidence audit. Correct populated observations still require independent review.",
+    "Deployment status is deliberately separate from completion; current assignment asks release-preparation plus accurate deployment status.",
+    "Evidence paths currently resolved against cwd; use absolute paths as current receipts do."
+  ]
+}

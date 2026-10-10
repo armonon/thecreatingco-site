@@ -1,0 +1,32 @@
+[
+  {
+    "sourceSha": "c46f9811c7fd34a00625541178d1f1e0d2b2456b",
+    "sourceDirty": false,
+    "browser": "chromium",
+    "version": "151.0.7922.34",
+    "scope": "Actual browser read-only file selection, SHA256 comparison and report export; NOT native quarantine UI",
+    "pass": true,
+    "exportedMeasurements": "Exact SHA256 reference hashes; changed-middle file not grouped",
+    "reportPath": "/Users/agentsattari/thecreateco-company/reports/reclaim-safety-20261007/chromium-browser-report.json"
+  },
+  {
+    "sourceSha": "c46f9811c7fd34a00625541178d1f1e0d2b2456b",
+    "sourceDirty": false,
+    "browser": "firefox",
+    "version": "153.0",
+    "scope": "Actual browser read-only file selection, SHA256 comparison and report export; NOT native quarantine UI",
+    "pass": true,
+    "exportedMeasurements": "Exact SHA256 reference hashes; changed-middle file not grouped",
+    "reportPath": "/Users/agentsattari/thecreateco-company/reports/reclaim-safety-20261007/firefox-browser-report.json"
+  },
+  {
+    "sourceSha": "c46f9811c7fd34a00625541178d1f1e0d2b2456b",
+    "sourceDirty": false,
+    "browser": "webkit",
+    "version": "26.5",
+    "scope": "Actual browser read-only file selection, SHA256 comparison and report export; NOT native quarantine UI",
+    "pass": true,
+    "exportedMeasurements": "Exact SHA256 reference hashes; changed-middle file not grouped",
+    "reportPath": "/Users/agentsattari/thecreateco-company/reports/reclaim-safety-20261007/webkit-browser-report.json"
+  }
+]

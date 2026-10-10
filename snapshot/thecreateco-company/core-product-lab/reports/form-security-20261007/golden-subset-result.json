@@ -1,0 +1,8 @@
+{
+  "command": "node --experimental-strip-types --test --test-name-pattern=acceptance projects build|SVG workbench shift-selection|canonical save state: real CAD Save As|Cast checks a selected mesh tests/workspace-smoke.test.mjs",
+  "runtime": "Node22.23.2",
+  "exit_code": 0,
+  "observed_at": "2026-10-08T01:44:02.378962+00:00",
+  "scope": "jsdom real-workspace synthetic golden subset, mocked native file API; NOT full desktop or deployed golden qualification",
+  "fixture_origin": "Deterministic synthetic buckle/enclosure/garment commands in existing tests; no customer assets"
+}

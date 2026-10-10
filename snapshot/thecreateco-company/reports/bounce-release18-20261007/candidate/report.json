@@ -1,0 +1,25 @@
+{
+  "at": "2026-10-08T02:12:01.406Z",
+  "browser": "153.0.8010.12",
+  "checks": [
+    {
+      "name": "import, actual media playback and reorder",
+      "status": "PASS"
+    },
+    {
+      "name": "save, close and reopen browser library",
+      "status": "PASS"
+    },
+    {
+      "name": "portable export bytes and independent manifest parser",
+      "status": "PASS"
+    },
+    {
+      "name": "damaged archive cannot replace current queue",
+      "status": "PASS"
+    }
+  ],
+  "pass": false,
+  "archive_sha256": "180fb5d85e350a8c1b009d3b1c2ab1433d1e74a58cc94611ade244b753fe04fd",
+  "error": "locator.innerText: Error: strict mode violation: getByRole('status') resolved to 4 elements:\n    1) <p id=\"status\" role=\"status\" class=\"status\">Saved the earlier library snapshot. Your library …</p> aka getByText('Saved the earlier library')\n    2) <output id=\"bass-value\">+6 dB</output> aka getByRole('status', { name: 'Bass' })\n    3) <output id=\"mid-value\">0 dB</output> aka getByRole('status', { name: 'Mid' })\n    4) <output id=\"treble-value\">4 dB</output> aka getByRole('status', { name: 'Treble' })\n\nCall log:\n\u001b[2m  - waiting for getByRole('status')\u001b[22m\n\n    at /Users/agentsattari/code/company-worktrees/bounce-release18-20261007/pwa/workflow-check.mjs:53:47\n    at async checkpoint (/Users/agentsattari/code/company-worktrees/bounce-release18-20261007/pwa/workflow-check.mjs:16:37)\n    at async file:///Users/agentsattari/code/company-worktrees/bounce-release18-20261007/pwa/workflow-check.mjs:45:2"
+}

@@ -1,0 +1,33 @@
+{
+  "product_id": "stemdeck",
+  "mastering_output_observation": {
+    "source_sha": "6bad0edaf198d80d44c9aa02c3e65970fe7d9148",
+    "observed_at": "2026-10-08T08:20:33.132616+00:00",
+    "coverage_complete": false,
+    "status": "SCOPED_AUDIT_COMPLETE_ORIGINAL_QUALIFICATION_FAIL",
+    "original_cases": 10,
+    "export_oracle_passes": 8,
+    "clipped_export_refusals": 2,
+    "baseline_unit_passes": 32,
+    "baseline_browser_passes": 9,
+    "diagnostic_checks_passed": 4,
+    "sample_rate_hz": 48000,
+    "fixture_scope": "Five deterministic synthetic families,20/60seconds,neutral/drivenlimiter;Chromium only",
+    "maximum_pcm_export_error": 1.1920928955078125e-07,
+    "limiter_ceiling_guaranteed": false,
+    "full_product_qualified": false,
+    "evidence": [
+      "/Users/agentsattari/thecreateco-company/reports/stemdeck-mastering-20261008T0810/README.md",
+      "/Users/agentsattari/thecreateco-company/reports/stemdeck-mastering-20261008T0810/results.json",
+      "/Users/agentsattari/thecreateco-company/reports/stemdeck-mastering-20261008T0810/diagnostic-results.json",
+      "/Users/agentsattari/thecreateco-company/reports/stemdeck-mastering-20261008T0810/receipt-validation.json"
+    ],
+    "next_action": "Retain failedstressvectors;expand independentphase/rate/musical/platform qualification;resolve existing disk/mandatoryCI/stack gates without bypass."
+  },
+  "evidence_sources": [
+    "/Users/agentsattari/thecreateco-marketing/PRODUCTS.md",
+    "/Users/agentsattari/code/wave4/WAVE4.md",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-initial.md",
+    "/Users/agentsattari/thecreateco-company/reports/stemdeck-mastering-20261008T0810/README.md"
+  ]
+}

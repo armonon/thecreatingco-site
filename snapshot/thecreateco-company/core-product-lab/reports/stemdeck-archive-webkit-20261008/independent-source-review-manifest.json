@@ -1,0 +1,18 @@
+{
+  "at": "2026-10-08T05:50:13.612813+00:00",
+  "reviewer": "independent native Codex child /root/archive_review",
+  "actualModel": "OpenAI gpt-6.1-sol (inherited parent model)",
+  "fallbacks": [],
+  "sourceHead": "c15bb06a87b150a966e8c563457de4f2786ba141",
+  "trackedDiffSha256": "8f54a995fc31f0ff06d575ea3bfe62fa8d4554760732d0983b35939df1134077",
+  "filesSha256": {
+    "src/studio/session/useStudioSession.js": "150675e21ffcaf2349049dca4f434573f0f3bf4caa42635ab0817bba51444797",
+    "src/utils/arrangementStreamExport.js": "047538c8b34912057d9b42d5308e85dc6bf18e81385bb7a0b219a36c4307c68d",
+    "src/utils/arrangementStreamExport.test.js": "9df14de5ff82b768defb68cf957a6a440f8c132a0280f3c784d5218ebd9e33b1",
+    "src/utils/audioProjectStore.js": "d5594f3d6072dcaa168c76f6e8403ed2962dafa4f9b56f1086821bb578456b6b",
+    "src/utils/libraryFiles.js": "fa970c9ed2da99cfa0fe3e4ce4eb84e8a2e1bed80a595cb8189111a006caa7cc",
+    "src/utils/importArchiveAudioAssets.js": "6f3037da77d8719c78eca0bb91ccd8eaa2619e0d8990040ca4967aa65bd41734",
+    "src/utils/importArchiveAudioAssets.test.js": "8cb393d4f84aed9a9a92cecd4b2b56f6d38481af1198adaa3d3f617b01566628"
+  },
+  "modelConfirmation": "Parent live session_status confirmed openai/gpt-6.1-sol / OpenAI Codex; child inherited with no override"
+}

@@ -1,0 +1,163 @@
+[
+  {
+    "product_id": "librarian",
+    "release_readiness": "Exact missing reader module recovered/tested; restoration pending exact live function preservation. PR2 docs/guard tests open; not deployed.",
+    "completion_observations": {
+      "candidate_sha": "b549a40072c1a5f01cd846fd37c68da3c1c31030",
+      "observed_at": "2026-10-08T03:37:22.377459+00:00",
+      "supported_platforms": [],
+      "gates": {
+        "core_workflow": {
+          "status": "BLOCKED",
+          "source_sha": "b549a40072c1a5f01cd846fd37c68da3c1c31030",
+          "observed_at": "2026-10-08T03:37:22.377459+00:00",
+          "coverage_complete": false,
+          "evidence": [
+            "/Users/agentsattari/thecreateco-company/reports/librarian-workflow-20261007/README.md",
+            "/Users/agentsattari/thecreateco-company/reports/librarian-workflow-20261007/results.json"
+          ],
+          "summary": "Public PDF reader404; current source and exact recovered one-file browser overlay pass, not deployed."
+        },
+        "save_reopen_export": {
+          "status": "UNVERIFIED",
+          "source_sha": "b549a40072c1a5f01cd846fd37c68da3c1c31030",
+          "observed_at": "2026-10-08T03:37:22.377459+00:00",
+          "coverage_complete": false,
+          "evidence": [
+            "/Users/agentsattari/thecreateco-company/reports/librarian-workflow-20261007/README.md",
+            "/Users/agentsattari/thecreateco-company/reports/librarian-workflow-20261007/results.json"
+          ],
+          "summary": "Actual PDF original-byte roundtrip passes in localcurrentmain and recoveredpublic responseoverlay. Live unmodified reader still404; broader workflows incomplete."
+        },
+        "reliability_recovery": {
+          "status": "UNVERIFIED",
+          "source_sha": "b549a40072c1a5f01cd846fd37c68da3c1c31030",
+          "observed_at": "2026-10-08T03:37:22.377459+00:00",
+          "coverage_complete": false,
+          "evidence": [
+            "/Users/agentsattari/thecreateco-company/reports/librarian-workflow-20261007/README.md",
+            "/Users/agentsattari/thecreateco-company/reports/librarian-workflow-20261007/results.json"
+          ],
+          "summary": "Partial evidence only; full product criteria not qualified."
+        },
+        "performance": {
+          "status": "UNVERIFIED",
+          "source_sha": "b549a40072c1a5f01cd846fd37c68da3c1c31030",
+          "observed_at": "2026-10-08T03:37:22.377459+00:00",
+          "coverage_complete": false,
+          "evidence": [
+            "/Users/agentsattari/thecreateco-company/reports/librarian-workflow-20261007/README.md",
+            "/Users/agentsattari/thecreateco-company/reports/librarian-workflow-20261007/results.json"
+          ],
+          "summary": "Partial evidence only; full product criteria not qualified."
+        },
+        "usability_accessibility": {
+          "status": "UNVERIFIED",
+          "source_sha": "b549a40072c1a5f01cd846fd37c68da3c1c31030",
+          "observed_at": "2026-10-08T03:37:22.377459+00:00",
+          "coverage_complete": false,
+          "evidence": [
+            "/Users/agentsattari/thecreateco-company/reports/librarian-workflow-20261007/README.md",
+            "/Users/agentsattari/thecreateco-company/reports/librarian-workflow-20261007/results.json"
+          ],
+          "summary": "Partial evidence only; full product criteria not qualified."
+        },
+        "responsive_behavior": {
+          "status": "UNVERIFIED",
+          "source_sha": "b549a40072c1a5f01cd846fd37c68da3c1c31030",
+          "observed_at": "2026-10-08T03:37:22.377459+00:00",
+          "coverage_complete": false,
+          "evidence": [
+            "/Users/agentsattari/thecreateco-company/reports/librarian-workflow-20261007/README.md",
+            "/Users/agentsattari/thecreateco-company/reports/librarian-workflow-20261007/results.json"
+          ],
+          "summary": "Partial evidence only; full product criteria not qualified."
+        },
+        "security_privacy": {
+          "status": "BLOCKED",
+          "source_sha": "b549a40072c1a5f01cd846fd37c68da3c1c31030",
+          "observed_at": "2026-10-08T03:37:22.377459+00:00",
+          "coverage_complete": false,
+          "evidence": [
+            "/Users/agentsattari/thecreateco-company/reports/librarian-workflow-20261007/README.md",
+            "/Users/agentsattari/thecreateco-company/reports/librarian-workflow-20261007/results.json"
+          ],
+          "summary": "Production audit0; inherited full dev/build audit1critical4high11moderate pending triage. Server auth guard unchanged; no verified-account E2E."
+        },
+        "documentation_support": {
+          "status": "UNVERIFIED",
+          "source_sha": "b549a40072c1a5f01cd846fd37c68da3c1c31030",
+          "observed_at": "2026-10-08T03:37:22.377459+00:00",
+          "coverage_complete": false,
+          "evidence": [
+            "/Users/agentsattari/thecreateco-company/reports/librarian-workflow-20261007/README.md",
+            "/Users/agentsattari/thecreateco-company/reports/librarian-workflow-20261007/results.json"
+          ],
+          "summary": "Scoped reviewed README now accurately describes hiddenAI and guarded prereqs; complete support/platform docs not certified."
+        },
+        "tests": {
+          "status": "UNVERIFIED",
+          "source_sha": "b549a40072c1a5f01cd846fd37c68da3c1c31030",
+          "observed_at": "2026-10-08T03:37:22.377459+00:00",
+          "coverage_complete": false,
+          "evidence": [
+            "/Users/agentsattari/thecreateco-company/reports/librarian-workflow-20261007/README.md",
+            "/Users/agentsattari/thecreateco-company/reports/librarian-workflow-20261007/results.json"
+          ],
+          "summary": "44/44units, web/iOS-mode builds and6WebKit browser cases pass. Not full native/platform/catalog/auth test qualification."
+        },
+        "supported_platforms": {
+          "status": "UNVERIFIED",
+          "source_sha": "b549a40072c1a5f01cd846fd37c68da3c1c31030",
+          "observed_at": "2026-10-08T03:37:22.377459+00:00",
+          "coverage_complete": false,
+          "evidence": [
+            "/Users/agentsattari/thecreateco-company/reports/librarian-workflow-20261007/README.md",
+            "/Users/agentsattari/thecreateco-company/reports/librarian-workflow-20261007/results.json"
+          ],
+          "summary": "Partial evidence only; full product criteria not qualified."
+        },
+        "critical_blockers": {
+          "status": "BLOCKED",
+          "source_sha": "b549a40072c1a5f01cd846fd37c68da3c1c31030",
+          "observed_at": "2026-10-08T03:37:22.377459+00:00",
+          "coverage_complete": false,
+          "evidence": [
+            "/Users/agentsattari/thecreateco-company/reports/librarian-workflow-20261007/README.md",
+            "/Users/agentsattari/thecreateco-company/reports/librarian-workflow-20261007/results.json"
+          ],
+          "summary": "Public reader404 repair prepared; deploying while preserving exact live functions unresolved. Build-tool vulnerabilities and broader qualification incomplete."
+        }
+      },
+      "deployment": {
+        "status": "UNCHANGED",
+        "published_deploy": "6ac1ecba6479a9e160b433b7",
+        "published_source_sha": null,
+        "active_frontend_reproduced_from": "179024b483c641ba407c83c8d6a5c579c5e1f97b",
+        "source_pr": "OPEN_NOT_MERGED",
+        "new_deploy_created": false
+      },
+      "next_action": "Resolve exact librarian/proxy function artifact preservation for216file restoration; triage build dependencies; approvedsession+testaccess required only for hiddenAI."
+    },
+    "release_disposition": {
+      "status": "blocked",
+      "reason": "Public reader404; exact one-file repair prepared but function-preserving deployment blocked. Not a complete product.",
+      "observed_at": "2026-10-08T03:37:22.377459+00:00",
+      "evidence": [
+        "/Users/agentsattari/thecreateco-company/reports/librarian-workflow-20261007/README.md"
+      ]
+    },
+    "known_bugs": [
+      {
+        "id": "LIBRARIAN-PDF-ASSET-404",
+        "severity": "P1",
+        "status": "RESTORATION_PREPARED_NOT_DEPLOYED",
+        "evidence": "/Users/agentsattari/thecreateco-company/reports/librarian-workflow-20261007/public/results.json",
+        "fix_evidence": "/Users/agentsattari/thecreateco-company/reports/librarian-workflow-20261007/exact-reader-recovery.json"
+      }
+    ],
+    "next_milestone": "Release exact reader artifact without losing functions; dependencytriage and fullqualification.",
+    "verification_level": "EXACT_LOCAL_AND_PUBLIC_ONE_FILE_OVERLAY_WORKFLOW_SUBSETS",
+    "evidence_freshness": "2026-10-08T03:37:22.377459+00:00"
+  }
+]

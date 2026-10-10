@@ -1,0 +1,44 @@
+{
+  "url": "https://form-studio-review.netlify.app/studio",
+  "published_deploy": "6ac5ba1aaeefd1fa9121aa8a",
+  "input_encoding": "binary",
+  "scope": "Real Cast synthetic mesh workflow subset; source/deploy provenance recorded separately",
+  "units_export": {
+    "triangles": 12,
+    "extent": [
+      20,
+      10,
+      4
+    ],
+    "min": [
+      0,
+      0,
+      0
+    ],
+    "max": [
+      20,
+      10,
+      4
+    ],
+    "triangle_vertices": [
+      "0,0,0|0,0,4|0,10,0",
+      "0,0,0|0,0,4|20,0,4",
+      "0,0,0|0,10,0|20,10,0",
+      "0,0,0|20,0,0|20,0,4",
+      "0,0,0|20,0,0|20,10,0",
+      "0,0,4|0,10,0|0,10,4",
+      "0,0,4|0,10,4|20,10,4",
+      "0,0,4|20,0,4|20,10,4",
+      "0,10,0|0,10,4|20,10,0",
+      "0,10,4|20,10,0|20,10,4",
+      "20,0,0|20,0,4|20,10,4",
+      "20,0,0|20,10,0|20,10,4"
+    ]
+  },
+  "repair_undo": "PASS",
+  "invalid_import_preserves_mesh": "PASS",
+  "saved_mesh_close_reopen": "PASS",
+  "original_preserved": "PASS",
+  "errors": [],
+  "pass": true
+}

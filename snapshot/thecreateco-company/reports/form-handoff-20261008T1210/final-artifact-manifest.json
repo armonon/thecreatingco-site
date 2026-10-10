@@ -1,0 +1,41 @@
+{
+  "source_sha": "779d61d324a6f5f8a6813b51735d4495dbfabc08",
+  "observed_at": "2026-10-08T12:23:32.262552+00:00",
+  "dirty_status": "",
+  "artifacts": {
+    "desktop-dist/index.html": "862f2632bd4b39488429287b48845ec5dedb93cd7079122673ebf81fd4d4efe6",
+    "desktop-dist/assets/vendor-three-C-81tCF6.js": "da34443320394dbadb7bb372c2e37eb11242f485dbdfe7c4e6121fce25d748ab",
+    "desktop-dist/assets/vendor-react-DHQQvKuQ.js": "ed225068c8e954a22013227be7530d758e9e5bd01bd1d738aa7657007f7be127",
+    "desktop-dist/assets/__vite-browser-external-2W3EstLn.js": "ef2c9f2a4d6ac427ec5ec3377c0141c1a4bfb1efcff8e3076d89b2c016062507",
+    "desktop-dist/assets/garment-exchange-check-CnSIyB9e.js": "9097ac2f064e304f0f412013ab80a5da2c725792b699a39de66a5c60517454fc",
+    "desktop-dist/assets/fabric-engine-CaLnyFmB.js": "b9dff53f6524468b0e387e4141907b485edad371b8fe40d1aa0ea03b41455944",
+    "desktop-dist/assets/fabric-pattern-geometry-bMrvfBYa.js": "fe3a27998e39bc465ff5fa610766b27bbc10b04144e095ab09aea55c389a8458",
+    "desktop-dist/assets/cad-kernel.worker-B0roJ15u.js": "87fa324881a78a6e8bc624dc66d8100bceaabc7abe32003f73a21e7e4881e773",
+    "desktop-dist/assets/fitting-body-CGls2ybs.js": "3c2109cf42853a4f262e2a33d306a1c270dfc6788f73e09f9aca87475eb8ee99",
+    "desktop-dist/assets/fabric-solver.worker-BkjMI6xD.js": "6eba3e94cf82e7396fc32435ef2971124f3f3a163980cea0f07ea2935114f4c3",
+    "desktop-dist/assets/occt-wasm-DGaK35CQ.wasm": "6b5392c5cbfec5f6372208ba0e5e37d3a6f4c14319d2016eadfbc0eb27a90827",
+    "desktop-dist/assets/index-PBvudrub.css": "6ae317015dce70bdb4a82c1bb140dfdacf7f2d4f1024b5e5ca99fae4ccf3c496",
+    "desktop-dist/assets/dist-js-DBV1yAzU.js": "9f3008e87e8eb0ea08a195479aa0b9b231e16667b3c305e49e9d2ef6673b5a5a",
+    "desktop-dist/assets/rolldown-runtime-hePW80VL.js": "580ad8c58061a4dde99bde0a56905e382f0568516ee2f5b84dbfb52085709021",
+    "desktop-dist/assets/openvdb-DG4nTsE9.js": "222dc257b9fef96df12cd7ccf1348f4bcad3a389146cd28bbeadc8dc519d0f68",
+    "desktop-dist/assets/fabric-studio-B6AP_AbP.js": "1cb2b67799919e253169f088716293d7d8505e0e03404f1296828f16eae0ffe5",
+    "desktop-dist/assets/event-CptVPVg9.js": "32f405321ef5a01f78e0ac51187528bdc613248ab6b3e5747dbcefc16078592e",
+    "desktop-dist/assets/openvdb.worker-BpYPuMQO.js": "15d69189f1725dc1ede693b561bab194946dcd4c2e40cd16dc94b0f8032bd43a",
+    "desktop-dist/assets/native-cloth-IF73c9Al.js": "5ac10e650a39fa79836746a98f0b51198ca2ac13a4bdd1a5dfd8c7871efd76aa",
+    "desktop-dist/assets/studio-v2-PnGA5oyA.js": "4936d815b875a6fe84b143cc6d70b724dc723554f0495af50bb3f1e1453e5fd6",
+    "desktop-dist/assets/animation-body-De_lNhBS.js": "530371cc3d5dce6bd3bae8d74abc79d77399bb924cca8c010ad3d0ef431c3f56",
+    "desktop-dist/assets/animated-cloth.worker-DmSR-Bid.js": "e60182d3205ff234758b9680703f4e8648cc31c133f39f00af67ad381898cc0a",
+    "desktop-dist/assets/dist-js-BMKJtzjQ.js": "59b44cb10c51be0c4ad1c4f9d715f1806b153f509a805e4e8d89a93ae2e19fda",
+    "desktop-dist/assets/garment-animation-C-pYaytn.js": "5438f0816ad61ca2feb9c688ed2b0d8e3089e5582522af6d10304a565bb5ab19",
+    "desktop-dist/assets/core-SwWLTXZB.js": "dc85f7a86c39d33c35fbe88fd339813a2c05c9ccf25a1bdd8691d7866355dd74",
+    "desktop-dist/assets/vendor-occt-Dhk5jspY.js": "a1d13f3269d0541bfc11f5f2451be830b9ae7c4e7d26c18235fd635487a53a52",
+    "desktop-dist/assets/index-K-_hPTqZ.js": "0ddc72e698b2367a1f803549146f855a03effcc2e710ea245962276b0decc9fb",
+    "desktop-dist/.vite/manifest.json": "aa2a2346d05e993112477992cc9e989da223c7c1225b4af95b5e7f34214f6e8d"
+  },
+  "node": "v22.23.2",
+  "baseline_source": "be1f7272c5689d6401194d643fa3eb09a2b0b73b",
+  "changed_files": [
+    "app/PARKED.md"
+  ],
+  "dependencies": "read-only symlink to exact parent worktree node_modules; lock unchanged"
+}

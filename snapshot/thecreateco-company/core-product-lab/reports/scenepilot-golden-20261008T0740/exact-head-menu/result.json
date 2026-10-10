@@ -1,0 +1,40 @@
+{
+  "startedAt": "2026-10-08T07:59:45.000Z",
+  "source": "c26d518bc3d05f0adbf7287f79c5f5f15ac25220",
+  "cssSha256": "56d04ed3cb11f1c0a825fa7ef377e14f455cf1be4405447736dd1c79b4e108d5",
+  "fixtureSha256": "30b52bd8a5c97b265f610b5ea660666df66b3951ffb44a59278be3dfc0dbca07",
+  "url": "http://127.0.0.1:5189/",
+  "checks": [
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 1100
+      },
+      "status": "PASS",
+      "before": 2,
+      "after": 3,
+      "hit": {
+        "reachable": true,
+        "overflow": "visible"
+      }
+    },
+    {
+      "viewport": {
+        "width": 1140,
+        "height": 900
+      },
+      "status": "PASS",
+      "before": 2,
+      "after": 3,
+      "hit": {
+        "reachable": true,
+        "overflow": "visible"
+      }
+    }
+  ],
+  "errors": [],
+  "scope": "Browser Lite timeline menu pointer reachability only; not golden/release qualification",
+  "browser": "153.0.8010.12",
+  "status": "PASS",
+  "finishedAt": "2026-10-08T07:59:54.967Z"
+}

@@ -1,0 +1,8 @@
+{
+  "task_id": "REV-BASELINE-001",
+  "next_action": "Founder confirms current revenue $0 (2026-10-07); preserve FOUNDER_REPORTED status separately from ledger-derived day/7d/30d totals. Inventory attributable operating/delivery costs and prepare Stripe reporting once account exists; do not repeat the already-answered current-revenue question. Confirm Sattari economic entitlement separately.",
+  "source_evidence": [
+    "REVENUE_DIRECTIVE.md",
+    "reports/revenue-2026-10-07/founder-baseline-patch.json"
+  ]
+}

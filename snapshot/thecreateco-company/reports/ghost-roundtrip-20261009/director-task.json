@@ -1,0 +1,45 @@
+{
+  "task_id": "PROGRAM18-GHOST-ROUNDTRIP-001",
+  "product": "ghost",
+  "title": "Qualify exact-source Ghost collection recovery and independent textured exports",
+  "workstream": "PRODUCT_COMPLETION",
+  "category": "reliability",
+  "severity": "P1",
+  "status": "RUNNING",
+  "model": "openai/gpt-6.1-sol",
+  "scores": {
+    "impact": 8,
+    "user_value": 8,
+    "confidence": 8,
+    "effort": 5,
+    "risk": 3
+  },
+  "source_evidence": {
+    "direct": [
+      "Original-photo/settings/output IndexedDB recovery documented; README94 contradicts README40;10dirty pendingpatternfiles prevent treatingHEAD asdeployed."
+    ]
+  },
+  "next_action": "Resume existing harness with visible Save link, then real portable/recovery/output roundtrips; README correction and platform qualification pending.",
+  "test_requirements": "Actualworker/browser and independentGLB parser; originalsourcebytes preserved; no garmentfit claims.",
+  "evidence_sources": [
+    "/Users/agentsattari/thecreateco-company/reports/release18-inventory-gaps-20261007/README.md"
+  ],
+  "dependencies": [],
+  "priority": 56.8889,
+  "priority_basis": "ESTIMATE: impact \u00d7 user_value \u00d7 confidence / (effort + risk + 1)",
+  "campaign": null,
+  "expected_value": null,
+  "risk": 3,
+  "created_at": "2026-10-08T02:20:57+00:00",
+  "started_at": "2026-10-09T12:10:38+00:00",
+  "completed_at": null,
+  "result": "Baseline54tests and solver build pass, clean isolated branch; browser object generated but portable download harness incomplete. Paused for explicit social-layer priority; no product changes or completion.",
+  "attempts": 2,
+  "owner": "company-director",
+  "lease_until": "2026-10-09T12:45:38+00:00",
+  "result_evidence": {
+    "path": "/Users/agentsattari/thecreateco-company/reports/ghost-roundtrip-20261007/README.md",
+    "recorded_at": "2026-10-08T03:57:51+00:00",
+    "bytes": 1973
+  }
+}

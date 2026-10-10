@@ -1,0 +1,277 @@
+{
+  "task": "CORE-STEM-AUD-005",
+  "snapshot": {
+    "repository": "/Users/agentsattari/code/core-product-lab/stemdeck-archive-webkit",
+    "head": "6bad0edaf198d80d44c9aa02c3e65970fe7d9148",
+    "working_tree": "clean (git status --short returned empty)"
+  },
+  "audit": {
+    "model": {
+      "requested": "gpt-6-luna",
+      "actual": "unverified",
+      "verification": "OpenClaw session_status was requested but is not exposed in this agent turn: absent from direct tools and no matching deferred entry was available in ALL_TOOLS. The model switch context only identifies GPT-6/Codex family, not exact serving variant.",
+      "claim_policy": "Do not treat requested model as actual."
+    },
+    "scope": [
+      "src/utils/performanceSupport.js",
+      "src/utils/performancePlayer.js",
+      "src/utils/performanceReplay.js",
+      "focused existing support/reconstruction tests"
+    ],
+    "tests_run": false,
+    "runtime_proof": false,
+    "release_qualification": false,
+    "limits": "Static source/test inspection only; no code changes, broad tests, runtime execution, or end-to-end lifecycle qualification."
+  },
+  "source_evidence": [
+    {
+      "claim": "Canonical inventory contains 20 rows and explicitly marks all qualified false; stage values are implementation/partial/printed/unverified, not PASS.",
+      "refs": [
+        "src/utils/performanceSupport.js:1-25",
+        "src/utils/performanceSupport.js:26-187",
+        "src/utils/performanceSupport.js:189-207"
+      ]
+    },
+    {
+      "claim": "Arrangement handler allowlist contains 20 event types including initialState; replay-only controls are absent from it.",
+      "refs": [
+        "src/utils/performanceSupport.js:210-232"
+      ]
+    },
+    {
+      "claim": "Arrangement reconstruction warns on event types outside that allowlist and implements transport, loop, source, mixer, lane, and stem handling; sync is re-derived by syncRateSchedules.",
+      "refs": [
+        "src/utils/performanceReplay.js:189-245",
+        "src/utils/performanceReplay.js:394-459",
+        "src/utils/performanceReplay.js:20-186"
+      ]
+    },
+    {
+      "claim": "Replay supports additional FX/EQ/filter/pitch/master/pad/input/routing-adjacent event types; acceptance is not evidence of reconstruction.",
+      "refs": [
+        "src/utils/performancePlayer.js:26-74",
+        "src/utils/performancePlayer.js:245-256",
+        "src/utils/performancePlayer.js:555-570"
+      ]
+    },
+    {
+      "claim": "Existing tests assert inventory coverage, no PASS qualification, and selected source-level behaviors; they do not establish runtime parity.",
+      "refs": [
+        "src/utils/performanceSupport.test.js:18-55",
+        "src/utils/performanceReplay.test.js:1-23"
+      ]
+    }
+  ],
+  "rows": [
+    {
+      "id": "transport",
+      "events": [
+        "deckTransport",
+        "playDeck",
+        "pauseDeck",
+        "stopDeck",
+        "seekDeck"
+      ],
+      "arrange_classification": "editable source intervals; direct transport handler"
+    },
+    {
+      "id": "sources",
+      "events": [
+        "setLaneState",
+        "removeLane"
+      ],
+      "arrange_classification": "editable source clips; direct source replacement/removal handler"
+    },
+    {
+      "id": "loop",
+      "events": [
+        "setLoop",
+        "setLoopRegion"
+      ],
+      "arrange_classification": "editable repeated source intervals/loop metadata; direct loop handler"
+    },
+    {
+      "id": "rate",
+      "events": [
+        "setPlaybackRate"
+      ],
+      "arrange_classification": "editable clip rate; direct transport handler"
+    },
+    {
+      "id": "sync",
+      "events": [
+        "setDeckSync",
+        "setProjectTempo",
+        "setTempoFollow"
+      ],
+      "arrange_classification": "editable re-derived rate schedules; helper handler"
+    },
+    {
+      "id": "pitch",
+      "events": [
+        "setDeckPitch",
+        "setDeckKeyLock",
+        "setStemPitch"
+      ],
+      "arrange_classification": "printed-only in Arrange; no reconstruction handler"
+    },
+    {
+      "id": "mixer",
+      "events": [
+        "setDeckGain",
+        "setDeckFader",
+        "setDeckSide",
+        "setCrossfader",
+        "setCrossfaderCurve"
+      ],
+      "arrange_classification": "editable combined volume automation; direct mix handler"
+    },
+    {
+      "id": "stems",
+      "events": [
+        "setLaneState",
+        "setMasterStems"
+      ],
+      "arrange_classification": "editable combined volume automation; direct lane/master-stems handler"
+    },
+    {
+      "id": "eq",
+      "events": [
+        "setDeckEq"
+      ],
+      "arrange_classification": "printed-only in Arrange; no reconstruction handler"
+    },
+    {
+      "id": "filter",
+      "events": [
+        "setDeckFilter"
+      ],
+      "arrange_classification": "printed-only in Arrange; no reconstruction handler"
+    },
+    {
+      "id": "fx",
+      "events": [
+        "setDeckFx",
+        "setLaneFx"
+      ],
+      "arrange_classification": "printed-only in Arrange; no reconstruction handler"
+    },
+    {
+      "id": "sends",
+      "events": [
+        "setDeckSend",
+        "setReturn",
+        "setDeckInserts"
+      ],
+      "arrange_classification": "printed-only in Arrange; no reconstruction handler"
+    },
+    {
+      "id": "master",
+      "events": [
+        "setMasterProcessing",
+        "setMasterAssist",
+        "setLimiter",
+        "setMasterLevel"
+      ],
+      "arrange_classification": "printed-only in Arrange; no reconstruction handler"
+    },
+    {
+      "id": "pads",
+      "events": [
+        "triggerPad",
+        "setPadGain"
+      ],
+      "arrange_classification": "printed-only in Arrange; no reconstruction handler (no optional rebuild implemented here)"
+    },
+    {
+      "id": "inputGain",
+      "events": [
+        "inputState"
+      ],
+      "arrange_classification": "no direct editable Arrange handler; separately captured/aligned input and replay path; partial per inventory"
+    },
+    {
+      "id": "inputMonitor",
+      "events": [
+        "inputState",
+        "openMicrophone",
+        "closeMicrophone"
+      ],
+      "arrange_classification": "no direct editable Arrange handler; interval/history is not reconstructed here"
+    },
+    {
+      "id": "midi",
+      "events": [],
+      "arrange_classification": "no event type in inventory; separate arrangement-recording path, not performance-event reconstruction"
+    },
+    {
+      "id": "pan",
+      "events": [],
+      "arrange_classification": "no event type in inventory; authored arrangement automation only"
+    },
+    {
+      "id": "routing",
+      "events": [],
+      "arrange_classification": "no event type in inventory; printed/local configuration only"
+    },
+    {
+      "id": "deviceAutomation",
+      "events": [],
+      "arrange_classification": "no event type in inventory; authored arrangement device envelopes, not live mutation reconstruction"
+    }
+  ],
+  "event_type_accounting": {
+    "reconstruction_allowlist": [
+      "initialState",
+      "deckTransport",
+      "playDeck",
+      "pauseDeck",
+      "stopDeck",
+      "seekDeck",
+      "setPlaybackRate",
+      "setCrossfader",
+      "setCrossfaderCurve",
+      "setDeckGain",
+      "setDeckFader",
+      "setDeckSide",
+      "setLaneState",
+      "removeLane",
+      "setLoop",
+      "setLoopRegion",
+      "setMasterStems",
+      "setDeckSync",
+      "setProjectTempo",
+      "setTempoFollow"
+    ],
+    "support_events_without_arrange_reconstruction": [
+      "setDeckPitch",
+      "setDeckKeyLock",
+      "setStemPitch",
+      "setDeckEq",
+      "setDeckFilter",
+      "setDeckFx",
+      "setLaneFx",
+      "setDeckSend",
+      "setReturn",
+      "setDeckInserts",
+      "setMasterProcessing",
+      "setMasterAssist",
+      "setLimiter",
+      "setMasterLevel",
+      "triggerPad",
+      "setPadGain",
+      "inputState",
+      "openMicrophone",
+      "closeMicrophone"
+    ],
+    "non_event_rows": [
+      "midi",
+      "pan",
+      "routing",
+      "deviceAutomation"
+    ],
+    "unaccounted_inventory_event_types": []
+  },
+  "discrepancies": [],
+  "conclusion": "No concrete contradiction between the canonical stage inventory and the inspected reconstruction handlers was identified. Seven rows (transport, sources, loop, rate, sync, mixer, stems) map to editable source/clip or volume reconstruction. Pitch, EQ, filter, FX, sends, master and pads are printed-only in Arrange; input rows are partial but have no direct reconstruction handler here. MIDI/pan/routing/deviceAutomation have no performance-event types in the canonical inventory. This is static source evidence only, not runtime proof."
+}

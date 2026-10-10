@@ -1,0 +1,103 @@
+[
+  {
+    "name": "company",
+    "exit_code": 0,
+    "command": [
+      "python3",
+      "engine/test_company.py"
+    ],
+    "cwd": "thecreateco-company",
+    "tail": "........................\n----------------------------------------------------------------------\nRan 24 tests in 0.289s\n\nOK\n"
+  },
+  {
+    "name": "os-cycle",
+    "exit_code": 0,
+    "command": [
+      "python3",
+      "engine/test_os_cycle.py"
+    ],
+    "cwd": "thecreateco-company",
+    "tail": "iled_steps\": [\n    \"telemetry_collect\"\n  ]\n}\n.......\n----------------------------------------------------------------------\nRan 7 tests in 0.032s\n\nOK\n"
+  },
+  {
+    "name": "anomalies",
+    "exit_code": 0,
+    "command": [
+      "python3",
+      "engine/test_anomalies.py"
+    ],
+    "cwd": "thecreateco-company",
+    "tail": "...\n----------------------------------------------------------------------\nRan 3 tests in 0.012s\n\nOK\n"
+  },
+  {
+    "name": "supervisor",
+    "exit_code": 0,
+    "command": [
+      "python3",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-q"
+    ],
+    "cwd": "operations-supervisor",
+    "tail": "----------------------------------------------------------------------\nRan 13 tests in 0.029s\n\nOK\n"
+  },
+  {
+    "name": "handoff",
+    "exit_code": 0,
+    "command": [
+      "python3",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "git-handoff",
+      "-q"
+    ],
+    "tail": "----------------------------------------------------------------------\nRan 5 tests in 0.514s\n\nOK\n"
+  },
+  {
+    "name": "telemetry",
+    "cwd": "thecreateco-company",
+    "command": [
+      "python3",
+      "engine/test_telemetry.py"
+    ],
+    "exit_code": 0,
+    "tail": "................\n----------------------------------------------------------------------\nRan 16 tests in 0.045s\n\nOK\n"
+  },
+  {
+    "name": "marketing",
+    "cwd": "thecreateco-marketing/engine",
+    "command": [
+      "python3",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-q"
+    ],
+    "exit_code": 0,
+    "tail": "----------------------------------------------------------------------\nRan 26 tests in 0.926s\n\nOK\n"
+  },
+  {
+    "name": "operations-export",
+    "cwd": "code/company-worktrees/thecreatingco-operations",
+    "command": [
+      "python3",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      ".",
+      "-p",
+      "test_*.py",
+      "-q"
+    ],
+    "exit_code": 0,
+    "tail": "our new repositories, which will suppress this warning,\nhint: call:\nhint:\nhint: \tgit config --global init.defaultBranch <name>\nhint:\nhint: Names commonly chosen instead of 'master' are 'main', 'trunk' and\nhint: 'development'. The just-created branch can be renamed via this command:\nhint:\nhint: \tgit branch -m <name>\nhint:\nhint: Disable this message with \"git config set advice.defaultBranchName false\"\n----------------------------------------------------------------------\nRan 3 tests in 0.127s\n\nOK\n"
+  }
+]

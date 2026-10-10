@@ -1,0 +1,55 @@
+{
+  "observed_at": "2026-10-08T10:11:19.634487+00:00",
+  "source_sha": "c26d518bc3d05f0adbf7287f79c5f5f15ac25220",
+  "tracked_dirty": "",
+  "source_checkout": "/Users/agentsattari/code/company-worktrees/scenepilot-golden-20261008T0740",
+  "mode": "read-only audit; no product code writes",
+  "host": "Darwin-25.2.0-arm64-arm-64bit-Mach-O",
+  "disk_usage_bytes": {
+    "total": 494384795648,
+    "used": 494238736384,
+    "free": 146059264
+  },
+  "node": "v22.23.2",
+  "model": "openai/gpt-6.1-sol",
+  "fallback": null,
+  "files": {
+    "scripts/benchmark-editor.mjs": "ab24d972d778d5c43aa7e3c84ec72a428c9a8ab300415234cb270059d5b2f828",
+    "lib/compositor.ts": "d16b1aa1a9e84781dcc8802e8f509b8dec8f841898f82dad2a548bf9ddb91991",
+    "lib/pcm-audio.ts": "f57324de1b04447defc0397dc20816f3ddb93644d7bcc6ee5082971641115246",
+    "scripts/certify-long-project.mjs": "85b14fa717aff83fc36be2714f9878d93fbf006e4a717b6cca94c641bd116f4b",
+    "scripts/certify-release-stress.mjs": "a9c7dfae3715e5d9435ff8beb3016aa97fe5b19a7f6f0becb70766da8e978929",
+    "scripts/certify-linked-media.mjs": "cc87b7b57bd155c2be61cdf03a9c4d77035e6583cdc2656a128aa0094927a512",
+    "package-lock.json": "1e40fbf0e48e967788f55124af384c653385b67303e3032a428af99149fd2569"
+  },
+  "runs": [
+    {
+      "command": [
+        "node",
+        "--experimental-strip-types",
+        "scripts/benchmark-editor.mjs",
+        "--report=/Users/agentsattari/thecreateco-company/reports/scenepilot-performance-20261008T1010/benchmark-1.json"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "node",
+        "--experimental-strip-types",
+        "scripts/benchmark-editor.mjs",
+        "--report=/Users/agentsattari/thecreateco-company/reports/scenepilot-performance-20261008T1010/benchmark-2.json"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "node",
+        "--experimental-strip-types",
+        "scripts/benchmark-editor.mjs",
+        "--report=/Users/agentsattari/thecreateco-company/reports/scenepilot-performance-20261008T1010/benchmark-3.json"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "after_tracked_dirty": ""
+}

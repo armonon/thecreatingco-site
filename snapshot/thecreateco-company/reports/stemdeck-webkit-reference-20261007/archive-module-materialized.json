@@ -1,0 +1,102 @@
+{
+  "profile": "/Users/agentsattari/.openclaw/tmp/stemdeck-archive-probe-rwIJM1",
+  "version": "26.5",
+  "variant": "materialized",
+  "result": {
+    "before": [
+      {
+        "id": "audio-baaf3c35-e70c-4638-9069-f161da91ccd0",
+        "declared": 2822444,
+        "actual": 2822444,
+        "head": [
+          82,
+          73,
+          70,
+          70,
+          36,
+          17,
+          43,
+          0
+        ]
+      },
+      {
+        "id": "audio-35b9fdc2-8df4-4691-9901-97c63b71718c",
+        "declared": 2822444,
+        "actual": 2822444,
+        "head": [
+          82,
+          73,
+          70,
+          70,
+          36,
+          17,
+          43,
+          0
+        ]
+      }
+    ],
+    "assets": 39,
+    "after": [
+      {
+        "id": "audio-baaf3c35-e70c-4638-9069-f161da91ccd0",
+        "declared": 2822444,
+        "actual": 2822444,
+        "head": [
+          82,
+          73,
+          70,
+          70,
+          36,
+          17,
+          43,
+          0
+        ]
+      },
+      {
+        "id": "audio-35b9fdc2-8df4-4691-9901-97c63b71718c",
+        "declared": 2822444,
+        "actual": 2822444,
+        "head": [
+          82,
+          73,
+          70,
+          70,
+          36,
+          17,
+          43,
+          0
+        ]
+      },
+      {
+        "id": "audio-c05754e4-f565-4caf-9341-218f9b4095fa",
+        "declared": 2822444,
+        "actual": 2822444,
+        "head": [
+          82,
+          73,
+          70,
+          70,
+          36,
+          17,
+          43,
+          0
+        ]
+      },
+      {
+        "id": "audio-dcbc6333-c94e-415d-ba77-90ba4579ba72",
+        "declared": 2822444,
+        "actual": 2822444,
+        "head": [
+          82,
+          73,
+          70,
+          70,
+          36,
+          17,
+          43,
+          0
+        ]
+      }
+    ]
+  }
+}

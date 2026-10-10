@@ -1,0 +1,10 @@
+{
+  "observed_at": "2026-10-08T12:18:23.527Z",
+  "checks": [
+    "actual SVG import/extrude produces nonempty CAD source",
+    "Fabric T-shirt edit/back preserves CAD and adds Fabric workspace",
+    "direct Animation navigation does not silently copy CAD geometry"
+  ],
+  "errors": [],
+  "error": "locator.click: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^Record position/ })\u001b[22m\n\n    at /Users/agentsattari/thecreateco-company/reports/form-handoff-20261008T1210/handoff-workflow.cjs:17:250"
+}

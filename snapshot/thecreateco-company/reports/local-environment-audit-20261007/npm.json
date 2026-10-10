@@ -1,0 +1,10 @@
+{
+  "command": [
+    "npm",
+    "--version"
+  ],
+  "started_at": "2026-10-08T02:52:26.254470+00:00",
+  "exit_code": 0,
+  "stdout": "11.19.1\n",
+  "stderr": ""
+}

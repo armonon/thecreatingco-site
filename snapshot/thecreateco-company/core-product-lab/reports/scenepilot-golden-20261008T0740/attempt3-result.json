@@ -1,0 +1,28 @@
+{
+  "startedAt": "2026-10-08T07:44:51.504Z",
+  "source": "c7d2b4fc973861eba785f26e5f607671ac22deb4",
+  "model": "openai/gpt-6.1-sol; session_status verified; no fallback used",
+  "checks": [
+    {
+      "name": "Repeat 1: authored mixed-rate/overlay/keyframes/title/audio document Open/Save full identity",
+      "status": "PASS"
+    },
+    {
+      "name": "Repeat 1: actual added track / Undo / Redo exact full-document identity",
+      "status": "PASS"
+    },
+    {
+      "name": "Repeat 1: fresh process/profile Open/Save full authored identity",
+      "status": "PASS"
+    }
+  ],
+  "errors": [],
+  "limits": [
+    "Schema-constructed synthetic edit; not UI authoring of animation/audio/title",
+    "Development Electron, OS dialog selections harnessed",
+    "No Browser Lite, packaged/platform/perceptual signoff"
+  ],
+  "status": "FAIL",
+  "error": "Error: Command failed: ffmpeg -v error -ss 0.1 -t .1 -i /Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-golden-20261008T0740/repeat-1/master.mp4 -vn -f f32le -ac 1 pipe:1\nInvalid duration for option t: .1\nError parsing options for input file /Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-golden-20261008T0740/repeat-1/master.mp4.\nError opening input files: Invalid argument\n\n    at genericNodeError (node:internal/errors:983:15)\n    at wrappedFn (node:internal/errors:537:14)\n    at checkExecSyncError (node:child_process:916:11)\n    at execFileSync (node:child_process:952:15)\n    at file:///Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-golden-20261008T0740/session.mjs:29:60",
+  "finishedAt": "2026-10-08T07:45:06.559Z"
+}

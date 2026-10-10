@@ -1,0 +1,245 @@
+[
+  {
+    "width": 1440,
+    "pass": false,
+    "mockedEndpoints": [
+      "/api/inventory"
+    ],
+    "errors": [
+      "The script has an unsupported MIME type ('text/html').",
+      "The script has an unsupported MIME type ('text/html')."
+    ],
+    "timeline": {
+      "top": 296.640625,
+      "height": 502.609375,
+      "visibleHeight": 502.609375,
+      "visibleWidth": 1388
+    },
+    "workspace": {
+      "top": 107.640625,
+      "height": 764.359375,
+      "visibleHeight": 764.359375,
+      "visibleWidth": 1408
+    },
+    "transport": {
+      "top": 167.640625,
+      "height": 40,
+      "visibleHeight": 40,
+      "visibleWidth": 44
+    },
+    "notes": {
+      "top": 640.328125,
+      "height": 200.3125,
+      "visibleHeight": 200.3125,
+      "visibleWidth": 1376
+    },
+    "editorLayout": [
+      {
+        "selector": ".ae-lower-editor",
+        "height": 380,
+        "flex": "0 0 380px",
+        "minHeight": "0px",
+        "maxHeight": "calc(100% - 310px)"
+      },
+      {
+        "selector": ".ae-scroll",
+        "height": 160,
+        "flex": "1 1 0px",
+        "minHeight": "160px",
+        "maxHeight": "558px"
+      },
+      {
+        "selector": ".ae-note-scroll",
+        "height": 200.3125,
+        "flex": "1 1 0px",
+        "minHeight": "100px",
+        "maxHeight": "none"
+      }
+    ],
+    "note": {
+      "top": 771.328125,
+      "height": 22,
+      "visibleHeight": 22,
+      "visibleWidth": 96
+    },
+    "exports": [
+      {
+        "label": "Export mixdown",
+        "bytes": 2332844,
+        "filename": "stemdeck-mixdown.wav"
+      },
+      {
+        "label": "Export track stems",
+        "bytes": 13998650,
+        "filename": "stemdeck-track-stems.zip"
+      }
+    ],
+    "error": "no fatal browser/console errors\n+ actual - expected\n\n+ [\n+   \"The script has an unsupported MIME type ('text/html').\",\n+   \"The script has an unsupported MIME type ('text/html').\"\n+ ]\n- []\n"
+  },
+  {
+    "width": 615,
+    "pass": false,
+    "mockedEndpoints": [
+      "/api/inventory"
+    ],
+    "errors": [
+      "The script has an unsupported MIME type ('text/html').",
+      "The script has an unsupported MIME type ('text/html')."
+    ],
+    "timeline": {
+      "top": 360,
+      "height": 572.609375,
+      "visibleHeight": 572.609375,
+      "visibleWidth": 587
+    },
+    "workspace": {
+      "top": 169,
+      "height": 791,
+      "visibleHeight": 791,
+      "visibleWidth": 599
+    },
+    "trackHeader": {
+      "top": 397,
+      "height": 152,
+      "visibleHeight": 152,
+      "visibleWidth": 164
+    },
+    "transport": {
+      "top": 219,
+      "height": 44,
+      "visibleHeight": 44,
+      "visibleWidth": 44
+    },
+    "notes": {
+      "top": 182.84375,
+      "height": 734.3125,
+      "visibleHeight": 704.15625,
+      "visibleWidth": 591
+    },
+    "editorLayout": [
+      {
+        "selector": ".ae-lower-editor",
+        "height": 988,
+        "flex": "0 0 380px",
+        "minHeight": "0px",
+        "maxHeight": "none"
+      },
+      {
+        "selector": ".ae-scroll",
+        "height": 553.765625,
+        "flex": "1 1 0px",
+        "minHeight": "160px",
+        "maxHeight": "612.56px"
+      },
+      {
+        "selector": ".ae-note-scroll",
+        "height": 734.3125,
+        "flex": "1 1 0px",
+        "minHeight": "200px",
+        "maxHeight": "none"
+      }
+    ],
+    "note": {
+      "top": 580.84375,
+      "height": 22,
+      "visibleHeight": 22,
+      "visibleWidth": 96
+    },
+    "exports": [
+      {
+        "label": "Export mixdown",
+        "bytes": 2332844,
+        "filename": "stemdeck-mixdown.wav"
+      },
+      {
+        "label": "Export track stems",
+        "bytes": 13998650,
+        "filename": "stemdeck-track-stems.zip"
+      }
+    ],
+    "error": "no fatal browser/console errors\n+ actual - expected\n\n+ [\n+   \"The script has an unsupported MIME type ('text/html').\",\n+   \"The script has an unsupported MIME type ('text/html').\"\n+ ]\n- []\n"
+  },
+  {
+    "width": 390,
+    "pass": false,
+    "mockedEndpoints": [
+      "/api/inventory"
+    ],
+    "errors": [
+      "The script has an unsupported MIME type ('text/html').",
+      "The script has an unsupported MIME type ('text/html')."
+    ],
+    "timeline": {
+      "top": 386,
+      "height": 478.609375,
+      "visibleHeight": 478.609375,
+      "visibleWidth": 362
+    },
+    "workspace": {
+      "top": 189,
+      "height": 683,
+      "visibleHeight": 683,
+      "visibleWidth": 374
+    },
+    "trackHeader": {
+      "top": 423,
+      "height": 152,
+      "visibleHeight": 152,
+      "visibleWidth": 164
+    },
+    "transport": {
+      "top": 239,
+      "height": 44,
+      "visibleHeight": 44,
+      "visibleWidth": 44
+    },
+    "notes": {
+      "top": 182.84375,
+      "height": 646.3125,
+      "visibleHeight": 596.15625,
+      "visibleWidth": 366
+    },
+    "editorLayout": [
+      {
+        "selector": ".ae-lower-editor",
+        "height": 900,
+        "flex": "0 0 380px",
+        "minHeight": "0px",
+        "maxHeight": "none"
+      },
+      {
+        "selector": ".ae-scroll",
+        "height": 459.765625,
+        "flex": "1 1 0px",
+        "minHeight": "160px",
+        "maxHeight": "558px"
+      },
+      {
+        "selector": ".ae-note-scroll",
+        "height": 646.3125,
+        "flex": "1 1 0px",
+        "minHeight": "200px",
+        "maxHeight": "none"
+      }
+    ],
+    "note": {
+      "top": 536.84375,
+      "height": 22,
+      "visibleHeight": 22,
+      "visibleWidth": 96
+    },
+    "exports": [
+      {
+        "label": "Export mixdown",
+        "bytes": 2332844,
+        "filename": "stemdeck-mixdown.wav"
+      },
+      {
+        "label": "Export track stems",
+        "bytes": 13998650,
+        "filename": "stemdeck-track-stems.zip"
+      }
+    ],
+    "error": "no fatal browser/console errors\n+ actual - expected\n\n+ [\n+   \"The script has an unsupported MIME type ('text/html').\",\n+   \"The script has an unsupported MIME type ('text/html').\"\n+ ]\n- []\n"
+  }
+]

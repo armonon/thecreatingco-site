@@ -1,0 +1,31 @@
+{
+  "startedAt": "2026-10-08T07:59:43.866Z",
+  "profile": "/Users/agentsattari/.openclaw/tmp/sp-lite-golden-ksBhN2",
+  "source": "c26d518bc3d05f0adbf7287f79c5f5f15ac25220",
+  "cssSha256": "56d04ed3cb11f1c0a825fa7ef377e14f455cf1be4405447736dd1c79b4e108d5  app/studio-workspace.css",
+  "server": "Vite dev localhost:5189, not production artifact",
+  "checks": [
+    {
+      "name": "Actual Lite import five generated assets and insert silent12s clip; IndexedDB retains all media byte hashes",
+      "status": "PASS"
+    },
+    {
+      "name": "Actual Lite added track Undo/Redo full saved-state and media-byte identity",
+      "status": "PASS"
+    },
+    {
+      "name": "Actual Lite full browser-process restart restores saved state and five media byte hashes",
+      "status": "PASS"
+    }
+  ],
+  "errors": [],
+  "limits": [
+    "One Browser Lite local-development run; no release qualification",
+    "Silent video export subset; full audio/composite golden recipe not claimed",
+    "Destination picker harnessed, actual OPFS handle"
+  ],
+  "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36",
+  "status": "FAIL",
+  "error": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert.ok(Math.abs(Number(probe.format.duration)-12)<.1)\n\n    at file:///Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-golden-20261008T0740/lite-workflow.mjs:9:1031",
+  "finishedAt": "2026-10-08T08:01:33.835Z"
+}

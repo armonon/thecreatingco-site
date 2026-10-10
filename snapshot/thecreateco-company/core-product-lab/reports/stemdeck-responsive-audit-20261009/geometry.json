@@ -1,0 +1,177 @@
+{
+  "source": "278e0874a69b8c0ea531fc5ff1ec66acc30a2e4b plus local CSS patch",
+  "fixtureSha256": "594b1e4d38e5cf4e8de561057a212553b2931d48f24dddbeba0da94c4b051871",
+  "browser": "Google Chrome 154.0.8037.99",
+  "errors": [],
+  "reports": [
+    {
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "sceneTabs": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "Auto mix"
+      ],
+      "deckHeader": {
+        "x": 169,
+        "y": 279,
+        "w": 482,
+        "h": 70,
+        "bottom": 349
+      },
+      "title": {
+        "text": "Original fixture A",
+        "rect": {
+          "x": 222,
+          "y": 289,
+          "w": 153,
+          "h": 23,
+          "bottom": 312
+        },
+        "clientWidth": 153,
+        "scrollWidth": 153
+      },
+      "notice": {
+        "x": 16,
+        "y": 118,
+        "w": 1408,
+        "h": 50,
+        "bottom": 168
+      },
+      "noticePosition": "relative",
+      "noticeText": "four-deck.sattari imported with 20 embedded audio assets.",
+      "deckControls": {
+        "x": 177,
+        "y": 760,
+        "w": 466,
+        "h": 82,
+        "bottom": 842
+      },
+      "workspace": {
+        "x": 16,
+        "y": 168,
+        "w": 1408,
+        "h": 704,
+        "bottom": 872
+      },
+      "workspaceScrollHeight": 1016,
+      "workspaceClientHeight": 704
+    },
+    {
+      "viewport": 960,
+      "documentWidth": 960,
+      "sceneTabs": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "Auto mix"
+      ],
+      "deckHeader": {
+        "x": 27,
+        "y": 274,
+        "w": 436,
+        "h": 58,
+        "bottom": 332
+      },
+      "title": {
+        "text": "Original fixture A",
+        "rect": {
+          "x": 69,
+          "y": 282,
+          "w": 131,
+          "h": 19,
+          "bottom": 301
+        },
+        "clientWidth": 131,
+        "scrollWidth": 131
+      },
+      "notice": {
+        "x": 16,
+        "y": 117,
+        "w": 928,
+        "h": 50,
+        "bottom": 167
+      },
+      "noticePosition": "relative",
+      "noticeText": "four-deck.sattari imported with 20 embedded audio assets.",
+      "deckControls": {
+        "x": 35,
+        "y": 695,
+        "w": 420,
+        "h": 84,
+        "bottom": 779
+      },
+      "workspace": {
+        "x": 16,
+        "y": 167,
+        "w": 928,
+        "h": 705,
+        "bottom": 872
+      },
+      "workspaceScrollHeight": 997,
+      "workspaceClientHeight": 705,
+      "keyboardFocus": {
+        "label": "Arrange",
+        "visible": true
+      }
+    },
+    {
+      "viewport": 390,
+      "documentWidth": 390,
+      "sceneTabs": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "Auto mix"
+      ],
+      "deckHeader": {
+        "x": 19,
+        "y": 418,
+        "w": 338,
+        "h": 107,
+        "bottom": 525
+      },
+      "title": {
+        "text": "Original fixture A",
+        "rect": {
+          "x": 68,
+          "y": 428,
+          "w": 131,
+          "h": 19,
+          "bottom": 448
+        },
+        "clientWidth": 131,
+        "scrollWidth": 131
+      },
+      "notice": {
+        "x": 8,
+        "y": 199,
+        "w": 374,
+        "h": 58,
+        "bottom": 257
+      },
+      "noticePosition": "relative",
+      "noticeText": "four-deck.sattari imported with 20 embedded audio assets.",
+      "deckControls": {
+        "x": 27,
+        "y": 892,
+        "w": 322,
+        "h": 84,
+        "bottom": 976
+      },
+      "workspace": {
+        "x": 8,
+        "y": 257,
+        "w": 374,
+        "h": 615,
+        "bottom": 872
+      },
+      "workspaceScrollHeight": 1640,
+      "workspaceClientHeight": 615
+    }
+  ]
+}

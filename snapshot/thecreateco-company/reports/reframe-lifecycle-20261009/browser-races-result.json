@@ -1,0 +1,10 @@
+{
+  "passed": [
+    "actual overlapping media selection latest wins",
+    "wrong SHA rejected without applying edits",
+    "render invalidation clears spinner and hides stale output",
+    "subsequent export succeeds"
+  ],
+  "pageErrors": [],
+  "observedAt": "2026-10-09T09:22:00.617Z"
+}

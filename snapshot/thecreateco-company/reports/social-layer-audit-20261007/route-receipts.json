@@ -1,0 +1,90 @@
+{
+  "observed_at": "2026-10-08T03:59:44.402539+00:00",
+  "requests": [
+    {
+      "url": "https://thecreatingco.com/community",
+      "final_url": "https://thecreatingco.com/community/network",
+      "status": 200,
+      "sha256": "93f598b6019d3609e19476f6f70246bb53b763e222f86444ffdeb8f79948877e",
+      "title": [
+        "Community \u00b7 thecreateco"
+      ],
+      "deployment_versions": [
+        "e9d3a984-5a81-424d-82a7-2c325fb6824f"
+      ],
+      "script_sources": [
+        "/_next/static/chunks/rolldown-runtime-C60lm6uB.js",
+        "/_next/static/chunks/framework-D_rUT4EX.js",
+        "/_next/static/chunks/index-CpPZqkN3.js"
+      ]
+    },
+    {
+      "url": "https://thecreatingco.com/community/",
+      "final_url": "https://thecreatingco.com/community/network",
+      "status": 200,
+      "sha256": "1997bb30be25f1fbb2873a59204bf36c1a4903abc0a4fb1293c2871951a6eb22",
+      "title": [
+        "Community \u00b7 thecreateco"
+      ],
+      "deployment_versions": [
+        "e9d3a984-5a81-424d-82a7-2c325fb6824f"
+      ],
+      "script_sources": [
+        "/_next/static/chunks/rolldown-runtime-C60lm6uB.js",
+        "/_next/static/chunks/framework-D_rUT4EX.js",
+        "/_next/static/chunks/index-CpPZqkN3.js"
+      ]
+    },
+    {
+      "url": "https://thecreatingco.com/community?legacy=1",
+      "final_url": "https://thecreatingco.com/community?legacy=1",
+      "status": 200,
+      "sha256": "0220572e1dd5dcf6c250434f36236f9dfcb05434b2d8678a9067536b37a3789b",
+      "title": [
+        "Community \u00b7 thecreateco"
+      ],
+      "deployment_versions": [
+        "e9d3a984-5a81-424d-82a7-2c325fb6824f"
+      ],
+      "script_sources": [
+        "/_next/static/chunks/rolldown-runtime-C60lm6uB.js",
+        "/_next/static/chunks/framework-D_rUT4EX.js",
+        "/_next/static/chunks/index-CpPZqkN3.js"
+      ]
+    },
+    {
+      "url": "https://thecreatingco.com/community/rules",
+      "final_url": "https://thecreatingco.com/community/rules",
+      "status": 200,
+      "sha256": "4a9d0071b7639c707b2a1080fefd70b909bc6740b0cfe391633a99203234dbb6",
+      "title": [
+        "Momentium Collaboration"
+      ],
+      "deployment_versions": [
+        "e9d3a984-5a81-424d-82a7-2c325fb6824f"
+      ],
+      "script_sources": [
+        "/_next/static/chunks/rolldown-runtime-C60lm6uB.js",
+        "/_next/static/chunks/framework-D_rUT4EX.js",
+        "/_next/static/chunks/index-CpPZqkN3.js"
+      ]
+    },
+    {
+      "url": "https://thecreatingco.com/community/network",
+      "final_url": "https://thecreatingco.com/community/network",
+      "status": 200,
+      "sha256": "875e9973eaf34d76ee3286b5d3283d109e7d04663abc92929594c84813115421",
+      "title": [
+        "Community \u00b7 thecreateco"
+      ],
+      "deployment_versions": [
+        "e9d3a984-5a81-424d-82a7-2c325fb6824f"
+      ],
+      "script_sources": [
+        "/_next/static/chunks/rolldown-runtime-C60lm6uB.js",
+        "/_next/static/chunks/framework-D_rUT4EX.js",
+        "/_next/static/chunks/index-CpPZqkN3.js"
+      ]
+    }
+  ]
+}

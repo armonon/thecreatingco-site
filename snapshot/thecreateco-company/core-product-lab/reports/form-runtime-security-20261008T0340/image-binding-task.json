@@ -1,0 +1,37 @@
+{
+  "task_id": "CORE-FORM-WORKER-IMAGE-BINDING-001",
+  "title": "Repair Worker static-image Fetcher and Images binding contract",
+  "product": "form",
+  "workstream": "CORE_PRODUCT_LAB",
+  "category": "bug",
+  "area": "import/export",
+  "severity": "P2",
+  "status": "QUEUED",
+  "model": "gpt-6.1-sol",
+  "scores": {
+    "impact": 6,
+    "severity": 6,
+    "workflow_importance": 4,
+    "release_importance": 6,
+    "confidence": 10,
+    "effort": 3,
+    "risk": 4,
+    "user_value": 4,
+    "competitive_value": 2
+  },
+  "source_evidence": {
+    "direct": [
+      "Exact-source emitted local Worker: GET /og.png 200; valid /_vinext/image?url=/og.png&w=16&q=75 returns500 TypeError env.ASSETS.fetch is not a function. ASSETS is R2 used by asset API; generated config has no explicit static Fetcher or IMAGES binding. External image URL rejected400. Handler/config are unchanged from baseline."
+    ],
+    "hypothesis": [
+      "Whether this endpoint is used by the deployed golden workflow is unverified; no live request or Cloudflare Images entitlement change performed."
+    ]
+  },
+  "evidence_sources": [
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-runtime-security-20261008T0340/worker-requests.log",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-runtime-security-20261008T0340/review.md"
+  ],
+  "test_requirements": "Reproduce500 on isolated exact Worker artifact. Keep R2 asset get/put/delete separate from static Fetcher; define authorized supported image behavior without adding paid/access bindings. Regression valid PNG200 transform/passthrough semantics, invalid URL400, SVG policy, original static assets and R2 CRUD; build web/desktop, independent OpenAI review, exact-head normal CI gates. No deployment/spend or assertion weakening.",
+  "next_action": "Qualify baseline binding contract then repair isolated Worker config/handler or explicit unsupported fallback; preserve R2 storage API and original static routes.",
+  "expected_value": "Restore evidenced endpoint reliability; scores are planning estimates, deployment impact unknown."
+}

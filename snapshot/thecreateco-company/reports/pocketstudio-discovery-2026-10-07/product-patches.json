@@ -1,0 +1,256 @@
+[
+  {
+    "product_id": "pocket-studio",
+    "completion_observations": {
+      "candidate_sha": null,
+      "observed_at": "2026-10-08T02:16:42.389176+00:00",
+      "live_artifact_identity": {
+        "vinext_deployment_version": "e9d3a984-5a81-424d-82a7-2c325fb6824f",
+        "netlify_proxy_deploy": "6ac6eb6cbf814008db6578af",
+        "proxy_digest": "74bd0204666b29a81c45e3c93c6d2f61b766e98657ba029eca31b52000a0f0ca",
+        "chunk_hash_manifest": "/Users/agentsattari/thecreateco-company/reports/pocketstudio-discovery-2026-10-07/artifact-hashes.json"
+      },
+      "supported_platforms": [],
+      "gates": {
+        "core_workflow": {
+          "status": "BLOCKED",
+          "coverage_complete": false,
+          "observed_at": "2026-10-08T02:16:42.389176+00:00",
+          "evidence": [
+            "/Users/agentsattari/thecreateco-company/reports/pocketstudio-discovery-2026-10-07/README.md"
+          ],
+          "summary": "Live guest interface exists; canonical Community source/deployment project not located. Authenticated upload and full product workflow not qualified."
+        },
+        "save_reopen_export": {
+          "status": "UNVERIFIED",
+          "coverage_complete": false,
+          "observed_at": "2026-10-08T02:16:42.389176+00:00",
+          "evidence": [
+            "/Users/agentsattari/thecreateco-company/reports/pocketstudio-discovery-2026-10-07/README.md"
+          ],
+          "summary": "Exact-source full product gate not qualified; canonical upstream source missing."
+        },
+        "reliability_recovery": {
+          "status": "UNVERIFIED",
+          "coverage_complete": false,
+          "observed_at": "2026-10-08T02:16:42.389176+00:00",
+          "evidence": [
+            "/Users/agentsattari/thecreateco-company/reports/pocketstudio-discovery-2026-10-07/guest-check.json"
+          ],
+          "summary": "Pocket microphone-denial message observed; timer00:00 and shelf0/20 preserved, no recording grant. Persistence/export/storage failure remains unverified."
+        },
+        "performance": {
+          "status": "UNVERIFIED",
+          "coverage_complete": false,
+          "observed_at": "2026-10-08T02:16:42.389176+00:00",
+          "evidence": [
+            "/Users/agentsattari/thecreateco-company/reports/pocketstudio-discovery-2026-10-07/README.md"
+          ],
+          "summary": "Exact-source full product gate not qualified; canonical upstream source missing."
+        },
+        "usability_accessibility": {
+          "status": "UNVERIFIED",
+          "coverage_complete": false,
+          "observed_at": "2026-10-08T02:16:42.389176+00:00",
+          "evidence": [
+            "/Users/agentsattari/thecreateco-company/reports/pocketstudio-discovery-2026-10-07/README.md"
+          ],
+          "summary": "Exact-source full product gate not qualified; canonical upstream source missing."
+        },
+        "responsive_behavior": {
+          "status": "UNVERIFIED",
+          "coverage_complete": false,
+          "observed_at": "2026-10-08T02:16:42.389176+00:00",
+          "evidence": [
+            "/Users/agentsattari/thecreateco-company/reports/pocketstudio-discovery-2026-10-07/pocket-phone.png",
+            "/Users/agentsattari/thecreateco-company/reports/pocketstudio-discovery-2026-10-07/guest-check.json"
+          ],
+          "summary": "390px Chromium public interface visually inspected with no horizontal overflow for Pocket; not a complete mobile/browser matrix."
+        },
+        "security_privacy": {
+          "status": "UNVERIFIED",
+          "coverage_complete": false,
+          "observed_at": "2026-10-08T02:16:42.389176+00:00",
+          "evidence": [
+            "/Users/agentsattari/thecreateco-company/reports/pocketstudio-discovery-2026-10-07/anonymous-boundary.json",
+            "/Users/agentsattari/thecreateco-company/reports/pocketstudio-discovery-2026-10-07/guest-check.json"
+          ],
+          "summary": "Anonymous no-cookie upload-init POST with empty JSON rejected401; guest UI remains accessible. Server implementation review, authenticated access/ownership, cross-user and account lifecycle unverified."
+        },
+        "documentation_support": {
+          "status": "UNVERIFIED",
+          "coverage_complete": false,
+          "observed_at": "2026-10-08T02:16:42.389176+00:00",
+          "evidence": [
+            "/Users/agentsattari/thecreateco-company/reports/pocketstudio-discovery-2026-10-07/README.md"
+          ],
+          "summary": "Exact-source full product gate not qualified; canonical upstream source missing."
+        },
+        "tests": {
+          "status": "UNVERIFIED",
+          "coverage_complete": false,
+          "observed_at": "2026-10-08T02:16:42.389176+00:00",
+          "evidence": [
+            "/Users/agentsattari/thecreateco-company/reports/pocketstudio-discovery-2026-10-07/README.md"
+          ],
+          "summary": "Exact-source full product gate not qualified; canonical upstream source missing."
+        },
+        "supported_platforms": {
+          "status": "UNVERIFIED",
+          "coverage_complete": false,
+          "observed_at": "2026-10-08T02:16:42.389176+00:00",
+          "evidence": [
+            "/Users/agentsattari/thecreateco-company/reports/pocketstudio-discovery-2026-10-07/README.md"
+          ],
+          "summary": "Exact-source full product gate not qualified; canonical upstream source missing."
+        },
+        "critical_blockers": {
+          "status": "BLOCKED",
+          "coverage_complete": false,
+          "observed_at": "2026-10-08T02:16:42.389176+00:00",
+          "evidence": [
+            "/Users/agentsattari/thecreateco-company/reports/pocketstudio-discovery-2026-10-07/README.md"
+          ],
+          "summary": "Missing canonical upstream source/deploy provenance and no designated authenticated/two-user test accounts; cannot implement/release a genuine fix yet."
+        }
+      },
+      "deployment": {
+        "status": "LIVE_OBSERVED_SOURCE_UNVERIFIED",
+        "source_sha": null,
+        "details": "Existing public endpoint observed; no new deployment; manual Netlify proxy deployment lacks source commit/repository metadata."
+      },
+      "next_action": "Owner provides canonical Community source repository and deployment project. Then establish exact-source reproducible build and scoped PR fixes; designated authenticated test accounts needed separately for upload/account/reconnect and two-user Sessions checks. No mock replacement or whole-static-mirror deployment."
+    },
+    "release_readiness": "BLOCKED: real hosted Community interface observed, but canonical source/deployment provenance and authenticated workflow access absent. Anonymous media upload rejects401. Not complete or release-qualified.",
+    "verification_level": "PUBLIC_GUEST_UI_AND_ANONYMOUS_AUTH_BOUNDARY_ONLY",
+    "observed_at": "2026-10-08T02:16:42.389176+00:00",
+    "next_milestone": "Owner provides canonical Community source repository and deployment project. Then establish exact-source reproducible build and scoped PR fixes; designated authenticated test accounts needed separately for upload/account/reconnect and two-user Sessions checks. No mock replacement or whole-static-mirror deployment."
+  },
+  {
+    "product_id": "sessions",
+    "completion_observations": {
+      "candidate_sha": null,
+      "observed_at": "2026-10-08T02:16:42.389176+00:00",
+      "live_artifact_identity": {
+        "vinext_deployment_version": "e9d3a984-5a81-424d-82a7-2c325fb6824f",
+        "netlify_proxy_deploy": "6ac6eb6cbf814008db6578af",
+        "proxy_digest": "74bd0204666b29a81c45e3c93c6d2f61b766e98657ba029eca31b52000a0f0ca",
+        "chunk_hash_manifest": "/Users/agentsattari/thecreateco-company/reports/pocketstudio-discovery-2026-10-07/artifact-hashes.json"
+      },
+      "supported_platforms": [],
+      "gates": {
+        "core_workflow": {
+          "status": "BLOCKED",
+          "coverage_complete": false,
+          "observed_at": "2026-10-08T02:16:42.389176+00:00",
+          "evidence": [
+            "/Users/agentsattari/thecreateco-company/reports/pocketstudio-discovery-2026-10-07/README.md"
+          ],
+          "summary": "Live guest interface exists; canonical Community source/deployment project not located. Authenticated upload and full product workflow not qualified."
+        },
+        "save_reopen_export": {
+          "status": "UNVERIFIED",
+          "coverage_complete": false,
+          "observed_at": "2026-10-08T02:16:42.389176+00:00",
+          "evidence": [
+            "/Users/agentsattari/thecreateco-company/reports/pocketstudio-discovery-2026-10-07/README.md"
+          ],
+          "summary": "Exact-source full product gate not qualified; canonical upstream source missing."
+        },
+        "reliability_recovery": {
+          "status": "UNVERIFIED",
+          "coverage_complete": false,
+          "observed_at": "2026-10-08T02:16:42.389176+00:00",
+          "evidence": [
+            "/Users/agentsattari/thecreateco-company/reports/pocketstudio-discovery-2026-10-07/guest-check.json"
+          ],
+          "summary": "Guest empty-room list observed. Actual two-client queue sync, reconnect, permission and failure recovery unverified."
+        },
+        "performance": {
+          "status": "UNVERIFIED",
+          "coverage_complete": false,
+          "observed_at": "2026-10-08T02:16:42.389176+00:00",
+          "evidence": [
+            "/Users/agentsattari/thecreateco-company/reports/pocketstudio-discovery-2026-10-07/README.md"
+          ],
+          "summary": "Exact-source full product gate not qualified; canonical upstream source missing."
+        },
+        "usability_accessibility": {
+          "status": "UNVERIFIED",
+          "coverage_complete": false,
+          "observed_at": "2026-10-08T02:16:42.389176+00:00",
+          "evidence": [
+            "/Users/agentsattari/thecreateco-company/reports/pocketstudio-discovery-2026-10-07/README.md"
+          ],
+          "summary": "Exact-source full product gate not qualified; canonical upstream source missing."
+        },
+        "responsive_behavior": {
+          "status": "UNVERIFIED",
+          "coverage_complete": false,
+          "observed_at": "2026-10-08T02:16:42.389176+00:00",
+          "evidence": [
+            "/Users/agentsattari/thecreateco-company/reports/pocketstudio-discovery-2026-10-07/sessions-phone.png",
+            "/Users/agentsattari/thecreateco-company/reports/pocketstudio-discovery-2026-10-07/guest-check.json"
+          ],
+          "summary": "390px Chromium public interface visually inspected with no horizontal overflow for Pocket; not a complete mobile/browser matrix."
+        },
+        "security_privacy": {
+          "status": "UNVERIFIED",
+          "coverage_complete": false,
+          "observed_at": "2026-10-08T02:16:42.389176+00:00",
+          "evidence": [
+            "/Users/agentsattari/thecreateco-company/reports/pocketstudio-discovery-2026-10-07/anonymous-boundary.json",
+            "/Users/agentsattari/thecreateco-company/reports/pocketstudio-discovery-2026-10-07/guest-check.json"
+          ],
+          "summary": "Anonymous no-cookie upload-init POST with empty JSON rejected401; guest UI remains accessible. Server implementation review, authenticated access/ownership, cross-user and account lifecycle unverified."
+        },
+        "documentation_support": {
+          "status": "UNVERIFIED",
+          "coverage_complete": false,
+          "observed_at": "2026-10-08T02:16:42.389176+00:00",
+          "evidence": [
+            "/Users/agentsattari/thecreateco-company/reports/pocketstudio-discovery-2026-10-07/README.md"
+          ],
+          "summary": "Exact-source full product gate not qualified; canonical upstream source missing."
+        },
+        "tests": {
+          "status": "UNVERIFIED",
+          "coverage_complete": false,
+          "observed_at": "2026-10-08T02:16:42.389176+00:00",
+          "evidence": [
+            "/Users/agentsattari/thecreateco-company/reports/pocketstudio-discovery-2026-10-07/README.md"
+          ],
+          "summary": "Exact-source full product gate not qualified; canonical upstream source missing."
+        },
+        "supported_platforms": {
+          "status": "UNVERIFIED",
+          "coverage_complete": false,
+          "observed_at": "2026-10-08T02:16:42.389176+00:00",
+          "evidence": [
+            "/Users/agentsattari/thecreateco-company/reports/pocketstudio-discovery-2026-10-07/README.md"
+          ],
+          "summary": "Exact-source full product gate not qualified; canonical upstream source missing."
+        },
+        "critical_blockers": {
+          "status": "BLOCKED",
+          "coverage_complete": false,
+          "observed_at": "2026-10-08T02:16:42.389176+00:00",
+          "evidence": [
+            "/Users/agentsattari/thecreateco-company/reports/pocketstudio-discovery-2026-10-07/README.md"
+          ],
+          "summary": "Missing canonical upstream source/deploy provenance and no designated authenticated/two-user test accounts; cannot implement/release a genuine fix yet."
+        }
+      },
+      "deployment": {
+        "status": "LIVE_OBSERVED_SOURCE_UNVERIFIED",
+        "source_sha": null,
+        "details": "Existing public endpoint observed; no new deployment; manual Netlify proxy deployment lacks source commit/repository metadata."
+      },
+      "next_action": "Owner provides canonical Community source repository and deployment project. Then establish exact-source reproducible build and scoped PR fixes; designated authenticated test accounts needed separately for upload/account/reconnect and two-user Sessions checks. No mock replacement or whole-static-mirror deployment."
+    },
+    "release_readiness": "BLOCKED: real hosted Community interface observed, but canonical source/deployment provenance and authenticated workflow access absent. Anonymous media upload rejects401. Not complete or release-qualified.",
+    "verification_level": "PUBLIC_GUEST_UI_AND_ANONYMOUS_AUTH_BOUNDARY_ONLY",
+    "observed_at": "2026-10-08T02:16:42.389176+00:00",
+    "next_milestone": "Owner provides canonical Community source repository and deployment project. Then establish exact-source reproducible build and scoped PR fixes; designated authenticated test accounts needed separately for upload/account/reconnect and two-user Sessions checks. No mock replacement or whole-static-mirror deployment."
+  }
+]

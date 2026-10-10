@@ -1,0 +1,15 @@
+{
+  "startedAt": "2026-10-08T07:44:29.956Z",
+  "source": "c7d2b4fc973861eba785f26e5f607671ac22deb4",
+  "model": "openai/gpt-6.1-sol; session_status verified; no fallback used",
+  "checks": [],
+  "errors": [],
+  "limits": [
+    "Schema-constructed synthetic edit; not UI authoring of animation/audio/title",
+    "Development Electron, OS dialog selections harnessed",
+    "No Browser Lite, packaged/platform/perceptual signoff"
+  ],
+  "status": "FAIL",
+  "error": "AssertionError [ERR_ASSERTION]: All serialized authored fields must survive Open/Save\n+ actual - expected\n... Skipped lines\n\n  {\n    analysis: null,\n    assets: [\n      {\n        folderId: 'bin-audio',\n        id: 'media-00ed93e0d09754fbb7b51ff6',\n        kind: 'audio',\n+       lastModified: 1791427964375.979,\n-       lastModified: 1791427964375,\n        name: 'sp-golden-sfx-44k.wav',\n        size: 264644,\n        sourcePath: '/Users/agentsattari/thecreateco-company/reports/scenepilot-golden-release18/fixtures/sp-golden-sfx-44k.wav'\n      },\n      {\n...\n        kind: 'video',\n+       lastModified: 1791427963757.6106,\n-       lastModified: 1791427963757,\n        name: 'sp-golden-main-30fps.mp4',\n        size: 938381,\n        sourcePath: '/Users/agentsattari/thecreateco-company/reports/scenepilot-golden-release18/fixtures/sp-golden-main-30fps.mp4'\n      },\n      {\n...\n        kind: 'video',\n+       lastModified: 1791427964269.2622,\n-       lastModified: 1791427964269,\n        name: 'sp-golden-broll-24fps.mp4',\n        size: 563635,\n        sourcePath: '/Users/agentsattari/thecreateco-company/reports/scenepilot-golden-release18/fixtures/sp-golden-broll-24fps.mp4'\n      },\n      {\n...\n        kind: 'audio',\n+       lastModified: 1791427964335.9778,\n-       lastModified: 1791427964335,\n        name: 'sp-golden-music-48k.wav',\n        size: 3840044,\n        sourcePath: '/Users/agentsattari/thecreateco-company/reports/scenepilot-golden-release18/fixtures/sp-golden-music-48k.wav'\n      },\n      {\n...\n        kind: 'image',\n+       lastModified: 1791427964289.7173,\n-       lastModified: 1791427964289,\n        name: 'sp-golden-overlay.png',\n        size: 6662,\n        sourcePath: '/Users/agentsattari/thecreateco-company/reports/scenepilot-golden-release18/fixtures/sp-golden-overlay.png'\n      }\n    ],\n\n    at file:///Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-golden-20261008T0740/session.mjs:16:68",
+  "finishedAt": "2026-10-08T07:44:31.341Z"
+}

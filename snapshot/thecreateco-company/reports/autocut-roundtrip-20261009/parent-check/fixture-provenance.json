@@ -1,0 +1,7 @@
+{
+  "source": "locally generated ffmpeg testsrc2+sine and Python PCM pulsed sine; no external/user footage",
+  "files": {
+    "owned-clip.mp4": "b7f327fa9e78e707d2ff80e04f80bd69a52e463bba382aa6ca42401725be0b6b",
+    "owned-song.wav": "efc24ea976770056ac676cc79a613999028c779f2a2cdd2034a735fa086ba450"
+  }
+}

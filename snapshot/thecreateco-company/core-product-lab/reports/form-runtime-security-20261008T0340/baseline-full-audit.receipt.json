@@ -1,0 +1,13 @@
+{
+  "command": [
+    "npm",
+    "audit",
+    "--json"
+  ],
+  "cwd": "/Users/agentsattari/code/worktrees/form-runtime-security-20261008T0340",
+  "started_at": "2026-10-08T03:40:49.158325+00:00",
+  "ended_at": "2026-10-08T03:40:49.992601+00:00",
+  "exit_code": 1,
+  "platform": "Darwin-25.2.0-arm64-arm-64bit-Mach-O",
+  "source_sha": "1e7f6d1c84a6c956ece3cfe6f74b665208bf069c"
+}

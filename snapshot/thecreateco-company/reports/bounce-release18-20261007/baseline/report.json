@@ -1,0 +1,25 @@
+{
+  "at": "2026-10-08T02:11:18.862Z",
+  "browser": "153.0.8010.12",
+  "checks": [
+    {
+      "name": "import, actual media playback and reorder",
+      "status": "PASS"
+    },
+    {
+      "name": "save, close and reopen browser library",
+      "status": "PASS"
+    },
+    {
+      "name": "portable export bytes and independent manifest parser",
+      "status": "PASS"
+    },
+    {
+      "name": "damaged archive cannot replace current queue",
+      "status": "PASS"
+    }
+  ],
+  "pass": false,
+  "archive_sha256": "180fb5d85e350a8c1b009d3b1c2ab1433d1e74a58cc94611ade244b753fe04fd",
+  "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n  {\n    eq: [\n+     6,\n      0,\n-     0,\n      4\n    ],\n+   name: 'New unsaved title',\n-   name: 'Reference library',\n    names: [\n      'Reference B.wav',\n      'Reference A.wav'\n    ]\n  }\n\n    at file:///Users/agentsattari/code/company-worktrees/bounce-release18-20261007/pwa/workflow-check.mjs:52:10\n    at async checkpoint (file:///Users/agentsattari/code/company-worktrees/bounce-release18-20261007/pwa/workflow-check.mjs:16:37)\n    at async file:///Users/agentsattari/code/company-worktrees/bounce-release18-20261007/pwa/workflow-check.mjs:45:2"
+}

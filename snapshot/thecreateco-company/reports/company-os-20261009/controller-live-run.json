@@ -1,0 +1,42 @@
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:2ca9d380-38ab-44bc-9d94-41f01374b11a:1791529397462:2",
+  "processInstanceId": "2e08a454-89fa-4e27-9e86-93d084a6d164",
+  "completed": true,
+  "status": "ok",
+  "completionStatus": "succeeded",
+  "run": {
+    "ts": 1791529400436,
+    "jobId": "2ca9d380-38ab-44bc-9d94-41f01374b11a",
+    "action": "finished",
+    "status": "ok",
+    "completionStatus": "succeeded",
+    "summary": "{\n  \"status\": \"complete\",\n  \"steps\": [\n    {\n      \"step\": \"company_recover\",\n      \"ok\": true\n    },\n    {\n      \"step\": \"company_refresh\",\n      \"ok\": true\n    },\n    {\n      \"step\": \"telemetry_collect\",\n      \"ok\": true\n    },\n    {\n      \"step\": \"anomaly_sync\",\n      \"ok\": true\n    },\n    {\n      \"step\": \"lab_refresh\",\n      \"ok\": true\n    }\n  ],\n  \"failed_steps\": [],\n  \"dashboard_at\": \"2026-10-09T07:03:20+00:00\"\n}",
+    "runId": "manual:2ca9d380-38ab-44bc-9d94-41f01374b11a:1791529397462:2",
+    "diagnostics": {
+      "summary": "{\n  \"status\": \"complete\",\n  \"steps\": [\n    {\n      \"step\": \"company_recover\",\n      \"ok\": true\n    },\n    {\n      \"step\": \"company_refresh\",\n      \"ok\": true\n    },\n    {\n      \"step\": \"telemetry_collect\",\n      \"ok\": true\n    },\n    {\n      \"step\": \"anomaly_sync\",\n      \"ok\": true\n    },\n    {\n      \"step\": \"lab_refresh\",\n      \"ok\": true\n    }\n  ],\n  \"failed_steps\": [],\n  \"dashboard_at\": \"2026-10-09T07:03:20+00:00\"\n}",
+      "entries": [
+        {
+          "ts": 1791529400436,
+          "source": "exec",
+          "severity": "info",
+          "message": "command ok: \"python3\" \"/Users/agentsattari/thecreateco-company/engine/os_cycle.py\" \"tick\"",
+          "exitCode": 0
+        }
+      ]
+    },
+    "runAtMs": 1791529397476,
+    "durationMs": 2960,
+    "nextRunAtMs": 1791530520000,
+    "deliveryStatus": "not-requested",
+    "delivery": {
+      "intended": {
+        "channel": "discord",
+        "to": "channel:1501138899752194130",
+        "source": "explicit"
+      }
+    },
+    "jobName": "Company OS deterministic controller"
+  }
+}

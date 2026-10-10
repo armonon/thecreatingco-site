@@ -1,0 +1,11 @@
+{
+  "electron/package.json": "d49712ab284a1ea75446a05d0c4571ceaa01130857e480d487738c7cd787d844",
+  "package.json": "580373061fcd7cd0b48f73c5761d1df5d61e3791cf1e39be5ef3cee27ea977f8",
+  "package-lock.json": "1e40fbf0e48e967788f55124af384c653385b67303e3032a428af99149fd2569",
+  "vite.desktop.config.ts": "41a944d27b395fbf343b81d0b510812861ee5817a96613f1b5d5a35e50eba099",
+  "node_modules/@next/eslint-plugin-next/dist/utils/get-root-dirs.js": "886677432990a735e5ebdfb345ff1cbd40e264f9947a8432eeeb254b3a926bde",
+  "node_modules/vite-plugin-dynamic-import/dist/index.mjs": "fb73e06eaba3e63e7dd5bf8ca1c41d7263dcada411924b3d383a16ebf2c140e8",
+  "node_modules/global-agent/dist/classes/Agent.js": "661807c170d5a796bd81e8632a6a6c85f2ab2a73d80211a882e4ba6a6bc5a69a",
+  "node_modules/global-agent/dist/factories/createProxyController.js": "c9402ac700159c062fc9c7cd6f1465c25c120057d34e8a5564c339c5f510b360",
+  "node_modules/roarr/dist/factories/createLogger.js": "e1cc89204dbc61d3d601506242ec8a9772f69ed5028a594dffac539060941400"
+}

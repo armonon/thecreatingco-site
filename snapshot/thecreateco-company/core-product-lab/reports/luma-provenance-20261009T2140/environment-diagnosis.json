@@ -1,0 +1,11 @@
+{
+  "node_modules_is_symlink": true,
+  "node_modules_target": "/Users/agentsattari/code/company-worktrees/luma-adjustment-20261009T0940/node_modules",
+  "correction": "cp -cR preserved the dependency-directory symlink rather than dereferencing it; no independent dependency directory was created. Retry failed identically; no further retry performed.",
+  "config_source_sha1": "52540f4b456ad75349f1075cd8ab8a760f55e33b",
+  "published_config_sha1": "c17fcbcc30a754ebdfdacdb29441ea8a1943acc4",
+  "config_matches": false,
+  "node": "v26.9.0",
+  "npm": "11.19.1",
+  "source_status": ""
+}

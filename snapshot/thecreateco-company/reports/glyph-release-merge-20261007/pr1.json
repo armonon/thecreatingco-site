@@ -1,0 +1,13 @@
+{
+  "pr": 1,
+  "request_id": "a24754f4-5c5f-4664-905c-8476c2e73e2b",
+  "expected_head": "3d99059feb331cd980734e137baa576cbc8e9894",
+  "state": "MERGED",
+  "merge_sha": "15c14a9fc309a34512b9fbb32a6515085b67aafd",
+  "method": "merge",
+  "bypass_rules": false,
+  "main_protected": false,
+  "rulesets": [],
+  "checks": "None configured, not claimed passed",
+  "review": "/Users/agentsattari/thecreateco-company/reports/glyph-20261007-1910/independent-review.md"
+}

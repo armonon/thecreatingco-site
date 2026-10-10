@@ -1,0 +1,12 @@
+{
+  "saveName": "qualification-rain-at-the-station.board.json",
+  "reopenedTitle": "Qualification — Rain at the station",
+  "summary": "1 SCENES\n2 SHOTS\n0 FRAMED\n≈0:05 RUNTIME",
+  "handoffName": "qualification-rain-at-the-station.scenepilot.json",
+  "mediaAccept": "audio/*,video/*,.mov,.mkv",
+  "sessionAccept": "application/json,.json",
+  "mediaResult": "Added 0 clips · skipped 1 other file.",
+  "sessionResult": "Unsupported or malformed AutoCut session version.",
+  "autocutText": "Skip to the tool\nSCENEPILOT\nAUTOCUT\nALPHA\nAUTOCUT\nREFRAME\nCAPTIONS\nBOARD\nGRADE\nOpen the editor\nMUSIC VIDEO · EDIT · TRAILER · ALPHA\nAutoCut.\n\nDrop a song and a pile of clips. AutoCut finds the beat, the bars and the drop, picks the usable moments of every clip and cuts them to the music — calm where the song breathes, fast where it hits. Re-roll, lock the shots you love, export.\n\nOpen / relink editable session\nDrop a song and your clips — or a whole folder\nMP3/WAV/M4A + MP4/MOV/WebM. No song file? AutoCut uses the soundtrack of your longest clip (a performance take).\nChoose files\nChoose folder\n\nUnsupported or malformed AutoCut session version.\n\nALPHA · WHAT WORKS AND WHAT DOESN’T YET\n\nRuns in this browser tab. Your media is not uploaded. Works offline after the first visit. Chrome or Edge recommended.",
+  "pageErrors": []
+}

@@ -1,0 +1,75 @@
+{
+  "baseline_react": {
+    "exit_code": 1,
+    "passed": 92,
+    "failed": 8,
+    "log": "baseline-react.log"
+  },
+  "baseline_lint": {
+    "exit_code": 1,
+    "errors": 1,
+    "log": "baseline-lint.log"
+  },
+  "npm_ci": {
+    "exit_code": 0,
+    "log": "install.log"
+  },
+  "lint": {
+    "exit_code": 0,
+    "log": "lint.log"
+  },
+  "typecheck": {
+    "exit_code": 0,
+    "log": "typecheck.log"
+  },
+  "build": {
+    "exit_code": 0,
+    "log": "build.log"
+  },
+  "desktop_web_build": {
+    "exit_code": 0,
+    "log": "desktop-build.log"
+  },
+  "unit_initial_overlapped_build": {
+    "exit_code": 1,
+    "passed": 1526,
+    "failed": 1,
+    "log": "unit.log",
+    "reason": "dist/.openai/hosting.json missing while concurrent build ran; sequential rerun below"
+  },
+  "unit_after_build": {
+    "exit_code": 0,
+    "passed": 1527,
+    "failed": 0,
+    "skipped": 0,
+    "log": "unit-after-build.log"
+  },
+  "budgets": {
+    "exit_code": 0,
+    "passed": 15,
+    "log": "budgets.log"
+  },
+  "release_validate": {
+    "exit_code": 0,
+    "log": "release-validate.log"
+  },
+  "production_audit": {
+    "exit_code": 0,
+    "groups": 0,
+    "log": "production-audit.json"
+  },
+  "browser_1440": {
+    "exit_code": 1,
+    "log": "browser-workflow.log",
+    "reason": "offscreen project menu; synthetic creation persistence passed"
+  },
+  "browser_1920_export": {
+    "exit_code": 0,
+    "log": "browser-workflow-wide.log"
+  },
+  "independent_glb": {
+    "exit_code": 0,
+    "log": "export-verification.json"
+  },
+  "source_sha": "ea6734638f72232676985f610daac18341fcd8ca"
+}

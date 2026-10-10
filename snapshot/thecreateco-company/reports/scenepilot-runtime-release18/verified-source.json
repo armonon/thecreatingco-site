@@ -1,0 +1,17 @@
+{
+  "base_sha": "e9c62eba1fd17de7ce5c3b1ac4710a14f72088f4",
+  "verified_worktree_files": {
+    "package.json": "d1e56b2b36ccad61e42974fa90e869e54b1e55d043cd4cd9e2aaa7ac216d3657",
+    "package-lock.json": "16f4355c8228731c9c5e4c8c6879d91cdeb41ea9c0bbf99f4b469aeba6e61aa8",
+    "electron/package.json": "d49712ab284a1ea75446a05d0c4571ceaa01130857e480d487738c7cd787d844"
+  },
+  "verified_commands": [
+    "npm run desktop:renderer",
+    "npm run verify:full",
+    "actual Electron43.7.9 isolated-profile sandbox smoke"
+  ],
+  "limits": "Not full native workflow or packaged/install qualification",
+  "candidate_sha": "5027e2d4b0a784a46aedca7223985b2860951059",
+  "clean_head": true,
+  "verified_bytes_match_commit": true
+}

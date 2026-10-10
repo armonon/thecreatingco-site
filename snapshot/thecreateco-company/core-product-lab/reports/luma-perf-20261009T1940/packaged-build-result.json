@@ -1,0 +1,15 @@
+{
+  "command": [
+    "npm",
+    "run",
+    "pro:build",
+    "--",
+    "--bundles",
+    "app"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 127.22453784942627,
+  "offline": true,
+  "CARGO_HOME": "/Users/agentsattari/code/toolchains/reclaim-rust/cargo",
+  "RUSTUP_HOME": "/Users/agentsattari/code/toolchains/reclaim-rust/rustup"
+}

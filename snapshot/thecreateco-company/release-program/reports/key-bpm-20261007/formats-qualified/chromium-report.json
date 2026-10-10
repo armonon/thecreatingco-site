@@ -1,0 +1,237 @@
+{
+  "at": "2026-10-08T02:32:06.694Z",
+  "sourceSha": "1569ef377f6d3e079936116b1d8e5c4fe7586f48",
+  "sourceDirty": true,
+  "engine": "chromium",
+  "pass": true,
+  "scope": "Generated-fixture browser workflow; not labelled-music accuracy or physical mobile qualification",
+  "checks": [
+    {
+      "name": "Import -> actual decoder/worker -> key/Camelot/tempo and silence refusal",
+      "pass": true,
+      "rows": [
+        [
+          "C major 120.wav",
+          "0:14",
+          "C major",
+          "8B",
+          "120",
+          "-17.8 dB RMS",
+          "Alt. G major."
+        ],
+        [
+          "A minor 100.wav",
+          "0:14",
+          "A minortentative",
+          "8A",
+          "100rough",
+          "-17.8 dB RMS",
+          "Alt. A major. BPM: No steady pulse found (rough value shown)"
+        ],
+        [
+          "silence.wav",
+          "0:04",
+          "—",
+          "—",
+          "—",
+          "—",
+          "Key: Too quiet; BPM: Too quiet"
+        ]
+      ],
+      "elapsedMs": 359
+    },
+    {
+      "name": "Sort and real CSV download/readback",
+      "pass": true,
+      "bytes": 532
+    },
+    {
+      "name": "Malformed input fails clearly without dropping completed results",
+      "pass": true
+    },
+    {
+      "name": "Save real report -> fresh context -> reopen -> exact measurements/confidence/time -> reexport; malformed/oversized imports atomic",
+      "pass": true
+    },
+    {
+      "name": "Different audio files sharing filename/byte length both analyzed",
+      "pass": true
+    },
+    {
+      "name": "Real MP3/FLAC/M4A/OGG decode and reference key/tempo; AIFF support or explicit rejection recorded",
+      "pass": true,
+      "formats": [
+        {
+          "status": "done",
+          "cells": [
+            "generated-reference.mp3",
+            "0:14",
+            "C major",
+            "8B",
+            "120",
+            "-18.2 dB RMS",
+            "Alt. G major."
+          ]
+        },
+        {
+          "status": "done",
+          "cells": [
+            "generated-reference.flac",
+            "0:14",
+            "C major",
+            "8B",
+            "120",
+            "-17.8 dB RMS",
+            "Alt. G major."
+          ]
+        },
+        {
+          "status": "done",
+          "cells": [
+            "generated-reference.m4a",
+            "0:14",
+            "C major",
+            "8B",
+            "120",
+            "-17.8 dB RMS",
+            "Alt. G major."
+          ]
+        },
+        {
+          "status": "done",
+          "cells": [
+            "generated-reference.ogg",
+            "0:14",
+            "C major",
+            "8B",
+            "120",
+            "-20.8 dB RMS",
+            "Alt. A minor."
+          ]
+        },
+        {
+          "status": "error",
+          "cells": [
+            "generated-reference.aiff",
+            "This file could not be decoded. Try a WAV, MP3, or FLAC export."
+          ],
+          "support": "UNSUPPORTED_IN_THIS_BROWSER"
+        }
+      ]
+    },
+    {
+      "name": "1440/768/390 CSS widths; not physical devices",
+      "pass": true
+    }
+  ],
+  "errors": [],
+  "fixtures": [
+    {
+      "name": "C major 120.wav",
+      "bytes": 1852244,
+      "sha256": "505b45f770431befd0fa8494e1bacdc333a7ea8f6dc6273396401adb84eec920",
+      "provenance": "Original deterministic synthesis in this script"
+    },
+    {
+      "name": "A minor 100.wav",
+      "bytes": 1852244,
+      "sha256": "67d7b02e5a4415bc87352e0fc4ef7197d94bd7e3f2e42f262d04bbbae6147b32",
+      "provenance": "Original deterministic synthesis in this script"
+    },
+    {
+      "name": "silence.wav",
+      "bytes": 529244,
+      "sha256": "f9ab3a72a1740b3935f2435611fd2a5e577652990afd66f520b67504fae26e0d",
+      "provenance": "Original deterministic synthesis in this script"
+    },
+    {
+      "name": "generated-reference.mp3",
+      "bytes": 112449,
+      "sha256": "ff6970017b14e44ff7ebe91236265769f4153af754b40791a252001e53f31cd2",
+      "provenance": "FFmpeg encoding of original generated reference WAV"
+    },
+    {
+      "name": "generated-reference.flac",
+      "bytes": 638266,
+      "sha256": "62a8d08e62c6d11516722a63d01a1a2e1887f5c0796d7ee3ac6bd2f1ba309200",
+      "provenance": "FFmpeg encoding of original generated reference WAV"
+    },
+    {
+      "name": "generated-reference.m4a",
+      "bytes": 134634,
+      "sha256": "90f3bfa15d492d1e736c77a47f82e4b1fc23540ab259e972bbe466b1d22ada9a",
+      "provenance": "FFmpeg encoding of original generated reference WAV"
+    },
+    {
+      "name": "generated-reference.ogg",
+      "bytes": 69613,
+      "sha256": "1c0296d947bb651b8fe3b3dd40f7bbd418abe9f996f44a8d5eb99f52e2d127b1",
+      "provenance": "FFmpeg encoding of original generated reference WAV"
+    },
+    {
+      "name": "generated-reference.aiff",
+      "bytes": 1234854,
+      "sha256": "b19c29d9d4567a01d74d20ebe1f5329375cb92b1757c94990fbea4bbda1af755",
+      "provenance": "FFmpeg encoding of original generated reference WAV"
+    }
+  ],
+  "browserVersion": "151.0.7922.34",
+  "formatResults": [
+    {
+      "status": "done",
+      "cells": [
+        "generated-reference.mp3",
+        "0:14",
+        "C major",
+        "8B",
+        "120",
+        "-18.2 dB RMS",
+        "Alt. G major."
+      ]
+    },
+    {
+      "status": "done",
+      "cells": [
+        "generated-reference.flac",
+        "0:14",
+        "C major",
+        "8B",
+        "120",
+        "-17.8 dB RMS",
+        "Alt. G major."
+      ]
+    },
+    {
+      "status": "done",
+      "cells": [
+        "generated-reference.m4a",
+        "0:14",
+        "C major",
+        "8B",
+        "120",
+        "-17.8 dB RMS",
+        "Alt. G major."
+      ]
+    },
+    {
+      "status": "done",
+      "cells": [
+        "generated-reference.ogg",
+        "0:14",
+        "C major",
+        "8B",
+        "120",
+        "-20.8 dB RMS",
+        "Alt. A minor."
+      ]
+    },
+    {
+      "status": "error",
+      "cells": [
+        "generated-reference.aiff",
+        "This file could not be decoded. Try a WAV, MP3, or FLAC export."
+      ],
+      "support": "UNSUPPORTED_IN_THIS_BROWSER"
+    }
+  ]
+}

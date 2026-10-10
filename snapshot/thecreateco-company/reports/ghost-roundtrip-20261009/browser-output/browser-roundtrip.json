@@ -1,0 +1,250 @@
+{
+  "browser": "Chrome headless actual app",
+  "url": "http://127.0.0.1:1442/",
+  "appBranch": "fix/ghost-roundtrip-20261007",
+  "steps": [
+    {
+      "step": "worker-generation",
+      "status": "2 photos · 1 photo sets · 1 models ready",
+      "engine": "Adjustments pending"
+    }
+  ],
+  "saveAffordances": {
+    "collection": {
+      "affordance": {
+        "text": "Save roundtrip-coat-source-qa.ghostbatch",
+        "href": "blob:http://127.0.0.1:1442/1de6a7a9-e0f1-40d6-808c-a9456fbaabdd",
+        "download": "roundtrip-coat-source-qa.ghostbatch",
+        "visible": true
+      },
+      "savedAs": "roundtrip-coat-source-qa.ghostbatch",
+      "path": "/Users/agentsattari/thecreateco-company/reports/ghost-roundtrip-20261009/browser-output/roundtrip-original.ghostbatch",
+      "bytes": 3750728
+    },
+    "models": {
+      "affordance": {
+        "text": "Save roundtrip-coat-source-qa.ghostbatch",
+        "href": "blob:http://127.0.0.1:1442/1de6a7a9-e0f1-40d6-808c-a9456fbaabdd",
+        "download": "roundtrip-coat-source-qa.ghostbatch",
+        "visible": true
+      },
+      "savedAs": "roundtrip-coat-source-qa-models.zip",
+      "path": "/Users/agentsattari/thecreateco-company/reports/ghost-roundtrip-20261009/browser-output/models.zip",
+      "bytes": 8676005
+    },
+    "reopened": {
+      "affordance": {
+        "text": "Save roundtrip-coat-source-qa.ghostbatch",
+        "href": "blob:http://127.0.0.1:1442/2892591e-a877-413b-ad81-0d237e616a8a",
+        "download": "roundtrip-coat-source-qa.ghostbatch",
+        "visible": true
+      },
+      "savedAs": "roundtrip-coat-source-qa.ghostbatch",
+      "path": "/Users/agentsattari/thecreateco-company/reports/ghost-roundtrip-20261009/browser-output/roundtrip-reopened.ghostbatch",
+      "bytes": 3750728
+    }
+  },
+  "reopenedUi": {
+    "profile": "new incognito browser context (empty in-memory origin state)",
+    "name": "Roundtrip coat source QA",
+    "count": "2 photos · 1 photo sets · 0 models ready",
+    "card": "coat\nClothes\nGarment type\nAuto · from photos\nT-shirt / polo\nShirt / blouse\nTank / camisole\nSweater / knitwear\nSweatshirt\nHoodie\nJacket / blazer\nCoat / trench\nVest / waistcoat\nCardigan\nDress / gown\nTunic / kaftan / robe\nJumpsuit / overalls\nRomper / playsuit\nBodysuit / leotard\nTrousers / pants\nJeans\nShorts\nLeggings / tights\nSkirt\nSwimwear\nBriefs / underwear\nBra / bralette\nActivewear / sportswear\nCape / poncho\nWrap / sari / sarong\nScarf / shawl\nOther garment · use photo shape\nStand-collar jacket · fitted template\nFront\ncoat-front.png\nBack\ncoat-back.png\nReady to generate\nShared settings\nFront / back checked\nReview checklist · 1 note\nEdit photos\nClean up\nSwap\nTweak & review\n×"
+  },
+  "recordRoundTrip": {
+    "recordEqual": true,
+    "photoCount": 2,
+    "settings": {
+      "fit": "natural",
+      "depth": 100,
+      "sleeves": 12,
+      "length": 70,
+      "finish": "soft",
+      "background": "studio",
+      "fabric": "wool",
+      "photoWidth": 1,
+      "presentation": "hanger",
+      "stiffness": 73,
+      "fullness": 50,
+      "airflow": 0
+    },
+    "firstRecord": {
+      "schema": "ghost-studio-collection",
+      "version": 6,
+      "name": "Roundtrip coat source QA",
+      "shared": {
+        "fit": "natural",
+        "depth": 100,
+        "sleeves": 12,
+        "length": 70,
+        "finish": "soft",
+        "background": "studio",
+        "fabric": "wool",
+        "photoWidth": 1,
+        "presentation": "hanger",
+        "stiffness": 73,
+        "fullness": 50,
+        "airflow": 0
+      },
+      "activeId": "7e2665c0-5d46-42f5-a8b2-152dbc4dae5e",
+      "photos": [
+        {
+          "id": "6300f21a-9953-4063-86e7-7484e492b415",
+          "name": "coat-front.png",
+          "type": "image/png",
+          "normalize": true,
+          "path": "photos/6300f21a-9953-4063-86e7-7484e492b415.png"
+        },
+        {
+          "id": "76423b42-2b36-417c-ba43-0fd1e1da22c0",
+          "name": "coat-back.png",
+          "type": "image/png",
+          "normalize": true,
+          "path": "photos/76423b42-2b36-417c-ba43-0fd1e1da22c0.png"
+        }
+      ],
+      "items": [
+        {
+          "id": "7e2665c0-5d46-42f5-a8b2-152dbc4dae5e",
+          "name": "coat",
+          "type": "garment",
+          "garmentType": "auto",
+          "photoIds": [
+            "6300f21a-9953-4063-86e7-7484e492b415",
+            "76423b42-2b36-417c-ba43-0fd1e1da22c0"
+          ],
+          "front": "6300f21a-9953-4063-86e7-7484e492b415",
+          "back": "76423b42-2b36-417c-ba43-0fd1e1da22c0",
+          "side": null,
+          "confirmed": true,
+          "overrides": null,
+          "sample": false,
+          "pairKey": "coat",
+          "photoEdits": {},
+          "match": {
+            "front": [],
+            "side": []
+          },
+          "construction": {
+            "mode": "outline",
+            "neck": "open",
+            "body": 100,
+            "sleeves": 100,
+            "hoodWidth": 100,
+            "hoodHeight": 100,
+            "hoodDepth": 100,
+            "hoodU": 50,
+            "hoodV": 60,
+            "hoodPatch": 18
+          },
+          "reviewed": false
+        }
+      ]
+    },
+    "sourceChecks": [
+      {
+        "id": "6300f21a-9953-4063-86e7-7484e492b415",
+        "name": "coat-front.png",
+        "originalEntry": true,
+        "reopenedEntry": true,
+        "sha256Upload": "f1fd7dcc0e66758a4cc8f15e30a06ee6e44088e86c98d8893403b1d724815778",
+        "sha256First": "f1fd7dcc0e66758a4cc8f15e30a06ee6e44088e86c98d8893403b1d724815778",
+        "sha256Reopened": "f1fd7dcc0e66758a4cc8f15e30a06ee6e44088e86c98d8893403b1d724815778",
+        "uploadEqual": true,
+        "equal": true
+      },
+      {
+        "id": "76423b42-2b36-417c-ba43-0fd1e1da22c0",
+        "name": "coat-back.png",
+        "originalEntry": true,
+        "reopenedEntry": true,
+        "sha256Upload": "de672b42c19f5917184a37c98caa006da83c239ebfbcc0291d28ccceeed7f017",
+        "sha256First": "de672b42c19f5917184a37c98caa006da83c239ebfbcc0291d28ccceeed7f017",
+        "sha256Reopened": "de672b42c19f5917184a37c98caa006da83c239ebfbcc0291d28ccceeed7f017",
+        "uploadEqual": true,
+        "equal": true
+      }
+    ],
+    "allSourcesPreserved": true,
+    "firstSettings": {
+      "fit": "natural",
+      "depth": 100,
+      "sleeves": 12,
+      "length": 70,
+      "finish": "soft",
+      "background": "studio",
+      "fabric": "wool",
+      "photoWidth": 1,
+      "presentation": "hanger",
+      "stiffness": 73,
+      "fullness": 50,
+      "airflow": 0
+    }
+  },
+  "glb": [
+    {
+      "entry": "roundtrip-coat-source-qa/models/001-coat.glb",
+      "bytes": 8671768,
+      "magic": "glTF",
+      "version": 2,
+      "lengthHeaderMatches": true,
+      "jsonChunkBytes": 18076,
+      "asset": {
+        "version": "2.0",
+        "generator": "Ghost (three.js GLTFExporter)"
+      },
+      "meshCount": 13,
+      "nodeNames": [
+        "Front fabric",
+        "Front fabric lining",
+        "Back fabric",
+        "Back fabric lining",
+        "Thin neck, cuff and hem edges",
+        "Hanger shoulders",
+        "Hanger end",
+        "Hanger end",
+        "Hanger rail",
+        "Hanger hook",
+        "Clip hanger stem",
+        "Garment clip",
+        "Garment clip",
+        "Studio hanger",
+        "coat"
+      ],
+      "imageCount": 2,
+      "images": [
+        {
+          "mimeType": "image/png",
+          "bytes": 2935240,
+          "pngSignature": "89504e470d0a1a0a",
+          "sha256": "070073807838221c2379aa7a0c0b88498ef21e6f93bab56fca3ce76a3036216f"
+        },
+        {
+          "mimeType": "image/png",
+          "bytes": 2793184,
+          "pngSignature": "89504e470d0a1a0a",
+          "sha256": "f7e5e24de2fc1ae06d8e19db644c7993315b6eca1e748ff29e0adaaa03c99f84"
+        }
+      ],
+      "positionCount": 54678,
+      "positionsFinite": true,
+      "bounds": [
+        {
+          "axis": "x",
+          "min": -0.2737559676170349,
+          "max": 0.25592362880706787
+        },
+        {
+          "axis": "y",
+          "min": -0.44468554854393005,
+          "max": 0.4760502576828003
+        },
+        {
+          "axis": "z",
+          "min": -0.0664488673210144,
+          "max": 0.06577873975038528
+        }
+      ]
+    }
+  ],
+  "pageErrors": []
+}

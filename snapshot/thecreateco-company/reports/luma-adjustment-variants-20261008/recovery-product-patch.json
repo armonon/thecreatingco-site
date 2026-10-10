@@ -1,0 +1,144 @@
+{
+  "product_id": "luma",
+  "release_readiness": "ALPHA/unqualified: reviewed8c15f85 pushed PR9 onPR8;1436enginepass/10skip,types/fulllint,72renderer cases and195840pixelprobe pass. Full build gates storage-blocked; hosted3jobs0steps billing; residual variants/full UI/native/source-live unresolved.",
+  "next_milestone": "Restore sufficient disk for exact-head builds; qualify styled/non-normal/multipass/BlendIf and full UI persistence. Resolve hosted account CI through existing owner/access path; no retry loops or gate bypass.",
+  "completion_observations": {
+    "candidate_sha": "8c15f8537c1176b7d4c0076182b7501c92f714b5",
+    "observed_at": "2026-10-08T14:47:37.039225+00:00",
+    "supported_platforms": [],
+    "gates": {
+      "core_workflow": {
+        "status": "UNVERIFIED",
+        "coverage_complete": false,
+        "source_sha": "8c15f8537c1176b7d4c0076182b7501c92f714b5",
+        "observed_at": "2026-10-08T14:47:37.039225+00:00",
+        "evidence": [
+          "/Users/agentsattari/thecreateco-company/reports/luma-adjustment-variants-20261008/README.md"
+        ],
+        "summary": "Normal partial opacity/raster masks/browser renderer subset plus Nodevector fixture repaired; full UI and styled/non-normal/multipass/BlendIf qualification incomplete."
+      },
+      "save_reopen_export": {
+        "status": "UNVERIFIED",
+        "coverage_complete": false,
+        "source_sha": "8c15f8537c1176b7d4c0076182b7501c92f714b5",
+        "observed_at": "2026-10-08T14:47:37.039225+00:00",
+        "evidence": [
+          "/Users/agentsattari/thecreateco-company/reports/luma-adjustment-variants-20261008/README.md"
+        ],
+        "summary": "Whole gate not qualified on this candidate; previous PR8 evidence retained in engine audit history."
+      },
+      "reliability_recovery": {
+        "status": "UNVERIFIED",
+        "coverage_complete": false,
+        "source_sha": "8c15f8537c1176b7d4c0076182b7501c92f714b5",
+        "observed_at": "2026-10-08T14:47:37.039225+00:00",
+        "evidence": [
+          "/Users/agentsattari/thecreateco-company/reports/luma-adjustment-variants-20261008/README.md"
+        ],
+        "summary": "Whole gate not qualified on this candidate; previous PR8 evidence retained in engine audit history."
+      },
+      "performance": {
+        "status": "UNVERIFIED",
+        "coverage_complete": false,
+        "source_sha": "8c15f8537c1176b7d4c0076182b7501c92f714b5",
+        "observed_at": "2026-10-08T14:47:37.039225+00:00",
+        "evidence": [
+          "/Users/agentsattari/thecreateco-company/reports/luma-adjustment-variants-20261008/README.md"
+        ],
+        "summary": "Whole gate not qualified on this candidate; previous PR8 evidence retained in engine audit history."
+      },
+      "usability_accessibility": {
+        "status": "UNVERIFIED",
+        "coverage_complete": false,
+        "source_sha": "8c15f8537c1176b7d4c0076182b7501c92f714b5",
+        "observed_at": "2026-10-08T14:47:37.039225+00:00",
+        "evidence": [
+          "/Users/agentsattari/thecreateco-company/reports/luma-adjustment-variants-20261008/README.md"
+        ],
+        "summary": "Whole gate not qualified on this candidate; previous PR8 evidence retained in engine audit history."
+      },
+      "responsive_behavior": {
+        "status": "UNVERIFIED",
+        "coverage_complete": false,
+        "source_sha": "8c15f8537c1176b7d4c0076182b7501c92f714b5",
+        "observed_at": "2026-10-08T14:47:37.039225+00:00",
+        "evidence": [
+          "/Users/agentsattari/thecreateco-company/reports/luma-adjustment-variants-20261008/README.md"
+        ],
+        "summary": "Whole gate not qualified on this candidate; previous PR8 evidence retained in engine audit history."
+      },
+      "security_privacy": {
+        "status": "UNVERIFIED",
+        "coverage_complete": false,
+        "source_sha": "8c15f8537c1176b7d4c0076182b7501c92f714b5",
+        "observed_at": "2026-10-08T14:47:37.039225+00:00",
+        "evidence": [
+          "/Users/agentsattari/thecreateco-company/reports/luma-adjustment-variants-20261008/README.md"
+        ],
+        "summary": "Whole gate not qualified on this candidate; previous PR8 evidence retained in engine audit history."
+      },
+      "documentation_support": {
+        "status": "UNVERIFIED",
+        "coverage_complete": false,
+        "source_sha": "8c15f8537c1176b7d4c0076182b7501c92f714b5",
+        "observed_at": "2026-10-08T14:47:37.039225+00:00",
+        "evidence": [
+          "/Users/agentsattari/thecreateco-company/reports/luma-adjustment-variants-20261008/README.md"
+        ],
+        "summary": "Whole gate not qualified on this candidate; previous PR8 evidence retained in engine audit history."
+      },
+      "tests": {
+        "status": "UNVERIFIED",
+        "coverage_complete": false,
+        "source_sha": "8c15f8537c1176b7d4c0076182b7501c92f714b5",
+        "observed_at": "2026-10-08T14:47:37.039225+00:00",
+        "evidence": [
+          "/Users/agentsattari/thecreateco-company/reports/luma-adjustment-variants-20261008/README.md"
+        ],
+        "summary": "1436 engine pass/10skip,types/full strict lint,72three-engine renderer cases and195840pixel probe pass. Full application/native builds and rendered-page tests not run due disk144MiB; hosted3jobs0stepsfailed billing. Not whole test-gate qualification."
+      },
+      "supported_platforms": {
+        "status": "UNVERIFIED",
+        "coverage_complete": false,
+        "source_sha": "8c15f8537c1176b7d4c0076182b7501c92f714b5",
+        "observed_at": "2026-10-08T14:47:37.039225+00:00",
+        "evidence": [
+          "/Users/agentsattari/thecreateco-company/reports/luma-adjustment-variants-20261008/README.md"
+        ],
+        "summary": "Whole gate not qualified on this candidate; previous PR8 evidence retained in engine audit history."
+      },
+      "critical_blockers": {
+        "status": "BLOCKED",
+        "coverage_complete": false,
+        "source_sha": "8c15f8537c1176b7d4c0076182b7501c92f714b5",
+        "observed_at": "2026-10-08T14:47:37.039225+00:00",
+        "evidence": [
+          "/Users/agentsattari/thecreateco-company/reports/luma-adjustment-variants-20261008/README.md"
+        ],
+        "summary": "Insufficient local disk for exact-head full builds; Actions37795215877 all3jobs0steps failed due payments/spending. Full golden/native/source-live qualification unresolved."
+      }
+    },
+    "deployment": {
+      "status": "PUSHED_PR_OPEN_NOT_MERGED_NOT_DEPLOYED",
+      "source_sha": "8c15f8537c1176b7d4c0076182b7501c92f714b5",
+      "pr": "https://github.com/armonon/luma-studio/pull/9",
+      "base_pr": "https://github.com/armonon/luma-studio/pull/8"
+    },
+    "next_action": "Restore sufficient disk for exact-head builds; qualify styled/non-normal/multipass/BlendIf and full UI persistence. Resolve hosted account CI through existing owner/access path; no retry loops or gate bypass."
+  },
+  "observed_at": "2026-10-08T14:47:37.039225+00:00",
+  "evidence_sources": [
+    "core-product-lab/reports/luma-initial.md",
+    "core-product-lab/products/luma.json",
+    "core-product-lab/golden-projects/luma.md",
+    "/tmp/luma-audit-e709-npm-test.log",
+    "/tmp/luma-audit-e709-release-status.log",
+    "/tmp/luma-audit-e709-npm-audit-production.json",
+    "reports/luma-security-2026-10-07/README.md",
+    "reports/luma-security-2026-10-07/fixed-audit.json",
+    "reports/luma-security-2026-10-07/next-runtime-smoke.json",
+    "reports/luma-security-2026-10-07/pr-state.json",
+    "https://github.com/armonon/luma-studio/pull/5",
+    "/Users/agentsattari/thecreateco-company/reports/luma-adjustment-variants-20261008/README.md"
+  ]
+}

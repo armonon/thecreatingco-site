@@ -1,0 +1,46 @@
+{
+  "source_sha": "772f082581e06e7a5783aff35ed859aace890394",
+  "source_status": "M app/engine/document.ts\n M app/engine/gl-renderer.ts\n M app/engine/precision-renderer.ts\n?? build/qualify-raster-color.mjs\n?? tests/raster-export-fidelity.test.ts",
+  "diff_sha256": "14b5f32081a8f02de5f3013f3c2ee2eae087e9e2f7836ba58b74174981893ead",
+  "harness_sha256": "0d59867fc01c40b6c7755e3620cc0cb66f423987cc77c1dc32522a5046c7174d",
+  "observed_at": "2026-10-08T03:18:22.063Z",
+  "node": "v22.23.2",
+  "checks": [
+    {
+      "name": "retained-gradient: independent decode versus imported bitmap",
+      "metrics": {
+        "maxRGB": 0,
+        "maxAlpha": 0,
+        "changedChannels": 0
+      },
+      "fixture_sha256": "d3e17c1546af1f7bbd6e13c137dd23cebea29b5db0262f8eb919de0bf8380112",
+      "status": "PASS"
+    },
+    {
+      "name": "retained-gradient: first CPU PNG",
+      "metrics": {
+        "maxRGB": 0,
+        "maxAlpha": 0,
+        "changedChannels": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "retained-gradient: repeat CPU PNG",
+      "metrics": {
+        "maxRGB": 0,
+        "maxAlpha": 0,
+        "changedChannels": 0
+      },
+      "status": "PASS"
+    }
+  ],
+  "pass": false,
+  "reference": "Independent browser decode to an sRGB canvas; RGB tolerance 2, alpha exact. PNGs also compared with independent native canvas decode. Invisible RGB is canonicalized by canvas, not claimed preserved.",
+  "scope": "Actual file-input import, PNG download twice, .luma save/download/confirm, actual close/reopen and PNG download. Synthetic opaque, partial-alpha, transparent and embedded matrix/TRC ICC images. CPU desktop shell in a local browser; not native, OS color calibration, every ICC profile or deployment qualification.",
+  "browser": "154.0.8037.98",
+  "error": "TimeoutError: page.waitForEvent: Timeout 90000ms exceeded while waiting for event \"download\"\n=========================== logs ===========================\nwaiting for event \"download\"\n============================================================",
+  "stack": "page.waitForEvent: Timeout 90000ms exceeded while waiting for event \"download\"\n=========================== logs ===========================\nwaiting for event \"download\"\n============================================================\n    at <anonymous> (/Users/agentsattari/code/company-worktrees/luma-color-20261007/build/qualify-raster-color.mjs:68:97)",
+  "body": "Skip to canvas\nL\nLuma\nretained-gradient\nUnsaved changes\nWorkspace\nFit\n50.59%\nNew document…\n⌘N\nOpen…\n⌘O\nSave project\n⌘S\nFilters\nBatch processing\nMockups\nalpha\nGlyph font maker\nalpha\nCutout\nalpha\nUpscale…\nalpha\nThumb…\nalpha\nVersion history\nWorkspaces & shortcuts\nExport\nRadial Warp\nretained-gradient\nFit\nGuides\nFocus\nretained-gradient\n×\n＋\npx\n0\n200\n400\n600\n800\n1000\n1200\n1400\n1600\n1800\n2000\n0\n200\n400\n600\n800\n1000\n1200\n1400\n⌜\nRadial warp\nProperties\nNeural Lab\nRadial warp\nTRANSFORM\nPanel\nAuto\nCampaign\nDocument & color\nChannels\nComps & artboards\nPlugins & assets\nSelection\nNeural Lab\nActions\nretained-gradient\nraster · visible\nQuick controls\nSpace\nTool features\nTap to pin · hold and drag to pan\nSpatial & Form Studio\nTransform & geometry\nPRECISION\n\nDrag directly on the document.\n\nInfluence\n360px\nX\nY\nScale X\nScale Y\nSkew\nRotation °\nReset transform\nLayers\nLayers 1\n＋ Adjustment\nTone\nCurves\nLevels\nHue / Saturation\nBlack & White\nColor Balance\nPhoto Filter\nChannel Mixer\nColor Lookup\nGradient Map\nRelight Field\nThreshold\nPosterize\nInvert\nretained-gradient\nRaster\nfx\nOpacity\n100%\nNormal\nDissolve\nDarken\nMultiply\nColor Burn\nLinear Burn\nDarker Color\nLighten\nScreen\nColor Dodge\nLinear Dodge (Add)\nLighter Color\nOverlay\nSoft Light\nHard Light\nVivid Light\nLinear Light\nPin Light\nHard Mix\nDifference\nExclusion\nSubtract\nDivide\nHue\nSaturation\nColor\nLuminosity\nLuma Desktop\n2,048 × 1,536 px\n8-bit · srgb · CPU\nRadial warp\nP\n50.59%\nLOCAL",
+  "errors": []
+}

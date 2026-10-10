@@ -1,0 +1,100 @@
+{
+  "schema": "SattariKeyBpm.report",
+  "version": 1,
+  "createdAt": "2026-10-08T02:53:38.516Z",
+  "limits": [
+    "Previously measured results only. Source audio is not included; choose audio files to analyze again.",
+    "One global key estimate per track; key changes, modal and atonal music are not separately identified.",
+    "Tempo can be half/double time. Rough estimates use one middle segment and fold into 70–180 BPM.",
+    "Fixture-tested estimates, not accuracy-certified against a labelled music corpus.",
+    "Report structure is validated; imported measurements are not re-verified without original audio."
+  ],
+  "tracks": [
+    {
+      "source": {
+        "name": "C major 120.wav",
+        "size": 1852244,
+        "type": "audio/wav",
+        "lastModified": 1791428018219
+      },
+      "result": {
+        "file": "C major 120.wav",
+        "status": "done",
+        "note": "",
+        "duration": 14,
+        "key": "C major",
+        "camelot": "8B",
+        "keyConfidence": 0.2431709643052497,
+        "keyEvidence": "supported",
+        "alternative": "G major",
+        "bpm": 120,
+        "tempoEvidence": "supported",
+        "rmsDb": -17.8,
+        "peakDb": -0.8
+      },
+      "measuredAt": "2026-10-08T02:53:38.365Z"
+    },
+    {
+      "source": {
+        "name": "A minor 100.wav",
+        "size": 1852244,
+        "type": "audio/wav",
+        "lastModified": 1791428018277
+      },
+      "result": {
+        "file": "A minor 100.wav",
+        "status": "done",
+        "note": "BPM: No steady pulse found (rough value shown)",
+        "duration": 14,
+        "key": "A minor",
+        "camelot": "8A",
+        "keyConfidence": 0.022178621624036943,
+        "keyEvidence": "tentative",
+        "alternative": "A major",
+        "bpm": 100,
+        "tempoEvidence": "rough",
+        "rmsDb": -17.8,
+        "peakDb": -0.1
+      },
+      "measuredAt": "2026-10-08T02:53:38.406Z"
+    },
+    {
+      "source": {
+        "name": "silence.wav",
+        "size": 529244,
+        "type": "audio/wav",
+        "lastModified": 1791428018295
+      },
+      "result": {
+        "file": "silence.wav",
+        "status": "done",
+        "note": "Key: Too quiet; BPM: Too quiet",
+        "duration": 4,
+        "key": "",
+        "camelot": "",
+        "keyConfidence": null,
+        "keyEvidence": "insufficient",
+        "alternative": "",
+        "bpm": null,
+        "tempoEvidence": "insufficient",
+        "rmsDb": null,
+        "peakDb": null
+      },
+      "measuredAt": "2026-10-08T02:53:38.410Z"
+    },
+    {
+      "source": {
+        "name": "malformed.wav",
+        "size": 9,
+        "type": "audio/wav",
+        "lastModified": 1791428018467
+      },
+      "result": {
+        "file": "malformed.wav",
+        "status": "error",
+        "note": "This file could not be decoded. Try a WAV, MP3, or FLAC export."
+      },
+      "measuredAt": "2026-10-08T02:53:38.480Z"
+    }
+  ]
+}

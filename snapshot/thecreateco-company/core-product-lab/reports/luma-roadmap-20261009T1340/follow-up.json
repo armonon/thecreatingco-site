@@ -1,0 +1,22 @@
+{
+  "task_id": "CORE-LUMA-HIGH-DEPTH-DOC-001",
+  "title": "Correct stale high-depth PSD/PSB compatibility disclosure",
+  "product": "luma",
+  "workstream": "CORE_PRODUCT_LAB",
+  "severity": "P3",
+  "area": "documentation",
+  "category": "documentation",
+  "model": "gpt-6-luna",
+  "scores": {
+    "impact": 4,
+    "user_value": 5,
+    "confidence": 10,
+    "effort": 1,
+    "risk": 1
+  },
+  "source_evidence": [
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/luma-roadmap-20261009T1340/README.md"
+  ],
+  "test_requirements": "At exact latest source compare README Photoshop policy to highDepthEligibility and native writer; run five-file 51-test qualification including layered16/32bit masks and fallback warnings; preserve all exclusions and do not claim external/UI qualification. Isolated scoped commit/push via normal gates.",
+  "next_action": "Update README only after reconciling current native admission checks; no broader color implementation."
+}

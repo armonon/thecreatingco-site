@@ -1,0 +1,50 @@
+[
+  {
+    "url": "https://thecreatingco.com/",
+    "observed_at": "2026-10-08T01:05:04.581146+00:00",
+    "status": 200,
+    "final_url": "https://thecreatingco.com/",
+    "bytes": 89622,
+    "snapshot": "thecreateco-company/reports/revenue-2026-10-07/public-pages/thecreatingco-com.html"
+  },
+  {
+    "url": "https://thecreatingco.com/downloads/",
+    "observed_at": "2026-10-08T01:05:04.581409+00:00",
+    "status": 200,
+    "final_url": "https://thecreatingco.com/downloads/",
+    "bytes": 24803,
+    "snapshot": "thecreateco-company/reports/revenue-2026-10-07/public-pages/thecreatingco-com-downloads.html"
+  },
+  {
+    "url": "https://thecreatingco.com/products/scenepilot/",
+    "observed_at": "2026-10-08T01:05:04.581502+00:00",
+    "status": 200,
+    "final_url": "https://thecreatingco.com/products/scenepilot/",
+    "bytes": 79050,
+    "snapshot": "thecreateco-company/reports/revenue-2026-10-07/public-pages/thecreatingco-com-products-scenepilot.html"
+  },
+  {
+    "url": "https://thecreatingco.com/products/luma/",
+    "observed_at": "2026-10-08T01:05:04.581574+00:00",
+    "status": 200,
+    "final_url": "https://thecreatingco.com/products/luma/",
+    "bytes": 73680,
+    "snapshot": "thecreateco-company/reports/revenue-2026-10-07/public-pages/thecreatingco-com-products-luma.html"
+  },
+  {
+    "url": "https://thecreatingco.com/testing/",
+    "observed_at": "2026-10-08T01:05:04.581628+00:00",
+    "status": 200,
+    "final_url": "https://thecreatingco.com/testing/",
+    "bytes": 24646,
+    "snapshot": "thecreateco-company/reports/revenue-2026-10-07/public-pages/thecreatingco-com-testing.html"
+  },
+  {
+    "url": "https://thecreatingco.com/kickstarter/",
+    "observed_at": "2026-10-08T01:05:04.581679+00:00",
+    "status": 200,
+    "final_url": "https://thecreatingco.com/kickstarter/",
+    "bytes": 30513,
+    "snapshot": "thecreateco-company/reports/revenue-2026-10-07/public-pages/thecreatingco-com-kickstarter.html"
+  }
+]

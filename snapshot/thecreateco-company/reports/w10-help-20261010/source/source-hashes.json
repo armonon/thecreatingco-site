@@ -1,0 +1,98 @@
+{
+  "observed_at": "2026-10-10T02:12:28.656293+00:00",
+  "collection_command": "python3 deterministic read-only file/git blob SHA-256 collection; see README.md",
+  "site_pages": [
+    {
+      "path": "/Users/agentsattari/code/wave2/thecreatingco-live/products/bounce/index.html",
+      "basis": "current-checkout",
+      "bytes": 47369,
+      "sha256": "f4464f8fab279b0f4a2bd683803ed0b51b310b5877a310f22b508ce96b82a335",
+      "mtime_ns": 1791596094027201950
+    },
+    {
+      "path": "/Users/agentsattari/code/wave2/thecreatingco-live/products/key-bpm/index.html",
+      "basis": "current-checkout",
+      "bytes": 36652,
+      "sha256": "2b6320ac7a936317f3b9c76711dcbfe474a60d8b4b6b694e9f9a02b147a82e4c",
+      "mtime_ns": 1791596097840465963
+    },
+    {
+      "path": "/Users/agentsattari/code/wave2/thecreatingco-live/products/glyph-studio/index.html",
+      "basis": "current-checkout",
+      "bytes": 30872,
+      "sha256": "00407bc1d5458661d7e2d5672236b491e80b93f3880c3e414adee241b5a0c675",
+      "mtime_ns": 1791596096833534817
+    },
+    {
+      "path": "/Users/agentsattari/code/wave2/thecreatingco-live/content/product-stories.json",
+      "basis": "current-checkout",
+      "bytes": 18372,
+      "sha256": "7f3ad638419bef75459cc618c5a3322b40bf6a0971e4ba1ff0c753fd4f4894a1",
+      "mtime_ns": 1791566927289457909
+    }
+  ],
+  "candidate_source_blobs": [
+    {
+      "repo": "/Users/agentsattari/code/wave4/bounce",
+      "commit": "8c8c2541e8d8861a53f102ef8b985e4e35950f3e",
+      "path": "web/test/bounce.js",
+      "bytes": 10995,
+      "git_blob": "f25464479586b1d08bc93daad34959f49089bb72",
+      "sha256": "44d3232b475848502a44865f4f2a7435d7229c84de7c27eadc6fe2ee92323dbe"
+    },
+    {
+      "repo": "/Users/agentsattari/code/core-product-lab/key-bpm",
+      "commit": "dab0dda829ffc436987773d650abbe0232f4a0ec",
+      "path": "src/App.tsx",
+      "bytes": 13613,
+      "git_blob": "a08787dc47203fee5bef6ed3ebf3e468b2b9f3e5",
+      "sha256": "c18f576d4558267877ee60ac4447f400e519049358a65218d67090e0a8bb303f"
+    },
+    {
+      "repo": "/Users/agentsattari/code/core-product-lab/key-bpm",
+      "commit": "dab0dda829ffc436987773d650abbe0232f4a0ec",
+      "path": "docs/KEY_BPM_REPORTS.md",
+      "bytes": 5277,
+      "git_blob": "ec7e7015b7a3662d1f7874c46560b93aa18ea7f6",
+      "sha256": "ba99bd83155b3fd039acbd839620ce656e3a10196c9605e1a566bdd20d39215d"
+    },
+    {
+      "repo": "/Users/agentsattari/code/glyph-studio",
+      "commit": "a3e50fa6d5fabdf499fd1592085c54d9710e42dc",
+      "path": "src/engine/font-export.ts",
+      "bytes": 16388,
+      "git_blob": "e3ae529c960cfeef75971e0a6d75c10ffdd66009",
+      "sha256": "4a3e6d3e8413b0ada707e769cd6ac82ecbdbbb7943fa6bc936ee6d9ea360760b"
+    },
+    {
+      "repo": "/Users/agentsattari/code/glyph-studio",
+      "commit": "a3e50fa6d5fabdf499fd1592085c54d9710e42dc",
+      "path": "src/engine/project-store.ts",
+      "bytes": 4868,
+      "git_blob": "0ca5047efe29eb884d5f7ce75cc69350b43dd61c",
+      "sha256": "2621236f8e62cc6859f771e4c702077e59f1f5a3ebb1f8ad2fb5602dc531483d"
+    }
+  ],
+  "current_checkouts": [
+    {
+      "repo": "/Users/agentsattari/code/wave2/thecreatingco-live",
+      "head": "a5bfb89d42add6f6dbedc6b1191ea377054c69f1",
+      "status_short": ""
+    },
+    {
+      "repo": "/Users/agentsattari/code/wave4/bounce",
+      "head": "c85ec72570f402d37f3a13b4916759f084bb09ce",
+      "status_short": ""
+    },
+    {
+      "repo": "/Users/agentsattari/code/core-product-lab/key-bpm",
+      "head": "dab0dda829ffc436987773d650abbe0232f4a0ec",
+      "status_short": ""
+    },
+    {
+      "repo": "/Users/agentsattari/code/glyph-studio",
+      "head": "bc6b6d047d4bb0c1a988b3c820a3e7c367c6e5fa",
+      "status_short": "M package.json\n M scripts/pwa-check.mjs\n M scripts/smoke-test.mjs\n M src/App.tsx\n M src/components/SiteHeader.tsx\n?? scripts/_audit.mjs\n?? scripts/_audit2.mjs\n?? scripts/_audit3.mjs\n?? scripts/_build-font.ts\n?? scripts/brand-check.mjs\n?? src/engine/brand/\n?? src/pages/Brand.tsx\n?? src/styles/brand.css\n?? tests/brand-ase.test.ts\n?? tests/brand-contrast.test.ts\n?? tests/brand-kmeans.test.ts\n?? tests/brand-misc.test.ts"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "id": "6ac6fe7a70a37106cdf27df7",
+  "state": "uploading",
+  "draft": null,
+  "deploy_ssl_url": "https://6ac6fe7a70a37106cdf27df7--bounce-music-player.netlify.app",
+  "published_at": null,
+  "required": [
+    "d074645060914f00d5234a34f7554e9afd0b0233",
+    "a6df0ce44412798789e6d84cab2c7bbfae6cdbfd"
+  ],
+  "error_message": null
+}

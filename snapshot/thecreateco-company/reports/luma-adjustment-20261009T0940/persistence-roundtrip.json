@@ -1,0 +1,36 @@
+{
+  "fixture": {
+    "provenance": "synthetic RGBA pixel [80,120,160,160]",
+    "input": [
+      80,
+      120,
+      160,
+      160
+    ]
+  },
+  "archiveBytes": 1109,
+  "outputBeforeSave": [
+    94,
+    99,
+    96,
+    220
+  ],
+  "outputAfterReopen": [
+    94,
+    99,
+    96,
+    220
+  ],
+  "exactRenderMatch": true,
+  "restoredBlendStack": [
+    {
+      "id": "multiply",
+      "mode": "multiply",
+      "opacity": 1,
+      "enabled": true
+    }
+  ],
+  "restoredAdjustment": {
+    "kind": "invert"
+  }
+}

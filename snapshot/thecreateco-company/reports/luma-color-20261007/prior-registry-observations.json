@@ -1,0 +1,127 @@
+{
+  "candidate_sha": "772f082581e06e7a5783aff35ed859aace890394",
+  "observed_at": "2026-10-08T02:16:42.389176+00:00",
+  "supported_platforms": [],
+  "gates": {
+    "core_workflow": {
+      "status": "FAIL",
+      "coverage_complete": false,
+      "source_sha": "772f082581e06e7a5783aff35ed859aace890394",
+      "observed_at": "2026-10-08T02:16:42.389176+00:00",
+      "evidence": [
+        "/Users/agentsattari/thecreateco-company/reports/luma-completion-2026-10-07/color-diagnostic.json",
+        "/Users/agentsattari/thecreateco-company/reports/luma-completion-2026-10-07/golden/report.json"
+      ],
+      "summary": "CPU PNG export differs from unchanged imported bitmap maxRGB7 above declared tolerance2; alpha exact. Root cause pending."
+    },
+    "save_reopen_export": {
+      "status": "UNVERIFIED",
+      "coverage_complete": false,
+      "source_sha": "772f082581e06e7a5783aff35ed859aace890394",
+      "observed_at": "2026-10-08T02:16:42.389176+00:00",
+      "evidence": [
+        "/Users/agentsattari/thecreateco-company/reports/luma-completion-2026-10-07/golden-r2/checkpoint.json",
+        "/Users/agentsattari/thecreateco-company/reports/luma-completion-2026-10-07/golden-r2.log"
+      ],
+      "summary": "Actual import/edit/export subset exercised. Save-download harness timeout45s; not yet confirmed app bug, no full close/reopen evidence."
+    },
+    "reliability_recovery": {
+      "status": "UNVERIFIED",
+      "coverage_complete": false,
+      "source_sha": "772f082581e06e7a5783aff35ed859aace890394",
+      "observed_at": "2026-10-08T02:16:42.389176+00:00",
+      "evidence": [
+        "/Users/agentsattari/thecreateco-company/reports/luma-completion-2026-10-07/README.md"
+      ],
+      "summary": "Full product gate unverified; local repaired-source verification and partial browser evidence retained."
+    },
+    "performance": {
+      "status": "UNVERIFIED",
+      "coverage_complete": false,
+      "source_sha": "772f082581e06e7a5783aff35ed859aace890394",
+      "observed_at": "2026-10-08T02:16:42.389176+00:00",
+      "evidence": [
+        "/Users/agentsattari/thecreateco-company/reports/luma-completion-2026-10-07/README.md"
+      ],
+      "summary": "Full product gate unverified; local repaired-source verification and partial browser evidence retained."
+    },
+    "usability_accessibility": {
+      "status": "UNVERIFIED",
+      "coverage_complete": false,
+      "source_sha": "772f082581e06e7a5783aff35ed859aace890394",
+      "observed_at": "2026-10-08T02:16:42.389176+00:00",
+      "evidence": [
+        "/Users/agentsattari/thecreateco-company/reports/luma-completion-2026-10-07/README.md"
+      ],
+      "summary": "Full product gate unverified; local repaired-source verification and partial browser evidence retained."
+    },
+    "responsive_behavior": {
+      "status": "UNVERIFIED",
+      "coverage_complete": false,
+      "source_sha": "772f082581e06e7a5783aff35ed859aace890394",
+      "observed_at": "2026-10-08T02:16:42.389176+00:00",
+      "evidence": [
+        "/Users/agentsattari/thecreateco-company/reports/luma-completion-2026-10-07/README.md"
+      ],
+      "summary": "Full product gate unverified; local repaired-source verification and partial browser evidence retained."
+    },
+    "security_privacy": {
+      "status": "UNVERIFIED",
+      "coverage_complete": false,
+      "source_sha": "772f082581e06e7a5783aff35ed859aace890394",
+      "observed_at": "2026-10-08T02:16:42.389176+00:00",
+      "evidence": [
+        "/Users/agentsattari/thecreateco-company/reports/luma-completion-2026-10-07/README.md"
+      ],
+      "summary": "Full product gate unverified; local repaired-source verification and partial browser evidence retained."
+    },
+    "documentation_support": {
+      "status": "UNVERIFIED",
+      "coverage_complete": false,
+      "source_sha": "772f082581e06e7a5783aff35ed859aace890394",
+      "observed_at": "2026-10-08T02:16:42.389176+00:00",
+      "evidence": [
+        "/Users/agentsattari/thecreateco-company/reports/luma-completion-2026-10-07/README.md"
+      ],
+      "summary": "Full product gate unverified; local repaired-source verification and partial browser evidence retained."
+    },
+    "tests": {
+      "status": "UNVERIFIED",
+      "coverage_complete": false,
+      "source_sha": "772f082581e06e7a5783aff35ed859aace890394",
+      "observed_at": "2026-10-08T02:16:42.389176+00:00",
+      "evidence": [
+        "/Users/agentsattari/thecreateco-company/reports/luma-completion-2026-10-07/test.log",
+        "/Users/agentsattari/thecreateco-company/reports/luma-completion-2026-10-07/README.md"
+      ],
+      "summary": "Narrow CI/lint repair:1374pass/10skip, rendered4, types/lint and three build targets pass. Full native/platform gate unverified; cargo absent and remote jobs did not start."
+    },
+    "supported_platforms": {
+      "status": "UNVERIFIED",
+      "coverage_complete": false,
+      "source_sha": "772f082581e06e7a5783aff35ed859aace890394",
+      "observed_at": "2026-10-08T02:16:42.389176+00:00",
+      "evidence": [
+        "/Users/agentsattari/thecreateco-company/reports/luma-completion-2026-10-07/README.md"
+      ],
+      "summary": "Full product gate unverified; local repaired-source verification and partial browser evidence retained."
+    },
+    "critical_blockers": {
+      "status": "BLOCKED",
+      "coverage_complete": false,
+      "source_sha": "772f082581e06e7a5783aff35ed859aace890394",
+      "observed_at": "2026-10-08T02:16:42.389176+00:00",
+      "evidence": [
+        "/Users/agentsattari/thecreateco-company/reports/luma-completion-2026-10-07/ci-annotations.json",
+        "/Users/agentsattari/thecreateco-company/reports/luma-completion-2026-10-07/README.md"
+      ],
+      "summary": "Exact-head Actions could not start due account payments/spending; CPU output fidelity/full golden/native/deployed provenance remain."
+    }
+  },
+  "deployment": {
+    "status": "PUSHED_PR_OPEN_NOT_MERGED_NOT_DEPLOYED",
+    "pr": "https://github.com/armonon/luma-studio/pull/6",
+    "source_sha": "772f082581e06e7a5783aff35ed859aace890394"
+  },
+  "next_action": "First-wave priority then CPU export RGB discrepancy task CORE-LUMA-EXPORT-COLOR-001, save/download harness isolation and full golden; account owner restores Actions execution; qualify stack/native/live provenance."
+}

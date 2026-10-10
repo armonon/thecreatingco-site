@@ -1,0 +1,586 @@
+{
+  "inputs": {
+    "electron/render-launches.js": {
+      "bytes": 621,
+      "imports": [],
+      "format": "esm"
+    },
+    "electron/pcm-staging.js": {
+      "bytes": 7301,
+      "imports": [
+        {
+          "path": "node:crypto",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "node:fs/promises",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "node:path",
+          "kind": "import-statement",
+          "external": true
+        }
+      ],
+      "format": "esm"
+    },
+    "electron/media-engine.js": {
+      "bytes": 37915,
+      "imports": [
+        {
+          "path": "node:child_process",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "node:crypto",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "node:fs/promises",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "node:path",
+          "kind": "import-statement",
+          "external": true
+        }
+      ],
+      "format": "esm"
+    },
+    "electron/native-roto.js": {
+      "bytes": 12172,
+      "imports": [
+        {
+          "path": "node:crypto",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "node:fs/promises",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "node:os",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "node:path",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "node:child_process",
+          "kind": "import-statement",
+          "external": true
+        }
+      ],
+      "format": "esm"
+    },
+    "electron/roto-cache.js": {
+      "bytes": 6313,
+      "imports": [
+        {
+          "path": "node:crypto",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "node:fs/promises",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "node:path",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "node:zlib",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "node:util",
+          "kind": "import-statement",
+          "external": true
+        }
+      ],
+      "format": "esm"
+    },
+    "electron/inpaint-cache.js": {
+      "bytes": 2184,
+      "imports": [
+        {
+          "path": "node:fs/promises",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "node:path",
+          "kind": "import-statement",
+          "external": true
+        }
+      ],
+      "format": "esm"
+    },
+    "electron/neural-inpaint.js": {
+      "bytes": 9492,
+      "imports": [
+        {
+          "path": "node:crypto",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "node:fs/promises",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "node:os",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "node:path",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "node:child_process",
+          "kind": "import-statement",
+          "external": true
+        }
+      ],
+      "format": "esm"
+    },
+    "electron/update-utils.js": {
+      "bytes": 1787,
+      "imports": [
+        {
+          "path": "node:crypto",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "node:fs",
+          "kind": "import-statement",
+          "external": true
+        }
+      ],
+      "format": "esm"
+    },
+    "electron/diagnostics.js": {
+      "bytes": 1466,
+      "imports": [
+        {
+          "path": "node:fs",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "node:path",
+          "kind": "import-statement",
+          "external": true
+        }
+      ],
+      "format": "esm"
+    },
+    "electron/atomic-file.js": {
+      "bytes": 1032,
+      "imports": [
+        {
+          "path": "node:crypto",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "node:fs/promises",
+          "kind": "import-statement",
+          "external": true
+        }
+      ],
+      "format": "esm"
+    },
+    "electron/generated-audio.js": {
+      "bytes": 1048,
+      "imports": [
+        {
+          "path": "node:crypto",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "node:fs/promises",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "node:path",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "electron/atomic-file.js",
+          "kind": "import-statement",
+          "original": "./atomic-file.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "electron/desktop-io.js": {
+      "bytes": 2346,
+      "imports": [
+        {
+          "path": "node:url",
+          "kind": "import-statement",
+          "external": true
+        }
+      ],
+      "format": "esm"
+    },
+    "electron/main.js": {
+      "bytes": 37947,
+      "imports": [
+        {
+          "path": "electron/render-launches.js",
+          "kind": "import-statement",
+          "original": "./render-launches.js"
+        },
+        {
+          "path": "electron/pcm-staging.js",
+          "kind": "import-statement",
+          "original": "./pcm-staging.js"
+        },
+        {
+          "path": "electron",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "node:crypto",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "node:fs/promises",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "node:path",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "node:url",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "electron/media-engine.js",
+          "kind": "import-statement",
+          "original": "./media-engine.js"
+        },
+        {
+          "path": "electron/native-roto.js",
+          "kind": "import-statement",
+          "original": "./native-roto.js"
+        },
+        {
+          "path": "electron/roto-cache.js",
+          "kind": "import-statement",
+          "original": "./roto-cache.js"
+        },
+        {
+          "path": "electron/inpaint-cache.js",
+          "kind": "import-statement",
+          "original": "./inpaint-cache.js"
+        },
+        {
+          "path": "electron/neural-inpaint.js",
+          "kind": "import-statement",
+          "original": "./neural-inpaint.js"
+        },
+        {
+          "path": "electron/update-utils.js",
+          "kind": "import-statement",
+          "original": "./update-utils.js"
+        },
+        {
+          "path": "electron/diagnostics.js",
+          "kind": "import-statement",
+          "original": "./diagnostics.js"
+        },
+        {
+          "path": "electron/atomic-file.js",
+          "kind": "import-statement",
+          "original": "./atomic-file.js"
+        },
+        {
+          "path": "electron/generated-audio.js",
+          "kind": "import-statement",
+          "original": "./generated-audio.js"
+        },
+        {
+          "path": "electron/desktop-io.js",
+          "kind": "import-statement",
+          "original": "./desktop-io.js"
+        }
+      ],
+      "format": "esm"
+    }
+  },
+  "outputs": {
+    "../../../thecreateco-company/core-product-lab/reports/scenepilot-sec-residual-20261008T1540/main.bundle.mjs": {
+      "imports": [
+        {
+          "path": "node:crypto",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "node:fs/promises",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "node:path",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "electron",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "node:crypto",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "node:fs/promises",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "node:path",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "node:url",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "node:child_process",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "node:crypto",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "node:fs/promises",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "node:path",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "node:crypto",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "node:fs/promises",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "node:os",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "node:path",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "node:child_process",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "node:crypto",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "node:fs/promises",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "node:path",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "node:zlib",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "node:util",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "node:fs/promises",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "node:path",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "node:crypto",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "node:fs/promises",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "node:os",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "node:path",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "node:child_process",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "node:crypto",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "node:fs",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "node:fs",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "node:path",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "node:crypto",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "node:fs/promises",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "node:crypto",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "node:fs/promises",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "node:path",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "node:url",
+          "kind": "import-statement",
+          "external": true
+        }
+      ],
+      "exports": [],
+      "entryPoint": "electron/main.js",
+      "inputs": {
+        "electron/render-launches.js": {
+          "bytesInOutput": 510
+        },
+        "electron/pcm-staging.js": {
+          "bytesInOutput": 6787
+        },
+        "electron/main.js": {
+          "bytesInOutput": 36917
+        },
+        "electron/media-engine.js": {
+          "bytesInOutput": 34962
+        },
+        "electron/native-roto.js": {
+          "bytesInOutput": 12034
+        },
+        "electron/roto-cache.js": {
+          "bytesInOutput": 6358
+        },
+        "electron/inpaint-cache.js": {
+          "bytesInOutput": 2218
+        },
+        "electron/neural-inpaint.js": {
+          "bytesInOutput": 9450
+        },
+        "electron/update-utils.js": {
+          "bytesInOutput": 1753
+        },
+        "electron/diagnostics.js": {
+          "bytesInOutput": 1409
+        },
+        "electron/atomic-file.js": {
+          "bytesInOutput": 960
+        },
+        "electron/generated-audio.js": {
+          "bytesInOutput": 852
+        },
+        "electron/desktop-io.js": {
+          "bytesInOutput": 2153
+        }
+      },
+      "bytes": 116753
+    }
+  }
+}

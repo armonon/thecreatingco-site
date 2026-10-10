@@ -1,0 +1,38 @@
+{
+  "source_sha": "179024b483c641ba407c83c8d6a5c579c5e1f97b",
+  "published_deploy": "6ac1ecba6479a9e160b433b7",
+  "assets": [
+    {
+      "path": "/assets/index-C8ngpwrs.js",
+      "sha1": "0f2c1dab4a3250bf8ceef6c2a9e26852d2d3499c",
+      "sha256": "ecc6e5cf94a6f8a199b1c177a2974bbf0daf9b95f11ec2c13db45b44ed648247",
+      "bytes": 61841,
+      "published_sha1": "0f2c1dab4a3250bf8ceef6c2a9e26852d2d3499c",
+      "matches_published": true
+    },
+    {
+      "path": "/assets/index-CpCy105w.css",
+      "sha1": "11371c98091a71aad037f2d20a5cfd382ee76e50",
+      "sha256": "a9de3f680c69786e7ba61b6c91dd37ac574103cf7711f5722ed0e716f1ff12b9",
+      "bytes": 24288,
+      "published_sha1": "11371c98091a71aad037f2d20a5cfd382ee76e50",
+      "matches_published": true
+    },
+    {
+      "path": "/assets/pdf-BbVnaTMr.js",
+      "sha1": "12c2a42afab7f210b69db96a7d3c47aad279c94a",
+      "sha256": "59e06f6a8c45957395fed4f4f64a5e41e46d870b36a50400937a8cad0096f895",
+      "bytes": 431198,
+      "published_sha1": null,
+      "matches_published": null
+    },
+    {
+      "path": "/assets/pdf.worker.min-Dswkl-cV.mjs",
+      "sha1": "490b29ce0dced0e3bbef9f1a63c2b3010537abde",
+      "sha256": "8ab0e5e30031b4a06ecfddd5ae9562f0227f830ee7ec9ed1a968b134243d2386",
+      "bytes": 1265413,
+      "published_sha1": "490b29ce0dced0e3bbef9f1a63c2b3010537abde",
+      "matches_published": true
+    }
+  ]
+}

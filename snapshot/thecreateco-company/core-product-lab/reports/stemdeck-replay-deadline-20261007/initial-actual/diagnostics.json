@@ -1,0 +1,1803 @@
+{
+  "startedAt": "2026-10-08T03:51:41.969Z",
+  "host": {
+    "loadAverage": [
+      17.90869140625,
+      15.36767578125,
+      14.734375
+    ],
+    "freeMemoryBytes": 843513856
+  },
+  "browser": "151.0.7922.34",
+  "profile": "/Users/agentsattari/.openclaw/tmp/stemdeck-fourdeck-GAaFjR",
+  "diagnostics": {
+    "failures": [
+      {
+        "at": 5940.89999999851,
+        "time": 5.226,
+        "now": 5.282666666666667,
+        "underrun": {
+          "kind": "scheduler-deadline",
+          "lateness": 0.05400000000000027,
+          "time": 5.226
+        },
+        "sourceDuration": 32,
+        "sourceStarts": [
+          {
+            "time": 3.6109999999999998,
+            "ticks": 0
+          }
+        ],
+        "clockState": "started",
+        "cursor": 5.38,
+        "stack": "Error\n    at WindowedGrainPlayer._tick (eval at evaluate (:311:30), <anonymous>:5:497)\n    at http://127.0.0.1:4291/src/utils/grainSchedule.js:43:27\n    at _TickSource.forEachTickBetween (http://127.0.0.1:4291/node_modules/.vite/deps/tone.js?v=019d247d:12132:11)\n    at GrainSchedule.pump (http://127.0.0.1:4291/src/utils/grainSchedule.js:37:40)\n    at GrainSchedule.pump (eval at evaluate (:311:30), <anonymous>:6:130)\n    at WindowedGrainPlayer.pumpGrains (http://127.0.0.1:4291/src/utils/windowedGrainPlayer.js:33:50)\n    at _Context.emit (http://127.0.0.1:4291/node_modules/.vite/deps/tone.js?v=019d247d:8670:24)"
+      },
+      {
+        "at": 5941.099999997765,
+        "time": 5.226,
+        "now": 5.282666666666667,
+        "underrun": {
+          "kind": "scheduler-deadline",
+          "lateness": 0.05666666666666664,
+          "time": 5.226
+        },
+        "sourceDuration": 32,
+        "sourceStarts": [
+          {
+            "time": 3.6109999999999998,
+            "ticks": 0
+          }
+        ],
+        "clockState": "started",
+        "cursor": 5.382666666666666,
+        "stack": "Error\n    at WindowedGrainPlayer._tick (eval at evaluate (:311:30), <anonymous>:5:497)\n    at http://127.0.0.1:4291/src/utils/grainSchedule.js:43:27\n    at _TickSource.forEachTickBetween (http://127.0.0.1:4291/node_modules/.vite/deps/tone.js?v=019d247d:12132:11)\n    at GrainSchedule.pump (http://127.0.0.1:4291/src/utils/grainSchedule.js:37:40)\n    at GrainSchedule.pump (eval at evaluate (:311:30), <anonymous>:6:130)\n    at WindowedGrainPlayer.pumpGrains (http://127.0.0.1:4291/src/utils/windowedGrainPlayer.js:33:50)\n    at _Context.emit (http://127.0.0.1:4291/node_modules/.vite/deps/tone.js?v=019d247d:8670:24)"
+      },
+      {
+        "at": 5941.199999999255,
+        "time": 5.226,
+        "now": 5.282666666666667,
+        "underrun": {
+          "kind": "scheduler-deadline",
+          "lateness": 0.05666666666666664,
+          "time": 5.226
+        },
+        "sourceDuration": 32,
+        "sourceStarts": [
+          {
+            "time": 3.6109999999999998,
+            "ticks": 0
+          }
+        ],
+        "clockState": "started",
+        "cursor": 5.382666666666666,
+        "stack": "Error\n    at WindowedGrainPlayer._tick (eval at evaluate (:311:30), <anonymous>:5:497)\n    at http://127.0.0.1:4291/src/utils/grainSchedule.js:43:27\n    at _TickSource.forEachTickBetween (http://127.0.0.1:4291/node_modules/.vite/deps/tone.js?v=019d247d:12132:11)\n    at GrainSchedule.pump (http://127.0.0.1:4291/src/utils/grainSchedule.js:37:40)\n    at GrainSchedule.pump (eval at evaluate (:311:30), <anonymous>:6:130)\n    at WindowedGrainPlayer.pumpGrains (http://127.0.0.1:4291/src/utils/windowedGrainPlayer.js:33:50)\n    at _Context.emit (http://127.0.0.1:4291/node_modules/.vite/deps/tone.js?v=019d247d:8670:24)"
+      },
+      {
+        "at": 6025.29999999702,
+        "time": 5.301,
+        "now": 5.365333333333333,
+        "underrun": {
+          "kind": "scheduler-deadline",
+          "lateness": 0.06433333333333291,
+          "time": 5.301
+        },
+        "sourceDuration": 32,
+        "sourceStarts": [
+          {
+            "time": 4.4510000000000005,
+            "ticks": 0
+          }
+        ],
+        "clockState": "started",
+        "cursor": 5.465333333333333,
+        "stack": "Error\n    at WindowedGrainPlayer._tick (eval at evaluate (:311:30), <anonymous>:5:497)\n    at http://127.0.0.1:4291/src/utils/grainSchedule.js:43:27\n    at _TickSource.forEachTickBetween (http://127.0.0.1:4291/node_modules/.vite/deps/tone.js?v=019d247d:12132:11)\n    at GrainSchedule.pump (http://127.0.0.1:4291/src/utils/grainSchedule.js:37:40)\n    at GrainSchedule.pump (eval at evaluate (:311:30), <anonymous>:6:130)\n    at WindowedGrainPlayer.pumpGrains (http://127.0.0.1:4291/src/utils/windowedGrainPlayer.js:33:50)\n    at _Context.emit (http://127.0.0.1:4291/node_modules/.vite/deps/tone.js?v=019d247d:8670:24)"
+      },
+      {
+        "at": 6405.599999997765,
+        "time": 5.6850000000000005,
+        "now": 5.746666666666667,
+        "underrun": {
+          "kind": "scheduler-deadline",
+          "lateness": 0.061666666666666536,
+          "time": 5.6850000000000005
+        },
+        "sourceDuration": 32,
+        "sourceStarts": [
+          {
+            "time": 2.795,
+            "ticks": 0
+          }
+        ],
+        "clockState": "started",
+        "cursor": 5.846666666666667,
+        "stack": "Error\n    at WindowedGrainPlayer._tick (eval at evaluate (:311:30), <anonymous>:5:497)\n    at http://127.0.0.1:4291/src/utils/grainSchedule.js:43:27\n    at _TickSource.forEachTickBetween (http://127.0.0.1:4291/node_modules/.vite/deps/tone.js?v=019d247d:12132:11)\n    at GrainSchedule.pump (http://127.0.0.1:4291/src/utils/grainSchedule.js:37:40)\n    at GrainSchedule.pump (eval at evaluate (:311:30), <anonymous>:6:130)\n    at WindowedGrainPlayer.pumpGrains (http://127.0.0.1:4291/src/utils/windowedGrainPlayer.js:33:50)\n    at _Context.emit (http://127.0.0.1:4291/node_modules/.vite/deps/tone.js?v=019d247d:8670:24)"
+      },
+      {
+        "at": 6772.29999999702,
+        "time": 6.015666666666666,
+        "now": 6.112,
+        "underrun": {
+          "kind": "scheduler-deadline",
+          "lateness": 0.09633333333333383,
+          "time": 6.015666666666666
+        },
+        "sourceDuration": 32,
+        "sourceStarts": [
+          {
+            "time": 3.1256666666666666,
+            "ticks": 0
+          }
+        ],
+        "clockState": "started",
+        "cursor": 6.212,
+        "stack": "Error\n    at WindowedGrainPlayer._tick (eval at evaluate (:311:30), <anonymous>:5:497)\n    at http://127.0.0.1:4291/src/utils/grainSchedule.js:43:27\n    at _TickSource.forEachTickBetween (http://127.0.0.1:4291/node_modules/.vite/deps/tone.js?v=019d247d:12132:11)\n    at GrainSchedule.pump (http://127.0.0.1:4291/src/utils/grainSchedule.js:37:40)\n    at GrainSchedule.pump (eval at evaluate (:311:30), <anonymous>:6:130)\n    at WindowedGrainPlayer.pumpGrains (http://127.0.0.1:4291/src/utils/windowedGrainPlayer.js:33:50)\n    at _Context.emit (http://127.0.0.1:4291/node_modules/.vite/deps/tone.js?v=019d247d:8670:24)"
+      },
+      {
+        "at": 13343.699999999255,
+        "time": 12.74,
+        "now": 12.685333333333332,
+        "underrun": {
+          "time": 12.74,
+          "offset": 9.945,
+          "span": 0.12004535147392291,
+          "region": {
+            "loop": false,
+            "loopStart": 0,
+            "loopEnd": 2.0338983050847457
+          },
+          "pages": [
+            [
+              0,
+              6.000020833333333
+            ],
+            [
+              4,
+              6.000020833333333
+            ]
+          ]
+        },
+        "sourceDuration": 32,
+        "sourceStarts": [
+          {
+            "time": 2.795,
+            "ticks": 0
+          }
+        ],
+        "clockState": "started",
+        "cursor": 12.74,
+        "stack": "Error\n    at WindowedGrainPlayer._tick (eval at evaluate (:311:30), <anonymous>:5:497)\n    at http://127.0.0.1:4291/src/utils/grainSchedule.js:43:27\n    at _TickSource.forEachTickBetween (http://127.0.0.1:4291/node_modules/.vite/deps/tone.js?v=019d247d:12132:11)\n    at GrainSchedule.pump (http://127.0.0.1:4291/src/utils/grainSchedule.js:37:40)\n    at GrainSchedule.pump (eval at evaluate (:311:30), <anonymous>:6:130)\n    at WindowedGrainPlayer.pumpGrains (http://127.0.0.1:4291/src/utils/windowedGrainPlayer.js:33:50)\n    at _Context.emit (http://127.0.0.1:4291/node_modules/.vite/deps/tone.js?v=019d247d:8670:24)"
+      },
+      {
+        "at": 13343.79999999702,
+        "time": 12.74,
+        "now": 12.685333333333332,
+        "underrun": {
+          "time": 12.74,
+          "offset": 9.945,
+          "span": 0.12004535147392291,
+          "region": {
+            "loop": false,
+            "loopStart": 0,
+            "loopEnd": 2.0338983050847457
+          },
+          "pages": [
+            [
+              0,
+              6.000020833333333
+            ],
+            [
+              4,
+              6.000020833333333
+            ]
+          ]
+        },
+        "sourceDuration": 32,
+        "sourceStarts": [
+          {
+            "time": 2.795,
+            "ticks": 0
+          }
+        ],
+        "clockState": "started",
+        "cursor": 12.74,
+        "stack": "Error\n    at WindowedGrainPlayer._tick (eval at evaluate (:311:30), <anonymous>:5:497)\n    at http://127.0.0.1:4291/src/utils/grainSchedule.js:43:27\n    at _TickSource.forEachTickBetween (http://127.0.0.1:4291/node_modules/.vite/deps/tone.js?v=019d247d:12132:11)\n    at GrainSchedule.pump (http://127.0.0.1:4291/src/utils/grainSchedule.js:37:40)\n    at GrainSchedule.pump (eval at evaluate (:311:30), <anonymous>:6:130)\n    at WindowedGrainPlayer.pumpGrains (http://127.0.0.1:4291/src/utils/windowedGrainPlayer.js:33:50)\n    at _Context.emit (http://127.0.0.1:4291/node_modules/.vite/deps/tone.js?v=019d247d:8670:24)"
+      },
+      {
+        "at": 13343.89999999851,
+        "time": 12.740000000000006,
+        "now": 12.685333333333332,
+        "underrun": {
+          "time": 12.740000000000006,
+          "offset": 9.945000000000006,
+          "span": 0.12004535147392291,
+          "region": {
+            "loop": false,
+            "loopStart": 0,
+            "loopEnd": 2.0338983050847457
+          },
+          "pages": [
+            [
+              0,
+              6.000020833333333
+            ],
+            [
+              4,
+              6.000020833333333
+            ]
+          ]
+        },
+        "sourceDuration": 32,
+        "sourceStarts": [
+          {
+            "time": 2.795,
+            "ticks": 0
+          }
+        ],
+        "clockState": "started",
+        "cursor": 12.740000000000006,
+        "stack": "Error\n    at WindowedGrainPlayer._tick (eval at evaluate (:311:30), <anonymous>:5:497)\n    at http://127.0.0.1:4291/src/utils/grainSchedule.js:43:27\n    at _TickSource.forEachTickBetween (http://127.0.0.1:4291/node_modules/.vite/deps/tone.js?v=019d247d:12132:11)\n    at GrainSchedule.pump (http://127.0.0.1:4291/src/utils/grainSchedule.js:37:40)\n    at GrainSchedule.pump (eval at evaluate (:311:30), <anonymous>:6:130)\n    at WindowedGrainPlayer.pumpGrains (http://127.0.0.1:4291/src/utils/windowedGrainPlayer.js:33:50)\n    at _Context.emit (http://127.0.0.1:4291/node_modules/.vite/deps/tone.js?v=019d247d:8670:24)"
+      },
+      {
+        "at": 13344,
+        "time": 12.74,
+        "now": 12.685333333333332,
+        "underrun": {
+          "time": 12.74,
+          "offset": 9.945,
+          "span": 0.12004535147392291,
+          "region": {
+            "loop": false,
+            "loopStart": 0,
+            "loopEnd": 2.0338983050847457
+          },
+          "pages": [
+            [
+              0,
+              6.000020833333333
+            ],
+            [
+              4,
+              6.000020833333333
+            ]
+          ]
+        },
+        "sourceDuration": 32,
+        "sourceStarts": [
+          {
+            "time": 2.795,
+            "ticks": 0
+          }
+        ],
+        "clockState": "started",
+        "cursor": 12.74,
+        "stack": "Error\n    at WindowedGrainPlayer._tick (eval at evaluate (:311:30), <anonymous>:5:497)\n    at http://127.0.0.1:4291/src/utils/grainSchedule.js:43:27\n    at _TickSource.forEachTickBetween (http://127.0.0.1:4291/node_modules/.vite/deps/tone.js?v=019d247d:12132:11)\n    at GrainSchedule.pump (http://127.0.0.1:4291/src/utils/grainSchedule.js:37:40)\n    at GrainSchedule.pump (eval at evaluate (:311:30), <anonymous>:6:130)\n    at WindowedGrainPlayer.pumpGrains (http://127.0.0.1:4291/src/utils/windowedGrainPlayer.js:33:50)\n    at _Context.emit (http://127.0.0.1:4291/node_modules/.vite/deps/tone.js?v=019d247d:8670:24)"
+      },
+      {
+        "at": 13641.29999999702,
+        "time": 13.070666666666668,
+        "now": 12.981333333333334,
+        "underrun": {
+          "time": 13.070666666666668,
+          "offset": 9.945,
+          "span": 0.12004535147392291,
+          "region": {
+            "loop": false,
+            "loopStart": 0,
+            "loopEnd": 2.0338983050847457
+          },
+          "pages": [
+            [
+              0,
+              6.000020833333333
+            ],
+            [
+              4,
+              6.000020833333333
+            ]
+          ]
+        },
+        "sourceDuration": 32,
+        "sourceStarts": [
+          {
+            "time": 3.1256666666666666,
+            "ticks": 0
+          }
+        ],
+        "clockState": "started",
+        "cursor": 13.070666666666668,
+        "stack": "Error\n    at WindowedGrainPlayer._tick (eval at evaluate (:311:30), <anonymous>:5:497)\n    at http://127.0.0.1:4291/src/utils/grainSchedule.js:43:27\n    at _TickSource.forEachTickBetween (http://127.0.0.1:4291/node_modules/.vite/deps/tone.js?v=019d247d:12132:11)\n    at GrainSchedule.pump (http://127.0.0.1:4291/src/utils/grainSchedule.js:37:40)\n    at GrainSchedule.pump (eval at evaluate (:311:30), <anonymous>:6:130)\n    at WindowedGrainPlayer.pumpGrains (http://127.0.0.1:4291/src/utils/windowedGrainPlayer.js:33:50)\n    at _Context.emit (http://127.0.0.1:4291/node_modules/.vite/deps/tone.js?v=019d247d:8670:24)"
+      },
+      {
+        "at": 13641.39999999851,
+        "time": 13.070666666666668,
+        "now": 12.981333333333334,
+        "underrun": {
+          "time": 13.070666666666668,
+          "offset": 9.945,
+          "span": 0.12004535147392291,
+          "region": {
+            "loop": false,
+            "loopStart": 0,
+            "loopEnd": 2.0338983050847457
+          },
+          "pages": [
+            [
+              0,
+              6.000020833333333
+            ],
+            [
+              4,
+              6.000020833333333
+            ]
+          ]
+        },
+        "sourceDuration": 32,
+        "sourceStarts": [
+          {
+            "time": 3.1256666666666666,
+            "ticks": 0
+          }
+        ],
+        "clockState": "started",
+        "cursor": 13.070666666666668,
+        "stack": "Error\n    at WindowedGrainPlayer._tick (eval at evaluate (:311:30), <anonymous>:5:497)\n    at http://127.0.0.1:4291/src/utils/grainSchedule.js:43:27\n    at _TickSource.forEachTickBetween (http://127.0.0.1:4291/node_modules/.vite/deps/tone.js?v=019d247d:12132:11)\n    at GrainSchedule.pump (http://127.0.0.1:4291/src/utils/grainSchedule.js:37:40)\n    at GrainSchedule.pump (eval at evaluate (:311:30), <anonymous>:6:130)\n    at WindowedGrainPlayer.pumpGrains (http://127.0.0.1:4291/src/utils/windowedGrainPlayer.js:33:50)\n    at _Context.emit (http://127.0.0.1:4291/node_modules/.vite/deps/tone.js?v=019d247d:8670:24)"
+      },
+      {
+        "at": 13641.5,
+        "time": 13.070666666666668,
+        "now": 12.981333333333334,
+        "underrun": {
+          "time": 13.070666666666668,
+          "offset": 9.945,
+          "span": 0.12004535147392291,
+          "region": {
+            "loop": false,
+            "loopStart": 0,
+            "loopEnd": 2.0338983050847457
+          },
+          "pages": [
+            [
+              0,
+              6.000020833333333
+            ],
+            [
+              4,
+              6.000020833333333
+            ]
+          ]
+        },
+        "sourceDuration": 32,
+        "sourceStarts": [
+          {
+            "time": 3.1256666666666666,
+            "ticks": 0
+          }
+        ],
+        "clockState": "started",
+        "cursor": 13.070666666666668,
+        "stack": "Error\n    at WindowedGrainPlayer._tick (eval at evaluate (:311:30), <anonymous>:5:497)\n    at http://127.0.0.1:4291/src/utils/grainSchedule.js:43:27\n    at _TickSource.forEachTickBetween (http://127.0.0.1:4291/node_modules/.vite/deps/tone.js?v=019d247d:12132:11)\n    at GrainSchedule.pump (http://127.0.0.1:4291/src/utils/grainSchedule.js:37:40)\n    at GrainSchedule.pump (eval at evaluate (:311:30), <anonymous>:6:130)\n    at WindowedGrainPlayer.pumpGrains (http://127.0.0.1:4291/src/utils/windowedGrainPlayer.js:33:50)\n    at _Context.emit (http://127.0.0.1:4291/node_modules/.vite/deps/tone.js?v=019d247d:8670:24)"
+      },
+      {
+        "at": 13641.599999997765,
+        "time": 13.070666666666668,
+        "now": 12.981333333333334,
+        "underrun": {
+          "time": 13.070666666666668,
+          "offset": 9.945,
+          "span": 0.12004535147392291,
+          "region": {
+            "loop": false,
+            "loopStart": 0,
+            "loopEnd": 2.0338983050847457
+          },
+          "pages": [
+            [
+              0,
+              6.000020833333333
+            ],
+            [
+              4,
+              6.000020833333333
+            ]
+          ]
+        },
+        "sourceDuration": 32,
+        "sourceStarts": [
+          {
+            "time": 3.1256666666666666,
+            "ticks": 0
+          }
+        ],
+        "clockState": "started",
+        "cursor": 13.070666666666668,
+        "stack": "Error\n    at WindowedGrainPlayer._tick (eval at evaluate (:311:30), <anonymous>:5:497)\n    at http://127.0.0.1:4291/src/utils/grainSchedule.js:43:27\n    at _TickSource.forEachTickBetween (http://127.0.0.1:4291/node_modules/.vite/deps/tone.js?v=019d247d:12132:11)\n    at GrainSchedule.pump (http://127.0.0.1:4291/src/utils/grainSchedule.js:37:40)\n    at GrainSchedule.pump (eval at evaluate (:311:30), <anonymous>:6:130)\n    at WindowedGrainPlayer.pumpGrains (http://127.0.0.1:4291/src/utils/windowedGrainPlayer.js:33:50)\n    at _Context.emit (http://127.0.0.1:4291/node_modules/.vite/deps/tone.js?v=019d247d:8670:24)"
+      }
+    ],
+    "slowCalls": [
+      {
+        "method": "grainPump",
+        "at": 2688.7999999970198,
+        "duration": 18.100000001490116
+      },
+      {
+        "method": "grainPump",
+        "at": 2707,
+        "duration": 17.5
+      },
+      {
+        "method": "grainPump",
+        "at": 2724.5,
+        "duration": 25.599999997764826
+      },
+      {
+        "method": "grainPump",
+        "at": 2750.099999997765,
+        "duration": 24.199999999254942
+      },
+      {
+        "method": "grainPump",
+        "at": 2774.2999999970198,
+        "duration": 22.5
+      },
+      {
+        "method": "grainPump",
+        "at": 2804.599999997765,
+        "duration": 11.300000000745058
+      },
+      {
+        "method": "grainPump",
+        "at": 2816,
+        "duration": 11.599999997764826
+      },
+      {
+        "method": "grainPump",
+        "at": 3125,
+        "duration": 11.399999998509884
+      },
+      {
+        "method": "grainPump",
+        "at": 3136.5,
+        "duration": 11.799999997019768
+      },
+      {
+        "method": "grainPump",
+        "at": 3148.2999999970198,
+        "duration": 12
+      },
+      {
+        "method": "grainPump",
+        "at": 3298.89999999851,
+        "duration": 11.300000000745058
+      },
+      {
+        "method": "grainPump",
+        "at": 3310.199999999255,
+        "duration": 11.899999998509884
+      },
+      {
+        "method": "grainPump",
+        "at": 3374.199999999255,
+        "duration": 11.899999998509884
+      },
+      {
+        "method": "grainPump",
+        "at": 3386.099999997765,
+        "duration": 11.400000002235174
+      },
+      {
+        "method": "grainPump",
+        "at": 3397.5,
+        "duration": 11.5
+      },
+      {
+        "method": "grainPump",
+        "at": 3409,
+        "duration": 11.399999998509884
+      },
+      {
+        "method": "grainPump",
+        "at": 3420.5,
+        "duration": 11.299999997019768
+      },
+      {
+        "method": "grainPump",
+        "at": 3471.5,
+        "duration": 11.299999997019768
+      },
+      {
+        "method": "grainPump",
+        "at": 3482.7999999970198,
+        "duration": 12
+      },
+      {
+        "method": "grainPump",
+        "at": 3494.7999999970198,
+        "duration": 11.5
+      },
+      {
+        "method": "grainPump",
+        "at": 3529.2999999970198,
+        "duration": 11.900000002235174
+      },
+      {
+        "method": "grainPump",
+        "at": 3559,
+        "duration": 11.5
+      },
+      {
+        "method": "grainPump",
+        "at": 3570.599999997765,
+        "duration": 12
+      },
+      {
+        "method": "grainPump",
+        "at": 3582.599999997765,
+        "duration": 11.900000002235174
+      },
+      {
+        "method": "grainPump",
+        "at": 3594.5,
+        "duration": 11.899999998509884
+      },
+      {
+        "method": "grainPump",
+        "at": 3623.89999999851,
+        "duration": 11.600000001490116
+      },
+      {
+        "method": "grainPump",
+        "at": 3635.5,
+        "duration": 11.799999997019768
+      },
+      {
+        "method": "grainPump",
+        "at": 3647.2999999970198,
+        "duration": 12
+      },
+      {
+        "method": "grainPump",
+        "at": 3659.2999999970198,
+        "duration": 11.200000002980232
+      },
+      {
+        "method": "grainPump",
+        "at": 3676.599999997765,
+        "duration": 11.100000001490116
+      },
+      {
+        "method": "grainPump",
+        "at": 3687.699999999255,
+        "duration": 11
+      },
+      {
+        "method": "grainPump",
+        "at": 3698.699999999255,
+        "duration": 12.300000000745058
+      },
+      {
+        "method": "grainPump",
+        "at": 3722.199999999255,
+        "duration": 11.099999997764826
+      },
+      {
+        "method": "grainPump",
+        "at": 3733.2999999970198,
+        "duration": 11.300000000745058
+      },
+      {
+        "method": "grainPump",
+        "at": 3744.599999997765,
+        "duration": 11
+      },
+      {
+        "method": "grainPump",
+        "at": 3755.599999997765,
+        "duration": 11.199999999254942
+      },
+      {
+        "method": "grainPump",
+        "at": 3766.7999999970198,
+        "duration": 12.100000001490116
+      },
+      {
+        "method": "grainPump",
+        "at": 3784.599999997765,
+        "duration": 10.900000002235174
+      },
+      {
+        "method": "grainPump",
+        "at": 3795.5,
+        "duration": 11.199999999254942
+      },
+      {
+        "method": "grainPump",
+        "at": 3806.699999999255,
+        "duration": 11.099999997764826
+      },
+      {
+        "method": "grainPump",
+        "at": 3817.7999999970198,
+        "duration": 11.5
+      },
+      {
+        "method": "grainPump",
+        "at": 3829.39999999851,
+        "duration": 11.199999999254942
+      },
+      {
+        "method": "grainPump",
+        "at": 3840.599999997765,
+        "duration": 11.300000000745058
+      },
+      {
+        "method": "grainPump",
+        "at": 3851.89999999851,
+        "duration": 11.399999998509884
+      },
+      {
+        "method": "grainPump",
+        "at": 3863.2999999970198,
+        "duration": 11.800000000745058
+      },
+      {
+        "method": "grainPump",
+        "at": 3875.099999997765,
+        "duration": 12
+      },
+      {
+        "method": "grainPump",
+        "at": 3893.099999997765,
+        "duration": 11.900000002235174
+      },
+      {
+        "method": "grainPump",
+        "at": 3905,
+        "duration": 11.699999999254942
+      },
+      {
+        "method": "grainPump",
+        "at": 3916.699999999255,
+        "duration": 12
+      },
+      {
+        "method": "grainPump",
+        "at": 3928.699999999255,
+        "duration": 11.899999998509884
+      },
+      {
+        "method": "grainPump",
+        "at": 3940.599999997765,
+        "duration": 11.5
+      },
+      {
+        "method": "grainPump",
+        "at": 3952.099999997765,
+        "duration": 11.600000001490116
+      },
+      {
+        "method": "grainPump",
+        "at": 3963.699999999255,
+        "duration": 12.199999999254942
+      },
+      {
+        "method": "grainPump",
+        "at": 3975.89999999851,
+        "duration": 11.399999998509884
+      },
+      {
+        "method": "grainPump",
+        "at": 3987.2999999970198,
+        "duration": 10.600000001490116
+      },
+      {
+        "method": "grainPump",
+        "at": 4054.89999999851,
+        "duration": 11.5
+      },
+      {
+        "method": "grainPump",
+        "at": 4066.39999999851,
+        "duration": 11.800000000745058
+      },
+      {
+        "method": "grainPump",
+        "at": 4078.199999999255,
+        "duration": 11.399999998509884
+      },
+      {
+        "method": "grainPump",
+        "at": 4089.599999997765,
+        "duration": 11.300000000745058
+      },
+      {
+        "method": "grainPump",
+        "at": 4100.89999999851,
+        "duration": 11.699999999254942
+      },
+      {
+        "method": "grainPump",
+        "at": 4112.599999997765,
+        "duration": 11.400000002235174
+      },
+      {
+        "method": "grainPump",
+        "at": 4124,
+        "duration": 11.199999999254942
+      },
+      {
+        "method": "grainPump",
+        "at": 4135.199999999255,
+        "duration": 11.5
+      },
+      {
+        "method": "grainPump",
+        "at": 4146.699999999255,
+        "duration": 11.099999997764826
+      },
+      {
+        "method": "grainPump",
+        "at": 4157.79999999702,
+        "duration": 10.700000002980232
+      },
+      {
+        "method": "grainPump",
+        "at": 4168.79999999702,
+        "duration": 10.900000002235174
+      },
+      {
+        "method": "grainPump",
+        "at": 4179.79999999702,
+        "duration": 11.400000002235174
+      },
+      {
+        "method": "grainPump",
+        "at": 4191.199999999255,
+        "duration": 11.099999997764826
+      },
+      {
+        "method": "grainPump",
+        "at": 4202.29999999702,
+        "duration": 11.300000000745058
+      },
+      {
+        "method": "grainPump",
+        "at": 4213.599999997765,
+        "duration": 11.100000001490116
+      },
+      {
+        "method": "grainPump",
+        "at": 4224.699999999255,
+        "duration": 10.899999998509884
+      },
+      {
+        "method": "grainPump",
+        "at": 4235.599999997765,
+        "duration": 11
+      },
+      {
+        "method": "grainPump",
+        "at": 4246.599999997765,
+        "duration": 10.800000000745058
+      },
+      {
+        "method": "grainPump",
+        "at": 4257.39999999851,
+        "duration": 10.800000000745058
+      },
+      {
+        "method": "grainPump",
+        "at": 4268.29999999702,
+        "duration": 11.200000002980232
+      },
+      {
+        "method": "grainPump",
+        "at": 4279.599999997765,
+        "duration": 10.900000002235174
+      },
+      {
+        "method": "grainPump",
+        "at": 4290.5,
+        "duration": 10.799999997019768
+      },
+      {
+        "method": "grainPump",
+        "at": 4301.29999999702,
+        "duration": 11.400000002235174
+      },
+      {
+        "method": "grainPump",
+        "at": 4312.699999999255,
+        "duration": 11.800000000745058
+      },
+      {
+        "method": "grainPump",
+        "at": 4324.5,
+        "duration": 11.199999999254942
+      },
+      {
+        "method": "grainPump",
+        "at": 4393.79999999702,
+        "duration": 11.400000002235174
+      },
+      {
+        "method": "grainPump",
+        "at": 4405.29999999702,
+        "duration": 11
+      },
+      {
+        "method": "grainPump",
+        "at": 4416.29999999702,
+        "duration": 11.900000002235174
+      },
+      {
+        "method": "grainPump",
+        "at": 4428.199999999255,
+        "duration": 11.699999999254942
+      },
+      {
+        "method": "grainPump",
+        "at": 4440,
+        "duration": 11.5
+      },
+      {
+        "method": "grainPump",
+        "at": 4451.599999997765,
+        "duration": 12.300000000745058
+      },
+      {
+        "method": "grainPump",
+        "at": 4463.89999999851,
+        "duration": 11.800000000745058
+      },
+      {
+        "method": "grainPump",
+        "at": 4475.699999999255,
+        "duration": 11.5
+      },
+      {
+        "method": "grainPump",
+        "at": 4487.29999999702,
+        "duration": 11.600000001490116
+      },
+      {
+        "method": "grainPump",
+        "at": 4498.89999999851,
+        "duration": 12
+      },
+      {
+        "method": "grainPump",
+        "at": 4571,
+        "duration": 18.299999997019768
+      },
+      {
+        "method": "grainPump",
+        "at": 4589.39999999851,
+        "duration": 11.399999998509884
+      },
+      {
+        "method": "grainPump",
+        "at": 4600.89999999851,
+        "duration": 12.199999999254942
+      },
+      {
+        "method": "grainPump",
+        "at": 4613.099999997765,
+        "duration": 12
+      },
+      {
+        "method": "grainPump",
+        "at": 4625.099999997765,
+        "duration": 12.100000001490116
+      },
+      {
+        "method": "grainPump",
+        "at": 4637.199999999255,
+        "duration": 18.199999999254942
+      },
+      {
+        "method": "grainPump",
+        "at": 4655.39999999851,
+        "duration": 11.800000000745058
+      },
+      {
+        "method": "grainPump",
+        "at": 4667.199999999255,
+        "duration": 11.800000000745058
+      },
+      {
+        "method": "grainPump",
+        "at": 4679.099999997765,
+        "duration": 14.300000000745058
+      },
+      {
+        "method": "grainPump",
+        "at": 4693.39999999851,
+        "duration": 11
+      },
+      {
+        "method": "grainPump",
+        "at": 4704.5,
+        "duration": 11
+      },
+      {
+        "method": "grainPump",
+        "at": 4715.5,
+        "duration": 12.599999997764826
+      },
+      {
+        "method": "grainPump",
+        "at": 4728.099999997765,
+        "duration": 11.100000001490116
+      },
+      {
+        "method": "grainPump",
+        "at": 4739.29999999702,
+        "duration": 15.100000001490116
+      },
+      {
+        "method": "grainPump",
+        "at": 4754.5,
+        "duration": 24
+      },
+      {
+        "method": "grainPump",
+        "at": 4778.5,
+        "duration": 14.399999998509884
+      },
+      {
+        "method": "grainPump",
+        "at": 4792.89999999851,
+        "duration": 11.300000000745058
+      },
+      {
+        "method": "grainPump",
+        "at": 4804.199999999255,
+        "duration": 14.5
+      },
+      {
+        "method": "grainPump",
+        "at": 4818.699999999255,
+        "duration": 12.599999997764826
+      },
+      {
+        "method": "grainPump",
+        "at": 4831.29999999702,
+        "duration": 17.5
+      },
+      {
+        "method": "grainPump",
+        "at": 4848.79999999702,
+        "duration": 11.900000002235174
+      },
+      {
+        "method": "grainPump",
+        "at": 4860.699999999255,
+        "duration": 11.5
+      },
+      {
+        "method": "grainPump",
+        "at": 4872.29999999702,
+        "duration": 11.5
+      },
+      {
+        "method": "grainPump",
+        "at": 4883.79999999702,
+        "duration": 11.600000001490116
+      },
+      {
+        "method": "grainPump",
+        "at": 4895.5,
+        "duration": 17.799999997019768
+      },
+      {
+        "method": "grainPump",
+        "at": 4928,
+        "duration": 64.89999999850988
+      },
+      {
+        "method": "grainPump",
+        "at": 4993,
+        "duration": 68.59999999776483
+      },
+      {
+        "method": "grainPump",
+        "at": 5061.599999997765,
+        "duration": 82.69999999925494
+      },
+      {
+        "method": "grainPump",
+        "at": 5144.29999999702,
+        "duration": 78
+      },
+      {
+        "method": "grainPump",
+        "at": 5222.29999999702,
+        "duration": 74.40000000223517
+      },
+      {
+        "method": "grainPump",
+        "at": 5297,
+        "duration": 46.19999999925494
+      },
+      {
+        "method": "grainPump",
+        "at": 5343.199999999255,
+        "duration": 41.099999997764826
+      },
+      {
+        "method": "grainPump",
+        "at": 5384.29999999702,
+        "duration": 51.600000001490116
+      },
+      {
+        "method": "grainPump",
+        "at": 5435.89999999851,
+        "duration": 54.80000000074506
+      },
+      {
+        "method": "grainPump",
+        "at": 5490.699999999255,
+        "duration": 48.399999998509884
+      },
+      {
+        "method": "grainPump",
+        "at": 5539.099999997765,
+        "duration": 55.5
+      },
+      {
+        "method": "grainPump",
+        "at": 5594.599999997765,
+        "duration": 59.19999999925494
+      },
+      {
+        "method": "grainPump",
+        "at": 5653.89999999851,
+        "duration": 71.5
+      },
+      {
+        "method": "grainPump",
+        "at": 5725.39999999851,
+        "duration": 68
+      },
+      {
+        "method": "grainPump",
+        "at": 5793.5,
+        "duration": 70.69999999925494
+      },
+      {
+        "method": "grainPump",
+        "at": 5864.199999999255,
+        "duration": 76.19999999925494
+      },
+      {
+        "method": "grainPump",
+        "at": 5941.29999999702,
+        "duration": 83.90000000223517
+      },
+      {
+        "method": "grainPump",
+        "at": 6025.39999999851,
+        "duration": 75
+      },
+      {
+        "method": "grainPump",
+        "at": 6100.5,
+        "duration": 74.19999999925494
+      },
+      {
+        "method": "grainPump",
+        "at": 6174.699999999255,
+        "duration": 66.89999999850988
+      },
+      {
+        "method": "grainPump",
+        "at": 6241.599999997765,
+        "duration": 69.10000000149012
+      },
+      {
+        "method": "grainPump",
+        "at": 6339.5,
+        "duration": 66
+      },
+      {
+        "method": "grainPump",
+        "at": 6405.699999999255,
+        "duration": 78
+      },
+      {
+        "method": "grainPump",
+        "at": 6483.79999999702,
+        "duration": 73.80000000074506
+      },
+      {
+        "method": "grainPump",
+        "at": 6557.699999999255,
+        "duration": 70.69999999925494
+      },
+      {
+        "method": "grainPump",
+        "at": 6628.5,
+        "duration": 72.79999999701977
+      },
+      {
+        "method": "grainPump",
+        "at": 6701.29999999702,
+        "duration": 70.90000000223517
+      },
+      {
+        "method": "grainPump",
+        "at": 6772.39999999851,
+        "duration": 62.899999998509884
+      },
+      {
+        "method": "grainPump",
+        "at": 6835.39999999851,
+        "duration": 64.10000000149012
+      },
+      {
+        "method": "grainPump",
+        "at": 6899.5,
+        "duration": 69.19999999925494
+      },
+      {
+        "method": "grainPump",
+        "at": 6968.79999999702,
+        "duration": 68.60000000149012
+      },
+      {
+        "method": "grainPump",
+        "at": 7037.39999999851,
+        "duration": 70.30000000074506
+      },
+      {
+        "method": "grainPump",
+        "at": 7107.79999999702,
+        "duration": 79.60000000149012
+      },
+      {
+        "method": "grainPump",
+        "at": 7187.39999999851,
+        "duration": 69.10000000149012
+      },
+      {
+        "method": "grainPump",
+        "at": 7256.599999997765,
+        "duration": 67.90000000223517
+      },
+      {
+        "method": "grainPump",
+        "at": 7328.79999999702,
+        "duration": 69.90000000223517
+      },
+      {
+        "method": "grainPump",
+        "at": 7398.79999999702,
+        "duration": 69.20000000298023
+      },
+      {
+        "method": "grainPump",
+        "at": 7468,
+        "duration": 68
+      },
+      {
+        "method": "grainPump",
+        "at": 7536,
+        "duration": 62.599999997764826
+      },
+      {
+        "method": "grainPump",
+        "at": 7598.599999997765,
+        "duration": 62.30000000074506
+      },
+      {
+        "method": "grainPump",
+        "at": 7661,
+        "duration": 62.899999998509884
+      },
+      {
+        "method": "grainPump",
+        "at": 7723.89999999851,
+        "duration": 70.30000000074506
+      },
+      {
+        "method": "grainPump",
+        "at": 7794.29999999702,
+        "duration": 62.5
+      },
+      {
+        "method": "grainPump",
+        "at": 7857,
+        "duration": 60.899999998509884
+      },
+      {
+        "method": "grainPump",
+        "at": 7918,
+        "duration": 61.19999999925494
+      },
+      {
+        "method": "grainPump",
+        "at": 7979.29999999702,
+        "duration": 62.20000000298023
+      },
+      {
+        "method": "grainPump",
+        "at": 8041.5,
+        "duration": 63
+      },
+      {
+        "method": "grainPump",
+        "at": 8104.5,
+        "duration": 62.79999999701977
+      },
+      {
+        "method": "grainPump",
+        "at": 8167.29999999702,
+        "duration": 63.70000000298023
+      },
+      {
+        "method": "grainPump",
+        "at": 8260.199999999255,
+        "duration": 60.69999999925494
+      },
+      {
+        "method": "grainPump",
+        "at": 8321,
+        "duration": 62.29999999701977
+      },
+      {
+        "method": "grainPump",
+        "at": 8383.29999999702,
+        "duration": 55.5
+      },
+      {
+        "method": "grainPump",
+        "at": 8438.79999999702,
+        "duration": 61.100000001490116
+      },
+      {
+        "method": "grainPump",
+        "at": 8500,
+        "duration": 61
+      },
+      {
+        "method": "grainPump",
+        "at": 8561.099999997765,
+        "duration": 55
+      },
+      {
+        "method": "grainPump",
+        "at": 8616.099999997765,
+        "duration": 54.100000001490116
+      },
+      {
+        "method": "grainPump",
+        "at": 8670.199999999255,
+        "duration": 59.5
+      },
+      {
+        "method": "grainPump",
+        "at": 8729.79999999702,
+        "duration": 63.70000000298023
+      },
+      {
+        "method": "grainPump",
+        "at": 8793.599999997765,
+        "duration": 57.80000000074506
+      },
+      {
+        "method": "grainPump",
+        "at": 8851.39999999851,
+        "duration": 57.600000001490116
+      },
+      {
+        "method": "grainPump",
+        "at": 8909,
+        "duration": 58.29999999701977
+      },
+      {
+        "method": "grainPump",
+        "at": 8967.29999999702,
+        "duration": 58.100000001490116
+      },
+      {
+        "method": "grainPump",
+        "at": 9025.39999999851,
+        "duration": 55.30000000074506
+      },
+      {
+        "method": "grainPump",
+        "at": 9107.699999999255,
+        "duration": 52.899999998509884
+      },
+      {
+        "method": "grainPump",
+        "at": 9160.599999997765,
+        "duration": 46.80000000074506
+      },
+      {
+        "method": "grainPump",
+        "at": 9207.39999999851,
+        "duration": 53.600000001490116
+      },
+      {
+        "method": "grainPump",
+        "at": 9261,
+        "duration": 54.399999998509884
+      },
+      {
+        "method": "grainPump",
+        "at": 9315.39999999851,
+        "duration": 49.600000001490116
+      },
+      {
+        "method": "grainPump",
+        "at": 9365,
+        "duration": 55.099999997764826
+      },
+      {
+        "method": "grainPump",
+        "at": 9420.199999999255,
+        "duration": 53.099999997764826
+      },
+      {
+        "method": "grainPump",
+        "at": 9473.29999999702,
+        "duration": 47.80000000074506
+      },
+      {
+        "method": "grainPump",
+        "at": 9521.099999997765,
+        "duration": 56.600000001490116
+      },
+      {
+        "method": "grainPump",
+        "at": 9577.699999999255,
+        "duration": 86.09999999776483
+      },
+      {
+        "method": "grainPump",
+        "at": 9663.79999999702,
+        "duration": 60.30000000074506
+      },
+      {
+        "method": "grainPump",
+        "at": 9724.099999997765,
+        "duration": 67.60000000149012
+      },
+      {
+        "method": "grainPump",
+        "at": 9791.79999999702,
+        "duration": 79.10000000149012
+      },
+      {
+        "method": "grainPump",
+        "at": 9871,
+        "duration": 66.19999999925494
+      },
+      {
+        "method": "grainPump",
+        "at": 9937.5,
+        "duration": 63.19999999925494
+      },
+      {
+        "method": "grainPump",
+        "at": 10000.89999999851,
+        "duration": 57.80000000074506
+      },
+      {
+        "method": "grainPump",
+        "at": 10058.699999999255,
+        "duration": 57.599999997764826
+      },
+      {
+        "method": "grainPump",
+        "at": 10116.39999999851,
+        "duration": 60.19999999925494
+      },
+      {
+        "method": "grainPump",
+        "at": 10176.699999999255,
+        "duration": 65.89999999850988
+      },
+      {
+        "method": "grainPump",
+        "at": 10242.699999999255,
+        "duration": 58
+      },
+      {
+        "method": "grainPump",
+        "at": 10300.699999999255,
+        "duration": 58
+      },
+      {
+        "method": "grainPump",
+        "at": 10358.699999999255,
+        "duration": 66
+      },
+      {
+        "method": "grainPump",
+        "at": 10424.699999999255,
+        "duration": 66.19999999925494
+      },
+      {
+        "method": "grainPump",
+        "at": 10490.89999999851,
+        "duration": 59
+      },
+      {
+        "method": "grainPump",
+        "at": 10549.89999999851,
+        "duration": 59.899999998509884
+      },
+      {
+        "method": "grainPump",
+        "at": 10609.79999999702,
+        "duration": 63.900000002235174
+      },
+      {
+        "method": "grainPump",
+        "at": 10673.699999999255,
+        "duration": 61.80000000074506
+      },
+      {
+        "method": "grainPump",
+        "at": 10735.599999997765,
+        "duration": 57.69999999925494
+      },
+      {
+        "method": "grainPump",
+        "at": 10821.699999999255,
+        "duration": 56.399999998509884
+      },
+      {
+        "method": "grainPump",
+        "at": 10878.099999997765,
+        "duration": 59.600000001490116
+      },
+      {
+        "method": "grainPump",
+        "at": 10937.699999999255,
+        "duration": 53.399999998509884
+      },
+      {
+        "method": "grainPump",
+        "at": 10991.099999997765,
+        "duration": 58.19999999925494
+      },
+      {
+        "method": "grainPump",
+        "at": 11049.29999999702,
+        "duration": 61.600000001490116
+      },
+      {
+        "method": "grainPump",
+        "at": 11110.89999999851,
+        "duration": 55.600000001490116
+      },
+      {
+        "method": "grainPump",
+        "at": 11166.599999997765,
+        "duration": 55.900000002235174
+      },
+      {
+        "method": "grainPump",
+        "at": 11222.5,
+        "duration": 57.69999999925494
+      },
+      {
+        "method": "grainPump",
+        "at": 11280.29999999702,
+        "duration": 58.20000000298023
+      },
+      {
+        "method": "grainPump",
+        "at": 11338.599999997765,
+        "duration": 59.30000000074506
+      },
+      {
+        "method": "grainPump",
+        "at": 11397.89999999851,
+        "duration": 55.100000001490116
+      },
+      {
+        "method": "grainPump",
+        "at": 11453,
+        "duration": 56.69999999925494
+      },
+      {
+        "method": "grainPump",
+        "at": 11509.699999999255,
+        "duration": 57.80000000074506
+      },
+      {
+        "method": "grainPump",
+        "at": 11567.5,
+        "duration": 58.399999998509884
+      },
+      {
+        "method": "grainPump",
+        "at": 11655.599999997765,
+        "duration": 59
+      },
+      {
+        "method": "grainPump",
+        "at": 11714.599999997765,
+        "duration": 51.80000000074506
+      },
+      {
+        "method": "grainPump",
+        "at": 11766.39999999851,
+        "duration": 57
+      },
+      {
+        "method": "grainPump",
+        "at": 11823.5,
+        "duration": 58.399999998509884
+      },
+      {
+        "method": "grainPump",
+        "at": 11882,
+        "duration": 57.5
+      },
+      {
+        "method": "grainPump",
+        "at": 11939.599999997765,
+        "duration": 58.69999999925494
+      },
+      {
+        "method": "grainPump",
+        "at": 11998.29999999702,
+        "duration": 61.5
+      },
+      {
+        "method": "grainPump",
+        "at": 12059.89999999851,
+        "duration": 57.899999998509884
+      },
+      {
+        "method": "grainPump",
+        "at": 12117.79999999702,
+        "duration": 58.900000002235174
+      },
+      {
+        "method": "grainPump",
+        "at": 12176.699999999255,
+        "duration": 56.80000000074506
+      },
+      {
+        "method": "grainPump",
+        "at": 12233.599999997765,
+        "duration": 56.19999999925494
+      },
+      {
+        "method": "grainPump",
+        "at": 12289.79999999702,
+        "duration": 56.400000002235174
+      },
+      {
+        "method": "grainPump",
+        "at": 12346.29999999702,
+        "duration": 54.600000001490116
+      },
+      {
+        "method": "grainPump",
+        "at": 12400.89999999851,
+        "duration": 58.100000001490116
+      },
+      {
+        "method": "grainPump",
+        "at": 12459.199999999255,
+        "duration": 44.19999999925494
+      },
+      {
+        "method": "grainPump",
+        "at": 12503.5,
+        "duration": 43.29999999701977
+      },
+      {
+        "method": "grainPump",
+        "at": 12546.89999999851,
+        "duration": 37.899999998509884
+      },
+      {
+        "method": "grainPump",
+        "at": 12584.89999999851,
+        "duration": 32.30000000074506
+      },
+      {
+        "method": "grainPump",
+        "at": 12617.199999999255,
+        "duration": 43.599999997764826
+      },
+      {
+        "method": "grainPump",
+        "at": 12660.79999999702,
+        "duration": 50.80000000074506
+      },
+      {
+        "method": "grainPump",
+        "at": 12711.599999997765,
+        "duration": 44.80000000074506
+      },
+      {
+        "method": "grainPump",
+        "at": 12756.39999999851,
+        "duration": 38.899999998509884
+      },
+      {
+        "method": "grainPump",
+        "at": 12795.39999999851,
+        "duration": 44.5
+      },
+      {
+        "method": "grainPump",
+        "at": 12839.89999999851,
+        "duration": 44.399999998509884
+      },
+      {
+        "method": "grainPump",
+        "at": 12884.29999999702,
+        "duration": 45.30000000074506
+      },
+      {
+        "method": "grainPump",
+        "at": 12929.599999997765,
+        "duration": 39.900000002235174
+      },
+      {
+        "method": "grainPump",
+        "at": 12969.5,
+        "duration": 39.899999998509884
+      },
+      {
+        "method": "grainPump",
+        "at": 13009.39999999851,
+        "duration": 41.5
+      },
+      {
+        "method": "grainPump",
+        "at": 13082.5,
+        "duration": 17.299999997019768
+      },
+      {
+        "method": "grainPump",
+        "at": 13099.79999999702,
+        "duration": 17.600000001490116
+      },
+      {
+        "method": "grainPump",
+        "at": 13117.39999999851,
+        "duration": 12
+      },
+      {
+        "method": "grainPump",
+        "at": 13129.39999999851,
+        "duration": 17
+      },
+      {
+        "method": "grainPump",
+        "at": 13146.39999999851,
+        "duration": 11.199999999254942
+      },
+      {
+        "method": "grainPump",
+        "at": 13157.599999997765,
+        "duration": 11.100000001490116
+      },
+      {
+        "method": "grainPump",
+        "at": 13215.29999999702,
+        "duration": 10.900000002235174
+      }
+    ],
+    "longTasks": [
+      {
+        "start": 2687,
+        "duration": 110
+      },
+      {
+        "start": 2966.7999999970198,
+        "duration": 58
+      },
+      {
+        "start": 3083.599999997765,
+        "duration": 76
+      },
+      {
+        "start": 3252.39999999851,
+        "duration": 69
+      },
+      {
+        "start": 3374.099999997765,
+        "duration": 57
+      },
+      {
+        "start": 3432.099999997765,
+        "duration": 109
+      },
+      {
+        "start": 3541.199999999255,
+        "duration": 135
+      },
+      {
+        "start": 3676.599999997765,
+        "duration": 152
+      },
+      {
+        "start": 3829.2999999970198,
+        "duration": 168
+      },
+      {
+        "start": 4011.39999999851,
+        "duration": 157
+      },
+      {
+        "start": 4168.599999997765,
+        "duration": 167
+      },
+      {
+        "start": 4350.39999999851,
+        "duration": 160
+      },
+      {
+        "start": 4527.099999997765,
+        "duration": 177
+      },
+      {
+        "start": 4704.5,
+        "duration": 208
+      },
+      {
+        "start": 4927.79999999702,
+        "duration": 369
+      },
+      {
+        "start": 5297,
+        "duration": 1013
+      },
+      {
+        "start": 6339.29999999702,
+        "duration": 985
+      },
+      {
+        "start": 7328.699999999255,
+        "duration": 902
+      },
+      {
+        "start": 8260.099999997765,
+        "duration": 820
+      },
+      {
+        "start": 9107.699999999255,
+        "duration": 829
+      },
+      {
+        "start": 9937.29999999702,
+        "duration": 856
+      },
+      {
+        "start": 10821.599999997765,
+        "duration": 804
+      },
+      {
+        "start": 11655.39999999851,
+        "duration": 803
+      },
+      {
+        "start": 12459,
+        "duration": 592
+      },
+      {
+        "start": 13079.199999999255,
+        "duration": 89
+      },
+      {
+        "start": 20049.79999999702,
+        "duration": 407
+      }
+    ],
+    "stages": [],
+    "controls": []
+  },
+  "status": "Skip to workspace\nLibrary\nPerform\nArrange\nMixer\nPlay\nTempo\nBPM\nKey\nOff\nC\nDb\nD\nEb\nE\nF\nF#\nG\nAb\nA\nBb\nB\nSTEMDECK\nCapture\nInput inspector\nMaster\n−∞\nUI 77 ms\nTools\nSettings\nArrange\nFour Deck Actual Capture QA\nOpen performance in Arrange\nTake 1\nExport\nLayout\nImport audio\nSave project\nPlay\nStop\nImport audio\nAdd audio track\nAdd instrument\nEffects rack\nPiano roll\nBeat sequencer\nMore sources\nPOSITION\n1 : 1\n0:00.0\nFit project\nFit selection\nFollow playhead\nEditing & export\nLoop, locators & MIDI recording\nExport range & filename\n\nSource audio was not ready in time. Playback stopped; check the recording status before continuing.\n\nTracks / bars\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\nDevices · 0 FX\nTrack options\nM\nS\n+ Audio\nMaster safety 0.0s\n5.00s\nMaster safety 5.0s\n2.15s\nDevices · 0 FX\nTrack options\nM\nS\n+ Audio\nDeck A · performed 0.0s\n5.00s\nDeck A · performed 5.0s\n2.15s\nDevices · 0 FX\nTrack options\nM\nS\n+ Audio\nDeck B · performed 0.0s\n5.00s\nDeck B · performed 5.0s\n2.15s\nDevices · 0 FX\nTrack options\nM\nS\n+ Audio\nDeck C · performed 0.0s\n5.00s\nDeck C · performed 5.0s\n2.15s\nDevices · 0 FX\nTrack options\nM\nS\n+ Audio\nDeck D · performed 0.0s\n5.00s\nDeck D · performed 5.0s\n2.15s\nDevices · 0 FX\nTrack options\nM\nS\n+ Audio\nDevices · 0 FX\nTrack options\nM\nS\n+ Audio\nDevices · 0 FX\nTrack options\nM\nS\n+ Audio\nFour Deck Actual Capture QA take 1.m4a\n7.25s\nDevices · 0 FX\nTrack options\nM\nS\n+ Audio\nA-fullMix\n5.81s\nDevices · 0 FX\nTrack options\nM\nS\n+ Audio\nA-drums.wav\n5.81s\nDevices · 0 FX\nTrack options\nM\nS\n+ Audio\nA-bass.wav\n5.81s\nDevices · 0 FX\nTrack options\nM\nS\n+ Audio\nA-music.wav\n5.81s\nDevices · 0 FX\nTrack options\nM\nS\n+ Audio\nA-vocals.wav\n5.81s\nDevices · 0 FX\nTrack options\nM\nS\n+ Audio\nB-fullMix\n6.04s\nDevices · 0 FX\nTrack options\nM\nS\n+ Audio\nB-drums.wav\n6.04s\nDevices · 0 FX\nTrack options\nM\nS\n+ Audio\nB-bass.wav\n6.04s\nDevices · 0 FX\nTrack options\nM\nS\n+ Audio\nB-music.wav\n6.04s\nDevices · 0 FX\nTrack options\nM\nS\n+ Audio\nB-vocals.wav\n6.04s\nDevices · 0 FX\nTrack options\nM\nS\n+ Audio\nC-fullMix\n5.86s\nDevices · 0 FX\nTrack options\nM\nS\n+ Audio\nC-drums.wav\n5.86s\nDevices · 0 FX\nTrack options\nM\nS\n+ Audio\nC-bass.wav\n5.86s\nDevices · 0 FX\nTrack options\nM\nS\n+ Audio\nC-music.wav\n5.86s\nDevices · 0 FX\nTrack options\nM\nS\n+ Audio\nC-vocals.wav\n5.86s\nDevices · 0 FX\nTrack options\nM\nS\n+ Audio\nD-fullMix\n5.27s\nDevices · 0 FX\nTrack options\nM\nS\n+ Audio\nD-drums.wav\n5.27s\nDevices · 0 FX\nTrack options\nM\nS\n+ Audio\nD-bass.wav\n5.27s\nDevices · 0 FX\nTrack options\nM\nS\n+ Audio\nD-music.wav\n5.27s\nDevices · 0 FX\nTrack options\nM\nS\n+ Audio\nD-vocals.wav\n5.27s\nKeep creating\nAudio or instruments.\nOne idea at a time.\nNew audio track\nNew instrument track\nClip\nDevices\nTrack automation\nPiano roll\nSequencer\nPerformance\nHide editor\nCaptured performance\nFour Deck Actual Capture QA take 1.m4a\nFour Deck Actual Capture QA take 1.m4a · 38 events\n\nPerformance Take · 37 enabled actions · Safety audio linked\n\nEditable in Arrange: Source clips · Source clip regions · Clips referencing retained source assets · Clip playback rate · Re-derived clip playback rates · Combined lane volume automation\n\nPrinted audio required: Deck filter · Deck / stem FX parameters · Historical master processing\n\nEvent controls below edit replay history, not necessarily arrangement devices. Keep the original print as the sound reference.\n\nFive-stage action support\nReplay limits\nAudition live-engine replay\nPrint edited performance\nBuild editable source replay\nRestore original events\nRebuild pads from edited events (synthesized noise may differ)\n\nBuilding editable sources creates new muted lanes. Original events and printed audio are kept. Compare before replacing the safety mix.\n\nLive-engine replay uses the original deck, stem and master processing. Printing runs in real time into recoverable WAV chunks. Legacy reverb, opening tails and captured pad edits have limitations; replay reports warnings and scheduling lateness.\n\nShow actions\nAll actions\nProject Tempo\ninitial State\nplay Deck\ndeck Transport\nDeck Fader\nPlayback Rate\nDeck Filter\nDeck Fx\nLane State\nCrossfader Curve\nCrossfader\npause Deck\nTime (s)\nsetProjectTempo\nEnabled\nEdit controls\nEvent values\nTime (s)\ninitialState\nEnabled\nEvent values\nTime (s)\nplayDeck\nEnabled\nEvent values\nTime (s)\ndeckTransport\nEnabled\nEdit controls\nEvent values\nTime (s)\nsetDeckFader\nEnabled\nEdit controls\nEvent values\nTime (s)\nsetPlaybackRate\nEnabled\nEdit controls\nEvent values\nTime (s)\nsetDeckFilter\nEnabled\nEdit controls\nEvent values\nTime (s)\nsetDeckFx\nEnabled\nEdit controls\nEvent values\nTime (s)\nsetDeckFader\nEnabled\nEdit controls\nEvent values\nTime (s)\nsetPlaybackRate\nEnabled\nEdit controls\nEvent values\nTime (s)\nsetDeckFilter\nEnabled\nEdit controls\nEvent values\nTime (s)\nsetDeckFx\nEnabled\nEdit controls\nEvent values\nTime (s)\nsetDeckFader\nEnabled\nEdit controls\nEvent values\nTime (s)\nsetPlaybackRate\nEnabled\nEdit controls\nEvent values\nTime (s)\nsetDeckFilter\nEnabled\nEdit controls\nEvent values\nTime (s)\nsetDeckFx\nEnabled\nEdit controls\nEvent values\nTime (s)\nsetDeckFader\nEnabled\nEdit controls\nEvent values\nTime (s)\nsetPlaybackRate\nEnabled\nEdit controls\nEvent values\nTime (s)\nsetDeckFilter\nEnabled\nEdit controls\nEvent values\nTime (s)\nsetDeckFx\nEnabled\nEdit controls\nEvent values\nTime (s)\nplayDeck\nEnabled\nEvent values\nTime (s)\ndeckTransport\nEnabled\nEdit controls\nEvent values\nTime (s)\nplayDeck\nEnabled\nEvent values\nTime (s)\ndeckTransport\nEnabled\nEdit controls\nEvent values\nTime (s)\nplayDeck\nEnabled\nEvent values\nTime (s)\ndeckTransport\nEnabled\nEdit controls\nEvent values\nTime (s)\nsetLaneState\nEnabled\nEdit controls\nEvent values\nTime (s)\nsetCrossfaderCurve\nEnabled\nEvent values\nTime (s)\nsetCrossfader\nEnabled\nEdit controls\nEvent values\nTime (s)\nsetLaneState\nEnabled\nEdit controls\nEvent values\nTime (s)\npauseDeck\nEnabled\nEvent values\nTime (s)\ndeckTransport\nEnabled\nEdit controls\nEvent values\nTime (s)\npauseDeck\nEnabled\nEvent values\nTime (s)\ndeckTransport\nEnabled\nEdit controls\nEvent values\nTime (s)\npauseDeck\nEnabled\nEvent values\nTime (s)\ndeckTransport\nEnabled\nEdit controls\nEvent values\nTime (s)\npauseDeck\nEnabled\nEvent values\nTime (s)\ndeckTransport\nEnabled\nEdit controls\nEvent values\nPrevious events\nPage 1 of 1\nNext events\nRecorded takes · add to arrangement\nArrange preview 2026.09.21.3 · Audio-clock playback · Live clip editing is under validation · Track stems are pre-master, not AI separation · Keep a portable project backup.\n\nAllow anonymous usage counts to help improve Sattari? No audio or form contents. Privacy choices\n\nNo thanks\nAllow counts"
+}

@@ -1,0 +1,18 @@
+{
+  "command": [
+    "gh",
+    "pr",
+    "list",
+    "--repo",
+    "armonon/form-studio",
+    "--state",
+    "open",
+    "--json",
+    "number,title,headRefName,headRefOid,baseRefName,url"
+  ],
+  "cwd": "/Users/agentsattari/code/wave2/form-D",
+  "observed_at": "2026-10-08T04:10:58.271415+00:00",
+  "exit_code": 0,
+  "stdout": "[{\"baseRefName\":\"fix/form-project-menu-20261007\",\"headRefName\":\"qa/form-runtime-security-20261008T0340\",\"headRefOid\":\"be1f7272c5689d6401194d643fa3eb09a2b0b73b\",\"number\":7,\"title\":\"fix(security): patch Form image parsers and Worker tooling\",\"url\":\"https://github.com/armonon/form-studio/pull/7\"},{\"baseRefName\":\"fix/form-project-menu-20261007\",\"headRefName\":\"fix/cast-stl-file-import-20261007\",\"headRefOid\":\"d24f5d76b4fd0e99c43e1cb8e5e2d9b63db6665e\",\"number\":6,\"title\":\"fix: recognize ASCII STL browser file bytes\",\"url\":\"https://github.com/armonon/form-studio/pull/6\"},{\"baseRefName\":\"fix/form-workflow-gates-20261007\",\"headRefName\":\"fix/form-project-menu-20261007\",\"headRefOid\":\"1e7f6d1c84a6c956ece3cfe6f74b665208bf069c\",\"number\":5,\"title\":\"Keep Form project actions reachable at desktop and compact widths\",\"url\":\"https://github.com/armonon/form-studio/pull/5\"},{\"baseRefName\":\"fix/core-form-security-20261007\",\"headRefName\":\"fix/form-workflow-gates-20261007\",\"headRefOid\":\"ea6734638f72232676985f610daac18341fcd8ca\",\"number\":4,\"title\":\"fix: restore Form workflow verification and texture lint gates\",\"url\":\"https://github.com/armonon/form-studio/pull/4\"},{\"baseRefName\":\"main\",\"headRefName\":\"fix/core-form-security-20261007\",\"headRefOid\":\"b433a12331af3dba200be596422442c103783831\",\"number\":3,\"title\":\"fix(security): patch Form production dependency advisories\",\"url\":\"https://github.com/armonon/form-studio/pull/3\"}]\n",
+  "stderr": ""
+}

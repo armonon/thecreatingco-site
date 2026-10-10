@@ -1,0 +1,29 @@
+{
+  "observed_at": "2026-10-08T14:44:50.259853+00:00",
+  "base_sha": "d18aef51086b50708cb9cb3a33fddc21d792dc58",
+  "model": "openai/gpt-6.1-sol",
+  "fallback": null,
+  "files": {
+    "app/engine/renderer.ts": "1ef23da681e8159d1cefcf65a071dc5470b887dee4b7a027564af2078cb88bad",
+    "tests/adjustment-variants-alpha.test.ts": "cdd6d196dc73d453a0a0c56f5613a5502adf5e5094bf2d40b00db58823d35bfe",
+    "build/qualify-adjustment-variants.ts": "44ad5a55d630fde983c74cefe1f537dc13e91b216cfab3294a92007fad3b59aa",
+    "docs/release/layered-golden-qualification.md": "ddd02dc9fc3095613e231c413cd246b287089b53b5ebd1fdf9b90dc1579e2eee"
+  },
+  "scope": "Normal neutral-BlendIf unstyled single source-over adjustment only",
+  "engine": {
+    "passed": 1436,
+    "skipped": 10,
+    "failed": 0
+  },
+  "browser_renderer": {
+    "chromium": 24,
+    "firefox": 24,
+    "webkit": 24
+  },
+  "full_build": "NOT_RUN: near-full disk; sparse checkout excludes live-static and most public assets",
+  "product_completion": false,
+  "candidate_sha": "8c15f8537c1176b7d4c0076182b7501c92f714b5",
+  "clean_after_commit": true,
+  "model_evidence": "session_status confirmed openai/gpt-6.1-sol",
+  "independent_review": "recovery-independent-review.md"
+}

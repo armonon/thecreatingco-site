@@ -1,0 +1,11 @@
+{
+  "command": [
+    "df",
+    "-h",
+    "/Users/agentsattari"
+  ],
+  "started_at": "2026-10-08T02:52:26.286954+00:00",
+  "exit_code": 0,
+  "stdout": "Filesystem      Size    Used   Avail Capacity iused ifree %iused  Mounted on\n/dev/disk3s5   460Gi   416Gi    21Gi    96%    4.3M  222M    2%   /System/Volumes/Data\n",
+  "stderr": ""
+}

@@ -1,0 +1,134 @@
+{
+  "candidate_sha": "d4e722330e65a260badc475f53a7a176ccfe7e57",
+  "observed_at": "2026-10-08T03:31:42.173984+00:00",
+  "supported_platforms": [],
+  "gates": {
+    "core_workflow": {
+      "status": "UNVERIFIED",
+      "coverage_complete": false,
+      "source_sha": "d4e722330e65a260badc475f53a7a176ccfe7e57",
+      "observed_at": "2026-10-08T03:31:42.173984+00:00",
+      "evidence": [
+        "/Users/agentsattari/thecreateco-company/reports/luma-color-20261007/README.md",
+        "/Users/agentsattari/thecreateco-company/reports/luma-color-20261007/completion-observation.json"
+      ],
+      "summary": "CPU drift repaired: RGB7\u21920, alpha0. Three actual raster file workflows pass; full layered/masked/adjusted golden still unverified."
+    },
+    "save_reopen_export": {
+      "status": "UNVERIFIED",
+      "coverage_complete": false,
+      "source_sha": "d4e722330e65a260badc475f53a7a176ccfe7e57",
+      "observed_at": "2026-10-08T03:31:42.173984+00:00",
+      "evidence": [
+        "/Users/agentsattari/thecreateco-company/reports/luma-color-20261007/README.md",
+        "/Users/agentsattari/thecreateco-company/reports/luma-color-20261007/completion-observation.json"
+      ],
+      "summary": "Real three-fixture .luma save/close/reopen/export passes at RGB0/alpha0; pointer and keyboard confirmation/cancel/retry work. Broader golden remains unverified."
+    },
+    "reliability_recovery": {
+      "status": "UNVERIFIED",
+      "coverage_complete": false,
+      "source_sha": "d4e722330e65a260badc475f53a7a176ccfe7e57",
+      "observed_at": "2026-10-08T03:31:42.173984+00:00",
+      "evidence": [
+        "/Users/agentsattari/thecreateco-company/reports/luma-color-20261007/README.md",
+        "/Users/agentsattari/thecreateco-company/reports/luma-color-20261007/completion-observation.json"
+      ],
+      "summary": "Full product gate remains unverified; no pass extrapolated from narrow raster and save repairs."
+    },
+    "performance": {
+      "status": "UNVERIFIED",
+      "coverage_complete": false,
+      "source_sha": "d4e722330e65a260badc475f53a7a176ccfe7e57",
+      "observed_at": "2026-10-08T03:31:42.173984+00:00",
+      "evidence": [
+        "/Users/agentsattari/thecreateco-company/reports/luma-color-20261007/README.md",
+        "/Users/agentsattari/thecreateco-company/reports/luma-color-20261007/completion-observation.json"
+      ],
+      "summary": "Full product gate remains unverified; no pass extrapolated from narrow raster and save repairs."
+    },
+    "usability_accessibility": {
+      "status": "UNVERIFIED",
+      "coverage_complete": false,
+      "source_sha": "d4e722330e65a260badc475f53a7a176ccfe7e57",
+      "observed_at": "2026-10-08T03:31:42.173984+00:00",
+      "evidence": [
+        "/Users/agentsattari/thecreateco-company/reports/luma-color-20261007/README.md",
+        "/Users/agentsattari/thecreateco-company/reports/luma-color-20261007/completion-observation.json"
+      ],
+      "summary": "Actual save pointer deadlock and blocked Tab/Enter/Escape repaired and tested. Full accessibility/UX gate unverified."
+    },
+    "responsive_behavior": {
+      "status": "UNVERIFIED",
+      "coverage_complete": false,
+      "source_sha": "d4e722330e65a260badc475f53a7a176ccfe7e57",
+      "observed_at": "2026-10-08T03:31:42.173984+00:00",
+      "evidence": [
+        "/Users/agentsattari/thecreateco-company/reports/luma-color-20261007/README.md",
+        "/Users/agentsattari/thecreateco-company/reports/luma-color-20261007/completion-observation.json"
+      ],
+      "summary": "Full product gate remains unverified; no pass extrapolated from narrow raster and save repairs."
+    },
+    "security_privacy": {
+      "status": "UNVERIFIED",
+      "coverage_complete": false,
+      "source_sha": "d4e722330e65a260badc475f53a7a176ccfe7e57",
+      "observed_at": "2026-10-08T03:31:42.173984+00:00",
+      "evidence": [
+        "/Users/agentsattari/thecreateco-company/reports/luma-color-20261007/README.md",
+        "/Users/agentsattari/thecreateco-company/reports/luma-color-20261007/completion-observation.json"
+      ],
+      "summary": "Exact production npm audit0; complete privacy/security including native/deployed behavior remains unverified."
+    },
+    "documentation_support": {
+      "status": "UNVERIFIED",
+      "coverage_complete": false,
+      "source_sha": "d4e722330e65a260badc475f53a7a176ccfe7e57",
+      "observed_at": "2026-10-08T03:31:42.173984+00:00",
+      "evidence": [
+        "/Users/agentsattari/thecreateco-company/reports/luma-color-20261007/README.md",
+        "/Users/agentsattari/thecreateco-company/reports/luma-color-20261007/completion-observation.json"
+      ],
+      "summary": "Source-controlled color/save regression reproduction documents actual behavior and limits; full product support/docs gate unverified."
+    },
+    "tests": {
+      "status": "UNVERIFIED",
+      "coverage_complete": false,
+      "source_sha": "d4e722330e65a260badc475f53a7a176ccfe7e57",
+      "observed_at": "2026-10-08T03:31:42.173984+00:00",
+      "evidence": [
+        "/Users/agentsattari/thecreateco-company/reports/luma-color-20261007/README.md",
+        "/Users/agentsattari/thecreateco-company/reports/luma-color-20261007/completion-observation.json"
+      ],
+      "summary": "Exact clean d4e7223 Node22:1393 pass/10skip, rendered4, types/lint/three builds and15 real-browser checks pass; native and hosted execution remain unverified."
+    },
+    "supported_platforms": {
+      "status": "UNVERIFIED",
+      "coverage_complete": false,
+      "source_sha": "d4e722330e65a260badc475f53a7a176ccfe7e57",
+      "observed_at": "2026-10-08T03:31:42.173984+00:00",
+      "evidence": [
+        "/Users/agentsattari/thecreateco-company/reports/luma-color-20261007/README.md",
+        "/Users/agentsattari/thecreateco-company/reports/luma-color-20261007/completion-observation.json"
+      ],
+      "summary": "Full product gate remains unverified; no pass extrapolated from narrow raster and save repairs."
+    },
+    "critical_blockers": {
+      "status": "BLOCKED",
+      "coverage_complete": false,
+      "source_sha": "d4e722330e65a260badc475f53a7a176ccfe7e57",
+      "observed_at": "2026-10-08T03:31:42.173984+00:00",
+      "evidence": [
+        "/Users/agentsattari/thecreateco-company/reports/luma-color-20261007/README.md",
+        "/Users/agentsattari/thecreateco-company/reports/luma-color-20261007/completion-observation.json"
+      ],
+      "summary": "New mandatory Actions run37722986444 all3jobs0steps due payments/spending; native/platform/full golden/live provenance remain."
+    }
+  },
+  "deployment": {
+    "status": "PUSHED_PR_OPEN_NOT_MERGED_NOT_DEPLOYED",
+    "pr": "https://github.com/armonon/luma-studio/pull/7",
+    "source_sha": "d4e722330e65a260badc475f53a7a176ccfe7e57"
+  },
+  "next_action": "Qualify layered/masked/adjusted golden, recovery and native/platform behavior; restore mandatory Actions via account owner without retry loops; reconcile stack/live provenance before release."
+}

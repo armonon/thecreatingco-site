@@ -1,0 +1,6 @@
+{
+  "command": "npm run build:netlify",
+  "exit_code": 1,
+  "elapsed_seconds": 2.885037899017334,
+  "scope": "Next app and service worker only; not Netlify plugin/functions assembly"
+}

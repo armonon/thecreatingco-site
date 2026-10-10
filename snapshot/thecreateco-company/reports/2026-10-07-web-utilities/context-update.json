@@ -1,0 +1,30 @@
+{
+  "revenue_strategy": {
+    "source": "REVENUE_DIRECTIVE.md",
+    "report": "reports/revenue-2026-10-07/README.md",
+    "paths": "data/revenue/paths.json",
+    "dashboard": "REVENUE_DASHBOARD.md",
+    "experiments": "data/revenue/experiments.json",
+    "current_revenue_baseline_usd": 0,
+    "baseline_evidence": "Founder reported 2026-10-07; ledger not yet available",
+    "next_milestone": "First $1000 verified company revenue; one-time services separate from MRR",
+    "weekly_objective": "Qualify and observe one narrow Glyph first-font outcome; identify repeated additional value. E02 prepared, not launched; no paid offer yet.",
+    "pricing_status": "New prices internal hypotheses",
+    "payment_status": "SQUARE_SELECTED; paid listings held for product readiness; agent owns automated fulfillment",
+    "payment_provider": "Square",
+    "payment_setup": "data/revenue/square-setup.md",
+    "payment_decision_source": "Discord #millions message 1557568686842454037",
+    "execution_mode": "Autonomous; no founder-operated listing or product-selection workflow",
+    "paid_software_candidate": null,
+    "owner_correction_source": "Discord #millions 1557584649482665997",
+    "current_research_focus": {
+      "primary": "Glyph E02 first-font activation and additional-value validation",
+      "secondary": "Split real quality/performance/lifecycle benchmark",
+      "experimental": "Captions research behind current owner; no new build",
+      "report": "/Users/agentsattari/thecreateco-company/reports/2026-10-07-web-utilities/README.md",
+      "customer_validation": "NOT_RUN",
+      "source": "Discord #millions 1557600150824812625"
+    }
+  },
+  "next_strategic_move": "Preserve active release owners. Revenue research: Glyph first-font validation via P08/W03/M03; Split benchmark second. Existing free core stays free; Square waits for one qualified paid offer and automated fulfillment. No founder setup chores."
+}

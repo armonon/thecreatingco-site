@@ -1,0 +1,16 @@
+{
+  "observed_at": "2026-10-10T01:12:16.694035+00:00",
+  "artifact_sha256": "50144438d15cb1c5af8eb6362d3544df2570c97eec570a0d215e03a306c05b1f",
+  "checks": {
+    "explicit_internal_send_hold": true,
+    "correct_alpha_url": true,
+    "limited_destination_evidence": true,
+    "backup_and_reopen_safety": true,
+    "followup_gates": true,
+    "existing_outcome_system_unknowns": true,
+    "five_feedback_questions": true,
+    "consent_no_recording_default": true
+  },
+  "all_pass": true,
+  "limits": "Structural checks only; Sol separately reviewed evidence and wording. No participant or delivery validation."
+}

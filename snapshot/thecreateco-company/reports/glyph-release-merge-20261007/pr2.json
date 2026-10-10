@@ -1,0 +1,12 @@
+{
+  "pr": 2,
+  "request_id": "f0256c6d-73b9-4059-8548-2a23f80eb103",
+  "expected_head": "a3e50fa6d5fabdf499fd1592085c54d9710e42dc",
+  "state": "MERGED",
+  "method": "merge",
+  "bypass_rules": false,
+  "base": "main",
+  "review": "Parent separate OpenAI context reviewed recovery/strictvalidation/a11y and preserved live-overlay CSS; child exact-head qualification passed.",
+  "merge_sha": "0feefc7785d356f1862f23a96162bfd69f4d872e",
+  "head_verified": true
+}

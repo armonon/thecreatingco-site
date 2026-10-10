@@ -1,0 +1,51 @@
+{
+  "task_id": "CORE-SP-WORKFLOW-001",
+  "title": "Qualify complete generated-media golden workflow in Lite and Desktop Pro",
+  "product": "scenepilot",
+  "area": "workflow_gap",
+  "category": "workflow_gap",
+  "workstream": "CORE_PRODUCT_LAB",
+  "severity": "P2",
+  "scores": {
+    "impact": 9,
+    "severity": 7,
+    "workflow_importance": 10,
+    "competitive_value": 8,
+    "release_importance": 10,
+    "confidence": 10,
+    "effort": 7,
+    "risk": 3,
+    "user_value": 10
+  },
+  "dependencies": [],
+  "status": "BLOCKED",
+  "model": "gpt-6-luna",
+  "expected_value": "Flagship golden-workflow reliability; scores are planning estimates, not health metrics.",
+  "test_requirements": "Reproduce on isolated exact source; preserve baseline/fixed evidence, appropriate build/tests and golden path; source reading is not interactive sign-off.",
+  "source_evidence": [
+    "Brief requires Import→Edit→Composite/Animate→Audio→Save→Reopen→Export.",
+    "Historical docs/release-today-0.1.16.md marks multiple full UI, relink, recovery, export-picker, and perceptual checks NOT VERIFIED.",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/golden-projects/scenepilot.md is a recipe only; fixture not created or run."
+  ],
+  "next_action": "Resume remaining UI-authored Lite/Pro audiovisual recipe and exact independent/perceptual comparisons from dated fixtures; full completion requires signed packaged Pro/native chooser qualification. Mandatory hosted/reviewed stack gates before landing. No personal-signoff gate.",
+  "priority": 81.8182,
+  "priority_basis": "ESTIMATE: impact × user_value × confidence / (effort + risk + 1)",
+  "campaign": null,
+  "risk": 3,
+  "created_at": "2026-10-08T00:02:44+00:00",
+  "started_at": "2026-10-08T07:40:20+00:00",
+  "completed_at": null,
+  "result": "Reviewed Lite menu clipping repair c26d518 pushed PR95 on PR94;1095tests/build/check,6 rebuiltElectron checks,2 menu viewports,4 Lite lifecycle checks PASS;three baseline desktop12s composite runs/42 independent sampled output checks PASS. Full golden remains unqualified.",
+  "attempts": 2,
+  "owner": null,
+  "lease_until": null,
+  "evidence_sources": [
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-initial.md",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/products/scenepilot.json"
+  ],
+  "result_evidence": {
+    "path": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-golden-20261008T0740/README.md",
+    "recorded_at": "2026-10-08T08:07:32+00:00",
+    "bytes": 7644
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "observed_at": "2026-10-09T20:11:52.280290+00:00",
+  "exit_code": 0,
+  "checks": {
+    "founder_baseline_unchanged": "PASS",
+    "ten_financial_metrics_null_in_authoritative_context_and_dashboard": "PASS",
+    "ten_explicit_source_blocker_statuses": "PASS",
+    "Square_provider_preserved": "PASS"
+  },
+  "commands": {
+    "source_inventory_and_patch_generation": 0,
+    "company.py update-context": 0,
+    "data/revenue/dashboard.py": 0,
+    "post_update_assertions": 0
+  }
+}

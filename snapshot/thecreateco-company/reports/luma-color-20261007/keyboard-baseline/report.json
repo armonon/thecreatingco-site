@@ -1,0 +1,46 @@
+{
+  "source_sha": "772f082581e06e7a5783aff35ed859aace890394",
+  "source_status": "M app/engine/document.ts\n M app/engine/gl-renderer.ts\n M app/engine/precision-renderer.ts\n M app/engine/studio.ts\n M app/studio/page.tsx\n M tests/transform-coordinates.test.ts\n?? build/qualify-raster-color.mjs\n?? docs/release/raster-color-qualification.md\n?? tests/raster-export-fidelity.test.ts",
+  "diff_sha256": "c30d85092101981a20e8cf9c412abc111e1dfeaa7401e9e2947759d5b7c55e6b",
+  "harness_sha256": "4f37760a2d7b00c5645a9b50a53bb08e63f369a780ea70fcba18a1473fc4cdad",
+  "observed_at": "2026-10-08T03:24:08.064Z",
+  "node": "v22.23.2",
+  "checks": [
+    {
+      "name": "retained-gradient: independent decode versus imported bitmap",
+      "metrics": {
+        "maxRGB": 0,
+        "maxAlpha": 0,
+        "changedChannels": 0
+      },
+      "fixture_sha256": "d3e17c1546af1f7bbd6e13c137dd23cebea29b5db0262f8eb919de0bf8380112",
+      "status": "PASS"
+    },
+    {
+      "name": "retained-gradient: first CPU PNG",
+      "metrics": {
+        "maxRGB": 0,
+        "maxAlpha": 0,
+        "changedChannels": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "retained-gradient: repeat CPU PNG",
+      "metrics": {
+        "maxRGB": 0,
+        "maxAlpha": 0,
+        "changedChannels": 0
+      },
+      "status": "PASS"
+    }
+  ],
+  "pass": false,
+  "reference": "Independent browser decode to an sRGB canvas; RGB tolerance 2, alpha exact. PNGs also compared with independent native canvas decode. Invisible RGB is canonicalized by canvas, not claimed preserved.",
+  "scope": "Actual file-input import, PNG download twice, .luma save/download/confirm, actual close/reopen and PNG download. Synthetic opaque, partial-alpha, transparent and embedded matrix/TRC ICC images. CPU desktop shell in a local browser; not native, OS color calibration, every ICC profile or deployment qualification.",
+  "browser": "154.0.8037.98",
+  "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n+ actual - expected\n\n+ 'Keep document unsaved'\n- 'I verified the saved file'\n",
+  "stack": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n+ actual - expected\n\n+ 'Keep document unsaved'\n- 'I verified the saved file'\n\n    at <anonymous> (/Users/agentsattari/code/company-worktrees/luma-color-20261007/build/qualify-raster-color.mjs:83:14)",
+  "body": "Skip to canvas\nL\nLuma\nretained-gradient\nSaving project…\nWorkspace\nFit\n50.59%\nExport\nRadial Warp\nretained-gradient\nFit\nGuides\nFocus\nDunes\n×\nretained-gradient\n×\n＋\npx\n0\n200\n400\n600\n800\n1000\n1200\n1400\n1600\n1800\n2000\n0\n200\n400\n600\n800\n1000\n1200\n1400\n⌜\nRadial warp\nProperties\nNeural Lab\nRadial warp\nTRANSFORM\nPanel\nAuto\nCampaign\nDocument & color\nChannels\nComps & artboards\nPlugins & assets\nSelection\nNeural Lab\nActions\nretained-gradient\nraster · visible\nQuick controls\nSpace\nTool features\nTap to pin · hold and drag to pan\nSpatial & Form Studio\nTransform & geometry\nPRECISION\n\nDrag directly on the document.\n\nInfluence\n360px\nX\nY\nScale X\nScale Y\nSkew\nRotation °\nReset transform\nLayers\nLayers 1\n＋ Adjustment\nTone\nCurves\nLevels\nHue / Saturation\nBlack & White\nColor Balance\nPhoto Filter\nChannel Mixer\nColor Lookup\nGradient Map\nRelight Field\nThreshold\nPosterize\nInvert\nretained-gradient\nRaster\nfx\nOpacity\n100%\nNormal\nDissolve\nDarken\nMultiply\nColor Burn\nLinear Burn\nDarker Color\nLighten\nScreen\nColor Dodge\nLinear Dodge (Add)\nLighter Color\nOverlay\nSoft Light\nHard Light\nVivid Light\nLinear Light\nPin Light\nHard Mix\nDifference\nExclusion\nSubtract\nDivide\nHue\nSaturation\nColor\nLuminosity\nLuma Desktop\n2,048 × 1,536 px\n8-bit · srgb · CPU\nRadial warp\nP\n50.59%\nLOCAL\nExported PNG\nCheck your downloaded project\n\nThe download of retained-gradient.luma was started. Check Files or Downloads before confirming. Your browser cannot tell Luma whether the file was saved.\n\nUntil you confirm, this document stays marked as unsaved.\n\nKeep document unsaved\nI verified the saved file",
+  "errors": []
+}

@@ -1,0 +1,160 @@
+{
+  "product_id": "scenepilot",
+  "completion_observations": {
+    "candidate_sha": "c7d2b4fc973861eba785f26e5f607671ac22deb4",
+    "observed_at": "2026-10-08T06:21:05.981721+00:00",
+    "supported_platforms": [
+      "Web",
+      "macOS Desktop Pro"
+    ],
+    "gates": {
+      "core_workflow": {
+        "status": "UNVERIFIED",
+        "source_sha": "a47417bc4b3390bc30697cc2b7d3d573ad14e4d6",
+        "coverage_complete": false,
+        "observed_at": "2026-10-08T03:48:34+00:00",
+        "summary": "Four reviewed primary workflow defects repaired/pushed PR93. Real import/insertion/Save/cold-reopen/mixed video+audio UI export subset passes; complete golden recipe unverified.",
+        "evidence": [
+          "/Users/agentsattari/thecreateco-company/reports/scenepilot-golden-release18/README.md",
+          "/Users/agentsattari/thecreateco-company/reports/scenepilot-golden-release18/exact-audio-head/receipt.json"
+        ]
+      },
+      "save_reopen_export": {
+        "status": "UNVERIFIED",
+        "source_sha": "c7d2b4fc973861eba785f26e5f607671ac22deb4",
+        "coverage_complete": false,
+        "observed_at": "2026-10-08T06:21:05.981721+00:00",
+        "summary": "Fullserialized journal/recovery and offline/relinked-save identity PASS with explicit added-track/source-path delta. No new export qualification; earlier a47417b export evidence remains candidate-specific. Full gate unverified.",
+        "evidence": [
+          "/Users/agentsattari/thecreateco-company/reports/scenepilot-recovery-20261008/README.md",
+          "/Users/agentsattari/thecreateco-company/reports/scenepilot-recovery-20261008/result.json",
+          "/Users/agentsattari/thecreateco-company/reports/scenepilot-recovery-20261008/source-build-receipt.json"
+        ]
+      },
+      "reliability_recovery": {
+        "status": "UNVERIFIED",
+        "source_sha": "c7d2b4fc973861eba785f26e5f607671ac22deb4",
+        "coverage_complete": false,
+        "observed_at": "2026-10-08T06:21:05.981721+00:00",
+        "summary": "Exact c7d2b4f actual development Electron completed-autosave SIGKILL/restart recovery, moved source offline-save/relink including favorite/beatMap, permission-denied preservation/retry6checks PASS; dedicated32MB ENOSPC atomic-helper PASS. Full packaged/main-source/UI ENOSPC/kill-during-write/platform/powerloss unverified.",
+        "evidence": [
+          "/Users/agentsattari/thecreateco-company/reports/scenepilot-recovery-20261008/README.md",
+          "/Users/agentsattari/thecreateco-company/reports/scenepilot-recovery-20261008/result.json",
+          "/Users/agentsattari/thecreateco-company/reports/scenepilot-recovery-20261008/source-build-receipt.json"
+        ]
+      },
+      "performance": {
+        "status": "UNVERIFIED",
+        "source_sha": "528899c8e69628738c861ede8937c0860a2292e6",
+        "coverage_complete": false,
+        "observed_at": "2026-10-08T02:41:22+00:00",
+        "summary": "Full release gate not qualified by this runtime-security checkpoint.",
+        "evidence": [
+          "/Users/agentsattari/thecreateco-company/reports/scenepilot-runtime-release18/README.md"
+        ]
+      },
+      "usability_accessibility": {
+        "status": "UNVERIFIED",
+        "source_sha": "528899c8e69628738c861ede8937c0860a2292e6",
+        "coverage_complete": false,
+        "observed_at": "2026-10-08T02:41:22+00:00",
+        "summary": "Full release gate not qualified by this runtime-security checkpoint.",
+        "evidence": [
+          "/Users/agentsattari/thecreateco-company/reports/scenepilot-runtime-release18/README.md"
+        ]
+      },
+      "responsive_behavior": {
+        "status": "UNVERIFIED",
+        "source_sha": "528899c8e69628738c861ede8937c0860a2292e6",
+        "coverage_complete": false,
+        "observed_at": "2026-10-08T02:41:22+00:00",
+        "summary": "Full release gate not qualified by this runtime-security checkpoint.",
+        "evidence": [
+          "/Users/agentsattari/thecreateco-company/reports/scenepilot-runtime-release18/README.md"
+        ]
+      },
+      "security_privacy": {
+        "status": "UNVERIFIED",
+        "source_sha": "528899c8e69628738c861ede8937c0860a2292e6",
+        "coverage_complete": false,
+        "observed_at": "2026-10-08T02:41:22+00:00",
+        "summary": "Runtime four high advisories fixed inPR91; compatibletoolingPR92 reduces29\u219216groups(8high8moderate). Remainingbraces/sprintf upstream latestaffected; exposure follow-up queued. No fullsecurityclear.",
+        "evidence": [
+          "/Users/agentsattari/thecreateco-company/reports/scenepilot-runtime-release18/README.md"
+        ]
+      },
+      "documentation_support": {
+        "status": "UNVERIFIED",
+        "source_sha": "528899c8e69628738c861ede8937c0860a2292e6",
+        "coverage_complete": false,
+        "observed_at": "2026-10-08T02:41:22+00:00",
+        "summary": "Full release gate not qualified by this runtime-security checkpoint.",
+        "evidence": [
+          "/Users/agentsattari/thecreateco-company/reports/scenepilot-runtime-release18/README.md"
+        ]
+      },
+      "tests": {
+        "status": "UNVERIFIED",
+        "source_sha": "c7d2b4fc973861eba785f26e5f607671ac22deb4",
+        "coverage_complete": false,
+        "observed_at": "2026-10-08T06:21:05.981721+00:00",
+        "summary": "Node22 types/lint, desktop renderer, productionbuild1095/1095units and6exact-head realElectron recovery checks PASS. Baseline metadata regression fails/fixed2tests pass. Required hosted/downstack and full platform requirements unresolved.",
+        "evidence": [
+          "/Users/agentsattari/thecreateco-company/reports/scenepilot-recovery-20261008/README.md",
+          "/Users/agentsattari/thecreateco-company/reports/scenepilot-recovery-20261008/result.json",
+          "/Users/agentsattari/thecreateco-company/reports/scenepilot-recovery-20261008/source-build-receipt.json"
+        ]
+      },
+      "supported_platforms": {
+        "status": "UNVERIFIED",
+        "source_sha": "528899c8e69628738c861ede8937c0860a2292e6",
+        "coverage_complete": false,
+        "observed_at": "2026-10-08T02:41:22+00:00",
+        "summary": "Full release gate not qualified by this runtime-security checkpoint.",
+        "evidence": [
+          "/Users/agentsattari/thecreateco-company/reports/scenepilot-runtime-release18/README.md"
+        ]
+      },
+      "critical_blockers": {
+        "status": "UNVERIFIED",
+        "source_sha": "528899c8e69628738c861ede8937c0860a2292e6",
+        "coverage_complete": false,
+        "observed_at": "2026-10-08T02:41:22+00:00",
+        "summary": "Complete critical/security/core-workflow triage not finished; do not infer absence.",
+        "evidence": [
+          "/Users/agentsattari/thecreateco-company/reports/scenepilot-runtime-release18/README.md"
+        ]
+      }
+    },
+    "deployment": {
+      "status": "PUSHED_PR94_OPEN_NOT_MERGED_NOT_DEPLOYED",
+      "url": "https://github.com/armonon/scenepilot-studio-badass/pull/94",
+      "source_sha": "c7d2b4fc973861eba785f26e5f607671ac22deb4",
+      "base": "codex/scenepilot-workflow-release18",
+      "mandatory_checks": "No check contexts reported at observation; not evidence of passing required checks."
+    },
+    "next_action": "Resume remaining packaged Pro/native chooser/missing-main-source and UI disk-pressure/kill-during-write qualification; preserve PR94\u2192PR93\u2192PR92\u2192PR91\u2192PR90 stack/mandatory gates. No personal review gate."
+  },
+  "release_readiness": "ALPHA / NOT QUALIFIED. Independently reviewed c7d2b4f pushed PR94 on PR93;1095tests/types/lint/build and six actualElectron recovery checks PASS. Packaged/fullgolden/platform/mandatory hosted/stack gates unresolved.",
+  "next_milestone": "Resume remaining packaged Pro/native chooser/missing-main-source and UI disk-pressure/kill-during-write qualification; preserve PR94\u2192PR93\u2192PR92\u2192PR91\u2192PR90 stack/mandatory gates. No personal review gate.",
+  "observed_at": "2026-10-08T06:21:05.981721+00:00",
+  "evidence_sources": [
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-initial.md",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/golden-projects/scenepilot.md",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-evidence/npm-test-build-and-suite.log",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-evidence/npm-ci-ignore-scripts.log",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-evidence/lifecycle-install-timeout.txt",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-evidence/initial-quick-tests-setup-failure.log",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-evidence/build-site.log",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-evidence/check-typescript-lint.log",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-evidence/performance-benchmark.log",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-evidence/npm-audit-production.json",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-evidence/accessibility-baseline-fail.log",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-evidence/accessibility-fix-pass.log",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-evidence/accessibility-fix-check.log",
+    "/Users/agentsattari/thecreateco-company/reports/2026-10-07-sp-security/report.md",
+    "/Users/agentsattari/thecreateco-company/reports/scenepilot-recovery-20261008/README.md",
+    "/Users/agentsattari/thecreateco-company/reports/scenepilot-recovery-20261008/result.json",
+    "/Users/agentsattari/thecreateco-company/reports/scenepilot-recovery-20261008/fix-review.md"
+  ]
+}

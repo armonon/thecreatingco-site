@@ -1,0 +1,26 @@
+{
+  "passed": true,
+  "savedLocks": 1,
+  "settings": {
+    "tempoFactor": 2,
+    "preset": "music-video",
+    "density": 0.5,
+    "seed": 2,
+    "length": "full",
+    "aspect": "16:9",
+    "performance": false,
+    "performanceTouched": false,
+    "brollMix": 0.25,
+    "faces": false,
+    "quality": 1,
+    "premiereRate": "auto",
+    "dropFrame": true,
+    "beatMarkers": "bars"
+  },
+  "musicEqual": true,
+  "locksEqual": true,
+  "wrongMediaRejectedWithoutMutation": true,
+  "renamedIdenticalMediaAccepted": true,
+  "videoExportDownloaded": true,
+  "errors": []
+}

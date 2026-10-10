@@ -1,0 +1,17 @@
+{
+  "startedAt": "2026-10-08T07:50:54.353Z",
+  "profile": "/Users/agentsattari/.openclaw/tmp/sp-lite-golden-VIGL1i",
+  "source": "c7d2b4fc973861eba785f26e5f607671ac22deb4",
+  "server": "Vite dev localhost:5189, not production artifact",
+  "checks": [],
+  "errors": [],
+  "limits": [
+    "One Browser Lite local-development run; no release qualification",
+    "Silent video export subset; full audio/composite golden recipe not claimed",
+    "Destination picker harnessed, actual OPFS handle"
+  ],
+  "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36",
+  "status": "FAIL",
+  "error": "page.evaluate: NotFoundError: Failed to execute 'transaction' on 'IDBDatabase': One of the specified object stores was not found.\n    at records (eval at evaluate (:311:30), <anonymous>:1:244)\n    at new Promise (<anonymous>)\n    at eval (eval at evaluate (:311:30), <anonymous>:1:200)\n    at async <anonymous>:337:30\n    at stored (/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-golden-20261008T0740/lite-workflow.mjs:4:43)\n    at save (/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-golden-20261008T0740/lite-workflow.mjs:5:44)\n    at /Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-golden-20261008T0740/lite-workflow.mjs:7:664",
+  "finishedAt": "2026-10-08T07:50:57.024Z"
+}

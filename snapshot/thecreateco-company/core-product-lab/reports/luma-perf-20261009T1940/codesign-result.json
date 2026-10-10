@@ -1,0 +1,12 @@
+{
+  "command": [
+    "codesign",
+    "--verify",
+    "--deep",
+    "--strict",
+    "--verbose=2",
+    "/Users/agentsattari/code/company-worktrees/luma-perf-20261009T1940/src-tauri/target/release/bundle/macos/Luma Studio.app"
+  ],
+  "exit_code": 0,
+  "signing": "ad-hoc; not Developer ID/notarization"
+}

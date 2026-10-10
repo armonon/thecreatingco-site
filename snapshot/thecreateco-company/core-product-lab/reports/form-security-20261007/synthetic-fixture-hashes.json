@@ -1,0 +1,20 @@
+[
+  {
+    "path": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-security-20261007/synthetic-fixtures/enclosure.form",
+    "bytes": 25691,
+    "sha256": "4602f2c61d132c715a10d67c9112a5c69bf453065092fcb4ec6143a82f009fe6",
+    "provenance": "Synthetic command-generated test project; no private input"
+  },
+  {
+    "path": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-security-20261007/synthetic-fixtures/buckle.form",
+    "bytes": 26890,
+    "sha256": "b0d081e91a32220daf7c71bb96a49c67d031059e064ca308e3c50325d8bcf7e5",
+    "provenance": "Synthetic command-generated test project; no private input"
+  },
+  {
+    "path": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-security-20261007/synthetic-fixtures/garment.form",
+    "bytes": 30664,
+    "sha256": "a9f738c2631c53ef1e0b0cc6fc3e8f937e2754fcc83cd9e7f0a1223e47b18d0c",
+    "provenance": "Synthetic command-generated test project; no private input"
+  }
+]

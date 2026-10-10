@@ -1,0 +1,7 @@
+{
+  "command": "npm run build:netlify",
+  "exit_code": 1,
+  "elapsed_seconds": 1.6116809844970703,
+  "environment_change": "external node_modules symlink replaced by private APFS clone; source unchanged",
+  "scope": "Next app and service worker only; not Netlify plugin/functions assembly"
+}

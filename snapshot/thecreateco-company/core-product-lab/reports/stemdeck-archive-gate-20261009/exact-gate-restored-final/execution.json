@@ -1,0 +1,12 @@
+{
+  "command": [
+    "/opt/homebrew/opt/node@22/bin/node",
+    "scripts/studio-release-gate.mjs"
+  ],
+  "cwd": "/Users/agentsattari/code/core-product-lab/stemdeck-archive-webkit",
+  "STUDIO_GATE_OUTPUT": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-archive-gate-20261009/exact-gate-restored-final",
+  "PLAYWRIGHT_BROWSERS_PATH": "/Users/agentsattari/code/core-product-lab/stemdeck-archive-webkit/node_modules/.cache/ms-playwright",
+  "startUtc": "2026-10-09T07:13:47.210803+00:00",
+  "endUtc": "2026-10-09T07:16:48.544832+00:00",
+  "exitCode": 1
+}

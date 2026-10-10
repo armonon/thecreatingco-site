@@ -1,0 +1,5 @@
+{
+  "command": "npm run lint",
+  "exit_code": 1,
+  "setup": "Moved generated ignored Netlify output directories to evidence storage after completed builds. Original artifact-contaminated lint log retained; lint rules/config/assertions unchanged."
+}

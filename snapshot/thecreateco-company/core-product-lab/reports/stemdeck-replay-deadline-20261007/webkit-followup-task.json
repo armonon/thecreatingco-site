@@ -1,0 +1,27 @@
+{
+  "task_id": "CORE-STEM-WEBKIT-REFERENCE-001",
+  "title": "Qualify WebKit captured reference decode and real UI lossless fallback",
+  "product": "stemdeck",
+  "area": "supported_platforms",
+  "category": "bug",
+  "workstream": "CORE_PRODUCT_LAB",
+  "severity": "P1",
+  "status": "QUEUED",
+  "model": "gpt-6.1-sol",
+  "scores": {
+    "impact": 8,
+    "user_value": 9,
+    "confidence": 8,
+    "effort": 5,
+    "risk": 3
+  },
+  "dependencies": [],
+  "expected_value": "Establish dependable browser capture/reopen without silently relying on an undecodable compressed reference. Preserve authoritative lossless safety chunks and original events.",
+  "test_requirements": "Owned generated sources only. Reproduce persistent WebKit 26.5 MediaRecorder native decode failure; collect actual MIME/bytes/ffprobe and bounded product decoder evidence. Verify actual public UI capture/lossless fallback/save/reopen/export before labeling a core blocker or claiming compatibility. Keep failed native case and ephemeral Blob limitation explicit. No physical inputs or real user files. Independent OpenAI review before any source push.",
+  "source_evidence": [
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/exact-platforms/report.json",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/webkit-storage-probe.json",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/webkit-persistent-storage-probe.json"
+  ],
+  "next_action": "Check active StemDeck owner; use isolated follow-up from reviewed candidate. Current replay repair remains local pending independent review, do not duplicate it. Start with actual recorder artifact and public UI fallback qualification, not a mock or native-test waiver."
+}

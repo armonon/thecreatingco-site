@@ -1,0 +1,10 @@
+{
+  "appId": "com.armonon.librarian",
+  "appName": "Librarian",
+  "webDir": "dist",
+  "backgroundColor": "#14110d",
+  "ios": {
+    "contentInset": "always",
+    "backgroundColor": "#14110d"
+  }
+}

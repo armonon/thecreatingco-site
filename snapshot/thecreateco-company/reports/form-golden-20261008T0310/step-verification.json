@@ -1,0 +1,23 @@
+{
+  "observed_at": "2026-10-08T03:16:50.135136+00:00",
+  "reader": "cadquery-ocp 7.8.1.1 native OCCT 7.8.1 (separate process/import path from application WASM OCCT3.8.1 package)",
+  "artifact": "reports/form-golden-20261008T0310/golden-bracket.step",
+  "sha256": "4e4950b4e41a158c546d2a6176b49ba71a03376303fd817d83c89ba36aaac05c",
+  "solids": 1,
+  "valid": true,
+  "bounds_mm": [
+    -55.0000001,
+    -10.0000001,
+    -1e-07,
+    -14.9999999,
+    30.0000001,
+    12.0000001
+  ],
+  "dimensions_mm": [
+    40.0000002,
+    40.0000002,
+    12.000000199999999
+  ],
+  "volume_mm3": 19199.999999999996,
+  "limitations": "Native reader, not FreeCAD recipient UI; synthetic single-body subset only"
+}

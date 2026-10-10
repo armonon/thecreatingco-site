@@ -1,0 +1,30 @@
+{
+  "observedAt": "2026-10-08T05:41:21.892439+00:00",
+  "source_sha": "a3e50fa6d5fabdf499fd1592085c54d9710e42dc",
+  "merged_main": "0feefc7785d356f1862f23a96162bfd69f4d872e",
+  "historical_published_deploy": "6ac702c6402f6654a7134732",
+  "scope": "Current index/runtime JS/CSS matched prior exact release manifest; not a new full provider manifest/deploy query",
+  "observations": [
+    {
+      "path": "/index.html",
+      "bytes": 2531,
+      "sha1": "e2038dda09410d13700a878303e6db798f0bd54d",
+      "expected": "e2038dda09410d13700a878303e6db798f0bd54d",
+      "matches": true
+    },
+    {
+      "path": "/assets/index-dvu7ypfe.js",
+      "bytes": 667478,
+      "sha1": "aed99d1497f0852b1fead283dd3870800238dec6",
+      "expected": "aed99d1497f0852b1fead283dd3870800238dec6",
+      "matches": true
+    },
+    {
+      "path": "/assets/index-dvkjzzcr.css",
+      "bytes": 10424,
+      "sha1": "ff8c66c9eb38f3084ef6d0fe333b0707144fce0f",
+      "expected": "ff8c66c9eb38f3084ef6d0fe333b0707144fce0f",
+      "matches": true
+    }
+  ]
+}

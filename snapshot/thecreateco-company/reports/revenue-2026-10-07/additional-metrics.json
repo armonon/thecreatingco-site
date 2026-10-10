@@ -1,0 +1,20 @@
+{
+  "metrics": {
+    "refunds": {
+      "value": null,
+      "source": null,
+      "period": null,
+      "observed_at": null,
+      "status": "UNVERIFIED",
+      "definition": "Recognized customer refunds in same currency/reporting interval, linked to revenue convention; do not subtract twice."
+    },
+    "direct_delivery_cost": {
+      "value": null,
+      "source": null,
+      "period": null,
+      "observed_at": null,
+      "status": "UNVERIFIED",
+      "definition": "Direct fulfillment labor, COGS, payment fees, subcontractors and delivery tools in matched interval; avoid double counting operating expense."
+    }
+  }
+}

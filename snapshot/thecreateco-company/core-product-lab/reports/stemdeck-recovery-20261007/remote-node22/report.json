@@ -1,0 +1,349 @@
+{
+  "environment": {
+    "node": "v22.23.3",
+    "platform": "linux",
+    "architecture": "x64",
+    "osRelease": "6.17.0-1022-azure",
+    "timezone": "UTC",
+    "logicalCpus": 4,
+    "totalMemoryBytes": 16766414848
+  },
+  "commit": "f6f061c6e463a552c287e883cbd7fc9bb3e0867e",
+  "lockfileSha256": "dcaaaaa496434e6e79f47c8bd0de97c7177191842bb9848c059c8178126c4048",
+  "configuration": {
+    "package.json": "3eba463d5cf0a29ed80cee2009501e5220e3b5256ab61be966746f5412370af0",
+    "vite.config.js": "2761a8b265ae80abd51d047327b3dc4badbf2c83261f754d38dea328673a9941",
+    "vite.qa.config.mjs": "21be34faca2acff42fa3ead5f3e90a5e217c77197396cabea778722335018e25",
+    "vitest.config.ts": "f9a64d7fe0bb3a879d9d7ffe38193cb662333cc7e8f20d21ee5f8e641d0eda3f",
+    "netlify.toml": "92445c11cc231f984e767acf57eb15ce168e6b89e9da35c987a57943e3edb73e",
+    ".github/workflows/build-deploy.yml": "0fc6e55c60b8c4a3e64786ff92b0661b113b66fc6d03e6271b40ac2c0df53890"
+  },
+  "browserConfiguration": {
+    "playwrightVersion": "1.62.1",
+    "executable": "/home/runner/.cache/ms-playwright/chromium-1234/chrome-linux64/chrome",
+    "version": "Google Chrome for Testing 151.0.7922.34",
+    "executableSha256": "0b20b130e7edd9dd51873be867761295fe0cfad490c2b9a64f95bd3cfc08fa71",
+    "revisions": [
+      {
+        "name": "chromium",
+        "revision": "1234",
+        "installByDefault": true,
+        "browserVersion": "151.0.7922.34",
+        "title": "Chrome for Testing"
+      },
+      {
+        "name": "chromium-headless-shell",
+        "revision": "1234",
+        "installByDefault": true,
+        "browserVersion": "151.0.7922.34",
+        "title": "Chrome Headless Shell"
+      },
+      {
+        "name": "chromium-tip-of-tree",
+        "revision": "1433",
+        "installByDefault": false,
+        "browserVersion": "151.0.7893.0",
+        "title": "Chrome Canary for Testing"
+      },
+      {
+        "name": "chromium-tip-of-tree-headless-shell",
+        "revision": "1433",
+        "installByDefault": false,
+        "browserVersion": "151.0.7893.0",
+        "title": "Chrome Canary Headless Shell"
+      }
+    ],
+    "headless": true,
+    "args": [
+      "--mute-audio",
+      "--autoplay-policy=no-user-gesture-required"
+    ],
+    "audioOrigin": "http://127.0.0.1:4192",
+    "builtUiOrigin": "http://127.0.0.1:4193"
+  },
+  "preflight": {
+    "cleanTree": true,
+    "initialStatus": "",
+    "disk": {
+      "seconds": 120,
+      "sampleRate": 48000,
+      "channels": 10,
+      "copies": 3,
+      "recordingBytes": 691200000,
+      "reserveBytes": 2147483648,
+      "requiredBytes": 2838683648,
+      "path": "/home/runner/work/_temp/stemdeck-release-qa",
+      "availableBytes": 90460049408,
+      "pass": true,
+      "note": "OS capacity check, not a browser quota reservation. Recheck browser quota and target volume before physical recording."
+    }
+  },
+  "sourceHash": "682c8b8e2c1d8dc30da701eb1d4f6cfb91e806e2e15169d2471c15f818d4436a",
+  "unchanged": true,
+  "at": "2026-10-08T02:24:30.710Z",
+  "softwarePassed": true,
+  "audioChecked": true,
+  "builtArtifactUiChecked": true,
+  "releaseApproved": false,
+  "results": [
+    {
+      "name": "matrix",
+      "status": 0,
+      "seconds": 0.04,
+      "hostBefore": {
+        "loadAverage": [
+          0.52,
+          0.28,
+          0.13
+        ],
+        "freeMemoryBytes": 14856040448
+      },
+      "hostAfter": {
+        "loadAverage": [
+          0.52,
+          0.28,
+          0.13
+        ],
+        "freeMemoryBytes": 14861549568
+      }
+    },
+    {
+      "name": "lint",
+      "status": 0,
+      "seconds": 23.896,
+      "hostBefore": {
+        "loadAverage": [
+          0.52,
+          0.28,
+          0.13
+        ],
+        "freeMemoryBytes": 14861549568
+      },
+      "hostAfter": {
+        "loadAverage": [
+          0.72,
+          0.35,
+          0.15
+        ],
+        "freeMemoryBytes": 15447543808
+      }
+    },
+    {
+      "name": "unit",
+      "status": 0,
+      "seconds": 368.078,
+      "hostBefore": {
+        "loadAverage": [
+          0.72,
+          0.35,
+          0.15
+        ],
+        "freeMemoryBytes": 15447543808
+      },
+      "hostAfter": {
+        "loadAverage": [
+          1.65,
+          1.32,
+          0.67
+        ],
+        "freeMemoryBytes": 15133888512
+      }
+    },
+    {
+      "name": "types",
+      "status": 0,
+      "seconds": 5.522,
+      "hostBefore": {
+        "loadAverage": [
+          1.65,
+          1.32,
+          0.67
+        ],
+        "freeMemoryBytes": 15133888512
+      },
+      "hostAfter": {
+        "loadAverage": [
+          1.92,
+          1.39,
+          0.7
+        ],
+        "freeMemoryBytes": 15356432384
+      }
+    },
+    {
+      "name": "meter",
+      "status": 0,
+      "seconds": 17.624,
+      "hostBefore": {
+        "loadAverage": [
+          1.92,
+          1.39,
+          0.7
+        ],
+        "freeMemoryBytes": 15356432384
+      },
+      "hostAfter": {
+        "loadAverage": [
+          1.66,
+          1.36,
+          0.7
+        ],
+        "freeMemoryBytes": 15542169600
+      }
+    },
+    {
+      "name": "tempo",
+      "status": 0,
+      "seconds": 0.281,
+      "hostBefore": {
+        "loadAverage": [
+          1.66,
+          1.36,
+          0.7
+        ],
+        "freeMemoryBytes": 15542169600
+      },
+      "hostAfter": {
+        "loadAverage": [
+          1.66,
+          1.36,
+          0.7
+        ],
+        "freeMemoryBytes": 15520686080
+      }
+    },
+    {
+      "name": "build",
+      "status": 0,
+      "seconds": 15.579,
+      "hostBefore": {
+        "loadAverage": [
+          1.66,
+          1.36,
+          0.7
+        ],
+        "freeMemoryBytes": 15520686080
+      },
+      "hostAfter": {
+        "loadAverage": [
+          1.51,
+          1.34,
+          0.71
+        ],
+        "freeMemoryBytes": 15098486784
+      }
+    },
+    {
+      "name": "prerender",
+      "status": 0,
+      "seconds": 3.554,
+      "hostBefore": {
+        "loadAverage": [
+          1.51,
+          1.34,
+          0.71
+        ],
+        "freeMemoryBytes": 15098486784
+      },
+      "hostAfter": {
+        "loadAverage": [
+          1.47,
+          1.33,
+          0.71
+        ],
+        "freeMemoryBytes": 15259193344
+      }
+    },
+    {
+      "name": "service-worker",
+      "status": 0,
+      "seconds": 0.078,
+      "hostBefore": {
+        "loadAverage": [
+          1.47,
+          1.33,
+          0.71
+        ],
+        "freeMemoryBytes": 15259193344
+      },
+      "hostAfter": {
+        "loadAverage": [
+          1.47,
+          1.33,
+          0.71
+        ],
+        "freeMemoryBytes": 15302139904
+      }
+    },
+    {
+      "name": "seo",
+      "status": 0,
+      "seconds": 3.181,
+      "hostBefore": {
+        "loadAverage": [
+          1.47,
+          1.33,
+          0.71
+        ],
+        "freeMemoryBytes": 15302139904
+      },
+      "hostAfter": {
+        "loadAverage": [
+          1.47,
+          1.33,
+          0.71
+        ],
+        "freeMemoryBytes": 15217025024
+      }
+    },
+    {
+      "name": "browser",
+      "status": 0,
+      "seconds": 254.653,
+      "hostBefore": {
+        "loadAverage": [
+          1.47,
+          1.33,
+          0.71
+        ],
+        "freeMemoryBytes": 15217025024
+      },
+      "hostAfter": {
+        "loadAverage": [
+          1.58,
+          1.46,
+          0.93
+        ],
+        "freeMemoryBytes": 15213580288
+      }
+    },
+    {
+      "name": "soak",
+      "status": 0,
+      "seconds": 134.798,
+      "hostBefore": {
+        "loadAverage": [
+          1.58,
+          1.46,
+          0.93
+        ],
+        "freeMemoryBytes": 15213580288
+      },
+      "hostAfter": {
+        "loadAverage": [
+          0.86,
+          1.21,
+          0.9
+        ],
+        "freeMemoryBytes": 15538618368
+      }
+    }
+  ],
+  "output": "/home/runner/work/_temp/stemdeck-release-qa",
+  "artifact": {
+    "algorithm": "sha256-path-size-content-v1",
+    "sha256": "bd3fc0b7238c29aa7977b7bdc5466e3e178af923f533c8d0e0105ecc3cf1a88f",
+    "files": 548,
+    "bytes": 229482607
+  }
+}

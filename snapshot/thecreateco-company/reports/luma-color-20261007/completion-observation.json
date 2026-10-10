@@ -1,0 +1,52 @@
+{
+  "observed_at": "2026-10-08T03:31:42.173984+00:00",
+  "source_sha": {
+    "status": "PASS",
+    "value": "d4e722330e65a260badc475f53a7a176ccfe7e57",
+    "evidence": "/Users/agentsattari/thecreateco-company/reports/luma-color-20261007/pr-state.json"
+  },
+  "core_workflow": {
+    "status": "UNVERIFIED",
+    "details": "CPU color and three real raster import/save/close/reopen/export cases pass; broader layered/masked/adjusted golden remains unverified.",
+    "evidence": [
+      "/Users/agentsattari/thecreateco-company/reports/luma-color-20261007/exact-browser/report.json"
+    ]
+  },
+  "tests": {
+    "status": "PASS",
+    "details": "Local exact clean head:1393 engine pass/10skip, rendered4, types/strict+full lint/three builds, production audit0; hosted/native gates NOT covered.",
+    "evidence": [
+      "/Users/agentsattari/thecreateco-company/reports/luma-color-20261007/exact-web-gates.json",
+      "/Users/agentsattari/thecreateco-company/reports/luma-color-20261007/exact-browser/report.json"
+    ]
+  },
+  "platforms": {
+    "status": "UNVERIFIED",
+    "details": "Chrome154 macOS local desktop shell subset PASS; native/GPU/other browser/OS/physical platforms not qualified.",
+    "evidence": [
+      "/Users/agentsattari/thecreateco-company/reports/luma-color-20261007/exact-browser/report.json"
+    ]
+  },
+  "documentation": {
+    "status": "PASS",
+    "details": "Source-controlled reproduction and precision/save behavior documented narrowly; broader release documentation not qualified.",
+    "evidence": [
+      "/Users/agentsattari/thecreateco-company/reports/luma-color-20261007/README.md"
+    ]
+  },
+  "critical_blockers": {
+    "status": "BLOCKED",
+    "details": "All three mandatory hosted jobs0steps, account payments/spending. Remaining native/platform/golden/source-live gates; product not complete.",
+    "evidence": [
+      "/Users/agentsattari/thecreateco-company/reports/luma-color-20261007/ci-jobs.json",
+      "/Users/agentsattari/thecreateco-company/reports/luma-color-20261007/ci-annotations.json"
+    ]
+  },
+  "deployment": {
+    "status": "UNVERIFIED",
+    "details": "PR7 open abovePR6; no merge/deployment; production source unresolved.",
+    "evidence": [
+      "/Users/agentsattari/thecreateco-company/reports/luma-color-20261007/pr-state.json"
+    ]
+  }
+}

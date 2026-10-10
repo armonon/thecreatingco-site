@@ -1,0 +1,12 @@
+{
+  "name": "config-validate",
+  "command": [
+    "openclaw",
+    "config",
+    "validate"
+  ],
+  "started_at": "2026-10-09T06:51:31.288288+00:00",
+  "finished_at": "2026-10-09T06:51:34.088077+00:00",
+  "exit_code": 0,
+  "output": "Config valid: ~/.openclaw/openclaw.json\n"
+}

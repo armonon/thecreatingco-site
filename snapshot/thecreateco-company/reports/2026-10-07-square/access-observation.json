@@ -1,0 +1,22 @@
+{
+  "observed_at": "2026-10-08T01:45:19.962399+00:00",
+  "provider": "Square",
+  "url": "https://app.squareup.com/login?return_to=%2Fdashboard",
+  "page_title": "Just a moment...",
+  "visible_state": "Performing security verification",
+  "account_access": "NOT_ESTABLISHED; existing/new account choice pending",
+  "actions_completed": [
+    "Owner provider preference persisted",
+    "Existing payment task retargeted instead of duplicated",
+    "Digital item/fulfillment setup and nonpublishable catalog draft prepared"
+  ],
+  "not_performed": [
+    "No credentials entered",
+    "No account created",
+    "No catalog mutation",
+    "No checkout/payment link",
+    "No payment",
+    "No delivery email",
+    "No new paid integration"
+  ]
+}

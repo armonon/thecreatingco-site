@@ -1,0 +1,16 @@
+{
+  "product_id": "luma",
+  "high_depth_documentation": {
+    "observed_at": "2026-10-09T15:42:53.142827+00:00",
+    "source_sha": "30bea20f862c4302887b79b89f364f2d7bdf5710",
+    "baseline_sha": "8c15f8537c1176b7d4c0076182b7501c92f714b5",
+    "report": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/luma-high-depth-doc-20261009T1540/README.md",
+    "pr": "https://github.com/armonon/luma-studio/pull/10",
+    "tests_passed": 51,
+    "tests_failed": 0,
+    "status": "DOCUMENTATION_PUSHED_DRAFT_CI_BILLING_BLOCKED",
+    "full_golden": "unqualified",
+    "independent_review": "not run; documentation-only scope",
+    "deployed": false
+  }
+}

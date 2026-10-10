@@ -1,0 +1,266 @@
+{
+  "startedAt": "2026-10-08T04:03:44.516Z",
+  "host": {
+    "loadAverage": [
+      19.54150390625,
+      17.8837890625,
+      15.623046875
+    ],
+    "freeMemoryBytes": 2204762112
+  },
+  "browser": "151.0.7922.34",
+  "profile": "/Users/agentsattari/.openclaw/tmp/stemdeck-fourdeck-GAaFjR",
+  "moduleUrls": {
+    "performancePlayer": "http://127.0.0.1:4291/src/utils/performancePlayer.js",
+    "windowedGrainPlayer": "http://127.0.0.1:4291/src/utils/windowedGrainPlayer.js",
+    "grainSchedule": "http://127.0.0.1:4291/src/utils/grainSchedule.js"
+  },
+  "diagnostics": {
+    "failures": [],
+    "slowCalls": [],
+    "longTasks": [],
+    "stages": [
+      {
+        "method": "prepare",
+        "at": 1670.0999999977648,
+        "duration": 474.30000000074506,
+        "audioNow": 1.28
+      },
+      {
+        "method": "play",
+        "at": 2144.39999999851,
+        "duration": 35.69999999925494,
+        "base": 1.8066666666666666,
+        "audioNow": 1.312
+      }
+    ],
+    "controls": [
+      {
+        "method": "scheduleControl",
+        "at": 2176.599999997765,
+        "type": "setProjectTempo",
+        "eventTime": 0.005333333333333634,
+        "scheduledAt": 1.8066666666666666,
+        "audioNow": 1.312,
+        "duration": 0.10000000149011612
+      },
+      {
+        "method": "scheduleControl",
+        "at": 2176.800000000745,
+        "type": "deckTransport",
+        "eventTime": 0.2629999999999999,
+        "scheduledAt": 2.0696666666666665,
+        "audioNow": 1.312,
+        "duration": 3
+      },
+      {
+        "method": "scheduleControl",
+        "at": 2179.800000000745,
+        "type": "setDeckFader",
+        "eventTime": 0.34133333333333304,
+        "scheduledAt": 2.248,
+        "audioNow": 1.312,
+        "duration": 0.09999999776482582
+      },
+      {
+        "method": "scheduleControl",
+        "at": 2179.89999999851,
+        "type": "setDeckFilter",
+        "eventTime": 0.34133333333333304,
+        "scheduledAt": 2.248,
+        "audioNow": 1.312,
+        "duration": 0
+      },
+      {
+        "method": "scheduleControl",
+        "at": 2179.89999999851,
+        "type": "setDeckFx",
+        "eventTime": 0.34133333333333304,
+        "scheduledAt": 2.248,
+        "audioNow": 1.312,
+        "duration": 0
+      },
+      {
+        "method": "scheduleControl",
+        "at": 2179.89999999851,
+        "type": "setDeckFader",
+        "eventTime": 0.34133333333333304,
+        "scheduledAt": 2.248,
+        "audioNow": 1.312,
+        "duration": 0
+      },
+      {
+        "method": "scheduleControl",
+        "at": 2179.89999999851,
+        "type": "setDeckFilter",
+        "eventTime": 0.34133333333333304,
+        "scheduledAt": 2.248,
+        "audioNow": 1.312,
+        "duration": 0
+      },
+      {
+        "method": "scheduleControl",
+        "at": 2179.89999999851,
+        "type": "setDeckFx",
+        "eventTime": 0.34133333333333304,
+        "scheduledAt": 2.248,
+        "audioNow": 1.312,
+        "duration": 0
+      },
+      {
+        "method": "scheduleControl",
+        "at": 2180,
+        "type": "setDeckFader",
+        "eventTime": 0.34133333333333304,
+        "scheduledAt": 2.248,
+        "audioNow": 1.312,
+        "duration": 0
+      },
+      {
+        "method": "scheduleControl",
+        "at": 2180,
+        "type": "setDeckFilter",
+        "eventTime": 0.34133333333333304,
+        "scheduledAt": 2.248,
+        "audioNow": 1.312,
+        "duration": 0
+      },
+      {
+        "method": "scheduleControl",
+        "at": 2180,
+        "type": "setDeckFx",
+        "eventTime": 0.34133333333333304,
+        "scheduledAt": 2.248,
+        "audioNow": 1.312,
+        "duration": 0
+      },
+      {
+        "method": "scheduleControl",
+        "at": 2180,
+        "type": "setDeckFader",
+        "eventTime": 0.34133333333333304,
+        "scheduledAt": 2.248,
+        "audioNow": 1.312,
+        "duration": 0
+      },
+      {
+        "method": "scheduleControl",
+        "at": 2180,
+        "type": "setDeckFilter",
+        "eventTime": 0.34133333333333304,
+        "scheduledAt": 2.248,
+        "audioNow": 1.312,
+        "duration": 0
+      },
+      {
+        "method": "scheduleControl",
+        "at": 2180,
+        "type": "setDeckFx",
+        "eventTime": 0.34133333333333304,
+        "scheduledAt": 2.248,
+        "audioNow": 1.312,
+        "duration": 0
+      },
+      {
+        "method": "scheduleControl",
+        "at": 2277.699999999255,
+        "type": "deckTransport",
+        "eventTime": 0.5936666666666666,
+        "scheduledAt": 2.400333333333333,
+        "audioNow": 1.4133333333333333,
+        "duration": 1.300000000745058
+      },
+      {
+        "method": "scheduleControl",
+        "at": 2757.300000000745,
+        "type": "deckTransport",
+        "eventTime": 1.0789999999999997,
+        "scheduledAt": 2.8856666666666664,
+        "audioNow": 1.8906666666666667,
+        "duration": 1.2999999970197678
+      },
+      {
+        "method": "scheduleControl",
+        "at": 3597.5,
+        "type": "deckTransport",
+        "eventTime": 1.9189999999999996,
+        "scheduledAt": 3.7256666666666667,
+        "audioNow": 2.7306666666666666,
+        "duration": 1
+      },
+      {
+        "method": "scheduleControl",
+        "at": 6386.5,
+        "type": "setLaneState",
+        "eventTime": 4.704,
+        "scheduledAt": 6.610666666666667,
+        "audioNow": 5.517333333333333,
+        "duration": 0.19999999925494194
+      },
+      {
+        "method": "scheduleControl",
+        "at": 6557.199999999255,
+        "type": "setCrossfaderCurve",
+        "eventTime": 4.88,
+        "scheduledAt": 6.786666666666667,
+        "audioNow": 5.688,
+        "duration": 0
+      },
+      {
+        "method": "scheduleControl",
+        "at": 6557.199999999255,
+        "type": "setCrossfader",
+        "eventTime": 4.88,
+        "scheduledAt": 6.786666666666667,
+        "audioNow": 5.688,
+        "duration": 0.10000000149011612
+      },
+      {
+        "method": "scheduleControl",
+        "at": 7266.599999997765,
+        "type": "setLaneState",
+        "eventTime": 5.586666666666667,
+        "scheduledAt": 7.493333333333333,
+        "audioNow": 6.397333333333333,
+        "duration": 0.10000000149011612
+      },
+      {
+        "method": "scheduleControl",
+        "at": 7756.699999999255,
+        "type": "deckTransport",
+        "eventTime": 6.076,
+        "scheduledAt": 7.882666666666666,
+        "audioNow": 6.888,
+        "duration": 0.3999999985098839
+      },
+      {
+        "method": "scheduleControl",
+        "at": 8316.699999999255,
+        "type": "deckTransport",
+        "eventTime": 6.6386666666666665,
+        "scheduledAt": 8.445333333333334,
+        "audioNow": 7.450666666666667,
+        "duration": 0.6000000014901161
+      },
+      {
+        "method": "scheduleControl",
+        "at": 8617.300000000745,
+        "type": "deckTransport",
+        "eventTime": 6.937333333333332,
+        "scheduledAt": 8.744,
+        "audioNow": 7.749333333333333,
+        "duration": 0.09999999776482582
+      },
+      {
+        "method": "scheduleControl",
+        "at": 8866.599999997765,
+        "type": "deckTransport",
+        "eventTime": 7.1933333333333325,
+        "scheduledAt": 9,
+        "audioNow": 8,
+        "duration": 0.6000000014901161
+      }
+    ]
+  },
+  "status": "Skip to workspace\nLibrary\nPerform\nArrange\nMixer\nPlay\nTempo\nBPM\nKey\nOff\nC\nDb\nD\nEb\nE\nF\nF#\nG\nAb\nA\nBb\nB\nSTEMDECK\nCapture\nInput inspector\nMaster\n−∞\nUI 0 ms\nTools\nSettings\nArrange\nFour Deck Actual Capture QA\nOpen performance in Arrange\nTake 1\nExport\nLayout\nImport audio\nSave project\nPlay\nStop\nImport audio\nAdd audio track\nAdd instrument\nEffects rack\nPiano roll\nBeat sequencer\nMore sources\nPOSITION\n1 : 1\n0:00.0\nFit project\nFit selection\nFollow playhead\nEditing & export\nLoop, locators & MIDI recording\nExport range & filename\n\nEdited performance printed, muted for comparison. Late control events (>25 ms): 0; worst 0.0 ms.\n\nTracks / bars\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\nDevices · 0 FX\nTrack options\nM\nS\n+ Audio\nMaster safety 0.0s\n5.00s\nMaster safety 5.0s\n2.15s\nDevices · 0 FX\nTrack options\nM\nS\n+ Audio\nDeck A · performed 0.0s\n5.00s\nDeck A · performed 5.0s\n2.15s\nDevices · 0 FX\nTrack options\nM\nS\n+ Audio\nDeck B · performed 0.0s\n5.00s\nDeck B · performed 5.0s\n2.15s\nDevices · 0 FX\nTrack options\nM\nS\n+ Audio\nDeck C · performed 0.0s\n5.00s\nDeck C · performed 5.0s\n2.15s\nDevices · 0 FX\nTrack options\nM\nS\n+ Audio\nDeck D · performed 0.0s\n5.00s\nDeck D · performed 5.0s\n2.15s\nDevices · 0 FX\nTrack options\nM\nS\n+ Audio\nDevices · 0 FX\nTrack options\nM\nS\n+ Audio\nDevices · 0 FX\nTrack options\nM\nS\n+ Audio\nFour Deck Actual Capture QA take 1.m4a\n7.25s\nDevices · 0 FX\nTrack options\nM\nS\n+ Audio\nA-fullMix\n5.81s\nDevices · 0 FX\nTrack options\nM\nS\n+ Audio\nA-drums.wav\n5.81s\nDevices · 0 FX\nTrack options\nM\nS\n+ Audio\nA-bass.wav\n5.81s\nDevices · 0 FX\nTrack options\nM\nS\n+ Audio\nA-music.wav\n5.81s\nDevices · 0 FX\nTrack options\nM\nS\n+ Audio\nA-vocals.wav\n5.81s\nDevices · 0 FX\nTrack options\nM\nS\n+ Audio\nB-fullMix\n6.04s\nDevices · 0 FX\nTrack options\nM\nS\n+ Audio\nB-drums.wav\n6.04s\nDevices · 0 FX\nTrack options\nM\nS\n+ Audio\nB-bass.wav\n6.04s\nDevices · 0 FX\nTrack options\nM\nS\n+ Audio\nB-music.wav\n6.04s\nDevices · 0 FX\nTrack options\nM\nS\n+ Audio\nB-vocals.wav\n6.04s\nDevices · 0 FX\nTrack options\nM\nS\n+ Audio\nC-fullMix\n5.86s\nDevices · 0 FX\nTrack options\nM\nS\n+ Audio\nC-drums.wav\n5.86s\nDevices · 0 FX\nTrack options\nM\nS\n+ Audio\nC-bass.wav\n5.86s\nDevices · 0 FX\nTrack options\nM\nS\n+ Audio\nC-music.wav\n5.86s\nDevices · 0 FX\nTrack options\nM\nS\n+ Audio\nC-vocals.wav\n5.86s\nDevices · 0 FX\nTrack options\nM\nS\n+ Audio\nD-fullMix\n5.27s\nDevices · 0 FX\nTrack options\nM\nS\n+ Audio\nD-drums.wav\n5.27s\nDevices · 0 FX\nTrack options\nM\nS\n+ Audio\nD-bass.wav\n5.27s\nDevices · 0 FX\nTrack options\nM\nS\n+ Audio\nD-music.wav\n5.27s\nDevices · 0 FX\nTrack options\nM\nS\n+ Audio\nD-vocals.wav\n5.27s\nDevices · 0 FX\nTrack options\nM\nS\n+ Audio\nMaster safety 0.0s\n4.58s\nMaster safety 5.0s\n2.68s\nKeep creating\nAudio or instruments.\nOne idea at a time.\nNew audio track\nNew instrument track\nClip\nDevices\nTrack automation\nPiano roll\nSequencer\nPerformance\nHide editor\nCaptured performance\nFour Deck Actual Capture QA take 1.m4a\nFour Deck Actual Capture QA take 1.m4a · 38 events\n\nPerformance Take · 37 enabled actions · Safety audio linked\n\nEditable in Arrange: Source clips · Source clip regions · Clips referencing retained source assets · Clip playback rate · Re-derived clip playback rates · Combined lane volume automation\n\nPrinted audio required: Deck filter · Deck / stem FX parameters · Historical master processing\n\nEvent controls below edit replay history, not necessarily arrangement devices. Keep the original print as the sound reference.\n\nFive-stage action support\nReplay limits\nAudition live-engine replay\nPrint edited performance\nBuild editable source replay\nRestore original events\nRebuild pads from edited events (synthesized noise may differ)\n\nBuilding editable sources creates new muted lanes. Original events and printed audio are kept. Compare before replacing the safety mix.\n\nLive-engine replay uses the original deck, stem and master processing. Printing runs in real time into recoverable WAV chunks. Legacy reverb, opening tails and captured pad edits have limitations; replay reports warnings and scheduling lateness.\n\nShow actions\nAll actions\nProject Tempo\ninitial State\nplay Deck\ndeck Transport\nDeck Fader\nPlayback Rate\nDeck Filter\nDeck Fx\nLane State\nCrossfader Curve\nCrossfader\npause Deck\nTime (s)\nsetProjectTempo\nEnabled\nEdit controls\nEvent values\nTime (s)\ninitialState\nEnabled\nEvent values\nTime (s)\nplayDeck\nEnabled\nEvent values\nTime (s)\ndeckTransport\nEnabled\nEdit controls\nEvent values\nTime (s)\nsetDeckFader\nEnabled\nEdit controls\nEvent values\nTime (s)\nsetPlaybackRate\nEnabled\nEdit controls\nEvent values\nTime (s)\nsetDeckFilter\nEnabled\nEdit controls\nEvent values\nTime (s)\nsetDeckFx\nEnabled\nEdit controls\nEvent values\nTime (s)\nsetDeckFader\nEnabled\nEdit controls\nEvent values\nTime (s)\nsetPlaybackRate\nEnabled\nEdit controls\nEvent values\nTime (s)\nsetDeckFilter\nEnabled\nEdit controls\nEvent values\nTime (s)\nsetDeckFx\nEnabled\nEdit controls\nEvent values\nTime (s)\nsetDeckFader\nEnabled\nEdit controls\nEvent values\nTime (s)\nsetPlaybackRate\nEnabled\nEdit controls\nEvent values\nTime (s)\nsetDeckFilter\nEnabled\nEdit controls\nEvent values\nTime (s)\nsetDeckFx\nEnabled\nEdit controls\nEvent values\nTime (s)\nsetDeckFader\nEnabled\nEdit controls\nEvent values\nTime (s)\nsetPlaybackRate\nEnabled\nEdit controls\nEvent values\nTime (s)\nsetDeckFilter\nEnabled\nEdit controls\nEvent values\nTime (s)\nsetDeckFx\nEnabled\nEdit controls\nEvent values\nTime (s)\nplayDeck\nEnabled\nEvent values\nTime (s)\ndeckTransport\nEnabled\nEdit controls\nEvent values\nTime (s)\nplayDeck\nEnabled\nEvent values\nTime (s)\ndeckTransport\nEnabled\nEdit controls\nEvent values\nTime (s)\nplayDeck\nEnabled\nEvent values\nTime (s)\ndeckTransport\nEnabled\nEdit controls\nEvent values\nTime (s)\nsetLaneState\nEnabled\nEdit controls\nEvent values\nTime (s)\nsetCrossfaderCurve\nEnabled\nEvent values\nTime (s)\nsetCrossfader\nEnabled\nEdit controls\nEvent values\nTime (s)\nsetLaneState\nEnabled\nEdit controls\nEvent values\nTime (s)\npauseDeck\nEnabled\nEvent values\nTime (s)\ndeckTransport\nEnabled\nEdit controls\nEvent values\nTime (s)\npauseDeck\nEnabled\nEvent values\nTime (s)\ndeckTransport\nEnabled\nEdit controls\nEvent values\nTime (s)\npauseDeck\nEnabled\nEvent values\nTime (s)\ndeckTransport\nEnabled\nEdit controls\nEvent values\nTime (s)\npauseDeck\nEnabled\nEvent values\nTime (s)\ndeckTransport\nEnabled\nEdit controls\nEvent values\nPrevious events\nPage 1 of 1\nNext events\nRecorded takes · add to arrangement\nArrange preview 2026.09.21.3 · Audio-clock playback · Live clip editing is under validation · Track stems are pre-master, not AI separation · Keep a portable project backup.\n\nAllow anonymous usage counts to help improve Sattari? No audio or form contents. Privacy choices\n\nNo thanks\nAllow counts"
+}

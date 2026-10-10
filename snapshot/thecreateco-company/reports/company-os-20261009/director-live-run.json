@@ -1,0 +1,43 @@
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:2069305d-6f38-41ba-b31c-a0fdbfdc7ea4:1791528644095:1",
+  "processInstanceId": "2e08a454-89fa-4e27-9e86-93d084a6d164",
+  "completed": true,
+  "status": "ok",
+  "completionStatus": "succeeded",
+  "run": {
+    "ts": 1791528744118,
+    "jobId": "2069305d-6f38-41ba-b31c-a0fdbfdc7ea4",
+    "action": "finished",
+    "status": "ok",
+    "completionStatus": "succeeded",
+    "summary": "COMPLETE — `OS-SCHEDULER-PROOF-20261009`\n\nModel: `openai/gpt-6.1-sol`; deterministic execution only.\n\n22 queue tests passed; config valid; six OpenAI Luna routes verified. Disk free: 63.02 GiB. Evidence saved and state refreshed. Product gates remain unqualified; no releases or external sends.",
+    "runId": "manual:2069305d-6f38-41ba-b31c-a0fdbfdc7ea4:1791528644095:1",
+    "runAtMs": 1791528644108,
+    "durationMs": 100010,
+    "nextRunAtMs": 1791529800000,
+    "model": "gpt-6.1-sol",
+    "provider": "openai",
+    "usage": {
+      "input_tokens": 36621,
+      "output_tokens": 2388,
+      "total_tokens": 255969,
+      "cache_read_tokens": 216960
+    },
+    "delivered": false,
+    "deliveryStatus": "not-requested",
+    "delivery": {
+      "intended": {
+        "channel": "last",
+        "to": null,
+        "source": "last"
+      },
+      "fallbackUsed": false,
+      "delivered": false
+    },
+    "sessionId": "583ddb29-6f39-455c-89d4-1fd3949a43fb",
+    "sessionKey": "agent:main:cron:2069305d-6f38-41ba-b31c-a0fdbfdc7ea4:run:583ddb29-6f39-455c-89d4-1fd3949a43fb",
+    "jobName": "thecreateco company director"
+  }
+}

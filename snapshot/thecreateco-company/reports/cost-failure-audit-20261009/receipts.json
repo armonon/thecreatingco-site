@@ -1,0 +1,575 @@
+{
+  "observed_at": "2026-10-09T17:11:09.862662+00:00",
+  "command_exit": 0,
+  "has_more": true,
+  "sanitized_model_receipts": [
+    {
+      "job_id": "8e672418-022e-4294-a77e-eb9fcaef28e8",
+      "at": "2026-10-09T17:07:00.012000+00:00",
+      "model": "gpt-6-luna",
+      "status": "ok",
+      "duration_ms": 19265,
+      "error_category": null
+    },
+    {
+      "job_id": "bb774619-5449-4f6c-ae0f-399e85ca8847",
+      "at": "2026-10-09T17:00:10.714000+00:00",
+      "model": "gpt-5.6-terra",
+      "status": "ok",
+      "duration_ms": 116925,
+      "error_category": null
+    },
+    {
+      "job_id": "43dc5580-e47c-4a4e-95d7-190263e6896a",
+      "at": "2026-10-09T16:51:02.034000+00:00",
+      "model": "gpt-6-luna",
+      "status": "ok",
+      "duration_ms": 24852,
+      "error_category": null
+    },
+    {
+      "job_id": "99398759-74b2-4cb3-a096-beb54e44ceb4",
+      "at": "2026-10-09T16:50:00.024000+00:00",
+      "model": "gpt-6-luna",
+      "status": "ok",
+      "duration_ms": 28059,
+      "error_category": null
+    },
+    {
+      "job_id": "43dc5580-e47c-4a4e-95d7-190263e6896a",
+      "at": "2026-10-09T16:21:01.993000+00:00",
+      "model": "gpt-6-luna",
+      "status": "ok",
+      "duration_ms": 35972,
+      "error_category": null
+    },
+    {
+      "job_id": "99398759-74b2-4cb3-a096-beb54e44ceb4",
+      "at": "2026-10-09T16:20:00.012000+00:00",
+      "model": "gpt-6-luna",
+      "status": "ok",
+      "duration_ms": 49290,
+      "error_category": null
+    },
+    {
+      "job_id": "e28ce23e-2691-4cee-a806-71bb3e3ae137",
+      "at": "2026-10-09T16:12:42.494000+00:00",
+      "model": "gpt-6-luna",
+      "status": "ok",
+      "duration_ms": 96928,
+      "error_category": null
+    },
+    {
+      "job_id": "2069305d-6f38-41ba-b31c-a0fdbfdc7ea4",
+      "at": "2026-10-09T16:10:00.019000+00:00",
+      "model": "gpt-6.1-sol",
+      "status": "ok",
+      "duration_ms": 131702,
+      "error_category": null
+    },
+    {
+      "job_id": "8e672418-022e-4294-a77e-eb9fcaef28e8",
+      "at": "2026-10-09T16:07:00.013000+00:00",
+      "model": "gpt-6-luna",
+      "status": "ok",
+      "duration_ms": 21637,
+      "error_category": null
+    },
+    {
+      "job_id": "18441c61-15d1-4a67-8234-900437818f26",
+      "at": "2026-10-09T16:05:00.016000+00:00",
+      "model": "gpt-6-luna",
+      "status": "ok",
+      "duration_ms": 92686,
+      "error_category": null
+    },
+    {
+      "job_id": "bb774619-5449-4f6c-ae0f-399e85ca8847",
+      "at": "2026-10-09T16:00:12.074000+00:00",
+      "model": "gpt-5.6-terra",
+      "status": "ok",
+      "duration_ms": 51144,
+      "error_category": null
+    },
+    {
+      "job_id": "d0d0df2e-14bd-444e-abd1-c189853fb494",
+      "at": "2026-10-09T16:00:00.017000+00:00",
+      "model": "gpt-6-luna",
+      "status": "ok",
+      "duration_ms": 59656,
+      "error_category": null
+    },
+    {
+      "job_id": "43dc5580-e47c-4a4e-95d7-190263e6896a",
+      "at": "2026-10-09T15:51:01.985000+00:00",
+      "model": "gpt-6-luna",
+      "status": "ok",
+      "duration_ms": 30621,
+      "error_category": null
+    },
+    {
+      "job_id": "99398759-74b2-4cb3-a096-beb54e44ceb4",
+      "at": "2026-10-09T15:50:00.016000+00:00",
+      "model": "gpt-6-luna",
+      "status": "ok",
+      "duration_ms": 59940,
+      "error_category": null
+    },
+    {
+      "job_id": "b98880fe-a5a5-410f-a7ca-7366239125d8",
+      "at": "2026-10-09T15:40:00.019000+00:00",
+      "model": "gpt-6.1-sol",
+      "status": "error",
+      "duration_ms": 206670,
+      "error_category": "billing"
+    },
+    {
+      "job_id": "a6ed3977-12d2-4d6d-9d67-f87a63394fdb",
+      "at": "2026-10-09T15:30:00.014000+00:00",
+      "model": "gpt-5.6-terra",
+      "status": "ok",
+      "duration_ms": 48413,
+      "error_category": null
+    },
+    {
+      "job_id": "43dc5580-e47c-4a4e-95d7-190263e6896a",
+      "at": "2026-10-09T15:20:59.759000+00:00",
+      "model": "gpt-6-luna",
+      "status": "ok",
+      "duration_ms": 12294,
+      "error_category": null
+    },
+    {
+      "job_id": "99398759-74b2-4cb3-a096-beb54e44ceb4",
+      "at": "2026-10-09T15:20:00.013000+00:00",
+      "model": "gpt-6-luna",
+      "status": "ok",
+      "duration_ms": 41322,
+      "error_category": null
+    },
+    {
+      "job_id": "2069305d-6f38-41ba-b31c-a0fdbfdc7ea4",
+      "at": "2026-10-09T15:10:00.018000+00:00",
+      "model": "gpt-6.1-sol",
+      "status": "ok",
+      "duration_ms": 316347,
+      "error_category": null
+    },
+    {
+      "job_id": "e28ce23e-2691-4cee-a806-71bb3e3ae137",
+      "at": "2026-10-09T15:12:42.927000+00:00",
+      "model": "gpt-6-luna",
+      "status": "ok",
+      "duration_ms": 70014,
+      "error_category": null
+    },
+    {
+      "job_id": "8e672418-022e-4294-a77e-eb9fcaef28e8",
+      "at": "2026-10-09T15:07:00.016000+00:00",
+      "model": "gpt-6-luna",
+      "status": "ok",
+      "duration_ms": 16635,
+      "error_category": null
+    },
+    {
+      "job_id": "bb774619-5449-4f6c-ae0f-399e85ca8847",
+      "at": "2026-10-09T15:00:10.714000+00:00",
+      "model": "gpt-5.6-terra",
+      "status": "ok",
+      "duration_ms": 101599,
+      "error_category": null
+    },
+    {
+      "job_id": "43dc5580-e47c-4a4e-95d7-190263e6896a",
+      "at": "2026-10-09T14:50:59.746000+00:00",
+      "model": "gpt-6-luna",
+      "status": "ok",
+      "duration_ms": 28753,
+      "error_category": null
+    },
+    {
+      "job_id": "43dc5580-e47c-4a4e-95d7-190263e6896a",
+      "at": "2026-10-09T14:20:59.729000+00:00",
+      "model": "gpt-6-luna",
+      "status": "ok",
+      "duration_ms": 25449,
+      "error_category": null
+    },
+    {
+      "job_id": "2069305d-6f38-41ba-b31c-a0fdbfdc7ea4",
+      "at": "2026-10-09T14:10:00.015000+00:00",
+      "model": "gpt-6.1-sol",
+      "status": "ok",
+      "duration_ms": 347778,
+      "error_category": null
+    },
+    {
+      "job_id": "e28ce23e-2691-4cee-a806-71bb3e3ae137",
+      "at": "2026-10-09T14:12:42.801000+00:00",
+      "model": "gpt-6-luna",
+      "status": "ok",
+      "duration_ms": 50039,
+      "error_category": null
+    },
+    {
+      "job_id": "8e672418-022e-4294-a77e-eb9fcaef28e8",
+      "at": "2026-10-09T14:07:00.017000+00:00",
+      "model": "gpt-6-luna",
+      "status": "ok",
+      "duration_ms": 17944,
+      "error_category": null
+    },
+    {
+      "job_id": "bb774619-5449-4f6c-ae0f-399e85ca8847",
+      "at": "2026-10-09T14:00:10.718000+00:00",
+      "model": "gpt-5.6-terra",
+      "status": "ok",
+      "duration_ms": 23835,
+      "error_category": null
+    },
+    {
+      "job_id": "43dc5580-e47c-4a4e-95d7-190263e6896a",
+      "at": "2026-10-09T13:50:59.718000+00:00",
+      "model": "gpt-6-luna",
+      "status": "ok",
+      "duration_ms": 25861,
+      "error_category": null
+    },
+    {
+      "job_id": "b98880fe-a5a5-410f-a7ca-7366239125d8",
+      "at": "2026-10-09T13:40:00.017000+00:00",
+      "model": "gpt-6.1-sol",
+      "status": "ok",
+      "duration_ms": 142959,
+      "error_category": null
+    },
+    {
+      "job_id": "4597783a-01d3-440a-b26f-dfdff911650c",
+      "at": "2026-10-09T13:36:24.666000+00:00",
+      "model": "gpt-5.6-terra",
+      "status": "ok",
+      "duration_ms": 60353,
+      "error_category": null
+    },
+    {
+      "job_id": "43dc5580-e47c-4a4e-95d7-190263e6896a",
+      "at": "2026-10-09T13:20:59.701000+00:00",
+      "model": "gpt-6-luna",
+      "status": "ok",
+      "duration_ms": 18419,
+      "error_category": null
+    },
+    {
+      "job_id": "2069305d-6f38-41ba-b31c-a0fdbfdc7ea4",
+      "at": "2026-10-09T13:10:00.015000+00:00",
+      "model": "gpt-6.1-sol",
+      "status": "error",
+      "duration_ms": 471393,
+      "error_category": "other_or_unspecified"
+    },
+    {
+      "job_id": "d62df64a-7961-4f71-af96-ebe3361a9c64",
+      "at": "2026-10-09T13:15:01.295000+00:00",
+      "model": "gpt-5.6-terra",
+      "status": "ok",
+      "duration_ms": 68253,
+      "error_category": null
+    },
+    {
+      "job_id": "e28ce23e-2691-4cee-a806-71bb3e3ae137",
+      "at": "2026-10-09T13:12:42.706000+00:00",
+      "model": "gpt-6-luna",
+      "status": "ok",
+      "duration_ms": 55867,
+      "error_category": null
+    },
+    {
+      "job_id": "8e672418-022e-4294-a77e-eb9fcaef28e8",
+      "at": "2026-10-09T13:07:00.016000+00:00",
+      "model": "gpt-6-luna",
+      "status": "ok",
+      "duration_ms": 16991,
+      "error_category": null
+    },
+    {
+      "job_id": "867b08c8-5767-49de-953c-f8d3df0f47b7",
+      "at": "2026-10-09T13:00:00.014000+00:00",
+      "model": "gpt-5.6-terra",
+      "status": "ok",
+      "duration_ms": 359983,
+      "error_category": null
+    },
+    {
+      "job_id": "bb774619-5449-4f6c-ae0f-399e85ca8847",
+      "at": "2026-10-09T13:00:12.072000+00:00",
+      "model": "gpt-5.6-terra",
+      "status": "ok",
+      "duration_ms": 92619,
+      "error_category": null
+    },
+    {
+      "job_id": "43dc5580-e47c-4a4e-95d7-190263e6896a",
+      "at": "2026-10-09T12:50:59.684000+00:00",
+      "model": "gpt-6-luna",
+      "status": "ok",
+      "duration_ms": 28171,
+      "error_category": null
+    },
+    {
+      "job_id": "2069305d-6f38-41ba-b31c-a0fdbfdc7ea4",
+      "at": "2026-10-09T12:10:00.017000+00:00",
+      "model": "gpt-6.1-sol",
+      "status": "error",
+      "duration_ms": 1313081,
+      "error_category": "other_or_unspecified"
+    },
+    {
+      "job_id": "43dc5580-e47c-4a4e-95d7-190263e6896a",
+      "at": "2026-10-09T12:20:59.667000+00:00",
+      "model": "gpt-6-luna",
+      "status": "ok",
+      "duration_ms": 29657,
+      "error_category": null
+    },
+    {
+      "job_id": "e28ce23e-2691-4cee-a806-71bb3e3ae137",
+      "at": "2026-10-09T12:12:42.741000+00:00",
+      "model": "gpt-6-luna",
+      "status": "ok",
+      "duration_ms": 62745,
+      "error_category": null
+    },
+    {
+      "job_id": "8e672418-022e-4294-a77e-eb9fcaef28e8",
+      "at": "2026-10-09T12:07:00.019000+00:00",
+      "model": "gpt-6-luna",
+      "status": "ok",
+      "duration_ms": 17435,
+      "error_category": null
+    },
+    {
+      "job_id": "bb774619-5449-4f6c-ae0f-399e85ca8847",
+      "at": "2026-10-09T12:00:10.716000+00:00",
+      "model": "gpt-5.6-terra",
+      "status": "ok",
+      "duration_ms": 44761,
+      "error_category": null
+    },
+    {
+      "job_id": "43dc5580-e47c-4a4e-95d7-190263e6896a",
+      "at": "2026-10-09T11:50:59.523000+00:00",
+      "model": "gpt-6-luna",
+      "status": "ok",
+      "duration_ms": 28702,
+      "error_category": null
+    },
+    {
+      "job_id": "b98880fe-a5a5-410f-a7ca-7366239125d8",
+      "at": "2026-10-09T11:40:00.016000+00:00",
+      "model": "gpt-6.1-sol",
+      "status": "error",
+      "duration_ms": 623632,
+      "error_category": "billing"
+    },
+    {
+      "job_id": "2069305d-6f38-41ba-b31c-a0fdbfdc7ea4",
+      "at": "2026-10-09T11:10:00.043000+00:00",
+      "model": "gpt-6.1-sol",
+      "status": "error",
+      "duration_ms": 738042,
+      "error_category": "other_or_unspecified"
+    },
+    {
+      "job_id": "43dc5580-e47c-4a4e-95d7-190263e6896a",
+      "at": "2026-10-09T11:20:59.508000+00:00",
+      "model": "gpt-6-luna",
+      "status": "ok",
+      "duration_ms": 19664,
+      "error_category": null
+    },
+    {
+      "job_id": "e28ce23e-2691-4cee-a806-71bb3e3ae137",
+      "at": "2026-10-09T11:12:43.687000+00:00",
+      "model": "gpt-6-luna",
+      "status": "ok",
+      "duration_ms": 32905,
+      "error_category": null
+    },
+    {
+      "job_id": "8e672418-022e-4294-a77e-eb9fcaef28e8",
+      "at": "2026-10-09T11:07:00.041000+00:00",
+      "model": "gpt-6-luna",
+      "status": "ok",
+      "duration_ms": 15195,
+      "error_category": null
+    },
+    {
+      "job_id": "bb774619-5449-4f6c-ae0f-399e85ca8847",
+      "at": "2026-10-09T11:00:10.741000+00:00",
+      "model": "gpt-5.6-terra",
+      "status": "ok",
+      "duration_ms": 54429,
+      "error_category": null
+    },
+    {
+      "job_id": "43dc5580-e47c-4a4e-95d7-190263e6896a",
+      "at": "2026-10-09T10:50:58.374000+00:00",
+      "model": "gpt-6-luna",
+      "status": "ok",
+      "duration_ms": 34968,
+      "error_category": null
+    },
+    {
+      "job_id": "43dc5580-e47c-4a4e-95d7-190263e6896a",
+      "at": "2026-10-09T10:20:58.340000+00:00",
+      "model": "gpt-6-luna",
+      "status": "ok",
+      "duration_ms": 18988,
+      "error_category": null
+    },
+    {
+      "job_id": "2069305d-6f38-41ba-b31c-a0fdbfdc7ea4",
+      "at": "2026-10-09T10:10:00.042000+00:00",
+      "model": "gpt-6.1-sol",
+      "status": "error",
+      "duration_ms": 626738,
+      "error_category": "other_or_unspecified"
+    },
+    {
+      "job_id": "e28ce23e-2691-4cee-a806-71bb3e3ae137",
+      "at": "2026-10-09T10:12:43.663000+00:00",
+      "model": "gpt-6-luna",
+      "status": "ok",
+      "duration_ms": 40299,
+      "error_category": null
+    },
+    {
+      "job_id": "8e672418-022e-4294-a77e-eb9fcaef28e8",
+      "at": "2026-10-09T10:07:00.041000+00:00",
+      "model": "gpt-6-luna",
+      "status": "ok",
+      "duration_ms": 18165,
+      "error_category": null
+    },
+    {
+      "job_id": "bb774619-5449-4f6c-ae0f-399e85ca8847",
+      "at": "2026-10-09T10:00:12.180000+00:00",
+      "model": "gpt-5.6-terra",
+      "status": "ok",
+      "duration_ms": 77767,
+      "error_category": null
+    },
+    {
+      "job_id": "1f8d86b6-04f7-4e98-88bf-fbf367e65c91",
+      "at": "2026-10-09T10:00:00.041000+00:00",
+      "model": "gpt-6-luna",
+      "status": "ok",
+      "duration_ms": 12116,
+      "error_category": null
+    },
+    {
+      "job_id": "43dc5580-e47c-4a4e-95d7-190263e6896a",
+      "at": "2026-10-09T09:50:58.327000+00:00",
+      "model": "gpt-6-luna",
+      "status": "ok",
+      "duration_ms": 22419,
+      "error_category": null
+    },
+    {
+      "job_id": "b98880fe-a5a5-410f-a7ca-7366239125d8",
+      "at": "2026-10-09T09:40:00.044000+00:00",
+      "model": "gpt-6.1-sol",
+      "status": "error",
+      "duration_ms": 327266,
+      "error_category": "other_or_unspecified"
+    },
+    {
+      "job_id": "2069305d-6f38-41ba-b31c-a0fdbfdc7ea4",
+      "at": "2026-10-09T09:10:00.040000+00:00",
+      "model": "gpt-6.1-sol",
+      "status": "ok",
+      "duration_ms": 1098673,
+      "error_category": null
+    },
+    {
+      "job_id": "43dc5580-e47c-4a4e-95d7-190263e6896a",
+      "at": "2026-10-09T09:20:58.291000+00:00",
+      "model": "gpt-6-luna",
+      "status": "ok",
+      "duration_ms": 15589,
+      "error_category": null
+    },
+    {
+      "job_id": "e28ce23e-2691-4cee-a806-71bb3e3ae137",
+      "at": "2026-10-09T09:12:43.626000+00:00",
+      "model": "gpt-6-luna",
+      "status": "ok",
+      "duration_ms": 35741,
+      "error_category": null
+    },
+    {
+      "job_id": "8e672418-022e-4294-a77e-eb9fcaef28e8",
+      "at": "2026-10-09T09:07:00.026000+00:00",
+      "model": "gpt-6-luna",
+      "status": "ok",
+      "duration_ms": 16427,
+      "error_category": null
+    },
+    {
+      "job_id": "bb774619-5449-4f6c-ae0f-399e85ca8847",
+      "at": "2026-10-09T09:00:10.738000+00:00",
+      "model": "gpt-5.6-terra",
+      "status": "ok",
+      "duration_ms": 95842,
+      "error_category": null
+    },
+    {
+      "job_id": "43dc5580-e47c-4a4e-95d7-190263e6896a",
+      "at": "2026-10-09T08:50:57.925000+00:00",
+      "model": "gpt-6-luna",
+      "status": "ok",
+      "duration_ms": 32025,
+      "error_category": null
+    },
+    {
+      "job_id": "43dc5580-e47c-4a4e-95d7-190263e6896a",
+      "at": "2026-10-09T08:20:57.886000+00:00",
+      "model": "gpt-6-luna",
+      "status": "ok",
+      "duration_ms": 23723,
+      "error_category": null
+    },
+    {
+      "job_id": "2069305d-6f38-41ba-b31c-a0fdbfdc7ea4",
+      "at": "2026-10-09T08:10:00.028000+00:00",
+      "model": "gpt-6.1-sol",
+      "status": "error",
+      "duration_ms": 339254,
+      "error_category": "other_or_unspecified"
+    },
+    {
+      "job_id": "e28ce23e-2691-4cee-a806-71bb3e3ae137",
+      "at": "2026-10-09T08:12:43.609000+00:00",
+      "model": "gpt-6-luna",
+      "status": "ok",
+      "duration_ms": 63527,
+      "error_category": null
+    },
+    {
+      "job_id": "8e672418-022e-4294-a77e-eb9fcaef28e8",
+      "at": "2026-10-09T08:07:00.015000+00:00",
+      "model": "gpt-6-luna",
+      "status": "ok",
+      "duration_ms": 14622,
+      "error_category": null
+    },
+    {
+      "job_id": "bb774619-5449-4f6c-ae0f-399e85ca8847",
+      "at": "2026-10-09T08:00:10.740000+00:00",
+      "model": "gpt-5.6-terra",
+      "status": "ok",
+      "duration_ms": 91274,
+      "error_category": null
+    }
+  ]
+}

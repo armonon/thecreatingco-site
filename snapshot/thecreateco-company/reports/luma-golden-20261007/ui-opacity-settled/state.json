@@ -1,0 +1,152 @@
+{
+  "width": 2048,
+  "height": 1536,
+  "colorSpace": "srgb",
+  "bitDepth": 8,
+  "layers": [
+    {
+      "id": "raster-b",
+      "name": "Overlay",
+      "kind": "raster",
+      "parentId": null,
+      "opacity": 0.63,
+      "visible": true,
+      "transform": {
+        "tx": 0,
+        "ty": 0,
+        "sx": 1,
+        "sy": 1,
+        "rotation": 0,
+        "skewX": 0
+      },
+      "tone": null,
+      "mask": [
+        0,
+        0,
+        0,
+        255
+      ]
+    },
+    {
+      "id": "raster-a",
+      "name": "Source",
+      "kind": "raster",
+      "parentId": null,
+      "opacity": 1,
+      "visible": true,
+      "transform": {
+        "tx": 0,
+        "ty": 0,
+        "sx": 1,
+        "sy": 1,
+        "rotation": 0,
+        "skewX": 0
+      },
+      "tone": null,
+      "mask": null
+    }
+  ],
+  "history": {
+    "currentId": "op-muyzr6t3-f",
+    "rootId": "history-root",
+    "operations": 8,
+    "branchPoints": 0,
+    "currentDepth": 8,
+    "bytes": 88343744,
+    "byteBudget": 536870912,
+    "overBudget": false,
+    "nodes": [
+      {
+        "id": "history-root",
+        "parentId": null,
+        "label": "Document opened",
+        "createdAt": 1791430971709,
+        "depth": 0,
+        "childCount": 1,
+        "isCurrent": false,
+        "isOnCurrentPath": true
+      },
+      {
+        "id": "op-muyzqwhm-8",
+        "parentId": "history-root",
+        "label": "source imported",
+        "createdAt": 1791430971898,
+        "depth": 1,
+        "childCount": 1,
+        "isCurrent": false,
+        "isOnCurrentPath": true
+      },
+      {
+        "id": "op-muyzqx93-9",
+        "parentId": "op-muyzqwhm-8",
+        "label": "Layer renamed",
+        "createdAt": 1791430972887,
+        "depth": 2,
+        "childCount": 1,
+        "isCurrent": false,
+        "isOnCurrentPath": true
+      },
+      {
+        "id": "op-muyzqxi1-a",
+        "parentId": "op-muyzqx93-9",
+        "label": "overlay imported",
+        "createdAt": 1791430973209,
+        "depth": 3,
+        "childCount": 1,
+        "isCurrent": false,
+        "isOnCurrentPath": true
+      },
+      {
+        "id": "op-muyzqxr6-b",
+        "parentId": "op-muyzqxi1-a",
+        "label": "Layer renamed",
+        "createdAt": 1791430973538,
+        "depth": 4,
+        "childCount": 1,
+        "isCurrent": false,
+        "isOnCurrentPath": true
+      },
+      {
+        "id": "op-muyzr1ke-c",
+        "parentId": "op-muyzqxr6-b",
+        "label": "Opacity",
+        "createdAt": 1791430978478,
+        "depth": 5,
+        "childCount": 1,
+        "isCurrent": false,
+        "isOnCurrentPath": true
+      },
+      {
+        "id": "op-muyzr1n5-d",
+        "parentId": "op-muyzr1ke-c",
+        "label": "Layers grouped",
+        "createdAt": 1791430978577,
+        "depth": 6,
+        "childCount": 1,
+        "isCurrent": false,
+        "isOnCurrentPath": true
+      },
+      {
+        "id": "op-muyzr1wx-e",
+        "parentId": "op-muyzr1n5-d",
+        "label": "Layers ungrouped",
+        "createdAt": 1791430978929,
+        "depth": 7,
+        "childCount": 1,
+        "isCurrent": false,
+        "isOnCurrentPath": true
+      },
+      {
+        "id": "op-muyzr6t3-f",
+        "parentId": "op-muyzr1wx-e",
+        "label": "Mask paint (remove)",
+        "createdAt": 1791430985271,
+        "depth": 8,
+        "childCount": 0,
+        "isCurrent": true,
+        "isOnCurrentPath": true
+      }
+    ],
+    "redoBranches": []
+  }
+}

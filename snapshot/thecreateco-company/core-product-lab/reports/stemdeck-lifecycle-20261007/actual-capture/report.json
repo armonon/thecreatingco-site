@@ -1,0 +1,14 @@
+{
+  "sourceSha": "f6f061c6e463a552c287e883cbd7fc9bb3e0867e",
+  "sourceDirty": true,
+  "profile": "/Users/agentsattari/.openclaw/tmp/stemdeck-fourdeck-FL3RQm",
+  "pass": false,
+  "physicalInputs": false,
+  "mockedEndpoints": [
+    "/api/inventory"
+  ],
+  "steps": [],
+  "errors": [],
+  "browser": "151.0.7922.34",
+  "error": "page.waitForFunction: Timeout 30000ms exceeded.\n    at /Users/agentsattari/code/core-product-lab/stemdeck-recovery/scripts/perform-lifecycle-qa.mjs:21:13"
+}

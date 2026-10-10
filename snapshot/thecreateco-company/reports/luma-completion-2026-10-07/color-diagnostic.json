@@ -1,0 +1,32 @@
+{
+  "useGL": false,
+  "layer": [
+    {
+      "name": "source",
+      "transform": {
+        "tx": 0,
+        "ty": 0,
+        "sx": 1,
+        "sy": 1,
+        "rotation": 0,
+        "skewX": 0
+      },
+      "opacity": 1
+    }
+  ],
+  "sourceToBrowser": {
+    "max": 0,
+    "alpha": 0,
+    "mean": 0
+  },
+  "browserToBitmap": {
+    "max": 0,
+    "alpha": 0,
+    "mean": 0
+  },
+  "bitmapToExport": {
+    "max": 7,
+    "alpha": 0,
+    "mean": 0.369613250096639
+  }
+}

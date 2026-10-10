@@ -1,0 +1,44 @@
+{
+  "observed_at": "2026-10-08T02:53:36.929Z",
+  "source_sha": "e547d7d4eef74d533795cea493a426b091b92d2a",
+  "source_hashes": {
+    "src/labs/pocket/PocketPage.jsx": "71f4abfbca53648ac509ea851723975f2640a153a60f4389b7be906fcb2061e2",
+    "src/labs/pocket/pocketPattern.js": "5032a6cb1381c8d60ca0d1225dc0246d9deade75806125d48a04d8f2eb64f331",
+    "scripts/pocket-persistence-check.mjs": "df2fe786d4df40bff4780d9aba734aba7583051782e95223b83460398e8b621f"
+  },
+  "browser": "151.0.7922.34",
+  "scope": "Local Chromium real storage/UI and synthetic Web Audio export; not physical audio, mobile hardware or deployed-artifact qualification.",
+  "checks": [
+    {
+      "name": "named beat save, actual close/reopen and editable drum/bass state",
+      "status": "PASS"
+    },
+    {
+      "name": "real synthesis starts and user WAV export is non-silent stereo24-bit at correct duration",
+      "status": "PASS"
+    },
+    {
+      "name": "41st named save refuses with every previous byte intact; same-name update works",
+      "status": "PASS"
+    },
+    {
+      "name": "corrupt named library and draft are not overwritten by save or autosave",
+      "status": "PASS"
+    },
+    {
+      "name": "semantically corrupt musical data is preserved and recoverable by real backup download",
+      "status": "PASS"
+    }
+  ],
+  "pass": true,
+  "wav": {
+    "sha256": "584dac8fe8884d32c6e1b1705bc0a6ec3e9a9a73e018793a99a787fc8ab166ff",
+    "rate": 44100,
+    "frames": 115043,
+    "seconds": 2.608684807256236,
+    "channels": 2,
+    "bits": 24
+  },
+  "phoneOverflow": false,
+  "errors": []
+}

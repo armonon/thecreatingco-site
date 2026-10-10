@@ -1,0 +1,60 @@
+{
+  "product_id": "scenepilot",
+  "observed_at": "2026-10-08T08:07:32.389718+00:00",
+  "release_readiness": "ALPHA / NOT QUALIFIED. Reviewed c26d518 pushed PR95 on PR94;1095tests/types/lint/build,6 rebuiltElectron checks,2 Lite menu viewports and4 Lite lifecycle checks PASS. Three baseline desktop synthetic12s exports/42 sampled output checks pass; fullUIauthored/package/nativechooser/perceptual/hosted-stack gates unresolved.",
+  "core_lab_report": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-golden-20261008T0740/README.md",
+  "golden_workflow_status": "SCOPED SYNTHETIC PASS: three desktop12s composite persistence/undo/reopen/export runs; one Lite720p silent lifecycle; FULL GOLDEN UNQUALIFIED",
+  "last_core_lab_cycle": {
+    "task_id": "CORE-SP-WORKFLOW-001",
+    "observed_at": "2026-10-08T08:07:32.389718+00:00",
+    "source_sha": "c26d518bc3d05f0adbf7287f79c5f5f15ac25220",
+    "baseline_golden_sha": "c7d2b4fc973861eba785f26e5f607671ac22deb4",
+    "pr_url": "https://github.com/armonon/scenepilot-studio-badass/pull/95",
+    "model": "openai/gpt-6.1-sol",
+    "fallback": null,
+    "desktop_golden_checks": {
+      "passed": 12,
+      "total": 12
+    },
+    "independent_sampled_output_checks": {
+      "passed": 42,
+      "total": 42
+    },
+    "lite_checks": {
+      "passed": 4,
+      "total": 4
+    },
+    "menu_viewports": {
+      "passed": 2,
+      "total": 2
+    },
+    "qualification_complete": false,
+    "report": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-golden-20261008T0740/README.md"
+  },
+  "evidence_sources": [
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-initial.md",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/golden-projects/scenepilot.md",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-evidence/npm-test-build-and-suite.log",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-evidence/npm-ci-ignore-scripts.log",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-evidence/lifecycle-install-timeout.txt",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-evidence/initial-quick-tests-setup-failure.log",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-evidence/build-site.log",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-evidence/check-typescript-lint.log",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-evidence/performance-benchmark.log",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-evidence/npm-audit-production.json",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-evidence/accessibility-baseline-fail.log",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-evidence/accessibility-fix-pass.log",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-evidence/accessibility-fix-check.log",
+    "/Users/agentsattari/thecreateco-company/reports/2026-10-07-sp-security/report.md",
+    "/Users/agentsattari/thecreateco-company/reports/scenepilot-recovery-20261008/README.md",
+    "/Users/agentsattari/thecreateco-company/reports/scenepilot-recovery-20261008/result.json",
+    "/Users/agentsattari/thecreateco-company/reports/scenepilot-recovery-20261008/fix-review.md",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-golden-20261008T0740/README.md",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-golden-20261008T0740/candidate-receipt.json",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-golden-20261008T0740/independent-review.md",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-golden-20261008T0740/result.json",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-golden-20261008T0740/independent-output-analysis.json",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-golden-20261008T0740/lite/result.json",
+    "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-golden-20261008T0740/exact-head-menu/result.json"
+  ]
+}

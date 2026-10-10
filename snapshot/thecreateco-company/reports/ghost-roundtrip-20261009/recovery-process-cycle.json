@@ -1,0 +1,57 @@
+{
+  "started": "2026-10-09T12:27:00.523Z",
+  "finished": "2026-10-09T12:27:25.697Z",
+  "profile": "/Users/agentsattari/thecreateco-company/reports/ghost-roundtrip-20261009/recovery-profile-20261009-run6",
+  "reopenedExistingPersistentChromeProfile": true,
+  "recoveryDraftRow": "Recovery process-cycle QA · 1 items · 1 models · 10/9/2026, 5:26:23 AM\n\nRestore draft\nDelete draft",
+  "restoredUi": {
+    "rowText": "Recovery process-cycle QA · 1 items · 1 models · 10/9/2026, 5:26:23 AM\n\nRestore draft\nDelete draft",
+    "name": "Recovery process-cycle QA",
+    "count": "2 photos · 1 photo sets · 1 models ready",
+    "stiffness": "73",
+    "presentation": "selected",
+    "engineState": "Skirt · On a hanger · balanced drape"
+  },
+  "restoredArchive": {
+    "text": "Save recovery-process-cycle-qa.ghostbatch",
+    "href": "blob:http://127.0.0.1:1442/e0ba091b-03c8-4078-bc17-1e720d5c527f",
+    "download": "recovery-process-cycle-qa.ghostbatch",
+    "bytesLength": 3750729
+  },
+  "archiveComparison": {
+    "bytes": 3750729,
+    "sha256": "e2edce54641411b8a5eb958e90f292705fcc9821f6b0eb80a1dfac38bbbf043d",
+    "recordEqual": true,
+    "settings": {
+      "fit": "natural",
+      "depth": 100,
+      "sleeves": 12,
+      "length": 70,
+      "finish": "soft",
+      "background": "studio",
+      "fabric": "wool",
+      "photoWidth": 1,
+      "presentation": "hanger",
+      "stiffness": 73,
+      "fullness": 50,
+      "airflow": 0
+    },
+    "photos": [
+      {
+        "name": "coat-front.png",
+        "inputSHA256": "f1fd7dcc0e66758a4cc8f15e30a06ee6e44088e86c98d8893403b1d724815778",
+        "precloseSHA256": "f1fd7dcc0e66758a4cc8f15e30a06ee6e44088e86c98d8893403b1d724815778",
+        "recoveredSHA256": "f1fd7dcc0e66758a4cc8f15e30a06ee6e44088e86c98d8893403b1d724815778",
+        "matches": true
+      },
+      {
+        "name": "coat-back.png",
+        "inputSHA256": "de672b42c19f5917184a37c98caa006da83c239ebfbcc0291d28ccceeed7f017",
+        "precloseSHA256": "de672b42c19f5917184a37c98caa006da83c239ebfbcc0291d28ccceeed7f017",
+        "recoveredSHA256": "de672b42c19f5917184a37c98caa006da83c239ebfbcc0291d28ccceeed7f017",
+        "matches": true
+      }
+    ]
+  },
+  "errors": []
+}

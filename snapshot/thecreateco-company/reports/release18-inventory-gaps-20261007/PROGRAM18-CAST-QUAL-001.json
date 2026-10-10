@@ -1,0 +1,27 @@
+{
+  "task_id": "PROGRAM18-CAST-QUAL-001",
+  "product": "cast",
+  "title": "Recover Cast public interface provenance and qualify safe mesh workflow",
+  "workstream": "PRODUCT_COMPLETION",
+  "category": "reliability",
+  "severity": "P1",
+  "status": "QUEUED",
+  "model": "openai/gpt-6.1-sol",
+  "scores": {
+    "impact": 9,
+    "user_value": 8,
+    "confidence": 8,
+    "effort": 4,
+    "risk": 3
+  },
+  "source_evidence": {
+    "direct": [
+      "Parent realbrowser reviewhost hiddenbodytimeout30s; no404inference. CanonicalForm redirectsotherhost. LocalCastengine tests notlivequalification."
+    ]
+  },
+  "next_action": "Establish intendedpublicentry/exactartifact then knownsizeclosed/hollowring\u2192scale/repair\u2192save/reopen\u2192STL independentlyparsed; preserveestimates/alpha limits.",
+  "test_requirements": "Actualbrowserengine, malformed/nonfinite/200MB bound, units/undo/originalpreservation, independentmeshreader; nocastercertification claims.",
+  "evidence_sources": [
+    "/Users/agentsattari/thecreateco-company/reports/release18-inventory-gaps-20261007/README.md"
+  ]
+}

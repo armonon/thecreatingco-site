@@ -1,0 +1,39 @@
+{
+  "product_id": "form",
+  "release_readiness": "ALPHA / NOT QUALIFIED. Independently reviewed b5f8b08 pushed draft PR9 on PR7; emitted Worker PNG200 byte/header fallback and R2 CRUD, web/desktop frontend builds, typecheck/lint,4asset tests and scoped browser save/reopen/export PASS. Exact-head hosted CI billing-blocked; downstack/native/full golden/source-live gates unresolved. No merge/deploy.",
+  "worker_image_binding_checkpoint": {
+    "observed_at": "2026-10-09T11:50:11.432951+00:00",
+    "task_id": "CORE-FORM-WORKER-IMAGE-BINDING-001",
+    "status": "BLOCKED",
+    "source_sha": "b5f8b08832dc7961b097ce2ae7a0c29db2fc0055",
+    "report": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-worker-images-20261009T1140/README.md",
+    "review": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-worker-images-20261009T1140/independent-review.md",
+    "scope": "Actual emitted local Worker static image/R2 isolation and one synthetic author-save-reopen-export workflow",
+    "runtime_image_positive_width_status": 200,
+    "image_passthrough_byte_identity": true,
+    "image_transform_qualified": false,
+    "asset_tests_passed": 4,
+    "asset_tests_total": 4,
+    "web_build": "PASS",
+    "desktop_frontend_build": "PASS",
+    "typecheck_lint": "PASS",
+    "synthetic_browser_save_reopen_export": "PASS",
+    "full_product_qualification": false,
+    "hosted_ci": "BILLING_BLOCKED_NOT_STARTED",
+    "deployment": {
+      "pr": "https://github.com/armonon/form-studio/pull/9",
+      "pushed": true,
+      "merged": false,
+      "deployed": false
+    },
+    "resume_condition": "Evidence of GitHub billing/access resolution, then one bounded exact-head mandatory CI qualification; qualify/review downstack before merge. Preserve native/full golden/source-live gates.",
+    "models": {
+      "director": "openai/gpt-6.1-sol",
+      "routine_worker": "openai/gpt-6-luna",
+      "independent_reviewer": "openai/gpt-6.1-sol",
+      "fallback": null,
+      "astra": null,
+      "usage_and_cost": null
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "source_sha": "b26c03be150e9ebb4dfcfa489bb57e62802011ec",
+  "implementation_baseline_sha": "6bad0edaf198d80d44c9aa02c3e65970fe7d9148",
+  "observed_at": "2026-10-08T09:17:39.235708+00:00",
+  "tracked_and_untracked_tree": "clean",
+  "changes": [
+    "docs/PERFORMANCE_SUPPORT_CHECKPOINT_2026-10-08.md",
+    "src/utils/performanceReplay.mixerMatrix.test.js"
+  ],
+  "reviewed_sha256": {
+    "docs/PERFORMANCE_SUPPORT_CHECKPOINT_2026-10-08.md": "b3004b0cde1672ab6e55c5756f4c6f33312d2d7ea90b30507508f0b8b95cf64a",
+    "src/utils/performanceReplay.mixerMatrix.test.js": "0bb0ec087b749dfb5752fb53f504a2b2aaba27f62fb6eb60b3e05c4342e48654"
+  },
+  "baseline_tests": {
+    "files": 9,
+    "passed": 68,
+    "source_sha": "6bad0edaf198d80d44c9aa02c3e65970fe7d9148"
+  },
+  "candidate_tests": {
+    "files": 10,
+    "passed": 71,
+    "source_sha": "b26c03be150e9ebb4dfcfa489bb57e62802011ec",
+    "binding": "precommit tests; exact committed reviewed hashes and unchanged production tree verified"
+  },
+  "available_bytes": 187310080,
+  "required_existing_mandatory_gate_bytes": 2838683648,
+  "actual_models": {
+    "director": "openai/gpt-6.1-sol",
+    "research": {
+      "requested": "gpt-6-luna",
+      "actual": "unverified: no child session_status"
+    },
+    "reviewer": {
+      "requested": "gpt-6.1-sol",
+      "actual": "unverified: no child session_status"
+    },
+    "fallback_invoked": false
+  },
+  "product_complete": false,
+  "support_cells_promoted": 0
+}

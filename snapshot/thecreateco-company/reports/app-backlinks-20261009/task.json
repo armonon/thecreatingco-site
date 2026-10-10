@@ -1,0 +1,41 @@
+{
+  "task_id": "WEB-APP-BACKLINKS-20261009",
+  "title": "Ensure every owned web app has a working route back to thecreateco.com",
+  "category": "website_growth",
+  "workstream": "WEBSITE",
+  "product": "company-site",
+  "severity": "P2",
+  "model": "openai/gpt-6-luna",
+  "model_tier": "LUNA",
+  "token_budget": 12000,
+  "tool_budget": 45,
+  "context_token_budget": 12000,
+  "scores": {
+    "impact": 5,
+    "user_value": 6,
+    "strategic_value": 6,
+    "urgency": 5,
+    "confidence": 9,
+    "effort": 2,
+    "risk": 3
+  },
+  "expected_value": "Consistent company attribution and a discoverable return path across owned web-app interfaces; conversion impact is unmeasured.",
+  "test_requirements": "Use actual public app routes. Verify a visible/accessible company-home link in direct page chrome or the shared app menu; verify destinations resolve and do not break the primary workspace. Record local source changes, PR/check state, and deployed state separately.",
+  "acceptance_criteria": [
+    "Inventory independently hosted company web-app routes from the current published suite/product registry.",
+    "Every currently authorized, released web app has a functional, keyboard-accessible link to https://thecreatingco.com/ either in its existing footer or shared app menu.",
+    "Do not duplicate links unnecessarily where the shared menu already works; preserve each product's identity and workspace layout.",
+    "For app links absent from the live deployment, implement only on a reviewable feature branch and retain normal PR/CI/deployment gates.",
+    "Document source, test evidence, PR and deployment status per app; keep blocked/unverified distinct from complete."
+  ],
+  "constraints": "Do not publish to the live company homepage or app production domains without existing authorization and release gates. Preserve active product ownership, source work, excluded products and current menu semantics. No CI bypass or direct production mutation.",
+  "source_evidence": [
+    "Owner request in Discord #4geeks 2026-10-09: make all web apps link back to thecreatingco.com.",
+    "/Users/agentsattari/thecreateco-company/reports/app-backlinks-20261009/audit.json",
+    "/Users/agentsattari/code/wave2/thecreatingco-live/suite/v1/apps.json"
+  ],
+  "next_action": "Keep Form/Cast PR #11 and WebLab PR #1 behind normal review/check gates; do not deploy around blocked required checks. Librarian PR #1 already includes suite-menu link but cannot be deployed until its documented Netlify function-secret/source and PDF asset blockers are resolved. Re-audit the live public endpoints after approved releases.",
+  "latest_status": "NEEDS_REVIEW",
+  "latest_result": "Live public audit: 21/21 routes returned HTTP 200; 17 already had a working company-home link via existing footer/shared menu. WebLab draft preview link verified. Form/Cast links added to isolated Form branch cbde0fd and pushed as draft PR #11; Node22 typecheck, focused 1/1 smoke, production build and diff check passed. Full test:react suite not green due unrelated baseline failures. Librarian link exists in existing draft PR #1 source, but its live deployment is blocked. No production app changes.",
+  "last_updated": "2026-10-09T16:58:00Z"
+}

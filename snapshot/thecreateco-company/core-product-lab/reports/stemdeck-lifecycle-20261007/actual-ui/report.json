@@ -1,0 +1,43 @@
+{
+  "sourceSha": "f6f061c6e463a552c287e883cbd7fc9bb3e0867e",
+  "sourceDirty": true,
+  "profile": "/Users/agentsattari/.openclaw/tmp/stemdeck-fourdeck-a6FNvO",
+  "pass": false,
+  "physicalInputs": false,
+  "mockedEndpoints": [
+    "/api/inventory"
+  ],
+  "steps": [
+    "Four decks,20 real generated audio assets imported through project picker",
+    "Actual fullMix lane import and analyzer executed for all four decks"
+  ],
+  "errors": [],
+  "browser": "151.0.7922.34",
+  "analysis": [
+    {
+      "id": "A",
+      "bpm": 120,
+      "key": "--",
+      "analysis": false
+    },
+    {
+      "id": "B",
+      "bpm": 120,
+      "key": "--",
+      "analysis": false
+    },
+    {
+      "id": "C",
+      "bpm": 120,
+      "key": "--",
+      "analysis": false
+    },
+    {
+      "id": "D",
+      "bpm": 120,
+      "key": "--",
+      "analysis": false
+    }
+  ],
+  "error": "locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('article', { name: 'Deck D', exact: true }).getByRole('button', { name: 'Mute Bass', exact: true })\u001b[22m\n\n    at /Users/agentsattari/code/core-product-lab/stemdeck-recovery/scripts/perform-lifecycle-qa.mjs:34:111"
+}

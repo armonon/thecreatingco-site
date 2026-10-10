@@ -1,0 +1,25 @@
+{
+  "observed_at": "2026-10-08T15:49:16.315027+00:00",
+  "source_sha": "be1f7272c5689d6401194d643fa3eb09a2b0b73b",
+  "git_status": "",
+  "free_bytes": 170614784,
+  "checks": {
+    "r2_assets_binding": true,
+    "no_explicit_static_fetcher": true,
+    "no_images_binding": true,
+    "worker_calls_r2_as_fetcher": true,
+    "storage_api_uses_r2_crud": true
+  },
+  "sha256": {
+    "worker/index.ts": "2ed36d7fa996e946d9d7695c5925e7760246f6bf8fa35c06f1bc515c087dc450",
+    "vite.config.ts": "9349a06d80d1e9e6a1831ea64b8d24d512801b796c2c34d4b0967abbae793c82",
+    "app/api/assets/route.ts": "9c531fb249252d9fe4ea542223df04d65872782a8f1a512adb5c7e7857b94df1",
+    "dist/server/wrangler.json": "89968db7df4b583aa5377068c97c610026b10d7e8420277aa29862f389d9c825",
+    "node_modules/vinext/dist/server/image-optimization.js": "0639e4b19cada5b3c59a2a0d7715e828d754517450ed934e60077a4f1214253d"
+  },
+  "artifact_bytes": {
+    "dist": 67554588,
+    "desktop-dist": 28354822
+  },
+  "coverage": "Read-only source/emitted binding assertions; not a fresh Worker HTTP or build test."
+}

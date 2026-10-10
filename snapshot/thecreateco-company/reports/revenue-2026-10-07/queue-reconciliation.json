@@ -1,0 +1,151 @@
+[
+  {
+    "expected_revenue_impact": "Unknown; validation-stage, not a forecast",
+    "cost": {
+      "new_spend_usd": 0,
+      "actual_labor_cost": null
+    },
+    "source_evidence": [
+      "REVENUE_DIRECTIVE.md",
+      "reports/revenue-2026-10-07/README.md"
+    ],
+    "result": null,
+    "task_id": "REV-BASELINE-001",
+    "title": "Establish attributable company sales, costs and cash baseline",
+    "category": "revenue_measurement",
+    "workstream": "OPERATIONS",
+    "accountable_owner": "revenue-director",
+    "expected_value": "Determine actual next revenue milestone and viable unit economics before optimizing offers",
+    "confidence": "High value of measurement; source access unknown",
+    "effort": "One bounded read-only source discovery/import cycle",
+    "time_to_signal": "One cycle after aggregate financial source is identified",
+    "dependencies": [],
+    "next_action": "Identify authorized accounting/Stripe/POS source, owner entitlement and timezone/currency; retrieve redacted today/7d/30d aggregates. Never infer sales from checkout code or campaign activity. Confirm Sattari attribution separately. Ask for aggregate export only if existing authorized access cannot resolve.",
+    "scores": {
+      "impact": 9,
+      "user_value": 8,
+      "confidence": 8,
+      "effort": 2,
+      "risk": 1
+    },
+    "status": "QUEUED",
+    "priority": 144.0,
+    "priority_basis": "ESTIMATE: impact \u00d7 user_value \u00d7 confidence / (effort + risk + 1)",
+    "product": null,
+    "campaign": null,
+    "model": null,
+    "risk": 1,
+    "created_at": "2026-10-08T01:11:16+00:00",
+    "started_at": null,
+    "completed_at": null,
+    "attempts": 0,
+    "owner": null,
+    "lease_until": null
+  },
+  {
+    "expected_revenue_impact": "Unknown; validation-stage, not a forecast",
+    "cost": {
+      "new_spend_usd": 0,
+      "actual_labor_cost": null
+    },
+    "source_evidence": [
+      "REVENUE_DIRECTIVE.md",
+      "reports/revenue-2026-10-07/README.md"
+    ],
+    "result": null,
+    "task_id": "REV-E01-001",
+    "title": "Validate one scoped creative-workflow service with qualified buyer evidence",
+    "category": "revenue_validation",
+    "workstream": "GROWTH",
+    "accountable_owner": "Growth with revenue-director decision owner",
+    "expected_value": "Find recurring buyer pain and a paid-pilot decision before major builds",
+    "confidence": "Low; vendor stories only, no direct buyer validation",
+    "effort": "Maximum 6 preparation/research hours; one concurrent pilot later",
+    "time_to_signal": "48 active-work hours preparation; 7 days response window after authorized launch",
+    "dependencies": [
+      "M04"
+    ],
+    "next_action": "Use data/revenue/first-validation-pack.md. Research 5 genuinely qualified buyer opportunities, prepare inspected personalization and synthetic delivery evidence. Existing Growth gates govern any send. Prices internal until approved; report interviews/proposal requests/paid receipts separately.",
+    "scores": {
+      "impact": 9,
+      "user_value": 8,
+      "confidence": 6,
+      "effort": 3,
+      "risk": 2
+    },
+    "status": "QUEUED",
+    "priority": 72.0,
+    "priority_basis": "ESTIMATE: impact \u00d7 user_value \u00d7 confidence / (effort + risk + 1)",
+    "product": null,
+    "campaign": null,
+    "model": null,
+    "risk": 2,
+    "created_at": "2026-10-08T01:11:16+00:00",
+    "started_at": null,
+    "completed_at": null,
+    "attempts": 0,
+    "owner": null,
+    "lease_until": null
+  },
+  {
+    "expected_revenue_impact": "Unknown; validation-stage, not a forecast",
+    "cost": {
+      "new_spend_usd": 0,
+      "actual_labor_cost": null
+    },
+    "source_evidence": [
+      "REVENUE_DIRECTIVE.md",
+      "reports/revenue-2026-10-07/README.md"
+    ],
+    "result": null,
+    "task_id": "REV-COMMERCE-001",
+    "title": "Verify Sattari economic attribution, fulfillment capacity and existing funnel",
+    "category": "revenue_research",
+    "workstream": "OPERATIONS",
+    "accountable_owner": "revenue-director with existing Sattari operator",
+    "expected_value": "Determine whether existing local commerce beats new-service validation for near-term contribution",
+    "confidence": "Posted offer verified; ownership, stock, sales and margin unknown",
+    "effort": "One read-only reconciliation; no checkout charge or product implementation",
+    "time_to_signal": "One cycle after operator/records access",
+    "dependencies": [],
+    "next_action": "Inspect authorized aggregate stock/capacity/booking/settled-order evidence and economic entitlement. Respect Sattari/music hold; public page audit is already in asset-audit.md. Do not count another business gross or mutate shop/payment flow.",
+    "scores": {
+      "impact": 8,
+      "user_value": 8,
+      "confidence": 6,
+      "effort": 2,
+      "risk": 2
+    },
+    "status": "QUEUED",
+    "priority": 76.8,
+    "priority_basis": "ESTIMATE: impact \u00d7 user_value \u00d7 confidence / (effort + risk + 1)",
+    "product": null,
+    "campaign": null,
+    "model": null,
+    "risk": 2,
+    "created_at": "2026-10-08T01:11:17+00:00",
+    "started_at": null,
+    "completed_at": null,
+    "attempts": 0,
+    "owner": null,
+    "lease_until": null
+  },
+  {
+    "error": "Error: Revision contains noneditable fields\n"
+  },
+  {
+    "error": "Error: Revision contains noneditable fields\n"
+  },
+  {
+    "error": "Error: Revision contains noneditable fields\n"
+  },
+  {
+    "error": "Error: Revision contains noneditable fields\n"
+  },
+  {
+    "error": "Error: Revision contains noneditable fields\n"
+  },
+  {
+    "error": "Error: Revision contains noneditable fields\n"
+  }
+]

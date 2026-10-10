@@ -1,0 +1,29 @@
+{
+  "metrics": {
+    "revenue": {
+      "value": 0,
+      "currency": "USD",
+      "source": "Armon, Discord #millions, 2026-10-07: we have no revenue at the moment",
+      "period": {
+        "as_of": "2026-10-07",
+        "type": "Current founder-reported baseline; not audited daily/7d/30d accounting totals"
+      },
+      "observed_at": "2026-10-08T01:15:19.407251+00:00",
+      "status": "FOUNDER_REPORTED_NOT_LEDGER_VERIFIED",
+      "definition": "Current company revenue baseline reported by founder; no historical interval or payment ledger verified."
+    }
+  },
+  "revenue_strategy": {
+    "source": "REVENUE_DIRECTIVE.md",
+    "report": "reports/revenue-2026-10-07/README.md",
+    "paths": "data/revenue/paths.json",
+    "dashboard": "REVENUE_DASHBOARD.md",
+    "experiments": "data/revenue/experiments.json",
+    "current_revenue_baseline_usd": 0,
+    "baseline_evidence": "Founder reported 2026-10-07; ledger not yet available",
+    "next_milestone": "First $1000 verified company revenue; one-time services separate from MRR",
+    "weekly_objective": "One qualified paid-pilot decision with buyer, scope and delivery economics",
+    "pricing_status": "New prices internal hypotheses",
+    "payment_status": "Founder says Stripe can be created; account/live checkout not yet configured"
+  }
+}

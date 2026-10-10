@@ -1,0 +1,15 @@
+{
+  "scope": "Synthetic in-memory storage only; no browser/profile/user files touched; actual existing pure helpers imported",
+  "oldestDropped": {
+    "capacity": 40,
+    "saveNumber": 41,
+    "oldestMissing": true,
+    "throws": false
+  },
+  "corruptOverwrite": {
+    "before": "{malformed-but-preserved-user-bytes",
+    "afterCount": 1,
+    "originalBytesPreserved": false,
+    "throws": false
+  }
+}

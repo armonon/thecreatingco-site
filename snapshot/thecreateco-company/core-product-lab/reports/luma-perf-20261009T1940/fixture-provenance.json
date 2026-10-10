@@ -1,0 +1,15 @@
+{
+  "synthetic": true,
+  "source_sha": "30bea20f862c4302887b79b89f364f2d7bdf5710",
+  "sha256": {
+    "build/benchmark-brush-streaming.ts": "b9769922d0e06a70fac68dc22a97dfb703779d7da1b9f4823b171feb2d4707ba",
+    "tests/resident-memory.test.ts": "0cf874c2c1dfa470c141ffa78cbb82c400b60012c9b43144ada1e2216de2ba40",
+    "tests/extreme-alpha-memory.test.ts": "6a029272a14904a95c1e4f344eaaf41b6de399fc29b873110a287a47c5026854",
+    "tests/performance-governor.test.ts": "0aa141700e87f2bc1a5fd62c718d623b77742461c402b3bbf12695b07964c3cd",
+    "tests/project-history.test.ts": "dd2cc62caeb8c68ccf7943051ac71acf8a506baca03c897248e06b9a01cf4ad0",
+    "tests/project-zip-stream.test.ts": "b24af387bf97998f69a0d17dd0ad2915e017d71c39654e62f1f48813853d6659",
+    "tests/lossless-png-fixture.ts": "c7114d9bb865550bff0cd75f39c6b7a3ccf325fa4a32c6742fc1c01e20dc6374",
+    "package-lock.json": "845481a71d7b1f28628a936585d5a4d5d2f614d069a90d2aabecd5bac3195c6d"
+  },
+  "fixture_definition": "Brush parameters/400 generated pressure points defined by hashed benchmark source; memory/persistence fixtures generated in hashed tests; no external user assets"
+}

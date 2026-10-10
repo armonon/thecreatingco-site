@@ -1,0 +1,18 @@
+{
+  "cpu": "Apple M4",
+  "node": "v26.9.0",
+  "fixture": "400 pressure samples, looping 18px brush, one 128x128 float tile",
+  "baselineMs": [
+    346.253458,
+    347.831375,
+    342.2678330000001
+  ],
+  "incrementalMs": [
+    52.89700000000005,
+    52.382750000000215,
+    52.80341700000008
+  ],
+  "baselineMedianMs": 346.253458,
+  "incrementalMedianMs": 52.80341700000008,
+  "pixels": "exact match"
+}

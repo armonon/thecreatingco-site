@@ -1,0 +1,69 @@
+{
+  "id": "2ca9d380-38ab-44bc-9d94-41f01374b11a",
+  "name": "Company OS deterministic controller",
+  "enabled": true,
+  "createdAtMs": 1779154818052,
+  "schedule": {
+    "kind": "cron",
+    "expr": "22 * * * *",
+    "tz": "America/Los_Angeles"
+  },
+  "sessionTarget": "isolated",
+  "wakeMode": "now",
+  "payload": {
+    "kind": "command",
+    "argv": [
+      "python3",
+      "/Users/agentsattari/thecreateco-company/engine/os_cycle.py",
+      "tick"
+    ],
+    "cwd": "/Users/agentsattari/thecreateco-company",
+    "timeoutSeconds": 240
+  },
+  "delivery": {
+    "mode": "none",
+    "channel": "discord",
+    "to": "channel:1501138899752194130",
+    "bestEffort": true
+  },
+  "agentId": "main",
+  "description": "Replaces failed legacy inference loop: one no-model lease recovery, telemetry, anomaly queue and dashboard refresh; no product selection or external sends",
+  "state": {
+    "lastRunAtMs": 1791411720098,
+    "lastRunStatus": "error",
+    "lastStatus": "error",
+    "lastDurationMs": 312186,
+    "lastDeliveryStatus": "unknown",
+    "consecutiveErrors": 0,
+    "consecutiveSkipped": 0,
+    "lastDiagnostics": {
+      "summary": "All models failed (1): openai-codex/gpt-5.5: Provider openai-codex is in cooldown (all profiles unavailable) (rate_limit)",
+      "entries": [
+        {
+          "ts": 1781029363988,
+          "source": "agent-run",
+          "severity": "error",
+          "message": "All models failed (1): openai-codex/gpt-5.5: Provider openai-codex is in cooldown (all profiles unavailable) (rate_limit)"
+        }
+      ]
+    },
+    "lastDiagnosticSummary": "All models failed (1): openai-codex/gpt-5.5: Provider openai-codex is in cooldown (all profiles unavailable) (rate_limit)",
+    "lastError": "cron: job interrupted by gateway restart",
+    "lastDelivered": false,
+    "lastDeliveryError": "cron: job interrupted by gateway restart",
+    "lastFailureNotificationDeliveryStatus": "not-requested",
+    "scheduleErrorCount": 0,
+    "scheduleActivatedAtMs": 1791528953636,
+    "nextRunAtMs": 1791530520000
+  },
+  "updatedAtMs": 1791528953636,
+  "configRevision": "sha256:tFUf9HJElHHBQCyoFBjV01_zf_e5DkADexmd03fam5E",
+  "nextRunAtMs": 1791530520000,
+  "lastRunAtMs": 1791411720098,
+  "lastRunStatus": "error",
+  "lastRunError": "cron: job interrupted by gateway restart",
+  "lastDelivered": false,
+  "lastDeliveryStatus": "unknown",
+  "lastDeliveryError": "cron: job interrupted by gateway restart",
+  "lastFailureNotificationDeliveryStatus": "not-requested"
+}

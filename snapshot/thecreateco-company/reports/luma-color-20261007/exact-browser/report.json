@@ -1,0 +1,151 @@
+{
+  "source_sha": "d4e722330e65a260badc475f53a7a176ccfe7e57",
+  "source_status": "",
+  "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "harness_sha256": "4f37760a2d7b00c5645a9b50a53bb08e63f369a780ea70fcba18a1473fc4cdad",
+  "observed_at": "2026-10-08T03:27:08.913Z",
+  "node": "v22.23.2",
+  "checks": [
+    {
+      "name": "retained-gradient: independent decode versus imported bitmap",
+      "metrics": {
+        "maxRGB": 0,
+        "maxAlpha": 0,
+        "changedChannels": 0
+      },
+      "fixture_sha256": "d3e17c1546af1f7bbd6e13c137dd23cebea29b5db0262f8eb919de0bf8380112",
+      "status": "PASS"
+    },
+    {
+      "name": "retained-gradient: first CPU PNG",
+      "metrics": {
+        "maxRGB": 0,
+        "maxAlpha": 0,
+        "changedChannels": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "retained-gradient: repeat CPU PNG",
+      "metrics": {
+        "maxRGB": 0,
+        "maxAlpha": 0,
+        "changedChannels": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "Keyboard Tab/Shift+Tab/Enter decline preserves dirty state and permits retry",
+      "status": "PASS"
+    },
+    {
+      "name": "retained-gradient: saved/closed/reopened CPU PNG",
+      "metrics": {
+        "maxRGB": 0,
+        "maxAlpha": 0,
+        "changedChannels": 0
+      },
+      "archive_sha256": "851c879a8cff8e7bcf3f8986698bfc328bf3de656cfe040d072c55cc236ca191",
+      "status": "PASS"
+    },
+    {
+      "name": "Embedded ICC recognized before comparison",
+      "profile": {
+        "id": "icc:de6ee84f",
+        "name": "Synthetic sRGB matrix profile",
+        "version": "4.3.0",
+        "colorSpace": "RGB",
+        "model": "matrix-trc",
+        "canTransform": true,
+        "browserDecoded": true,
+        "warnings": []
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "opaque-icc: independent decode versus imported bitmap",
+      "metrics": {
+        "maxRGB": 0,
+        "maxAlpha": 0,
+        "changedChannels": 0
+      },
+      "fixture_sha256": "291d9fcfc68861ea2accbd49f6c66de69ac50a5a8fe722a698c5275de03ac041",
+      "status": "PASS"
+    },
+    {
+      "name": "opaque-icc: first CPU PNG",
+      "metrics": {
+        "maxRGB": 0,
+        "maxAlpha": 0,
+        "changedChannels": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "opaque-icc: repeat CPU PNG",
+      "metrics": {
+        "maxRGB": 0,
+        "maxAlpha": 0,
+        "changedChannels": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "Escape declines confirmation without marking the document saved",
+      "status": "PASS"
+    },
+    {
+      "name": "opaque-icc: saved/closed/reopened CPU PNG",
+      "metrics": {
+        "maxRGB": 0,
+        "maxAlpha": 0,
+        "changedChannels": 0
+      },
+      "archive_sha256": "68b510b9fb6749b5e16817277369af26b5db3a31bb7fa082e008c58286f6de54",
+      "status": "PASS"
+    },
+    {
+      "name": "transparent-alpha: independent decode versus imported bitmap",
+      "metrics": {
+        "maxRGB": 0,
+        "maxAlpha": 0,
+        "changedChannels": 0
+      },
+      "fixture_sha256": "90361ad89e3c8ff746deb978c23ff2c5db5054ae738e33a4ed356250d2f058fd",
+      "status": "PASS"
+    },
+    {
+      "name": "transparent-alpha: first CPU PNG",
+      "metrics": {
+        "maxRGB": 0,
+        "maxAlpha": 0,
+        "changedChannels": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "transparent-alpha: repeat CPU PNG",
+      "metrics": {
+        "maxRGB": 0,
+        "maxAlpha": 0,
+        "changedChannels": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "transparent-alpha: saved/closed/reopened CPU PNG",
+      "metrics": {
+        "maxRGB": 0,
+        "maxAlpha": 0,
+        "changedChannels": 0
+      },
+      "archive_sha256": "ff2816e514f4fd4761b02e5151f5d0eb54131c0e86f407c42a76507d5c034c65",
+      "status": "PASS"
+    }
+  ],
+  "pass": true,
+  "reference": "Independent browser decode to an sRGB canvas; RGB tolerance 2, alpha exact. PNGs also compared with independent native canvas decode. Invisible RGB is canonicalized by canvas, not claimed preserved.",
+  "scope": "Actual file-input import, PNG download twice, .luma save/download/confirm, actual close/reopen and PNG download. Synthetic opaque, partial-alpha, transparent and embedded matrix/TRC ICC images. CPU desktop shell in a local browser; not native, OS color calibration, every ICC profile or deployment qualification.",
+  "browser": "154.0.8037.98",
+  "errors": []
+}

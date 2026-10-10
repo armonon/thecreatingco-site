@@ -1,0 +1,9 @@
+{
+  "task_id": "W02",
+  "next_action": "Existing Netlify Analytics/Forms; preserve no analytics=unknown distinction. Retrieve dated aggregate visitors/signups and explicit event coverage; pageviews are not active users. Write context metrics and refresh revenue dashboard.",
+  "source_evidence": [
+    "reports/revenue-2026-10-07/README.md",
+    "reports/revenue-2026-10-07/asset-audit.md"
+  ],
+  "expected_value": "Owner: Analytics/PRODUCT. Revenue impact: Highest-leverage missing funnel baseline; no conversion lift forecast. Time to signal: One cycle after source access. New spend: $0; labor cost unknown. Existing scores remain provisional."
+}

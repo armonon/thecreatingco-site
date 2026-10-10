@@ -1,0 +1,26 @@
+{
+  "product_id": "luma",
+  "release_readiness": "Unqualified: security repair 5afa61c pushed in PR5; local production audit0 and three builds pass. Remote CI jobs did not start due GitHub account payments/spending limit. Existing local sibling-contract test and zero-warning lint blockers remain; full golden workflow, deployed artifact and native qualification unverified.",
+  "observed_at": "2026-10-08T01:19:49+00:00",
+  "verification_level": "LOCAL_SOURCE_SECURITY_REMEDIATION_REVIEW_AND_BUILDS_REMOTE_CI_BLOCKED",
+  "evidence_freshness": "Security source 5afa61c observed 2026-10-08T01:19:49+00:00; no deployed artifact verification.",
+  "known_bugs": [
+    "tests/form-mesh.test.ts:21 required cross-app contract assumes absent sibling checkout.",
+    "Existing no-img-element warning in upscale-dialog.tsx:98 blocks zero-warning lint.",
+    "Affected baseline production dependencies repaired in PR5 (local production audit0); deployed versions/exposure remain unverified."
+  ],
+  "evidence_sources": [
+    "core-product-lab/reports/luma-initial.md",
+    "core-product-lab/products/luma.json",
+    "core-product-lab/golden-projects/luma.md",
+    "/tmp/luma-audit-e709-npm-test.log",
+    "/tmp/luma-audit-e709-release-status.log",
+    "/tmp/luma-audit-e709-npm-audit-production.json",
+    "reports/luma-security-2026-10-07/README.md",
+    "reports/luma-security-2026-10-07/fixed-audit.json",
+    "reports/luma-security-2026-10-07/next-runtime-smoke.json",
+    "reports/luma-security-2026-10-07/pr-state.json",
+    "https://github.com/armonon/luma-studio/pull/5"
+  ],
+  "next_milestone": "Repair standalone CI test/lint blockers, restore remote CI execution, qualify exact-head and stack gates; keep source/deployed reconciliation and full golden workflow separate."
+}

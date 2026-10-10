@@ -1,0 +1,15 @@
+{
+  "command": [
+    "/opt/homebrew/opt/node@22/bin/node",
+    "node_modules/playwright/cli.js",
+    "install",
+    "chromium"
+  ],
+  "cwd": "/Users/agentsattari/code/core-product-lab/stemdeck-archive-webkit",
+  "PLAYWRIGHT_BROWSERS_PATH": "/Users/agentsattari/code/core-product-lab/stemdeck-archive-webkit/node_modules/.cache/ms-playwright",
+  "expectedRevision": "1234",
+  "expectedVersion": "151.0.7922.34",
+  "startUtc": "2026-10-09T07:12:38.553260+00:00",
+  "endUtc": "2026-10-09T07:13:24.898101+00:00",
+  "exitCode": 0
+}

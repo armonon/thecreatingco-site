@@ -1,0 +1,33 @@
+[
+  {
+    "name": "unit",
+    "command": [
+      "/opt/homebrew/opt/node@22/bin/node",
+      "node_modules/vitest/vitest.mjs",
+      "run",
+      "--maxWorkers=2"
+    ],
+    "exit_code": 1,
+    "wall_seconds": 89.64
+  },
+  {
+    "name": "types",
+    "command": [
+      "npm",
+      "run",
+      "type-check"
+    ],
+    "exit_code": 0,
+    "wall_seconds": 1.86
+  },
+  {
+    "name": "build",
+    "command": [
+      "npm",
+      "run",
+      "build"
+    ],
+    "exit_code": 0,
+    "wall_seconds": 7.86
+  }
+]

@@ -1,0 +1,6 @@
+{
+  "path": "tests/fixtures/sketch-workbench.svg",
+  "sha256": "95f4a2041c5969b51c1d931e4c4e8eaaa29751a9185f0e7d46a662621fd6b405",
+  "provenance": "Repository synthetic SVG workbench fixture; no customer data",
+  "qualification": "Automated synthetic lifecycle tests only; no desktop or deployed interactive qualification"
+}

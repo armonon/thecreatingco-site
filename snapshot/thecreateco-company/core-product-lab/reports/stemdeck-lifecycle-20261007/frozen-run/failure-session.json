@@ -1,0 +1,1248 @@
+{
+  "uiSchemaVersion": 2,
+  "sessionName": "Untitled session",
+  "decks": [
+    {
+      "id": "A",
+      "accent": "#4ad9c4",
+      "side": "left",
+      "cfSide": "left",
+      "title": "Empty deck",
+      "keyName": "--",
+      "sourceKeyName": "--",
+      "bpm": 120,
+      "beatOffset": 0,
+      "downbeat": 1,
+      "gain": 100,
+      "fader": 100,
+      "pitch": 0,
+      "filter": 50,
+      "eq": {
+        "low": 50,
+        "mid": 50,
+        "high": 50
+      },
+      "fx": {
+        "reverb": 15,
+        "echo": 0,
+        "macro": 0
+      },
+      "stemFx": {
+        "drums": {
+          "filter": 50,
+          "send": 0,
+          "pitch": 0
+        },
+        "bass": {
+          "filter": 50,
+          "send": 0,
+          "pitch": 0
+        },
+        "music": {
+          "filter": 50,
+          "send": 0,
+          "pitch": 0
+        },
+        "vocals": {
+          "filter": 50,
+          "send": 0,
+          "pitch": 0
+        }
+      },
+      "looping": false,
+      "loopStart": 0,
+      "loopEnd": 2.5,
+      "synced": false,
+      "keyLock": true,
+      "liveKey": false,
+      "slip": false,
+      "tempoInterpretation": "Straight",
+      "syncMode": "BPM",
+      "activeToolTab": "CUES",
+      "hotCues": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "introEnd": null,
+      "outroStart": null,
+      "muted": false,
+      "solo": false,
+      "sends": {
+        "a": 0,
+        "b": 0
+      },
+      "inserts": [],
+      "cue": false,
+      "playing": false,
+      "duration": 0,
+      "waveform": [
+        10,
+        27,
+        26,
+        25,
+        24,
+        23,
+        22,
+        21,
+        20,
+        19,
+        18,
+        17,
+        16,
+        15,
+        14,
+        13,
+        12,
+        11,
+        10,
+        27,
+        26,
+        25,
+        24,
+        23,
+        22,
+        21,
+        20,
+        19,
+        18,
+        17,
+        16,
+        15,
+        14,
+        13,
+        12,
+        11,
+        10,
+        27,
+        26,
+        25,
+        24,
+        23,
+        22,
+        21,
+        20,
+        19,
+        18,
+        17,
+        16,
+        15,
+        14,
+        13,
+        12,
+        11,
+        10,
+        27,
+        26,
+        25,
+        24,
+        23,
+        22,
+        21,
+        20,
+        19,
+        18,
+        17,
+        16,
+        15,
+        14,
+        13,
+        12,
+        11,
+        10,
+        27,
+        26,
+        25,
+        24,
+        23,
+        22,
+        21,
+        20,
+        19,
+        18,
+        17,
+        16,
+        15,
+        14,
+        13,
+        12,
+        11,
+        10,
+        27,
+        26,
+        25,
+        24,
+        23
+      ],
+      "analysis": null,
+      "arrangement": {
+        "enabled": true,
+        "start": 0,
+        "trimStart": 0,
+        "trimEnd": 0,
+        "gain": 100,
+        "fadeIn": 0,
+        "fadeOut": 0,
+        "automationTarget": "volume",
+        "automation": {
+          "volume": [
+            {
+              "position": 0,
+              "value": 100
+            },
+            {
+              "position": 1,
+              "value": 100
+            }
+          ],
+          "filter": [
+            {
+              "position": 0,
+              "value": 50
+            },
+            {
+              "position": 1,
+              "value": 50
+            }
+          ],
+          "reverb": [
+            {
+              "position": 0,
+              "value": 15
+            },
+            {
+              "position": 1,
+              "value": 15
+            }
+          ]
+        }
+      },
+      "lanes": {
+        "fullMix": {
+          "id": "fullMix",
+          "label": "Full mix",
+          "assetId": "",
+          "name": "",
+          "level": 100,
+          "muted": false,
+          "solo": false,
+          "pitch": 0,
+          "duration": 0,
+          "status": "empty"
+        },
+        "drums": {
+          "id": "drums",
+          "label": "Drums",
+          "assetId": "",
+          "name": "",
+          "level": 100,
+          "muted": false,
+          "solo": false,
+          "pitch": 0,
+          "duration": 0,
+          "status": "empty"
+        },
+        "bass": {
+          "id": "bass",
+          "label": "Bass",
+          "assetId": "",
+          "name": "",
+          "level": 100,
+          "muted": false,
+          "solo": false,
+          "pitch": 0,
+          "duration": 0,
+          "status": "empty"
+        },
+        "music": {
+          "id": "music",
+          "label": "Music",
+          "assetId": "",
+          "name": "",
+          "level": 100,
+          "muted": false,
+          "solo": false,
+          "pitch": 0,
+          "duration": 0,
+          "status": "empty"
+        },
+        "vocals": {
+          "id": "vocals",
+          "label": "Vocals",
+          "assetId": "",
+          "name": "",
+          "level": 100,
+          "muted": false,
+          "solo": false,
+          "pitch": 0,
+          "duration": 0,
+          "status": "empty"
+        }
+      }
+    },
+    {
+      "id": "B",
+      "accent": "#4a9eff",
+      "side": "right",
+      "cfSide": "right",
+      "title": "Empty deck",
+      "keyName": "--",
+      "sourceKeyName": "--",
+      "bpm": 120,
+      "beatOffset": 0,
+      "downbeat": 1,
+      "gain": 100,
+      "fader": 100,
+      "pitch": 0,
+      "filter": 50,
+      "eq": {
+        "low": 50,
+        "mid": 50,
+        "high": 50
+      },
+      "fx": {
+        "reverb": 15,
+        "echo": 0,
+        "macro": 0
+      },
+      "stemFx": {
+        "drums": {
+          "filter": 50,
+          "send": 0,
+          "pitch": 0
+        },
+        "bass": {
+          "filter": 50,
+          "send": 0,
+          "pitch": 0
+        },
+        "music": {
+          "filter": 50,
+          "send": 0,
+          "pitch": 0
+        },
+        "vocals": {
+          "filter": 50,
+          "send": 0,
+          "pitch": 0
+        }
+      },
+      "looping": false,
+      "loopStart": 0,
+      "loopEnd": 2.5,
+      "synced": false,
+      "keyLock": true,
+      "liveKey": false,
+      "slip": false,
+      "tempoInterpretation": "Straight",
+      "syncMode": "BPM",
+      "activeToolTab": "CUES",
+      "hotCues": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "introEnd": null,
+      "outroStart": null,
+      "muted": false,
+      "solo": false,
+      "sends": {
+        "a": 0,
+        "b": 0
+      },
+      "inserts": [],
+      "cue": false,
+      "playing": false,
+      "duration": 0,
+      "waveform": [
+        10,
+        27,
+        26,
+        25,
+        24,
+        23,
+        22,
+        21,
+        20,
+        19,
+        18,
+        17,
+        16,
+        15,
+        14,
+        13,
+        12,
+        11,
+        10,
+        27,
+        26,
+        25,
+        24,
+        23,
+        22,
+        21,
+        20,
+        19,
+        18,
+        17,
+        16,
+        15,
+        14,
+        13,
+        12,
+        11,
+        10,
+        27,
+        26,
+        25,
+        24,
+        23,
+        22,
+        21,
+        20,
+        19,
+        18,
+        17,
+        16,
+        15,
+        14,
+        13,
+        12,
+        11,
+        10,
+        27,
+        26,
+        25,
+        24,
+        23,
+        22,
+        21,
+        20,
+        19,
+        18,
+        17,
+        16,
+        15,
+        14,
+        13,
+        12,
+        11,
+        10,
+        27,
+        26,
+        25,
+        24,
+        23,
+        22,
+        21,
+        20,
+        19,
+        18,
+        17,
+        16,
+        15,
+        14,
+        13,
+        12,
+        11,
+        10,
+        27,
+        26,
+        25,
+        24,
+        23
+      ],
+      "analysis": null,
+      "arrangement": {
+        "enabled": true,
+        "start": 0,
+        "trimStart": 0,
+        "trimEnd": 0,
+        "gain": 100,
+        "fadeIn": 0,
+        "fadeOut": 0,
+        "automationTarget": "volume",
+        "automation": {
+          "volume": [
+            {
+              "position": 0,
+              "value": 100
+            },
+            {
+              "position": 1,
+              "value": 100
+            }
+          ],
+          "filter": [
+            {
+              "position": 0,
+              "value": 50
+            },
+            {
+              "position": 1,
+              "value": 50
+            }
+          ],
+          "reverb": [
+            {
+              "position": 0,
+              "value": 15
+            },
+            {
+              "position": 1,
+              "value": 15
+            }
+          ]
+        }
+      },
+      "lanes": {
+        "fullMix": {
+          "id": "fullMix",
+          "label": "Full mix",
+          "assetId": "",
+          "name": "",
+          "level": 100,
+          "muted": false,
+          "solo": false,
+          "pitch": 0,
+          "duration": 0,
+          "status": "empty"
+        },
+        "drums": {
+          "id": "drums",
+          "label": "Drums",
+          "assetId": "",
+          "name": "",
+          "level": 100,
+          "muted": false,
+          "solo": false,
+          "pitch": 0,
+          "duration": 0,
+          "status": "empty"
+        },
+        "bass": {
+          "id": "bass",
+          "label": "Bass",
+          "assetId": "",
+          "name": "",
+          "level": 100,
+          "muted": false,
+          "solo": false,
+          "pitch": 0,
+          "duration": 0,
+          "status": "empty"
+        },
+        "music": {
+          "id": "music",
+          "label": "Music",
+          "assetId": "",
+          "name": "",
+          "level": 100,
+          "muted": false,
+          "solo": false,
+          "pitch": 0,
+          "duration": 0,
+          "status": "empty"
+        },
+        "vocals": {
+          "id": "vocals",
+          "label": "Vocals",
+          "assetId": "",
+          "name": "",
+          "level": 100,
+          "muted": false,
+          "solo": false,
+          "pitch": 0,
+          "duration": 0,
+          "status": "empty"
+        }
+      }
+    },
+    {
+      "id": "C",
+      "accent": "#b47aff",
+      "side": "left",
+      "cfSide": "left",
+      "title": "Empty deck",
+      "keyName": "--",
+      "sourceKeyName": "--",
+      "bpm": 120,
+      "beatOffset": 0,
+      "downbeat": 1,
+      "gain": 100,
+      "fader": 100,
+      "pitch": 0,
+      "filter": 50,
+      "eq": {
+        "low": 50,
+        "mid": 50,
+        "high": 50
+      },
+      "fx": {
+        "reverb": 15,
+        "echo": 0,
+        "macro": 0
+      },
+      "stemFx": {
+        "drums": {
+          "filter": 50,
+          "send": 0,
+          "pitch": 0
+        },
+        "bass": {
+          "filter": 50,
+          "send": 0,
+          "pitch": 0
+        },
+        "music": {
+          "filter": 50,
+          "send": 0,
+          "pitch": 0
+        },
+        "vocals": {
+          "filter": 50,
+          "send": 0,
+          "pitch": 0
+        }
+      },
+      "looping": false,
+      "loopStart": 0,
+      "loopEnd": 2.5,
+      "synced": false,
+      "keyLock": true,
+      "liveKey": false,
+      "slip": false,
+      "tempoInterpretation": "Straight",
+      "syncMode": "BPM",
+      "activeToolTab": "CUES",
+      "hotCues": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "introEnd": null,
+      "outroStart": null,
+      "muted": false,
+      "solo": false,
+      "sends": {
+        "a": 0,
+        "b": 0
+      },
+      "inserts": [],
+      "cue": false,
+      "playing": false,
+      "duration": 0,
+      "waveform": [
+        10,
+        27,
+        26,
+        25,
+        24,
+        23,
+        22,
+        21,
+        20,
+        19,
+        18,
+        17,
+        16,
+        15,
+        14,
+        13,
+        12,
+        11,
+        10,
+        27,
+        26,
+        25,
+        24,
+        23,
+        22,
+        21,
+        20,
+        19,
+        18,
+        17,
+        16,
+        15,
+        14,
+        13,
+        12,
+        11,
+        10,
+        27,
+        26,
+        25,
+        24,
+        23,
+        22,
+        21,
+        20,
+        19,
+        18,
+        17,
+        16,
+        15,
+        14,
+        13,
+        12,
+        11,
+        10,
+        27,
+        26,
+        25,
+        24,
+        23,
+        22,
+        21,
+        20,
+        19,
+        18,
+        17,
+        16,
+        15,
+        14,
+        13,
+        12,
+        11,
+        10,
+        27,
+        26,
+        25,
+        24,
+        23,
+        22,
+        21,
+        20,
+        19,
+        18,
+        17,
+        16,
+        15,
+        14,
+        13,
+        12,
+        11,
+        10,
+        27,
+        26,
+        25,
+        24,
+        23
+      ],
+      "analysis": null,
+      "arrangement": {
+        "enabled": true,
+        "start": 0,
+        "trimStart": 0,
+        "trimEnd": 0,
+        "gain": 100,
+        "fadeIn": 0,
+        "fadeOut": 0,
+        "automationTarget": "volume",
+        "automation": {
+          "volume": [
+            {
+              "position": 0,
+              "value": 100
+            },
+            {
+              "position": 1,
+              "value": 100
+            }
+          ],
+          "filter": [
+            {
+              "position": 0,
+              "value": 50
+            },
+            {
+              "position": 1,
+              "value": 50
+            }
+          ],
+          "reverb": [
+            {
+              "position": 0,
+              "value": 15
+            },
+            {
+              "position": 1,
+              "value": 15
+            }
+          ]
+        }
+      },
+      "lanes": {
+        "fullMix": {
+          "id": "fullMix",
+          "label": "Full mix",
+          "assetId": "",
+          "name": "",
+          "level": 100,
+          "muted": false,
+          "solo": false,
+          "pitch": 0,
+          "duration": 0,
+          "status": "empty"
+        },
+        "drums": {
+          "id": "drums",
+          "label": "Drums",
+          "assetId": "",
+          "name": "",
+          "level": 100,
+          "muted": false,
+          "solo": false,
+          "pitch": 0,
+          "duration": 0,
+          "status": "empty"
+        },
+        "bass": {
+          "id": "bass",
+          "label": "Bass",
+          "assetId": "",
+          "name": "",
+          "level": 100,
+          "muted": false,
+          "solo": false,
+          "pitch": 0,
+          "duration": 0,
+          "status": "empty"
+        },
+        "music": {
+          "id": "music",
+          "label": "Music",
+          "assetId": "",
+          "name": "",
+          "level": 100,
+          "muted": false,
+          "solo": false,
+          "pitch": 0,
+          "duration": 0,
+          "status": "empty"
+        },
+        "vocals": {
+          "id": "vocals",
+          "label": "Vocals",
+          "assetId": "",
+          "name": "",
+          "level": 100,
+          "muted": false,
+          "solo": false,
+          "pitch": 0,
+          "duration": 0,
+          "status": "empty"
+        }
+      }
+    },
+    {
+      "id": "D",
+      "accent": "#e8a54a",
+      "side": "right",
+      "cfSide": "right",
+      "title": "Empty deck",
+      "keyName": "--",
+      "sourceKeyName": "--",
+      "bpm": 120,
+      "beatOffset": 0,
+      "downbeat": 1,
+      "gain": 100,
+      "fader": 100,
+      "pitch": 0,
+      "filter": 50,
+      "eq": {
+        "low": 50,
+        "mid": 50,
+        "high": 50
+      },
+      "fx": {
+        "reverb": 15,
+        "echo": 0,
+        "macro": 0
+      },
+      "stemFx": {
+        "drums": {
+          "filter": 50,
+          "send": 0,
+          "pitch": 0
+        },
+        "bass": {
+          "filter": 50,
+          "send": 0,
+          "pitch": 0
+        },
+        "music": {
+          "filter": 50,
+          "send": 0,
+          "pitch": 0
+        },
+        "vocals": {
+          "filter": 50,
+          "send": 0,
+          "pitch": 0
+        }
+      },
+      "looping": false,
+      "loopStart": 0,
+      "loopEnd": 2.5,
+      "synced": false,
+      "keyLock": true,
+      "liveKey": false,
+      "slip": false,
+      "tempoInterpretation": "Straight",
+      "syncMode": "BPM",
+      "activeToolTab": "CUES",
+      "hotCues": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "introEnd": null,
+      "outroStart": null,
+      "muted": false,
+      "solo": false,
+      "sends": {
+        "a": 0,
+        "b": 0
+      },
+      "inserts": [],
+      "cue": false,
+      "playing": false,
+      "duration": 0,
+      "waveform": [
+        10,
+        27,
+        26,
+        25,
+        24,
+        23,
+        22,
+        21,
+        20,
+        19,
+        18,
+        17,
+        16,
+        15,
+        14,
+        13,
+        12,
+        11,
+        10,
+        27,
+        26,
+        25,
+        24,
+        23,
+        22,
+        21,
+        20,
+        19,
+        18,
+        17,
+        16,
+        15,
+        14,
+        13,
+        12,
+        11,
+        10,
+        27,
+        26,
+        25,
+        24,
+        23,
+        22,
+        21,
+        20,
+        19,
+        18,
+        17,
+        16,
+        15,
+        14,
+        13,
+        12,
+        11,
+        10,
+        27,
+        26,
+        25,
+        24,
+        23,
+        22,
+        21,
+        20,
+        19,
+        18,
+        17,
+        16,
+        15,
+        14,
+        13,
+        12,
+        11,
+        10,
+        27,
+        26,
+        25,
+        24,
+        23,
+        22,
+        21,
+        20,
+        19,
+        18,
+        17,
+        16,
+        15,
+        14,
+        13,
+        12,
+        11,
+        10,
+        27,
+        26,
+        25,
+        24,
+        23
+      ],
+      "analysis": null,
+      "arrangement": {
+        "enabled": true,
+        "start": 0,
+        "trimStart": 0,
+        "trimEnd": 0,
+        "gain": 100,
+        "fadeIn": 0,
+        "fadeOut": 0,
+        "automationTarget": "volume",
+        "automation": {
+          "volume": [
+            {
+              "position": 0,
+              "value": 100
+            },
+            {
+              "position": 1,
+              "value": 100
+            }
+          ],
+          "filter": [
+            {
+              "position": 0,
+              "value": 50
+            },
+            {
+              "position": 1,
+              "value": 50
+            }
+          ],
+          "reverb": [
+            {
+              "position": 0,
+              "value": 15
+            },
+            {
+              "position": 1,
+              "value": 15
+            }
+          ]
+        }
+      },
+      "lanes": {
+        "fullMix": {
+          "id": "fullMix",
+          "label": "Full mix",
+          "assetId": "",
+          "name": "",
+          "level": 100,
+          "muted": false,
+          "solo": false,
+          "pitch": 0,
+          "duration": 0,
+          "status": "empty"
+        },
+        "drums": {
+          "id": "drums",
+          "label": "Drums",
+          "assetId": "",
+          "name": "",
+          "level": 100,
+          "muted": false,
+          "solo": false,
+          "pitch": 0,
+          "duration": 0,
+          "status": "empty"
+        },
+        "bass": {
+          "id": "bass",
+          "label": "Bass",
+          "assetId": "",
+          "name": "",
+          "level": 100,
+          "muted": false,
+          "solo": false,
+          "pitch": 0,
+          "duration": 0,
+          "status": "empty"
+        },
+        "music": {
+          "id": "music",
+          "label": "Music",
+          "assetId": "",
+          "name": "",
+          "level": 100,
+          "muted": false,
+          "solo": false,
+          "pitch": 0,
+          "duration": 0,
+          "status": "empty"
+        },
+        "vocals": {
+          "id": "vocals",
+          "label": "Vocals",
+          "assetId": "",
+          "name": "",
+          "level": 100,
+          "muted": false,
+          "solo": false,
+          "pitch": 0,
+          "duration": 0,
+          "status": "empty"
+        }
+      }
+    }
+  ],
+  "pads": [
+    {
+      "name": "Kick",
+      "frequency": 72,
+      "accent": "#26d9ff",
+      "gain": 82,
+      "assetId": ""
+    },
+    {
+      "name": "Snare",
+      "frequency": 180,
+      "accent": "#62f5c8",
+      "gain": 82,
+      "assetId": ""
+    },
+    {
+      "name": "Hat",
+      "frequency": 420,
+      "accent": "#4a90e2",
+      "gain": 82,
+      "assetId": ""
+    },
+    {
+      "name": "Clap",
+      "frequency": 260,
+      "accent": "#9b7bff",
+      "gain": 82,
+      "assetId": ""
+    },
+    {
+      "name": "Low",
+      "frequency": 110,
+      "accent": "#ffb020",
+      "gain": 82,
+      "assetId": ""
+    },
+    {
+      "name": "Rise",
+      "frequency": 760,
+      "accent": "#e0742b",
+      "gain": 82,
+      "assetId": ""
+    },
+    {
+      "name": "Perc",
+      "frequency": 330,
+      "accent": "#e03030",
+      "gain": 82,
+      "assetId": ""
+    },
+    {
+      "name": "Tone",
+      "frequency": 610,
+      "accent": "#d44fc8",
+      "gain": 82,
+      "assetId": ""
+    }
+  ],
+  "recordings": [],
+  "crossfader": 50,
+  "crossfaderCurve": "Smooth",
+  "crossfaderReverse": false,
+  "masterLevel": 100,
+  "masterProcessing": {
+    "inputTrim": 0,
+    "limiterDrive": 0,
+    "lowFrequency": 250,
+    "highFrequency": 2500,
+    "targetLufs": -14,
+    "targetPeak": -1,
+    "low": 0,
+    "mid": 0,
+    "high": 0,
+    "lowCut": 20,
+    "width": 100,
+    "ceiling": -1,
+    "bypass": false
+  },
+  "masterBpm": 120,
+  "projectKey": "Off",
+  "limiter": true,
+  "aiMaster": false,
+  "aiMasterMode": "Streaming -14",
+  "transfer": null,
+  "pianoNotes": [],
+  "arranger": {
+    "version": 1,
+    "tracks": [],
+    "captures": []
+  },
+  "mixer": {
+    "returns": {
+      "a": {
+        "size": 45,
+        "decay": 2.4,
+        "preDelay": 12,
+        "tone": 50,
+        "level": 70,
+        "muted": false
+      },
+      "b": {
+        "division": "1/4",
+        "feedback": 35,
+        "tone": 50,
+        "pingPong": false,
+        "level": 70,
+        "muted": false
+      }
+    }
+  }
+}

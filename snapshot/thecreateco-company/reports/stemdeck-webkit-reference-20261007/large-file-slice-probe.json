@@ -1,0 +1,184 @@
+[
+  {
+    "name": "webkit",
+    "version": "26.5",
+    "profile": "/Users/agentsattari/.openclaw/tmp/stemdeck-slice-WRArOD",
+    "rows": [
+      {
+        "name": "slice",
+        "beforeBytes": 4096,
+        "afterDeclaredBytes": 4096,
+        "afterReadBytes": 4096,
+        "firstBytes": [
+          34,
+          58,
+          50,
+          50,
+          46,
+          52,
+          57,
+          48,
+          56,
+          56,
+          52,
+          51
+        ],
+        "pass": true
+      },
+      {
+        "name": "composed",
+        "beforeBytes": 4096,
+        "afterDeclaredBytes": 4096,
+        "afterReadBytes": 4096,
+        "firstBytes": [
+          34,
+          58,
+          50,
+          50,
+          46,
+          52,
+          57,
+          48,
+          56,
+          56,
+          52,
+          51
+        ],
+        "pass": true
+      },
+      {
+        "name": "materialized",
+        "beforeBytes": 4096,
+        "afterDeclaredBytes": 4096,
+        "afterReadBytes": 4096,
+        "firstBytes": [
+          34,
+          58,
+          50,
+          50,
+          46,
+          52,
+          57,
+          48,
+          56,
+          56,
+          52,
+          51
+        ],
+        "pass": true
+      },
+      {
+        "name": "bytes",
+        "beforeBytes": 4096,
+        "afterDeclaredBytes": 4096,
+        "afterReadBytes": 4096,
+        "firstBytes": [
+          34,
+          58,
+          50,
+          50,
+          46,
+          52,
+          57,
+          48,
+          56,
+          56,
+          52,
+          51
+        ],
+        "pass": true
+      }
+    ]
+  },
+  {
+    "name": "chromium",
+    "version": "151.0.7922.34",
+    "profile": "/Users/agentsattari/.openclaw/tmp/stemdeck-slice-Zr13mY",
+    "rows": [
+      {
+        "name": "slice",
+        "beforeBytes": 4096,
+        "afterDeclaredBytes": 4096,
+        "afterReadBytes": 4096,
+        "firstBytes": [
+          34,
+          58,
+          50,
+          50,
+          46,
+          52,
+          57,
+          48,
+          56,
+          56,
+          52,
+          51
+        ],
+        "pass": true
+      },
+      {
+        "name": "composed",
+        "beforeBytes": 4096,
+        "afterDeclaredBytes": 4096,
+        "afterReadBytes": 4096,
+        "firstBytes": [
+          34,
+          58,
+          50,
+          50,
+          46,
+          52,
+          57,
+          48,
+          56,
+          56,
+          52,
+          51
+        ],
+        "pass": true
+      },
+      {
+        "name": "materialized",
+        "beforeBytes": 4096,
+        "afterDeclaredBytes": 4096,
+        "afterReadBytes": 4096,
+        "firstBytes": [
+          34,
+          58,
+          50,
+          50,
+          46,
+          52,
+          57,
+          48,
+          56,
+          56,
+          52,
+          51
+        ],
+        "pass": true
+      },
+      {
+        "name": "bytes",
+        "beforeBytes": 4096,
+        "afterDeclaredBytes": 4096,
+        "afterReadBytes": 4096,
+        "firstBytes": [
+          34,
+          58,
+          50,
+          50,
+          46,
+          52,
+          57,
+          48,
+          56,
+          56,
+          52,
+          51
+        ],
+        "pass": true
+      }
+    ]
+  }
+]

@@ -1,0 +1,77 @@
+{
+  "observed_at": "2026-10-08T03:37:22.377459+00:00",
+  "source_sha": "b549a40072c1a5f01cd846fd37c68da3c1c31030",
+  "pr": "https://github.com/armonon/librarian/pull/2",
+  "source_base": "7126236",
+  "source_changed": "Only factual README + guard regression tests; no auth/guest/provider behavior changed.",
+  "core_workflow": {
+    "status": "BLOCKED",
+    "live": "Actual owned3page PDF cannot render because /assets/pdf-BbVnaTMr.js404.",
+    "candidate_subset": "Currentmain realChrome import/render/close/newpage/reopen/download byte equality passes. Six existing WebKit small-iPhone/iPad reading tests pass; network fixture/route-based offline checks, not physical devices or true cold offline boot."
+  },
+  "restoration": {
+    "source_sha": "179024b483c641ba407c83c8d6a5c579c5e1f97b",
+    "live_main_css_worker": "Exact byteSHA1 match",
+    "missing_file": "/assets/pdf-BbVnaTMr.js",
+    "missing_file_sha256": "59e06f6a8c45957395fed4f4f64a5e41e46d870b36a50400937a8cad0096f895",
+    "public_one_file_browser_overlay": "PASS actual painted pixels, close/reopen, exact downloadedbytes; NOT a deployment",
+    "blocker": "Exact preservation of both deployed Netlify function artifacts unresolved.215livefiles/config retained in prepared216file manifest; no draft created."
+  },
+  "auth": {
+    "status": "BLOCKED",
+    "reason": "AI deliberately hidden; approved client login/session integration and authorized verified test access absent. Guard contracts tested with deterministic syntheticresponses only; no providercalls/accounts created."
+  },
+  "tests": {
+    "status": "PASS_LOCAL_SUBSET",
+    "unit": 44,
+    "unit_total": 44,
+    "baseline_unit": 42,
+    "web_build": "PASS",
+    "ios_mode_build": "PASS",
+    "webkit_reading": {
+      "pass": 6,
+      "total": 6
+    },
+    "production_audit": {
+      "info": 0,
+      "low": 0,
+      "moderate": 0,
+      "high": 0,
+      "critical": 0,
+      "total": 0
+    },
+    "full_audit": {
+      "info": 0,
+      "low": 0,
+      "moderate": 11,
+      "high": 4,
+      "critical": 1,
+      "total": 16
+    },
+    "lint_typecheck": "No dedicated scripts declared; not separately certified"
+  },
+  "platforms": {
+    "status": "UNVERIFIED",
+    "observed": "Chrome154 on macOSarm64; WebKit small-iPhone/iPad emulation. No physicaliOS/nativeWindows/Safari verification."
+  },
+  "documentation": {
+    "status": "PASS_SCOPED",
+    "summary": "Removed false offlineheuristic claim; documented hiddenAI prerequisites/guest independence and source/function parity requirement."
+  },
+  "critical_blockers": {
+    "status": "BLOCKED",
+    "items": [
+      "Public PDF reader404 pending exact-function-preserving restoration.",
+      "Full audit1critical4high11moderate dev/build tool findings require triage; no clean full-security claim.",
+      "Full supported-platform, catalog/auth and cold-offline qualification incomplete."
+    ]
+  },
+  "deployment": {
+    "status": "UNCHANGED",
+    "published_deploy": "6ac1ecba6479a9e160b433b7",
+    "published_source_sha": null,
+    "active_frontend_reproduced_from": "179024b483c641ba407c83c8d6a5c579c5e1f97b",
+    "source_pr": "OPEN_NOT_MERGED",
+    "new_deploy_created": false
+  }
+}

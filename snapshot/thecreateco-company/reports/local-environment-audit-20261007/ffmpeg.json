@@ -1,0 +1,10 @@
+{
+  "command": [
+    "ffmpeg",
+    "-version"
+  ],
+  "started_at": "2026-10-08T02:52:26.265777+00:00",
+  "exit_code": 0,
+  "stdout": "ffmpeg version 8.1.1 Copyright (c) 2000-2026 the FFmpeg developers\nbuilt with Apple clang version 21.0.0 (clang-2100.0.123.102)\nconfiguration: --prefix=/opt/homebrew/Cellar/ffmpeg/8.1.1 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags= --enable-ffplay --enable-gpl --enable-libsvtav1 --enable-libopus --enable-libx264 --enable-libmp3lame --enable-libdav1d --enable-libvmaf --enable-libvpx --enable-libx265 --enable-openssl --enable-videotoolbox --enable-audiotoolbox --enable-neon\nlibavutil      60. 26.101 / 60. 26.101\nlibavcodec     62. 28.101 / 62. 28.101\nlibavformat    62. 12.101 / 62. 12.101\nlibavdevice    62.  3.101 / 62.  3.101\nlibavfilter    11. 14.101 / 11. 14.101\nlibswscale      9.  5.101 /  9.  5.101\nlibswresample   6.  3.101 /  6.  3.101\n\nExiting with exit code 0\n",
+  "stderr": ""
+}

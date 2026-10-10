@@ -1,0 +1,11 @@
+{
+  "at": "2026-10-08T02:56:08.834Z",
+  "sourceSha": "e547d7d4eef74d533795cea493a426b091b92d2a",
+  "sourceDirty": false,
+  "scope": "Actual Chromium process death and browser quota denial; not physical disk exhaustion or hardware qualification",
+  "profile": "/Users/agentsattari/.openclaw/tmp/stemdeck-process-recovery-2GM9nJ",
+  "pass": false,
+  "checks": [],
+  "browserVersion": "151.0.7922.34",
+  "error": "page.goto: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:4197/scripts/process-recovery-qa.html\", waiting until \"load\"\u001b[22m\n\n    at start (/Users/agentsattari/code/company-worktrees/sattari-integrated-20261007/scripts/run-process-recovery-qa.mjs:50:14)\n    at async file:///Users/agentsattari/code/company-worktrees/sattari-integrated-20261007/scripts/run-process-recovery-qa.mjs:65:14"
+}

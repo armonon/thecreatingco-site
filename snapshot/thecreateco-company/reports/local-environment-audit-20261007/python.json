@@ -1,0 +1,10 @@
+{
+  "command": [
+    "python3",
+    "--version"
+  ],
+  "started_at": "2026-10-08T02:52:26.255140+00:00",
+  "exit_code": 0,
+  "stdout": "Python 3.14.4\n",
+  "stderr": ""
+}

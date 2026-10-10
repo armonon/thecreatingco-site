@@ -1,0 +1,8 @@
+{
+  "at": "2026-10-08T15:58:43.645468+00:00",
+  "status": "BLOCKED",
+  "reason": "External mkdir Operation not permitted",
+  "moved_files": 0,
+  "reformatted": false,
+  "internal_free_mib": 146
+}

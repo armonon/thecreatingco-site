@@ -1,0 +1,38 @@
+{
+  "at": "2026-10-08T02:13:49.091Z",
+  "browserName": "firefox",
+  "browser": "153.0",
+  "checks": [
+    {
+      "name": "import, actual media playback and reorder",
+      "status": "PASS"
+    },
+    {
+      "name": "save, close and reopen browser library",
+      "status": "PASS"
+    },
+    {
+      "name": "portable export bytes and independent manifest parser",
+      "status": "PASS"
+    },
+    {
+      "name": "damaged archive cannot replace current queue",
+      "status": "PASS"
+    },
+    {
+      "name": "save snapshots metadata before async file reads; later edits stay unsaved",
+      "status": "PASS"
+    },
+    {
+      "name": "actual browser quota rejection",
+      "status": "UNVERIFIED",
+      "reason": "No equivalent browser quota override in this harness; Chromium checked separately"
+    },
+    {
+      "name": "phone controls fit viewport and keyboard labels remain present",
+      "status": "PASS"
+    }
+  ],
+  "pass": true,
+  "archive_sha256": "180fb5d85e350a8c1b009d3b1c2ab1433d1e74a58cc94611ade244b753fe04fd"
+}

@@ -1,0 +1,9 @@
+{
+  "command": "node_modules/.bin/tsx --test tests/resident-memory.test.ts tests/extreme-alpha-memory.test.ts tests/performance-governor.test.ts tests/project-history.test.ts tests/project-zip-stream.test.ts",
+  "exit_code": 0,
+  "tests": 20,
+  "passed": 20,
+  "failed": 0,
+  "skipped": 0,
+  "scope": "synthetic engine tests; not packaged interactive dogfood"
+}

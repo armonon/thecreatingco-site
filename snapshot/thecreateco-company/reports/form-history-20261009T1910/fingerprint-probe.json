@@ -1,0 +1,7 @@
+{
+  "sourceSha": "b5f8b08832dc7961b097ce2ae7a0c29db2fc0055",
+  "probe": "Only one timestamp changed per clone; all authored fields preserved",
+  "innerFabricTimestampChangesFingerprint": true,
+  "wrapperTimestampChangesFingerprint": false,
+  "limitation": "Source function probe only; does not confirm browser checkpoint root cause"
+}
