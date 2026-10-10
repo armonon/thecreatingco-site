@@ -1,0 +1,29 @@
+{
+  "base": "https://6aca9f54728c68d664310180--momentium-creative.netlify.app",
+  "results": [
+    {
+      "width": 1280,
+      "journeys": 6,
+      "availableApps": 36,
+      "archiveRoundtrip": true,
+      "noOverflow": true,
+      "pageErrors": []
+    },
+    {
+      "width": 390,
+      "journeys": 6,
+      "availableApps": 36,
+      "archiveRoundtrip": true,
+      "noOverflow": true,
+      "pageErrors": []
+    },
+    {
+      "width": 320,
+      "journeys": 6,
+      "availableApps": 36,
+      "archiveRoundtrip": true,
+      "noOverflow": true,
+      "pageErrors": []
+    }
+  ]
+}

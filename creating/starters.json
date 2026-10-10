@@ -1,0 +1,126 @@
+[
+  {
+    "id": "orbit",
+    "name": "Orbit",
+    "image": "/assets/orbit-story/orbit-poster.jpg",
+    "view": "/projects/orbit/",
+    "try": "/projects/orbit/",
+    "match": "/projects/orbit/",
+    "credit": "Original: Orbit / thecreatingco. Sound: Foolish Game by snowflake, Levihica remix (CC BY 3.0). Keep CREDITS.txt with your version. The reference film was assembled with FFmpeg; the source pack contains a ScenePilot cut map.",
+    "files": [
+      {
+        "name": "orbit-pendant.form",
+        "stage": "form",
+        "url": "/assets/orbit-story/orbit-pendant.form",
+        "sha256": "ea63291d9a08d93d43d050f9679a697326b9b5b1124dea5e11578e406c1acabb",
+        "type": "application/octet-stream"
+      },
+      {
+        "name": "orbit-artwork.luma",
+        "stage": "luma",
+        "url": "/assets/orbit-story/orbit-artwork.luma",
+        "sha256": "76b2baeb169369cb3adcbef176587652eda421db060c0ed4d158c201e1a7a6b4",
+        "type": "application/octet-stream"
+      },
+      {
+        "name": "orbit-poster.png",
+        "stage": "luma",
+        "url": "/assets/orbit-story/orbit-poster.png",
+        "sha256": "dd9dfff5d980a2876a62ece608b148c790ead325e2a246b18385610d8bb92723",
+        "type": "image/png"
+      },
+      {
+        "name": "orbit-sound.sattari",
+        "stage": "stemdeck",
+        "url": "/assets/orbit-story/orbit-sound.sattari",
+        "sha256": "8710c0fddcb8e5d00350595b150d624cfd60dcd0ee1a787b2c753c49fe97d8cc",
+        "type": "application/octet-stream"
+      },
+      {
+        "name": "orbit-sound.wav",
+        "stage": "stemdeck",
+        "url": "/assets/orbit-story/orbit-sound.wav",
+        "sha256": "a24294446b66b6cc8b09ca3401755d21c0d170b5138e2e1bb45450e9dafe05b7",
+        "type": "audio/wav"
+      },
+      {
+        "name": "orbit-film.scenepilot.json",
+        "stage": "scenepilot",
+        "url": "/assets/orbit-story/orbit-film.scenepilot.json",
+        "sha256": "377fcd64c73ec5393e36b45c721425fe285cd9e3e75d04bdbd69638061441da5",
+        "type": "application/octet-stream"
+      },
+      {
+        "name": "orbit-shot-1.mp4",
+        "stage": "scenepilot",
+        "url": "/assets/orbit-story/orbit-shot-1.mp4",
+        "sha256": "06aba282479a9e20b52579d66327e95834f6930e86e9606ec813831c621fa1d1",
+        "type": "video/mp4"
+      },
+      {
+        "name": "orbit-shot-2.mp4",
+        "stage": "scenepilot",
+        "url": "/assets/orbit-story/orbit-shot-2.mp4",
+        "sha256": "d523a5da748814d65b0f1acf070a767d5898d9c46caad2b6804924f7a939aead",
+        "type": "video/mp4"
+      },
+      {
+        "name": "orbit-shot-3.mp4",
+        "stage": "scenepilot",
+        "url": "/assets/orbit-story/orbit-shot-3.mp4",
+        "sha256": "41d18b49ae5337b31634676377b159eefc69133c988159afdc6ffe1aa1b81fd0",
+        "type": "video/mp4"
+      },
+      {
+        "name": "CREDITS.txt",
+        "stage": "other",
+        "url": "/assets/orbit-story/credits.txt",
+        "sha256": "88010f2d8810a4510a4a2ffaf99b7b526138d4b1c0e79f79c91383ee5e1adfea",
+        "type": "application/octet-stream"
+      },
+      {
+        "name": "README.txt",
+        "stage": "other",
+        "url": "/assets/orbit-story/readme.txt",
+        "sha256": "d0c2d79d94034120c39790daef0b133957bd0cf87300bfd72e41a897acb0750e",
+        "type": "application/octet-stream"
+      }
+    ]
+  },
+  {
+    "id": "form:architecture",
+    "name": "Studio House",
+    "image": "/assets/form-architecture/house-editor.jpg",
+    "view": "/products/form/?lesson=architecture#learn-studio",
+    "try": "/products/form/?lesson=architecture#learn-studio",
+    "match": "/products/form/?lesson=architecture#learn-studio",
+    "credit": "Based on the Studio House workshop. Original source credits and edition limits remain with the lesson. Save or export your edited file from its editor, then add it to this project."
+  },
+  {
+    "id": "luma:print",
+    "name": "Build a signature print.",
+    "image": "/assets/luma-workshops/print-example.jpg",
+    "view": "/products/luma/?lesson=print#learn-studio",
+    "try": "/products/luma/?lesson=print#learn-studio",
+    "match": "/products/luma/?lesson=print#learn-studio",
+    "credit": "Based on the Build a signature print. workshop. Original source credits and edition limits remain with the lesson. Save or export your edited file from its editor, then add it to this project."
+  },
+  {
+    "id": "stemdeck:stems",
+    "name": "Shape the stems",
+    "image": "/assets/stemdeck-studio/stems-live.png",
+    "view": "/products/stemdeck/?lesson=stems#learn-studio",
+    "try": "/products/stemdeck/?lesson=stems#learn-studio",
+    "match": "/products/stemdeck/?lesson=stems#learn-studio",
+    "credit": "Based on the Shape the stems workshop. Original source credits and edition limits remain with the lesson. Save or export your edited file from its editor, then add it to this project."
+  },
+  {
+    "id": "scenepilot:blend",
+    "name": "Blend two scenes",
+    "image": "/assets/scenepilot-workshops/captures/blend.webp",
+    "view": "/products/scenepilot/?lesson=blend#learn-studio",
+    "try": "/products/scenepilot/?lesson=blend#learn-studio",
+    "match": "/products/scenepilot/?lesson=blend#learn-studio",
+    "credit": "Based on the Blend two scenes workshop. Original source credits and edition limits remain with the lesson. Save or export your edited file from its editor, then add it to this project."
+  }
+]
