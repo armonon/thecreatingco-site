@@ -1,11 +1,11 @@
 # Company OS dashboard
 
-Generated: 2026-10-10T02:22:04+00:00
+Generated: 2026-10-10T03:22:04+00:00
 
 Health: unknown (not inferred)
 Bottleneck: Founder-reported revenue $0; apps not ready for sale. Main execution need: complete real workflows and release qualification. Paid offer/demand/delivery remain unvalidated; Square account access is not the current company bottleneck.
 Queue: 0 active; 43 blocked
-Next milestone: [department task omitted]
+Next milestone: Execute18-product completion assignment with evidence-backed release matrix
 Revenue evidence: 0; source=Armon, Discord #millions, 2026-10-07: we have no revenue at the moment; period={'as_of': '2026-10-07', 'type': 'Current founder-reported baseline; not audited daily/7d/30d accounting totals'}
 
 ## Flagships
@@ -17,11 +17,11 @@ Revenue evidence: 0; source=Armon, Discord #millions, 2026-10-07: we have no rev
 
 ## Operations and evidence
 
-Cost snapshot: observed=2026-10-10T02:22:00.262564+00:00; daily list estimate=0.0029449999999999997; billed=unknown; list-estimate coverage=3/176 rows; basis=observed receipt sums; cross-source overlap is unreconciled, not company spend or billed totals
-Supervisor: available; latest report=2026-10-10T02:07:04.430000+00:00; aggregate heartbeat counts={'ACTIVE': 1, 'BLOCKED': 10, 'FAILED': 1, 'IDLE': 17, 'WAITING': 5}
+Cost snapshot: observed=2026-10-10T03:22:00.269092+00:00; daily list estimate=0.0029449999999999997; billed=unknown; list-estimate coverage=3/185 rows; basis=observed receipt sums; cross-source overlap is unreconciled, not company spend or billed totals
+Supervisor: available; latest report=2026-10-10T03:07:05.854000+00:00; aggregate heartbeat counts={'ACTIVE': 1, 'BLOCKED': 10, 'FAILED': 1, 'IDLE': 18, 'WAITING': 5}
 Marketing: read_only_snapshot; recorded outcome aggregates={'impressions': {'recorded_values': 0, 'sum_of_recorded_values': None}, 'clicks': {'recorded_values': 0, 'sum_of_recorded_values': None}, 'replies': {'recorded_values': 0, 'sum_of_recorded_values': None}, 'signups': {'recorded_values': 0, 'sum_of_recorded_values': None}, 'conversions': {'recorded_values': 0, 'sum_of_recorded_values': None}, 'engagement': {'recorded_values': 0, 'sum_of_recorded_values': None}, 'cost': {'recorded_values': 0, 'sum_of_recorded_values': None}}; outcome period={'earliest_record': None, 'latest_record': None}
 Astra historical telemetry: {'ledger_rows': 40, 'outcomes_recorded': 0, 'outcomes_unknown': 40}
 Deliberate Astra cycles: company-os-initial-20261009 selected ENCORE (WAITING_FOR_QUALIFICATION); usage/cost/value=unknown/unknown/unknown/unknown
 Experiments: unknown; No measured experiment result record is present in company state.
 
-Website probes: 2026-10-10T02:22:04+00:00 — https://thecreatingco.com/: ok/200
+Website probes: 2026-10-10T03:22:04+00:00 — https://thecreatingco.com/: ok/200

@@ -1,0 +1,22 @@
+{
+  "observed_at": "2026-10-10T03:11:11.148953+00:00",
+  "task_id": "M07",
+  "sources": [
+    {
+      "path": "core-product-lab/reports/form-worker-images-20261009T1140/README.md",
+      "sha256": "dfb6414c06af7652d828c7b835ac7b76ef1e834289d01bd717163077edf84d5a"
+    },
+    {
+      "path": "core-product-lab/reports/form-worker-images-20261009T1140/independent-review.md",
+      "sha256": "f71d99384bfaef6a7b8dfdddc258f8563f273924d3397485441284e4aea98862"
+    },
+    {
+      "path": "core-product-lab/reports/form-worker-images-20261009T1140/director-completion.json",
+      "sha256": "2c6d0f3c1a36576aa226c7bf9c97770d5048b8b2d578564d514d33b6181f2fdb"
+    },
+    {
+      "path": "core-product-lab/reports/form-worker-images-20261009T1140/worker-image-regression.log",
+      "sha256": "40477e6fe28bddff9f430e209e6f183775b4f4ac9fdb0df4bf7605e8c0367043"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+# Claim-to-evidence map
+
+| Story claim | Source and precise location |
+| --- | --- |
+| `ASSETS` was an R2 bucket, not the static fetcher; optimizer failed before repair with `env.ASSETS.fetch is not a function` and 500. | [README.md](../../core-product-lab/reports/form-worker-images-20261009T1140/README.md), **Reproduction and verification**, step 3; **Candidate**, second bullet. |
+| Repair separates static `STATIC` Fetcher from `ASSETS` R2 binding. | [README.md](../../core-product-lab/reports/form-worker-images-20261009T1140/README.md), **Candidate**, first two bullets; **Reproduction and verification**, step 5. |
+| Local emitted Worker returned PNG 200 with unchanged 67 bytes. | [README.md](../../core-product-lab/reports/form-worker-images-20261009T1140/README.md), **Reproduction and verification**, step 6; fixture byte count/hash in the table immediately after step 11. |
+| No Images binding means original-byte passthrough, not resizing/transcoding. | [README.md](../../core-product-lab/reports/form-worker-images-20261009T1140/README.md), **Candidate**, third bullet; **Reproduction and verification**, step 7. Independent confirmation: [independent-review.md](../../core-product-lab/reports/form-worker-images-20261009T1140/independent-review.md), **Findings and reasoning**, second bullet. |
+| Exact narrow repair was reviewed and pushed in draft PR #9, not deployed or release-qualified. | [README.md](../../core-product-lab/reports/form-worker-images-20261009T1140/README.md), **Director completion** paragraph. The review's limited disposition is in [independent-review.md](../../core-product-lab/reports/form-worker-images-20261009T1140/independent-review.md), **Disposition**. |
+| Hosted web/native checks did not start due to payment/spending-limit annotations; no live/production behavior established. | [README.md](../../core-product-lab/reports/form-worker-images-20261009T1140/README.md), **Director completion** paragraph and final status sentence; corroborated in [independent-review.md](../../core-product-lab/reports/form-worker-images-20261009T1140/independent-review.md), **Limitations and gates**. |

@@ -1,0 +1,16 @@
+{
+  "observed_at": "2026-10-10T03:12:03.537274+00:00",
+  "checks": "PASS: nonempty artifacts, all local evidence links resolve, explicit local/passthrough/unreleased limitations",
+  "files": [
+    {
+      "file": "reports/m07-story-20261010/development-story-draft.md",
+      "sha256": "0fffcb0178a6b0326cab047a72eb90627dc3b3b17f3ba2661e59097338f21e75",
+      "bytes": 1400
+    },
+    {
+      "file": "reports/m07-story-20261010/claim-evidence.md",
+      "sha256": "f80f82843ea7af074ff8be70f636c2fe2633fbdc8781b64d8766e35a016c0cf9",
+      "bytes": 2136
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 # Revenue dashboard
 
-Generated: 2026-10-10T02:13:45.128190+00:00
+Generated: 2026-10-10T03:11:14.121543+00:00
 
 Source: authoritative company context; this file is a generated view, not a second ledger.
 
