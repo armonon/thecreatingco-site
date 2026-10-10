@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-10-09",
+  "updated": "2026-10-10",
   "notes": "Canonical product catalog. counted excludes umbrella hubs. opens:true preserves an existing declared Locker receiver; it is not proof of production qualification. accepts describes expected input types, not certified decoder coverage. Native availability is separate from web status.",
   "home": {
     "name": "thecreatingco.com",
@@ -77,7 +77,7 @@
       "blurb": "Jewelry casting checks",
       "url": "https://form-studio-review.netlify.app/studio",
       "openUrl": "https://form-studio-review.netlify.app/studio",
-      "page": "https://thecreatingco.com/products/form/#cast",
+      "page": "https://thecreatingco.com/products/cast/",
       "accepts": [
         "model/stl",
         "model/gltf-binary",
@@ -365,7 +365,7 @@
       "blurb": "Wide to vertical",
       "url": "https://scenepilot.thecreatingco.com/tools/reframe/",
       "openUrl": "https://scenepilot.thecreatingco.com/tools/reframe/",
-      "page": "https://thecreatingco.com/products/scenepilot/",
+      "page": "https://thecreatingco.com/products/reframe/",
       "accepts": [
         "video/*"
       ],
@@ -686,7 +686,8 @@
         "qualification": "Not end-to-end qualified in this catalog release."
       },
       "opens": false,
-      "storage": "browser-local"
+      "storage": "browser-local",
+      "page": "https://thecreatingco.com/products/locker/"
     },
     {
       "id": "sessions",
@@ -708,7 +709,8 @@
         "state": "unavailable",
         "qualification": "Not end-to-end qualified in this catalog release."
       },
-      "opens": false
+      "opens": false,
+      "page": "https://thecreatingco.com/products/sessions/"
     },
     {
       "id": "pocket-studio",
@@ -731,7 +733,8 @@
         "qualification": "Not end-to-end qualified in this catalog release."
       },
       "opens": false,
-      "entryHint": "Recording uploads require sign-in."
+      "entryHint": "Recording uploads require sign-in.",
+      "page": "https://thecreatingco.com/products/pocket-studio/"
     },
     {
       "id": "cutout",
@@ -758,7 +761,8 @@
       "handoff": {
         "state": "unavailable",
         "qualification": "Not end-to-end qualified in this catalog release."
-      }
+      },
+      "page": "https://thecreatingco.com/products/cutout/"
     },
     {
       "id": "loop",
@@ -782,7 +786,8 @@
       "handoff": {
         "state": "unavailable",
         "qualification": "Not end-to-end qualified in this catalog release."
-      }
+      },
+      "page": "https://thecreatingco.com/products/loop/"
     },
     {
       "id": "luma-glyph",
@@ -853,13 +858,123 @@
       "handoff": {
         "state": "unavailable",
         "qualification": "Not end-to-end qualified in this catalog release."
-      }
+      },
+      "page": "https://thecreatingco.com/products/circle/"
+    },
+    {
+      "id": "animate",
+      "name": "Animate",
+      "blurb": "Frame-by-frame and tween animation",
+      "group": "make",
+      "url": "/apps/animate/studio",
+      "openUrl": "/apps/animate/studio",
+      "page": "https://thecreatingco.com/products/animate/",
+      "counted": true,
+      "status": "alpha",
+      "family": "other",
+      "kind": "app",
+      "disciplines": [
+        "Design"
+      ],
+      "accepts": []
+    },
+    {
+      "id": "moodboard",
+      "name": "Moodboard",
+      "blurb": "Collect references and shape a visual direction",
+      "group": "make",
+      "url": "/apps/moodboard/board",
+      "openUrl": "/apps/moodboard/board",
+      "page": "https://thecreatingco.com/products/moodboard/",
+      "counted": true,
+      "status": "alpha",
+      "family": "other",
+      "kind": "app",
+      "disciplines": [
+        "Design"
+      ],
+      "accepts": []
+    },
+    {
+      "id": "portfolio",
+      "name": "Portfolio Studio",
+      "blurb": "Build and export a portfolio",
+      "group": "make",
+      "url": "/apps/portfolio/studio",
+      "openUrl": "/apps/portfolio/studio",
+      "page": "https://thecreatingco.com/products/portfolio/",
+      "counted": true,
+      "status": "alpha",
+      "family": "other",
+      "kind": "app",
+      "disciplines": [
+        "Design"
+      ],
+      "accepts": []
+    },
+    {
+      "id": "website-checkup",
+      "name": "Website Checkup",
+      "blurb": "Inspect links, page metadata and forms",
+      "group": "everyday",
+      "url": "/checkup/",
+      "openUrl": "/checkup/",
+      "page": "https://thecreatingco.com/products/website-checkup/",
+      "counted": true,
+      "status": "alpha",
+      "family": "other",
+      "kind": "app",
+      "disciplines": [
+        "Everyday"
+      ],
+      "accepts": []
+    },
+    {
+      "id": "hole",
+      "name": "HOLE",
+      "blurb": "Search, collect and explore with Trails",
+      "group": "community",
+      "url": "/community/hole",
+      "openUrl": "/community/hole",
+      "page": "https://thecreatingco.com/products/hole/",
+      "counted": true,
+      "status": "alpha",
+      "family": "other",
+      "kind": "app",
+      "disciplines": [
+        "Community"
+      ],
+      "accepts": []
+    },
+    {
+      "id": "now-messenger",
+      "name": "NOW Messenger",
+      "group": "community",
+      "blurb": "Private messaging, guest chatrooms & disappearing messages",
+      "url": "https://now-messenger.armonon.chatgpt.site/",
+      "openUrl": "https://now-messenger.armonon.chatgpt.site/",
+      "page": "https://thecreatingco.com/products/now-messenger/",
+      "icon": "/app-logos/now-messenger.svg",
+      "counted": true,
+      "kind": "app",
+      "family": "other",
+      "status": "alpha",
+      "disciplines": [
+        "Community"
+      ],
+      "accepts": [],
+      "opens": false,
+      "handoff": {
+        "state": "not-supported"
+      },
+      "storage": "server",
+      "access": "Guest identities; deployment access is controlled separately."
     }
   ],
   "summary": {
-    "experiences": 30,
+    "experiences": 36,
     "studios": 4,
-    "apps": 6,
+    "apps": 12,
     "tools": 13,
     "embedded": 3,
     "platform": 4
