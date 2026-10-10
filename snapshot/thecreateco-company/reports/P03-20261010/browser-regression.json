@@ -1,0 +1,59 @@
+{
+  "observed_at": "2026-10-10T05:13:29.092Z",
+  "checks": [
+    {
+      "name": "drawn stroke persisted",
+      "passed": true
+    },
+    {
+      "name": "download preserves layers and timeline",
+      "passed": true
+    },
+    {
+      "name": "empty-layers rejected without losing editor",
+      "passed": true
+    },
+    {
+      "name": "layers-object rejected without losing editor",
+      "passed": true
+    },
+    {
+      "name": "timeline-object rejected without losing editor",
+      "passed": true
+    },
+    {
+      "name": "future-version rejected without losing editor",
+      "passed": true
+    },
+    {
+      "name": "bad-nested-layer rejected without losing editor",
+      "passed": true
+    },
+    {
+      "name": "all invalid imports show error",
+      "passed": true
+    },
+    {
+      "name": "autosave reopen retains drawn project",
+      "passed": true
+    },
+    {
+      "name": "file reopen restores drawn project",
+      "passed": true
+    },
+    {
+      "name": "no uncaught page errors",
+      "passed": true
+    }
+  ],
+  "dialogs": [
+    "That file doesn't look like an Animate project.",
+    "That file doesn't look like an Animate project.",
+    "That file doesn't look like an Animate project.",
+    "That file doesn't look like an Animate project.",
+    "That file doesn't look like an Animate project."
+  ],
+  "errors": [],
+  "exit_code": 0,
+  "coverage": "local Chromium isolated profile; suite blocked; no native/Locker/physical qualification"
+}

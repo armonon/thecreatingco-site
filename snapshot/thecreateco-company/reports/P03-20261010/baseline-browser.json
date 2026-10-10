@@ -1,0 +1,12 @@
+{
+  "observed_at": "2026-10-10T05:12:26.459393+00:00",
+  "source_sha": "11ccaca4730606ba922ecf70b5754171ce365725",
+  "command": "Playwright Chromium, local Vite http://127.0.0.1:4325/studio; isolated profile; suite requests aborted",
+  "fixture": "valid autosaved P03-preserve-me project with layers replaced by {}",
+  "canvas_count_after_import": 0,
+  "page_errors": [
+    "Cannot read properties of undefined (reading 'id')"
+  ],
+  "exit_code": 0,
+  "interpretation": "Harness completed; application crash reproduced, not a passing workflow"
+}

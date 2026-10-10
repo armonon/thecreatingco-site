@@ -1,0 +1,18 @@
+{
+  "observed_at": "2026-10-10T05:13:49.166Z",
+  "fixture": "ffmpeg generated red160x90video1s H264; isolated local Chromium profile",
+  "source_sha": "18f2273f30501625927d04f72db9851e60abdaa4",
+  "before_pixel": [
+    254,
+    0,
+    0,
+    255
+  ],
+  "after_reload_pixel": [
+    255,
+    255,
+    255,
+    255
+  ],
+  "reopen_preserves_video": false
+}

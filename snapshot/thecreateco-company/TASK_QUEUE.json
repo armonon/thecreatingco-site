@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-10T04:40:02+00:00",
+  "generated_at": "2026-10-10T05:14:06+00:00",
   "tasks": [
     {
       "task_id": "CORE-STEMDECK-SEC-001",
@@ -564,6 +564,46 @@
         "recorded_at": "2026-10-08T00:05:49+00:00",
         "bytes": 7451
       }
+    },
+    {
+      "task_id": "P03-VIDEO-REOPEN-001",
+      "title": "Restore Animate reference video after save/reopen before export",
+      "category": "workflow_gap",
+      "workstream": "ENGINEERING",
+      "product": "animate",
+      "severity": "P1",
+      "model": "openai/gpt-6-luna",
+      "token_budget": 8000,
+      "tool_budget": 35,
+      "dependencies": [
+        "P03"
+      ],
+      "scores": {
+        "impact": 8,
+        "user_value": 9,
+        "confidence": 10,
+        "effort": 3,
+        "risk": 2
+      },
+      "expected_value": "Preserve actual imported reference-video render across autosave/file/Locker reopen and export without affecting source bytes.",
+      "test_requirements": "Reproduce isolated browser import/save/process-reopen/export with generated red video. Baseline center pixel254,0,0,255 becomes255,255,255,255 after reload at18f2273. Rehydrate video elements on all project-load paths; verify exported pixels, byte identity, media resource cleanup, valid image/drawn project regressions.",
+      "source_evidence": [
+        "/Users/agentsattari/thecreateco-company/reports/P03-20261010/video-reopen.json",
+        "/Users/agentsattari/thecreateco-company/reports/P03-20261010-luna-audit.md"
+      ],
+      "next_action": "Claim only after P03 completes; use scoped review branch, Luna execution and independent OpenAI review, exact-head checks/push; no deployment.",
+      "status": "QUEUED",
+      "priority": 120.0,
+      "priority_basis": "ESTIMATE: impact × user_value × confidence / (effort + risk + 1)",
+      "campaign": null,
+      "risk": 2,
+      "created_at": "2026-10-10T05:14:06+00:00",
+      "started_at": null,
+      "completed_at": null,
+      "result": null,
+      "attempts": 0,
+      "owner": null,
+      "lease_until": null
     },
     {
       "task_id": "OS-INTEGRATION-20261009",
@@ -4964,7 +5004,7 @@
       "workstream": "ENGINEERING",
       "product": "animate",
       "campaign": null,
-      "status": "QUEUED",
+      "status": "RUNNING",
       "model": "gpt-6.1-sol",
       "dependencies": [],
       "scores": {
@@ -4987,11 +5027,11 @@
       "priority_basis": "ESTIMATE: impact × user_value × confidence / (effort + risk + 1)",
       "risk": 2,
       "created_at": "2026-10-07T23:38:29+00:00",
-      "started_at": null,
+      "started_at": "2026-10-10T05:10:27+00:00",
       "completed_at": null,
-      "attempts": 0,
-      "owner": null,
-      "lease_until": null
+      "attempts": 1,
+      "owner": "company-director-20261010T0510",
+      "lease_until": "2026-10-10T05:37:26+00:00"
     },
     {
       "task_id": "P04",

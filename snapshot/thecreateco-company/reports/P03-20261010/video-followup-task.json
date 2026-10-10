@@ -1,0 +1,28 @@
+{
+  "task_id": "P03-VIDEO-REOPEN-001",
+  "title": "Restore Animate reference video after save/reopen before export",
+  "category": "workflow_gap",
+  "workstream": "ENGINEERING",
+  "product": "animate",
+  "severity": "P1",
+  "model": "openai/gpt-6-luna",
+  "token_budget": 8000,
+  "tool_budget": 35,
+  "dependencies": [
+    "P03"
+  ],
+  "scores": {
+    "impact": 8,
+    "user_value": 9,
+    "confidence": 10,
+    "effort": 3,
+    "risk": 2
+  },
+  "expected_value": "Preserve actual imported reference-video render across autosave/file/Locker reopen and export without affecting source bytes.",
+  "test_requirements": "Reproduce isolated browser import/save/process-reopen/export with generated red video. Baseline center pixel254,0,0,255 becomes255,255,255,255 after reload at18f2273. Rehydrate video elements on all project-load paths; verify exported pixels, byte identity, media resource cleanup, valid image/drawn project regressions.",
+  "source_evidence": [
+    "/Users/agentsattari/thecreateco-company/reports/P03-20261010/video-reopen.json",
+    "/Users/agentsattari/thecreateco-company/reports/P03-20261010-luna-audit.md"
+  ],
+  "next_action": "Claim only after P03 completes; use scoped review branch, Luna execution and independent OpenAI review, exact-head checks/push; no deployment."
+}

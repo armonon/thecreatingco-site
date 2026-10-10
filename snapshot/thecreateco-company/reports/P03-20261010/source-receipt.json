@@ -1,0 +1,18 @@
+{
+  "observed_at": "2026-10-10T05:17:52.236354+00:00",
+  "sha": "18f2273f30501625927d04f72db9851e60abdaa4",
+  "branch": "company/p03-project-validation-20261010",
+  "files": {
+    "src/engine/project.ts": "fca91a774a5aa1ba269100ee037cac9c19a8caf29420fa909ee2885fb6e1428a",
+    "tests/project.test.ts": "d167c372dd3fcb3d93a287d3c8480497b498dd101c595775b0aef0576d93e27e"
+  },
+  "tracked_tree_clean": true,
+  "unit_tests": 61,
+  "browser_checks": 11,
+  "pwa_checks": 18,
+  "models": {
+    "director_review": "openai/gpt-6.1-sol",
+    "executor": "openai/gpt-6-luna",
+    "astra_calls": 0
+  }
+}
