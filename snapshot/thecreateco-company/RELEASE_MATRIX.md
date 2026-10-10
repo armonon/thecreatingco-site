@@ -1,6 +1,6 @@
 # Product release matrix — ongoing assignment
 
-Updated: 2026-10-09T14:15:28+00:00
+Updated: 2026-10-10T04:13:08+00:00
 **0/18 products meet all documented completion gates. Assignment NOT COMPLETE.**
 
 Named scope: 18/18. CONFIRMED.
@@ -45,111 +45,94 @@ PASS requires exact-candidate evidence and complete declared coverage. Missing c
 
 - Product completion: INCOMPLETE
 - Release status: alpha — Source-described beta remains unqualified; dated evidence supports ALPHA only. No stable or production claim.
-- Candidate: 779d61d324a6f5f8a6813b51735d4495dbfabc08
+- Candidate: b5f8b08832dc7961b097ce2ae7a0c29db2fc0055
 - Repository: https://github.com/armonon/form-studio
 - Application: https://form.thecreatingco.com/studio
-- core workflow: **UNVERIFIED** — Exact779d61d builtChromium shared Model/Fabric/Animation/Model edit/back/keyframe/history subset PASS. Full native, linked/garment handoffs and broader golden workflow unverified.
+- core workflow: **UNVERIFIED** — Exact b5f8b08 emitted Worker static Fetcher/R2 separation, validated PNG fallback and synthetic Sketch/model browser subset pass; full product workflow unqualified.
+  - [README.md](/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-worker-images-20261009T1140/README.md)
+- save reopen export: **UNVERIFIED** — Exact b5f8b08 synthetic browser save/full-process close/reopen/STEP/GLB subset passes; native and full workflows unqualified.
+  - [README.md](/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-worker-images-20261009T1140/README.md)
+- reliability recovery: **UNVERIFIED** — Historical partial evidence at 779d61d324a6f5f8a6813b51735d4495dbfabc08; not requalified on current candidate b5f8b08832dc7961b097ce2ae7a0c29db2fc0055. Exact779d61d shared Undo/Redo and browser save/reopen PASS; two Undo steps required after Animation return. Cross-key native/browser crash/interruption/pressure and linked/garment variants unverified.
   - [README.md](/Users/agentsattari/thecreateco-company/reports/form-handoff-20261008T1210/README.md)
   - [browser-result.json](/Users/agentsattari/thecreateco-company/reports/form-handoff-20261008T1210/browser-result.json)
   - [final-artifact-manifest.json](/Users/agentsattari/thecreateco-company/reports/form-handoff-20261008T1210/final-artifact-manifest.json)
-- save reopen export: **UNVERIFIED** — Exact779d61d actual .form download/full Chromium process restart/reopen preserves CAD/Fabric authored data and Animation cube/keyframe; old history resets. Independent geometry/mesh export evidence remains prior-source only; full native/export/recovery unqualified.
-  - [README.md](/Users/agentsattari/thecreateco-company/reports/form-handoff-20261008T1210/README.md)
-  - [browser-result.json](/Users/agentsattari/thecreateco-company/reports/form-handoff-20261008T1210/browser-result.json)
-  - [final-artifact-manifest.json](/Users/agentsattari/thecreateco-company/reports/form-handoff-20261008T1210/final-artifact-manifest.json)
-- reliability recovery: **UNVERIFIED** — Exact779d61d shared Undo/Redo and browser save/reopen PASS; two Undo steps required after Animation return. Cross-key native/browser crash/interruption/pressure and linked/garment variants unverified.
-  - [README.md](/Users/agentsattari/thecreateco-company/reports/form-handoff-20261008T1210/README.md)
-  - [browser-result.json](/Users/agentsattari/thecreateco-company/reports/form-handoff-20261008T1210/browser-result.json)
-  - [final-artifact-manifest.json](/Users/agentsattari/thecreateco-company/reports/form-handoff-20261008T1210/final-artifact-manifest.json)
-- performance: **UNVERIFIED** — 15JSbudget tests pass; interactive/hardware/largeproject envelope unqualified.
+- performance: **UNVERIFIED** — Historical partial evidence at ea6734638f72232676985f610daac18341fcd8ca; not requalified on current candidate b5f8b08832dc7961b097ce2ae7a0c29db2fc0055. 15JSbudget tests pass; interactive/hardware/largeproject envelope unqualified.
   - [budgets.log](/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-completion-20261007/budgets.log)
-- usability accessibility: **UNVERIFIED** — Former offscreen Project trigger repaired on exact head; actual normal1440 exports PASS. Full accessibility/onboarding coverage unverified; first-run product center dismissed normally.
+- usability accessibility: **UNVERIFIED** — Historical partial evidence at 1e7f6d1c84a6c956ece3cfe6f74b665208bf069c; not requalified on current candidate b5f8b08832dc7961b097ce2ae7a0c29db2fc0055. Former offscreen Project trigger repaired on exact head; actual normal1440 exports PASS. Full accessibility/onboarding coverage unverified; first-run product center dismissed normally.
   - [README.md](/Users/agentsattari/thecreateco-company/reports/form-golden-20261008T0310/README.md)
   - [browser-workflow-result.json](/Users/agentsattari/thecreateco-company/reports/form-golden-20261008T0310/browser-workflow-result.json)
   - [step-verification.json](/Users/agentsattari/thecreateco-company/reports/form-golden-20261008T0310/step-verification.json)
   - [export-verification.json](/Users/agentsattari/thecreateco-company/reports/form-golden-20261008T0310/export-verification.json)
-- responsive behavior: **UNVERIFIED** — Prior exact-head reviewed menu repair passes24browser variants320–1440px; current1440 fullbrowserrestart/export PASS. Former offscreen-menu defect repaired; fullproduct responsive qualification incomplete.
+- responsive behavior: **UNVERIFIED** — Historical partial evidence at 1e7f6d1c84a6c956ece3cfe6f74b665208bf069c; not requalified on current candidate b5f8b08832dc7961b097ce2ae7a0c29db2fc0055. Prior exact-head reviewed menu repair passes24browser variants320–1440px; current1440 fullbrowserrestart/export PASS. Former offscreen-menu defect repaired; fullproduct responsive qualification incomplete.
   - [README.md](/Users/agentsattari/thecreateco-company/reports/form-golden-20261008T0310/README.md)
   - [browser-workflow-result.json](/Users/agentsattari/thecreateco-company/reports/form-golden-20261008T0310/browser-workflow-result.json)
   - [step-verification.json](/Users/agentsattari/thecreateco-company/reports/form-golden-20261008T0310/step-verification.json)
   - [export-verification.json](/Users/agentsattari/thecreateco-company/reports/form-golden-20261008T0310/export-verification.json)
-- security privacy: **UNVERIFIED** — Productionnpm audit zero; development/native/Vinext runtime and deployedtree not fullyqualified.
+- security privacy: **UNVERIFIED** — Historical partial evidence at ea6734638f72232676985f610daac18341fcd8ca; not requalified on current candidate b5f8b08832dc7961b097ce2ae7a0c29db2fc0055. Productionnpm audit zero; development/native/Vinext runtime and deployedtree not fullyqualified.
   - [production-audit.json](/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-completion-20261007/production-audit.json)
-- documentation support: **UNVERIFIED** — Exact779d61d narrow stale routing/shared-container/recovery-boundary correction independently Sol-reviewed and pushed PR8. Full documentation/support coverage unverified.
+- documentation support: **UNVERIFIED** — Historical partial evidence at 779d61d324a6f5f8a6813b51735d4495dbfabc08; not requalified on current candidate b5f8b08832dc7961b097ce2ae7a0c29db2fc0055. Exact779d61d narrow stale routing/shared-container/recovery-boundary correction independently Sol-reviewed and pushed PR8. Full documentation/support coverage unverified.
   - [README.md](/Users/agentsattari/thecreateco-company/reports/form-handoff-20261008T1210/README.md)
   - [browser-result.json](/Users/agentsattari/thecreateco-company/reports/form-handoff-20261008T1210/browser-result.json)
   - [final-artifact-manifest.json](/Users/agentsattari/thecreateco-company/reports/form-handoff-20261008T1210/final-artifact-manifest.json)
-- tests: **UNVERIFIED** — Exact779d61d focused42unit+4mocked integration and12actual builtChromium assertions PASS; desktopfrontend build PASS. Fullsuite/native/hosted/platform gates not qualified by this audit.
+- tests: **UNVERIFIED** — Exact b5f8b08 web and desktop frontend builds, types/lint, local Worker regression and 4 focused asset tests pass; native/full-unit/full-golden coverage incomplete.
+  - [README.md](/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-worker-images-20261009T1140/README.md)
+- supported platforms: **UNVERIFIED** — Historical partial evidence at 779d61d324a6f5f8a6813b51735d4495dbfabc08; not requalified on current candidate b5f8b08832dc7961b097ce2ae7a0c29db2fc0055. Exact779d61d macOSarm64 bundledChromium153 SwiftShader desktopfrontend subset PASS. InstalledChrome154 loopback timed out; native/signed app and other platforms/browsers unqualified.
   - [README.md](/Users/agentsattari/thecreateco-company/reports/form-handoff-20261008T1210/README.md)
   - [browser-result.json](/Users/agentsattari/thecreateco-company/reports/form-handoff-20261008T1210/browser-result.json)
   - [final-artifact-manifest.json](/Users/agentsattari/thecreateco-company/reports/form-handoff-20261008T1210/final-artifact-manifest.json)
-- supported platforms: **UNVERIFIED** — Exact779d61d macOSarm64 bundledChromium153 SwiftShader desktopfrontend subset PASS. InstalledChrome154 loopback timed out; native/signed app and other platforms/browsers unqualified.
-  - [README.md](/Users/agentsattari/thecreateco-company/reports/form-handoff-20261008T1210/README.md)
-  - [browser-result.json](/Users/agentsattari/thecreateco-company/reports/form-handoff-20261008T1210/browser-result.json)
-  - [final-artifact-manifest.json](/Users/agentsattari/thecreateco-company/reports/form-handoff-20261008T1210/final-artifact-manifest.json)
-- critical blockers: **BLOCKED** — Fresh preflight lacks exactnativeapp/DMG/signing identity/credentials; mandatory PR8 web/native checks billing-blocked, desktopartifact skipped. No merge/deployment; fullgolden remains unqualified.
-  - [README.md](/Users/agentsattari/thecreateco-company/reports/form-handoff-20261008T1210/README.md)
-  - [browser-result.json](/Users/agentsattari/thecreateco-company/reports/form-handoff-20261008T1210/browser-result.json)
-  - [final-artifact-manifest.json](/Users/agentsattari/thecreateco-company/reports/form-handoff-20261008T1210/final-artifact-manifest.json)
-  - [hosted-run.txt](/Users/agentsattari/thecreateco-company/reports/form-handoff-20261008T1210/hosted-run.txt)
-  - [native-preflight.json](/Users/agentsattari/thecreateco-company/reports/form-handoff-20261008T1210/native-preflight.json)
-- Deployment: {"status": "PUSHED_PR_OPEN_NOT_MERGED_NOT_DEPLOYED", "source_sha": "779d61d324a6f5f8a6813b51735d4495dbfabc08", "pr": "https://github.com/armonon/form-studio/pull/8", "base": "qa/form-runtime-security-20261008T0340", "prerequisite_pr": "https://github.com/armonon/form-studio/pull/7", "checks": "web/native-macos FAILURE due billing; desktop-artifact SKIPPED; no retry or bypass", "published_source_sha": null}
-- Exact next action: Investigate extra navigation history checkpoint; resume exactnative/cross-channel recovery and explicit linked-model/Fabric-character variants; preserve PR8→PR7→PR5 stack/hosted gates and firstwave priority.
+- critical blockers: **BLOCKED** — Exact PR9 hosted web/native checks billing-blocked, desktop artifact skipped; downstack review, native/full golden and source/live unresolved. No merge/deploy.
+  - [README.md](/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-worker-images-20261009T1140/README.md)
+- Deployment: {"status": "HISTORICALLY_PUSHED_PR_OPEN_NOT_MERGED_NOT_DEPLOYED", "source_sha": "b5f8b08832dc7961b097ce2ae7a0c29db2fc0055", "branch": "fix/form-worker-images-20261009", "pr": "https://github.com/armonon/form-studio/pull/9", "pushed": true, "merged": false, "deployed": false, "verification": "Dated existing report only; no remote ref reread this cycle", "evidence": ["/Users/agentsattari/thecreateco-company/core-product-lab/reports/form-worker-images-20261009T1140/README.md"]}
+- Exact next action: Worker binding repair is reviewed/tested/pushed at b5f8b08 PR9 on PR7; do not rebuild it as unimplemented. Complete downstack/native/full-workflow/source-live qualification; retry hosted checks only after concrete billing/access change.
 
 ## StemDeck
 
 - Product completion: INCOMPLETE
 - Release status: alpha — Software recovery fix qualified; full golden/platform/provenance requirements remain incomplete.
-- Candidate: c15bb06a87b150a966e8c563457de4f2786ba141
+- Candidate: 6bad0edaf198d80d44c9aa02c3e65970fe7d9148
 - Repository: https://github.com/armonon/sattari-custom-site
 - Application: https://stemdeck.thecreatingco.com/studio
-- core workflow: **UNVERIFIED** — Actual clean-head synthetic four-deck load/analyze/12-second continuous perform/capture/replay-print/arrange/undo-redo/save/close/reopen/export passes. Actual production-bundle replay also passes with no late controls and original event history preserved. Full musical/physical/input/platform workflow coverage incomplete. Current local-source WebKit actual four-deck capture, arrangement reconstruction/edit undo-redo and live replay-print PASS (0 late controls); fresh portable restore FAIL, so whole workflow remains unqualified.
+- core workflow: **UNVERIFIED** — Historical partial evidence at c15bb06a87b150a966e8c563457de4f2786ba141; not requalified on current candidate 6bad0edaf198d80d44c9aa02c3e65970fe7d9148. Actual clean-head synthetic four-deck load/analyze/12-second continuous perform/capture/replay-print/arrange/undo-redo/save/close/reopen/export passes. Actual production-bundle replay also passes with no late controls and original event history preserved. Full musical/physical/input/platform workflow coverage incomplete. Current local-source WebKit actual four-deck capture, arrangement reconstruction/edit undo-redo and live replay-print PASS (0 late controls); fresh portable restore FAIL, so whole workflow remains unqualified.
   - [report.json](/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/exact-ui/report.json)
   - [report.json](/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/exact-production-replay/report.json)
   - [README.md](/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/README.md)
   - [README.md](/Users/agentsattari/thecreateco-company/reports/stemdeck-webkit-reference-20261007/README.md)
-- save reopen export: **FAIL** — Current exact-source WebKit normal capture and explicit long-session WAV same-profile browser restart/export PASS: 658368 and 660416 frames at48kHz stereo, maximum PCM error0. Fresh portable profile: normal import returns entire SATPROJ6 archive for individual audio blobs; lossless import fails local storage. Disk pressure affects bulk import failures; wrong bytes directly observed. Whole-product qualification incomplete.
+- save reopen export: **UNVERIFIED** — Historical partial evidence at c15bb06a87b150a966e8c563457de4f2786ba141; not requalified on current candidate 6bad0edaf198d80d44c9aa02c3e65970fe7d9148. Current exact-source WebKit normal capture and explicit long-session WAV same-profile browser restart/export PASS: 658368 and 660416 frames at48kHz stereo, maximum PCM error0. Fresh portable profile: normal import returns entire SATPROJ6 archive for individual audio blobs; lossless import fails local storage. Disk pressure affects bulk import failures; wrong bytes directly observed. Whole-product qualification incomplete.
   - [report.json](/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/exact-ui/report.json)
   - [README.md](/Users/agentsattari/thecreateco-company/reports/stemdeck-webkit-reference-20261007/README.md)
-- reliability recovery: **FAIL** — Current normal full-browser restart, portable archive and mandatory captured-recovery suite pass. Earlier f6f061c SIGKILL/quota evidence is historical; current-head power-loss/full-platform qualification incomplete. Current local WebKit fresh-profile portable restore fails asset byte identity; imported audio reads begin SATPROJ6 rather than RIFF. Original generated archive/capture kept. No real user data was involved.
+- reliability recovery: **UNVERIFIED** — Historical partial evidence at c15bb06a87b150a966e8c563457de4f2786ba141; not requalified on current candidate 6bad0edaf198d80d44c9aa02c3e65970fe7d9148. Current normal full-browser restart, portable archive and mandatory captured-recovery suite pass. Earlier f6f061c SIGKILL/quota evidence is historical; current-head power-loss/full-platform qualification incomplete. Current local WebKit fresh-profile portable restore fails asset byte identity; imported audio reads begin SATPROJ6 rather than RIFF. Original generated archive/capture kept. No real user data was involved.
   - [report.json](/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/exact-ui/report.json)
   - [report.json](/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/exact-gate/report.json)
   - [README.md](/Users/agentsattari/thecreateco-company/reports/stemdeck-webkit-reference-20261007/README.md)
-- performance: **UNVERIFIED** — Measured dependency path-enumeration bottleneck repaired locally without changing 50 ms grain or 250 ms control guards. Actual UI/production replay passes, mandatory unchanged 120-second soak passes. Original lossless capture versus actual print middle interval has zero-sample lag and maximum sample error 9.32e-9. Full musical/hardware envelope unverified.
+- performance: **UNVERIFIED** — Historical partial evidence at c15bb06a87b150a966e8c563457de4f2786ba141; not requalified on current candidate 6bad0edaf198d80d44c9aa02c3e65970fe7d9148. Measured dependency path-enumeration bottleneck repaired locally without changing 50 ms grain or 250 ms control guards. Actual UI/production replay passes, mandatory unchanged 120-second soak passes. Original lossless capture versus actual print middle interval has zero-sample lag and maximum sample error 9.32e-9. Full musical/hardware envelope unverified.
   - [report.json](/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/exact-gate/report.json)
   - [report.json](/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/exact-ui/report.json)
   - [exact-capture-print-comparison.json](/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/exact-capture-print-comparison.json)
   - [cpu-profile.json](/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/actual-modules/cpu-profile.json)
   - [diagnostics.json](/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/reachability-probe/diagnostics.json)
-- usability accessibility: **UNVERIFIED** — Actual desktop file controls, perform/print/arrange and undo/redo exercised. Whole-product artist/accessibility qualification incomplete.
+- usability accessibility: **UNVERIFIED** — Historical partial evidence at c15bb06a87b150a966e8c563457de4f2786ba141; not requalified on current candidate 6bad0edaf198d80d44c9aa02c3e65970fe7d9148. Actual desktop file controls, perform/print/arrange and undo/redo exercised. Whole-product artist/accessibility qualification incomplete.
   - [report.json](/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/exact-ui/report.json)
   - [report.json](/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/exact-gate/report.json)
-- responsive behavior: **UNVERIFIED** — Mandatory built UI viewport checks pass. Real mobile/tablet behavior remains unverified.
+- responsive behavior: **UNVERIFIED** — Historical partial evidence at c15bb06a87b150a966e8c563457de4f2786ba141; not requalified on current candidate 6bad0edaf198d80d44c9aa02c3e65970fe7d9148. Mandatory built UI viewport checks pass. Real mobile/tablet behavior remains unverified.
   - [report.json](/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/exact-gate/report.json)
-- security privacy: **UNVERIFIED** — Version/source-fenced dependency repair changes no source media, network authorization or security gate. Uses owned synthetic fixtures only. Independent source review remains pending; whole-product privacy/security provenance not complete.
+- security privacy: **UNVERIFIED** — Historical partial evidence at c15bb06a87b150a966e8c563457de4f2786ba141; not requalified on current candidate 6bad0edaf198d80d44c9aa02c3e65970fe7d9148. Version/source-fenced dependency repair changes no source media, network authorization or security gate. Uses owned synthetic fixtures only. Independent source review remains pending; whole-product privacy/security provenance not complete.
   - [review-request.json](/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/review-request.json)
   - [clean-install.log](/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/clean-install.log)
   - [README.md](/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/README.md)
-- documentation support: **UNVERIFIED** — Scoped repair, reproducible install and qualification limits documented. Current work log distinguishes ephemeral WebKit Blob failure from persistent reference-decode failure. Full support/release documentation incomplete.
+- documentation support: **UNVERIFIED** — Historical partial evidence at c15bb06a87b150a966e8c563457de4f2786ba141; not requalified on current candidate 6bad0edaf198d80d44c9aa02c3e65970fe7d9148. Scoped repair, reproducible install and qualification limits documented. Current work log distinguishes ephemeral WebKit Blob failure from persistent reference-decode failure. Full support/release documentation incomplete.
   - [README.md](/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/README.md)
   - [review-request.json](/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/review-request.json)
-- tests: **FAIL** — Mandatory exact clean Node 22 gate passes 2,250 tests, lint/types/build/native/browser and unchanged 120-second soak. Supplemental exact UI and actual production replay pass. Persistent platform suites: Chromium 14/14, Firefox 14/14, WebKit 13/14; native MediaRecorder reference decode fails in WebKit. Do not replace that remaining failed check with mandatory-gate PASS. Additional actual WebKit normal-ui and lossless-ui suites exit1 at fresh portable restoration; earlier passing subsets retained. No native-test waiver or source change.
-  - [report.json](/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/exact-gate/report.json)
-  - [report.json](/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/exact-ui/report.json)
-  - [report.json](/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/exact-platforms/report.json)
-  - [report.json](/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/exact-production-replay/report.json)
-  - [README.md](/Users/agentsattari/thecreateco-company/reports/stemdeck-webkit-reference-20261007/README.md)
-- supported platforms: **FAIL** — Persistent Chromium 151 and Firefox 153 native arrangement suites pass 14/14. Persistent WebKit 26.5 passes 13/14 including exact frame/WAV/ZIP and lossless source capture; MediaRecorder reference fails native decodeAudioData. Ephemeral WebKit rejects even a 3-byte Blob while persistent storage succeeds. Real Safari/iOS/Android/native devices unverified. Same WebKit M4A successfully decodes through the real bounded product decoder despite native failure. Explicit WAV and same-profile reopen/export pass; fresh portable restore fails. Do not label Safari universally broken or qualified from Playwright alone.
+- tests: **FAIL** — Exact unchanged 6bad0ed mandatory gate 2026-10-09: disk preflight, matrix and lint pass; unit 2258 PASS / 1 FAIL (forged/tampered device token expected429 actual200). Downstream types/build/browser/audio/soak did not run. Historical 2259-test and synthetic archive subsets are not this gate success.
+  - [README.md](/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-archive-gate-20261009/README.md)
+- supported platforms: **UNVERIFIED** — Historical partial evidence at c15bb06a87b150a966e8c563457de4f2786ba141; not requalified on current candidate 6bad0edaf198d80d44c9aa02c3e65970fe7d9148. Persistent Chromium 151 and Firefox 153 native arrangement suites pass 14/14. Persistent WebKit 26.5 passes 13/14 including exact frame/WAV/ZIP and lossless source capture; MediaRecorder reference fails native decodeAudioData. Ephemeral WebKit rejects even a 3-byte Blob while persistent storage succeeds. Real Safari/iOS/Android/native devices unverified. Same WebKit M4A successfully decodes through the real bounded product decoder despite native failure. Explicit WAV and same-profile reopen/export pass; fresh portable restore fails. Do not label Safari universally broken or qualified from Playwright alone.
   - [report.json](/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/exact-platforms/report.json)
   - [webkit-storage-probe.json](/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/webkit-storage-probe.json)
   - [webkit-persistent-storage-probe.json](/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/webkit-persistent-storage-probe.json)
   - [README.md](/Users/agentsattari/thecreateco-company/reports/stemdeck-webkit-reference-20261007/README.md)
-- critical blockers: **FAIL** — Native reference decoder failure is retained but real bounded product decoder succeeds, so native failure alone is not a proven core blocker. Actual fresh-profile WebKit portable restore byte corruption is a confirmed synthetic-fixture failure; full39-asset imports can also fail local storage with disk-pressure confound. Smaller slice probes pass; root cause remains a hypothesis, no patch approved. Independent review, hosted gates, remaining device/platform/source-live qualification unresolved.
-  - [report.json](/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/exact-ui/report.json)
-  - [report.json](/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/exact-platforms/report.json)
-  - [review-request.json](/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/review-request.json)
-  - [README.md](/Users/agentsattari/thecreateco-company/reports/stemdeck-webkit-reference-20261007/README.md)
-- Deployment: {"status": "LOCAL_ONLY_NEEDS_INDEPENDENT_REVIEW", "branch": "core-lab/stemdeck-replay-deadline-20261007", "base_pr": "https://github.com/armonon/sattari-custom-site/pull/33", "pushed": false, "merged": false, "deployed": false, "local_exact_gate": "PASS", "remote_gate_status": "NOT_REQUESTED_UNPUSHED_REVIEW_PENDING", "review_status": "PENDING", "last_pushed_candidate": "af10e31c9df8f1363d3945e3b1d39518cd858009"}
-- Exact next action: Execute queued CORE-STEM-ARCHIVE-WEBKIT-001 P0 repair: reproduce real39-asset portable roundtrip with disk baseline; use bounded detached-storage candidate only after proof, verify every hash/browser restart/PCM/failure atomicity, retain native failure, obtain independent OpenAI source review and normal stack/CI gates. Qualification audit CORE-STEM-WEBKIT-REFERENCE-001 is NEEDS_REVIEW, not product completion.
+- critical blockers: **BLOCKED** — Disk/dependencies restored for exact 6bad0ed; mandatory gate now blocked by staff-login forged/tampered-token assertion. Root cause unestablished, not confirmed production defect. Hosted/downstack/native/physical/full-workflow/source-live qualification unresolved.
+  - [README.md](/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-archive-gate-20261009/README.md)
+- Deployment: {"status": "HISTORICALLY_PUSHED_PR_OPEN_NOT_MERGED_NOT_DEPLOYED", "source_sha": "6bad0edaf198d80d44c9aa02c3e65970fe7d9148", "branch": "core-lab/stemdeck-archive-webkit-20261008", "pr": "https://github.com/armonon/sattari-custom-site/pull/34", "pushed": true, "merged": false, "deployed": false, "verification": "Dated existing report only; no remote ref reread this cycle", "evidence": ["/Users/agentsattari/thecreateco-company/core-product-lab/reports/stemdeck-archive-gate-20261009/README.md"]}
+- Exact next action: Bounded Sol root-cause investigation of exact6bad staff-login throttle/test isolation failure (expected429 actual200); preserve assertions and independent review for source repair. Then rerun all mandatory phases with exact source. Historical WebKit/native failures retain original provenance; no identical retry or gate waiver.
 
 ## ScenePilot
 

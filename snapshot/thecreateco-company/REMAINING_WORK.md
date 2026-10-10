@@ -78,7 +78,7 @@ First wave: Bounce, Pocket Studio, Key & BPM, Glyph Studio. Missing gate coverag
 - Owner: unclaimed
 - Dependencies: 
 - Last result/blocker: Sol-directed Luna local02c6ece repairs decode and stale-transcription fencing;16 deterministic tests PASS, clean isolated branch. Typecheck failed: pinned compiler missing. Browser/codec/WebM and portable authored media/timing/style save-reopen unqualified. No push/merge/deploy.
-- Next: Resume exact02c6ece isolated branch; restore pinned toolchain and type/lint/tools build, real browser races; implement and qualify portable editable media/caption/style roundtrip. Preserve source stack and mandatory CI gates.
+- Next: Exact 02c6ece branch is now pushed to origin/codex/captions-lifecycle-20261009 (2026-10-09T22:24:59Z handoff receipt). Resume source qualification: restore pinned toolchain, run type/lint/tools build and real browser/codec races, implement and prove portable editable media/caption/style save-reopen. Mandatory CI/stack gates remain.
 
 ## PROGRAM18-REFRAME-LIFECYCLE-001 — Fence Reframe analysis and roundtrip editable crop paths/settings
 - Product: reframe; NEEDS_REVIEW; severity P1; estimated priority 64.0
@@ -92,7 +92,7 @@ First wave: Bounce, Pocket Studio, Key & BPM, Glyph Studio. Missing gate coverag
 - Owner: unclaimed
 - Dependencies: 
 - Last result/blocker: Sol-directed Luna local e3f0123 adds Split same-browser session recovery; independent Sol scoped review PASS WITH LIMITATIONS and exact-final18tests PASS; types/targetlint/build PASS. Full qualification BLOCKED: native IndexedDB reload/quota and real inference/fourWAV/handoff/listening/device benchmark absent. Clean local commit only; no push/deploy.
-- Next: Resume exact e3f0123 native browser storage/reload/quota and real rights-cleared model/four-WAV/handoff qualification; repair exceptional object-URL hydration allocation cleanup; preserve disclosed single-tab limitation and all source/CI/release gates.
+- Next: Exact e3f0123 is now pushed to origin/codex/split-session-20261009 (2026-10-09T22:25:46Z handoff receipt). Resume native browser storage/reload/quota and real rights-cleared model/four-WAV/handoff qualification; repair exceptional object-URL hydration allocation cleanup; preserve single-tab limitation and source/CI/release gates.
 
 ## CORE-STEM-AUD-003 — Measure long-session audio deadlines and memory
 - Product: stemdeck; BLOCKED; severity P1; estimated priority 62.3077
@@ -128,6 +128,13 @@ First wave: Bounce, Pocket Studio, Key & BPM, Glyph Studio. Missing gate coverag
 - Dependencies: 
 - Last result/blocker: Reviewed dependency repair be1f727 pushed PR7 on PR5; full advisory groups19 to12 (high15 to8), production0; unit1527/1527,budgets15/15,types/lint/web/desktop builds and real synthetic lifecycle PASS. Remaining braces/glob/Vinext and Drizzle advisories unresolved; exact-head CI zero-step billing failure. Separate Worker image500 binding defect queued.
 - Next: Resume remaining advisory remediation when compatible patched braces/tooling releases exist or independently reviewed replacement approach is concrete; exact-head audit/affected tests required. PR7 must retain downstack/mandatoryCI/native/deployed artifact gates. Worker binding repair is CORE-FORM-WORKER-IMAGE-BINDING-001.
+
+## FORM-GARMENT-APP-001 — Build dedicated pattern-first garment designer with scan-to-editable-pattern and pattern-to-3D workflows
+- Product: form; NEEDS_REVIEW; severity P1; estimated priority 30.375
+- Owner: unclaimed
+- Dependencies: CORE-FORM-GARMENT-FIT-001
+- Last result/blocker: Completed a bounded source-image custody slice for the pattern-first garment task: exact PNG/JPEG/WebP bytes are embedded as versioned Form project assets with SHA-256/view provenance and duplicate/size guards. 13 focused source/pattern/project tests pass; typecheck, targeted lint, build and independent Sol review pass. This is not an end-user scan workflow and does not complete the app.
+- Next: Review the local slice; then continue with decoded-image validation, front/back upload and trace UI, asset-to-scanEvidence links, and save/reopen/export workflow. Hosted CI remains blocked before job start by GitHub billing/spending-limit status; do not bypass PR/release gates.
 
 ## CORE-SP-WORKFLOW-001 — Qualify complete generated-media golden workflow in Lite and Desktop Pro
 - Product: scenepilot; BLOCKED; severity P2; estimated priority 81.8182
@@ -192,6 +199,13 @@ First wave: Bounce, Pocket Studio, Key & BPM, Glyph Studio. Missing gate coverag
 - Last result/blocker: Sol-directed Luna: existing-artifact Chromium5 checks and real localStorage quota preservation PASS; reference source4bd196d unchanged. Exact source/build correspondence, browser/mobile/interruption/a11y/performance and hosted-stack/live release gates remain UNVERIFIED. No product edits/push/merge/deploy.
 - Next: Establish an identified exact-source build in available dependency environment, then supported-browser interruption/reopen, accessibility/performance and remaining release gates; no gate bypass.
 
+## PROGRAM18-LIBRARIAN-COLLECTIONS-001 — Build and qualify the first curator-to-reader collections workflow
+- Product: librarian; WAITING; severity P2; estimated priority 41.1429
+- Owner: unclaimed
+- Dependencies: 
+- Last result/blocker: Implemented and committed the first Librarian Collections curator-to-reader slice at b6e3ca098dc69b411fdb077982eaedba3742a073. Evidence: 53/53 unit tests; production build; iPhone browser 2/2 (guest PDF.js read, curator create/upload/QR); syntax and diff checks passed. Supabase/Netlify mocked only; no live configuration, migration application, or production verification. Independent review remains pending; no push.
+- Next: Independent OpenAI code/security review of pushed exact commit b6e3ca098dc69b411fdb077982eaedba3742a073; address findings, rerun checks, and follow PR/check gates before merge/deploy. Real Supabase/Netlify qualification remains unperformed.
+
 ## OS-ENCORE-VALIDATE-20261009 — Validate ENCORE post-restart editable performance slice using owned synthetic media
 - Product: stemdeck; WAITING; severity P2; estimated priority 38.5714
 - Owner: unclaimed
@@ -207,11 +221,11 @@ First wave: Bounce, Pocket Studio, Key & BPM, Glyph Studio. Missing gate coverag
 - Next: Resume SAME task after adequate disk for gated exact-source configured build/package and full syntheticUIgolden; inspect signed app.asar and provider/runtime resources. Require upstream fixed version or separately reviewed narrow build-input mitigation; keep16audit groups and PR89-through95 stack/CI gates visible.
 
 ## PROGRAM18-LIBRARIAN-UUID-REPAIR-001 — Apply and qualify scoped Xcode UUID11 CommonJS security override
-- Product: librarian; QUEUED; severity P2; estimated priority 36.0
+- Product: librarian; NEEDS_REVIEW; severity P2; estimated priority 36.0
 - Owner: unclaimed
 - Dependencies: PROGRAM18-LIBRARIAN-MODERATE-DEPS-001
-- Last result/blocker: No result recorded.
-- Next: Bounded Luna worker capsule: owner/task/objective/files/current state/known failure/constraints/acceptance/budgets; implement tested two-file dependency patch, not new app work.
+- Last result/blocker: Sol independently reviewed bounded worker UUID11 override; pushed dce2f0f draft PR4. 44 tests/build/Xcode/assets/direct sync pass; full audit8moderate, prod0; sprintf residual open. Current-main integration/native/required hosted gates unresolved. Luna requested, child actual route unverified.
+- Next: Qualify current-main integration and exact-head required checks for draft PR4; preserve native/full product and sprintf residual gates; no billing retry loops or release bypass.
 
 ## CORE-FORM-WORKER-IMAGE-BINDING-001 — Repair Worker static-image Fetcher and Images binding contract
 - Product: form; BLOCKED; severity P2; estimated priority 30.0
@@ -221,46 +235,39 @@ First wave: Bounce, Pocket Studio, Key & BPM, Glyph Studio. Missing gate coverag
 - Next: After concrete billing/access-resolution evidence, perform one bounded exact-head mandatory hosted CI qualification and review complete PR7/downstack before merge. Preserve native/full-golden/source-live gates; no bypass or automatic billing retries.
 
 ## CORE-STEMDECK-TEST-001 — Stabilize revocation throttle test clock without changing authentication behavior
-- Product: stemdeck; QUEUED; severity P3; estimated priority 83.3333
+- Product: stemdeck; NEEDS_REVIEW; severity P3; estimated priority 83.3333
 - Owner: unclaimed
 - Dependencies: 
-- Last result/blocker: No result recorded.
-- Next: Use exact reviewer-proposed isolated test patch; retain boundary-failure proof and existing security assertions.
-
-## CORE-LUMA-HIGH-DEPTH-DOC-001 — Correct stale high-depth PSD/PSB compatibility disclosure
-- Product: luma; QUEUED; severity P3; estimated priority 66.6667
-- Owner: unclaimed
-- Dependencies: 
-- Last result/blocker: No result recorded.
-- Next: Update README only after reconciling current native admission checks; no broader color implementation.
+- Last result/blocker: Test-only clock stabilization pushed as PR37 at 6265c32; focused17/17 and full serial2234/2234 pass; no auth changes, merge or deploy.
+- Next: Independent exact-head review and hosted gate assessment; retain PR28 downstack release gates.
 
 ## CORE-STEM-AUD-007 — Validate dense performance controls and lower-panel occlusion
-- Product: stemdeck; QUEUED; severity P3; estimated priority 56.0
+- Product: stemdeck; NEEDS_REVIEW; severity P3; estimated priority 56.0
 - Owner: unclaimed
 - Dependencies: 
-- Last result/blocker: No result recorded.
-- Next: Screenshot shows tiny secondary labels and toast over lower controls. Observe keyboard/zoom and loaded four-deck session before redesign; single-source fixture insufficient for deck-layout diagnosis.
+- Last result/blocker: Completed the bounded responsive workspace audit and local CSS fix; npm build and manual 3-width synthetic-fixture checks passed; independent Sol review found no actionable issue. Local change and evidence are review-ready, but no commit/PR/deploy was performed.
+- Next: Review the local branch and evidence packet, then continue only through normal PR/CI/release gates.
 
 ## CORE-STEM-AUD-004 — Make Node26 test environment explicit or pin supported test runtime
-- Product: stemdeck; QUEUED; severity P3; estimated priority 50.0
+- Product: stemdeck; NEEDS_REVIEW; severity P3; estimated priority 50.0
 - Owner: unclaimed
 - Dependencies: 
-- Last result/blocker: No result recorded.
-- Next: Prevent Node native localStorage from shadowing jsdom or explicitly qualify/pin CI Node22/24; never weaken persistence assertions.
+- Last result/blocker: Node 26 experimental process localStorage was shadowing jsdom in parallel browser tests. Added a cross-platform Vitest wrapper and regression proof; full suite 2234/2234, type-check and production build pass at a9e9d97.
+- Next: Independent OpenAI review of a9e9d97, then normal PR/CI route; do not treat this environment repair as full workflow qualification.
 
 ## CORE-SP-UX-001 — Clarify Lite/Pro disabled controls and loaded-media counts
-- Product: scenepilot; QUEUED; severity P3; estimated priority 49.0
+- Product: scenepilot; BLOCKED; severity P3; estimated priority 49.0
 - Owner: unclaimed
 - Dependencies: 
-- Last result/blocker: No result recorded.
-- Next: Verify current behavior before implementing; retain exact-source evidence.
+- Last result/blocker: Exact02c6ece isolated qualification:39tests and renderer build PASS; Lite Video track ordinary click intercepted, known c26d518 fix absent from divergent stack. Desktop scoped media/H264/save/fresh-process reopen PASS; final mixed export blocked by missing ffmpeg-static. Separate-source counts UNKNOWN after2 harness failures. Untested8b6e91d local artifact retained unpushed; no independent review/merge/deploy.
+- Next: Qualify correct reviewed candidate stack including existing c26d518; stage exact lockfile FFmpeg; rerun unforced Lite and full desktop golden plus independent OpenAI stack review. Reuse existing task/fix; do not duplicate.
 
 ## CORE-FORM-HANDOFF-HISTORY-001 — Investigate extra navigation history checkpoint on Animation-to-CAD return
-- Product: form; QUEUED; severity P3; estimated priority 48.0
+- Product: form; BLOCKED; severity P3; estimated priority 48.0
 - Owner: unclaimed
 - Dependencies: 
-- Last result/blocker: No result recorded.
-- Next: Pin current source and compare journal pre/post return; distinguish camera/authored edits from metadata-only changes, then fix only reproduced redundant checkpoint.
+- Last result/blocker: Sol deterministic checkpoint: 12 history/format tests PASS on b5f8b08; isolated timestamp probe confirms Fabric inner updatedAt changes fingerprint, not browser root cause. Luna not dispatched: all cost caps unknown, no new spending approval; browser reproduction/fix unqualified.
+- Next: Establish bounded worker cost authority, resume isolated Luna capsule with exact-current built-browser journal and authored Undo regression; preserve release gates.
 
 ## CORE-FORM-AUD-FEAT-002 — Expand independent interchange corpus for supported recipients
 - Product: form; WAITING; severity P3; estimated priority 39.2
@@ -270,11 +277,11 @@ First wave: Bounce, Pocket Studio, Key & BPM, Glyph Studio. Missing gate coverag
 - Next: Run the documented interchange matrix on supported representative projects and recipient versions; record scale, bounds, topology and warnings.
 
 ## CORE-LUMA-AUD-003 — Measure packaged interaction latency and process memory
-- Product: luma; QUEUED; severity P3; estimated priority 37.3333
+- Product: luma; BLOCKED; severity P3; estimated priority 37.3333
 - Owner: unclaimed
 - Dependencies: 
-- Last result/blocker: No result recorded.
-- Next: Record repeatable brush, transform, open/save/export timings and peak process RAM on dense/sparse fixtures in a packaged build.
+- Last result/blocker: Exact-source release macOS package and ad-hoc codesign PASS;20synthetic memory/persistence tests PASS;CPU brush benchmark pixel parity PASS. Packaged input percentiles/process-tree RAM/full native golden NOT RUN: isolated native recovery profile and measurement driver not established.
+- Next: Reuse task after isolated native qualification identifier/profile and validated input-to-paint/process-tree RSS harness exist; synthetic dense/sparse brush/transform/save/reopen/export fixtures, raw samples and parity required.
 
 ## CORE-FORM-AUD-FEAT-001 — Reconcile exact CAD operation support matrix and parity
 - Product: form; WAITING; severity P3; estimated priority 30.1538
@@ -305,25 +312,25 @@ First wave: Bounce, Pocket Studio, Key & BPM, Glyph Studio. Missing gate coverag
 - Next: Verify current behavior before implementing; retain exact-source evidence.
 
 ## M03 — Turn verified Glyph outputs into a useful tutorial
-- Product: glyph; QUEUED; severity unassigned; estimated priority 112.0
+- Product: glyph; NEEDS_REVIEW; severity unassigned; estimated priority 112.0
 - Owner: unclaimed
 - Dependencies: 
-- Last result/blocker: No result recorded.
-- Next: Use independently reviewed standalone Glyph destination proof and creator-validation-pack.md shot list. Prepare one truthful original-lettering save/reopen/export/use demo. Label Inkscape command-line evidence as such; do not fake manual GUI or Figma/Adobe/Canva support. P08 broader Brand Kit/embedded scope remains pending; narrow evidence dependency is satisfied, not a full-product pass. Existing external publication gates remain; no paid promises. Metadata PR3 merged, not deployed.
+- Last result/blocker: Prepared an internal source-grounded tutorial for the real four-glyph font workflow. It includes a hash-verified actual OTF output image, exact save/reopen/export evidence, and explicit Inkscape 1.4.2 CLI-only limits; it makes no GUI/platform/customer/pricing claims and was not published. Tutorial evidence/link checks 4/4 plus exact artifact SHA checks passed.
+- Next: Independent content review and fresh source-matched browser capture before any publication; preserve external publication gate.
 
 ## P01 — Reconcile Luma production with a reproducible source baseline
-- Product: luma; QUEUED; severity unassigned; estimated priority 101.25
+- Product: luma; BLOCKED; severity unassigned; estimated priority 101.25
 - Owner: unclaimed
 - Dependencies: 
-- Last result/blocker: No result recorded.
-- Next: Verify current deployment, preserve its full manifest and map source before preparing any release; do not automatically roll back.
+- Last result/blocker: Read-only current deployment1692-file manifest retained;1292overlay/277public files match;122downloaded app files exact. Deployed config differs; commit/branch null. Synthetic overlay PASS. Netlify build twice fails external dependency symlink; raw failure evidence preserved. No source/production changes.
+- Next: Reuse P01; recover live build inputs or independently qualify reviewed full replacement; private supported-Node dependencies, full Netlify assembly, synthetic UI golden and exact-source OpenAI/CI/stack gates required. No rollback.
 
 ## W03 — Validate Glyph first-font activation and additional customer value (E02)
-- Product: glyph; QUEUED; severity unassigned; estimated priority 94.5
+- Product: glyph; BLOCKED; severity unassigned; estimated priority 94.5
 - Owner: unclaimed
 - Dependencies: 
-- Last result/blocker: No result recorded.
-- Next: Use E02 and reports/glyph-destination-20261007/creator-validation-pack.md. Narrow standalone TTF/OTF Inkscape CLI render and editable/outlined SVG save-reopen independently passed; manual install/GUI is NOT presumed qualified and must be observed honestly. Prepare/execute five consent-compatible creator journeys under existing Growth send/consent gates; review M04 outcomes before more outreach. Record real failures/help/time/unmet additional need. $0 new spend, six-hour prep cap. No paid launch, existing free core remains free. The P08 destination-evidence dependency is satisfied by the linked narrow proof; broad P08 Brand Kit/embedded/platform scope remains pending, not silently passed.
+- Last result/blocker: Deterministic E02 checks PASS: five null-only placeholders, not observed journeys. M04 blocked; consent-compatible participant outcomes unavailable. No outreach, extra model calls or product changes.
+- Next: Resume only with sanitized M04 outcome reconciliation and consent-compatible real E02 creator-session evidence from existing Growth; no new send authority.
 
 ## P02 — Recheck Librarian reader 404 and prepare a source-level repair
 - Product: librarian; BLOCKED; severity unassigned; estimated priority 92.5714
@@ -332,19 +339,12 @@ First wave: Bounce, Pocket Studio, Key & BPM, Glyph Studio. Missing gate coverag
 - Last result/blocker: Public missingpdf-BbVnaTMr.js404 reproduced. Historical179024b exactmatcheslive main/CSS/worker and reproducesmissingreader; onefilepublicbrowseroverlay restorespaint/reopen/download originalbytes.216file additivemanifest retains215files; no public changes. Exact matching2function ZIP/reuse mechanism absent; no unsafe draft/publish.
 - Next: Recover exact deployed librarian/proxy function ZIPs or documented immutable reuse, or independently review function-source/config reconstruction. Then review additive reader restoration and normal release gates; never publish prior functionless drafts.
 
-## M01 — Draft evidence-led Reclaim native-alpha demonstration
-- Product: reclaim; QUEUED; severity unassigned; estimated priority 89.6
-- Owner: unclaimed
-- Dependencies: W06
-- Last result/blocker: No result recorded.
-- Next: Verify current download/release first; draft before/after workflow and restore caveat, not a release announcement.
-
 ## P06 — Verify Form review-versus-canonical feature parity
-- Product: form; QUEUED; severity unassigned; estimated priority 85.3333
+- Product: form; BLOCKED; severity unassigned; estimated priority 85.3333
 - Owner: unclaimed
 - Dependencies: 
-- Last result/blocker: No result recorded.
-- Next: Document Cast/Room and canonical release differences; do not publish to a mismatched host.
+- Last result/blocker: Read-only exact PR9 parity batch:52Cast/mesh tests and desktop frontend build PASS; review endpoints200, canonical/public endpoints403. PR9 still reproduces ASCII STL byte corruption26vs12triangles; existing parallel PR6 repair yields12. Room remains another workers dirty checkout. No code commit or push needed; no merge/deploy.
+- Next: Resume with authorized readable canonical artifact and deployed source identity; compare real Cast/Blender/Locker/PWA workflows. Reconcile existing PR6 through normal stack/review/CI gates; preserve Room owner work.
 
 ## P08 — Test Glyph generated fonts and Brand Kit exports
 - Product: glyph; NEEDS_REVIEW; severity unassigned; estimated priority 74.6667
@@ -354,11 +354,11 @@ First wave: Bounce, Pocket Studio, Key & BPM, Glyph Studio. Missing gate coverag
 - Next: Continue remaining P08 Brand Kit/embedded export/licensing/reopen scope separately, coordinate PROGRAM18-GLYPH-001 manual/platform qualification. Preserve narrow native evidence; do not rerun unchanged tests. Release owner can publish merged metadata patch through exact-artifact gates. W03/M03 use reviewed narrow proof and creator-validation-pack; no paid launch or new outreach authorization.
 
 ## P07 — Qualify ScenePilot Board to AutoCut workflow
-- Product: scenepilot; QUEUED; severity unassigned; estimated priority 72.0
+- Product: scenepilot; BLOCKED; severity unassigned; estimated priority 72.0
 - Owner: unclaimed
 - Dependencies: 
-- Last result/blocker: No result recorded.
-- Next: Use a disposable project through save, handoff and export; report exact failure boundaries.
+- Last result/blocker: Board synthetic save/fresh-context reopen/export and parser compatibility PASS; 12/12 focused tests, tools build PASS; independent OpenAI evidence review. AutoCut skips marker-only JSON and rejects session format by design. Editor UI/full golden unverified. No code commit; no push needed.
+- Next: Define Board shot-to-media/source-range/music binding and beat-cut contract; resume P07 with synthetic import/save/reopen/relink/export and missing-media existing-project preservation tests. Reuse P07, no duplicate.
 
 ## P05 — Qualify Reclaim native restore and deletion safeguards
 - Product: reclaim; BLOCKED; severity unassigned; estimated priority 66.6667

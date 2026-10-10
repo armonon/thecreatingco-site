@@ -93,8 +93,8 @@
     },
     {
       "path": "thecreateco-company/COMPANY_STATE.md",
-      "bytes": 8161,
-      "sha256": "1532a7076363d139961129108566c06a0bf93e0eca072563dba4de9e9a464785"
+      "bytes": 8099,
+      "sha256": "ccdda2b9d848f97542598468fa5eef18f1b7998ed7d90298f80e93035cf8ebd7"
     },
     {
       "path": "thecreateco-company/DIRECTIVE.md",
@@ -108,18 +108,18 @@
     },
     {
       "path": "thecreateco-company/OS_DASHBOARD.json",
-      "bytes": 27895,
-      "sha256": "3657a348811e637332e1a0dabae60ad6a18ed3ea8c54a9160c1f8d471621b62d"
+      "bytes": 28155,
+      "sha256": "4cc7449c46db9bf92d76ac60e071f9e50f55283ad3dffdca5511435da0900970"
     },
     {
       "path": "thecreateco-company/OS_DASHBOARD.md",
-      "bytes": 4927,
-      "sha256": "c9ce758d3950cfb765b59f8ec717681ccd1401ec41ee15333675817694f351cc"
+      "bytes": 5163,
+      "sha256": "109143278f52df356cbe2e325c2d05eae75c4bf31d3a13937075e7f74351738a"
     },
     {
       "path": "thecreateco-company/PRODUCT_REGISTRY.json",
-      "bytes": 403278,
-      "sha256": "a9fc242b9a3905f89cb269dfb802aced49ac574c3b612c605ec46c7dad7f0a90"
+      "bytes": 399994,
+      "sha256": "b913c2beea379ca5a660f5233179ad9b111630c0e952e4f2205d5aaa8a563455"
     },
     {
       "path": "thecreateco-company/README.md",
@@ -128,18 +128,18 @@
     },
     {
       "path": "thecreateco-company/RELEASE_MATRIX.md",
-      "bytes": 86822,
-      "sha256": "293c27d941b3b90509bf8a78791aa31a69ae603223f781cac89ae8ecec6f7150"
+      "bytes": 86498,
+      "sha256": "c2e2c62d020805c4082dc68a265687cce300184f8bc90aebb91fbc446f3eac48"
     },
     {
       "path": "thecreateco-company/REMAINING_WORK.md",
-      "bytes": 38033,
-      "sha256": "e079740cf5a4210fdec98cd3f226e3c74683cb426318f84feab26b2e835b0ba1"
+      "bytes": 42161,
+      "sha256": "2b919d29bb800e7c330ce5be51189f6e32a5bcf4bc66c8e3fe20f70759dd010c"
     },
     {
       "path": "thecreateco-company/REVENUE_DASHBOARD.md",
       "bytes": 10538,
-      "sha256": "cb58dbaaccafa8be01fab727c28c2dd797ddc8fa112fb32179275e74f02bea0f"
+      "sha256": "4aff1df1ee506a9446c857f169a75319446739ab9a4f398c6b6d89ba7032bf60"
     },
     {
       "path": "thecreateco-company/REVENUE_DIRECTIVE.md",
@@ -148,8 +148,8 @@
     },
     {
       "path": "thecreateco-company/TASK_QUEUE.json",
-      "bytes": 324825,
-      "sha256": "6d0089fb139c2731a0d46d45a947d1de9148833cd9c092c4117a9dead5fda50c"
+      "bytes": 325651,
+      "sha256": "7fbcd1a1403998a54a99889e136b4daa51822ea94f876c1f3bf82415efa3c99d"
     },
     {
       "path": "thecreateco-company/USER_BRIEF.txt",
@@ -213,8 +213,8 @@
     },
     {
       "path": "thecreateco-company/automation/report-cursor.json",
-      "bytes": 9460,
-      "sha256": "390483a2a30857e6dcfbc74abcb8de2c035a4262a61e91c4f477a2e6f5b3e709"
+      "bytes": 9605,
+      "sha256": "f02c70518cfcbe15c2c1095f4e23d1a55b48f3580d97bcd9d8626a3dd0186b13"
     },
     {
       "path": "thecreateco-company/automation/weekly-review.txt",
@@ -234,12 +234,12 @@
     {
       "path": "thecreateco-company/core-product-lab/HEALTH.md",
       "bytes": 4750,
-      "sha256": "9775b2a728eed4108fe2a97d7948a60651c5ae6e48ffeba36e088d1ef0b7b1ab"
+      "sha256": "9f4878d143a8a95ab9296ad21ebfe1371c5f4e925afc8bfe5fa89c84c4bfb305"
     },
     {
       "path": "thecreateco-company/core-product-lab/PRIORITIES.json",
       "bytes": 141418,
-      "sha256": "9abffb0d9acbc41e2351ca4620ec9c9622383d44cc9e8b5c98a7344d77cca2c1"
+      "sha256": "f84663c0235302b2ab0989707a5fc7d94dc28b20803beda5954fd91950292c85"
     },
     {
       "path": "thecreateco-company/core-product-lab/PRODUCT_HEALTH_REPORT.md",
@@ -3324,7 +3324,7 @@
     {
       "path": "thecreateco-company/data/cost-snapshot.json",
       "bytes": 16038,
-      "sha256": "be617ed491725d352aaf8067be3e92c96468c8eee23bec6e45a0f7a0bef708af"
+      "sha256": "f9766d08067cadd7ab5499d14641b2a2ea8fa184491f2a2a0e5694f78fd3aca4"
     },
     {
       "path": "thecreateco-company/data/experiment-template.json",
@@ -3359,7 +3359,7 @@
     {
       "path": "thecreateco-company/data/revenue/dashboard-snapshot.json",
       "bytes": 12968,
-      "sha256": "926c503c085fca37db36793bd58294048ff21493d991b9f417fbb91fd88fad6d"
+      "sha256": "132fd89da89479bd5cb15bece360736996f91864674137f6c72fdbe16331d792"
     },
     {
       "path": "thecreateco-company/data/revenue/dashboard.py",
@@ -3508,8 +3508,8 @@
     },
     {
       "path": "thecreateco-company/release-program/release-matrix.json",
-      "bytes": 242413,
-      "sha256": "1db7a8e4b47b0e612b821257f3a3094ad13cebd224a34dd9f1d72e6af698cc53"
+      "bytes": 239042,
+      "sha256": "7baad05470a428c19ab7c492bb1551504e2ef3c86c9cdd0f3d0218f5cb08c25d"
     },
     {
       "path": "thecreateco-company/release-program/reports/key-bpm-20261007/README.md",
@@ -6362,6 +6362,26 @@
       "sha256": "050f82a36889497746061e08564d8e0bb3a49c822d40a8e1c76c96d211530f7b"
     },
     {
+      "path": "thecreateco-company/reports/program18-reconcile-20261010/README.md",
+      "bytes": 3155,
+      "sha256": "3dabe65b8ed47be133db8e55e60525e53f65de6d527e6ae46ea3097aff0b82d6"
+    },
+    {
+      "path": "thecreateco-company/reports/program18-reconcile-20261010/evidence-audit.json",
+      "bytes": 2911,
+      "sha256": "b48329c630ec8fef135723065e166e12009250eb7dfbd7bce8f53c42e98625f3"
+    },
+    {
+      "path": "thecreateco-company/reports/program18-reconcile-20261010/preflight.json",
+      "bytes": 1756,
+      "sha256": "ec1b29d17222eb48b79a46a1ca8a065b8825924fead6935b44bacf4308592dfd"
+    },
+    {
+      "path": "thecreateco-company/reports/program18-reconcile-20261010/registry-patch.json",
+      "bytes": 29767,
+      "sha256": "c9425130c927094eaf5981f00a4cd98cf59d5e7f04a47f63558679e4af2cb5e2"
+    },
+    {
       "path": "thecreateco-company/reports/quality-and-feedback-rubric.md",
       "bytes": 2852,
       "sha256": "76709dece844c1f151b107ff590c605643cdf0e17c45d8fcb80586204e08e7f9"
@@ -8024,7 +8044,7 @@
     {
       "path": "thecreateco-marketing/DAILY_STATE.md",
       "bytes": 6775,
-      "sha256": "f4082fb5ff70fe7f9f8e4e0dfb7a3a6dc0e99423f2e5b7fea76648898ae24960"
+      "sha256": "1ea4983a9e0493363318e6d29ba2929b26a12732903a2afa7f7b119d3299b8c2"
     },
     {
       "path": "thecreateco-marketing/DIRECTIVE.md",
@@ -8049,7 +8069,7 @@
     {
       "path": "thecreateco-marketing/STATE.md",
       "bytes": 5512,
-      "sha256": "548dd088e316824945a75955b445219b6ee044c55dcf5dfe8c852faed63f890c"
+      "sha256": "7a5d89fc0d78df9ef2465c1abc7bce271df94bd153f45d8226e0c8ed307884a7"
     },
     {
       "path": "thecreateco-marketing/content/circle-company-posts-2026-10-09.md",

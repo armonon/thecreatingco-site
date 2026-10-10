@@ -1,0 +1,114 @@
+{
+  "observed_at": "2026-10-10T04:11:07.721129+00:00",
+  "coverage": "Recorded reference existence and PASS candidate matching only; no product reruns",
+  "products": [
+    {
+      "product_id": "autocut",
+      "candidate_sha": null,
+      "evidence_references": 0,
+      "issues": []
+    },
+    {
+      "product_id": "bounce",
+      "candidate_sha": "8c8c2541e8d8861a53f102ef8b985e4e35950f3e",
+      "evidence_references": 22,
+      "issues": []
+    },
+    {
+      "product_id": "captions",
+      "candidate_sha": null,
+      "evidence_references": 0,
+      "issues": []
+    },
+    {
+      "product_id": "cast",
+      "candidate_sha": "d24f5d76b4fd0e99c43e1cb8e5e2d9b63db6665e",
+      "evidence_references": 27,
+      "issues": []
+    },
+    {
+      "product_id": "form",
+      "candidate_sha": "779d61d324a6f5f8a6813b51735d4495dbfabc08",
+      "evidence_references": 33,
+      "issues": []
+    },
+    {
+      "product_id": "ghost",
+      "candidate_sha": "bfad2ee98a5194cc84892cc7a13a43e28fefea9b",
+      "evidence_references": 11,
+      "issues": []
+    },
+    {
+      "product_id": "glyph",
+      "candidate_sha": "a3e50fa6d5fabdf499fd1592085c54d9710e42dc",
+      "evidence_references": 35,
+      "issues": []
+    },
+    {
+      "product_id": "key-bpm",
+      "candidate_sha": "dab0dda829ffc436987773d650abbe0232f4a0ec",
+      "evidence_references": 38,
+      "issues": []
+    },
+    {
+      "product_id": "librarian",
+      "candidate_sha": "ca7e806c86d376e707c0afdefc8a0e84ff40b35e",
+      "evidence_references": 21,
+      "issues": []
+    },
+    {
+      "product_id": "luma",
+      "candidate_sha": "8c15f8537c1176b7d4c0076182b7501c92f714b5",
+      "evidence_references": 11,
+      "issues": []
+    },
+    {
+      "product_id": "pocket",
+      "candidate_sha": "4bd196d65c7fd56f5de038179978e3eae47ab6b7",
+      "evidence_references": 15,
+      "issues": []
+    },
+    {
+      "product_id": "pocket-studio",
+      "candidate_sha": null,
+      "evidence_references": 13,
+      "issues": []
+    },
+    {
+      "product_id": "reclaim",
+      "candidate_sha": "c46f9811c7fd34a00625541178d1f1e0d2b2456b",
+      "evidence_references": 14,
+      "issues": []
+    },
+    {
+      "product_id": "reframe",
+      "candidate_sha": "08a64180df7ca80f64436437027d8fc10b5c65df",
+      "evidence_references": 5,
+      "issues": []
+    },
+    {
+      "product_id": "scenepilot",
+      "candidate_sha": "c26d518bc3d05f0adbf7287f79c5f5f15ac25220",
+      "evidence_references": 22,
+      "issues": []
+    },
+    {
+      "product_id": "sessions",
+      "candidate_sha": null,
+      "evidence_references": 13,
+      "issues": []
+    },
+    {
+      "product_id": "split",
+      "candidate_sha": null,
+      "evidence_references": 0,
+      "issues": []
+    },
+    {
+      "product_id": "stemdeck",
+      "candidate_sha": "c15bb06a87b150a966e8c563457de4f2786ba141",
+      "evidence_references": 35,
+      "issues": []
+    }
+  ]
+}

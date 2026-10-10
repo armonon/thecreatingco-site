@@ -1,0 +1,77 @@
+{
+  "decision": "continue",
+  "advisory_only": true,
+  "mode": "normal",
+  "critical_override": false,
+  "budgets": [
+    {
+      "name": "daily",
+      "scope": "all",
+      "key": "all",
+      "window": "day",
+      "metric": "list_estimated_usd",
+      "observed": 0.002945,
+      "limit": null,
+      "exceeded": false,
+      "coverage": "partial"
+    },
+    {
+      "name": "weekly",
+      "scope": "all",
+      "key": "all",
+      "window": "week",
+      "metric": "list_estimated_usd",
+      "observed": 0.3670248,
+      "limit": null,
+      "exceeded": false,
+      "coverage": "partial"
+    },
+    {
+      "name": "per-agent",
+      "scope": "agent",
+      "key": "company-director",
+      "window": "day",
+      "metric": "list_estimated_usd",
+      "observed": null,
+      "limit": null,
+      "exceeded": false,
+      "coverage": "partial"
+    },
+    {
+      "name": "per-product",
+      "scope": "product",
+      "key": "unknown",
+      "window": "week",
+      "metric": "list_estimated_usd",
+      "observed": null,
+      "limit": null,
+      "exceeded": false,
+      "coverage": "partial"
+    },
+    {
+      "name": "per-task",
+      "scope": "task",
+      "key": "PROGRAM-18-20261007",
+      "window": "week",
+      "metric": "list_estimated_usd",
+      "observed": null,
+      "limit": null,
+      "exceeded": false,
+      "coverage": "partial"
+    },
+    {
+      "name": "astra",
+      "scope": "astra",
+      "key": "astra",
+      "window": "week",
+      "metric": "list_estimated_usd",
+      "observed": null,
+      "limit": null,
+      "exceeded": false,
+      "coverage": "partial"
+    }
+  ],
+  "astra_requested": false,
+  "astra_reason_recorded": null,
+  "next": "prefer deterministic tools and smallest adequate authorized model"
+}
