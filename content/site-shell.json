@@ -1,0 +1,126 @@
+{
+  "primary": [
+    {
+      "key": "suite",
+      "label": "Creative Suite",
+      "url": "/#creative-suite"
+    },
+    {
+      "key": "apps",
+      "label": "Directory",
+      "url": "/tools/"
+    },
+    {
+      "key": "about",
+      "label": "About",
+      "url": "/about/"
+    },
+    {
+      "key": "learn",
+      "label": "Learn",
+      "url": "/learn/"
+    },
+    {
+      "key": "circle",
+      "label": "The Circle",
+      "url": "/community/network"
+    },
+    {
+      "key": "hole",
+      "label": "HOLE",
+      "url": "/community/hole"
+    }
+  ],
+  "groups": [
+    {
+      "title": "Create",
+      "links": [
+        {
+          "key": "suite",
+          "label": "Creative Suite",
+          "url": "/#creative-suite"
+        },
+        {
+          "key": "apps",
+          "label": "Directory",
+          "url": "/tools/"
+        },
+        {
+          "key": "learn",
+          "label": "Learn",
+          "url": "/learn/"
+        },
+        {
+          "key": "locker",
+          "label": "Locker",
+          "url": "/locker/"
+        },
+        {
+          "key": "work",
+          "label": "Saved lessons",
+          "url": "/work/"
+        }
+      ]
+    },
+    {
+      "title": "Connect",
+      "links": [
+        {
+          "key": "start",
+          "label": "Meet thecreatingco",
+          "url": "/start/"
+        },
+        {
+          "key": "about",
+          "label": "About",
+          "url": "/about/"
+        },
+        {
+          "key": "circle",
+          "label": "The Circle",
+          "url": "/community/network"
+        },
+        {
+          "key": "messenger",
+          "label": "NOW Messenger",
+          "url": "/community/network?view=Messages"
+        },
+        {
+          "key": "hole",
+          "label": "HOLE",
+          "url": "/community/hole"
+        },
+        {
+          "key": "store",
+          "label": "Momentous store",
+          "url": "https://momentous-store.netlify.app/"
+        },
+        {
+          "key": "launch",
+          "label": "Kickstarter plans",
+          "url": "/kickstarter/"
+        }
+      ]
+    },
+    {
+      "title": "Help",
+      "links": [
+        {
+          "key": "downloads",
+          "label": "Downloads & availability",
+          "url": "/downloads/"
+        },
+        {
+          "key": "support",
+          "label": "Support & feedback",
+          "url": "/testing/"
+        },
+        {
+          "key": "privacy",
+          "label": "Privacy",
+          "url": "/privacy/"
+        }
+      ]
+    }
+  ]
+}

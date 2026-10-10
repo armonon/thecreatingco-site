@@ -319,7 +319,7 @@
       "id": "now-messenger",
       "name": "NOW Messenger",
       "blurb": "Private messaging, guest chatrooms & disappearing messages",
-      "openUrl": "https://now-messenger.armonon.chatgpt.site/",
+      "openUrl": "/community/network?view=Messages",
       "guide": "/learn/guides/guest-chat-expiry-check/",
       "groupLabel": "Community",
       "status": "alpha"

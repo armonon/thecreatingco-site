@@ -1,0 +1,457 @@
+{
+  "apps": [
+    {
+      "id": "form",
+      "name": "Form",
+      "blurb": "3D & CAD",
+      "openUrl": "https://form.thecreatingco.com/studio",
+      "guide": "/learn/guides/check-3d-model-scale/",
+      "groupLabel": "Image & object",
+      "status": "alpha"
+    },
+    {
+      "id": "cast",
+      "name": "Cast",
+      "blurb": "Jewelry casting checks",
+      "openUrl": "https://form-studio-review.netlify.app/studio",
+      "guide": "/learn/guides/review-photo-to-3d/",
+      "groupLabel": "Image & object",
+      "status": "preview"
+    },
+    {
+      "id": "luma",
+      "name": "Luma",
+      "blurb": "Layered image editor",
+      "openUrl": "https://luma.thecreatingco.com/studio",
+      "guide": "/learn/guides/layer-export-check/",
+      "groupLabel": "Image & object",
+      "status": "alpha"
+    },
+    {
+      "id": "mockup",
+      "name": "Mockups",
+      "blurb": "Art onto products",
+      "openUrl": "https://luma.thecreatingco.com/studio",
+      "guide": "/learn/guides/artwork-mockup-fit/",
+      "groupLabel": "Image & object",
+      "status": "alpha"
+    },
+    {
+      "id": "glyph",
+      "name": "Glyph Studio",
+      "blurb": "Draw your own font",
+      "openUrl": "https://glyph-studio-610.netlify.app/studio",
+      "guide": "/learn/guides/test-exported-font/",
+      "groupLabel": "Image & object",
+      "status": "alpha"
+    },
+    {
+      "id": "ghost",
+      "name": "Ghost",
+      "blurb": "Garment photos to 3D",
+      "openUrl": "https://ghost.thecreatingco.com/",
+      "guide": "/learn/guides/garment-photo-study/",
+      "groupLabel": "Image & object",
+      "status": "alpha"
+    },
+    {
+      "id": "scenepilot",
+      "name": "ScenePilot",
+      "blurb": "Beat-aware video editor",
+      "openUrl": "https://scenepilot.thecreatingco.com/app/",
+      "guide": "/learn/guides/video-timing-review/",
+      "groupLabel": "Film & animation",
+      "status": "alpha"
+    },
+    {
+      "id": "autocut",
+      "name": "AutoCut",
+      "blurb": "Cut to the beat",
+      "openUrl": "https://scenepilot.thecreatingco.com/tools/autocut/",
+      "guide": "/learn/guides/beat-cut-plan/",
+      "groupLabel": "Film & animation",
+      "status": "alpha"
+    },
+    {
+      "id": "captions",
+      "name": "Captions",
+      "blurb": "Speech to captions",
+      "openUrl": "https://scenepilot.thecreatingco.com/tools/captions/",
+      "guide": "/learn/guides/srt-vs-vtt-captions/",
+      "groupLabel": "Film & animation",
+      "status": "alpha"
+    },
+    {
+      "id": "board",
+      "name": "Board",
+      "blurb": "Script to storyboard",
+      "openUrl": "https://scenepilot.thecreatingco.com/tools/board/",
+      "guide": "/learn/guides/storyboard-shot-duration/",
+      "groupLabel": "Film & animation",
+      "status": "alpha"
+    },
+    {
+      "id": "grade",
+      "name": "Grade",
+      "blurb": "Grade from a reference",
+      "openUrl": "https://scenepilot.thecreatingco.com/tools/grade/",
+      "guide": "/learn/guides/color-reference-review/",
+      "groupLabel": "Film & animation",
+      "status": "alpha"
+    },
+    {
+      "id": "reframe",
+      "name": "Reframe",
+      "blurb": "Wide to vertical",
+      "openUrl": "https://scenepilot.thecreatingco.com/tools/reframe/",
+      "guide": "/learn/guides/wide-to-vertical-crop/",
+      "groupLabel": "Film & animation",
+      "status": "alpha"
+    },
+    {
+      "id": "stemdeck",
+      "name": "StemDeck",
+      "blurb": "Stem remix studio",
+      "openUrl": "https://stemdeck.thecreatingco.com/studio",
+      "guide": "/learn/guides/align-stems-for-remix/",
+      "groupLabel": "Music & audio",
+      "status": "alpha"
+    },
+    {
+      "id": "split",
+      "name": "Split",
+      "blurb": "Separate stems",
+      "openUrl": "https://sattarimusic.com/studio/split",
+      "guide": "/learn/guides/evaluate-audio-stems/",
+      "groupLabel": "Music & audio",
+      "status": "alpha"
+    },
+    {
+      "id": "key-bpm",
+      "name": "Key & BPM",
+      "blurb": "Key and tempo",
+      "openUrl": "https://sattarimusic.com/studio/keybpm",
+      "guide": "/learn/guides/bpm-half-double-time/",
+      "groupLabel": "Music & audio",
+      "status": "alpha"
+    },
+    {
+      "id": "vox",
+      "name": "Vox",
+      "blurb": "Vocal tune & harmony",
+      "openUrl": "https://sattarimusic.com/studio/vox",
+      "guide": "/learn/guides/vocal-pitch-review/",
+      "groupLabel": "Music & audio",
+      "status": "alpha"
+    },
+    {
+      "id": "canvas",
+      "name": "Canvas",
+      "blurb": "Audio-reactive visuals",
+      "openUrl": "https://sattarimusic.com/studio/canvas",
+      "guide": "/learn/guides/audio-reactive-export-check/",
+      "groupLabel": "Music & audio",
+      "status": "alpha"
+    },
+    {
+      "id": "pocket",
+      "name": "Pocket",
+      "blurb": "Beat sketchpad",
+      "openUrl": "https://sattarimusic.com/studio/pocket",
+      "guide": "/learn/guides/sixteen-step-beat-example/",
+      "groupLabel": "Music & audio",
+      "status": "alpha"
+    },
+    {
+      "id": "press",
+      "name": "Press",
+      "blurb": "Press kit builder",
+      "openUrl": "https://sattarimusic.com/press",
+      "guide": "/learn/guides/artist-press-kit-checklist/",
+      "groupLabel": "Music & audio",
+      "status": "alpha"
+    },
+    {
+      "id": "librarian",
+      "name": "Librarian",
+      "blurb": "Books & PDF reader",
+      "openUrl": "https://librarian.thecreatingco.com/",
+      "guide": "/learn/guides/pdf-reading-test/",
+      "groupLabel": "Read & organize",
+      "status": "alpha"
+    },
+    {
+      "id": "reclaim",
+      "name": "Reclaim",
+      "blurb": "Read-only browser file review",
+      "openUrl": "https://reclaim.thecreatingco.com/browser/",
+      "guide": "/learn/guides/duplicate-file-review/",
+      "groupLabel": "Read & organize",
+      "status": "alpha"
+    },
+    {
+      "id": "bounce",
+      "name": "Bounce",
+      "blurb": "Player for your music",
+      "openUrl": "https://bounce.thecreatingco.com/browser/",
+      "guide": "/learn/guides/compare-eq-levels/",
+      "groupLabel": "Music & audio",
+      "status": "alpha"
+    },
+    {
+      "id": "locker",
+      "name": "Locker",
+      "blurb": "Files kept in this browser",
+      "openUrl": "https://thecreatingco.com/locker/",
+      "guide": "/learn/guides/browser-local-file-backup/",
+      "groupLabel": "Read & organize",
+      "status": "alpha"
+    },
+    {
+      "id": "sessions",
+      "name": "Sessions",
+      "blurb": "Shared listening rooms",
+      "openUrl": "https://thecreatingco.com/community/network?view=Sessions",
+      "guide": "/learn/guides/shared-listening-room-plan/",
+      "groupLabel": "Community",
+      "status": "alpha"
+    },
+    {
+      "id": "pocket-studio",
+      "name": "Pocket Studio",
+      "blurb": "Voice memos & sharing",
+      "openUrl": "https://thecreatingco.com/community/network?view=Pocket%20Studio",
+      "guide": "/learn/guides/voice-memo-test/",
+      "groupLabel": "Community",
+      "status": "alpha"
+    },
+    {
+      "id": "cutout",
+      "name": "Cutout",
+      "blurb": "Remove backgrounds and refine transparent images",
+      "openUrl": "https://luma.thecreatingco.com/cutout",
+      "guide": "/learn/guides/check-transparent-png/",
+      "groupLabel": "Image & object",
+      "status": "alpha"
+    },
+    {
+      "id": "loop",
+      "name": "Loop",
+      "blurb": "Turn a clip into a short video loop",
+      "openUrl": "https://scenepilot.thecreatingco.com/tools/loop/",
+      "guide": "/learn/guides/video-loop-seam/",
+      "groupLabel": "Film & animation",
+      "status": "alpha"
+    },
+    {
+      "id": "luma-glyph",
+      "name": "Glyph (in Luma)",
+      "blurb": "Experimental lettering inside Luma",
+      "openUrl": "https://luma.thecreatingco.com/studio",
+      "guide": "/learn/guides/lettering-baseline-test/",
+      "groupLabel": "Image & object",
+      "status": "alpha"
+    },
+    {
+      "id": "weblab",
+      "name": "WebLab",
+      "blurb": "Build a single web page with visual blocks and HTML/CSS output",
+      "openUrl": "https://weblab-thecreatingco.netlify.app/",
+      "guide": "/learn/guides/save-html-css-prototype/",
+      "groupLabel": "Web & portfolio",
+      "status": "preview"
+    },
+    {
+      "id": "circle",
+      "name": "The Circle",
+      "blurb": "Profiles, projects, collections and discussions",
+      "openUrl": "https://thecreatingco.com/community/network",
+      "guide": "/learn/guides/project-feedback-brief/",
+      "groupLabel": "Community",
+      "status": "alpha"
+    },
+    {
+      "id": "animate",
+      "name": "Animate",
+      "blurb": "Frame-by-frame and tween animation",
+      "openUrl": "/apps/animate/studio",
+      "guide": "/learn/guides/animation-holds-timing/",
+      "groupLabel": "Film & animation",
+      "status": "alpha"
+    },
+    {
+      "id": "moodboard",
+      "name": "Moodboard",
+      "blurb": "Collect references and shape a visual direction",
+      "openUrl": "/apps/moodboard/board",
+      "guide": "/learn/guides/moodboard-reference-credits/",
+      "groupLabel": "Image & object",
+      "status": "alpha"
+    },
+    {
+      "id": "portfolio",
+      "name": "Portfolio Studio",
+      "blurb": "Build and export a portfolio",
+      "openUrl": "/apps/portfolio/studio",
+      "guide": "/learn/guides/portfolio-case-study-example/",
+      "groupLabel": "Web & portfolio",
+      "status": "alpha"
+    },
+    {
+      "id": "website-checkup",
+      "name": "Website Checkup",
+      "blurb": "Inspect links, page metadata and forms",
+      "openUrl": "/checkup/",
+      "guide": "/learn/guides/website-findings-triage/",
+      "groupLabel": "Web & portfolio",
+      "status": "alpha"
+    },
+    {
+      "id": "hole",
+      "name": "HOLE",
+      "blurb": "Search, collect and explore with Trails",
+      "openUrl": "/community/hole",
+      "guide": "/learn/guides/research-trail-source-check/",
+      "groupLabel": "Community",
+      "status": "alpha"
+    },
+    {
+      "id": "now-messenger",
+      "name": "NOW Messenger",
+      "blurb": "Private messaging, guest chatrooms & disappearing messages",
+      "openUrl": "/community/network?view=Messages",
+      "guide": "/learn/guides/guest-chat-expiry-check/",
+      "groupLabel": "Community",
+      "status": "alpha"
+    }
+  ],
+  "journeys": [
+    {
+      "id": "design",
+      "name": "Shape an idea",
+      "label": "IMAGE & OBJECT",
+      "description": "Collect a direction, build the object, and prepare images to share.",
+      "color": "#e8eddb",
+      "apps": [
+        "moodboard",
+        "form",
+        "cast",
+        "ghost",
+        "luma",
+        "cutout",
+        "mockup",
+        "glyph",
+        "luma-glyph"
+      ],
+      "suggested": [
+        "moodboard",
+        "form",
+        "luma",
+        "mockup"
+      ],
+      "handoff": "Keep your original model and image project. Export an image when the next tool needs a picture rather than geometry."
+    },
+    {
+      "id": "film",
+      "name": "Tell it in motion",
+      "label": "FILM & ANIMATION",
+      "description": "Plan a sequence, create the motion, and finish a small film.",
+      "color": "#eee5f7",
+      "apps": [
+        "board",
+        "animate",
+        "scenepilot",
+        "autocut",
+        "reframe",
+        "grade",
+        "captions",
+        "loop"
+      ],
+      "suggested": [
+        "board",
+        "animate",
+        "scenepilot",
+        "captions"
+      ],
+      "handoff": "Keep editable animation files and source media beside the film project. Import an exported video into the next editor; keep captions separately."
+    },
+    {
+      "id": "sound",
+      "name": "Find your sound",
+      "label": "MUSIC & AUDIO",
+      "description": "Explore a rhythm, develop a session, and keep a finished mix.",
+      "color": "#f8e6d5",
+      "apps": [
+        "stemdeck",
+        "split",
+        "key-bpm",
+        "vox",
+        "canvas",
+        "pocket",
+        "press",
+        "bounce"
+      ],
+      "suggested": [
+        "pocket",
+        "stemdeck",
+        "key-bpm",
+        "bounce"
+      ],
+      "handoff": "Keep the session and source recordings. Check an exported audio file before using it in film or sharing it."
+    },
+    {
+      "id": "publish",
+      "name": "Give it a home",
+      "label": "WEB & PORTFOLIO",
+      "description": "Arrange your work, build a page, and check its public destination.",
+      "color": "#dfeef5",
+      "apps": [
+        "portfolio",
+        "weblab",
+        "website-checkup"
+      ],
+      "suggested": [
+        "portfolio",
+        "weblab",
+        "website-checkup"
+      ],
+      "handoff": "Keep exported page files and screenshots. WebLab is a preview with no project reopening; the separate Website Checkup inspects an existing URL."
+    },
+    {
+      "id": "library",
+      "name": "Keep the good things",
+      "label": "READ & ORGANIZE",
+      "description": "Gather references and keep useful files close to the project.",
+      "color": "#f4edce",
+      "apps": [
+        "librarian",
+        "reclaim",
+        "locker"
+      ],
+      "suggested": [
+        "librarian",
+        "locker"
+      ],
+      "handoff": "Save references and their credits. My Projects and Locker are separate stores; add the files you want to keep in each."
+    },
+    {
+      "id": "connect",
+      "name": "Make room for others",
+      "label": "COMMUNITY",
+      "description": "Share a result, join a session, or start a conversation.",
+      "color": "#f4dfe6",
+      "apps": [
+        "circle",
+        "sessions",
+        "pocket-studio",
+        "hole",
+        "now-messenger"
+      ],
+      "suggested": [
+        "circle",
+        "now-messenger"
+      ],
+      "handoff": "Choose what to share yourself. Circle and NOW Messenger use separate identities; opening them does not upload project files."
+    }
+  ]
+}
