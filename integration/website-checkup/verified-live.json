@@ -1,0 +1,10 @@
+{
+  "deploy": "6acaaa872212dcb93bbe0d21",
+  "current_published": "6acaaa872212dcb93bbe0d21",
+  "files": 2119,
+  "exact_manifest": true,
+  "retained_existing_functions": true,
+  "new_function_sha256": "d2d139e5b7fc03e8393de9f8593835bb91af640e6a0d91bd0b6ee673cb030f48",
+  "new_function": "weblab-audit",
+  "live": true
+}

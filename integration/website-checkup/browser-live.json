@@ -1,0 +1,35 @@
+{
+  "base": "https://thecreatingco.com",
+  "proof": [
+    {
+      "width": 1280,
+      "links": 16,
+      "browserChecks": "unavailable",
+      "changedFiles": 0,
+      "download": true,
+      "queryRedacted": true,
+      "noOverflow": true,
+      "errors": []
+    },
+    {
+      "width": 390,
+      "links": 16,
+      "browserChecks": "unavailable",
+      "changedFiles": 0,
+      "download": true,
+      "queryRedacted": true,
+      "noOverflow": true,
+      "errors": []
+    },
+    {
+      "width": 320,
+      "links": 16,
+      "browserChecks": "unavailable",
+      "changedFiles": 0,
+      "download": true,
+      "queryRedacted": true,
+      "noOverflow": true,
+      "errors": []
+    }
+  ]
+}
