@@ -1,6 +1,6 @@
 # thecreateco — Current State
 
-Updated: 2026-10-10T00:40:04+00:00 | Seeds loaded: 2026-10-07T23:38:29+00:00
+Updated: 2026-10-10T01:45:59+00:00 | Seeds loaded: 2026-10-07T23:38:29+00:00
 
 ## COMPANY HEALTH
 Unknown / not scored — evidence-backed health rubric not yet measured.
@@ -9,7 +9,7 @@ Unknown / not scored — evidence-backed health rubric not yet measured.
 ["Reach $1M annual company revenue ethically; first verify the current baseline and next $1K milestone", "Preserve user work and qualify the four flagship workflows", "Validate one focused paid offer; measure contribution, conversion and retention"]
 
 ## TOP PRIORITY
-M05 — Prepare focused beta-testing invitations (priority 89.6; estimate)
+W10 — Verify first-use help and export-limit clarity (priority 89.6; estimate)
 
 ## PRODUCTS
 47 registered entries; inventory may be incomplete.
@@ -29,7 +29,6 @@ Unknown / not measured: visitors, downloads, signups, beta_testers, active_users
 Unknown-metric reporting periods: {'type': 'source availability check, not financial reporting interval', 'as_of': '2026-10-09T20:11:37.276475+00:00'}. Individual source details retained in context.
 
 ## CURRENT WORK
-- M05 Prepare focused beta-testing invitations — QUEUED; priority 89.6 (estimate)
 - W10 Verify first-use help and export-limit clarity — QUEUED; priority 89.6 (estimate)
 - M07 Repurpose one verified fix into a development story — QUEUED; priority 85.75 (estimate)
 - PROGRAM-18-20261007 Execute18-product completion assignment with evidence-backed release matrix — QUEUED; priority 83.3333 (estimate)
@@ -37,7 +36,8 @@ Unknown-metric reporting periods: {'type': 'source availability check, not finan
 - P04 Qualify Locker cross-app open/save failure behavior — QUEUED; priority 81.0 (estimate)
 - M10 Audit free-pack usefulness and product handoff — QUEUED; priority 78.4 (estimate)
 - W08 Measure critical-page performance before optimization — QUEUED; priority 78.4 (estimate)
-Queue totals: BLOCKED 43, COMPLETE 45, NEEDS_REVIEW 17, QUEUED 22, WAITING 22
+- REV-COMMERCE-001 Verify Sattari economic attribution, fulfillment capacity and existing funnel — QUEUED; priority 76.8 (estimate)
+Queue totals: BLOCKED 43, COMPLETE 47, NEEDS_REVIEW 17, QUEUED 20, WAITING 22
 Showing up to 8 running + 8 eligible queued; full details: TASK_QUEUE.json.
 
 ## BIGGEST BOTTLENECK
@@ -54,14 +54,14 @@ Preserve active release owners. Revenue research: Glyph first-font validation vi
 82 tasks gated by review/validation/blockers; see TASK_QUEUE.json.
 
 ## RECENT RESULTS
+- 2026-10-10T01:45:59+00:00 P07 BLOCKED: Board synthetic save/fresh-context reopen/export and parser compatibility PASS; 12/12 focused tests, tools build PASS; independen…
+- 2026-10-10T01:36:52+00:00 GROW-SITE-NETLIFY-HANDOFF-20261009 COMPLETE: Published exact-snapshot Netlify overlays: NOW Messages concept preview at 6ac994b4559b54cd63acdbee (80 paths, routes 200, disclo…
+- 2026-10-10T01:12:16+00:00 M05 COMPLETE: Sol-directed bounded Luna invitation pack prepared; independent Sol draft review and 8/8 structural checks PASS; two read-only li…
 - 2026-10-10T00:12:18+00:00 M01 COMPLETE: Internal Reclaim alpha demo draft completed by requested Luna worker with independent Sol review; three director live GETs and me…
 - 2026-10-09T23:41:54+00:00 P06 BLOCKED: Read-only exact PR9 parity batch:52Cast/mesh tests and desktop frontend build PASS; review endpoints200, canonical/public endpoin…
-- 2026-10-09T23:17:40+00:00 W05 COMPLETE: Sol-directed Luna non-sending audit: seven mocked validation/success/error checks PASS with independent Sol rerun; seven live GET…
-- 2026-10-09T22:12:56+00:00 W03 BLOCKED: Deterministic E02 checks PASS: five null-only placeholders, not observed journeys. M04 blocked; consent-compatible participant ou…
-- 2026-10-09T21:55:55+00:00 GROW-SITE-NETLIFY-HANDOFF-20261009 BLOCKED: Pushed exact website source on 6354f944a46e13f324ac69cf08acae6c9bd7f9cd and opened PR #2. Source checks pass. Both exact-manifest…
 
 ## MARKETING SUMMARY
-Read-only snapshot: read_only_snapshot; observed 2026-10-10T00:40:04+00:00.
+Read-only snapshot: read_only_snapshot; observed 2026-10-10T01:45:59+00:00.
 Queue statuses: {"tasks": {"COMPLETE": 26}}
 Campaign statuses: {"campaigns": {"active": 1}}
 Recorded outcomes: {"impressions": null, "clicks": null, "replies": null, "signups": null, "conversions": null, "engagement": null, "cost": null}
@@ -69,8 +69,8 @@ Outcome period: {"earliest_record": null, "latest_record": null}
 Marketing counts are NOT company traffic metrics. Source: /Users/agentsattari/thecreateco-marketing/engine/data/mktg.db
 
 ## AI COST / GOVERNOR
-Observed: 2026-10-10T00:22:00.291849+00:00
-Today: {"ledger_rows": 157, "records": 157, "records_known_rows": 157, "failures": 21, "failures_known_rows": 157, "input_tokens": 6186545, "input_tokens_known_rows": 156, "cached_tokens": 52817536, "cached_tokens_known_rows": 154, "cache_read_tokens": 52817536, "cache_read_tokens_known_rows": 149, "cache_write_tokens": null, "cache_write_tokens_known_ro…
+Observed: 2026-10-10T01:22:01.570634+00:00
+Today: {"ledger_rows": 166, "records": 166, "records_known_rows": 166, "failures": 21, "failures_known_rows": 166, "input_tokens": 6476599, "input_tokens_known_rows": 165, "cached_tokens": 54455424, "cached_tokens_known_rows": 163, "cache_read_tokens": 54455424, "cache_read_tokens_known_rows": 158, "cache_write_tokens": null, "cache_write_tokens_known_ro…
 Governor: {"mode": "normal", "advisory_only": true, "budgets": [{"name": "daily", "scope": "all", "key": "all", "window": "day", "metric": "list_estimated_usd", "observed": 0.00294499999999…
 Coverage gaps: ["interactive/native-child per-call usage not exposed by cron receipts", "scheduled receipt token counts may aggregate multiple model calls", "cache/input accounting differs by source; preserve explicit totals, do not subtract caches blindly", "scheduled latency is end-to-end run duration, not pure inference latency", "task/product/reasoning/escal…
 Details: data/cost-snapshot.json; list-price estimates are not billed spend.

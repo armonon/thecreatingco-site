@@ -33,8 +33,8 @@
     },
     {
       "path": "thecreateco-company/COMPANY_STATE.md",
-      "bytes": 7995,
-      "sha256": "e060fbd1391c2adfe4c3cfdff9e2967ee8d22c43955386296e475df6a4b15abe"
+      "bytes": 8052,
+      "sha256": "540ed6734f539d757e8151f7fdafcb69e0492940dff73dcd6edfdb99a846ae8a"
     },
     {
       "path": "thecreateco-company/DIRECTIVE.md",
@@ -48,18 +48,18 @@
     },
     {
       "path": "thecreateco-company/OS_DASHBOARD.json",
-      "bytes": 27888,
-      "sha256": "1f04cf2fc16096c6ddefecee9bd82fabf762236076815e96828ed83345e0f09e"
+      "bytes": 27911,
+      "sha256": "aa9850f0b13af8b488301db73f3370e527e604403c3c66805db8369254eae0d8"
     },
     {
       "path": "thecreateco-company/OS_DASHBOARD.md",
-      "bytes": 4877,
-      "sha256": "bcf7bea00c3cbd6e11cf9b4af2fa47ed6682e23f3cec08d6661dbb22809921e8"
+      "bytes": 4898,
+      "sha256": "fd1e630ddc004c4488762c959e41a4aff51d2fcdce18bbb63e015334001bdfe5"
     },
     {
       "path": "thecreateco-company/PRODUCT_REGISTRY.json",
-      "bytes": 401866,
-      "sha256": "8a66ce2b8e9396c17e45ab1e9f2ae1c726a3d477813224cc38abf347d11041c0"
+      "bytes": 403278,
+      "sha256": "405f0a646c05797be19f9223ea465f6906ca64701763e62d9559b65ca998dedf"
     },
     {
       "path": "thecreateco-company/README.md",
@@ -79,7 +79,7 @@
     {
       "path": "thecreateco-company/REVENUE_DASHBOARD.md",
       "bytes": 10538,
-      "sha256": "bfd732ed798bd7fd0509cb0f1cbc92b1f0babc3debcd7ba82d48f820912b453c"
+      "sha256": "fe46689107908099811d1e1a511d96e7bd2e39d93cc372097779339d29f99bf4"
     },
     {
       "path": "thecreateco-company/REVENUE_DIRECTIVE.md",
@@ -88,8 +88,8 @@
     },
     {
       "path": "thecreateco-company/TASK_QUEUE.json",
-      "bytes": 318628,
-      "sha256": "565dc430ec79faba57a8b8a7dff5b1a23b035dc652ec59eb2c69fd2a6290d6b5"
+      "bytes": 319917,
+      "sha256": "be9eb386018c3358935b4bd3e95359f32072879dfdf9421afbcfb333e423becd"
     },
     {
       "path": "thecreateco-company/YEAR_ONE_EXECUTION.md",
@@ -108,13 +108,13 @@
     },
     {
       "path": "thecreateco-company/core-product-lab/HEALTH.md",
-      "bytes": 4741,
-      "sha256": "83672585aa94e0c05d480889767e31d4a569c81b59a1f2aea10a10ff42d44cf0"
+      "bytes": 4750,
+      "sha256": "3da28d335b30a39014866854f46181a69f75e21013d2da6228b80e85c7b27788"
     },
     {
       "path": "thecreateco-company/core-product-lab/PRIORITIES.json",
-      "bytes": 142026,
-      "sha256": "3e8bb4ae6503e2a52200d51775cb7ffba3e77a6a17ce380f3b37e2dc8d89f7b2"
+      "bytes": 141418,
+      "sha256": "d37722e79d81a2980dee5e35ec24532f24ada122346041cc88b6714849f6106e"
     },
     {
       "path": "thecreateco-company/core-product-lab/PRODUCT_HEALTH_REPORT.md",
@@ -173,8 +173,8 @@
     },
     {
       "path": "thecreateco-company/core-product-lab/products/scenepilot.json",
-      "bytes": 19945,
-      "sha256": "7928083f7992c66f288cb18f247cf9f5f7508ca46e1574360035389aa9f2a97d"
+      "bytes": 21780,
+      "sha256": "45e169de838e9a1d05088f8b8f3bea66a645740fd9c664ca30d27a0ef66b2cb0"
     },
     {
       "path": "thecreateco-company/core-product-lab/products/stemdeck.json",
@@ -315,6 +315,16 @@
       "path": "thecreateco-company/core-product-lab/reports/openai-review-policy.md",
       "bytes": 1122,
       "sha256": "ff88737d0fb0caeee156136ee3570eccbd74876f0923d4d5f83b08cd97829adb"
+    },
+    {
+      "path": "thecreateco-company/core-product-lab/reports/scenepilot-board-20261010T0140/REPORT.md",
+      "bytes": 8450,
+      "sha256": "47abae6411336a8b1b6be0aa01f17495d0f5c9c80b0026def162e10799065610"
+    },
+    {
+      "path": "thecreateco-company/core-product-lab/reports/scenepilot-board-20261010T0140/independent-review.md",
+      "bytes": 5323,
+      "sha256": "06c19a80b2818b7869af78f6491ac9e0ea20a7b1f9e742712e85fc77a5102026"
     },
     {
       "path": "thecreateco-company/core-product-lab/reports/scenepilot-evidence/README.md",
@@ -623,8 +633,8 @@
     },
     {
       "path": "thecreateco-company/reports/2026-10-09-site-publish-handoff/README.md",
-      "bytes": 4772,
-      "sha256": "c26299bb94a15d73fdab447586ab678846ff522ecabc6b405ddfdc9a19a5bc69"
+      "bytes": 6910,
+      "sha256": "06251a7c8ebf5ae0344f7603bb9f7cf7b39f1adc5968d3ca338e6178991d1a40"
     },
     {
       "path": "thecreateco-company/reports/2026-10-09-tools-directory-release.md",
@@ -1060,6 +1070,21 @@
       "path": "thecreateco-company/reports/m04-outcomes-20261009/README.md",
       "bytes": 2954,
       "sha256": "530f04f504721f2cb662fb4465541424bbb52b2a8a90a370a45af9b6e139da25"
+    },
+    {
+      "path": "thecreateco-company/reports/m05-beta-20261010/README.md",
+      "bytes": 2358,
+      "sha256": "442342ce677850c6023753fed65f387b0ca874bb0606c4f8e3e61376da83817e"
+    },
+    {
+      "path": "thecreateco-company/reports/m05-beta-20261010/invitations.md",
+      "bytes": 8720,
+      "sha256": "50144438d15cb1c5af8eb6362d3544df2570c97eec570a0d215e03a306c05b1f"
+    },
+    {
+      "path": "thecreateco-company/reports/m05-beta-20261010/sol-review.md",
+      "bytes": 842,
+      "sha256": "d7653c3b8d1f0e5564f5e611b155c5a7883d47851068e6e949ed32e428819c33"
     },
     {
       "path": "thecreateco-company/reports/now-messages-20261009/README.md",
@@ -1760,7 +1785,7 @@
     {
       "repo": "https://github.com/armonon/thecreatingco-site",
       "branch": "feat/tools-directory-start-links-product-stories-20261009",
-      "sha": "6354f944a46e13f324ac69cf08acae6c9bd7f9cd"
+      "sha": "a5bfb89d42add6f6dbedc6b1191ea377054c69f1"
     },
     {
       "repo": "https://github.com/armonon/universal-operator-batch-kit",

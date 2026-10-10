@@ -1,45 +1,8 @@
 {
-  "generated_at": "2026-10-10T00:22:03+00:00",
+  "generated_at": "2026-10-10T01:45:59+00:00",
   "paused": false,
   "note": "Read-only company queue projection; severity first, priorities are estimates. Claim by ID via company.py.",
-  "eligible": [
-    {
-      "task_id": "P07",
-      "title": "Qualify ScenePilot Board to AutoCut workflow",
-      "category": "product",
-      "workstream": "ENGINEERING",
-      "product": "scenepilot",
-      "campaign": null,
-      "status": "QUEUED",
-      "model": "gpt-6.1-sol",
-      "dependencies": [],
-      "scores": {
-        "impact": 8,
-        "user_value": 9,
-        "strategic_value": 8,
-        "urgency": 5,
-        "confidence": 7,
-        "effort": 4,
-        "risk": 2
-      },
-      "expected_value": "Use a disposable project through save, handoff and export; report exact failure boundaries.",
-      "next_action": "Use a disposable project through save, handoff and export; report exact failure boundaries.",
-      "evidence_sources": [
-        "/Users/agentsattari/code/wave5/WAVE5.md"
-      ],
-      "score_basis": "Provisional director estimate; evidence-backed opportunity, not measured ROI. Recheck before execution.",
-      "result": null,
-      "priority": 72.0,
-      "priority_basis": "ESTIMATE: impact \u00d7 user_value \u00d7 confidence / (effort + risk + 1)",
-      "risk": 2,
-      "created_at": "2026-10-07T23:38:29+00:00",
-      "started_at": null,
-      "completed_at": null,
-      "attempts": 0,
-      "owner": null,
-      "lease_until": null
-    }
-  ],
+  "eligible": [],
   "all_flagship_tasks": [
     {
       "task_id": "CORE-STEMDECK-SEC-001",
@@ -2643,7 +2606,7 @@
       "workstream": "ENGINEERING",
       "product": "scenepilot",
       "campaign": null,
-      "status": "QUEUED",
+      "status": "BLOCKED",
       "model": "gpt-6.1-sol",
       "dependencies": [],
       "scores": {
@@ -2656,21 +2619,26 @@
         "risk": 2
       },
       "expected_value": "Use a disposable project through save, handoff and export; report exact failure boundaries.",
-      "next_action": "Use a disposable project through save, handoff and export; report exact failure boundaries.",
+      "next_action": "Define Board shot-to-media/source-range/music binding and beat-cut contract; resume P07 with synthetic import/save/reopen/relink/export and missing-media existing-project preservation tests. Reuse P07, no duplicate.",
       "evidence_sources": [
         "/Users/agentsattari/code/wave5/WAVE5.md"
       ],
       "score_basis": "Provisional director estimate; evidence-backed opportunity, not measured ROI. Recheck before execution.",
-      "result": null,
+      "result": "Board synthetic save/fresh-context reopen/export and parser compatibility PASS; 12/12 focused tests, tools build PASS; independent OpenAI evidence review. AutoCut skips marker-only JSON and rejects session format by design. Editor UI/full golden unverified. No code commit; no push needed.",
       "priority": 72.0,
       "priority_basis": "ESTIMATE: impact \u00d7 user_value \u00d7 confidence / (effort + risk + 1)",
       "risk": 2,
       "created_at": "2026-10-07T23:38:29+00:00",
-      "started_at": null,
+      "started_at": "2026-10-10T01:40:18+00:00",
       "completed_at": null,
-      "attempts": 0,
+      "attempts": 1,
       "owner": null,
-      "lease_until": null
+      "lease_until": null,
+      "result_evidence": {
+        "path": "/Users/agentsattari/thecreateco-company/core-product-lab/reports/scenepilot-board-20261010T0140/REPORT.md",
+        "recorded_at": "2026-10-10T01:45:59+00:00",
+        "bytes": 8450
+      }
     },
     {
       "task_id": "I06",

@@ -1,0 +1,26 @@
+# P07 independent bounded evidence review
+
+Review date: 2026-10-10 UTC. Source HEAD verified: `8d740071cb9631cfa18d4d6c7faa4a806b8fa42a`; source worktree clean. Reviewer: independent OpenAI/Codex child agent. Actual serving model: **unknown / not exposed** (no exact model identifier is available in this review context). Fallback: **none**. This is an evidence qualification review, not human review or release approval.
+
+## Scope and independently checked evidence
+
+Read `REPORT.md`, `browser-journey.mjs`, `browser-result.json`, `artifact-check.json`, and `focused-tests.log`; inspected Board exporter, Board UI copy, AutoCut ingest/session loader and parser, and focused test assertions. Independently reran `node --experimental-strip-types --test tests/storyboard.test.mjs tests/autocut-export.test.mjs`: exit 0, 12 passed, 0 failed. No source/task/queue edits, browser rerun, external calls, spending, deployment, or model inference for the app. Saved browser outcomes are reviewed evidence, not independently reproduced UI results.
+
+## Findings
+
+1. **Board save/reopen: supported for the tested synthetic fixture.** The script saves `.board.json`, closes the first context, creates a fresh context and selects that file. Recorded title, one scene and two shots match the expected fixture. This does not establish arbitrary-board or drawing/media preservation; the final browser script explicitly asserts the reopened title and scene/shot counts. The initial missing-assertion finding is resolved by the worker’s final asserted journey (reported exit 0).
+2. **Board export: generated and parser-compatible, not proven imported through the editor UI.** The journey downloads `.scenepilot.json` but never opens the editor or invokes its Import cut flow. Focused tests call `parseCutFile`; artifact measurements report zero assets/base cuts, three markers and the two-shot brief. The initial overbroad REPORT headline has been corrected: the final REPORT separates Board save/reopen/export PASS, parser compatibility PASS and editor UI import UNVERIFIED. A real editor UI import and visible marker/brief inspection remain unverified. Parser tests cannot establish the editor integration end to end.
+3. **AutoCut rejection is an unsupported input boundary by current design, not a confirmed data-loss defect.** `boardToCutFile` deliberately emits a media-empty starter cut with marker/brief metadata. AutoCut media ingestion filters audio/video and reports a skipped JSON; the session parser requires `scenepilot-autocut-session` version 1 and rejects the Board cut before pending-session application. Recorded status messages match those paths. The run starts with an empty AutoCut project; preservation of a populated existing project was not browser-tested, though source rejects this format before applying edits.
+4. **Initial page-error coverage finding resolved.** The final script installs `pageerror` listeners on original Board, reopened Board and AutoCut pages and explicitly asserts an empty error array, matching the final result. This covers captured page errors in this bounded journey, not every browser/network/console failure mode. No media analysis/render or editable-session relinking occurred.
+
+## Proposed P07 disposition and resume contract
+
+**Keep existing P07 BLOCKED for Board → AutoCut qualification; reuse P07 and this evidence, with no duplicate task/bug.** Board → editor metadata export is a separate verified partial boundary, not completion of Board → AutoCut.
+
+Before resuming, specify the Board-to-AutoCut contract: how stable Board scene/shot IDs, order, description and intended duration bind to original video identities/source ranges; how missing, ambiguous or insufficient media are handled; whether storyboard order/duration are constraints or suggestions to the beat cutter; explicit music selection or video-soundtrack fallback; and which metadata survives save/reopen/export. Define the accepted import/session format and relinking semantics rather than treating marker-only JSON as runnable media edits.
+
+Then execute a focused acceptance journey using local synthetic song/video fixtures: save/reopen Board, supply the specified media/music bindings, import through the intended AutoCut UI, verify ordered shots/durations and metadata under the chosen beat-cut policy, save/reopen/relink its editable session, and verify exported edits/media references. Include missing/mismatched media rejection with existing-project preservation. If editor handoff is claimed, actually import the export through editor UI and inspect marker/brief/timeline state. Acceptance requires the specified contract and those observed outcomes; this review does not approve implementation or release.
+
+## Final evidence follow-up
+
+Re-read the worker’s final `browser-journey.mjs`, `browser-result.json`, and `REPORT.md` after the asserted rerun. Exact AutoCut media skip/session rejection assertions are now present, alongside reopened Board assertions and AutoCut page-error coverage. The REPORT states final `browser-asserted.log` exit 0; this follow-up did not rerun the browser or independently read that receipt. Initial harness/assertion/report-wording findings above are resolved as indicated. The remaining integration limits and proposed **P07 BLOCKED** disposition are unchanged.
