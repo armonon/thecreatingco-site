@@ -1,6 +1,6 @@
 # thecreateco — Current State
 
-Updated: 2026-10-10T01:45:59+00:00 | Seeds loaded: 2026-10-07T23:38:29+00:00
+Updated: 2026-10-10T02:10:31+00:00 | Seeds loaded: 2026-10-07T23:38:29+00:00
 
 ## COMPANY HEALTH
 Unknown / not scored — evidence-backed health rubric not yet measured.
@@ -29,15 +29,16 @@ Unknown / not measured: visitors, downloads, signups, beta_testers, active_users
 Unknown-metric reporting periods: {'type': 'source availability check, not financial reporting interval', 'as_of': '2026-10-09T20:11:37.276475+00:00'}. Individual source details retained in context.
 
 ## CURRENT WORK
-- W10 Verify first-use help and export-limit clarity — QUEUED; priority 89.6 (estimate)
+- W10 Verify first-use help and export-limit clarity — RUNNING; priority 89.6 (estimate)
 - M07 Repurpose one verified fix into a development story — QUEUED; priority 85.75 (estimate)
 - PROGRAM-18-20261007 Execute18-product completion assignment with evidence-backed release matrix — QUEUED; priority 83.3333 (estimate)
 - P03 Verify Animate save/export recovery and assess undo — QUEUED; priority 81.0 (estimate)
 - P04 Qualify Locker cross-app open/save failure behavior — QUEUED; priority 81.0 (estimate)
 - M10 Audit free-pack usefulness and product handoff — QUEUED; priority 78.4 (estimate)
-- W08 Measure critical-page performance before optimization — QUEUED; priority 78.4 (estimate)
 - REV-COMMERCE-001 Verify Sattari economic attribution, fulfillment capacity and existing funnel — QUEUED; priority 76.8 (estimate)
-Queue totals: BLOCKED 43, COMPLETE 47, NEEDS_REVIEW 17, QUEUED 20, WAITING 22
+- P09 Reconcile Moodboard and Portfolio implementation state — QUEUED; priority 56.0 (estimate)
+- P10 Audit offline update and cache recovery across non-music apps — QUEUED; priority 54.0 (estimate)
+Queue totals: BLOCKED 43, COMPLETE 47, NEEDS_REVIEW 17, QUEUED 19, RUNNING 1, WAITING 22
 Showing up to 8 running + 8 eligible queued; full details: TASK_QUEUE.json.
 
 ## BIGGEST BOTTLENECK
@@ -61,7 +62,7 @@ Preserve active release owners. Revenue research: Glyph first-font validation vi
 - 2026-10-09T23:41:54+00:00 P06 BLOCKED: Read-only exact PR9 parity batch:52Cast/mesh tests and desktop frontend build PASS; review endpoints200, canonical/public endpoin…
 
 ## MARKETING SUMMARY
-Read-only snapshot: read_only_snapshot; observed 2026-10-10T01:45:59+00:00.
+Read-only snapshot: read_only_snapshot; observed 2026-10-10T02:10:31+00:00.
 Queue statuses: {"tasks": {"COMPLETE": 26}}
 Campaign statuses: {"campaigns": {"active": 1}}
 Recorded outcomes: {"impressions": null, "clicks": null, "replies": null, "signups": null, "conversions": null, "engagement": null, "cost": null}

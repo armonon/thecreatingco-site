@@ -33,8 +33,8 @@
     },
     {
       "path": "thecreateco-company/COMPANY_STATE.md",
-      "bytes": 8052,
-      "sha256": "540ed6734f539d757e8151f7fdafcb69e0492940dff73dcd6edfdb99a846ae8a"
+      "bytes": 8170,
+      "sha256": "a7b587108b824327ad6e3ff443f1c12829618ac58d194b93ff08f36a2a83f46b"
     },
     {
       "path": "thecreateco-company/DIRECTIVE.md",
@@ -59,7 +59,7 @@
     {
       "path": "thecreateco-company/PRODUCT_REGISTRY.json",
       "bytes": 403278,
-      "sha256": "405f0a646c05797be19f9223ea465f6906ca64701763e62d9559b65ca998dedf"
+      "sha256": "e8eda1329a7bc1b9bf252a808b55f4bc7dae8816d224fcac4af98512fdfcbd3d"
     },
     {
       "path": "thecreateco-company/README.md",
@@ -88,8 +88,8 @@
     },
     {
       "path": "thecreateco-company/TASK_QUEUE.json",
-      "bytes": 319917,
-      "sha256": "be9eb386018c3358935b4bd3e95359f32072879dfdf9421afbcfb333e423becd"
+      "bytes": 319992,
+      "sha256": "e9fe67fcf7de344bb894dd03ba2d861355e58add8caf050c6a0186b03a18b2a9"
     },
     {
       "path": "thecreateco-company/YEAR_ONE_EXECUTION.md",
