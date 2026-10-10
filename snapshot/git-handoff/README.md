@@ -27,6 +27,10 @@ on another verified current remote branch is `contained_elsewhere`, not missing.
 uncommitted files are counted but never sent. The existing 30-minute company
 progress reporter runs this read-only check; it is not a second controller.
 
-This workspace root has no Git remote. These operational scripts and company
-documents remain local until a designated private operations repository is
-chosen. Product review branches use their existing project origins.
+The workspace root has no Git remote. Creating Co code/state/evidence now lands
+in the private `armonon/thecreatingco-site` branch `company/operations`. Product
+branches retain their existing origins and normal PR/CI gates; successful company
+source pushes automatically archive their screened committed review delta there.
+Use `checkpoint_company.py --evidence ... --file ...` for tested company source
+outside a project origin. Databases, contacts, secrets, binaries and dirty product
+files are excluded and listed explicitly, not silently called pushed.

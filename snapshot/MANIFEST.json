@@ -3,8 +3,8 @@
   "files": [
     {
       "path": "git-handoff/README.md",
-      "bytes": 1521,
-      "sha256": "132e32ae883f9c5e74d715e01c32caa848f97b1ecd59aa78fdca5925a9698aec"
+      "bytes": 1858,
+      "sha256": "47782a0c0b73c2e919a45b32f445bfc29611288db655aaec4e260585d6b3d434"
     },
     {
       "path": "git-handoff/audit_recent.py",
@@ -12,14 +12,14 @@
       "sha256": "39353ee39046b8d560a4e7146ab4100d109ad94ae6db1fe10c360e6078c35ca5"
     },
     {
-      "path": "git-handoff/push_branch.py",
-      "bytes": 3465,
-      "sha256": "5852954fcf15db8a659e746b90b61f6ce65fe6d39c78e69e7dc852e43efa9634"
+      "path": "git-handoff/checkpoint_company.py",
+      "bytes": 1018,
+      "sha256": "1ce98cb8251c2916bfbbf0817f81a06a694261fb3482690ae29c290e0b0e66da"
     },
     {
       "path": "thecreateco-company/AGENTS.md",
-      "bytes": 2417,
-      "sha256": "e78209d9ecac7456c38658378e2fece084b09eb145d1da7e766efcc4ff4225e3"
+      "bytes": 3845,
+      "sha256": "f5e197981815cd394ad413cedf0dbec58b482b8f4bb093126a414dd87d9be425"
     },
     {
       "path": "thecreateco-company/AUTONOMY.md",
@@ -33,33 +33,33 @@
     },
     {
       "path": "thecreateco-company/COMPANY_STATE.md",
-      "bytes": 8170,
-      "sha256": "a7b587108b824327ad6e3ff443f1c12829618ac58d194b93ff08f36a2a83f46b"
+      "bytes": 8103,
+      "sha256": "31f62e4a6343bd597d6a61053e029cc6340732dd50f29a74a96de6404327b78e"
     },
     {
       "path": "thecreateco-company/DIRECTIVE.md",
-      "bytes": 9434,
-      "sha256": "0fd3eb8b64bd9fb2f2e283296207001c0060f375a668b58f3b6a50200514ea6a"
+      "bytes": 10862,
+      "sha256": "30d7dc2f83625a4a0cd7c606c93a0cb089e9f0f291289174f927c934e0834210"
     },
     {
       "path": "thecreateco-company/OPERATING_POLICY.md",
-      "bytes": 7230,
-      "sha256": "9931452abb1529b67422cda8ab8993a7ee7a3f3e8a57719df879bdb39a474261"
+      "bytes": 8658,
+      "sha256": "94813abb0d082237ab18eb4d9eaf6b26f75cdde1a81749bbc4dc42ced2552898"
     },
     {
       "path": "thecreateco-company/OS_DASHBOARD.json",
-      "bytes": 27911,
-      "sha256": "aa9850f0b13af8b488301db73f3370e527e604403c3c66805db8369254eae0d8"
+      "bytes": 27865,
+      "sha256": "42b1b5b2b9629d605cfc571a43ec3e692a0f6b62b74a5f0c56987410aa16217e"
     },
     {
       "path": "thecreateco-company/OS_DASHBOARD.md",
-      "bytes": 4898,
-      "sha256": "fd1e630ddc004c4488762c959e41a4aff51d2fcdce18bbb63e015334001bdfe5"
+      "bytes": 4877,
+      "sha256": "8f6c801e7768587950d8e30d9dbc95ed649276241a990844fdba0b2ada0c5485"
     },
     {
       "path": "thecreateco-company/PRODUCT_REGISTRY.json",
       "bytes": 403278,
-      "sha256": "e8eda1329a7bc1b9bf252a808b55f4bc7dae8816d224fcac4af98512fdfcbd3d"
+      "sha256": "5b17c0940952cbff5ce1d85741657426edcabb44e61d3f7c218bd9aacfbfab99"
     },
     {
       "path": "thecreateco-company/README.md",
@@ -79,7 +79,7 @@
     {
       "path": "thecreateco-company/REVENUE_DASHBOARD.md",
       "bytes": 10538,
-      "sha256": "fe46689107908099811d1e1a511d96e7bd2e39d93cc372097779339d29f99bf4"
+      "sha256": "037e9cb5bdaaefc5ed5953dcac4b0a70b52b39bb94a61fa35c5f2a5c5fff50dc"
     },
     {
       "path": "thecreateco-company/REVENUE_DIRECTIVE.md",
@@ -88,8 +88,8 @@
     },
     {
       "path": "thecreateco-company/TASK_QUEUE.json",
-      "bytes": 319992,
-      "sha256": "e9fe67fcf7de344bb894dd03ba2d861355e58add8caf050c6a0186b03a18b2a9"
+      "bytes": 322394,
+      "sha256": "3c50a55b8fbf6fce3a4ce2f145795456bb4fd25e08be504ab65da5ae6dca894b"
     },
     {
       "path": "thecreateco-company/YEAR_ONE_EXECUTION.md",
@@ -109,12 +109,12 @@
     {
       "path": "thecreateco-company/core-product-lab/HEALTH.md",
       "bytes": 4750,
-      "sha256": "3da28d335b30a39014866854f46181a69f75e21013d2da6228b80e85c7b27788"
+      "sha256": "8ace270047aeb9f0d33f874599d18be14704045a1bd3f9d77ee0f2cc4bd48d3e"
     },
     {
       "path": "thecreateco-company/core-product-lab/PRIORITIES.json",
       "bytes": 141418,
-      "sha256": "d37722e79d81a2980dee5e35ec24532f24ada122346041cc88b6714849f6106e"
+      "sha256": "d9904dcc1ffa37c628a925fe16505aeaa5176e329ebc0928c509680aeb59bce0"
     },
     {
       "path": "thecreateco-company/core-product-lab/PRODUCT_HEALTH_REPORT.md",
@@ -637,6 +637,11 @@
       "sha256": "06251a7c8ebf5ae0344f7603bb9f7cf7b39f1adc5968d3ca338e6178991d1a40"
     },
     {
+      "path": "thecreateco-company/reports/2026-10-09-site-rollback/README.md",
+      "bytes": 1722,
+      "sha256": "43f6c46f140b544c71491c96963d7ce22cb75334e7d856af1d700af2cca692b6"
+    },
+    {
       "path": "thecreateco-company/reports/2026-10-09-tools-directory-release.md",
       "bytes": 2269,
       "sha256": "87ec5bc6c318eb311fc2b43047d2b7d2e2ee5e4c56aada0b755d90b1d0e1cd0d"
@@ -850,6 +855,11 @@
       "path": "thecreateco-company/reports/ghost-roundtrip-20261009/director-checkpoint.md",
       "bytes": 1992,
       "sha256": "c18b0f837f027e24cc38b2de8fae0f7001445bb7559bc861695cf8342aab24b0"
+    },
+    {
+      "path": "thecreateco-company/reports/git-centralization-20261009/baseline/README.md",
+      "bytes": 1520,
+      "sha256": "20c4d3db63ea9b6101e2ee14f91dfe6eb47417e08c6bb162c813b70827bd822a"
     },
     {
       "path": "thecreateco-company/reports/glyph-20261007-1910/README.md",
@@ -1387,6 +1397,16 @@
       "sha256": "436dcd958ee8ccc991606297b16adb203eb4b95558fb5bedda22ff85e2a9373a"
     },
     {
+      "path": "thecreateco-company/reports/w10-help-20261010/README.md",
+      "bytes": 10683,
+      "sha256": "43fd71a938aceba496235dadfd6f0da27548e637d420c8beed1fe72685d67a2f"
+    },
+    {
+      "path": "thecreateco-company/reports/w10-help-20261010/director-cycle.md",
+      "bytes": 4502,
+      "sha256": "783e9b96e8623970d414a58ee2fab18e6aaab406f55ed136ed8b227eee7ff976"
+    },
+    {
       "path": "thecreateco-company/reports/weblab-mvp-20261009/README.md",
       "bytes": 7442,
       "sha256": "3ef032c1aebedfcea0d099807cfdbea1be6491fe4874f8187b8e9a8bdd302065"
@@ -1463,6 +1483,10 @@
     }
   ],
   "skipped": [
+    {
+      "path": "git-handoff/push_branch.py",
+      "reason": "sensitive-or-binary"
+    },
     {
       "path": "git-handoff/test_push_branch.py",
       "reason": "sensitive-or-binary"

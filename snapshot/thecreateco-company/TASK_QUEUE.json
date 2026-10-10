@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-10T02:10:31+00:00",
+  "generated_at": "2026-10-10T02:24:40+00:00",
   "tasks": [
     {
       "task_id": "CORE-STEMDECK-SEC-001",
@@ -2881,6 +2881,45 @@
       }
     },
     {
+      "task_id": "GROW-SITE-ROLLBACK-20261009",
+      "title": "Roll back the published Tools expansion and NOW Messages preview on request",
+      "category": "growth",
+      "workstream": "website release",
+      "product": null,
+      "campaign": null,
+      "model": "gpt-6.1-sol",
+      "severity": "P3",
+      "status": "COMPLETE",
+      "dependencies": [],
+      "scores": {
+        "impact": 6,
+        "user_value": 6,
+        "confidence": 10,
+        "effort": 2,
+        "risk": 2
+      },
+      "expected_value": "Restore the requested earlier public discovery experience while retaining unrelated current site functions and later product work.",
+      "next_action": "Reopen only if requested; current source PR remains open and unmerged.",
+      "token_budget": 1000,
+      "tool_budget": 10,
+      "context_token_budget": 3000,
+      "priority": 72.0,
+      "priority_basis": "ESTIMATE: impact × user_value × confidence / (effort + risk + 1)",
+      "risk": 2,
+      "created_at": "2026-10-10T02:24:30+00:00",
+      "started_at": "2026-10-10T02:24:33+00:00",
+      "completed_at": "2026-10-10T02:24:40+00:00",
+      "result": "Rolled back the requested Tools directory expansion and NOW Messages preview. Company site used a verified exact-manifest overlay preserving WebLab, current Community proxy, redirects/headers, and later capture updates; NOW Suite restored to its exact pre-preview deploy. Live checks and evidence recorded.",
+      "attempts": 1,
+      "owner": null,
+      "lease_until": null,
+      "result_evidence": {
+        "path": "/Users/agentsattari/thecreateco-company/reports/2026-10-09-site-rollback/README.md",
+        "recorded_at": "2026-10-10T02:24:40+00:00",
+        "bytes": 1722
+      }
+    },
+    {
       "task_id": "OS-COST-ASTRA-REASON-NOT-EXPOSED-20261008",
       "title": "Investigate observed telemetry: astra_reason_not_exposed",
       "category": "OPERATIONS",
@@ -4722,7 +4761,7 @@
       "workstream": "PRODUCT",
       "product": "company-site",
       "campaign": null,
-      "status": "RUNNING",
+      "status": "COMPLETE",
       "model": "gpt-6.1-sol",
       "dependencies": [
         "W06"
@@ -4737,21 +4776,26 @@
         "risk": 1
       },
       "expected_value": "Compare product-page instructions with current UI; document actual limits and usable recovery guidance.",
-      "next_action": "Compare product-page instructions with current UI; document actual limits and usable recovery guidance.",
+      "next_action": "Scoped company-site help-copy checkpoint: verify Pocket hydration and Bounce/KeyBPM live-source parity before numerical caps; clarify portable backup and permission/storage recovery without changing release gates.",
       "evidence_sources": [
         "/Users/agentsattari/code/wave2/thecreatingco-live/maintenance/AGENTS.md"
       ],
       "score_basis": "Provisional director estimate; evidence-backed opportunity, not measured ROI. Recheck before execution.",
-      "result": null,
+      "result": "Scoped four-product first-use/export help audit completed by bounded requested Luna with independent Sol director review; 7 canonical live GETs HTTP200 and13 evidence checks PASS. Bounce portable-backup ambiguity, Pocket local/mic recovery and Glyph backup help gaps documented; KeyBPM live-source parity remains unverified. No code commit; no push needed; no release.",
       "priority": 89.6,
       "priority_basis": "ESTIMATE: impact × user_value × confidence / (effort + risk + 1)",
       "risk": 1,
       "created_at": "2026-10-07T23:38:29+00:00",
       "started_at": "2026-10-10T02:10:31+00:00",
-      "completed_at": null,
+      "completed_at": "2026-10-10T02:13:44+00:00",
       "attempts": 1,
-      "owner": "company-director-20261009T1910",
-      "lease_until": "2026-10-10T02:45:31+00:00"
+      "owner": null,
+      "lease_until": null,
+      "result_evidence": {
+        "path": "/Users/agentsattari/thecreateco-company/reports/w10-help-20261010/README.md",
+        "recorded_at": "2026-10-10T02:13:44+00:00",
+        "bytes": 10032
+      }
     },
     {
       "task_id": "M07",
