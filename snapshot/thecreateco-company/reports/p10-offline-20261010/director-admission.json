@@ -1,0 +1,93 @@
+{
+  "observed_at": "2026-10-10T16:12:46.973490+00:00",
+  "task_id": "P10",
+  "director_model": "openai/gpt-6.1-sol",
+  "worker_requested_model": "openai/gpt-6-luna",
+  "pause_files": {
+    "PAUSE": false,
+    "core-product-lab/PAUSE": false
+  },
+  "recover_result": {
+    "recovered": []
+  },
+  "commissioning_task_status": "COMPLETE",
+  "preflight": {
+    "decision": "continue",
+    "advisory_only": true,
+    "mode": "normal",
+    "critical_override": false,
+    "budgets": [
+      {
+        "name": "daily",
+        "scope": "all",
+        "key": "all",
+        "window": "day",
+        "metric": "list_estimated_usd",
+        "observed": 0.000929,
+        "limit": null,
+        "exceeded": false,
+        "coverage": "partial"
+      },
+      {
+        "name": "weekly",
+        "scope": "all",
+        "key": "all",
+        "window": "week",
+        "metric": "list_estimated_usd",
+        "observed": 0.3679538,
+        "limit": null,
+        "exceeded": false,
+        "coverage": "partial"
+      },
+      {
+        "name": "per-agent",
+        "scope": "agent",
+        "key": "company-director-20261010T1610",
+        "window": "day",
+        "metric": "list_estimated_usd",
+        "observed": null,
+        "limit": null,
+        "exceeded": false,
+        "coverage": "partial"
+      },
+      {
+        "name": "per-product",
+        "scope": "product",
+        "key": "unknown",
+        "window": "week",
+        "metric": "list_estimated_usd",
+        "observed": null,
+        "limit": null,
+        "exceeded": false,
+        "coverage": "partial"
+      },
+      {
+        "name": "per-task",
+        "scope": "task",
+        "key": "P10",
+        "window": "week",
+        "metric": "list_estimated_usd",
+        "observed": null,
+        "limit": null,
+        "exceeded": false,
+        "coverage": "partial"
+      },
+      {
+        "name": "astra",
+        "scope": "astra",
+        "key": "astra",
+        "window": "week",
+        "metric": "list_estimated_usd",
+        "observed": null,
+        "limit": null,
+        "exceeded": false,
+        "coverage": "partial"
+      }
+    ],
+    "astra_requested": false,
+    "astra_reason_recorded": null,
+    "next": "prefer deterministic tools and smallest adequate authorized model"
+  },
+  "selection_reason": "Highest eligible task after excluding held products and unmet dependencies; no active product lease at selection. Severity-first commissioning already COMPLETE.",
+  "boundaries": "Read-only product audit. No external messages, release, spend, merge, deploy, or unrelated staging."
+}

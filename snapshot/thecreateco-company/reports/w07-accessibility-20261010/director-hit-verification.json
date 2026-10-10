@@ -1,0 +1,30 @@
+{
+  "observed_at": "2026-10-10T13:14:25.770Z",
+  "method": "Independent director Chromium DOM bounding-box and actual hit-target check; no click/navigation/form submission",
+  "rows": [
+    {
+      "width": 320,
+      "formLink": "/products/form/",
+      "lumaLink": "/products/luma/",
+      "overlapWidth": 140.53448867797852,
+      "overlapHeight": 91.115966796875,
+      "sample": {
+        "x": 161.41406440734863,
+        "y": 661.6875
+      },
+      "hitHref": "/products/luma/"
+    },
+    {
+      "width": 390,
+      "formLink": "/products/form/",
+      "lumaLink": "/products/luma/",
+      "overlapWidth": 174.4618091583252,
+      "overlapHeight": 154.6522216796875,
+      "sample": {
+        "x": 196.76561832427979,
+        "y": 655.921875
+      },
+      "hitHref": "/products/luma/"
+    }
+  ]
+}

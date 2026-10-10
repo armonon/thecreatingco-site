@@ -1,0 +1,26 @@
+[
+  {
+    "product_id": "moodboard",
+    "observed_at": "2026-10-10T15:12:54.888306+00:00",
+    "verification_level": "CURRENT_LOCAL_SOURCE_INSPECTED_EXECUTION_BLOCKED",
+    "evidence_freshness": "2026-10-10 exact local HEAD source audit; test/build/browser attempts blocked by absent dependencies. No remote/deployed provenance.",
+    "release_readiness": "UNQUALIFIED: tests/build cannot execute; import/save/reopen/export not observed. Browser scripts reopen IndexedDB instead of saved project file.",
+    "next_milestone": "Restore reproducible toolchain; execute tests/build and fresh-state saved-file import/export validation before release qualification.",
+    "evidence_sources": [
+      "/Users/agentsattari/thecreateco-company/reports/p09-reconcile-20261010/verification.md",
+      "/Users/agentsattari/thecreateco-company/reports/p09-reconcile-20261010/commands.json"
+    ]
+  },
+  {
+    "product_id": "portfolio",
+    "observed_at": "2026-10-10T15:12:54.888306+00:00",
+    "verification_level": "CURRENT_LOCAL_SOURCE_INSPECTED_EXECUTION_BLOCKED",
+    "evidence_freshness": "2026-10-10 exact local HEAD source audit; test/build/browser attempts blocked by absent dependencies. No remote/deployed provenance.",
+    "release_readiness": "UNQUALIFIED: tests/build cannot execute; import/save/reopen/export not observed. Browser scripts reopen IndexedDB instead of saved project file.",
+    "next_milestone": "Restore reproducible toolchain; execute tests/build and fresh-state saved-file import/export validation before release qualification.",
+    "evidence_sources": [
+      "/Users/agentsattari/thecreateco-company/reports/p09-reconcile-20261010/verification.md",
+      "/Users/agentsattari/thecreateco-company/reports/p09-reconcile-20261010/commands.json"
+    ]
+  }
+]

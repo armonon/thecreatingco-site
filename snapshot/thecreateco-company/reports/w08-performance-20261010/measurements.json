@@ -1,0 +1,4057 @@
+{
+  "capturedAt": "2026-10-10T10:16:20.595Z",
+  "assumptions": {
+    "browser": "Google Chrome via Playwright Core",
+    "cache": "Fresh context each run; HTTP cache not explicitly disabled; OS/network/CDN cache may be warm",
+    "network": "unthrottled; no request interception",
+    "wait": "load + 1500ms",
+    "runsPerRouteDevice": 3
+  },
+  "results": [
+    {
+      "device": "desktop",
+      "width": 1365,
+      "height": 900,
+      "route": "/",
+      "run": 1,
+      "started": "2026-10-10T10:15:37.056Z",
+      "status": 200,
+      "navError": null,
+      "errors": [],
+      "url": "https://thecreatingco.com/",
+      "title": "Free Creative Tools for 3D, Images, Music & Video | thecreatingco",
+      "bodyText": "Skip to content\nthecreatingco\n.\nCreative Suite\nApps & tools\nAbout\nLearn\nThe Circle\nQuick launch\n\nTHECREATINGCO / THE NEXT CHAPTER\n\nYour ideas.\nMade real.\n\nFree creative tools for 3D, images, music and film. Our promise: Lite stays free and fully capable. No su",
+      "navigation": {
+        "duration": 889.9000000059605,
+        "domContentLoaded": 428.30000001192093,
+        "load": 889.9000000059605,
+        "responseStart": 148.30000001192093,
+        "transferSize": 13296,
+        "encodedBodySize": 12996
+      },
+      "fcp": 440,
+      "lcp": 440,
+      "lcpCandidate": {
+        "tag": "IMG",
+        "id": "",
+        "className": "journey-poster",
+        "src": "https://thecreatingco.com/assets/hero/creative-journey.jpg"
+      },
+      "cls": 0.00460930398457871,
+      "shiftEntries": [
+        {
+          "value": 0.003513277605585298,
+          "startTime": 435,
+          "sources": [
+            {
+              "tag": "NAV",
+              "id": "",
+              "className": "",
+              "previousRect": {
+                "x": 483.9375,
+                "y": 15.5,
+                "width": 474.875,
+                "height": 44,
+                "top": 15.5,
+                "right": 958.8125,
+                "bottom": 59.5,
+                "left": 483.9375
+              },
+              "currentRect": {
+                "x": 430.375,
+                "y": 15.5,
+                "width": 413.984375,
+                "height": 44,
+                "top": 15.5,
+                "right": 844.359375,
+                "bottom": 59.5,
+                "left": 430.375
+              }
+            },
+            {
+              "tag": "DIV",
+              "id": "",
+              "className": "cc-header-actions",
+              "previousRect": {
+                "x": 1237,
+                "y": 15.5,
+                "width": 100,
+                "height": 44,
+                "top": 15.5,
+                "right": 1337,
+                "bottom": 59.5,
+                "left": 1237
+              },
+              "currentRect": {
+                "x": 1069,
+                "y": 15.5,
+                "width": 268,
+                "height": 44,
+                "top": 15.5,
+                "right": 1337,
+                "bottom": 59.5,
+                "left": 1069
+              }
+            }
+          ]
+        },
+        {
+          "value": 0.001096026378993412,
+          "startTime": 691.3000000119209,
+          "sources": [
+            {
+              "tag": null,
+              "id": null,
+              "className": null,
+              "previousRect": {
+                "x": 47,
+                "y": 190.75,
+                "width": 595.5,
+                "height": 83,
+                "top": 190.75,
+                "right": 642.5,
+                "bottom": 273.75,
+                "left": 47
+              },
+              "currentRect": {
+                "x": 47,
+                "y": 185.75,
+                "width": 595.5,
+                "height": 83,
+                "top": 185.75,
+                "right": 642.5,
+                "bottom": 268.75,
+                "left": 47
+              }
+            },
+            {
+              "tag": null,
+              "id": null,
+              "className": null,
+              "previousRect": {
+                "x": 47,
+                "y": 259.859375,
+                "width": 595.5,
+                "height": 83,
+                "top": 259.859375,
+                "right": 642.5,
+                "bottom": 342.859375,
+                "left": 47
+              },
+              "currentRect": {
+                "x": 47,
+                "y": 254.859375,
+                "width": 595.5,
+                "height": 83,
+                "top": 254.859375,
+                "right": 642.5,
+                "bottom": 337.859375,
+                "left": 47
+              }
+            },
+            {
+              "tag": "NAV",
+              "id": "",
+              "className": "",
+              "previousRect": {
+                "x": 430.375,
+                "y": 15.5,
+                "width": 413.984375,
+                "height": 44,
+                "top": 15.5,
+                "right": 844.359375,
+                "bottom": 59.5,
+                "left": 430.375
+              },
+              "currentRect": {
+                "x": 436.703125,
+                "y": 15.5,
+                "width": 417.015625,
+                "height": 44,
+                "top": 15.5,
+                "right": 853.71875,
+                "bottom": 59.5,
+                "left": 436.703125
+              }
+            },
+            {
+              "tag": null,
+              "id": null,
+              "className": null,
+              "previousRect": {
+                "x": 198.5,
+                "y": 22.5,
+                "width": 7.234375,
+                "height": 34,
+                "top": 22.5,
+                "right": 205.734375,
+                "bottom": 56.5,
+                "left": 198.5
+              },
+              "currentRect": {
+                "x": 214.8125,
+                "y": 20.5,
+                "width": 6.609375,
+                "height": 34,
+                "top": 20.5,
+                "right": 221.421875,
+                "bottom": 54.5,
+                "left": 214.8125
+              }
+            }
+          ]
+        }
+      ],
+      "resourceCount": 65,
+      "resourceTransferBytes": 434964,
+      "resourceDecodedBytes": 664010,
+      "largestResources": [
+        {
+          "name": "https://thecreatingco.com/assets/workflows/form-technical.png",
+          "initiatorType": "img",
+          "transferSize": 126109,
+          "decodedBodySize": 125809,
+          "duration": 111.59999999403954
+        },
+        {
+          "name": "https://thecreatingco.com/assets/after-hours/luma-04-finished.png",
+          "initiatorType": "img",
+          "transferSize": 89614,
+          "decodedBodySize": 89314,
+          "duration": 198
+        },
+        {
+          "name": "https://thecreatingco.com/assets/hero/creative-journey.jpg",
+          "initiatorType": "img",
+          "transferSize": 79525,
+          "decodedBodySize": 79225,
+          "duration": 167.09999999403954
+        },
+        {
+          "name": "https://thecreatingco.com/assets/form-origin/geist-98bbbccb.woff2",
+          "initiatorType": "css",
+          "transferSize": 29588,
+          "decodedBodySize": 29288,
+          "duration": 286.09999999403954
+        },
+        {
+          "name": "https://thecreatingco.com/assets/styles/marketing-cbfe5b6595fb.css",
+          "initiatorType": "link",
+          "transferSize": 17282,
+          "decodedBodySize": 83671,
+          "duration": 202
+        },
+        {
+          "name": "https://thecreatingco.com/suite/v1/suite.js",
+          "initiatorType": "script",
+          "transferSize": 13035,
+          "decodedBodySize": 50428,
+          "duration": 151.59999999403954
+        },
+        {
+          "name": "https://thecreatingco.com/momentium.js",
+          "initiatorType": "script",
+          "transferSize": 5733,
+          "decodedBodySize": 30509,
+          "duration": 49.80000001192093
+        },
+        {
+          "name": "https://thecreatingco.com/unified-shell.css?v=20261009",
+          "initiatorType": "link",
+          "transferSize": 5187,
+          "decodedBodySize": 22374,
+          "duration": 205.69999998807907
+        },
+        {
+          "name": "https://thecreatingco.com/site-navigation.js?v=20261009-unified",
+          "initiatorType": "script",
+          "transferSize": 3649,
+          "decodedBodySize": 10882,
+          "duration": 65.09999999403954
+        },
+        {
+          "name": "https://thecreatingco.com/launch-season.css?v=1",
+          "initiatorType": "link",
+          "transferSize": 2945,
+          "decodedBodySize": 11586,
+          "duration": 47.900000005960464
+        },
+        {
+          "name": "https://thecreatingco.com/site-refinement.css?v=20261007",
+          "initiatorType": "link",
+          "transferSize": 2923,
+          "decodedBodySize": 11181,
+          "duration": 62.19999998807907
+        },
+        {
+          "name": "https://thecreatingco.com/product-carousels.js",
+          "initiatorType": "script",
+          "transferSize": 2637,
+          "decodedBodySize": 7712,
+          "duration": 215
+        }
+      ]
+    },
+    {
+      "device": "desktop",
+      "width": 1365,
+      "height": 900,
+      "route": "/",
+      "run": 2,
+      "started": "2026-10-10T10:15:39.571Z",
+      "status": 200,
+      "navError": null,
+      "errors": [],
+      "url": "https://thecreatingco.com/",
+      "title": "Free Creative Tools for 3D, Images, Music & Video | thecreatingco",
+      "bodyText": "Skip to content\nthecreatingco\n.\nCreative Suite\nApps & tools\nAbout\nLearn\nThe Circle\nQuick launch\n\nTHECREATINGCO / THE NEXT CHAPTER\n\nYour ideas.\nMade real.\n\nFree creative tools for 3D, images, music and film. Our promise: Lite stays free and fully capable. No su",
+      "navigation": {
+        "duration": 538.8000000119209,
+        "domContentLoaded": 255.40000000596046,
+        "load": 538.8000000119209,
+        "responseStart": 99.19999998807907,
+        "transferSize": 13296,
+        "encodedBodySize": 12996
+      },
+      "fcp": 248,
+      "lcp": 356,
+      "lcpCandidate": {
+        "tag": "IMG",
+        "id": "",
+        "className": "journey-poster",
+        "src": "https://thecreatingco.com/assets/hero/creative-journey.jpg"
+      },
+      "cls": 0.00460930398457871,
+      "shiftEntries": [
+        {
+          "value": 0.003513277605585298,
+          "startTime": 260.69999998807907,
+          "sources": [
+            {
+              "tag": "NAV",
+              "id": "",
+              "className": "",
+              "previousRect": {
+                "x": 483.9375,
+                "y": 15.5,
+                "width": 474.875,
+                "height": 44,
+                "top": 15.5,
+                "right": 958.8125,
+                "bottom": 59.5,
+                "left": 483.9375
+              },
+              "currentRect": {
+                "x": 430.375,
+                "y": 15.5,
+                "width": 413.984375,
+                "height": 44,
+                "top": 15.5,
+                "right": 844.359375,
+                "bottom": 59.5,
+                "left": 430.375
+              }
+            },
+            {
+              "tag": "DIV",
+              "id": "",
+              "className": "cc-header-actions",
+              "previousRect": {
+                "x": 1237,
+                "y": 15.5,
+                "width": 100,
+                "height": 44,
+                "top": 15.5,
+                "right": 1337,
+                "bottom": 59.5,
+                "left": 1237
+              },
+              "currentRect": {
+                "x": 1069,
+                "y": 15.5,
+                "width": 268,
+                "height": 44,
+                "top": 15.5,
+                "right": 1337,
+                "bottom": 59.5,
+                "left": 1069
+              }
+            }
+          ]
+        },
+        {
+          "value": 0.001096026378993412,
+          "startTime": 448.40000000596046,
+          "sources": [
+            {
+              "tag": null,
+              "id": null,
+              "className": null,
+              "previousRect": {
+                "x": 47,
+                "y": 190.75,
+                "width": 595.5,
+                "height": 83,
+                "top": 190.75,
+                "right": 642.5,
+                "bottom": 273.75,
+                "left": 47
+              },
+              "currentRect": {
+                "x": 47,
+                "y": 185.75,
+                "width": 595.5,
+                "height": 83,
+                "top": 185.75,
+                "right": 642.5,
+                "bottom": 268.75,
+                "left": 47
+              }
+            },
+            {
+              "tag": null,
+              "id": null,
+              "className": null,
+              "previousRect": {
+                "x": 47,
+                "y": 259.859375,
+                "width": 595.5,
+                "height": 83,
+                "top": 259.859375,
+                "right": 642.5,
+                "bottom": 342.859375,
+                "left": 47
+              },
+              "currentRect": {
+                "x": 47,
+                "y": 254.859375,
+                "width": 595.5,
+                "height": 83,
+                "top": 254.859375,
+                "right": 642.5,
+                "bottom": 337.859375,
+                "left": 47
+              }
+            },
+            {
+              "tag": "NAV",
+              "id": "",
+              "className": "",
+              "previousRect": {
+                "x": 430.375,
+                "y": 15.5,
+                "width": 413.984375,
+                "height": 44,
+                "top": 15.5,
+                "right": 844.359375,
+                "bottom": 59.5,
+                "left": 430.375
+              },
+              "currentRect": {
+                "x": 436.703125,
+                "y": 15.5,
+                "width": 417.015625,
+                "height": 44,
+                "top": 15.5,
+                "right": 853.71875,
+                "bottom": 59.5,
+                "left": 436.703125
+              }
+            },
+            {
+              "tag": null,
+              "id": null,
+              "className": null,
+              "previousRect": {
+                "x": 198.5,
+                "y": 22.5,
+                "width": 7.234375,
+                "height": 34,
+                "top": 22.5,
+                "right": 205.734375,
+                "bottom": 56.5,
+                "left": 198.5
+              },
+              "currentRect": {
+                "x": 214.8125,
+                "y": 20.5,
+                "width": 6.609375,
+                "height": 34,
+                "top": 20.5,
+                "right": 221.421875,
+                "bottom": 54.5,
+                "left": 214.8125
+              }
+            }
+          ]
+        }
+      ],
+      "resourceCount": 65,
+      "resourceTransferBytes": 434964,
+      "resourceDecodedBytes": 664010,
+      "largestResources": [
+        {
+          "name": "https://thecreatingco.com/assets/workflows/form-technical.png",
+          "initiatorType": "img",
+          "transferSize": 126109,
+          "decodedBodySize": 125809,
+          "duration": 249.40000000596046
+        },
+        {
+          "name": "https://thecreatingco.com/assets/after-hours/luma-04-finished.png",
+          "initiatorType": "img",
+          "transferSize": 89614,
+          "decodedBodySize": 89314,
+          "duration": 289.30000001192093
+        },
+        {
+          "name": "https://thecreatingco.com/assets/hero/creative-journey.jpg",
+          "initiatorType": "img",
+          "transferSize": 79525,
+          "decodedBodySize": 79225,
+          "duration": 243.2999999821186
+        },
+        {
+          "name": "https://thecreatingco.com/assets/form-origin/geist-98bbbccb.woff2",
+          "initiatorType": "css",
+          "transferSize": 29588,
+          "decodedBodySize": 29288,
+          "duration": 216.90000000596046
+        },
+        {
+          "name": "https://thecreatingco.com/assets/styles/marketing-cbfe5b6595fb.css",
+          "initiatorType": "link",
+          "transferSize": 17282,
+          "decodedBodySize": 83671,
+          "duration": 45
+        },
+        {
+          "name": "https://thecreatingco.com/suite/v1/suite.js",
+          "initiatorType": "script",
+          "transferSize": 13035,
+          "decodedBodySize": 50428,
+          "duration": 97.69999998807907
+        },
+        {
+          "name": "https://thecreatingco.com/momentium.js",
+          "initiatorType": "script",
+          "transferSize": 5733,
+          "decodedBodySize": 30509,
+          "duration": 63.19999998807907
+        },
+        {
+          "name": "https://thecreatingco.com/unified-shell.css?v=20261009",
+          "initiatorType": "link",
+          "transferSize": 5187,
+          "decodedBodySize": 22374,
+          "duration": 63.5
+        },
+        {
+          "name": "https://thecreatingco.com/site-navigation.js?v=20261009-unified",
+          "initiatorType": "script",
+          "transferSize": 3649,
+          "decodedBodySize": 10882,
+          "duration": 65
+        },
+        {
+          "name": "https://thecreatingco.com/launch-season.css?v=1",
+          "initiatorType": "link",
+          "transferSize": 2945,
+          "decodedBodySize": 11586,
+          "duration": 62.900000005960464
+        },
+        {
+          "name": "https://thecreatingco.com/site-refinement.css?v=20261007",
+          "initiatorType": "link",
+          "transferSize": 2923,
+          "decodedBodySize": 11181,
+          "duration": 76.69999998807907
+        },
+        {
+          "name": "https://thecreatingco.com/product-carousels.js",
+          "initiatorType": "script",
+          "transferSize": 2637,
+          "decodedBodySize": 7712,
+          "duration": 74.30000001192093
+        }
+      ]
+    },
+    {
+      "device": "desktop",
+      "width": 1365,
+      "height": 900,
+      "route": "/",
+      "run": 3,
+      "started": "2026-10-10T10:15:41.731Z",
+      "status": 200,
+      "navError": null,
+      "errors": [],
+      "url": "https://thecreatingco.com/",
+      "title": "Free Creative Tools for 3D, Images, Music & Video | thecreatingco",
+      "bodyText": "Skip to content\nthecreatingco\n.\nCreative Suite\nApps & tools\nAbout\nLearn\nThe Circle\nQuick launch\n\nTHECREATINGCO / THE NEXT CHAPTER\n\nYour ideas.\nMade real.\n\nFree creative tools for 3D, images, music and film. Our promise: Lite stays free and fully capable. No su",
+      "navigation": {
+        "duration": 1019.9000000059605,
+        "domContentLoaded": 703.0999999940395,
+        "load": 1019.9000000059605,
+        "responseStart": 367.90000000596046,
+        "transferSize": 13224,
+        "encodedBodySize": 12924
+      },
+      "fcp": 716,
+      "lcp": 716,
+      "lcpCandidate": {
+        "tag": "IMG",
+        "id": "",
+        "className": "journey-poster",
+        "src": "https://thecreatingco.com/assets/hero/creative-journey.jpg"
+      },
+      "cls": 0.00460930398457871,
+      "shiftEntries": [
+        {
+          "value": 0.003513277605585298,
+          "startTime": 708.5999999940395,
+          "sources": [
+            {
+              "tag": "NAV",
+              "id": "",
+              "className": "",
+              "previousRect": {
+                "x": 483.9375,
+                "y": 15.5,
+                "width": 474.875,
+                "height": 44,
+                "top": 15.5,
+                "right": 958.8125,
+                "bottom": 59.5,
+                "left": 483.9375
+              },
+              "currentRect": {
+                "x": 430.375,
+                "y": 15.5,
+                "width": 413.984375,
+                "height": 44,
+                "top": 15.5,
+                "right": 844.359375,
+                "bottom": 59.5,
+                "left": 430.375
+              }
+            },
+            {
+              "tag": "DIV",
+              "id": "",
+              "className": "cc-header-actions",
+              "previousRect": {
+                "x": 1237,
+                "y": 15.5,
+                "width": 100,
+                "height": 44,
+                "top": 15.5,
+                "right": 1337,
+                "bottom": 59.5,
+                "left": 1237
+              },
+              "currentRect": {
+                "x": 1069,
+                "y": 15.5,
+                "width": 268,
+                "height": 44,
+                "top": 15.5,
+                "right": 1337,
+                "bottom": 59.5,
+                "left": 1069
+              }
+            }
+          ]
+        },
+        {
+          "value": 0.001096026378993412,
+          "startTime": 847.2000000178814,
+          "sources": [
+            {
+              "tag": null,
+              "id": null,
+              "className": null,
+              "previousRect": {
+                "x": 47,
+                "y": 190.75,
+                "width": 595.5,
+                "height": 83,
+                "top": 190.75,
+                "right": 642.5,
+                "bottom": 273.75,
+                "left": 47
+              },
+              "currentRect": {
+                "x": 47,
+                "y": 185.75,
+                "width": 595.5,
+                "height": 83,
+                "top": 185.75,
+                "right": 642.5,
+                "bottom": 268.75,
+                "left": 47
+              }
+            },
+            {
+              "tag": null,
+              "id": null,
+              "className": null,
+              "previousRect": {
+                "x": 47,
+                "y": 259.859375,
+                "width": 595.5,
+                "height": 83,
+                "top": 259.859375,
+                "right": 642.5,
+                "bottom": 342.859375,
+                "left": 47
+              },
+              "currentRect": {
+                "x": 47,
+                "y": 254.859375,
+                "width": 595.5,
+                "height": 83,
+                "top": 254.859375,
+                "right": 642.5,
+                "bottom": 337.859375,
+                "left": 47
+              }
+            },
+            {
+              "tag": "NAV",
+              "id": "",
+              "className": "",
+              "previousRect": {
+                "x": 430.375,
+                "y": 15.5,
+                "width": 413.984375,
+                "height": 44,
+                "top": 15.5,
+                "right": 844.359375,
+                "bottom": 59.5,
+                "left": 430.375
+              },
+              "currentRect": {
+                "x": 436.703125,
+                "y": 15.5,
+                "width": 417.015625,
+                "height": 44,
+                "top": 15.5,
+                "right": 853.71875,
+                "bottom": 59.5,
+                "left": 436.703125
+              }
+            },
+            {
+              "tag": null,
+              "id": null,
+              "className": null,
+              "previousRect": {
+                "x": 198.5,
+                "y": 22.5,
+                "width": 7.234375,
+                "height": 34,
+                "top": 22.5,
+                "right": 205.734375,
+                "bottom": 56.5,
+                "left": 198.5
+              },
+              "currentRect": {
+                "x": 214.8125,
+                "y": 20.5,
+                "width": 6.609375,
+                "height": 34,
+                "top": 20.5,
+                "right": 221.421875,
+                "bottom": 54.5,
+                "left": 214.8125
+              }
+            }
+          ]
+        }
+      ],
+      "resourceCount": 65,
+      "resourceTransferBytes": 435028,
+      "resourceDecodedBytes": 664010,
+      "largestResources": [
+        {
+          "name": "https://thecreatingco.com/assets/workflows/form-technical.png",
+          "initiatorType": "img",
+          "transferSize": 126109,
+          "decodedBodySize": 125809,
+          "duration": 266.7000000178814
+        },
+        {
+          "name": "https://thecreatingco.com/assets/after-hours/luma-04-finished.png",
+          "initiatorType": "img",
+          "transferSize": 89614,
+          "decodedBodySize": 89314,
+          "duration": 222.80000001192093
+        },
+        {
+          "name": "https://thecreatingco.com/assets/hero/creative-journey.jpg",
+          "initiatorType": "img",
+          "transferSize": 79525,
+          "decodedBodySize": 79225,
+          "duration": 247.19999998807907
+        },
+        {
+          "name": "https://thecreatingco.com/assets/form-origin/geist-98bbbccb.woff2",
+          "initiatorType": "css",
+          "transferSize": 29588,
+          "decodedBodySize": 29288,
+          "duration": 149.40000000596046
+        },
+        {
+          "name": "https://thecreatingco.com/assets/styles/marketing-cbfe5b6595fb.css",
+          "initiatorType": "link",
+          "transferSize": 17293,
+          "decodedBodySize": 83671,
+          "duration": 124.7999999821186
+        },
+        {
+          "name": "https://thecreatingco.com/suite/v1/suite.js",
+          "initiatorType": "script",
+          "transferSize": 13036,
+          "decodedBodySize": 50428,
+          "duration": 293
+        },
+        {
+          "name": "https://thecreatingco.com/momentium.js",
+          "initiatorType": "script",
+          "transferSize": 5736,
+          "decodedBodySize": 30509,
+          "duration": 182.5
+        },
+        {
+          "name": "https://thecreatingco.com/unified-shell.css?v=20261009",
+          "initiatorType": "link",
+          "transferSize": 5176,
+          "decodedBodySize": 22374,
+          "duration": 253.59999999403954
+        },
+        {
+          "name": "https://thecreatingco.com/site-navigation.js?v=20261009-unified",
+          "initiatorType": "script",
+          "transferSize": 3649,
+          "decodedBodySize": 10882,
+          "duration": 254.7999999821186
+        },
+        {
+          "name": "https://thecreatingco.com/launch-season.css?v=1",
+          "initiatorType": "link",
+          "transferSize": 2945,
+          "decodedBodySize": 11586,
+          "duration": 92.2999999821186
+        },
+        {
+          "name": "https://thecreatingco.com/site-refinement.css?v=20261007",
+          "initiatorType": "link",
+          "transferSize": 2938,
+          "decodedBodySize": 11181,
+          "duration": 253.30000001192093
+        },
+        {
+          "name": "https://thecreatingco.com/product-carousels.js",
+          "initiatorType": "script",
+          "transferSize": 2637,
+          "decodedBodySize": 7712,
+          "duration": 250.09999999403954
+        }
+      ]
+    },
+    {
+      "device": "desktop",
+      "width": 1365,
+      "height": 900,
+      "route": "/tools/",
+      "run": 1,
+      "started": "2026-10-10T10:15:44.370Z",
+      "status": 200,
+      "navError": null,
+      "errors": [],
+      "url": "https://thecreatingco.com/tools/",
+      "title": "Creative Web Apps & Tools Directory | thecreatingco",
+      "bodyText": "Skip to content\nthecreatingco\n.\nCreative Suite\nApps & tools\nAbout\nLearn\nThe Circle\nQuick launch\nthecreatingco\n/\nCreative Web Apps & Tools Directory\n\nTHE CREATIVE TOOLBOX\n\nYour next idea\nstarts here.\n\nA whole world of tools for whatever you’re into next. Follow",
+      "navigation": {
+        "duration": 668,
+        "domContentLoaded": 305.40000000596046,
+        "load": 668,
+        "responseStart": 112.90000000596046,
+        "transferSize": 7810,
+        "encodedBodySize": 7510
+      },
+      "fcp": 320,
+      "lcp": 320,
+      "lcpCandidate": {
+        "tag": "IMG",
+        "id": "",
+        "className": "",
+        "src": "https://thecreatingco.com/assets/workflows/form-technical.png"
+      },
+      "cls": 0.016424460295843078,
+      "shiftEntries": [
+        {
+          "value": 0.005819730127422435,
+          "startTime": 307.2000000178814,
+          "sources": [
+            {
+              "tag": "NAV",
+              "id": "",
+              "className": "",
+              "previousRect": {
+                "x": 483.9375,
+                "y": 15.5,
+                "width": 474.875,
+                "height": 44,
+                "top": 15.5,
+                "right": 958.8125,
+                "bottom": 59.5,
+                "left": 483.9375
+              },
+              "currentRect": {
+                "x": 430.375,
+                "y": 15.5,
+                "width": 413.984375,
+                "height": 44,
+                "top": 15.5,
+                "right": 844.359375,
+                "bottom": 59.5,
+                "left": 430.375
+              }
+            },
+            {
+              "tag": "DIV",
+              "id": "",
+              "className": "cc-header-actions",
+              "previousRect": {
+                "x": 1237,
+                "y": 15.5,
+                "width": 100,
+                "height": 44,
+                "top": 15.5,
+                "right": 1337,
+                "bottom": 59.5,
+                "left": 1237
+              },
+              "currentRect": {
+                "x": 1069,
+                "y": 15.5,
+                "width": 268,
+                "height": 44,
+                "top": 15.5,
+                "right": 1337,
+                "bottom": 59.5,
+                "left": 1069
+              }
+            },
+            {
+              "tag": "DIV",
+              "id": "app-grid",
+              "className": "ec-grid",
+              "previousRect": {
+                "x": 54.59375,
+                "y": 891.09375,
+                "width": 1255.8125,
+                "height": 8.90625,
+                "top": 891.09375,
+                "right": 1310.40625,
+                "bottom": 900,
+                "left": 54.59375
+              },
+              "currentRect": {
+                "x": 0,
+                "y": 0,
+                "width": 0,
+                "height": 0,
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              }
+            },
+            {
+              "tag": "ARTICLE",
+              "id": "",
+              "className": "ec-card",
+              "previousRect": {
+                "x": 42.59375,
+                "y": 882.09375,
+                "width": 427.9375,
+                "height": 17.90625,
+                "top": 882.09375,
+                "right": 470.53125,
+                "bottom": 900,
+                "left": 42.59375
+              },
+              "currentRect": {
+                "x": 42.59375,
+                "y": 899.140625,
+                "width": 427.9375,
+                "height": 0.859375,
+                "top": 899.140625,
+                "right": 470.53125,
+                "bottom": 900,
+                "left": 42.59375
+              }
+            },
+            {
+              "tag": "ARTICLE",
+              "id": "",
+              "className": "ec-card",
+              "previousRect": {
+                "x": 468.53125,
+                "y": 882.09375,
+                "width": 427.9375,
+                "height": 17.90625,
+                "top": 882.09375,
+                "right": 896.46875,
+                "bottom": 900,
+                "left": 468.53125
+              },
+              "currentRect": {
+                "x": 468.53125,
+                "y": 899.140625,
+                "width": 427.9375,
+                "height": 0.859375,
+                "top": 899.140625,
+                "right": 896.46875,
+                "bottom": 900,
+                "left": 468.53125
+              }
+            }
+          ]
+        },
+        {
+          "value": 0.010604730168420643,
+          "startTime": 584.5,
+          "sources": [
+            {
+              "tag": "DIV",
+              "id": "",
+              "className": "tool-collage",
+              "previousRect": {
+                "x": 700.5,
+                "y": 234.1875,
+                "width": 609.90625,
+                "height": 365,
+                "top": 234.1875,
+                "right": 1310.40625,
+                "bottom": 599.1875,
+                "left": 700.5
+              },
+              "currentRect": {
+                "x": 700.5,
+                "y": 222.6875,
+                "width": 609.90625,
+                "height": 365,
+                "top": 222.6875,
+                "right": 1310.40625,
+                "bottom": 587.6875,
+                "left": 700.5
+              }
+            },
+            {
+              "tag": "SECTION",
+              "id": "find-tools",
+              "className": "ec-find",
+              "previousRect": {
+                "x": 54.59375,
+                "y": 740.296875,
+                "width": 1261.8125,
+                "height": 145.84375,
+                "top": 740.296875,
+                "right": 1316.40625,
+                "bottom": 886.140625,
+                "left": 54.59375
+              },
+              "currentRect": {
+                "x": 54.59375,
+                "y": 717.28125,
+                "width": 1261.8125,
+                "height": 145.84375,
+                "top": 717.28125,
+                "right": 1316.40625,
+                "bottom": 863.125,
+                "left": 54.59375
+              }
+            },
+            {
+              "tag": "A",
+              "id": "",
+              "className": "tool-window",
+              "previousRect": {
+                "x": 700.5,
+                "y": 222.6875,
+                "width": 530.8358154296875,
+                "height": 365,
+                "top": 222.6875,
+                "right": 1231.3358154296875,
+                "bottom": 587.6875,
+                "left": 700.5
+              },
+              "currentRect": {
+                "x": 700.5,
+                "y": 222.6875,
+                "width": 529.877197265625,
+                "height": 365,
+                "top": 222.6875,
+                "right": 1230.377197265625,
+                "bottom": 587.6875,
+                "left": 700.5
+              }
+            },
+            {
+              "tag": "A",
+              "id": "",
+              "className": "tool-window",
+              "previousRect": {
+                "x": 785.4050903320312,
+                "y": 222.6875,
+                "width": 525.0011596679688,
+                "height": 365,
+                "top": 222.6875,
+                "right": 1310.40625,
+                "bottom": 587.6875,
+                "left": 785.4050903320312
+              },
+              "currentRect": {
+                "x": 786.4509887695312,
+                "y": 222.6875,
+                "width": 523.9552612304688,
+                "height": 365,
+                "top": 222.6875,
+                "right": 1310.40625,
+                "bottom": 587.6875,
+                "left": 786.4509887695312
+              }
+            },
+            {
+              "tag": "NAV",
+              "id": "",
+              "className": "ec-sections",
+              "previousRect": {
+                "x": 54.59375,
+                "y": 654.703125,
+                "width": 1255.8125,
+                "height": 57.59375,
+                "top": 654.703125,
+                "right": 1310.40625,
+                "bottom": 712.296875,
+                "left": 54.59375
+              },
+              "currentRect": {
+                "x": 54.59375,
+                "y": 631.6875,
+                "width": 1255.8125,
+                "height": 57.59375,
+                "top": 631.6875,
+                "right": 1310.40625,
+                "bottom": 689.28125,
+                "left": 54.59375
+              }
+            }
+          ]
+        }
+      ],
+      "resourceCount": 60,
+      "resourceTransferBytes": 816156,
+      "resourceDecodedBytes": 1062191,
+      "largestResources": [
+        {
+          "name": "https://thecreatingco.com/assets/workflows/form-technical.png",
+          "initiatorType": "img",
+          "transferSize": 126109,
+          "decodedBodySize": 125809,
+          "duration": 146.7000000178814
+        },
+        {
+          "name": "https://thecreatingco.com/assets/workflows/scenepilot-timeline.png",
+          "initiatorType": "img",
+          "transferSize": 94055,
+          "decodedBodySize": 93755,
+          "duration": 348.30000001192093
+        },
+        {
+          "name": "https://thecreatingco.com/assets/after-hours/luma-04-finished.png",
+          "initiatorType": "img",
+          "transferSize": 89614,
+          "decodedBodySize": 89314,
+          "duration": 117.10000002384186
+        },
+        {
+          "name": "https://thecreatingco.com/assets/after-hours/ghost-02-relaxed.png",
+          "initiatorType": "img",
+          "transferSize": 74021,
+          "decodedBodySize": 73721,
+          "duration": 364.69999998807907
+        },
+        {
+          "name": "https://thecreatingco.com/assets/workspace-captures-20261009/glyph-studio.png",
+          "initiatorType": "img",
+          "transferSize": 72648,
+          "decodedBodySize": 72348,
+          "duration": 350.19999998807907
+        },
+        {
+          "name": "https://thecreatingco.com/assets/tool-products/autocut.webp",
+          "initiatorType": "img",
+          "transferSize": 72312,
+          "decodedBodySize": 72012,
+          "duration": 364.40000000596046
+        },
+        {
+          "name": "https://thecreatingco.com/assets/workspace-captures-20261009/mockup.png",
+          "initiatorType": "img",
+          "transferSize": 70291,
+          "decodedBodySize": 69991,
+          "duration": 111.80000001192093
+        },
+        {
+          "name": "https://thecreatingco.com/assets/tool-products/captions.webp",
+          "initiatorType": "img",
+          "transferSize": 66232,
+          "decodedBodySize": 65932,
+          "duration": 348.59999999403954
+        },
+        {
+          "name": "https://thecreatingco.com/assets/form-origin/geist-98bbbccb.woff2",
+          "initiatorType": "css",
+          "transferSize": 29588,
+          "decodedBodySize": 29288,
+          "duration": 287.69999998807907
+        },
+        {
+          "name": "https://thecreatingco.com/assets/styles/marketing-fe07f1dfeb46.css",
+          "initiatorType": "link",
+          "transferSize": 25774,
+          "decodedBodySize": 127689,
+          "duration": 91.5
+        },
+        {
+          "name": "https://thecreatingco.com/assets/creative-tools/cast.webp",
+          "initiatorType": "img",
+          "transferSize": 16700,
+          "decodedBodySize": 16400,
+          "duration": 100.40000000596046
+        },
+        {
+          "name": "https://thecreatingco.com/suite/v1/suite.js",
+          "initiatorType": "script",
+          "transferSize": 13035,
+          "decodedBodySize": 50428,
+          "duration": 73.40000000596046
+        }
+      ]
+    },
+    {
+      "device": "desktop",
+      "width": 1365,
+      "height": 900,
+      "route": "/tools/",
+      "run": 2,
+      "started": "2026-10-10T10:15:46.663Z",
+      "status": 200,
+      "navError": null,
+      "errors": [],
+      "url": "https://thecreatingco.com/tools/",
+      "title": "Creative Web Apps & Tools Directory | thecreatingco",
+      "bodyText": "Skip to content\nthecreatingco\n.\nCreative Suite\nApps & tools\nAbout\nLearn\nThe Circle\nQuick launch\nthecreatingco\n/\nCreative Web Apps & Tools Directory\n\nTHE CREATIVE TOOLBOX\n\nYour next idea\nstarts here.\n\nA whole world of tools for whatever you’re into next. Follow",
+      "navigation": {
+        "duration": 771.2999999821186,
+        "domContentLoaded": 394,
+        "load": 771.2999999821186,
+        "responseStart": 123.09999999403954,
+        "transferSize": 7816,
+        "encodedBodySize": 7516
+      },
+      "fcp": 400,
+      "lcp": 400,
+      "lcpCandidate": {
+        "tag": "IMG",
+        "id": "",
+        "className": "",
+        "src": "https://thecreatingco.com/assets/workflows/form-technical.png"
+      },
+      "cls": 0.016424460295843078,
+      "shiftEntries": [
+        {
+          "value": 0.005819730127422435,
+          "startTime": 395.89999997615814,
+          "sources": [
+            {
+              "tag": "NAV",
+              "id": "",
+              "className": "",
+              "previousRect": {
+                "x": 483.9375,
+                "y": 15.5,
+                "width": 474.875,
+                "height": 44,
+                "top": 15.5,
+                "right": 958.8125,
+                "bottom": 59.5,
+                "left": 483.9375
+              },
+              "currentRect": {
+                "x": 430.375,
+                "y": 15.5,
+                "width": 413.984375,
+                "height": 44,
+                "top": 15.5,
+                "right": 844.359375,
+                "bottom": 59.5,
+                "left": 430.375
+              }
+            },
+            {
+              "tag": "DIV",
+              "id": "",
+              "className": "cc-header-actions",
+              "previousRect": {
+                "x": 1237,
+                "y": 15.5,
+                "width": 100,
+                "height": 44,
+                "top": 15.5,
+                "right": 1337,
+                "bottom": 59.5,
+                "left": 1237
+              },
+              "currentRect": {
+                "x": 1069,
+                "y": 15.5,
+                "width": 268,
+                "height": 44,
+                "top": 15.5,
+                "right": 1337,
+                "bottom": 59.5,
+                "left": 1069
+              }
+            },
+            {
+              "tag": "DIV",
+              "id": "app-grid",
+              "className": "ec-grid",
+              "previousRect": {
+                "x": 54.59375,
+                "y": 891.09375,
+                "width": 1255.8125,
+                "height": 8.90625,
+                "top": 891.09375,
+                "right": 1310.40625,
+                "bottom": 900,
+                "left": 54.59375
+              },
+              "currentRect": {
+                "x": 0,
+                "y": 0,
+                "width": 0,
+                "height": 0,
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              }
+            },
+            {
+              "tag": "ARTICLE",
+              "id": "",
+              "className": "ec-card",
+              "previousRect": {
+                "x": 42.59375,
+                "y": 882.09375,
+                "width": 427.9375,
+                "height": 17.90625,
+                "top": 882.09375,
+                "right": 470.53125,
+                "bottom": 900,
+                "left": 42.59375
+              },
+              "currentRect": {
+                "x": 42.59375,
+                "y": 899.140625,
+                "width": 427.9375,
+                "height": 0.859375,
+                "top": 899.140625,
+                "right": 470.53125,
+                "bottom": 900,
+                "left": 42.59375
+              }
+            },
+            {
+              "tag": "ARTICLE",
+              "id": "",
+              "className": "ec-card",
+              "previousRect": {
+                "x": 468.53125,
+                "y": 882.09375,
+                "width": 427.9375,
+                "height": 17.90625,
+                "top": 882.09375,
+                "right": 896.46875,
+                "bottom": 900,
+                "left": 468.53125
+              },
+              "currentRect": {
+                "x": 468.53125,
+                "y": 899.140625,
+                "width": 427.9375,
+                "height": 0.859375,
+                "top": 899.140625,
+                "right": 896.46875,
+                "bottom": 900,
+                "left": 468.53125
+              }
+            }
+          ]
+        },
+        {
+          "value": 0.010604730168420643,
+          "startTime": 598.5999999940395,
+          "sources": [
+            {
+              "tag": "DIV",
+              "id": "",
+              "className": "tool-collage",
+              "previousRect": {
+                "x": 700.5,
+                "y": 234.1875,
+                "width": 609.90625,
+                "height": 365,
+                "top": 234.1875,
+                "right": 1310.40625,
+                "bottom": 599.1875,
+                "left": 700.5
+              },
+              "currentRect": {
+                "x": 700.5,
+                "y": 222.6875,
+                "width": 609.90625,
+                "height": 365,
+                "top": 222.6875,
+                "right": 1310.40625,
+                "bottom": 587.6875,
+                "left": 700.5
+              }
+            },
+            {
+              "tag": "SECTION",
+              "id": "find-tools",
+              "className": "ec-find",
+              "previousRect": {
+                "x": 54.59375,
+                "y": 740.296875,
+                "width": 1261.8125,
+                "height": 145.84375,
+                "top": 740.296875,
+                "right": 1316.40625,
+                "bottom": 886.140625,
+                "left": 54.59375
+              },
+              "currentRect": {
+                "x": 54.59375,
+                "y": 717.28125,
+                "width": 1261.8125,
+                "height": 145.84375,
+                "top": 717.28125,
+                "right": 1316.40625,
+                "bottom": 863.125,
+                "left": 54.59375
+              }
+            },
+            {
+              "tag": "A",
+              "id": "",
+              "className": "tool-window",
+              "previousRect": {
+                "x": 700.5,
+                "y": 222.6875,
+                "width": 530.8358154296875,
+                "height": 365,
+                "top": 222.6875,
+                "right": 1231.3358154296875,
+                "bottom": 587.6875,
+                "left": 700.5
+              },
+              "currentRect": {
+                "x": 700.5,
+                "y": 222.6875,
+                "width": 529.877197265625,
+                "height": 365,
+                "top": 222.6875,
+                "right": 1230.377197265625,
+                "bottom": 587.6875,
+                "left": 700.5
+              }
+            },
+            {
+              "tag": "A",
+              "id": "",
+              "className": "tool-window",
+              "previousRect": {
+                "x": 785.4050903320312,
+                "y": 222.6875,
+                "width": 525.0011596679688,
+                "height": 365,
+                "top": 222.6875,
+                "right": 1310.40625,
+                "bottom": 587.6875,
+                "left": 785.4050903320312
+              },
+              "currentRect": {
+                "x": 786.4509887695312,
+                "y": 222.6875,
+                "width": 523.9552612304688,
+                "height": 365,
+                "top": 222.6875,
+                "right": 1310.40625,
+                "bottom": 587.6875,
+                "left": 786.4509887695312
+              }
+            },
+            {
+              "tag": "NAV",
+              "id": "",
+              "className": "ec-sections",
+              "previousRect": {
+                "x": 54.59375,
+                "y": 654.703125,
+                "width": 1255.8125,
+                "height": 57.59375,
+                "top": 654.703125,
+                "right": 1310.40625,
+                "bottom": 712.296875,
+                "left": 54.59375
+              },
+              "currentRect": {
+                "x": 54.59375,
+                "y": 631.6875,
+                "width": 1255.8125,
+                "height": 57.59375,
+                "top": 631.6875,
+                "right": 1310.40625,
+                "bottom": 689.28125,
+                "left": 54.59375
+              }
+            }
+          ]
+        }
+      ],
+      "resourceCount": 60,
+      "resourceTransferBytes": 816024,
+      "resourceDecodedBytes": 1062191,
+      "largestResources": [
+        {
+          "name": "https://thecreatingco.com/assets/workflows/form-technical.png",
+          "initiatorType": "img",
+          "transferSize": 126109,
+          "decodedBodySize": 125809,
+          "duration": 157.59999999403954
+        },
+        {
+          "name": "https://thecreatingco.com/assets/workflows/scenepilot-timeline.png",
+          "initiatorType": "img",
+          "transferSize": 94055,
+          "decodedBodySize": 93755,
+          "duration": 341.59999999403954
+        },
+        {
+          "name": "https://thecreatingco.com/assets/after-hours/luma-04-finished.png",
+          "initiatorType": "img",
+          "transferSize": 89614,
+          "decodedBodySize": 89314,
+          "duration": 218.7999999821186
+        },
+        {
+          "name": "https://thecreatingco.com/assets/after-hours/ghost-02-relaxed.png",
+          "initiatorType": "img",
+          "transferSize": 74021,
+          "decodedBodySize": 73721,
+          "duration": 304.69999998807907
+        },
+        {
+          "name": "https://thecreatingco.com/assets/workspace-captures-20261009/glyph-studio.png",
+          "initiatorType": "img",
+          "transferSize": 72648,
+          "decodedBodySize": 72348,
+          "duration": 341
+        },
+        {
+          "name": "https://thecreatingco.com/assets/tool-products/autocut.webp",
+          "initiatorType": "img",
+          "transferSize": 72312,
+          "decodedBodySize": 72012,
+          "duration": 381
+        },
+        {
+          "name": "https://thecreatingco.com/assets/workspace-captures-20261009/mockup.png",
+          "initiatorType": "img",
+          "transferSize": 70291,
+          "decodedBodySize": 69991,
+          "duration": 321.5
+        },
+        {
+          "name": "https://thecreatingco.com/assets/tool-products/captions.webp",
+          "initiatorType": "img",
+          "transferSize": 66232,
+          "decodedBodySize": 65932,
+          "duration": 282.89999997615814
+        },
+        {
+          "name": "https://thecreatingco.com/assets/form-origin/geist-98bbbccb.woff2",
+          "initiatorType": "css",
+          "transferSize": 29588,
+          "decodedBodySize": 29288,
+          "duration": 213.59999999403954
+        },
+        {
+          "name": "https://thecreatingco.com/assets/styles/marketing-fe07f1dfeb46.css",
+          "initiatorType": "link",
+          "transferSize": 25844,
+          "decodedBodySize": 127689,
+          "duration": 73.5
+        },
+        {
+          "name": "https://thecreatingco.com/assets/creative-tools/cast.webp",
+          "initiatorType": "img",
+          "transferSize": 16700,
+          "decodedBodySize": 16400,
+          "duration": 163.19999998807907
+        },
+        {
+          "name": "https://thecreatingco.com/suite/v1/suite.js",
+          "initiatorType": "script",
+          "transferSize": 13056,
+          "decodedBodySize": 50428,
+          "duration": 242.5
+        }
+      ]
+    },
+    {
+      "device": "desktop",
+      "width": 1365,
+      "height": 900,
+      "route": "/tools/",
+      "run": 3,
+      "started": "2026-10-10T10:15:49.055Z",
+      "status": 200,
+      "navError": null,
+      "errors": [],
+      "url": "https://thecreatingco.com/tools/",
+      "title": "Creative Web Apps & Tools Directory | thecreatingco",
+      "bodyText": "Skip to content\nthecreatingco\n.\nCreative Suite\nApps & tools\nAbout\nLearn\nThe Circle\nQuick launch\nthecreatingco\n/\nCreative Web Apps & Tools Directory\n\nTHE CREATIVE TOOLBOX\n\nYour next idea\nstarts here.\n\nA whole world of tools for whatever you’re into next. Follow",
+      "navigation": {
+        "duration": 805.6999999880791,
+        "domContentLoaded": 434.59999999403954,
+        "load": 805.6999999880791,
+        "responseStart": 174.59999999403954,
+        "transferSize": 7893,
+        "encodedBodySize": 7593
+      },
+      "fcp": 448,
+      "lcp": 448,
+      "lcpCandidate": {
+        "tag": "IMG",
+        "id": "",
+        "className": "",
+        "src": "https://thecreatingco.com/assets/workflows/form-technical.png"
+      },
+      "cls": 0.016424460295843078,
+      "shiftEntries": [
+        {
+          "value": 0.005819730127422435,
+          "startTime": 432.09999999403954,
+          "sources": [
+            {
+              "tag": "NAV",
+              "id": "",
+              "className": "",
+              "previousRect": {
+                "x": 483.9375,
+                "y": 15.5,
+                "width": 474.875,
+                "height": 44,
+                "top": 15.5,
+                "right": 958.8125,
+                "bottom": 59.5,
+                "left": 483.9375
+              },
+              "currentRect": {
+                "x": 430.375,
+                "y": 15.5,
+                "width": 413.984375,
+                "height": 44,
+                "top": 15.5,
+                "right": 844.359375,
+                "bottom": 59.5,
+                "left": 430.375
+              }
+            },
+            {
+              "tag": "DIV",
+              "id": "",
+              "className": "cc-header-actions",
+              "previousRect": {
+                "x": 1237,
+                "y": 15.5,
+                "width": 100,
+                "height": 44,
+                "top": 15.5,
+                "right": 1337,
+                "bottom": 59.5,
+                "left": 1237
+              },
+              "currentRect": {
+                "x": 1069,
+                "y": 15.5,
+                "width": 268,
+                "height": 44,
+                "top": 15.5,
+                "right": 1337,
+                "bottom": 59.5,
+                "left": 1069
+              }
+            },
+            {
+              "tag": "DIV",
+              "id": "app-grid",
+              "className": "ec-grid",
+              "previousRect": {
+                "x": 54.59375,
+                "y": 891.09375,
+                "width": 1255.8125,
+                "height": 8.90625,
+                "top": 891.09375,
+                "right": 1310.40625,
+                "bottom": 900,
+                "left": 54.59375
+              },
+              "currentRect": {
+                "x": 0,
+                "y": 0,
+                "width": 0,
+                "height": 0,
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              }
+            },
+            {
+              "tag": "ARTICLE",
+              "id": "",
+              "className": "ec-card",
+              "previousRect": {
+                "x": 42.59375,
+                "y": 882.09375,
+                "width": 427.9375,
+                "height": 17.90625,
+                "top": 882.09375,
+                "right": 470.53125,
+                "bottom": 900,
+                "left": 42.59375
+              },
+              "currentRect": {
+                "x": 42.59375,
+                "y": 899.140625,
+                "width": 427.9375,
+                "height": 0.859375,
+                "top": 899.140625,
+                "right": 470.53125,
+                "bottom": 900,
+                "left": 42.59375
+              }
+            },
+            {
+              "tag": "ARTICLE",
+              "id": "",
+              "className": "ec-card",
+              "previousRect": {
+                "x": 468.53125,
+                "y": 882.09375,
+                "width": 427.9375,
+                "height": 17.90625,
+                "top": 882.09375,
+                "right": 896.46875,
+                "bottom": 900,
+                "left": 468.53125
+              },
+              "currentRect": {
+                "x": 468.53125,
+                "y": 899.140625,
+                "width": 427.9375,
+                "height": 0.859375,
+                "top": 899.140625,
+                "right": 896.46875,
+                "bottom": 900,
+                "left": 468.53125
+              }
+            }
+          ]
+        },
+        {
+          "value": 0.010604730168420643,
+          "startTime": 498.59999999403954,
+          "sources": [
+            {
+              "tag": "DIV",
+              "id": "",
+              "className": "tool-collage",
+              "previousRect": {
+                "x": 700.5,
+                "y": 234.1875,
+                "width": 609.90625,
+                "height": 365,
+                "top": 234.1875,
+                "right": 1310.40625,
+                "bottom": 599.1875,
+                "left": 700.5
+              },
+              "currentRect": {
+                "x": 700.5,
+                "y": 222.6875,
+                "width": 609.90625,
+                "height": 365,
+                "top": 222.6875,
+                "right": 1310.40625,
+                "bottom": 587.6875,
+                "left": 700.5
+              }
+            },
+            {
+              "tag": "SECTION",
+              "id": "find-tools",
+              "className": "ec-find",
+              "previousRect": {
+                "x": 54.59375,
+                "y": 740.296875,
+                "width": 1261.8125,
+                "height": 145.84375,
+                "top": 740.296875,
+                "right": 1316.40625,
+                "bottom": 886.140625,
+                "left": 54.59375
+              },
+              "currentRect": {
+                "x": 54.59375,
+                "y": 717.28125,
+                "width": 1261.8125,
+                "height": 145.84375,
+                "top": 717.28125,
+                "right": 1316.40625,
+                "bottom": 863.125,
+                "left": 54.59375
+              }
+            },
+            {
+              "tag": "A",
+              "id": "",
+              "className": "tool-window",
+              "previousRect": {
+                "x": 700.5,
+                "y": 222.6875,
+                "width": 530.8358154296875,
+                "height": 365,
+                "top": 222.6875,
+                "right": 1231.3358154296875,
+                "bottom": 587.6875,
+                "left": 700.5
+              },
+              "currentRect": {
+                "x": 700.5,
+                "y": 222.6875,
+                "width": 529.877197265625,
+                "height": 365,
+                "top": 222.6875,
+                "right": 1230.377197265625,
+                "bottom": 587.6875,
+                "left": 700.5
+              }
+            },
+            {
+              "tag": "A",
+              "id": "",
+              "className": "tool-window",
+              "previousRect": {
+                "x": 785.4050903320312,
+                "y": 222.6875,
+                "width": 525.0011596679688,
+                "height": 365,
+                "top": 222.6875,
+                "right": 1310.40625,
+                "bottom": 587.6875,
+                "left": 785.4050903320312
+              },
+              "currentRect": {
+                "x": 786.4509887695312,
+                "y": 222.6875,
+                "width": 523.9552612304688,
+                "height": 365,
+                "top": 222.6875,
+                "right": 1310.40625,
+                "bottom": 587.6875,
+                "left": 786.4509887695312
+              }
+            },
+            {
+              "tag": "NAV",
+              "id": "",
+              "className": "ec-sections",
+              "previousRect": {
+                "x": 54.59375,
+                "y": 654.703125,
+                "width": 1255.8125,
+                "height": 57.59375,
+                "top": 654.703125,
+                "right": 1310.40625,
+                "bottom": 712.296875,
+                "left": 54.59375
+              },
+              "currentRect": {
+                "x": 54.59375,
+                "y": 631.6875,
+                "width": 1255.8125,
+                "height": 57.59375,
+                "top": 631.6875,
+                "right": 1310.40625,
+                "bottom": 689.28125,
+                "left": 54.59375
+              }
+            }
+          ]
+        }
+      ],
+      "resourceCount": 60,
+      "resourceTransferBytes": 816182,
+      "resourceDecodedBytes": 1062191,
+      "largestResources": [
+        {
+          "name": "https://thecreatingco.com/assets/workflows/form-technical.png",
+          "initiatorType": "img",
+          "transferSize": 126109,
+          "decodedBodySize": 125809,
+          "duration": 152.90000000596046
+        },
+        {
+          "name": "https://thecreatingco.com/assets/workflows/scenepilot-timeline.png",
+          "initiatorType": "img",
+          "transferSize": 94055,
+          "decodedBodySize": 93755,
+          "duration": 341.40000000596046
+        },
+        {
+          "name": "https://thecreatingco.com/assets/after-hours/luma-04-finished.png",
+          "initiatorType": "img",
+          "transferSize": 89614,
+          "decodedBodySize": 89314,
+          "duration": 152.40000000596046
+        },
+        {
+          "name": "https://thecreatingco.com/assets/after-hours/ghost-02-relaxed.png",
+          "initiatorType": "img",
+          "transferSize": 74021,
+          "decodedBodySize": 73721,
+          "duration": 364.30000001192093
+        },
+        {
+          "name": "https://thecreatingco.com/assets/workspace-captures-20261009/glyph-studio.png",
+          "initiatorType": "img",
+          "transferSize": 72648,
+          "decodedBodySize": 72348,
+          "duration": 295.90000000596046
+        },
+        {
+          "name": "https://thecreatingco.com/assets/tool-products/autocut.webp",
+          "initiatorType": "img",
+          "transferSize": 72312,
+          "decodedBodySize": 72012,
+          "duration": 264.90000000596046
+        },
+        {
+          "name": "https://thecreatingco.com/assets/workspace-captures-20261009/mockup.png",
+          "initiatorType": "img",
+          "transferSize": 70291,
+          "decodedBodySize": 69991,
+          "duration": 374.7000000178814
+        },
+        {
+          "name": "https://thecreatingco.com/assets/tool-products/captions.webp",
+          "initiatorType": "img",
+          "transferSize": 66232,
+          "decodedBodySize": 65932,
+          "duration": 135.60000002384186
+        },
+        {
+          "name": "https://thecreatingco.com/assets/form-origin/geist-98bbbccb.woff2",
+          "initiatorType": "css",
+          "transferSize": 29588,
+          "decodedBodySize": 29288,
+          "duration": 87.39999997615814
+        },
+        {
+          "name": "https://thecreatingco.com/assets/styles/marketing-fe07f1dfeb46.css",
+          "initiatorType": "link",
+          "transferSize": 25949,
+          "decodedBodySize": 127689,
+          "duration": 213.5
+        },
+        {
+          "name": "https://thecreatingco.com/assets/creative-tools/cast.webp",
+          "initiatorType": "img",
+          "transferSize": 16700,
+          "decodedBodySize": 16400,
+          "duration": 106.80000001192093
+        },
+        {
+          "name": "https://thecreatingco.com/suite/v1/suite.js",
+          "initiatorType": "script",
+          "transferSize": 13063,
+          "decodedBodySize": 50428,
+          "duration": 41.29999998211861
+        }
+      ]
+    },
+    {
+      "device": "desktop",
+      "width": 1365,
+      "height": 900,
+      "route": "/products/luma/",
+      "run": 1,
+      "started": "2026-10-10T10:15:51.478Z",
+      "status": 200,
+      "navError": null,
+      "errors": [],
+      "url": "https://thecreatingco.com/products/luma/",
+      "title": "Luma: Layered Image Editor | thecreatingco",
+      "bodyText": "Skip to content\nthecreatingco\n.\nCreative Suite\nApps & tools\nAbout\nLearn\nThe Circle\nQuick launch\nthecreatingco\n/\nApps & tools\n/\nLuma: Layered Image Editor\nLuma Studio\nTry it\nFeatures\nOpen app\n↗\n\nA DIRECT SPACE FOR VISUAL IDEAS / LUMA STUDIO\n\nYour images.\nYour w",
+      "navigation": {
+        "duration": 1225.2000000178814,
+        "domContentLoaded": 1004.9000000059605,
+        "load": 1225.2000000178814,
+        "responseStart": 392.40000000596046,
+        "transferSize": 17346,
+        "encodedBodySize": 17046
+      },
+      "fcp": 724,
+      "lcp": 728,
+      "lcpCandidate": {
+        "tag": "IMG",
+        "id": "",
+        "className": "",
+        "src": "https://thecreatingco.com/assets/product-artwork/luma-1280.webp"
+      },
+      "cls": 0.020006085550591045,
+      "shiftEntries": [
+        {
+          "value": 0.0013275469951294127,
+          "startTime": 764.0999999940395,
+          "sources": [
+            {
+              "tag": null,
+              "id": null,
+              "className": null,
+              "previousRect": {
+                "x": 61.421875,
+                "y": 478.671875,
+                "width": 689.578125,
+                "height": 83,
+                "top": 478.671875,
+                "right": 751,
+                "bottom": 561.671875,
+                "left": 61.421875
+              },
+              "currentRect": {
+                "x": 60.421875,
+                "y": 474.671875,
+                "width": 690.578125,
+                "height": 83,
+                "top": 474.671875,
+                "right": 751,
+                "bottom": 557.671875,
+                "left": 60.421875
+              }
+            },
+            {
+              "tag": null,
+              "id": null,
+              "className": null,
+              "previousRect": {
+                "x": 61.421875,
+                "y": 409.5625,
+                "width": 689.578125,
+                "height": 83,
+                "top": 409.5625,
+                "right": 751,
+                "bottom": 492.5625,
+                "left": 61.421875
+              },
+              "currentRect": {
+                "x": 60.421875,
+                "y": 405.5625,
+                "width": 690.578125,
+                "height": 83,
+                "top": 405.5625,
+                "right": 751,
+                "bottom": 488.5625,
+                "left": 60.421875
+              }
+            },
+            {
+              "tag": "NAV",
+              "id": "",
+              "className": "",
+              "previousRect": {
+                "x": 483.9375,
+                "y": 15.5,
+                "width": 474.875,
+                "height": 44,
+                "top": 15.5,
+                "right": 958.8125,
+                "bottom": 59.5,
+                "left": 483.9375
+              },
+              "currentRect": {
+                "x": 491.28125,
+                "y": 15.5,
+                "width": 475.859375,
+                "height": 44,
+                "top": 15.5,
+                "right": 967.140625,
+                "bottom": 59.5,
+                "left": 491.28125
+              }
+            },
+            {
+              "tag": "SPAN",
+              "id": "",
+              "className": "",
+              "previousRect": {
+                "x": 302.515625,
+                "y": 116,
+                "width": 177,
+                "height": 23.796875,
+                "top": 116,
+                "right": 479.515625,
+                "bottom": 139.796875,
+                "left": 302.515625
+              },
+              "currentRect": {
+                "x": 314.546875,
+                "y": 116,
+                "width": 178.46875,
+                "height": 23.796875,
+                "top": 116,
+                "right": 493.015625,
+                "bottom": 139.796875,
+                "left": 314.546875
+              }
+            },
+            {
+              "tag": "A",
+              "id": "",
+              "className": "",
+              "previousRect": {
+                "x": 206.234375,
+                "y": 116,
+                "width": 80,
+                "height": 23.796875,
+                "top": 116,
+                "right": 286.234375,
+                "bottom": 139.796875,
+                "left": 206.234375
+              },
+              "currentRect": {
+                "x": 214.578125,
+                "y": 116,
+                "width": 80.453125,
+                "height": 23.796875,
+                "top": 116,
+                "right": 295.03125,
+                "bottom": 139.796875,
+                "left": 214.578125
+              }
+            }
+          ]
+        },
+        {
+          "value": 0.018678538555461633,
+          "startTime": 1011,
+          "sources": [
+            {
+              "tag": "DIV",
+              "id": "",
+              "className": "",
+              "previousRect": {
+                "x": 60.421875,
+                "y": 366.765625,
+                "width": 690.578125,
+                "height": 190.90625,
+                "top": 366.765625,
+                "right": 751,
+                "bottom": 557.671875,
+                "left": 60.421875
+              },
+              "currentRect": {
+                "x": 60.421875,
+                "y": 338.5625,
+                "width": 690.578125,
+                "height": 219.109375,
+                "top": 338.5625,
+                "right": 751,
+                "bottom": 557.671875,
+                "left": 60.421875
+              }
+            },
+            {
+              "tag": "NAV",
+              "id": "",
+              "className": "",
+              "previousRect": {
+                "x": 491.28125,
+                "y": 15.5,
+                "width": 475.859375,
+                "height": 44,
+                "top": 15.5,
+                "right": 967.140625,
+                "bottom": 59.5,
+                "left": 491.28125
+              },
+              "currentRect": {
+                "x": 436.703125,
+                "y": 15.5,
+                "width": 417.015625,
+                "height": 44,
+                "top": 15.5,
+                "right": 853.71875,
+                "bottom": 59.5,
+                "left": 436.703125
+              }
+            },
+            {
+              "tag": "DIV",
+              "id": "",
+              "className": "cc-header-actions",
+              "previousRect": {
+                "x": 1237,
+                "y": 15.5,
+                "width": 100,
+                "height": 44,
+                "top": 15.5,
+                "right": 1337,
+                "bottom": 59.5,
+                "left": 1237
+              },
+              "currentRect": {
+                "x": 1069,
+                "y": 15.5,
+                "width": 268,
+                "height": 44,
+                "top": 15.5,
+                "right": 1337,
+                "bottom": 59.5,
+                "left": 1069
+              }
+            }
+          ]
+        }
+      ],
+      "resourceCount": 75,
+      "resourceTransferBytes": 642477,
+      "resourceDecodedBytes": 1101848,
+      "largestResources": [
+        {
+          "name": "https://thecreatingco.com/assets/after-hours/luma-02-type.png",
+          "initiatorType": "img",
+          "transferSize": 97512,
+          "decodedBodySize": 97212,
+          "duration": 146.09999999403954
+        },
+        {
+          "name": "https://thecreatingco.com/assets/after-hours/luma-03-tone.png",
+          "initiatorType": "img",
+          "transferSize": 97501,
+          "decodedBodySize": 97201,
+          "duration": 310.5
+        },
+        {
+          "name": "https://thecreatingco.com/assets/after-hours/luma-01-source.png",
+          "initiatorType": "img",
+          "transferSize": 84899,
+          "decodedBodySize": 84599,
+          "duration": 217.7000000178814
+        },
+        {
+          "name": "https://thecreatingco.com/assets/product-artwork/luma-1280.webp",
+          "initiatorType": "img",
+          "transferSize": 69944,
+          "decodedBodySize": 69644,
+          "duration": 260.2999999821186
+        },
+        {
+          "name": "https://thecreatingco.com/assets/luma-workshops/recolor-example.jpg",
+          "initiatorType": "img",
+          "transferSize": 67007,
+          "decodedBodySize": 66707,
+          "duration": 239.80000001192093
+        },
+        {
+          "name": "https://thecreatingco.com/assets/styles/marketing-f5eb7f39af18.css",
+          "initiatorType": "link",
+          "transferSize": 38654,
+          "decodedBodySize": 194839,
+          "duration": 252.7000000178814
+        },
+        {
+          "name": "https://thecreatingco.com/assets/form-origin/geist-98bbbccb.woff2",
+          "initiatorType": "css",
+          "transferSize": 29588,
+          "decodedBodySize": 29288,
+          "duration": 83.2999999821186
+        },
+        {
+          "name": "https://thecreatingco.com/learn/vendor/jszip.min.js",
+          "initiatorType": "script",
+          "transferSize": 27792,
+          "decodedBodySize": 97630,
+          "duration": 241.59999999403954
+        },
+        {
+          "name": "https://thecreatingco.com/suite/v1/suite.js",
+          "initiatorType": "script",
+          "transferSize": 13035,
+          "decodedBodySize": 50428,
+          "duration": 54.900000005960464
+        },
+        {
+          "name": "https://thecreatingco.com/learn/previews/previews.js",
+          "initiatorType": "script",
+          "transferSize": 10902,
+          "decodedBodySize": 29962,
+          "duration": 111.7000000178814
+        },
+        {
+          "name": "https://thecreatingco.com/learn/data.json",
+          "initiatorType": "fetch",
+          "transferSize": 6595,
+          "decodedBodySize": 25890,
+          "duration": 210.90000000596046
+        },
+        {
+          "name": "https://thecreatingco.com/momentium.js",
+          "initiatorType": "script",
+          "transferSize": 5735,
+          "decodedBodySize": 30509,
+          "duration": 63.89999997615814
+        }
+      ]
+    },
+    {
+      "device": "desktop",
+      "width": 1365,
+      "height": 900,
+      "route": "/products/luma/",
+      "run": 2,
+      "started": "2026-10-10T10:15:54.323Z",
+      "status": 200,
+      "navError": null,
+      "errors": [],
+      "url": "https://thecreatingco.com/products/luma/",
+      "title": "Luma: Layered Image Editor | thecreatingco",
+      "bodyText": "Skip to content\nthecreatingco\n.\nCreative Suite\nApps & tools\nAbout\nLearn\nThe Circle\nQuick launch\nthecreatingco\n/\nApps & tools\n/\nLuma: Layered Image Editor\nLuma Studio\nTry it\nFeatures\nOpen app\n↗\n\nA DIRECT SPACE FOR VISUAL IDEAS / LUMA STUDIO\n\nYour images.\nYour w",
+      "navigation": {
+        "duration": 935.1999999880791,
+        "domContentLoaded": 651,
+        "load": 935.1999999880791,
+        "responseStart": 190.69999998807907,
+        "transferSize": 17398,
+        "encodedBodySize": 17098
+      },
+      "fcp": 648,
+      "lcp": 648,
+      "lcpCandidate": {
+        "tag": "IMG",
+        "id": "",
+        "className": "",
+        "src": "https://thecreatingco.com/assets/product-artwork/luma-1280.webp"
+      },
+      "cls": 0.019608846444560728,
+      "shiftEntries": [
+        {
+          "value": 0.018306552706552705,
+          "startTime": 655.9000000059605,
+          "sources": [
+            {
+              "tag": "DIV",
+              "id": "",
+              "className": "",
+              "previousRect": {
+                "x": 61.421875,
+                "y": 366.765625,
+                "width": 689.578125,
+                "height": 185.90625,
+                "top": 366.765625,
+                "right": 751,
+                "bottom": 552.671875,
+                "left": 61.421875
+              },
+              "currentRect": {
+                "x": 61.421875,
+                "y": 338.5625,
+                "width": 689.578125,
+                "height": 214.109375,
+                "top": 338.5625,
+                "right": 751,
+                "bottom": 552.671875,
+                "left": 61.421875
+              }
+            },
+            {
+              "tag": "NAV",
+              "id": "",
+              "className": "",
+              "previousRect": {
+                "x": 483.9375,
+                "y": 15.5,
+                "width": 474.875,
+                "height": 44,
+                "top": 15.5,
+                "right": 958.8125,
+                "bottom": 59.5,
+                "left": 483.9375
+              },
+              "currentRect": {
+                "x": 430.375,
+                "y": 15.5,
+                "width": 413.984375,
+                "height": 44,
+                "top": 15.5,
+                "right": 844.359375,
+                "bottom": 59.5,
+                "left": 430.375
+              }
+            },
+            {
+              "tag": "DIV",
+              "id": "",
+              "className": "cc-header-actions",
+              "previousRect": {
+                "x": 1237,
+                "y": 15.5,
+                "width": 100,
+                "height": 44,
+                "top": 15.5,
+                "right": 1337,
+                "bottom": 59.5,
+                "left": 1237
+              },
+              "currentRect": {
+                "x": 1069,
+                "y": 15.5,
+                "width": 268,
+                "height": 44,
+                "top": 15.5,
+                "right": 1337,
+                "bottom": 59.5,
+                "left": 1069
+              }
+            }
+          ]
+        },
+        {
+          "value": 0.0013022937380080236,
+          "startTime": 712.5,
+          "sources": [
+            {
+              "tag": null,
+              "id": null,
+              "className": null,
+              "previousRect": {
+                "x": 61.421875,
+                "y": 478.671875,
+                "width": 689.578125,
+                "height": 83,
+                "top": 478.671875,
+                "right": 751,
+                "bottom": 561.671875,
+                "left": 61.421875
+              },
+              "currentRect": {
+                "x": 60.421875,
+                "y": 474.671875,
+                "width": 690.578125,
+                "height": 83,
+                "top": 474.671875,
+                "right": 751,
+                "bottom": 557.671875,
+                "left": 60.421875
+              }
+            },
+            {
+              "tag": null,
+              "id": null,
+              "className": null,
+              "previousRect": {
+                "x": 61.421875,
+                "y": 409.5625,
+                "width": 689.578125,
+                "height": 83,
+                "top": 409.5625,
+                "right": 751,
+                "bottom": 492.5625,
+                "left": 61.421875
+              },
+              "currentRect": {
+                "x": 60.421875,
+                "y": 405.5625,
+                "width": 690.578125,
+                "height": 83,
+                "top": 405.5625,
+                "right": 751,
+                "bottom": 488.5625,
+                "left": 60.421875
+              }
+            },
+            {
+              "tag": "NAV",
+              "id": "",
+              "className": "",
+              "previousRect": {
+                "x": 430.375,
+                "y": 15.5,
+                "width": 413.984375,
+                "height": 44,
+                "top": 15.5,
+                "right": 844.359375,
+                "bottom": 59.5,
+                "left": 430.375
+              },
+              "currentRect": {
+                "x": 436.703125,
+                "y": 15.5,
+                "width": 417.015625,
+                "height": 44,
+                "top": 15.5,
+                "right": 853.71875,
+                "bottom": 59.5,
+                "left": 436.703125
+              }
+            },
+            {
+              "tag": "SPAN",
+              "id": "",
+              "className": "",
+              "previousRect": {
+                "x": 302.515625,
+                "y": 116,
+                "width": 177,
+                "height": 23.796875,
+                "top": 116,
+                "right": 479.515625,
+                "bottom": 139.796875,
+                "left": 302.515625
+              },
+              "currentRect": {
+                "x": 314.546875,
+                "y": 116,
+                "width": 178.46875,
+                "height": 23.796875,
+                "top": 116,
+                "right": 493.015625,
+                "bottom": 139.796875,
+                "left": 314.546875
+              }
+            },
+            {
+              "tag": "A",
+              "id": "",
+              "className": "",
+              "previousRect": {
+                "x": 206.234375,
+                "y": 116,
+                "width": 80,
+                "height": 23.796875,
+                "top": 116,
+                "right": 286.234375,
+                "bottom": 139.796875,
+                "left": 206.234375
+              },
+              "currentRect": {
+                "x": 214.578125,
+                "y": 116,
+                "width": 80.453125,
+                "height": 23.796875,
+                "top": 116,
+                "right": 295.03125,
+                "bottom": 139.796875,
+                "left": 214.578125
+              }
+            }
+          ]
+        }
+      ],
+      "resourceCount": 75,
+      "resourceTransferBytes": 642935,
+      "resourceDecodedBytes": 1101848,
+      "largestResources": [
+        {
+          "name": "https://thecreatingco.com/assets/after-hours/luma-02-type.png",
+          "initiatorType": "img",
+          "transferSize": 97512,
+          "decodedBodySize": 97212,
+          "duration": 290.80000001192093
+        },
+        {
+          "name": "https://thecreatingco.com/assets/after-hours/luma-03-tone.png",
+          "initiatorType": "img",
+          "transferSize": 97501,
+          "decodedBodySize": 97201,
+          "duration": 276.40000000596046
+        },
+        {
+          "name": "https://thecreatingco.com/assets/after-hours/luma-01-source.png",
+          "initiatorType": "img",
+          "transferSize": 84899,
+          "decodedBodySize": 84599,
+          "duration": 137.19999998807907
+        },
+        {
+          "name": "https://thecreatingco.com/assets/product-artwork/luma-1280.webp",
+          "initiatorType": "img",
+          "transferSize": 69944,
+          "decodedBodySize": 69644,
+          "duration": 270.69999998807907
+        },
+        {
+          "name": "https://thecreatingco.com/assets/luma-workshops/recolor-example.jpg",
+          "initiatorType": "img",
+          "transferSize": 67007,
+          "decodedBodySize": 66707,
+          "duration": 324.7999999821186
+        },
+        {
+          "name": "https://thecreatingco.com/assets/styles/marketing-f5eb7f39af18.css",
+          "initiatorType": "link",
+          "transferSize": 38895,
+          "decodedBodySize": 194839,
+          "duration": 397.19999998807907
+        },
+        {
+          "name": "https://thecreatingco.com/assets/form-origin/geist-98bbbccb.woff2",
+          "initiatorType": "css",
+          "transferSize": 29588,
+          "decodedBodySize": 29288,
+          "duration": 89.69999998807907
+        },
+        {
+          "name": "https://thecreatingco.com/learn/vendor/jszip.min.js",
+          "initiatorType": "script",
+          "transferSize": 27792,
+          "decodedBodySize": 97630,
+          "duration": 250
+        },
+        {
+          "name": "https://thecreatingco.com/suite/v1/suite.js",
+          "initiatorType": "script",
+          "transferSize": 13056,
+          "decodedBodySize": 50428,
+          "duration": 37.099999994039536
+        },
+        {
+          "name": "https://thecreatingco.com/learn/previews/previews.js",
+          "initiatorType": "script",
+          "transferSize": 10913,
+          "decodedBodySize": 29962,
+          "duration": 147.2000000178814
+        },
+        {
+          "name": "https://thecreatingco.com/learn/data.json",
+          "initiatorType": "fetch",
+          "transferSize": 6639,
+          "decodedBodySize": 25890,
+          "duration": 289.2000000178814
+        },
+        {
+          "name": "https://thecreatingco.com/momentium.js",
+          "initiatorType": "script",
+          "transferSize": 5718,
+          "decodedBodySize": 30509,
+          "duration": 59.099999994039536
+        }
+      ]
+    },
+    {
+      "device": "desktop",
+      "width": 1365,
+      "height": 900,
+      "route": "/products/luma/",
+      "run": 3,
+      "started": "2026-10-10T10:15:56.879Z",
+      "status": 200,
+      "navError": null,
+      "errors": [],
+      "url": "https://thecreatingco.com/products/luma/",
+      "title": "Luma: Layered Image Editor | thecreatingco",
+      "bodyText": "Skip to content\nthecreatingco\n.\nCreative Suite\nApps & tools\nAbout\nLearn\nThe Circle\nQuick launch\nthecreatingco\n/\nApps & tools\n/\nLuma: Layered Image Editor\nLuma Studio\nTry it\nFeatures\nOpen app\n↗\n\nA DIRECT SPACE FOR VISUAL IDEAS / LUMA STUDIO\n\nYour images.\nYour w",
+      "navigation": {
+        "duration": 822.4000000059605,
+        "domContentLoaded": 691.9000000059605,
+        "load": 822.4000000059605,
+        "responseStart": 122.40000000596046,
+        "transferSize": 17350,
+        "encodedBodySize": 17050
+      },
+      "fcp": 448,
+      "lcp": 448,
+      "lcpCandidate": {
+        "tag": "IMG",
+        "id": "",
+        "className": "",
+        "src": "https://thecreatingco.com/assets/product-artwork/luma-1280.webp"
+      },
+      "cls": 0.0175706427196125,
+      "shiftEntries": [
+        {
+          "value": 0.015025503271657118,
+          "startTime": 686.8000000119209,
+          "sources": [
+            {
+              "tag": null,
+              "id": null,
+              "className": null,
+              "previousRect": {
+                "x": 61.421875,
+                "y": 409.5625,
+                "width": 689.578125,
+                "height": 83,
+                "top": 409.5625,
+                "right": 751,
+                "bottom": 492.5625,
+                "left": 61.421875
+              },
+              "currentRect": {
+                "x": 60.421875,
+                "y": 405.5625,
+                "width": 690.578125,
+                "height": 83,
+                "top": 405.5625,
+                "right": 751,
+                "bottom": 488.5625,
+                "left": 60.421875
+              }
+            },
+            {
+              "tag": null,
+              "id": null,
+              "className": null,
+              "previousRect": {
+                "x": 61.421875,
+                "y": 478.671875,
+                "width": 689.578125,
+                "height": 83,
+                "top": 478.671875,
+                "right": 751,
+                "bottom": 561.671875,
+                "left": 61.421875
+              },
+              "currentRect": {
+                "x": 60.421875,
+                "y": 474.671875,
+                "width": 690.578125,
+                "height": 83,
+                "top": 474.671875,
+                "right": 751,
+                "bottom": 557.671875,
+                "left": 60.421875
+              }
+            },
+            {
+              "tag": "NAV",
+              "id": "",
+              "className": "",
+              "previousRect": {
+                "x": 483.9375,
+                "y": 15.5,
+                "width": 474.875,
+                "height": 44,
+                "top": 15.5,
+                "right": 958.8125,
+                "bottom": 59.5,
+                "left": 483.9375
+              },
+              "currentRect": {
+                "x": 436.703125,
+                "y": 15.5,
+                "width": 417.015625,
+                "height": 44,
+                "top": 15.5,
+                "right": 853.71875,
+                "bottom": 59.5,
+                "left": 436.703125
+              }
+            },
+            {
+              "tag": "DIV",
+              "id": "",
+              "className": "cc-header-actions",
+              "previousRect": {
+                "x": 1237,
+                "y": 15.5,
+                "width": 100,
+                "height": 44,
+                "top": 15.5,
+                "right": 1337,
+                "bottom": 59.5,
+                "left": 1237
+              },
+              "currentRect": {
+                "x": 1069,
+                "y": 15.5,
+                "width": 268,
+                "height": 44,
+                "top": 15.5,
+                "right": 1337,
+                "bottom": 59.5,
+                "left": 1069
+              }
+            },
+            {
+              "tag": "SPAN",
+              "id": "",
+              "className": "",
+              "previousRect": {
+                "x": 302.515625,
+                "y": 116,
+                "width": 177,
+                "height": 23.796875,
+                "top": 116,
+                "right": 479.515625,
+                "bottom": 139.796875,
+                "left": 302.515625
+              },
+              "currentRect": {
+                "x": 314.546875,
+                "y": 116,
+                "width": 178.46875,
+                "height": 23.796875,
+                "top": 116,
+                "right": 493.015625,
+                "bottom": 139.796875,
+                "left": 314.546875
+              }
+            }
+          ]
+        },
+        {
+          "value": 0.0025451394479553816,
+          "startTime": 694.7000000178814,
+          "sources": [
+            {
+              "tag": "DIV",
+              "id": "",
+              "className": "",
+              "previousRect": {
+                "x": 60.421875,
+                "y": 366.765625,
+                "width": 690.578125,
+                "height": 190.90625,
+                "top": 366.765625,
+                "right": 751,
+                "bottom": 557.671875,
+                "left": 60.421875
+              },
+              "currentRect": {
+                "x": 60.421875,
+                "y": 338.5625,
+                "width": 690.578125,
+                "height": 219.109375,
+                "top": 338.5625,
+                "right": 751,
+                "bottom": 557.671875,
+                "left": 60.421875
+              }
+            }
+          ]
+        }
+      ],
+      "resourceCount": 75,
+      "resourceTransferBytes": 642759,
+      "resourceDecodedBytes": 1101848,
+      "largestResources": [
+        {
+          "name": "https://thecreatingco.com/assets/after-hours/luma-02-type.png",
+          "initiatorType": "img",
+          "transferSize": 97512,
+          "decodedBodySize": 97212,
+          "duration": 149.19999998807907
+        },
+        {
+          "name": "https://thecreatingco.com/assets/after-hours/luma-03-tone.png",
+          "initiatorType": "img",
+          "transferSize": 97501,
+          "decodedBodySize": 97201,
+          "duration": 213.09999999403954
+        },
+        {
+          "name": "https://thecreatingco.com/assets/after-hours/luma-01-source.png",
+          "initiatorType": "img",
+          "transferSize": 84899,
+          "decodedBodySize": 84599,
+          "duration": 106.09999999403954
+        },
+        {
+          "name": "https://thecreatingco.com/assets/product-artwork/luma-1280.webp",
+          "initiatorType": "img",
+          "transferSize": 69944,
+          "decodedBodySize": 69644,
+          "duration": 186.40000000596046
+        },
+        {
+          "name": "https://thecreatingco.com/assets/luma-workshops/recolor-example.jpg",
+          "initiatorType": "img",
+          "transferSize": 67007,
+          "decodedBodySize": 66707,
+          "duration": 256.40000000596046
+        },
+        {
+          "name": "https://thecreatingco.com/assets/styles/marketing-f5eb7f39af18.css",
+          "initiatorType": "link",
+          "transferSize": 38791,
+          "decodedBodySize": 194839,
+          "duration": 79.7000000178814
+        },
+        {
+          "name": "https://thecreatingco.com/assets/form-origin/geist-98bbbccb.woff2",
+          "initiatorType": "css",
+          "transferSize": 29588,
+          "decodedBodySize": 29288,
+          "duration": 255
+        },
+        {
+          "name": "https://thecreatingco.com/learn/vendor/jszip.min.js",
+          "initiatorType": "script",
+          "transferSize": 27792,
+          "decodedBodySize": 97630,
+          "duration": 119.2999999821186
+        },
+        {
+          "name": "https://thecreatingco.com/suite/v1/suite.js",
+          "initiatorType": "script",
+          "transferSize": 13063,
+          "decodedBodySize": 50428,
+          "duration": 186.09999999403954
+        },
+        {
+          "name": "https://thecreatingco.com/learn/previews/previews.js",
+          "initiatorType": "script",
+          "transferSize": 10902,
+          "decodedBodySize": 29962,
+          "duration": 40
+        },
+        {
+          "name": "https://thecreatingco.com/learn/data.json",
+          "initiatorType": "fetch",
+          "transferSize": 6580,
+          "decodedBodySize": 25890,
+          "duration": 214.5
+        },
+        {
+          "name": "https://thecreatingco.com/momentium.js",
+          "initiatorType": "script",
+          "transferSize": 5724,
+          "decodedBodySize": 30509,
+          "duration": 120.40000000596046
+        }
+      ]
+    },
+    {
+      "device": "mobile",
+      "width": 390,
+      "height": 844,
+      "route": "/",
+      "run": 1,
+      "started": "2026-10-10T10:15:59.317Z",
+      "status": 200,
+      "navError": null,
+      "errors": [],
+      "url": "https://thecreatingco.com/",
+      "title": "Free Creative Tools for 3D, Images, Music & Video | thecreatingco",
+      "bodyText": "Skip to content\nthecreatingco\n.\nQuick launch\n\nTHECREATINGCO / THE NEXT CHAPTER\n\nYour ideas.\nMade real.\n\nFree creative tools for 3D, images, music and film. Our promise: Lite stays free and fully capable. No subscription required to keep creating.\n\nTry Form Stu",
+      "navigation": {
+        "duration": 548,
+        "domContentLoaded": 299.2999999821186,
+        "load": 548,
+        "responseStart": 116.90000000596046,
+        "transferSize": 13328,
+        "encodedBodySize": 13028
+      },
+      "fcp": 292,
+      "lcp": 292,
+      "lcpCandidate": {
+        "tag": "IMG",
+        "id": "",
+        "className": "journey-poster",
+        "src": "https://thecreatingco.com/assets/hero/creative-journey.jpg"
+      },
+      "cls": 0,
+      "shiftEntries": [],
+      "resourceCount": 64,
+      "resourceTransferBytes": 345560,
+      "resourceDecodedBytes": 574696,
+      "largestResources": [
+        {
+          "name": "https://thecreatingco.com/assets/workflows/form-technical.png",
+          "initiatorType": "img",
+          "transferSize": 126109,
+          "decodedBodySize": 125809,
+          "duration": 98.7000000178814
+        },
+        {
+          "name": "https://thecreatingco.com/assets/hero/creative-journey.jpg",
+          "initiatorType": "img",
+          "transferSize": 79525,
+          "decodedBodySize": 79225,
+          "duration": 117.2999999821186
+        },
+        {
+          "name": "https://thecreatingco.com/assets/form-origin/geist-98bbbccb.woff2",
+          "initiatorType": "css",
+          "transferSize": 29588,
+          "decodedBodySize": 29288,
+          "duration": 150.5
+        },
+        {
+          "name": "https://thecreatingco.com/assets/styles/marketing-cbfe5b6595fb.css",
+          "initiatorType": "link",
+          "transferSize": 17240,
+          "decodedBodySize": 83671,
+          "duration": 53.900000005960464
+        },
+        {
+          "name": "https://thecreatingco.com/suite/v1/suite.js",
+          "initiatorType": "script",
+          "transferSize": 13088,
+          "decodedBodySize": 50428,
+          "duration": 58.5
+        },
+        {
+          "name": "https://thecreatingco.com/momentium.js",
+          "initiatorType": "script",
+          "transferSize": 5806,
+          "decodedBodySize": 30509,
+          "duration": 35.80000001192093
+        },
+        {
+          "name": "https://thecreatingco.com/unified-shell.css?v=20261009",
+          "initiatorType": "link",
+          "transferSize": 5191,
+          "decodedBodySize": 22374,
+          "duration": 129.89999997615814
+        },
+        {
+          "name": "https://thecreatingco.com/site-navigation.js?v=20261009-unified",
+          "initiatorType": "script",
+          "transferSize": 3639,
+          "decodedBodySize": 10882,
+          "duration": 123.80000001192093
+        },
+        {
+          "name": "https://thecreatingco.com/site-refinement.css?v=20261007",
+          "initiatorType": "link",
+          "transferSize": 3018,
+          "decodedBodySize": 11181,
+          "duration": 61.19999998807907
+        },
+        {
+          "name": "https://thecreatingco.com/launch-season.css?v=1",
+          "initiatorType": "link",
+          "transferSize": 2986,
+          "decodedBodySize": 11586,
+          "duration": 35.70000001788139
+        },
+        {
+          "name": "https://thecreatingco.com/product-carousels.js",
+          "initiatorType": "script",
+          "transferSize": 2637,
+          "decodedBodySize": 7712,
+          "duration": 43.400000005960464
+        },
+        {
+          "name": "https://thecreatingco.com/review-polish.css?v=1",
+          "initiatorType": "link",
+          "transferSize": 2622,
+          "decodedBodySize": 9154,
+          "duration": 35.900000005960464
+        }
+      ]
+    },
+    {
+      "device": "mobile",
+      "width": 390,
+      "height": 844,
+      "route": "/",
+      "run": 2,
+      "started": "2026-10-10T10:16:01.477Z",
+      "status": 200,
+      "navError": null,
+      "errors": [],
+      "url": "https://thecreatingco.com/",
+      "title": "Free Creative Tools for 3D, Images, Music & Video | thecreatingco",
+      "bodyText": "Skip to content\nthecreatingco\n.\nQuick launch\n\nTHECREATINGCO / THE NEXT CHAPTER\n\nYour ideas.\nMade real.\n\nFree creative tools for 3D, images, music and film. Our promise: Lite stays free and fully capable. No subscription required to keep creating.\n\nTry Form Stu",
+      "navigation": {
+        "duration": 908.1999999880791,
+        "domContentLoaded": 405.90000000596046,
+        "load": 908.1999999880791,
+        "responseStart": 159.59999999403954,
+        "transferSize": 13230,
+        "encodedBodySize": 12930
+      },
+      "fcp": 400,
+      "lcp": 400,
+      "lcpCandidate": {
+        "tag": "IMG",
+        "id": "",
+        "className": "journey-poster",
+        "src": "https://thecreatingco.com/assets/hero/creative-journey.jpg"
+      },
+      "cls": 0,
+      "shiftEntries": [],
+      "resourceCount": 64,
+      "resourceTransferBytes": 345697,
+      "resourceDecodedBytes": 574696,
+      "largestResources": [
+        {
+          "name": "https://thecreatingco.com/assets/workflows/form-technical.png",
+          "initiatorType": "img",
+          "transferSize": 126109,
+          "decodedBodySize": 125809,
+          "duration": 100.19999998807907
+        },
+        {
+          "name": "https://thecreatingco.com/assets/hero/creative-journey.jpg",
+          "initiatorType": "img",
+          "transferSize": 79525,
+          "decodedBodySize": 79225,
+          "duration": 185.2000000178814
+        },
+        {
+          "name": "https://thecreatingco.com/assets/form-origin/geist-98bbbccb.woff2",
+          "initiatorType": "css",
+          "transferSize": 29588,
+          "decodedBodySize": 29288,
+          "duration": 157.90000000596046
+        },
+        {
+          "name": "https://thecreatingco.com/assets/styles/marketing-cbfe5b6595fb.css",
+          "initiatorType": "link",
+          "transferSize": 17338,
+          "decodedBodySize": 83671,
+          "duration": 105.39999997615814
+        },
+        {
+          "name": "https://thecreatingco.com/suite/v1/suite.js",
+          "initiatorType": "script",
+          "transferSize": 13126,
+          "decodedBodySize": 50428,
+          "duration": 66.2000000178814
+        },
+        {
+          "name": "https://thecreatingco.com/momentium.js",
+          "initiatorType": "script",
+          "transferSize": 5792,
+          "decodedBodySize": 30509,
+          "duration": 35.900000005960464
+        },
+        {
+          "name": "https://thecreatingco.com/unified-shell.css?v=20261009",
+          "initiatorType": "link",
+          "transferSize": 5179,
+          "decodedBodySize": 22374,
+          "duration": 74.59999999403954
+        },
+        {
+          "name": "https://thecreatingco.com/site-navigation.js?v=20261009-unified",
+          "initiatorType": "script",
+          "transferSize": 3649,
+          "decodedBodySize": 10882,
+          "duration": 46.80000001192093
+        },
+        {
+          "name": "https://thecreatingco.com/site-refinement.css?v=20261007",
+          "initiatorType": "link",
+          "transferSize": 3012,
+          "decodedBodySize": 11181,
+          "duration": 35.69999998807907
+        },
+        {
+          "name": "https://thecreatingco.com/launch-season.css?v=1",
+          "initiatorType": "link",
+          "transferSize": 2945,
+          "decodedBodySize": 11586,
+          "duration": 46.29999998211861
+        },
+        {
+          "name": "https://thecreatingco.com/product-carousels.js",
+          "initiatorType": "script",
+          "transferSize": 2637,
+          "decodedBodySize": 7712,
+          "duration": 108.5
+        },
+        {
+          "name": "https://thecreatingco.com/review-polish.css?v=1",
+          "initiatorType": "link",
+          "transferSize": 2622,
+          "decodedBodySize": 9154,
+          "duration": 48.5
+        }
+      ]
+    },
+    {
+      "device": "mobile",
+      "width": 390,
+      "height": 844,
+      "route": "/",
+      "run": 3,
+      "started": "2026-10-10T10:16:04.000Z",
+      "status": 200,
+      "navError": null,
+      "errors": [],
+      "url": "https://thecreatingco.com/",
+      "title": "Free Creative Tools for 3D, Images, Music & Video | thecreatingco",
+      "bodyText": "Skip to content\nthecreatingco\n.\nQuick launch\n\nTHECREATINGCO / THE NEXT CHAPTER\n\nYour ideas.\nMade real.\n\nFree creative tools for 3D, images, music and film. Our promise: Lite stays free and fully capable. No subscription required to keep creating.\n\nTry Form Stu",
+      "navigation": {
+        "duration": 916.5999999940395,
+        "domContentLoaded": 578.6999999880791,
+        "load": 916.5999999940395,
+        "responseStart": 291,
+        "transferSize": 13304,
+        "encodedBodySize": 13004
+      },
+      "fcp": 584,
+      "lcp": 672,
+      "lcpCandidate": {
+        "tag": "IMG",
+        "id": "",
+        "className": "journey-poster",
+        "src": "https://thecreatingco.com/assets/hero/creative-journey.jpg"
+      },
+      "cls": 0,
+      "shiftEntries": [],
+      "resourceCount": 64,
+      "resourceTransferBytes": 345492,
+      "resourceDecodedBytes": 574696,
+      "largestResources": [
+        {
+          "name": "https://thecreatingco.com/assets/workflows/form-technical.png",
+          "initiatorType": "img",
+          "transferSize": 126109,
+          "decodedBodySize": 125809,
+          "duration": 192.09999999403954
+        },
+        {
+          "name": "https://thecreatingco.com/assets/hero/creative-journey.jpg",
+          "initiatorType": "img",
+          "transferSize": 79525,
+          "decodedBodySize": 79225,
+          "duration": 352.90000000596046
+        },
+        {
+          "name": "https://thecreatingco.com/assets/form-origin/geist-98bbbccb.woff2",
+          "initiatorType": "css",
+          "transferSize": 29588,
+          "decodedBodySize": 29288,
+          "duration": 235.7000000178814
+        },
+        {
+          "name": "https://thecreatingco.com/assets/styles/marketing-cbfe5b6595fb.css",
+          "initiatorType": "link",
+          "transferSize": 17240,
+          "decodedBodySize": 83671,
+          "duration": 218.2999999821186
+        },
+        {
+          "name": "https://thecreatingco.com/suite/v1/suite.js",
+          "initiatorType": "script",
+          "transferSize": 13151,
+          "decodedBodySize": 50428,
+          "duration": 116.5
+        },
+        {
+          "name": "https://thecreatingco.com/momentium.js",
+          "initiatorType": "script",
+          "transferSize": 5724,
+          "decodedBodySize": 30509,
+          "duration": 55.30000001192093
+        },
+        {
+          "name": "https://thecreatingco.com/unified-shell.css?v=20261009",
+          "initiatorType": "link",
+          "transferSize": 5179,
+          "decodedBodySize": 22374,
+          "duration": 62.69999998807907
+        },
+        {
+          "name": "https://thecreatingco.com/site-navigation.js?v=20261009-unified",
+          "initiatorType": "script",
+          "transferSize": 3649,
+          "decodedBodySize": 10882,
+          "duration": 138.90000000596046
+        },
+        {
+          "name": "https://thecreatingco.com/launch-season.css?v=1",
+          "initiatorType": "link",
+          "transferSize": 2945,
+          "decodedBodySize": 11586,
+          "duration": 55
+        },
+        {
+          "name": "https://thecreatingco.com/site-refinement.css?v=20261007",
+          "initiatorType": "link",
+          "transferSize": 2943,
+          "decodedBodySize": 11181,
+          "duration": 63.599999994039536
+        },
+        {
+          "name": "https://thecreatingco.com/review-polish.css?v=1",
+          "initiatorType": "link",
+          "transferSize": 2619,
+          "decodedBodySize": 9154,
+          "duration": 55.400000005960464
+        },
+        {
+          "name": "https://thecreatingco.com/review-polish.css",
+          "initiatorType": "link",
+          "transferSize": 2619,
+          "decodedBodySize": 9154,
+          "duration": 135
+        }
+      ]
+    },
+    {
+      "device": "mobile",
+      "width": 390,
+      "height": 844,
+      "route": "/tools/",
+      "run": 1,
+      "started": "2026-10-10T10:16:06.535Z",
+      "status": 200,
+      "navError": null,
+      "errors": [],
+      "url": "https://thecreatingco.com/tools/",
+      "title": "Creative Web Apps & Tools Directory | thecreatingco",
+      "bodyText": "Skip to content\nthecreatingco\n.\nQuick launch\n\nTHE CREATIVE TOOLBOX\n\nYour next idea\nstarts here.\n\nA whole world of tools for whatever you’re into next. Follow your curiosity. Make it yours.\n\nFind your tool\n↓\n\nPublic web apps · No installation to explore\n\n01 / F",
+      "navigation": {
+        "duration": 804.3000000119209,
+        "domContentLoaded": 643.7000000178814,
+        "load": 804.3000000119209,
+        "responseStart": 295.80000001192093,
+        "transferSize": 7790,
+        "encodedBodySize": 7490
+      },
+      "fcp": 648,
+      "lcp": 648,
+      "lcpCandidate": {
+        "tag": "IMG",
+        "id": "",
+        "className": "",
+        "src": "https://thecreatingco.com/assets/workflows/form-technical.png"
+      },
+      "cls": 0,
+      "shiftEntries": [],
+      "resourceCount": 54,
+      "resourceTransferBytes": 366388,
+      "resourceDecodedBytes": 614432,
+      "largestResources": [
+        {
+          "name": "https://thecreatingco.com/assets/workflows/form-technical.png",
+          "initiatorType": "img",
+          "transferSize": 126109,
+          "decodedBodySize": 125809,
+          "duration": 231.7000000178814
+        },
+        {
+          "name": "https://thecreatingco.com/assets/after-hours/luma-04-finished.png",
+          "initiatorType": "img",
+          "transferSize": 89614,
+          "decodedBodySize": 89314,
+          "duration": 277.40000000596046
+        },
+        {
+          "name": "https://thecreatingco.com/assets/form-origin/geist-98bbbccb.woff2",
+          "initiatorType": "css",
+          "transferSize": 29588,
+          "decodedBodySize": 29288,
+          "duration": 85.90000000596046
+        },
+        {
+          "name": "https://thecreatingco.com/assets/styles/marketing-fe07f1dfeb46.css",
+          "initiatorType": "link",
+          "transferSize": 25762,
+          "decodedBodySize": 127689,
+          "duration": 241.59999999403954
+        },
+        {
+          "name": "https://thecreatingco.com/assets/creative-tools/cast.webp",
+          "initiatorType": "img",
+          "transferSize": 16700,
+          "decodedBodySize": 16400,
+          "duration": 34.900000005960464
+        },
+        {
+          "name": "https://thecreatingco.com/suite/v1/suite.js",
+          "initiatorType": "script",
+          "transferSize": 13035,
+          "decodedBodySize": 50428,
+          "duration": 294.90000000596046
+        },
+        {
+          "name": "https://thecreatingco.com/momentium.js",
+          "initiatorType": "script",
+          "transferSize": 5720,
+          "decodedBodySize": 30509,
+          "duration": 33.60000002384186
+        },
+        {
+          "name": "https://thecreatingco.com/unified-shell.css?v=20261009",
+          "initiatorType": "link",
+          "transferSize": 5179,
+          "decodedBodySize": 22374,
+          "duration": 68.90000000596046
+        },
+        {
+          "name": "https://thecreatingco.com/site-navigation.js?v=20261009-unified",
+          "initiatorType": "script",
+          "transferSize": 3649,
+          "decodedBodySize": 10882,
+          "duration": 71.19999998807907
+        },
+        {
+          "name": "https://thecreatingco.com/launch-season.css?v=1",
+          "initiatorType": "link",
+          "transferSize": 2945,
+          "decodedBodySize": 11586,
+          "duration": 69.69999998807907
+        },
+        {
+          "name": "https://thecreatingco.com/site-refinement.css?v=20261007",
+          "initiatorType": "link",
+          "transferSize": 2938,
+          "decodedBodySize": 11181,
+          "duration": 296.7999999821186
+        },
+        {
+          "name": "https://thecreatingco.com/review-polish.css?v=1",
+          "initiatorType": "link",
+          "transferSize": 2620,
+          "decodedBodySize": 9154,
+          "duration": 44.19999998807907
+        }
+      ]
+    },
+    {
+      "device": "mobile",
+      "width": 390,
+      "height": 844,
+      "route": "/tools/",
+      "run": 2,
+      "started": "2026-10-10T10:16:08.958Z",
+      "status": 200,
+      "navError": null,
+      "errors": [],
+      "url": "https://thecreatingco.com/tools/",
+      "title": "Creative Web Apps & Tools Directory | thecreatingco",
+      "bodyText": "Skip to content\nthecreatingco\n.\nQuick launch\n\nTHE CREATIVE TOOLBOX\n\nYour next idea\nstarts here.\n\nA whole world of tools for whatever you’re into next. Follow your curiosity. Make it yours.\n\nFind your tool\n↓\n\nPublic web apps · No installation to explore\n\n01 / F",
+      "navigation": {
+        "duration": 563.1999999880791,
+        "domContentLoaded": 389.19999998807907,
+        "load": 563.1999999880791,
+        "responseStart": 96.89999997615814,
+        "transferSize": 7808,
+        "encodedBodySize": 7508
+      },
+      "fcp": 400,
+      "lcp": 400,
+      "lcpCandidate": {
+        "tag": "IMG",
+        "id": "",
+        "className": "",
+        "src": "https://thecreatingco.com/assets/workflows/form-technical.png"
+      },
+      "cls": 0,
+      "shiftEntries": [],
+      "resourceCount": 54,
+      "resourceTransferBytes": 366590,
+      "resourceDecodedBytes": 614432,
+      "largestResources": [
+        {
+          "name": "https://thecreatingco.com/assets/workflows/form-technical.png",
+          "initiatorType": "img",
+          "transferSize": 126109,
+          "decodedBodySize": 125809,
+          "duration": 163.30000001192093
+        },
+        {
+          "name": "https://thecreatingco.com/assets/after-hours/luma-04-finished.png",
+          "initiatorType": "img",
+          "transferSize": 89614,
+          "decodedBodySize": 89314,
+          "duration": 243.7000000178814
+        },
+        {
+          "name": "https://thecreatingco.com/assets/form-origin/geist-98bbbccb.woff2",
+          "initiatorType": "css",
+          "transferSize": 29588,
+          "decodedBodySize": 29288,
+          "duration": 84.5
+        },
+        {
+          "name": "https://thecreatingco.com/assets/styles/marketing-fe07f1dfeb46.css",
+          "initiatorType": "link",
+          "transferSize": 25762,
+          "decodedBodySize": 127689,
+          "duration": 151
+        },
+        {
+          "name": "https://thecreatingco.com/assets/creative-tools/cast.webp",
+          "initiatorType": "img",
+          "transferSize": 16700,
+          "decodedBodySize": 16400,
+          "duration": 63.19999998807907
+        },
+        {
+          "name": "https://thecreatingco.com/suite/v1/suite.js",
+          "initiatorType": "script",
+          "transferSize": 13126,
+          "decodedBodySize": 50428,
+          "duration": 244.19999998807907
+        },
+        {
+          "name": "https://thecreatingco.com/momentium.js",
+          "initiatorType": "script",
+          "transferSize": 5792,
+          "decodedBodySize": 30509,
+          "duration": 247.5
+        },
+        {
+          "name": "https://thecreatingco.com/unified-shell.css?v=20261009",
+          "initiatorType": "link",
+          "transferSize": 5179,
+          "decodedBodySize": 22374,
+          "duration": 40.69999998807907
+        },
+        {
+          "name": "https://thecreatingco.com/site-navigation.js?v=20261009-unified",
+          "initiatorType": "script",
+          "transferSize": 3649,
+          "decodedBodySize": 10882,
+          "duration": 110.2999999821186
+        },
+        {
+          "name": "https://thecreatingco.com/site-refinement.css?v=20261007",
+          "initiatorType": "link",
+          "transferSize": 3012,
+          "decodedBodySize": 11181,
+          "duration": 44.099999994039536
+        },
+        {
+          "name": "https://thecreatingco.com/launch-season.css?v=1",
+          "initiatorType": "link",
+          "transferSize": 2945,
+          "decodedBodySize": 11586,
+          "duration": 40.599999994039536
+        },
+        {
+          "name": "https://thecreatingco.com/review-polish.css?v=1",
+          "initiatorType": "link",
+          "transferSize": 2622,
+          "decodedBodySize": 9154,
+          "duration": 40.29999998211861
+        }
+      ]
+    },
+    {
+      "device": "mobile",
+      "width": 390,
+      "height": 844,
+      "route": "/tools/",
+      "run": 3,
+      "started": "2026-10-10T10:16:11.135Z",
+      "status": 200,
+      "navError": null,
+      "errors": [],
+      "url": "https://thecreatingco.com/tools/",
+      "title": "Creative Web Apps & Tools Directory | thecreatingco",
+      "bodyText": "Skip to content\nthecreatingco\n.\nQuick launch\n\nTHE CREATIVE TOOLBOX\n\nYour next idea\nstarts here.\n\nA whole world of tools for whatever you’re into next. Follow your curiosity. Make it yours.\n\nFind your tool\n↓\n\nPublic web apps · No installation to explore\n\n01 / F",
+      "navigation": {
+        "duration": 608.5999999940395,
+        "domContentLoaded": 454.5,
+        "load": 608.5999999940395,
+        "responseStart": 118.5,
+        "transferSize": 7810,
+        "encodedBodySize": 7510
+      },
+      "fcp": 456,
+      "lcp": 456,
+      "lcpCandidate": {
+        "tag": "IMG",
+        "id": "",
+        "className": "",
+        "src": "https://thecreatingco.com/assets/workflows/form-technical.png"
+      },
+      "cls": 0,
+      "shiftEntries": [],
+      "resourceCount": 54,
+      "resourceTransferBytes": 366597,
+      "resourceDecodedBytes": 614432,
+      "largestResources": [
+        {
+          "name": "https://thecreatingco.com/assets/workflows/form-technical.png",
+          "initiatorType": "img",
+          "transferSize": 126109,
+          "decodedBodySize": 125809,
+          "duration": 266.19999998807907
+        },
+        {
+          "name": "https://thecreatingco.com/assets/after-hours/luma-04-finished.png",
+          "initiatorType": "img",
+          "transferSize": 89614,
+          "decodedBodySize": 89314,
+          "duration": 261.2999999821186
+        },
+        {
+          "name": "https://thecreatingco.com/assets/form-origin/geist-98bbbccb.woff2",
+          "initiatorType": "css",
+          "transferSize": 29588,
+          "decodedBodySize": 29288,
+          "duration": 82.39999997615814
+        },
+        {
+          "name": "https://thecreatingco.com/assets/styles/marketing-fe07f1dfeb46.css",
+          "initiatorType": "link",
+          "transferSize": 25774,
+          "decodedBodySize": 127689,
+          "duration": 134.69999998807907
+        },
+        {
+          "name": "https://thecreatingco.com/assets/creative-tools/cast.webp",
+          "initiatorType": "img",
+          "transferSize": 16700,
+          "decodedBodySize": 16400,
+          "duration": 33.10000002384186
+        },
+        {
+          "name": "https://thecreatingco.com/suite/v1/suite.js",
+          "initiatorType": "script",
+          "transferSize": 13035,
+          "decodedBodySize": 50428,
+          "duration": 279.40000000596046
+        },
+        {
+          "name": "https://thecreatingco.com/momentium.js",
+          "initiatorType": "script",
+          "transferSize": 5814,
+          "decodedBodySize": 30509,
+          "duration": 40.19999998807907
+        },
+        {
+          "name": "https://thecreatingco.com/unified-shell.css?v=20261009",
+          "initiatorType": "link",
+          "transferSize": 5187,
+          "decodedBodySize": 22374,
+          "duration": 76.10000002384186
+        },
+        {
+          "name": "https://thecreatingco.com/site-navigation.js?v=20261009-unified",
+          "initiatorType": "script",
+          "transferSize": 3649,
+          "decodedBodySize": 10882,
+          "duration": 300.80000001192093
+        },
+        {
+          "name": "https://thecreatingco.com/launch-season.css?v=1",
+          "initiatorType": "link",
+          "transferSize": 2986,
+          "decodedBodySize": 11586,
+          "duration": 116.7000000178814
+        },
+        {
+          "name": "https://thecreatingco.com/site-refinement.css?v=20261007",
+          "initiatorType": "link",
+          "transferSize": 2938,
+          "decodedBodySize": 11181,
+          "duration": 76.40000000596046
+        },
+        {
+          "name": "https://thecreatingco.com/review-polish.css?v=1",
+          "initiatorType": "link",
+          "transferSize": 2627,
+          "decodedBodySize": 9154,
+          "duration": 278.2000000178814
+        }
+      ]
+    },
+    {
+      "device": "mobile",
+      "width": 390,
+      "height": 844,
+      "route": "/products/luma/",
+      "run": 1,
+      "started": "2026-10-10T10:16:13.358Z",
+      "status": 200,
+      "navError": null,
+      "errors": [],
+      "url": "https://thecreatingco.com/products/luma/",
+      "title": "Luma: Layered Image Editor | thecreatingco",
+      "bodyText": "Skip to content\nthecreatingco\n.\nQuick launch\nthecreatingco\n/\nApps & tools\n/\nLuma: Layered Image Editor\nTry it\nFeatures\nOpen app\n↗\n\nA DIRECT SPACE FOR VISUAL IDEAS / LUMA STUDIO\n\nYour images.\nYour world.\n\nStart with a photograph, a texture or a mark. Give it a ",
+      "navigation": {
+        "duration": 875.3000000119209,
+        "domContentLoaded": 562,
+        "load": 875.3000000119209,
+        "responseStart": 161.40000000596046,
+        "transferSize": 17523,
+        "encodedBodySize": 17223
+      },
+      "fcp": 512,
+      "lcp": 512,
+      "lcpCandidate": {
+        "tag": "IMG",
+        "id": "",
+        "className": "",
+        "src": "https://thecreatingco.com/assets/product-artwork/luma-640.webp"
+      },
+      "cls": 0,
+      "shiftEntries": [],
+      "resourceCount": 76,
+      "resourceTransferBytes": 688673,
+      "resourceDecodedBytes": 1147262,
+      "largestResources": [
+        {
+          "name": "https://thecreatingco.com/assets/after-hours/luma-02-type.png",
+          "initiatorType": "img",
+          "transferSize": 97512,
+          "decodedBodySize": 97212,
+          "duration": 182.80000001192093
+        },
+        {
+          "name": "https://thecreatingco.com/assets/after-hours/luma-03-tone.png",
+          "initiatorType": "img",
+          "transferSize": 97501,
+          "decodedBodySize": 97201,
+          "duration": 368
+        },
+        {
+          "name": "https://thecreatingco.com/assets/after-hours/luma-04-finished.png",
+          "initiatorType": "img",
+          "transferSize": 89614,
+          "decodedBodySize": 89314,
+          "duration": 258.5
+        },
+        {
+          "name": "https://thecreatingco.com/assets/after-hours/luma-01-source.png",
+          "initiatorType": "img",
+          "transferSize": 84899,
+          "decodedBodySize": 84599,
+          "duration": 362.5
+        },
+        {
+          "name": "https://thecreatingco.com/assets/luma-workshops/recolor-example.jpg",
+          "initiatorType": "img",
+          "transferSize": 67007,
+          "decodedBodySize": 66707,
+          "duration": 148.09999999403954
+        },
+        {
+          "name": "https://thecreatingco.com/assets/styles/marketing-f5eb7f39af18.css",
+          "initiatorType": "link",
+          "transferSize": 38903,
+          "decodedBodySize": 194839,
+          "duration": 294.69999998807907
+        },
+        {
+          "name": "https://thecreatingco.com/assets/form-origin/geist-98bbbccb.woff2",
+          "initiatorType": "css",
+          "transferSize": 29588,
+          "decodedBodySize": 29288,
+          "duration": 253.40000000596046
+        },
+        {
+          "name": "https://thecreatingco.com/learn/vendor/jszip.min.js",
+          "initiatorType": "script",
+          "transferSize": 27817,
+          "decodedBodySize": 97630,
+          "duration": 213.7000000178814
+        },
+        {
+          "name": "https://thecreatingco.com/assets/product-artwork/luma-640.webp",
+          "initiatorType": "img",
+          "transferSize": 26044,
+          "decodedBodySize": 25744,
+          "duration": 186.59999999403954
+        },
+        {
+          "name": "https://thecreatingco.com/suite/v1/suite.js",
+          "initiatorType": "script",
+          "transferSize": 13063,
+          "decodedBodySize": 50428,
+          "duration": 241.7999999821186
+        },
+        {
+          "name": "https://thecreatingco.com/learn/previews/previews.js",
+          "initiatorType": "script",
+          "transferSize": 10902,
+          "decodedBodySize": 29962,
+          "duration": 106.90000000596046
+        },
+        {
+          "name": "https://thecreatingco.com/learn/data.json",
+          "initiatorType": "fetch",
+          "transferSize": 6627,
+          "decodedBodySize": 25890,
+          "duration": 276.7999999821186
+        }
+      ]
+    },
+    {
+      "device": "mobile",
+      "width": 390,
+      "height": 844,
+      "route": "/products/luma/",
+      "run": 2,
+      "started": "2026-10-10T10:16:15.856Z",
+      "status": 200,
+      "navError": null,
+      "errors": [],
+      "url": "https://thecreatingco.com/products/luma/",
+      "title": "Luma: Layered Image Editor | thecreatingco",
+      "bodyText": "Skip to content\nthecreatingco\n.\nQuick launch\nthecreatingco\n/\nApps & tools\n/\nLuma: Layered Image Editor\nTry it\nFeatures\nOpen app\n↗\n\nA DIRECT SPACE FOR VISUAL IDEAS / LUMA STUDIO\n\nYour images.\nYour world.\n\nStart with a photograph, a texture or a mark. Give it a ",
+      "navigation": {
+        "duration": 807.2000000178814,
+        "domContentLoaded": 631.4000000059605,
+        "load": 807.2000000178814,
+        "responseStart": 101,
+        "transferSize": 17369,
+        "encodedBodySize": 17069
+      },
+      "fcp": 352,
+      "lcp": 352,
+      "lcpCandidate": {
+        "tag": "IMG",
+        "id": "",
+        "className": "",
+        "src": "https://thecreatingco.com/assets/product-artwork/luma-640.webp"
+      },
+      "cls": 0,
+      "shiftEntries": [],
+      "resourceCount": 76,
+      "resourceTransferBytes": 688385,
+      "resourceDecodedBytes": 1147262,
+      "largestResources": [
+        {
+          "name": "https://thecreatingco.com/assets/after-hours/luma-02-type.png",
+          "initiatorType": "img",
+          "transferSize": 97512,
+          "decodedBodySize": 97212,
+          "duration": 157.5
+        },
+        {
+          "name": "https://thecreatingco.com/assets/after-hours/luma-03-tone.png",
+          "initiatorType": "img",
+          "transferSize": 97501,
+          "decodedBodySize": 97201,
+          "duration": 242.2999999821186
+        },
+        {
+          "name": "https://thecreatingco.com/assets/after-hours/luma-04-finished.png",
+          "initiatorType": "img",
+          "transferSize": 89614,
+          "decodedBodySize": 89314,
+          "duration": 287.5
+        },
+        {
+          "name": "https://thecreatingco.com/assets/after-hours/luma-01-source.png",
+          "initiatorType": "img",
+          "transferSize": 84899,
+          "decodedBodySize": 84599,
+          "duration": 137.59999999403954
+        },
+        {
+          "name": "https://thecreatingco.com/assets/luma-workshops/recolor-example.jpg",
+          "initiatorType": "img",
+          "transferSize": 67007,
+          "decodedBodySize": 66707,
+          "duration": 162
+        },
+        {
+          "name": "https://thecreatingco.com/assets/styles/marketing-f5eb7f39af18.css",
+          "initiatorType": "link",
+          "transferSize": 38605,
+          "decodedBodySize": 194839,
+          "duration": 88.09999999403954
+        },
+        {
+          "name": "https://thecreatingco.com/assets/form-origin/geist-98bbbccb.woff2",
+          "initiatorType": "css",
+          "transferSize": 29588,
+          "decodedBodySize": 29288,
+          "duration": 293.89999997615814
+        },
+        {
+          "name": "https://thecreatingco.com/learn/vendor/jszip.min.js",
+          "initiatorType": "script",
+          "transferSize": 27895,
+          "decodedBodySize": 97630,
+          "duration": 141
+        },
+        {
+          "name": "https://thecreatingco.com/assets/product-artwork/luma-640.webp",
+          "initiatorType": "img",
+          "transferSize": 26044,
+          "decodedBodySize": 25744,
+          "duration": 103.2999999821186
+        },
+        {
+          "name": "https://thecreatingco.com/suite/v1/suite.js",
+          "initiatorType": "script",
+          "transferSize": 13035,
+          "decodedBodySize": 50428,
+          "duration": 177.80000001192093
+        },
+        {
+          "name": "https://thecreatingco.com/learn/previews/previews.js",
+          "initiatorType": "script",
+          "transferSize": 10902,
+          "decodedBodySize": 29962,
+          "duration": 63.099999994039536
+        },
+        {
+          "name": "https://thecreatingco.com/learn/data.json",
+          "initiatorType": "fetch",
+          "transferSize": 6580,
+          "decodedBodySize": 25890,
+          "duration": 236.59999999403954
+        }
+      ]
+    },
+    {
+      "device": "mobile",
+      "width": 390,
+      "height": 844,
+      "route": "/products/luma/",
+      "run": 3,
+      "started": "2026-10-10T10:16:18.277Z",
+      "status": 200,
+      "navError": null,
+      "errors": [],
+      "url": "https://thecreatingco.com/products/luma/",
+      "title": "Luma: Layered Image Editor | thecreatingco",
+      "bodyText": "Skip to content\nthecreatingco\n.\nQuick launch\nthecreatingco\n/\nApps & tools\n/\nLuma: Layered Image Editor\nTry it\nFeatures\nOpen app\n↗\n\nA DIRECT SPACE FOR VISUAL IDEAS / LUMA STUDIO\n\nYour images.\nYour world.\n\nStart with a photograph, a texture or a mark. Give it a ",
+      "navigation": {
+        "duration": 738.1999999880791,
+        "domContentLoaded": 589.6999999880791,
+        "load": 738.1999999880791,
+        "responseStart": 97.7999999821186,
+        "transferSize": 17346,
+        "encodedBodySize": 17046
+      },
+      "fcp": 296,
+      "lcp": 296,
+      "lcpCandidate": {
+        "tag": "IMG",
+        "id": "",
+        "className": "",
+        "src": "https://thecreatingco.com/assets/product-artwork/luma-640.webp"
+      },
+      "cls": 0,
+      "shiftEntries": [],
+      "resourceCount": 76,
+      "resourceTransferBytes": 688429,
+      "resourceDecodedBytes": 1147262,
+      "largestResources": [
+        {
+          "name": "https://thecreatingco.com/assets/after-hours/luma-02-type.png",
+          "initiatorType": "img",
+          "transferSize": 97512,
+          "decodedBodySize": 97212,
+          "duration": 165.39999997615814
+        },
+        {
+          "name": "https://thecreatingco.com/assets/after-hours/luma-03-tone.png",
+          "initiatorType": "img",
+          "transferSize": 97501,
+          "decodedBodySize": 97201,
+          "duration": 241.90000000596046
+        },
+        {
+          "name": "https://thecreatingco.com/assets/after-hours/luma-04-finished.png",
+          "initiatorType": "img",
+          "transferSize": 89614,
+          "decodedBodySize": 89314,
+          "duration": 270.40000000596046
+        },
+        {
+          "name": "https://thecreatingco.com/assets/after-hours/luma-01-source.png",
+          "initiatorType": "img",
+          "transferSize": 84899,
+          "decodedBodySize": 84599,
+          "duration": 165.2999999821186
+        },
+        {
+          "name": "https://thecreatingco.com/assets/luma-workshops/recolor-example.jpg",
+          "initiatorType": "img",
+          "transferSize": 67007,
+          "decodedBodySize": 66707,
+          "duration": 115.2000000178814
+        },
+        {
+          "name": "https://thecreatingco.com/assets/styles/marketing-f5eb7f39af18.css",
+          "initiatorType": "link",
+          "transferSize": 38607,
+          "decodedBodySize": 194839,
+          "duration": 62.29999998211861
+        },
+        {
+          "name": "https://thecreatingco.com/assets/form-origin/geist-98bbbccb.woff2",
+          "initiatorType": "css",
+          "transferSize": 29588,
+          "decodedBodySize": 29288,
+          "duration": 301.09999999403954
+        },
+        {
+          "name": "https://thecreatingco.com/learn/vendor/jszip.min.js",
+          "initiatorType": "script",
+          "transferSize": 27931,
+          "decodedBodySize": 97630,
+          "duration": 146.2999999821186
+        },
+        {
+          "name": "https://thecreatingco.com/assets/product-artwork/luma-640.webp",
+          "initiatorType": "img",
+          "transferSize": 26044,
+          "decodedBodySize": 25744,
+          "duration": 95.90000000596046
+        },
+        {
+          "name": "https://thecreatingco.com/suite/v1/suite.js",
+          "initiatorType": "script",
+          "transferSize": 13035,
+          "decodedBodySize": 50428,
+          "duration": 93.7999999821186
+        },
+        {
+          "name": "https://thecreatingco.com/learn/previews/previews.js",
+          "initiatorType": "script",
+          "transferSize": 10975,
+          "decodedBodySize": 29962,
+          "duration": 121.5
+        },
+        {
+          "name": "https://thecreatingco.com/learn/data.json",
+          "initiatorType": "fetch",
+          "transferSize": 6639,
+          "decodedBodySize": 25890,
+          "duration": 163.80000001192093
+        }
+      ]
+    }
+  ]
+}

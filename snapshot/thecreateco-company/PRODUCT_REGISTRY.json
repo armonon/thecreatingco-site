@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-10T05:14:06+00:00",
+  "generated_at": "2026-10-10T17:40:27+00:00",
   "source_loaded_at": "2026-10-07T23:38:29+00:00",
   "products": [
     {
@@ -4192,7 +4192,7 @@
         "mobile_responsiveness": null,
         "user_value": null
       },
-      "release_readiness": "Source and commit present; no completion/publication receipt found in Wave5 tracker.",
+      "release_readiness": "UNQUALIFIED: tests/build cannot execute; import/save/reopen/export not observed. Browser scripts reopen IndexedDB instead of saved project file.",
       "active_users": null,
       "feedback": [],
       "known_bugs": [],
@@ -4201,19 +4201,19 @@
       "strategic_value": "Candidate for evaluation; not measured.",
       "growth_potential": null,
       "maintenance_cost": null,
-      "next_milestone": "Recover builder result and verify outputs before any claim of release.",
+      "next_milestone": "Restore reproducible toolchain; execute tests/build and fresh-state saved-file import/export validation before release qualification.",
       "priority": "MEDIUM",
       "repo": "https://github.com/armonon/moodboard",
       "local_path": "/Users/agentsattari/code/wave5/moodboard",
       "evidence_sources": [
-        "/Users/agentsattari/code/wave5/moodboard/package.json",
-        "/Users/agentsattari/code/wave5/moodboard/index.html",
-        "/Users/agentsattari/code/wave5/WAVE5.md"
+        "/Users/agentsattari/thecreateco-company/reports/p09-reconcile-20261010/verification.md",
+        "/Users/agentsattari/thecreateco-company/reports/p09-reconcile-20261010/commands.json"
       ],
-      "observed_at": "2026-10-07T23:36:43.179001+00:00",
-      "verification_level": "LOCAL_SOURCE_AND_HISTORICAL_REPORTS_ONLY",
-      "evidence_freshness": "Source documents Oct 5–7, 2026; not live revalidated during this audit.",
-      "execution_hold": null
+      "observed_at": "2026-10-10T15:12:54.888306+00:00",
+      "verification_level": "CURRENT_LOCAL_SOURCE_INSPECTED_EXECUTION_BLOCKED",
+      "evidence_freshness": "2026-10-10 exact local HEAD source audit; test/build/browser attempts blocked by absent dependencies. No remote/deployed provenance.",
+      "execution_hold": null,
+      "updated_at": "2026-10-10T15:12:54+00:00"
     },
     {
       "product_id": "now-platform",
@@ -4823,7 +4823,7 @@
         "mobile_responsiveness": null,
         "user_value": null
       },
-      "release_readiness": "Source and commit present; no completion/publication receipt found in Wave5 tracker.",
+      "release_readiness": "UNQUALIFIED: tests/build cannot execute; import/save/reopen/export not observed. Browser scripts reopen IndexedDB instead of saved project file.",
       "active_users": null,
       "feedback": [],
       "known_bugs": [],
@@ -4832,19 +4832,19 @@
       "strategic_value": "Candidate for evaluation; not measured.",
       "growth_potential": null,
       "maintenance_cost": null,
-      "next_milestone": "Recover builder result and verify outputs before any claim of release.",
+      "next_milestone": "Restore reproducible toolchain; execute tests/build and fresh-state saved-file import/export validation before release qualification.",
       "priority": "MEDIUM",
       "repo": "https://github.com/armonon/portfolio-studio",
       "local_path": "/Users/agentsattari/code/wave5/portfolio-studio",
       "evidence_sources": [
-        "/Users/agentsattari/code/wave5/portfolio-studio/package.json",
-        "/Users/agentsattari/code/wave5/portfolio-studio/index.html",
-        "/Users/agentsattari/code/wave5/WAVE5.md"
+        "/Users/agentsattari/thecreateco-company/reports/p09-reconcile-20261010/verification.md",
+        "/Users/agentsattari/thecreateco-company/reports/p09-reconcile-20261010/commands.json"
       ],
-      "observed_at": "2026-10-07T23:36:43.179001+00:00",
-      "verification_level": "LOCAL_SOURCE_AND_HISTORICAL_REPORTS_ONLY",
-      "evidence_freshness": "Source documents Oct 5–7, 2026; not live revalidated during this audit.",
-      "execution_hold": null
+      "observed_at": "2026-10-10T15:12:54.888306+00:00",
+      "verification_level": "CURRENT_LOCAL_SOURCE_INSPECTED_EXECUTION_BLOCKED",
+      "evidence_freshness": "2026-10-10 exact local HEAD source audit; test/build/browser attempts blocked by absent dependencies. No remote/deployed provenance.",
+      "execution_hold": null,
+      "updated_at": "2026-10-10T15:12:54+00:00"
     },
     {
       "product_id": "press",

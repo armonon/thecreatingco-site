@@ -1,0 +1,46 @@
+{
+  "task_id": "REV-COMMERCE-001",
+  "observed_at": "2026-10-10T11:11:03.961053+00:00",
+  "method": "Task-specific local evidence inventory; not financial reconciliation or live commerce access",
+  "sources": [
+    {
+      "path": "data/revenue/paths.json",
+      "sha256": "bdc1a2291a9d0f839a0c3299b05563ceaea17890e5b906e3734c426334a16db6",
+      "bytes": 4070
+    },
+    {
+      "path": "data/revenue/metric-definitions.json",
+      "sha256": "77b58f503a06a4a63b719f43cbe474245920ef18ab624c34137d032be923d90e",
+      "bytes": 8842
+    },
+    {
+      "path": "reports/revenue-2026-10-07/asset-audit.md",
+      "sha256": "51f5658a0c5e8c3ad1d776588eb9c5a24213a7798a4f950a933e6e7d57488581",
+      "bytes": 20765
+    },
+    {
+      "path": "reports/revenue-2026-10-07/asset-public-observations.json",
+      "sha256": "0d11385a3ac4623b24dbbe5db9fc1197a0276ae945f33f06f3094a704d94a1d1",
+      "bytes": 48279
+    }
+  ],
+  "new_external_spend_usd": 0,
+  "no_messages_charges_or_shop_edits": true,
+  "unknowns": [
+    "company economic entitlement",
+    "stock available for sale",
+    "operator fulfillment capacity",
+    "settled attributed sales",
+    "refunds",
+    "direct delivery costs",
+    "traffic/booking conversion denominator"
+  ],
+  "scenario_math": {
+    "posted_single_hour_usd": 25,
+    "posted_four_hour_usd": 60,
+    "four_hour_effective_usd_per_hour": 15.0,
+    "hours_at_25_to_gross_1000": 40.0,
+    "four_hour_blocks_at_60_to_exceed_1000": 17,
+    "scenario_only_not_capacity_or_revenue_evidence": true
+  }
+}

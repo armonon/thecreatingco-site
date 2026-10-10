@@ -1,0 +1,65 @@
+{
+  "at": "2026-10-10T09:12:33.028991+00:00",
+  "model": "Sol director; deterministic Python verification",
+  "results": [
+    {
+      "file": "thecreateco-lut-pack.zip",
+      "sha256": "6d3e1030bd6840923634492f710beffd3022954ef089bd5327b4a04883ce9812",
+      "zip_integrity": "PASS",
+      "cube_count": 9,
+      "eight_pattern_bundle": false,
+      "entries": [
+        "HOW-TO-USE.md",
+        "MANIFEST.md",
+        "VALIDATE.md",
+        "contact-sheet.png",
+        "cubes/bleach-bypass.cube",
+        "cubes/cool-night.cube",
+        "cubes/deep-shadow.cube",
+        "cubes/faded-matte.cube",
+        "cubes/golden-hour.cube",
+        "cubes/mono-contrast.cube",
+        "cubes/soft-pastel.cube",
+        "cubes/teal-orange.cube",
+        "cubes/warm-film.cube",
+        "hero-preview.png",
+        "previews/_test-image-original.png",
+        "previews/bleach-bypass.png",
+        "previews/cool-night.png",
+        "previews/deep-shadow.png",
+        "previews/faded-matte.png",
+        "previews/golden-hour.png",
+        "previews/mono-contrast.png",
+        "previews/soft-pastel.png",
+        "previews/teal-orange.png",
+        "previews/warm-film.png"
+      ]
+    },
+    {
+      "file": "thecreateco-pocket-patterns.zip",
+      "sha256": "9765c5f69f93e420460b6d788102ff90622d1a4000dd7b266c9db315a47b6449",
+      "zip_integrity": "PASS",
+      "cube_count": 0,
+      "eight_pattern_bundle": true,
+      "entries": [
+        "MANIFEST.md",
+        "SAFE-IMPORT.md",
+        "all-patterns.json",
+        "import.html",
+        "patterns/2-step-lift.json",
+        "patterns/boom-bap-basic.json",
+        "patterns/dembow-step.json",
+        "patterns/grey-room.json",
+        "patterns/lagos-light.json",
+        "patterns/low-end-theory.json",
+        "patterns/night-drive.json",
+        "patterns/rainy-window.json",
+        "preview.png",
+        "safe-import.mjs",
+        "HOW-TO-USE.md"
+      ]
+    }
+  ],
+  "checks": "Hashes, ZIP CRC integrity, 9 LUT dimensions/row counts and eight-pattern bundle PASS",
+  "limits": "No real editor import/visual usefulness/license ownership qualification"
+}

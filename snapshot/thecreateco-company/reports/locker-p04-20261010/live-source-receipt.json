@@ -1,0 +1,40 @@
+{
+  "observed_at": "2026-10-10T07:11:22.895015+00:00",
+  "observations": [
+    {
+      "path": "locker/core.js",
+      "local_sha256": "7fcbfbacfdd1fe262213496f151212c87e4b6c6338cb3aa69f4d4b09e3b87d58",
+      "http_status": 200,
+      "live_sha256": "7fcbfbacfdd1fe262213496f151212c87e4b6c6338cb3aa69f4d4b09e3b87d58",
+      "matches_local": true
+    },
+    {
+      "path": "locker/bridge.html",
+      "local_sha256": "4d1b327b88f7b3326d9029accdf99235ed6e3503f9ca4f8d0481dee3aac11e8e",
+      "http_status": 200,
+      "live_sha256": "4d1b327b88f7b3326d9029accdf99235ed6e3503f9ca4f8d0481dee3aac11e8e",
+      "matches_local": true
+    },
+    {
+      "path": "locker/locker.js",
+      "local_sha256": "41d544905e28ff4af0cbd813364ebf892d65d450e2e7e120cf8de172cf1555af",
+      "http_status": 200,
+      "live_sha256": "41d544905e28ff4af0cbd813364ebf892d65d450e2e7e120cf8de172cf1555af",
+      "matches_local": true
+    },
+    {
+      "path": "suite/v1/suite.js",
+      "local_sha256": "561f789c3c86672fbba91dc74259570bf9c71ebad0af6b991b5b55302e48c733",
+      "http_status": 200,
+      "live_sha256": "352f50535d85d551b164d3a3fc92f7c6eefeb8bb92bb7ca53d6b474f75bc1f56",
+      "matches_local": false
+    },
+    {
+      "path": "suite/v1/apps.json",
+      "local_sha256": "3dd305e782cb5be149d078761aff1d8e7b68b4a5d8f5c3625b49d57efe047c61",
+      "http_status": 200,
+      "live_sha256": "773bab8acb3171d9e471c00b1e4dc72b0566909d755f344f0236f259111819f6",
+      "matches_local": false
+    }
+  ]
+}

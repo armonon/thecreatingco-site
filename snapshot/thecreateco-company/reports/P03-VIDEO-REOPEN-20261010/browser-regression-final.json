@@ -1,0 +1,109 @@
+{
+  "observed_at": "2026-10-10T06:17:09.664Z",
+  "fixture_sha256": "a8a4543abd67b87ce9dbc4c245cae415c05a506a2ff76bf3ab6e36860877b698",
+  "checks": [
+    {
+      "label": "fresh video import",
+      "pixel": [
+        254,
+        0,
+        0,
+        255
+      ]
+    },
+    {
+      "label": "before-reopen original video byte identity",
+      "passed": true
+    },
+    {
+      "label": "autosave page reload",
+      "pixel": [
+        254,
+        0,
+        0,
+        255
+      ]
+    },
+    {
+      "label": "full Chromium process restart/autosave reopen",
+      "pixel": [
+        254,
+        0,
+        0,
+        255
+      ]
+    },
+    {
+      "label": "after-process-reopen original video byte identity",
+      "passed": true
+    },
+    {
+      "label": "project replacement releases decoder",
+      "passed": true
+    },
+    {
+      "label": ".animate file reopen",
+      "pixel": [
+        254,
+        0,
+        0,
+        255
+      ]
+    },
+    {
+      "label": "Locker project-open contract stub",
+      "pixel": [
+        254,
+        0,
+        0,
+        255
+      ]
+    },
+    {
+      "label": "after-locker-reopen original video byte identity",
+      "passed": true
+    },
+    {
+      "label": "every reopened exported PNG contains red video",
+      "frames": 3,
+      "passed": true
+    },
+    {
+      "label": "layer removal releases decoder",
+      "passed": true
+    },
+    {
+      "label": "valid image import",
+      "pixel": [
+        254,
+        0,
+        0,
+        255
+      ]
+    },
+    {
+      "label": "valid image save/file reopen",
+      "pixel": [
+        254,
+        0,
+        0,
+        255
+      ]
+    },
+    {
+      "label": "video project replacement of image project",
+      "pixel": [
+        254,
+        0,
+        0,
+        255
+      ]
+    },
+    {
+      "label": "Studio unmount releases decoder",
+      "passed": true
+    }
+  ],
+  "pageerrors": [],
+  "artifacts": "/Users/agentsattari/.openclaw/tmp/animate-video-reopen-8Dz4Rq"
+}

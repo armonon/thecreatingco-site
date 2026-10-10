@@ -1,0 +1,12 @@
+{
+  "purpose": "Retain the first diagnostic attempt for reproducibility; superseded by evidence.json.",
+  "observed_utc_approx": "2026-10-10T14:13Z",
+  "robots_status": 200,
+  "robots_sitemap_directive": "https://thecreatingco.com/sitemap.xml",
+  "sitemap_url": "https://thecreatingco.com/sitemap.xml",
+  "sitemap_http_status": 200,
+  "sitemap_raw_sha256": "894448d1c8652a597ad790c6cc9dd6b122094807e7d1af589d7eb2d7934ad0c1",
+  "local_parser_error": "ImportError: No module named expat; use SimpleXMLTreeBuilder instead",
+  "entries_parsed": 0,
+  "interpretation": "Local Python ElementTree parser unavailable; zero parsed entries was not a finding about live sitemap validity. The final script uses bounded <loc> extraction and re-fetches sitemap and child maps."
+}

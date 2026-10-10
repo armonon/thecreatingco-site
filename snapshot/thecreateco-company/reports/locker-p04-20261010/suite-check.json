@@ -1,0 +1,49 @@
+{
+  "suiteSha256": "352f50535d85d551b164d3a3fc92f7c6eefeb8bb92bb7ca53d6b474f75bc1f56",
+  "observedAt": "2026-10-10T07:14:16.953Z",
+  "scope": "Chromium actual transport with fixture consumers; no full app qualification",
+  "rows": [
+    {
+      "case": "Luma fixture → real bridge/IDB → ScenePilot fixture",
+      "pass": true,
+      "bytes": [
+        0,
+        1,
+        255,
+        8
+      ]
+    },
+    {
+      "case": "invalid save / missing ID / unknown app / unsupported MIME / blocked popup",
+      "pass": true,
+      "invalidSave": "bad-request",
+      "missingOpen": "not-found",
+      "unknownApp": "unknown-app",
+      "unsupportedType": "unsupported-type",
+      "popupBlocked": "popup-blocked",
+      "after": [
+        0,
+        1,
+        255,
+        8
+      ],
+      "before": [
+        0,
+        1,
+        255,
+        8
+      ],
+      "editor": "existing-unsaved-edits"
+    },
+    {
+      "case": "failed launch ID leaves fixture edits unchanged and no delivery",
+      "pass": true
+    },
+    {
+      "case": "cancel before calling transport preserves stored bytes",
+      "pass": true,
+      "scope": "fixture no-op, not real app native chooser"
+    }
+  ],
+  "exitCode": 0
+}

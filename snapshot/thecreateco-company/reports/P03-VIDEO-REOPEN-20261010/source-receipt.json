@@ -1,0 +1,28 @@
+{
+  "observed_at": "2026-10-10T06:17:37.564849+00:00",
+  "sha": "2a9ec4936b13f77cfe21252db072e8669493e640",
+  "branch": "company/p03-video-reopen-20261010",
+  "tracked_status": "",
+  "files": {
+    "src/engine/render.ts": {
+      "sha256": "8d953ffef460162489ec136be2f6bd224c45340acd94da70102bce53ba67bdd3",
+      "bytes": 6179,
+      "committed_matches_tested_tree": true
+    },
+    "src/pages/Studio.tsx": {
+      "sha256": "dc0e38385b0721f6056c6043ec527502e077cbe6adbf6e6ad4297e6b0d83ca71",
+      "bytes": 21403,
+      "committed_matches_tested_tree": true
+    },
+    "tests/reference-video-lifecycle.test.ts": {
+      "sha256": "f4122807b73530c9b79764d4d0f659e8ab17c824d5cb1bb1f94e99023148c2ee",
+      "bytes": 2932,
+      "committed_matches_tested_tree": true
+    },
+    "scripts/video-reopen-check.mjs": {
+      "sha256": "8ad7cc5e98840d1e3745c9af58c7a912a809aaa81c0d8adee6a192a96ca008d3",
+      "bytes": 10036,
+      "committed_matches_tested_tree": true
+    }
+  }
+}

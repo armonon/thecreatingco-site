@@ -3,14 +3,14 @@
   "records": [
     {
       "repo": "https://github.com/armonon/animate",
-      "sha": "18f2273f30501625927d04f72db9851e60abdaa4",
+      "sha": "2a9ec4936b13f77cfe21252db072e8669493e640",
       "base_sha": "11ccaca4730606ba922ecf70b5754171ce365725",
       "branches": [
-        "company/p03-project-validation-20261010"
+        "company/p03-video-reopen-20261010"
       ],
-      "archive_path": "animate/18f2273f30501625927d04f72db9851e60abdaa4",
+      "archive_path": "animate/2a9ec4936b13f77cfe21252db072e8669493e640",
       "local_worktree_dirty": false,
-      "files": 2,
+      "files": 6,
       "omitted": 0
     },
     {

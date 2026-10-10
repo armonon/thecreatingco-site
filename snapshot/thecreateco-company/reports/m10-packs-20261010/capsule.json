@@ -1,0 +1,23 @@
+{
+  "task_id": "M10",
+  "agent": "company-director-2069305d",
+  "model": "openai/gpt-6-luna",
+  "new_spend_usd": 0,
+  "objective": "Audit free-pack usefulness and product handoff",
+  "known_failure": "Historical /packs 404; all-CC-BY draft conflicts with OFL font",
+  "constraints": [
+    "No external messages/releases",
+    "No paid checkout",
+    "No product edits",
+    "Preserve owners"
+  ],
+  "acceptance": [
+    "Dated live route and download evidence",
+    "Archive/license inventory",
+    "Import-tested vs unknown distinction",
+    "Accurate license copy and next action"
+  ],
+  "context_token_budget": 8000,
+  "tool_budget": 20,
+  "worker_minutes": 10
+}

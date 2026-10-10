@@ -1,0 +1,380 @@
+[
+  {
+    "device": "desktop",
+    "route": "/",
+    "run": 1,
+    "status": 200,
+    "url": "https://thecreatingco.com/",
+    "fcp": 440,
+    "lcp": 440,
+    "lcpCandidate": {
+      "tag": "IMG",
+      "id": "",
+      "className": "journey-poster",
+      "src": "https://thecreatingco.com/assets/hero/creative-journey.jpg"
+    },
+    "cls": 0.00460930398457871,
+    "load": 889.9000000059605,
+    "transfer": 434964,
+    "resources": 65,
+    "error": null,
+    "errors": 0
+  },
+  {
+    "device": "desktop",
+    "route": "/",
+    "run": 2,
+    "status": 200,
+    "url": "https://thecreatingco.com/",
+    "fcp": 248,
+    "lcp": 356,
+    "lcpCandidate": {
+      "tag": "IMG",
+      "id": "",
+      "className": "journey-poster",
+      "src": "https://thecreatingco.com/assets/hero/creative-journey.jpg"
+    },
+    "cls": 0.00460930398457871,
+    "load": 538.8000000119209,
+    "transfer": 434964,
+    "resources": 65,
+    "error": null,
+    "errors": 0
+  },
+  {
+    "device": "desktop",
+    "route": "/",
+    "run": 3,
+    "status": 200,
+    "url": "https://thecreatingco.com/",
+    "fcp": 716,
+    "lcp": 716,
+    "lcpCandidate": {
+      "tag": "IMG",
+      "id": "",
+      "className": "journey-poster",
+      "src": "https://thecreatingco.com/assets/hero/creative-journey.jpg"
+    },
+    "cls": 0.00460930398457871,
+    "load": 1019.9000000059605,
+    "transfer": 435028,
+    "resources": 65,
+    "error": null,
+    "errors": 0
+  },
+  {
+    "device": "desktop",
+    "route": "/tools/",
+    "run": 1,
+    "status": 200,
+    "url": "https://thecreatingco.com/tools/",
+    "fcp": 320,
+    "lcp": 320,
+    "lcpCandidate": {
+      "tag": "IMG",
+      "id": "",
+      "className": "",
+      "src": "https://thecreatingco.com/assets/workflows/form-technical.png"
+    },
+    "cls": 0.016424460295843078,
+    "load": 668,
+    "transfer": 816156,
+    "resources": 60,
+    "error": null,
+    "errors": 0
+  },
+  {
+    "device": "desktop",
+    "route": "/tools/",
+    "run": 2,
+    "status": 200,
+    "url": "https://thecreatingco.com/tools/",
+    "fcp": 400,
+    "lcp": 400,
+    "lcpCandidate": {
+      "tag": "IMG",
+      "id": "",
+      "className": "",
+      "src": "https://thecreatingco.com/assets/workflows/form-technical.png"
+    },
+    "cls": 0.016424460295843078,
+    "load": 771.2999999821186,
+    "transfer": 816024,
+    "resources": 60,
+    "error": null,
+    "errors": 0
+  },
+  {
+    "device": "desktop",
+    "route": "/tools/",
+    "run": 3,
+    "status": 200,
+    "url": "https://thecreatingco.com/tools/",
+    "fcp": 448,
+    "lcp": 448,
+    "lcpCandidate": {
+      "tag": "IMG",
+      "id": "",
+      "className": "",
+      "src": "https://thecreatingco.com/assets/workflows/form-technical.png"
+    },
+    "cls": 0.016424460295843078,
+    "load": 805.6999999880791,
+    "transfer": 816182,
+    "resources": 60,
+    "error": null,
+    "errors": 0
+  },
+  {
+    "device": "desktop",
+    "route": "/products/luma/",
+    "run": 1,
+    "status": 200,
+    "url": "https://thecreatingco.com/products/luma/",
+    "fcp": 724,
+    "lcp": 728,
+    "lcpCandidate": {
+      "tag": "IMG",
+      "id": "",
+      "className": "",
+      "src": "https://thecreatingco.com/assets/product-artwork/luma-1280.webp"
+    },
+    "cls": 0.020006085550591045,
+    "load": 1225.2000000178814,
+    "transfer": 642477,
+    "resources": 75,
+    "error": null,
+    "errors": 0
+  },
+  {
+    "device": "desktop",
+    "route": "/products/luma/",
+    "run": 2,
+    "status": 200,
+    "url": "https://thecreatingco.com/products/luma/",
+    "fcp": 648,
+    "lcp": 648,
+    "lcpCandidate": {
+      "tag": "IMG",
+      "id": "",
+      "className": "",
+      "src": "https://thecreatingco.com/assets/product-artwork/luma-1280.webp"
+    },
+    "cls": 0.019608846444560728,
+    "load": 935.1999999880791,
+    "transfer": 642935,
+    "resources": 75,
+    "error": null,
+    "errors": 0
+  },
+  {
+    "device": "desktop",
+    "route": "/products/luma/",
+    "run": 3,
+    "status": 200,
+    "url": "https://thecreatingco.com/products/luma/",
+    "fcp": 448,
+    "lcp": 448,
+    "lcpCandidate": {
+      "tag": "IMG",
+      "id": "",
+      "className": "",
+      "src": "https://thecreatingco.com/assets/product-artwork/luma-1280.webp"
+    },
+    "cls": 0.0175706427196125,
+    "load": 822.4000000059605,
+    "transfer": 642759,
+    "resources": 75,
+    "error": null,
+    "errors": 0
+  },
+  {
+    "device": "mobile",
+    "route": "/",
+    "run": 1,
+    "status": 200,
+    "url": "https://thecreatingco.com/",
+    "fcp": 292,
+    "lcp": 292,
+    "lcpCandidate": {
+      "tag": "IMG",
+      "id": "",
+      "className": "journey-poster",
+      "src": "https://thecreatingco.com/assets/hero/creative-journey.jpg"
+    },
+    "cls": 0,
+    "load": 548,
+    "transfer": 345560,
+    "resources": 64,
+    "error": null,
+    "errors": 0
+  },
+  {
+    "device": "mobile",
+    "route": "/",
+    "run": 2,
+    "status": 200,
+    "url": "https://thecreatingco.com/",
+    "fcp": 400,
+    "lcp": 400,
+    "lcpCandidate": {
+      "tag": "IMG",
+      "id": "",
+      "className": "journey-poster",
+      "src": "https://thecreatingco.com/assets/hero/creative-journey.jpg"
+    },
+    "cls": 0,
+    "load": 908.1999999880791,
+    "transfer": 345697,
+    "resources": 64,
+    "error": null,
+    "errors": 0
+  },
+  {
+    "device": "mobile",
+    "route": "/",
+    "run": 3,
+    "status": 200,
+    "url": "https://thecreatingco.com/",
+    "fcp": 584,
+    "lcp": 672,
+    "lcpCandidate": {
+      "tag": "IMG",
+      "id": "",
+      "className": "journey-poster",
+      "src": "https://thecreatingco.com/assets/hero/creative-journey.jpg"
+    },
+    "cls": 0,
+    "load": 916.5999999940395,
+    "transfer": 345492,
+    "resources": 64,
+    "error": null,
+    "errors": 0
+  },
+  {
+    "device": "mobile",
+    "route": "/tools/",
+    "run": 1,
+    "status": 200,
+    "url": "https://thecreatingco.com/tools/",
+    "fcp": 648,
+    "lcp": 648,
+    "lcpCandidate": {
+      "tag": "IMG",
+      "id": "",
+      "className": "",
+      "src": "https://thecreatingco.com/assets/workflows/form-technical.png"
+    },
+    "cls": 0,
+    "load": 804.3000000119209,
+    "transfer": 366388,
+    "resources": 54,
+    "error": null,
+    "errors": 0
+  },
+  {
+    "device": "mobile",
+    "route": "/tools/",
+    "run": 2,
+    "status": 200,
+    "url": "https://thecreatingco.com/tools/",
+    "fcp": 400,
+    "lcp": 400,
+    "lcpCandidate": {
+      "tag": "IMG",
+      "id": "",
+      "className": "",
+      "src": "https://thecreatingco.com/assets/workflows/form-technical.png"
+    },
+    "cls": 0,
+    "load": 563.1999999880791,
+    "transfer": 366590,
+    "resources": 54,
+    "error": null,
+    "errors": 0
+  },
+  {
+    "device": "mobile",
+    "route": "/tools/",
+    "run": 3,
+    "status": 200,
+    "url": "https://thecreatingco.com/tools/",
+    "fcp": 456,
+    "lcp": 456,
+    "lcpCandidate": {
+      "tag": "IMG",
+      "id": "",
+      "className": "",
+      "src": "https://thecreatingco.com/assets/workflows/form-technical.png"
+    },
+    "cls": 0,
+    "load": 608.5999999940395,
+    "transfer": 366597,
+    "resources": 54,
+    "error": null,
+    "errors": 0
+  },
+  {
+    "device": "mobile",
+    "route": "/products/luma/",
+    "run": 1,
+    "status": 200,
+    "url": "https://thecreatingco.com/products/luma/",
+    "fcp": 512,
+    "lcp": 512,
+    "lcpCandidate": {
+      "tag": "IMG",
+      "id": "",
+      "className": "",
+      "src": "https://thecreatingco.com/assets/product-artwork/luma-640.webp"
+    },
+    "cls": 0,
+    "load": 875.3000000119209,
+    "transfer": 688673,
+    "resources": 76,
+    "error": null,
+    "errors": 0
+  },
+  {
+    "device": "mobile",
+    "route": "/products/luma/",
+    "run": 2,
+    "status": 200,
+    "url": "https://thecreatingco.com/products/luma/",
+    "fcp": 352,
+    "lcp": 352,
+    "lcpCandidate": {
+      "tag": "IMG",
+      "id": "",
+      "className": "",
+      "src": "https://thecreatingco.com/assets/product-artwork/luma-640.webp"
+    },
+    "cls": 0,
+    "load": 807.2000000178814,
+    "transfer": 688385,
+    "resources": 76,
+    "error": null,
+    "errors": 0
+  },
+  {
+    "device": "mobile",
+    "route": "/products/luma/",
+    "run": 3,
+    "status": 200,
+    "url": "https://thecreatingco.com/products/luma/",
+    "fcp": 296,
+    "lcp": 296,
+    "lcpCandidate": {
+      "tag": "IMG",
+      "id": "",
+      "className": "",
+      "src": "https://thecreatingco.com/assets/product-artwork/luma-640.webp"
+    },
+    "cls": 0,
+    "load": 738.1999999880791,
+    "transfer": 688429,
+    "resources": 76,
+    "error": null,
+    "errors": 0
+  }
+]

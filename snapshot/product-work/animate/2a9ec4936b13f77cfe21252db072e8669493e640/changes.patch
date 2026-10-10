@@ -1,0 +1,498 @@
+diff --git a/scripts/video-reopen-check.mjs b/scripts/video-reopen-check.mjs
+new file mode 100644
+index 0000000000000000000000000000000000000000..29883ccd3e21d3cda09a877f7055a698dae78d4f
+--- /dev/null
++++ b/scripts/video-reopen-check.mjs
+@@ -0,0 +1,164 @@
++/** Local production-build regression: generated reference video survives all opens.
++ * npm run build && node scripts/video-reopen-check.mjs
++ * Locker is a local API contract stub; no live handoff or release is claimed.
++ */
++import assert from 'node:assert/strict';
++import { execFileSync } from 'node:child_process';
++import { mkdtempSync, readFileSync, writeFileSync } from 'node:fs';
++import { tmpdir } from 'node:os';
++import path from 'node:path';
++import { createHash } from 'node:crypto';
++import { chromium } from 'playwright';
++import { preview } from 'vite';
++import JSZip from 'jszip';
++
++const dir = mkdtempSync(path.join(tmpdir(), 'animate-video-reopen-'));
++const fixture = path.join(dir, 'red.mp4');
++execFileSync('ffmpeg', ['-v','error','-f','lavfi','-i','color=c=red:s=160x90:d=1','-c:v','libx264','-pix_fmt','yuv420p', fixture]);
++const hash = bytes => createHash('sha256').update(bytes).digest('hex');
++const sourceHash = hash(readFileSync(fixture));
++const server = await preview({ preview: { host: '127.0.0.1', port: 4337, strictPort: true } });
++const base = 'http://127.0.0.1:4337';
++let context;
++const checks = [];
++const errors = [];
++async function openContext() {
++  const ctx = await chromium.launchPersistentContext(path.join(dir, 'profile'), { headless: true, acceptDownloads: true });
++  await ctx.route('https://thecreatingco.com/**', route => route.fulfill({ contentType: 'application/javascript', body: '' }));
++  await ctx.addInitScript(() => {
++    window.TCC = { locker: { save: async () => 'local-test', sendTo: async () => {}, onOpen: handler => { window.testLockerOpen = handler; } } };
++    window.mediaCleanup = 0;
++    window.testVideos = [];
++    const create = document.createElement.bind(document);
++    document.createElement = function(tag, options) { const el = create(tag, options); if(tag === 'video') window.testVideos.push(el); return el; };
++    const load = HTMLMediaElement.prototype.load;
++    HTMLMediaElement.prototype.load = function () { if (!this.getAttribute('src')) window.mediaCleanup++; return load.call(this); };
++  });
++  const page = ctx.pages()[0];
++  page.on('pageerror', err => errors.push(String(err)));
++  await page.goto(base + '/');
++  const stored = await page.evaluate(() => new Promise(resolve => {
++    const req = indexedDB.open('animate-autosave', 1);
++    req.onupgradeneeded = () => { req.result.createObjectStore('autosave', { keyPath: 'id' }); };
++    req.onsuccess = () => { const db = req.result; const read = db.transaction('autosave').objectStore('autosave').get('current'); read.onsuccess = () => { resolve(read.result ?? null); db.close(); }; };
++  }));
++  writeFileSync(path.join(dir, `stored-before-studio-${checks.length}.json`), JSON.stringify(stored, null, 2));
++  await page.goto(base + '/studio');
++  await page.locator('[data-testid="studio-canvas"]').waitFor();
++  return { ctx, page };
++}
++async function red(page, label) {
++  await page.waitForFunction(() => {
++    const c = document.querySelector('[data-testid="studio-canvas"]');
++    const p = c.getContext('2d').getImageData(c.width/2,c.height/2,1,1).data;
++    return p[0] > 240 && p[1] < 10 && p[2] < 10 && p[3] === 255;
++  }, null, { timeout: 15000 }).catch(async err => {
++    writeFileSync(path.join(dir, 'failure-diagnostics.json'), JSON.stringify(await page.evaluate(() => ({
++      text: document.body.innerText,
++      videos: window.testVideos.map(v => ({ srcPrefix: v.src.slice(0,100), state: v.readyState, error: v.error?.message, paused: v.paused, time: v.currentTime })),
++      cleanup: window.mediaCleanup,
++    })), null, 2));
++    throw err;
++  });
++  checks.push({ label, pixel: await page.locator('canvas').first().evaluate(c => [...c.getContext('2d').getImageData(c.width/2,c.height/2,1,1).data]) });
++}
++async function download(page, button, filename) {
++  const pending = page.waitForEvent('download');
++  await button.click();
++  const d = await pending;
++  await d.saveAs(path.join(dir, filename));
++  return path.join(dir, filename);
++}
++async function saved(page, label) {
++  const file = await download(page, page.getByRole('button', { name: 'Save .animate', exact: true }), label + '.animate');
++  const p = JSON.parse(readFileSync(file, 'utf8'));
++  const video = p.layers.find(l => l.referenceKind === 'video');
++  assert(video?.referenceSrc.startsWith('data:'));
++  assert.equal(hash(Buffer.from(video.referenceSrc.split(',')[1], 'base64')), sourceHash);
++  checks.push({ label: label + ' original video byte identity', passed: true });
++  return { file, text: JSON.stringify(p) };
++}
++try {
++  let session = await openContext(); context = session.ctx;
++  let page = session.page;
++  // Allow the initial autosave loader to finish before importing.
++  await page.waitForTimeout(1000);
++  await page.locator('input[accept="image/*,video/*"]').setInputFiles(fixture);
++  await red(page, 'fresh video import');
++  const project = await saved(page, 'before-reopen');
++  // Wait for the actual debounced IndexedDB record, not an arbitrary reload delay.
++  let record;
++  for (let attempt = 0; attempt < 30; attempt++) {
++    record = await page.evaluate(() => new Promise(resolve => {
++      const req = indexedDB.open('animate-autosave', 1);
++      req.onsuccess = () => { const db = req.result; const tx = db.transaction('autosave'); const read = tx.objectStore('autosave').get('current'); tx.oncomplete = () => { resolve(read.result ?? null); db.close(); }; };
++    }));
++    if (record?.json.includes('data:video')) break;
++    await page.waitForTimeout(100);
++  }
++  writeFileSync(path.join(dir, 'record-before-reload.json'), JSON.stringify(record, null, 2));
++  assert(record?.json.includes('data:video'), 'actual committed autosave must contain video before restart');
++  // Exercise ordinary reload first, and allow Chromium's relaxed-durability
++  // backing store to settle before a full process shutdown.
++  await page.reload();
++  await red(page, 'autosave page reload');
++  await page.waitForTimeout(1000);
++  await page.goto('about:blank');
++  await context.close(); context = null;
++  session = await openContext(); context = session.ctx; page = session.page;
++  await red(page, 'full Chromium process restart/autosave reopen');
++  await saved(page, 'after-process-reopen');
++  await page.getByRole('button', { name: 'New', exact: true }).click();
++  await page.waitForFunction(() => window.mediaCleanup > 0);
++  checks.push({ label: 'project replacement releases decoder', passed: true });
++  await page.locator('input[accept=".animate,application/json"]').setInputFiles(project.file);
++  await red(page, '.animate file reopen');
++  await page.getByRole('button', { name: 'New', exact: true }).click();
++  await page.waitForFunction(() => window.testLockerOpen != null);
++  await page.evaluate(text => window.testLockerOpen({ id: 'test', name: 'red.animate', type: 'application/json', blob: new Blob([text], { type: 'application/json' }) }), project.text);
++  await red(page, 'Locker project-open contract stub');
++  await saved(page, 'after-locker-reopen');
++  await page.locator('[data-testid="open-export"]').click();
++  await page.locator('[data-testid="export-png-zip"]').click();
++  await page.waitForFunction(() => document.querySelector('[data-testid="export-result"] p')?.textContent.startsWith('PNG sequence ready'));
++  const zipFile = await download(page, page.locator('[data-testid="export-download"]'), 'reopened-frames.zip');
++  const zip = await JSZip.loadAsync(readFileSync(zipFile));
++  const pngs = Object.values(zip.files).filter(f => f.name.endsWith('.png'));
++  assert(pngs.length > 0);
++  for (const file of pngs) {
++    const bytes = await file.async('base64');
++    const pixel = await page.evaluate(async b64 => {
++      const image = new Image(); image.src = 'data:image/png;base64,' + b64; await image.decode();
++      const c = document.createElement('canvas'); c.width=image.width; c.height=image.height;
++      const ctx=c.getContext('2d'); ctx.drawImage(image,0,0); return [...ctx.getImageData(c.width/2,c.height/2,1,1).data];
++    }, bytes);
++    assert(pixel[0]>240 && pixel[1]<10 && pixel[2]<10 && pixel[3]===255, `${file.name}: ${pixel}`);
++  }
++  checks.push({ label: 'every reopened exported PNG contains red video', frames: pngs.length, passed: true });
++  await page.locator('.modal-header button').click();
++  const before = await page.evaluate(() => window.mediaCleanup);
++  await page.locator('.layer-list li').filter({ has: page.locator('input[value="red.mp4"]') }).getByRole('button', { name: 'Delete layer' }).click();
++  await page.waitForFunction(n => window.mediaCleanup > n, before);
++  checks.push({ label: 'layer removal releases decoder', passed: true });
++  const imagePath = path.join(dir, 'red.png');
++  writeFileSync(imagePath, await pngs[0].async('nodebuffer'));
++  await page.getByRole('button', { name: 'New', exact: true }).click();
++  await page.locator('input[accept="image/*,video/*"]').setInputFiles(imagePath);
++  await red(page, 'valid image import');
++  const imageProject = await download(page, page.getByRole('button', { name: 'Save .animate', exact: true }), 'image.animate');
++  await page.getByRole('button', { name: 'New', exact: true }).click();
++  await page.locator('input[accept=".animate,application/json"]').setInputFiles(imageProject);
++  await red(page, 'valid image save/file reopen');
++  await page.locator('input[accept=".animate,application/json"]').setInputFiles(project.file);
++  await red(page, 'video project replacement of image project');
++  const beforeUnmount = await page.evaluate(() => window.mediaCleanup);
++  await page.getByRole('link', { name: 'Privacy', exact: true }).click();
++  await page.waitForFunction(n => window.mediaCleanup > n, beforeUnmount);
++  checks.push({ label: 'Studio unmount releases decoder', passed: true });
++  assert.deepEqual(errors, []);
++  console.log(JSON.stringify({ observed_at: new Date().toISOString(), fixture_sha256: sourceHash, checks, pageerrors: errors, artifacts: dir }, null, 2));
++} finally {
++  if (context) await context.close();
++  await server.close();
++  writeFileSync(path.join(dir, 'checks.json'), JSON.stringify({ checks, errors }, null, 2));
++}
+diff --git a/src/engine/project.ts b/src/engine/project.ts
+index 070b8127ec391add9a838f55159f638eec39bbac..8d83b2c415a2a3547272aa2fef397b3190f48f85 100644
+--- a/src/engine/project.ts
++++ b/src/engine/project.ts
+@@ -6,6 +6,7 @@
+  */
+ import { newLayer, type Layer } from "./layers";
+ import { defaultTimeline, type TimelineState } from "./timeline";
++import { easingIds } from "./easing";
+ 
+ export const ANIMATE_FILE_VERSION = 1;
+ 
+@@ -62,9 +63,61 @@ export async function serializeProject(project: Project): Promise<string> {
+   return JSON.stringify({ ...project, layers, updatedAt: Date.now() });
+ }
+ 
++const isRecord = (value: unknown): value is Record<string, unknown> =>
++  typeof value === "object" && value !== null && !Array.isArray(value);
++const isFiniteNumber = (value: unknown): value is number =>
++  typeof value === "number" && Number.isFinite(value);
++const isNonNegativeInteger = (value: unknown): value is number =>
++  Number.isInteger(value) && (value as number) >= 0;
++const tweenProps = ["x", "y", "scaleX", "scaleY", "rotation", "opacity"] as const;
++function isValidProject(value: unknown): value is Project {
++  if (!isRecord(value) || value.version !== ANIMATE_FILE_VERSION) return false;
++  if (typeof value.id !== "string" || typeof value.name !== "string" || typeof value.background !== "string") return false;
++  if (!isFiniteNumber(value.createdAt) || !isFiniteNumber(value.updatedAt)) return false;
++  if (!isFiniteNumber(value.width) || value.width <= 0 || !Number.isInteger(value.width)) return false;
++  if (!isFiniteNumber(value.height) || value.height <= 0 || !Number.isInteger(value.height)) return false;
++  if (!Array.isArray(value.layers) || value.layers.length === 0 || !isRecord(value.timeline)) return false;
++
++  const t = value.timeline;
++  if (!isNonNegativeInteger(t.frameCount) || t.frameCount < 1 || !isNonNegativeInteger(t.currentFrame) || t.currentFrame >= t.frameCount) return false;
++  if (t.fps !== 12 && t.fps !== 24 && t.fps !== 30) return false;
++  if (typeof t.loop !== "boolean" || !isRecord(t.onionSkin)) return false;
++  const onion = t.onionSkin;
++  if (typeof onion.enabled !== "boolean" || !isNonNegativeInteger(onion.prev) || !isNonNegativeInteger(onion.next)) return false;
++  if (!isFiniteNumber(onion.opacity) || onion.opacity < 0 || onion.opacity > 1) return false;
++
++  return value.layers.every((layer) => {
++    if (!isRecord(layer) || typeof layer.id !== "string" || typeof layer.name !== "string") return false;
++    if (layer.kind !== "draw" && layer.kind !== "reference") return false;
++    if (typeof layer.visible !== "boolean" || typeof layer.locked !== "boolean") return false;
++    if (!isRecord(layer.transform) || !isRecord(layer.tweens) || !isRecord(layer.cels)) return false;
++    for (const key of ["x", "y", "scaleX", "scaleY", "rotation", "opacity"] as const) {
++      if (!isFiniteNumber(layer.transform[key])) return false;
++    }
++    for (const [prop, track] of Object.entries(layer.tweens)) {
++      if (!(tweenProps as readonly string[]).includes(prop) || !Array.isArray(track)) return false;
++      if (!track.every((kf) => isRecord(kf) && isNonNegativeInteger(kf.frame) && isFiniteNumber(kf.value) && typeof kf.easing === "string" && easingIds.includes(kf.easing as (typeof easingIds)[number]))) return false;
++    }
++    for (const [frame, cel] of Object.entries(layer.cels)) {
++      if (!/^\d+$/.test(frame) || !isRecord(cel) || !Array.isArray(cel.strokes)) return false;
++      if (cel.fillDataUrl !== undefined && typeof cel.fillDataUrl !== "string") return false;
++      if (!cel.strokes.every((stroke) => {
++        if (!isRecord(stroke) || typeof stroke.id !== "string" || typeof stroke.color !== "string") return false;
++        if (!isFiniteNumber(stroke.baseWidth) || !Array.isArray(stroke.points)) return false;
++        if (stroke.erase !== undefined && typeof stroke.erase !== "boolean") return false;
++        return stroke.points.every((point) => isRecord(point) && isFiniteNumber(point.x) && isFiniteNumber(point.y) && isFiniteNumber(point.pressure));
++      })) return false;
++    }
++    if (layer.kind === "reference") {
++      if (typeof layer.referenceSrc !== "string" || (layer.referenceKind !== "image" && layer.referenceKind !== "video")) return false;
++    }
++    return true;
++  });
++}
++
+ export function deserializeProject(json: string): Project {
+-  const parsed = JSON.parse(json) as Project;
+-  if (!parsed.version || !parsed.layers || !parsed.timeline) {
++  const parsed: unknown = JSON.parse(json);
++  if (!isValidProject(parsed)) {
+     throw new Error("That file doesn't look like an Animate project.");
+   }
+   return parsed;
+diff --git a/src/engine/render.ts b/src/engine/render.ts
+index 5ff9680d264024ea51996085211e18f56b53981d..6e7c415310eb6b53a3f5f265257327641246481c 100644
+--- a/src/engine/render.ts
++++ b/src/engine/render.ts
+@@ -28,6 +28,48 @@ function getImage(src: string): HTMLImageElement | null {
+ 
+ /** Reference <video> elements, registered by the Studio page so playback position can drive export too. */
+ export const videoElements = new Map<string, HTMLVideoElement>();
++const videoSources = new Map<string, string>();
++
++function releaseReferenceVideo(id: string): void {
++  const video = videoElements.get(id);
++  const src = videoSources.get(id);
++  if (video) {
++    video.pause();
++    video.removeAttribute("src");
++    video.load();
++    videoElements.delete(id);
++  }
++  videoSources.delete(id);
++  if (src?.startsWith("blob:")) URL.revokeObjectURL(src);
++}
++
++/** Keep renderer video resources aligned with project state, including every load path. */
++export function syncReferenceVideos(layers: Layer[]): void {
++  const wanted = new Map(
++    layers
++      .filter((layer) => layer.kind === "reference" && layer.referenceKind === "video" && layer.referenceSrc)
++      .map((layer) => [layer.id, layer.referenceSrc!] as const),
++  );
++  for (const [id, src] of videoSources) {
++    if (wanted.get(id) !== src) releaseReferenceVideo(id);
++  }
++  for (const [id, src] of wanted) {
++    if (videoSources.get(id) === src && videoElements.has(id)) continue;
++    const video = document.createElement("video");
++    video.src = src;
++    video.loop = true;
++    video.muted = true;
++    video.playsInline = true;
++    void video.play().catch(() => {});
++    videoSources.set(id, src);
++    videoElements.set(id, video);
++  }
++}
++
++/** Release every registered media element when Studio unmounts. */
++export function clearReferenceVideos(): void {
++  for (const id of [...videoSources.keys()]) releaseReferenceVideo(id);
++}
+ 
+ const layerCanvases = new Map<string, HTMLCanvasElement>();
+ function getLayerCanvas(id: string, width: number, height: number): HTMLCanvasElement {
+diff --git a/src/pages/Studio.tsx b/src/pages/Studio.tsx
+index 2d69c8f5856db3db1c22486cfa123d363ae3e91e..52db7139fdf1e99da8bb7c7deb7260172ed29a8e 100644
+--- a/src/pages/Studio.tsx
++++ b/src/pages/Studio.tsx
+@@ -24,7 +24,7 @@ import {
+   type Fps,
+   type OnionSkinSettings,
+ } from "../engine/timeline";
+-import { renderFrame, renderFrameToCanvas, videoElements, dropLayerCanvas, type ActiveStrokePreview } from "../engine/render";
++import { renderFrame, renderFrameToCanvas, syncReferenceVideos, clearReferenceVideos, dropLayerCanvas, type ActiveStrokePreview } from "../engine/render";
+ import { applyFillAtPoint } from "../lib/fill-tool";
+ import { autosaveProject, loadAutosavedProject } from "../lib/idb";
+ import { lockerApi, sendToScenePilot, useLocker, waitForLocker, launchedFromLocker, type LockerEntry } from "../lib/suite";
+@@ -69,6 +69,13 @@ export default function Studio() {
+     playingRef.current = playing;
+   }, [playing]);
+ 
++  // Rehydrate renderer-only video elements after any project load or layer change.
++  useEffect(() => {
++    syncReferenceVideos(project.layers);
++  }, [project.layers]);
++
++  useEffect(() => () => clearReferenceVideos(), []);
++
+   // --- load: Locker onOpen (if launched with ?tcc-open=) or IndexedDB autosave ---
+   const applyOpenedEntry = useCallback(async (entry: LockerEntry & { blob: Blob }) => {
+     const isProject = entry.name.endsWith(".animate") || entry.type === "application/json";
+@@ -82,7 +89,6 @@ export default function Studio() {
+     const kind = entry.type.startsWith("video/") ? "video" : "image";
+     const url = URL.createObjectURL(entry.blob);
+     const layer: Layer = { ...newLayer(entry.name, "reference"), referenceSrc: url, referenceKind: kind };
+-    if (kind === "video") attachReferenceVideo(layer.id, url);
+     setProject((p) => ({ ...p, layers: [...p.layers, layer] }));
+     setSelectedLayerId(layer.id);
+   }, []);
+@@ -162,16 +168,6 @@ export default function Studio() {
+     return () => cancelAnimationFrame(raf);
+   }, []);
+ 
+-  function attachReferenceVideo(layerId: string, url: string) {
+-    const el = document.createElement("video");
+-    el.src = url;
+-    el.loop = true;
+-    el.muted = true;
+-    el.playsInline = true;
+-    void el.play().catch(() => {});
+-    videoElements.set(layerId, el);
+-  }
+-
+   const currentLayer = useCallback(
+     () => project.layers.find((l) => l.id === selectedLayerId) ?? project.layers[0],
+     [project, selectedLayerId],
+@@ -258,7 +254,6 @@ export default function Studio() {
+     const kind = file.type.startsWith("video/") ? "video" : "image";
+     const url = URL.createObjectURL(file);
+     const layer: Layer = { ...newLayer(file.name, "reference"), referenceSrc: url, referenceKind: kind };
+-    if (kind === "video") attachReferenceVideo(layer.id, url);
+     setProject((p) => ({ ...p, layers: [...p.layers, layer] }));
+     setSelectedLayerId(layer.id);
+   }
+@@ -274,7 +269,6 @@ export default function Studio() {
+   }
+   function removeLayer(id: string) {
+     dropLayerCanvas(id);
+-    videoElements.delete(id);
+     setProject((p) => {
+       const layers = p.layers.filter((l) => l.id !== id);
+       return { ...p, layers: layers.length ? layers : [newLayer("Layer 1")] };
+diff --git a/tests/project.test.ts b/tests/project.test.ts
+new file mode 100644
+index 0000000000000000000000000000000000000000..452e6f64e493b5d1bc963aac1a098342ce1f3889
+--- /dev/null
++++ b/tests/project.test.ts
+@@ -0,0 +1,46 @@
++import { describe, expect, it } from "vitest";
++import { deserializeProject, newProject, serializeProject } from "../src/engine/project";
++import { newLayer, setCelAtFrame } from "../src/engine/layers";
++import { setKeyframe } from "../src/engine/tween";
++
++describe("Animate project files", () => {
++  it("round-trips a valid v1 project", async () => {
++    const project = newProject("Round trip");
++    const layer = project.layers[0];
++    const populatedLayer = {
++      ...setCelAtFrame(layer, 0, {
++        strokes: [{ id: "s1", color: "#111111", baseWidth: 4, points: [{ x: 10, y: 20, pressure: 0.5 }] }],
++        fillDataUrl: "data:image/png;base64,AA==",
++      }),
++      tweens: { x: setKeyframe([], { frame: 0, value: 12, easing: "easeOutQuad" }) },
++    };
++    const populatedProject = { ...project, layers: [populatedLayer] };
++    const loaded = deserializeProject(await serializeProject(populatedProject));
++    expect(loaded).toMatchObject({
++      version: 1,
++      name: "Round trip",
++      layers: populatedProject.layers,
++      timeline: project.timeline,
++    });
++  });
++
++  it.each([
++    ["truthy non-array layers", (p: ReturnType<typeof newProject>) => ({ ...p, layers: {} })],
++    ["empty layers", (p: ReturnType<typeof newProject>) => ({ ...p, layers: [] })],
++    ["malformed timeline", (p: ReturnType<typeof newProject>) => ({ ...p, timeline: { ...p.timeline, onionSkin: null } })],
++    ["malformed nested layer", (p: ReturnType<typeof newProject>) => ({ ...p, layers: [{ ...p.layers[0], transform: null }] })],
++    ["malformed cel stroke", (p: ReturnType<typeof newProject>) => ({ ...p, layers: [{ ...p.layers[0], cels: { 0: { strokes: [null] } } }] })],
++    ["malformed keyframe easing", (p: ReturnType<typeof newProject>) => ({ ...p, layers: [{ ...p.layers[0], tweens: { x: [{ frame: 0, value: 1, easing: ["linear"] }] } }] })],
++    ["unsupported version", (p: ReturnType<typeof newProject>) => ({ ...p, version: 2 })],
++  ])("rejects %s before returning a project", async (_label, mutate) => {
++    const malformed = mutate(newProject());
++    await expect(Promise.resolve().then(() => deserializeProject(JSON.stringify(malformed))))
++      .rejects.toThrow("That file doesn't look like an Animate project.");
++  });
++
++  it("accepts a valid reference layer", () => {
++    const project = newProject();
++    const reference = { ...newLayer("ref", "reference"), referenceSrc: "data:image/png;base64,AA==", referenceKind: "image" as const };
++    expect(deserializeProject(JSON.stringify({ ...project, layers: [...project.layers, reference] })).layers).toHaveLength(2);
++  });
++});
+diff --git a/tests/reference-video-lifecycle.test.ts b/tests/reference-video-lifecycle.test.ts
+new file mode 100644
+index 0000000000000000000000000000000000000000..64ef62a4cef48873afd6b3553512b601b02a0aa2
+--- /dev/null
++++ b/tests/reference-video-lifecycle.test.ts
+@@ -0,0 +1,73 @@
++import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
++import { clearReferenceVideos, syncReferenceVideos, videoElements } from "../src/engine/render";
++import { newLayer } from "../src/engine/layers";
++
++describe("reference video renderer lifecycle", () => {
++  const created: HTMLVideoElement[] = [];
++  const originalCreateElement = document.createElement.bind(document);
++
++  beforeEach(() => {
++    clearReferenceVideos();
++    created.length = 0;
++    vi.spyOn(URL, "revokeObjectURL");
++    vi.spyOn(document, "createElement").mockImplementation(((tag: string, options?: ElementCreationOptions) => {
++      const element = originalCreateElement(tag, options);
++      if (tag === "video") {
++        const video = element as HTMLVideoElement;
++        vi.spyOn(video, "play").mockResolvedValue(undefined);
++        vi.spyOn(video, "pause").mockImplementation(() => {});
++        vi.spyOn(video, "load").mockImplementation(() => {});
++        created.push(video);
++      }
++      return element;
++    }) as typeof document.createElement);
++  });
++
++  afterEach(() => {
++    clearReferenceVideos();
++    vi.restoreAllMocks();
++  });
++
++  function videoLayer(id: string, src: string) {
++    return { ...newLayer("Reference", "reference"), id, referenceSrc: src, referenceKind: "video" as const };
++  }
++
++  it("rehydrates saved data-URL videos and is idempotent", () => {
++    const layer = videoLayer("saved", "data:video/mp4;base64,AA==");
++    syncReferenceVideos([layer]);
++
++    const registered = videoElements.get(layer.id)!;
++    expect(registered.src).toBe(layer.referenceSrc);
++    expect(registered.loop).toBe(true);
++    expect(registered.muted).toBe(true);
++    expect(registered.playsInline).toBe(true);
++    syncReferenceVideos([layer]);
++    expect(videoElements.get(layer.id)).toBe(registered);
++    expect(created).toHaveLength(1);
++  });
++
++  it("releases replaced and removed videos, revoking only owned blob URLs", () => {
++    const first = videoLayer("ref", "blob:old-media");
++    syncReferenceVideos([first]);
++    const previous = videoElements.get("ref")!;
++
++    syncReferenceVideos([videoLayer("ref", "data:video/mp4;base64,BB==")]);
++    expect(previous.pause).toHaveBeenCalledOnce();
++    expect(previous.load).toHaveBeenCalledOnce();
++    expect(previous.hasAttribute("src")).toBe(false);
++    expect(URL.revokeObjectURL).toHaveBeenCalledWith("blob:old-media");
++
++    const replacement = videoElements.get("ref")!;
++    syncReferenceVideos([]);
++    expect(replacement.pause).toHaveBeenCalledOnce();
++    expect(URL.revokeObjectURL).toHaveBeenCalledTimes(1);
++    expect(videoElements.size).toBe(0);
++  });
++
++  it("does not register images or drawn layers", () => {
++    const image = { ...newLayer("Image", "reference"), referenceSrc: "data:image/png;base64,AA==", referenceKind: "image" as const };
++    syncReferenceVideos([image, newLayer("Drawing")]);
++    expect(videoElements.size).toBe(0);
++    expect(created).toHaveLength(0);
++  });
++});

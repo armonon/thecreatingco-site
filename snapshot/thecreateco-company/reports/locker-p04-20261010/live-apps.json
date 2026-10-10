@@ -1,0 +1,867 @@
+{
+  "version": 1,
+  "updated": "2026-10-09",
+  "notes": "Canonical product catalog. counted excludes umbrella hubs. opens:true preserves an existing declared Locker receiver; it is not proof of production qualification. accepts describes expected input types, not certified decoder coverage. Native availability is separate from web status.",
+  "home": {
+    "name": "thecreatingco.com",
+    "url": "https://thecreatingco.com/start/"
+  },
+  "groups": [
+    {
+      "id": "make",
+      "name": "Make"
+    },
+    {
+      "id": "film",
+      "name": "Film"
+    },
+    {
+      "id": "music",
+      "name": "Music"
+    },
+    {
+      "id": "everyday",
+      "name": "Everyday"
+    },
+    {
+      "id": "locker",
+      "name": "Locker"
+    },
+    {
+      "id": "community",
+      "name": "The Circle"
+    }
+  ],
+  "apps": [
+    {
+      "id": "form",
+      "disciplines": [
+        "Design"
+      ],
+      "name": "Form",
+      "group": "make",
+      "blurb": "3D & CAD",
+      "url": "https://form.thecreatingco.com/studio",
+      "openUrl": "https://form.thecreatingco.com/studio",
+      "page": "https://thecreatingco.com/products/form/",
+      "accepts": [
+        "model/gltf-binary",
+        "model/stl",
+        "model/obj",
+        ".glb",
+        ".stl",
+        ".obj",
+        ".ply",
+        ".usd",
+        ".usda"
+      ],
+      "kind": "studio",
+      "status": "alpha",
+      "counted": true,
+      "family": "form",
+      "handoff": {
+        "state": "unavailable",
+        "qualification": "Not end-to-end qualified in this catalog release."
+      },
+      "opens": false
+    },
+    {
+      "id": "cast",
+      "disciplines": [
+        "Design"
+      ],
+      "name": "Cast",
+      "parent": "form",
+      "group": "make",
+      "status": "preview",
+      "blurb": "Jewelry casting checks",
+      "url": "https://form-studio-review.netlify.app/studio",
+      "openUrl": "https://form-studio-review.netlify.app/studio",
+      "page": "https://thecreatingco.com/products/form/#cast",
+      "accepts": [
+        "model/stl",
+        "model/gltf-binary",
+        "model/obj",
+        ".stl",
+        ".glb",
+        ".obj"
+      ],
+      "opens": true,
+      "kind": "embedded",
+      "counted": true,
+      "family": "form",
+      "handoff": {
+        "state": "declared",
+        "qualification": "Not end-to-end qualified in this catalog release."
+      },
+      "entryHint": "Form review studio menu > Open Cast. Preview, not manufacturing certification."
+    },
+    {
+      "id": "luma",
+      "disciplines": [
+        "Image",
+        "Design"
+      ],
+      "name": "Luma",
+      "group": "make",
+      "blurb": "Layered image editor",
+      "url": "https://luma.thecreatingco.com/studio",
+      "openUrl": "https://luma.thecreatingco.com/studio",
+      "page": "https://thecreatingco.com/products/luma/",
+      "accepts": [
+        "image/png",
+        "image/jpeg",
+        "image/webp",
+        "image/gif",
+        "image/svg+xml",
+        ".luma",
+        "font/otf",
+        "font/ttf",
+        ".otf",
+        ".ttf"
+      ],
+      "opens": true,
+      "kind": "studio",
+      "status": "alpha",
+      "counted": true,
+      "family": "luma",
+      "handoff": {
+        "state": "declared",
+        "qualification": "Not end-to-end qualified in this catalog release."
+      }
+    },
+    {
+      "id": "mockup",
+      "disciplines": [
+        "Image",
+        "Design"
+      ],
+      "name": "Mockups",
+      "parent": "luma",
+      "group": "make",
+      "blurb": "Art onto products",
+      "url": "https://luma.thecreatingco.com/studio",
+      "openUrl": "https://luma.thecreatingco.com/studio",
+      "page": "https://thecreatingco.com/products/mockup/",
+      "accepts": [
+        "image/png",
+        "image/jpeg",
+        "image/webp",
+        "image/svg+xml"
+      ],
+      "kind": "embedded",
+      "status": "alpha",
+      "counted": true,
+      "family": "luma",
+      "handoff": {
+        "state": "unavailable",
+        "qualification": "Not end-to-end qualified in this catalog release."
+      },
+      "opens": false,
+      "entryHint": "Luma studio menu > Mockups."
+    },
+    {
+      "id": "glyph",
+      "disciplines": [
+        "Design",
+        "Image"
+      ],
+      "name": "Glyph Studio",
+      "group": "make",
+      "blurb": "Draw your own font",
+      "url": "https://glyph-studio-610.netlify.app/",
+      "openUrl": "https://glyph-studio-610.netlify.app/studio",
+      "page": "https://thecreatingco.com/products/glyph-studio/",
+      "accepts": [
+        ".glyph"
+      ],
+      "opens": true,
+      "kind": "app",
+      "status": "alpha",
+      "counted": true,
+      "family": "glyph-studio",
+      "handoff": {
+        "state": "declared",
+        "qualification": "Not end-to-end qualified in this catalog release."
+      }
+    },
+    {
+      "id": "ghost",
+      "disciplines": [
+        "Design"
+      ],
+      "name": "Ghost",
+      "group": "make",
+      "blurb": "Garment photos to 3D",
+      "url": "https://ghost.thecreatingco.com/",
+      "openUrl": "https://ghost.thecreatingco.com/",
+      "page": "https://thecreatingco.com/products/ghost/",
+      "accepts": [
+        "image/png",
+        "image/jpeg",
+        "image/webp",
+        ".ghost",
+        ".ghostbatch"
+      ],
+      "opens": true,
+      "kind": "app",
+      "status": "alpha",
+      "counted": true,
+      "family": "other",
+      "handoff": {
+        "state": "declared",
+        "qualification": "Not end-to-end qualified in this catalog release."
+      }
+    },
+    {
+      "id": "scenepilot",
+      "disciplines": [
+        "Film"
+      ],
+      "name": "ScenePilot",
+      "group": "film",
+      "blurb": "Beat-aware video editor",
+      "url": "https://scenepilot.thecreatingco.com/app/",
+      "openUrl": "https://scenepilot.thecreatingco.com/app/",
+      "page": "https://thecreatingco.com/products/scenepilot/",
+      "accepts": [
+        "video/*",
+        "audio/*",
+        "image/png",
+        "image/jpeg",
+        "image/webp",
+        ".cube",
+        ".srt",
+        ".vtt",
+        "text/vtt"
+      ],
+      "opens": true,
+      "kind": "studio",
+      "status": "alpha",
+      "counted": true,
+      "family": "scenepilot",
+      "handoff": {
+        "state": "declared",
+        "qualification": "Not end-to-end qualified in this catalog release."
+      }
+    },
+    {
+      "id": "autocut",
+      "disciplines": [
+        "Film"
+      ],
+      "name": "AutoCut",
+      "parent": "scenepilot",
+      "group": "film",
+      "blurb": "Cut to the beat",
+      "url": "https://scenepilot.thecreatingco.com/tools/autocut/",
+      "openUrl": "https://scenepilot.thecreatingco.com/tools/autocut/",
+      "page": "https://thecreatingco.com/products/autocut/",
+      "accepts": [
+        "video/*",
+        "audio/*"
+      ],
+      "opens": true,
+      "kind": "tool",
+      "status": "alpha",
+      "counted": true,
+      "family": "scenepilot",
+      "handoff": {
+        "state": "declared",
+        "qualification": "Not end-to-end qualified in this catalog release."
+      }
+    },
+    {
+      "id": "captions",
+      "disciplines": [
+        "Film"
+      ],
+      "name": "Captions",
+      "parent": "scenepilot",
+      "group": "film",
+      "blurb": "Speech to captions",
+      "url": "https://scenepilot.thecreatingco.com/tools/captions/",
+      "openUrl": "https://scenepilot.thecreatingco.com/tools/captions/",
+      "page": "https://thecreatingco.com/products/captions/",
+      "accepts": [
+        "video/*",
+        "audio/*"
+      ],
+      "opens": true,
+      "kind": "tool",
+      "status": "alpha",
+      "counted": true,
+      "family": "scenepilot",
+      "handoff": {
+        "state": "declared",
+        "qualification": "Not end-to-end qualified in this catalog release."
+      }
+    },
+    {
+      "id": "board",
+      "disciplines": [
+        "Film"
+      ],
+      "name": "Board",
+      "parent": "scenepilot",
+      "group": "film",
+      "blurb": "Script to storyboard",
+      "url": "https://scenepilot.thecreatingco.com/tools/board/",
+      "openUrl": "https://scenepilot.thecreatingco.com/tools/board/",
+      "page": "https://thecreatingco.com/products/board/",
+      "accepts": [
+        "text/plain",
+        ".txt",
+        ".fountain"
+      ],
+      "kind": "tool",
+      "status": "alpha",
+      "counted": true,
+      "family": "scenepilot",
+      "handoff": {
+        "state": "unavailable",
+        "qualification": "Not end-to-end qualified in this catalog release."
+      },
+      "opens": false
+    },
+    {
+      "id": "grade",
+      "disciplines": [
+        "Film",
+        "Image"
+      ],
+      "name": "Grade",
+      "parent": "scenepilot",
+      "group": "film",
+      "blurb": "Grade from a reference",
+      "url": "https://scenepilot.thecreatingco.com/tools/grade/",
+      "openUrl": "https://scenepilot.thecreatingco.com/tools/grade/",
+      "page": "https://thecreatingco.com/products/grade/",
+      "accepts": [
+        "image/png",
+        "image/jpeg",
+        "image/webp",
+        "video/*",
+        ".cube"
+      ],
+      "opens": true,
+      "kind": "tool",
+      "status": "alpha",
+      "counted": true,
+      "family": "scenepilot",
+      "handoff": {
+        "state": "declared",
+        "qualification": "Not end-to-end qualified in this catalog release."
+      }
+    },
+    {
+      "id": "reframe",
+      "disciplines": [
+        "Film"
+      ],
+      "name": "Reframe",
+      "parent": "scenepilot",
+      "group": "film",
+      "blurb": "Wide to vertical",
+      "url": "https://scenepilot.thecreatingco.com/tools/reframe/",
+      "openUrl": "https://scenepilot.thecreatingco.com/tools/reframe/",
+      "page": "https://thecreatingco.com/products/scenepilot/",
+      "accepts": [
+        "video/*"
+      ],
+      "opens": true,
+      "kind": "tool",
+      "status": "alpha",
+      "counted": true,
+      "family": "scenepilot",
+      "handoff": {
+        "state": "declared",
+        "qualification": "Not end-to-end qualified in this catalog release."
+      }
+    },
+    {
+      "id": "stemdeck",
+      "disciplines": [
+        "Sound"
+      ],
+      "name": "StemDeck",
+      "group": "music",
+      "blurb": "Stem remix studio",
+      "url": "https://stemdeck.thecreatingco.com/studio",
+      "openUrl": "https://stemdeck.thecreatingco.com/studio",
+      "page": "https://thecreatingco.com/products/stemdeck/",
+      "accepts": [
+        "audio/*"
+      ],
+      "opens": true,
+      "kind": "studio",
+      "status": "alpha",
+      "counted": true,
+      "family": "stemdeck",
+      "handoff": {
+        "state": "declared",
+        "qualification": "Not end-to-end qualified in this catalog release."
+      }
+    },
+    {
+      "id": "sattari",
+      "disciplines": [
+        "Sound"
+      ],
+      "name": "Sattari",
+      "group": "music",
+      "blurb": "Music tools",
+      "url": "https://sattarimusic.com/studio",
+      "openUrl": "https://sattarimusic.com/studio",
+      "page": "https://thecreatingco.com/products/stemdeck/#sattari-labs",
+      "accepts": [],
+      "kind": "hub",
+      "status": "alpha",
+      "counted": false,
+      "family": "stemdeck",
+      "handoff": {
+        "state": "unavailable",
+        "qualification": "Not end-to-end qualified in this catalog release."
+      },
+      "opens": false
+    },
+    {
+      "id": "split",
+      "disciplines": [
+        "Sound"
+      ],
+      "name": "Split",
+      "parent": "sattari",
+      "group": "music",
+      "blurb": "Separate stems",
+      "url": "https://sattarimusic.com/studio/split",
+      "openUrl": "https://sattarimusic.com/studio/split",
+      "page": "https://thecreatingco.com/products/split/",
+      "accepts": [
+        "audio/*"
+      ],
+      "opens": true,
+      "kind": "tool",
+      "status": "alpha",
+      "counted": true,
+      "family": "stemdeck",
+      "handoff": {
+        "state": "declared",
+        "qualification": "Not end-to-end qualified in this catalog release."
+      }
+    },
+    {
+      "id": "key-bpm",
+      "disciplines": [
+        "Sound"
+      ],
+      "name": "Key & BPM",
+      "parent": "sattari",
+      "group": "music",
+      "blurb": "Key and tempo",
+      "url": "https://sattarimusic.com/studio/keybpm",
+      "openUrl": "https://sattarimusic.com/studio/keybpm",
+      "page": "https://thecreatingco.com/products/key-bpm/",
+      "accepts": [
+        "audio/*"
+      ],
+      "opens": true,
+      "kind": "tool",
+      "status": "alpha",
+      "counted": true,
+      "family": "stemdeck",
+      "handoff": {
+        "state": "declared",
+        "qualification": "Not end-to-end qualified in this catalog release."
+      }
+    },
+    {
+      "id": "vox",
+      "disciplines": [
+        "Sound"
+      ],
+      "name": "Vox",
+      "parent": "sattari",
+      "group": "music",
+      "blurb": "Vocal tune & harmony",
+      "url": "https://sattarimusic.com/studio/vox",
+      "openUrl": "https://sattarimusic.com/studio/vox",
+      "page": "https://thecreatingco.com/products/vox/",
+      "accepts": [
+        "audio/*"
+      ],
+      "opens": true,
+      "kind": "tool",
+      "status": "alpha",
+      "counted": true,
+      "family": "stemdeck",
+      "handoff": {
+        "state": "declared",
+        "qualification": "Not end-to-end qualified in this catalog release."
+      }
+    },
+    {
+      "id": "canvas",
+      "disciplines": [
+        "Sound",
+        "Film"
+      ],
+      "name": "Canvas",
+      "parent": "sattari",
+      "group": "music",
+      "blurb": "Audio-reactive visuals",
+      "url": "https://sattarimusic.com/studio/canvas",
+      "openUrl": "https://sattarimusic.com/studio/canvas",
+      "page": "https://thecreatingco.com/products/canvas/",
+      "accepts": [
+        "audio/*",
+        "image/png",
+        "image/jpeg",
+        "image/webp"
+      ],
+      "opens": true,
+      "kind": "tool",
+      "status": "alpha",
+      "counted": true,
+      "family": "stemdeck",
+      "handoff": {
+        "state": "declared",
+        "qualification": "Not end-to-end qualified in this catalog release."
+      }
+    },
+    {
+      "id": "pocket",
+      "disciplines": [
+        "Sound"
+      ],
+      "name": "Pocket",
+      "parent": "sattari",
+      "group": "music",
+      "blurb": "Beat sketchpad",
+      "url": "https://sattarimusic.com/studio/pocket",
+      "openUrl": "https://sattarimusic.com/studio/pocket",
+      "page": "https://thecreatingco.com/products/pocket/",
+      "accepts": [],
+      "kind": "tool",
+      "status": "alpha",
+      "counted": true,
+      "family": "stemdeck",
+      "handoff": {
+        "state": "unavailable",
+        "qualification": "Not end-to-end qualified in this catalog release."
+      },
+      "opens": false
+    },
+    {
+      "id": "press",
+      "disciplines": [
+        "Sound"
+      ],
+      "name": "Press",
+      "parent": "sattari",
+      "group": "music",
+      "blurb": "Press kit builder",
+      "url": "https://sattarimusic.com/press",
+      "openUrl": "https://sattarimusic.com/press",
+      "page": "https://thecreatingco.com/products/press/",
+      "accepts": [
+        "image/png",
+        "image/jpeg",
+        "image/webp"
+      ],
+      "opens": true,
+      "kind": "tool",
+      "status": "alpha",
+      "counted": true,
+      "family": "stemdeck",
+      "handoff": {
+        "state": "declared",
+        "qualification": "Not end-to-end qualified in this catalog release."
+      }
+    },
+    {
+      "id": "librarian",
+      "disciplines": [
+        "Read & organize"
+      ],
+      "name": "Librarian",
+      "group": "everyday",
+      "blurb": "Books & PDF reader",
+      "url": "https://librarian.thecreatingco.com/",
+      "openUrl": "https://librarian.thecreatingco.com/",
+      "page": "https://thecreatingco.com/products/librarian/",
+      "accepts": [
+        "application/pdf",
+        ".pdf"
+      ],
+      "kind": "app",
+      "status": "alpha",
+      "counted": true,
+      "family": "other",
+      "handoff": {
+        "state": "unavailable",
+        "qualification": "Not end-to-end qualified in this catalog release."
+      },
+      "opens": false
+    },
+    {
+      "id": "reclaim",
+      "disciplines": [
+        "Read & organize"
+      ],
+      "name": "Reclaim",
+      "group": "everyday",
+      "blurb": "Read-only browser file review",
+      "url": "https://reclaim.thecreatingco.com/browser/",
+      "openUrl": "https://reclaim.thecreatingco.com/browser/",
+      "page": "https://thecreatingco.com/products/reclaim/",
+      "accepts": [],
+      "kind": "app",
+      "status": "alpha",
+      "counted": true,
+      "family": "other",
+      "handoff": {
+        "state": "unavailable",
+        "qualification": "Not end-to-end qualified in this catalog release."
+      },
+      "opens": false,
+      "native": {
+        "mac": {
+          "status": "alpha",
+          "version": "0.1.1",
+          "architectures": [
+            "arm64",
+            "x86_64"
+          ],
+          "minimumOS": "13",
+          "releaseUrl": "https://github.com/armonon/studio-downloads/releases/tag/reclaim-v0.1.1",
+          "qualification": "Clean-machine, physical Intel and oldest-macOS testing outstanding."
+        }
+      }
+    },
+    {
+      "id": "bounce",
+      "disciplines": [
+        "Sound",
+        "Read & organize"
+      ],
+      "name": "Bounce",
+      "group": "everyday",
+      "blurb": "Player for your music",
+      "url": "https://bounce.thecreatingco.com/browser/",
+      "openUrl": "https://bounce.thecreatingco.com/browser/",
+      "page": "https://thecreatingco.com/products/bounce/",
+      "accepts": [
+        "audio/*"
+      ],
+      "opens": true,
+      "kind": "app",
+      "status": "alpha",
+      "counted": true,
+      "family": "other",
+      "handoff": {
+        "state": "declared",
+        "qualification": "Not end-to-end qualified in this catalog release."
+      }
+    },
+    {
+      "id": "locker",
+      "disciplines": [
+        "Read & organize"
+      ],
+      "name": "Locker",
+      "group": "locker",
+      "blurb": "Files kept in this browser",
+      "url": "https://thecreatingco.com/locker/",
+      "openUrl": "https://thecreatingco.com/locker/",
+      "accepts": [
+        "*/*"
+      ],
+      "kind": "platform",
+      "status": "alpha",
+      "counted": true,
+      "family": "platform",
+      "handoff": {
+        "state": "unavailable",
+        "qualification": "Not end-to-end qualified in this catalog release."
+      },
+      "opens": false,
+      "storage": "browser-local"
+    },
+    {
+      "id": "sessions",
+      "disciplines": [
+        "Sound",
+        "Community"
+      ],
+      "name": "Sessions",
+      "group": "community",
+      "blurb": "Shared listening rooms",
+      "url": "https://thecreatingco.com/community/network?view=Sessions",
+      "openUrl": "https://thecreatingco.com/community/network?view=Sessions",
+      "accepts": [],
+      "kind": "platform",
+      "status": "alpha",
+      "counted": true,
+      "family": "platform",
+      "handoff": {
+        "state": "unavailable",
+        "qualification": "Not end-to-end qualified in this catalog release."
+      },
+      "opens": false
+    },
+    {
+      "id": "pocket-studio",
+      "disciplines": [
+        "Sound",
+        "Community"
+      ],
+      "name": "Pocket Studio",
+      "group": "community",
+      "blurb": "Voice memos & sharing",
+      "url": "https://thecreatingco.com/community/network?view=Pocket%20Studio",
+      "openUrl": "https://thecreatingco.com/community/network?view=Pocket%20Studio",
+      "accepts": [],
+      "kind": "platform",
+      "status": "alpha",
+      "counted": true,
+      "family": "platform",
+      "handoff": {
+        "state": "unavailable",
+        "qualification": "Not end-to-end qualified in this catalog release."
+      },
+      "opens": false,
+      "entryHint": "Recording uploads require sign-in."
+    },
+    {
+      "id": "cutout",
+      "disciplines": [
+        "Image",
+        "Design"
+      ],
+      "name": "Cutout",
+      "parent": "luma",
+      "group": "make",
+      "family": "luma",
+      "kind": "tool",
+      "blurb": "Remove backgrounds and refine transparent images",
+      "url": "https://luma.thecreatingco.com/cutout",
+      "accepts": [
+        "image/png",
+        "image/jpeg",
+        "image/webp"
+      ],
+      "openUrl": "https://luma.thecreatingco.com/cutout",
+      "counted": true,
+      "status": "alpha",
+      "opens": false,
+      "handoff": {
+        "state": "unavailable",
+        "qualification": "Not end-to-end qualified in this catalog release."
+      }
+    },
+    {
+      "id": "loop",
+      "disciplines": [
+        "Film"
+      ],
+      "name": "Loop",
+      "parent": "scenepilot",
+      "group": "film",
+      "family": "scenepilot",
+      "kind": "tool",
+      "blurb": "Turn a clip into a short video loop",
+      "url": "https://scenepilot.thecreatingco.com/tools/loop/",
+      "accepts": [
+        "video/*"
+      ],
+      "openUrl": "https://scenepilot.thecreatingco.com/tools/loop/",
+      "counted": true,
+      "status": "alpha",
+      "opens": false,
+      "handoff": {
+        "state": "unavailable",
+        "qualification": "Not end-to-end qualified in this catalog release."
+      }
+    },
+    {
+      "id": "luma-glyph",
+      "disciplines": [
+        "Image",
+        "Design"
+      ],
+      "name": "Glyph (in Luma)",
+      "parent": "luma",
+      "group": "make",
+      "family": "luma",
+      "kind": "embedded",
+      "blurb": "Experimental lettering inside Luma",
+      "url": "https://luma.thecreatingco.com/studio",
+      "page": "https://thecreatingco.com/products/glyph/",
+      "entryHint": "Luma studio menu > Glyph.",
+      "accepts": [],
+      "openUrl": "https://luma.thecreatingco.com/studio",
+      "counted": true,
+      "status": "alpha",
+      "opens": false,
+      "handoff": {
+        "state": "unavailable",
+        "qualification": "Not end-to-end qualified in this catalog release."
+      }
+    },
+    {
+      "id": "weblab",
+      "disciplines": [
+        "Design"
+      ],
+      "name": "WebLab",
+      "group": "make",
+      "family": "other",
+      "kind": "app",
+      "blurb": "Build a single web page with visual blocks and HTML/CSS output",
+      "url": "https://weblab-thecreatingco.netlify.app/",
+      "openUrl": "https://weblab-thecreatingco.netlify.app/",
+      "page": "https://thecreatingco.com/products/weblab/",
+      "image": "/assets/integration/weblab-workspace.png",
+      "icon": "/assets/integration/weblab-workspace.png",
+      "entryHint": "Prototype. No autosave or project reopening; keep a copy of your code before leaving.",
+      "accepts": [],
+      "counted": true,
+      "status": "preview",
+      "opens": false,
+      "handoff": {
+        "state": "unavailable",
+        "qualification": "Editing and generated code checked in the browser. Download completion, persistent projects and cross-app handoff are not qualified."
+      }
+    },
+    {
+      "id": "circle",
+      "disciplines": [
+        "Community"
+      ],
+      "name": "The Circle",
+      "group": "community",
+      "family": "platform",
+      "kind": "platform",
+      "blurb": "Profiles, projects, collections and discussions",
+      "url": "https://thecreatingco.com/community/network",
+      "accepts": [],
+      "openUrl": "https://thecreatingco.com/community/network",
+      "counted": true,
+      "status": "alpha",
+      "opens": false,
+      "handoff": {
+        "state": "unavailable",
+        "qualification": "Not end-to-end qualified in this catalog release."
+      }
+    }
+  ],
+  "summary": {
+    "experiences": 30,
+    "studios": 4,
+    "apps": 6,
+    "tools": 13,
+    "embedded": 3,
+    "platform": 4
+  }
+}

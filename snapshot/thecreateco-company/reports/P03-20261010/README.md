@@ -17,3 +17,9 @@ Ran prescribed push_branch.py with --expect-sha18f2273f30501625927d04f72db9851e6
 Actual generated red-reference video imported and autosaved, then reload changed canvas center from [254,0,0,255] to white[255,255,255,255]. Source18f2273; no video-reopen pass claimed. Queued P1 follow-up P03-VIDEO-REOPEN-001 in authoritative company engine, dependent on P03, with exact pixel repro and save/reopen/export acceptance criteria. Undo/redo remains absent by source audit. Single-record autosave lacks prior-good version recovery; overlapping async writes remain a hypothesis. No native chooser, Locker end-to-end, full golden workflow, hosted required-check, source/live parity or product release qualification claimed. No code outside two task-owned paths staged or overwritten.
 
 Evidence: baseline-browser.json; browser-regression.json; video-reopen.json; source-receipt.json; exact-head-tests.log; pwa-check.log; ../P03-20261010-luna-audit.md. The audit task/fix is complete, not the product.
+
+Cleanup: stopped only this cycle local Vite process; removed only this cycle installed reinstallable node_modules per Wave policy. Built output and test artifacts retained; no unrelated cleanup. Exact committed task files rehashed and tracked tree verified clean after checks.
+
+## Final mirror receipt — recovered
+
+Fresh publish_snapshot.py completed exit0 with company/operations SHA f06113fb29661b9abb18f8a8b1c1a2077b171e05. Independent git ls-remote verified that exact remote head. Central MANIFEST archives Animate18f2273f30501625927d04f72db9851e60abdaa4 and review branch company/p03-project-validation-20261010,2files/0omitted, clean tracked source. Both mirrored files were byte-compared against the tested committed source and match. Initial helper receipt shortfall is resolved; see push-receipt.json. Source branch and central mirror pushed; no merge/deployment/CI success implied.

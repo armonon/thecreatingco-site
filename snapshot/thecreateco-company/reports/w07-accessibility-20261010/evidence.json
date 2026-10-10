@@ -1,0 +1,1779 @@
+{
+  "audit": "W07 live accessibility spot check",
+  "observedAt": "2026-10-10T13:13:48.985Z",
+  "browser": "Installed Google Chrome via playwright-core",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+  "routes": [
+    {
+      "route": "/",
+      "viewports": [
+        {
+          "requestedWidth": 390,
+          "status": 200,
+          "finalUrl": "https://thecreatingco.com/",
+          "htmlSha256": "5821a1fc0b3ba223410974ee7e183e6c5fe738d7e7708a5438f7380e52f37337",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "document": {
+            "clientWidth": 390,
+            "scrollWidth": 390,
+            "overflow": false
+          },
+          "firstActions": [
+            {
+              "tag": "A",
+              "name": "Try Form Studio ↗",
+              "href": "/products/form/#learn-studio",
+              "box": {
+                "x": 20,
+                "y": 464,
+                "width": 350,
+                "height": 51
+              },
+              "minimum44": true
+            },
+            {
+              "tag": "A",
+              "name": "Join the launch list ↗",
+              "href": "#join-launch",
+              "box": {
+                "x": 20,
+                "y": 527,
+                "width": 350,
+                "height": 51
+              },
+              "minimum44": true
+            },
+            {
+              "tag": "BUTTON",
+              "name": "Play film",
+              "href": null,
+              "box": {
+                "x": 290,
+                "y": 898,
+                "width": 80,
+                "height": 44
+              },
+              "minimum44": true
+            },
+            {
+              "tag": "INPUT",
+              "name": "Creative journey position",
+              "href": null,
+              "box": {
+                "x": 22,
+                "y": 956,
+                "width": 350,
+                "height": 24
+              },
+              "minimum44": false
+            },
+            {
+              "tag": "A",
+              "name": "Why we’re building thecreatingco ↗",
+              "href": "/about/",
+              "box": {
+                "x": 20,
+                "y": 1196,
+                "width": 263,
+                "height": 25
+              },
+              "minimum44": false
+            },
+            {
+              "tag": "BUTTON",
+              "name": "All tools",
+              "href": null,
+              "box": {
+                "x": 38,
+                "y": 1284,
+                "width": 83,
+                "height": 44
+              },
+              "minimum44": true
+            },
+            {
+              "tag": "BUTTON",
+              "name": "Design",
+              "href": null,
+              "box": {
+                "x": 127,
+                "y": 1284,
+                "width": 74,
+                "height": 44
+              },
+              "minimum44": true
+            },
+            {
+              "tag": "BUTTON",
+              "name": "Image",
+              "href": null,
+              "box": {
+                "x": 207,
+                "y": 1284,
+                "width": 68,
+                "height": 44
+              },
+              "minimum44": true
+            }
+          ],
+          "visibleTabbableCount": 224,
+          "hiddenTabbableDomCount": 130,
+          "featuredCardOverlap": null,
+          "skipLink": {
+            "name": "Skip to content",
+            "box": {
+              "x": 12,
+              "y": -94,
+              "width": 150,
+              "height": 51
+            },
+            "visibility": true,
+            "focusStyle": "none"
+          }
+        },
+        {
+          "requestedWidth": 320,
+          "status": 200,
+          "finalUrl": "https://thecreatingco.com/",
+          "htmlSha256": "5821a1fc0b3ba223410974ee7e183e6c5fe738d7e7708a5438f7380e52f37337",
+          "viewport": {
+            "width": 320,
+            "height": 844
+          },
+          "document": {
+            "clientWidth": 320,
+            "scrollWidth": 320,
+            "overflow": false
+          },
+          "firstActions": [
+            {
+              "tag": "A",
+              "name": "Try Form Studio ↗",
+              "href": "/products/form/#learn-studio",
+              "box": {
+                "x": 20,
+                "y": 475,
+                "width": 280,
+                "height": 51
+              },
+              "minimum44": true
+            },
+            {
+              "tag": "A",
+              "name": "Join the launch list ↗",
+              "href": "#join-launch",
+              "box": {
+                "x": 20,
+                "y": 538,
+                "width": 280,
+                "height": 51
+              },
+              "minimum44": true
+            },
+            {
+              "tag": "BUTTON",
+              "name": "Play film",
+              "href": null,
+              "box": {
+                "x": 226,
+                "y": 879,
+                "width": 74,
+                "height": 54
+              },
+              "minimum44": true
+            },
+            {
+              "tag": "INPUT",
+              "name": "Creative journey position",
+              "href": null,
+              "box": {
+                "x": 22,
+                "y": 947,
+                "width": 280,
+                "height": 24
+              },
+              "minimum44": false
+            },
+            {
+              "tag": "A",
+              "name": "Why we’re building thecreatingco ↗",
+              "href": "/about/",
+              "box": {
+                "x": 20,
+                "y": 1186,
+                "width": 263,
+                "height": 25
+              },
+              "minimum44": false
+            },
+            {
+              "tag": "BUTTON",
+              "name": "All tools",
+              "href": null,
+              "box": {
+                "x": 38,
+                "y": 1275,
+                "width": 83,
+                "height": 44
+              },
+              "minimum44": true
+            },
+            {
+              "tag": "BUTTON",
+              "name": "Design",
+              "href": null,
+              "box": {
+                "x": 127,
+                "y": 1275,
+                "width": 74,
+                "height": 44
+              },
+              "minimum44": true
+            },
+            {
+              "tag": "BUTTON",
+              "name": "Image",
+              "href": null,
+              "box": {
+                "x": 207,
+                "y": 1275,
+                "width": 68,
+                "height": 44
+              },
+              "minimum44": true
+            }
+          ],
+          "visibleTabbableCount": 224,
+          "hiddenTabbableDomCount": 130,
+          "featuredCardOverlap": null,
+          "skipLink": {
+            "name": "Skip to content",
+            "box": {
+              "x": 12,
+              "y": -94,
+              "width": 150,
+              "height": 51
+            },
+            "visibility": true,
+            "focusStyle": "none"
+          }
+        }
+      ]
+    },
+    {
+      "route": "/tools/",
+      "viewports": [
+        {
+          "requestedWidth": 390,
+          "status": 200,
+          "finalUrl": "https://thecreatingco.com/tools/",
+          "htmlSha256": "9b230fede5ac1d68c7c877b7f78fb6b494320db903beef85a3fca8f5726410bc",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "document": {
+            "clientWidth": 390,
+            "scrollWidth": 390,
+            "overflow": false
+          },
+          "firstActions": [
+            {
+              "tag": "A",
+              "name": "Find your tool\n↓",
+              "href": "#find-tools",
+              "box": {
+                "x": 18,
+                "y": 409,
+                "width": 173,
+                "height": 50
+              },
+              "minimum44": true
+            },
+            {
+              "tag": "A",
+              "name": "01 / FORM STUDIO\n↗",
+              "href": "/products/form/",
+              "box": {
+                "x": 28,
+                "y": 528,
+                "width": 256,
+                "height": 205
+              },
+              "minimum44": true
+            },
+            {
+              "tag": "A",
+              "name": "02 / LUMA STUDIO\n↗",
+              "href": "/products/luma/",
+              "box": {
+                "x": 110,
+                "y": 579,
+                "width": 256,
+                "height": 205
+              },
+              "minimum44": true
+            },
+            {
+              "tag": "A",
+              "name": "Apps",
+              "href": "/tools/",
+              "box": {
+                "x": 18,
+                "y": 819,
+                "width": 54,
+                "height": 37
+              },
+              "minimum44": false
+            },
+            {
+              "tag": "A",
+              "name": "Learn",
+              "href": "/learn/",
+              "box": {
+                "x": 78,
+                "y": 819,
+                "width": 56,
+                "height": 37
+              },
+              "minimum44": false
+            },
+            {
+              "tag": "A",
+              "name": "Free packs",
+              "href": "/packs/",
+              "box": {
+                "x": 140,
+                "y": 819,
+                "width": 87,
+                "height": 37
+              },
+              "minimum44": false
+            },
+            {
+              "tag": "A",
+              "name": "Labs",
+              "href": "/labs/",
+              "box": {
+                "x": 233,
+                "y": 819,
+                "width": 52,
+                "height": 37
+              },
+              "minimum44": false
+            },
+            {
+              "tag": "A",
+              "name": "How we build",
+              "href": "/inside/",
+              "box": {
+                "x": 291,
+                "y": 819,
+                "width": 100,
+                "height": 37
+              },
+              "minimum44": false
+            }
+          ],
+          "visibleTabbableCount": 88,
+          "hiddenTabbableDomCount": 97,
+          "featuredCardOverlap": {
+            "intersection": {
+              "left": 110,
+              "top": 579,
+              "width": 174,
+              "height": 155,
+              "area": 26981
+            },
+            "samplePoint": {
+              "x": 197,
+              "y": 656
+            },
+            "topHitName": "02 / LUMA STUDIO\n↗",
+            "topHitHref": "/products/luma/",
+            "stackedLinks": [
+              {
+                "name": "01 / FORM STUDIO\n↗",
+                "href": "/products/form/",
+                "box": {
+                  "x": 28,
+                  "y": 528,
+                  "width": 256,
+                  "height": 205
+                }
+              },
+              {
+                "name": "02 / LUMA STUDIO\n↗",
+                "href": "/products/luma/",
+                "box": {
+                  "x": 110,
+                  "y": 579,
+                  "width": 256,
+                  "height": 205
+                }
+              }
+            ]
+          },
+          "skipLink": {
+            "name": "Skip to content",
+            "box": {
+              "x": 12,
+              "y": -94,
+              "width": 150,
+              "height": 51
+            },
+            "visibility": true,
+            "focusStyle": "none"
+          }
+        },
+        {
+          "requestedWidth": 320,
+          "status": 200,
+          "finalUrl": "https://thecreatingco.com/tools/",
+          "htmlSha256": "9b230fede5ac1d68c7c877b7f78fb6b494320db903beef85a3fca8f5726410bc",
+          "viewport": {
+            "width": 320,
+            "height": 844
+          },
+          "document": {
+            "clientWidth": 320,
+            "scrollWidth": 320,
+            "overflow": false
+          },
+          "firstActions": [
+            {
+              "tag": "A",
+              "name": "Find your tool\n↓",
+              "href": "#find-tools",
+              "box": {
+                "x": 18,
+                "y": 415,
+                "width": 173,
+                "height": 50
+              },
+              "minimum44": true
+            },
+            {
+              "tag": "A",
+              "name": "01 / FORM STUDIO\n↗",
+              "href": "/products/form/",
+              "box": {
+                "x": 26,
+                "y": 536,
+                "width": 206,
+                "height": 171
+              },
+              "minimum44": true
+            },
+            {
+              "tag": "A",
+              "name": "02 / LUMA STUDIO\n↗",
+              "href": "/products/luma/",
+              "box": {
+                "x": 91,
+                "y": 616,
+                "width": 206,
+                "height": 171
+              },
+              "minimum44": true
+            },
+            {
+              "tag": "A",
+              "name": "Apps",
+              "href": "/tools/",
+              "box": {
+                "x": 18,
+                "y": 825,
+                "width": 54,
+                "height": 37
+              },
+              "minimum44": false
+            },
+            {
+              "tag": "A",
+              "name": "Learn",
+              "href": "/learn/",
+              "box": {
+                "x": 78,
+                "y": 825,
+                "width": 56,
+                "height": 37
+              },
+              "minimum44": false
+            },
+            {
+              "tag": "A",
+              "name": "Free packs",
+              "href": "/packs/",
+              "box": {
+                "x": 140,
+                "y": 825,
+                "width": 87,
+                "height": 37
+              },
+              "minimum44": false
+            },
+            {
+              "tag": "A",
+              "name": "Labs",
+              "href": "/labs/",
+              "box": {
+                "x": 233,
+                "y": 825,
+                "width": 52,
+                "height": 37
+              },
+              "minimum44": false
+            },
+            {
+              "tag": "A",
+              "name": "How we build",
+              "href": "/inside/",
+              "box": {
+                "x": 291,
+                "y": 825,
+                "width": 100,
+                "height": 37
+              },
+              "minimum44": false
+            }
+          ],
+          "visibleTabbableCount": 88,
+          "hiddenTabbableDomCount": 97,
+          "featuredCardOverlap": {
+            "intersection": {
+              "left": 91,
+              "top": 616,
+              "width": 141,
+              "height": 91,
+              "area": 12805
+            },
+            "samplePoint": {
+              "x": 161,
+              "y": 662
+            },
+            "topHitName": "02 / LUMA STUDIO\n↗",
+            "topHitHref": "/products/luma/",
+            "stackedLinks": [
+              {
+                "name": "01 / FORM STUDIO\n↗",
+                "href": "/products/form/",
+                "box": {
+                  "x": 26,
+                  "y": 536,
+                  "width": 206,
+                  "height": 171
+                }
+              },
+              {
+                "name": "02 / LUMA STUDIO\n↗",
+                "href": "/products/luma/",
+                "box": {
+                  "x": 91,
+                  "y": 616,
+                  "width": 206,
+                  "height": 171
+                }
+              }
+            ]
+          },
+          "skipLink": {
+            "name": "Skip to content",
+            "box": {
+              "x": 12,
+              "y": -94,
+              "width": 150,
+              "height": 51
+            },
+            "visibility": true,
+            "focusStyle": "none"
+          }
+        }
+      ]
+    },
+    {
+      "route": "/products/luma/",
+      "viewports": [
+        {
+          "requestedWidth": 390,
+          "status": 200,
+          "finalUrl": "https://thecreatingco.com/products/luma/",
+          "htmlSha256": "5e50b5c52ed46640709c82468360306965b1e0abfcfb94495e8afc5526e4e8c2",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "document": {
+            "clientWidth": 390,
+            "scrollWidth": 390,
+            "overflow": false
+          },
+          "firstActions": [
+            {
+              "tag": "A",
+              "name": "thecreatingco",
+              "href": "https://thecreatingco.com/start/",
+              "box": {
+                "x": 24,
+                "y": 152,
+                "width": 89,
+                "height": 24
+              },
+              "minimum44": false
+            },
+            {
+              "tag": "A",
+              "name": "Apps & tools",
+              "href": "https://thecreatingco.com/tools/",
+              "box": {
+                "x": 132,
+                "y": 152,
+                "width": 80,
+                "height": 24
+              },
+              "minimum44": false
+            },
+            {
+              "tag": "A",
+              "name": "Try it",
+              "href": "#product-lessons",
+              "box": {
+                "x": 16,
+                "y": 253,
+                "width": 61,
+                "height": 44
+              },
+              "minimum44": true
+            },
+            {
+              "tag": "A",
+              "name": "Features",
+              "href": "#product-features",
+              "box": {
+                "x": 130,
+                "y": 253,
+                "width": 82,
+                "height": 44
+              },
+              "minimum44": true
+            },
+            {
+              "tag": "A",
+              "name": "Open app\n↗",
+              "href": "https://luma.thecreatingco.com/studio",
+              "box": {
+                "x": 265,
+                "y": 253,
+                "width": 109,
+                "height": 44
+              },
+              "minimum44": true
+            },
+            {
+              "tag": "A",
+              "name": "Open the web studio\n↗",
+              "href": "https://luma.thecreatingco.com/studio",
+              "box": {
+                "x": 23,
+                "y": 664,
+                "width": 255,
+                "height": 54
+              },
+              "minimum44": true
+            },
+            {
+              "tag": "A",
+              "name": "View artwork at full size",
+              "href": "/assets/product-artwork/luma.png",
+              "box": {
+                "x": 23,
+                "y": 791,
+                "width": 343,
+                "height": 193
+              },
+              "minimum44": true
+            },
+            {
+              "tag": "BUTTON",
+              "name": "01\nBegin with an image",
+              "href": null,
+              "box": {
+                "x": 35,
+                "y": 1703,
+                "width": 157,
+                "height": 49
+              },
+              "minimum44": true
+            }
+          ],
+          "visibleTabbableCount": 100,
+          "hiddenTabbableDomCount": 104,
+          "featuredCardOverlap": null,
+          "skipLink": {
+            "name": "Skip to content",
+            "box": {
+              "x": 12,
+              "y": -94,
+              "width": 150,
+              "height": 51
+            },
+            "visibility": true,
+            "focusStyle": "none"
+          }
+        },
+        {
+          "requestedWidth": 320,
+          "status": 200,
+          "finalUrl": "https://thecreatingco.com/products/luma/",
+          "htmlSha256": "5e50b5c52ed46640709c82468360306965b1e0abfcfb94495e8afc5526e4e8c2",
+          "viewport": {
+            "width": 320,
+            "height": 844
+          },
+          "document": {
+            "clientWidth": 320,
+            "scrollWidth": 320,
+            "overflow": false
+          },
+          "firstActions": [
+            {
+              "tag": "A",
+              "name": "thecreatingco",
+              "href": "https://thecreatingco.com/start/",
+              "box": {
+                "x": 24,
+                "y": 152,
+                "width": 89,
+                "height": 24
+              },
+              "minimum44": false
+            },
+            {
+              "tag": "A",
+              "name": "Apps & tools",
+              "href": "https://thecreatingco.com/tools/",
+              "box": {
+                "x": 132,
+                "y": 152,
+                "width": 80,
+                "height": 24
+              },
+              "minimum44": false
+            },
+            {
+              "tag": "A",
+              "name": "Try it",
+              "href": "#product-lessons",
+              "box": {
+                "x": 16,
+                "y": 253,
+                "width": 61,
+                "height": 44
+              },
+              "minimum44": true
+            },
+            {
+              "tag": "A",
+              "name": "Features",
+              "href": "#product-features",
+              "box": {
+                "x": 95,
+                "y": 253,
+                "width": 82,
+                "height": 44
+              },
+              "minimum44": true
+            },
+            {
+              "tag": "A",
+              "name": "Open app\n↗",
+              "href": "https://luma.thecreatingco.com/studio",
+              "box": {
+                "x": 195,
+                "y": 253,
+                "width": 109,
+                "height": 44
+              },
+              "minimum44": true
+            },
+            {
+              "tag": "A",
+              "name": "Open the web studio\n↗",
+              "href": "https://luma.thecreatingco.com/studio",
+              "box": {
+                "x": 19,
+                "y": 685,
+                "width": 255,
+                "height": 54
+              },
+              "minimum44": true
+            },
+            {
+              "tag": "A",
+              "name": "View artwork at full size",
+              "href": "/assets/product-artwork/luma.png",
+              "box": {
+                "x": 19,
+                "y": 813,
+                "width": 282,
+                "height": 158
+              },
+              "minimum44": true
+            },
+            {
+              "tag": "BUTTON",
+              "name": "01\nBegin with an image",
+              "href": null,
+              "box": {
+                "x": 35,
+                "y": 1682,
+                "width": 122,
+                "height": 49
+              },
+              "minimum44": true
+            }
+          ],
+          "visibleTabbableCount": 100,
+          "hiddenTabbableDomCount": 104,
+          "featuredCardOverlap": null,
+          "skipLink": {
+            "name": "Skip to content",
+            "box": {
+              "x": 12,
+              "y": -94,
+              "width": 150,
+              "height": 51
+            },
+            "visibility": true,
+            "focusStyle": "none"
+          }
+        }
+      ]
+    }
+  ],
+  "desktopKeyboard": [
+    {
+      "route": "/",
+      "first18Tabs": [
+        {
+          "tag": "A",
+          "name": "Skip to content",
+          "href": "#main",
+          "focusVisible": true,
+          "outline": "solid",
+          "outlineWidth": "3px",
+          "box": {
+            "x": 12,
+            "y": 8,
+            "width": 150,
+            "height": 51
+          },
+          "withinViewport": true
+        },
+        {
+          "tag": "A",
+          "name": "thecreatingco home",
+          "href": "/start/",
+          "focusVisible": true,
+          "outline": "solid",
+          "outlineWidth": "3px",
+          "box": {
+            "x": 28,
+            "y": 25,
+            "width": 193,
+            "height": 26
+          },
+          "withinViewport": true
+        },
+        {
+          "tag": "A",
+          "name": "Creative Suite",
+          "href": "/#creative-suite",
+          "focusVisible": true,
+          "outline": "solid",
+          "outlineWidth": "3px",
+          "box": {
+            "x": 474,
+            "y": 16,
+            "width": 96,
+            "height": 44
+          },
+          "withinViewport": true
+        },
+        {
+          "tag": "A",
+          "name": "Apps & tools",
+          "href": "/tools/",
+          "focusVisible": true,
+          "outline": "solid",
+          "outlineWidth": "3px",
+          "box": {
+            "x": 592,
+            "y": 16,
+            "width": 86,
+            "height": 44
+          },
+          "withinViewport": true
+        },
+        {
+          "tag": "A",
+          "name": "About",
+          "href": "/about/",
+          "focusVisible": true,
+          "outline": "solid",
+          "outlineWidth": "3px",
+          "box": {
+            "x": 700,
+            "y": 16,
+            "width": 41,
+            "height": 44
+          },
+          "withinViewport": true
+        },
+        {
+          "tag": "A",
+          "name": "Learn",
+          "href": "/learn/",
+          "focusVisible": true,
+          "outline": "solid",
+          "outlineWidth": "3px",
+          "box": {
+            "x": 763,
+            "y": 16,
+            "width": 38,
+            "height": 44
+          },
+          "withinViewport": true
+        },
+        {
+          "tag": "A",
+          "name": "The Circle",
+          "href": "/community/network",
+          "focusVisible": true,
+          "outline": "solid",
+          "outlineWidth": "3px",
+          "box": {
+            "x": 823,
+            "y": 16,
+            "width": 68,
+            "height": 44
+          },
+          "withinViewport": true
+        },
+        {
+          "tag": "A",
+          "name": "Open HOLE",
+          "href": "/community/hole",
+          "focusVisible": true,
+          "outline": "solid",
+          "outlineWidth": "2px",
+          "box": {
+            "x": 1144,
+            "y": 16,
+            "width": 44,
+            "height": 44
+          },
+          "withinViewport": true
+        },
+        {
+          "tag": "A",
+          "name": "Open The Circle",
+          "href": "/community/network",
+          "focusVisible": true,
+          "outline": "solid",
+          "outlineWidth": "2px",
+          "box": {
+            "x": 1200,
+            "y": 16,
+            "width": 44,
+            "height": 44
+          },
+          "withinViewport": true
+        },
+        {
+          "tag": "BUTTON",
+          "name": "Quick launch",
+          "href": null,
+          "focusVisible": true,
+          "outline": "solid",
+          "outlineWidth": "3px",
+          "box": {
+            "x": 1256,
+            "y": 16,
+            "width": 44,
+            "height": 44
+          },
+          "withinViewport": true
+        },
+        {
+          "tag": "A",
+          "name": "Open Momentous store",
+          "href": "https://momentous-store.netlify.app/",
+          "focusVisible": true,
+          "outline": "solid",
+          "outlineWidth": "3px",
+          "box": {
+            "x": 1312,
+            "y": 16,
+            "width": 44,
+            "height": 44
+          },
+          "withinViewport": true
+        },
+        {
+          "tag": "SUMMARY",
+          "name": "Site menu",
+          "href": null,
+          "focusVisible": true,
+          "outline": "solid",
+          "outlineWidth": "2px",
+          "box": {
+            "x": 1368,
+            "y": 16,
+            "width": 44,
+            "height": 44
+          },
+          "withinViewport": true
+        },
+        {
+          "tag": "A",
+          "name": "Try Form Studio ↗",
+          "href": "/products/form/#learn-studio",
+          "focusVisible": true,
+          "outline": "solid",
+          "outlineWidth": "3px",
+          "box": {
+            "x": 760,
+            "y": 328,
+            "width": 179,
+            "height": 51
+          },
+          "withinViewport": true
+        },
+        {
+          "tag": "A",
+          "name": "Join the launch list ↗",
+          "href": "#join-launch",
+          "focusVisible": true,
+          "outline": "solid",
+          "outlineWidth": "3px",
+          "box": {
+            "x": 951,
+            "y": 328,
+            "width": 203,
+            "height": 51
+          },
+          "withinViewport": true
+        },
+        {
+          "tag": "BUTTON",
+          "name": "Play film",
+          "href": null,
+          "focusVisible": true,
+          "outline": "solid",
+          "outlineWidth": "3px",
+          "box": {
+            "x": 1305,
+            "y": 1154,
+            "width": 87,
+            "height": 44
+          },
+          "withinViewport": false
+        },
+        {
+          "tag": "INPUT",
+          "name": "Creative journey position",
+          "href": null,
+          "focusVisible": true,
+          "outline": "solid",
+          "outlineWidth": "3px",
+          "box": {
+            "x": 50,
+            "y": 1212,
+            "width": 1344,
+            "height": 24
+          },
+          "withinViewport": false
+        },
+        {
+          "tag": "A",
+          "name": "Why we’re building thecreatingco ↗",
+          "href": "/about/",
+          "focusVisible": true,
+          "outline": "solid",
+          "outlineWidth": "3px",
+          "box": {
+            "x": 1129,
+            "y": 1440,
+            "width": 263,
+            "height": 25
+          },
+          "withinViewport": false
+        },
+        {
+          "tag": "BUTTON",
+          "name": "All tools",
+          "href": null,
+          "focusVisible": true,
+          "outline": "solid",
+          "outlineWidth": "3px",
+          "box": {
+            "x": 30,
+            "y": 1550,
+            "width": 91,
+            "height": 44
+          },
+          "withinViewport": false
+        }
+      ]
+    },
+    {
+      "route": "/tools/",
+      "first18Tabs": [
+        {
+          "tag": "A",
+          "name": "Skip to content",
+          "href": "#main",
+          "focusVisible": true,
+          "outline": "solid",
+          "outlineWidth": "3px",
+          "box": {
+            "x": 12,
+            "y": 8,
+            "width": 150,
+            "height": 51
+          },
+          "withinViewport": true
+        },
+        {
+          "tag": "A",
+          "name": "thecreatingco home",
+          "href": "/start/",
+          "focusVisible": true,
+          "outline": "solid",
+          "outlineWidth": "3px",
+          "box": {
+            "x": 28,
+            "y": 25,
+            "width": 193,
+            "height": 26
+          },
+          "withinViewport": true
+        },
+        {
+          "tag": "A",
+          "name": "Creative Suite",
+          "href": "/#creative-suite",
+          "focusVisible": true,
+          "outline": "solid",
+          "outlineWidth": "3px",
+          "box": {
+            "x": 474,
+            "y": 16,
+            "width": 96,
+            "height": 44
+          },
+          "withinViewport": true
+        },
+        {
+          "tag": "A",
+          "name": "Apps & tools",
+          "href": "/tools/",
+          "focusVisible": true,
+          "outline": "solid",
+          "outlineWidth": "3px",
+          "box": {
+            "x": 592,
+            "y": 16,
+            "width": 86,
+            "height": 44
+          },
+          "withinViewport": true
+        },
+        {
+          "tag": "A",
+          "name": "About",
+          "href": "/about/",
+          "focusVisible": true,
+          "outline": "solid",
+          "outlineWidth": "3px",
+          "box": {
+            "x": 700,
+            "y": 16,
+            "width": 41,
+            "height": 44
+          },
+          "withinViewport": true
+        },
+        {
+          "tag": "A",
+          "name": "Learn",
+          "href": "/learn/",
+          "focusVisible": true,
+          "outline": "solid",
+          "outlineWidth": "3px",
+          "box": {
+            "x": 763,
+            "y": 16,
+            "width": 38,
+            "height": 44
+          },
+          "withinViewport": true
+        },
+        {
+          "tag": "A",
+          "name": "The Circle",
+          "href": "/community/network",
+          "focusVisible": true,
+          "outline": "solid",
+          "outlineWidth": "3px",
+          "box": {
+            "x": 823,
+            "y": 16,
+            "width": 68,
+            "height": 44
+          },
+          "withinViewport": true
+        },
+        {
+          "tag": "A",
+          "name": "Open HOLE",
+          "href": "/community/hole",
+          "focusVisible": true,
+          "outline": "solid",
+          "outlineWidth": "2px",
+          "box": {
+            "x": 1144,
+            "y": 16,
+            "width": 44,
+            "height": 44
+          },
+          "withinViewport": true
+        },
+        {
+          "tag": "A",
+          "name": "Open The Circle",
+          "href": "/community/network",
+          "focusVisible": true,
+          "outline": "solid",
+          "outlineWidth": "2px",
+          "box": {
+            "x": 1200,
+            "y": 16,
+            "width": 44,
+            "height": 44
+          },
+          "withinViewport": true
+        },
+        {
+          "tag": "BUTTON",
+          "name": "Quick launch",
+          "href": null,
+          "focusVisible": true,
+          "outline": "solid",
+          "outlineWidth": "3px",
+          "box": {
+            "x": 1256,
+            "y": 16,
+            "width": 44,
+            "height": 44
+          },
+          "withinViewport": true
+        },
+        {
+          "tag": "A",
+          "name": "Open Momentous store",
+          "href": "https://momentous-store.netlify.app/",
+          "focusVisible": true,
+          "outline": "solid",
+          "outlineWidth": "3px",
+          "box": {
+            "x": 1312,
+            "y": 16,
+            "width": 44,
+            "height": 44
+          },
+          "withinViewport": true
+        },
+        {
+          "tag": "SUMMARY",
+          "name": "Site menu",
+          "href": null,
+          "focusVisible": true,
+          "outline": "solid",
+          "outlineWidth": "2px",
+          "box": {
+            "x": 1368,
+            "y": 16,
+            "width": 44,
+            "height": 44
+          },
+          "withinViewport": true
+        },
+        {
+          "tag": "A",
+          "name": "thecreatingco",
+          "href": "https://thecreatingco.com/start/",
+          "focusVisible": true,
+          "outline": "solid",
+          "outlineWidth": "3px",
+          "box": {
+            "x": 144,
+            "y": 144,
+            "width": 70,
+            "height": 19
+          },
+          "withinViewport": true
+        },
+        {
+          "tag": "A",
+          "name": "Find your tool\n↓",
+          "href": "#find-tools",
+          "focusVisible": true,
+          "outline": "solid",
+          "outlineWidth": "3px",
+          "box": {
+            "x": 58,
+            "y": 504,
+            "width": 173,
+            "height": 50
+          },
+          "withinViewport": true
+        },
+        {
+          "tag": "A",
+          "name": "01 / FORM STUDIO\n↗",
+          "href": "/products/form/",
+          "focusVisible": true,
+          "outline": "solid",
+          "outlineWidth": "3px",
+          "box": {
+            "x": 757,
+            "y": 229,
+            "width": 470,
+            "height": 350
+          },
+          "withinViewport": true
+        },
+        {
+          "tag": "A",
+          "name": "02 / LUMA STUDIO\n↗",
+          "href": "/products/luma/",
+          "focusVisible": true,
+          "outline": "solid",
+          "outlineWidth": "3px",
+          "box": {
+            "x": 899,
+            "y": 232,
+            "width": 470,
+            "height": 350
+          },
+          "withinViewport": true
+        },
+        {
+          "tag": "A",
+          "name": "Apps",
+          "href": "/tools/",
+          "focusVisible": true,
+          "outline": "solid",
+          "outlineWidth": "3px",
+          "box": {
+            "x": 58,
+            "y": 632,
+            "width": 54,
+            "height": 37
+          },
+          "withinViewport": true
+        },
+        {
+          "tag": "A",
+          "name": "Learn",
+          "href": "/learn/",
+          "focusVisible": true,
+          "outline": "solid",
+          "outlineWidth": "3px",
+          "box": {
+            "x": 117,
+            "y": 632,
+            "width": 56,
+            "height": 37
+          },
+          "withinViewport": true
+        }
+      ]
+    },
+    {
+      "route": "/products/luma/",
+      "first18Tabs": [
+        {
+          "tag": "A",
+          "name": "Skip to content",
+          "href": "#main",
+          "focusVisible": true,
+          "outline": "solid",
+          "outlineWidth": "3px",
+          "box": {
+            "x": 12,
+            "y": 8,
+            "width": 150,
+            "height": 51
+          },
+          "withinViewport": true
+        },
+        {
+          "tag": "A",
+          "name": "thecreatingco home",
+          "href": "/start/",
+          "focusVisible": true,
+          "outline": "solid",
+          "outlineWidth": "3px",
+          "box": {
+            "x": 28,
+            "y": 25,
+            "width": 193,
+            "height": 26
+          },
+          "withinViewport": true
+        },
+        {
+          "tag": "A",
+          "name": "Creative Suite",
+          "href": "/#creative-suite",
+          "focusVisible": true,
+          "outline": "solid",
+          "outlineWidth": "3px",
+          "box": {
+            "x": 474,
+            "y": 16,
+            "width": 96,
+            "height": 44
+          },
+          "withinViewport": true
+        },
+        {
+          "tag": "A",
+          "name": "Apps & tools",
+          "href": "/tools/",
+          "focusVisible": true,
+          "outline": "solid",
+          "outlineWidth": "3px",
+          "box": {
+            "x": 592,
+            "y": 16,
+            "width": 86,
+            "height": 44
+          },
+          "withinViewport": true
+        },
+        {
+          "tag": "A",
+          "name": "About",
+          "href": "/about/",
+          "focusVisible": true,
+          "outline": "solid",
+          "outlineWidth": "3px",
+          "box": {
+            "x": 700,
+            "y": 16,
+            "width": 41,
+            "height": 44
+          },
+          "withinViewport": true
+        },
+        {
+          "tag": "A",
+          "name": "Learn",
+          "href": "/learn/",
+          "focusVisible": true,
+          "outline": "solid",
+          "outlineWidth": "3px",
+          "box": {
+            "x": 763,
+            "y": 16,
+            "width": 38,
+            "height": 44
+          },
+          "withinViewport": true
+        },
+        {
+          "tag": "A",
+          "name": "The Circle",
+          "href": "/community/network",
+          "focusVisible": true,
+          "outline": "solid",
+          "outlineWidth": "3px",
+          "box": {
+            "x": 823,
+            "y": 16,
+            "width": 68,
+            "height": 44
+          },
+          "withinViewport": true
+        },
+        {
+          "tag": "A",
+          "name": "Open HOLE",
+          "href": "/community/hole",
+          "focusVisible": true,
+          "outline": "solid",
+          "outlineWidth": "2px",
+          "box": {
+            "x": 1144,
+            "y": 16,
+            "width": 44,
+            "height": 44
+          },
+          "withinViewport": true
+        },
+        {
+          "tag": "A",
+          "name": "Open The Circle",
+          "href": "/community/network",
+          "focusVisible": true,
+          "outline": "solid",
+          "outlineWidth": "2px",
+          "box": {
+            "x": 1200,
+            "y": 16,
+            "width": 44,
+            "height": 44
+          },
+          "withinViewport": true
+        },
+        {
+          "tag": "BUTTON",
+          "name": "Quick launch",
+          "href": null,
+          "focusVisible": true,
+          "outline": "solid",
+          "outlineWidth": "3px",
+          "box": {
+            "x": 1256,
+            "y": 16,
+            "width": 44,
+            "height": 44
+          },
+          "withinViewport": true
+        },
+        {
+          "tag": "A",
+          "name": "Open Momentous store",
+          "href": "https://momentous-store.netlify.app/",
+          "focusVisible": true,
+          "outline": "solid",
+          "outlineWidth": "3px",
+          "box": {
+            "x": 1312,
+            "y": 16,
+            "width": 44,
+            "height": 44
+          },
+          "withinViewport": true
+        },
+        {
+          "tag": "SUMMARY",
+          "name": "Site menu",
+          "href": null,
+          "focusVisible": true,
+          "outline": "solid",
+          "outlineWidth": "2px",
+          "box": {
+            "x": 1368,
+            "y": 16,
+            "width": 44,
+            "height": 44
+          },
+          "withinViewport": true
+        },
+        {
+          "tag": "A",
+          "name": "thecreatingco",
+          "href": "https://thecreatingco.com/start/",
+          "focusVisible": true,
+          "outline": "solid",
+          "outlineWidth": "3px",
+          "box": {
+            "x": 144,
+            "y": 116,
+            "width": 89,
+            "height": 24
+          },
+          "withinViewport": true
+        },
+        {
+          "tag": "A",
+          "name": "Apps & tools",
+          "href": "https://thecreatingco.com/tools/",
+          "focusVisible": true,
+          "outline": "solid",
+          "outlineWidth": "3px",
+          "box": {
+            "x": 252,
+            "y": 116,
+            "width": 80,
+            "height": 24
+          },
+          "withinViewport": true
+        },
+        {
+          "tag": "A",
+          "name": "Try it",
+          "href": "#product-lessons",
+          "focusVisible": true,
+          "outline": "solid",
+          "outlineWidth": "3px",
+          "box": {
+            "x": 1071,
+            "y": 189,
+            "width": 61,
+            "height": 44
+          },
+          "withinViewport": true
+        },
+        {
+          "tag": "A",
+          "name": "Features",
+          "href": "#product-features",
+          "focusVisible": true,
+          "outline": "solid",
+          "outlineWidth": "3px",
+          "box": {
+            "x": 1138,
+            "y": 189,
+            "width": 84,
+            "height": 44
+          },
+          "withinViewport": true
+        },
+        {
+          "tag": "A",
+          "name": "Open app\n↗",
+          "href": "https://luma.thecreatingco.com/studio",
+          "focusVisible": true,
+          "outline": "solid",
+          "outlineWidth": "3px",
+          "box": {
+            "x": 1228,
+            "y": 189,
+            "width": 112,
+            "height": 44
+          },
+          "withinViewport": true
+        },
+        {
+          "tag": "A",
+          "name": "Open the web studio\n↗",
+          "href": "https://luma.thecreatingco.com/studio",
+          "focusVisible": true,
+          "outline": "solid",
+          "outlineWidth": "3px",
+          "box": {
+            "x": 1020,
+            "y": 457,
+            "width": 255,
+            "height": 56
+          },
+          "withinViewport": true
+        }
+      ]
+    }
+  ],
+  "menuKeyboard": [
+    {
+      "route": "/",
+      "width": 390,
+      "triggerBefore": {
+        "tag": "SUMMARY",
+        "text": "",
+        "aria": "Site menu"
+      },
+      "opened": {
+        "open": true,
+        "drawerLinks": 15,
+        "active": "<summary aria-label=\"Site menu\" title=\"Site menu\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"current"
+      },
+      "firstTabInDrawer": {
+        "name": "Close site menu",
+        "href": null,
+        "tag": "BUTTON"
+      },
+      "afterEscape": {
+        "open": false,
+        "activeTag": "SUMMARY",
+        "activeLabel": "Site menu",
+        "activeText": ""
+      },
+      "afterCloseButtonKeyboardActivation": {
+        "open": false,
+        "activeTag": "SUMMARY",
+        "activeLabel": "Site menu",
+        "activeText": ""
+      }
+    },
+    {
+      "route": "/tools/",
+      "width": 390,
+      "triggerBefore": {
+        "tag": "SUMMARY",
+        "text": "",
+        "aria": "Site menu"
+      },
+      "opened": {
+        "open": true,
+        "drawerLinks": 15,
+        "active": "<summary aria-label=\"Site menu\" title=\"Site menu\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"current"
+      },
+      "firstTabInDrawer": {
+        "name": "Close site menu",
+        "href": null,
+        "tag": "BUTTON"
+      },
+      "afterEscape": {
+        "open": false,
+        "activeTag": "SUMMARY",
+        "activeLabel": "Site menu",
+        "activeText": ""
+      },
+      "afterCloseButtonKeyboardActivation": {
+        "open": false,
+        "activeTag": "SUMMARY",
+        "activeLabel": "Site menu",
+        "activeText": ""
+      }
+    },
+    {
+      "route": "/products/luma/",
+      "width": 390,
+      "triggerBefore": {
+        "tag": "SUMMARY",
+        "text": "",
+        "aria": "Site menu"
+      },
+      "opened": {
+        "open": true,
+        "drawerLinks": 15,
+        "active": "<summary aria-label=\"Site menu\" title=\"Site menu\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"current"
+      },
+      "firstTabInDrawer": {
+        "name": "Close site menu",
+        "href": null,
+        "tag": "BUTTON"
+      },
+      "afterEscape": {
+        "open": false,
+        "activeTag": "SUMMARY",
+        "activeLabel": "Site menu",
+        "activeText": ""
+      },
+      "afterCloseButtonKeyboardActivation": {
+        "open": false,
+        "activeTag": "SUMMARY",
+        "activeLabel": "Site menu",
+        "activeText": ""
+      }
+    }
+  ]
+}

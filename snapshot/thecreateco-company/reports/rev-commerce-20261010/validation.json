@@ -1,0 +1,13 @@
+{
+  "observed_at": "2026-10-10T11:12:28.287075+00:00",
+  "source_hash_checks": {
+    "data/revenue/paths.json": true,
+    "data/revenue/metric-definitions.json": true,
+    "reports/revenue-2026-10-07/asset-audit.md": true,
+    "reports/revenue-2026-10-07/asset-public-observations.json": true
+  },
+  "scenario_arithmetic": "PASS",
+  "financial_verification": "BLOCKED: no attributable authorized aggregates",
+  "code_changed": false,
+  "push_required": false
+}

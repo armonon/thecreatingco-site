@@ -1,0 +1,23 @@
+{
+  "observed_at": "2026-10-10T13:15:01.810593+00:00",
+  "result": "PASS",
+  "phone_http200_no_overflow_checks": 6,
+  "sampled_visible_desktop_focus_stops": 54,
+  "menu_routes_pass": 3,
+  "source_mismatches": 3,
+  "independent_hit_tests": 2,
+  "checkout_still_clean": true,
+  "files": {
+    "home-320.png": "cde3f683bd7d7239a5eb353019b1e2f3756a62a8c65e852ff48c008ea06ef2d1",
+    "evidence.json": "71cc7eb778f39eb9f113b3dbdb7a40dcb8e641eb2589d8b08bd982bdbe9644e6",
+    "tools-320.png": "54d9d4d03142efb48637ab8a2b5807a1c95886b24e8451af1401003417ce273f",
+    "products-luma-390.png": "2e855ba8de3a412af751211e83c987397f722856d539949a014f19d23e0fdadf",
+    "products-luma-320.png": "940f5e18c5432d78b28889d0dce59eaf445935bd925088a39a66aca03fedebee",
+    "tools-390.png": "5bb1bf9f4b7323ba6c338e685df33c7b05ee56ce4fc3ffd41d24cb95aae70674",
+    "home-390.png": "0d3fc89c3d7ae443ae66f8077839892cf5db8553a7eb32d5621e774f92e88cb3",
+    "README.md": "87389193f3973b67fcc9dd4e8a8f24feaf346ad83d11f873013ea96998a3e795",
+    "audit.mjs": "7dd54e439c2091f12f519b815153ff8960e269a25067b5325661a684737bfba7",
+    "director-hit-verification.json": "c734f72ef4c98dc0d7790a97220c8eaa56595862da02d78832cc3935fe26b241",
+    "source-reconciliation.json": "afdcd9ae6cb98df0cbebcb83181cf6e6e619c055fd9d7cbd56fb1b2a7ce8b971"
+  }
+}

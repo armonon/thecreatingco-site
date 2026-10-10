@@ -1,0 +1,14 @@
+{
+  "observed_at": "2026-10-10T16:16:04.420431+00:00",
+  "reviewer_model": "openai/gpt-6.1-sol",
+  "worker_requested_model": "openai/gpt-6-luna",
+  "checks": "Existing raw evidence assertions PASS; browser not redundantly rerun",
+  "sha256": {
+    "summary.md": "720ec5edfcb949cd135204ef2a30f50e703b17914c388ae895e26c3290cca66f",
+    "director-admission.json": "f66bc75e96d1c598e4f7f6f56e69d4e33a344397d67abbb3104d77189b33d745",
+    "check.mjs": "ae7149de1aa4e0f8f2f59739f108bc603d9031f5145b7626dbd0b8e507402587",
+    "browser-results.json": "7a267c52e4a301299dac190fe232456d2b8a2f8167c7f74b61b0af76933dc860"
+  },
+  "decision": "BLOCKED: update activation safety and broader non-music coverage unqualified",
+  "push": "No code commit resulted; no push needed."
+}

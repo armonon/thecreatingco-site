@@ -1,0 +1,27 @@
+{
+  "observed_at": "2026-10-10T10:18:55.283977+00:00",
+  "checks": {
+    "18_navigation_records": true,
+    "all_http200_no_captured_errors": true,
+    "all_lcp_attributed": true,
+    "live_asset_equals_checkout": true,
+    "decoded_rgb_identical": true
+  },
+  "source_bytes": 125809,
+  "candidate_bytes": 123462,
+  "decoded_rgb_sha256": "df54deb8633946054eea3445d0db631d7ce8f46fa673121707f36c90e7046bad",
+  "artifacts": {
+    "form-technical-lossless.webp": "433a483a2e9c4020b1eb26b1a42ddabc8b6bb565b6348061c654eeb1e1422569",
+    "form-technical-q95.webp": "4adf954ee5871764a5cd0aabdf315e5d45040a4ae0623867d7932e3904fa2678",
+    "measure.js": "576c72df0746dacc21356d12756ac23a27103349d446253d62d098d70191c718",
+    "measurements.json": "4c121de75a3e2a590b39f94ca341a6cb9ab35189c897728481e24ab45b4a8c5a",
+    "commands.log": "5126836fa9a47cdc8e1561dda3191a31e93ead1a5cc96fb83853ad9282973a7e",
+    "lcp-attribution.json": "74012decdf34b7091d7a1682b84def1fe9cb296c7759d6222a9d9a11ba241bd8",
+    "form-technical-jpegtran.jpg": "f9190f65e5f851475423340e0805b0181b20bbbd529b34fec8dad6e3c7bacccc",
+    "README.md": "4a75998a493cf1d20b6e07952e3154c24b620d7a2c0ae6c1dcc8217a1dbfc323",
+    "run-output.json": "49420e88d52e450ed97f4d3d854bbc54a11fe5fbda95e77026324ab6b2aaeb10",
+    "form-technical-roundtrip.png": "b06e53ab5c78219dbb4eceeb2859f93c19c0c147ffc9365c2c27db94a542e103",
+    "form-technical-live.png": "d08e3b05f67a18c02757ee2295bd9352f28c7483dd86a06c0797616d3439a04a",
+    "preflight.json": "2babd951ec84d7a0520374e936540938c52d746d45ceaf63340a2c951c0a707b"
+  }
+}

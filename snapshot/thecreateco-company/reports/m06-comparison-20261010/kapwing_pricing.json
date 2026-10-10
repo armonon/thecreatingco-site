@@ -1,0 +1,30 @@
+{
+  "key": "kapwing_pricing",
+  "requested_url": "https://www.kapwing.com/pricing",
+  "retrieved_utc": "2026-10-10T17:10:58Z",
+  "method": "urllib.request.urlopen timeout=12s",
+  "timeout_seconds": 12,
+  "http_status": 200,
+  "final_url": "https://www.kapwing.com/pricing",
+  "content_type": "text/html",
+  "bytes_read": 348464,
+  "text_length_chars": 16436,
+  "excerpts": [
+    {
+      "term": "$16",
+      "excerpt": "lling history will also be accessible from the Billing settings page. Do you have an annual/yearly billing option? Yes! If you want better value, then Kapwing Pro is available for $16/month billed annually or $192/year. Kapwing Business can supercharge your content creation and is available for $50/month billed annually or $600/year. Click \"Upgrade\" to access the annual option. This will allow you to pay for an annual membership at a discount from the normal monthly price. See more FAQs Real tea"
+    },
+    {
+      "term": "720p",
+      "excerpt": "ee For anyone who wants to get started creating and repurposing content 10 credits $ 0 It's Free! Get Started Unlimited exports with a watermark Export videos up to 4 minutes long 720p video quality 5 GB of cloud storage Credits usable for: Auto-subtitling (up to 10 mins) Text to speech (up to 1 mins) Most Popular Pro For individuals and small groups looking to create more content in less time 1,000 credits / month $ 16 Per member, per month, billed annually $24 billed monthly Upgrade Everything"
+    },
+    {
+      "term": "watermark",
+      "excerpt": "d what’s best for you. Trusted By Teams At Free For anyone who wants to get started creating and repurposing content 10 credits $ 0 It's Free! Get Started Unlimited exports with a watermark Export videos up to 4 minutes long 720p video quality 5 GB of cloud storage Credits usable for: Auto-subtitling (up to 10 mins) Text to speech (up to 1 mins) Most Popular Pro For individuals and small groups looking to create more content in less time 1,000 credits / month $ 16 Per member, per month, billed a"
+    },
+    {
+      "term": "1,000 minutes",
+      "excerpt": "rts None For all projects For all projects For all projects Automatic Editing & Smart Tools Create subtitles automatically with our AI tool. Auto-subtitling Up to 10 minutes Up to 1,000 minutes per month Up to 4,000 minutes per month Custom Automatically translate subtitles to over 60 languages using AI Auto-translating Up to 5 minutes Up to 500 minutes per month Up to 2,000 minutes per month Custom Generate speech from text layers automatically with AI Text to Speech Up to 1 minutes Up to 50 mi"
+    }
+  ]
+}

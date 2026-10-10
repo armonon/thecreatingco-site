@@ -1,0 +1,21 @@
+{
+  "source": "/Users/agentsattari/code/wave2/thecreatingco-live/locker/core.js",
+  "sourceSha256": "7fcbfbacfdd1fe262213496f151212c87e4b6c6338cb3aa69f4d4b09e3b87d58",
+  "fixtureSha256": "188efee8ddb8335df77e7792efbb7c0299f4673da092c2a60369da78554c822d",
+  "result": {
+    "id": "40006e80-6f4d-4612-b210-4ef40a2b98ad",
+    "before": "188efee8ddb8335df77e7792efbb7c0299f4673da092c2a60369da78554c822d",
+    "after": "188efee8ddb8335df77e7792efbb7c0299f4673da092c2a60369da78554c822d",
+    "invalidSave": "bad-request",
+    "missingGet": "not-found",
+    "name": "p04-fixture.bin",
+    "size": 26
+  },
+  "assertions": {
+    "validRoundtripByteIdentity": true,
+    "failedSavePreservesStoredBytes": true,
+    "failedOpenPreservesStoredBytes": true,
+    "metadataPreserved": true
+  },
+  "exitCode": 0
+}

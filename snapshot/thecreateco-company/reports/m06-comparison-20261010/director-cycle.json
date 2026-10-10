@@ -1,0 +1,92 @@
+{
+  "observed_at": "2026-10-10T17:10:50.614296+00:00",
+  "task_id": "M06",
+  "director_model": "openai/gpt-6.1-sol",
+  "requested_worker_model": "openai/gpt-6-luna",
+  "preflight": {
+    "decision": "continue",
+    "advisory_only": true,
+    "mode": "normal",
+    "critical_override": false,
+    "budgets": [
+      {
+        "name": "daily",
+        "scope": "all",
+        "key": "all",
+        "window": "day",
+        "metric": "list_estimated_usd",
+        "observed": 0.000929,
+        "limit": null,
+        "exceeded": false,
+        "coverage": "partial"
+      },
+      {
+        "name": "weekly",
+        "scope": "all",
+        "key": "all",
+        "window": "week",
+        "metric": "list_estimated_usd",
+        "observed": 0.3679538,
+        "limit": null,
+        "exceeded": false,
+        "coverage": "partial"
+      },
+      {
+        "name": "per-agent",
+        "scope": "agent",
+        "key": "company-director-20261010T1710",
+        "window": "day",
+        "metric": "list_estimated_usd",
+        "observed": null,
+        "limit": null,
+        "exceeded": false,
+        "coverage": "partial"
+      },
+      {
+        "name": "per-product",
+        "scope": "product",
+        "key": "unknown",
+        "window": "week",
+        "metric": "list_estimated_usd",
+        "observed": null,
+        "limit": null,
+        "exceeded": false,
+        "coverage": "partial"
+      },
+      {
+        "name": "per-task",
+        "scope": "task",
+        "key": "M06",
+        "window": "week",
+        "metric": "list_estimated_usd",
+        "observed": null,
+        "limit": null,
+        "exceeded": false,
+        "coverage": "partial"
+      },
+      {
+        "name": "astra",
+        "scope": "astra",
+        "key": "astra",
+        "window": "week",
+        "metric": "list_estimated_usd",
+        "observed": null,
+        "limit": null,
+        "exceeded": false,
+        "coverage": "partial"
+      }
+    ],
+    "astra_requested": false,
+    "astra_reason_recorded": null,
+    "next": "prefer deterministic tools and smallest adequate authorized model"
+  },
+  "selection": {
+    "scheduler_proof": "COMPLETE; not rerun",
+    "lab_next": null,
+    "company_pause": false,
+    "lab_pause": false,
+    "eligible": "M06 ahead of tied M08 by queue order; higher-priority tasks dependencies or product holds exclude them"
+  },
+  "spending": "No new external spending authorized; unset budget not approval",
+  "push_state": "No task-owned code commit planned; no push needed if research-only"
+}

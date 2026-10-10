@@ -1,0 +1,51 @@
+{
+  "sha": "2a9ec4936b13f77cfe21252db072e8669493e640",
+  "base_sha": "11ccaca4730606ba922ecf70b5754171ce365725",
+  "scope": "Committed screened review delta, not a release or complete binary artifact",
+  "files": [
+    {
+      "path": "scripts/video-reopen-check.mjs",
+      "status": "present",
+      "sha256": "8ad7cc5e98840d1e3745c9af58c7a912a809aaa81c0d8adee6a192a96ca008d3",
+      "bytes": 10036
+    },
+    {
+      "path": "src/engine/project.ts",
+      "status": "present",
+      "sha256": "fca91a774a5aa1ba269100ee037cac9c19a8caf29420fa909ee2885fb6e1428a",
+      "bytes": 6011
+    },
+    {
+      "path": "src/engine/render.ts",
+      "status": "present",
+      "sha256": "8d953ffef460162489ec136be2f6bd224c45340acd94da70102bce53ba67bdd3",
+      "bytes": 6179
+    },
+    {
+      "path": "src/pages/Studio.tsx",
+      "status": "present",
+      "sha256": "dc0e38385b0721f6056c6043ec527502e077cbe6adbf6e6ad4297e6b0d83ca71",
+      "bytes": 21403
+    },
+    {
+      "path": "tests/project.test.ts",
+      "status": "present",
+      "sha256": "d167c372dd3fcb3d93a287d3c8480497b498dd101c595775b0aef0576d93e27e",
+      "bytes": 2580
+    },
+    {
+      "path": "tests/reference-video-lifecycle.test.ts",
+      "status": "present",
+      "sha256": "f4122807b73530c9b79764d4d0f659e8ab17c824d5cb1bb1f94e99023148c2ee",
+      "bytes": 2932
+    }
+  ],
+  "omitted": [],
+  "patch_sha256": "07ecdbf5dce5a8f1c8147535efbfa933db032b9545885c5f4f8401708a0f4b9f",
+  "repo": "https://github.com/armonon/animate",
+  "branches": [
+    "company/p03-video-reopen-20261010"
+  ],
+  "archive_path": "animate/2a9ec4936b13f77cfe21252db072e8669493e640",
+  "local_worktree_dirty": false
+}

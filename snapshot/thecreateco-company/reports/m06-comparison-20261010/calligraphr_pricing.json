@@ -1,0 +1,30 @@
+{
+  "key": "calligraphr_pricing",
+  "requested_url": "https://www.calligraphr.com/en/pricing/",
+  "retrieved_utc": "2026-10-10T17:10:55Z",
+  "method": "urllib.request.urlopen timeout=12s",
+  "timeout_seconds": 12,
+  "http_status": 200,
+  "final_url": "https://www.calligraphr.com/en/pricing/",
+  "content_type": "text/html; charset=utf-8",
+  "bytes_read": 11899,
+  "text_length_chars": 1386,
+  "excerpts": [
+    {
+      "term": "75",
+      "excerpt": "# fonts you can create. Unlimited Unlimited Max. # fonts concurrently Number of fonts you can work on concurrently. 1 20 Max. # characters Number of characters a font can contain. 75 600 Max. # Variants for character randomization Number of variants per character used for randomization. 2 15 Ligatures No Yes Adjust letter spacing for single characters. No Yes Data storage Your browser Your browser + our server Data backup option No Yes Prioritized processing No Yes About us Contact us Press Kit "
+    },
+    {
+      "term": "600",
+      "excerpt": "onts you can create. Unlimited Unlimited Max. # fonts concurrently Number of fonts you can work on concurrently. 1 20 Max. # characters Number of characters a font can contain. 75 600 Max. # Variants for character randomization Number of variants per character used for randomization. 2 15 Ligatures No Yes Adjust letter spacing for single characters. No Yes Data storage Your browser Your browser + our server Data backup option No Yes Prioritized processing No Yes About us Contact us Press Kit You"
+    },
+    {
+      "term": "one month",
+      "excerpt": "tee. If you are not satisfied with our app send us an email and we will refund your upgrade payment without asking any questions. Free Pro Price Registration required $ 10 usd for one month $ 6 usd per month for a 6 months upgrade Max. # fonts you can create. Unlimited Unlimited Max. # fonts concurrently Number of fonts you can work on concurrently. 1 20 Max. # characters Number of characters a font can contain. 75 600 Max. # Variants for character randomization Number of variants per character "
+    },
+    {
+      "term": "month",
+      "excerpt": " If you are not satisfied with our app send us an email and we will refund your upgrade payment without asking any questions. Free Pro Price Registration required $ 10 usd for one month $ 6 usd per month for a 6 months upgrade Max. # fonts you can create. Unlimited Unlimited Max. # fonts concurrently Number of fonts you can work on concurrently. 1 20 Max. # characters Number of characters a font can contain. 75 600 Max. # Variants for character randomization Number of variants per character used"
+    }
+  ]
+}

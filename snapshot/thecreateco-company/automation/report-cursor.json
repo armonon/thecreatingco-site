@@ -1,7 +1,7 @@
 {
-  "reported_at": "2026-10-10T04:50:00Z",
-  "last_reported_task_id": "PROGRAM-18-20261007",
-  "last_reported_completion_id": "2026-10-10T03:12:03+00:00",
+  "reported_at": "2026-10-10T17:50:00Z",
+  "last_reported_task_id": "M06",
+  "last_reported_completion_id": "2026-10-10T17:12:06+00:00",
   "reported_completions": [
     {
       "task_id": "REV-AUDIT-20261007",
@@ -118,6 +118,26 @@
     {
       "task_id": "M07",
       "completed_at": "2026-10-10T03:12:03+00:00"
+    },
+    {
+      "task_id": "P03",
+      "completed_at": "2026-10-10T05:22:56+00:00"
+    },
+    {
+      "task_id": "P03-VIDEO-REOPEN-001",
+      "completed_at": "2026-10-10T06:19:32+00:00"
+    },
+    {
+      "task_id": "W09",
+      "completed_at": "2026-10-10T14:15:37+00:00"
+    },
+    {
+      "task_id": "CORE-REVIEW-20261010",
+      "completed_at": "2026-10-10T16:06:44+00:00"
+    },
+    {
+      "task_id": "M06",
+      "completed_at": "2026-10-10T17:12:06+00:00"
     }
   ],
   "reported_task_results": [
@@ -353,6 +373,55 @@
       "task_id": "PROGRAM-18-20261007",
       "status": "NEEDS_REVIEW",
       "reported_at": "2026-10-10T04:20:21Z"
+    },
+    {
+      "task_id": "P03-VIDEO-REOPEN-001",
+      "status": "QUEUED",
+      "reported_at": "2026-10-10T05:50:00Z"
+    },
+    {
+      "task_id": "P03-VIDEO-REOPEN-001",
+      "status": "COMPLETE",
+      "completed_at": "2026-10-10T06:19:32+00:00",
+      "reported_at": "2026-10-10T15:20:00Z"
+    },
+    {
+      "task_id": "W09",
+      "status": "COMPLETE",
+      "completed_at": "2026-10-10T14:15:37+00:00",
+      "reported_at": "2026-10-10T15:20:00Z"
+    },
+    {
+      "task_id": "P09",
+      "status": "BLOCKED",
+      "reported_at": "2026-10-10T15:20:00Z"
+    },
+    {
+      "task_id": "W07",
+      "status": "BLOCKED",
+      "reported_at": "2026-10-10T15:20:00Z"
+    },
+    {
+      "task_id": "W08",
+      "status": "BLOCKED",
+      "reported_at": "2026-10-10T15:20:00Z"
+    },
+    {
+      "task_id": "P10",
+      "status": "BLOCKED",
+      "reported_at": "2026-10-10T16:20:13Z"
+    },
+    {
+      "task_id": "PROGRAM18-KEYBPM-001",
+      "status": "BLOCKED",
+      "reported_at": "2026-10-10T16:52:00Z",
+      "note": "Exact-head attempt 2 CI success confirmed in dated report; stack/source-live and platform qualification remain blockers; no merge/deploy claim."
+    },
+    {
+      "task_id": "M06",
+      "status": "COMPLETE",
+      "completed_at": "2026-10-10T17:12:06+00:00",
+      "reported_at": "2026-10-10T17:50:00Z"
     }
   ]
 }

@@ -1,5 +1,5 @@
 # MARKETING STATE (generated — edit via `mktg state set`, not by hand)
-_rendered 2026-10-09T21:40:02-07:00_
+_rendered 2026-10-10T10:40:05-07:00_
 
 ## CURRENT GOALS
 - 1,000 qualified founding users; learn which product/audience/message/channel wins organically
@@ -13,14 +13,14 @@ _rendered 2026-10-09T21:40:02-07:00_
 - Preserve existing Glyph campaign/history and 1000-qualified-founding-user goal as a subordinate learning target. Reuse W02/W03/W05/M10; no parallel CRM or duplicate top-level queue. Keep active flagship security/reliability owners.
 
 ## IMPORTANT RECENT RESULTS
+- 2026-10-10 rank_opportunities (gpt-6.1-sol): Choose two permission-compatible homes for the finished first-font lesson → engine/results/2026-10-10/task_20261010_c07a02f2.md
+- 2026-10-10 analytics_summary (gpt-6-luna): Retrieve the first usable acquisition baseline without redesigning E02 → engine/results/2026-10-10/task_20261010_a315e051.md
+- 2026-10-10 resolve_ambiguity (gpt-6.1-sol): Close the evidence gaps in the existing Glyph first-font launch packet → engine/results/2026-10-10/task_20261010_38757703.md
+- 2026-10-10 next_actions (gpt-6.1-sol): Daily plan 2026-10-10 → engine/results/2026-10-10/task_20261010_82744895.md
 - 2026-10-09 revise_copy (gpt-6-luna): Polish one verified Glyph Studio first-font tutorial into a ready-to-post creator lesson;  → engine/results/2026-10-09/task_20261009_093f6c08.md
 - 2026-10-09 workflow_plan (gpt-6.1-sol): Make E02 ready to measure qualified first-font use → engine/results/2026-10-09/task_20261009_776e8b81.md
 - 2026-10-09 revise_copy (gpt-6-luna): Finish one useful first-font tutorial, not another launch draft → engine/results/2026-10-09/task_20261009_1bb3c799.md
 - 2026-10-09 research_summary (gpt-6-luna): Verify the Glyph first-font evidence and launch-path gates → engine/results/2026-10-09/task_20261009_e6111948.md
-- 2026-10-09 next_actions (gpt-6.1-sol): Daily plan 2026-10-09 → engine/results/2026-10-09/task_20261009_e79c04b6.md
-- 2026-10-08 first_draft (claude-sonnet-5): Draft one useful first-font tutorial for E02 → engine/results/2026-10-08/task_20261008_fa1c495a.md
-- 2026-10-08 analytics_summary (gpt-6-luna): Reconcile M04 outreach outcomes before any new outreach → engine/results/2026-10-08/task_20261008_f465f112.md
-- 2026-10-08 next_actions (gpt-6-sol): Daily plan 2026-10-08 → engine/results/2026-10-08/task_20261008_4643b4a7.md
 
 ## TOP LEARNINGS
 - 2026-10-08: M04 reconciliation confirmed the 2026-10-06 Glyph batch is draft-only; delivery, replies and qualified-use outcomes remain unknown, so no new outreach was sent. Fresh fetch: glyph-studio-610.netlify.app returned 200; hub launch form has required explicit consent and Netlify form metadata, while a real submission success/error cycle remains untested.
@@ -48,6 +48,6 @@ _rendered 2026-10-09T21:40:02-07:00_
 - Wave 2 outreach drafts in outreach/drafts-2026-10-06.md (10 prospects, not contacted)
 
 ## KEY METRICS
-- queue: COMPLETE=26
-- ai today: 5 calls, $0.0029 list-equivalent
+- queue: COMPLETE=30
+- ai today: 4 calls, $0.0009 list-equivalent
 - leads: 25 tracked, 3 contacted

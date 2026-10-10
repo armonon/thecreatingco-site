@@ -1,0 +1,28 @@
+{
+  "observed_at": "2026-10-10T13:11:03.719239+00:00",
+  "checkout_head": "a5bfb89d42add6f6dbedc6b1191ea377054c69f1",
+  "checkout_initial_clean": true,
+  "routes": [
+    {
+      "route": "/",
+      "status": 200,
+      "live_sha256": "e327e97b7c56f671117838648519ca8e7c71fd1fb592cf5e37384f25a1db2409",
+      "checkout_sha256": "627082393de0def286a47870592e0948bd5452e5c149f4700a4f06cc30084e1d",
+      "matches": false
+    },
+    {
+      "route": "/tools/",
+      "status": 200,
+      "live_sha256": "5956e58d26a5a2fc85741a6a6d645e31fa817159c9cb5ff1883a34bdfa9348bb",
+      "checkout_sha256": "72e9d934795d265462a3387b9fd06974ac7b1ee5cc9a2de9a5597ad21543c496",
+      "matches": false
+    },
+    {
+      "route": "/products/luma/",
+      "status": 200,
+      "live_sha256": "bfb41be4ab6ee93bc16d4d94c0b07ba5dfc18c2962329ef2a1c395d41986e096",
+      "checkout_sha256": "02098415d8d64c3131c6c6a3bd57531d09feb12be15f3f7d442d8ae09f3b6a6f",
+      "matches": false
+    }
+  ]
+}

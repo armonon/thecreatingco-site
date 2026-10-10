@@ -1,0 +1,30 @@
+{
+  "key": "fadr_home",
+  "requested_url": "https://fadr.com/",
+  "retrieved_utc": "2026-10-10T17:10:58Z",
+  "method": "urllib.request.urlopen timeout=12s",
+  "timeout_seconds": 12,
+  "http_status": 200,
+  "final_url": "https://fadr.com/",
+  "content_type": "text/html; charset=utf-8",
+  "bytes_read": 133908,
+  "text_length_chars": 2309,
+  "excerpts": [
+    {
+      "term": "free",
+      "excerpt": "ther instruments. Remix Remix any song without prior experience. Siren Create playable instruments with words. DrumGPT Create playable drum kits with words. Get Started Fadr Basic Free Upgrade any music workflow with access to Fadr's fundamental technology. Separate Songs Into: Vocals Melodies Drums Bass Basic Stems MP3 Downloads Midi Detection Remix Maker Sign Up Fadr Plus $10 / mo or $100 / yr Unlock pro status with unparalleled access to Fadr's top tier of bleeding-edge tools. Separate Songs "
+    },
+    {
+      "term": "stems",
+      "excerpt": "Creativity Amplifying Music Tech - Fadr Introducing Pro Stems 50% Off Fadr Plus Introducing Pro Stems 50% Off Fadr Plus Introducing Pro Stems 50% Off Fadr Plus Introducing Pro Stems 50% Off Fadr Plus Introducing Pro Stems 50% Off Fadr Plus Stems Siren DrumGPT Sign Up Plus Creativity Amplifying Music Tech Stems Extract vocals and 15 other instruments. Remix Remix any song wi"
+    },
+    {
+      "term": "Plus",
+      "excerpt": "Creativity Amplifying Music Tech - Fadr Introducing Pro Stems 50% Off Fadr Plus Introducing Pro Stems 50% Off Fadr Plus Introducing Pro Stems 50% Off Fadr Plus Introducing Pro Stems 50% Off Fadr Plus Introducing Pro Stems 50% Off Fadr Plus Stems Siren DrumGPT Sign Up Plus Creativity Amplifying Music Tech Stems Extract vocals and 15 other instruments. Remix Remix any song without prior experie"
+    },
+    {
+      "term": "$10",
+      "excerpt": "music workflow with access to Fadr's fundamental technology. Separate Songs Into: Vocals Melodies Drums Bass Basic Stems MP3 Downloads Midi Detection Remix Maker Sign Up Fadr Plus $10 / mo or $100 / yr Unlock pro status with unparalleled access to Fadr's top tier of bleeding-edge tools. Separate Songs Into: Vocals Lead Vocals Background Vocals Melodies Piano Guitar Acoustic Guitar Electric Guitar Melodies Other Melodies Wind Strings Drums Other Drums Kick Snare Bass Instrumental Siren Plugin NEW"
+    }
+  ]
+}

@@ -1,0 +1,2215 @@
+{
+  "audit": {
+    "started_utc": "2026-10-10T14:13:10.098082+00:00",
+    "finished_utc": "2026-10-10T14:13:13.092387+00:00",
+    "duration_seconds": 2.994,
+    "base": "https://thecreatingco.com",
+    "limits": {
+      "pages": 100,
+      "concurrency": 6,
+      "timeout_seconds": 12,
+      "body_bytes_per_response": 2000000
+    },
+    "method": "Python standard library urllib; GET only; no forms or site mutations"
+  },
+  "robots": {
+    "requested_url": "https://thecreatingco.com/robots.txt",
+    "status": 200,
+    "final_url": "https://thecreatingco.com/robots.txt",
+    "content_type": "text/plain; charset=UTF-8",
+    "raw_sha256": "23b282b258eb2fd2f9294b89d63d3f2bcc11063325b5f159f80fa24733abb8c3",
+    "truncated": false,
+    "error": null,
+    "sitemap_directives": [
+      "https://thecreatingco.com/sitemap.xml"
+    ],
+    "policy_lines": [
+      "User-agent: *",
+      "Allow: /",
+      "Disallow: /api/",
+      "Disallow: /_next/"
+    ]
+  },
+  "sitemap": {
+    "requested_url": "https://thecreatingco.com/sitemap.xml",
+    "status": 200,
+    "final_url": "https://thecreatingco.com/sitemap.xml",
+    "content_type": "application/xml",
+    "raw_sha256": "894448d1c8652a597ad790c6cc9dd6b122094807e7d1af589d7eb2d7934ad0c1",
+    "truncated": false,
+    "error": null,
+    "root_type": "sitemapindex",
+    "parse_error": null,
+    "robots_sitemap_directives": [
+      "https://thecreatingco.com/sitemap.xml"
+    ],
+    "child_sitemaps": [
+      {
+        "requested_url": "https://thecreatingco.com/sitemaps/pages.xml",
+        "status": 200,
+        "final_url": "https://thecreatingco.com/sitemaps/pages.xml",
+        "content_type": "application/xml",
+        "raw_sha256": "ad381b78e3bd4e86055c21e69126236b0f415b975be599f80c3bd1326c45d357",
+        "error": null,
+        "root_type": "urlset",
+        "loc_count": 19
+      },
+      {
+        "requested_url": "https://thecreatingco.com/sitemaps/products.xml",
+        "status": 200,
+        "final_url": "https://thecreatingco.com/sitemaps/products.xml",
+        "content_type": "application/xml",
+        "raw_sha256": "ba5e361db6aad2a60b6a9d61ee16f9b35b26eea517503adfa26e1153e452e8f8",
+        "error": null,
+        "root_type": "urlset",
+        "loc_count": 27
+      },
+      {
+        "requested_url": "https://thecreatingco.com/sitemaps/learn.xml",
+        "status": 200,
+        "final_url": "https://thecreatingco.com/sitemaps/learn.xml",
+        "content_type": "application/xml",
+        "raw_sha256": "23f1c94a2ef9a29111ccf51e68996d028ef8a9703c210460a1cda5bbbf353d41",
+        "error": null,
+        "root_type": "urlset",
+        "loc_count": 10
+      }
+    ],
+    "discovered_entries_total": 56,
+    "same_host_unique_entries": 56,
+    "audited_entries": 56,
+    "omitted_due_to_limit": 0,
+    "entries": [
+      {
+        "requested_url": "https://thecreatingco.com/",
+        "status": 200,
+        "final_url": "https://thecreatingco.com/",
+        "content_type": "text/html; charset=UTF-8",
+        "truncated": false,
+        "error": null,
+        "raw_sha256": "e327e97b7c56f671117838648519ca8e7c71fd1fb592cf5e37384f25a1db2409",
+        "canonical_count": 1,
+        "canonical_raw": [
+          "https://thecreatingco.com/"
+        ],
+        "canonical_resolved": [
+          "https://thecreatingco.com/"
+        ],
+        "title": "Free Creative Tools for 3D, Images, Music & Video | thecreatingco",
+        "meta_description": [
+          "Explore the Momentium suite: Form for 3D and CAD, Luma for images, StemDeck for remixing and ScenePilot for video. Try the public web alphas."
+        ],
+        "og_url": [
+          "https://thecreatingco.com/"
+        ],
+        "jsonld_blocks": [
+          {
+            "index": 0,
+            "valid_json": true
+          }
+        ],
+        "jsonld_types": [
+          "Organization",
+          "WebPage",
+          "WebSite"
+        ],
+        "structural_findings": [],
+        "jsonld_identity_findings": []
+      },
+      {
+        "requested_url": "https://thecreatingco.com/tools/",
+        "status": 200,
+        "final_url": "https://thecreatingco.com/tools/",
+        "content_type": "text/html; charset=UTF-8",
+        "truncated": false,
+        "error": null,
+        "raw_sha256": "5956e58d26a5a2fc85741a6a6d645e31fa817159c9cb5ff1883a34bdfa9348bb",
+        "canonical_count": 1,
+        "canonical_raw": [
+          "https://thecreatingco.com/tools/"
+        ],
+        "canonical_resolved": [
+          "https://thecreatingco.com/tools/"
+        ],
+        "title": "Creative Web Apps & Tools Directory | thecreatingco",
+        "meta_description": [
+          "Find tools for 3D design, image editing, music, video, fonts and everyday projects. Browse the catalog, compare public alpha limits and open a workspace."
+        ],
+        "og_url": [
+          "https://thecreatingco.com/tools/"
+        ],
+        "jsonld_blocks": [
+          {
+            "index": 0,
+            "valid_json": true
+          }
+        ],
+        "jsonld_types": [
+          "BreadcrumbList",
+          "ItemList",
+          "ListItem",
+          "Organization",
+          "WebPage",
+          "WebSite"
+        ],
+        "structural_findings": [],
+        "jsonld_identity_findings": []
+      },
+      {
+        "requested_url": "https://thecreatingco.com/kickstarter/",
+        "status": 200,
+        "final_url": "https://thecreatingco.com/kickstarter/",
+        "content_type": "text/html; charset=UTF-8",
+        "truncated": false,
+        "error": null,
+        "raw_sha256": "0be6dad2d2391d5704502a788348c4062fb079225399817f7cc38dbaf7c60980",
+        "canonical_count": 1,
+        "canonical_raw": [
+          "https://thecreatingco.com/kickstarter/"
+        ],
+        "canonical_resolved": [
+          "https://thecreatingco.com/kickstarter/"
+        ],
+        "title": "thecreatingco Launch Plans & Kickstarter Updates",
+        "meta_description": [
+          "Explore thecreatingco's creative software launch plans and join the consent-based launch list. Read proposed priorities and try the existing public web alphas."
+        ],
+        "og_url": [
+          "https://thecreatingco.com/kickstarter/"
+        ],
+        "jsonld_blocks": [
+          {
+            "index": 0,
+            "valid_json": true
+          }
+        ],
+        "jsonld_types": [
+          "BreadcrumbList",
+          "ListItem",
+          "Organization",
+          "WebPage",
+          "WebSite"
+        ],
+        "structural_findings": [],
+        "jsonld_identity_findings": []
+      },
+      {
+        "requested_url": "https://thecreatingco.com/privacy/",
+        "status": 200,
+        "final_url": "https://thecreatingco.com/privacy/",
+        "content_type": "text/html; charset=UTF-8",
+        "truncated": false,
+        "error": null,
+        "raw_sha256": "7c29374d022113ce89953014891265ccdd5c2dd8b16b713a06769101446475b8",
+        "canonical_count": 1,
+        "canonical_raw": [
+          "https://thecreatingco.com/privacy/"
+        ],
+        "canonical_resolved": [
+          "https://thecreatingco.com/privacy/"
+        ],
+        "title": "Privacy & Data Handling | thecreatingco",
+        "meta_description": [
+          "Learn how thecreatingco handles local projects, website analytics, support messages and The Circle's accounts, recordings and shared media."
+        ],
+        "og_url": [
+          "https://thecreatingco.com/privacy/"
+        ],
+        "jsonld_blocks": [
+          {
+            "index": 0,
+            "valid_json": true
+          }
+        ],
+        "jsonld_types": [
+          "BreadcrumbList",
+          "ListItem",
+          "Organization",
+          "WebPage",
+          "WebSite"
+        ],
+        "structural_findings": [],
+        "jsonld_identity_findings": []
+      },
+      {
+        "requested_url": "https://thecreatingco.com/projects/",
+        "status": 200,
+        "final_url": "https://thecreatingco.com/projects/",
+        "content_type": "text/html; charset=UTF-8",
+        "truncated": false,
+        "error": null,
+        "raw_sha256": "190d674586e5b3bf6a06e8db724251be1d76b28c7328ff250226b6f89e1954b9",
+        "canonical_count": 1,
+        "canonical_raw": [
+          "https://thecreatingco.com/projects/"
+        ],
+        "canonical_resolved": [
+          "https://thecreatingco.com/projects/"
+        ],
+        "title": "Creative Project Examples & Source Files | thecreatingco",
+        "meta_description": [
+          "Explore Orbit and After Hours across Form, Luma, StemDeck and ScenePilot. Study original outputs and download editable creative project files."
+        ],
+        "og_url": [
+          "https://thecreatingco.com/projects/"
+        ],
+        "jsonld_blocks": [
+          {
+            "index": 0,
+            "valid_json": true
+          }
+        ],
+        "jsonld_types": [
+          "BreadcrumbList",
+          "ListItem",
+          "Organization",
+          "WebPage",
+          "WebSite"
+        ],
+        "structural_findings": [],
+        "jsonld_identity_findings": []
+      },
+      {
+        "requested_url": "https://thecreatingco.com/projects/orbit/",
+        "status": 200,
+        "final_url": "https://thecreatingco.com/projects/orbit/",
+        "content_type": "text/html; charset=UTF-8",
+        "truncated": false,
+        "error": null,
+        "raw_sha256": "a91738bf3c5621ce77a4b41cda25b900789814a9788cbbe2a2f901d45beb6db8",
+        "canonical_count": 1,
+        "canonical_raw": [
+          "https://thecreatingco.com/projects/orbit/"
+        ],
+        "canonical_resolved": [
+          "https://thecreatingco.com/projects/orbit/"
+        ],
+        "title": "Orbit: 3D, Image, Remix & Video Project Examples",
+        "meta_description": [
+          "Follow one Orbit project through four creative tools. Explore the object, layered image, remix and film, with original outputs and editable source files."
+        ],
+        "og_url": [
+          "https://thecreatingco.com/projects/orbit/"
+        ],
+        "jsonld_blocks": [
+          {
+            "index": 0,
+            "valid_json": true
+          }
+        ],
+        "jsonld_types": [
+          "BreadcrumbList",
+          "ListItem",
+          "Organization",
+          "WebPage",
+          "WebSite"
+        ],
+        "structural_findings": [],
+        "jsonld_identity_findings": []
+      },
+      {
+        "requested_url": "https://thecreatingco.com/about/",
+        "status": 200,
+        "final_url": "https://thecreatingco.com/about/",
+        "content_type": "text/html; charset=UTF-8",
+        "truncated": false,
+        "error": null,
+        "raw_sha256": "bdc79b2bf3a76f81f4ba077a5a73532d06b19f072df35c18c51d844a35e453d9",
+        "canonical_count": 1,
+        "canonical_raw": [
+          "https://thecreatingco.com/about/"
+        ],
+        "canonical_resolved": [
+          "https://thecreatingco.com/about/"
+        ],
+        "title": "About thecreatingco | Independent Creative Software",
+        "meta_description": [
+          "Meet founders Armon Nasiri and Jensen Westerlund and the ideas behind thecreatingco, an independent company building creative software with your feedback."
+        ],
+        "og_url": [
+          "https://thecreatingco.com/about/"
+        ],
+        "jsonld_blocks": [
+          {
+            "index": 0,
+            "valid_json": true
+          }
+        ],
+        "jsonld_types": [
+          "BreadcrumbList",
+          "ListItem",
+          "Organization",
+          "WebPage",
+          "WebSite"
+        ],
+        "structural_findings": [],
+        "jsonld_identity_findings": []
+      },
+      {
+        "requested_url": "https://thecreatingco.com/release-notes/",
+        "status": 200,
+        "final_url": "https://thecreatingco.com/release-notes/",
+        "content_type": "text/html; charset=UTF-8",
+        "truncated": false,
+        "error": null,
+        "raw_sha256": "8c4edf3a54a428270247835e75d199a45267669720beea711fa9c819f2cbf683",
+        "canonical_count": 1,
+        "canonical_raw": [
+          "https://thecreatingco.com/release-notes/"
+        ],
+        "canonical_resolved": [
+          "https://thecreatingco.com/release-notes/"
+        ],
+        "title": "Software Release Notes & Alpha Status | thecreatingco",
+        "meta_description": [
+          "Read technical release notes and testing status for thecreatingco software, including Reclaim's Mac alpha and the current public web editions."
+        ],
+        "og_url": [
+          "https://thecreatingco.com/release-notes/"
+        ],
+        "jsonld_blocks": [
+          {
+            "index": 0,
+            "valid_json": true
+          }
+        ],
+        "jsonld_types": [
+          "BreadcrumbList",
+          "ListItem",
+          "Organization",
+          "WebPage",
+          "WebSite"
+        ],
+        "structural_findings": [],
+        "jsonld_identity_findings": []
+      },
+      {
+        "requested_url": "https://thecreatingco.com/testing/",
+        "status": 200,
+        "final_url": "https://thecreatingco.com/testing/",
+        "content_type": "text/html; charset=UTF-8",
+        "truncated": false,
+        "error": null,
+        "raw_sha256": "3bd44ff084d022d80dfc71d017c03aa5c97faefdc32a999fd0d8a56da1f25ab0",
+        "canonical_count": 1,
+        "canonical_raw": [
+          "https://thecreatingco.com/testing/"
+        ],
+        "canonical_resolved": [
+          "https://thecreatingco.com/testing/"
+        ],
+        "title": "Product Support & Alpha Feedback | thecreatingco",
+        "meta_description": [
+          "Send product feedback, ask for support or make a privacy request. Include your app and browser details and keep a local copy of your report."
+        ],
+        "og_url": [
+          "https://thecreatingco.com/testing/"
+        ],
+        "jsonld_blocks": [
+          {
+            "index": 0,
+            "valid_json": true
+          }
+        ],
+        "jsonld_types": [
+          "BreadcrumbList",
+          "ListItem",
+          "Organization",
+          "WebPage",
+          "WebSite"
+        ],
+        "structural_findings": [],
+        "jsonld_identity_findings": []
+      },
+      {
+        "requested_url": "https://thecreatingco.com/campaign/",
+        "status": 200,
+        "final_url": "https://thecreatingco.com/campaign/",
+        "content_type": "text/html; charset=UTF-8",
+        "truncated": false,
+        "error": null,
+        "raw_sha256": "77fd1e38fab79ef1b1b3b0331240b3e32f9cbad0ac58e99960eff23df226ea33",
+        "canonical_count": 1,
+        "canonical_raw": [
+          "https://thecreatingco.com/campaign/"
+        ],
+        "canonical_resolved": [
+          "https://thecreatingco.com/campaign/"
+        ],
+        "title": "Create a Launch Campaign: Four Guided Projects",
+        "meta_description": [
+          "Build a campaign across Form, Luma, StemDeck and ScenePilot. Practice an object, image, remix and film in guided creative exercises."
+        ],
+        "og_url": [
+          "https://thecreatingco.com/campaign/"
+        ],
+        "jsonld_blocks": [
+          {
+            "index": 0,
+            "valid_json": true
+          }
+        ],
+        "jsonld_types": [
+          "BreadcrumbList",
+          "ListItem",
+          "Organization",
+          "WebPage",
+          "WebSite"
+        ],
+        "structural_findings": [],
+        "jsonld_identity_findings": []
+      },
+      {
+        "requested_url": "https://thecreatingco.com/after-hours/",
+        "status": 200,
+        "final_url": "https://thecreatingco.com/after-hours/",
+        "content_type": "text/html; charset=UTF-8",
+        "truncated": false,
+        "error": null,
+        "raw_sha256": "3d9aed9fe47e813c4a937d662da4851db18c3acccd64d8cd22a72a4c3b5e586f",
+        "canonical_count": 1,
+        "canonical_raw": [
+          "https://thecreatingco.com/after-hours/"
+        ],
+        "canonical_resolved": [
+          "https://thecreatingco.com/after-hours/"
+        ],
+        "title": "After Hours: Creative Project Examples & Downloads",
+        "meta_description": [
+          "Explore eight After Hours projects through original images, objects, music and film. Compare captured details and download the editable source files."
+        ],
+        "og_url": [
+          "https://thecreatingco.com/after-hours/"
+        ],
+        "jsonld_blocks": [
+          {
+            "index": 0,
+            "valid_json": true
+          }
+        ],
+        "jsonld_types": [
+          "BreadcrumbList",
+          "ListItem",
+          "Organization",
+          "WebPage",
+          "WebSite"
+        ],
+        "structural_findings": [],
+        "jsonld_identity_findings": []
+      },
+      {
+        "requested_url": "https://thecreatingco.com/downloads/",
+        "status": 200,
+        "final_url": "https://thecreatingco.com/downloads/",
+        "content_type": "text/html; charset=UTF-8",
+        "truncated": false,
+        "error": null,
+        "raw_sha256": "6a47e917f9c1b345df13660fc30d7a63268a7c1dda799b02074e28e20702af71",
+        "canonical_count": 1,
+        "canonical_raw": [
+          "https://thecreatingco.com/downloads/"
+        ],
+        "canonical_resolved": [
+          "https://thecreatingco.com/downloads/"
+        ],
+        "title": "App Downloads & Web Availability | thecreatingco",
+        "meta_description": [
+          "Download Reclaim's free Mac alpha for Intel and Apple Silicon, or open the public web apps. Check current availability and native release limitations."
+        ],
+        "og_url": [
+          "https://thecreatingco.com/downloads/"
+        ],
+        "jsonld_blocks": [
+          {
+            "index": 0,
+            "valid_json": true
+          }
+        ],
+        "jsonld_types": [
+          "BreadcrumbList",
+          "ListItem",
+          "Organization",
+          "WebPage",
+          "WebSite"
+        ],
+        "structural_findings": [],
+        "jsonld_identity_findings": []
+      },
+      {
+        "requested_url": "https://thecreatingco.com/start/",
+        "status": 200,
+        "final_url": "https://thecreatingco.com/start/",
+        "content_type": "text/html; charset=UTF-8",
+        "truncated": false,
+        "error": null,
+        "raw_sha256": "b9309016bb9be1928b2f5284b5d35130e308b0296aca4afb149938377a990895",
+        "canonical_count": 1,
+        "canonical_raw": [
+          "https://thecreatingco.com/start/"
+        ],
+        "canonical_resolved": [
+          "https://thecreatingco.com/start/"
+        ],
+        "title": "thecreatingco | Creative Software, Apps & The Circle",
+        "meta_description": [
+          "Meet thecreatingco: explore the Momentium creative suite, find focused web tools, connect in The Circle and discover the Momentous store."
+        ],
+        "og_url": [
+          "https://thecreatingco.com/start/"
+        ],
+        "jsonld_blocks": [
+          {
+            "index": 0,
+            "valid_json": true
+          }
+        ],
+        "jsonld_types": [
+          "Organization",
+          "WebPage",
+          "WebSite"
+        ],
+        "structural_findings": [],
+        "jsonld_identity_findings": []
+      },
+      {
+        "requested_url": "https://thecreatingco.com/checkup/",
+        "status": 200,
+        "final_url": "https://thecreatingco.com/checkup/",
+        "content_type": "text/html; charset=UTF-8",
+        "truncated": false,
+        "error": null,
+        "raw_sha256": "06b6c641e99a4e2b1f835ceb3f3e30e11745a5c9a21d3ebe216b87c98044441d",
+        "canonical_count": 1,
+        "canonical_raw": [
+          "https://thecreatingco.com/checkup/"
+        ],
+        "canonical_resolved": [
+          "https://thecreatingco.com/checkup/"
+        ],
+        "title": "Website Checkup: Inspect links, page metadata and forms | thecreatingco",
+        "meta_description": [
+          "Check page signals and links with the WebLab hosted preview."
+        ],
+        "og_url": [
+          "https://thecreatingco.com/checkup/"
+        ],
+        "jsonld_blocks": [
+          {
+            "index": 0,
+            "valid_json": true
+          }
+        ],
+        "jsonld_types": [
+          "BreadcrumbList",
+          "ListItem",
+          "Organization",
+          "SoftwareApplication",
+          "WebPage",
+          "WebSite"
+        ],
+        "structural_findings": [],
+        "jsonld_identity_findings": []
+      },
+      {
+        "requested_url": "https://thecreatingco.com/labs/",
+        "status": 200,
+        "final_url": "https://thecreatingco.com/labs/",
+        "content_type": "text/html; charset=UTF-8",
+        "truncated": false,
+        "error": null,
+        "raw_sha256": "54256f976a140294da0b1ed741493c8d8a07733c47f47ababf5f87f3f15a20dc",
+        "canonical_count": 1,
+        "canonical_raw": [
+          "https://thecreatingco.com/labs/"
+        ],
+        "canonical_resolved": [
+          "https://thecreatingco.com/labs/"
+        ],
+        "title": "Labs | thecreatingco",
+        "meta_description": [
+          "Prototypes, concepts and useful ideas from the archive."
+        ],
+        "og_url": [
+          "https://thecreatingco.com/labs/"
+        ],
+        "jsonld_blocks": [
+          {
+            "index": 0,
+            "valid_json": true
+          }
+        ],
+        "jsonld_types": [
+          "BreadcrumbList",
+          "ListItem",
+          "Organization",
+          "WebPage",
+          "WebSite"
+        ],
+        "structural_findings": [],
+        "jsonld_identity_findings": []
+      },
+      {
+        "requested_url": "https://thecreatingco.com/inside/",
+        "status": 200,
+        "final_url": "https://thecreatingco.com/inside/",
+        "content_type": "text/html; charset=UTF-8",
+        "truncated": false,
+        "error": null,
+        "raw_sha256": "9e9b58f797bcb633a99cb09d175de5949bb5e7ad95a9a23eb0f612fa79f59d46",
+        "canonical_count": 1,
+        "canonical_raw": [
+          "https://thecreatingco.com/inside/"
+        ],
+        "canonical_resolved": [
+          "https://thecreatingco.com/inside/"
+        ],
+        "title": "How we build | thecreatingco",
+        "meta_description": [
+          "The tools, learning and operations behind the creative studio."
+        ],
+        "og_url": [
+          "https://thecreatingco.com/inside/"
+        ],
+        "jsonld_blocks": [
+          {
+            "index": 0,
+            "valid_json": true
+          }
+        ],
+        "jsonld_types": [
+          "BreadcrumbList",
+          "ListItem",
+          "Organization",
+          "WebPage",
+          "WebSite"
+        ],
+        "structural_findings": [],
+        "jsonld_identity_findings": []
+      },
+      {
+        "requested_url": "https://thecreatingco.com/packs/",
+        "status": 200,
+        "final_url": "https://thecreatingco.com/packs/",
+        "content_type": "text/html; charset=UTF-8",
+        "truncated": false,
+        "error": null,
+        "raw_sha256": "fef1fa5e318b1c110fba706d89b5dff7f52b057fd0755701339a293376a07be9",
+        "canonical_count": 1,
+        "canonical_raw": [
+          "https://thecreatingco.com/packs/"
+        ],
+        "canonical_resolved": [
+          "https://thecreatingco.com/packs/"
+        ],
+        "title": "Free packs | thecreatingco",
+        "meta_description": [
+          "Download nine creative LUTs and eight original Pocket patterns."
+        ],
+        "og_url": [
+          "https://thecreatingco.com/packs/"
+        ],
+        "jsonld_blocks": [
+          {
+            "index": 0,
+            "valid_json": true
+          }
+        ],
+        "jsonld_types": [
+          "BreadcrumbList",
+          "ListItem",
+          "Organization",
+          "WebPage",
+          "WebSite"
+        ],
+        "structural_findings": [],
+        "jsonld_identity_findings": []
+      },
+      {
+        "requested_url": "https://thecreatingco.com/community/network",
+        "status": 200,
+        "final_url": "https://thecreatingco.com/community/network",
+        "content_type": "text/html; charset=utf-8",
+        "truncated": false,
+        "error": null,
+        "raw_sha256": "6090385760d6e0b41b6d23f88040447978ba3be45ca7c024fc31e16c02eddc48",
+        "canonical_count": 1,
+        "canonical_raw": [
+          "/community/network"
+        ],
+        "canonical_resolved": [
+          "https://thecreatingco.com/community/network"
+        ],
+        "title": "The Circle: Creative Community | thecreatingco",
+        "meta_description": [
+          "Share creative work, find your people and make something together."
+        ],
+        "og_url": [
+          "/community/network"
+        ],
+        "jsonld_blocks": [],
+        "jsonld_types": [],
+        "structural_findings": [],
+        "jsonld_identity_findings": []
+      },
+      {
+        "requested_url": "https://thecreatingco.com/community/rules",
+        "status": 200,
+        "final_url": "https://thecreatingco.com/community/rules",
+        "content_type": "text/html; charset=utf-8",
+        "truncated": false,
+        "error": null,
+        "raw_sha256": "7af391f7006affff68c944ccb9bb6ae36270471d11c95b6258837fe9806f4ea8",
+        "canonical_count": 1,
+        "canonical_raw": [
+          "/community/rules"
+        ],
+        "canonical_resolved": [
+          "https://thecreatingco.com/community/rules"
+        ],
+        "title": "The Circle Community Guidelines | thecreatingco",
+        "meta_description": [
+          "Read The Circle's guidelines for sharing work, crediting creators, respecting privacy and reporting concerns during the public alpha."
+        ],
+        "og_url": [],
+        "jsonld_blocks": [],
+        "jsonld_types": [],
+        "structural_findings": [],
+        "jsonld_identity_findings": []
+      },
+      {
+        "requested_url": "https://thecreatingco.com/products/librarian/",
+        "status": 200,
+        "final_url": "https://thecreatingco.com/products/librarian/",
+        "content_type": "text/html; charset=UTF-8",
+        "truncated": false,
+        "error": null,
+        "raw_sha256": "5c6057423810fc57b91c5c480c49e5a60b01de6c6884e118990903dfed2406bc",
+        "canonical_count": 1,
+        "canonical_raw": [
+          "https://thecreatingco.com/products/librarian/"
+        ],
+        "canonical_resolved": [
+          "https://thecreatingco.com/products/librarian/"
+        ],
+        "title": "Librarian: Book Discovery & Local PDF Reader | thecreatingco",
+        "meta_description": [
+          "Discover books across connected catalogs, save a personal shelf and read your imported PDFs in a local library."
+        ],
+        "og_url": [
+          "https://thecreatingco.com/products/librarian/"
+        ],
+        "jsonld_blocks": [
+          {
+            "index": 0,
+            "valid_json": true
+          }
+        ],
+        "jsonld_types": [
+          "BreadcrumbList",
+          "ListItem",
+          "Organization",
+          "SoftwareApplication",
+          "WebPage",
+          "WebSite"
+        ],
+        "structural_findings": [],
+        "jsonld_identity_findings": []
+      },
+      {
+        "requested_url": "https://thecreatingco.com/products/split/",
+        "status": 200,
+        "final_url": "https://thecreatingco.com/products/split/",
+        "content_type": "text/html; charset=UTF-8",
+        "truncated": false,
+        "error": null,
+        "raw_sha256": "1f0912d6cf74d5f5c17512da814b9e309e4d33024702ff75ed1426951c9aca5e",
+        "canonical_count": 1,
+        "canonical_raw": [
+          "https://thecreatingco.com/products/split/"
+        ],
+        "canonical_resolved": [
+          "https://thecreatingco.com/products/split/"
+        ],
+        "title": "Split: Audio Stem Separation Tool | thecreatingco",
+        "meta_description": [
+          "Separate vocals, drums, bass and the remaining instruments on your device. Listen to each stem, download WAVs or carry the parts into StemDeck."
+        ],
+        "og_url": [
+          "https://thecreatingco.com/products/split/"
+        ],
+        "jsonld_blocks": [
+          {
+            "index": 0,
+            "valid_json": true
+          }
+        ],
+        "jsonld_types": [
+          "BreadcrumbList",
+          "ListItem",
+          "Organization",
+          "SoftwareApplication",
+          "WebPage",
+          "WebSite"
+        ],
+        "structural_findings": [],
+        "jsonld_identity_findings": []
+      },
+      {
+        "requested_url": "https://thecreatingco.com/products/pocket/",
+        "status": 200,
+        "final_url": "https://thecreatingco.com/products/pocket/",
+        "content_type": "text/html; charset=UTF-8",
+        "truncated": false,
+        "error": null,
+        "raw_sha256": "2aa16097d11509ad0f63ff87f7a74ab52740a4288847a64ca5641291c4110e0a",
+        "canonical_count": 1,
+        "canonical_raw": [
+          "https://thecreatingco.com/products/pocket/"
+        ],
+        "canonical_resolved": [
+          "https://thecreatingco.com/products/pocket/"
+        ],
+        "title": "Pocket: 16-Step Beat Sketchpad | thecreatingco",
+        "meta_description": [
+          "Tap a 16-step drum and bass pattern, adjust swing and balance the voices. Keep a loop or send its parts to StemDeck."
+        ],
+        "og_url": [
+          "https://thecreatingco.com/products/pocket/"
+        ],
+        "jsonld_blocks": [
+          {
+            "index": 0,
+            "valid_json": true
+          }
+        ],
+        "jsonld_types": [
+          "BreadcrumbList",
+          "ListItem",
+          "Organization",
+          "SoftwareApplication",
+          "WebPage",
+          "WebSite"
+        ],
+        "structural_findings": [],
+        "jsonld_identity_findings": []
+      },
+      {
+        "requested_url": "https://thecreatingco.com/products/captions/",
+        "status": 200,
+        "final_url": "https://thecreatingco.com/products/captions/",
+        "content_type": "text/html; charset=UTF-8",
+        "truncated": false,
+        "error": null,
+        "raw_sha256": "b631b5433e9f0a033e84791eddd796bc9dc2db1ed9ce07ef0bda22babf9defa3",
+        "canonical_count": 1,
+        "canonical_raw": [
+          "https://thecreatingco.com/products/captions/"
+        ],
+        "canonical_resolved": [
+          "https://thecreatingco.com/products/captions/"
+        ],
+        "title": "Captions: Video Captions & SRT/VTT Export | thecreatingco",
+        "meta_description": [
+          "Transcribe a clip on your device, correct the words and choose an animated style. Export a captioned WebM or take SRT and VTT files into another editor."
+        ],
+        "og_url": [
+          "https://thecreatingco.com/products/captions/"
+        ],
+        "jsonld_blocks": [
+          {
+            "index": 0,
+            "valid_json": true
+          }
+        ],
+        "jsonld_types": [
+          "BreadcrumbList",
+          "ListItem",
+          "Organization",
+          "SoftwareApplication",
+          "WebPage",
+          "WebSite"
+        ],
+        "structural_findings": [],
+        "jsonld_identity_findings": []
+      },
+      {
+        "requested_url": "https://thecreatingco.com/products/form/",
+        "status": 200,
+        "final_url": "https://thecreatingco.com/products/form/",
+        "content_type": "text/html; charset=UTF-8",
+        "truncated": false,
+        "error": null,
+        "raw_sha256": "9c175e800af1e76fe70b12c0ab23fca808f831a09311681b92279738f8eba89f",
+        "canonical_count": 1,
+        "canonical_raw": [
+          "https://thecreatingco.com/products/form/"
+        ],
+        "canonical_resolved": [
+          "https://thecreatingco.com/products/form/"
+        ],
+        "title": "Form: 3D Design & CAD Studio | thecreatingco",
+        "meta_description": [
+          "Design architecture, products, jewelry and garments with exact CAD, editable sketches, text commands and dedicated creative workspaces."
+        ],
+        "og_url": [
+          "https://thecreatingco.com/products/form/"
+        ],
+        "jsonld_blocks": [
+          {
+            "index": 0,
+            "valid_json": true
+          }
+        ],
+        "jsonld_types": [
+          "BreadcrumbList",
+          "ListItem",
+          "Organization",
+          "SoftwareApplication",
+          "WebPage",
+          "WebSite"
+        ],
+        "structural_findings": [],
+        "jsonld_identity_findings": []
+      },
+      {
+        "requested_url": "https://thecreatingco.com/products/stemdeck/",
+        "status": 200,
+        "final_url": "https://thecreatingco.com/products/stemdeck/",
+        "content_type": "text/html; charset=UTF-8",
+        "truncated": false,
+        "error": null,
+        "raw_sha256": "68ec96003ee8a6d4ade5def6076e95c675a72bb6b5cde3bffb1664fe8151470f",
+        "canonical_count": 1,
+        "canonical_raw": [
+          "https://thecreatingco.com/products/stemdeck/"
+        ],
+        "canonical_resolved": [
+          "https://thecreatingco.com/products/stemdeck/"
+        ],
+        "title": "StemDeck: Stem Remix & Mixing Studio | thecreatingco",
+        "meta_description": [
+          "A standalone remix workspace with multiple decks, stem-lane controls, performance tools and arrangement capture."
+        ],
+        "og_url": [
+          "https://thecreatingco.com/products/stemdeck/"
+        ],
+        "jsonld_blocks": [
+          {
+            "index": 0,
+            "valid_json": true
+          }
+        ],
+        "jsonld_types": [
+          "BreadcrumbList",
+          "ListItem",
+          "Organization",
+          "SoftwareApplication",
+          "WebPage",
+          "WebSite"
+        ],
+        "structural_findings": [],
+        "jsonld_identity_findings": []
+      },
+      {
+        "requested_url": "https://thecreatingco.com/products/luma/",
+        "status": 200,
+        "final_url": "https://thecreatingco.com/products/luma/",
+        "content_type": "text/html; charset=UTF-8",
+        "truncated": false,
+        "error": null,
+        "raw_sha256": "bfb41be4ab6ee93bc16d4d94c0b07ba5dfc18c2962329ef2a1c395d41986e096",
+        "canonical_count": 1,
+        "canonical_raw": [
+          "https://thecreatingco.com/products/luma/"
+        ],
+        "canonical_resolved": [
+          "https://thecreatingco.com/products/luma/"
+        ],
+        "title": "Luma: Layered Image Editor | thecreatingco",
+        "meta_description": [
+          "A local-first image editor for layered compositions, precise selections, editable type and nondestructive color work."
+        ],
+        "og_url": [
+          "https://thecreatingco.com/products/luma/"
+        ],
+        "jsonld_blocks": [
+          {
+            "index": 0,
+            "valid_json": true
+          }
+        ],
+        "jsonld_types": [
+          "BreadcrumbList",
+          "ListItem",
+          "Organization",
+          "SoftwareApplication",
+          "WebPage",
+          "WebSite"
+        ],
+        "structural_findings": [],
+        "jsonld_identity_findings": []
+      },
+      {
+        "requested_url": "https://thecreatingco.com/products/scenepilot/",
+        "status": 200,
+        "final_url": "https://thecreatingco.com/products/scenepilot/",
+        "content_type": "text/html; charset=UTF-8",
+        "truncated": false,
+        "error": null,
+        "raw_sha256": "ad363e32b34d0c0a01f4f7823f4332aa26cb05746a072d08ef741c7a36acd597",
+        "canonical_count": 1,
+        "canonical_raw": [
+          "https://thecreatingco.com/products/scenepilot/"
+        ],
+        "canonical_resolved": [
+          "https://thecreatingco.com/products/scenepilot/"
+        ],
+        "title": "ScenePilot: Beat-Aware Video Editor | thecreatingco",
+        "meta_description": [
+          "A beat-aware video editor that carries an editable first cut into a timeline, motion composition and local delivery workflow."
+        ],
+        "og_url": [
+          "https://thecreatingco.com/products/scenepilot/"
+        ],
+        "jsonld_blocks": [
+          {
+            "index": 0,
+            "valid_json": true
+          }
+        ],
+        "jsonld_types": [
+          "BreadcrumbList",
+          "ListItem",
+          "Organization",
+          "SoftwareApplication",
+          "WebPage",
+          "WebSite"
+        ],
+        "structural_findings": [],
+        "jsonld_identity_findings": []
+      },
+      {
+        "requested_url": "https://thecreatingco.com/products/board/",
+        "status": 200,
+        "final_url": "https://thecreatingco.com/products/board/",
+        "content_type": "text/html; charset=UTF-8",
+        "truncated": false,
+        "error": null,
+        "raw_sha256": "25521bfadda12eda87822c14917b25a91da26b3373d927073c0e978c9ed35af4",
+        "canonical_count": 1,
+        "canonical_raw": [
+          "https://thecreatingco.com/products/board/"
+        ],
+        "canonical_resolved": [
+          "https://thecreatingco.com/products/board/"
+        ],
+        "title": "Board: Script & Storyboard Planner | thecreatingco",
+        "meta_description": [
+          "Turn a script or a list of beats into an editable shot plan. Sketch frames, add references and take a readable plan to the shoot."
+        ],
+        "og_url": [
+          "https://thecreatingco.com/products/board/"
+        ],
+        "jsonld_blocks": [
+          {
+            "index": 0,
+            "valid_json": true
+          }
+        ],
+        "jsonld_types": [
+          "BreadcrumbList",
+          "ListItem",
+          "Organization",
+          "SoftwareApplication",
+          "WebPage",
+          "WebSite"
+        ],
+        "structural_findings": [],
+        "jsonld_identity_findings": []
+      },
+      {
+        "requested_url": "https://thecreatingco.com/products/autocut/",
+        "status": 200,
+        "final_url": "https://thecreatingco.com/products/autocut/",
+        "content_type": "text/html; charset=UTF-8",
+        "truncated": false,
+        "error": null,
+        "raw_sha256": "dc6d8602c746b9839a2de7c9f6771140e8a3e67dd88cc47718b2665e6d3235a4",
+        "canonical_count": 1,
+        "canonical_raw": [
+          "https://thecreatingco.com/products/autocut/"
+        ],
+        "canonical_resolved": [
+          "https://thecreatingco.com/products/autocut/"
+        ],
+        "title": "AutoCut: Beat-Aware Video Cut Planner | thecreatingco",
+        "meta_description": [
+          "Bring your clips and a soundtrack. Build a beat-aware first cut, keep the moments you love, then refine the result in ScenePilot."
+        ],
+        "og_url": [
+          "https://thecreatingco.com/products/autocut/"
+        ],
+        "jsonld_blocks": [
+          {
+            "index": 0,
+            "valid_json": true
+          }
+        ],
+        "jsonld_types": [
+          "BreadcrumbList",
+          "ListItem",
+          "Organization",
+          "SoftwareApplication",
+          "WebPage",
+          "WebSite"
+        ],
+        "structural_findings": [],
+        "jsonld_identity_findings": []
+      },
+      {
+        "requested_url": "https://thecreatingco.com/products/press/",
+        "status": 200,
+        "final_url": "https://thecreatingco.com/products/press/",
+        "content_type": "text/html; charset=UTF-8",
+        "truncated": false,
+        "error": null,
+        "raw_sha256": "588b3b963266639d2102ca9454f3c6779081493f00376fc607425b57eaad8e1d",
+        "canonical_count": 1,
+        "canonical_raw": [
+          "https://thecreatingco.com/products/press/"
+        ],
+        "canonical_resolved": [
+          "https://thecreatingco.com/products/press/"
+        ],
+        "title": "Press: Artist Press Kit Builder | thecreatingco",
+        "meta_description": [
+          "Gather your bio, photo, tracks and links into an artist press kit. Choose a look and download a self-contained HTML page you can host yourself."
+        ],
+        "og_url": [
+          "https://thecreatingco.com/products/press/"
+        ],
+        "jsonld_blocks": [
+          {
+            "index": 0,
+            "valid_json": true
+          }
+        ],
+        "jsonld_types": [
+          "BreadcrumbList",
+          "ListItem",
+          "Organization",
+          "SoftwareApplication",
+          "WebPage",
+          "WebSite"
+        ],
+        "structural_findings": [],
+        "jsonld_identity_findings": []
+      },
+      {
+        "requested_url": "https://thecreatingco.com/products/grade/",
+        "status": 200,
+        "final_url": "https://thecreatingco.com/products/grade/",
+        "content_type": "text/html; charset=UTF-8",
+        "truncated": false,
+        "error": null,
+        "raw_sha256": "f7db773d373677d62ad4d7e95f5834fc228d67a1f759bb99816849d4b4b75b2f",
+        "canonical_count": 1,
+        "canonical_raw": [
+          "https://thecreatingco.com/products/grade/"
+        ],
+        "canonical_resolved": [
+          "https://thecreatingco.com/products/grade/"
+        ],
+        "title": "Grade: Reference Color Transfer & LUT Tool | thecreatingco",
+        "meta_description": [
+          "Bring a reference still and your image or clip. Compare a statistical color transfer, adjust its strength and export a graded still or .cube LUT."
+        ],
+        "og_url": [
+          "https://thecreatingco.com/products/grade/"
+        ],
+        "jsonld_blocks": [
+          {
+            "index": 0,
+            "valid_json": true
+          }
+        ],
+        "jsonld_types": [
+          "BreadcrumbList",
+          "ListItem",
+          "Organization",
+          "SoftwareApplication",
+          "WebPage",
+          "WebSite"
+        ],
+        "structural_findings": [],
+        "jsonld_identity_findings": []
+      },
+      {
+        "requested_url": "https://thecreatingco.com/products/canvas/",
+        "status": 200,
+        "final_url": "https://thecreatingco.com/products/canvas/",
+        "content_type": "text/html; charset=UTF-8",
+        "truncated": false,
+        "error": null,
+        "raw_sha256": "ec650854e6f4461c58f00a81dfa87151f518f7aa4b59834a52af7185481c594f",
+        "canonical_count": 1,
+        "canonical_raw": [
+          "https://thecreatingco.com/products/canvas/"
+        ],
+        "canonical_resolved": [
+          "https://thecreatingco.com/products/canvas/"
+        ],
+        "title": "Canvas: Audio-Reactive Music Visuals | thecreatingco",
+        "meta_description": [
+          "Bring music and optional cover art. Explore an audio-reactive vertical loop, shape its palette and export a visual for your release."
+        ],
+        "og_url": [
+          "https://thecreatingco.com/products/canvas/"
+        ],
+        "jsonld_blocks": [
+          {
+            "index": 0,
+            "valid_json": true
+          }
+        ],
+        "jsonld_types": [
+          "BreadcrumbList",
+          "ListItem",
+          "Organization",
+          "SoftwareApplication",
+          "WebPage",
+          "WebSite"
+        ],
+        "structural_findings": [],
+        "jsonld_identity_findings": []
+      },
+      {
+        "requested_url": "https://thecreatingco.com/products/ghost/",
+        "status": 200,
+        "final_url": "https://thecreatingco.com/products/ghost/",
+        "content_type": "text/html; charset=UTF-8",
+        "truncated": false,
+        "error": null,
+        "raw_sha256": "e8173f297f596ecf31a4ee0fcda4ac9c67519184dd486a5ddbebcfe8ee66c3b8",
+        "canonical_count": 1,
+        "canonical_raw": [
+          "https://thecreatingco.com/products/ghost/"
+        ],
+        "canonical_resolved": [
+          "https://thecreatingco.com/products/ghost/"
+        ],
+        "title": "Ghost: Photo-Based 3D Garment Studies | thecreatingco",
+        "meta_description": [
+          "Turn photo references into adjustable garment and object studies, then export your work as GLB or an editable project."
+        ],
+        "og_url": [
+          "https://thecreatingco.com/products/ghost/"
+        ],
+        "jsonld_blocks": [
+          {
+            "index": 0,
+            "valid_json": true
+          }
+        ],
+        "jsonld_types": [
+          "BreadcrumbList",
+          "ListItem",
+          "Organization",
+          "SoftwareApplication",
+          "WebPage",
+          "WebSite"
+        ],
+        "structural_findings": [],
+        "jsonld_identity_findings": []
+      },
+      {
+        "requested_url": "https://thecreatingco.com/products/vox/",
+        "status": 200,
+        "final_url": "https://thecreatingco.com/products/vox/",
+        "content_type": "text/html; charset=UTF-8",
+        "truncated": false,
+        "error": null,
+        "raw_sha256": "6b7692303c1a5adef38041b19457d2450e2ccbc82fa1156496bcce74088eb63f",
+        "canonical_count": 1,
+        "canonical_raw": [
+          "https://thecreatingco.com/products/vox/"
+        ],
+        "canonical_resolved": [
+          "https://thecreatingco.com/products/vox/"
+        ],
+        "title": "Vox: Vocal Pitch & Harmony Tool | thecreatingco",
+        "meta_description": [
+          "Record or import a clean solo vocal. Explore scale-based pitch correction, add a third or fifth harmony and export a WAV."
+        ],
+        "og_url": [
+          "https://thecreatingco.com/products/vox/"
+        ],
+        "jsonld_blocks": [
+          {
+            "index": 0,
+            "valid_json": true
+          }
+        ],
+        "jsonld_types": [
+          "BreadcrumbList",
+          "ListItem",
+          "Organization",
+          "SoftwareApplication",
+          "WebPage",
+          "WebSite"
+        ],
+        "structural_findings": [],
+        "jsonld_identity_findings": []
+      },
+      {
+        "requested_url": "https://thecreatingco.com/products/glyph/",
+        "status": 200,
+        "final_url": "https://thecreatingco.com/products/glyph/",
+        "content_type": "text/html; charset=UTF-8",
+        "truncated": false,
+        "error": null,
+        "raw_sha256": "50a5fed82eda24a6a02583706c946b231ab41a81bbc9c501e9df988dc180a842",
+        "canonical_count": 1,
+        "canonical_raw": [
+          "https://thecreatingco.com/products/glyph/"
+        ],
+        "canonical_resolved": [
+          "https://thecreatingco.com/products/glyph/"
+        ],
+        "title": "Glyph (in Luma): Experimental Lettering in Luma | thecreatingco",
+        "meta_description": [
+          "Sketch letterforms on a guided grid, preview them as type and install the font in Luma. A simple place to begin making your own alphabet."
+        ],
+        "og_url": [
+          "https://thecreatingco.com/products/glyph/"
+        ],
+        "jsonld_blocks": [
+          {
+            "index": 0,
+            "valid_json": true
+          }
+        ],
+        "jsonld_types": [
+          "BreadcrumbList",
+          "ListItem",
+          "Organization",
+          "SoftwareApplication",
+          "WebPage",
+          "WebSite"
+        ],
+        "structural_findings": [],
+        "jsonld_identity_findings": []
+      },
+      {
+        "requested_url": "https://thecreatingco.com/products/key-bpm/",
+        "status": 200,
+        "final_url": "https://thecreatingco.com/products/key-bpm/",
+        "content_type": "text/html; charset=UTF-8",
+        "truncated": false,
+        "error": null,
+        "raw_sha256": "3b36a0637e8f5cad4c44dc985e7a8edc3225870a76675ffc07c8bd9dae34216f",
+        "canonical_count": 1,
+        "canonical_raw": [
+          "https://thecreatingco.com/products/key-bpm/"
+        ],
+        "canonical_resolved": [
+          "https://thecreatingco.com/products/key-bpm/"
+        ],
+        "title": "Key & BPM: Song Key & BPM Finder | thecreatingco",
+        "meta_description": [
+          "Analyze a batch of tracks for estimated key, Camelot code and tempo. Export a CSV and make your final decisions by ear."
+        ],
+        "og_url": [
+          "https://thecreatingco.com/products/key-bpm/"
+        ],
+        "jsonld_blocks": [
+          {
+            "index": 0,
+            "valid_json": true
+          }
+        ],
+        "jsonld_types": [
+          "BreadcrumbList",
+          "ListItem",
+          "Organization",
+          "SoftwareApplication",
+          "WebPage",
+          "WebSite"
+        ],
+        "structural_findings": [],
+        "jsonld_identity_findings": []
+      },
+      {
+        "requested_url": "https://thecreatingco.com/products/mockup/",
+        "status": 200,
+        "final_url": "https://thecreatingco.com/products/mockup/",
+        "content_type": "text/html; charset=UTF-8",
+        "truncated": false,
+        "error": null,
+        "raw_sha256": "56fc4507fdc998b3d0f4ad5e6221455e2a9b585692e87bc367f583a5863bb43d",
+        "canonical_count": 1,
+        "canonical_raw": [
+          "https://thecreatingco.com/products/mockup/"
+        ],
+        "canonical_resolved": [
+          "https://thecreatingco.com/products/mockup/"
+        ],
+        "title": "Mockups: Artwork & Product Mockup Tool | thecreatingco",
+        "meta_description": [
+          "Try your artwork on a tee, hoodie, tote, poster, vinyl sleeve or phone screen. Adjust placement and color, then download a scene or the whole set."
+        ],
+        "og_url": [
+          "https://thecreatingco.com/products/mockup/"
+        ],
+        "jsonld_blocks": [
+          {
+            "index": 0,
+            "valid_json": true
+          }
+        ],
+        "jsonld_types": [
+          "BreadcrumbList",
+          "ListItem",
+          "Organization",
+          "SoftwareApplication",
+          "WebPage",
+          "WebSite"
+        ],
+        "structural_findings": [],
+        "jsonld_identity_findings": []
+      },
+      {
+        "requested_url": "https://thecreatingco.com/products/reclaim/",
+        "status": 200,
+        "final_url": "https://thecreatingco.com/products/reclaim/",
+        "content_type": "text/html; charset=UTF-8",
+        "truncated": false,
+        "error": null,
+        "raw_sha256": "8b2f7cbdb9fe09d20ec2bf05f1dcee82e546a379b56d1605da9c58ea946722bd",
+        "canonical_count": 1,
+        "canonical_raw": [
+          "https://thecreatingco.com/products/reclaim/"
+        ],
+        "canonical_resolved": [
+          "https://thecreatingco.com/products/reclaim/"
+        ],
+        "title": "Reclaim: Mac File Review & Browser Companion | thecreatingco",
+        "meta_description": [
+          "Download the free Reclaim Mac alpha for Intel and Apple Silicon, or try its read-only browser file review. Signed and notarized. macOS 13+."
+        ],
+        "og_url": [
+          "https://thecreatingco.com/products/reclaim/"
+        ],
+        "jsonld_blocks": [
+          {
+            "index": 0,
+            "valid_json": true
+          }
+        ],
+        "jsonld_types": [
+          "BreadcrumbList",
+          "ListItem",
+          "Organization",
+          "SoftwareApplication",
+          "WebPage",
+          "WebSite"
+        ],
+        "structural_findings": [],
+        "jsonld_identity_findings": []
+      },
+      {
+        "requested_url": "https://thecreatingco.com/products/bounce/",
+        "status": 200,
+        "final_url": "https://thecreatingco.com/products/bounce/",
+        "content_type": "text/html; charset=UTF-8",
+        "truncated": false,
+        "error": null,
+        "raw_sha256": "506341827f46906735bf6504072026dd8976d98bf1b62d52843cebc6f2136e42",
+        "canonical_count": 1,
+        "canonical_raw": [
+          "https://thecreatingco.com/products/bounce/"
+        ],
+        "canonical_resolved": [
+          "https://thecreatingco.com/products/bounce/"
+        ],
+        "title": "Bounce: Local Audio Player & EQ | thecreatingco",
+        "meta_description": [
+          "Play your own audio files in Bounce’s browser companion. Search the queue, adjust EQ and save a local playlist. No streaming catalog or native download required."
+        ],
+        "og_url": [
+          "https://thecreatingco.com/products/bounce/"
+        ],
+        "jsonld_blocks": [
+          {
+            "index": 0,
+            "valid_json": true
+          }
+        ],
+        "jsonld_types": [
+          "BreadcrumbList",
+          "ListItem",
+          "Organization",
+          "SoftwareApplication",
+          "WebPage",
+          "WebSite"
+        ],
+        "structural_findings": [],
+        "jsonld_identity_findings": []
+      },
+      {
+        "requested_url": "https://thecreatingco.com/products/glyph-studio/",
+        "status": 200,
+        "final_url": "https://thecreatingco.com/products/glyph-studio/",
+        "content_type": "text/html; charset=UTF-8",
+        "truncated": false,
+        "error": null,
+        "raw_sha256": "249fdf9d2cfadcffd6f9ab3a38dfbcf383367540ec9ab034008eb5a98c847f59",
+        "canonical_count": 1,
+        "canonical_raw": [
+          "https://thecreatingco.com/products/glyph-studio/"
+        ],
+        "canonical_resolved": [
+          "https://thecreatingco.com/products/glyph-studio/"
+        ],
+        "title": "Glyph Studio: Draw Your Own Font & Export OTF/TTF | thecreatingco",
+        "meta_description": [
+          "Glyph Studio is a standalone draw-your-own-font tool: brush and pen drawing, curve fitting, a kerning editor, and OTF/TTF export, with an Open in Luma link."
+        ],
+        "og_url": [
+          "https://thecreatingco.com/products/glyph-studio/"
+        ],
+        "jsonld_blocks": [
+          {
+            "index": 0,
+            "valid_json": true
+          }
+        ],
+        "jsonld_types": [
+          "BreadcrumbList",
+          "ListItem",
+          "Organization",
+          "SoftwareApplication",
+          "WebPage",
+          "WebSite"
+        ],
+        "structural_findings": [],
+        "jsonld_identity_findings": []
+      },
+      {
+        "requested_url": "https://thecreatingco.com/products/weblab/",
+        "status": 200,
+        "final_url": "https://thecreatingco.com/products/weblab/",
+        "content_type": "text/html; charset=UTF-8",
+        "truncated": false,
+        "error": null,
+        "raw_sha256": "bfefb9b12e1dfb7f4295361a4cdb5bb13fec9300c45c487766dc561974d7db6e",
+        "canonical_count": 1,
+        "canonical_raw": [
+          "https://thecreatingco.com/products/weblab/"
+        ],
+        "canonical_resolved": [
+          "https://thecreatingco.com/products/weblab/"
+        ],
+        "title": "WebLab: Visual Web Page Builder Preview | thecreatingco",
+        "meta_description": [
+          "Build a single web page with visual blocks and inspect its HTML and CSS. WebLab is an early preview without autosave, project reopening or hosting."
+        ],
+        "og_url": [
+          "https://thecreatingco.com/products/weblab/"
+        ],
+        "jsonld_blocks": [
+          {
+            "index": 0,
+            "valid_json": true
+          }
+        ],
+        "jsonld_types": [
+          "BreadcrumbList",
+          "ListItem",
+          "Organization",
+          "SoftwareApplication",
+          "WebPage",
+          "WebSite"
+        ],
+        "structural_findings": [],
+        "jsonld_identity_findings": []
+      },
+      {
+        "requested_url": "https://thecreatingco.com/products/cutout/",
+        "status": 200,
+        "final_url": "https://thecreatingco.com/products/cutout/",
+        "content_type": "text/html; charset=UTF-8",
+        "truncated": false,
+        "error": null,
+        "raw_sha256": "4d6d6549ecfc64d076cc4e144ad95c543a75833798408d971bf3e46fb06b11ec",
+        "canonical_count": 1,
+        "canonical_raw": [
+          "https://thecreatingco.com/products/cutout/"
+        ],
+        "canonical_resolved": [
+          "https://thecreatingco.com/products/cutout/"
+        ],
+        "title": "Cutout: Background Removal & Transparent Images | thecreatingco",
+        "meta_description": [
+          "Cutout is the focused image tool for removing a background and refining a transparent image. Open the tool directly, then keep a separate copy of the result you want to use."
+        ],
+        "og_url": [
+          "https://thecreatingco.com/products/cutout/"
+        ],
+        "jsonld_blocks": [
+          {
+            "index": 0,
+            "valid_json": true
+          }
+        ],
+        "jsonld_types": [
+          "BreadcrumbList",
+          "ListItem",
+          "Organization",
+          "SoftwareApplication",
+          "WebPage",
+          "WebSite"
+        ],
+        "structural_findings": [],
+        "jsonld_identity_findings": []
+      },
+      {
+        "requested_url": "https://thecreatingco.com/products/loop/",
+        "status": 200,
+        "final_url": "https://thecreatingco.com/products/loop/",
+        "content_type": "text/html; charset=UTF-8",
+        "truncated": false,
+        "error": null,
+        "raw_sha256": "c53dfd6fde1b5d68b1bcf0f032ee45d331fb21df04f6ebd239b7033fc8026648",
+        "canonical_count": 1,
+        "canonical_raw": [
+          "https://thecreatingco.com/products/loop/"
+        ],
+        "canonical_resolved": [
+          "https://thecreatingco.com/products/loop/"
+        ],
+        "title": "Loop: Turn a Video Clip into a Short Loop | thecreatingco",
+        "meta_description": [
+          "Loop is a focused ScenePilot tool for turning a clip into a short video loop. Use it when you have one moment to repeat, rather than a full film to arrange."
+        ],
+        "og_url": [
+          "https://thecreatingco.com/products/loop/"
+        ],
+        "jsonld_blocks": [
+          {
+            "index": 0,
+            "valid_json": true
+          }
+        ],
+        "jsonld_types": [
+          "BreadcrumbList",
+          "ListItem",
+          "Organization",
+          "SoftwareApplication",
+          "WebPage",
+          "WebSite"
+        ],
+        "structural_findings": [],
+        "jsonld_identity_findings": []
+      },
+      {
+        "requested_url": "https://thecreatingco.com/products/reframe/",
+        "status": 200,
+        "final_url": "https://thecreatingco.com/products/reframe/",
+        "content_type": "text/html; charset=UTF-8",
+        "truncated": false,
+        "error": null,
+        "raw_sha256": "706a76d376ff89485331e506b3e14f9ed6aad575026ad0ed7e354cf32fd4db03",
+        "canonical_count": 1,
+        "canonical_raw": [
+          "https://thecreatingco.com/products/reframe/"
+        ],
+        "canonical_resolved": [
+          "https://thecreatingco.com/products/reframe/"
+        ],
+        "title": "Reframe: Adapt Wide Video for Vertical Viewing | thecreatingco",
+        "meta_description": [
+          "Reframe is the ScenePilot tool for adapting a wide video to a vertical frame. A tighter frame changes what the viewer can see, so review the composition throughout the clip."
+        ],
+        "og_url": [
+          "https://thecreatingco.com/products/reframe/"
+        ],
+        "jsonld_blocks": [
+          {
+            "index": 0,
+            "valid_json": true
+          }
+        ],
+        "jsonld_types": [
+          "BreadcrumbList",
+          "ListItem",
+          "Organization",
+          "SoftwareApplication",
+          "WebPage",
+          "WebSite"
+        ],
+        "structural_findings": [],
+        "jsonld_identity_findings": []
+      },
+      {
+        "requested_url": "https://thecreatingco.com/products/sessions/",
+        "status": 200,
+        "final_url": "https://thecreatingco.com/products/sessions/",
+        "content_type": "text/html; charset=UTF-8",
+        "truncated": false,
+        "error": null,
+        "raw_sha256": "ea3b62059123e3df864f84cd009b3ad001a857e26d7c6e6226df5810ea555f41",
+        "canonical_count": 1,
+        "canonical_raw": [
+          "https://thecreatingco.com/products/sessions/"
+        ],
+        "canonical_resolved": [
+          "https://thecreatingco.com/products/sessions/"
+        ],
+        "title": "Sessions: Shared Listening Rooms in The Circle | thecreatingco",
+        "meta_description": [
+          "Sessions is the shared listening experience in The Circle. Open the Sessions view to explore rooms and listen with other people; it is separate from StemDeck’s remix workspace."
+        ],
+        "og_url": [
+          "https://thecreatingco.com/products/sessions/"
+        ],
+        "jsonld_blocks": [
+          {
+            "index": 0,
+            "valid_json": true
+          }
+        ],
+        "jsonld_types": [
+          "BreadcrumbList",
+          "ListItem",
+          "Organization",
+          "SoftwareApplication",
+          "WebPage",
+          "WebSite"
+        ],
+        "structural_findings": [],
+        "jsonld_identity_findings": []
+      },
+      {
+        "requested_url": "https://thecreatingco.com/products/pocket-studio/",
+        "status": 200,
+        "final_url": "https://thecreatingco.com/products/pocket-studio/",
+        "content_type": "text/html; charset=UTF-8",
+        "truncated": false,
+        "error": null,
+        "raw_sha256": "4e3c1dc297f51ebc3c257c88c07cd55075cab9cfba419d6d4ee4746ad1b5fce7",
+        "canonical_count": 1,
+        "canonical_raw": [
+          "https://thecreatingco.com/products/pocket-studio/"
+        ],
+        "canonical_resolved": [
+          "https://thecreatingco.com/products/pocket-studio/"
+        ],
+        "title": "Pocket Studio: Voice Memos & Recording in The Circle | thecreatingco",
+        "meta_description": [
+          "Pocket Studio is The Circle’s local audio recorder for voice memos, melodies and sounds. It is distinct from Sattari Pocket, the beat sketchpad."
+        ],
+        "og_url": [
+          "https://thecreatingco.com/products/pocket-studio/"
+        ],
+        "jsonld_blocks": [
+          {
+            "index": 0,
+            "valid_json": true
+          }
+        ],
+        "jsonld_types": [
+          "BreadcrumbList",
+          "ListItem",
+          "Organization",
+          "SoftwareApplication",
+          "WebPage",
+          "WebSite"
+        ],
+        "structural_findings": [],
+        "jsonld_identity_findings": []
+      },
+      {
+        "requested_url": "https://thecreatingco.com/learn/",
+        "status": 200,
+        "final_url": "https://thecreatingco.com/learn/",
+        "content_type": "text/html; charset=UTF-8",
+        "truncated": false,
+        "error": null,
+        "raw_sha256": "dbcfc03c445e3a29089a697c71e7b2a6e9b1e2248b0037f843a7e5cdcf84b62f",
+        "canonical_count": 1,
+        "canonical_raw": [
+          "https://thecreatingco.com/learn/"
+        ],
+        "canonical_resolved": [
+          "https://thecreatingco.com/learn/"
+        ],
+        "title": "Creative Software Tutorials & Editable Projects | thecreatingco",
+        "meta_description": [
+          "Learn Form, Luma, StemDeck and ScenePilot through guided projects. Practice 3D design, layered image editing, stem remixing and video editing."
+        ],
+        "og_url": [
+          "https://thecreatingco.com/learn/"
+        ],
+        "jsonld_blocks": [
+          {
+            "index": 0,
+            "valid_json": true
+          }
+        ],
+        "jsonld_types": [
+          "BreadcrumbList",
+          "ListItem",
+          "Organization",
+          "WebPage",
+          "WebSite"
+        ],
+        "structural_findings": [],
+        "jsonld_identity_findings": []
+      },
+      {
+        "requested_url": "https://thecreatingco.com/learn/form/",
+        "status": 200,
+        "final_url": "https://thecreatingco.com/learn/form/",
+        "content_type": "text/html; charset=UTF-8",
+        "truncated": false,
+        "error": null,
+        "raw_sha256": "b3fa0723ab95903a72c1a5fa1019906c3c46624605544e6b190b3956ad175efa",
+        "canonical_count": 1,
+        "canonical_raw": [
+          "https://thecreatingco.com/learn/form/"
+        ],
+        "canonical_resolved": [
+          "https://thecreatingco.com/learn/form/"
+        ],
+        "title": "Form Tutorials: 3D Design & CAD Projects | thecreatingco",
+        "meta_description": [
+          "Learn Form with editable 3D and CAD projects. Explore architecture, jewelry and garment exercises, then keep your work as a project or exported file."
+        ],
+        "og_url": [
+          "https://thecreatingco.com/learn/form/"
+        ],
+        "jsonld_blocks": [
+          {
+            "index": 0,
+            "valid_json": true
+          }
+        ],
+        "jsonld_types": [
+          "BreadcrumbList",
+          "ListItem",
+          "Organization",
+          "WebPage",
+          "WebSite"
+        ],
+        "structural_findings": [],
+        "jsonld_identity_findings": []
+      },
+      {
+        "requested_url": "https://thecreatingco.com/learn/form/fashion/",
+        "status": 200,
+        "final_url": "https://thecreatingco.com/learn/form/fashion/",
+        "content_type": "text/html; charset=UTF-8",
+        "truncated": false,
+        "error": null,
+        "raw_sha256": "b189a21673b2488995dfc2f09f07fd86bb3f92ed60e661c2c74a88b8e934a727",
+        "canonical_count": 1,
+        "canonical_raw": [
+          "https://thecreatingco.com/learn/form/fashion/"
+        ],
+        "canonical_resolved": [
+          "https://thecreatingco.com/learn/form/fashion/"
+        ],
+        "title": "Pattern Drafting & Garment Design Tutorials | Form",
+        "meta_description": [
+          "Draft a skirt, sew a T-shirt and compare fabric drape in Form. Download editable garment projects and explore experimental cloth simulation."
+        ],
+        "og_url": [
+          "https://thecreatingco.com/learn/form/fashion/"
+        ],
+        "jsonld_blocks": [
+          {
+            "index": 0,
+            "valid_json": true
+          }
+        ],
+        "jsonld_types": [
+          "BreadcrumbList",
+          "ListItem",
+          "Organization",
+          "WebPage",
+          "WebSite"
+        ],
+        "structural_findings": [],
+        "jsonld_identity_findings": []
+      },
+      {
+        "requested_url": "https://thecreatingco.com/learn/form/jewelry/",
+        "status": 200,
+        "final_url": "https://thecreatingco.com/learn/form/jewelry/",
+        "content_type": "text/html; charset=UTF-8",
+        "truncated": false,
+        "error": null,
+        "raw_sha256": "b77900640a3c3cc96ff6ed612f3a96b576744c30eb622741d1a9091dd6e5096c",
+        "canonical_count": 1,
+        "canonical_raw": [
+          "https://thecreatingco.com/learn/form/jewelry/"
+        ],
+        "canonical_resolved": [
+          "https://thecreatingco.com/learn/form/jewelry/"
+        ],
+        "title": "Jewelry CAD Tutorial: Design an Orbit Pendant | Form",
+        "meta_description": [
+          "Sketch and model an Orbit pendant in Form. Explore circles, extrusion and boolean cuts, with editable examples and DXF, STEP and STL downloads."
+        ],
+        "og_url": [
+          "https://thecreatingco.com/learn/form/jewelry/"
+        ],
+        "jsonld_blocks": [
+          {
+            "index": 0,
+            "valid_json": true
+          }
+        ],
+        "jsonld_types": [
+          "BreadcrumbList",
+          "ListItem",
+          "Organization",
+          "WebPage",
+          "WebSite"
+        ],
+        "structural_findings": [],
+        "jsonld_identity_findings": []
+      },
+      {
+        "requested_url": "https://thecreatingco.com/learn/form/architecture/",
+        "status": 200,
+        "final_url": "https://thecreatingco.com/learn/form/architecture/",
+        "content_type": "text/html; charset=UTF-8",
+        "truncated": false,
+        "error": null,
+        "raw_sha256": "49c69ee7a540c3e6aa6403f2c629ba84785b0eb7c1be527a8ec42e2c38c07fee",
+        "canonical_count": 1,
+        "canonical_raw": [
+          "https://thecreatingco.com/learn/form/architecture/"
+        ],
+        "canonical_resolved": [
+          "https://thecreatingco.com/learn/form/architecture/"
+        ],
+        "title": "Architecture CAD Tutorial: Edit a House | Form",
+        "meta_description": [
+          "Edit a house with Form's text commands and CAD tools. Practice walls, openings, dimensions and room labels in a guided architectural project."
+        ],
+        "og_url": [
+          "https://thecreatingco.com/learn/form/architecture/"
+        ],
+        "jsonld_blocks": [
+          {
+            "index": 0,
+            "valid_json": true
+          }
+        ],
+        "jsonld_types": [
+          "BreadcrumbList",
+          "ListItem",
+          "Organization",
+          "WebPage",
+          "WebSite"
+        ],
+        "structural_findings": [],
+        "jsonld_identity_findings": []
+      },
+      {
+        "requested_url": "https://thecreatingco.com/learn/stemdeck/",
+        "status": 200,
+        "final_url": "https://thecreatingco.com/learn/stemdeck/",
+        "content_type": "text/html; charset=UTF-8",
+        "truncated": false,
+        "error": null,
+        "raw_sha256": "fe8a4a962603cccfbac925f5c5cd989378438bef1b1b43b0954115de56b22f92",
+        "canonical_count": 1,
+        "canonical_raw": [
+          "https://thecreatingco.com/learn/stemdeck/"
+        ],
+        "canonical_resolved": [
+          "https://thecreatingco.com/learn/stemdeck/"
+        ],
+        "title": "StemDeck Tutorials: Stem Remixing & Mixing",
+        "meta_description": [
+          "Learn StemDeck through guided remix projects. Practice deck controls, stem balance and arrangement choices in the real music workspace."
+        ],
+        "og_url": [
+          "https://thecreatingco.com/learn/stemdeck/"
+        ],
+        "jsonld_blocks": [
+          {
+            "index": 0,
+            "valid_json": true
+          }
+        ],
+        "jsonld_types": [
+          "BreadcrumbList",
+          "ListItem",
+          "Organization",
+          "WebPage",
+          "WebSite"
+        ],
+        "structural_findings": [],
+        "jsonld_identity_findings": []
+      },
+      {
+        "requested_url": "https://thecreatingco.com/learn/luma/",
+        "status": 200,
+        "final_url": "https://thecreatingco.com/learn/luma/",
+        "content_type": "text/html; charset=UTF-8",
+        "truncated": false,
+        "error": null,
+        "raw_sha256": "8f13727e6e16f02527f6ea1c0103ea772c268c52f794ad0e187007537b6bd4ab",
+        "canonical_count": 1,
+        "canonical_raw": [
+          "https://thecreatingco.com/learn/luma/"
+        ],
+        "canonical_resolved": [
+          "https://thecreatingco.com/learn/luma/"
+        ],
+        "title": "Luma Tutorials: Layers, Selections & Image Editing",
+        "meta_description": [
+          "Practice layered image editing in Luma. Explore selections, recoloring, type and effects through guided projects in the real image editor."
+        ],
+        "og_url": [
+          "https://thecreatingco.com/learn/luma/"
+        ],
+        "jsonld_blocks": [
+          {
+            "index": 0,
+            "valid_json": true
+          }
+        ],
+        "jsonld_types": [
+          "BreadcrumbList",
+          "ListItem",
+          "Organization",
+          "WebPage",
+          "WebSite"
+        ],
+        "structural_findings": [],
+        "jsonld_identity_findings": []
+      },
+      {
+        "requested_url": "https://thecreatingco.com/learn/luma/basics/",
+        "status": 200,
+        "final_url": "https://thecreatingco.com/learn/luma/basics/",
+        "content_type": "text/html; charset=UTF-8",
+        "truncated": false,
+        "error": null,
+        "raw_sha256": "61c1b301300c020170b5d79694bf003e936b8f7112c82241a1e999f3c957cdf0",
+        "canonical_count": 1,
+        "canonical_raw": [
+          "https://thecreatingco.com/learn/luma/basics/"
+        ],
+        "canonical_resolved": [
+          "https://thecreatingco.com/learn/luma/basics/"
+        ],
+        "title": "Luma Basics: Your First Layered Image",
+        "meta_description": [
+          "Practice your first layered image in Luma with guided selections, color edits and type. Keep an editable project while learning the workspace."
+        ],
+        "og_url": [
+          "https://thecreatingco.com/learn/luma/basics/"
+        ],
+        "jsonld_blocks": [
+          {
+            "index": 0,
+            "valid_json": true
+          }
+        ],
+        "jsonld_types": [
+          "BreadcrumbList",
+          "ListItem",
+          "Organization",
+          "WebPage",
+          "WebSite"
+        ],
+        "structural_findings": [],
+        "jsonld_identity_findings": []
+      },
+      {
+        "requested_url": "https://thecreatingco.com/learn/luma/effects/",
+        "status": 200,
+        "final_url": "https://thecreatingco.com/learn/luma/effects/",
+        "content_type": "text/html; charset=UTF-8",
+        "truncated": false,
+        "error": null,
+        "raw_sha256": "b213f3919c6b62224305e67239332bd12ccfffb6d5c88f13f4fd3bb3334ac988",
+        "canonical_count": 1,
+        "canonical_raw": [
+          "https://thecreatingco.com/learn/luma/effects/"
+        ],
+        "canonical_resolved": [
+          "https://thecreatingco.com/learn/luma/effects/"
+        ],
+        "title": "Luma Effects Guide: Filters, Blend Modes & Adjustments",
+        "meta_description": [
+          "Understand Luma layer effects, smart filters, blend modes and adjustments. Compare visual examples and read the documented limits before applying a look."
+        ],
+        "og_url": [
+          "https://thecreatingco.com/learn/luma/effects/"
+        ],
+        "jsonld_blocks": [
+          {
+            "index": 0,
+            "valid_json": true
+          }
+        ],
+        "jsonld_types": [
+          "BreadcrumbList",
+          "ListItem",
+          "Organization",
+          "WebPage",
+          "WebSite"
+        ],
+        "structural_findings": [],
+        "jsonld_identity_findings": []
+      },
+      {
+        "requested_url": "https://thecreatingco.com/learn/scenepilot/",
+        "status": 200,
+        "final_url": "https://thecreatingco.com/learn/scenepilot/",
+        "content_type": "text/html; charset=UTF-8",
+        "truncated": false,
+        "error": null,
+        "raw_sha256": "1b1ac71d5810889172f0ecd4c74a2888c45aadafe9b45ae8903f0fa67f952b55",
+        "canonical_count": 1,
+        "canonical_raw": [
+          "https://thecreatingco.com/learn/scenepilot/"
+        ],
+        "canonical_resolved": [
+          "https://thecreatingco.com/learn/scenepilot/"
+        ],
+        "title": "ScenePilot Tutorials: Beat-Aware Video Editing",
+        "meta_description": [
+          "Learn ScenePilot with editable video projects. Practice clip timing, beat-aware cuts, transitions and effects in the real editing workspace."
+        ],
+        "og_url": [
+          "https://thecreatingco.com/learn/scenepilot/"
+        ],
+        "jsonld_blocks": [
+          {
+            "index": 0,
+            "valid_json": true
+          }
+        ],
+        "jsonld_types": [
+          "BreadcrumbList",
+          "ListItem",
+          "Organization",
+          "WebPage",
+          "WebSite"
+        ],
+        "structural_findings": [],
+        "jsonld_identity_findings": []
+      }
+    ]
+  },
+  "scope_note": "Structural observations only; not a Google indexability, rich-result eligibility, traffic, or ranking determination. External destinations in SoftwareApplication/Product nodes are not treated as identity inconsistencies; identity checks apply only to nodes typed WebPage."
+}

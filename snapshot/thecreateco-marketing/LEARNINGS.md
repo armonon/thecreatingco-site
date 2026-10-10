@@ -10,3 +10,8 @@ _(empty — started 2026-10-05)_
 - Mailbox IDs 3 and 4 are Titan Email promotions; no creator reply was present. The three initial contacts have first follow-ups due 2026-10-12, not today.
 - A short “first font from one letter” lesson is drafted with screen-capture steps and truthful alpha/TTF-only kerning caveats. It is a ready-to-capture draft, not published content or evidence of qualified use.
 - Keep Glyph audience validation blocked on the documented destination and launch-path evidence gates; drafting alone establishes no uptake.
+
+## 2026-10-10 · No new marketing signal
+- Mailbox IDs 3–4 remain Titan Email promotions; no creator response or opt-out was observed. The first follow-ups for the three Oct 5 contacts are due Oct 12.
+- The public home and Circle pages returned HTTP 200. A successful page fetch is not evidence of audience reach, signups, or engagement.
+- No Circle update was due Saturday under the Mon/Wed/Fri cadence; no content was published.

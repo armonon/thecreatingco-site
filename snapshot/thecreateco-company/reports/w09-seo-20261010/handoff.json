@@ -1,0 +1,17 @@
+{
+  "task_id": "W09",
+  "recorded_at": "2026-10-10T14:15:37.598009+00:00",
+  "checkpoint": "verified-byte checkpoint recorded for automation/w09-seo-audit-20261010.py",
+  "publication": "BLOCKED",
+  "reason": "OPS_SYNC_BLOCKED: Operations worktree dirty; review it before automated sync",
+  "checkout": "/Users/agentsattari/code/company-worktrees/thecreatingco-operations",
+  "branch": "company/operations",
+  "observed_local_head": "f06113fb29661b9abb18f8a8b1c1a2077b171e05",
+  "dirty_paths": [
+    "?? .snapshot-1o1y1_q9/"
+  ],
+  "task_code_commit": null,
+  "pushed_sha": null,
+  "remote_sha_receipt": null,
+  "action": "Left other worker untracked files untouched; no stage/delete/force/push/merge/deploy. No product code commit resulted, so no product-branch push needed. Company audit script remains local, checkpointed but not published."
+}

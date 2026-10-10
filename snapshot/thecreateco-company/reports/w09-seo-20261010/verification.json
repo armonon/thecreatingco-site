@@ -1,0 +1,14 @@
+{
+  "task_id": "W09",
+  "observed_at": "2026-10-10T14:14:51.398014+00:00",
+  "model_director": "openai/gpt-6.1-sol",
+  "model_worker": "openai/gpt-6-luna",
+  "checks": "compile + evidence/counts/status/canonical/JSON-LD/first-wave reconciliation PASS",
+  "script_sha256": "5a59fe9e183cc6aa494dbf938f36e5ca620372ade30c100908ce3141ea76cd9c",
+  "evidence_sha256": "482e2a8270ac71811e91860fe888c84b5720877b1f0bd8de0b0ded6c0e1f342f",
+  "spend": "preflight continue/advisory; unset limits and partial cost coverage not spending approval; no new paid tools",
+  "selection": "Commissioning task COMPLETE; P1 WebLab product execution_hold fenced; W09 highest-value eligible task",
+  "product_edits": false,
+  "push_state": "Initial helper refused code under reports/ (text-evidence-only scope); exact same verified script bytes moved to permitted automation/ path for checkpoint, with no exporter changes.",
+  "script_path": "/Users/agentsattari/thecreateco-company/automation/w09-seo-audit-20261010.py"
+}

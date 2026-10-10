@@ -1,0 +1,30 @@
+{
+  "observed_at": "2026-10-10T08:10:50.004534+00:00",
+  "routing_proof_completed_at": "2026-10-09T06:52:18+00:00",
+  "weekly_astra_rows": 40,
+  "missing_reason_rows": 40,
+  "astra_first": "2026-10-07T22:50:57.795000+00:00",
+  "astra_last": "2026-10-08T19:20:57.915000+00:00",
+  "astra_by_source": {
+    "openclaw_cron": 40
+  },
+  "astra_by_agent": {
+    "main": 40
+  },
+  "post_proof_rows": 224,
+  "post_proof_model_counts": {
+    "gpt-5.6-terra": 35,
+    "gpt-6-luna": 143,
+    "gpt-6.1-sol": 38,
+    "openai/gpt-6.1-sol": 2,
+    "openai/gpt-6-luna": 3,
+    "gpt-5.5": 3
+  },
+  "post_proof_astra_rows": 0,
+  "current_anomalies": [
+    {
+      "kind": "astra_reason_not_exposed",
+      "ledger_rows": 40
+    }
+  ]
+}

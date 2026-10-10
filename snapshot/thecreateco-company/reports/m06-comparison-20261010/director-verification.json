@@ -1,0 +1,33 @@
+{
+  "at": "2026-10-10T17:12:06.031386+00:00",
+  "receipt_checks": [
+    {
+      "file": "calligraphr_pricing.json",
+      "http_status": 200,
+      "bounded_bytes": 11899,
+      "sha256": "e85a328e23b5d9dfc18c59ed36b5177875fc369c906224aa4bb2fda03e90d77a"
+    },
+    {
+      "file": "glyphr_home.json",
+      "http_status": 200,
+      "bounded_bytes": 21162,
+      "sha256": "0586b56c1aa50de2413dd669edceeae79202367b8080d59d30e4a0f6e3378283"
+    },
+    {
+      "file": "fadr_home.json",
+      "http_status": 200,
+      "bounded_bytes": 133908,
+      "sha256": "51b71caf3a7fd2c11f98a23284630e77cbdbdc63c1d81c1d905c42c3f82ae5cf"
+    },
+    {
+      "file": "kapwing_pricing.json",
+      "http_status": 200,
+      "bounded_bytes": 348464,
+      "sha256": "6d6c0e390215269c8d8a40a98783005d18716559a94b60262329207e4e4e0f4c"
+    }
+  ],
+  "report_sha256": "45b0aee4dad23f88430b1d25707bf2aaacd2fb66f851d0d7426b4ce736141687",
+  "result": "PASS scoped research acceptance",
+  "no_code_commit": true,
+  "push_needed": false
+}

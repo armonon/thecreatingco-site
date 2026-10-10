@@ -1,0 +1,98 @@
+{
+  "capturedAt": "2026-10-10T10:13:53.087Z",
+  "method": "Separate one-pass LCP attribution per viewport/route; page sampled after load + 1800ms. LCP candidates can change during load; this attribution is indicative and distinct from three-run navigation dataset.",
+  "results": [
+    {
+      "viewport": "desktop 1365x900",
+      "route": "/",
+      "lcp": {
+        "tag": "IMG",
+        "class": "journey-poster",
+        "src": "/assets/hero/creative-journey.jpg",
+        "timeMs": 228
+      },
+      "image": {
+        "natural": "1536x672",
+        "rendered": "1269x555",
+        "loading": "auto",
+        "fetchpriority": "high"
+      }
+    },
+    {
+      "viewport": "mobile 390x844",
+      "route": "/",
+      "lcp": {
+        "tag": "IMG",
+        "class": "journey-poster",
+        "src": "/assets/hero/creative-journey.jpg",
+        "timeMs": 672
+      },
+      "image": {
+        "natural": "1536x672",
+        "rendered": "350x153",
+        "loading": "auto",
+        "fetchpriority": "high"
+      }
+    },
+    {
+      "viewport": "desktop 1365x900",
+      "route": "/tools/",
+      "lcp": {
+        "tag": "IMG",
+        "src": "/assets/workflows/form-technical.png",
+        "timeMs": 1428
+      },
+      "image": {
+        "natural": "1280x720",
+        "rendered": "440x297",
+        "loading": "auto",
+        "fetchpriority": "auto"
+      }
+    },
+    {
+      "viewport": "mobile 390x844",
+      "route": "/tools/",
+      "lcp": {
+        "tag": "IMG",
+        "src": "/assets/workflows/form-technical.png",
+        "timeMs": 596
+      },
+      "image": {
+        "natural": "1280x720",
+        "rendered": "251x169",
+        "loading": "auto",
+        "fetchpriority": "auto"
+      }
+    },
+    {
+      "viewport": "desktop 1365x900",
+      "route": "/products/luma/",
+      "lcp": {
+        "tag": "IMG",
+        "src": "/assets/product-artwork/luma-1280.webp",
+        "timeMs": 700
+      },
+      "image": {
+        "natural": "682x383",
+        "rendered": "1242x699",
+        "loading": "auto",
+        "fetchpriority": "high"
+      }
+    },
+    {
+      "viewport": "mobile 390x844",
+      "route": "/products/luma/",
+      "lcp": {
+        "tag": "IMG",
+        "src": "/assets/product-artwork/luma-640.webp",
+        "timeMs": 340
+      },
+      "image": {
+        "natural": "390x219",
+        "rendered": "343x193",
+        "loading": "auto",
+        "fetchpriority": "high"
+      }
+    }
+  ]
+}

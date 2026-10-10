@@ -1,0 +1,70 @@
+{
+  "observed_at": "2026-10-10T12:11:42.271850+00:00",
+  "day_start": "2026-10-10T07:00:00+00:00",
+  "coverage": "Newest 200 receipts span before day start; current in-progress run has no completion receipt",
+  "model_receipts_today": 37,
+  "failures_today": 3,
+  "failure_threshold": 3,
+  "checks": {
+    "day_coverage": true,
+    "each_failure_matches_blocked_queue_task": true,
+    "distinct_tasks_and_diagnostic_hashes": true,
+    "agent_run_not_provider_error": true
+  },
+  "failures": [
+    {
+      "receipt_id": "cron:91faad91584783e9c51078c211bc8432",
+      "at": "2026-10-10T11:10:00.033000+00:00",
+      "job_id": "2069305d-6f38-41ba-b31c-a0fdbfdc7ea4",
+      "model": "gpt-6.1-sol",
+      "provider": "openai",
+      "status": "error",
+      "completion_status": "failed",
+      "diagnostic_sources": [
+        "agent-run"
+      ],
+      "task_id": "REV-COMMERCE-001",
+      "queue_status": "BLOCKED",
+      "classification": "task_blocker_reported_as_failed_completion",
+      "error_sha256": "55749e6221cd282dc1bc9faee0eec11af9e814ead3bfcf141f9cc2c1b98ffd60"
+    },
+    {
+      "receipt_id": "cron:0d72390b365faf76ffb1cba1cb2f07b9",
+      "at": "2026-10-10T10:10:00.030000+00:00",
+      "job_id": "2069305d-6f38-41ba-b31c-a0fdbfdc7ea4",
+      "model": "gpt-6.1-sol",
+      "provider": "openai",
+      "status": "error",
+      "completion_status": "failed",
+      "diagnostic_sources": [
+        "agent-run"
+      ],
+      "task_id": "W08",
+      "queue_status": "BLOCKED",
+      "classification": "task_blocker_reported_as_failed_completion",
+      "error_sha256": "d3024812b3b6f792b52354adacde165054b9dc59bda206dcba8d292f575ae129"
+    },
+    {
+      "receipt_id": "cron:4eafa88bb0a914eeed92fea92f976f02",
+      "at": "2026-10-10T07:10:00.024000+00:00",
+      "job_id": "2069305d-6f38-41ba-b31c-a0fdbfdc7ea4",
+      "model": "gpt-6.1-sol",
+      "provider": "openai",
+      "status": "error",
+      "completion_status": "failed",
+      "diagnostic_sources": [
+        "agent-run"
+      ],
+      "task_id": "P04",
+      "queue_status": "BLOCKED",
+      "classification": "task_blocker_reported_as_failed_completion",
+      "error_sha256": "c9b6b02d7f93cc3e38d3db2939bae9f9857a0a5ced37b075571d5a635865699b"
+    }
+  ],
+  "source_hashes": {
+    "engine/telemetry.py": "54ad9015eec003614da1836fc1a5f1eff8ac5e17806a16b182585a9fd47ba7ff",
+    "data/cost-policy.json": "0a628efe608087fe7b3fec2c4811151fc6a7a27e7fc3b36fb2768b6f8b976f20",
+    "data/cost-snapshot.json": "2b14394ef42ba821d4c9d6175fcd0ef71d20f87eb43c88c024378cb5197d4449"
+  },
+  "limitations": "No per-call traces or billed cost; scheduler receipts may aggregate calls. Do not infer all underlying calls succeeded."
+}

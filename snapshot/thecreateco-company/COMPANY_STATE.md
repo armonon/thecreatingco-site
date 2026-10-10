@@ -1,6 +1,6 @@
 # thecreateco — Current State
 
-Updated: 2026-10-10T05:14:06+00:00 | Seeds loaded: 2026-10-07T23:38:29+00:00
+Updated: 2026-10-10T17:40:27+00:00 | Seeds loaded: 2026-10-07T23:38:29+00:00
 
 ## COMPANY HEALTH
 Unknown / not scored — evidence-backed health rubric not yet measured.
@@ -9,7 +9,7 @@ Unknown / not scored — evidence-backed health rubric not yet measured.
 ["Reach $1M annual company revenue ethically; first verify the current baseline and next $1K milestone", "Preserve user work and qualify the four flagship workflows", "Validate one focused paid offer; measure contribution, conversion and retention"]
 
 ## TOP PRIORITY
-P03 — Verify Animate save/export recovery and assess undo (priority 81.0; estimate)
+M08 — Refresh community opportunity research and current rules (priority 49.0; estimate)
 
 ## PRODUCTS
 47 registered entries; inventory may be incomplete.
@@ -29,16 +29,8 @@ Unknown / not measured: visitors, downloads, signups, beta_testers, active_users
 Unknown-metric reporting periods: {'type': 'source availability check, not financial reporting interval', 'as_of': '2026-10-09T20:11:37.276475+00:00'}. Individual source details retained in context.
 
 ## CURRENT WORK
-- P03 Verify Animate save/export recovery and assess undo — RUNNING; priority 81.0 (estimate)
-- P04 Qualify Locker cross-app open/save failure behavior — QUEUED; priority 81.0 (estimate)
-- M10 Audit free-pack usefulness and product handoff — QUEUED; priority 78.4 (estimate)
-- W08 Measure critical-page performance before optimization — QUEUED; priority 78.4 (estimate)
-- REV-COMMERCE-001 Verify Sattari economic attribution, fulfillment capacity and existing funnel — QUEUED; priority 76.8 (estimate)
-- W07 Audit mobile keyboard navigation and first-action accessibility — QUEUED; priority 74.6667 (estimate)
-- W09 Check canonical links, sitemap and structured metadata for current releases — QUEUED; priority 73.5 (estimate)
-- P09 Reconcile Moodboard and Portfolio implementation state — QUEUED; priority 56.0 (estimate)
-- P10 Audit offline update and cache recovery across non-music apps — QUEUED; priority 54.0 (estimate)
-Queue totals: BLOCKED 43, COMPLETE 51, NEEDS_REVIEW 18, QUEUED 17, RUNNING 1, WAITING 22
+- M08 Refresh community opportunity research and current rules — QUEUED; priority 49.0 (estimate)
+Queue totals: BLOCKED 50, COMPLETE 59, NEEDS_REVIEW 18, QUEUED 7, WAITING 22
 Showing up to 8 running + 8 eligible queued; full details: TASK_QUEUE.json.
 
 ## BIGGEST BOTTLENECK
@@ -52,27 +44,27 @@ Preserve active release owners. Revenue research: Glyph first-font validation vi
 - Marketing claims/catalog lag newer app work; current live evidence is required.
 - Netlify Web Analytics is documented enabled, but company KPI values have not been retrieved or validated.
 - Core lab: all four full golden workflows still unqualified. Fresh dependency advisories in ScenePilot/Luma/Form; StemDeck local security repair awaits normal review/release path.
-83 tasks gated by review/validation/blockers; see TASK_QUEUE.json.
+90 tasks gated by review/validation/blockers; see TASK_QUEUE.json.
 
 ## RECENT RESULTS
-- 2026-10-10T04:13:24+00:00 PROGRAM-18-20261007 NEEDS_REVIEW: Bounded Sol director + Luna evidence audit: 18 products/315 references valid; 4 matrix tests PASS. Reconciled Form b5f8b08 and St…
-- 2026-10-10T03:12:03+00:00 M07 COMPLETE: Created internal evidence-backed Form repair story and six-claim source map; bounded requested Luna drafting, independent Sol sco…
-- 2026-10-10T02:35:07+00:00 OPS-GIT-CENTRALIZE-20261009 COMPLETE: Canonical company/operations branch verified at 77101ae4752517ddea386342bac547a380022274; company source/state/evidence and 77 co…
-- 2026-10-10T02:24:40+00:00 GROW-SITE-ROLLBACK-20261009 COMPLETE: Rolled back the requested Tools directory expansion and NOW Messages preview. Company site used a verified exact-manifest overlay…
-- 2026-10-10T02:13:44+00:00 W10 COMPLETE: Scoped four-product first-use/export help audit completed by bounded requested Luna with independent Sol director review; 7 canon…
+- 2026-10-10T17:12:06+00:00 M06 COMPLETE: Sol director + requested bounded OpenAI Luna worker: comparison research complete; four official HTTP200 source receipts verified…
+- 2026-10-10T16:16:04+00:00 P10 BLOCKED: Sol director + bounded requested OpenAI Luna executor: Animate/Portfolio live HTTP200 offline reload and distinct unsaved-edit pe…
+- 2026-10-10T16:06:44+00:00 CORE-REVIEW-20261010 COMPLETE: Daily four-flagship review completed from evidence since 2026-10-09; recorded scoped improvements, known failures, unmeasured per…
+- 2026-10-10T15:13:18+00:00 P09 BLOCKED: Sol director + requested bounded OpenAI Luna worker; exact Moodboard b2a54d1 and Portfolio ae9a10e clean source reconciled. Six e…
+- 2026-10-10T14:15:37+00:00 W09 COMPLETE: Sol director + bounded OpenAI Luna worker; deterministic live SEO audit: 56/56 sitemap pages HTTP200/self-canonical; JSON-LD synt…
 
 ## MARKETING SUMMARY
-Read-only snapshot: read_only_snapshot; observed 2026-10-10T05:14:06+00:00.
-Queue statuses: {"tasks": {"COMPLETE": 26}}
+Read-only snapshot: read_only_snapshot; observed 2026-10-10T17:40:27+00:00.
+Queue statuses: {"tasks": {"COMPLETE": 30}}
 Campaign statuses: {"campaigns": {"active": 1}}
 Recorded outcomes: {"impressions": null, "clicks": null, "replies": null, "signups": null, "conversions": null, "engagement": null, "cost": null}
 Outcome period: {"earliest_record": null, "latest_record": null}
 Marketing counts are NOT company traffic metrics. Source: /Users/agentsattari/thecreateco-marketing/engine/data/mktg.db
 
 ## AI COST / GOVERNOR
-Observed: 2026-10-10T04:22:00.281849+00:00
-Today: {"ledger_rows": 195, "records": 195, "records_known_rows": 195, "failures": 21, "failures_known_rows": 195, "input_tokens": 7588177, "input_tokens_known_rows": 194, "cached_tokens": 62408704, "cached_tokens_known_rows": 192, "cache_read_tokens": 62408704, "cache_read_tokens_known_rows": 187, "cache_write_tokens": null, "cache_write_tokens_known_ro…
-Governor: {"mode": "normal", "advisory_only": true, "budgets": [{"name": "daily", "scope": "all", "key": "all", "window": "day", "metric": "list_estimated_usd", "observed": 0.00294499999999…
+Observed: 2026-10-10T17:22:00.293570+00:00
+Today: {"ledger_rows": 87, "records": 87, "records_known_rows": 87, "failures": 8, "failures_known_rows": 87, "input_tokens": 3047975, "input_tokens_known_rows": 86, "cached_tokens": 20181760, "cached_tokens_known_rows": 85, "cache_read_tokens": 20181760, "cache_read_tokens_known_rows": 81, "cache_write_tokens": null, "cache_write_tokens_known_rows": 0, …
+Governor: {"mode": "normal", "advisory_only": true, "budgets": [{"name": "daily", "scope": "all", "key": "all", "window": "day", "metric": "list_estimated_usd", "observed": 0.000929, "limit…
 Coverage gaps: ["interactive/native-child per-call usage not exposed by cron receipts", "scheduled receipt token counts may aggregate multiple model calls", "cache/input accounting differs by source; preserve explicit totals, do not subtract caches blindly", "scheduled latency is end-to-end run duration, not pure inference latency", "task/product/reasoning/escal…
 Details: data/cost-snapshot.json; list-price estimates are not billed spend.
 

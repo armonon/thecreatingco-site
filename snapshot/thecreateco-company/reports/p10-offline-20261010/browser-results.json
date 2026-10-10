@@ -1,0 +1,103 @@
+[
+  {
+    "app": "Animate",
+    "base": "https://animate-thecreatingco.netlify.app",
+    "path": "/studio",
+    "checks": {
+      "http": {
+        "status": 200,
+        "url": "https://animate-thecreatingco.netlify.app/studio"
+      },
+      "title": "Animate — frame-by-frame and tween animation, in the browser",
+      "manifest": "/manifest.webmanifest",
+      "worker": {
+        "controlled": true,
+        "scope": "https://animate-thecreatingco.netlify.app/",
+        "waiting": false,
+        "activeState": "activated"
+      },
+      "studioLoaded": true,
+      "editAction": "drew a stroke on frame 0",
+      "autosaveBeforeOffline": {
+        "savedAt": 1791648898939,
+        "layers": [
+          {
+            "name": "Layer 1",
+            "cels": {
+              "0": {
+                "strokeCount": 1,
+                "pointCounts": [
+                  4
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "offline": {
+        "url": "https://animate-thecreatingco.netlify.app/studio",
+        "bodyVisible": "Animate\nALPHA\nStudio\nPrivacy\nOpen the studio\nBrush\nEraser\nFill\nColor\nSize\n8px\nNew\nOpen\nSave .animate\nSave project to Locker\nExport…\nLayers\n+ Layer\n+ Reference\n👁\n🔓\nTweens — Layer 1 @ frame 1\nProperty\tValue\tEasing\tKey\nPosition X\t\t\nlinear\neaseInQuad\neaseOutQuad\neaseInOutQuad\neaseInCubic\neaseOutCubic\neaseInOutCubic\neaseOutBack\neaseInOutSine\n\tSet key\nPosition Y\t\t\nlinear\neaseInQuad\neaseOutQuad\neaseInOutQuad\neaseInCubic\neaseOutCubic\neaseInOutCubic\neaseOutBack\neaseInOutSine\n\tSet key\nScale X\t\t\nlinear\neaseInQuad\neaseOutQuad\neaseInOutQuad\neaseInCubic\neaseOutCubic\neaseInOutCubic\neaseOutBack\neaseInOutSine\n\tSet key\nScale Y\t\t\nlinear\neaseInQuad\neaseOutQuad\neaseInOutQuad\neaseInCubic\neaseOutCubic\neaseInOutCubic\neaseOutBack\neaseInOutSine\n\tSet key\nRotation°\t\t\nlinear\neaseInQuad\neaseOutQuad\neaseInOutQuad\neaseInCubic\neaseOutCubic\neaseInOutCubic\neaseOutBack\neaseInOutSine\n\tSet key\nOpacity\t\t\nlinear\neaseInQuad\neaseOutQuad\neaseInOutQuad\neaseInCubic\neaseOutCubic\neaseInOutCubic\neaseOutBack\neaseInOutSine\n\tSet key\n",
+        "workerControlled": true,
+        "studioVisible": true,
+        "renderedCanvas": {
+          "tag": "CANVAS",
+          "canvases": []
+        },
+        "autosaveAfterReload": {
+          "savedAt": 1791648900477,
+          "layers": [
+            {
+              "name": "Layer 1",
+              "cels": {
+                "0": {
+                  "strokeCount": 1,
+                  "pointCounts": [
+                    4
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "sameDrawing": true
+      },
+      "consoleErrors": [],
+      "registrationAfterOffline": {
+        "waiting": false,
+        "activeState": "activated"
+      }
+    }
+  },
+  {
+    "app": "Portfolio",
+    "base": "https://portfolio-studio-384.netlify.app",
+    "path": "/studio",
+    "checks": {
+      "http": {
+        "status": 200,
+        "url": "https://portfolio-studio-384.netlify.app/studio"
+      },
+      "title": "Portfolio — a one-page site builder for visual artists",
+      "manifest": "/manifest.webmanifest",
+      "worker": {
+        "controlled": false,
+        "scope": "https://portfolio-studio-384.netlify.app/",
+        "waiting": false,
+        "activeState": "activating"
+      },
+      "studioLoaded": true,
+      "unsavedMarkerEntered": true,
+      "offline": {
+        "url": "https://portfolio-studio-384.netlify.app/studio",
+        "bodyVisible": "Portfolio\nTEMPLATE\nMinimal Grid\nEditorial Stack\nSidebar Bio\nABOUT\nName\nBio\nLinks\n+ Add link\nPROJECTS\n+ Add project\n⠿\nP10 unsaved recovery marker\n↑\n↓\nDelete\nTitle\nDescription\n+ Add image / video / 3D model\nBrowse your Locker\nEXPORT & SAVE\nDownload static site (.zip)\nDownload PDF\nSave .portfolio file\nLoad .portfolio file",
+        "workerControlled": true,
+        "markerPreserved": true
+      },
+      "consoleErrors": [],
+      "registrationAfterOffline": {
+        "waiting": false,
+        "activeState": "activated"
+      }
+    }
+  }
+]

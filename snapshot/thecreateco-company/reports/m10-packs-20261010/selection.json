@@ -1,0 +1,52 @@
+{
+  "observed_at": "2026-10-10T09:11:12.375834+00:00",
+  "note": "Reconstructed pre-claim ranking; M10 restored to QUEUED solely in memory",
+  "commissioning_status": "COMPLETE",
+  "eligible": [
+    {
+      "task_id": "M10",
+      "severity": null,
+      "priority": 78.4
+    },
+    {
+      "task_id": "W08",
+      "severity": null,
+      "priority": 78.4
+    },
+    {
+      "task_id": "REV-COMMERCE-001",
+      "severity": null,
+      "priority": 76.8
+    },
+    {
+      "task_id": "W07",
+      "severity": null,
+      "priority": 74.6667
+    },
+    {
+      "task_id": "W09",
+      "severity": null,
+      "priority": 73.5
+    },
+    {
+      "task_id": "P09",
+      "severity": null,
+      "priority": 56.0
+    },
+    {
+      "task_id": "P10",
+      "severity": null,
+      "priority": 54.0
+    },
+    {
+      "task_id": "M06",
+      "severity": null,
+      "priority": 49.0
+    },
+    {
+      "task_id": "M08",
+      "severity": null,
+      "priority": 49.0
+    }
+  ]
+}

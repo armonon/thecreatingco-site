@@ -1,0 +1,9 @@
+{
+  "observed_at": "2026-10-10T06:19:32.315858+00:00",
+  "source_branch": "company/p03-video-reopen-20261010",
+  "source_remote_sha": "2a9ec4936b13f77cfe21252db072e8669493e640",
+  "source_verified": true,
+  "central_status": "blocked",
+  "central_reason": "Concurrent operations publisher holds lock; separate invocation returned Ops sync already running, no verified operations SHA. Other worker staging preserved.",
+  "last_observed_central_remote_sha": "f06113fb29661b9abb18f8a8b1c1a2077b171e05"
+}
