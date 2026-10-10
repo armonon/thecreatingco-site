@@ -1,0 +1,4 @@
+# This historical GitHub mirror is not a complete production deploy input.
+# Publish only an explicitly reviewed overlay from the current live source.
+[build]
+  ignore = "exit 0"
