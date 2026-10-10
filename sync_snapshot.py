@@ -35,9 +35,9 @@ def candidates(workspace=WORKSPACE_ROOT):
         root=company/folder
         # Reports are text evidence only, never copied packaged applications/venvs.
         for p in walk(root,TEXT):
-            if 'reports' in p.relative_to(root).parts and p.suffix!='.md':continue
+            if 'reports' in p.relative_to(root).parts and p.suffix not in {'.md','.json'}:continue
             files.append(p)
-    files += walk(company/'reports',{'.md'})
+    files += walk(company/'reports',{'.md','.json'})
     if marketing.is_dir():files += [p for p in marketing.iterdir() if p.is_file() and p.suffix in {'.md','.json'}]
     for folder in ['engine/mktg','engine/tests','engine/config','content','research','outreach','packs-build']:
         files += walk(marketing/folder,TEXT)

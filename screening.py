@@ -4,6 +4,7 @@ import re
 
 EMAIL = re.compile(rb'[A-Z0-9._%+-]+@([A-Z0-9.-]+\.[A-Z]{2,})', re.I)
 TEST_DOMAINS = {b'example.com', b'example.org', b'example.net', b'example.test'}
+PUBLIC_COMPANY_DOMAINS = {b'thecreatingco.com'}
 PATTERNS = [
     re.compile(rb'(?:gh[pousr]_|github_pat_|sk-|xox[baprs]-)[A-Za-z0-9_-]{20,}'),
     re.compile(rb'-----BEGIN (?:RSA |OPENSSH |EC )?PRIVATE KEY-----'),
@@ -25,6 +26,6 @@ def content_reason(data):
     try: data.decode('utf-8')
     except UnicodeDecodeError: return 'non-utf8-content'
     if any(x.search(data) for x in PATTERNS): return 'secret-like-content'
-    if any(x.group(1).lower() not in TEST_DOMAINS and not x.group(1).lower().endswith(b'.test') for x in EMAIL.finditer(data)):
+    if any(x.group(0).lower() != b'git@github.com' and x.group(1).lower() not in TEST_DOMAINS | PUBLIC_COMPANY_DOMAINS and not x.group(1).lower().endswith(b'.test') for x in EMAIL.finditer(data)):
         return 'non-fixture-email-content'
     return None

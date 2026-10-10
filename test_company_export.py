@@ -14,6 +14,8 @@ class ExportTests(unittest.TestCase):
         self.assertIsNotNone(path_reason('reports/run-lease.private.json'))
         self.assertIsNone(path_reason('release-program/RELEASE_MATRIX.md'))
         self.assertIsNone(content_reason(b'unit fixture: alice@example.com'))
+        self.assertIsNone(content_reason(b'git'+b'@github.com:company/repo.git'))
+        self.assertIsNotNone(content_reason(b'person'+b'@github.com'))
         self.assertIsNotNone(content_reason(b'person'+b'@'+b'customer.invalid'))
         self.assertIsNotNone(content_reason(b'sk-'+b'a'*32))
     def test_code_checkpoint_matches_exact_bytes_not_dirty_flags(self):
