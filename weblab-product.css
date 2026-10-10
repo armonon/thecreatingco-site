@@ -1,0 +1,34 @@
+.wl-product { color: #17211f; background: #fff; letter-spacing: 0; }
+.wl-product *, .wl-product *::before, .wl-product *::after { box-sizing: border-box; letter-spacing: 0; }
+.wl-product p, .wl-product li { color: #39443e; }
+.wl-intro, .wl-capabilities, .wl-scope { max-width: 1200px; margin: 0 auto; padding: 48px 28px; }
+.wl-eyebrow { font-size: 14px; line-height: 1.6; font-weight: 600; }
+.wl-status { display: inline-block; margin-left: 12px; padding: 3px 10px; color: #223629; background: #dbf5dc; border-radius: 4px; }
+.wl-intro h1 { font-size: 64px; line-height: 1.1; margin: 22px 0 12px; overflow-wrap: anywhere; }
+.wl-promise { font-size: 28px; line-height: 1.3; margin: 0 0 18px; }
+.wl-lede { max-width: 680px; font-size: 19px; line-height: 1.6; }
+.wl-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; margin: 24px 0; }
+.wl-product a { color: inherit; text-underline-offset: 4px; }
+.wl-actions a { display: inline-flex; gap: 12px; align-items: center; min-height: 44px; font-weight: 650; }
+.wl-actions .wl-primary { background: #d8ff3e; color: #17211f; padding: 12px 22px; border-radius: 4px; text-decoration: none; }
+.wl-product a:focus-visible { outline: 3px solid #255faa; outline-offset: 4px; }
+.wl-caution { max-width: 720px; font-size: 14px; line-height: 1.6; color: #48534d; }
+.wl-workspace { margin: 0; background: #edf4f5; padding: 24px max(20px, calc((100% - 1200px)/2)); }
+.wl-workspace img { display: block; width: 100%; height: auto; aspect-ratio: 3/2; object-fit: contain; }
+.wl-workspace figcaption { padding-top: 14px; font-size: 14px; line-height: 1.5; }
+.wl-capabilities { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 36px; }
+.wl-capabilities h2, .wl-scope h2 { font-size: 24px; line-height: 1.25; }
+.wl-capabilities p, .wl-scope p, .wl-scope li { font-size: 16px; line-height: 1.7; }
+.wl-capabilities > div { border-top: 3px solid #47aeba; padding-top: 18px; }
+.wl-capabilities > div:nth-child(2) { border-color: #ee987f; }
+.wl-capabilities > div:nth-child(3) { border-color: #b1d661; }
+.wl-scope { border-top: 1px solid #d7dfdb; scroll-margin-top: 100px; }
+.wl-scope ul { padding-left: 22px; }
+.wl-scope li { margin-bottom: 10px; }
+@media (max-width: 700px) {
+  .wl-intro, .wl-capabilities, .wl-scope { padding: 32px 20px; }
+  .wl-intro h1 { font-size: 44px; }
+  .wl-promise { font-size: 24px; }
+  .wl-lede { font-size: 17px; }
+  .wl-capabilities { grid-template-columns: minmax(0,1fr); gap: 20px; }
+}
