@@ -957,14 +957,14 @@
       "sha256": "bbc6c5de2ecd37d8e8a06f930662481405dceb31caa106522da2ae6e74243d45"
     },
     {
-      "path": "thecreateco-company/core-product-lab/reports/form-project-menu-20261007/built/browser-results.json",
-      "bytes": 1204,
-      "sha256": "bbc6c5de2ecd37d8e8a06f930662481405dceb31caa106522da2ae6e74243d45"
-    },
-    {
       "path": "thecreateco-company/core-product-lab/reports/form-project-menu-20261007/built-coarse/browser-results.json",
       "bytes": 1203,
       "sha256": "01a2e9d575aabcc1bcec954a272b55cf93de23e7910db42a972af61d0db5caf0"
+    },
+    {
+      "path": "thecreateco-company/core-product-lab/reports/form-project-menu-20261007/built/browser-results.json",
+      "bytes": 1204,
+      "sha256": "bbc6c5de2ecd37d8e8a06f930662481405dceb31caa106522da2ae6e74243d45"
     },
     {
       "path": "thecreateco-company/core-product-lab/reports/form-project-menu-20261007/coarse/browser-results.json",
@@ -1897,41 +1897,6 @@
       "sha256": "dd113fd59d42772d0e713c14499053c63f298bbc524bc567be274a3a8eeea08e"
     },
     {
-      "path": "thecreateco-company/core-product-lab/reports/scenepilot-golden-20261008T0740/lite/cold.json",
-      "bytes": 15756,
-      "sha256": "012ab6b5760562301936b79f37c04d0b4061627e418b1600e89ff09f38b69c06"
-    },
-    {
-      "path": "thecreateco-company/core-product-lab/reports/scenepilot-golden-20261008T0740/lite/menu-diagnostics.json",
-      "bytes": 5491,
-      "sha256": "fef9bd23d9a6185bedadc77eb4c79c7518db44a6eb09c0eaa7a320991aa8e8dd"
-    },
-    {
-      "path": "thecreateco-company/core-product-lab/reports/scenepilot-golden-20261008T0740/lite/probe.json",
-      "bytes": 2348,
-      "sha256": "4be608f645b56b4ee9e42daf25a1f59c8fbf757180be38d9fa3e4d483a2bc060"
-    },
-    {
-      "path": "thecreateco-company/core-product-lab/reports/scenepilot-golden-20261008T0740/lite/redone.json",
-      "bytes": 15756,
-      "sha256": "e66b5ac7784fbd864f45544c3ecf6997f58c7f6c33f0cbd3e8a2770686b154a6"
-    },
-    {
-      "path": "thecreateco-company/core-product-lab/reports/scenepilot-golden-20261008T0740/lite/result.json",
-      "bytes": 1409,
-      "sha256": "d733e5dad40fa48815de70035bd587b1ed5e7920d564055060317422e066efb2"
-    },
-    {
-      "path": "thecreateco-company/core-product-lab/reports/scenepilot-golden-20261008T0740/lite/saved.json",
-      "bytes": 15405,
-      "sha256": "0fc26a507def3e7e90da0a301145b240b6af6f8d2c93c2ec5aa033831a160566"
-    },
-    {
-      "path": "thecreateco-company/core-product-lab/reports/scenepilot-golden-20261008T0740/lite/supported-12s-cut.json",
-      "bytes": 7114,
-      "sha256": "bf193075f64ea71f65154083c410d55d8e81cda3451f03814ee22de3b0185547"
-    },
-    {
       "path": "thecreateco-company/core-product-lab/reports/scenepilot-golden-20261008T0740/lite-attempt1/result.json",
       "bytes": 1444,
       "sha256": "ec43385a5bb2c6c8c96f91c2c3c154b50ec4eebca1a270f35bb41471f85006df"
@@ -2070,6 +2035,41 @@
       "path": "thecreateco-company/core-product-lab/reports/scenepilot-golden-20261008T0740/lite-fix-diagnostic1/saved.json",
       "bytes": 15405,
       "sha256": "f391fd1eb4fc4f88d9521d4317edfec55b6b14457d787b7861cfe74e389dce6d"
+    },
+    {
+      "path": "thecreateco-company/core-product-lab/reports/scenepilot-golden-20261008T0740/lite/cold.json",
+      "bytes": 15756,
+      "sha256": "012ab6b5760562301936b79f37c04d0b4061627e418b1600e89ff09f38b69c06"
+    },
+    {
+      "path": "thecreateco-company/core-product-lab/reports/scenepilot-golden-20261008T0740/lite/menu-diagnostics.json",
+      "bytes": 5491,
+      "sha256": "fef9bd23d9a6185bedadc77eb4c79c7518db44a6eb09c0eaa7a320991aa8e8dd"
+    },
+    {
+      "path": "thecreateco-company/core-product-lab/reports/scenepilot-golden-20261008T0740/lite/probe.json",
+      "bytes": 2348,
+      "sha256": "4be608f645b56b4ee9e42daf25a1f59c8fbf757180be38d9fa3e4d483a2bc060"
+    },
+    {
+      "path": "thecreateco-company/core-product-lab/reports/scenepilot-golden-20261008T0740/lite/redone.json",
+      "bytes": 15756,
+      "sha256": "e66b5ac7784fbd864f45544c3ecf6997f58c7f6c33f0cbd3e8a2770686b154a6"
+    },
+    {
+      "path": "thecreateco-company/core-product-lab/reports/scenepilot-golden-20261008T0740/lite/result.json",
+      "bytes": 1409,
+      "sha256": "d733e5dad40fa48815de70035bd587b1ed5e7920d564055060317422e066efb2"
+    },
+    {
+      "path": "thecreateco-company/core-product-lab/reports/scenepilot-golden-20261008T0740/lite/saved.json",
+      "bytes": 15405,
+      "sha256": "0fc26a507def3e7e90da0a301145b240b6af6f8d2c93c2ec5aa033831a160566"
+    },
+    {
+      "path": "thecreateco-company/core-product-lab/reports/scenepilot-golden-20261008T0740/lite/supported-12s-cut.json",
+      "bytes": 7114,
+      "sha256": "bf193075f64ea71f65154083c410d55d8e81cda3451f03814ee22de3b0185547"
     },
     {
       "path": "thecreateco-company/core-product-lab/reports/scenepilot-golden-20261008T0740/pr-body.md",
@@ -2342,26 +2342,6 @@
       "sha256": "54588425b84c00e8f3997ec7a33cc75b4d94105c8bdb9c85aa6673590759ad4e"
     },
     {
-      "path": "thecreateco-company/core-product-lab/reports/stemdeck-archive-gate-20261009/exact-gate/README.md",
-      "bytes": 2656,
-      "sha256": "18c5dafc2336730f49edcee41223caea43018590fa7f8e3594a79db3c727fc95"
-    },
-    {
-      "path": "thecreateco-company/core-product-lab/reports/stemdeck-archive-gate-20261009/exact-gate/execution.json",
-      "bytes": 296,
-      "sha256": "2bde16f29e3cdf0a0e6469d583804c0034788d216fb2d489892cab9e4dc89dfa"
-    },
-    {
-      "path": "thecreateco-company/core-product-lab/reports/stemdeck-archive-gate-20261009/exact-gate-restored/execution.json",
-      "bytes": 439,
-      "sha256": "45ff965ba43721161e41e9be7e0b41386a0bed163b8608ad9c0fdfd9c6a7590b"
-    },
-    {
-      "path": "thecreateco-company/core-product-lab/reports/stemdeck-archive-gate-20261009/exact-gate-restored/playwright-browser-install.json",
-      "bytes": 527,
-      "sha256": "ef2d5247d814317329823bd44aa8a50ccaddf608319fb1a33420ac84f66542ad"
-    },
-    {
       "path": "thecreateco-company/core-product-lab/reports/stemdeck-archive-gate-20261009/exact-gate-restored-final/execution.json",
       "bytes": 578,
       "sha256": "648c94b92ccc46836e888cf1e4d3f62b0798873d9e0791cfc1607ef1d8999e1c"
@@ -2382,24 +2362,29 @@
       "sha256": "330c1a33ac14a09990229d844a418f69c13c105b5daaf560b91b5aae856228a7"
     },
     {
+      "path": "thecreateco-company/core-product-lab/reports/stemdeck-archive-gate-20261009/exact-gate-restored/execution.json",
+      "bytes": 439,
+      "sha256": "45ff965ba43721161e41e9be7e0b41386a0bed163b8608ad9c0fdfd9c6a7590b"
+    },
+    {
+      "path": "thecreateco-company/core-product-lab/reports/stemdeck-archive-gate-20261009/exact-gate-restored/playwright-browser-install.json",
+      "bytes": 527,
+      "sha256": "ef2d5247d814317329823bd44aa8a50ccaddf608319fb1a33420ac84f66542ad"
+    },
+    {
+      "path": "thecreateco-company/core-product-lab/reports/stemdeck-archive-gate-20261009/exact-gate/README.md",
+      "bytes": 2656,
+      "sha256": "18c5dafc2336730f49edcee41223caea43018590fa7f8e3594a79db3c727fc95"
+    },
+    {
+      "path": "thecreateco-company/core-product-lab/reports/stemdeck-archive-gate-20261009/exact-gate/execution.json",
+      "bytes": 296,
+      "sha256": "2bde16f29e3cdf0a0e6469d583804c0034788d216fb2d489892cab9e4dc89dfa"
+    },
+    {
       "path": "thecreateco-company/core-product-lab/reports/stemdeck-archive-webkit-20261008/README.md",
       "bytes": 9779,
       "sha256": "8f964b8ef289c1d4ec7ce8b7c43cffb69bf5c2bee091c2d016ba576d270aad8e"
-    },
-    {
-      "path": "thecreateco-company/core-product-lab/reports/stemdeck-archive-webkit-20261008/candidate-ui/failure-session.json",
-      "bytes": 62003,
-      "sha256": "e50dd2bafd1e65ded4aeb248d8961e0b6bf64080fda0adc3e59e724da34600ab"
-    },
-    {
-      "path": "thecreateco-company/core-product-lab/reports/stemdeck-archive-webkit-20261008/candidate-ui/fixture-hashes.json",
-      "bytes": 1830,
-      "sha256": "a457cd32524715c81428049bc83a54c587aadd75f501e5007f533d3658747c68"
-    },
-    {
-      "path": "thecreateco-company/core-product-lab/reports/stemdeck-archive-webkit-20261008/candidate-ui/report.json",
-      "bytes": 1224,
-      "sha256": "3cf0353bf22e499096abdec81168796121dbf0ce9949138e29018f8f0d3aff0c"
     },
     {
       "path": "thecreateco-company/core-product-lab/reports/stemdeck-archive-webkit-20261008/candidate-ui-final/before-close-session.json",
@@ -2425,6 +2410,21 @@
       "path": "thecreateco-company/core-product-lab/reports/stemdeck-archive-webkit-20261008/candidate-ui-final/report.json",
       "bytes": 3133,
       "sha256": "b5eeaa46b7b6f5248f8d674f6aa4485c3df9baffdabd1cf1e58caad2b666df3b"
+    },
+    {
+      "path": "thecreateco-company/core-product-lab/reports/stemdeck-archive-webkit-20261008/candidate-ui/failure-session.json",
+      "bytes": 62003,
+      "sha256": "e50dd2bafd1e65ded4aeb248d8961e0b6bf64080fda0adc3e59e724da34600ab"
+    },
+    {
+      "path": "thecreateco-company/core-product-lab/reports/stemdeck-archive-webkit-20261008/candidate-ui/fixture-hashes.json",
+      "bytes": 1830,
+      "sha256": "a457cd32524715c81428049bc83a54c587aadd75f501e5007f533d3658747c68"
+    },
+    {
+      "path": "thecreateco-company/core-product-lab/reports/stemdeck-archive-webkit-20261008/candidate-ui/report.json",
+      "bytes": 1224,
+      "sha256": "3cf0353bf22e499096abdec81168796121dbf0ce9949138e29018f8f0d3aff0c"
     },
     {
       "path": "thecreateco-company/core-product-lab/reports/stemdeck-archive-webkit-20261008/chromium-baseline.json",
@@ -2882,21 +2882,6 @@
       "sha256": "823364f2472df6799f90ccf8128b1f21e564df70f54b048d5d79736a7e5266b6"
     },
     {
-      "path": "thecreateco-company/core-product-lab/reports/stemdeck-lifecycle-20261007/timing-fixed/failure-session.json",
-      "bytes": 48881,
-      "sha256": "37a74c1fac93a893f9c3b586d789f4b447a2427e7a4e5469ca0a30c16b84ceaf"
-    },
-    {
-      "path": "thecreateco-company/core-product-lab/reports/stemdeck-lifecycle-20261007/timing-fixed/fixture-hashes.json",
-      "bytes": 1830,
-      "sha256": "af4b5b96f3c8a24d630ece580e9894dc922bb496f36d349eff00d80a93add3a0"
-    },
-    {
-      "path": "thecreateco-company/core-product-lab/reports/stemdeck-lifecycle-20261007/timing-fixed/report.json",
-      "bytes": 1136,
-      "sha256": "8ef6f6a418af76666e21aa4fb289588d52ef3913c365476e802e04bfb260e710"
-    },
-    {
       "path": "thecreateco-company/core-product-lab/reports/stemdeck-lifecycle-20261007/timing-fixed-file/built-session.json",
       "bytes": 395163,
       "sha256": "82e55ddb7f4a42dc4e7aba8f16d43cccc9fb7e8dafab3d368e5429a268f4260e"
@@ -2920,6 +2905,21 @@
       "path": "thecreateco-company/core-product-lab/reports/stemdeck-lifecycle-20261007/timing-fixed-file/report.json",
       "bytes": 1788,
       "sha256": "996f08eb8b4573392c2cf1c5b9e89ecb74842bda350e2200f1cfdd5a536f9e65"
+    },
+    {
+      "path": "thecreateco-company/core-product-lab/reports/stemdeck-lifecycle-20261007/timing-fixed/failure-session.json",
+      "bytes": 48881,
+      "sha256": "37a74c1fac93a893f9c3b586d789f4b447a2427e7a4e5469ca0a30c16b84ceaf"
+    },
+    {
+      "path": "thecreateco-company/core-product-lab/reports/stemdeck-lifecycle-20261007/timing-fixed/fixture-hashes.json",
+      "bytes": 1830,
+      "sha256": "af4b5b96f3c8a24d630ece580e9894dc922bb496f36d349eff00d80a93add3a0"
+    },
+    {
+      "path": "thecreateco-company/core-product-lab/reports/stemdeck-lifecycle-20261007/timing-fixed/report.json",
+      "bytes": 1136,
+      "sha256": "8ef6f6a418af76666e21aa4fb289588d52ef3913c365476e802e04bfb260e710"
     },
     {
       "path": "thecreateco-company/core-product-lab/reports/stemdeck-lifecycle-20261007/timing-fixed32/failure-session.json",
@@ -3005,6 +3005,11 @@
       "path": "thecreateco-company/core-product-lab/reports/stemdeck-portability-20261008/webkit.json",
       "bytes": 2717,
       "sha256": "6dad5f1828a9fd8508f1ab97f6baea4433cb46678512a3a27e328fa8d63f671a"
+    },
+    {
+      "path": "thecreateco-company/core-product-lab/reports/stemdeck-recovery-20261007.md",
+      "bytes": 4854,
+      "sha256": "e00646691bb97fdd6f2c7565f7366b6e95ff0c5945670f1e2813b2fd85e1a3a0"
     },
     {
       "path": "thecreateco-company/core-product-lab/reports/stemdeck-recovery-20261007/process-before.json",
@@ -3100,11 +3105,6 @@
       "path": "thecreateco-company/core-product-lab/reports/stemdeck-recovery-20261007/remote-node24/report.json",
       "bytes": 7984,
       "sha256": "41d7ed1bd47bfea16b9f235b4b2aa0f3ea4d6cc91625c2cec8b2f4918abbf589"
-    },
-    {
-      "path": "thecreateco-company/core-product-lab/reports/stemdeck-recovery-20261007.md",
-      "bytes": 4854,
-      "sha256": "e00646691bb97fdd6f2c7565f7366b6e95ff0c5945670f1e2813b2fd85e1a3a0"
     },
     {
       "path": "thecreateco-company/core-product-lab/reports/stemdeck-replay-deadline-20261007/README.md",
@@ -3562,14 +3562,14 @@
       "sha256": "ea4b59959f405f265eab86483440aff8f643c12f817a0573986c2bd89811572b"
     },
     {
-      "path": "thecreateco-company/release-program/reports/key-bpm-20261007/baseline/chromium-report.json",
-      "bytes": 2065,
-      "sha256": "f29ee90819c98ab740d9a5c2312110d84ec29ee57e606419a754d92984424f86"
-    },
-    {
       "path": "thecreateco-company/release-program/reports/key-bpm-20261007/baseline-built/chromium-report.json",
       "bytes": 2098,
       "sha256": "2cdaae288a9d371624565abe729a4e9421d031bd5e48b3a94de53ac932d3584c"
+    },
+    {
+      "path": "thecreateco-company/release-program/reports/key-bpm-20261007/baseline/chromium-report.json",
+      "bytes": 2065,
+      "sha256": "f29ee90819c98ab740d9a5c2312110d84ec29ee57e606419a754d92984424f86"
     },
     {
       "path": "thecreateco-company/release-program/reports/key-bpm-20261007/candidate-chromium/chromium-report.json",
@@ -3647,6 +3647,16 @@
       "sha256": "72df5f9d0d1db864e3aa6e83edbd72e73b4d277a1939795da636e06d60d28220"
     },
     {
+      "path": "thecreateco-company/release-program/reports/key-bpm-20261007/fixed-final/chromium-report.json",
+      "bytes": 2666,
+      "sha256": "976d4ebc63e89927c87d25e8963900396ad0528645474dc3fef3033b830267d1"
+    },
+    {
+      "path": "thecreateco-company/release-program/reports/key-bpm-20261007/fixed-final/chromium-saved.keybpm.json",
+      "bytes": 2914,
+      "sha256": "87f46d28381fb9b4f362f87bad5286c2c5df808848540476a47eef80b87ec8d6"
+    },
+    {
       "path": "thecreateco-company/release-program/reports/key-bpm-20261007/fixed/chromium-report.json",
       "bytes": 3118,
       "sha256": "71fd086a166d7b8ba37c44f2468441cffc3b9b170aa2fa7de9732845bfb14864"
@@ -3677,26 +3687,6 @@
       "sha256": "b429625de3937b35bd69163c92977e0be4bf81c31ad938a71b213fcd51bff558"
     },
     {
-      "path": "thecreateco-company/release-program/reports/key-bpm-20261007/fixed-final/chromium-report.json",
-      "bytes": 2666,
-      "sha256": "976d4ebc63e89927c87d25e8963900396ad0528645474dc3fef3033b830267d1"
-    },
-    {
-      "path": "thecreateco-company/release-program/reports/key-bpm-20261007/fixed-final/chromium-saved.keybpm.json",
-      "bytes": 2914,
-      "sha256": "87f46d28381fb9b4f362f87bad5286c2c5df808848540476a47eef80b87ec8d6"
-    },
-    {
-      "path": "thecreateco-company/release-program/reports/key-bpm-20261007/formats/chromium-report.json",
-      "bytes": 3921,
-      "sha256": "722ecdaff19395e37e16c1dad7084a77a84467a57c5e0927b897c92a776e828c"
-    },
-    {
-      "path": "thecreateco-company/release-program/reports/key-bpm-20261007/formats/chromium-saved.keybpm.json",
-      "bytes": 2914,
-      "sha256": "202767e24b98e54ab350d522ab659c4a54885f91946cf238d3b6d333b88882b4"
-    },
-    {
       "path": "thecreateco-company/release-program/reports/key-bpm-20261007/formats-final/chromium-report.json",
       "bytes": 3969,
       "sha256": "958f5e3962a61a745b01afe45e384e47550ff846d006db5259b6359d4f47e9a0"
@@ -3715,6 +3705,16 @@
       "path": "thecreateco-company/release-program/reports/key-bpm-20261007/formats-qualified/chromium-saved.keybpm.json",
       "bytes": 2914,
       "sha256": "8d1b8f42f3c3d8349ec5d186f1048f7be5f3f05ca005b57636d64b5e4dac0da6"
+    },
+    {
+      "path": "thecreateco-company/release-program/reports/key-bpm-20261007/formats/chromium-report.json",
+      "bytes": 3921,
+      "sha256": "722ecdaff19395e37e16c1dad7084a77a84467a57c5e0927b897c92a776e828c"
+    },
+    {
+      "path": "thecreateco-company/release-program/reports/key-bpm-20261007/formats/chromium-saved.keybpm.json",
+      "bytes": 2914,
+      "sha256": "202767e24b98e54ab350d522ab659c4a54885f91946cf238d3b6d333b88882b4"
     },
     {
       "path": "thecreateco-company/release-program/reports/key-bpm-20261007/remote-attempt2-node22/artifact-verification.json",
@@ -4022,6 +4022,11 @@
       "sha256": "6dceb52708afafa625195175029249cb6e0fe91437c06157611d197f98127577"
     },
     {
+      "path": "thecreateco-company/reports/P03-20261010-luna-audit.md",
+      "bytes": 6547,
+      "sha256": "fb221b051ea3fcba39b649ff621e87c8b1a5fa9e177f8fc1d5879f219ab2c5e4"
+    },
+    {
       "path": "thecreateco-company/reports/P03-20261010/README.md",
       "bytes": 4148,
       "sha256": "240feec71a98dfc032a7de3b692ae6540643f3113e2e3f308a8a4de2fecb3c6b"
@@ -4055,11 +4060,6 @@
       "path": "thecreateco-company/reports/P03-20261010/video-reopen.json",
       "bytes": 441,
       "sha256": "b6658f4a153780e8dce536a9c99ac0a6c92ccef04e7e0d3ba7a9bad75e5b722e"
-    },
-    {
-      "path": "thecreateco-company/reports/P03-20261010-luna-audit.md",
-      "bytes": 6547,
-      "sha256": "fb221b051ea3fcba39b649ff621e87c8b1a5fa9e177f8fc1d5879f219ab2c5e4"
     },
     {
       "path": "thecreateco-company/reports/P03-VIDEO-REOPEN-20261010/README.md",
@@ -4353,8 +4353,8 @@
     },
     {
       "path": "thecreateco-company/reports/community-bounce-social-20261010/README.md",
-      "bytes": 3059,
-      "sha256": "c92697a54e8d5e27b08ca18ccec427383c51ed86b3fa65da6fde7a2e495ea0c4"
+      "bytes": 3155,
+      "sha256": "5e0b1699e0c2ce542993326efc2df2f85044e61af90754d331a890e0ad9dd7f6"
     },
     {
       "path": "thecreateco-company/reports/company-os-20261009/README.md",
@@ -4557,16 +4557,6 @@
       "sha256": "5e8789ff1db391ebab0e29f0a6963083225f906d480d8519716f54b7aebe2c97"
     },
     {
-      "path": "thecreateco-company/reports/cost-failure-audit-20261009/README.md",
-      "bytes": 2440,
-      "sha256": "41af711a255da23f8ccf5137c9b92d2d6289c9c06bc97c3595c05aeec5f0d7db"
-    },
-    {
-      "path": "thecreateco-company/reports/cost-failure-audit-20261009/receipts.json",
-      "bytes": 16323,
-      "sha256": "4404b372ca500921e681011d6c464b24241b934890c90592f967660773b87a9e"
-    },
-    {
       "path": "thecreateco-company/reports/cost-failure-audit-20261009-1810/README.md",
       "bytes": 2851,
       "sha256": "4159d750f0ffc3ea847dc5a80d3a9928c380326aeabd6ce39bdd211d74aba01b"
@@ -4580,6 +4570,16 @@
       "path": "thecreateco-company/reports/cost-failure-audit-20261009-1810/snapshot.json",
       "bytes": 15669,
       "sha256": "7b1cc79abed9e966c76f35ec4139e5b79d9c805d5fd14a53cac6d6f78e985775"
+    },
+    {
+      "path": "thecreateco-company/reports/cost-failure-audit-20261009/README.md",
+      "bytes": 2440,
+      "sha256": "41af711a255da23f8ccf5137c9b92d2d6289c9c06bc97c3595c05aeec5f0d7db"
+    },
+    {
+      "path": "thecreateco-company/reports/cost-failure-audit-20261009/receipts.json",
+      "bytes": 16323,
+      "sha256": "4404b372ca500921e681011d6c464b24241b934890c90592f967660773b87a9e"
     },
     {
       "path": "thecreateco-company/reports/cost-repeated-failures-20261010/README.md",
@@ -5577,14 +5577,14 @@
       "sha256": "35e5257e1f43da680779ca2dce52b3f676c7411878ddd69043a16e2e72e7c6f2"
     },
     {
-      "path": "thecreateco-company/reports/librarian-workflow-20261007/public/results.json",
-      "bytes": 992,
-      "sha256": "28dfc0c593e91a61cc5341d8c852315e8d1b145b96dcca7a42c5ef185224b142"
-    },
-    {
       "path": "thecreateco-company/reports/librarian-workflow-20261007/public-one-file-overlay/results.json",
       "bytes": 510,
       "sha256": "19d330b2d91e89f08e0dda01e9a3c6b92e78a2f732cb466104c0bd0886ab9fa3"
+    },
+    {
+      "path": "thecreateco-company/reports/librarian-workflow-20261007/public/results.json",
+      "bytes": 992,
+      "sha256": "28dfc0c593e91a61cc5341d8c852315e8d1b145b96dcca7a42c5ef185224b142"
     },
     {
       "path": "thecreateco-company/reports/librarian-workflow-20261007/published-files.json",
@@ -5912,14 +5912,14 @@
       "sha256": "f7c13bdb1b85fa1c38d9c3423e153f5c6f087bf6c9f2446368cc24b42ecf1627"
     },
     {
-      "path": "thecreateco-company/reports/luma-color-20261007/baseline-browser/report.json",
-      "bytes": 1640,
-      "sha256": "e004eebe47cfa9acefca0396bcba540ebe915574738598971fe1bb9593d03117"
-    },
-    {
       "path": "thecreateco-company/reports/luma-color-20261007/baseline-browser-connected/report.json",
       "bytes": 1967,
       "sha256": "5bce1aff9e2d6686eff5bf0089a1e29802c60baf4eb822ce81b54d3fcb31c539"
+    },
+    {
+      "path": "thecreateco-company/reports/luma-color-20261007/baseline-browser/report.json",
+      "bytes": 1640,
+      "sha256": "e004eebe47cfa9acefca0396bcba540ebe915574738598971fe1bb9593d03117"
     },
     {
       "path": "thecreateco-company/reports/luma-color-20261007/candidate-browser-diagnostic/report.json",
@@ -6017,11 +6017,6 @@
       "sha256": "ef2677f0c0cb39b84e64b52b42e12ee454d0583b6be725cfc6243325e1ad5121"
     },
     {
-      "path": "thecreateco-company/reports/luma-completion-2026-10-07/golden/report.json",
-      "bytes": 1841,
-      "sha256": "20a3efa9acf38d42c7cadf3254f65836ec106512d826fd104fc21614fadc0695"
-    },
-    {
       "path": "thecreateco-company/reports/luma-completion-2026-10-07/golden-r2/checkpoint.json",
       "bytes": 756,
       "sha256": "7661419431ab5b5c64ad4497571a9f440c667a0e24583f5c8f282575a47bf08f"
@@ -6030,6 +6025,11 @@
       "path": "thecreateco-company/reports/luma-completion-2026-10-07/golden-r2/expected.json",
       "bytes": 4143,
       "sha256": "fbf6a534d2a5de86ab71da8e9c71bf7de3330496d0b01e0b519758d4845d0219"
+    },
+    {
+      "path": "thecreateco-company/reports/luma-completion-2026-10-07/golden/report.json",
+      "bytes": 1841,
+      "sha256": "20a3efa9acf38d42c7cadf3254f65836ec106512d826fd104fc21614fadc0695"
     },
     {
       "path": "thecreateco-company/reports/luma-completion-2026-10-07/independent-review.md",
@@ -6497,11 +6497,6 @@
       "sha256": "c234075f1cb9bc3556cb76544a0628c552768d9d9b30edb454b7f771173b7f00"
     },
     {
-      "path": "thecreateco-company/reports/pocket-persistence-2026-10-07/browser/report.json",
-      "bytes": 2025,
-      "sha256": "c4cdca8d3f745eae1e7849a9cba7dc239221ebd3b3e169e7a2210657abdfb092"
-    },
-    {
       "path": "thecreateco-company/reports/pocket-persistence-2026-10-07/browser-built/report.json",
       "bytes": 1439,
       "sha256": "dbc5127b04ca2f775321c623e73c5ad54ef7251241fb2a15418df07e72c963bf"
@@ -6525,6 +6520,11 @@
       "path": "thecreateco-company/reports/pocket-persistence-2026-10-07/browser-reviewed/report.json",
       "bytes": 1579,
       "sha256": "ad89058ce266f59a111ce6b5e0d86a1198ba32c9ce2d8f0eb7eaabcb99593e83"
+    },
+    {
+      "path": "thecreateco-company/reports/pocket-persistence-2026-10-07/browser/report.json",
+      "bytes": 2025,
+      "sha256": "c4cdca8d3f745eae1e7849a9cba7dc239221ebd3b3e169e7a2210657abdfb092"
     },
     {
       "path": "thecreateco-company/reports/pocket-persistence-2026-10-07/followup-task.json",
@@ -8352,6 +8352,11 @@
       "sha256": "43fd71a938aceba496235dadfd6f0da27548e637d420c8beed1fe72685d67a2f"
     },
     {
+      "path": "thecreateco-company/reports/w10-help-20261010/director-cycle.md",
+      "bytes": 4502,
+      "sha256": "783e9b96e8623970d414a58ee2fab18e6aaab406f55ed136ed8b227eee7ff976"
+    },
+    {
       "path": "thecreateco-company/reports/w10-help-20261010/director/canonical-fetches.json",
       "bytes": 1372,
       "sha256": "674191e13de9c90b514acafb26b7b8dcf111c39f22647e6f573a2d68c4675bd4"
@@ -8365,11 +8370,6 @@
       "path": "thecreateco-company/reports/w10-help-20261010/director/fetches.json",
       "bytes": 724,
       "sha256": "fd855300301ace9cf79abf3908071c525574507e8150afd95c09b88747308f72"
-    },
-    {
-      "path": "thecreateco-company/reports/w10-help-20261010/director-cycle.md",
-      "bytes": 4502,
-      "sha256": "783e9b96e8623970d414a58ee2fab18e6aaab406f55ed136ed8b227eee7ff976"
     },
     {
       "path": "thecreateco-company/reports/w10-help-20261010/source/app-fetches.json",

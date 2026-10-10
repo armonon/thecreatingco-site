@@ -9,7 +9,7 @@ Status: BLOCKED on canonical Community/NOW source and approved nonproduction ide
 - Added durable company task `COMMUNITY-BOUNCE-SOCIAL-001`, status `BLOCKED`, dependency `NOW-PLATFORM-SOURCE-001`, provisional score 40.5 (an estimate, not a measured product KPI).
 - No Community/Bounce code, provider credentials, social account, production media or deploy was changed. No post was published.
 - No product source branch was created or pushed because there is no canonical Community source in this workspace and no product code changed.
-- Central company/operations mirror: local checkpoint helper reported `checkpointed: 2`, then publication was blocked by pre-existing unrelated untracked `.snapshot-1o1y1_q9/` in `/Users/agentsattari/code/company-worktrees/thecreatingco-operations`. That operations worktree was not altered to bypass the blocker. Local and `origin/company/operations` both remain at `f06113fb29661b9abb18f8a8b1c1a2077b171e05`; these two files are not claimed as pushed.
+- Central company/operations mirror: the first publish attempt from the original checkout was blocked by pre-existing unrelated untracked `.snapshot-1o1y1_q9/`, which was left untouched. A clean isolated checkout then ran the standard screened snapshot publisher. `company/operations` was pushed and verified at `71b73ce2f8f3c290f155e38fd0ea6a568824294f`; the snapshot contains this brief, checkpoint report, and `COMMUNITY-BOUNCE-SOCIAL-001` in the queue export. No product code branch was created or pushed because Community source is unavailable.
 
 ## Boundary evidence
 
