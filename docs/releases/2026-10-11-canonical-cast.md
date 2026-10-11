@@ -1,0 +1,3 @@
+Replace old Cast preview links with the published Form Studio address throughout the current company site, shared app menu, product pages, directory and lessons. The migration captures the latest immutable production before applying only that exact URL substitution; it retains the current 36-product catalogue and latest directory/About design.
+
+Validation: all changed bytes and retained manifests/functions verified; desktop/390px/320px browser checks passed on Tools, Downloads, Cast and About; the destination loads in Chromium and exposes Open Cast. The migration includes a reusable fresh-capture preparer. Production promotion uses the existing deployment guard.
