@@ -25,3 +25,7 @@
 /locker/sw.js
   Cache-Control: no-cache
   Service-Worker-Allowed: /locker/
+
+# --- autopilot perf (2026-10-18): content-hashed bundles never change in place ---
+/assets/styles/*
+  Cache-Control: public, max-age=31536000, immutable
