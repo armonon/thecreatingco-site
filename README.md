@@ -4,6 +4,34 @@ Source for the production site at https://thecreatingco.com (Netlify site
 `momentium-creative`, site id `59ccf268-f99f-43ba-89b6-1117fa561e93`), deployed
 by CLI/API rather than from a connected git repo.
 
+## Check the current source baseline
+
+Before website changes, run the read-only production comparison:
+
+```sh
+/usr/bin/python3 maintenance/scripts/audit-live-source.py --output /tmp/thecreatingco-source-audit.json
+```
+
+This uses the authenticated Netlify CLI and exact production site ID, verifies
+that the deployment stays unchanged while reading its manifest, and compares
+SHA-1 hashes with tracked files. It records deployment and function metadata
+without exposing credentials. Exit 2 reports drift; exit 1 means the audit did
+not complete. Repository-only files are reported but may be source or maintenance
+files that are intentionally unpublished.
+
+The October 17, 2026 audit of unmodified commit `e300dc9` found 145 changed files
+and 440 live-only files against published deployment `6acdeb0dedf03e90c4a63f55`
+(October 13). The existing `maintenance/tests/year-one-availability.mjs` test also
+fails on that snapshot. These are baseline findings, not changes introduced by
+the operator setup. Reconcile original source before feature edits: CDN-served
+HTML can be transformed and must not be accepted when its manifest hash differs.
+No production deployment or automatic Git deployment is enabled by this audit.
+
+The historical reconstruction notes below still apply. Read AGENTS.md for the
+maintenance workflow and release constraints.
+
+## Historical reconstruction
+
 This repository was reconstructed from the live published deploy on
 **2026-10-06**: every file was downloaded from the then-published deploy
 (`6ac497e9bdab52f76e8be724`) via the Netlify API (`GET
