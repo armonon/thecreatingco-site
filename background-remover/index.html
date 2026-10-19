@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Background Remover Free Online — Remove Background From Photo Instantly</title>
+<meta name="description" content="Remove the background from any photo free in your browser — no app, no account. Cutout by thecreatingco separates your subject, refines the edge, and exports a transparent PNG.">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Background Remover Free Online — Cutout by thecreatingco">
+<meta property="og:description" content="Remove backgrounds from photos free in your browser. Export transparent PNG — no download, no account needed.">
+<meta property="og:url" content="https://thecreatingco.com/background-remover/">
+<meta property="og:site_name" content="thecreatingco">
+<meta property="og:image" content="https://thecreatingco.com/assets/catalog-screenshots-20261009/cutout.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://thecreatingco.com/assets/catalog-screenshots-20261009/cutout.png">
+<meta name="twitter:title" content="Background Remover Free Online — Cutout by thecreatingco">
+<meta name="twitter:description" content="Remove the background from any photo free in your browser. Export transparent PNG instantly.">
+<link rel="canonical" href="https://thecreatingco.com/background-remover/">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://thecreatingco.com/background-remover/#page","url":"https://thecreatingco.com/background-remover/","name":"Background Remover Free Online — Cutout by thecreatingco","description":"Remove the background from any photo free in your browser. Export a transparent PNG with a clean edge — no download, no account.","about":{"@id":"https://thecreatingco.com/products/cutout/#app"}},{"@type":"SoftwareApplication","@id":"https://thecreatingco.com/products/cutout/#app","name":"Cutout — Background Remover","url":"https://thecreatingco.com/products/cutout/","installUrl":"https://luma.thecreatingco.com/cutout","applicationCategory":"GraphicsApplication","operatingSystem":"Web browser","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"thecreatingco","url":"https://thecreatingco.com"},"description":"Cutout is a browser-based background removal tool. Upload any photo, let the model detect the subject, refine the edge with a manual brush, and export a transparent PNG — all without installing anything.","featureList":["AI background removal in the browser","Manual edge refinement with grow and shrink brush","Transparent PNG export","Supports portraits, products, logos and objects","Works on any image format your browser can open","No upload to a server — processing stays in your browser","Integrates with Luma for layered image editing"]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is the background remover really free?","acceptedAnswer":{"@type":"Answer","text":"Yes — Cutout is completely free to use in your browser. There is no account, no trial limit, and no download required."}},{"@type":"Question","name":"Does the background remover work on portraits?","acceptedAnswer":{"@type":"Answer","text":"Yes. Cutout works well on portraits, product photos, logos, and any image with a reasonably clear subject. The AI detects the foreground subject automatically, and you can refine the edge with a manual brush."}},{"@type":"Question","name":"What file format does the export use?","acceptedAnswer":{"@type":"Answer","text":"Cutout exports a transparent PNG — the background is replaced with alpha (transparency), so you can place the cutout on any background in an image editor, presentation or video."}},{"@type":"Question","name":"Does my photo leave my browser?","acceptedAnswer":{"@type":"Answer","text":"Cutout runs the background removal model locally in your browser. Your image is processed on your device and is not uploaded to a server."}},{"@type":"Question","name":"Can I refine the edge after the automatic removal?","acceptedAnswer":{"@type":"Answer","text":"Yes. After the automatic pass, Cutout gives you a grow and shrink brush to add or remove pixels from the mask, so you can clean up hair, fur, or complex edges manually."}},{"@type":"Question","name":"Can I use the cutout image in Luma?","acceptedAnswer":{"@type":"Answer","text":"Yes — Cutout integrates with Luma, thecreatingco's layered image editor. After removing the background you can send your cutout directly into a Luma canvas to composite it with other layers, add effects, or export at full resolution."}},{"@type":"Question","name":"What kinds of photos work best?","acceptedAnswer":{"@type":"Answer","text":"Cutout works best on photos with a clear contrast between the subject and the background. Portraits, product shots on plain backgrounds, and logos on solid colours work especially well. Complex scenes with similar colours between subject and background may need more manual edge work."}}]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://thecreatingco.com/start/"},{"@type":"ListItem","position":2,"name":"Apps & tools","item":"https://thecreatingco.com/tools/"},{"@type":"ListItem","position":3,"name":"Background Remover","item":"https://thecreatingco.com/background-remover/"}]}]}</script>
+<style>
+:root {
+  --bg: #0c0c0f;
+  --surface: #141418;
+  --border: #222228;
+  --text: #ebebf0;
+  --muted: #888898;
+  --accent: #00d4aa;
+  --accent-dim: rgba(0,212,170,0.10);
+  --accent2: #7b8cf8;
+  --radius: 10px;
+}
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --bg: #f4f6f8;
+    --surface: #fff;
+    --border: #dce0e8;
+    --text: #0d0d14;
+    --muted: #5a6070;
+    --accent: #00a882;
+    --accent-dim: rgba(0,168,130,0.08);
+    --accent2: #4455d6;
+  }
+}
+:root[data-theme="light"] {
+  --bg: #f4f6f8; --surface: #fff; --border: #dce0e8; --text: #0d0d14;
+  --muted: #5a6070; --accent: #00a882; --accent-dim: rgba(0,168,130,0.08); --accent2: #4455d6;
+}
+*,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.nav { display: flex; align-items: center; justify-content: space-between; padding: 0 20px; height: 56px; border-bottom: 1px solid var(--border); background: var(--surface); position: sticky; top: 0; z-index: 10; }
+.nav-brand { font-size: 15px; font-weight: 700; color: var(--text); letter-spacing: -0.02em; }
+.nav-brand span { color: var(--accent); }
+.nav-link { font-size: 14px; color: var(--muted); }
+.nav-link:hover { color: var(--text); }
+
+.hero { max-width: 840px; margin: 0 auto; padding: 72px 20px 56px; text-align: center; }
+.hero-badge { display: inline-flex; align-items: center; gap: 6px; background: var(--accent-dim); color: var(--accent); border: 1px solid color-mix(in srgb,var(--accent) 30%,transparent); border-radius: 100px; font-size: 12px; font-weight: 600; padding: 4px 12px; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 20px; }
+.hero h1 { font-size: clamp(2rem,5vw,3.2rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 16px; }
+.hero h1 em { font-style: normal; color: var(--accent); }
+.hero-sub { font-size: clamp(1rem,2.2vw,1.2rem); color: var(--muted); max-width: 580px; margin: 0 auto 36px; }
+.hero-cta { display: inline-block; background: var(--accent); color: #fff; font-size: 16px; font-weight: 700; padding: 14px 32px; border-radius: 8px; letter-spacing: -0.01em; transition: opacity .15s; }
+.hero-cta:hover { opacity: .88; text-decoration: none; }
+.hero-note { font-size: 13px; color: var(--muted); margin-top: 10px; }
+
+/* Cutout illustration */
+.cutout-demo { max-width: 640px; margin: 48px auto 0; }
+.cutout-canvas { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; display: flex; gap: 16px; align-items: center; }
+.cutout-before, .cutout-after { flex: 1; border-radius: 8px; overflow: hidden; aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center; position: relative; }
+.cutout-before { background: linear-gradient(135deg,#2a2040 0%,#1a3050 100%); }
+.cutout-after { background: repeating-conic-gradient(#1e1e24 0% 25%, #28282f 0% 50%) 0 0 / 16px 16px; }
+.cutout-figure { width: 70%; height: 80%; background: linear-gradient(180deg,#ffbfa0 0%,#d4907a 50%,#a05a44 100%); border-radius: 50% 50% 40% 40% / 60% 60% 40% 40%; position: relative; }
+.cutout-figure::before { content: ""; position: absolute; top: -20%; left: 20%; width: 60%; height: 45%; background: linear-gradient(180deg,#ffcfb0 0%,#d4a088 100%); border-radius: 50%; }
+.cutout-after .cutout-figure { filter: drop-shadow(0 4px 16px rgba(0,212,170,.3)); }
+.cutout-arrow { font-size: 20px; color: var(--accent); flex-shrink: 0; }
+.cutout-labels { display: flex; gap: 16px; margin-top: 10px; }
+.cutout-label { flex: 1; text-align: center; font-size: 11px; font-weight: 600; color: var(--muted); letter-spacing: 0.05em; text-transform: uppercase; }
+
+.section { max-width: 840px; margin: 0 auto; padding: 64px 20px; }
+.section-title { font-size: clamp(1.4rem,3vw,1.9rem); font-weight: 800; letter-spacing: -0.025em; text-align: center; margin-bottom: 8px; }
+.section-sub { text-align: center; color: var(--muted); font-size: 1rem; margin-bottom: 40px; }
+.features { display: grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap: 20px; }
+.feature { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; }
+.feature-icon { font-size: 24px; margin-bottom: 10px; }
+.feature h3 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+.feature p { font-size: 14px; color: var(--muted); line-height: 1.5; }
+
+.use-cases { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.use-inner { max-width: 840px; margin: 0 auto; padding: 64px 20px; }
+.uc-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); gap: 16px; margin-top: 36px; }
+.uc-card { border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; }
+.uc-title { font-size: 14px; font-weight: 700; margin-bottom: 6px; }
+.uc-desc { font-size: 13px; color: var(--muted); line-height: 1.5; }
+
+.steps { counter-reset: step; display: flex; flex-direction: column; gap: 16px; margin-top: 40px; }
+.step { display: flex; gap: 16px; align-items: flex-start; }
+.step-num { counter-increment: step; width: 32px; height: 32px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 13px; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+.step-num::before { content: counter(step); }
+.step-body h3 { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+.step-body p { font-size: 14px; color: var(--muted); }
+
+.related { max-width: 840px; margin: 0 auto; padding: 48px 20px 64px; }
+.related-title { font-size: 16px; font-weight: 700; margin-bottom: 20px; }
+.related-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); gap: 16px; }
+.related-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; display: flex; flex-direction: column; gap: 6px; transition: border-color .15s; }
+.related-card:hover { border-color: var(--accent); text-decoration: none; }
+.related-card-name { font-size: 14px; font-weight: 700; color: var(--text); }
+.related-card-desc { font-size: 13px; color: var(--muted); }
+
+.faq { max-width: 700px; margin: 0 auto; padding: 0 20px 72px; }
+.faq-title { font-size: clamp(1.3rem,2.5vw,1.7rem); font-weight: 800; letter-spacing: -0.02em; margin-bottom: 28px; }
+.faq-item { border-bottom: 1px solid var(--border); padding: 18px 0; }
+.faq-q { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+.faq-a { font-size: 14px; color: var(--muted); line-height: 1.6; }
+.faq-a a { color: var(--accent); }
+
+.cta-strip { background: var(--accent-dim); border-top: 1px solid color-mix(in srgb,var(--accent) 20%,transparent); border-bottom: 1px solid color-mix(in srgb,var(--accent) 20%,transparent); }
+.cta-inner { max-width: 840px; margin: 0 auto; padding: 48px 20px; text-align: center; }
+.cta-inner h2 { font-size: clamp(1.4rem,3vw,1.9rem); font-weight: 800; letter-spacing: -0.025em; margin-bottom: 10px; }
+.cta-inner p { color: var(--muted); margin-bottom: 28px; }
+
+.footer { border-top: 1px solid var(--border); padding: 28px 20px; text-align: center; font-size: 13px; color: var(--muted); }
+.footer a { color: var(--muted); }
+.footer a:hover { color: var(--text); }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="nav-brand" href="/start/">the<span>creating</span>co</a>
+  <a class="nav-link" href="/tools/">All free tools</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-badge">Free · No login · In-browser AI</div>
+  <h1>Background Remover<br><em>Free Online</em></h1>
+  <p class="hero-sub">Remove the background from any photo instantly in your browser. AI detects your subject, you refine the edge, and export a transparent PNG — no upload, no account.</p>
+  <a class="hero-cta" href="https://luma.thecreatingco.com/cutout" rel="noopener">Remove Background Free →</a>
+  <p class="hero-note">Powered by Cutout · Works in Chrome, Safari, Firefox</p>
+
+  <div class="cutout-demo">
+    <div class="cutout-canvas">
+      <div class="cutout-before">
+        <div class="cutout-figure"></div>
+      </div>
+      <div class="cutout-arrow">→</div>
+      <div class="cutout-after">
+        <div class="cutout-figure"></div>
+      </div>
+    </div>
+    <div class="cutout-labels">
+      <div class="cutout-label">Original</div>
+      <div class="cutout-label" style="flex:0 0 32px"></div>
+      <div class="cutout-label">Transparent PNG</div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2 class="section-title">Everything you need to cut out a subject</h2>
+  <p class="section-sub">AI detection, manual edge refinement, and transparent PNG export — all free, all in the browser.</p>
+  <div class="features">
+    <div class="feature">
+      <div class="feature-icon">🤖</div>
+      <h3>AI subject detection</h3>
+      <p>Cutout's on-device model automatically identifies the foreground subject and generates an initial mask in seconds.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">🖌️</div>
+      <h3>Manual edge refinement</h3>
+      <p>Use the grow and shrink brush to add or remove pixels from the mask — ideal for hair, fur, and complex edges.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">🖼️</div>
+      <h3>Transparent PNG export</h3>
+      <p>Export your cutout as a transparent PNG, ready to composite into any image editor, presentation, or video.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">🔒</div>
+      <h3>On-device processing</h3>
+      <p>Your photo never leaves your browser — the background removal model runs entirely on your device.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">🎨</div>
+      <h3>Send to Luma for editing</h3>
+      <p>Open your cutout directly in Luma to composite it with other layers, apply effects, or export at full resolution.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">📱</div>
+      <h3>Works on mobile</h3>
+      <p>Cutout runs in any modern browser on desktop, tablet, or phone — no installation needed.</p>
+    </div>
+  </div>
+</section>
+
+<div class="use-cases">
+  <div class="use-inner">
+    <h2 class="section-title">What people remove backgrounds for</h2>
+    <div class="uc-grid">
+      <div class="uc-card">
+        <div class="uc-title">🛍️ Product photos</div>
+        <div class="uc-desc">Cut products from their shoot background and place them on white, grey or branded backgrounds for e-commerce.</div>
+      </div>
+      <div class="uc-card">
+        <div class="uc-title">🤳 Portrait cutouts</div>
+        <div class="uc-desc">Isolate a person from a photo to add to a presentation slide, banner, or composite image.</div>
+      </div>
+      <div class="uc-card">
+        <div class="uc-title">🖼️ Mockups</div>
+        <div class="uc-desc">Remove a product background to place it on a lifestyle mockup or styled flat-lay scene.</div>
+      </div>
+      <div class="uc-card">
+        <div class="uc-title">🎨 Creative compositing</div>
+        <div class="uc-desc">Layer a cutout on a new background in Luma to build creative compositions, collages, or artwork.</div>
+      </div>
+      <div class="uc-card">
+        <div class="uc-title">📄 Logo isolation</div>
+        <div class="uc-desc">Remove a white or coloured background from a logo to get a clean transparent PNG for use anywhere.</div>
+      </div>
+      <div class="uc-card">
+        <div class="uc-title">🎬 Video overlays</div>
+        <div class="uc-desc">Cut a subject from a still and overlay it on a video frame for a quick visual effect.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="section">
+  <h2 class="section-title">How to remove a background — 3 steps</h2>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num"></div>
+      <div class="step-body">
+        <h3>Open Cutout in your browser</h3>
+        <p>Go to <a href="https://luma.thecreatingco.com/cutout">luma.thecreatingco.com/cutout</a> — no account or app installation needed.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num"></div>
+      <div class="step-body">
+        <h3>Upload your photo and let AI detect the subject</h3>
+        <p>Drop or select your image. Cutout's on-device AI automatically highlights the foreground subject and removes the background.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num"></div>
+      <div class="step-body">
+        <h3>Refine the edge and export as PNG</h3>
+        <p>Use the brush to clean up any rough edges, then export your transparent PNG — ready to use anywhere.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-strip">
+  <div class="cta-inner">
+    <h2>Remove a background for free — right now</h2>
+    <p>No account. No upload. Processing stays in your browser.</p>
+    <a class="hero-cta" href="https://luma.thecreatingco.com/cutout" rel="noopener">Open Cutout Free →</a>
+  </div>
+</div>
+
+<section class="related">
+  <div class="related-title">More free creative tools</div>
+  <div class="related-grid">
+    <a class="related-card" href="/products/luma/">
+      <div class="related-card-name">🖼️ Luma — Image Editor</div>
+      <div class="related-card-desc">Build layered image compositions with your cutouts, effects, and type.</div>
+    </a>
+    <a class="related-card" href="/products/mockup/">
+      <div class="related-card-name">📦 Mockups</div>
+      <div class="related-card-desc">Place your cutout product images on stylised mockup scenes instantly.</div>
+    </a>
+    <a class="related-card" href="/stem-splitter/">
+      <div class="related-card-name">🎼 Stem Splitter</div>
+      <div class="related-card-desc">Separate vocals, drums, bass and melody from any song — free online.</div>
+    </a>
+    <a class="related-card" href="/pitch-shifter/">
+      <div class="related-card-name">🎚️ Pitch Shifter</div>
+      <div class="related-card-desc">Change the pitch of any audio free in your browser — no download.</div>
+    </a>
+  </div>
+</section>
+
+<section class="faq">
+  <h2 class="faq-title">Frequently asked questions</h2>
+
+  <div class="faq-item">
+    <div class="faq-q">Is the background remover really free?</div>
+    <div class="faq-a">Yes — Cutout is completely free to use in your browser. There is no account, no trial limit, and no download required.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Does the background remover work on portraits?</div>
+    <div class="faq-a">Yes. Cutout works on portraits, product photos, logos, and any image with a reasonably clear subject. The AI detects the foreground automatically, and you can refine the edge with a brush for hair and complex outlines.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">What format does it export?</div>
+    <div class="faq-a">Cutout exports a transparent PNG — the background pixels become alpha (transparent), so you can place the cutout on any background in an image editor, presentation, or video project.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Does my photo leave my browser?</div>
+    <div class="faq-a">No — Cutout runs the background removal model locally on your device. Your image is never uploaded to a server.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Can I refine the edge after the automatic removal?</div>
+    <div class="faq-a">Yes. After the automatic pass, Cutout gives you a grow and shrink brush to add or remove pixels from the mask, so you can clean up hair, fur, or complex edges manually.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Can I use the cutout in a layered editor?</div>
+    <div class="faq-a">Yes — Cutout integrates with <a href="/products/luma/">Luma</a>, thecreatingco's layered image editor. You can send your cutout directly into a Luma canvas to composite it with other layers, add effects, or export at full resolution.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">What kinds of photos work best?</div>
+    <div class="faq-a">Cutout works best on photos with clear contrast between the subject and background — portraits, product shots on plain backgrounds, and logos on solid colours. Complex scenes where the subject and background share similar colours may need more manual edge work.</div>
+  </div>
+</section>
+
+<footer class="footer">
+  <p>© thecreatingco · <a href="/privacy/">Privacy</a> · <a href="/start/">Home</a> · <a href="/tools/">Tools</a></p>
+</footer>
+
+</body>
+</html>
