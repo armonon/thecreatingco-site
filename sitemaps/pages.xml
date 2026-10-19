@@ -1,2 +1,40 @@
-<?xml version='1.0' encoding='utf-8'?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://thecreatingco.com/</loc></url><url><loc>https://thecreatingco.com/tools/</loc></url><url><loc>https://thecreatingco.com/kickstarter/</loc></url><url><loc>https://thecreatingco.com/privacy/</loc></url><url><loc>https://thecreatingco.com/projects/</loc></url><url><loc>https://thecreatingco.com/projects/orbit/</loc></url><url><loc>https://thecreatingco.com/about/</loc></url><url><loc>https://thecreatingco.com/release-notes/</loc></url><url><loc>https://thecreatingco.com/testing/</loc></url><url><loc>https://thecreatingco.com/campaign/</loc></url><url><loc>https://thecreatingco.com/after-hours/</loc></url><url><loc>https://thecreatingco.com/downloads/</loc></url><url><loc>https://thecreatingco.com/start/</loc></url><url><loc>https://thecreatingco.com/checkup/</loc></url><url><loc>https://thecreatingco.com/labs/</loc></url><url><loc>https://thecreatingco.com/inside/</loc></url><url><loc>https://thecreatingco.com/packs/</loc></url><url><loc>https://thecreatingco.com/community/network</loc></url><url><loc>https://thecreatingco.com/community/rules</loc></url><url><loc>https://thecreatingco.com/products/now-messenger/</loc></url></urlset>
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://thecreatingco.com/</loc><lastmod>2026-10-18</lastmod></url>
+  <url><loc>https://thecreatingco.com/products/animate/</loc><lastmod>2026-10-18</lastmod></url>
+  <url><loc>https://thecreatingco.com/products/autocut/</loc><lastmod>2026-10-18</lastmod></url>
+  <url><loc>https://thecreatingco.com/products/board/</loc><lastmod>2026-10-18</lastmod></url>
+  <url><loc>https://thecreatingco.com/products/bounce/</loc><lastmod>2026-10-18</lastmod></url>
+  <url><loc>https://thecreatingco.com/products/canvas/</loc><lastmod>2026-10-18</lastmod></url>
+  <url><loc>https://thecreatingco.com/products/captions/</loc><lastmod>2026-10-18</lastmod></url>
+  <url><loc>https://thecreatingco.com/products/cast/</loc><lastmod>2026-10-18</lastmod></url>
+  <url><loc>https://thecreatingco.com/products/circle/</loc><lastmod>2026-10-18</lastmod></url>
+  <url><loc>https://thecreatingco.com/products/cutout/</loc><lastmod>2026-10-18</lastmod></url>
+  <url><loc>https://thecreatingco.com/products/form/</loc><lastmod>2026-10-18</lastmod></url>
+  <url><loc>https://thecreatingco.com/products/ghost/</loc><lastmod>2026-10-18</lastmod></url>
+  <url><loc>https://thecreatingco.com/products/glyph-studio/</loc><lastmod>2026-10-18</lastmod></url>
+  <url><loc>https://thecreatingco.com/products/glyph/</loc><lastmod>2026-10-18</lastmod></url>
+  <url><loc>https://thecreatingco.com/products/grade/</loc><lastmod>2026-10-18</lastmod></url>
+  <url><loc>https://thecreatingco.com/products/hole/</loc><lastmod>2026-10-18</lastmod></url>
+  <url><loc>https://thecreatingco.com/products/key-bpm/</loc><lastmod>2026-10-18</lastmod></url>
+  <url><loc>https://thecreatingco.com/products/librarian/</loc><lastmod>2026-10-18</lastmod></url>
+  <url><loc>https://thecreatingco.com/products/locker/</loc><lastmod>2026-10-18</lastmod></url>
+  <url><loc>https://thecreatingco.com/products/loop/</loc><lastmod>2026-10-18</lastmod></url>
+  <url><loc>https://thecreatingco.com/products/luma/</loc><lastmod>2026-10-18</lastmod></url>
+  <url><loc>https://thecreatingco.com/products/mockup/</loc><lastmod>2026-10-18</lastmod></url>
+  <url><loc>https://thecreatingco.com/products/moodboard/</loc><lastmod>2026-10-18</lastmod></url>
+  <url><loc>https://thecreatingco.com/products/now-messenger/</loc><lastmod>2026-10-18</lastmod></url>
+  <url><loc>https://thecreatingco.com/products/pocket-studio/</loc><lastmod>2026-10-18</lastmod></url>
+  <url><loc>https://thecreatingco.com/products/pocket/</loc><lastmod>2026-10-18</lastmod></url>
+  <url><loc>https://thecreatingco.com/products/portfolio/</loc><lastmod>2026-10-18</lastmod></url>
+  <url><loc>https://thecreatingco.com/products/press/</loc><lastmod>2026-10-18</lastmod></url>
+  <url><loc>https://thecreatingco.com/products/reclaim/</loc><lastmod>2026-10-18</lastmod></url>
+  <url><loc>https://thecreatingco.com/products/reframe/</loc><lastmod>2026-10-18</lastmod></url>
+  <url><loc>https://thecreatingco.com/products/scenepilot/</loc><lastmod>2026-10-18</lastmod></url>
+  <url><loc>https://thecreatingco.com/products/sessions/</loc><lastmod>2026-10-18</lastmod></url>
+  <url><loc>https://thecreatingco.com/products/split/</loc><lastmod>2026-10-18</lastmod></url>
+  <url><loc>https://thecreatingco.com/products/stemdeck/</loc><lastmod>2026-10-18</lastmod></url>
+  <url><loc>https://thecreatingco.com/products/vox/</loc><lastmod>2026-10-18</lastmod></url>
+  <url><loc>https://thecreatingco.com/products/weblab/</loc><lastmod>2026-10-18</lastmod></url>
+  <url><loc>https://thecreatingco.com/products/website-checkup/</loc><lastmod>2026-10-18</lastmod></url>
+</urlset>
