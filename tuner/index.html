@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Online Guitar Tuner Free — Chromatic Tuner, No Download</title>
+<meta name="description" content="Free online guitar tuner and chromatic tuner — tune any instrument in your browser using your microphone. No app download required.">
+<link rel="canonical" href="https://thecreatingco.com/tuner/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://thecreatingco.com/tuner/">
+<meta property="og:title" content="Online Guitar Tuner Free — Chromatic Tuner, No Download">
+<meta property="og:description" content="Free online guitar tuner and chromatic tuner — tune any instrument in your browser using your microphone. No app download required.">
+<meta property="og:image" content="https://thecreatingco.com/assets/share/stemdeck.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Online Guitar Tuner Free — Chromatic Tuner, No Download">
+<meta name="twitter:description" content="Free online guitar tuner and chromatic tuner — tune any instrument in your browser using your microphone. No app download required.">
+<meta name="twitter:image" content="https://thecreatingco.com/assets/share/stemdeck.jpg">
+<meta name="robots" content="index,follow">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://thecreatingco.com/tuner/#webpage",
+      "url": "https://thecreatingco.com/tuner/",
+      "name": "Online Guitar Tuner Free — Chromatic Tuner, No Download",
+      "description": "Free online guitar tuner and chromatic tuner — tune any instrument in your browser using your microphone. No app download required.",
+      "isPartOf": { "@id": "https://thecreatingco.com/#website" },
+      "breadcrumb": { "@id": "https://thecreatingco.com/tuner/#breadcrumb" }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://thecreatingco.com/tuner/#app",
+      "name": "Online Guitar Tuner & Chromatic Tuner",
+      "applicationCategory": "MusicApplication",
+      "operatingSystem": "Any (web browser with microphone)",
+      "url": "https://thecreatingco.com/tuner/",
+      "description": "Free online chromatic tuner for guitar, bass, ukulele, violin, and any other instrument. Uses your device microphone to detect pitch in real time — no app to download.",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "publisher": {
+        "@type": "Organization",
+        "name": "The Creating Co",
+        "url": "https://thecreatingco.com"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://thecreatingco.com/tuner/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is the online tuner free?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes — completely free. Open the page, allow microphone access, and start tuning. No account needed, no app to install." }
+        },
+        {
+          "@type": "Question",
+          "name": "What instruments can I tune with the online tuner?",
+          "acceptedAnswer": { "@type": "Answer", "text": "The chromatic tuner works with any pitched instrument: guitar (standard, drop D, open G, DADGAD, and other alternate tunings), bass guitar, ukulele, violin, viola, cello, mandolin, banjo, and more. Switch between preset instrument tunings or use chromatic mode to detect any note." }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need to install anything?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No — the tuner runs entirely in your browser using the Web Audio API. You just need to allow microphone access when prompted. It works on Chrome, Firefox, Safari, and Edge on desktop and mobile." }
+        },
+        {
+          "@type": "Question",
+          "name": "How accurate is the online tuner?",
+          "acceptedAnswer": { "@type": "Answer", "text": "The chromatic tuner uses autocorrelation-based pitch detection accurate to ±1 cent. That's more than precise enough for performance and recording. A good microphone or holding the device close to the instrument improves accuracy in noisy environments." }
+        },
+        {
+          "@type": "Question",
+          "name": "What is standard guitar tuning?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Standard guitar tuning from low to high is E2–A2–D3–G3–B3–E4. The tuner shows which string you're closest to and whether it's sharp or flat, with a needle display to guide you to perfect pitch." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use the tuner on my phone?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes — the tuner is fully mobile-optimised. Open it in your phone browser, allow mic access, and tune. The large needle display is easy to read while your hands are on the instrument." }
+        },
+        {
+          "@type": "Question",
+          "name": "What is A4 reference pitch and can I change it?",
+          "acceptedAnswer": { "@type": "Answer", "text": "A4 reference pitch is the frequency of the A above middle C, standardised at 440 Hz for most Western music. Some orchestras and historical recordings use 432 Hz or 415 Hz. The online tuner lets you set the A4 reference between 432 Hz and 446 Hz to match your ensemble." }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://thecreatingco.com/tuner/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://thecreatingco.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Free Tools", "item": "https://thecreatingco.com/tools/" },
+        { "@type": "ListItem", "position": 3, "name": "Tuner", "item": "https://thecreatingco.com/tuner/" }
+      ]
+    }
+  ]
+}
+</script>
+<style>
+:root {
+  --bg: #0d0d12; --surface: #16161e; --surface2: #1e1e2a;
+  --border: rgba(255,255,255,0.08); --text: #f0f0f8; --muted: #7878a0;
+  --accent: #00d4a0; --accent2: #d400a0;
+  --accent-dim: rgba(0,212,160,0.12); --accent2-dim: rgba(212,0,160,0.12);
+}
+@media (prefers-color-scheme: light) {
+  :root { --bg:#f8f8fc; --surface:#fff; --surface2:#f0f0f8; --border:rgba(0,0,0,0.08); --text:#111118; --muted:#6060a0; --accent-dim:rgba(0,160,120,0.10); --accent2-dim:rgba(160,0,120,0.10); }
+}
+:root[data-theme="dark"] { --bg:#0d0d12; --surface:#16161e; --surface2:#1e1e2a; --border:rgba(255,255,255,0.08); --text:#f0f0f8; --muted:#7878a0; --accent-dim:rgba(0,212,160,0.12); --accent2-dim:rgba(212,0,160,0.12); }
+:root[data-theme="light"] { --bg:#f8f8fc; --surface:#fff; --surface2:#f0f0f8; --border:rgba(0,0,0,0.08); --text:#111118; --muted:#6060a0; --accent-dim:rgba(0,160,120,0.10); --accent2-dim:rgba(160,0,120,0.10); }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+header{border-bottom:1px solid var(--border);padding:16px}
+.nav-inner{max-width:860px;margin:auto;display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:800;font-size:17px;color:var(--text)}
+.logo span{color:var(--accent)}
+.hero{text-align:center;padding:64px 16px 48px;max-width:700px;margin:auto}
+.badge{display:inline-flex;align-items:center;gap:6px;background:var(--accent-dim);border:1px solid color-mix(in srgb,var(--accent) 30%,transparent);border-radius:999px;padding:4px 12px;font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;text-transform:uppercase;margin-bottom:20px}
+h1{font-size:clamp(28px,5vw,48px);font-weight:900;letter-spacing:-1px;line-height:1.1;margin-bottom:16px}
+.sub{font-size:17px;color:var(--muted);max-width:500px;margin:0 auto 32px}
+.cta-btn{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#000;font-size:16px;font-weight:800;padding:14px 28px;border-radius:8px;transition:opacity .15s}
+.cta-btn:hover{opacity:.88;text-decoration:none}
+.cta-sub{margin-top:12px;font-size:13px;color:var(--muted)}
+
+/* ---- Tuner illustration ---- */
+.tuner-wrap{max-width:440px;margin:48px auto;background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:32px 28px;text-align:center}
+.tuner-note{font-size:72px;font-weight:900;line-height:1;color:var(--accent);letter-spacing:-2px;margin-bottom:4px;animation:note-pulse 2s ease-in-out infinite}
+@keyframes note-pulse{0%,100%{opacity:1}50%{opacity:0.7}}
+.tuner-oct{font-size:20px;color:var(--muted);font-weight:700;margin-bottom:24px}
+/* Needle display */
+.needle-container{position:relative;width:260px;height:130px;margin:0 auto 16px;overflow:hidden}
+.needle-arc{position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:260px;height:260px;border-radius:50%;border:3px solid var(--border);clip-path:polygon(0 50%,100% 50%,100% 0,0 0)}
+.needle-tick{position:absolute;bottom:0;left:50%;width:2px;height:10px;background:var(--border);transform-origin:bottom center}
+.needle{position:absolute;bottom:0;left:50%;width:3px;height:110px;background:var(--accent);border-radius:2px 2px 0 0;transform-origin:bottom center;transform:translateX(-50%) rotate(-8deg);animation:needle-sway 3s ease-in-out infinite}
+@keyframes needle-sway{0%,100%{transform:translateX(-50%) rotate(-8deg)}50%{transform:translateX(-50%) rotate(6deg)}}
+.needle-dot{position:absolute;bottom:-5px;left:50%;transform:translateX(-50%);width:12px;height:12px;border-radius:50%;background:var(--accent)}
+.tuner-cents{font-size:13px;color:var(--muted);margin-bottom:20px;font-weight:700;letter-spacing:.04em}
+.tuner-cents span{color:var(--accent)}
+/* String buttons */
+.string-row{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin-bottom:16px}
+.str-btn{width:40px;height:40px;border-radius:50%;background:var(--surface2);border:2px solid var(--border);font-size:13px;font-weight:800;color:var(--muted);display:flex;align-items:center;justify-content:center;cursor:default;flex-direction:column;line-height:1.1}
+.str-btn.active{background:var(--accent-dim);border-color:color-mix(in srgb,var(--accent) 40%,transparent);color:var(--accent)}
+.str-btn .hz{font-size:8px;font-weight:400;opacity:.7}
+/* Tuning mode tabs */
+.mode-tabs{display:flex;gap:6px;justify-content:center}
+.mode-tab{padding:6px 14px;border-radius:6px;font-size:12px;font-weight:700;background:var(--surface2);color:var(--muted);border:1px solid var(--border);cursor:default}
+.mode-tab.active{background:var(--accent-dim);color:var(--accent);border-color:color-mix(in srgb,var(--accent) 30%,transparent)}
+
+/* Tuning table and rest of content */
+.section{max-width:860px;margin:0 auto;padding:48px 16px}
+.section-title{font-size:24px;font-weight:800;margin-bottom:8px}
+.section-sub{color:var(--muted);margin-bottom:32px}
+.tuning-table{width:100%;border-collapse:collapse;font-size:14px}
+.tuning-table th{text-align:left;padding:10px 12px;border-bottom:2px solid var(--border);color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.06em}
+.tuning-table td{padding:10px 12px;border-bottom:1px solid var(--border);font-family:monospace}
+.tuning-table tr:last-child td{border-bottom:none}
+.tuning-table td:first-child{font-family:system-ui,-apple-system,sans-serif;font-weight:700}
+.note-pill{display:inline-block;padding:2px 7px;border-radius:4px;font-size:11px;font-weight:700;background:var(--accent-dim);color:var(--accent);margin:1px}
+.features{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
+.feat-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px}
+.feat-icon{font-size:24px;margin-bottom:10px}
+.feat-title{font-weight:700;margin-bottom:6px}
+.feat-desc{font-size:14px;color:var(--muted)}
+.use-cases{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
+.use-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px}
+.use-title{font-weight:700;margin-bottom:6px}
+.use-desc{font-size:14px;color:var(--muted)}
+.steps{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
+.step-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px}
+.step-num{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:var(--accent-dim);color:var(--accent);font-weight:900;font-size:14px;margin-bottom:12px}
+.step-title{font-weight:700;margin-bottom:6px}
+.step-desc{font-size:14px;color:var(--muted)}
+.cta-strip{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:48px 16px;text-align:center}
+.cta-strip h2{font-size:24px;font-weight:800;margin-bottom:12px}
+.cta-strip p{color:var(--muted);margin-bottom:24px;max-width:480px;margin-left:auto;margin-right:auto}
+.related{display:flex;flex-wrap:wrap;gap:10px}
+.rel-link{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:8px 16px;font-size:14px;font-weight:600;color:var(--text)}
+.rel-link:hover{border-color:var(--accent);text-decoration:none}
+.faq{display:grid;gap:12px}
+.faq-item{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px}
+.faq-q{font-weight:700;margin-bottom:8px}
+.faq-a{font-size:14px;color:var(--muted)}
+footer{border-top:1px solid var(--border);padding:32px 16px;text-align:center}
+.footer-inner{max-width:860px;margin:auto}
+.footer-links{display:flex;flex-wrap:wrap;gap:16px;justify-content:center;margin-bottom:12px;font-size:14px}
+.footer-copy{font-size:12px;color:var(--muted)}
+</style>
+</head>
+<body>
+<header>
+  <div class="nav-inner">
+    <a class="logo" href="https://thecreatingco.com/">the<span>creating</span>co</a>
+    <a class="cta-btn" style="font-size:13px;padding:8px 16px;color:#000" href="https://thecreatingco.com/products/stemdeck/">Open StemDeck →</a>
+  </div>
+</header>
+
+<main>
+<div class="hero">
+  <div class="badge">🎸 Free Online Tool</div>
+  <h1>Online Guitar Tuner Free</h1>
+  <p class="sub">Chromatic tuner for guitar, bass, ukulele, violin, and any pitched instrument — right in your browser. No app, no download.</p>
+  <a class="cta-btn" href="https://thecreatingco.com/products/stemdeck/">Open Tuner Free →</a>
+  <p class="cta-sub">Free · Uses your microphone · Works on any device</p>
+</div>
+
+<!-- Tuner illustration -->
+<div class="tuner-wrap" aria-hidden="true">
+  <!-- Note display -->
+  <div class="tuner-note">G</div>
+  <div class="tuner-oct">3 · 196.00 Hz</div>
+
+  <!-- Needle -->
+  <div class="needle-container">
+    <div class="needle-arc"></div>
+    <!-- Tick marks at -40, -20, 0, +20, +40 cents -->
+    <div class="needle-tick" style="transform:rotate(-40deg);transform-origin:bottom center;left:calc(50% - 1px);bottom:0;height:14px"></div>
+    <div class="needle-tick" style="transform:rotate(-20deg);transform-origin:bottom center;left:calc(50% - 1px);bottom:0"></div>
+    <div class="needle-tick" style="transform:rotate(0deg);transform-origin:bottom center;left:calc(50% - 1px);bottom:0;height:16px;background:var(--accent);opacity:0.5"></div>
+    <div class="needle-tick" style="transform:rotate(20deg);transform-origin:bottom center;left:calc(50% - 1px);bottom:0"></div>
+    <div class="needle-tick" style="transform:rotate(40deg);transform-origin:bottom center;left:calc(50% - 1px);bottom:0;height:14px"></div>
+    <div class="needle"></div>
+    <div class="needle-dot"></div>
+  </div>
+  <div class="tuner-cents">−8 cents <span>↑ tune up slightly</span></div>
+
+  <!-- String buttons (standard E tuning) -->
+  <div class="string-row">
+    <div class="str-btn"><span>E2</span><span class="hz">82Hz</span></div>
+    <div class="str-btn"><span>A2</span><span class="hz">110Hz</span></div>
+    <div class="str-btn"><span>D3</span><span class="hz">147Hz</span></div>
+    <div class="str-btn active"><span>G3</span><span class="hz">196Hz</span></div>
+    <div class="str-btn"><span>B3</span><span class="hz">247Hz</span></div>
+    <div class="str-btn"><span>E4</span><span class="hz">330Hz</span></div>
+  </div>
+
+  <!-- Mode tabs -->
+  <div class="mode-tabs">
+    <div class="mode-tab active">Guitar</div>
+    <div class="mode-tab">Bass</div>
+    <div class="mode-tab">Ukulele</div>
+    <div class="mode-tab">Chromatic</div>
+  </div>
+</div>
+
+<!-- Features -->
+<section class="section">
+  <h2 class="section-title">A real-time tuner in your browser</h2>
+  <p class="section-sub">No app store, no Bluetooth dongle — just open and play.</p>
+  <div class="features">
+    <div class="feat-card">
+      <div class="feat-icon">🎯</div>
+      <div class="feat-title">±1 Cent Accuracy</div>
+      <div class="feat-desc">Autocorrelation pitch detection is accurate to ±1 cent — more than precise enough for performance, recording, and studio work.</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">🎸</div>
+      <div class="feat-title">Guitar, Bass, Uke &amp; More</div>
+      <div class="feat-desc">Preset modes for 6-string guitar (standard + alternate tunings), 4-string bass, ukulele, and chromatic mode for violin, cello, mandolin, or any pitched instrument.</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">🎛️</div>
+      <div class="feat-title">Adjustable A4 Reference</div>
+      <div class="feat-desc">Set the A4 reference pitch anywhere from 432 Hz to 446 Hz. Match orchestras, historical instruments, or recordings tuned to non-standard pitch.</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">🔒</div>
+      <div class="feat-title">Mic Audio Stays Local</div>
+      <div class="feat-desc">The Web Audio API processes your microphone input entirely on your device. Nothing is streamed or recorded — the tuner hears your instrument and nothing else.</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">🎼</div>
+      <div class="feat-title">Alternate Tunings</div>
+      <div class="feat-desc">Switch between standard E, drop D, open G, DADGAD, open D, open E, and more with a single tap — no manual entry needed.</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">📱</div>
+      <div class="feat-title">Works on Any Device</div>
+      <div class="feat-desc">Large needle display reads clearly while your hands are on the instrument. Works on iPhone, Android, tablet, laptop, and desktop — any browser with mic access.</div>
+    </div>
+  </div>
+</section>
+
+<!-- Tuning reference table -->
+<section class="section" style="padding-top:0">
+  <h2 class="section-title">Common guitar tuning reference</h2>
+  <p class="section-sub">Open the tuner and match each string to these notes. Low to high, string 6 → string 1.</p>
+  <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden">
+    <table class="tuning-table">
+      <thead>
+        <tr>
+          <th>Tuning name</th>
+          <th>String 6 (low)</th>
+          <th>String 5</th>
+          <th>String 4</th>
+          <th>String 3</th>
+          <th>String 2</th>
+          <th>String 1 (high)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Standard</td>
+          <td><span class="note-pill">E2</span></td>
+          <td><span class="note-pill">A2</span></td>
+          <td><span class="note-pill">D3</span></td>
+          <td><span class="note-pill">G3</span></td>
+          <td><span class="note-pill">B3</span></td>
+          <td><span class="note-pill">E4</span></td>
+        </tr>
+        <tr>
+          <td>Drop D</td>
+          <td><span class="note-pill">D2</span></td>
+          <td><span class="note-pill">A2</span></td>
+          <td><span class="note-pill">D3</span></td>
+          <td><span class="note-pill">G3</span></td>
+          <td><span class="note-pill">B3</span></td>
+          <td><span class="note-pill">E4</span></td>
+        </tr>
+        <tr>
+          <td>Open G</td>
+          <td><span class="note-pill">D2</span></td>
+          <td><span class="note-pill">G2</span></td>
+          <td><span class="note-pill">D3</span></td>
+          <td><span class="note-pill">G3</span></td>
+          <td><span class="note-pill">B3</span></td>
+          <td><span class="note-pill">D4</span></td>
+        </tr>
+        <tr>
+          <td>Open D</td>
+          <td><span class="note-pill">D2</span></td>
+          <td><span class="note-pill">A2</span></td>
+          <td><span class="note-pill">D3</span></td>
+          <td><span class="note-pill">F♯3</span></td>
+          <td><span class="note-pill">A3</span></td>
+          <td><span class="note-pill">D4</span></td>
+        </tr>
+        <tr>
+          <td>DADGAD</td>
+          <td><span class="note-pill">D2</span></td>
+          <td><span class="note-pill">A2</span></td>
+          <td><span class="note-pill">D3</span></td>
+          <td><span class="note-pill">G3</span></td>
+          <td><span class="note-pill">A3</span></td>
+          <td><span class="note-pill">D4</span></td>
+        </tr>
+        <tr>
+          <td>Open E</td>
+          <td><span class="note-pill">E2</span></td>
+          <td><span class="note-pill">B2</span></td>
+          <td><span class="note-pill">E3</span></td>
+          <td><span class="note-pill">G♯3</span></td>
+          <td><span class="note-pill">B3</span></td>
+          <td><span class="note-pill">E4</span></td>
+        </tr>
+        <tr>
+          <td>Half-step down (Eb)</td>
+          <td><span class="note-pill">Eb2</span></td>
+          <td><span class="note-pill">Ab2</span></td>
+          <td><span class="note-pill">Db3</span></td>
+          <td><span class="note-pill">Gb3</span></td>
+          <td><span class="note-pill">Bb3</span></td>
+          <td><span class="note-pill">Eb4</span></td>
+        </tr>
+        <tr>
+          <td>4-String Bass (standard)</td>
+          <td><span class="note-pill">E1</span></td>
+          <td><span class="note-pill">A1</span></td>
+          <td><span class="note-pill">D2</span></td>
+          <td><span class="note-pill">G2</span></td>
+          <td>—</td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td>Ukulele (standard C)</td>
+          <td>—</td>
+          <td>—</td>
+          <td><span class="note-pill">G4</span></td>
+          <td><span class="note-pill">C4</span></td>
+          <td><span class="note-pill">E4</span></td>
+          <td><span class="note-pill">A4</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- Use Cases -->
+<section class="section" style="padding-top:0">
+  <h2 class="section-title">Who needs an online tuner?</h2>
+  <p class="section-sub">From bedroom players to touring musicians — in-tune playing matters for everyone.</p>
+  <div class="use-cases">
+    <div class="use-card">
+      <div class="use-title">🎸 Guitar Players</div>
+      <div class="use-desc">Standard, drop D, open G — switch tunings quickly during rehearsal or before recording without reaching for a dedicated pedal tuner.</div>
+    </div>
+    <div class="use-card">
+      <div class="use-title">🎵 Beginners</div>
+      <div class="use-desc">Learning guitar or ukulele? Tuning by ear is hard at first. A visual tuner with a needle shows exactly which way to turn the peg — no guesswork.</div>
+    </div>
+    <div class="use-card">
+      <div class="use-title">🎻 Orchestral Players</div>
+      <div class="use-desc">Set A4 to 442 Hz (European orchestral standard), 415 Hz (Baroque), or any custom pitch before rehearsal — without carrying a reference tone generator.</div>
+    </div>
+    <div class="use-card">
+      <div class="use-title">🎤 Singer-Songwriters</div>
+      <div class="use-desc">Open guitar tunings — DADGAD, open G, open D — unlock unique chord shapes. Quickly switch between them in the set list without a clip tuner.</div>
+    </div>
+    <div class="use-card">
+      <div class="use-title">🎙️ Home Recorders</div>
+      <div class="use-desc">Nothing ruins a track like an out-of-tune instrument discovered in mixdown. Tune before every take with the browser tuner — zero friction.</div>
+    </div>
+    <div class="use-card">
+      <div class="use-title">🎓 Music Teachers</div>
+      <div class="use-desc">Pull up the tuner on a classroom projector or tablet to demonstrate proper tuning to students, or have them check their own instruments on a phone.</div>
+    </div>
+  </div>
+</section>
+
+<!-- How-to -->
+<section class="section" style="padding-top:0">
+  <h2 class="section-title">How to tune with the online tuner</h2>
+  <p class="section-sub">Takes about 30 seconds. No setup, no download.</p>
+  <div class="steps">
+    <div class="step-card">
+      <div class="step-num">1</div>
+      <div class="step-title">Allow microphone access</div>
+      <div class="step-desc">Open the tuner and click Allow when the browser asks for microphone permission. This lets the tuner hear your instrument. The mic input is never recorded or sent anywhere.</div>
+    </div>
+    <div class="step-card">
+      <div class="step-num">2</div>
+      <div class="step-title">Select your instrument and tuning</div>
+      <div class="step-desc">Choose Guitar, Bass, Ukulele, or Chromatic. For guitar, pick your tuning — standard, drop D, open G, DADGAD, and more. Select the string you want to tune.</div>
+    </div>
+    <div class="step-card">
+      <div class="step-num">3</div>
+      <div class="step-title">Play a string and watch the needle</div>
+      <div class="step-desc">Pluck the string and watch the needle. If the note is flat, tune up (turn the peg until the needle centres). If sharp, tune down. When the needle sits at 0 cents, that string is in tune.</div>
+    </div>
+  </div>
+</section>
+
+<!-- Mid CTA -->
+<div class="cta-strip">
+  <h2>Tune your instrument right now — free</h2>
+  <p>No download, no account. Open the tuner, allow mic access, and be in tune in under a minute.</p>
+  <a class="cta-btn" href="https://thecreatingco.com/products/stemdeck/">Open Tuner Free →</a>
+</div>
+
+<!-- Related tools -->
+<section class="section">
+  <h2 class="section-title">More free music tools</h2>
+  <p class="section-sub">A full toolkit for musicians, producers, and creators.</p>
+  <div class="related">
+    <a class="rel-link" href="https://thecreatingco.com/equalizer/">Equalizer</a>
+    <a class="rel-link" href="https://thecreatingco.com/noise-reducer/">Noise Reducer</a>
+    <a class="rel-link" href="https://thecreatingco.com/pitch-shifter/">Pitch Shifter</a>
+    <a class="rel-link" href="https://thecreatingco.com/beat-maker/">Beat Maker</a>
+    <a class="rel-link" href="https://thecreatingco.com/vocal-remover/">Vocal Remover</a>
+    <a class="rel-link" href="https://thecreatingco.com/audio-converter/">Audio Converter</a>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" style="padding-top:0">
+  <h2 class="section-title">Frequently asked questions</h2>
+  <div class="faq">
+    <div class="faq-item">
+      <div class="faq-q">Is the online tuner free?</div>
+      <div class="faq-a">Yes — completely free. Open the page, allow microphone access, and start tuning. No account needed, no app to install.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What instruments can I tune with the online tuner?</div>
+      <div class="faq-a">The chromatic tuner works with any pitched instrument: guitar (standard, drop D, open G, DADGAD, and other alternate tunings), bass guitar, ukulele, violin, viola, cello, mandolin, banjo, and more. Switch between preset instrument tunings or use chromatic mode to detect any note.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Do I need to install anything?</div>
+      <div class="faq-a">No — the tuner runs entirely in your browser using the Web Audio API. You just need to allow microphone access when prompted. It works on Chrome, Firefox, Safari, and Edge on desktop and mobile.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How accurate is the online tuner?</div>
+      <div class="faq-a">The chromatic tuner uses autocorrelation-based pitch detection accurate to ±1 cent. That's more than precise enough for performance and recording. A good microphone or holding the device close to the instrument improves accuracy in noisy environments.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What is standard guitar tuning?</div>
+      <div class="faq-a">Standard guitar tuning from low to high is E2–A2–D3–G3–B3–E4. The tuner shows which string you're closest to and whether it's sharp or flat, with a needle display to guide you to perfect pitch.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Can I use the tuner on my phone?</div>
+      <div class="faq-a">Yes — the tuner is fully mobile-optimised. Open it in your phone browser, allow mic access, and tune. The large needle display is easy to read while your hands are on the instrument.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What is A4 reference pitch and can I change it?</div>
+      <div class="faq-a">A4 reference pitch is the frequency of the A above middle C, standardised at 440 Hz for most Western music. Some orchestras and historical recordings use 432 Hz or 415 Hz. The online tuner lets you set the A4 reference between 432 Hz and 446 Hz to match your ensemble.</div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="https://thecreatingco.com/">Home</a>
+      <a href="https://thecreatingco.com/products/stemdeck/">StemDeck</a>
+      <a href="https://thecreatingco.com/equalizer/">Equalizer</a>
+      <a href="https://thecreatingco.com/pitch-shifter/">Pitch Shifter</a>
+      <a href="https://thecreatingco.com/noise-reducer/">Noise Reducer</a>
+    </div>
+    <div class="footer-copy">© 2026 The Creating Co · <a href="https://thecreatingco.com/privacy/">Privacy</a> · <a href="https://thecreatingco.com/terms/">Terms</a></div>
+  </div>
+</footer>
+</body>
+</html>
