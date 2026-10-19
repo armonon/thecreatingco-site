@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Image Compressor Free Online — Compress PNG, JPG, WebP</title>
+<meta name="description" content="Compress images online free — reduce PNG, JPG, WebP, and AVIF file size without losing quality. No upload limits, no sign-up, instant download.">
+<link rel="canonical" href="https://thecreatingco.com/image-compressor/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://thecreatingco.com/image-compressor/">
+<meta property="og:title" content="Image Compressor Free Online — Compress PNG, JPG, WebP">
+<meta property="og:description" content="Compress images online free — reduce PNG, JPG, WebP, and AVIF file size without losing quality. No upload limits, no sign-up, instant download.">
+<meta property="og:image" content="https://thecreatingco.com/assets/share/home.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Image Compressor Free Online — Compress PNG, JPG, WebP">
+<meta name="twitter:description" content="Compress images online free — reduce PNG, JPG, WebP, and AVIF file size without losing quality. No upload limits, no sign-up, instant download.">
+<meta name="twitter:image" content="https://thecreatingco.com/assets/share/home.jpg">
+<meta name="robots" content="index,follow">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://thecreatingco.com/image-compressor/#webpage",
+      "url": "https://thecreatingco.com/image-compressor/",
+      "name": "Image Compressor Free Online — Compress PNG, JPG, WebP",
+      "description": "Compress images online free — reduce PNG, JPG, WebP, and AVIF file size without losing quality. No upload limits, no sign-up, instant download.",
+      "isPartOf": { "@id": "https://thecreatingco.com/#website" },
+      "breadcrumb": { "@id": "https://thecreatingco.com/image-compressor/#breadcrumb" }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://thecreatingco.com/image-compressor/#app",
+      "name": "Online Image Compressor",
+      "applicationCategory": "GraphicsApplication",
+      "operatingSystem": "Any (web browser)",
+      "url": "https://thecreatingco.com/image-compressor/",
+      "description": "Free online image compressor — reduce PNG, JPG, WebP, AVIF, and SVG file sizes in your browser with zero uploads to a server.",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "publisher": {
+        "@type": "Organization",
+        "name": "The Creating Co",
+        "url": "https://thecreatingco.com"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://thecreatingco.com/image-compressor/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is this image compressor really free?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes — 100% free with no limits. You can compress as many images as you need, in any session, with no account required." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does it compress images without losing quality?",
+          "acceptedAnswer": { "@type": "Answer", "text": "The compressor uses smart lossy and lossless algorithms. You choose the quality level — at 80% quality, most images look identical to the original while shrinking by 60–80%." }
+        },
+        {
+          "@type": "Question",
+          "name": "What image formats are supported?",
+          "acceptedAnswer": { "@type": "Answer", "text": "You can compress JPG/JPEG, PNG, WebP, AVIF, GIF (static), BMP, and TIFF. You can also convert between formats during compression — e.g. PNG → WebP." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is my image uploaded to a server?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. All compression happens in your browser using the Canvas API and WebAssembly codecs. Your images never leave your device." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I compress multiple images at once?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes — drag and drop up to 20 images at once and they're all compressed in parallel. Download them individually or as a single ZIP file." }
+        },
+        {
+          "@type": "Question",
+          "name": "What's the maximum file size I can compress?",
+          "acceptedAnswer": { "@type": "Answer", "text": "There's no server-side limit because everything runs in your browser. In practice, images up to 50 MB compress smoothly. Extremely large RAW files may be slower on older devices." }
+        },
+        {
+          "@type": "Question",
+          "name": "How much will my file size be reduced?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Results vary by image and format, but typical reductions are 50–80% for JPEGs, 40–70% for PNGs, and up to 90% when converting to modern formats like WebP or AVIF." }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://thecreatingco.com/image-compressor/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://thecreatingco.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Free Tools", "item": "https://thecreatingco.com/tools/" },
+        { "@type": "ListItem", "position": 3, "name": "Image Compressor", "item": "https://thecreatingco.com/image-compressor/" }
+      ]
+    }
+  ]
+}
+</script>
+<style>
+:root {
+  --bg: #0d0d12;
+  --surface: #16161e;
+  --surface2: #1e1e2a;
+  --border: rgba(255,255,255,0.08);
+  --text: #f0f0f8;
+  --muted: #7878a0;
+  --accent: #00d4ff;
+  --accent2: #ff6b00;
+  --accent-dim: rgba(0,212,255,0.12);
+  --accent2-dim: rgba(255,107,0,0.12);
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #f8f8fc;
+    --surface: #fff;
+    --surface2: #f0f0f8;
+    --border: rgba(0,0,0,0.08);
+    --text: #111118;
+    --muted: #6060a0;
+    --accent-dim: rgba(0,180,220,0.10);
+    --accent2-dim: rgba(200,80,0,0.10);
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0d0d12; --surface: #16161e; --surface2: #1e1e2a;
+  --border: rgba(255,255,255,0.08); --text: #f0f0f8; --muted: #7878a0;
+  --accent-dim: rgba(0,212,255,0.12); --accent2-dim: rgba(255,107,0,0.12);
+}
+:root[data-theme="light"] {
+  --bg: #f8f8fc; --surface: #fff; --surface2: #f0f0f8;
+  --border: rgba(0,0,0,0.08); --text: #111118; --muted: #6060a0;
+  --accent-dim: rgba(0,180,220,0.10); --accent2-dim: rgba(200,80,0,0.10);
+}
+*,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: system-ui, -apple-system, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ---- Layout ---- */
+header { border-bottom: 1px solid var(--border); padding: 16px; }
+.nav-inner { max-width: 860px; margin: auto; display: flex; align-items: center; justify-content: space-between; }
+.logo { font-weight: 800; font-size: 17px; color: var(--text); }
+.logo span { color: var(--accent); }
+.hero { text-align: center; padding: 64px 16px 48px; max-width: 700px; margin: auto; }
+.badge { display: inline-flex; align-items: center; gap: 6px; background: var(--accent-dim); border: 1px solid color-mix(in srgb,var(--accent) 30%,transparent); border-radius: 999px; padding: 4px 12px; font-size: 12px; font-weight: 700; color: var(--accent); letter-spacing: .05em; text-transform: uppercase; margin-bottom: 20px; }
+h1 { font-size: clamp(28px,5vw,48px); font-weight: 900; letter-spacing: -1px; line-height: 1.1; margin-bottom: 16px; }
+.sub { font-size: 17px; color: var(--muted); max-width: 500px; margin: 0 auto 32px; }
+.cta-btn { display: inline-flex; align-items: center; gap: 8px; background: var(--accent); color: #000; font-size: 16px; font-weight: 800; padding: 14px 28px; border-radius: 8px; transition: opacity .15s; }
+.cta-btn:hover { opacity: .88; text-decoration: none; }
+.cta-sub { margin-top: 12px; font-size: 13px; color: var(--muted); }
+
+/* ---- Compression Illustration ---- */
+.compress-wrap { max-width: 500px; margin: 48px auto; }
+.compress-demo { display: flex; align-items: center; gap: 16px; background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 24px; }
+.compress-img { flex: 1; }
+.img-label { font-size: 11px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .07em; margin-bottom: 8px; text-align: center; }
+.img-preview { border-radius: 8px; overflow: hidden; aspect-ratio: 4/3; position: relative; border: 1px solid var(--border); }
+.img-orig { background: linear-gradient(135deg, #2a2a3e 0%, #1a1a2e 50%, #0d0d20 100%); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; }
+.img-thumb-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 2px; width: 80%; }
+.img-thumb-grid div { aspect-ratio: 1; border-radius: 2px; }
+.img-c1 { background: #4060a0; }
+.img-c2 { background: #306080; }
+.img-c3 { background: #20a060; }
+.img-c4 { background: #8040c0; }
+.img-c5 { background: #c04040; }
+.img-c6 { background: #c08020; }
+.img-c7 { background: #4080c0; }
+.img-c8 { background: #20c0a0; }
+.img-compressed { background: var(--surface2); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; }
+.img-thumb-grid-sm { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; width: 80%; filter: blur(0.2px); }
+.img-size-orig { text-align: center; font-size: 13px; color: var(--muted); margin-top: 8px; }
+.img-size-new { text-align: center; font-size: 13px; font-weight: 800; color: var(--accent); margin-top: 8px; }
+.compress-arrow { display: flex; flex-direction: column; align-items: center; gap: 6px; color: var(--accent); flex-shrink: 0; }
+.arrow-icon { font-size: 22px; animation: arr-bounce 1.2s ease-in-out infinite alternate; }
+@keyframes arr-bounce {
+  from { transform: translateX(-4px); opacity: 0.6; }
+  to { transform: translateX(4px); opacity: 1; }
+}
+.arrow-label { font-size: 11px; font-weight: 700; color: var(--accent); text-align: center; white-space: nowrap; }
+.savings-bar-wrap { margin-top: 20px; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 16px; }
+.savings-label { display: flex; justify-content: space-between; font-size: 12px; font-weight: 700; color: var(--muted); margin-bottom: 8px; }
+.savings-label span:last-child { color: var(--accent); }
+.savings-bar { height: 10px; border-radius: 5px; background: var(--surface2); overflow: hidden; }
+.savings-fill { height: 100%; border-radius: 5px; background: linear-gradient(90deg, var(--accent), var(--accent2)); animation: bar-grow 1.4s ease-out forwards; width: 0; }
+@keyframes bar-grow {
+  from { width: 0; }
+  to { width: 73%; }
+}
+.savings-formats { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.fmt-chip { background: var(--surface2); border: 1px solid var(--border); border-radius: 6px; font-size: 12px; font-weight: 700; padding: 3px 9px; color: var(--muted); }
+.fmt-chip.hi { color: var(--accent); border-color: color-mix(in srgb, var(--accent) 30%, transparent); background: var(--accent-dim); }
+
+/* ---- Features ---- */
+.section { max-width: 860px; margin: 0 auto; padding: 48px 16px; }
+.section-title { font-size: 24px; font-weight: 800; margin-bottom: 8px; }
+.section-sub { color: var(--muted); margin-bottom: 32px; }
+.features { display: grid; grid-template-columns: repeat(auto-fill,minmax(240px,1fr)); gap: 16px; }
+.feat-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 20px; }
+.feat-icon { font-size: 24px; margin-bottom: 10px; }
+.feat-title { font-weight: 700; margin-bottom: 6px; }
+.feat-desc { font-size: 14px; color: var(--muted); }
+
+/* ---- Format table ---- */
+.fmt-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.fmt-table th { text-align: left; padding: 10px 12px; border-bottom: 2px solid var(--border); color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .06em; }
+.fmt-table td { padding: 10px 12px; border-bottom: 1px solid var(--border); }
+.fmt-table tr:last-child td { border-bottom: none; }
+.fmt-badge { display: inline-block; padding: 2px 7px; border-radius: 4px; font-size: 11px; font-weight: 700; }
+.fmt-badge.lossy { background: var(--accent2-dim); color: var(--accent2); }
+.fmt-badge.lossless { background: var(--accent-dim); color: var(--accent); }
+.fmt-badge.both { background: color-mix(in srgb, var(--accent-dim) 50%, var(--accent2-dim)); color: var(--text); }
+
+/* ---- Use cases ---- */
+.use-cases { display: grid; grid-template-columns: repeat(auto-fill,minmax(240px,1fr)); gap: 16px; }
+.use-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 20px; }
+.use-title { font-weight: 700; margin-bottom: 6px; }
+.use-desc { font-size: 14px; color: var(--muted); }
+
+/* ---- Steps ---- */
+.steps { display: grid; grid-template-columns: repeat(auto-fill,minmax(220px,1fr)); gap: 16px; counter-reset: step; }
+.step-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 20px; counter-increment: step; }
+.step-num { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 50%; background: var(--accent-dim); color: var(--accent); font-weight: 900; font-size: 14px; margin-bottom: 12px; }
+.step-title { font-weight: 700; margin-bottom: 6px; }
+.step-desc { font-size: 14px; color: var(--muted); }
+
+/* ---- CTA Strip ---- */
+.cta-strip { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 48px 16px; text-align: center; }
+.cta-strip h2 { font-size: 24px; font-weight: 800; margin-bottom: 12px; }
+.cta-strip p { color: var(--muted); margin-bottom: 24px; max-width: 480px; margin-left: auto; margin-right: auto; }
+
+/* ---- Related ---- */
+.related { display: flex; flex-wrap: wrap; gap: 10px; }
+.rel-link { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 8px 16px; font-size: 14px; font-weight: 600; color: var(--text); }
+.rel-link:hover { border-color: var(--accent); text-decoration: none; }
+
+/* ---- FAQ ---- */
+.faq { display: grid; gap: 12px; }
+.faq-item { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 20px; }
+.faq-q { font-weight: 700; margin-bottom: 8px; }
+.faq-a { font-size: 14px; color: var(--muted); }
+
+/* ---- Footer ---- */
+footer { border-top: 1px solid var(--border); padding: 32px 16px; text-align: center; }
+.footer-inner { max-width: 860px; margin: auto; }
+.footer-links { display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; margin-bottom: 12px; font-size: 14px; }
+.footer-copy { font-size: 12px; color: var(--muted); }
+</style>
+</head>
+<body>
+<header>
+  <div class="nav-inner">
+    <a class="logo" href="https://thecreatingco.com/">the<span>creating</span>co</a>
+    <a class="cta-btn" style="font-size:13px;padding:8px 16px;" href="https://thecreatingco.com/">Explore Tools →</a>
+  </div>
+</header>
+
+<main>
+<!-- Hero -->
+<div class="hero">
+  <div class="badge">🖼️ Free Online Tool</div>
+  <h1>Image Compressor Free Online</h1>
+  <p class="sub">Reduce PNG, JPG, WebP, and AVIF file sizes instantly — no quality loss you can see, no uploads to a server, no sign-up needed.</p>
+  <a class="cta-btn" href="https://thecreatingco.com/">Compress Images Free →</a>
+  <p class="cta-sub">Free · Private · Works in any browser</p>
+</div>
+
+<!-- Compression Illustration -->
+<div class="compress-wrap" aria-hidden="true">
+  <div class="compress-demo">
+    <div class="compress-img">
+      <div class="img-label">Original</div>
+      <div class="img-preview">
+        <div class="img-orig">
+          <div class="img-thumb-grid">
+            <div class="img-c1"></div><div class="img-c2"></div><div class="img-c3"></div><div class="img-c4"></div>
+            <div class="img-c5"></div><div class="img-c6"></div><div class="img-c7"></div><div class="img-c8"></div>
+            <div class="img-c3"></div><div class="img-c5"></div><div class="img-c1"></div><div class="img-c6"></div>
+            <div class="img-c7"></div><div class="img-c4"></div><div class="img-c8"></div><div class="img-c2"></div>
+          </div>
+        </div>
+      </div>
+      <div class="img-size-orig">4.2 MB · PNG</div>
+    </div>
+    <div class="compress-arrow">
+      <div class="arrow-icon">→</div>
+      <div class="arrow-label">73%<br>smaller</div>
+    </div>
+    <div class="compress-img">
+      <div class="img-label">Compressed</div>
+      <div class="img-preview">
+        <div class="img-compressed">
+          <div class="img-thumb-grid-sm">
+            <div class="img-c1"></div><div class="img-c2"></div><div class="img-c3"></div><div class="img-c4"></div>
+            <div class="img-c5"></div><div class="img-c6"></div><div class="img-c7"></div><div class="img-c8"></div>
+            <div class="img-c3"></div><div class="img-c5"></div><div class="img-c1"></div><div class="img-c6"></div>
+            <div class="img-c7"></div><div class="img-c4"></div><div class="img-c8"></div><div class="img-c2"></div>
+          </div>
+        </div>
+      </div>
+      <div class="img-size-new">1.1 MB · WebP ✓</div>
+    </div>
+  </div>
+  <div class="savings-bar-wrap">
+    <div class="savings-label">
+      <span>File size reduction</span>
+      <span>−73% · 3.1 MB saved</span>
+    </div>
+    <div class="savings-bar">
+      <div class="savings-fill"></div>
+    </div>
+    <div class="savings-formats">
+      <span class="fmt-chip hi">JPG</span>
+      <span class="fmt-chip hi">PNG</span>
+      <span class="fmt-chip hi">WebP</span>
+      <span class="fmt-chip hi">AVIF</span>
+      <span class="fmt-chip">GIF</span>
+      <span class="fmt-chip">BMP</span>
+      <span class="fmt-chip">TIFF</span>
+      <span class="fmt-chip">SVG</span>
+    </div>
+  </div>
+</div>
+
+<!-- Features -->
+<section class="section">
+  <h2 class="section-title">Everything you need in a free image compressor</h2>
+  <p class="section-sub">Smart compression that runs entirely in your browser — fast, private, and no file size limits.</p>
+  <div class="features">
+    <div class="feat-card">
+      <div class="feat-icon">🔒</div>
+      <div class="feat-title">100% Private</div>
+      <div class="feat-desc">Compression happens in your browser using Canvas API and WebAssembly. Your images never leave your device and are never uploaded to any server.</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">⚡</div>
+      <div class="feat-title">Instant Results</div>
+      <div class="feat-desc">No waiting for uploads or server queues. Compression runs on your CPU/GPU directly — results appear in seconds for most images.</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">🖼️</div>
+      <div class="feat-title">8 Formats Supported</div>
+      <div class="feat-desc">Compress JPG, PNG, WebP, AVIF, GIF, BMP, TIFF, and SVG. Convert between formats at the same time — PNG to WebP in one step.</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">📦</div>
+      <div class="feat-title">Batch Compression</div>
+      <div class="feat-desc">Drag up to 20 images at once and compress them all in parallel. Download individually or grab everything as a single ZIP file.</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">🎚️</div>
+      <div class="feat-title">Adjustable Quality</div>
+      <div class="feat-desc">Slide between 1–100% quality to balance size vs. fidelity. A live before/after preview lets you see exactly what you'll get before downloading.</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">📱</div>
+      <div class="feat-title">Works on Mobile</div>
+      <div class="feat-desc">Fully responsive — use it on iPhone, iPad, and Android. Compress photos straight from your camera roll before sharing them.</div>
+    </div>
+  </div>
+</section>
+
+<!-- Format guide table -->
+<section class="section" style="padding-top:0">
+  <h2 class="section-title">Image format compression guide</h2>
+  <p class="section-sub">Which format to choose for maximum compression with the best quality.</p>
+  <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden;">
+    <table class="fmt-table">
+      <thead>
+        <tr>
+          <th>Format</th>
+          <th>Type</th>
+          <th>Typical reduction</th>
+          <th>Best for</th>
+          <th>Browser support</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>AVIF</strong></td>
+          <td><span class="fmt-badge both">Both</span></td>
+          <td>50–90%</td>
+          <td>Photos, web images — best modern format</td>
+          <td>Chrome, Firefox, Edge (No IE)</td>
+        </tr>
+        <tr>
+          <td><strong>WebP</strong></td>
+          <td><span class="fmt-badge both">Both</span></td>
+          <td>25–80%</td>
+          <td>General web use, replaces JPG + PNG</td>
+          <td>All modern browsers</td>
+        </tr>
+        <tr>
+          <td><strong>JPG / JPEG</strong></td>
+          <td><span class="fmt-badge lossy">Lossy</span></td>
+          <td>40–75%</td>
+          <td>Photos, gradients, complex images</td>
+          <td>Universal</td>
+        </tr>
+        <tr>
+          <td><strong>PNG</strong></td>
+          <td><span class="fmt-badge lossless">Lossless</span></td>
+          <td>10–40%</td>
+          <td>Logos, illustrations, transparency needed</td>
+          <td>Universal</td>
+        </tr>
+        <tr>
+          <td><strong>GIF</strong></td>
+          <td><span class="fmt-badge lossless">Lossless</span></td>
+          <td>5–30%</td>
+          <td>Simple animations, icons (256 colors max)</td>
+          <td>Universal</td>
+        </tr>
+        <tr>
+          <td><strong>BMP</strong></td>
+          <td><span class="fmt-badge lossless">Lossless</span></td>
+          <td>Convert away</td>
+          <td>Windows legacy — convert to PNG/WebP</td>
+          <td>Universal</td>
+        </tr>
+        <tr>
+          <td><strong>SVG</strong></td>
+          <td><span class="fmt-badge lossless">Lossless</span></td>
+          <td>30–60% (minify)</td>
+          <td>Icons, logos, vector graphics</td>
+          <td>All modern browsers</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- Use Cases -->
+<section class="section" style="padding-top:0">
+  <h2 class="section-title">Who uses an online image compressor?</h2>
+  <p class="section-sub">From web developers to social media creators — everyone benefits from smaller image files.</p>
+  <div class="use-cases">
+    <div class="use-card">
+      <div class="use-title">🌐 Web Developers</div>
+      <div class="use-desc">Optimize images before deploying to reduce page load times and hit Core Web Vitals targets. Convert PNG assets to WebP in one step.</div>
+    </div>
+    <div class="use-card">
+      <div class="use-title">📱 Social Media Managers</div>
+      <div class="use-desc">Compress photos below platform upload limits without noticeably reducing visual quality. Posts load faster for your followers.</div>
+    </div>
+    <div class="use-card">
+      <div class="use-title">📸 Photographers</div>
+      <div class="use-desc">Deliver high-quality proofs to clients as compressed JPEGs or WebPs that load quickly in the browser without re-shooting.</div>
+    </div>
+    <div class="use-card">
+      <div class="use-title">🛍️ E-commerce Sellers</div>
+      <div class="use-desc">Faster product images mean faster pages and more conversions. Compress hundreds of product photos in a single batch.</div>
+    </div>
+    <div class="use-card">
+      <div class="use-title">✉️ Email Marketers</div>
+      <div class="use-desc">Keep email image attachments under size limits so they reach every inbox without being clipped or rejected by spam filters.</div>
+    </div>
+    <div class="use-card">
+      <div class="use-title">🎮 Game Developers</div>
+      <div class="use-desc">Squeeze texture atlases and UI sprites without visible quality loss to reduce app bundle size and improve load times.</div>
+    </div>
+  </div>
+</section>
+
+<!-- How-to -->
+<section class="section" style="padding-top:0">
+  <h2 class="section-title">How to compress images online in 3 steps</h2>
+  <p class="section-sub">From oversized original to optimized file in seconds.</p>
+  <div class="steps">
+    <div class="step-card">
+      <div class="step-num">1</div>
+      <div class="step-title">Drop or select your images</div>
+      <div class="step-desc">Drag and drop up to 20 images onto the tool, or click to browse your files. Supports JPG, PNG, WebP, AVIF, GIF, BMP, TIFF, and SVG.</div>
+    </div>
+    <div class="step-card">
+      <div class="step-num">2</div>
+      <div class="step-title">Adjust quality &amp; output format</div>
+      <div class="step-desc">Drag the quality slider to balance size and clarity. Optionally convert to a modern format like WebP or AVIF for even better compression.</div>
+    </div>
+    <div class="step-card">
+      <div class="step-num">3</div>
+      <div class="step-title">Download compressed files</div>
+      <div class="step-desc">Click Download to save each compressed image, or grab all at once as a ZIP. All processing was done locally — nothing was sent to any server.</div>
+    </div>
+  </div>
+</section>
+
+<!-- Mid CTA -->
+<div class="cta-strip">
+  <h2>Compress your images now — free, private, instant</h2>
+  <p>No sign-up required. Just drop your images in and download the optimized versions in seconds.</p>
+  <a class="cta-btn" href="https://thecreatingco.com/">Open Image Compressor Free →</a>
+</div>
+
+<!-- Related Tools -->
+<section class="section">
+  <h2 class="section-title">More free creative tools</h2>
+  <p class="section-sub">Discover the full suite of free tools from The Creating Co.</p>
+  <div class="related">
+    <a class="rel-link" href="https://thecreatingco.com/background-remover/">Background Remover</a>
+    <a class="rel-link" href="https://thecreatingco.com/audio-converter/">Audio Converter</a>
+    <a class="rel-link" href="https://thecreatingco.com/beat-maker/">Beat Maker</a>
+    <a class="rel-link" href="https://thecreatingco.com/vocal-remover/">Vocal Remover</a>
+    <a class="rel-link" href="https://thecreatingco.com/stem-splitter/">Stem Splitter</a>
+    <a class="rel-link" href="https://thecreatingco.com/audio-visualizer/">Audio Visualizer</a>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" style="padding-top:0">
+  <h2 class="section-title">Frequently asked questions</h2>
+  <div class="faq">
+    <div class="faq-item">
+      <div class="faq-q">Is this image compressor really free?</div>
+      <div class="faq-a">Yes — 100% free with no limits. You can compress as many images as you need, in any session, with no account required.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Does it compress images without losing quality?</div>
+      <div class="faq-a">The compressor uses smart lossy and lossless algorithms. You choose the quality level — at 80% quality, most images look identical to the original while shrinking by 60–80%.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What image formats are supported?</div>
+      <div class="faq-a">You can compress JPG/JPEG, PNG, WebP, AVIF, GIF (static), BMP, and TIFF. You can also convert between formats during compression — e.g. PNG → WebP.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Is my image uploaded to a server?</div>
+      <div class="faq-a">No. All compression happens in your browser using the Canvas API and WebAssembly codecs. Your images never leave your device.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Can I compress multiple images at once?</div>
+      <div class="faq-a">Yes — drag and drop up to 20 images at once and they're all compressed in parallel. Download them individually or as a single ZIP file.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What's the maximum file size I can compress?</div>
+      <div class="faq-a">There's no server-side limit because everything runs in your browser. In practice, images up to 50 MB compress smoothly. Extremely large RAW files may be slower on older devices.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How much will my file size be reduced?</div>
+      <div class="faq-a">Results vary by image and format, but typical reductions are 50–80% for JPEGs, 40–70% for PNGs, and up to 90% when converting to modern formats like WebP or AVIF.</div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="https://thecreatingco.com/">Home</a>
+      <a href="https://thecreatingco.com/background-remover/">Background Remover</a>
+      <a href="https://thecreatingco.com/audio-converter/">Audio Converter</a>
+      <a href="https://thecreatingco.com/beat-maker/">Beat Maker</a>
+      <a href="https://thecreatingco.com/stem-splitter/">Stem Splitter</a>
+    </div>
+    <div class="footer-copy">© 2026 The Creating Co · <a href="https://thecreatingco.com/privacy/">Privacy</a> · <a href="https://thecreatingco.com/terms/">Terms</a></div>
+  </div>
+</footer>
+</body>
+</html>
