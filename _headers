@@ -2,7 +2,8 @@
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
   X-Frame-Options: SAMEORIGIN
-  Permissions-Policy: camera=(), microphone=(), geolocation=()
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()
+  X-XSS-Protection: 0
 
 # --- thecreateco suite kit (wave 4) — added 2026-10-06; rules above unchanged ---
 /suite/v1/*
@@ -29,3 +30,20 @@
 # --- autopilot perf (2026-10-18): content-hashed bundles never change in place ---
 /assets/styles/*
   Cache-Control: public, max-age=31536000, immutable
+
+# --- autopilot security + cache (2026-10-18) ---
+# Immutable cache for content-hashed JS assets under /assets/
+/assets/js/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/images/*
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+
+/assets/product-artwork/*
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+
+/assets/team/*
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+
+/assets/after-hours/*
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
