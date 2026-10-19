@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Chord Finder Free Online — Identify Chords by Note or Audio</title>
+<meta name="description" content="Find guitar and piano chords free online — identify any chord by name, notes or audio in your browser. No account or download needed.">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chord Finder Free Online — thecreatingco">
+<meta property="og:description" content="Identify any guitar or piano chord free in your browser. Enter notes, play audio, or search by chord name — instant chord recognition, no account needed.">
+<meta property="og:url" content="https://thecreatingco.com/chord-finder/">
+<meta property="og:site_name" content="thecreatingco">
+<meta property="og:image" content="https://thecreatingco.com/assets/share/stemdeck.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://thecreatingco.com/assets/share/stemdeck.jpg">
+<meta name="twitter:title" content="Chord Finder Free Online — thecreatingco">
+<meta name="twitter:description" content="Identify any chord free online — by name, notes, or audio. Works in your browser, no account needed.">
+<link rel="canonical" href="https://thecreatingco.com/chord-finder/">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://thecreatingco.com/chord-finder/#page","url":"https://thecreatingco.com/chord-finder/","name":"Chord Finder Free Online — thecreatingco","description":"Find and identify guitar and piano chords free in your browser. Enter notes, search by name, or play audio for chord recognition. No account or download needed.","about":{"@id":"https://thecreatingco.com/products/stemdeck/#app"}},{"@type":"SoftwareApplication","@id":"https://thecreatingco.com/products/stemdeck/#app","name":"StemDeck — Chord Finder & Music Studio","url":"https://thecreatingco.com/products/stemdeck/","applicationCategory":"MultimediaApplication","operatingSystem":"Web browser","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"thecreatingco","url":"https://thecreatingco.com"},"description":"StemDeck is a browser-based music studio with a built-in chord finder and identifier. Look up any chord by name, enter its notes to identify it, or play audio to recognize the chord. Includes chord diagrams, note names, and music theory context.","featureList":["Chord identification by note input","Chord search by name","Guitar and piano chord diagrams","Audio chord recognition","Chord theory: intervals, inversions, extensions","Key and scale context for each chord","Works in the browser — no download or account"]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is the chord finder free?","acceptedAnswer":{"@type":"Answer","text":"Yes — StemDeck's chord finder is completely free. No account, no download, and no usage limit."}},{"@type":"Question","name":"How do I identify a chord by its notes?","acceptedAnswer":{"@type":"Answer","text":"Enter the notes of the chord and the finder identifies the chord name, type (major, minor, diminished, etc.) and any inversions. For example, entering C, E and G returns 'C major'."}},{"@type":"Question","name":"Can the chord finder identify chords from audio?","acceptedAnswer":{"@type":"Answer","text":"Yes — you can play or upload a short audio clip and the chord recognition tool will analyse the frequencies to identify the most likely chord. Works best with clean, isolated chords on piano or guitar."}},{"@type":"Question","name":"Does it show guitar chord diagrams?","acceptedAnswer":{"@type":"Answer","text":"Yes — for common chords, the chord finder shows guitar chord diagrams with finger positions as well as piano keyboard diagrams showing which keys to press."}},{"@type":"Question","name":"What types of chords can it identify?","acceptedAnswer":{"@type":"Answer","text":"The chord finder covers major, minor, diminished, augmented, dominant 7th, major 7th, minor 7th, suspended, add9, and many other chord types. It also identifies inversions (first, second and third inversion) and slash chords."}},{"@type":"Question","name":"How do I find what key a chord progression is in?","acceptedAnswer":{"@type":"Answer","text":"Once you have identified the individual chords, look for the chords that fit neatly into a common key. The chord finder shows which keys each chord is diatonic to, helping you identify the key of a chord progression."}},{"@type":"Question","name":"Can I use the chord finder on mobile?","acceptedAnswer":{"@type":"Answer","text":"Yes — the chord finder works in any modern mobile browser. Tap notes on the on-screen keyboard to identify chords, or search by chord name."}}]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://thecreatingco.com/start/"},{"@type":"ListItem","position":2,"name":"Apps & tools","item":"https://thecreatingco.com/tools/"},{"@type":"ListItem","position":3,"name":"Chord Finder","item":"https://thecreatingco.com/chord-finder/"}]}]}</script>
+<style>
+:root {
+  --bg: #080e0a;
+  --surface: #0e1610;
+  --border: #182010;
+  --text: #e8f8e8;
+  --muted: #78a880;
+  --accent: #40e080;
+  --accent-dim: rgba(64,224,128,0.10);
+  --accent2: #e0a840;
+  --radius: 10px;
+}
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --bg: #f0f8f2; --surface: #fff; --border: #d0ecd8; --text: #0a180e;
+    --muted: #408858; --accent: #1a8040; --accent-dim: rgba(26,128,64,0.08); --accent2: #a07010;
+  }
+}
+:root[data-theme="light"] {
+  --bg: #f0f8f2; --surface: #fff; --border: #d0ecd8; --text: #0a180e;
+  --muted: #408858; --accent: #1a8040; --accent-dim: rgba(26,128,64,0.08); --accent2: #a07010;
+}
+*,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.nav { display: flex; align-items: center; justify-content: space-between; padding: 0 20px; height: 56px; border-bottom: 1px solid var(--border); background: var(--surface); position: sticky; top: 0; z-index: 10; }
+.nav-brand { font-size: 15px; font-weight: 700; color: var(--text); letter-spacing: -0.02em; }
+.nav-brand span { color: var(--accent); }
+.nav-link { font-size: 14px; color: var(--muted); }
+.nav-link:hover { color: var(--text); }
+
+.hero { max-width: 840px; margin: 0 auto; padding: 72px 20px 56px; text-align: center; }
+.hero-badge { display: inline-flex; align-items: center; gap: 6px; background: var(--accent-dim); color: var(--accent); border: 1px solid color-mix(in srgb,var(--accent) 30%,transparent); border-radius: 100px; font-size: 12px; font-weight: 600; padding: 4px 12px; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 20px; }
+.hero h1 { font-size: clamp(2rem,5vw,3.2rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 16px; }
+.hero h1 em { font-style: normal; color: var(--accent); }
+.hero-sub { font-size: clamp(1rem,2.2vw,1.2rem); color: var(--muted); max-width: 580px; margin: 0 auto 36px; }
+.hero-cta { display: inline-block; background: var(--accent); color: #fff; font-size: 16px; font-weight: 700; padding: 14px 32px; border-radius: 8px; letter-spacing: -0.01em; transition: opacity .15s; }
+.hero-cta:hover { opacity: .88; text-decoration: none; }
+.hero-note { font-size: 13px; color: var(--muted); margin-top: 10px; }
+
+/* Piano chord illustration */
+.chord-demo { max-width: 480px; margin: 48px auto 0; }
+.chord-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; }
+.chord-name { font-size: 28px; font-weight: 900; color: var(--accent); letter-spacing: -0.03em; margin-bottom: 4px; }
+.chord-type { font-size: 13px; color: var(--muted); margin-bottom: 20px; }
+.piano { display: flex; gap: 3px; height: 72px; align-items: flex-end; justify-content: center; position: relative; }
+.wk { width: 28px; height: 72px; background: color-mix(in srgb,var(--text) 95%,transparent); border-radius: 0 0 4px 4px; border: 1px solid var(--border); position: relative; flex-shrink: 0; }
+.wk.active { background: var(--accent); box-shadow: 0 0 12px color-mix(in srgb,var(--accent) 50%,transparent); }
+.bk { width: 18px; height: 44px; background: var(--text); border-radius: 0 0 3px 3px; position: absolute; top: 0; z-index: 2; margin-left: -9px; }
+.bk.active { background: var(--accent2); box-shadow: 0 0 10px color-mix(in srgb,var(--accent2) 50%,transparent); }
+.chord-notes { display: flex; gap: 8px; margin-top: 12px; flex-wrap: wrap; }
+.chord-note-tag { background: var(--accent-dim); border: 1px solid color-mix(in srgb,var(--accent) 25%,transparent); color: var(--accent); font-size: 13px; font-weight: 700; padding: 4px 10px; border-radius: 5px; }
+
+.section { max-width: 840px; margin: 0 auto; padding: 64px 20px; }
+.section-title { font-size: clamp(1.4rem,3vw,1.9rem); font-weight: 800; letter-spacing: -0.025em; text-align: center; margin-bottom: 8px; }
+.section-sub { text-align: center; color: var(--muted); font-size: 1rem; margin-bottom: 40px; }
+.features { display: grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap: 20px; }
+.feature { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; }
+.feature-icon { font-size: 24px; margin-bottom: 10px; }
+.feature h3 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+.feature p { font-size: 14px; color: var(--muted); line-height: 1.5; }
+
+.use-cases { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.use-inner { max-width: 840px; margin: 0 auto; padding: 64px 20px; }
+.uc-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); gap: 16px; margin-top: 36px; }
+.uc-card { border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; }
+.uc-title { font-size: 14px; font-weight: 700; margin-bottom: 6px; }
+.uc-desc { font-size: 13px; color: var(--muted); line-height: 1.5; }
+
+.steps { counter-reset: step; display: flex; flex-direction: column; gap: 16px; margin-top: 40px; }
+.step { display: flex; gap: 16px; align-items: flex-start; }
+.step-num { counter-increment: step; width: 32px; height: 32px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 13px; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+.step-num::before { content: counter(step); }
+.step-body h3 { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+.step-body p { font-size: 14px; color: var(--muted); }
+
+.cta-strip { background: var(--accent-dim); border-top: 1px solid color-mix(in srgb,var(--accent) 20%,transparent); border-bottom: 1px solid color-mix(in srgb,var(--accent) 20%,transparent); }
+.cta-inner { max-width: 840px; margin: 0 auto; padding: 48px 20px; text-align: center; }
+.cta-inner h2 { font-size: clamp(1.4rem,3vw,1.9rem); font-weight: 800; letter-spacing: -0.025em; margin-bottom: 10px; }
+.cta-inner p { color: var(--muted); margin-bottom: 28px; }
+
+.related { max-width: 840px; margin: 0 auto; padding: 48px 20px 64px; }
+.related-title { font-size: 16px; font-weight: 700; margin-bottom: 20px; }
+.related-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); gap: 16px; }
+.related-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; display: flex; flex-direction: column; gap: 6px; transition: border-color .15s; }
+.related-card:hover { border-color: var(--accent); text-decoration: none; }
+.related-card-name { font-size: 14px; font-weight: 700; color: var(--text); }
+.related-card-desc { font-size: 13px; color: var(--muted); }
+
+.faq { max-width: 700px; margin: 0 auto; padding: 0 20px 72px; }
+.faq-title { font-size: clamp(1.3rem,2.5vw,1.7rem); font-weight: 800; letter-spacing: -0.02em; margin-bottom: 28px; }
+.faq-item { border-bottom: 1px solid var(--border); padding: 18px 0; }
+.faq-q { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+.faq-a { font-size: 14px; color: var(--muted); line-height: 1.6; }
+
+.footer { border-top: 1px solid var(--border); padding: 28px 20px; text-align: center; font-size: 13px; color: var(--muted); }
+.footer a { color: var(--muted); }
+.footer a:hover { color: var(--text); }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="nav-brand" href="/start/">the<span>creating</span>co</a>
+  <a class="nav-link" href="/tools/">All free tools</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-badge">Free · Notes, name or audio · In-browser</div>
+  <h1>Chord Finder<br><em>Free Online</em></h1>
+  <p class="hero-sub">Identify any guitar or piano chord in your browser — enter the notes, search by chord name, or play audio for instant chord recognition. No account or download needed.</p>
+  <a class="hero-cta" href="https://thecreatingco.com/products/stemdeck/" rel="noopener">Find Chords Free →</a>
+  <p class="hero-note">Powered by StemDeck · Works in Chrome, Safari, Firefox</p>
+
+  <div class="chord-demo">
+    <div class="chord-card">
+      <div class="chord-name">Cmaj7</div>
+      <div class="chord-type">C major seventh · C · E · G · B</div>
+      <div class="piano" style="position:relative;width:240px;margin:0 auto;">
+        <!-- White keys C D E F G A B C -->
+        <div class="wk active" style="position:relative;"></div>
+        <div class="wk" style="position:relative;"></div>
+        <div class="wk active" style="position:relative;"></div>
+        <div class="wk" style="position:relative;"></div>
+        <div class="wk active" style="position:relative;"></div>
+        <div class="wk" style="position:relative;"></div>
+        <div class="wk active" style="position:relative;"></div>
+        <div class="wk" style="position:relative;"></div>
+        <!-- Black keys -->
+        <div class="bk" style="left:21px;"></div>
+        <div class="bk" style="left:52px;"></div>
+        <div class="bk" style="left:114px;"></div>
+        <div class="bk" style="left:145px;"></div>
+        <div class="bk" style="left:176px;"></div>
+      </div>
+      <div class="chord-notes">
+        <span class="chord-note-tag">C</span>
+        <span class="chord-note-tag">E</span>
+        <span class="chord-note-tag">G</span>
+        <span class="chord-note-tag">B</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2 class="section-title">Everything you need to identify chords</h2>
+  <p class="section-sub">Look up any chord by name, notes or audio — with diagrams and theory, all free in the browser.</p>
+  <div class="features">
+    <div class="feature">
+      <div class="feature-icon">🎹</div>
+      <h3>Identify by notes</h3>
+      <p>Enter the notes of any chord and the finder identifies the chord name, type and any inversions. Works for simple triads and complex jazz chords.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">🔍</div>
+      <h3>Search by chord name</h3>
+      <p>Type a chord name — Cmaj7, F#m, Bdim, Gsus4 — and get the notes, intervals, guitar and piano diagrams, and music theory context.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">🎤</div>
+      <h3>Audio chord recognition</h3>
+      <p>Play or upload a short audio clip for automatic chord recognition — the tool analyses the frequencies and identifies the most likely chord.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">🎸</div>
+      <h3>Guitar and piano diagrams</h3>
+      <p>Every chord includes a guitar chord diagram with finger positions and a piano keyboard diagram showing which keys to play.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">📖</div>
+      <h3>Chord theory</h3>
+      <p>See the intervals, inversions, enharmonic equivalents and which scales and keys each chord belongs to — useful for song writing and analysis.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">📱</div>
+      <h3>Works on any device</h3>
+      <p>The chord finder works in any modern browser on desktop or mobile — no app or download required.</p>
+    </div>
+  </div>
+</section>
+
+<div class="use-cases">
+  <div class="use-inner">
+    <h2 class="section-title">What people use chord finders for</h2>
+    <div class="uc-grid">
+      <div class="uc-card">
+        <div class="uc-title">🎵 Learning songs by ear</div>
+        <div class="uc-desc">Identify chords you can hear but can't name — enter the notes you've worked out and see what chord they form.</div>
+      </div>
+      <div class="uc-card">
+        <div class="uc-title">🎸 Jamming and improvisation</div>
+        <div class="uc-desc">Look up which scales and modes work over a chord — the chord finder shows the parent key and related modes for improvising.</div>
+      </div>
+      <div class="uc-card">
+        <div class="uc-title">📝 Song writing</div>
+        <div class="uc-desc">Explore chord extensions, substitutions and variations on a chord to find fresh voicings for your progressions.</div>
+      </div>
+      <div class="uc-card">
+        <div class="uc-title">🎓 Music theory</div>
+        <div class="uc-desc">Understand the intervals that make up a chord — understand why a diminished seventh sounds tense, or why a major 7th sounds lush.</div>
+      </div>
+      <div class="uc-card">
+        <div class="uc-title">🎹 Learning piano</div>
+        <div class="uc-desc">See exactly which keys to press for any chord name — the piano diagram shows finger positions instantly for every chord type.</div>
+      </div>
+      <div class="uc-card">
+        <div class="uc-title">🎚️ Production and sampling</div>
+        <div class="uc-desc">Identify the chords in a sample you want to use — understand what key it's in before layering it with other elements.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="section">
+  <h2 class="section-title">How to identify a chord — 3 methods</h2>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num"></div>
+      <div class="step-body">
+        <h3>Enter the notes</h3>
+        <p>Open <a href="https://thecreatingco.com/products/stemdeck/">StemDeck</a> and enter the notes of the chord on the on-screen keyboard or by name. The finder identifies the chord — including inversions and extended chord types.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num"></div>
+      <div class="step-body">
+        <h3>Search by name</h3>
+        <p>Type the chord name in the search box to see its notes, intervals, guitar fingering, piano keyboard diagram, and music theory context — all in one place.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num"></div>
+      <div class="step-body">
+        <h3>Play or upload audio</h3>
+        <p>Play a chord on your instrument into the microphone, or upload a short audio clip. The audio chord recogniser analyses the frequencies and suggests the most likely chord.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-strip">
+  <div class="cta-inner">
+    <h2>Identify any chord — free, right now</h2>
+    <p>Enter notes, search by name, or play audio. No account. No download. Instant chord recognition in your browser.</p>
+    <a class="hero-cta" href="https://thecreatingco.com/products/stemdeck/" rel="noopener">Open Chord Finder Free →</a>
+  </div>
+</div>
+
+<section class="related">
+  <div class="related-title">More free music tools</div>
+  <div class="related-grid">
+    <a class="related-card" href="/bpm-finder/">
+      <div class="related-card-name">🥁 BPM Finder</div>
+      <div class="related-card-desc">Find the tempo of any song — tap the beat or upload audio for instant BPM detection.</div>
+    </a>
+    <a class="related-card" href="/pitch-shifter/">
+      <div class="related-card-name">🎚️ Pitch Shifter</div>
+      <div class="related-card-desc">Change the pitch of any audio free online — shift by semitone, no download needed.</div>
+    </a>
+    <a class="related-card" href="/vocal-remover/">
+      <div class="related-card-name">🎤 Vocal Remover</div>
+      <div class="related-card-desc">Remove vocals or isolate an acapella from any song — free AI stem separation.</div>
+    </a>
+    <a class="related-card" href="/audio-visualizer/">
+      <div class="related-card-name">📊 Audio Visualizer</div>
+      <div class="related-card-desc">Real-time spectrum and waveform visualization — free in your browser.</div>
+    </a>
+  </div>
+</section>
+
+<section class="faq">
+  <h2 class="faq-title">Frequently asked questions</h2>
+
+  <div class="faq-item">
+    <div class="faq-q">Is the chord finder free?</div>
+    <div class="faq-a">Yes — StemDeck's chord finder is completely free. No account, no download, and no usage limit.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">How do I identify a chord by its notes?</div>
+    <div class="faq-a">Enter the notes of the chord on the on-screen keyboard or by letter name and the finder identifies the chord name, type (major, minor, diminished, augmented, etc.) and any inversions. For example, entering C, E and G returns "C major".</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Can the chord finder identify chords from audio?</div>
+    <div class="faq-a">Yes — you can play or upload a short audio clip and the chord recognition tool will analyse the frequencies to identify the most likely chord. Works best with clean, isolated chords on piano or guitar.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Does it show guitar chord diagrams?</div>
+    <div class="faq-a">Yes — for common chords, the finder shows guitar chord diagrams with finger positions and piano keyboard diagrams showing which keys to press.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">What types of chords can it identify?</div>
+    <div class="faq-a">The chord finder covers major, minor, diminished, augmented, dominant 7th, major 7th, minor 7th, suspended, add9, and many extended chord types. It also identifies inversions and slash chords.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">How do I find what key a chord progression is in?</div>
+    <div class="faq-a">Once you've identified each chord, look for the key where all the chords are diatonic. The chord finder shows which keys each chord belongs to — when several chords share a common key, that's likely the key of the progression.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Can I use the chord finder on mobile?</div>
+    <div class="faq-a">Yes — the chord finder works in any modern mobile browser. Tap notes on the on-screen keyboard or search by chord name.</div>
+  </div>
+</section>
+
+<footer class="footer">
+  <p>© thecreatingco · <a href="/privacy/">Privacy</a> · <a href="/start/">Home</a> · <a href="/tools/">Tools</a></p>
+</footer>
+
+</body>
+</html>
