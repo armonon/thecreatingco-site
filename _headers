@@ -2,7 +2,9 @@
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
   X-Frame-Options: SAMEORIGIN
-  Permissions-Policy: camera=(), microphone=(), geolocation=()
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()
+  X-XSS-Protection: 0
+  X-DNS-Prefetch-Control: off
 
 # --- thecreateco suite kit (wave 4) — added 2026-10-06; rules above unchanged ---
 /suite/v1/*
