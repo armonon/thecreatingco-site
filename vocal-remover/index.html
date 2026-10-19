@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Vocal Remover Free Online — Remove Vocals From Any Song</title>
+<meta name="description" content="Remove vocals from any song free in your browser — no app, no account. Split isolates vocals, drums, bass and melody so you can mute the vocal stem and export an instrumental.">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Vocal Remover Free Online — Split by thecreatingco">
+<meta property="og:description" content="Remove vocals from any song free in your browser. Split separates the vocal stem so you can mute it and export a clean instrumental — no download needed.">
+<meta property="og:url" content="https://thecreatingco.com/vocal-remover/">
+<meta property="og:site_name" content="thecreatingco">
+<meta property="og:image" content="https://thecreatingco.com/assets/tool-products/split-share.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://thecreatingco.com/assets/tool-products/split-share.jpg">
+<meta name="twitter:title" content="Vocal Remover Free Online — Split by thecreatingco">
+<meta name="twitter:description" content="Remove vocals from any song free in your browser. Export a clean instrumental instantly.">
+<link rel="canonical" href="https://thecreatingco.com/vocal-remover/">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://thecreatingco.com/vocal-remover/#page","url":"https://thecreatingco.com/vocal-remover/","name":"Vocal Remover Free Online — Split by thecreatingco","description":"Remove the vocal stem from any song free in your browser. Split separates vocals, drums, bass and melody — mute vocals, export an instrumental, or isolate the acapella.","about":{"@id":"https://thecreatingco.com/products/split/#app"}},{"@type":"SoftwareApplication","@id":"https://thecreatingco.com/products/split/#app","name":"Split — Vocal & Stem Remover","url":"https://thecreatingco.com/products/split/","applicationCategory":"MultimediaApplication","operatingSystem":"Web browser","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"thecreatingco","url":"https://thecreatingco.com"},"description":"Split is a browser-based stem separation and vocal removal tool. Upload any song, and Split's AI model separates it into vocals, drums, bass and melody stems. Mute the vocal stem to get an instrumental, solo it for an acapella, or download each stem separately.","featureList":["AI vocal removal in the browser","Separate vocals, drums, bass and melody","Solo vocal stem for acapella extraction","Mute vocal stem for a clean instrumental","Download individual stems as audio files","On-device processing — audio never uploaded","Works with MP3, WAV, FLAC and most audio formats"]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is the vocal remover really free?","acceptedAnswer":{"@type":"Answer","text":"Yes — Split is completely free to use in your browser. No account, no download, and no trial limit. Upload your song and the vocal separation starts immediately."}},{"@type":"Question","name":"How does vocal removal work?","acceptedAnswer":{"@type":"Answer","text":"Split uses an AI stem separation model to isolate the vocal stem from the rest of the audio. Once separated, you can mute the vocals to hear the instrumental, or solo them to hear a clean acapella."}},{"@type":"Question","name":"Can I get the acapella (vocals only) as well as the instrumental?","acceptedAnswer":{"@type":"Answer","text":"Yes. Split separates the full mix into individual stems — vocals, drums, bass and melody. You can solo the vocal stem to get an acapella, or mute it to get the instrumental. Both are available as downloads."}},{"@type":"Question","name":"Does my audio file leave my browser?","acceptedAnswer":{"@type":"Answer","text":"No — Split's stem separation model runs locally in your browser after the initial model download. Your audio is never uploaded to a server."}},{"@type":"Question","name":"What audio formats does the vocal remover support?","acceptedAnswer":{"@type":"Answer","text":"Split accepts MP3, WAV, FLAC, AAC, OGG and most other audio formats your browser can decode. Drop your file onto Split to begin."}},{"@type":"Question","name":"Can I use the stems in my own music or video?","acceptedAnswer":{"@type":"Answer","text":"Technically, yes — Split gives you downloadable stem files you can import into a DAW or video editor. Whether the original track's copyright permits this is a separate legal question: make sure you have permission to use the source audio."}},{"@type":"Question","name":"Will the vocal removal be perfect?","acceptedAnswer":{"@type":"Answer","text":"AI stem separation has improved dramatically and works well on most professionally recorded music. Very heavily compressed or live recordings, or songs where instruments and vocals share the same frequency range, may leave some residual bleed. Complex songs may need some manual cleanup in a DAW."}}]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://thecreatingco.com/start/"},{"@type":"ListItem","position":2,"name":"Apps & tools","item":"https://thecreatingco.com/tools/"},{"@type":"ListItem","position":3,"name":"Vocal Remover","item":"https://thecreatingco.com/vocal-remover/"}]}]}</script>
+<style>
+:root {
+  --bg: #0a080e;
+  --surface: #120e18;
+  --border: #201c2c;
+  --text: #ede8f8;
+  --muted: #8880a8;
+  --accent: #c060ff;
+  --accent-dim: rgba(192,96,255,0.10);
+  --accent2: #60b8ff;
+  --radius: 10px;
+}
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --bg: #f4f0fc; --surface: #fff; --border: #dcd8ec; --text: #140e20;
+    --muted: #60588a; --accent: #8020e0; --accent-dim: rgba(128,32,224,0.08); --accent2: #1470c8;
+  }
+}
+:root[data-theme="light"] {
+  --bg: #f4f0fc; --surface: #fff; --border: #dcd8ec; --text: #140e20;
+  --muted: #60588a; --accent: #8020e0; --accent-dim: rgba(128,32,224,0.08); --accent2: #1470c8;
+}
+*,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.nav { display: flex; align-items: center; justify-content: space-between; padding: 0 20px; height: 56px; border-bottom: 1px solid var(--border); background: var(--surface); position: sticky; top: 0; z-index: 10; }
+.nav-brand { font-size: 15px; font-weight: 700; color: var(--text); letter-spacing: -0.02em; }
+.nav-brand span { color: var(--accent); }
+.nav-link { font-size: 14px; color: var(--muted); }
+.nav-link:hover { color: var(--text); }
+
+.hero { max-width: 840px; margin: 0 auto; padding: 72px 20px 56px; text-align: center; }
+.hero-badge { display: inline-flex; align-items: center; gap: 6px; background: var(--accent-dim); color: var(--accent); border: 1px solid color-mix(in srgb,var(--accent) 30%,transparent); border-radius: 100px; font-size: 12px; font-weight: 600; padding: 4px 12px; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 20px; }
+.hero h1 { font-size: clamp(2rem,5vw,3.2rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 16px; }
+.hero h1 em { font-style: normal; color: var(--accent); }
+.hero-sub { font-size: clamp(1rem,2.2vw,1.2rem); color: var(--muted); max-width: 580px; margin: 0 auto 36px; }
+.hero-cta { display: inline-block; background: var(--accent); color: #fff; font-size: 16px; font-weight: 700; padding: 14px 32px; border-radius: 8px; letter-spacing: -0.01em; transition: opacity .15s; }
+.hero-cta:hover { opacity: .88; text-decoration: none; }
+.hero-note { font-size: 13px; color: var(--muted); margin-top: 10px; }
+
+/* Stem illustration */
+.stem-demo { max-width: 640px; margin: 48px auto 0; }
+.stem-stage { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px 24px; }
+.stem-row { display: flex; align-items: center; gap: 12px; padding: 8px 0; border-bottom: 1px solid var(--border); }
+.stem-row:last-child { border-bottom: none; }
+.stem-label { font-size: 12px; font-weight: 700; color: var(--muted); letter-spacing: 0.04em; text-transform: uppercase; width: 60px; flex-shrink: 0; }
+.stem-bar-track { flex: 1; height: 24px; border-radius: 4px; overflow: hidden; position: relative; background: color-mix(in srgb,var(--border) 50%,transparent); }
+.stem-bar { height: 100%; border-radius: 4px; animation: stem-pulse var(--d,1s) ease-in-out infinite alternate; }
+@keyframes stem-pulse { from { opacity: var(--lo,.5); } to { opacity: 1; } }
+.stem-muted { display: flex; align-items: center; justify-content: center; height: 100%; }
+.stem-muted-label { font-size: 10px; font-weight: 600; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; }
+
+.section { max-width: 840px; margin: 0 auto; padding: 64px 20px; }
+.section-title { font-size: clamp(1.4rem,3vw,1.9rem); font-weight: 800; letter-spacing: -0.025em; text-align: center; margin-bottom: 8px; }
+.section-sub { text-align: center; color: var(--muted); font-size: 1rem; margin-bottom: 40px; }
+.features { display: grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap: 20px; }
+.feature { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; }
+.feature-icon { font-size: 24px; margin-bottom: 10px; }
+.feature h3 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+.feature p { font-size: 14px; color: var(--muted); line-height: 1.5; }
+
+.use-cases { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.use-inner { max-width: 840px; margin: 0 auto; padding: 64px 20px; }
+.uc-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); gap: 16px; margin-top: 36px; }
+.uc-card { border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; }
+.uc-title { font-size: 14px; font-weight: 700; margin-bottom: 6px; }
+.uc-desc { font-size: 13px; color: var(--muted); line-height: 1.5; }
+
+.steps { counter-reset: step; display: flex; flex-direction: column; gap: 16px; margin-top: 40px; }
+.step { display: flex; gap: 16px; align-items: flex-start; }
+.step-num { counter-increment: step; width: 32px; height: 32px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 13px; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+.step-num::before { content: counter(step); }
+.step-body h3 { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+.step-body p { font-size: 14px; color: var(--muted); }
+
+.cta-strip { background: var(--accent-dim); border-top: 1px solid color-mix(in srgb,var(--accent) 20%,transparent); border-bottom: 1px solid color-mix(in srgb,var(--accent) 20%,transparent); }
+.cta-inner { max-width: 840px; margin: 0 auto; padding: 48px 20px; text-align: center; }
+.cta-inner h2 { font-size: clamp(1.4rem,3vw,1.9rem); font-weight: 800; letter-spacing: -0.025em; margin-bottom: 10px; }
+.cta-inner p { color: var(--muted); margin-bottom: 28px; }
+
+.related { max-width: 840px; margin: 0 auto; padding: 48px 20px 64px; }
+.related-title { font-size: 16px; font-weight: 700; margin-bottom: 20px; }
+.related-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); gap: 16px; }
+.related-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; display: flex; flex-direction: column; gap: 6px; transition: border-color .15s; }
+.related-card:hover { border-color: var(--accent); text-decoration: none; }
+.related-card-name { font-size: 14px; font-weight: 700; color: var(--text); }
+.related-card-desc { font-size: 13px; color: var(--muted); }
+
+.faq { max-width: 700px; margin: 0 auto; padding: 0 20px 72px; }
+.faq-title { font-size: clamp(1.3rem,2.5vw,1.7rem); font-weight: 800; letter-spacing: -0.02em; margin-bottom: 28px; }
+.faq-item { border-bottom: 1px solid var(--border); padding: 18px 0; }
+.faq-q { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+.faq-a { font-size: 14px; color: var(--muted); line-height: 1.6; }
+.faq-a a { color: var(--accent); }
+
+.footer { border-top: 1px solid var(--border); padding: 28px 20px; text-align: center; font-size: 13px; color: var(--muted); }
+.footer a { color: var(--muted); }
+.footer a:hover { color: var(--text); }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="nav-brand" href="/start/">the<span>creating</span>co</a>
+  <a class="nav-link" href="/tools/">All free tools</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-badge">Free · AI stem separation · In-browser</div>
+  <h1>Vocal Remover<br><em>Free Online</em></h1>
+  <p class="hero-sub">Remove the vocals from any song in your browser — no app, no account. Split's AI model separates vocals, drums, bass and melody so you can mute the vocal stem and get a clean instrumental.</p>
+  <a class="hero-cta" href="https://thecreatingco.com/products/split/" rel="noopener">Remove Vocals Free →</a>
+  <p class="hero-note">Powered by Split · Works in Chrome, Safari, Firefox</p>
+
+  <div class="stem-demo">
+    <div class="stem-stage">
+      <div class="stem-row">
+        <div class="stem-label">Vocals</div>
+        <div class="stem-bar-track">
+          <div class="stem-muted"><span class="stem-muted-label">Muted → Instrumental</span></div>
+        </div>
+      </div>
+      <div class="stem-row">
+        <div class="stem-label">Drums</div>
+        <div class="stem-bar-track">
+          <div class="stem-bar" style="width:80%;background:var(--accent2);--d:0.9s;--lo:.5;"></div>
+        </div>
+      </div>
+      <div class="stem-row">
+        <div class="stem-label">Bass</div>
+        <div class="stem-bar-track">
+          <div class="stem-bar" style="width:65%;background:#60e0a0;--d:1.1s;--lo:.4;"></div>
+        </div>
+      </div>
+      <div class="stem-row">
+        <div class="stem-label">Melody</div>
+        <div class="stem-bar-track">
+          <div class="stem-bar" style="width:72%;background:#ffb060;--d:0.85s;--lo:.45;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2 class="section-title">What Split gives you</h2>
+  <p class="section-sub">AI vocal isolation, per-stem control, and downloadable audio files — all free, all in the browser.</p>
+  <div class="features">
+    <div class="feature">
+      <div class="feature-icon">🎤</div>
+      <h3>AI vocal removal</h3>
+      <p>Split's AI model isolates the vocal stem from the rest of the mix — mute it to get an instrumental, or solo it for an acapella.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">🎼</div>
+      <h3>4-stem separation</h3>
+      <p>Split separates vocals, drums, bass and melody into independent stems — not just a vocal/instrumental split, but the full breakdown.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">💾</div>
+      <h3>Download individual stems</h3>
+      <p>Export any stem as an audio file to use in your DAW, video editor, or remix project.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">🔒</div>
+      <h3>On-device processing</h3>
+      <p>Split's model runs locally in your browser after the initial model load. Your audio is never uploaded to a server.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">🎛️</div>
+      <h3>Solo, mute and balance</h3>
+      <p>Control each stem level independently. Solo a stem to hear it alone, mute it to remove it, or blend stems together at custom levels.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">📱</div>
+      <h3>Works on any device</h3>
+      <p>Split runs in any modern browser on desktop, tablet, or phone — no app installation needed.</p>
+    </div>
+  </div>
+</section>
+
+<div class="use-cases">
+  <div class="use-inner">
+    <h2 class="section-title">What people use vocal removal for</h2>
+    <div class="uc-grid">
+      <div class="uc-card">
+        <div class="uc-title">🎵 Karaoke and backing tracks</div>
+        <div class="uc-desc">Create a clean backing track from any song by muting the vocal stem — sing along to your favourite tracks.</div>
+      </div>
+      <div class="uc-card">
+        <div class="uc-title">🎤 Acapella extraction</div>
+        <div class="uc-desc">Isolate just the vocal stem to get an acapella — use it in a mashup, a remix, or as a reference for a vocal arrangement.</div>
+      </div>
+      <div class="uc-card">
+        <div class="uc-title">🎚️ Remixing</div>
+        <div class="uc-desc">Download stems and reassemble the track in your DAW — replace the beat, add new instruments, or rebuild the arrangement.</div>
+      </div>
+      <div class="uc-card">
+        <div class="uc-title">📚 Music production learning</div>
+        <div class="uc-desc">Isolate individual stems to hear how a mix is constructed — study the drum arrangement, the bass line, or how the vocals sit in the mix.</div>
+      </div>
+      <div class="uc-card">
+        <div class="uc-title">🎬 Video and content creation</div>
+        <div class="uc-desc">Use an instrumental version of a track under video content when the vocal version might trigger copyright claims — check that you have permission first.</div>
+      </div>
+      <div class="uc-card">
+        <div class="uc-title">🎹 Songwriting and sampling</div>
+        <div class="uc-desc">Extract a melody or drum part to use as a reference or sample in your own original production.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="section">
+  <h2 class="section-title">How to remove vocals — 3 steps</h2>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num"></div>
+      <div class="step-body">
+        <h3>Open Split in your browser</h3>
+        <p>Go to <a href="https://thecreatingco.com/products/split/">thecreatingco.com/products/split</a> — no account or app needed. The AI model loads in the browser.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num"></div>
+      <div class="step-body">
+        <h3>Upload your song</h3>
+        <p>Drop or select your audio file — MP3, WAV, FLAC or most other formats work. Split's AI model separates the track into vocals, drums, bass and melody.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num"></div>
+      <div class="step-body">
+        <h3>Mute vocals and download the instrumental</h3>
+        <p>Toggle off the vocal stem to hear the instrumental, then download any stem or the full mix as an audio file.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-strip">
+  <div class="cta-inner">
+    <h2>Remove vocals from a song — free, right now</h2>
+    <p>No account. No upload to a server. AI stem separation in your browser.</p>
+    <a class="hero-cta" href="https://thecreatingco.com/products/split/" rel="noopener">Open Vocal Remover Free →</a>
+  </div>
+</div>
+
+<section class="related">
+  <div class="related-title">More free audio tools</div>
+  <div class="related-grid">
+    <a class="related-card" href="/stem-splitter/">
+      <div class="related-card-name">🎼 Stem Splitter</div>
+      <div class="related-card-desc">Full stem separation — vocals, drums, bass and melody — as downloadable files.</div>
+    </a>
+    <a class="related-card" href="/audio-visualizer/">
+      <div class="related-card-name">📊 Audio Visualizer</div>
+      <div class="related-card-desc">Real-time spectrum and waveform visualization of any audio file — free in your browser.</div>
+    </a>
+    <a class="related-card" href="/pitch-shifter/">
+      <div class="related-card-name">🎚️ Pitch Shifter</div>
+      <div class="related-card-desc">Change the pitch of any audio free online — no download or account needed.</div>
+    </a>
+    <a class="related-card" href="/products/stemdeck/">
+      <div class="related-card-name">🎛️ StemDeck</div>
+      <div class="related-card-desc">Remix and mix your stems in the full StemDeck studio — cues, loops and arrangement.</div>
+    </a>
+  </div>
+</section>
+
+<section class="faq">
+  <h2 class="faq-title">Frequently asked questions</h2>
+
+  <div class="faq-item">
+    <div class="faq-q">Is the vocal remover really free?</div>
+    <div class="faq-a">Yes — Split is completely free. No account, no download, and no trial limit. Upload your song and the vocal separation starts immediately.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">How does vocal removal work?</div>
+    <div class="faq-a">Split uses an AI stem separation model to isolate the vocal track from the rest of the audio. Once separated, you can mute the vocals for an instrumental or solo them for an acapella.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Can I get the acapella (vocals only) as well?</div>
+    <div class="faq-a">Yes. Split separates the full mix into vocals, drums, bass and melody. Solo the vocal stem to hear just the acapella, then download it as an audio file.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Does my audio leave my browser?</div>
+    <div class="faq-a">No — Split's model runs locally after the initial model load. Your audio is never uploaded to a server.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">What audio formats does it support?</div>
+    <div class="faq-a">Split accepts MP3, WAV, FLAC, AAC, OGG and most other formats your browser can decode.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Will the vocal removal be perfect?</div>
+    <div class="faq-a">AI stem separation works well on most professionally recorded music. Heavily compressed or live recordings, or songs where the vocals and instruments share similar frequencies, may have some bleed. Complex mixes may benefit from some cleanup in a DAW after export.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Can I use the stems in my own music or video?</div>
+    <div class="faq-a">Split gives you downloadable stem files to use in a DAW or video editor. Whether the original track's copyright permits this is a separate question — always make sure you have permission to use the source audio in your project.</div>
+  </div>
+</section>
+
+<footer class="footer">
+  <p>© thecreatingco · <a href="/privacy/">Privacy</a> · <a href="/start/">Home</a> · <a href="/tools/">Tools</a></p>
+</footer>
+
+</body>
+</html>
