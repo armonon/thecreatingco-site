@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Key Finder Free Online — Find the Musical Key of Any Song</title>
+<meta name="description" content="Find the musical key of any song free online — upload audio or enter notes and get the key and scale instantly. No account or download needed.">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Key Finder Free Online — thecreatingco">
+<meta property="og:description" content="Detect the musical key of any song free in your browser. Upload audio or enter notes for instant key detection — major, minor, modes and more.">
+<meta property="og:url" content="https://thecreatingco.com/key-finder/">
+<meta property="og:site_name" content="thecreatingco">
+<meta property="og:image" content="https://thecreatingco.com/assets/share/stemdeck.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://thecreatingco.com/assets/share/stemdeck.jpg">
+<meta name="twitter:title" content="Key Finder Free Online — thecreatingco">
+<meta name="twitter:description" content="Find the musical key of any song free. Upload audio or enter notes for instant key detection in your browser.">
+<link rel="canonical" href="https://thecreatingco.com/key-finder/">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://thecreatingco.com/key-finder/#page","url":"https://thecreatingco.com/key-finder/","name":"Key Finder Free Online — thecreatingco","description":"Find the musical key of any song free in your browser. Upload audio, enter notes, or play a chord and get the key and scale — major, minor, modes and more. No account or download needed.","about":{"@id":"https://thecreatingco.com/products/stemdeck/#app"}},{"@type":"SoftwareApplication","@id":"https://thecreatingco.com/products/stemdeck/#app","name":"StemDeck — Key Finder & Music Studio","url":"https://thecreatingco.com/products/stemdeck/","applicationCategory":"MultimediaApplication","operatingSystem":"Web browser","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"thecreatingco","url":"https://thecreatingco.com"},"description":"StemDeck is a browser-based music studio with a built-in key finder and music theory reference. Upload audio, enter notes, or play a chord progression and StemDeck identifies the key and scale — major, minor, and all seven modes. Includes a circle of fifths, relative key lookup, and chord-in-key reference.","featureList":["Audio key detection","Note input key analysis","Relative major/minor lookup","All 7 modes supported","Circle of fifths reference","Chord-in-key suggestions","Works in the browser — no download or account"]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is the key finder free?","acceptedAnswer":{"@type":"Answer","text":"Yes — StemDeck's key finder is completely free. No account, no download, and no usage limit."}},{"@type":"Question","name":"How do I find the key of a song?","acceptedAnswer":{"@type":"Answer","text":"Upload the audio file or enter the notes you've identified, and the key finder analyses them to determine the most likely key and scale. It shows the root note, scale type (major, minor or mode), and the relative key."}},{"@type":"Question","name":"What is a musical key?","acceptedAnswer":{"@type":"Answer","text":"A musical key is the tonal centre of a piece of music — the note and scale around which the melody and harmony are organised. A song in 'C major' uses the notes C D E F G A B and resolves to C. Knowing the key helps you improvise, transpose, and understand chord progressions."}},{"@type":"Question","name":"What is the difference between major and minor keys?","acceptedAnswer":{"@type":"Answer","text":"Major keys sound bright and resolved; minor keys sound darker and more tense. Every major key has a 'relative minor' that shares the same notes — C major and A minor share all the same notes, but A minor centres on A. The key finder shows both the major and relative minor interpretation."}},{"@type":"Question","name":"Can the key finder detect modes?","acceptedAnswer":{"@type":"Answer","text":"Yes — the key finder supports all seven modes: Ionian (major), Dorian, Phrygian, Lydian, Mixolydian, Aeolian (natural minor) and Locrian. If a track has a modal flavour, the finder will show the most likely mode alongside the parent key."}},{"@type":"Question","name":"Why do I need to know the key of a song?","acceptedAnswer":{"@type":"Answer","text":"Knowing the key lets you: choose the right scale for improvisation; transpose the song to a different pitch; find chords that fit the progression; match a sample's key to your project; and understand the music theory behind a song."}},{"@type":"Question","name":"Can I use the key finder on mobile?","acceptedAnswer":{"@type":"Answer","text":"Yes — the key finder works in any modern mobile browser. Upload a file or use the on-screen keyboard to enter notes and get the key instantly."}}]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://thecreatingco.com/start/"},{"@type":"ListItem","position":2,"name":"Apps & tools","item":"https://thecreatingco.com/tools/"},{"@type":"ListItem","position":3,"name":"Key Finder","item":"https://thecreatingco.com/key-finder/"}]}]}</script>
+<style>
+:root {
+  --bg: #0c080e;
+  --surface: #140c18;
+  --border: #201428;
+  --text: #f0e8fc;
+  --muted: #9070b0;
+  --accent: #e040fb;
+  --accent-dim: rgba(224,64,251,0.10);
+  --accent2: #40fbcc;
+  --radius: 10px;
+}
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --bg: #f8f0fc; --surface: #fff; --border: #ead8f8; --text: #1a0828;
+    --muted: #8040a8; --accent: #9010c8; --accent-dim: rgba(144,16,200,0.08); --accent2: #008870;
+  }
+}
+:root[data-theme="light"] {
+  --bg: #f8f0fc; --surface: #fff; --border: #ead8f8; --text: #1a0828;
+  --muted: #8040a8; --accent: #9010c8; --accent-dim: rgba(144,16,200,0.08); --accent2: #008870;
+}
+*,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.nav { display: flex; align-items: center; justify-content: space-between; padding: 0 20px; height: 56px; border-bottom: 1px solid var(--border); background: var(--surface); position: sticky; top: 0; z-index: 10; }
+.nav-brand { font-size: 15px; font-weight: 700; color: var(--text); letter-spacing: -0.02em; }
+.nav-brand span { color: var(--accent); }
+.nav-link { font-size: 14px; color: var(--muted); }
+.nav-link:hover { color: var(--text); }
+
+.hero { max-width: 840px; margin: 0 auto; padding: 72px 20px 56px; text-align: center; }
+.hero-badge { display: inline-flex; align-items: center; gap: 6px; background: var(--accent-dim); color: var(--accent); border: 1px solid color-mix(in srgb,var(--accent) 30%,transparent); border-radius: 100px; font-size: 12px; font-weight: 600; padding: 4px 12px; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 20px; }
+.hero h1 { font-size: clamp(2rem,5vw,3.2rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 16px; }
+.hero h1 em { font-style: normal; color: var(--accent); }
+.hero-sub { font-size: clamp(1rem,2.2vw,1.2rem); color: var(--muted); max-width: 580px; margin: 0 auto 36px; }
+.hero-cta { display: inline-block; background: var(--accent); color: #fff; font-size: 16px; font-weight: 700; padding: 14px 32px; border-radius: 8px; letter-spacing: -0.01em; transition: opacity .15s; }
+.hero-cta:hover { opacity: .88; text-decoration: none; }
+.hero-note { font-size: 13px; color: var(--muted); margin-top: 10px; }
+
+/* Circle of fifths illustration */
+.cof-demo { max-width: 360px; margin: 48px auto 0; }
+.cof-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; text-align: center; }
+.cof-label { font-size: 13px; font-weight: 700; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 16px; }
+.cof { position: relative; width: 220px; height: 220px; margin: 0 auto; }
+.cof-ring { position: absolute; inset: 0; border-radius: 50%; border: 2px solid var(--border); }
+.cof-note { position: absolute; transform: translate(-50%,-50%); font-size: 13px; font-weight: 800; }
+.cof-note.active { color: var(--accent); font-size: 15px; }
+.cof-note.secondary { color: var(--accent2); }
+.cof-note.dim { color: var(--muted); }
+.cof-center { position: absolute; inset: 35%; border-radius: 50%; background: var(--accent-dim); border: 1px solid color-mix(in srgb,var(--accent) 20%,transparent); display: flex; align-items: center; justify-content: center; flex-direction: column; }
+.cof-key { font-size: 20px; font-weight: 900; color: var(--accent); }
+.cof-scale { font-size: 10px; font-weight: 700; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; }
+.key-result { margin-top: 14px; font-size: 13px; color: var(--muted); }
+.key-result strong { color: var(--text); }
+
+.section { max-width: 840px; margin: 0 auto; padding: 64px 20px; }
+.section-title { font-size: clamp(1.4rem,3vw,1.9rem); font-weight: 800; letter-spacing: -0.025em; text-align: center; margin-bottom: 8px; }
+.section-sub { text-align: center; color: var(--muted); font-size: 1rem; margin-bottom: 40px; }
+.features { display: grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap: 20px; }
+.feature { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; }
+.feature-icon { font-size: 24px; margin-bottom: 10px; }
+.feature h3 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+.feature p { font-size: 14px; color: var(--muted); line-height: 1.5; }
+
+.use-cases { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.use-inner { max-width: 840px; margin: 0 auto; padding: 64px 20px; }
+.uc-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); gap: 16px; margin-top: 36px; }
+.uc-card { border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; }
+.uc-title { font-size: 14px; font-weight: 700; margin-bottom: 6px; }
+.uc-desc { font-size: 13px; color: var(--muted); line-height: 1.5; }
+
+/* Key signature reference */
+.key-table { width: 100%; border-collapse: collapse; margin-top: 32px; font-size: 14px; }
+.key-table th { text-align: left; font-size: 12px; font-weight: 700; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; padding: 0 12px 12px; border-bottom: 1px solid var(--border); }
+.key-table td { padding: 10px 12px; border-bottom: 1px solid var(--border); }
+.key-table tr:last-child td { border-bottom: none; }
+.key-cell-main { font-weight: 700; color: var(--accent); }
+.key-cell-rel { color: var(--accent2); font-weight: 600; }
+.key-cell-dim { color: var(--muted); font-size: 13px; }
+
+.steps { counter-reset: step; display: flex; flex-direction: column; gap: 16px; margin-top: 40px; }
+.step { display: flex; gap: 16px; align-items: flex-start; }
+.step-num { counter-increment: step; width: 32px; height: 32px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 13px; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+.step-num::before { content: counter(step); }
+.step-body h3 { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+.step-body p { font-size: 14px; color: var(--muted); }
+
+.cta-strip { background: var(--accent-dim); border-top: 1px solid color-mix(in srgb,var(--accent) 20%,transparent); border-bottom: 1px solid color-mix(in srgb,var(--accent) 20%,transparent); }
+.cta-inner { max-width: 840px; margin: 0 auto; padding: 48px 20px; text-align: center; }
+.cta-inner h2 { font-size: clamp(1.4rem,3vw,1.9rem); font-weight: 800; letter-spacing: -0.025em; margin-bottom: 10px; }
+.cta-inner p { color: var(--muted); margin-bottom: 28px; }
+
+.related { max-width: 840px; margin: 0 auto; padding: 48px 20px 64px; }
+.related-title { font-size: 16px; font-weight: 700; margin-bottom: 20px; }
+.related-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); gap: 16px; }
+.related-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; display: flex; flex-direction: column; gap: 6px; transition: border-color .15s; }
+.related-card:hover { border-color: var(--accent); text-decoration: none; }
+.related-card-name { font-size: 14px; font-weight: 700; color: var(--text); }
+.related-card-desc { font-size: 13px; color: var(--muted); }
+
+.faq { max-width: 700px; margin: 0 auto; padding: 0 20px 72px; }
+.faq-title { font-size: clamp(1.3rem,2.5vw,1.7rem); font-weight: 800; letter-spacing: -0.02em; margin-bottom: 28px; }
+.faq-item { border-bottom: 1px solid var(--border); padding: 18px 0; }
+.faq-q { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+.faq-a { font-size: 14px; color: var(--muted); line-height: 1.6; }
+
+.footer { border-top: 1px solid var(--border); padding: 28px 20px; text-align: center; font-size: 13px; color: var(--muted); }
+.footer a { color: var(--muted); }
+.footer a:hover { color: var(--text); }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="nav-brand" href="/start/">the<span>creating</span>co</a>
+  <a class="nav-link" href="/tools/">All free tools</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-badge">Free · Audio or notes · In-browser</div>
+  <h1>Key Finder<br><em>Free Online</em></h1>
+  <p class="hero-sub">Find the musical key of any song in your browser — upload audio or enter the notes and get the key and scale instantly. Major, minor, and all seven modes. No account or download needed.</p>
+  <a class="hero-cta" href="https://thecreatingco.com/products/stemdeck/" rel="noopener">Find Key Free →</a>
+  <p class="hero-note">Powered by StemDeck · Works in Chrome, Safari, Firefox</p>
+
+  <div class="cof-demo">
+    <div class="cof-card">
+      <div class="cof-label">Circle of fifths</div>
+      <div class="cof">
+        <div class="cof-ring"></div>
+        <!-- Notes positioned around the circle at 30° intervals, r=90px from centre=110 -->
+        <div class="cof-note active" style="left:110px;top:20px;">C</div>
+        <div class="cof-note dim" style="left:164px;top:35px;">G</div>
+        <div class="cof-note dim" style="left:196px;top:83px;">D</div>
+        <div class="cof-note dim" style="left:196px;top:137px;">A</div>
+        <div class="cof-note dim" style="left:164px;top:185px;">E</div>
+        <div class="cof-note dim" style="left:110px;top:200px;">B</div>
+        <div class="cof-note dim" style="left:56px;top:185px;">F♯</div>
+        <div class="cof-note dim" style="left:24px;top:137px;">D♭</div>
+        <div class="cof-note dim" style="left:24px;top:83px;">A♭</div>
+        <div class="cof-note dim" style="left:56px;top:35px;">E♭</div>
+        <div class="cof-note secondary" style="left:88px;top:24px;font-size:11px;">B♭</div>
+        <div class="cof-note secondary" style="left:132px;top:24px;font-size:11px;">F</div>
+        <div class="cof-center">
+          <div class="cof-key">C</div>
+          <div class="cof-scale">Major</div>
+        </div>
+      </div>
+      <div class="key-result">Detected key: <strong>C Major</strong> · Relative minor: <strong>A minor</strong></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2 class="section-title">Everything in one key finder</h2>
+  <p class="section-sub">Upload audio, enter notes, or browse the circle of fifths — key detection with full music theory context, all free in your browser.</p>
+  <div class="features">
+    <div class="feature">
+      <div class="feature-icon">🎵</div>
+      <h3>Audio key detection</h3>
+      <p>Upload any audio file and the key finder analyses the frequency content to identify the most likely key and scale.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">🎹</div>
+      <h3>Note input key analysis</h3>
+      <p>Enter the notes you've identified by ear and the finder shows every key those notes fit — useful when you have a partial chord or melody fragment.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">🔄</div>
+      <h3>Relative key lookup</h3>
+      <p>Every result shows both the major key and its relative minor — C major and A minor share the same notes; the finder shows both.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">🎼</div>
+      <h3>All 7 modes</h3>
+      <p>Supports Ionian, Dorian, Phrygian, Lydian, Mixolydian, Aeolian and Locrian — the finder identifies the mode if the track has a modal flavour.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">🎸</div>
+      <h3>Chord-in-key suggestions</h3>
+      <p>Once the key is identified, see which chords are diatonic to that key — the natural triads and seventh chords you can use freely.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">📱</div>
+      <h3>Works on any device</h3>
+      <p>The key finder works in any modern browser on desktop or mobile — no app or download required.</p>
+    </div>
+  </div>
+</section>
+
+<div class="use-cases">
+  <div class="use-inner">
+    <h2 class="section-title">Common major and minor keys</h2>
+    <table class="key-table">
+      <thead><tr><th>Major key</th><th>Relative minor</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td class="key-cell-main">C major</td><td class="key-cell-rel">A minor</td><td class="key-cell-dim">C D E F G A B</td></tr>
+        <tr><td class="key-cell-main">G major</td><td class="key-cell-rel">E minor</td><td class="key-cell-dim">G A B C D E F♯</td></tr>
+        <tr><td class="key-cell-main">D major</td><td class="key-cell-rel">B minor</td><td class="key-cell-dim">D E F♯ G A B C♯</td></tr>
+        <tr><td class="key-cell-main">F major</td><td class="key-cell-rel">D minor</td><td class="key-cell-dim">F G A B♭ C D E</td></tr>
+        <tr><td class="key-cell-main">B♭ major</td><td class="key-cell-rel">G minor</td><td class="key-cell-dim">B♭ C D E♭ F G A</td></tr>
+        <tr><td class="key-cell-main">E♭ major</td><td class="key-cell-rel">C minor</td><td class="key-cell-dim">E♭ F G A♭ B♭ C D</td></tr>
+        <tr><td class="key-cell-main">A major</td><td class="key-cell-rel">F♯ minor</td><td class="key-cell-dim">A B C♯ D E F♯ G♯</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<section class="section">
+  <h2 class="section-title">What people use key detection for</h2>
+  <div class="uc-grid">
+    <div class="uc-card">
+      <div class="uc-title">🎹 Songwriting and composition</div>
+      <div class="uc-desc">Find the key of a sample or reference track so you can write new material that fits without clashing harmonically.</div>
+    </div>
+    <div class="uc-card">
+      <div class="uc-title">🎚️ Mixing and sampling</div>
+      <div class="uc-desc">Match samples and loops to the key of your project — or find key-compatible samples in a library using the detected key.</div>
+    </div>
+    <div class="uc-card">
+      <div class="uc-title">🎸 Learning songs by ear</div>
+      <div class="uc-desc">Find the key of a song you're learning to know which scale to use for solos and fills — no guessing required.</div>
+    </div>
+    <div class="uc-card">
+      <div class="uc-title">🎛️ DJing and harmonic mixing</div>
+      <div class="uc-desc">Know the key of every track before you mix — compatible keys blend smoothly; incompatible keys clash. The circle of fifths shows which keys work together.</div>
+    </div>
+    <div class="uc-card">
+      <div class="uc-title">🎤 Vocal range matching</div>
+      <div class="uc-desc">Find the key of a song, then check whether it falls in your vocal range — transpose to a more comfortable key if needed.</div>
+    </div>
+    <div class="uc-card">
+      <div class="uc-title">📚 Music theory study</div>
+      <div class="uc-desc">Analyse the keys and modes of songs you like to understand how they're constructed and apply those ideas to your own music.</div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2 class="section-title">How to find the key of a song — 3 methods</h2>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num"></div>
+      <div class="step-body">
+        <h3>Upload the audio file</h3>
+        <p>Open <a href="https://thecreatingco.com/products/stemdeck/">StemDeck</a> and drop in your audio file — MP3, WAV, FLAC or most other formats. The key finder analyses the frequency content and returns the most likely key and scale.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num"></div>
+      <div class="step-body">
+        <h3>Enter the notes you've identified</h3>
+        <p>If you've already worked out some notes by ear, enter them on the on-screen keyboard. The finder shows every key those notes could belong to, ranked by likelihood.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num"></div>
+      <div class="step-body">
+        <h3>Browse related chords and scales</h3>
+        <p>Once the key is detected, explore the diatonic chords, the relative key, and the modes built on each scale degree — all the theory context you need in one place.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-strip">
+  <div class="cta-inner">
+    <h2>Find the key of any song — free, right now</h2>
+    <p>Upload audio or enter notes. No account. No download. Instant key detection in your browser.</p>
+    <a class="hero-cta" href="https://thecreatingco.com/products/stemdeck/" rel="noopener">Open Key Finder Free →</a>
+  </div>
+</div>
+
+<section class="related">
+  <div class="related-title">More free music tools</div>
+  <div class="related-grid">
+    <a class="related-card" href="/chord-finder/">
+      <div class="related-card-name">🎵 Chord Finder</div>
+      <div class="related-card-desc">Identify any chord by notes, name or audio — guitar and piano diagrams included.</div>
+    </a>
+    <a class="related-card" href="/bpm-finder/">
+      <div class="related-card-name">🥁 BPM Finder</div>
+      <div class="related-card-desc">Find the tempo of any song — tap the beat or upload audio for instant BPM detection.</div>
+    </a>
+    <a class="related-card" href="/pitch-shifter/">
+      <div class="related-card-name">🎚️ Pitch Shifter</div>
+      <div class="related-card-desc">Change the pitch of any audio free online — shift by semitone, no download needed.</div>
+    </a>
+    <a class="related-card" href="/vocal-remover/">
+      <div class="related-card-name">🎤 Vocal Remover</div>
+      <div class="related-card-desc">Remove vocals or isolate the acapella from any song — free AI stem separation.</div>
+    </a>
+  </div>
+</section>
+
+<section class="faq">
+  <h2 class="faq-title">Frequently asked questions</h2>
+
+  <div class="faq-item">
+    <div class="faq-q">Is the key finder free?</div>
+    <div class="faq-a">Yes — StemDeck's key finder is completely free. No account, no download, and no usage limit.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">How do I find the key of a song?</div>
+    <div class="faq-a">Upload the audio file or enter the notes you've identified, and the key finder analyses them to determine the most likely key and scale. It shows the root note, scale type (major, minor or mode), and the relative key.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">What is a musical key?</div>
+    <div class="faq-a">A musical key is the tonal centre of a piece of music — the note and scale around which the melody and harmony are organised. A song in "C major" uses the notes C D E F G A B and resolves to C. Knowing the key helps you improvise, transpose, and understand chord progressions.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">What is the difference between major and minor keys?</div>
+    <div class="faq-a">Major keys sound bright and resolved; minor keys sound darker and more tense. Every major key has a "relative minor" that shares the same notes — C major and A minor share all the same notes, but A minor centres on A. The key finder shows both interpretations.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Can the key finder detect modes?</div>
+    <div class="faq-a">Yes — the key finder supports all seven modes: Ionian (major), Dorian, Phrygian, Lydian, Mixolydian, Aeolian (natural minor) and Locrian. If a track has a modal flavour, the finder will show the most likely mode alongside the parent key.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Why do I need to know the key of a song?</div>
+    <div class="faq-a">Knowing the key lets you choose the right scale for improvisation, transpose the song, find fitting chords, match a sample's key to your project, and understand the music theory behind a song.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Can I use the key finder on mobile?</div>
+    <div class="faq-a">Yes — the key finder works in any modern mobile browser. Upload a file or use the on-screen keyboard to enter notes and get the key instantly.</div>
+  </div>
+</section>
+
+<footer class="footer">
+  <p>© thecreatingco · <a href="/privacy/">Privacy</a> · <a href="/start/">Home</a> · <a href="/tools/">Tools</a></p>
+</footer>
+
+</body>
+</html>
