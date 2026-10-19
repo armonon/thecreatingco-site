@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Image Resizer Free Online — thecreatingco</title>
+<meta name="description" content="Resize images free online. Resize by pixels, percentage, or preset dimensions. No upload needed — everything runs in your browser. Fast, private, and free.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://thecreatingco.com/image-resizer/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://thecreatingco.com/image-resizer/">
+<meta property="og:title" content="Image Resizer Free Online — thecreatingco">
+<meta property="og:description" content="Resize images free online. Resize by pixels, percentage, or preset dimensions. No upload needed — everything runs in your browser.">
+<meta property="og:image" content="https://thecreatingco.com/assets/share/home.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="thecreatingco">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Image Resizer Free Online — thecreatingco">
+<meta name="twitter:description" content="Resize images free online. No upload needed — everything runs in your browser. Free forever.">
+<meta name="twitter:image" content="https://thecreatingco.com/assets/share/home.jpg">
+
+<!-- JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://thecreatingco.com/image-resizer/#webpage",
+      "url": "https://thecreatingco.com/image-resizer/",
+      "name": "Image Resizer Free Online",
+      "description": "Resize images free online. Resize by pixels, percentage, or preset dimensions — no upload needed.",
+      "isPartOf": { "@id": "https://thecreatingco.com/#website" },
+      "breadcrumb": { "@id": "https://thecreatingco.com/image-resizer/#breadcrumb" }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://thecreatingco.com/image-resizer/#app",
+      "name": "Image Resizer",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "Web",
+      "description": "Free online image resizer. Resize JPG, PNG, WebP, GIF and AVIF by exact pixels, percentage, or social media preset — no upload, no server.",
+      "url": "https://thecreatingco.com/image-resizer/",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "publisher": {
+        "@type": "Organization",
+        "name": "thecreatingco",
+        "url": "https://thecreatingco.com"
+      },
+      "featureList": [
+        "Resize by exact pixels or percentage",
+        "Lock aspect ratio",
+        "Social media size presets (Instagram, Twitter, YouTube, LinkedIn)",
+        "Accepts JPG, PNG, WebP, GIF, AVIF, BMP",
+        "Batch resize multiple images",
+        "In-browser — no upload, fully private"
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://thecreatingco.com/image-resizer/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Does resizing an image reduce quality?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Downscaling (making an image smaller) is lossless in terms of visual information — you just have fewer pixels. The image will look sharp as long as you use a high-quality resampling algorithm (Lanczos or bicubic). Upscaling (making an image larger than its original size) stretches pixels and can cause blurring or pixellation, since no new detail is added." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is this image resizer free and private?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes — completely free with no file count or file size limits. Your images stay on your device the entire time. All processing happens locally in your browser using the Canvas API. Nothing is uploaded to any server." }
+        },
+        {
+          "@type": "Question",
+          "name": "What image formats can I resize?",
+          "acceptedAnswer": { "@type": "Answer", "text": "The resizer accepts JPG/JPEG, PNG, WebP, GIF (static), AVIF, and BMP — any format your browser supports. Output can be saved as JPG, PNG, or WebP at your chosen quality level." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I resize to a specific aspect ratio like 16:9 or 1:1?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. You can lock the aspect ratio to scale proportionally, or enter custom width and height values to stretch the image to any ratio. For social media presets (Instagram square, Twitter header, YouTube thumbnail) the correct dimensions are pre-filled." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I resize multiple images at once?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes — drop a folder or select multiple files and all will be resized to the same target dimensions. Download them individually or as a ZIP archive." }
+        },
+        {
+          "@type": "Question",
+          "name": "Will the file size decrease when I resize an image?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Usually yes — fewer pixels means less data to store. A 4000×3000 px image resized to 1200×900 px typically results in a file 6–10× smaller. You can also control output quality separately when saving as JPG or WebP." }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://thecreatingco.com/image-resizer/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://thecreatingco.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Image Resizer", "item": "https://thecreatingco.com/image-resizer/" }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+:root {
+  --bg: #0d0d12; --surface: #16161e; --surface2: #1e1e2a;
+  --border: rgba(255,255,255,0.08); --text: #f0f0f8; --muted: #7878a0;
+  --accent: #30c8e0; --accent2: #e03080;
+  --accent-dim: rgba(48,200,224,0.12); --accent2-dim: rgba(224,48,128,0.12);
+}
+[data-theme="light"] {
+  --bg: #f8f8fc; --surface: #ffffff; --surface2: #f0f0f8;
+  --border: rgba(0,0,0,0.08); --text: #12121e; --muted: #5a5a7a;
+  --accent-dim: rgba(48,200,224,0.08); --accent2-dim: rgba(224,48,128,0.08);
+}
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --bg: #f8f8fc; --surface: #ffffff; --surface2: #f0f0f8;
+    --border: rgba(0,0,0,0.08); --text: #12121e; --muted: #5a5a7a;
+    --accent-dim: rgba(48,200,224,0.08); --accent2-dim: rgba(224,48,128,0.08);
+  }
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; line-height: 1.6; }
+
+nav { position: sticky; top: 0; z-index: 100; background: rgba(13,13,18,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 24px; height: 56px; display: flex; align-items: center; justify-content: space-between; }
+.nav-brand { font-size: 15px; font-weight: 700; color: var(--text); text-decoration: none; letter-spacing: -0.3px; }
+.nav-brand span { color: var(--accent); }
+.nav-cta { background: var(--accent); color: #0d0d12; padding: 7px 16px; border-radius: 8px; font-size: 13px; font-weight: 700; text-decoration: none; white-space: nowrap; }
+
+.hero { max-width: 860px; margin: 0 auto; padding: 72px 24px 56px; text-align: center; }
+.hero-badge { display: inline-flex; align-items: center; gap: 7px; background: var(--accent-dim); color: var(--accent); border: 1px solid rgba(48,200,224,0.25); border-radius: 20px; padding: 5px 14px; font-size: 12px; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 24px; }
+.hero-badge::before { content: ''; width: 6px; height: 6px; background: var(--accent); border-radius: 50%; }
+h1 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; letter-spacing: -1px; line-height: 1.15; margin-bottom: 18px; }
+h1 em { font-style: normal; color: var(--accent); }
+.hero-sub { font-size: 1.1rem; color: var(--muted); max-width: 560px; margin: 0 auto 32px; }
+.cta-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.btn-primary { background: var(--accent); color: #0d0d12; padding: 14px 28px; border-radius: 10px; font-size: 15px; font-weight: 700; text-decoration: none; }
+.btn-secondary { background: var(--surface); color: var(--text); border: 1px solid var(--border); padding: 14px 28px; border-radius: 10px; font-size: 15px; font-weight: 600; text-decoration: none; }
+
+/* ILLUSTRATION */
+.illo-wrap { max-width: 640px; margin: 52px auto 0; background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 32px 28px; }
+.illo-label { font-size: 11px; font-weight: 600; letter-spacing: 0.8px; text-transform: uppercase; color: var(--muted); margin-bottom: 20px; text-align: center; }
+
+/* Resize preview */
+.resize-demo { display: flex; align-items: center; justify-content: center; gap: 24px; margin-bottom: 24px; }
+.img-block { border-radius: 12px; border: 2px solid var(--border); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+.img-block.orig { width: 120px; height: 90px; border-color: rgba(48,200,224,0.35); background: var(--surface2); animation: orig-pulse 2.4s ease-in-out infinite; }
+.img-block.resized { width: 72px; height: 54px; border-color: rgba(224,48,128,0.35); background: var(--surface2); }
+@keyframes orig-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(48,200,224,0); }
+  50% { box-shadow: 0 0 0 6px rgba(48,200,224,0.15); }
+}
+.img-fill { position: absolute; inset: 6px; border-radius: 6px; }
+.img-block.orig .img-fill { background: linear-gradient(135deg, rgba(48,200,224,0.3) 0%, rgba(48,200,224,0.08) 60%, rgba(224,48,128,0.15) 100%); }
+.img-block.resized .img-fill { background: linear-gradient(135deg, rgba(224,48,128,0.3) 0%, rgba(48,200,224,0.15) 100%); }
+.img-dims { position: absolute; bottom: 4px; right: 5px; font-size: 9px; font-weight: 700; letter-spacing: 0.3px; }
+.img-block.orig .img-dims { color: var(--accent); }
+.img-block.resized .img-dims { color: var(--accent2); }
+
+.resize-arrow { display: flex; flex-direction: column; align-items: center; gap: 5px; }
+.arr-line { width: 32px; height: 2px; background: linear-gradient(90deg, var(--accent), var(--accent2)); border-radius: 1px; animation: arr-anim 1.8s ease-in-out infinite; }
+@keyframes arr-anim { 0%, 100% { opacity: 0.5; } 50% { opacity: 1; } }
+.arr-tip { width: 0; height: 0; border-top: 5px solid transparent; border-bottom: 5px solid transparent; border-left: 8px solid var(--accent2); }
+
+/* Preset chips */
+.preset-section { margin-bottom: 20px; }
+.preset-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.6px; color: var(--muted); margin-bottom: 10px; text-align: center; }
+.preset-row { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
+.preset-chip { background: var(--surface2); border: 1px solid var(--border); border-radius: 8px; padding: 6px 12px; font-size: 12px; font-weight: 600; color: var(--muted); }
+.preset-chip.active { border-color: rgba(48,200,224,0.4); color: var(--accent); background: var(--accent-dim); }
+.preset-chip.hot { border-color: rgba(224,48,128,0.4); color: var(--accent2); background: var(--accent2-dim); }
+
+/* Dimension inputs */
+.dim-row { display: flex; align-items: center; gap: 10px; justify-content: center; background: var(--surface2); border-radius: 12px; padding: 14px 18px; }
+.dim-field { display: flex; flex-direction: column; gap: 4px; align-items: center; }
+.dim-field label { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: var(--muted); }
+.dim-input { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 8px 12px; font-size: 15px; font-weight: 700; color: var(--text); width: 80px; text-align: center; }
+.dim-input.w { border-color: rgba(48,200,224,0.35); color: var(--accent); }
+.dim-input.h { border-color: rgba(224,48,128,0.35); color: var(--accent2); }
+.dim-lock { font-size: 18px; color: var(--muted); }
+
+/* SECTIONS */
+section { max-width: 900px; margin: 0 auto; padding: 64px 24px; }
+h2 { font-size: 1.8rem; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 12px; }
+h2 em { font-style: normal; color: var(--accent); }
+.section-sub { color: var(--muted); margin-bottom: 40px; }
+
+.features-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; }
+.feat-card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 24px; }
+.feat-icon { font-size: 1.6rem; margin-bottom: 12px; }
+.feat-title { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+.feat-body { font-size: 14px; color: var(--muted); line-height: 1.55; }
+
+.tbl-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+th { text-align: left; padding: 10px 14px; border-bottom: 2px solid var(--border); color: var(--muted); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; white-space: nowrap; }
+td { padding: 13px 14px; border-bottom: 1px solid var(--border); vertical-align: top; }
+tr:last-child td { border-bottom: none; }
+.badge { display: inline-block; padding: 2px 9px; border-radius: 6px; font-size: 11px; font-weight: 700; white-space: nowrap; }
+.badge-g { background: rgba(48,255,128,0.12); color: #30ff80; }
+.badge-y { background: rgba(255,220,48,0.12); color: #ffdc30; }
+.badge-b { background: rgba(48,200,224,0.12); color: #30c8e0; }
+.badge-p { background: rgba(224,48,128,0.12); color: #e03080; }
+
+.use-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; }
+.use-card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 24px; }
+.use-title { font-size: 15px; font-weight: 700; margin-bottom: 6px; color: var(--accent); }
+.use-body { font-size: 14px; color: var(--muted); line-height: 1.55; }
+
+.steps { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 20px; counter-reset: step; }
+.step { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 28px 24px; counter-increment: step; position: relative; }
+.step::before { content: counter(step); position: absolute; top: 20px; right: 20px; width: 28px; height: 28px; background: var(--accent-dim); color: var(--accent); border-radius: 50%; font-size: 13px; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+.step-title { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+.step-body { font-size: 14px; color: var(--muted); line-height: 1.55; }
+
+.cta-strip { background: linear-gradient(135deg, var(--accent-dim), var(--accent2-dim)); border: 1px solid rgba(48,200,224,0.2); border-radius: 20px; padding: 48px 32px; text-align: center; }
+.cta-strip h2 { margin-bottom: 12px; }
+.cta-strip p { color: var(--muted); margin-bottom: 28px; }
+
+.related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 14px; }
+.related-link { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 16px 18px; text-decoration: none; color: var(--text); font-size: 14px; font-weight: 600; display: flex; align-items: center; gap: 8px; }
+.related-link:hover { border-color: rgba(48,200,224,0.3); color: var(--accent); }
+.related-link::before { content: '→'; color: var(--accent); }
+
+.faq { display: flex; flex-direction: column; gap: 14px; }
+details { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
+details[open] { border-color: rgba(48,200,224,0.25); }
+summary { padding: 18px 20px; font-size: 15px; font-weight: 600; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+summary::after { content: '+'; color: var(--accent); font-size: 20px; font-weight: 300; flex-shrink: 0; }
+details[open] summary::after { content: '−'; }
+.faq-body { padding: 0 20px 18px; font-size: 14px; color: var(--muted); line-height: 1.65; }
+
+footer { border-top: 1px solid var(--border); padding: 32px 24px; text-align: center; font-size: 13px; color: var(--muted); max-width: 900px; margin: 0 auto; }
+footer a { color: var(--muted); text-decoration: none; }
+footer a:hover { color: var(--accent); }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="https://thecreatingco.com/"><span>the</span>creatingco</a>
+  <a class="nav-cta" href="https://thecreatingco.com/">Try Free Tools →</a>
+</nav>
+
+<div class="hero">
+  <div class="hero-badge">Free Online Tool</div>
+  <h1><em>Resize Images</em><br>Free Online</h1>
+  <p class="hero-sub">Resize any image by exact pixels, percentage, or social media preset. No software download, no file upload — runs entirely in your browser, instantly and privately.</p>
+  <div class="cta-row">
+    <a class="btn-primary" href="https://thecreatingco.com/">Open Image Resizer Free →</a>
+    <a class="btn-secondary" href="#how-it-works">How it works</a>
+  </div>
+</div>
+
+<!-- ILLUSTRATION -->
+<div style="max-width:900px;margin:0 auto;padding:0 24px;">
+  <div class="illo-wrap">
+    <div class="illo-label">Image Resizer</div>
+    <div class="resize-demo">
+      <div class="img-block orig">
+        <div class="img-fill"></div>
+        <div class="img-dims">4000×3000</div>
+      </div>
+      <div class="resize-arrow">
+        <div class="arr-line"></div>
+        <div class="arr-tip"></div>
+      </div>
+      <div class="img-block resized">
+        <div class="img-fill"></div>
+        <div class="img-dims">1200×900</div>
+      </div>
+    </div>
+
+    <!-- Presets -->
+    <div class="preset-section">
+      <div class="preset-label">Social Media Presets</div>
+      <div class="preset-row">
+        <div class="preset-chip hot">Instagram</div>
+        <div class="preset-chip active">Twitter</div>
+        <div class="preset-chip">YouTube</div>
+        <div class="preset-chip">LinkedIn</div>
+        <div class="preset-chip">Facebook</div>
+      </div>
+    </div>
+
+    <!-- Dimension inputs -->
+    <div class="dim-row">
+      <div class="dim-field">
+        <label>Width (px)</label>
+        <div class="dim-input w">1200</div>
+      </div>
+      <div class="dim-lock">🔒</div>
+      <div class="dim-field">
+        <label>Height (px)</label>
+        <div class="dim-input h">900</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FEATURES -->
+<section>
+  <h2>Why use our <em>image resizer</em>?</h2>
+  <p class="section-sub">Powerful, private, and completely free — no sign-up required.</p>
+  <div class="features-grid">
+    <div class="feat-card">
+      <div class="feat-icon">🔒</div>
+      <div class="feat-title">100% Private</div>
+      <div class="feat-body">Your images stay on your device. All resizing happens locally using the browser's Canvas API — nothing is uploaded to any server, ever.</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">📐</div>
+      <div class="feat-title">Pixels or Percentage</div>
+      <div class="feat-body">Enter exact pixel dimensions, or scale by percentage (e.g. 50% to halve the size). Lock aspect ratio to prevent distortion.</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">📱</div>
+      <div class="feat-title">Social Media Presets</div>
+      <div class="feat-body">Instagram square (1080×1080), Twitter header (1500×500), YouTube thumbnail (1280×720), LinkedIn banner (1584×396), and more — one click.</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">🖼️</div>
+      <div class="feat-title">5 Input Formats</div>
+      <div class="feat-body">Accepts JPG, PNG, WebP, GIF (static), AVIF and BMP. Output as JPG, PNG, or WebP at your chosen quality level (1–100).</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">📦</div>
+      <div class="feat-title">Batch Resize</div>
+      <div class="feat-body">Drop a folder or select multiple images and resize all of them to the same dimensions at once. Download as individual files or a ZIP.</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">⚡</div>
+      <div class="feat-title">Instant — No Queue</div>
+      <div class="feat-body">No upload, no server queue. A 20 MP photo resizes in under a second. Works offline too — once the page is loaded, no internet connection is needed.</div>
+    </div>
+  </div>
+</section>
+
+<!-- TABLE -->
+<section style="padding-top:0;">
+  <h2>Social media image <em>size guide</em></h2>
+  <p class="section-sub">Use the correct dimensions for each platform to avoid cropping or stretching.</p>
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Platform</th>
+          <th>Type</th>
+          <th>Size (px)</th>
+          <th>Ratio</th>
+          <th>Format</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Instagram</strong></td>
+          <td>Feed Square</td>
+          <td>1080 × 1080</td>
+          <td><span class="badge badge-b">1:1</span></td>
+          <td>JPG / PNG</td>
+        </tr>
+        <tr>
+          <td><strong>Instagram</strong></td>
+          <td>Portrait</td>
+          <td>1080 × 1350</td>
+          <td><span class="badge badge-b">4:5</span></td>
+          <td>JPG / PNG</td>
+        </tr>
+        <tr>
+          <td><strong>Twitter / X</strong></td>
+          <td>Header</td>
+          <td>1500 × 500</td>
+          <td><span class="badge badge-g">3:1</span></td>
+          <td>JPG / PNG</td>
+        </tr>
+        <tr>
+          <td><strong>Twitter / X</strong></td>
+          <td>Share Card</td>
+          <td>1200 × 628</td>
+          <td><span class="badge badge-g">1.91:1</span></td>
+          <td>JPG / PNG</td>
+        </tr>
+        <tr>
+          <td><strong>YouTube</strong></td>
+          <td>Thumbnail</td>
+          <td>1280 × 720</td>
+          <td><span class="badge badge-y">16:9</span></td>
+          <td>JPG / PNG</td>
+        </tr>
+        <tr>
+          <td><strong>LinkedIn</strong></td>
+          <td>Banner</td>
+          <td>1584 × 396</td>
+          <td><span class="badge badge-p">4:1</span></td>
+          <td>JPG / PNG</td>
+        </tr>
+        <tr>
+          <td><strong>Facebook</strong></td>
+          <td>Cover Photo</td>
+          <td>820 × 312</td>
+          <td><span class="badge badge-b">2.63:1</span></td>
+          <td>JPG / PNG</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- USE CASES -->
+<section style="padding-top:0;">
+  <h2>Who uses an <em>image resizer</em>?</h2>
+  <p class="section-sub">Anyone who works with images for digital or print.</p>
+  <div class="use-grid">
+    <div class="use-card">
+      <div class="use-title">Content Creators & Influencers</div>
+      <div class="use-body">Resize photos to exact platform specs before posting — Instagram square, YouTube thumbnail, Twitter header — in seconds, without opening Photoshop.</div>
+    </div>
+    <div class="use-card">
+      <div class="use-title">Web & App Developers</div>
+      <div class="use-body">Generate @2x and @1x assets, resize hero images to exact breakpoints, and prepare optimised thumbnails for galleries or product pages.</div>
+    </div>
+    <div class="use-card">
+      <div class="use-title">E-Commerce Sellers</div>
+      <div class="use-body">Resize product photos to the exact pixel dimensions required by Amazon, Etsy, Shopify, or eBay to avoid rejection or quality warnings.</div>
+    </div>
+    <div class="use-card">
+      <div class="use-title">Bloggers & Writers</div>
+      <div class="use-body">Resize featured images to the correct dimensions for your CMS or email newsletter template — WordPress, Ghost, Substack, Mailchimp all have specific requirements.</div>
+    </div>
+    <div class="use-card">
+      <div class="use-title">Designers & Photographers</div>
+      <div class="use-body">Quickly prep client deliverables, web exports, or print files to exact sizes without firing up your full design toolchain. Batch resize a whole shoot at once.</div>
+    </div>
+    <div class="use-card">
+      <div class="use-title">Marketing & Ads Teams</div>
+      <div class="use-body">Produce all required ad creative sizes from a single master image. Resize once to Google Ads, Meta, LinkedIn, and display banner specs in one go.</div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW TO -->
+<section id="how-it-works" style="padding-top:0;">
+  <h2>How to <em>resize an image</em> online</h2>
+  <p class="section-sub">Three steps — done in seconds, no sign-up needed.</p>
+  <div class="steps">
+    <div class="step">
+      <div class="step-title">Upload your image</div>
+      <div class="step-body">Click the drop zone or drag and drop your image (JPG, PNG, WebP, GIF, AVIF or BMP). Your file stays on your device — nothing is uploaded.</div>
+    </div>
+    <div class="step">
+      <div class="step-title">Set your dimensions</div>
+      <div class="step-body">Enter the target width and height in pixels, choose a percentage, or pick a social media preset. Lock the aspect ratio to scale proportionally.</div>
+    </div>
+    <div class="step">
+      <div class="step-title">Download the resized image</div>
+      <div class="step-body">Click resize and download your image as JPG, PNG, or WebP. For batches, download all as a ZIP archive. Instant — no queue, no wait.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA STRIP -->
+<section style="padding-top:0;">
+  <div class="cta-strip">
+    <h2>Resize your <em>images</em> now — free</h2>
+    <p>Private, instant, no sign-up, no download, no upload.</p>
+    <a class="btn-primary" href="https://thecreatingco.com/">Open Image Resizer →</a>
+  </div>
+</section>
+
+<!-- RELATED TOOLS -->
+<section style="padding-top:0;">
+  <h2>Related <em>free tools</em></h2>
+  <p class="section-sub">More tools that run entirely in your browser.</p>
+  <div class="related-grid">
+    <a class="related-link" href="https://thecreatingco.com/image-compressor/">Image Compressor</a>
+    <a class="related-link" href="https://thecreatingco.com/background-remover/">Background Remover</a>
+    <a class="related-link" href="https://thecreatingco.com/audio-converter/">Audio Converter</a>
+    <a class="related-link" href="https://thecreatingco.com/video-trimmer/">Video Trimmer</a>
+    <a class="related-link" href="https://thecreatingco.com/audio-trimmer/">Audio Trimmer</a>
+    <a class="related-link" href="https://thecreatingco.com/noise-reducer/">Noise Reducer</a>
+    <a class="related-link" href="https://thecreatingco.com/stem-splitter/">Stem Splitter</a>
+    <a class="related-link" href="https://thecreatingco.com/vocal-remover/">Vocal Remover</a>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section style="padding-top:0;">
+  <h2>Image resizer — <em>FAQ</em></h2>
+  <div class="faq">
+    <details>
+      <summary>Does resizing an image reduce quality?</summary>
+      <div class="faq-body">Downscaling (making an image smaller) is generally lossless — you just have fewer pixels. The result looks sharp when using a high-quality resampling algorithm. Upscaling (making an image larger than its source) stretches existing pixels and can cause blurring or pixellation — no new detail is added. For upscaling, AI-based tools give better results than standard resampling.</div>
+    </details>
+    <details>
+      <summary>Is this image resizer free and private?</summary>
+      <div class="faq-body">Yes — completely free with no file count or file size limits. Your images stay on your device the entire time. All processing happens locally in your browser using the Canvas API. Nothing is ever uploaded to any server.</div>
+    </details>
+    <details>
+      <summary>What image formats can I resize?</summary>
+      <div class="faq-body">The resizer accepts JPG/JPEG, PNG, WebP, GIF (static), AVIF, and BMP — any format your browser's image decoder supports. Output can be saved as JPG, PNG, or WebP at your chosen quality level (1–100).</div>
+    </details>
+    <details>
+      <summary>Can I resize to a specific aspect ratio like 16:9 or 1:1?</summary>
+      <div class="faq-body">Yes. You can lock the aspect ratio to scale proportionally, or unlock it to enter any custom width and height to stretch the image to any ratio. Social media presets (Instagram square, Twitter header, YouTube thumbnail, etc.) pre-fill the correct dimensions automatically.</div>
+    </details>
+    <details>
+      <summary>Can I batch-resize multiple images at once?</summary>
+      <div class="faq-body">Yes. Drop a folder or select multiple image files and all will be resized to the same target dimensions with the same settings. Download them as individual files or bundled into a ZIP archive.</div>
+    </details>
+    <details>
+      <summary>Will resizing reduce the file size?</summary>
+      <div class="faq-body">Usually yes — fewer pixels means less data to store. A 4000×3000 image resized to 1200×900 is typically 6–10× smaller. You can also control output quality independently when saving as JPG or WebP — useful for maximising compression beyond just resizing.</div>
+    </details>
+  </div>
+</section>
+
+<footer>
+  <p>
+    <a href="https://thecreatingco.com/">thecreatingco</a> ·
+    <a href="https://thecreatingco.com/image-compressor/">Image Compressor</a> ·
+    <a href="https://thecreatingco.com/background-remover/">Background Remover</a> ·
+    <a href="https://thecreatingco.com/audio-converter/">Audio Converter</a> ·
+    <a href="https://thecreatingco.com/video-trimmer/">Video Trimmer</a>
+  </p>
+  <p style="margin-top:10px;">© 2026 thecreatingco · Free online image tools</p>
+</footer>
+
+</body>
+</html>
