@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Audio Visualizer Free Online — Visualize Music in Your Browser</title>
+<meta name="description" content="Create real-time audio visualizations free in your browser — no download, no account. Sync waveforms, spectrum bars and beat-reactive visuals to any song or audio file.">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Audio Visualizer Free Online — thecreatingco">
+<meta property="og:description" content="Real-time audio visualizations free in your browser. Waveforms, spectrum bars, beat-reactive visuals — sync to any song or audio file instantly.">
+<meta property="og:url" content="https://thecreatingco.com/audio-visualizer/">
+<meta property="og:site_name" content="thecreatingco">
+<meta property="og:image" content="https://thecreatingco.com/assets/share/stemdeck.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://thecreatingco.com/assets/share/stemdeck.jpg">
+<meta name="twitter:title" content="Audio Visualizer Free Online — thecreatingco">
+<meta name="twitter:description" content="Real-time audio visualizations free in your browser. Sync to any song — no download needed.">
+<link rel="canonical" href="https://thecreatingco.com/audio-visualizer/">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://thecreatingco.com/audio-visualizer/#page","url":"https://thecreatingco.com/audio-visualizer/","name":"Audio Visualizer Free Online — thecreatingco","description":"Create real-time audio visualizations free in your browser. Waveforms, spectrum bars and beat-reactive visuals synced to any song — no download, no account.","about":{"@id":"https://thecreatingco.com/products/stemdeck/#app"}},{"@type":"SoftwareApplication","@id":"https://thecreatingco.com/products/stemdeck/#app","name":"StemDeck — Audio Visualizer & Remix Studio","url":"https://thecreatingco.com/products/stemdeck/","installUrl":"https://sattarimusic.com/studio/stemdeck","applicationCategory":"MultimediaApplication","operatingSystem":"Web browser","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"thecreatingco","url":"https://thecreatingco.com"},"description":"StemDeck is a browser-based audio visualizer and remix studio. Load any audio file, watch real-time spectrum and waveform visuals sync to the beat, and use stem controls to mix vocals, drums, bass and melody separately.","featureList":["Real-time spectrum analyzer and waveform display","Beat-reactive visual modes","Per-stem visualizer (vocals, drums, bass, melody)","Audio file import — MP3, WAV, FLAC and more","No upload to a server — audio stays in your browser","Stem balance and solo/mute controls","Export visualizer frame as image"]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is the audio visualizer free?","acceptedAnswer":{"@type":"Answer","text":"Yes — StemDeck's audio visualizer is completely free to use in your browser. No account, no download, and no trial limit."}},{"@type":"Question","name":"What audio files can the visualizer use?","acceptedAnswer":{"@type":"Answer","text":"StemDeck accepts MP3, WAV, FLAC, AAC, OGG, and most other audio formats your browser can decode. Drop an audio file onto the player to start the visualization."}},{"@type":"Question","name":"Does my audio file leave my browser?","acceptedAnswer":{"@type":"Answer","text":"No — StemDeck processes and visualizes your audio entirely in the browser. Your file is never uploaded to a server."}},{"@type":"Question","name":"What visualizer modes are available?","acceptedAnswer":{"@type":"Answer","text":"StemDeck offers a real-time spectrum analyzer (frequency bars), a waveform display, and beat-reactive visual modes. You can also view the visualizer per stem — separately for vocals, drums, bass and melody."}},{"@type":"Question","name":"Can the visualizer show separate stems?","acceptedAnswer":{"@type":"Answer","text":"Yes. StemDeck lets you split a track into its stems and visualize each one independently — ideal for understanding how a mix is constructed or for creating a visual for a remix."}},{"@type":"Question","name":"Can I use this to make a music video?","acceptedAnswer":{"@type":"Answer","text":"StemDeck is optimized for real-time visualization and remixing. You can capture visualizer frames as still images. For full music video rendering, pairing StemDeck with ScenePilot (thecreatingco's video editor) gives you a complete workflow."}},{"@type":"Question","name":"Does it work on mobile?","acceptedAnswer":{"@type":"Answer","text":"Yes — StemDeck runs in any modern browser on desktop, tablet, or phone. The visualizer is optimized for both large and small screens."}}]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://thecreatingco.com/start/"},{"@type":"ListItem","position":2,"name":"Apps & tools","item":"https://thecreatingco.com/tools/"},{"@type":"ListItem","position":3,"name":"Audio Visualizer","item":"https://thecreatingco.com/audio-visualizer/"}]}]}</script>
+<style>
+:root {
+  --bg: #080810;
+  --surface: #10101a;
+  --border: #1e1e2e;
+  --text: #e8e8f4;
+  --muted: #7878a0;
+  --accent: #a060ff;
+  --accent-dim: rgba(160,96,255,0.10);
+  --accent2: #ff6096;
+  --radius: 10px;
+}
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --bg: #f2f2f8; --surface: #fff; --border: #dcdce8; --text: #0c0c18;
+    --muted: #585878; --accent: #7030e0; --accent-dim: rgba(112,48,224,0.08); --accent2: #d0245a;
+  }
+}
+:root[data-theme="light"] {
+  --bg: #f2f2f8; --surface: #fff; --border: #dcdce8; --text: #0c0c18;
+  --muted: #585878; --accent: #7030e0; --accent-dim: rgba(112,48,224,0.08); --accent2: #d0245a;
+}
+*,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.nav { display: flex; align-items: center; justify-content: space-between; padding: 0 20px; height: 56px; border-bottom: 1px solid var(--border); background: var(--surface); position: sticky; top: 0; z-index: 10; }
+.nav-brand { font-size: 15px; font-weight: 700; color: var(--text); letter-spacing: -0.02em; }
+.nav-brand span { color: var(--accent); }
+.nav-link { font-size: 14px; color: var(--muted); }
+.nav-link:hover { color: var(--text); }
+
+.hero { max-width: 840px; margin: 0 auto; padding: 72px 20px 56px; text-align: center; }
+.hero-badge { display: inline-flex; align-items: center; gap: 6px; background: var(--accent-dim); color: var(--accent); border: 1px solid color-mix(in srgb,var(--accent) 30%,transparent); border-radius: 100px; font-size: 12px; font-weight: 600; padding: 4px 12px; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 20px; }
+.hero h1 { font-size: clamp(2rem,5vw,3.2rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 16px; }
+.hero h1 em { font-style: normal; color: var(--accent); }
+.hero-sub { font-size: clamp(1rem,2.2vw,1.2rem); color: var(--muted); max-width: 580px; margin: 0 auto 36px; }
+.hero-cta { display: inline-block; background: var(--accent); color: #fff; font-size: 16px; font-weight: 700; padding: 14px 32px; border-radius: 8px; letter-spacing: -0.01em; transition: opacity .15s; }
+.hero-cta:hover { opacity: .88; text-decoration: none; }
+.hero-note { font-size: 13px; color: var(--muted); margin-top: 10px; }
+
+/* Visualizer illustration */
+.viz-demo { max-width: 640px; margin: 48px auto 0; }
+.viz-stage { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px 24px 20px; }
+.viz-bars { display: flex; align-items: flex-end; gap: 4px; height: 80px; justify-content: center; }
+.vb { width: 8px; border-radius: 3px 3px 0 0; background: var(--accent); animation: viz-pulse var(--d,1.2s) ease-in-out infinite alternate; opacity: var(--o,1); }
+@keyframes viz-pulse { from { transform: scaleY(var(--lo,.15)); } to { transform: scaleY(1); } }
+.viz-bars .vb:nth-child(1)  { height:22px; --d:1.10s; --lo:.2; }
+.viz-bars .vb:nth-child(2)  { height:38px; --d:0.80s; --lo:.3; }
+.viz-bars .vb:nth-child(3)  { height:55px; --d:0.95s; --lo:.25; }
+.viz-bars .vb:nth-child(4)  { height:70px; --d:0.70s; --lo:.35; }
+.viz-bars .vb:nth-child(5)  { height:80px; --d:1.00s; --lo:.4; background: var(--accent2); }
+.viz-bars .vb:nth-child(6)  { height:72px; --d:0.85s; --lo:.3; }
+.viz-bars .vb:nth-child(7)  { height:60px; --d:1.20s; --lo:.2; }
+.viz-bars .vb:nth-child(8)  { height:78px; --d:0.75s; --lo:.45; background: var(--accent2); }
+.viz-bars .vb:nth-child(9)  { height:64px; --d:0.90s; --lo:.28; }
+.viz-bars .vb:nth-child(10) { height:50px; --d:1.05s; --lo:.22; }
+.viz-bars .vb:nth-child(11) { height:68px; --d:0.82s; --lo:.38; background: var(--accent2); }
+.viz-bars .vb:nth-child(12) { height:58px; --d:0.92s; --lo:.3; }
+.viz-bars .vb:nth-child(13) { height:42px; --d:1.15s; --lo:.18; }
+.viz-bars .vb:nth-child(14) { height:34px; --d:0.78s; --lo:.25; }
+.viz-bars .vb:nth-child(15) { height:20px; --d:1.00s; --lo:.15; }
+.viz-bars .vb:nth-child(16) { height:48px; --d:0.88s; --lo:.3; }
+.viz-bars .vb:nth-child(17) { height:62px; --d:0.72s; --lo:.35; background: var(--accent2); }
+.viz-bars .vb:nth-child(18) { height:76px; --d:0.95s; --lo:.4; }
+.viz-bars .vb:nth-child(19) { height:52px; --d:1.08s; --lo:.22; }
+.viz-bars .vb:nth-child(20) { height:28px; --d:0.82s; --lo:.18; }
+.viz-waveform { margin-top: 12px; height: 30px; position: relative; overflow: hidden; }
+.viz-waveform svg { width: 100%; height: 100%; }
+.viz-caption { text-align: center; font-size: 11px; font-weight: 600; color: var(--muted); letter-spacing: 0.05em; text-transform: uppercase; margin-top: 12px; }
+
+.section { max-width: 840px; margin: 0 auto; padding: 64px 20px; }
+.section-title { font-size: clamp(1.4rem,3vw,1.9rem); font-weight: 800; letter-spacing: -0.025em; text-align: center; margin-bottom: 8px; }
+.section-sub { text-align: center; color: var(--muted); font-size: 1rem; margin-bottom: 40px; }
+.features { display: grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap: 20px; }
+.feature { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; }
+.feature-icon { font-size: 24px; margin-bottom: 10px; }
+.feature h3 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+.feature p { font-size: 14px; color: var(--muted); line-height: 1.5; }
+
+.use-cases { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.use-inner { max-width: 840px; margin: 0 auto; padding: 64px 20px; }
+.uc-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); gap: 16px; margin-top: 36px; }
+.uc-card { border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; }
+.uc-title { font-size: 14px; font-weight: 700; margin-bottom: 6px; }
+.uc-desc { font-size: 13px; color: var(--muted); line-height: 1.5; }
+
+.steps { counter-reset: step; display: flex; flex-direction: column; gap: 16px; margin-top: 40px; }
+.step { display: flex; gap: 16px; align-items: flex-start; }
+.step-num { counter-increment: step; width: 32px; height: 32px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 13px; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+.step-num::before { content: counter(step); }
+.step-body h3 { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+.step-body p { font-size: 14px; color: var(--muted); }
+
+.cta-strip { background: var(--accent-dim); border-top: 1px solid color-mix(in srgb,var(--accent) 20%,transparent); border-bottom: 1px solid color-mix(in srgb,var(--accent) 20%,transparent); }
+.cta-inner { max-width: 840px; margin: 0 auto; padding: 48px 20px; text-align: center; }
+.cta-inner h2 { font-size: clamp(1.4rem,3vw,1.9rem); font-weight: 800; letter-spacing: -0.025em; margin-bottom: 10px; }
+.cta-inner p { color: var(--muted); margin-bottom: 28px; }
+
+.related { max-width: 840px; margin: 0 auto; padding: 48px 20px 64px; }
+.related-title { font-size: 16px; font-weight: 700; margin-bottom: 20px; }
+.related-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); gap: 16px; }
+.related-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; display: flex; flex-direction: column; gap: 6px; transition: border-color .15s; }
+.related-card:hover { border-color: var(--accent); text-decoration: none; }
+.related-card-name { font-size: 14px; font-weight: 700; color: var(--text); }
+.related-card-desc { font-size: 13px; color: var(--muted); }
+
+.faq { max-width: 700px; margin: 0 auto; padding: 0 20px 72px; }
+.faq-title { font-size: clamp(1.3rem,2.5vw,1.7rem); font-weight: 800; letter-spacing: -0.02em; margin-bottom: 28px; }
+.faq-item { border-bottom: 1px solid var(--border); padding: 18px 0; }
+.faq-q { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+.faq-a { font-size: 14px; color: var(--muted); line-height: 1.6; }
+.faq-a a { color: var(--accent); }
+
+.footer { border-top: 1px solid var(--border); padding: 28px 20px; text-align: center; font-size: 13px; color: var(--muted); }
+.footer a { color: var(--muted); }
+.footer a:hover { color: var(--text); }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="nav-brand" href="/start/">the<span>creating</span>co</a>
+  <a class="nav-link" href="/tools/">All free tools</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-badge">Free · Real-time · In-browser</div>
+  <h1>Audio Visualizer<br><em>Free Online</em></h1>
+  <p class="hero-sub">Watch your music come alive. Real-time spectrum analyzer, waveform and beat-reactive visuals — synced to any audio file in your browser. No download, no account.</p>
+  <a class="hero-cta" href="https://sattarimusic.com/studio/stemdeck" rel="noopener">Visualize Audio Free →</a>
+  <p class="hero-note">Powered by StemDeck · Works in Chrome, Safari, Firefox</p>
+
+  <div class="viz-demo">
+    <div class="viz-stage">
+      <div class="viz-bars">
+        <div class="vb"></div><div class="vb"></div><div class="vb"></div><div class="vb"></div>
+        <div class="vb"></div><div class="vb"></div><div class="vb"></div><div class="vb"></div>
+        <div class="vb"></div><div class="vb"></div><div class="vb"></div><div class="vb"></div>
+        <div class="vb"></div><div class="vb"></div><div class="vb"></div><div class="vb"></div>
+        <div class="vb"></div><div class="vb"></div><div class="vb"></div><div class="vb"></div>
+      </div>
+      <div class="viz-waveform">
+        <svg viewBox="0 0 600 30" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <polyline points="0,15 30,8 60,22 90,5 120,18 150,10 180,25 210,6 240,20 270,12 300,15 330,9 360,23 390,7 420,19 450,11 480,24 510,8 540,17 570,13 600,15" fill="none" stroke="var(--accent)" stroke-width="1.5" opacity="0.5"/>
+        </svg>
+      </div>
+      <div class="viz-caption">Real-time spectrum + waveform</div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2 class="section-title">Everything in the free visualizer</h2>
+  <p class="section-sub">Real-time spectrum analysis, per-stem visuals, and beat-reactive modes — all in the browser.</p>
+  <div class="features">
+    <div class="feature">
+      <div class="feature-icon">📊</div>
+      <h3>Real-time spectrum analyzer</h3>
+      <p>Watch frequency bars rise and fall in real time as your audio plays — see the full spectrum from bass to treble as the music unfolds.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">〰️</div>
+      <h3>Waveform display</h3>
+      <p>A live waveform scrolls alongside the spectrum, showing the audio amplitude over time so you can see transients and dynamics clearly.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">🥁</div>
+      <h3>Per-stem visualization</h3>
+      <p>Split a track into stems and visualize vocals, drums, bass and melody independently — understand a mix from the inside out.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">🔒</div>
+      <h3>Audio stays in your browser</h3>
+      <p>Your audio file is never uploaded to a server. All decoding and visualization happens locally in your browser tab.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">🎛️</div>
+      <h3>Stem balance controls</h3>
+      <p>Adjust the level of each stem independently. Solo, mute, or blend vocals, drums, bass and melody while watching the visualization respond in real time.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">📱</div>
+      <h3>Works on any device</h3>
+      <p>StemDeck runs in any modern browser on desktop, tablet, or phone — no installation needed on any platform.</p>
+    </div>
+  </div>
+</section>
+
+<div class="use-cases">
+  <div class="use-inner">
+    <h2 class="section-title">Why people use an audio visualizer</h2>
+    <div class="uc-grid">
+      <div class="uc-card">
+        <div class="uc-title">🎵 Understanding a mix</div>
+        <div class="uc-desc">See exactly where the bass, mids and highs sit in a finished track — great for learning how a mix is constructed.</div>
+      </div>
+      <div class="uc-card">
+        <div class="uc-title">🎬 Music video production</div>
+        <div class="uc-desc">Capture spectrum frames and reference the beat pattern when syncing visual cuts to a track in a video editor.</div>
+      </div>
+      <div class="uc-card">
+        <div class="uc-title">🎚️ Remixing and stem editing</div>
+        <div class="uc-desc">Visualize individual stems to find the best edit points, see transients, and understand how each part contributes to the overall energy.</div>
+      </div>
+      <div class="uc-card">
+        <div class="uc-title">📚 Music learning and analysis</div>
+        <div class="uc-desc">Students and educators use spectrum analyzers to visualize and explain frequency content, dynamics, and structure in recorded music.</div>
+      </div>
+      <div class="uc-card">
+        <div class="uc-title">🎤 Vocal checking</div>
+        <div class="uc-desc">Visualize the vocal stem in isolation to spot resonance peaks, sibilance, or frequency clashes with other instruments.</div>
+      </div>
+      <div class="uc-card">
+        <div class="uc-title">🎧 DJ preparation</div>
+        <div class="uc-desc">Analyze the frequency and energy profile of tracks before a set — understand how two tracks will combine in a mix.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="section">
+  <h2 class="section-title">How to visualize audio — 3 steps</h2>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num"></div>
+      <div class="step-body">
+        <h3>Open StemDeck in your browser</h3>
+        <p>Go to <a href="https://sattarimusic.com/studio/stemdeck">sattarimusic.com/studio/stemdeck</a> — no account or install needed.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num"></div>
+      <div class="step-body">
+        <h3>Drop or select your audio file</h3>
+        <p>Drag an MP3, WAV, FLAC or any supported audio file onto the player. The spectrum and waveform visualizer starts immediately as the track plays.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num"></div>
+      <div class="step-body">
+        <h3>Explore stems and visualizer modes</h3>
+        <p>Switch between full-mix and per-stem visualization. Adjust stem levels, solo a part, and watch the spectrum respond in real time.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-strip">
+  <div class="cta-inner">
+    <h2>Visualize your audio free — right now</h2>
+    <p>Real-time spectrum, waveform, and per-stem visuals. No account, no download.</p>
+    <a class="hero-cta" href="https://sattarimusic.com/studio/stemdeck" rel="noopener">Open Audio Visualizer Free →</a>
+  </div>
+</div>
+
+<section class="related">
+  <div class="related-title">More free audio and creative tools</div>
+  <div class="related-grid">
+    <a class="related-card" href="/stem-splitter/">
+      <div class="related-card-name">🎼 Stem Splitter</div>
+      <div class="related-card-desc">Separate vocals, drums, bass and melody from any song — free in your browser.</div>
+    </a>
+    <a class="related-card" href="/pitch-shifter/">
+      <div class="related-card-name">🎚️ Pitch Shifter</div>
+      <div class="related-card-desc">Change the pitch of any audio free online — no download or account needed.</div>
+    </a>
+    <a class="related-card" href="/bpm-finder/">
+      <div class="related-card-name">🥁 BPM Finder</div>
+      <div class="related-card-desc">Detect the tempo of any song free in your browser instantly.</div>
+    </a>
+    <a class="related-card" href="/products/stemdeck/">
+      <div class="related-card-name">🎛️ StemDeck</div>
+      <div class="related-card-desc">The full stem remix and mixing studio — cues, loops, balance and arrangement.</div>
+    </a>
+  </div>
+</section>
+
+<section class="faq">
+  <h2 class="faq-title">Frequently asked questions</h2>
+
+  <div class="faq-item">
+    <div class="faq-q">Is the audio visualizer free?</div>
+    <div class="faq-a">Yes — StemDeck's audio visualizer is completely free to use in your browser. No account, no download, and no trial limit.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">What audio formats does the visualizer support?</div>
+    <div class="faq-a">StemDeck accepts MP3, WAV, FLAC, AAC, OGG, and most other audio formats your browser can decode. Just drop your file onto the player to start.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Does my audio file leave my browser?</div>
+    <div class="faq-a">No — StemDeck visualizes and processes your audio entirely in the browser. Your file is never uploaded to a server.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">What visualizer modes are available?</div>
+    <div class="faq-a">StemDeck offers a real-time spectrum analyzer (frequency bars), a waveform display, and per-stem visualization — you can view the spectrum for vocals, drums, bass or melody independently.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Can I visualize just the vocals or just the drums?</div>
+    <div class="faq-a">Yes. StemDeck's stem separation lets you split a track and visualize each stem independently — solo the vocal stem, for example, to see just its frequency and amplitude in the visualizer.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Can I use this for a music video?</div>
+    <div class="faq-a">StemDeck is built for real-time visualization and remixing. You can capture visualizer frames as still images. For full music video rendering, pairing StemDeck with <a href="/products/scenepilot/">ScenePilot</a> gives you a complete workflow.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Does the audio visualizer work on mobile?</div>
+    <div class="faq-a">Yes — StemDeck runs in any modern browser on desktop, tablet, or phone. No installation needed on any device.</div>
+  </div>
+</section>
+
+<footer class="footer">
+  <p>© thecreatingco · <a href="/privacy/">Privacy</a> · <a href="/start/">Home</a> · <a href="/tools/">Tools</a></p>
+</footer>
+
+</body>
+</html>
