@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Audio Spectrum Analyzer Free Online — Frequency Analyzer, No Download</title>
+<meta name="description" content="Free online audio spectrum analyzer — visualize the frequency content of any audio in real time. No app download. Works with mic input or audio file upload.">
+<link rel="canonical" href="https://thecreatingco.com/spectrum-analyzer/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://thecreatingco.com/spectrum-analyzer/">
+<meta property="og:title" content="Audio Spectrum Analyzer Free Online — Frequency Analyzer, No Download">
+<meta property="og:description" content="Free online audio spectrum analyzer — visualize the frequency content of any audio in real time. No app download. Works with mic input or audio file upload.">
+<meta property="og:image" content="https://thecreatingco.com/assets/share/stemdeck.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Audio Spectrum Analyzer Free Online — Frequency Analyzer, No Download">
+<meta name="twitter:description" content="Free online audio spectrum analyzer — visualize the frequency content of any audio in real time. No app download. Works with mic input or audio file upload.">
+<meta name="twitter:image" content="https://thecreatingco.com/assets/share/stemdeck.jpg">
+<meta name="robots" content="index,follow">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://thecreatingco.com/spectrum-analyzer/#webpage",
+      "url": "https://thecreatingco.com/spectrum-analyzer/",
+      "name": "Audio Spectrum Analyzer Free Online — Frequency Analyzer, No Download",
+      "description": "Free online audio spectrum analyzer — visualize the frequency content of any audio in real time. No app download. Works with mic input or audio file upload.",
+      "isPartOf": { "@id": "https://thecreatingco.com/#website" },
+      "breadcrumb": { "@id": "https://thecreatingco.com/spectrum-analyzer/#breadcrumb" }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://thecreatingco.com/spectrum-analyzer/#app",
+      "name": "Online Audio Spectrum Analyzer",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "Any (web browser with microphone)",
+      "url": "https://thecreatingco.com/spectrum-analyzer/",
+      "description": "Free online audio spectrum analyzer using the Web Audio API. Visualize frequency content in real time from microphone input or uploaded audio files — no app or plugin to install.",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "publisher": {
+        "@type": "Organization",
+        "name": "The Creating Co",
+        "url": "https://thecreatingco.com"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://thecreatingco.com/spectrum-analyzer/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is an audio spectrum analyzer?",
+          "acceptedAnswer": { "@type": "Answer", "text": "An audio spectrum analyzer shows the frequency content of a sound in real time — which frequencies are loud and which are quiet. The horizontal axis represents frequency (20 Hz to 20 kHz) and the vertical axis shows the amplitude (loudness) in decibels (dB). Engineers and musicians use it to identify problem frequencies, compare sounds, and make EQ decisions." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is the online spectrum analyzer free?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes — completely free. Open the page, allow microphone access (or upload a file), and the real-time FFT display appears immediately. No account, no download, no time limit." }
+        },
+        {
+          "@type": "Question",
+          "name": "What does the spectrum analyzer show?",
+          "acceptedAnswer": { "@type": "Answer", "text": "The analyzer shows a real-time FFT (Fast Fourier Transform) plot: the amplitude of each frequency band from 20 Hz to 20 kHz, updated 60 times per second. The display also shows a peak-hold line and a scrolling spectrogram (color waterfall) for tracking how frequencies change over time." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I analyze an audio file (MP3, WAV) instead of live mic input?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes — upload an MP3, WAV, FLAC, OGG, or M4A file and the analyzer processes it offline. You can scrub through the file while watching the spectrum update, or export a screenshot of any frame." }
+        },
+        {
+          "@type": "Question",
+          "name": "What FFT size does the analyzer use?",
+          "acceptedAnswer": { "@type": "Answer", "text": "The default FFT size is 4096 samples, giving 2048 frequency bins across the 0–22 kHz range at 44.1 kHz sample rate. You can switch to 2048 (faster, less frequency resolution) or 8192 (slower, higher resolution) from the settings panel." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use the spectrum analyzer for music production?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes — it's ideal for mixing and mastering decisions: comparing two tracks side by side, identifying resonances, checking the low-end in a mix, verifying a noise reduction result, or simply learning how different instruments look in the frequency domain." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does the analyzer work on mobile?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes — the spectrum analyzer is fully mobile-optimised. It works in Chrome on Android and Safari on iPhone. Allow microphone access and the real-time FFT display starts immediately." }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://thecreatingco.com/spectrum-analyzer/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://thecreatingco.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Free Tools", "item": "https://thecreatingco.com/tools/" },
+        { "@type": "ListItem", "position": 3, "name": "Spectrum Analyzer", "item": "https://thecreatingco.com/spectrum-analyzer/" }
+      ]
+    }
+  ]
+}
+</script>
+<style>
+:root {
+  --bg: #0d0d12; --surface: #16161e; --surface2: #1e1e2a;
+  --border: rgba(255,255,255,0.08); --text: #f0f0f8; --muted: #7878a0;
+  --accent: #a0ff40; --accent2: #4040ff;
+  --accent-dim: rgba(160,255,64,0.12); --accent2-dim: rgba(64,64,255,0.12);
+}
+@media (prefers-color-scheme: light) {
+  :root { --bg:#f8f8fc; --surface:#fff; --surface2:#f0f0f8; --border:rgba(0,0,0,0.08); --text:#111118; --muted:#6060a0; --accent-dim:rgba(100,200,30,0.10); --accent2-dim:rgba(40,40,200,0.10); }
+}
+:root[data-theme="dark"] { --bg:#0d0d12; --surface:#16161e; --surface2:#1e1e2a; --border:rgba(255,255,255,0.08); --text:#f0f0f8; --muted:#7878a0; }
+:root[data-theme="light"] { --bg:#f8f8fc; --surface:#fff; --surface2:#f0f0f8; --border:rgba(0,0,0,0.08); --text:#111118; --muted:#6060a0; }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+header{border-bottom:1px solid var(--border);padding:16px}
+.nav-inner{max-width:860px;margin:auto;display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:800;font-size:17px;color:var(--text)}.logo span{color:var(--accent)}
+.hero{text-align:center;padding:64px 16px 48px;max-width:700px;margin:auto}
+.badge{display:inline-flex;align-items:center;gap:6px;background:var(--accent-dim);border:1px solid color-mix(in srgb,var(--accent) 30%,transparent);border-radius:999px;padding:4px 12px;font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;text-transform:uppercase;margin-bottom:20px}
+h1{font-size:clamp(28px,5vw,48px);font-weight:900;letter-spacing:-1px;line-height:1.1;margin-bottom:16px}
+.sub{font-size:17px;color:var(--muted);max-width:500px;margin:0 auto 32px}
+.cta-btn{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#000;font-size:16px;font-weight:800;padding:14px 28px;border-radius:8px;transition:opacity .15s}
+.cta-btn:hover{opacity:.88;text-decoration:none}
+.cta-sub{margin-top:12px;font-size:13px;color:var(--muted)}
+
+/* ---- Spectrum illustration ---- */
+.spec-wrap{max-width:520px;margin:48px auto;background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:24px 20px}
+/* Spectrogram waterfall */
+.spectrogram{height:48px;border-radius:6px;overflow:hidden;display:flex;margin-bottom:16px;position:relative}
+.sg-col{flex:1;display:flex;flex-direction:column-reverse;gap:1px}
+.sg-px{height:3px;border-radius:1px;opacity:.85}
+/* FFT bars */
+.fft-display{display:flex;align-items:flex-end;gap:2px;height:100px;background:var(--surface2);border-radius:8px;padding:4px 4px 0;margin-bottom:8px;overflow:hidden}
+.fft-bar{flex:1;border-radius:2px 2px 0 0;min-width:2px;transform-origin:bottom;animation:fft-bounce 1.8s ease-in-out infinite}
+.fft-peak{position:absolute;width:100%;height:2px;background:rgba(160,255,64,0.6);top:var(--pk)}
+@keyframes fft-bounce{0%,100%{transform:scaleY(1)}50%{transform:scaleY(var(--scale,0.7))}}
+/* Freq labels */
+.freq-labels{display:flex;justify-content:space-between;font-size:10px;color:var(--muted);font-family:monospace;margin-bottom:14px;padding:0 2px}
+/* Mode tabs */
+.mode-tabs{display:flex;gap:6px;margin-bottom:14px}
+.mode-tab{padding:5px 12px;border-radius:6px;font-size:12px;font-weight:700;background:var(--surface2);color:var(--muted);border:1px solid var(--border)}
+.mode-tab.active{background:var(--accent-dim);color:var(--accent);border-color:color-mix(in srgb,var(--accent) 30%,transparent)}
+/* dB scale */
+.db-row{display:flex;justify-content:space-between;font-size:10px;color:var(--muted);font-family:monospace}
+
+/* Frequency band reference table and rest */
+.section{max-width:860px;margin:0 auto;padding:48px 16px}
+.section-title{font-size:24px;font-weight:800;margin-bottom:8px}
+.section-sub{color:var(--muted);margin-bottom:32px}
+.freq-table{width:100%;border-collapse:collapse;font-size:14px}
+.freq-table th{text-align:left;padding:10px 12px;border-bottom:2px solid var(--border);color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.06em}
+.freq-table td{padding:10px 12px;border-bottom:1px solid var(--border);font-family:monospace}
+.freq-table tr:last-child td{border-bottom:none}
+.freq-table td:first-child{font-family:system-ui,-apple-system,sans-serif;font-weight:700}
+.band-chip{display:inline-block;padding:2px 7px;border-radius:4px;font-size:11px;font-weight:700;background:var(--accent-dim);color:var(--accent)}
+.features{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
+.feat-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px}
+.feat-icon{font-size:24px;margin-bottom:10px}
+.feat-title{font-weight:700;margin-bottom:6px}
+.feat-desc{font-size:14px;color:var(--muted)}
+.use-cases{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
+.use-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px}
+.use-title{font-weight:700;margin-bottom:6px}
+.use-desc{font-size:14px;color:var(--muted)}
+.steps{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
+.step-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px}
+.step-num{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:var(--accent-dim);color:var(--accent);font-weight:900;font-size:14px;margin-bottom:12px}
+.step-title{font-weight:700;margin-bottom:6px}
+.step-desc{font-size:14px;color:var(--muted)}
+.cta-strip{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:48px 16px;text-align:center}
+.cta-strip h2{font-size:24px;font-weight:800;margin-bottom:12px}
+.cta-strip p{color:var(--muted);margin-bottom:24px;max-width:480px;margin-left:auto;margin-right:auto}
+.related{display:flex;flex-wrap:wrap;gap:10px}
+.rel-link{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:8px 16px;font-size:14px;font-weight:600;color:var(--text)}
+.rel-link:hover{border-color:var(--accent);text-decoration:none}
+.faq{display:grid;gap:12px}
+.faq-item{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px}
+.faq-q{font-weight:700;margin-bottom:8px}
+.faq-a{font-size:14px;color:var(--muted)}
+footer{border-top:1px solid var(--border);padding:32px 16px;text-align:center}
+.footer-inner{max-width:860px;margin:auto}
+.footer-links{display:flex;flex-wrap:wrap;gap:16px;justify-content:center;margin-bottom:12px;font-size:14px}
+.footer-copy{font-size:12px;color:var(--muted)}
+</style>
+</head>
+<body>
+<header>
+  <div class="nav-inner">
+    <a class="logo" href="https://thecreatingco.com/">the<span>creating</span>co</a>
+    <a class="cta-btn" style="font-size:13px;padding:8px 16px;color:#000" href="https://thecreatingco.com/products/stemdeck/">Open StemDeck →</a>
+  </div>
+</header>
+
+<main>
+<div class="hero">
+  <div class="badge">📊 Free Online Tool</div>
+  <h1>Audio Spectrum Analyzer Free Online</h1>
+  <p class="sub">Real-time FFT frequency analyzer for mic input or audio files — see every frequency from 20 Hz to 20 kHz. No app, no download.</p>
+  <a class="cta-btn" href="https://thecreatingco.com/products/stemdeck/">Open Analyzer Free →</a>
+  <p class="cta-sub">Free · Real-time · Works in any browser</p>
+</div>
+
+<!-- Spectrum illustration -->
+<div class="spec-wrap" aria-hidden="true">
+  <!-- Mode tabs -->
+  <div class="mode-tabs">
+    <div class="mode-tab active">Real-time</div>
+    <div class="mode-tab">File</div>
+    <div class="mode-tab">Spectrogram</div>
+  </div>
+
+  <!-- Spectrogram waterfall (simplified color gradient rows) -->
+  <div class="spectrogram" style="background:linear-gradient(180deg,
+    rgba(64,64,255,0.6) 0%,
+    rgba(64,200,100,0.5) 20%,
+    rgba(100,200,64,0.7) 35%,
+    rgba(160,255,64,0.8) 50%,
+    rgba(255,200,40,0.6) 65%,
+    rgba(255,100,40,0.4) 80%,
+    rgba(80,200,255,0.3) 100%)">
+  </div>
+
+  <!-- FFT bars (32 bars representing frequency buckets) -->
+  <div style="position:relative">
+    <div class="fft-display">
+      <!-- Sub-bass to bass: short bars, blue tones -->
+      <div class="fft-bar" style="height:15%;background:var(--accent2);--scale:.8;animation-delay:.0s"></div>
+      <div class="fft-bar" style="height:22%;background:var(--accent2);--scale:.9;animation-delay:.05s"></div>
+      <div class="fft-bar" style="height:35%;background:var(--accent2);--scale:.7;animation-delay:.1s"></div>
+      <div class="fft-bar" style="height:48%;background:color-mix(in srgb,var(--accent2) 70%,var(--accent));--scale:.85;animation-delay:.0s"></div>
+      <div class="fft-bar" style="height:62%;background:color-mix(in srgb,var(--accent2) 50%,var(--accent));--scale:.6;animation-delay:.15s"></div>
+      <div class="fft-bar" style="height:70%;background:color-mix(in srgb,var(--accent2) 40%,var(--accent));--scale:.75;animation-delay:.05s"></div>
+      <!-- Midrange: taller bars, green tones -->
+      <div class="fft-bar" style="height:85%;background:color-mix(in srgb,var(--accent2) 20%,var(--accent));--scale:.65;animation-delay:.1s"></div>
+      <div class="fft-bar" style="height:95%;background:var(--accent);--scale:.8;animation-delay:.2s"></div>
+      <div class="fft-bar" style="height:88%;background:var(--accent);--scale:.7;animation-delay:.0s"></div>
+      <div class="fft-bar" style="height:80%;background:var(--accent);--scale:.6;animation-delay:.25s"></div>
+      <div class="fft-bar" style="height:90%;background:var(--accent);--scale:.85;animation-delay:.1s"></div>
+      <div class="fft-bar" style="height:75%;background:var(--accent);--scale:.7;animation-delay:.05s"></div>
+      <div class="fft-bar" style="height:82%;background:var(--accent);--scale:.6;animation-delay:.15s"></div>
+      <div class="fft-bar" style="height:68%;background:var(--accent);--scale:.8;animation-delay:.2s"></div>
+      <div class="fft-bar" style="height:78%;background:var(--accent);--scale:.75;animation-delay:.0s"></div>
+      <div class="fft-bar" style="height:72%;background:var(--accent);--scale:.65;animation-delay:.3s"></div>
+      <!-- Upper mid to presence: medium bars -->
+      <div class="fft-bar" style="height:65%;background:color-mix(in srgb,var(--accent) 80%,#ffcc00);--scale:.7;animation-delay:.05s"></div>
+      <div class="fft-bar" style="height:58%;background:color-mix(in srgb,var(--accent) 60%,#ffcc00);--scale:.8;animation-delay:.1s"></div>
+      <div class="fft-bar" style="height:52%;background:color-mix(in srgb,var(--accent) 40%,#ffcc00);--scale:.6;animation-delay:.15s"></div>
+      <div class="fft-bar" style="height:60%;background:color-mix(in srgb,var(--accent) 30%,#ffcc00);--scale:.75;animation-delay:.0s"></div>
+      <div class="fft-bar" style="height:45%;background:#aadd30;--scale:.7;animation-delay:.2s"></div>
+      <div class="fft-bar" style="height:50%;background:#aadd30;--scale:.65;animation-delay:.05s"></div>
+      <!-- High freq: shorter bars -->
+      <div class="fft-bar" style="height:42%;background:#ccdd20;--scale:.8;animation-delay:.1s"></div>
+      <div class="fft-bar" style="height:38%;background:#ccdd20;--scale:.7;animation-delay:.25s"></div>
+      <div class="fft-bar" style="height:32%;background:#dddd20;--scale:.6;animation-delay:.0s"></div>
+      <div class="fft-bar" style="height:28%;background:#ddcc20;--scale:.75;animation-delay:.15s"></div>
+      <div class="fft-bar" style="height:24%;background:#ddcc20;--scale:.8;animation-delay:.05s"></div>
+      <div class="fft-bar" style="height:20%;background:#ddcc20;--scale:.65;animation-delay:.2s"></div>
+      <div class="fft-bar" style="height:16%;background:#ddaa20;--scale:.7;animation-delay:.1s"></div>
+      <div class="fft-bar" style="height:12%;background:#dd8820;--scale:.8;animation-delay:.0s"></div>
+      <div class="fft-bar" style="height:8%;background:#dd6620;--scale:.75;animation-delay:.25s"></div>
+    </div>
+  </div>
+
+  <!-- Freq labels -->
+  <div class="freq-labels">
+    <span>20 Hz</span>
+    <span>100</span>
+    <span>500</span>
+    <span>1k</span>
+    <span>5k</span>
+    <span>10k</span>
+    <span>20 kHz</span>
+  </div>
+
+  <!-- dB scale -->
+  <div class="db-row">
+    <span>−80 dB</span>
+    <span>−60</span>
+    <span>−40</span>
+    <span>−20</span>
+    <span>0 dBFS</span>
+  </div>
+</div>
+
+<!-- Features -->
+<section class="section">
+  <h2 class="section-title">See every frequency — in real time</h2>
+  <p class="section-sub">The analyzer runs the FFT at 60 fps so you see the spectrum change as fast as you hear it.</p>
+  <div class="features">
+    <div class="feat-card">
+      <div class="feat-icon">⚡</div>
+      <div class="feat-title">60 fps Real-Time FFT</div>
+      <div class="feat-desc">WebAudio AnalyserNode runs the FFT at up to 60 times per second. The display updates fast enough to catch transients, attack spikes, and short bursts.</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">🎙️</div>
+      <div class="feat-title">Mic Input or File Upload</div>
+      <div class="feat-desc">Use your device microphone for live analysis of room acoustics, instruments, or speakers — or upload MP3, WAV, FLAC, or OGG to analyze offline.</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">📈</div>
+      <div class="feat-title">Scrolling Spectrogram</div>
+      <div class="feat-desc">The spectrogram (color waterfall) view shows how frequency content evolves over time. Perfect for identifying sustained resonances, reverb tails, or intermittent noise.</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">🔍</div>
+      <div class="feat-title">Hover Frequency Read-out</div>
+      <div class="feat-desc">Hover or tap any point on the spectrum to see the exact frequency (Hz) and amplitude (dBFS) at that point. Click to pin a frequency marker.</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">🎚️</div>
+      <div class="feat-title">Peak Hold + Averaging</div>
+      <div class="feat-desc">Peak-hold lines show the highest amplitude reached over a set hold time. Averaging mode smooths the display over 2–64 frames for a cleaner tonal picture.</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">📸</div>
+      <div class="feat-title">Export Screenshot</div>
+      <div class="feat-desc">Capture a PNG of any spectrum frame for documentation, comparison, or sharing. The export includes frequency labels, dB scale, and a timestamp.</div>
+    </div>
+  </div>
+</section>
+
+<!-- Frequency band reference -->
+<section class="section" style="padding-top:0">
+  <h2 class="section-title">Audio frequency band reference</h2>
+  <p class="section-sub">Use this table to identify what you're seeing in the spectrum display when mixing or troubleshooting.</p>
+  <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden">
+    <table class="freq-table">
+      <thead>
+        <tr>
+          <th>Band</th>
+          <th>Range</th>
+          <th>What you hear</th>
+          <th>Common issues</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Sub-bass</td>
+          <td><span class="band-chip">20–60 Hz</span></td>
+          <td>Rumble, kick depth, sub bass</td>
+          <td>Muddiness, phase issues with bass</td>
+        </tr>
+        <tr>
+          <td>Bass</td>
+          <td><span class="band-chip">60–250 Hz</span></td>
+          <td>Kick body, bass guitar, warmth</td>
+          <td>Boxiness (around 200 Hz), lack of punch</td>
+        </tr>
+        <tr>
+          <td>Low-mid</td>
+          <td><span class="band-chip">250–500 Hz</span></td>
+          <td>Vocals, guitar body, piano warmth</td>
+          <td>Mud buildup, honky resonances</td>
+        </tr>
+        <tr>
+          <td>Midrange</td>
+          <td><span class="band-chip">500 Hz–2 kHz</span></td>
+          <td>Fundamental vocal range, guitar attack</td>
+          <td>Nasality (around 1 kHz), harshness</td>
+        </tr>
+        <tr>
+          <td>Upper-mid</td>
+          <td><span class="band-chip">2–4 kHz</span></td>
+          <td>Presence, vocal intelligibility</td>
+          <td>Ear fatigue, sibilance buildup</td>
+        </tr>
+        <tr>
+          <td>Presence</td>
+          <td><span class="band-chip">4–8 kHz</span></td>
+          <td>Clarity, attack, cut through mix</td>
+          <td>Harsh sibilance, thin sound if cut too much</td>
+        </tr>
+        <tr>
+          <td>Brilliance / Air</td>
+          <td><span class="band-chip">8–20 kHz</span></td>
+          <td>Shimmer, air, cymbals, breath</td>
+          <td>Hiss, digital harshness, excess brightness</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- Use Cases -->
+<section class="section" style="padding-top:0">
+  <h2 class="section-title">Who uses an audio spectrum analyzer?</h2>
+  <p class="section-sub">From mixing engineers to acoustic researchers — frequency analysis is a universal audio tool.</p>
+  <div class="use-cases">
+    <div class="use-card">
+      <div class="use-title">🎛️ Mixing Engineers</div>
+      <div class="use-desc">Compare the frequency balance of a mix against a reference track. Identify frequency masking between instruments. Confirm EQ decisions before printing.</div>
+    </div>
+    <div class="use-card">
+      <div class="use-title">🔊 Acoustic Treatment</div>
+      <div class="use-desc">Use the microphone input to sweep a room and see room modes — the standing waves that cause bass buildup in studio corners and home listening rooms.</div>
+    </div>
+    <div class="use-card">
+      <div class="use-title">🎤 Vocal Producers</div>
+      <div class="use-desc">Spot sibilance peaks in a recorded vocal. Find the frequency of resonances to notch out before heavy compression makes them worse.</div>
+    </div>
+    <div class="use-card">
+      <div class="use-title">🎸 Instrument Setup</div>
+      <div class="use-desc">Analyze the output of an amplifier, instrument pickup, or PA speaker to identify tonal issues before the recording session starts.</div>
+    </div>
+    <div class="use-card">
+      <div class="use-title">🎓 Audio Education</div>
+      <div class="use-desc">Teachers can show students in real time how different instruments, chords, vowels, and consonants look in the frequency domain — a living textbook.</div>
+    </div>
+    <div class="use-card">
+      <div class="use-title">🔬 Research and QA</div>
+      <div class="use-desc">Test microphones, speakers, and audio interfaces by measuring their frequency response against a reference signal without expensive dedicated hardware.</div>
+    </div>
+  </div>
+</section>
+
+<!-- How-to -->
+<section class="section" style="padding-top:0">
+  <h2 class="section-title">How to use the online spectrum analyzer</h2>
+  <p class="section-sub">Real-time analysis starts in seconds.</p>
+  <div class="steps">
+    <div class="step-card">
+      <div class="step-num">1</div>
+      <div class="step-title">Choose input source</div>
+      <div class="step-desc">Click "Real-time" to use your device microphone (allow mic access when prompted) or "File" to upload an MP3, WAV, or FLAC. The FFT display starts immediately.</div>
+    </div>
+    <div class="step-card">
+      <div class="step-num">2</div>
+      <div class="step-title">Read the frequency display</div>
+      <div class="step-desc">Tall green bars in the midrange mean a lot of mid-frequency content. Short bars in the highs mean a dark or rolled-off sound. Hover over any bar to see the exact Hz and dB value at that frequency.</div>
+    </div>
+    <div class="step-card">
+      <div class="step-num">3</div>
+      <div class="step-title">Adjust settings and export</div>
+      <div class="step-desc">Switch to Spectrogram view to see how the spectrum evolves over time. Change FFT size for more frequency resolution. Click Export to save a PNG screenshot of any frame for documentation.</div>
+    </div>
+  </div>
+</section>
+
+<!-- Mid CTA -->
+<div class="cta-strip">
+  <h2>Analyze your audio's frequencies — free</h2>
+  <p>No download, no account. Open the analyzer, allow mic access or upload a file, and start reading frequencies in seconds.</p>
+  <a class="cta-btn" href="https://thecreatingco.com/products/stemdeck/">Open Analyzer Free →</a>
+</div>
+
+<!-- Related tools -->
+<section class="section">
+  <h2 class="section-title">More free audio tools</h2>
+  <p class="section-sub">The full toolkit for producers, engineers, and musicians.</p>
+  <div class="related">
+    <a class="rel-link" href="https://thecreatingco.com/equalizer/">Equalizer</a>
+    <a class="rel-link" href="https://thecreatingco.com/noise-reducer/">Noise Reducer</a>
+    <a class="rel-link" href="https://thecreatingco.com/audio-visualizer/">Audio Visualizer</a>
+    <a class="rel-link" href="https://thecreatingco.com/key-finder/">Key Finder</a>
+    <a class="rel-link" href="https://thecreatingco.com/bpm-finder/">BPM Finder</a>
+    <a class="rel-link" href="https://thecreatingco.com/reverb-remover/">Reverb Remover</a>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" style="padding-top:0">
+  <h2 class="section-title">Frequently asked questions</h2>
+  <div class="faq">
+    <div class="faq-item">
+      <div class="faq-q">What is an audio spectrum analyzer?</div>
+      <div class="faq-a">An audio spectrum analyzer shows the frequency content of a sound in real time — which frequencies are loud and which are quiet. The horizontal axis represents frequency (20 Hz to 20 kHz) and the vertical axis shows the amplitude (loudness) in decibels (dB). Engineers and musicians use it to identify problem frequencies, compare sounds, and make EQ decisions.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Is the online spectrum analyzer free?</div>
+      <div class="faq-a">Yes — completely free. Open the page, allow microphone access (or upload a file), and the real-time FFT display appears immediately. No account, no download, no time limit.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What does the spectrum analyzer show?</div>
+      <div class="faq-a">The analyzer shows a real-time FFT (Fast Fourier Transform) plot: the amplitude of each frequency band from 20 Hz to 20 kHz, updated 60 times per second. The display also shows a peak-hold line and a scrolling spectrogram (color waterfall) for tracking how frequencies change over time.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Can I analyze an audio file (MP3, WAV) instead of live mic input?</div>
+      <div class="faq-a">Yes — upload an MP3, WAV, FLAC, OGG, or M4A file and the analyzer processes it offline. You can scrub through the file while watching the spectrum update, or export a screenshot of any frame.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What FFT size does the analyzer use?</div>
+      <div class="faq-a">The default FFT size is 4096 samples, giving 2048 frequency bins across the 0–22 kHz range at 44.1 kHz sample rate. You can switch to 2048 (faster, less frequency resolution) or 8192 (slower, higher resolution) from the settings panel.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Can I use the spectrum analyzer for music production?</div>
+      <div class="faq-a">Yes — it's ideal for mixing and mastering decisions: comparing two tracks side by side, identifying resonances, checking the low-end in a mix, verifying a noise reduction result, or simply learning how different instruments look in the frequency domain.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Does the analyzer work on mobile?</div>
+      <div class="faq-a">Yes — the spectrum analyzer is fully mobile-optimised. It works in Chrome on Android and Safari on iPhone. Allow microphone access and the real-time FFT display starts immediately.</div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="https://thecreatingco.com/">Home</a>
+      <a href="https://thecreatingco.com/products/stemdeck/">StemDeck</a>
+      <a href="https://thecreatingco.com/equalizer/">Equalizer</a>
+      <a href="https://thecreatingco.com/noise-reducer/">Noise Reducer</a>
+      <a href="https://thecreatingco.com/audio-visualizer/">Audio Visualizer</a>
+    </div>
+    <div class="footer-copy">© 2026 The Creating Co · <a href="https://thecreatingco.com/privacy/">Privacy</a> · <a href="https://thecreatingco.com/terms/">Terms</a></div>
+  </div>
+</footer>
+</body>
+</html>
