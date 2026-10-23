@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Voice Recorder Online Free — Record Your Voice Instantly | thecreatingco</title>
+<meta name="description" content="Free online voice recorder — record your voice directly in the browser. No download, no signup. Save as MP3 or WAV in one click.">
+<link rel="canonical" href="https://thecreatingco.com/voice-recorder/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://thecreatingco.com/voice-recorder/">
+<meta property="og:title" content="Voice Recorder Online Free — Record Your Voice Instantly | thecreatingco">
+<meta property="og:description" content="Free online voice recorder — record your voice directly in the browser. No download, no signup. Save as MP3 or WAV in one click.">
+<meta property="og:image" content="https://thecreatingco.com/assets/share/stemdeck.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Voice Recorder Online Free — Record Your Voice Instantly | thecreatingco">
+<meta name="twitter:description" content="Free online voice recorder — record your voice directly in the browser. No download, no signup. Save as MP3 or WAV in one click.">
+<meta name="twitter:image" content="https://thecreatingco.com/assets/share/stemdeck.jpg">
+<meta name="robots" content="index, follow">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://thecreatingco.com/voice-recorder/",
+      "url": "https://thecreatingco.com/voice-recorder/",
+      "name": "Voice Recorder Online Free",
+      "description": "Free online voice recorder — record your voice directly in the browser. No download, no signup.",
+      "isPartOf": { "@id": "https://thecreatingco.com/" },
+      "breadcrumb": { "@id": "https://thecreatingco.com/voice-recorder/#breadcrumb" }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "Voice Recorder",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "Web",
+      "url": "https://thecreatingco.com/voice-recorder/",
+      "description": "Free online voice recorder. Record your voice in the browser using your microphone — no download or account required.",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "publisher": { "@type": "Organization", "name": "thecreatingco", "url": "https://thecreatingco.com/" }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I record my voice online for free?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Open the voice recorder in your browser, click Record, and allow microphone access when prompted. Your browser captures audio directly from your mic — nothing is uploaded. Click Stop when done, then Download to save your recording." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does the voice recorder work without installing anything?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. The recorder uses the Web Audio API and MediaRecorder API built into every modern browser. There is nothing to install — no app, no extension, no plugin." }
+        },
+        {
+          "@type": "Question",
+          "name": "What file format will my recording be saved in?",
+          "acceptedAnswer": { "@type": "Answer", "text": "You can download as MP3 or WAV. MP3 gives smaller files (great for sharing). WAV gives lossless quality (better for further editing). Typical voice recordings are around 1 MB per minute in MP3." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is my voice recording stored on a server?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. Everything stays in your browser tab. Your voice is captured by your microphone, held in browser memory, and saved directly to your device when you click Download. No recording ever touches a server." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I pause and resume a recording?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Tap Pause to hold without stopping the timer or losing what you've recorded, then Resume to continue. The final download includes everything before and after the pause." }
+        },
+        {
+          "@type": "Question",
+          "name": "What microphone should I use for the best voice quality?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Any built-in laptop or phone mic works fine for voice memos. For clearer recordings — podcasts, voiceovers, presentations — a USB condenser mic like the Audio-Technica AT2020 or a Bluetooth headset with a boom mic reduces background noise significantly." }
+        },
+        {
+          "@type": "Question",
+          "name": "How long can I record?",
+          "acceptedAnswer": { "@type": "Answer", "text": "There is no hard time limit — you can record as long as your device has available RAM. In practice, recordings under 60 minutes are completely smooth. Very long sessions (2+ hours) may slow down older devices." }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://thecreatingco.com/voice-recorder/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://thecreatingco.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Voice Recorder", "item": "https://thecreatingco.com/voice-recorder/" }
+      ]
+    }
+  ]
+}
+</script>
+<style>
+  :root {
+    --bg: #0d0d12; --surface: #16161e; --surface2: #1e1e2a;
+    --border: rgba(255,255,255,0.08); --text: #f0f0f8; --muted: #7878a0;
+    --accent: #a040ff; --accent2: #ffa040;
+    --accent-dim: rgba(160,64,255,0.12); --accent2-dim: rgba(255,160,64,0.12);
+  }
+  [data-theme="light"] {
+    --bg: #f8f8fc; --surface: #ffffff; --surface2: #f0f0f8;
+    --border: rgba(0,0,0,0.08); --text: #18181e; --muted: #6060a0;
+  }
+  @media (prefers-color-scheme: light) {
+    :root:not([data-theme="dark"]) {
+      --bg: #f8f8fc; --surface: #ffffff; --surface2: #f0f0f8;
+      --border: rgba(0,0,0,0.08); --text: #18181e; --muted: #6060a0;
+    }
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--text); font-family: system-ui, -apple-system, sans-serif; line-height: 1.6; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  nav { padding: 1rem 1.5rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); }
+  .nav-logo { font-weight: 700; font-size: 1.1rem; color: var(--text); }
+  .nav-cta { background: var(--accent); color: #fff; padding: .45rem 1.1rem; border-radius: 6px; font-weight: 600; font-size: .85rem; }
+  .nav-cta:hover { text-decoration: none; opacity: .9; }
+
+  .hero { text-align: center; padding: 4rem 1.5rem 3rem; max-width: 720px; margin: 0 auto; }
+  .badge { display: inline-block; background: var(--accent-dim); color: var(--accent); border: 1px solid var(--accent); border-radius: 99px; padding: .3rem .9rem; font-size: .78rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; margin-bottom: 1.2rem; }
+  h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; line-height: 1.15; margin-bottom: 1rem; }
+  .sub { font-size: 1.1rem; color: var(--muted); max-width: 560px; margin: 0 auto 2rem; }
+  .cta-group { display: flex; gap: .75rem; justify-content: center; flex-wrap: wrap; }
+  .btn-primary { background: var(--accent); color: #fff; padding: .75rem 1.75rem; border-radius: 8px; font-weight: 700; font-size: 1rem; transition: opacity .15s; }
+  .btn-primary:hover { text-decoration: none; opacity: .88; }
+  .btn-secondary { background: var(--surface2); color: var(--text); padding: .75rem 1.75rem; border-radius: 8px; font-weight: 600; font-size: 1rem; border: 1px solid var(--border); }
+
+  /* CSS ILLUSTRATION — voice recorder UI */
+  .vr-illustration {
+    max-width: 420px; margin: 3rem auto 2rem;
+    background: var(--surface); border: 1px solid var(--border); border-radius: 16px;
+    padding: 1.75rem; text-align: center; font-size: .82rem; color: var(--muted);
+  }
+  .vr-title { font-weight: 700; font-size: .78rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin-bottom: 1.25rem; }
+
+  /* mic button */
+  .mic-btn {
+    width: 80px; height: 80px; border-radius: 50%; margin: 0 auto .75rem;
+    background: var(--accent);
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 0 0 8px var(--accent-dim), 0 0 0 18px rgba(160,64,255,0.06);
+    animation: mic-pulse 1.4s ease-in-out infinite;
+  }
+  @keyframes mic-pulse {
+    0%, 100% { box-shadow: 0 0 0 8px var(--accent-dim), 0 0 0 18px rgba(160,64,255,0.06); }
+    50% { box-shadow: 0 0 0 14px var(--accent-dim), 0 0 0 28px rgba(160,64,255,0.04); }
+  }
+  .mic-icon { width: 36px; height: 36px; }
+
+  /* REC badge */
+  .rec-badge {
+    display: inline-flex; align-items: center; gap: .4rem;
+    background: rgba(255,80,80,.15); color: #ff5050; border-radius: 99px;
+    padding: .25rem .8rem; font-size: .76rem; font-weight: 700; margin-bottom: .5rem;
+  }
+  .rec-dot { width: 7px; height: 7px; border-radius: 50%; background: #ff5050;
+    animation: rec-blink .9s ease-in-out infinite; }
+  @keyframes rec-blink { 0%,100%{opacity:1}50%{opacity:.2} }
+
+  /* timer */
+  .vr-timer { font-size: 2rem; font-weight: 800; color: var(--text); margin-bottom: 1rem;
+    font-variant-numeric: tabular-nums; letter-spacing: .04em; }
+
+  /* mini waveform */
+  .mini-wf { display: flex; align-items: flex-end; justify-content: center; gap: 3px; height: 32px; margin-bottom: 1rem; }
+  .mwb {
+    width: 5px; border-radius: 2px; background: var(--accent);
+    transform-origin: bottom;
+    animation: mwb-bounce 1s ease-in-out infinite alternate;
+    animation-delay: calc(var(--i) * 80ms);
+  }
+  @keyframes mwb-bounce { 0%{transform:scaleY(0.2)}100%{transform:scaleY(1)} }
+
+  /* controls row */
+  .vr-controls { display: flex; justify-content: center; gap: .75rem; margin-bottom: 1rem; }
+  .vr-btn { padding: .4rem .9rem; border-radius: 8px; font-size: .78rem; font-weight: 600; }
+  .vr-btn.pause { background: var(--surface2); border: 1px solid var(--border); color: var(--text); }
+  .vr-btn.stop { background: rgba(255,80,80,.15); border: 1px solid rgba(255,80,80,.3); color: #ff5050; }
+
+  /* format strip */
+  .fmt-strip { display: flex; justify-content: center; gap: .5rem; }
+  .fmt { padding: .22rem .55rem; border-radius: 5px; font-size: .72rem; font-weight: 600; background: var(--surface2); color: var(--muted); }
+  .fmt.active { background: var(--accent-dim); border: 1px solid var(--accent); color: var(--accent); }
+  .fmt.a2 { background: var(--accent2-dim); border: 1px solid var(--accent2); color: var(--accent2); }
+
+  /* SECTIONS */
+  section { max-width: 880px; margin: 0 auto; padding: 3rem 1.5rem; }
+  h2 { font-size: 1.7rem; font-weight: 800; margin-bottom: 1.5rem; }
+
+  .features { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1rem; }
+  .feat { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem; }
+  .feat-icon { font-size: 1.5rem; margin-bottom: .6rem; }
+  .feat h3 { font-size: .95rem; font-weight: 700; margin-bottom: .4rem; }
+  .feat p { font-size: .85rem; color: var(--muted); }
+
+  .table-wrap { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; font-size: .875rem; }
+  thead tr { background: var(--surface2); }
+  th { text-align: left; padding: .75rem 1rem; font-weight: 700; font-size: .78rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+  td { padding: .75rem 1rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+  tr:last-child td { border-bottom: none; }
+  .badge-good { background: var(--accent2-dim); color: var(--accent2); padding: .2rem .6rem; border-radius: 4px; font-size: .75rem; font-weight: 600; white-space: nowrap; }
+  .badge-ok { background: var(--accent-dim); color: var(--accent); padding: .2rem .6rem; border-radius: 4px; font-size: .75rem; font-weight: 600; white-space: nowrap; }
+
+  .usecases { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; }
+  .uc { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 1.2rem; }
+  .uc h3 { font-size: .9rem; font-weight: 700; margin-bottom: .4rem; color: var(--accent2); }
+  .uc p { font-size: .82rem; color: var(--muted); }
+
+  .steps { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; }
+  .step { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem; }
+  .step-num { font-size: 1.6rem; font-weight: 900; color: var(--accent); line-height: 1; margin-bottom: .5rem; }
+  .step h3 { font-size: .92rem; font-weight: 700; margin-bottom: .35rem; }
+  .step p { font-size: .82rem; color: var(--muted); }
+
+  .cta-strip { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; text-align: center; padding: 2.5rem 1.5rem; }
+  .cta-strip h2 { margin-bottom: .75rem; }
+  .cta-strip p { color: var(--muted); margin-bottom: 1.5rem; }
+
+  .related { display: flex; flex-wrap: wrap; gap: .6rem; }
+  .rel-link { background: var(--surface2); border: 1px solid var(--border); border-radius: 8px; padding: .45rem .9rem; font-size: .85rem; font-weight: 500; color: var(--text); }
+  .rel-link:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
+
+  details { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; margin-bottom: .75rem; }
+  summary { padding: 1rem 1.25rem; cursor: pointer; font-weight: 600; font-size: .92rem; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+  summary::after { content: "+"; font-size: 1.2rem; color: var(--accent); transition: transform .2s; }
+  details[open] summary::after { transform: rotate(45deg); }
+  details p { padding: 0 1.25rem 1rem; color: var(--muted); font-size: .88rem; line-height: 1.65; }
+
+  footer { border-top: 1px solid var(--border); padding: 2rem 1.5rem; text-align: center; color: var(--muted); font-size: .82rem; }
+  footer a { color: var(--muted); }
+  footer a:hover { color: var(--accent); }
+
+  @media (max-width: 480px) {
+    .cta-group { flex-direction: column; align-items: center; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="https://thecreatingco.com/">thecreatingco</a>
+  <a class="nav-cta" href="https://thecreatingco.com/products/stemdeck/">Try StemDeck</a>
+</nav>
+
+<div class="hero">
+  <span class="badge">Free Online Tool</span>
+  <h1>Voice Recorder Online</h1>
+  <p class="sub">Record your voice instantly in the browser — no app, no account, no upload. Save as MP3 or WAV with one click.</p>
+  <div class="cta-group">
+    <a class="btn-primary" href="https://thecreatingco.com/products/stemdeck/">Record Voice Free →</a>
+    <a class="btn-secondary" href="#how-it-works">How it Works</a>
+  </div>
+</div>
+
+<!-- CSS illustration -->
+<div class="vr-illustration" aria-hidden="true">
+  <div class="vr-title">Voice Recorder</div>
+
+  <div class="mic-btn">
+    <svg class="mic-icon" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="12" y="4" width="12" height="20" rx="6" fill="white"/>
+      <path d="M6 18c0 6.627 5.373 12 12 12s12-5.373 12-12" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="18" y1="30" x2="18" y2="34" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="13" y1="34" x2="23" y2="34" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+    </svg>
+  </div>
+
+  <div class="rec-badge"><div class="rec-dot"></div> RECORDING</div>
+
+  <div class="vr-timer">0:03:41</div>
+
+  <div class="mini-wf">
+    <div class="mwb" style="--i:0;height:32px"></div>
+    <div class="mwb" style="--i:1;height:32px"></div>
+    <div class="mwb" style="--i:2;height:32px"></div>
+    <div class="mwb" style="--i:3;height:32px"></div>
+    <div class="mwb" style="--i:4;height:32px"></div>
+    <div class="mwb" style="--i:5;height:32px"></div>
+    <div class="mwb" style="--i:6;height:32px"></div>
+    <div class="mwb" style="--i:7;height:32px"></div>
+    <div class="mwb" style="--i:8;height:32px"></div>
+    <div class="mwb" style="--i:9;height:32px"></div>
+    <div class="mwb" style="--i:10;height:32px"></div>
+    <div class="mwb" style="--i:11;height:32px"></div>
+  </div>
+
+  <div class="vr-controls">
+    <span class="vr-btn pause">⏸ Pause</span>
+    <span class="vr-btn stop">⏹ Stop</span>
+  </div>
+
+  <div class="fmt-strip">
+    <span class="fmt active">MP3</span>
+    <span class="fmt a2">WAV</span>
+    <span class="fmt">OGG</span>
+  </div>
+</div>
+
+<section>
+  <h2>Why Use This Voice Recorder?</h2>
+  <div class="features">
+    <div class="feat">
+      <div class="feat-icon">🌐</div>
+      <h3>Works in Any Browser</h3>
+      <p>Chrome, Safari, Firefox, Edge — if it supports the MediaRecorder API, the recorder works. No plugin, no download.</p>
+    </div>
+    <div class="feat">
+      <div class="feat-icon">🔒</div>
+      <h3>100% Private</h3>
+      <p>Your voice stays in your browser tab. No cloud, no server, no third-party service ever touches your recording.</p>
+    </div>
+    <div class="feat">
+      <div class="feat-icon">⏸</div>
+      <h3>Pause & Resume</h3>
+      <p>Pause mid-sentence, think, collect yourself, then resume — all captured in one continuous file.</p>
+    </div>
+    <div class="feat">
+      <div class="feat-icon">🎙️</div>
+      <h3>Any Microphone</h3>
+      <p>Built-in laptop mic, USB condenser, headset, phone — choose from all connected inputs in the device dropdown.</p>
+    </div>
+    <div class="feat">
+      <div class="feat-icon">💾</div>
+      <h3>MP3, WAV, or OGG</h3>
+      <p>Download in the format you need: compact MP3 for sharing, lossless WAV for editing, OGG for web apps.</p>
+    </div>
+    <div class="feat">
+      <div class="feat-icon">📱</div>
+      <h3>Works on iPhone & Android</h3>
+      <p>Mobile browsers fully supported. Tap record and speak — works just as well as a dedicated voice memo app.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Microphone & Format Guide</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Use Case</th>
+          <th>Recommended Mic</th>
+          <th>Best Format</th>
+          <th>Approx. Size / min</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Quick voice memo</strong></td>
+          <td>Built-in phone mic</td>
+          <td><span class="badge-ok">MP3 128 kbps</span></td>
+          <td>~1 MB</td>
+        </tr>
+        <tr>
+          <td><strong>Meeting or lecture notes</strong></td>
+          <td>Built-in laptop mic or headset</td>
+          <td><span class="badge-ok">MP3 192 kbps</span></td>
+          <td>~1.4 MB</td>
+        </tr>
+        <tr>
+          <td><strong>Podcast or interview</strong></td>
+          <td>USB condenser or cardioid XLR</td>
+          <td><span class="badge-good">WAV 44.1 kHz</span></td>
+          <td>~10 MB</td>
+        </tr>
+        <tr>
+          <td><strong>Voiceover / narration</strong></td>
+          <td>USB condenser in a quiet room</td>
+          <td><span class="badge-good">WAV 48 kHz</span></td>
+          <td>~11 MB</td>
+        </tr>
+        <tr>
+          <td><strong>Language practice</strong></td>
+          <td>Any — clarity matters more than fidelity</td>
+          <td><span class="badge-ok">MP3 192 kbps</span></td>
+          <td>~1.4 MB</td>
+        </tr>
+        <tr>
+          <td><strong>Web or app audio</strong></td>
+          <td>Headset with boom mic</td>
+          <td><span class="badge-ok">OGG Vorbis</span></td>
+          <td>~0.9 MB</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <h2>Who Records Their Voice Online?</h2>
+  <div class="usecases">
+    <div class="uc">
+      <h3>Journalists & Researchers</h3>
+      <p>Capture interviews and field notes instantly — no dictaphone needed. Browser recordings are timestamped and easy to share.</p>
+    </div>
+    <div class="uc">
+      <h3>Students</h3>
+      <p>Record lectures, record yourself practicing a speech, or send an audio answer instead of typing it out.</p>
+    </div>
+    <div class="uc">
+      <h3>Podcasters</h3>
+      <p>Record a quick segment, intro, or ad read on any device without launching your DAW — then import the WAV.</p>
+    </div>
+    <div class="uc">
+      <h3>Language Learners</h3>
+      <p>Record yourself speaking, play it back, and compare your pronunciation to native audio — the fastest feedback loop.</p>
+    </div>
+    <div class="uc">
+      <h3>Voice Actors & Narrators</h3>
+      <p>Audition takes, annotate timing, share a raw clip with a client — all before opening your studio DAW.</p>
+    </div>
+    <div class="uc">
+      <h3>Remote Workers</h3>
+      <p>Leave an async voice message instead of a wall of text. More expressive, faster to make, and easy to forward.</p>
+    </div>
+  </div>
+</section>
+
+<section id="how-it-works">
+  <h2>How to Record Your Voice Online</h2>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <h3>Click Record</h3>
+      <p>Hit the big Record button. Your browser will ask for microphone permission — click Allow. Recording starts instantly.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <h3>Speak (Pause Anytime)</h3>
+      <p>Speak naturally. Use Pause to take a breath or collect your thoughts, then Resume — everything stitches into one file.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <h3>Stop & Download</h3>
+      <p>Hit Stop when done. Choose MP3 or WAV, then Download. Your recording is on your device — ready to share or edit.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="cta-strip">
+    <h2>Start Recording Your Voice — Free</h2>
+    <p>No sign-up. No app. Just click and speak.</p>
+    <a class="btn-primary" href="https://thecreatingco.com/products/stemdeck/">Open Voice Recorder →</a>
+  </div>
+</section>
+
+<section>
+  <h2>Related Free Audio Tools</h2>
+  <div class="related">
+    <a class="rel-link" href="/audio-recorder/">Audio Recorder</a>
+    <a class="rel-link" href="/audio-trimmer/">Audio Trimmer</a>
+    <a class="rel-link" href="/noise-reducer/">Noise Reducer</a>
+    <a class="rel-link" href="/audio-speed-changer/">Speed Changer</a>
+    <a class="rel-link" href="/audio-converter/">Audio Converter</a>
+    <a class="rel-link" href="/mp3-joiner/">MP3 Joiner</a>
+    <a class="rel-link" href="/pitch-shifter/">Pitch Shifter</a>
+    <a class="rel-link" href="/vocal-remover/">Vocal Remover</a>
+  </div>
+</section>
+
+<section>
+  <h2>Frequently Asked Questions</h2>
+  <details>
+    <summary>How do I record my voice online for free?</summary>
+    <p>Open the voice recorder in your browser, click Record, and allow microphone access when prompted. Your browser captures audio directly from your mic — nothing is uploaded. Click Stop when done, then Download to save your recording.</p>
+  </details>
+  <details>
+    <summary>Does the voice recorder work without installing anything?</summary>
+    <p>Yes. The recorder uses the Web Audio API and MediaRecorder API built into every modern browser. There is nothing to install — no app, no extension, no plugin.</p>
+  </details>
+  <details>
+    <summary>What file format will my recording be saved in?</summary>
+    <p>You can download as MP3 or WAV. MP3 gives smaller files (great for sharing). WAV gives lossless quality (better for further editing). Typical voice recordings are around 1 MB per minute in MP3.</p>
+  </details>
+  <details>
+    <summary>Is my voice recording stored on a server?</summary>
+    <p>No. Everything stays in your browser tab. Your voice is captured by your microphone, held in browser memory, and saved directly to your device when you click Download. No recording ever touches a server.</p>
+  </details>
+  <details>
+    <summary>Can I pause and resume a recording?</summary>
+    <p>Yes. Tap Pause to hold without stopping the timer or losing what you've recorded, then Resume to continue. The final download includes everything before and after the pause.</p>
+  </details>
+  <details>
+    <summary>What microphone should I use for the best voice quality?</summary>
+    <p>Any built-in laptop or phone mic works fine for voice memos. For clearer recordings — podcasts, voiceovers, presentations — a USB condenser mic like the Audio-Technica AT2020 or a Bluetooth headset with a boom mic reduces background noise significantly.</p>
+  </details>
+  <details>
+    <summary>How long can I record?</summary>
+    <p>There is no hard time limit — you can record as long as your device has available RAM. In practice, recordings under 60 minutes are completely smooth. Very long sessions (2+ hours) may slow down older devices.</p>
+  </details>
+</section>
+
+<footer>
+  <p style="margin-bottom:.5rem;">
+    <a href="https://thecreatingco.com/">thecreatingco</a> ·
+    <a href="/audio-recorder/">Audio Recorder</a> ·
+    <a href="/audio-trimmer/">Trimmer</a> ·
+    <a href="/noise-reducer/">Noise Reducer</a> ·
+    <a href="/vocal-remover/">Vocal Remover</a>
+  </p>
+  <p>© 2026 thecreatingco · Free audio tools, always free.</p>
+</footer>
+
+</body>
+</html>
