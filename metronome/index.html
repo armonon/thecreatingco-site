@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Online Metronome Free — Keep Perfect Tempo While You Practice</title>
+<meta name="description" content="Free online metronome for musicians — set your BPM, time signature and subdivision, then tap along or let it run. Works in any browser, no download needed.">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Online Metronome Free — thecreatingco">
+<meta property="og:description" content="Free online metronome for musicians. Set BPM, time signature and subdivision. No download or account needed — works in any browser.">
+<meta property="og:url" content="https://thecreatingco.com/metronome/">
+<meta property="og:site_name" content="thecreatingco">
+<meta property="og:image" content="https://thecreatingco.com/assets/share/stemdeck.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://thecreatingco.com/assets/share/stemdeck.jpg">
+<meta name="twitter:title" content="Online Metronome Free — thecreatingco">
+<meta name="twitter:description" content="Free online metronome — set BPM, time signature and subdivision. Works in any browser, no download needed.">
+<link rel="canonical" href="https://thecreatingco.com/metronome/">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://thecreatingco.com/metronome/#page","url":"https://thecreatingco.com/metronome/","name":"Online Metronome Free — thecreatingco","description":"Free online metronome for musicians. Set BPM, time signature and subdivision, then tap along or let it run. Works in any browser — no account or download needed.","about":{"@id":"https://thecreatingco.com/products/stemdeck/#app"}},{"@type":"SoftwareApplication","@id":"https://thecreatingco.com/products/stemdeck/#app","name":"StemDeck — Online Metronome & Music Studio","url":"https://thecreatingco.com/products/stemdeck/","applicationCategory":"MultimediaApplication","operatingSystem":"Web browser","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"thecreatingco","url":"https://thecreatingco.com"},"description":"StemDeck includes a free online metronome with adjustable BPM, time signatures (2/4 through 12/8), subdivisions, and a tap-tempo button. The beat grid pulses in sync so you can follow visually while you practice. Works in any modern browser with no account or download required.","featureList":["Adjustable BPM (20–300)","Multiple time signatures (2/4 through 12/8)","Beat subdivisions (quarter, eighth, triplet, sixteenth)","Tap tempo","Visual beat grid","Accent on the downbeat","Works in any browser — no download or account"]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is the online metronome free?","acceptedAnswer":{"@type":"Answer","text":"Yes — StemDeck's metronome is completely free. No account, no download, and no usage limit."}},{"@type":"Question","name":"What is a metronome?","acceptedAnswer":{"@type":"Answer","text":"A metronome is a device — physical or digital — that produces a steady beat at a set tempo, measured in beats per minute (BPM). Musicians use it to develop consistent timing, learn difficult passages at a slow tempo, and gradually increase speed as they become comfortable."}},{"@type":"Question","name":"What BPM range does the online metronome support?","acceptedAnswer":{"@type":"Answer","text":"The metronome supports tempos from 20 BPM (very slow, largo) to 300 BPM (extremely fast). Common practice tempos are 60–80 BPM for slow work, 100–120 for medium, and 140+ for fast passages."}},{"@type":"Question","name":"What time signatures does it support?","acceptedAnswer":{"@type":"Answer","text":"The metronome supports 2/4, 3/4, 4/4, 5/4, 6/8, 7/8 and 12/8. The downbeat is accented so you can always hear the start of the bar."}},{"@type":"Question","name":"What is tap tempo?","acceptedAnswer":{"@type":"Answer","text":"Tap tempo lets you set the BPM by tapping a button in time with a song or a passage you want to match. The metronome averages your taps to find the closest BPM, so you don't have to calculate it yourself."}},{"@type":"Question","name":"Can I use the metronome on mobile?","acceptedAnswer":{"@type":"Answer","text":"Yes — the online metronome works in any modern mobile browser. Enable your device's audio permission and tap the start button to begin."}},{"@type":"Question","name":"What are common Italian tempo markings and their BPM?","acceptedAnswer":{"@type":"Answer","text":"Larghissimo: below 24 BPM. Largo: 24–54. Adagio: 54–68. Andante: 76–108. Moderato: 86–108. Allegro: 120–156. Vivace: 156–176. Presto: 168–200. Prestissimo: above 200 BPM."}}]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://thecreatingco.com/start/"},{"@type":"ListItem","position":2,"name":"Apps & tools","item":"https://thecreatingco.com/tools/"},{"@type":"ListItem","position":3,"name":"Online Metronome","item":"https://thecreatingco.com/metronome/"}]}]}</script>
+<style>
+:root {
+  --bg: #060a10;
+  --surface: #0c1220;
+  --border: #162030;
+  --text: #e8f0fc;
+  --muted: #6080a8;
+  --accent: #38b2ff;
+  --accent-dim: rgba(56,178,255,0.10);
+  --accent2: #ff9038;
+  --radius: 10px;
+}
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --bg: #f0f6ff; --surface: #fff; --border: #d8e8f8; --text: #08182e;
+    --muted: #4070a0; --accent: #0070cc; --accent-dim: rgba(0,112,204,0.08); --accent2: #c06000;
+  }
+}
+:root[data-theme="light"] {
+  --bg: #f0f6ff; --surface: #fff; --border: #d8e8f8; --text: #08182e;
+  --muted: #4070a0; --accent: #0070cc; --accent-dim: rgba(0,112,204,0.08); --accent2: #c06000;
+}
+*,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.nav { display: flex; align-items: center; justify-content: space-between; padding: 0 20px; height: 56px; border-bottom: 1px solid var(--border); background: var(--surface); position: sticky; top: 0; z-index: 10; }
+.nav-brand { font-size: 15px; font-weight: 700; color: var(--text); letter-spacing: -0.02em; }
+.nav-brand span { color: var(--accent); }
+.nav-link { font-size: 14px; color: var(--muted); }
+.nav-link:hover { color: var(--text); }
+
+.hero { max-width: 840px; margin: 0 auto; padding: 72px 20px 56px; text-align: center; }
+.hero-badge { display: inline-flex; align-items: center; gap: 6px; background: var(--accent-dim); color: var(--accent); border: 1px solid color-mix(in srgb,var(--accent) 30%,transparent); border-radius: 100px; font-size: 12px; font-weight: 600; padding: 4px 12px; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 20px; }
+.hero h1 { font-size: clamp(2rem,5vw,3.2rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 16px; }
+.hero h1 em { font-style: normal; color: var(--accent); }
+.hero-sub { font-size: clamp(1rem,2.2vw,1.2rem); color: var(--muted); max-width: 580px; margin: 0 auto 36px; }
+.hero-cta { display: inline-block; background: var(--accent); color: #fff; font-size: 16px; font-weight: 700; padding: 14px 32px; border-radius: 8px; letter-spacing: -0.01em; transition: opacity .15s; }
+.hero-cta:hover { opacity: .88; text-decoration: none; }
+.hero-note { font-size: 13px; color: var(--muted); margin-top: 10px; }
+
+/* Metronome pendulum illustration */
+.metro-demo { max-width: 280px; margin: 48px auto 0; }
+.metro-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px 20px 20px; text-align: center; }
+.metro-label { font-size: 12px; font-weight: 700; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 18px; }
+.metro-svg-wrap { display: flex; justify-content: center; align-items: flex-end; height: 130px; }
+.metro-svg-wrap svg { overflow: visible; }
+/* pendulum pivot at top centre, rod swings ±30° */
+.metro-rod { transform-origin: 90px 0; animation: swing 0.5s ease-in-out infinite alternate; }
+@keyframes swing { from { transform: rotate(-28deg); } to { transform: rotate(28deg); } }
+.metro-bpm { font-size: 32px; font-weight: 900; color: var(--accent); margin-top: 12px; letter-spacing: -0.03em; }
+.metro-bpm-label { font-size: 11px; font-weight: 700; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; }
+/* Beat grid */
+.beat-row { display: flex; justify-content: center; gap: 10px; margin-top: 16px; }
+.beat-dot { width: 12px; height: 12px; border-radius: 50%; background: var(--border); }
+.beat-dot.one { background: var(--accent); animation: beat-one 0.5s ease-out infinite; }
+.beat-dot.rest { animation: beat-rest 0.5s ease-out infinite; animation-delay: calc(var(--i) * 0.5s); }
+@keyframes beat-one { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(0.75); } }
+@keyframes beat-rest { 0%,80%,100% { opacity: 0.3; transform: scale(0.8); } 10% { opacity: 0.9; transform: scale(1); } }
+
+.section { max-width: 840px; margin: 0 auto; padding: 64px 20px; }
+.section-title { font-size: clamp(1.4rem,3vw,1.9rem); font-weight: 800; letter-spacing: -0.025em; text-align: center; margin-bottom: 8px; }
+.section-sub { text-align: center; color: var(--muted); font-size: 1rem; margin-bottom: 40px; }
+.features { display: grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap: 20px; }
+.feature { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; }
+.feature-icon { font-size: 24px; margin-bottom: 10px; }
+.feature h3 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+.feature p { font-size: 14px; color: var(--muted); line-height: 1.5; }
+
+.use-cases { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.use-inner { max-width: 840px; margin: 0 auto; padding: 64px 20px; }
+.uc-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); gap: 16px; margin-top: 36px; }
+.uc-card { border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; }
+.uc-title { font-size: 14px; font-weight: 700; margin-bottom: 6px; }
+.uc-desc { font-size: 13px; color: var(--muted); line-height: 1.5; }
+
+/* Tempo reference table */
+.tempo-table { width: 100%; border-collapse: collapse; margin-top: 32px; font-size: 14px; }
+.tempo-table th { text-align: left; font-size: 12px; font-weight: 700; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; padding: 0 12px 12px; border-bottom: 1px solid var(--border); }
+.tempo-table td { padding: 10px 12px; border-bottom: 1px solid var(--border); }
+.tempo-table tr:last-child td { border-bottom: none; }
+.t-marking { font-weight: 700; color: var(--accent); }
+.t-bpm { color: var(--accent2); font-weight: 600; }
+.t-feel { color: var(--muted); font-size: 13px; }
+
+.steps { counter-reset: step; display: flex; flex-direction: column; gap: 16px; margin-top: 40px; }
+.step { display: flex; gap: 16px; align-items: flex-start; }
+.step-num { counter-increment: step; width: 32px; height: 32px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 13px; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+.step-num::before { content: counter(step); }
+.step-body h3 { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+.step-body p { font-size: 14px; color: var(--muted); }
+
+.cta-strip { background: var(--accent-dim); border-top: 1px solid color-mix(in srgb,var(--accent) 20%,transparent); border-bottom: 1px solid color-mix(in srgb,var(--accent) 20%,transparent); }
+.cta-inner { max-width: 840px; margin: 0 auto; padding: 48px 20px; text-align: center; }
+.cta-inner h2 { font-size: clamp(1.4rem,3vw,1.9rem); font-weight: 800; letter-spacing: -0.025em; margin-bottom: 10px; }
+.cta-inner p { color: var(--muted); margin-bottom: 28px; }
+
+.related { max-width: 840px; margin: 0 auto; padding: 48px 20px 64px; }
+.related-title { font-size: 16px; font-weight: 700; margin-bottom: 20px; }
+.related-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); gap: 16px; }
+.related-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; display: flex; flex-direction: column; gap: 6px; transition: border-color .15s; }
+.related-card:hover { border-color: var(--accent); text-decoration: none; }
+.related-card-name { font-size: 14px; font-weight: 700; color: var(--text); }
+.related-card-desc { font-size: 13px; color: var(--muted); }
+
+.faq { max-width: 700px; margin: 0 auto; padding: 0 20px 72px; }
+.faq-title { font-size: clamp(1.3rem,2.5vw,1.7rem); font-weight: 800; letter-spacing: -0.02em; margin-bottom: 28px; }
+.faq-item { border-bottom: 1px solid var(--border); padding: 18px 0; }
+.faq-q { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+.faq-a { font-size: 14px; color: var(--muted); line-height: 1.6; }
+
+.footer { border-top: 1px solid var(--border); padding: 28px 20px; text-align: center; font-size: 13px; color: var(--muted); }
+.footer a { color: var(--muted); }
+.footer a:hover { color: var(--text); }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="nav-brand" href="/start/">the<span>creating</span>co</a>
+  <a class="nav-link" href="/tools/">All free tools</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-badge">Free · Any time signature · In-browser</div>
+  <h1>Online Metronome<br><em>Free</em></h1>
+  <p class="hero-sub">Keep perfect tempo while you practice — set your BPM, time signature and subdivision, then tap along or let it run. Works in any browser with no download or account needed.</p>
+  <a class="hero-cta" href="https://thecreatingco.com/products/stemdeck/" rel="noopener">Open Metronome Free →</a>
+  <p class="hero-note">Powered by StemDeck · Works in Chrome, Safari, Firefox</p>
+
+  <div class="metro-demo">
+    <div class="metro-card">
+      <div class="metro-label">120 BPM · 4/4</div>
+      <div class="metro-svg-wrap">
+        <!-- Pendulum: pivot at (90,0), rod length 100, weight at bottom -->
+        <svg width="180" height="130" viewBox="0 0 180 130">
+          <!-- base triangle -->
+          <polygon points="60,128 120,128 90,80" fill="none" stroke="var(--border)" stroke-width="2"/>
+          <!-- pivot dot -->
+          <circle cx="90" cy="14" r="4" fill="var(--muted)"/>
+          <!-- swinging rod + weight -->
+          <g class="metro-rod">
+            <line x1="90" y1="0" x2="90" y2="100" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round"/>
+            <!-- tuning weight (square) -->
+            <rect x="82" y="44" width="16" height="8" rx="2" fill="var(--accent2)"/>
+            <!-- bob -->
+            <circle cx="90" cy="102" r="8" fill="var(--accent)"/>
+          </g>
+          <!-- tick marks -->
+          <line x1="90" y1="6" x2="90" y2="14" stroke="var(--border)" stroke-width="1"/>
+        </svg>
+      </div>
+      <div class="metro-bpm">120</div>
+      <div class="metro-bpm-label">BPM · Allegro</div>
+      <div class="beat-row">
+        <div class="beat-dot one"></div>
+        <div class="beat-dot rest" style="--i:1"></div>
+        <div class="beat-dot rest" style="--i:2"></div>
+        <div class="beat-dot rest" style="--i:3"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2 class="section-title">Everything a practice metronome needs</h2>
+  <p class="section-sub">BPM, time signature, subdivisions, tap tempo and a visual beat grid — all free in your browser, with no account or download required.</p>
+  <div class="features">
+    <div class="feature">
+      <div class="feature-icon">🎚️</div>
+      <h3>Adjustable BPM (20–300)</h3>
+      <p>Set any tempo from a very slow largo to an extremely fast prestissimo — use the slider, type a value, or tap the beat.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">🥁</div>
+      <h3>Multiple time signatures</h3>
+      <p>2/4, 3/4, 4/4, 5/4, 6/8, 7/8 and 12/8 — the downbeat is always accented so you can hear the bar boundary.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">🎵</div>
+      <h3>Beat subdivisions</h3>
+      <p>Choose quarter, eighth, triplet or sixteenth subdivisions to work on the exact rhythmic grid your piece requires.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">👆</div>
+      <h3>Tap tempo</h3>
+      <p>Tap the beat of any song and the metronome averages your taps to find the closest BPM — no mental arithmetic needed.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">👁️</div>
+      <h3>Visual beat grid</h3>
+      <p>Each beat pulses visually so you can follow along even if the audio is low — helpful for practice in quiet spaces.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">📱</div>
+      <h3>Works on any device</h3>
+      <p>The online metronome works in any modern browser on desktop or mobile — no app or download required.</p>
+    </div>
+  </div>
+</section>
+
+<div class="use-cases">
+  <div class="use-inner">
+    <h2 class="section-title">Italian tempo markings reference</h2>
+    <table class="tempo-table">
+      <thead><tr><th>Marking</th><th>BPM range</th><th>Feel</th></tr></thead>
+      <tbody>
+        <tr><td class="t-marking">Larghissimo</td><td class="t-bpm">below 24</td><td class="t-feel">Extremely slow, almost static</td></tr>
+        <tr><td class="t-marking">Largo</td><td class="t-bpm">24–54</td><td class="t-feel">Very slow and broad</td></tr>
+        <tr><td class="t-marking">Adagio</td><td class="t-bpm">54–68</td><td class="t-feel">Slow and stately</td></tr>
+        <tr><td class="t-marking">Andante</td><td class="t-bpm">76–108</td><td class="t-feel">Walking pace</td></tr>
+        <tr><td class="t-marking">Moderato</td><td class="t-bpm">86–108</td><td class="t-feel">Moderate, comfortable</td></tr>
+        <tr><td class="t-marking">Allegro</td><td class="t-bpm">120–156</td><td class="t-feel">Fast and bright</td></tr>
+        <tr><td class="t-marking">Vivace</td><td class="t-bpm">156–176</td><td class="t-feel">Very fast and lively</td></tr>
+        <tr><td class="t-marking">Presto</td><td class="t-bpm">168–200</td><td class="t-feel">Very fast</td></tr>
+        <tr><td class="t-marking">Prestissimo</td><td class="t-bpm">above 200</td><td class="t-feel">Extremely fast</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<section class="section">
+  <h2 class="section-title">Who uses an online metronome</h2>
+  <div class="uc-grid">
+    <div class="uc-card">
+      <div class="uc-title">🎸 Guitarists and bassists</div>
+      <div class="uc-desc">Practise scales, chord changes and riffs in strict time — start slow and increase the BPM as muscle memory builds.</div>
+    </div>
+    <div class="uc-card">
+      <div class="uc-title">🎹 Piano and keyboard players</div>
+      <div class="uc-desc">Work on difficult passages bar by bar at a reduced tempo until they're clean, then gradually raise the BPM to performance speed.</div>
+    </div>
+    <div class="uc-card">
+      <div class="uc-title">🥁 Drummers</div>
+      <div class="uc-desc">Lock in with a click track to tighten your groove and eliminate rushing or dragging — the foundation of studio-ready drumming.</div>
+    </div>
+    <div class="uc-card">
+      <div class="uc-title">🎤 Singers and vocalists</div>
+      <div class="uc-desc">Keep time while learning a new song, practise rhythmic phrasing, or match the tempo of a backing track before recording.</div>
+    </div>
+    <div class="uc-card">
+      <div class="uc-title">🎓 Music students</div>
+      <div class="uc-desc">Use the metronome during grade practice and sight-reading sessions — a consistent tempo is one of the first things an examiner listens for.</div>
+    </div>
+    <div class="uc-card">
+      <div class="uc-title">🎛️ Producers and beatmakers</div>
+      <div class="uc-desc">Set a project BPM, loop a section, and tap along with the metronome to find the groove before committing to a tempo.</div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2 class="section-title">How to use the online metronome — 3 steps</h2>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num"></div>
+      <div class="step-body">
+        <h3>Set your BPM and time signature</h3>
+        <p>Open <a href="https://thecreatingco.com/products/stemdeck/">StemDeck</a> and set the tempo — use the slider, type in a BPM, or tap the tempo of a song you want to match. Choose the time signature for your piece.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num"></div>
+      <div class="step-body">
+        <h3>Choose your subdivision</h3>
+        <p>Select the rhythmic grid — quarter notes for basic counting, eighths or sixteenths for busier passages, triplets for swing or 12/8 feels. The metronome accents beat one automatically.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num"></div>
+      <div class="step-body">
+        <h3>Start the metronome and practise</h3>
+        <p>Hit play and follow the click. Start at a tempo where every note is clean and comfortable — accuracy at slow speed transfers to fast speed; rushing at slow speed stays with you.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-strip">
+  <div class="cta-inner">
+    <h2>Start the metronome now — free, right in your browser</h2>
+    <p>No download. No account. Just a clean, reliable online metronome ready to use.</p>
+    <a class="hero-cta" href="https://thecreatingco.com/products/stemdeck/" rel="noopener">Open Metronome Free →</a>
+  </div>
+</div>
+
+<section class="related">
+  <div class="related-title">More free music tools</div>
+  <div class="related-grid">
+    <a class="related-card" href="/bpm-finder/">
+      <div class="related-card-name">🥁 BPM Finder</div>
+      <div class="related-card-desc">Find the tempo of any song — tap the beat or upload audio for instant BPM detection.</div>
+    </a>
+    <a class="related-card" href="/key-finder/">
+      <div class="related-card-name">🎵 Key Finder</div>
+      <div class="related-card-desc">Find the musical key of any song free online — upload audio or enter the notes.</div>
+    </a>
+    <a class="related-card" href="/chord-finder/">
+      <div class="related-card-name">🎹 Chord Finder</div>
+      <div class="related-card-desc">Identify any chord by notes, name or audio — guitar and piano diagrams included.</div>
+    </a>
+    <a class="related-card" href="/pitch-shifter/">
+      <div class="related-card-name">🎚️ Pitch Shifter</div>
+      <div class="related-card-desc">Change the pitch of any audio free online — shift by semitone, no download needed.</div>
+    </a>
+  </div>
+</section>
+
+<section class="faq">
+  <h2 class="faq-title">Frequently asked questions</h2>
+
+  <div class="faq-item">
+    <div class="faq-q">Is the online metronome free?</div>
+    <div class="faq-a">Yes — StemDeck's metronome is completely free. No account, no download, and no usage limit.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">What is a metronome?</div>
+    <div class="faq-a">A metronome is a device — physical or digital — that produces a steady beat at a set tempo, measured in beats per minute (BPM). Musicians use it to develop consistent timing, learn difficult passages at a slow tempo, and gradually increase speed as they become comfortable.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">What BPM range does the online metronome support?</div>
+    <div class="faq-a">The metronome supports tempos from 20 BPM (very slow, largo) to 300 BPM (extremely fast). Common practice tempos are 60–80 BPM for slow work, 100–120 for medium, and 140+ for fast passages.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">What time signatures does it support?</div>
+    <div class="faq-a">The metronome supports 2/4, 3/4, 4/4, 5/4, 6/8, 7/8 and 12/8. The downbeat is accented so you can always hear the start of the bar.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">What is tap tempo?</div>
+    <div class="faq-a">Tap tempo lets you set the BPM by tapping a button in time with a song or a passage you want to match. The metronome averages your taps to find the closest BPM, so you don't have to calculate it yourself.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Can I use the metronome on mobile?</div>
+    <div class="faq-a">Yes — the online metronome works in any modern mobile browser. Enable your device's audio permission and tap the start button to begin.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">What are common Italian tempo markings and their BPM?</div>
+    <div class="faq-a">Larghissimo: below 24 BPM. Largo: 24–54. Adagio: 54–68. Andante: 76–108. Moderato: 86–108. Allegro: 120–156. Vivace: 156–176. Presto: 168–200. Prestissimo: above 200 BPM.</div>
+  </div>
+</section>
+
+<footer class="footer">
+  <p>© thecreatingco · <a href="/privacy/">Privacy</a> · <a href="/start/">Home</a> · <a href="/tools/">Tools</a></p>
+</footer>
+
+</body>
+</html>
