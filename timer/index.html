@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Free Online Timer & Stopwatch — Countdown Timer in Your Browser</title>
+<meta name="description" content="Free online timer and stopwatch — set a countdown timer or run a stopwatch instantly. No ads, no account, works in any browser tab. Plays an alarm when the countdown ends.">
+<link rel="canonical" href="https://thecreatingco.com/timer/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://thecreatingco.com/timer/">
+<meta property="og:title" content="Free Online Timer & Stopwatch">
+<meta property="og:description" content="Set a countdown timer or run a stopwatch. Plays an alarm when done. Free, no account, runs entirely in your browser.">
+<meta property="og:image" content="https://thecreatingco.com/assets/share/home.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Free Online Timer & Stopwatch">
+<meta name="twitter:description" content="Countdown timer and stopwatch. Alarm when done. Free, no account.">
+<meta name="twitter:image" content="https://thecreatingco.com/assets/share/home.jpg">
+<meta name="robots" content="index,follow">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://thecreatingco.com/timer/#webpage","url":"https://thecreatingco.com/timer/","name":"Free Online Timer & Stopwatch","description":"Free online countdown timer and stopwatch. Set hours, minutes and seconds for a countdown. Runs a stopwatch. Plays an alarm when the timer ends. No account or download needed.","isPartOf":{"@id":"https://thecreatingco.com/#website"},"breadcrumb":{"@id":"https://thecreatingco.com/timer/#breadcrumb"}},{"@type":"SoftwareApplication","@id":"https://thecreatingco.com/timer/#app","name":"Online Timer and Stopwatch","applicationCategory":"UtilitiesApplication","operatingSystem":"Any (web browser)","url":"https://thecreatingco.com/timer/","description":"Free online timer and stopwatch. Set a countdown in hours, minutes and seconds. Run a stopwatch. Plays an audio alarm when the countdown finishes. Runs entirely in your browser.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"The Creating Co","url":"https://thecreatingco.com"}},{"@type":"FAQPage","@id":"https://thecreatingco.com/timer/#faq","mainEntity":[{"@type":"Question","name":"How do I set a countdown timer?","acceptedAnswer":{"@type":"Answer","text":"Click the Hours, Minutes, or Seconds fields at the top and type the time you want, or use the up/down arrow buttons to adjust each field. Then click Start to begin the countdown. The timer plays an alarm sound when it reaches zero."}},{"@type":"Question","name":"Does the timer work in the background?","acceptedAnswer":{"@type":"Answer","text":"Yes — the timer continues running even if you switch to another browser tab. The alarm will play when the countdown ends regardless of which tab you are viewing. Keep the browser window open; if the tab is closed or the page is refreshed, the timer will reset."}},{"@type":"Question","name":"Can I use this as a stopwatch?","acceptedAnswer":{"@type":"Answer","text":"Yes — click the Stopwatch tab at the top of the tool. The stopwatch counts up from zero and includes a Lap button to record split times. You can pause, resume, and reset the stopwatch at any time."}},{"@type":"Question","name":"Is there an alarm when the timer finishes?","acceptedAnswer":{"@type":"Answer","text":"Yes — the timer plays a short beep alarm when the countdown reaches zero. The alarm uses the Web Audio API and plays directly in your browser without any plugin or download. Make sure your device's sound is not muted."}},{"@type":"Question","name":"Can I set a timer for more than an hour?","acceptedAnswer":{"@type":"Answer","text":"Yes — you can set the hours field to any value from 0 to 99, the minutes field from 0 to 59, and the seconds field from 0 to 59. This allows timers up to 99 hours, 59 minutes, and 59 seconds."}},{"@type":"Question","name":"What are the preset timer buttons?","acceptedAnswer":{"@type":"Answer","text":"The quick presets let you start a common timer with one click: 1 minute, 5 minutes, 10 minutes, 15 minutes, 25 minutes (Pomodoro), 30 minutes, and 1 hour. Click any preset and it immediately fills in the time and starts the countdown."}},{"@type":"Question","name":"Does this timer work on mobile?","acceptedAnswer":{"@type":"Answer","text":"Yes — the timer works on any modern smartphone or tablet browser including Safari on iPhone and iPad, and Chrome or Firefox on Android. The interface adapts to smaller screens. Note that on iOS, audio may require a user interaction before playing — tap Start to ensure the alarm can sound."}}]},{"@type":"BreadcrumbList","@id":"https://thecreatingco.com/timer/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://thecreatingco.com/"},{"@type":"ListItem","position":2,"name":"Free Tools","item":"https://thecreatingco.com/free-tools/"},{"@type":"ListItem","position":3,"name":"Timer & Stopwatch","item":"https://thecreatingco.com/timer/"}]}]}</script>
+<style>
+:root{
+  --bg:#0d0d12;--surface:#16161e;--surface2:#1e1e2a;
+  --border:rgba(255,255,255,0.08);--text:#f0f0f8;--muted:#7878a0;
+  --accent:#fb923c;--accent2:#818cf8;
+  --accent-dim:rgba(251,146,60,0.12);--accent2-dim:rgba(129,140,248,0.12);
+}
+@media(prefers-color-scheme:light){
+  :root{--bg:#f8f8fc;--surface:#fff;--surface2:#f0f0f8;--border:rgba(0,0,0,0.08);--text:#111118;--muted:#6060a0;--accent:#ea6e0a;--accent2:#4f46e5;--accent-dim:rgba(234,110,10,0.10);--accent2-dim:rgba(79,70,229,0.10);}
+}
+:root[data-theme="dark"]{--bg:#0d0d12;--surface:#16161e;--surface2:#1e1e2a;--border:rgba(255,255,255,0.08);--text:#f0f0f8;--muted:#7878a0;--accent:#fb923c;--accent2:#818cf8;}
+:root[data-theme="light"]{--bg:#f8f8fc;--surface:#fff;--surface2:#f0f0f8;--border:rgba(0,0,0,0.08);--text:#111118;--muted:#6060a0;--accent:#ea6e0a;--accent2:#4f46e5;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+header{border-bottom:1px solid var(--border);padding:16px}
+.nav-inner{max-width:860px;margin:auto;display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:800;font-size:17px;color:var(--text)}.logo span{color:var(--accent)}
+.hero{text-align:center;padding:52px 16px 36px;max-width:640px;margin:auto}
+.badge{display:inline-flex;align-items:center;gap:6px;background:var(--accent-dim);border:1px solid color-mix(in srgb,var(--accent) 30%,transparent);border-radius:999px;padding:4px 12px;font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;text-transform:uppercase;margin-bottom:18px}
+h1{font-size:clamp(28px,5vw,44px);font-weight:900;letter-spacing:-1px;line-height:1.1;margin-bottom:14px}
+.sub{font-size:17px;color:var(--muted);max-width:480px;margin:0 auto}
+
+/* Tab switcher */
+.tool-wrap{max-width:480px;margin:0 auto;padding:0 16px 52px}
+.tabs{display:flex;gap:8px;margin-bottom:20px;background:var(--surface2);border-radius:12px;padding:4px}
+.tab{flex:1;padding:10px;border:none;border-radius:8px;font-weight:700;font-size:14px;cursor:pointer;font-family:inherit;background:transparent;color:var(--muted);transition:all .15s}
+.tab.active{background:var(--surface);color:var(--text);box-shadow:0 1px 3px rgba(0,0,0,.2)}
+
+/* Timer */
+.timer-card{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:28px 24px;text-align:center}
+
+/* Digit display */
+.display{font-size:clamp(56px,14vw,96px);font-weight:900;letter-spacing:-3px;font-variant-numeric:tabular-nums;font-family:ui-monospace,monospace;margin:16px 0;transition:color .2s}
+.display.running{color:var(--accent)}
+.display.finished{color:#ef4444;animation:blink 1s step-end infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.4}}
+
+/* Inputs */
+.time-inputs{display:flex;align-items:center;gap:6px;justify-content:center;margin-bottom:20px}
+.time-field{display:flex;flex-direction:column;align-items:center;gap:4px}
+.time-field label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.spin-btn{width:36px;height:24px;background:var(--surface2);border:1px solid var(--border);border-radius:6px;cursor:pointer;font-size:14px;color:var(--text);display:flex;align-items:center;justify-content:center;font-family:inherit}
+.spin-btn:hover{border-color:var(--accent);color:var(--accent)}
+.time-input{width:60px;height:48px;background:var(--surface2);border:1px solid var(--border);border-radius:8px;text-align:center;font-size:28px;font-weight:800;color:var(--text);font-family:ui-monospace,monospace;outline:none}
+.time-input:focus{border-color:var(--accent)}
+.sep{font-size:32px;font-weight:900;color:var(--muted);padding-bottom:4px}
+
+/* Presets */
+.presets{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-bottom:20px}
+.preset{background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:6px 12px;font-size:12px;font-weight:700;cursor:pointer;color:var(--muted);transition:all .15s;font-family:inherit}
+.preset:hover{border-color:var(--accent);color:var(--accent)}
+
+/* Controls */
+.btns{display:flex;gap:8px}
+.btn{flex:1;padding:14px;border-radius:10px;font-weight:800;font-size:16px;cursor:pointer;border:none;transition:all .15s;font-family:inherit}
+.btn-start{background:var(--accent);color:#fff}
+.btn-start:hover{opacity:.88}
+.btn-start:disabled{opacity:.45;cursor:not-allowed}
+.btn-reset{background:var(--surface2);border:1px solid var(--border);color:var(--text)}
+.btn-reset:hover{border-color:var(--accent);color:var(--accent)}
+
+/* Stopwatch */
+.sw-display{font-size:clamp(48px,12vw,88px);font-weight:900;letter-spacing:-2px;font-variant-numeric:tabular-nums;font-family:ui-monospace,monospace;margin:16px 0;color:var(--text)}
+.sw-display.running{color:var(--accent)}
+.lap-list{margin-top:16px;max-height:180px;overflow-y:auto;text-align:left}
+.lap-item{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border);font-size:13px;font-family:ui-monospace,monospace}
+.lap-label{color:var(--muted)}
+.lap-time{font-weight:700}
+
+/* Use cases */
+.section{max-width:860px;margin:0 auto;padding:0 16px 48px}
+.section-title{font-size:22px;font-weight:800;margin-bottom:8px}
+.section-sub{color:var(--muted);margin-bottom:24px}
+.use-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;margin-bottom:32px}
+.use-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px}
+.use-icon{font-size:22px;margin-bottom:8px}
+.use-title{font-weight:700;font-size:14px;margin-bottom:6px}
+.use-desc{font-size:13px;color:var(--muted)}
+.faq{display:grid;gap:12px}
+.faq-item{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px}
+.faq-q{font-weight:700;margin-bottom:8px}
+.faq-a{font-size:14px;color:var(--muted)}
+footer{border-top:1px solid var(--border);padding:32px 16px;text-align:center}
+.footer-inner{max-width:860px;margin:auto}
+.footer-links{display:flex;flex-wrap:wrap;gap:16px;justify-content:center;margin-bottom:12px;font-size:14px}
+.footer-copy{font-size:12px;color:var(--muted)}
+</style>
+</head>
+<body>
+<header>
+  <div class="nav-inner">
+    <a class="logo" href="https://thecreatingco.com/">the<span>creating</span>co</a>
+    <nav style="display:flex;gap:20px;font-size:14px;font-weight:600">
+      <a href="https://thecreatingco.com/free-tools/" style="color:var(--muted)">Free Tools</a>
+      <a href="https://thecreatingco.com/products/stemdeck/" style="color:var(--muted)">StemDeck</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<div class="hero">
+  <div class="badge">⏱ Free Timer Tool</div>
+  <h1>Timer &amp; Stopwatch</h1>
+  <p class="sub">Set a countdown timer with an alarm, or run a stopwatch with lap times. Free, no account, works in any browser tab.</p>
+</div>
+
+<div class="tool-wrap">
+  <!-- Tab switcher -->
+  <div class="tabs">
+    <button class="tab active" id="tab-timer" onclick="switchTab('timer')">⏳ Timer</button>
+    <button class="tab" id="tab-sw" onclick="switchTab('sw')">🏃 Stopwatch</button>
+  </div>
+
+  <!-- Timer panel -->
+  <div id="panel-timer" class="timer-card">
+    <!-- Presets -->
+    <div class="presets">
+      <button class="preset" onclick="setPreset(1,0)">1 min</button>
+      <button class="preset" onclick="setPreset(5,0)">5 min</button>
+      <button class="preset" onclick="setPreset(10,0)">10 min</button>
+      <button class="preset" onclick="setPreset(15,0)">15 min</button>
+      <button class="preset" onclick="setPreset(25,0)">25 min 🍅</button>
+      <button class="preset" onclick="setPreset(30,0)">30 min</button>
+      <button class="preset" onclick="setPreset(60,0)">1 hour</button>
+    </div>
+
+    <!-- Time inputs -->
+    <div class="time-inputs" id="timer-inputs">
+      <div class="time-field">
+        <button class="spin-btn" onclick="spin('h',1)">▲</button>
+        <input class="time-input" id="inp-h" type="number" min="0" max="99" value="0" oninput="clampInput(this,0,99)">
+        <button class="spin-btn" onclick="spin('h',-1)">▼</button>
+        <label>h</label>
+      </div>
+      <span class="sep">:</span>
+      <div class="time-field">
+        <button class="spin-btn" onclick="spin('m',1)">▲</button>
+        <input class="time-input" id="inp-m" type="number" min="0" max="59" value="0" oninput="clampInput(this,0,59)">
+        <button class="spin-btn" onclick="spin('m',-1)">▼</button>
+        <label>m</label>
+      </div>
+      <span class="sep">:</span>
+      <div class="time-field">
+        <button class="spin-btn" onclick="spin('s',1)">▲</button>
+        <input class="time-input" id="inp-s" type="number" min="0" max="59" value="0" oninput="clampInput(this,0,59)">
+        <button class="spin-btn" onclick="spin('s',-1)">▼</button>
+        <label>s</label>
+      </div>
+    </div>
+
+    <!-- Display -->
+    <div class="display" id="timer-display">00:00</div>
+
+    <!-- Buttons -->
+    <div class="btns">
+      <button class="btn btn-start" id="btn-start" onclick="timerToggle()">▶ Start</button>
+      <button class="btn btn-reset" onclick="timerReset()">↺ Reset</button>
+    </div>
+  </div>
+
+  <!-- Stopwatch panel -->
+  <div id="panel-sw" class="timer-card" style="display:none">
+    <div class="sw-display" id="sw-display">00:00.0</div>
+    <div class="btns">
+      <button class="btn btn-start" id="sw-btn-start" onclick="swToggle()">▶ Start</button>
+      <button class="btn btn-reset" onclick="swLap()">⚑ Lap</button>
+      <button class="btn btn-reset" onclick="swReset()">↺ Reset</button>
+    </div>
+    <div class="lap-list" id="lap-list"></div>
+  </div>
+</div>
+
+<!-- Use cases -->
+<section class="section">
+  <h2 class="section-title">What can you use an online timer for?</h2>
+  <p class="section-sub">From focus sessions to cooking, a timer keeps you on track without any setup or installation.</p>
+  <div class="use-grid">
+    <div class="use-card">
+      <div class="use-icon">🍅</div>
+      <div class="use-title">Pomodoro technique</div>
+      <div class="use-desc">Work in 25-minute focused sprints, then take a 5-minute break. Use the 25-min preset and repeat to build deep focus and prevent burnout.</div>
+    </div>
+    <div class="use-card">
+      <div class="use-icon">🍳</div>
+      <div class="use-title">Cooking & kitchen</div>
+      <div class="use-desc">Set a timer for pasta, eggs, or roasting times. The alarm plays through your browser tab so you hear it in another tab.</div>
+    </div>
+    <div class="use-card">
+      <div class="use-icon">🏋️</div>
+      <div class="use-title">Exercise & intervals</div>
+      <div class="use-desc">Time work and rest intervals for HIIT, tabata, or strength sets. Use the stopwatch to track set durations and personal bests.</div>
+    </div>
+    <div class="use-card">
+      <div class="use-icon">🎤</div>
+      <div class="use-title">Presentations & speeches</div>
+      <div class="use-desc">Use the stopwatch to time presentation rehearsals, or set a countdown for lightning talk time limits (5 or 10 minutes).</div>
+    </div>
+    <div class="use-card">
+      <div class="use-icon">📚</div>
+      <div class="use-title">Study sessions</div>
+      <div class="use-desc">Time study blocks, reading sprints, or revision sessions. The stopwatch lap feature lets you track how long each topic section takes.</div>
+    </div>
+    <div class="use-card">
+      <div class="use-icon">🎮</div>
+      <div class="use-title">Games & events</div>
+      <div class="use-desc">Countdown for quiz rounds, board game turns, puzzle challenges, or any event where participants need equal time limits.</div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" style="padding-top:0">
+  <h2 class="section-title">Frequently asked questions</h2>
+  <div class="faq">
+    <div class="faq-item">
+      <div class="faq-q">How do I set a countdown timer?</div>
+      <div class="faq-a">Use the hours, minutes, and seconds inputs to enter your desired time, or click one of the quick preset buttons (1 min, 5 min, 10 min, 25 min Pomodoro, etc.). Then click Start. The timer counts down and plays an alarm when it reaches zero.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Does the timer work in the background?</div>
+      <div class="faq-a">Yes — the timer continues counting even if you switch to another tab. The alarm plays when it finishes. Keep the browser window open; closing the tab or refreshing the page resets the timer.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Is there an alarm when the countdown ends?</div>
+      <div class="faq-a">Yes — the timer plays a short beep using the Web Audio API when the countdown reaches zero. Ensure your device volume is not muted. On iOS, tap Start at least once to allow the browser to play audio.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How do I use the stopwatch?</div>
+      <div class="faq-a">Click the Stopwatch tab at the top. Press Start to begin counting up. Press Lap to record a split time while the stopwatch continues running. Press Reset to clear all laps and return to zero.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Can I set a timer for more than an hour?</div>
+      <div class="faq-a">Yes — the hours field accepts values from 0 to 99, allowing timers up to 99 hours, 59 minutes, and 59 seconds. For very long timers, note that the browser tab must remain open.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What is a Pomodoro timer?</div>
+      <div class="faq-a">The Pomodoro Technique is a time-management method where you work for 25 minutes, then take a 5-minute break — one cycle is called a "Pomodoro." Use the 25 min preset, start working, then when the alarm sounds take a short break before starting the next session.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Does this timer work on mobile?</div>
+      <div class="faq-a">Yes — the timer works on any modern smartphone or tablet browser. The layout adapts to smaller screens. Note that iOS may require a tap interaction before audio can play — press Start at least once to enable the alarm sound.</div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="https://thecreatingco.com/">Home</a>
+      <a href="https://thecreatingco.com/free-tools/">Free Tools</a>
+      <a href="https://thecreatingco.com/text-to-speech/">Text to Speech</a>
+      <a href="https://thecreatingco.com/word-counter/">Word Counter</a>
+      <a href="https://thecreatingco.com/metronome/">Metronome</a>
+    </div>
+    <div class="footer-copy">© 2026 The Creating Co · <a href="https://thecreatingco.com/privacy/">Privacy</a> · <a href="https://thecreatingco.com/terms/">Terms</a></div>
+  </div>
+</footer>
+
+<style>
+.related-tools{background:#16161f;border-top:1px solid #2a2a3d;padding:2.5rem 1.5rem;margin-top:2rem}
+.related-tools h2{font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#7a7a98;margin-bottom:1.25rem}
+.related-tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:.75rem;max-width:960px}
+.related-tools-grid a{display:block;background:#0d0d14;border:1px solid #2a2a3d;border-radius:8px;padding:.9rem 1rem;color:#e8e8f0;text-decoration:none;font-size:.875rem;font-weight:600;transition:border-color .2s,color .2s}
+.related-tools-grid a:hover{border-color:#c8ff00;color:#c8ff00}
+.related-tools-all{display:block;margin-top:1rem;font-size:.8rem;color:#7a7a98;text-decoration:none}
+.related-tools-all:hover{color:#c8ff00}
+@media(prefers-color-scheme:light){.related-tools{background:#f0f0f8;border-top-color:#d8d8e8}.related-tools-grid a{background:#fff;border-color:#d8d8e8;color:#1a1a2e}.related-tools-grid a:hover{border-color:#556600;color:#334400}.related-tools-all{color:#6a6a88}.related-tools-all:hover{color:#334400}}
+</style>
+
+<section class="related-tools" aria-label="Related free tools">
+  <h2>Related Free Tools</h2>
+  <div class="related-tools-grid">
+    <a href="/metronome/">Metronome</a>
+    <a href="/text-to-speech/">Text to Speech</a>
+    <a href="/word-counter/">Word Counter</a>
+    <a href="/bpm-finder/">BPM Finder</a>
+    <a href="/audio-recorder/">Voice Recorder</a>
+  </div>
+  <a href="/free-tools/" class="related-tools-all">Browse all 40 free tools →</a>
+</section>
+
+<script>
+/* ===== SHARED ===== */
+function switchTab(t) {
+  document.getElementById('panel-timer').style.display = t === 'timer' ? '' : 'none';
+  document.getElementById('panel-sw').style.display   = t === 'sw'    ? '' : 'none';
+  document.getElementById('tab-timer').className = 'tab' + (t === 'timer' ? ' active' : '');
+  document.getElementById('tab-sw').className    = 'tab' + (t === 'sw'    ? ' active' : '');
+}
+
+/* ===== ALARM ===== */
+let audioCtx = null;
+function initAudio() {
+  if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+}
+function playAlarm() {
+  try {
+    initAudio();
+    const freqs = [880, 1100, 880, 1100];
+    let t = audioCtx.currentTime;
+    freqs.forEach(f => {
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.connect(gain); gain.connect(audioCtx.destination);
+      osc.frequency.value = f;
+      osc.type = 'sine';
+      gain.gain.setValueAtTime(0.4, t);
+      gain.gain.exponentialRampToValueAtTime(0.001, t + 0.3);
+      osc.start(t); osc.stop(t + 0.3);
+      t += 0.35;
+    });
+  } catch(e) { /* silent if audio not available */ }
+}
+
+/* ===== TIMER ===== */
+let timerInterval = null;
+let timerRunning = false;
+let timerTotal = 0; // original seconds
+let timerRemaining = 0;
+
+function pad2(n) { return String(Math.floor(n)).padStart(2,'0'); }
+
+function fmtTimer(s) {
+  const h = Math.floor(s / 3600);
+  const m = Math.floor((s % 3600) / 60);
+  const sec = s % 60;
+  return h > 0
+    ? `${pad2(h)}:${pad2(m)}:${pad2(sec)}`
+    : `${pad2(m)}:${pad2(sec)}`;
+}
+
+function getTimerInputSecs() {
+  const h = parseInt(document.getElementById('inp-h').value)||0;
+  const m = parseInt(document.getElementById('inp-m').value)||0;
+  const s = parseInt(document.getElementById('inp-s').value)||0;
+  return h*3600 + m*60 + s;
+}
+
+function renderTimer(s) {
+  const el = document.getElementById('timer-display');
+  el.textContent = fmtTimer(s);
+  el.className = 'display' + (timerRunning && s > 0 ? ' running' : s === 0 && timerTotal > 0 ? ' finished' : '');
+}
+
+function timerToggle() {
+  initAudio();
+  if (timerRunning) {
+    // Pause
+    clearInterval(timerInterval);
+    timerRunning = false;
+    document.getElementById('btn-start').textContent = '▶ Resume';
+    return;
+  }
+  // Start / Resume
+  if (!timerRunning && timerRemaining === 0) {
+    timerRemaining = getTimerInputSecs();
+    timerTotal = timerRemaining;
+  }
+  if (timerRemaining <= 0) return;
+  timerRunning = true;
+  document.getElementById('btn-start').textContent = '⏸ Pause';
+  document.getElementById('timer-inputs').style.opacity = '0.4';
+  timerInterval = setInterval(() => {
+    timerRemaining--;
+    renderTimer(timerRemaining);
+    if (timerRemaining <= 0) {
+      clearInterval(timerInterval);
+      timerRunning = false;
+      document.getElementById('btn-start').textContent = '▶ Start';
+      document.getElementById('timer-inputs').style.opacity = '';
+      playAlarm();
+    }
+  }, 1000);
+}
+
+function timerReset() {
+  clearInterval(timerInterval);
+  timerRunning = false;
+  timerRemaining = 0;
+  timerTotal = 0;
+  document.getElementById('btn-start').textContent = '▶ Start';
+  document.getElementById('timer-inputs').style.opacity = '';
+  renderTimer(getTimerInputSecs());
+}
+
+function setPreset(mins, secs) {
+  timerReset();
+  const m = Math.floor(mins); const s = secs||0;
+  document.getElementById('inp-h').value = Math.floor(m/60);
+  document.getElementById('inp-m').value = m % 60;
+  document.getElementById('inp-s').value = s;
+  renderTimer(m*60 + s);
+}
+
+function spin(field, delta) {
+  const el = document.getElementById('inp-' + field);
+  const max = field === 'h' ? 99 : 59;
+  let v = (parseInt(el.value)||0) + delta;
+  v = Math.max(0, Math.min(max, v));
+  el.value = v;
+  if (!timerRunning) renderTimer(getTimerInputSecs());
+}
+
+function clampInput(el, min, max) {
+  let v = parseInt(el.value);
+  if (isNaN(v)) { el.value = 0; return; }
+  el.value = Math.max(min, Math.min(max, v));
+  if (!timerRunning) renderTimer(getTimerInputSecs());
+}
+
+/* ===== STOPWATCH ===== */
+let swRunning = false;
+let swStart = 0;
+let swElapsed = 0;
+let swInterval = null;
+let lapElapsed = 0;
+let lapCount = 0;
+
+function fmtSW(ms) {
+  const total = ms / 1000;
+  const h = Math.floor(total / 3600);
+  const m = Math.floor((total % 3600) / 60);
+  const s = Math.floor(total % 60);
+  const tenth = Math.floor((ms % 1000) / 100);
+  return h > 0
+    ? `${pad2(h)}:${pad2(m)}:${pad2(s)}.${tenth}`
+    : `${pad2(m)}:${pad2(s)}.${tenth}`;
+}
+
+function renderSW() {
+  const el = document.getElementById('sw-display');
+  el.textContent = fmtSW(swElapsed);
+  el.className = 'sw-display' + (swRunning ? ' running' : '');
+}
+
+function swToggle() {
+  initAudio();
+  if (swRunning) {
+    clearInterval(swInterval);
+    swRunning = false;
+    document.getElementById('sw-btn-start').textContent = '▶ Resume';
+  } else {
+    swStart = Date.now() - swElapsed;
+    swRunning = true;
+    document.getElementById('sw-btn-start').textContent = '⏸ Pause';
+    swInterval = setInterval(() => {
+      swElapsed = Date.now() - swStart;
+      renderSW();
+    }, 100);
+  }
+}
+
+function swLap() {
+  if (!swRunning && swElapsed === 0) return;
+  lapCount++;
+  const splitMs = swElapsed - lapElapsed;
+  lapElapsed = swElapsed;
+  const item = document.createElement('div');
+  item.className = 'lap-item';
+  item.innerHTML = `<span class="lap-label">Lap ${lapCount}</span><span class="lap-time">${fmtSW(swElapsed)} <span style="color:var(--muted);font-weight:400">(+${fmtSW(splitMs)})</span></span>`;
+  const list = document.getElementById('lap-list');
+  list.prepend(item);
+}
+
+function swReset() {
+  clearInterval(swInterval);
+  swRunning = false; swElapsed = 0; swStart = 0; lapElapsed = 0; lapCount = 0;
+  document.getElementById('sw-btn-start').textContent = '▶ Start';
+  document.getElementById('lap-list').innerHTML = '';
+  renderSW();
+}
+
+// Init display
+renderTimer(0);
+renderSW();
+
+// Update page title with countdown
+setInterval(() => {
+  if (timerRunning) document.title = fmtTimer(timerRemaining) + ' — Timer';
+  else if (swRunning) document.title = fmtSW(swElapsed) + ' — Stopwatch';
+  else document.title = 'Free Online Timer & Stopwatch';
+}, 1000);
+</script>
+</body>
+</html>
