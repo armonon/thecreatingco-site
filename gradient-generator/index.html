@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CSS Gradient Generator — Free Online Linear & Radial Gradient Maker</title>
+<meta name="description" content="Free CSS gradient generator — create beautiful linear and radial gradients visually. Add color stops, adjust direction and position, copy the CSS instantly. No account needed.">
+<link rel="canonical" href="https://thecreatingco.com/gradient-generator/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://thecreatingco.com/gradient-generator/">
+<meta property="og:title" content="CSS Gradient Generator — Free Linear & Radial Gradient Maker">
+<meta property="og:description" content="Create beautiful CSS gradients visually. Linear and radial modes, unlimited color stops, one-click copy. Free, no account, no download.">
+<meta property="og:image" content="https://thecreatingco.com/assets/share/home.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Free CSS Gradient Generator">
+<meta name="twitter:description" content="Create linear and radial CSS gradients visually with unlimited color stops. Copy the CSS in one click.">
+<meta name="twitter:image" content="https://thecreatingco.com/assets/share/home.jpg">
+<meta name="robots" content="index,follow">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://thecreatingco.com/gradient-generator/#webpage","url":"https://thecreatingco.com/gradient-generator/","name":"CSS Gradient Generator","description":"Free online CSS gradient generator that lets you create beautiful linear and radial gradients visually. Add color stops, adjust angle or direction, and copy the ready-to-use CSS gradient code in one click. No account or download required.","isPartOf":{"@id":"https://thecreatingco.com/#website"},"breadcrumb":{"@id":"https://thecreatingco.com/gradient-generator/#breadcrumb"}},{"@type":"SoftwareApplication","@id":"https://thecreatingco.com/gradient-generator/#app","name":"Online CSS Gradient Generator","applicationCategory":"DesignApplication","operatingSystem":"Any (web browser)","url":"https://thecreatingco.com/gradient-generator/","description":"Free visual CSS gradient generator supporting linear-gradient and radial-gradient. Drag color stops on an interactive slider, pick any colors, set the gradient angle, and instantly preview the result. Copies CSS, background shorthand, and individual values to the clipboard.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"The Creating Co","url":"https://thecreatingco.com"}},{"@type":"FAQPage","@id":"https://thecreatingco.com/gradient-generator/#faq","mainEntity":[{"@type":"Question","name":"What is a CSS gradient?","acceptedAnswer":{"@type":"Answer","text":"A CSS gradient is a type of image created using the CSS functions linear-gradient() or radial-gradient(). They let you transition smoothly between two or more colors without using an image file. Gradients are commonly used for backgrounds, buttons, overlays, and decorative elements in web design."}},{"@type":"Question","name":"What is the difference between linear and radial gradients?","acceptedAnswer":{"@type":"Answer","text":"A linear-gradient transitions colors along a straight line at a specified angle (e.g., 90deg goes left to right, 180deg goes top to bottom). A radial-gradient transitions colors outward from a center point in a circular or elliptical pattern. Linear gradients are more common for backgrounds and banners; radial gradients are popular for glows, spotlights, and circular decorative effects."}},{"@type":"Question","name":"How do I use a CSS gradient as a background?","acceptedAnswer":{"@type":"Answer","text":"Use the background or background-image CSS property and pass the gradient function as the value. For example: background: linear-gradient(135deg, #667eea 0%, #764ba2 100%). You can also layer gradients over a background color by separating them with a comma: background: linear-gradient(135deg, rgba(102,126,234,0.8), rgba(118,75,162,0.8)), #1a1a2e."}},{"@type":"Question","name":"Can I add more than two colors to a CSS gradient?","acceptedAnswer":{"@type":"Answer","text":"Yes — you can add as many color stops as you like. Each color stop is a color value followed by an optional position (percentage or length). For example: linear-gradient(90deg, red 0%, orange 33%, yellow 66%, green 100%). This gradient-generator lets you add and remove color stops visually with a drag-to-position interface."}},{"@type":"Question","name":"What does the gradient angle mean?","acceptedAnswer":{"@type":"Answer","text":"The angle controls the direction a linear gradient flows. 0deg runs bottom to top, 90deg runs left to right, 180deg runs top to bottom, and 270deg runs right to left. You can also use keyword directions: to right (90deg), to bottom right (135deg), to bottom (180deg), etc. Angles between these create diagonal gradients."}},{"@type":"Question","name":"How do I make a transparent gradient in CSS?","acceptedAnswer":{"@type":"Answer","text":"Use rgba() or the transparent keyword as a color stop. For example: linear-gradient(to right, rgba(0,0,0,0.8), transparent). This creates a gradient that fades from a semi-transparent black to fully transparent — useful for overlays on top of images or videos. You can also use hex colors with an alpha channel: #000000cc (the last two hex digits set opacity)."}},{"@type":"Question","name":"Does CSS gradient work in all browsers?","acceptedAnswer":{"@type":"Answer","text":"Yes — linear-gradient and radial-gradient are supported in all modern browsers including Chrome, Firefox, Safari, Edge, and Opera. They have been widely supported since around 2012. No vendor prefixes (-webkit-, -moz-) are needed for current browsers. The CSS output from this generator uses the unprefixed standard syntax."}}]},{"@type":"BreadcrumbList","@id":"https://thecreatingco.com/gradient-generator/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://thecreatingco.com/"},{"@type":"ListItem","position":2,"name":"Free Tools","item":"https://thecreatingco.com/free-tools/"},{"@type":"ListItem","position":3,"name":"CSS Gradient Generator","item":"https://thecreatingco.com/gradient-generator/"}]}]}</script>
+<style>
+:root{
+  --bg:#0d0d12;--surface:#16161e;--surface2:#1e1e2a;
+  --border:rgba(255,255,255,0.08);--text:#f0f0f8;--muted:#7878a0;
+  --accent:#a78bfa;--accent2:#8b5cf6;
+  --accent-dim:rgba(167,139,250,0.10);--accent2-dim:rgba(139,92,246,0.10);
+}
+@media(prefers-color-scheme:light){
+  :root{--bg:#f8f8fc;--surface:#fff;--surface2:#f0f0f8;--border:rgba(0,0,0,0.08);--text:#111118;--muted:#6060a0;--accent:#7c3aed;--accent2:#6d28d9;--accent-dim:rgba(124,58,237,0.08);}
+}
+:root[data-theme="dark"]{--bg:#0d0d12;--surface:#16161e;--surface2:#1e1e2a;--border:rgba(255,255,255,0.08);--text:#f0f0f8;--muted:#7878a0;--accent:#a78bfa;}
+:root[data-theme="light"]{--bg:#f8f8fc;--surface:#fff;--surface2:#f0f0f8;--border:rgba(0,0,0,0.08);--text:#111118;--muted:#6060a0;--accent:#7c3aed;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+header{border-bottom:1px solid var(--border);padding:16px}
+.nav-inner{max-width:960px;margin:auto;display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:800;font-size:17px;color:var(--text)}.logo span{color:var(--accent)}
+.hero{text-align:center;padding:48px 16px 32px;max-width:640px;margin:auto}
+.badge{display:inline-flex;align-items:center;gap:6px;background:var(--accent-dim);border:1px solid color-mix(in srgb,var(--accent) 30%,transparent);border-radius:999px;padding:4px 12px;font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;text-transform:uppercase;margin-bottom:18px}
+h1{font-size:clamp(26px,5vw,42px);font-weight:900;letter-spacing:-1px;line-height:1.1;margin-bottom:14px}
+.sub{font-size:17px;color:var(--muted);max-width:480px;margin:0 auto}
+
+/* Layout */
+.tool-wrap{max-width:960px;margin:0 auto;padding:0 16px 52px;display:grid;grid-template-columns:1fr 320px;gap:20px}
+@media(max-width:720px){.tool-wrap{grid-template-columns:1fr}}
+.panel{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:24px}
+
+/* Preview */
+.preview-box{border-radius:16px;height:200px;margin-bottom:20px;transition:background .2s;position:relative;overflow:hidden}
+.preview-label{position:absolute;bottom:12px;right:14px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,0.6);background:rgba(0,0,0,0.35);padding:3px 8px;border-radius:6px;backdrop-filter:blur(4px)}
+
+/* Type toggle */
+.type-row{display:flex;gap:8px;margin-bottom:20px}
+.type-btn{flex:1;padding:9px;border:1px solid var(--border);background:var(--surface2);border-radius:10px;font-family:inherit;font-size:13px;font-weight:700;color:var(--muted);cursor:pointer;transition:all .15s}
+.type-btn.active{background:var(--accent);border-color:var(--accent);color:#fff}
+
+/* Angle / radial shape */
+.control-row{margin-bottom:18px}
+.control-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:8px;display:flex;justify-content:space-between;align-items:center}
+.control-val{font-size:13px;font-weight:800;color:var(--text);font-family:ui-monospace,monospace}
+input[type=range]{width:100%;accent-color:var(--accent);cursor:pointer}
+
+/* Color stops */
+.stops-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:12px;display:flex;justify-content:space-between;align-items:center}
+.add-stop-btn{background:var(--accent-dim);border:1px solid color-mix(in srgb,var(--accent) 30%,transparent);border-radius:8px;padding:4px 10px;font-size:12px;font-weight:700;color:var(--accent);cursor:pointer;font-family:inherit;transition:background .15s}
+.add-stop-btn:hover{background:var(--accent);color:#fff}
+.stop-list{display:grid;gap:8px;margin-bottom:16px}
+.stop-row{display:grid;grid-template-columns:auto 1fr auto auto;gap:8px;align-items:center}
+.stop-swatch{width:36px;height:36px;border-radius:8px;border:2px solid var(--border);cursor:pointer;overflow:hidden;position:relative;flex-shrink:0}
+.stop-swatch input[type=color]{position:absolute;inset:-4px;width:calc(100%+8px);height:calc(100%+8px);opacity:0;cursor:pointer}
+.stop-swatch-bg{position:absolute;inset:0;border-radius:6px}
+.stop-pos{width:60px;background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:6px 8px;font-size:13px;font-family:ui-monospace,monospace;color:var(--text);text-align:center;outline:none}
+.stop-pos:focus{border-color:var(--accent)}
+.stop-remove{width:28px;height:28px;background:none;border:1px solid var(--border);border-radius:7px;color:var(--muted);cursor:pointer;font-size:16px;line-height:1;display:flex;align-items:center;justify-content:center;transition:all .15s;font-family:inherit}
+.stop-remove:hover{border-color:#f87171;color:#f87171}
+.stop-label{font-size:12px;font-weight:700;font-family:ui-monospace,monospace;color:var(--text)}
+
+/* Gradient bar */
+.grad-bar-wrap{position:relative;margin-bottom:20px}
+.grad-bar{height:20px;border-radius:10px;cursor:crosshair;position:relative}
+
+/* CSS output */
+.css-out-wrap{margin-bottom:0}
+.css-block{background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:14px 14px 10px;font-family:ui-monospace,monospace;font-size:12px;color:var(--text);white-space:pre-wrap;word-break:break-all;line-height:1.6;margin-bottom:8px}
+.copy-row{display:flex;gap:8px;flex-wrap:wrap}
+.copy-btn{flex:1;min-width:100px;padding:9px 12px;border:1px solid var(--border);background:var(--surface2);border-radius:8px;font-family:inherit;font-size:12px;font-weight:700;color:var(--muted);cursor:pointer;transition:all .15s;white-space:nowrap}
+.copy-btn:hover{border-color:var(--accent);color:var(--accent)}
+.copy-btn.copied{background:var(--accent);border-color:var(--accent);color:#fff}
+
+/* Presets panel */
+.presets-title{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:14px}
+.preset-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.preset-card{border-radius:12px;height:72px;cursor:pointer;transition:transform .15s,box-shadow .15s;border:2px solid transparent}
+.preset-card:hover{transform:scale(1.04);box-shadow:0 4px 16px rgba(0,0,0,.3);border-color:var(--accent)}
+.preset-card span{display:block;text-align:center;padding-top:80px;font-size:11px;font-weight:700;color:var(--muted)}
+
+/* FAQ */
+.section{max-width:960px;margin:0 auto;padding:0 16px 48px}
+.section-title{font-size:22px;font-weight:800;margin-bottom:8px}
+.section-sub{color:var(--muted);margin-bottom:24px}
+.faq{display:grid;gap:12px}
+.faq-item{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px}
+.faq-q{font-weight:700;margin-bottom:8px}
+.faq-a{font-size:14px;color:var(--muted)}
+footer{border-top:1px solid var(--border);padding:32px 16px;text-align:center}
+.footer-inner{max-width:960px;margin:auto}
+.footer-links{display:flex;flex-wrap:wrap;gap:16px;justify-content:center;margin-bottom:12px;font-size:14px}
+.footer-copy{font-size:12px;color:var(--muted)}
+</style>
+</head>
+<body>
+<header>
+  <div class="nav-inner">
+    <a class="logo" href="https://thecreatingco.com/">the<span>creating</span>co</a>
+    <nav style="display:flex;gap:20px;font-size:14px;font-weight:600">
+      <a href="https://thecreatingco.com/free-tools/" style="color:var(--muted)">Free Tools</a>
+      <a href="https://thecreatingco.com/products/stemdeck/" style="color:var(--muted)">StemDeck</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<div class="hero">
+  <div class="badge">🎨 Design Tool</div>
+  <h1>CSS Gradient Generator</h1>
+  <p class="sub">Create beautiful linear and radial gradients visually. Add color stops, adjust direction, and copy the CSS in one click.</p>
+</div>
+
+<div class="tool-wrap">
+  <!-- Main panel -->
+  <div class="panel">
+    <!-- Preview -->
+    <div class="preview-box" id="previewBox">
+      <span class="preview-label">Live preview</span>
+    </div>
+
+    <!-- Type -->
+    <div class="type-row">
+      <button class="type-btn active" id="btnLinear" onclick="setType('linear')">⟶ Linear</button>
+      <button class="type-btn" id="btnRadial" onclick="setType('radial')">◎ Radial</button>
+    </div>
+
+    <!-- Angle (linear) / position (radial) -->
+    <div class="control-row" id="angleRow">
+      <div class="control-label">Angle <span class="control-val" id="angleVal">135°</span></div>
+      <input type="range" id="angleSlider" min="0" max="360" value="135" oninput="onAngle()">
+    </div>
+    <div class="control-row" id="radialRow" style="display:none">
+      <div class="control-label">Shape</div>
+      <div style="display:flex;gap:8px">
+        <button class="type-btn active" id="btnEllipse" style="font-size:12px" onclick="setRadialShape('ellipse')">Ellipse</button>
+        <button class="type-btn" id="btnCircle" style="font-size:12px" onclick="setRadialShape('circle')">Circle</button>
+      </div>
+    </div>
+
+    <!-- Color stops -->
+    <div class="stops-label">
+      Color stops
+      <button class="add-stop-btn" onclick="addStop()">+ Add stop</button>
+    </div>
+    <div class="stop-list" id="stopList"></div>
+
+    <!-- CSS output -->
+    <div class="css-out-wrap">
+      <div class="control-label" style="margin-bottom:8px">CSS output</div>
+      <div class="css-block" id="cssOut"></div>
+      <div class="copy-row">
+        <button class="copy-btn" id="copyFull" onclick="copyCSS('full')">Copy full CSS</button>
+        <button class="copy-btn" id="copyValue" onclick="copyCSS('value')">Copy value only</button>
+        <button class="copy-btn" id="copyBg" onclick="copyCSS('bg')">Copy background</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Presets panel -->
+  <div class="panel" style="align-self:start">
+    <div class="presets-title">Quick presets</div>
+    <div class="preset-grid" id="presetGrid"></div>
+  </div>
+</div>
+
+<!-- FAQ -->
+<section class="section">
+  <h2 class="section-title">Frequently asked questions</h2>
+  <div class="faq">
+    <div class="faq-item">
+      <div class="faq-q">What is a CSS gradient?</div>
+      <div class="faq-a">A CSS gradient is a type of image created using the CSS functions <code>linear-gradient()</code> or <code>radial-gradient()</code>. They transition smoothly between two or more colors without using an image file. Gradients are used for backgrounds, buttons, overlays, and decorative elements in web design.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What is the difference between linear and radial gradients?</div>
+      <div class="faq-a">A <code>linear-gradient</code> transitions colors along a straight line at a specified angle. A <code>radial-gradient</code> transitions colors outward from a center point in a circular or elliptical pattern. Linear gradients suit banners and backgrounds; radial gradients work well for glows and spotlights.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How do I use a CSS gradient as a background?</div>
+      <div class="faq-a">Use the <code>background</code> or <code>background-image</code> property and pass the gradient function as the value. Example: <code>background: linear-gradient(135deg, #667eea 0%, #764ba2 100%)</code>. The "Copy background" button above outputs this format directly.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Can I add more than two colors to a CSS gradient?</div>
+      <div class="faq-a">Yes — you can add as many color stops as you like using the "+ Add stop" button. Each color stop is a color value at a position (percentage). This creates multi-color transitions like <code>linear-gradient(90deg, red 0%, orange 33%, yellow 66%, green 100%)</code>.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What does the gradient angle mean?</div>
+      <div class="faq-a">The angle controls the direction a linear gradient flows. 0° runs bottom to top, 90° left to right, 180° top to bottom, and 270° right to left. Angles between these create diagonal gradients. The angle slider updates the preview in real time.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How do I make a transparent gradient in CSS?</div>
+      <div class="faq-a">Use <code>rgba()</code> or the <code>transparent</code> keyword. For example: <code>linear-gradient(to right, rgba(0,0,0,0.8), transparent)</code>. This creates an overlay that fades from semi-transparent black to fully transparent — great for text overlays on images.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Does CSS gradient work in all browsers?</div>
+      <div class="faq-a">Yes — <code>linear-gradient</code> and <code>radial-gradient</code> are supported in all modern browsers: Chrome, Firefox, Safari, Edge, and Opera. They've been widely supported since 2012. No vendor prefixes are needed for current browsers. The CSS output from this generator uses standard unprefixed syntax.</div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="https://thecreatingco.com/">Home</a>
+      <a href="https://thecreatingco.com/free-tools/">Free Tools</a>
+      <a href="https://thecreatingco.com/color-picker/">Color Picker</a>
+      <a href="https://thecreatingco.com/image-converter/">Image Converter</a>
+      <a href="https://thecreatingco.com/favicon-generator/">Favicon Generator</a>
+    </div>
+    <div class="footer-copy">© 2026 The Creating Co · <a href="https://thecreatingco.com/privacy/">Privacy</a> · <a href="https://thecreatingco.com/terms/">Terms</a> · <a href="https://thecreatingco.com/free-tools/">46 free tools</a></div>
+  </div>
+</footer>
+
+<style>
+.related-tools{background:#16161f;border-top:1px solid #2a2a3d;padding:2.5rem 1.5rem;margin-top:2rem}
+.related-tools h2{font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#7a7a98;margin-bottom:1.25rem}
+.related-tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:.75rem;max-width:960px}
+.related-tools-grid a{display:block;background:#0d0d14;border:1px solid #2a2a3d;border-radius:8px;padding:.9rem 1rem;color:#e8e8f0;text-decoration:none;font-size:.875rem;font-weight:600;transition:border-color .2s,color .2s}
+.related-tools-grid a:hover{border-color:#c8ff00;color:#c8ff00}
+.related-tools-all{display:block;margin-top:1rem;font-size:.8rem;color:#7a7a98;text-decoration:none}
+.related-tools-all:hover{color:#c8ff00}
+@media(prefers-color-scheme:light){.related-tools{background:#f0f0f8;border-top-color:#d8d8e8}.related-tools-grid a{background:#fff;border-color:#d8d8e8;color:#1a1a2e}.related-tools-grid a:hover{border-color:#556600;color:#334400}.related-tools-all{color:#6a6a88}.related-tools-all:hover{color:#334400}}
+</style>
+<section class="related-tools" aria-label="Related free tools">
+  <h2>Related Free Tools</h2>
+  <div class="related-tools-grid">
+    <a href="/color-picker/">Color Picker</a>
+    <a href="/image-converter/">Image Converter</a>
+    <a href="/favicon-generator/">Favicon Generator</a>
+    <a href="/image-compressor/">Image Compressor</a>
+    <a href="/background-remover/">Background Remover</a>
+  </div>
+  <a href="/free-tools/" class="related-tools-all">Browse all 46 free tools →</a>
+</section>
+
+<script>
+// State
+let gradType = 'linear';
+let angle = 135;
+let radialShape = 'ellipse';
+let stops = [
+  { color: '#a78bfa', pos: 0 },
+  { color: '#ec4899', pos: 100 }
+];
+
+const PRESETS = [
+  { name: 'Midnight', stops: [{color:'#0f0c29',pos:0},{color:'#302b63',pos:50},{color:'#24243e',pos:100}], angle: 135, type:'linear' },
+  { name: 'Sunset', stops: [{color:'#f7971e',pos:0},{color:'#ffd200',pos:100}], angle: 45, type:'linear' },
+  { name: 'Ocean', stops: [{color:'#1a1a2e',pos:0},{color:'#16213e',pos:50},{color:'#0f3460',pos:100}], angle: 160, type:'linear' },
+  { name: 'Aurora', stops: [{color:'#00c9ff',pos:0},{color:'#92fe9d',pos:100}], angle: 90, type:'linear' },
+  { name: 'Fire', stops: [{color:'#f12711',pos:0},{color:'#f5af19',pos:100}], angle: 135, type:'linear' },
+  { name: 'Cosmic', stops: [{color:'#c471ed',pos:0},{color:'#12c2e9',pos:100}], angle: 90, type:'linear' },
+  { name: 'Neon', stops: [{color:'#00f260',pos:0},{color:'#0575e6',pos:100}], angle: 270, type:'linear' },
+  { name: 'Soft', stops: [{color:'#ffecd2',pos:0},{color:'#fcb69f',pos:100}], angle: 135, type:'linear' },
+  { name: 'Glow', stops: [{color:'#a78bfa',pos:0},{color:'#0f0c29',pos:100}], angle: 0, type:'radial', shape:'ellipse' },
+  { name: 'Candy', stops: [{color:'#f64f59',pos:0},{color:'#c471ed',pos:50},{color:'#12c2e9',pos:100}], angle: 90, type:'linear' },
+];
+
+function buildPresets() {
+  const grid = document.getElementById('presetGrid');
+  grid.innerHTML = '';
+  PRESETS.forEach((p, i) => {
+    const div = document.createElement('div');
+    div.className = 'preset-card';
+    const grad = buildGradientStr(p.type, p.angle || 135, p.shape || 'ellipse', p.stops);
+    div.style.background = grad;
+    div.title = p.name;
+    div.onclick = () => applyPreset(p);
+    div.innerHTML = `<span>${p.name}</span>`;
+    grid.appendChild(div);
+  });
+}
+
+function applyPreset(p) {
+  gradType = p.type;
+  angle = p.angle || 135;
+  radialShape = p.shape || 'ellipse';
+  stops = p.stops.map(s => ({ ...s }));
+  document.getElementById('angleSlider').value = angle;
+  document.getElementById('angleVal').textContent = angle + '°';
+  document.getElementById('btnLinear').classList.toggle('active', gradType === 'linear');
+  document.getElementById('btnRadial').classList.toggle('active', gradType === 'radial');
+  document.getElementById('angleRow').style.display = gradType === 'linear' ? '' : 'none';
+  document.getElementById('radialRow').style.display = gradType === 'radial' ? '' : 'none';
+  document.getElementById('btnEllipse').classList.toggle('active', radialShape === 'ellipse');
+  document.getElementById('btnCircle').classList.toggle('active', radialShape === 'circle');
+  renderStops();
+  update();
+}
+
+function setType(t) {
+  gradType = t;
+  document.getElementById('btnLinear').classList.toggle('active', t === 'linear');
+  document.getElementById('btnRadial').classList.toggle('active', t === 'radial');
+  document.getElementById('angleRow').style.display = t === 'linear' ? '' : 'none';
+  document.getElementById('radialRow').style.display = t === 'radial' ? '' : 'none';
+  update();
+}
+
+function setRadialShape(s) {
+  radialShape = s;
+  document.getElementById('btnEllipse').classList.toggle('active', s === 'ellipse');
+  document.getElementById('btnCircle').classList.toggle('active', s === 'circle');
+  update();
+}
+
+function onAngle() {
+  angle = parseInt(document.getElementById('angleSlider').value);
+  document.getElementById('angleVal').textContent = angle + '°';
+  update();
+}
+
+function buildGradientStr(type, ang, shape, sArr) {
+  const sorted = [...sArr].sort((a, b) => a.pos - b.pos);
+  const stopStr = sorted.map(s => `${s.color} ${s.pos}%`).join(', ');
+  if (type === 'radial') return `radial-gradient(${shape} at center, ${stopStr})`;
+  return `linear-gradient(${ang}deg, ${stopStr})`;
+}
+
+function update() {
+  const grad = buildGradientStr(gradType, angle, radialShape, stops);
+  document.getElementById('previewBox').style.background = grad;
+  const prop = `background: ${grad};`;
+  document.getElementById('cssOut').textContent = prop;
+}
+
+function renderStops() {
+  const list = document.getElementById('stopList');
+  list.innerHTML = '';
+  stops.forEach((s, i) => {
+    const row = document.createElement('div');
+    row.className = 'stop-row';
+    row.innerHTML = `
+      <div class="stop-swatch">
+        <div class="stop-swatch-bg" id="swatch-${i}" style="background:${s.color}"></div>
+        <input type="color" value="${s.color}" oninput="onColorChange(${i}, this.value)">
+      </div>
+      <div style="display:flex;flex-direction:column;gap:3px">
+        <div class="stop-label">${s.color.toUpperCase()}</div>
+        <input type="range" min="0" max="100" value="${s.pos}" style="accent-color:var(--accent);width:100%;cursor:pointer" oninput="onPosSlide(${i}, this.value)">
+      </div>
+      <input class="stop-pos" type="number" min="0" max="100" value="${s.pos}" oninput="onPosInput(${i}, this.value)">
+      <button class="stop-remove" onclick="removeStop(${i})" ${stops.length <= 2 ? 'disabled style="opacity:.3;cursor:default"' : ''}>×</button>
+    `;
+    list.appendChild(row);
+  });
+}
+
+function onColorChange(i, val) {
+  stops[i].color = val;
+  const swatch = document.getElementById('swatch-' + i);
+  if (swatch) swatch.style.background = val;
+  // update label
+  const labels = document.querySelectorAll('.stop-label');
+  if (labels[i]) labels[i].textContent = val.toUpperCase();
+  update();
+}
+
+function onPosSlide(i, val) {
+  stops[i].pos = parseInt(val);
+  // sync number input
+  const posInputs = document.querySelectorAll('.stop-pos');
+  if (posInputs[i]) posInputs[i].value = val;
+  update();
+}
+
+function onPosInput(i, val) {
+  const v = Math.max(0, Math.min(100, parseInt(val) || 0));
+  stops[i].pos = v;
+  const sliders = document.querySelectorAll('input[type=range]');
+  // find the right slider (index 0 is angle, then 1..n per stop)
+  // we'll re-render instead
+  update();
+}
+
+function addStop() {
+  const midPos = stops.length > 0 ? Math.round((stops[stops.length - 1].pos + stops[0].pos) / 2) : 50;
+  stops.push({ color: '#' + Math.floor(Math.random() * 0xffffff).toString(16).padStart(6, '0'), pos: midPos });
+  renderStops();
+  update();
+}
+
+function removeStop(i) {
+  if (stops.length <= 2) return;
+  stops.splice(i, 1);
+  renderStops();
+  update();
+}
+
+async function copyCSS(mode) {
+  const grad = buildGradientStr(gradType, angle, radialShape, stops);
+  let text;
+  if (mode === 'full') text = `background: ${grad};`;
+  else if (mode === 'value') text = grad;
+  else text = `background: ${grad};`;
+
+  try { await navigator.clipboard.writeText(text); } catch(e) {
+    const ta = document.createElement('textarea');
+    ta.value = text; document.body.appendChild(ta);
+    ta.select(); document.execCommand('copy');
+    document.body.removeChild(ta);
+  }
+  const ids = { full: 'copyFull', value: 'copyValue', bg: 'copyBg' };
+  const btn = document.getElementById(ids[mode]);
+  const orig = btn.textContent;
+  btn.textContent = '✓ Copied!';
+  btn.classList.add('copied');
+  setTimeout(() => { btn.textContent = orig; btn.classList.remove('copied'); }, 1800);
+}
+
+// Init
+buildPresets();
+renderStops();
+update();
+</script>
+</body>
+</html>
