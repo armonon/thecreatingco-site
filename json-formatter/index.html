@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>JSON Formatter & Validator Free Online — Pretty Print & Minify JSON</title>
+<meta name="description" content="Free online JSON formatter, validator, and minifier — paste JSON to pretty print, validate, and minify instantly. Syntax highlighting, error detection, copy. No account, runs in your browser.">
+<link rel="canonical" href="https://thecreatingco.com/json-formatter/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://thecreatingco.com/json-formatter/">
+<meta property="og:title" content="JSON Formatter & Validator Free Online">
+<meta property="og:description" content="Pretty print, validate, and minify JSON instantly. Syntax highlighting, error messages with line numbers. Free, no account, in-browser only.">
+<meta property="og:image" content="https://thecreatingco.com/assets/share/home.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="JSON Formatter & Validator Free Online">
+<meta name="twitter:description" content="Pretty print, validate, and minify JSON. Free, no account, in-browser only.">
+<meta name="twitter:image" content="https://thecreatingco.com/assets/share/home.jpg">
+<meta name="robots" content="index,follow">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://thecreatingco.com/json-formatter/#webpage","url":"https://thecreatingco.com/json-formatter/","name":"JSON Formatter & Validator Free Online — Pretty Print & Minify JSON","description":"Free online JSON formatter and validator. Paste JSON to pretty print with syntax highlighting, validate for errors, or minify. No account required.","isPartOf":{"@id":"https://thecreatingco.com/#website"},"breadcrumb":{"@id":"https://thecreatingco.com/json-formatter/#breadcrumb"}},{"@type":"SoftwareApplication","@id":"https://thecreatingco.com/json-formatter/#app","name":"Online JSON Formatter & Validator","applicationCategory":"DeveloperApplication","operatingSystem":"Any (web browser)","url":"https://thecreatingco.com/json-formatter/","description":"Free online JSON formatter, validator and minifier that pretty prints JSON with syntax highlighting, detects errors with line numbers, and minifies JSON for production. Runs entirely in your browser.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"The Creating Co","url":"https://thecreatingco.com"}},{"@type":"FAQPage","@id":"https://thecreatingco.com/json-formatter/#faq","mainEntity":[{"@type":"Question","name":"What is JSON?","acceptedAnswer":{"@type":"Answer","text":"JSON (JavaScript Object Notation) is a lightweight text format for storing and transporting data. It uses human-readable key/value pairs, arrays, strings, numbers, booleans, and null. JSON is language-independent and is the most widely used data interchange format for APIs and web services."}},{"@type":"Question","name":"What is JSON formatting / pretty printing?","acceptedAnswer":{"@type":"Answer","text":"JSON formatting (also called pretty printing) adds consistent indentation and newlines to raw JSON text, making it readable to humans. Minified JSON has no whitespace to reduce file size; formatted JSON is identical data presented with whitespace for readability. This tool converts between both."}},{"@type":"Question","name":"How do I validate JSON?","acceptedAnswer":{"@type":"Answer","text":"Paste your JSON into the input area on this page. The tool parses it immediately and either shows the formatted output (valid JSON) or highlights the error with a message and the approximate line number of the problem (invalid JSON). Common errors include missing quotes around keys, trailing commas, and mismatched brackets."}},{"@type":"Question","name":"What is JSON minification?","acceptedAnswer":{"@type":"Answer","text":"JSON minification removes all unnecessary whitespace (spaces, tabs, newlines) from a JSON document, producing the smallest possible valid JSON string. Minified JSON reduces file size and transfer time and is typically used in production API responses and bundled web apps where human readability is not needed."}},{"@type":"Question","name":"What are common JSON syntax errors?","acceptedAnswer":{"@type":"Answer","text":"The most common JSON errors are: (1) Single quotes instead of double quotes around strings or keys — JSON requires double quotes. (2) Trailing commas after the last item in an object or array — JSON does not allow trailing commas. (3) Unquoted keys — unlike JavaScript objects, all JSON keys must be quoted strings. (4) Comments — JSON has no comment syntax. (5) Undefined, NaN, or Infinity values — these are not valid JSON values."}},{"@type":"Question","name":"What is the difference between JSON and JavaScript objects?","acceptedAnswer":{"@type":"Answer","text":"JSON is a text format derived from JavaScript object syntax, but they are not the same. JavaScript objects can have unquoted keys, single-quoted strings, trailing commas, comments, and special values like undefined and NaN. JSON requires double-quoted keys and string values, disallows trailing commas and comments, and only allows strings, numbers, booleans, null, objects, and arrays as values."}},{"@type":"Question","name":"Can I format JSON from an API response?","acceptedAnswer":{"@type":"Answer","text":"Yes — just paste the raw JSON from your API response into the input area. This tool handles minified single-line JSON, multi-line JSON, and JSON with irregular indentation. It re-parses and re-formats the data into consistently indented, readable output. You can then switch to Minify mode to compact it back for use in code."}}]},{"@type":"BreadcrumbList","@id":"https://thecreatingco.com/json-formatter/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://thecreatingco.com/"},{"@type":"ListItem","position":2,"name":"Free Tools","item":"https://thecreatingco.com/free-tools/"},{"@type":"ListItem","position":3,"name":"JSON Formatter","item":"https://thecreatingco.com/json-formatter/"}]}]}</script>
+<style>
+:root{
+  --bg:#0d0d12;--surface:#16161e;--surface2:#1e1e2a;
+  --border:rgba(255,255,255,0.08);--text:#f0f0f8;--muted:#7878a0;
+  --accent:#f59e0b;--accent2:#38bdf8;
+  --accent-dim:rgba(245,158,11,0.12);--accent2-dim:rgba(56,189,248,0.12);
+  /* syntax colors */
+  --syn-key:#38bdf8;--syn-str:#4ade80;--syn-num:#fb923c;--syn-bool:#a78bfa;--syn-null:#94a3b8;
+}
+@media(prefers-color-scheme:light){
+  :root{--bg:#f8f8fc;--surface:#fff;--surface2:#f0f0f8;--border:rgba(0,0,0,0.08);--text:#111118;--muted:#6060a0;--accent:#d97706;--accent2:#0284c7;--accent-dim:rgba(217,119,6,0.10);--accent2-dim:rgba(2,132,199,0.10);--syn-key:#0284c7;--syn-str:#16a34a;--syn-num:#ea580c;--syn-bool:#7c3aed;--syn-null:#64748b;}
+}
+:root[data-theme="dark"]{--bg:#0d0d12;--surface:#16161e;--surface2:#1e1e2a;--border:rgba(255,255,255,0.08);--text:#f0f0f8;--muted:#7878a0;--accent:#f59e0b;--syn-key:#38bdf8;--syn-str:#4ade80;--syn-num:#fb923c;--syn-bool:#a78bfa;}
+:root[data-theme="light"]{--bg:#f8f8fc;--surface:#fff;--surface2:#f0f0f8;--border:rgba(0,0,0,0.08);--text:#111118;--muted:#6060a0;--accent:#d97706;--syn-key:#0284c7;--syn-str:#16a34a;--syn-num:#ea580c;--syn-bool:#7c3aed;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+header{border-bottom:1px solid var(--border);padding:16px}
+.nav-inner{max-width:960px;margin:auto;display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:800;font-size:17px;color:var(--text)}.logo span{color:var(--accent)}
+.hero{text-align:center;padding:48px 16px 32px;max-width:640px;margin:auto}
+.badge{display:inline-flex;align-items:center;gap:6px;background:var(--accent-dim);border:1px solid color-mix(in srgb,var(--accent) 30%,transparent);border-radius:999px;padding:4px 12px;font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;text-transform:uppercase;margin-bottom:18px}
+h1{font-size:clamp(26px,5vw,42px);font-weight:900;letter-spacing:-1px;line-height:1.1;margin-bottom:14px}
+.sub{font-size:16px;color:var(--muted);max-width:480px;margin:0 auto}
+
+/* ── Main tool layout ── */
+.tool-wrap{max-width:1100px;margin:0 auto;padding:0 16px 48px}
+.mode-row{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap;align-items:center}
+.mode-tab{background:var(--surface);border:1px solid var(--border);color:var(--muted);border-radius:8px;padding:8px 18px;font-size:13px;font-weight:700;cursor:pointer;transition:all .15s;font-family:inherit}
+.mode-tab.active{background:var(--accent-dim);border-color:color-mix(in srgb,var(--accent) 40%,transparent);color:var(--accent)}
+.indent-row{display:flex;align-items:center;gap:8px;margin-left:auto;font-size:13px;color:var(--muted)}
+.indent-row select{background:var(--surface);border:1px solid var(--border);color:var(--text);border-radius:6px;padding:5px 8px;font-size:13px;font-family:inherit;cursor:pointer}
+
+.editor-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:700px){.editor-grid{grid-template-columns:1fr}}
+
+.pane{display:flex;flex-direction:column;gap:0}
+.pane-header{background:var(--surface);border:1px solid var(--border);border-bottom:none;border-radius:10px 10px 0 0;padding:10px 14px;display:flex;align-items:center;justify-content:space-between;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+.pane-header button{background:none;border:1px solid var(--border);color:var(--muted);border-radius:6px;padding:4px 10px;font-size:11px;font-weight:700;cursor:pointer;font-family:inherit;transition:all .15s}
+.pane-header button:hover{color:var(--accent);border-color:var(--accent)}
+textarea.code{
+  flex:1;min-height:400px;background:var(--surface2);border:1px solid var(--border);
+  border-top:none;border-radius:0 0 10px 10px;padding:14px;
+  font-family:'Fira Code',Consolas,monospace;font-size:13px;
+  color:var(--text);resize:vertical;outline:none;transition:border-color .15s;line-height:1.7;
+}
+textarea.code:focus{border-color:var(--accent)}
+.output-pane{background:var(--surface2);border:1px solid var(--border);border-top:none;border-radius:0 0 10px 10px;overflow:auto;min-height:400px;padding:14px;font-family:'Fira Code',Consolas,monospace;font-size:13px;line-height:1.7;white-space:pre}
+.status-bar{margin-top:8px;font-size:12px;padding:8px 12px;border-radius:8px;display:none}
+.status-bar.ok{display:block;background:rgba(74,222,128,0.1);border:1px solid rgba(74,222,128,0.3);color:#4ade80}
+.status-bar.err{display:block;background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.3);color:#ef4444}
+
+/* Syntax highlighting spans */
+.s-key{color:var(--syn-key)}
+.s-str{color:var(--syn-str)}
+.s-num{color:var(--syn-num)}
+.s-bool{color:var(--syn-bool)}
+.s-null{color:var(--syn-null)}
+
+/* Info section */
+.section{max-width:860px;margin:0 auto;padding:0 16px 48px}
+.section-title{font-size:21px;font-weight:800;margin-bottom:8px}
+.section-sub{color:var(--muted);margin-bottom:24px}
+.tips-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px;margin-bottom:32px}
+.tip-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px}
+.tip-icon{font-size:20px;margin-bottom:8px}
+.tip-title{font-weight:700;font-size:14px;margin-bottom:6px}
+.tip-body{font-size:13px;color:var(--muted);line-height:1.6}
+code{background:var(--surface2);border:1px solid var(--border);border-radius:4px;padding:2px 6px;font-size:12px;font-family:monospace}
+.faq{display:grid;gap:12px}
+.faq-item{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px}
+.faq-q{font-weight:700;margin-bottom:8px;font-size:15px}
+.faq-a{font-size:14px;color:var(--muted)}
+footer{border-top:1px solid var(--border);padding:32px 16px;text-align:center}
+.footer-inner{max-width:860px;margin:auto}
+.footer-links{display:flex;flex-wrap:wrap;gap:16px;justify-content:center;margin-bottom:12px;font-size:14px}
+.footer-copy{font-size:12px;color:var(--muted)}
+</style>
+</head>
+<body>
+<header>
+  <div class="nav-inner">
+    <a class="logo" href="https://thecreatingco.com/">the<span>creating</span>co</a>
+    <nav style="display:flex;gap:20px;font-size:14px;font-weight:600">
+      <a href="https://thecreatingco.com/free-tools/" style="color:var(--muted)">Free Tools</a>
+      <a href="https://thecreatingco.com/products/stemdeck/" style="color:var(--muted)">StemDeck</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<div class="hero">
+  <div class="badge">🛠️ Free Developer Tool</div>
+  <h1>JSON Formatter & Validator</h1>
+  <p class="sub">Paste JSON to instantly pretty print with syntax highlighting, validate for errors, or minify for production. Runs entirely in your browser — nothing is sent to any server.</p>
+</div>
+
+<div class="tool-wrap">
+  <div class="mode-row">
+    <button class="mode-tab active" onclick="setMode('format')" id="tab-format">Pretty Print</button>
+    <button class="mode-tab" onclick="setMode('minify')" id="tab-minify">Minify</button>
+    <button class="mode-tab" onclick="setMode('validate')" id="tab-validate">Validate Only</button>
+    <div class="indent-row">
+      Indent:
+      <select id="indent-sel" onchange="process()">
+        <option value="2">2 spaces</option>
+        <option value="4">4 spaces</option>
+        <option value="tab">Tab</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="editor-grid">
+    <!-- Input -->
+    <div class="pane">
+      <div class="pane-header">
+        <span>Input JSON</span>
+        <div style="display:flex;gap:6px">
+          <button onclick="loadSample()">Sample</button>
+          <button onclick="clearInput()">Clear</button>
+        </div>
+      </div>
+      <textarea class="code" id="input-json" placeholder='Paste your JSON here…&#10;&#10;{"name":"example","values":[1,2,3]}' oninput="onInput()" spellcheck="false"></textarea>
+    </div>
+
+    <!-- Output -->
+    <div class="pane">
+      <div class="pane-header">
+        <span id="output-label">Formatted output</span>
+        <button onclick="copyOutput()">Copy</button>
+      </div>
+      <div class="output-pane" id="output-pane" aria-live="polite"></div>
+    </div>
+  </div>
+  <div class="status-bar" id="status-bar"></div>
+</div>
+
+<!-- Tips -->
+<section class="section">
+  <h2 class="section-title">Common JSON errors to watch for</h2>
+  <p class="section-sub">This validator will catch these — but knowing why they happen helps you fix them fast.</p>
+  <div class="tips-grid">
+    <div class="tip-card">
+      <div class="tip-icon">❝</div>
+      <div class="tip-title">Single quotes instead of double quotes</div>
+      <div class="tip-body">JSON requires double quotes everywhere. <code>{'key': 'value'}</code> is invalid JavaScript-style; <code>{"key": "value"}</code> is correct JSON.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">⚠️</div>
+      <div class="tip-title">Trailing commas</div>
+      <div class="tip-body">JSON does not allow trailing commas after the last item in an object or array. <code>[1, 2, 3,]</code> and <code>{"a":1,}</code> are both invalid JSON.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">🔑</div>
+      <div class="tip-title">Unquoted keys</div>
+      <div class="tip-body">Unlike JavaScript objects, all JSON keys must be double-quoted strings. <code>{name: "Alice"}</code> is invalid; <code>{"name": "Alice"}</code> is correct.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">💬</div>
+      <div class="tip-title">Comments not allowed</div>
+      <div class="tip-body">JSON has no comment syntax. <code>// comment</code> and <code>/* block */</code> will cause a parse error. Strip all comments before validating or transmitting JSON.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">∞</div>
+      <div class="tip-title">Invalid values</div>
+      <div class="tip-body">JSON only allows: strings, numbers, booleans (<code>true</code>/<code>false</code>), <code>null</code>, objects, and arrays. Values like <code>undefined</code>, <code>NaN</code>, <code>Infinity</code> are not valid JSON.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">🔗</div>
+      <div class="tip-title">Duplicate keys</div>
+      <div class="tip-body">Technically valid JSON (parsers accept it), but duplicate keys produce unpredictable behavior. Most parsers use the last occurrence. Avoid duplicating keys in the same object.</div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" style="padding-top:0">
+  <h2 class="section-title">Frequently asked questions</h2>
+  <div class="faq">
+    <div class="faq-item">
+      <div class="faq-q">What is JSON?</div>
+      <div class="faq-a">JSON (JavaScript Object Notation) is a lightweight text format for storing and exchanging data. It uses human-readable key/value pairs, arrays, strings, numbers, booleans, and null. JSON is the most common data format for web APIs.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What is the difference between formatted and minified JSON?</div>
+      <div class="faq-a">Formatted (pretty printed) JSON adds indentation and line breaks to make it readable to humans. Minified JSON removes all unnecessary whitespace to reduce file size. Both contain the exact same data. Use formatted for debugging; use minified in production to reduce transfer size.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How do I fix a "Unexpected token" JSON error?</div>
+      <div class="faq-a">Paste your JSON here and look at the error message and line number. Common causes: single quotes (replace with double quotes), trailing commas (remove the last comma in the object or array), unquoted keys (add double quotes around them), or JavaScript-specific values like <code>undefined</code> (replace with <code>null</code>).</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Is my data safe to paste here?</div>
+      <div class="faq-a">Yes — this tool runs entirely in your browser using the native <code>JSON.parse()</code> and <code>JSON.stringify()</code> functions. No data is sent to any server. You can verify this by disconnecting from the internet and the formatter will still work.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What is the difference between JSON and JSON5?</div>
+      <div class="faq-a">JSON5 is a superset of JSON that allows single-quoted strings, unquoted keys, trailing commas, comments, and multi-line strings — making it more like JavaScript object syntax. This tool validates standard JSON (RFC 8259). JSON5 files that use these features will show as invalid here because standard JSON parsers do not accept them.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Can I format JSON from an API response?</div>
+      <div class="faq-a">Yes — paste any raw API response (minified single-line or multi-line JSON) into the input. The tool re-parses and reformats it with consistent indentation. Switch to Minify mode to compact it back into a single line.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What indentation should I use?</div>
+      <div class="faq-a">2 spaces is the most common convention for JSON (used by most APIs and tools like Prettier). 4 spaces is common in Python-generated JSON. Tabs are sometimes preferred in codebases that use tab-based indentation. All three produce identical data — only the whitespace differs.</div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="https://thecreatingco.com/">Home</a>
+      <a href="https://thecreatingco.com/free-tools/">Free Tools</a>
+      <a href="https://thecreatingco.com/base64-encoder/">Base64 Encoder</a>
+      <a href="https://thecreatingco.com/password-generator/">Password Generator</a>
+      <a href="https://thecreatingco.com/unit-converter/">Unit Converter</a>
+    </div>
+    <div class="footer-copy">© 2026 The Creating Co · <a href="https://thecreatingco.com/privacy/">Privacy</a> · <a href="https://thecreatingco.com/terms/">Terms</a></div>
+  </div>
+</footer>
+
+<style>
+.related-tools{background:#16161f;border-top:1px solid #2a2a3d;padding:2.5rem 1.5rem;margin-top:2rem}
+.related-tools h2{font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#7a7a98;margin-bottom:1.25rem}
+.related-tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:.75rem;max-width:960px}
+.related-tools-grid a{display:block;background:#0d0d14;border:1px solid #2a2a3d;border-radius:8px;padding:.9rem 1rem;color:#e8e8f0;text-decoration:none;font-size:.875rem;font-weight:600;transition:border-color .2s,color .2s}
+.related-tools-grid a:hover{border-color:#c8ff00;color:#c8ff00}
+.related-tools-all{display:block;margin-top:1rem;font-size:.8rem;color:#7a7a98;text-decoration:none}
+.related-tools-all:hover{color:#c8ff00}
+@media(prefers-color-scheme:light){.related-tools{background:#f0f0f8;border-top-color:#d8d8e8}.related-tools-grid a{background:#fff;border-color:#d8d8e8;color:#1a1a2e}.related-tools-grid a:hover{border-color:#556600;color:#334400}.related-tools-all{color:#6a6a88}.related-tools-all:hover{color:#334400}}
+</style>
+
+<section class="related-tools" aria-label="Related free tools">
+  <h2>Related Free Tools</h2>
+  <div class="related-tools-grid">
+    <a href="/base64-encoder/">Base64 Encoder</a>
+    <a href="/password-generator/">Password Generator</a>
+    <a href="/unit-converter/">Unit Converter</a>
+    <a href="/word-counter/">Word Counter</a>
+    <a href="/qr-generator/">QR Generator</a>
+  </div>
+  <a href="/free-tools/" class="related-tools-all">Browse all 38 free tools →</a>
+</section>
+
+<script>
+const SAMPLE = `{
+  "name": "The Creating Co",
+  "url": "https://thecreatingco.com",
+  "tools": 38,
+  "features": ["free", "no-account", "in-browser"],
+  "active": true,
+  "meta": null
+}`;
+
+let mode = 'format';
+let lastOutput = '';
+
+function setMode(m) {
+  mode = m;
+  ['format','minify','validate'].forEach(id => {
+    document.getElementById('tab-'+id).classList.toggle('active', id === m);
+  });
+  document.getElementById('output-label').textContent =
+    m === 'minify' ? 'Minified output' :
+    m === 'validate' ? 'Validation result' : 'Formatted output';
+  process();
+}
+
+function loadSample() {
+  document.getElementById('input-json').value = SAMPLE;
+  process();
+}
+
+function clearInput() {
+  document.getElementById('input-json').value = '';
+  document.getElementById('output-pane').innerHTML = '';
+  document.getElementById('status-bar').className = 'status-bar';
+  lastOutput = '';
+}
+
+function onInput() {
+  clearTimeout(onInput._t);
+  onInput._t = setTimeout(process, 250);
+}
+
+function process() {
+  const raw = document.getElementById('input-json').value.trim();
+  const pane = document.getElementById('output-pane');
+  const bar  = document.getElementById('status-bar');
+
+  if (!raw) {
+    pane.innerHTML = '';
+    bar.className = 'status-bar';
+    lastOutput = '';
+    return;
+  }
+
+  let parsed;
+  try {
+    parsed = JSON.parse(raw);
+  } catch(e) {
+    pane.innerHTML = '';
+    bar.className = 'status-bar err';
+    bar.textContent = '✗ Invalid JSON — ' + e.message;
+    lastOutput = '';
+    return;
+  }
+
+  if (mode === 'validate') {
+    pane.innerHTML = '✓ Valid JSON';
+    pane.style.color = 'var(--syn-str)';
+    bar.className = 'status-bar ok';
+    bar.textContent = '✓ Valid JSON — parsed successfully';
+    lastOutput = '';
+    return;
+  }
+
+  pane.style.color = '';
+  const indentSel = document.getElementById('indent-sel').value;
+  const indent = indentSel === 'tab' ? '\t' : parseInt(indentSel);
+
+  let text;
+  if (mode === 'minify') {
+    text = JSON.stringify(parsed);
+  } else {
+    text = JSON.stringify(parsed, null, indent);
+  }
+
+  lastOutput = text;
+  pane.innerHTML = syntaxHighlight(escapeHtml(text));
+  bar.className = 'status-bar ok';
+  bar.textContent = `✓ Valid JSON — ${countKeys(parsed)} keys, ${text.length.toLocaleString()} characters`;
+}
+
+function escapeHtml(s) {
+  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+function syntaxHighlight(json) {
+  // Simple regex-based highlighter on already-escaped JSON
+  return json
+    .replace(/("(\\u[a-fA-F0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g, match => {
+      if (/^"/.test(match)) {
+        if (/:$/.test(match)) return `<span class="s-key">${match}</span>`;
+        return `<span class="s-str">${match}</span>`;
+      }
+      if (/true|false/.test(match)) return `<span class="s-bool">${match}</span>`;
+      if (/null/.test(match)) return `<span class="s-null">${match}</span>`;
+      return `<span class="s-num">${match}</span>`;
+    });
+}
+
+function countKeys(obj, count=0) {
+  if (typeof obj === 'object' && obj !== null) {
+    if (Array.isArray(obj)) {
+      obj.forEach(v => { count = countKeys(v, count); });
+    } else {
+      const keys = Object.keys(obj);
+      count += keys.length;
+      keys.forEach(k => { count = countKeys(obj[k], count); });
+    }
+  }
+  return count;
+}
+
+function copyOutput() {
+  if (!lastOutput) return;
+  navigator.clipboard.writeText(lastOutput).then(() => {
+    const btn = document.querySelector('[onclick="copyOutput()"]');
+    const orig = btn.textContent;
+    btn.textContent = '✓ Copied';
+    setTimeout(() => btn.textContent = orig, 1500);
+  });
+}
+</script>
+</body>
+</html>
