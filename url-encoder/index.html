@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>URL Encoder & Decoder Free Online — Encode/Decode URLs in Your Browser</title>
+<meta name="description" content="Free online URL encoder and decoder — encode special characters in URLs or decode encoded strings instantly. Supports full URL and query string encoding. Runs in your browser, no account needed.">
+<link rel="canonical" href="https://thecreatingco.com/url-encoder/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://thecreatingco.com/url-encoder/">
+<meta property="og:title" content="URL Encoder & Decoder Free Online">
+<meta property="og:description" content="Encode special characters in URLs or decode encoded strings instantly. Free, no account, runs in your browser.">
+<meta property="og:image" content="https://thecreatingco.com/assets/share/home.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="URL Encoder & Decoder Free Online">
+<meta name="twitter:description" content="Encode or decode URL strings instantly. Free, no account.">
+<meta name="twitter:image" content="https://thecreatingco.com/assets/share/home.jpg">
+<meta name="robots" content="index,follow">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://thecreatingco.com/url-encoder/#webpage","url":"https://thecreatingco.com/url-encoder/","name":"URL Encoder & Decoder Free Online","description":"Free online URL encoder and decoder. Encode special characters for use in URLs or query strings, or decode percent-encoded strings back to readable text. Runs entirely in your browser.","isPartOf":{"@id":"https://thecreatingco.com/#website"},"breadcrumb":{"@id":"https://thecreatingco.com/url-encoder/#breadcrumb"}},{"@type":"SoftwareApplication","@id":"https://thecreatingco.com/url-encoder/#app","name":"Online URL Encoder and Decoder","applicationCategory":"DeveloperApplication","operatingSystem":"Any (web browser)","url":"https://thecreatingco.com/url-encoder/","description":"Free online tool to encode URLs using encodeURIComponent or encodeURI, or decode percent-encoded strings. Supports full URL mode (preserves slashes and protocol) and query string mode. Runs entirely in your browser.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"The Creating Co","url":"https://thecreatingco.com"}},{"@type":"FAQPage","@id":"https://thecreatingco.com/url-encoder/#faq","mainEntity":[{"@type":"Question","name":"What is URL encoding?","acceptedAnswer":{"@type":"Answer","text":"URL encoding (also called percent encoding) converts characters that are not allowed in a URL into a safe format using a percent sign followed by two hexadecimal digits. For example, a space becomes %20, an ampersand becomes %26, and a plus sign becomes %2B. This ensures URLs remain valid when they contain special characters like spaces, quotes, or non-ASCII text."}},{"@type":"Question","name":"What is the difference between encodeURI and encodeURIComponent?","acceptedAnswer":{"@type":"Answer","text":"encodeURI encodes a full URL but leaves characters like /, ?, :, #, and @ unencoded because they are structural parts of a URL. encodeURIComponent encodes everything except letters, digits, and the characters - _ . ! ~ * ' ( ), making it suitable for encoding a single parameter value within a query string. Use encodeURI for full URLs and encodeURIComponent for values that will be used as part of a URL parameter."}},{"@type":"Question","name":"Why does a space become %20 or a + sign in URLs?","acceptedAnswer":{"@type":"Answer","text":"In the original percent-encoding standard (RFC 3986), a space becomes %20. In HTML form encoding (application/x-www-form-urlencoded, used by HTML forms and many older APIs), a space becomes + instead. Both are valid in different contexts: use %20 for modern REST APIs and path segments; + is mainly seen in query strings from HTML form submissions. This tool uses %20 (the standard)."}},{"@type":"Question","name":"How do I encode a URL parameter value?","acceptedAnswer":{"@type":"Answer","text":"Select 'Query string / param value' mode, paste your value, and click Encode. This uses encodeURIComponent, which encodes spaces as %20 and also encodes characters like &, =, +, and / that would otherwise break the URL structure. Only use full URL mode if you are encoding an entire URL rather than a single parameter value."}},{"@type":"Question","name":"Can I decode multiple encoded values at once?","acceptedAnswer":{"@type":"Answer","text":"Yes — paste any text that contains percent-encoded sequences and click Decode. The tool decodes all %XX sequences in the input at once. You can paste an entire query string, a full URL, or just a few encoded values and all will be decoded."}},{"@type":"Question","name":"What characters must be encoded in a URL?","acceptedAnswer":{"@type":"Answer","text":"Characters that must be percent-encoded in a URL include: spaces, <>, {}, |, \\, ^, `, and non-ASCII characters such as accented letters, Chinese characters, or emoji. Characters like ?, &, =, #, /, :, @, and + have special meaning in URLs and must be encoded if they appear as literal values in parameter data (not as URL structure)."}},{"@type":"Question","name":"Is my data sent to a server when I encode or decode?","acceptedAnswer":{"@type":"Answer","text":"No — all encoding and decoding happens entirely in your browser using JavaScript's built-in encodeURIComponent, encodeURI, decodeURIComponent, and decodeURI functions. Your input is never sent to any external server."}}]},{"@type":"BreadcrumbList","@id":"https://thecreatingco.com/url-encoder/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://thecreatingco.com/"},{"@type":"ListItem","position":2,"name":"Free Tools","item":"https://thecreatingco.com/free-tools/"},{"@type":"ListItem","position":3,"name":"URL Encoder","item":"https://thecreatingco.com/url-encoder/"}]}]}</script>
+<style>
+:root{
+  --bg:#0d0d12;--surface:#16161e;--surface2:#1e1e2a;
+  --border:rgba(255,255,255,0.08);--text:#f0f0f8;--muted:#7878a0;
+  --accent:#38bdf8;--accent2:#818cf8;
+  --accent-dim:rgba(56,189,248,0.12);--accent2-dim:rgba(129,140,248,0.12);
+}
+@media(prefers-color-scheme:light){
+  :root{--bg:#f8f8fc;--surface:#fff;--surface2:#f0f0f8;--border:rgba(0,0,0,0.08);--text:#111118;--muted:#6060a0;--accent:#0284c7;--accent2:#4f46e5;--accent-dim:rgba(2,132,199,0.10);--accent2-dim:rgba(79,70,229,0.10);}
+}
+:root[data-theme="dark"]{--bg:#0d0d12;--surface:#16161e;--surface2:#1e1e2a;--border:rgba(255,255,255,0.08);--text:#f0f0f8;--muted:#7878a0;--accent:#38bdf8;--accent2:#818cf8;}
+:root[data-theme="light"]{--bg:#f8f8fc;--surface:#fff;--surface2:#f0f0f8;--border:rgba(0,0,0,0.08);--text:#111118;--muted:#6060a0;--accent:#0284c7;--accent2:#4f46e5;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+header{border-bottom:1px solid var(--border);padding:16px}
+.nav-inner{max-width:860px;margin:auto;display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:800;font-size:17px;color:var(--text)}.logo span{color:var(--accent)}
+.hero{text-align:center;padding:52px 16px 36px;max-width:640px;margin:auto}
+.badge{display:inline-flex;align-items:center;gap:6px;background:var(--accent-dim);border:1px solid color-mix(in srgb,var(--accent) 30%,transparent);border-radius:999px;padding:4px 12px;font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;text-transform:uppercase;margin-bottom:18px}
+h1{font-size:clamp(28px,5vw,44px);font-weight:900;letter-spacing:-1px;line-height:1.1;margin-bottom:14px}
+.sub{font-size:17px;color:var(--muted);max-width:480px;margin:0 auto}
+
+/* Tool */
+.tool-wrap{max-width:680px;margin:0 auto;padding:0 16px 52px}
+.tool-card{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:28px 24px}
+
+/* Mode tabs */
+.mode-tabs{display:flex;gap:6px;margin-bottom:20px;flex-wrap:wrap}
+.mode-tab{padding:7px 14px;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;border:1px solid var(--border);background:var(--surface2);color:var(--muted);transition:all .15s;font-family:inherit}
+.mode-tab.active{background:var(--accent-dim);border-color:color-mix(in srgb,var(--accent) 40%,transparent);color:var(--accent)}
+
+.label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:8px;display:block}
+textarea{
+  width:100%;height:130px;background:var(--surface2);border:1px solid var(--border);
+  border-radius:10px;padding:14px;font-family:ui-monospace,monospace;font-size:13px;
+  color:var(--text);resize:vertical;outline:none;transition:border-color .15s;
+}
+textarea:focus{border-color:var(--accent)}
+
+.btn-row{display:flex;gap:8px;margin:14px 0}
+.btn{padding:12px 20px;border-radius:9px;font-weight:800;font-size:14px;cursor:pointer;border:none;transition:all .15s;font-family:inherit}
+.btn-primary{background:var(--accent);color:#fff;flex:1}
+.btn-primary:hover{opacity:.88}
+.btn-secondary{background:var(--surface2);border:1px solid var(--border);color:var(--text)}
+.btn-secondary:hover{border-color:var(--accent);color:var(--accent)}
+.btn-swap{background:var(--surface2);border:1px solid var(--border);color:var(--muted)}
+.btn-swap:hover{border-color:var(--accent);color:var(--accent)}
+
+.output-wrap{position:relative}
+.output{
+  width:100%;min-height:100px;background:var(--surface2);border:1px solid var(--border);
+  border-radius:10px;padding:14px;font-family:ui-monospace,monospace;font-size:13px;
+  color:var(--text);word-break:break-all;white-space:pre-wrap;
+}
+.copy-btn{position:absolute;top:10px;right:10px;background:var(--accent-dim);border:1px solid color-mix(in srgb,var(--accent) 30%,transparent);color:var(--accent);padding:4px 12px;border-radius:6px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit}
+.copy-btn:hover{opacity:.8}
+.status{font-size:12px;color:var(--muted);margin-top:8px;min-height:18px}
+.status.err{color:#ef4444}
+
+/* Reference table */
+.ref-table{width:100%;border-collapse:collapse;font-size:13px;margin-top:16px}
+.ref-table th{background:var(--surface2);padding:8px 12px;text-align:left;font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);border-bottom:1px solid var(--border)}
+.ref-table td{padding:8px 12px;border-bottom:1px solid var(--border);font-family:ui-monospace,monospace}
+.ref-table tr:last-child td{border-bottom:none}
+
+/* Sections */
+.section{max-width:860px;margin:0 auto;padding:0 16px 48px}
+.section-title{font-size:22px;font-weight:800;margin-bottom:8px}
+.section-sub{color:var(--muted);margin-bottom:24px}
+.use-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;margin-bottom:32px}
+.use-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px}
+.use-icon{font-size:22px;margin-bottom:8px}
+.use-title{font-weight:700;font-size:14px;margin-bottom:6px}
+.use-desc{font-size:13px;color:var(--muted)}
+.faq{display:grid;gap:12px}
+.faq-item{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px}
+.faq-q{font-weight:700;margin-bottom:8px}
+.faq-a{font-size:14px;color:var(--muted)}
+footer{border-top:1px solid var(--border);padding:32px 16px;text-align:center}
+.footer-inner{max-width:860px;margin:auto}
+.footer-links{display:flex;flex-wrap:wrap;gap:16px;justify-content:center;margin-bottom:12px;font-size:14px}
+.footer-copy{font-size:12px;color:var(--muted)}
+</style>
+</head>
+<body>
+<header>
+  <div class="nav-inner">
+    <a class="logo" href="https://thecreatingco.com/">the<span>creating</span>co</a>
+    <nav style="display:flex;gap:20px;font-size:14px;font-weight:600">
+      <a href="https://thecreatingco.com/free-tools/" style="color:var(--muted)">Free Tools</a>
+      <a href="https://thecreatingco.com/products/stemdeck/" style="color:var(--muted)">StemDeck</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<div class="hero">
+  <div class="badge">🔗 Developer Tool</div>
+  <h1>URL Encoder &amp; Decoder</h1>
+  <p class="sub">Encode special characters for safe use in URLs and query strings, or decode percent-encoded strings back to readable text. Free, instant, runs entirely in your browser.</p>
+</div>
+
+<div class="tool-wrap">
+  <div class="tool-card">
+    <!-- Mode selector -->
+    <div class="mode-tabs">
+      <button class="mode-tab active" id="mode-component" onclick="setMode('component')">Query string / param value</button>
+      <button class="mode-tab" id="mode-uri" onclick="setMode('uri')">Full URL</button>
+    </div>
+    <p style="font-size:12px;color:var(--muted);margin-bottom:18px" id="mode-hint">Encodes everything except letters, digits, and <code style="background:var(--surface2);padding:1px 4px;border-radius:3px">- _ . ! ~ * ' ( )</code> — best for parameter values.</p>
+
+    <!-- Input -->
+    <span class="label">Input</span>
+    <textarea id="input-text" placeholder="Paste your URL or text here…" oninput="autoConvert()"></textarea>
+
+    <div class="btn-row">
+      <button class="btn btn-primary" onclick="encode()">Encode →</button>
+      <button class="btn btn-primary" style="background:var(--accent2)" onclick="decode()">← Decode</button>
+      <button class="btn btn-swap" onclick="swapFields()" title="Swap input and output">⇄</button>
+      <button class="btn btn-secondary" onclick="clearAll()">Clear</button>
+    </div>
+
+    <!-- Output -->
+    <span class="label">Output</span>
+    <div class="output-wrap">
+      <div class="output" id="output-text"></div>
+      <button class="copy-btn" onclick="copyOutput()">Copy</button>
+    </div>
+    <div class="status" id="status"></div>
+  </div>
+
+  <!-- Reference table -->
+  <div style="margin-top:20px">
+    <p style="font-size:13px;font-weight:700;margin-bottom:12px;color:var(--muted)">Common encodings</p>
+    <table class="ref-table">
+      <thead><tr><th>Character</th><th>Encoded</th><th>Name</th></tr></thead>
+      <tbody>
+        <tr><td>space</td><td>%20</td><td>Space</td></tr>
+        <tr><td>!</td><td>%21</td><td>Exclamation mark</td></tr>
+        <tr><td>#</td><td>%23</td><td>Hash / Fragment</td></tr>
+        <tr><td>$</td><td>%24</td><td>Dollar sign</td></tr>
+        <tr><td>&</td><td>%26</td><td>Ampersand</td></tr>
+        <tr><td>'</td><td>%27</td><td>Single quote</td></tr>
+        <tr><td>+</td><td>%2B</td><td>Plus sign</td></tr>
+        <tr><td>,</td><td>%2C</td><td>Comma</td></tr>
+        <tr><td>/</td><td>%2F</td><td>Slash</td></tr>
+        <tr><td>:</td><td>%3A</td><td>Colon</td></tr>
+        <tr><td>=</td><td>%3D</td><td>Equals sign</td></tr>
+        <tr><td>?</td><td>%3F</td><td>Question mark</td></tr>
+        <tr><td>@</td><td>%40</td><td>At sign</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Use cases -->
+<section class="section">
+  <h2 class="section-title">When do you need URL encoding?</h2>
+  <p class="section-sub">Any time a URL contains characters with special meaning, encoding ensures the data passes through correctly without breaking the URL structure.</p>
+  <div class="use-grid">
+    <div class="use-card">
+      <div class="use-icon">🔗</div>
+      <div class="use-title">Query string parameters</div>
+      <div class="use-desc">When building a URL with data in the query string (e.g., a search query containing spaces or &amp; symbols), encode each parameter value to avoid breaking the URL.</div>
+    </div>
+    <div class="use-card">
+      <div class="use-icon">🌐</div>
+      <div class="use-title">API requests</div>
+      <div class="use-desc">REST APIs often require URL-encoded parameter values in GET requests. Encode values like access tokens, search strings, or date ranges before appending them to API URLs.</div>
+    </div>
+    <div class="use-card">
+      <div class="use-icon">📧</div>
+      <div class="use-title">mailto links</div>
+      <div class="use-desc">Email subjects and bodies in mailto: links must be URL encoded. Spaces, line breaks, and special characters in subjects like "Re: Meeting &amp; Notes" must be encoded for the link to work.</div>
+    </div>
+    <div class="use-card">
+      <div class="use-icon">🔍</div>
+      <div class="use-title">Search URLs</div>
+      <div class="use-desc">Search engines and site search features use URL-encoded query strings. If you're building a search redirect or deep link with a specific query, encode the search term first.</div>
+    </div>
+    <div class="use-card">
+      <div class="use-icon">🗺️</div>
+      <div class="use-title">Maps and location links</div>
+      <div class="use-desc">Place names with spaces, commas, and special characters in Google Maps or other mapping URLs must be encoded. "123 Main St, New York" becomes "123%20Main%20St%2C%20New%20York".</div>
+    </div>
+    <div class="use-card">
+      <div class="use-icon">🛠️</div>
+      <div class="use-title">Debugging encoded URLs</div>
+      <div class="use-desc">When you encounter a URL full of % sequences and need to read it, paste it into the decoder to get the readable original. Useful for debugging API responses or log files.</div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" style="padding-top:0">
+  <h2 class="section-title">Frequently asked questions</h2>
+  <div class="faq">
+    <div class="faq-item">
+      <div class="faq-q">What is URL encoding?</div>
+      <div class="faq-a">URL encoding (percent encoding) converts characters that are not allowed or have special meaning in a URL into a safe format using % followed by two hex digits. A space becomes %20, an ampersand becomes %26. This ensures the URL remains valid and the data is not misinterpreted as URL structure.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What is the difference between encodeURI and encodeURIComponent?</div>
+      <div class="faq-a">encodeURI encodes a full URL but preserves structural characters like /, ?, :, #, and @. encodeURIComponent encodes everything except letters, digits, and <code style="background:var(--surface2);padding:1px 4px;border-radius:3px">- _ . ! ~ * ' ( )</code>, making it suitable for values inside query strings. Use encodeURIComponent (the "Query string" mode) for parameter values, and encodeURI (the "Full URL" mode) only for whole URLs.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Why does a space sometimes appear as + rather than %20?</div>
+      <div class="faq-a">The + encoding for spaces comes from the HTML form encoding standard (application/x-www-form-urlencoded), used when browsers submit HTML forms. The modern RFC 3986 standard uses %20. This tool uses %20, which is safe in all contexts. If your target system expects + signs, replace %20 with + after encoding.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">When should I encode a full URL vs. just a parameter value?</div>
+      <div class="faq-a">Encode a parameter value (use "Query string" mode) when you're adding data inside a URL — e.g., the search term in ?q=hello+world, or a redirect URL in ?return=https://.... Encode a full URL (use "Full URL" mode) only when the entire URL string itself is a value being embedded somewhere else. For most use cases, query string mode is what you need.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Is my data sent to a server when I encode or decode?</div>
+      <div class="faq-a">No — encoding and decoding happens entirely in your browser using JavaScript's built-in encodeURIComponent, encodeURI, decodeURIComponent, and decodeURI functions. Nothing you type or paste is sent to any server.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What characters must be percent-encoded in a URL?</div>
+      <div class="faq-a">Characters that must be encoded include: space, ", &lt;, &gt;, {, }, |, \, ^, `, and any non-ASCII characters (accented letters, emoji, etc.). Characters like ?, &amp;, =, #, /, :, @, and + have special meaning in URLs and must be encoded when they appear as literal values in parameter data rather than as URL structure.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Can I decode a whole URL at once?</div>
+      <div class="faq-a">Yes — paste the entire URL and click Decode. All %XX sequences in the URL are decoded at once. This is useful for making an encoded URL readable, debugging API responses, or converting log file URLs back to their original form.</div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="https://thecreatingco.com/">Home</a>
+      <a href="https://thecreatingco.com/free-tools/">Free Tools</a>
+      <a href="https://thecreatingco.com/base64-encoder/">Base64 Encoder</a>
+      <a href="https://thecreatingco.com/json-formatter/">JSON Formatter</a>
+      <a href="https://thecreatingco.com/password-generator/">Password Generator</a>
+    </div>
+    <div class="footer-copy">© 2026 The Creating Co · <a href="https://thecreatingco.com/privacy/">Privacy</a> · <a href="https://thecreatingco.com/terms/">Terms</a></div>
+  </div>
+</footer>
+
+<style>
+.related-tools{background:#16161f;border-top:1px solid #2a2a3d;padding:2.5rem 1.5rem;margin-top:2rem}
+.related-tools h2{font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#7a7a98;margin-bottom:1.25rem}
+.related-tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:.75rem;max-width:960px}
+.related-tools-grid a{display:block;background:#0d0d14;border:1px solid #2a2a3d;border-radius:8px;padding:.9rem 1rem;color:#e8e8f0;text-decoration:none;font-size:.875rem;font-weight:600;transition:border-color .2s,color .2s}
+.related-tools-grid a:hover{border-color:#c8ff00;color:#c8ff00}
+.related-tools-all{display:block;margin-top:1rem;font-size:.8rem;color:#7a7a98;text-decoration:none}
+.related-tools-all:hover{color:#c8ff00}
+@media(prefers-color-scheme:light){.related-tools{background:#f0f0f8;border-top-color:#d8d8e8}.related-tools-grid a{background:#fff;border-color:#d8d8e8;color:#1a1a2e}.related-tools-grid a:hover{border-color:#556600;color:#334400}.related-tools-all{color:#6a6a88}.related-tools-all:hover{color:#334400}}
+</style>
+
+<section class="related-tools" aria-label="Related free tools">
+  <h2>Related Free Tools</h2>
+  <div class="related-tools-grid">
+    <a href="/base64-encoder/">Base64 Encoder</a>
+    <a href="/json-formatter/">JSON Formatter</a>
+    <a href="/password-generator/">Password Generator</a>
+    <a href="/word-counter/">Word Counter</a>
+    <a href="/qr-generator/">QR Generator</a>
+  </div>
+  <a href="/free-tools/" class="related-tools-all">Browse all 41 free tools →</a>
+</section>
+
+<script>
+let mode = 'component';
+
+function setMode(m) {
+  mode = m;
+  document.getElementById('mode-component').className = 'mode-tab' + (m === 'component' ? ' active' : '');
+  document.getElementById('mode-uri').className        = 'mode-tab' + (m === 'uri'       ? ' active' : '');
+  document.getElementById('mode-hint').textContent = m === 'component'
+    ? 'Encodes everything except letters, digits, and - _ . ! ~ * \' ( ) — best for parameter values.'
+    : 'Encodes only characters not allowed in a full URL — preserves /, ?, :, #, @, and &.';
+  if (document.getElementById('input-text').value) autoConvert();
+}
+
+function encode() {
+  const v = document.getElementById('input-text').value;
+  if (!v) { setStatus('Paste some text first.', true); return; }
+  try {
+    const result = mode === 'component' ? encodeURIComponent(v) : encodeURI(v);
+    setOutput(result);
+    setStatus(`Encoded — ${v.length} chars → ${result.length} chars`);
+  } catch(e) {
+    setStatus('Encode error: ' + e.message, true);
+  }
+}
+
+function decode() {
+  const v = document.getElementById('input-text').value;
+  if (!v) { setStatus('Paste some text first.', true); return; }
+  try {
+    const result = mode === 'component' ? decodeURIComponent(v) : decodeURI(v);
+    setOutput(result);
+    setStatus(`Decoded — ${v.length} chars → ${result.length} chars`);
+  } catch(e) {
+    setStatus('Decode error: invalid encoding — ' + e.message, true);
+  }
+}
+
+function autoConvert() {
+  // Auto-detect: if input contains % sequences, likely needs decoding
+  const v = document.getElementById('input-text').value;
+  if (!v) { setOutput(''); setStatus(''); return; }
+}
+
+function setOutput(text) {
+  document.getElementById('output-text').textContent = text;
+}
+
+function setStatus(msg, err) {
+  const el = document.getElementById('status');
+  el.textContent = msg;
+  el.className = 'status' + (err ? ' err' : '');
+}
+
+function swapFields() {
+  const inp = document.getElementById('input-text');
+  const out = document.getElementById('output-text');
+  inp.value = out.textContent;
+  out.textContent = '';
+  setStatus('');
+}
+
+function clearAll() {
+  document.getElementById('input-text').value = '';
+  setOutput('');
+  setStatus('');
+}
+
+async function copyOutput() {
+  const text = document.getElementById('output-text').textContent;
+  if (!text) return;
+  try {
+    await navigator.clipboard.writeText(text);
+    const btn = document.querySelector('.copy-btn');
+    btn.textContent = 'Copied!';
+    setTimeout(() => btn.textContent = 'Copy', 1500);
+  } catch(e) {
+    setStatus('Copy failed — select and copy manually.', true);
+  }
+}
+</script>
+</body>
+</html>
