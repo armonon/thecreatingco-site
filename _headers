@@ -26,27 +26,23 @@
   Cache-Control: no-cache
   Service-Worker-Allowed: /locker/
 
-# --- content-hashed JS bundles (wave 5) — added 2026-10-18; rules above unchanged ---
-# These filenames embed a SHA-256 content hash so they are safe to cache for 1 year.
-# Browsers that have an old hash will fetch the new file; repeat visitors get it free.
-/momentium-*.js
+# --- autopilot run 18 — immutable caching for hashed bundles + /learn/ — 2026-10-18 ---
+# Content-addressed assets (filename includes hash) → 1-year immutable cache
+/learn/form/workshops/assets/*
   Cache-Control: public, max-age=31536000, immutable
 
-/site-navigation-*.js
+/learn/luma/workshops/assets/*
   Cache-Control: public, max-age=31536000, immutable
 
-/audit-fixes-*.js
+/learn/scenepilot/workshops/assets/*
   Cache-Control: public, max-age=31536000, immutable
 
-/site-*.js
+/learn/stemdeck/workshops/assets/*
   Cache-Control: public, max-age=31536000, immutable
 
-/momentium-motion-*.js
-  Cache-Control: public, max-age=31536000, immutable
+# Top-level static JS/CSS with version query strings — short TTL, always fresh on deploy
+/*.js
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
 
-/start/motion-*.js
-  Cache-Control: public, max-age=31536000, immutable
-
-# content-hashed CSS bundle (wave 3)
-/assets/styles/global-*.css
-  Cache-Control: public, max-age=31536000, immutable
+/*.css
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
