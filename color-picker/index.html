@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Color Picker Free Online — HEX, RGB, HSL Color Tool</title>
+<meta name="description" content="Free online color picker — pick, convert, and copy colors in HEX, RGB, HSL, and CSS format. Generate palettes, check contrast ratios, and find complementary colors.">
+<link rel="canonical" href="https://thecreatingco.com/color-picker/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://thecreatingco.com/color-picker/">
+<meta property="og:title" content="Color Picker Free Online — HEX, RGB, HSL Color Tool">
+<meta property="og:description" content="Free online color picker — pick, convert, and copy colors in HEX, RGB, HSL, and CSS format. Generate palettes, check contrast ratios, and find complementary colors.">
+<meta property="og:image" content="https://thecreatingco.com/assets/share/home.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Color Picker Free Online — HEX, RGB, HSL Color Tool">
+<meta name="twitter:description" content="Free online color picker — pick, convert, and copy colors in HEX, RGB, HSL, and CSS format. Generate palettes, check contrast ratios, and find complementary colors.">
+<meta name="twitter:image" content="https://thecreatingco.com/assets/share/home.jpg">
+<meta name="robots" content="index,follow">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://thecreatingco.com/color-picker/#webpage","url":"https://thecreatingco.com/color-picker/","name":"Color Picker Free Online — HEX, RGB, HSL Color Tool","description":"Free online color picker — pick, convert, and copy colors in HEX, RGB, HSL, and CSS format. Generate palettes, check contrast ratios, and find complementary colors.","isPartOf":{"@id":"https://thecreatingco.com/#website"},"breadcrumb":{"@id":"https://thecreatingco.com/color-picker/#breadcrumb"}},{"@type":"SoftwareApplication","@id":"https://thecreatingco.com/color-picker/#app","name":"Online Color Picker","applicationCategory":"DesignApplication","operatingSystem":"Any (web browser)","url":"https://thecreatingco.com/color-picker/","description":"Free online color picker for designers and developers — convert between HEX, RGB, HSL, and HSV, generate color palettes, check WCAG contrast ratios, and copy CSS values instantly.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"The Creating Co","url":"https://thecreatingco.com"}},{"@type":"FAQPage","@id":"https://thecreatingco.com/color-picker/#faq","mainEntity":[{"@type":"Question","name":"How do I convert HEX to RGB?","acceptedAnswer":{"@type":"Answer","text":"Enter the HEX color code (e.g. #3b82f6) and the color picker instantly shows the equivalent RGB values (e.g. rgb(59, 130, 246)) alongside HSL and HSV. Click the RGB value to copy it."}},{"@type":"Question","name":"What is the difference between HEX, RGB, and HSL?","acceptedAnswer":{"@type":"Answer","text":"HEX is a six-character code used in HTML and CSS (e.g. #ff6040). RGB defines a color by its red, green, and blue components, each from 0–255. HSL defines a color by hue (0–360°), saturation (0–100%), and lightness (0–100%) — HSL is often more intuitive for creating color variations."}},{"@type":"Question","name":"Can I use this to check color contrast for accessibility?","acceptedAnswer":{"@type":"Answer","text":"Yes — the color picker shows the WCAG 2.1 contrast ratio between any two colors. A ratio of 4.5:1 or higher meets AA standard for normal text; 3:1 meets AA for large text; 7:1 meets AAA."}},{"@type":"Question","name":"What are complementary colors?","acceptedAnswer":{"@type":"Answer","text":"Complementary colors sit opposite each other on the color wheel (180° apart in hue). They create maximum contrast when placed side by side. The color picker shows the complementary, triadic, and analogous colors for any input color."}},{"@type":"Question","name":"Can I pick a color from an image?","acceptedAnswer":{"@type":"Answer","text":"Yes — use the eyedropper tool to click any color on your screen (supported in Chrome, Edge, and Opera via the EyeDropper API). Or upload an image and click any pixel to sample its color."}},{"@type":"Question","name":"How do I get the CSS value for a color?","acceptedAnswer":{"@type":"Answer","text":"The color picker shows the color in all CSS formats: hex (#3b82f6), rgb(59, 130, 246), hsl(217, 91%, 60%), and rgba with adjustable opacity. Click any value to copy it directly to your clipboard."}}]},{"@type":"BreadcrumbList","@id":"https://thecreatingco.com/color-picker/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://thecreatingco.com/"},{"@type":"ListItem","position":2,"name":"Free Tools","item":"https://thecreatingco.com/free-tools/"},{"@type":"ListItem","position":3,"name":"Color Picker","item":"https://thecreatingco.com/color-picker/"}]}]}</script>
+<style>
+:root {
+  --bg: #0d0d12; --surface: #16161e; --surface2: #1e1e2a;
+  --border: rgba(255,255,255,0.08); --text: #f0f0f8; --muted: #7878a0;
+  --accent: #f472b6; --accent2: #818cf8;
+  --accent-dim: rgba(244,114,182,0.12); --accent2-dim: rgba(129,140,248,0.12);
+}
+@media (prefers-color-scheme: light) {
+  :root { --bg:#f8f8fc; --surface:#fff; --surface2:#f0f0f8; --border:rgba(0,0,0,0.08); --text:#111118; --muted:#6060a0; --accent-dim:rgba(220,80,160,0.10); --accent2-dim:rgba(100,110,220,0.10); }
+}
+:root[data-theme="dark"] { --bg:#0d0d12; --surface:#16161e; --surface2:#1e1e2a; --border:rgba(255,255,255,0.08); --text:#f0f0f8; --muted:#7878a0; }
+:root[data-theme="light"] { --bg:#f8f8fc; --surface:#fff; --surface2:#f0f0f8; --border:rgba(0,0,0,0.08); --text:#111118; --muted:#6060a0; }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+header{border-bottom:1px solid var(--border);padding:16px}
+.nav-inner{max-width:860px;margin:auto;display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:800;font-size:17px;color:var(--text)}.logo span{color:var(--accent)}
+.hero{text-align:center;padding:64px 16px 48px;max-width:700px;margin:auto}
+.badge{display:inline-flex;align-items:center;gap:6px;background:var(--accent-dim);border:1px solid color-mix(in srgb,var(--accent) 30%,transparent);border-radius:999px;padding:4px 12px;font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;text-transform:uppercase;margin-bottom:20px}
+h1{font-size:clamp(28px,5vw,48px);font-weight:900;letter-spacing:-1px;line-height:1.1;margin-bottom:16px}
+.sub{font-size:17px;color:var(--muted);max-width:500px;margin:0 auto 32px}
+.cta-btn{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#fff;font-size:16px;font-weight:800;padding:14px 28px;border-radius:8px;transition:opacity .15s}
+.cta-btn:hover{opacity:.88;text-decoration:none}
+.cta-sub{margin-top:12px;font-size:13px;color:var(--muted)}
+
+/* ---- Color picker illustration ---- */
+.cp-demo{max-width:520px;margin:48px auto;background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:28px 24px;overflow:hidden}
+.cp-gradient{height:140px;border-radius:10px;background:linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%), linear-gradient(to right, rgba(255,255,255,1) 0%, hsl(217,91%,60%) 100%);margin-bottom:16px;position:relative;cursor:crosshair}
+.cp-cursor{position:absolute;width:16px;height:16px;border-radius:50%;border:2px solid #fff;box-shadow:0 0 0 1px rgba(0,0,0,.5);top:30%;left:60%;transform:translate(-50%,-50%)}
+.cp-hue{height:12px;border-radius:6px;background:linear-gradient(to right,#f00,#ff0,#0f0,#0ff,#00f,#f0f,#f00);margin-bottom:10px}
+.cp-alpha{height:12px;border-radius:6px;background:linear-gradient(to right,transparent,#3b82f6);margin-bottom:16px}
+.cp-values{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px}
+.cp-val-box{background:var(--surface2);border-radius:8px;padding:8px 10px}
+.cp-val-label{font-size:10px;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:2px}
+.cp-val-code{font-size:13px;font-weight:700;font-family:monospace;color:var(--accent)}
+.cp-swatch-row{display:flex;gap:8px;align-items:center}
+.cp-swatch{width:40px;height:40px;border-radius:8px;flex-shrink:0;background:#3b82f6;border:2px solid var(--border)}
+.cp-copy-row{display:flex;flex-direction:column;gap:4px;flex:1}
+.cp-copy-item{display:flex;justify-content:space-between;align-items:center;background:var(--surface2);border-radius:6px;padding:5px 10px;font-size:12px}
+.cp-copy-key{color:var(--muted);font-weight:600}
+.cp-copy-val{font-family:monospace;font-weight:700;color:var(--text)}
+.cp-copy-btn{padding:2px 7px;border-radius:4px;background:var(--accent-dim);color:var(--accent);font-size:10px;font-weight:800}
+
+/* Palette display */
+.palette-row{display:flex;gap:6px;margin-top:12px;border-radius:8px;overflow:hidden}
+.pal-swatch{flex:1;height:36px;display:flex;align-items:flex-end;justify-content:center;padding-bottom:4px}
+.pal-label{font-size:9px;font-weight:700;opacity:.6}
+
+.section{max-width:860px;margin:0 auto;padding:48px 16px}
+.section-title{font-size:24px;font-weight:800;margin-bottom:8px}
+.section-sub{color:var(--muted);margin-bottom:32px}
+.features{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
+.feat-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px}
+.feat-icon{font-size:24px;margin-bottom:10px}
+.feat-title{font-weight:700;margin-bottom:6px}
+.feat-desc{font-size:14px;color:var(--muted)}
+.formats-table{width:100%;border-collapse:collapse;font-size:14px}
+.formats-table th{text-align:left;padding:10px 12px;border-bottom:2px solid var(--border);color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.06em}
+.formats-table td{padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top}
+.formats-table tr:last-child td{border-bottom:none}
+.formats-table td:first-child{font-weight:700;font-family:monospace;color:var(--accent)}
+.use-cases{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
+.use-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px}
+.use-title{font-weight:700;margin-bottom:6px}
+.use-desc{font-size:14px;color:var(--muted)}
+.steps{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
+.step-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px}
+.step-num{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:var(--accent-dim);color:var(--accent);font-weight:900;font-size:14px;margin-bottom:12px}
+.step-title{font-weight:700;margin-bottom:6px}
+.step-desc{font-size:14px;color:var(--muted)}
+.contrast-demo{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.contrast-box{border-radius:10px;padding:16px;border:1px solid var(--border)}
+.contrast-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px}
+.contrast-ratio{font-size:22px;font-weight:900}
+.contrast-rating{display:inline-flex;align-items:center;gap:5px;margin-top:4px;font-size:12px;font-weight:700}
+.pass{color:#22c55e}.fail{color:#ef4444}
+.cta-strip{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:48px 16px;text-align:center}
+.cta-strip h2{font-size:24px;font-weight:800;margin-bottom:12px}
+.cta-strip p{color:var(--muted);margin-bottom:24px;max-width:480px;margin-left:auto;margin-right:auto}
+.related{display:flex;flex-wrap:wrap;gap:10px}
+.rel-link{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:8px 16px;font-size:14px;font-weight:600;color:var(--text)}
+.rel-link:hover{border-color:var(--accent);text-decoration:none}
+.faq{display:grid;gap:12px}
+.faq-item{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px}
+.faq-q{font-weight:700;margin-bottom:8px}
+.faq-a{font-size:14px;color:var(--muted)}
+footer{border-top:1px solid var(--border);padding:32px 16px;text-align:center}
+.footer-inner{max-width:860px;margin:auto}
+.footer-links{display:flex;flex-wrap:wrap;gap:16px;justify-content:center;margin-bottom:12px;font-size:14px}
+.footer-copy{font-size:12px;color:var(--muted)}
+</style>
+</head>
+<body>
+<header>
+  <div class="nav-inner">
+    <a class="logo" href="https://thecreatingco.com/">the<span>creating</span>co</a>
+    <nav style="display:flex;gap:20px;font-size:14px;font-weight:600">
+      <a href="https://thecreatingco.com/free-tools/" style="color:var(--muted)">Free Tools</a>
+      <a href="https://thecreatingco.com/products/stemdeck/" style="color:var(--muted)">StemDeck</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<div class="hero">
+  <div class="badge">✦ Free Online Tool</div>
+  <h1>Color Picker</h1>
+  <p class="sub">Pick any color and get its HEX, RGB, HSL, and CSS values instantly. Generate palettes, check contrast ratios, and copy color codes with one click.</p>
+  <a class="cta-btn" href="https://thecreatingco.com/products/stemdeck/">Open Color Picker Free →</a>
+  <p class="cta-sub">HEX · RGB · HSL · HSV · WCAG contrast · Palette generator</p>
+</div>
+
+<!-- Color picker illustration -->
+<div class="cp-demo">
+  <div class="cp-gradient"><div class="cp-cursor"></div></div>
+  <div class="cp-hue"></div>
+  <div class="cp-alpha"></div>
+  <div class="cp-values">
+    <div class="cp-val-box">
+      <div class="cp-val-label">HEX</div>
+      <div class="cp-val-code">#3b82f6</div>
+    </div>
+    <div class="cp-val-box">
+      <div class="cp-val-label">RGB</div>
+      <div class="cp-val-code">59, 130, 246</div>
+    </div>
+    <div class="cp-val-box">
+      <div class="cp-val-label">HSL</div>
+      <div class="cp-val-code">217° 91% 60%</div>
+    </div>
+    <div class="cp-val-box">
+      <div class="cp-val-label">HSV</div>
+      <div class="cp-val-code">217° 76% 96%</div>
+    </div>
+  </div>
+  <div class="cp-swatch-row">
+    <div class="cp-swatch"></div>
+    <div class="cp-copy-row">
+      <div class="cp-copy-item"><span class="cp-copy-key">CSS hex</span><span class="cp-copy-val">#3b82f6</span><span class="cp-copy-btn">Copy</span></div>
+      <div class="cp-copy-item"><span class="cp-copy-key">CSS rgb</span><span class="cp-copy-val">rgb(59,130,246)</span><span class="cp-copy-btn">Copy</span></div>
+      <div class="cp-copy-item"><span class="cp-copy-key">CSS hsl</span><span class="cp-copy-val">hsl(217,91%,60%)</span><span class="cp-copy-btn">Copy</span></div>
+    </div>
+  </div>
+  <!-- Tints palette -->
+  <div class="palette-row" aria-label="Tints and shades">
+    <div class="pal-swatch" style="background:#dbeafe"><span class="pal-label" style="color:#3b82f6">50</span></div>
+    <div class="pal-swatch" style="background:#bfdbfe"><span class="pal-label" style="color:#3b82f6">100</span></div>
+    <div class="pal-swatch" style="background:#93c5fd"><span class="pal-label" style="color:#3b82f6">200</span></div>
+    <div class="pal-swatch" style="background:#60a5fa"><span class="pal-label" style="color:#fff">300</span></div>
+    <div class="pal-swatch" style="background:#3b82f6"><span class="pal-label" style="color:#fff">400</span></div>
+    <div class="pal-swatch" style="background:#2563eb"><span class="pal-label" style="color:#fff">500</span></div>
+    <div class="pal-swatch" style="background:#1d4ed8"><span class="pal-label" style="color:#fff">600</span></div>
+    <div class="pal-swatch" style="background:#1e40af"><span class="pal-label" style="color:#fff">700</span></div>
+    <div class="pal-swatch" style="background:#1e3a8a"><span class="pal-label" style="color:#fff">800</span></div>
+  </div>
+</div>
+
+<!-- Features -->
+<section class="section">
+  <h2 class="section-title">Everything a color picker should do</h2>
+  <p class="section-sub">Built for designers, developers, and anyone who works with color.</p>
+  <div class="features">
+    <div class="feat-card">
+      <div class="feat-icon">🎨</div>
+      <div class="feat-title">Visual color picker</div>
+      <div class="feat-desc">A full saturation-lightness gradient canvas plus hue and alpha sliders. Click anywhere to pick, or type a value directly. Instant preview of the selected color.</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">🔄</div>
+      <div class="feat-title">Format converter</div>
+      <div class="feat-desc">Enter any color in HEX, RGB, HSL, or HSV and see it instantly converted to all other formats. Copy the CSS value you need with one click.</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">🎭</div>
+      <div class="feat-title">Palette generator</div>
+      <div class="feat-desc">Auto-generates tints, shades, complementary, triadic, analogous, split-complementary, and tetradic color schemes from any input color.</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">♿</div>
+      <div class="feat-title">WCAG contrast checker</div>
+      <div class="feat-desc">Check the contrast ratio between any two colors against WCAG 2.1 AA (4.5:1) and AAA (7:1) standards for text accessibility compliance.</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">💉</div>
+      <div class="feat-title">Eyedropper / screen picker</div>
+      <div class="feat-desc">Use the native browser eyedropper (Chrome, Edge, Opera) to sample any color from anywhere on your screen — websites, images, design tools.</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">📋</div>
+      <div class="feat-title">One-click copy</div>
+      <div class="feat-desc">Click any color value to copy it directly to your clipboard — hex, rgb(), hsl(), rgba(), or Tailwind class name. No selecting, no drag.</div>
+    </div>
+  </div>
+</section>
+
+<!-- Format reference -->
+<section class="section" style="padding-top:0">
+  <h2 class="section-title">Color format reference</h2>
+  <p class="section-sub">When to use each format in your code or design tool.</p>
+  <table class="formats-table">
+    <thead>
+      <tr>
+        <th>Format</th>
+        <th>Example</th>
+        <th>Best for</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>HEX</td>
+        <td>#3b82f6</td>
+        <td>HTML, CSS, design tools (Figma, Sketch, Photoshop). The universal format.</td>
+      </tr>
+      <tr>
+        <td>RGB</td>
+        <td>rgb(59, 130, 246)</td>
+        <td>CSS and JavaScript. Useful when you need to manipulate individual channels or add opacity with rgba().</td>
+      </tr>
+      <tr>
+        <td>HSL</td>
+        <td>hsl(217, 91%, 60%)</td>
+        <td>CSS and design systems. The most human-readable format — easy to adjust lightness without changing the hue.</td>
+      </tr>
+      <tr>
+        <td>HSV</td>
+        <td>hsv(217, 76%, 96%)</td>
+        <td>Color picker UIs and image editing software. Not a native CSS format but common in design tools.</td>
+      </tr>
+      <tr>
+        <td>RGBA</td>
+        <td>rgba(59, 130, 246, 0.8)</td>
+        <td>CSS overlays, shadows, and any element where transparency is needed alongside a specific color.</td>
+      </tr>
+      <tr>
+        <td>HSLA</td>
+        <td>hsla(217, 91%, 60%, 0.8)</td>
+        <td>CSS with transparency, same benefits as HSL but with an alpha channel for opacity.</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- Contrast checker illustration -->
+<section class="section" style="padding-top:0">
+  <h2 class="section-title">WCAG contrast checker</h2>
+  <p class="section-sub">Check whether your text and background combination meets accessibility standards.</p>
+  <div class="contrast-demo">
+    <div class="contrast-box" style="background:#1e40af">
+      <div class="contrast-label" style="color:rgba(255,255,255,.6)">Text on background</div>
+      <p style="color:#fff;font-size:15px;font-weight:600;margin-bottom:10px">White on Dark Blue</p>
+      <div class="contrast-ratio" style="color:#fff">9.72 : 1</div>
+      <div class="contrast-rating pass">✓ Passes WCAG AAA</div>
+    </div>
+    <div class="contrast-box" style="background:#bfdbfe">
+      <div class="contrast-label" style="color:rgba(0,0,0,.4)">Text on background</div>
+      <p style="color:#60a5fa;font-size:15px;font-weight:600;margin-bottom:10px">Light Blue on Light Blue</p>
+      <div class="contrast-ratio" style="color:#1e40af">1.95 : 1</div>
+      <div class="contrast-rating fail">✗ Fails WCAG AA</div>
+    </div>
+  </div>
+</section>
+
+<!-- Use cases -->
+<section class="section" style="padding-top:0">
+  <h2 class="section-title">Who uses a color picker</h2>
+  <p class="section-sub">From UI designers to content creators, color tools are universal.</p>
+  <div class="use-cases">
+    <div class="use-card">
+      <div class="use-title">🖥️ Web Developers</div>
+      <div class="use-desc">Copy hex or hsl() values directly into CSS. Convert colors from a design file to the format your stylesheet uses. Check contrast for accessible text.</div>
+    </div>
+    <div class="use-card">
+      <div class="use-title">🎨 UI/UX Designers</div>
+      <div class="use-desc">Generate a full tint/shade scale from a brand color for a design system. Find harmonious palette combinations using the palette generator.</div>
+    </div>
+    <div class="use-card">
+      <div class="use-title">📱 App Developers</div>
+      <div class="use-desc">Convert between hex (most design tools) and RGB values (iOS UIColor, Android, React Native). Verify colors meet accessibility standards before shipping.</div>
+    </div>
+    <div class="use-card">
+      <div class="use-title">🖼️ Graphic Designers</div>
+      <div class="use-desc">Sample a color from a reference image using the eyedropper, then export the exact hex or RGB to use in Illustrator, Photoshop, or Canva.</div>
+    </div>
+    <div class="use-card">
+      <div class="use-title">🏢 Brand Managers</div>
+      <div class="use-desc">Verify vendor colors match brand standards. Convert a Pantone-inspired color to digital HEX/RGB for consistent use across digital and print assets.</div>
+    </div>
+    <div class="use-card">
+      <div class="use-title">✍️ Content Creators</div>
+      <div class="use-desc">Pick colors that match your video thumbnail aesthetic or social media feed. Generate a coherent color scheme for slide decks, thumbnails, and graphics.</div>
+    </div>
+  </div>
+</section>
+
+<!-- How to -->
+<section class="section" style="padding-top:0">
+  <h2 class="section-title">How to use the color picker</h2>
+  <p class="section-sub">From a blank canvas to a complete palette in seconds.</p>
+  <div class="steps">
+    <div class="step-card">
+      <div class="step-num">1</div>
+      <div class="step-title">Select your color</div>
+      <div class="step-desc">Drag the crosshair on the color canvas, move the hue slider, or type a color value directly in HEX, RGB, or HSL. The preview updates instantly.</div>
+    </div>
+    <div class="step-card">
+      <div class="step-num">2</div>
+      <div class="step-title">Copy the format you need</div>
+      <div class="step-desc">Click any CSS value — hex, rgb(), hsl(), or rgba() — to copy it instantly. All formats are shown at once so you don't need to switch views.</div>
+    </div>
+    <div class="step-card">
+      <div class="step-num">3</div>
+      <div class="step-title">Explore palettes and contrast</div>
+      <div class="step-desc">Switch to the Palette tab to generate tints, shades, or harmonic color schemes. Use the Contrast tab to check your colors meet WCAG AA or AAA accessibility requirements.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-strip">
+  <h2>Pick your perfect color — free</h2>
+  <p>HEX, RGB, HSL, contrast checking, palette generation. All in the browser, all free.</p>
+  <a class="cta-btn" href="https://thecreatingco.com/products/stemdeck/">Open Color Picker Free →</a>
+</div>
+
+<!-- Related -->
+<section class="section">
+  <h2 class="section-title">More free design tools</h2>
+  <p class="section-sub">A full toolkit for visual creators, all in the browser.</p>
+  <div class="related">
+    <a class="rel-link" href="https://thecreatingco.com/qr-generator/">QR Code Generator</a>
+    <a class="rel-link" href="https://thecreatingco.com/gif-maker/">GIF Maker</a>
+    <a class="rel-link" href="https://thecreatingco.com/image-compressor/">Image Compressor</a>
+    <a class="rel-link" href="https://thecreatingco.com/image-resizer/">Image Resizer</a>
+    <a class="rel-link" href="https://thecreatingco.com/background-remover/">Background Remover</a>
+    <a class="rel-link" href="https://thecreatingco.com/pdf-compressor/">PDF Compressor</a>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" style="padding-top:0">
+  <h2 class="section-title">Frequently asked questions</h2>
+  <div class="faq">
+    <div class="faq-item">
+      <div class="faq-q">How do I convert HEX to RGB?</div>
+      <div class="faq-a">Enter the HEX color code (e.g. #3b82f6) and the color picker instantly shows the equivalent RGB values (e.g. rgb(59, 130, 246)) alongside HSL and HSV. Click the RGB value to copy it directly to your clipboard.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What is the difference between HEX, RGB, and HSL?</div>
+      <div class="faq-a">HEX is a six-character code used in HTML and CSS (e.g. #ff6040). RGB defines a color by its red, green, and blue components, each from 0–255. HSL defines a color by hue (0–360°), saturation (0–100%), and lightness (0–100%) — HSL is often more intuitive for creating color variations because you can adjust lightness or saturation independently.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Can I use this to check color contrast for accessibility?</div>
+      <div class="faq-a">Yes — the color picker shows the WCAG 2.1 contrast ratio between any two colors you pick. A ratio of 4.5:1 or higher meets AA standard for normal-sized text; 3:1 meets AA for large text (18pt+ or 14pt bold); 7:1 meets the stricter AAA standard.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What are complementary colors?</div>
+      <div class="faq-a">Complementary colors sit opposite each other on the color wheel — 180° apart in hue. They create maximum contrast when placed side by side. The color picker shows the complementary color and also generates triadic (120° apart), analogous (30° apart), split-complementary, and tetradic schemes.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Can I pick a color from an image?</div>
+      <div class="faq-a">Yes — use the eyedropper tool to click any color on your screen. This uses the browser's native EyeDropper API, which is supported in Chrome, Edge, and Opera. You can also upload an image and click any pixel to sample its exact color value.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How do I get the CSS value for a color?</div>
+      <div class="faq-a">The color picker shows the color in all CSS formats simultaneously: hex (#3b82f6), rgb(59, 130, 246), hsl(217, 91%, 60%), and rgba() with an adjustable opacity slider. Click any format to copy it instantly to your clipboard.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What is HSV versus HSL?</div>
+      <div class="faq-a">Both describe colors using hue and saturation, but they differ in the third value. HSV (Hue, Saturation, Value) uses "value" for brightness — a value of 100% is the pure hue, and 0% is black. HSL (Hue, Saturation, Lightness) uses "lightness" — 50% lightness is the pure hue, 100% is white, and 0% is black. HSL is a native CSS format; HSV is not, but is common in design tools and color pickers.</div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="https://thecreatingco.com/">Home</a>
+      <a href="https://thecreatingco.com/free-tools/">Free Tools</a>
+      <a href="https://thecreatingco.com/qr-generator/">QR Generator</a>
+      <a href="https://thecreatingco.com/image-compressor/">Image Compressor</a>
+      <a href="https://thecreatingco.com/gif-maker/">GIF Maker</a>
+      <a href="https://thecreatingco.com/learn/">Learning Hub</a>
+    </div>
+    <div class="footer-copy">© 2026 The Creating Co · <a href="https://thecreatingco.com/privacy/">Privacy</a> · <a href="https://thecreatingco.com/terms/">Terms</a></div>
+  </div>
+</footer>
+
+<style>
+.related-tools{background:#16161f;border-top:1px solid #2a2a3d;padding:2.5rem 1.5rem;margin-top:2rem}
+.related-tools h2{font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#7a7a98;margin-bottom:1.25rem}
+.related-tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:.75rem;max-width:960px}
+.related-tools-grid a{display:block;background:#0d0d14;border:1px solid #2a2a3d;border-radius:8px;padding:.9rem 1rem;color:#e8e8f0;text-decoration:none;font-size:.875rem;font-weight:600;transition:border-color .2s,color .2s}
+.related-tools-grid a:hover{border-color:#c8ff00;color:#c8ff00}
+.related-tools-all{display:block;margin-top:1rem;font-size:.8rem;color:#7a7a98;text-decoration:none}
+.related-tools-all:hover{color:#c8ff00}
+@media(prefers-color-scheme:light){.related-tools{background:#f0f0f8;border-top-color:#d8d8e8}.related-tools-grid a{background:#fff;border-color:#d8d8e8;color:#1a1a2e}.related-tools-grid a:hover{border-color:#556600;color:#334400}.related-tools-all{color:#6a6a88}.related-tools-all:hover{color:#334400}}
+</style>
+
+<section class="related-tools" aria-label="Related free tools">
+  <h2>Related Free Tools</h2>
+  <div class="related-tools-grid">
+    <a href="/qr-generator/">QR Generator</a>
+    <a href="/gif-maker/">GIF Maker</a>
+    <a href="/image-compressor/">Image Compressor</a>
+    <a href="/image-resizer/">Image Resizer</a>
+    <a href="/background-remover/">Background Remover</a>
+  </div>
+  <a href="/free-tools/" class="related-tools-all">Browse all free tools →</a>
+</section>
+</body>
+</html>
