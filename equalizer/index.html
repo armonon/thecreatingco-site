@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Equalizer Free Online — Audio EQ Tool, No Download</title>
+<meta name="description" content="Use a free online equalizer to boost, cut, and shape your audio's frequencies. Adjust bass, mids, and highs in your browser — no software to download.">
+<link rel="canonical" href="https://thecreatingco.com/equalizer/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://thecreatingco.com/equalizer/">
+<meta property="og:title" content="Equalizer Free Online — Audio EQ Tool, No Download">
+<meta property="og:description" content="Use a free online equalizer to boost, cut, and shape your audio's frequencies. Adjust bass, mids, and highs in your browser — no software to download.">
+<meta property="og:image" content="https://thecreatingco.com/assets/share/stemdeck.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Equalizer Free Online — Audio EQ Tool, No Download">
+<meta name="twitter:description" content="Use a free online equalizer to boost, cut, and shape your audio's frequencies. Adjust bass, mids, and highs in your browser — no software to download.">
+<meta name="twitter:image" content="https://thecreatingco.com/assets/share/stemdeck.jpg">
+<meta name="robots" content="index,follow">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://thecreatingco.com/equalizer/#webpage",
+      "url": "https://thecreatingco.com/equalizer/",
+      "name": "Equalizer Free Online — Audio EQ Tool, No Download",
+      "description": "Use a free online equalizer to boost, cut, and shape your audio's frequencies. Adjust bass, mids, and highs in your browser — no software to download.",
+      "isPartOf": { "@id": "https://thecreatingco.com/#website" },
+      "breadcrumb": { "@id": "https://thecreatingco.com/equalizer/#breadcrumb" }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://thecreatingco.com/equalizer/#app",
+      "name": "Online Audio Equalizer",
+      "applicationCategory": "MusicApplication",
+      "operatingSystem": "Any (web browser)",
+      "url": "https://thecreatingco.com/equalizer/",
+      "description": "Free online audio equalizer — boost or cut frequencies across 10 bands, apply EQ presets for music genres, and shape your sound without installing any software.",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "publisher": {
+        "@type": "Organization",
+        "name": "The Creating Co",
+        "url": "https://thecreatingco.com"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://thecreatingco.com/equalizer/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is the online equalizer free to use?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes — completely free with no account needed. Upload your audio, adjust the EQ bands or choose a preset, and download the processed file. No time limits or file-size caps beyond your browser's capacity." }
+        },
+        {
+          "@type": "Question",
+          "name": "What is an equalizer used for?",
+          "acceptedAnswer": { "@type": "Answer", "text": "An equalizer (EQ) lets you boost or cut the volume of specific frequency ranges in an audio file. You can add bass warmth, reduce harshness in the highs, cut muddy low-mids, or apply genre-specific presets like 'Hip-Hop', 'Acoustic', or 'Podcast Voice'." }
+        },
+        {
+          "@type": "Question",
+          "name": "What audio formats does the online EQ support?",
+          "acceptedAnswer": { "@type": "Answer", "text": "You can upload MP3, WAV, FLAC, AAC, OGG, and M4A. The equalized output downloads as WAV (lossless) or MP3." }
+        },
+        {
+          "@type": "Question",
+          "name": "How many EQ bands are available?",
+          "acceptedAnswer": { "@type": "Answer", "text": "The online equalizer provides 10 parametric bands ranging from 32 Hz (sub-bass) up to 16 kHz (air). Each band can be boosted or cut by up to ±12 dB, with adjustable Q (bandwidth) for precise or wide-range shaping." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is my audio private?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. All EQ processing runs in your browser using the Web Audio API. Your audio is never uploaded to any server — it stays entirely on your device." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use EQ presets?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes — the tool includes presets for popular use cases: Bass Boost, Vocal Clarity, Podcast Voice, Hip-Hop, Acoustic, Electronic, Rock, and Flat (reset). Each preset sets all 10 bands at once; you can then fine-tune individual bands." }
+        },
+        {
+          "@type": "Question",
+          "name": "What's the difference between graphic EQ and parametric EQ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "A graphic EQ has fixed frequency bands at preset intervals (like 31, 63, 125 Hz…). A parametric EQ lets you choose the exact center frequency, gain, and Q width for each band. This online equalizer uses a 10-band graphic EQ layout with a frequency response curve display." }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://thecreatingco.com/equalizer/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://thecreatingco.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Free Tools", "item": "https://thecreatingco.com/tools/" },
+        { "@type": "ListItem", "position": 3, "name": "Equalizer", "item": "https://thecreatingco.com/equalizer/" }
+      ]
+    }
+  ]
+}
+</script>
+<style>
+:root {
+  --bg: #0d0d12;
+  --surface: #16161e;
+  --surface2: #1e1e2a;
+  --border: rgba(255,255,255,0.08);
+  --text: #f0f0f8;
+  --muted: #7878a0;
+  --accent: #ff8c00;
+  --accent2: #00c8ff;
+  --accent-dim: rgba(255,140,0,0.12);
+  --accent2-dim: rgba(0,200,255,0.12);
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #f8f8fc; --surface: #fff; --surface2: #f0f0f8;
+    --border: rgba(0,0,0,0.08); --text: #111118; --muted: #6060a0;
+    --accent-dim: rgba(200,100,0,0.10); --accent2-dim: rgba(0,160,200,0.10);
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0d0d12; --surface: #16161e; --surface2: #1e1e2a;
+  --border: rgba(255,255,255,0.08); --text: #f0f0f8; --muted: #7878a0;
+  --accent-dim: rgba(255,140,0,0.12); --accent2-dim: rgba(0,200,255,0.12);
+}
+:root[data-theme="light"] {
+  --bg: #f8f8fc; --surface: #fff; --surface2: #f0f0f8;
+  --border: rgba(0,0,0,0.08); --text: #111118; --muted: #6060a0;
+  --accent-dim: rgba(200,100,0,0.10); --accent2-dim: rgba(0,160,200,0.10);
+}
+*,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: system-ui, -apple-system, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+header { border-bottom: 1px solid var(--border); padding: 16px; }
+.nav-inner { max-width: 860px; margin: auto; display: flex; align-items: center; justify-content: space-between; }
+.logo { font-weight: 800; font-size: 17px; color: var(--text); }
+.logo span { color: var(--accent); }
+.hero { text-align: center; padding: 64px 16px 48px; max-width: 700px; margin: auto; }
+.badge { display: inline-flex; align-items: center; gap: 6px; background: var(--accent-dim); border: 1px solid color-mix(in srgb,var(--accent) 30%,transparent); border-radius: 999px; padding: 4px 12px; font-size: 12px; font-weight: 700; color: var(--accent); letter-spacing: .05em; text-transform: uppercase; margin-bottom: 20px; }
+h1 { font-size: clamp(28px,5vw,48px); font-weight: 900; letter-spacing: -1px; line-height: 1.1; margin-bottom: 16px; }
+.sub { font-size: 17px; color: var(--muted); max-width: 500px; margin: 0 auto 32px; }
+.cta-btn { display: inline-flex; align-items: center; gap: 8px; background: var(--accent); color: #000; font-size: 16px; font-weight: 800; padding: 14px 28px; border-radius: 8px; transition: opacity .15s; }
+.cta-btn:hover { opacity: .88; text-decoration: none; }
+.cta-sub { margin-top: 12px; font-size: 13px; color: var(--muted); }
+
+/* ---- EQ Illustration ---- */
+.eq-wrap { max-width: 580px; margin: 48px auto; background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 24px; }
+.eq-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+.eq-title { font-size: 12px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .07em; }
+.eq-preset { font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 6px; background: var(--accent-dim); color: var(--accent); border: 1px solid color-mix(in srgb,var(--accent) 25%,transparent); }
+/* Frequency curve (SVG) */
+.eq-curve { width: 100%; height: 72px; margin-bottom: 16px; }
+/* Band faders */
+.eq-faders { display: flex; gap: 6px; align-items: flex-end; height: 80px; margin-bottom: 8px; }
+.eq-band { display: flex; flex-direction: column; align-items: center; flex: 1; gap: 4px; }
+.fader-track { width: 6px; height: 64px; background: var(--surface2); border-radius: 3px; position: relative; overflow: visible; }
+.fader-fill { position: absolute; bottom: 0; left: 0; width: 100%; border-radius: 3px; animation: fader-in 0.8s ease-out forwards; }
+@keyframes fader-in { from { height: 0; } }
+.fader-label { font-size: 9px; color: var(--muted); font-weight: 700; text-align: center; white-space: nowrap; }
+/* Preset chips */
+.preset-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 16px; }
+.preset-chip { background: var(--surface2); border: 1px solid var(--border); border-radius: 6px; font-size: 11px; font-weight: 700; padding: 4px 10px; color: var(--muted); cursor: default; }
+.preset-chip.active { background: var(--accent-dim); color: var(--accent); border-color: color-mix(in srgb,var(--accent) 30%,transparent); }
+
+/* ---- EQ frequency table ---- */
+.section { max-width: 860px; margin: 0 auto; padding: 48px 16px; }
+.section-title { font-size: 24px; font-weight: 800; margin-bottom: 8px; }
+.section-sub { color: var(--muted); margin-bottom: 32px; }
+.eq-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.eq-table th { text-align: left; padding: 10px 12px; border-bottom: 2px solid var(--border); color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .06em; }
+.eq-table td { padding: 10px 12px; border-bottom: 1px solid var(--border); }
+.eq-table tr:last-child td { border-bottom: none; }
+.freq-range { font-weight: 700; font-size: 12px; }
+.freq-badge { display: inline-block; padding: 2px 7px; border-radius: 4px; font-size: 11px; font-weight: 700; }
+.freq-badge.bass { background: var(--accent-dim); color: var(--accent); }
+.freq-badge.mid { background: var(--accent2-dim); color: var(--accent2); }
+.freq-badge.high { background: rgba(160,255,120,0.12); color: #80e060; }
+
+/* ---- Features, use cases, steps, CTA, FAQ, related, footer ---- */
+.features { display: grid; grid-template-columns: repeat(auto-fill,minmax(240px,1fr)); gap: 16px; }
+.feat-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 20px; }
+.feat-icon { font-size: 24px; margin-bottom: 10px; }
+.feat-title { font-weight: 700; margin-bottom: 6px; }
+.feat-desc { font-size: 14px; color: var(--muted); }
+.use-cases { display: grid; grid-template-columns: repeat(auto-fill,minmax(240px,1fr)); gap: 16px; }
+.use-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 20px; }
+.use-title { font-weight: 700; margin-bottom: 6px; }
+.use-desc { font-size: 14px; color: var(--muted); }
+.steps { display: grid; grid-template-columns: repeat(auto-fill,minmax(220px,1fr)); gap: 16px; }
+.step-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 20px; }
+.step-num { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 50%; background: var(--accent-dim); color: var(--accent); font-weight: 900; font-size: 14px; margin-bottom: 12px; }
+.step-title { font-weight: 700; margin-bottom: 6px; }
+.step-desc { font-size: 14px; color: var(--muted); }
+.cta-strip { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 48px 16px; text-align: center; }
+.cta-strip h2 { font-size: 24px; font-weight: 800; margin-bottom: 12px; }
+.cta-strip p { color: var(--muted); margin-bottom: 24px; max-width: 480px; margin-left: auto; margin-right: auto; }
+.related { display: flex; flex-wrap: wrap; gap: 10px; }
+.rel-link { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 8px 16px; font-size: 14px; font-weight: 600; color: var(--text); }
+.rel-link:hover { border-color: var(--accent); text-decoration: none; }
+.faq { display: grid; gap: 12px; }
+.faq-item { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 20px; }
+.faq-q { font-weight: 700; margin-bottom: 8px; }
+.faq-a { font-size: 14px; color: var(--muted); }
+footer { border-top: 1px solid var(--border); padding: 32px 16px; text-align: center; }
+.footer-inner { max-width: 860px; margin: auto; }
+.footer-links { display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; margin-bottom: 12px; font-size: 14px; }
+.footer-copy { font-size: 12px; color: var(--muted); }
+</style>
+</head>
+<body>
+<header>
+  <div class="nav-inner">
+    <a class="logo" href="https://thecreatingco.com/">the<span>creating</span>co</a>
+    <a class="cta-btn" style="font-size:13px;padding:8px 16px;" href="https://thecreatingco.com/products/stemdeck/">Open StemDeck →</a>
+  </div>
+</header>
+
+<main>
+<!-- Hero -->
+<div class="hero">
+  <div class="badge">🎛️ Free Online Tool</div>
+  <h1>Equalizer Free Online</h1>
+  <p class="sub">Boost bass, cut mids, shape your highs. A 10-band EQ in your browser — no download, no account, no limits.</p>
+  <a class="cta-btn" href="https://thecreatingco.com/products/stemdeck/">Open EQ Free →</a>
+  <p class="cta-sub">Free · In-browser · Any audio format</p>
+</div>
+
+<!-- EQ Illustration -->
+<div class="eq-wrap" aria-hidden="true">
+  <div class="eq-header">
+    <span class="eq-title">10-Band Equalizer</span>
+    <span class="eq-preset">Hip-Hop preset</span>
+  </div>
+
+  <!-- Frequency curve SVG -->
+  <svg class="eq-curve" viewBox="0 0 540 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Horizontal grid lines -->
+    <line x1="0" y1="36" x2="540" y2="36" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+    <line x1="0" y1="18" x2="540" y2="18" stroke="rgba(255,255,255,0.04)" stroke-width="1" stroke-dasharray="4,4"/>
+    <line x1="0" y1="54" x2="540" y2="54" stroke="rgba(255,255,255,0.04)" stroke-width="1" stroke-dasharray="4,4"/>
+    <!-- EQ curve path (Hip-Hop: bass boost, low-mid cut, presence peak) -->
+    <path d="M0,52 C30,50 50,28 80,18 C100,12 120,14 150,36 C170,50 190,52 220,44 C240,38 260,38 290,42 C310,44 330,34 360,28 C390,22 420,30 460,36 C490,40 520,38 540,38" stroke="var(--accent)" stroke-width="2.5" fill="none" opacity="0.9"/>
+    <!-- Gradient fill under curve -->
+    <path d="M0,52 C30,50 50,28 80,18 C100,12 120,14 150,36 C170,50 190,52 220,44 C240,38 260,38 290,42 C310,44 330,34 360,28 C390,22 420,30 460,36 C490,40 520,38 540,38 L540,72 L0,72 Z" fill="url(#eq-grad)" opacity="0.2"/>
+    <defs>
+      <linearGradient id="eq-grad" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="var(--accent)"/>
+        <stop offset="100%" stop-color="transparent"/>
+      </linearGradient>
+    </defs>
+    <!-- Zero line label -->
+    <text x="4" y="34" font-size="8" fill="rgba(255,255,255,0.3)" font-family="monospace">0 dB</text>
+    <text x="4" y="16" font-size="8" fill="rgba(255,255,255,0.2)" font-family="monospace">+12</text>
+    <text x="4" y="70" font-size="8" fill="rgba(255,255,255,0.2)" font-family="monospace">−12</text>
+  </svg>
+
+  <!-- 10 fader bands — Hip-Hop preset values -->
+  <div class="eq-faders">
+    <!-- 32 Hz: +8 dB -->
+    <div class="eq-band">
+      <div class="fader-track">
+        <div class="fader-fill" style="background:var(--accent);height:75%;animation-delay:.05s"></div>
+      </div>
+      <div class="fader-label">32Hz</div>
+    </div>
+    <!-- 64 Hz: +10 dB -->
+    <div class="eq-band">
+      <div class="fader-track">
+        <div class="fader-fill" style="background:var(--accent);height:90%;animation-delay:.10s"></div>
+      </div>
+      <div class="fader-label">64Hz</div>
+    </div>
+    <!-- 125 Hz: +6 dB -->
+    <div class="eq-band">
+      <div class="fader-track">
+        <div class="fader-fill" style="background:var(--accent);height:60%;animation-delay:.15s"></div>
+      </div>
+      <div class="fader-label">125Hz</div>
+    </div>
+    <!-- 250 Hz: −3 dB -->
+    <div class="eq-band">
+      <div class="fader-track" style="display:flex;flex-direction:column-reverse;">
+        <div class="fader-fill" style="background:var(--accent2);height:28%;animation-delay:.20s;bottom:auto;top:0;position:absolute;"></div>
+      </div>
+      <div class="fader-label">250Hz</div>
+    </div>
+    <!-- 500 Hz: 0 dB -->
+    <div class="eq-band">
+      <div class="fader-track">
+        <div class="fader-fill" style="background:var(--muted);height:4%;animation-delay:.25s"></div>
+      </div>
+      <div class="fader-label">500Hz</div>
+    </div>
+    <!-- 1 kHz: +2 dB -->
+    <div class="eq-band">
+      <div class="fader-track">
+        <div class="fader-fill" style="background:var(--accent);height:18%;animation-delay:.30s"></div>
+      </div>
+      <div class="fader-label">1kHz</div>
+    </div>
+    <!-- 2 kHz: +4 dB -->
+    <div class="eq-band">
+      <div class="fader-track">
+        <div class="fader-fill" style="background:var(--accent);height:36%;animation-delay:.35s"></div>
+      </div>
+      <div class="fader-label">2kHz</div>
+    </div>
+    <!-- 4 kHz: +3 dB -->
+    <div class="eq-band">
+      <div class="fader-track">
+        <div class="fader-fill" style="background:var(--accent);height:27%;animation-delay:.40s"></div>
+      </div>
+      <div class="fader-label">4kHz</div>
+    </div>
+    <!-- 8 kHz: +1 dB -->
+    <div class="eq-band">
+      <div class="fader-track">
+        <div class="fader-fill" style="background:var(--accent);height:10%;animation-delay:.45s"></div>
+      </div>
+      <div class="fader-label">8kHz</div>
+    </div>
+    <!-- 16 kHz: 0 dB -->
+    <div class="eq-band">
+      <div class="fader-track">
+        <div class="fader-fill" style="background:var(--muted);height:4%;animation-delay:.50s"></div>
+      </div>
+      <div class="fader-label">16kHz</div>
+    </div>
+  </div>
+
+  <!-- Preset chips -->
+  <div class="preset-row">
+    <span class="preset-chip">Flat</span>
+    <span class="preset-chip">Bass Boost</span>
+    <span class="preset-chip active">Hip-Hop</span>
+    <span class="preset-chip">Vocal Clarity</span>
+    <span class="preset-chip">Podcast</span>
+    <span class="preset-chip">Acoustic</span>
+    <span class="preset-chip">Rock</span>
+    <span class="preset-chip">Electronic</span>
+  </div>
+</div>
+
+<!-- Features -->
+<section class="section">
+  <h2 class="section-title">A full equalizer in your browser</h2>
+  <p class="section-sub">From subtle warmth to dramatic reshaping — without Pro Tools or Logic.</p>
+  <div class="features">
+    <div class="feat-card">
+      <div class="feat-icon">🎚️</div>
+      <div class="feat-title">10 EQ Bands</div>
+      <div class="feat-desc">Adjust 32 Hz, 64, 125, 250, 500 Hz, 1 kHz, 2, 4, 8, and 16 kHz independently. Each band supports ±12 dB of boost or cut.</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">📈</div>
+      <div class="feat-title">Live Frequency Curve</div>
+      <div class="feat-desc">See the combined frequency response curve update in real time as you move each band. Visualize exactly what you're doing to the sound.</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">⚡</div>
+      <div class="feat-title">8 Instant Presets</div>
+      <div class="feat-desc">Start with Hip-Hop, Acoustic, Vocal Clarity, Podcast, Electronic, Rock, Bass Boost, or Flat. Tweak from there or apply and export in one click.</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">🔒</div>
+      <div class="feat-title">100% Private</div>
+      <div class="feat-desc">Audio processing runs on your device via the Web Audio API. No files are uploaded to any server — your music stays yours.</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">🎵</div>
+      <div class="feat-title">Multiple Formats</div>
+      <div class="feat-desc">Upload MP3, WAV, FLAC, AAC, OGG, or M4A. Export the EQ'd result as high-quality MP3 or lossless WAV.</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">📱</div>
+      <div class="feat-title">Mobile-Friendly</div>
+      <div class="feat-desc">Use the equalizer on your phone or tablet. Drag faders with your finger — the responsive layout adapts to any screen size.</div>
+    </div>
+  </div>
+</section>
+
+<!-- Frequency reference table -->
+<section class="section" style="padding-top:0">
+  <h2 class="section-title">What each frequency band controls</h2>
+  <p class="section-sub">A quick-reference guide to EQ bands and their effect on your sound.</p>
+  <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden;">
+    <table class="eq-table">
+      <thead>
+        <tr>
+          <th>Frequency</th>
+          <th>Range</th>
+          <th>What it controls</th>
+          <th>Boost to…</th>
+          <th>Cut to…</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="freq-range">32 Hz</td>
+          <td><span class="freq-badge bass">Sub-bass</span></td>
+          <td>Deep rumble, felt more than heard</td>
+          <td>Add floor-shaking weight to kick and bass</td>
+          <td>Clean up mud on recordings without subwoofers</td>
+        </tr>
+        <tr>
+          <td class="freq-range">64 Hz</td>
+          <td><span class="freq-badge bass">Bass</span></td>
+          <td>Fundamental bass guitar &amp; kick drum punch</td>
+          <td>Make bass full and warm</td>
+          <td>Tighten up a boomy room recording</td>
+        </tr>
+        <tr>
+          <td class="freq-range">125 Hz</td>
+          <td><span class="freq-badge bass">Low bass</span></td>
+          <td>Body of male vocals, bass note warmth</td>
+          <td>Add body and presence to thin recordings</td>
+          <td>Remove boominess in podcasts and voice-overs</td>
+        </tr>
+        <tr>
+          <td class="freq-range">250 Hz</td>
+          <td><span class="freq-badge mid">Low-mid</span></td>
+          <td>Warmth vs. muddiness zone</td>
+          <td>Add warmth to acoustic instruments</td>
+          <td>Cut to clean up muddy or boxy-sounding audio</td>
+        </tr>
+        <tr>
+          <td class="freq-range">500 Hz</td>
+          <td><span class="freq-badge mid">Mid</span></td>
+          <td>Nasal frequencies, guitar body</td>
+          <td>Add presence to keys and rhythm guitar</td>
+          <td>Reduce a nasal, "cardboard-box" sound in vocals</td>
+        </tr>
+        <tr>
+          <td class="freq-range">1 kHz</td>
+          <td><span class="freq-badge mid">Upper mid</span></td>
+          <td>Presence, vocal intelligibility</td>
+          <td>Help lyrics cut through a dense mix</td>
+          <td>Tame a honky or stiff piano tone</td>
+        </tr>
+        <tr>
+          <td class="freq-range">2 kHz</td>
+          <td><span class="freq-badge mid">Presence</span></td>
+          <td>Attack of snare, consonant clarity</td>
+          <td>Add edge and bite to vocals or guitars</td>
+          <td>Reduce harshness or ear fatigue in a mix</td>
+        </tr>
+        <tr>
+          <td class="freq-range">4 kHz</td>
+          <td><span class="freq-badge high">High-mid</span></td>
+          <td>Snare crack, string definition</td>
+          <td>Add snap and definition to drums</td>
+          <td>Soften a harsh, brittle recording</td>
+        </tr>
+        <tr>
+          <td class="freq-range">8 kHz</td>
+          <td><span class="freq-badge high">High</span></td>
+          <td>Cymbals, sibilance, hi-hats</td>
+          <td>Add sparkle and openness</td>
+          <td>De-ess harsh S and T sounds in vocals</td>
+        </tr>
+        <tr>
+          <td class="freq-range">16 kHz</td>
+          <td><span class="freq-badge high">Air</span></td>
+          <td>Airy shimmer, perceived space</td>
+          <td>Make a mix sound open and professional</td>
+          <td>Remove hiss without touching the rest of the top end</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- Use Cases -->
+<section class="section" style="padding-top:0">
+  <h2 class="section-title">Who needs an online equalizer?</h2>
+  <p class="section-sub">From home studio producers to video creators — EQ improves every kind of audio.</p>
+  <div class="use-cases">
+    <div class="use-card">
+      <div class="use-title">🎙️ Podcasters &amp; Voice-Over Artists</div>
+      <div class="use-desc">Boost 1–2 kHz for vocal presence, cut 200–300 Hz to reduce room muddiness, apply a gentle high-pass at 80 Hz to remove mic handling noise.</div>
+    </div>
+    <div class="use-card">
+      <div class="use-title">🎵 Music Producers</div>
+      <div class="use-desc">EQ individual stems before mixing — add bass warmth to a thin synth pad, cut low-mids to un-bury a kick drum, or brighten a dull acoustic guitar recording.</div>
+    </div>
+    <div class="use-card">
+      <div class="use-title">🎬 Video Editors</div>
+      <div class="use-desc">Fix dialogue recorded on a camera mic. Cut the rumble below 80 Hz, reduce the 300–500 Hz box resonance, and lift 2–4 kHz for clarity before export.</div>
+    </div>
+    <div class="use-card">
+      <div class="use-title">🎧 DJs &amp; Playlist Curators</div>
+      <div class="use-desc">Level the playing field between tracks with different mastering styles. A subtle bass boost or high-shelf lift unifies a playlist that sounds inconsistent across devices.</div>
+    </div>
+    <div class="use-card">
+      <div class="use-title">🎓 Music Students</div>
+      <div class="use-desc">Learn what different frequencies actually sound like by boosting and cutting in isolation. The live curve display makes EQ theory tangible without opening Pro Tools.</div>
+    </div>
+    <div class="use-card">
+      <div class="use-title">📻 Content Creators</div>
+      <div class="use-desc">Polish a voiceover, a talking-head video, or an Instagram reel. Apply the Vocal Clarity preset, fine-tune, and export — in under a minute.</div>
+    </div>
+  </div>
+</section>
+
+<!-- How-to -->
+<section class="section" style="padding-top:0">
+  <h2 class="section-title">How to EQ your audio in 3 steps</h2>
+  <p class="section-sub">Open, adjust, download — no tutorials required.</p>
+  <div class="steps">
+    <div class="step-card">
+      <div class="step-num">1</div>
+      <div class="step-title">Upload your audio</div>
+      <div class="step-desc">Drag and drop any MP3, WAV, FLAC, AAC, OGG, or M4A file into the equalizer. The file loads entirely in your browser — nothing is sent to a server.</div>
+    </div>
+    <div class="step-card">
+      <div class="step-num">2</div>
+      <div class="step-title">Choose a preset or adjust bands</div>
+      <div class="step-desc">Pick one of 8 EQ presets to start from, or drag the 10 band faders manually. The frequency curve updates live so you can see the effect before you hear it.</div>
+    </div>
+    <div class="step-card">
+      <div class="step-num">3</div>
+      <div class="step-title">Preview and download</div>
+      <div class="step-desc">Play the EQ'd audio to confirm the sound. When you're happy, click Download — your equalized file saves as WAV or MP3 instantly to your device.</div>
+    </div>
+  </div>
+</section>
+
+<!-- Mid CTA -->
+<div class="cta-strip">
+  <h2>Shape your sound right now — free</h2>
+  <p>No account needed. Open StemDeck's EQ, upload your audio, and download a polished file in seconds.</p>
+  <a class="cta-btn" href="https://thecreatingco.com/products/stemdeck/">Open Equalizer Free →</a>
+</div>
+
+<!-- Related tools -->
+<section class="section">
+  <h2 class="section-title">More free audio tools</h2>
+  <p class="section-sub">A full toolkit for clean, professional-sounding audio.</p>
+  <div class="related">
+    <a class="rel-link" href="https://thecreatingco.com/noise-reducer/">Noise Reducer</a>
+    <a class="rel-link" href="https://thecreatingco.com/vocal-remover/">Vocal Remover</a>
+    <a class="rel-link" href="https://thecreatingco.com/pitch-shifter/">Pitch Shifter</a>
+    <a class="rel-link" href="https://thecreatingco.com/audio-visualizer/">Audio Visualizer</a>
+    <a class="rel-link" href="https://thecreatingco.com/stem-splitter/">Stem Splitter</a>
+    <a class="rel-link" href="https://thecreatingco.com/audio-converter/">Audio Converter</a>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" style="padding-top:0">
+  <h2 class="section-title">Frequently asked questions</h2>
+  <div class="faq">
+    <div class="faq-item">
+      <div class="faq-q">Is the online equalizer free to use?</div>
+      <div class="faq-a">Yes — completely free with no account needed. Upload your audio, adjust the EQ bands or choose a preset, and download the processed file. No time limits or file-size caps beyond your browser's capacity.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What is an equalizer used for?</div>
+      <div class="faq-a">An equalizer (EQ) lets you boost or cut the volume of specific frequency ranges in an audio file. You can add bass warmth, reduce harshness in the highs, cut muddy low-mids, or apply genre-specific presets like 'Hip-Hop', 'Acoustic', or 'Podcast Voice'.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What audio formats does the online EQ support?</div>
+      <div class="faq-a">You can upload MP3, WAV, FLAC, AAC, OGG, and M4A. The equalized output downloads as WAV (lossless) or MP3.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How many EQ bands are available?</div>
+      <div class="faq-a">The online equalizer provides 10 parametric bands ranging from 32 Hz (sub-bass) up to 16 kHz (air). Each band can be boosted or cut by up to ±12 dB, with adjustable Q (bandwidth) for precise or wide-range shaping.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Is my audio private?</div>
+      <div class="faq-a">Yes. All EQ processing runs in your browser using the Web Audio API. Your audio is never uploaded to any server — it stays entirely on your device.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Can I use EQ presets?</div>
+      <div class="faq-a">Yes — the tool includes presets for popular use cases: Bass Boost, Vocal Clarity, Podcast Voice, Hip-Hop, Acoustic, Electronic, Rock, and Flat (reset). Each preset sets all 10 bands at once; you can then fine-tune individual bands.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What's the difference between graphic EQ and parametric EQ?</div>
+      <div class="faq-a">A graphic EQ has fixed frequency bands at preset intervals (like 31, 63, 125 Hz…). A parametric EQ lets you choose the exact center frequency, gain, and Q width for each band. This online equalizer uses a 10-band graphic EQ layout with a frequency response curve display.</div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="https://thecreatingco.com/">Home</a>
+      <a href="https://thecreatingco.com/products/stemdeck/">StemDeck</a>
+      <a href="https://thecreatingco.com/noise-reducer/">Noise Reducer</a>
+      <a href="https://thecreatingco.com/vocal-remover/">Vocal Remover</a>
+      <a href="https://thecreatingco.com/audio-converter/">Audio Converter</a>
+    </div>
+    <div class="footer-copy">© 2026 The Creating Co · <a href="https://thecreatingco.com/privacy/">Privacy</a> · <a href="https://thecreatingco.com/terms/">Terms</a></div>
+  </div>
+</footer>
+</body>
+</html>
