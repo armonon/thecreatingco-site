@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Online Audio Recorder Free — Record Voice &amp; Mic, No Download</title>
+<meta name="description" content="Free online audio recorder — record your voice or microphone directly in the browser and download as MP3, WAV, or OGG. No app, no plugin required.">
+<link rel="canonical" href="https://thecreatingco.com/audio-recorder/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://thecreatingco.com/audio-recorder/">
+<meta property="og:title" content="Online Audio Recorder Free — Record Voice &amp; Mic, No Download">
+<meta property="og:description" content="Free online audio recorder — record your voice or microphone directly in the browser and download as MP3, WAV, or OGG. No app, no plugin required.">
+<meta property="og:image" content="https://thecreatingco.com/assets/share/stemdeck.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Online Audio Recorder Free — Record Voice &amp; Mic, No Download">
+<meta name="twitter:description" content="Free online audio recorder — record your voice or microphone directly in the browser and download as MP3, WAV, or OGG. No app, no plugin required.">
+<meta name="twitter:image" content="https://thecreatingco.com/assets/share/stemdeck.jpg">
+<meta name="robots" content="index,follow">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://thecreatingco.com/audio-recorder/#webpage",
+      "url": "https://thecreatingco.com/audio-recorder/",
+      "name": "Online Audio Recorder Free — Record Voice & Mic, No Download",
+      "description": "Free online audio recorder — record your voice or microphone directly in the browser and download as MP3, WAV, or OGG. No app, no plugin required.",
+      "isPartOf": { "@id": "https://thecreatingco.com/#website" },
+      "breadcrumb": { "@id": "https://thecreatingco.com/audio-recorder/#breadcrumb" }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://thecreatingco.com/audio-recorder/#app",
+      "name": "Online Audio Recorder",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "Any (web browser with microphone)",
+      "url": "https://thecreatingco.com/audio-recorder/",
+      "description": "Free online audio recorder that captures microphone input directly in the browser using the Web Audio API. Record voice, instruments, or meetings and download as MP3, WAV, or OGG — no app download required.",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "publisher": {
+        "@type": "Organization",
+        "name": "The Creating Co",
+        "url": "https://thecreatingco.com"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://thecreatingco.com/audio-recorder/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is the online audio recorder free?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes — completely free. Open the page, allow microphone access, press Record, and your audio starts capturing immediately. No account, no download, and no time limit on recordings." }
+        },
+        {
+          "@type": "Question",
+          "name": "What format will my recording be saved in?",
+          "acceptedAnswer": { "@type": "Answer", "text": "You can download your recording as MP3, WAV, or OGG. WAV is lossless and best for further editing. MP3 is smaller and works everywhere. OGG is a free, open format supported in most modern browsers." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I record audio on my phone?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes — the online recorder works on mobile. Open the page in Chrome on Android or Safari on iPhone, allow microphone access, and tap Record. Downloads go to your phone's Downloads folder or Files app." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is my recording kept on the server?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No — recording, processing, and downloading all happen locally in your browser. Your audio never leaves your device and is never sent to any server. The page has no upload step." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I pause and resume a recording?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes — the recorder supports pause and resume. Click Pause to stop capturing without ending the session. Click Resume to continue. The final download includes all segments joined as a single file." }
+        },
+        {
+          "@type": "Question",
+          "name": "What microphone quality should I use?",
+          "acceptedAnswer": { "@type": "Answer", "text": "The recorder uses whatever microphone your device provides — laptop built-in, phone mic, USB condenser, or audio interface input. For the best quality, use an external microphone and record in a quiet room. The app records at 44.1 kHz, 16-bit by default." }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://thecreatingco.com/audio-recorder/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://thecreatingco.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Free Tools", "item": "https://thecreatingco.com/tools/" },
+        { "@type": "ListItem", "position": 3, "name": "Audio Recorder", "item": "https://thecreatingco.com/audio-recorder/" }
+      ]
+    }
+  ]
+}
+</script>
+<style>
+:root {
+  --bg: #0d0d12; --surface: #16161e; --surface2: #1e1e2a;
+  --border: rgba(255,255,255,0.08); --text: #f0f0f8; --muted: #7878a0;
+  --accent: #ff4080; --accent2: #40ffb0;
+  --accent-dim: rgba(255,64,128,0.12); --accent2-dim: rgba(64,255,176,0.12);
+}
+@media (prefers-color-scheme: light) {
+  :root { --bg:#f8f8fc; --surface:#fff; --surface2:#f0f0f8; --border:rgba(0,0,0,0.08); --text:#111118; --muted:#6060a0; --accent-dim:rgba(220,30,100,0.10); --accent2-dim:rgba(30,200,130,0.10); }
+}
+:root[data-theme="dark"] { --bg:#0d0d12; --surface:#16161e; --surface2:#1e1e2a; --border:rgba(255,255,255,0.08); --text:#f0f0f8; --muted:#7878a0; }
+:root[data-theme="light"] { --bg:#f8f8fc; --surface:#fff; --surface2:#f0f0f8; --border:rgba(0,0,0,0.08); --text:#111118; --muted:#6060a0; }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+header{border-bottom:1px solid var(--border);padding:16px}
+.nav-inner{max-width:860px;margin:auto;display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:800;font-size:17px;color:var(--text)}.logo span{color:var(--accent)}
+.hero{text-align:center;padding:64px 16px 48px;max-width:700px;margin:auto}
+.badge{display:inline-flex;align-items:center;gap:6px;background:var(--accent-dim);border:1px solid color-mix(in srgb,var(--accent) 30%,transparent);border-radius:999px;padding:4px 12px;font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;text-transform:uppercase;margin-bottom:20px}
+h1{font-size:clamp(28px,5vw,48px);font-weight:900;letter-spacing:-1px;line-height:1.1;margin-bottom:16px}
+.sub{font-size:17px;color:var(--muted);max-width:500px;margin:0 auto 32px}
+.cta-btn{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#fff;font-size:16px;font-weight:800;padding:14px 28px;border-radius:8px;transition:opacity .15s}
+.cta-btn:hover{opacity:.88;text-decoration:none}
+.cta-sub{margin-top:12px;font-size:13px;color:var(--muted)}
+
+/* ---- Recorder illustration ---- */
+.rec-wrap{max-width:480px;margin:48px auto;background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:28px 24px}
+/* Timer display */
+.rec-timer{font-family:monospace;font-size:48px;font-weight:900;color:var(--text);text-align:center;letter-spacing:2px;margin-bottom:20px;animation:timer-tick 1s step-start infinite}
+@keyframes timer-tick{0%,100%{opacity:1}50%{opacity:.7}}
+/* Waveform */
+.rec-wave{display:flex;align-items:center;gap:3px;height:56px;background:var(--surface2);border-radius:10px;padding:6px 8px;margin-bottom:20px;overflow:hidden}
+.rec-bar{flex:1;border-radius:3px;background:var(--accent);transform-origin:center;animation:rec-pulse var(--dur,0.6s) ease-in-out infinite alternate}
+@keyframes rec-pulse{0%{transform:scaleY(var(--lo,.15))}100%{transform:scaleY(var(--hi,1))}}
+/* Record button row */
+.rec-controls{display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:20px}
+.rec-btn{width:64px;height:64px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;font-size:22px;box-shadow:0 0 0 6px var(--accent-dim);animation:btn-glow 1.8s ease-in-out infinite}
+@keyframes btn-glow{0%,100%{box-shadow:0 0 0 6px var(--accent-dim)}50%{box-shadow:0 0 0 12px var(--accent-dim)}}
+.ctrl-btn{width:44px;height:44px;border-radius:50%;background:var(--surface2);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:16px;color:var(--muted)}
+/* Format row */
+.fmt-row{display:flex;gap:8px;justify-content:center}
+.fmt-chip{padding:4px 12px;border-radius:6px;font-size:12px;font-weight:700;background:var(--surface2);color:var(--muted);border:1px solid var(--border)}
+.fmt-chip.active{background:var(--accent2-dim);color:var(--accent2);border-color:color-mix(in srgb,var(--accent2) 30%,transparent)}
+
+/* Sections */
+.section{max-width:860px;margin:0 auto;padding:48px 16px}
+.section-title{font-size:24px;font-weight:800;margin-bottom:8px}
+.section-sub{color:var(--muted);margin-bottom:32px}
+.rec-table{width:100%;border-collapse:collapse;font-size:14px}
+.rec-table th{text-align:left;padding:10px 12px;border-bottom:2px solid var(--border);color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.06em}
+.rec-table td{padding:10px 12px;border-bottom:1px solid var(--border);font-family:monospace}
+.rec-table tr:last-child td{border-bottom:none}
+.rec-table td:first-child{font-family:system-ui,-apple-system,sans-serif;font-weight:700}
+.fmt-badge{display:inline-block;padding:2px 7px;border-radius:4px;font-size:11px;font-weight:700;background:var(--accent2-dim);color:var(--accent2)}
+.features{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
+.feat-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px}
+.feat-icon{font-size:24px;margin-bottom:10px}
+.feat-title{font-weight:700;margin-bottom:6px}
+.feat-desc{font-size:14px;color:var(--muted)}
+.use-cases{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
+.use-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px}
+.use-title{font-weight:700;margin-bottom:6px}
+.use-desc{font-size:14px;color:var(--muted)}
+.steps{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
+.step-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px}
+.step-num{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:var(--accent-dim);color:var(--accent);font-weight:900;font-size:14px;margin-bottom:12px}
+.step-title{font-weight:700;margin-bottom:6px}
+.step-desc{font-size:14px;color:var(--muted)}
+.cta-strip{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:48px 16px;text-align:center}
+.cta-strip h2{font-size:24px;font-weight:800;margin-bottom:12px}
+.cta-strip p{color:var(--muted);margin-bottom:24px;max-width:480px;margin-left:auto;margin-right:auto}
+.related{display:flex;flex-wrap:wrap;gap:10px}
+.rel-link{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:8px 16px;font-size:14px;font-weight:600;color:var(--text)}
+.rel-link:hover{border-color:var(--accent);text-decoration:none}
+.faq{display:grid;gap:12px}
+.faq-item{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px}
+.faq-q{font-weight:700;margin-bottom:8px}
+.faq-a{font-size:14px;color:var(--muted)}
+footer{border-top:1px solid var(--border);padding:32px 16px;text-align:center}
+.footer-inner{max-width:860px;margin:auto}
+.footer-links{display:flex;flex-wrap:wrap;gap:16px;justify-content:center;margin-bottom:12px;font-size:14px}
+.footer-copy{font-size:12px;color:var(--muted)}
+</style>
+</head>
+<body>
+<header>
+  <div class="nav-inner">
+    <a class="logo" href="https://thecreatingco.com/">the<span>creating</span>co</a>
+    <a class="cta-btn" style="font-size:13px;padding:8px 16px" href="https://thecreatingco.com/products/stemdeck/">Open StemDeck →</a>
+  </div>
+</header>
+
+<main>
+<div class="hero">
+  <div class="badge">🎙️ Free Online Tool</div>
+  <h1>Online Audio Recorder — Free, No Download</h1>
+  <p class="sub">Record your voice or microphone directly in the browser and download as MP3, WAV, or OGG. Private — audio never leaves your device.</p>
+  <a class="cta-btn" href="https://thecreatingco.com/products/stemdeck/">Start Recording Free →</a>
+  <p class="cta-sub">Free · Private · Works in any browser</p>
+</div>
+
+<!-- Recorder illustration -->
+<div class="rec-wrap" aria-hidden="true">
+  <!-- Timer -->
+  <div class="rec-timer">0:02:34</div>
+
+  <!-- Animated waveform (24 bars) -->
+  <div class="rec-wave">
+    <div class="rec-bar" style="--lo:.1;--hi:.4;--dur:.55s"></div>
+    <div class="rec-bar" style="--lo:.2;--hi:.7;--dur:.40s"></div>
+    <div class="rec-bar" style="--lo:.1;--hi:.9;--dur:.65s"></div>
+    <div class="rec-bar" style="--lo:.3;--hi:1.0;--dur:.48s"></div>
+    <div class="rec-bar" style="--lo:.15;--hi:.85;--dur:.55s"></div>
+    <div class="rec-bar" style="--lo:.2;--hi:.7;--dur:.42s"></div>
+    <div class="rec-bar" style="--lo:.1;--hi:.95;--dur:.60s"></div>
+    <div class="rec-bar" style="--lo:.25;--hi:.8;--dur:.45s"></div>
+    <div class="rec-bar" style="--lo:.1;--hi:.6;--dur:.70s"></div>
+    <div class="rec-bar" style="--lo:.2;--hi:.9;--dur:.38s"></div>
+    <div class="rec-bar" style="--lo:.15;--hi:.75;--dur:.58s"></div>
+    <div class="rec-bar" style="--lo:.3;--hi:1.0;--dur:.46s"></div>
+    <div class="rec-bar" style="--lo:.1;--hi:.7;--dur:.52s"></div>
+    <div class="rec-bar" style="--lo:.2;--hi:.85;--dur:.66s"></div>
+    <div class="rec-bar" style="--lo:.15;--hi:.6;--dur:.44s"></div>
+    <div class="rec-bar" style="--lo:.1;--hi:.9;--dur:.62s"></div>
+    <div class="rec-bar" style="--lo:.25;--hi:.75;--dur:.50s"></div>
+    <div class="rec-bar" style="--lo:.1;--hi:.8;--dur:.68s"></div>
+    <div class="rec-bar" style="--lo:.2;--hi:.5;--dur:.40s"></div>
+    <div class="rec-bar" style="--lo:.15;--hi:.95;--dur:.56s"></div>
+    <div class="rec-bar" style="--lo:.1;--hi:.7;--dur:.72s"></div>
+    <div class="rec-bar" style="--lo:.2;--hi:.6;--dur:.44s"></div>
+    <div class="rec-bar" style="--lo:.1;--hi:.8;--dur:.60s"></div>
+    <div class="rec-bar" style="--lo:.15;--hi:.45;--dur:.50s"></div>
+  </div>
+
+  <!-- Controls -->
+  <div class="rec-controls">
+    <div class="ctrl-btn">⏮</div>
+    <div class="rec-btn">⏹</div>
+    <div class="ctrl-btn">⏸</div>
+  </div>
+
+  <!-- Format chips -->
+  <div class="fmt-row">
+    <div class="fmt-chip">MP3</div>
+    <div class="fmt-chip active">WAV</div>
+    <div class="fmt-chip">OGG</div>
+  </div>
+</div>
+
+<!-- Features -->
+<section class="section">
+  <h2 class="section-title">Everything you need to record audio in the browser</h2>
+  <p class="section-sub">No installs, no accounts — just open the page and start recording.</p>
+  <div class="features">
+    <div class="feat-card">
+      <div class="feat-icon">🔒</div>
+      <div class="feat-title">100% Private</div>
+      <div class="feat-desc">Recording, encoding, and download all happen locally in your browser. Your audio never leaves your device and is never sent to any server.</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">⏸</div>
+      <div class="feat-title">Pause &amp; Resume</div>
+      <div class="feat-desc">Click Pause to hold the session without ending it. Click Resume to continue. All segments are merged into a single file on download — no editing needed.</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">💾</div>
+      <div class="feat-title">MP3, WAV, OGG</div>
+      <div class="feat-desc">Choose your format before downloading. WAV for lossless, archive-quality audio. MP3 for the smallest file size. OGG for open-format compatibility.</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">🎚️</div>
+      <div class="feat-title">Live Waveform</div>
+      <div class="feat-desc">Watch the real-time animated waveform as you record. Instantly see whether you're too close to the mic, too far, or recording in silence.</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">📱</div>
+      <div class="feat-title">Works on Mobile</div>
+      <div class="feat-desc">Fully optimized for iOS and Android. Tap Record in Safari or Chrome, allow mic access, and record anywhere. Downloads go straight to your phone.</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">⚡</div>
+      <div class="feat-title">Instant Download</div>
+      <div class="feat-desc">No upload, no waiting for a server to process. When you stop, your file is ready to download in seconds directly from your browser.</div>
+    </div>
+  </div>
+</section>
+
+<!-- Format guide table -->
+<section class="section" style="padding-top:0">
+  <h2 class="section-title">Which format should I choose?</h2>
+  <p class="section-sub">Compare recording formats to find the right balance of quality, size, and compatibility.</p>
+  <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden">
+    <table class="rec-table">
+      <thead>
+        <tr>
+          <th>Format</th>
+          <th>Type</th>
+          <th>Typical size (1 min)</th>
+          <th>Best for</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>WAV</td>
+          <td><span class="fmt-badge">Lossless</span></td>
+          <td>~10 MB</td>
+          <td>Editing, archiving, DAW import</td>
+        </tr>
+        <tr>
+          <td>MP3 320kbps</td>
+          <td><span class="fmt-badge">Lossy</span></td>
+          <td>~2.4 MB</td>
+          <td>High-quality sharing, podcasts</td>
+        </tr>
+        <tr>
+          <td>MP3 192kbps</td>
+          <td><span class="fmt-badge">Lossy</span></td>
+          <td>~1.4 MB</td>
+          <td>Podcasts, general distribution</td>
+        </tr>
+        <tr>
+          <td>MP3 128kbps</td>
+          <td><span class="fmt-badge">Lossy</span></td>
+          <td>~0.9 MB</td>
+          <td>Voice memos, small file size priority</td>
+        </tr>
+        <tr>
+          <td>OGG Vorbis</td>
+          <td><span class="fmt-badge">Lossy</span></td>
+          <td>~1.2 MB</td>
+          <td>Open-source projects, web audio</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- Use Cases -->
+<section class="section" style="padding-top:0">
+  <h2 class="section-title">Who uses an online audio recorder?</h2>
+  <p class="section-sub">Quick, private audio capture for every context.</p>
+  <div class="use-cases">
+    <div class="use-card">
+      <div class="use-title">🎙️ Podcasters</div>
+      <div class="use-desc">Quickly capture a solo episode, intro, or interview without setting up a full DAW. Record in WAV and bring it into your editing software for post-production.</div>
+    </div>
+    <div class="use-card">
+      <div class="use-title">🗣️ Voice Notes</div>
+      <div class="use-desc">Record a voice memo on any device — faster than typing, and the file is immediately downloadable without syncing to a cloud account you don't control.</div>
+    </div>
+    <div class="use-card">
+      <div class="use-title">🎓 Students & Lectures</div>
+      <div class="use-desc">Record a study session, presentation practice run, or a question to send to a tutor — no app permissions needed beyond mic access in the browser.</div>
+    </div>
+    <div class="use-card">
+      <div class="use-title">🎵 Music Ideas</div>
+      <div class="use-desc">Capture a melody, chord progression, or lyric idea the moment it arrives. Record into WAV and import directly into your DAW without conversion.</div>
+    </div>
+    <div class="use-card">
+      <div class="use-title">💼 Meetings & Interviews</div>
+      <div class="use-desc">Record a call or in-person meeting for your own notes. Audio stays on your device — nothing is uploaded to any third-party service.</div>
+    </div>
+    <div class="use-card">
+      <div class="use-title">🛠️ Audio Sampling</div>
+      <div class="use-desc">Record room ambience, foley sounds, or instrument samples for use in your music production workflow. WAV captures all the detail your sample library needs.</div>
+    </div>
+  </div>
+</section>
+
+<!-- How-to -->
+<section class="section" style="padding-top:0">
+  <h2 class="section-title">How to record audio online — in 3 steps</h2>
+  <p class="section-sub">From open to download in under a minute.</p>
+  <div class="steps">
+    <div class="step-card">
+      <div class="step-num">1</div>
+      <div class="step-title">Allow microphone access</div>
+      <div class="step-desc">When you click Record, the browser will ask for permission to use your microphone. Click Allow — the recorder never sends audio to any server.</div>
+    </div>
+    <div class="step-card">
+      <div class="step-num">2</div>
+      <div class="step-title">Record, pause, and resume</div>
+      <div class="step-desc">Press the red Record button to start. Press Pause to hold without ending the session. Press Resume to continue. The timer shows your recording length.</div>
+    </div>
+    <div class="step-card">
+      <div class="step-num">3</div>
+      <div class="step-title">Choose format and download</div>
+      <div class="step-desc">When done, press Stop. Select MP3, WAV, or OGG from the format panel and click Download. Your file saves immediately — no upload, no wait.</div>
+    </div>
+  </div>
+</section>
+
+<!-- Mid CTA -->
+<div class="cta-strip">
+  <h2>Record voice online — free, private, instant</h2>
+  <p>No account, no download, no cloud upload. Press Record and capture audio in any browser.</p>
+  <a class="cta-btn" href="https://thecreatingco.com/products/stemdeck/">Start Recording Free →</a>
+</div>
+
+<!-- Related tools -->
+<section class="section">
+  <h2 class="section-title">More free audio tools</h2>
+  <p class="section-sub">The full toolkit for producers, engineers, and musicians.</p>
+  <div class="related">
+    <a class="rel-link" href="https://thecreatingco.com/audio-trimmer/">Audio Trimmer</a>
+    <a class="rel-link" href="https://thecreatingco.com/spectrum-analyzer/">Spectrum Analyzer</a>
+    <a class="rel-link" href="https://thecreatingco.com/noise-reducer/">Noise Reducer</a>
+    <a class="rel-link" href="https://thecreatingco.com/audio-visualizer/">Audio Visualizer</a>
+    <a class="rel-link" href="https://thecreatingco.com/key-finder/">Key Finder</a>
+    <a class="rel-link" href="https://thecreatingco.com/bpm-finder/">BPM Finder</a>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" style="padding-top:0">
+  <h2 class="section-title">Frequently asked questions</h2>
+  <div class="faq">
+    <div class="faq-item">
+      <div class="faq-q">Is the online audio recorder free?</div>
+      <div class="faq-a">Yes — completely free. Open the page, allow microphone access, press Record, and your audio starts capturing immediately. No account, no download, and no time limit on recordings.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What format will my recording be saved in?</div>
+      <div class="faq-a">You can download your recording as MP3, WAV, or OGG. WAV is lossless and best for further editing. MP3 is smaller and works everywhere. OGG is a free, open format supported in most modern browsers.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Can I record audio on my phone?</div>
+      <div class="faq-a">Yes — the online recorder works on mobile. Open the page in Chrome on Android or Safari on iPhone, allow microphone access, and tap Record. Downloads go to your phone's Downloads folder or Files app.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Is my recording kept on the server?</div>
+      <div class="faq-a">No — recording, processing, and downloading all happen locally in your browser. Your audio never leaves your device and is never sent to any server. The page has no upload step.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Can I pause and resume a recording?</div>
+      <div class="faq-a">Yes — the recorder supports pause and resume. Click Pause to stop capturing without ending the session. Click Resume to continue. The final download includes all segments joined as a single file.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What microphone quality should I use?</div>
+      <div class="faq-a">The recorder uses whatever microphone your device provides — laptop built-in, phone mic, USB condenser, or audio interface input. For the best quality, use an external microphone and record in a quiet room. The app records at 44.1 kHz, 16-bit by default.</div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="https://thecreatingco.com/">Home</a>
+      <a href="https://thecreatingco.com/products/stemdeck/">StemDeck</a>
+      <a href="https://thecreatingco.com/audio-trimmer/">Audio Trimmer</a>
+      <a href="https://thecreatingco.com/spectrum-analyzer/">Spectrum Analyzer</a>
+      <a href="https://thecreatingco.com/noise-reducer/">Noise Reducer</a>
+    </div>
+    <div class="footer-copy">© 2026 The Creating Co · <a href="https://thecreatingco.com/privacy/">Privacy</a> · <a href="https://thecreatingco.com/terms/">Terms</a></div>
+  </div>
+</footer>
+</body>
+</html>
