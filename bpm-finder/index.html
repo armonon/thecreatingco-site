@@ -1,177 +1,351 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="/favicon.svg"><script src="/site.js" defer=""></script><script src="/momentium.js" defer=""></script><!-- RELEASE-META:START -->
-<script src="/site-navigation.js?v=20261009-unified" defer=""></script>
-<!-- RELEASE-META:END --><link rel="stylesheet" href="/assets/styles/marketing-fe07f1dfeb46.css"><link rel="stylesheet" href="/launch-season.css?v=1"><link rel="stylesheet" href="/review-polish.css?v=1"><link rel="stylesheet" href="/product-polish.css"><link rel="stylesheet" href="/other-apps-clean.css"><link rel="stylesheet" href="/site-declutter.css"><link rel="stylesheet" href="/visual-consistency.css"><link rel="stylesheet" href="/audit-fixes.css"><script src="/audit-fixes.js" defer=""></script><link rel="stylesheet" href="/site-refinement.css?v=20261007"><link rel="stylesheet" href="/ecosystem.css">
-<title>BPM &amp; Key Finder — Free Online Tempo &amp; Song Key Detector</title>
-<meta name="description" content="Find the BPM and musical key of any audio file free online. Upload a WAV, MP3 or FLAC and get tempo and key results instantly. Export results to CSV.">
-<link rel="canonical" href="https://thecreatingco.com/bpm-finder/">
-<meta name="robots" content="index, follow, max-image-preview:large">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BPM Finder Free Online — Tap or Upload to Detect Tempo</title>
+<meta name="description" content="Find the BPM of any song free online — tap the beat or upload your audio file. Detect tempo instantly in your browser with no download or account needed.">
+<meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="thecreatingco">
-<meta property="og:title" content="BPM &amp; Key Finder — Free Online Tempo &amp; Song Key Detector">
-<meta property="og:description" content="Find the BPM and musical key of any audio file free online. Upload a WAV, MP3 or FLAC and get tempo and key results instantly. Export results to CSV.">
+<meta property="og:title" content="BPM Finder Free Online — thecreatingco">
+<meta property="og:description" content="Detect the BPM of any song free in your browser. Tap along to the beat or upload an audio file — instant tempo detection, no account needed.">
 <meta property="og:url" content="https://thecreatingco.com/bpm-finder/">
-<meta property="og:image" content="https://thecreatingco.com/assets/share/home.jpg">
+<meta property="og:site_name" content="thecreatingco">
+<meta property="og:image" content="https://thecreatingco.com/assets/share/stemdeck.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="BPM &amp; Key Finder — Free Online Tempo &amp; Song Key Detector">
-<meta name="twitter:description" content="Find the BPM and musical key of any audio file free online. Upload a WAV, MP3 or FLAC and get tempo and key results instantly. Export results to CSV.">
-<meta name="twitter:image" content="https://thecreatingco.com/assets/share/home.jpg">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://thecreatingco.com/bpm-finder/#page","url":"https://thecreatingco.com/bpm-finder/","name":"BPM & Key Finder — Free Online Tempo & Song Key Detector","description":"Find the BPM and musical key of any audio file free online. Upload a WAV, MP3 or FLAC and get tempo and key results instantly. Export results to CSV.","about":{"@id":"https://thecreatingco.com/products/key-bpm/#app"}},{"@type":"SoftwareApplication","@id":"https://thecreatingco.com/products/key-bpm/#app","name":"Key & BPM","url":"https://thecreatingco.com/products/key-bpm/","installUrl":"https://sattarimusic.com/studio/keybpm","description":"Estimate the musical key and tempo of audio before planning a mix. Key & BPM supports batch comparison and CSV results.","applicationCategory":"MusicApplication","operatingSystem":"Web browser","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"thecreatingco","url":"https://thecreatingco.com"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What audio formats does the BPM finder support?","acceptedAnswer":{"@type":"Answer","text":"Key & BPM accepts WAV, MP3, FLAC and other common audio formats. The file is analysed in your browser — nothing is uploaded to a server."}},{"@type":"Question","name":"How accurate is the BPM detection?","acceptedAnswer":{"@type":"Answer","text":"The tool reports a supported or rough estimate result. A steady, metronomic pulse at a single tempo gives the most reliable reading. Live recordings or rubato pieces may return inconclusive results."}},{"@type":"Question","name":"Why does the BPM finder show half or double my expected tempo?","acceptedAnswer":{"@type":"Answer","text":"Most tempo algorithms detect a periodic pulse, not a named musical beat. A 120 BPM track also has a 60 BPM half-note pulse and 240 BPM sixteenth-note pulse. Choose the result that matches the grid you want to work with."}},{"@type":"Question","name":"Can I analyse multiple files at once?","acceptedAnswer":{"@type":"Answer","text":"Yes — Key & BPM supports batch comparison. Load several files and export a CSV with tempo and key estimates for each."}},{"@type":"Question","name":"Is the key detection reliable on all songs?","acceptedAnswer":{"@type":"Answer","text":"Key estimation works best on tracks with clear harmonic content. Percussion-only tracks, heavily distorted audio, or very short clips may return a blank key result, which means the evidence was inconclusive rather than that no key exists."}}]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://thecreatingco.com/start/"},{"@type":"ListItem","position":2,"name":"BPM & Key Finder","item":"https://thecreatingco.com/bpm-finder/"}]}]}</script>
+<meta name="twitter:image" content="https://thecreatingco.com/assets/share/stemdeck.jpg">
+<meta name="twitter:title" content="BPM Finder Free Online — thecreatingco">
+<meta name="twitter:description" content="Find the BPM of any song free. Tap the beat or upload audio for instant tempo detection in your browser.">
+<link rel="canonical" href="https://thecreatingco.com/bpm-finder/">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://thecreatingco.com/bpm-finder/#page","url":"https://thecreatingco.com/bpm-finder/","name":"BPM Finder Free Online — thecreatingco","description":"Find the BPM of any song free in your browser. Tap the beat, upload an audio file, or analyze a track for instant tempo detection.","about":{"@id":"https://thecreatingco.com/products/stemdeck/#app"}},{"@type":"SoftwareApplication","@id":"https://thecreatingco.com/products/stemdeck/#app","name":"StemDeck — BPM Finder & Music Studio","url":"https://thecreatingco.com/products/stemdeck/","applicationCategory":"MultimediaApplication","operatingSystem":"Web browser","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"thecreatingco","url":"https://thecreatingco.com"},"description":"StemDeck is a browser-based music studio with a built-in BPM finder. Tap the beat to count tempo, upload a track for automatic BPM detection, then use the built-in loop and cue tools to remix and arrange your music at the detected tempo.","featureList":["Tap-tempo BPM counter","Audio file BPM detection","BPM display with decimal precision","Tempo tap input works on any device","Metronome sync at detected BPM","Browser-based — no download or account","Works with MP3, WAV, FLAC and most audio formats"]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is the BPM finder free?","acceptedAnswer":{"@type":"Answer","text":"Yes — the BPM finder in StemDeck is completely free. No account, no download, and no usage limit. Tap the beat or upload a track and the tempo is shown immediately."}},{"@type":"Question","name":"How do I find the BPM of a song?","acceptedAnswer":{"@type":"Answer","text":"The easiest way is to tap along to the beat: open StemDeck, tap the BPM button on every beat for a few bars, and the tool averages your taps to show the BPM. You can also upload an audio file and let the automatic tempo detection analyse it for you."}},{"@type":"Question","name":"What is BPM?","acceptedAnswer":{"@type":"Answer","text":"BPM stands for Beats Per Minute — it is the standard measure of musical tempo. 60 BPM means one beat per second; 120 BPM means two beats per second. Most popular music falls between 80 BPM (slow hip-hop) and 175 BPM (drum and bass)."}},{"@type":"Question","name":"Why do I need to know the BPM of a song?","acceptedAnswer":{"@type":"Answer","text":"Knowing the BPM lets you sync samples, loops and effects to the tempo of a track. DJs use it to beatmatch songs; producers use it to set a metronome or plugin tempo; dancers and choreographers use it to count phrases; and fitness instructors use it to match music energy to workout intensity."}},{"@type":"Question","name":"How accurate is the BPM detection?","acceptedAnswer":{"@type":"Answer","text":"For tracks with a strong rhythmic beat — pop, hip-hop, EDM, rock — automated detection is typically accurate to within 1 BPM. Ambient or classical music with subtle rhythms may need manual tap input for best results."}},{"@type":"Question","name":"Can I use the BPM finder on my phone?","acceptedAnswer":{"@type":"Answer","text":"Yes — the tap BPM input works on any device with a browser. Tap or click in time with the beat and the BPM is calculated from your tap intervals."}},{"@type":"Question","name":"What audio formats does the BPM finder accept?","acceptedAnswer":{"@type":"Answer","text":"StemDeck accepts MP3, WAV, FLAC, AAC, OGG and most other audio formats your browser can decode."}}]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://thecreatingco.com/start/"},{"@type":"ListItem","position":2,"name":"Apps & tools","item":"https://thecreatingco.com/tools/"},{"@type":"ListItem","position":3,"name":"BPM Finder","item":"https://thecreatingco.com/bpm-finder/"}]}]}</script>
 <style>
-.bpf-hero{padding:48px 20px 32px;max-width:680px;margin:0 auto;text-align:center}
-.bpf-hero h1{font-size:clamp(1.75rem,4vw,2.75rem);line-height:1.15;margin:0 0 16px;font-weight:700;letter-spacing:-0.02em}
-.bpf-hero p{font-size:1.1rem;color:#888;margin:0 0 28px;line-height:1.6}
-.bpf-cta-group{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-bottom:12px}
-.bpf-cta-primary{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;background:#fff;color:#000;border-radius:8px;font-weight:600;font-size:1rem;text-decoration:none;transition:opacity .15s}
-.bpf-cta-primary:hover{opacity:.85}
-.bpf-cta-secondary{display:inline-flex;align-items:center;padding:14px 28px;background:transparent;color:#ccc;border:1px solid #333;border-radius:8px;font-size:1rem;text-decoration:none;transition:border-color .15s}
-.bpf-cta-secondary:hover{border-color:#666}
-.bpf-badge{font-size:.78rem;color:#666;margin-top:8px}
-.bpf-features{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;max-width:900px;margin:0 auto 56px;padding:0 20px}
-.bpf-feature{padding:24px;border:1px solid #222;border-radius:10px}
-.bpf-feature h3{margin:0 0 8px;font-size:1rem;font-weight:600}
-.bpf-feature p{margin:0;font-size:.9rem;color:#888;line-height:1.55}
-.bpf-how{max-width:640px;margin:0 auto 56px;padding:0 20px}
-.bpf-how h2{font-size:1.5rem;font-weight:700;margin:0 0 20px;text-align:center}
-.bpf-steps{counter-reset:steps;list-style:none;margin:0;padding:0}
-.bpf-steps li{counter-increment:steps;display:flex;gap:16px;margin-bottom:20px;align-items:flex-start}
-.bpf-steps li::before{content:counter(steps);display:flex;align-items:center;justify-content:center;min-width:32px;height:32px;border-radius:50%;background:#222;color:#fff;font-size:.85rem;font-weight:600;margin-top:2px}
-.bpf-steps strong{display:block;margin-bottom:4px}
-.bpf-steps p{margin:0;color:#888;font-size:.9rem;line-height:1.5}
-.bpf-faq{max-width:680px;margin:0 auto 56px;padding:0 20px}
-.bpf-faq h2{font-size:1.5rem;font-weight:700;margin:0 0 24px;text-align:center}
-.bpf-faq details{border-bottom:1px solid #222;padding:16px 0}
-.bpf-faq summary{font-weight:600;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;font-size:.95rem}
-.bpf-faq summary::-webkit-details-marker{display:none}
-.bpf-faq summary::after{content:"＋";font-size:1.2rem;color:#666;transition:transform .2s}
-.bpf-faq details[open] summary::after{content:"−"}
-.bpf-faq .faq-answer{padding-top:12px;color:#888;font-size:.9rem;line-height:1.6}
-.bpf-related{max-width:900px;margin:0 auto 56px;padding:0 20px}
-.bpf-related h2{font-size:1.3rem;font-weight:700;margin:0 0 16px}
-.bpf-related ul{display:flex;flex-wrap:wrap;gap:10px;list-style:none;margin:0;padding:0}
-.bpf-related a{padding:8px 14px;border:1px solid #222;border-radius:6px;font-size:.85rem;color:#ccc;text-decoration:none;display:block;transition:border-color .15s}
-.bpf-related a:hover{border-color:#555;color:#fff}
-</style>
-</head><body class="site-unified">
-<a class="skip" href="#main">Skip to content</a>
-<header class="header mm-header cc-header"><a class="wordmark" href="/start/" aria-label="thecreatingco home">thecreatingco<span class="brand-period">.</span></a><nav aria-label="Main navigation"><a data-nav-key="suite" href="/#creative-suite">Creative Suite</a><a data-nav-key="apps" href="/tools/">Directory</a><a data-nav-key="about" href="/about/">About</a><a data-nav-key="learn" href="/learn/">Learn</a><a data-nav-key="circle" href="/community/network">The Circle</a><a data-nav-key="hole" href="/community/hole">HOLE</a></nav><div class="cc-header-actions"><button class="mm-launch-button" type="button" data-mm-launch="" aria-label="Quick launch">Quick launch</button><details class="site-menu" data-site-menu=""><summary aria-label="Site menu" title="Site menu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></summary><nav aria-label="Site menu"><a data-nav-key="suite" href="/#creative-suite">Creative Suite</a><a data-nav-key="apps" href="/tools/">Directory</a><a data-nav-key="learn" href="/learn/">Learn</a><a data-nav-key="locker" href="/locker/">Locker</a><a data-nav-key="work" href="/work/">Saved lessons</a><a data-nav-key="start" href="/start/">Meet thecreatingco</a><a data-nav-key="about" href="/about/">About</a><a data-nav-key="circle" href="/community/network">The Circle</a><a data-nav-key="hole" href="/community/hole">HOLE</a></nav></details></div></header>
+:root {
+  --bg: #070b12;
+  --surface: #0d1520;
+  --border: #182030;
+  --text: #e8f0fc;
+  --muted: #7890b8;
+  --accent: #20b8ff;
+  --accent-dim: rgba(32,184,255,0.10);
+  --accent2: #ff6040;
+  --radius: 10px;
+}
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --bg: #f0f4fc; --surface: #fff; --border: #d4dced; --text: #0c1828;
+    --muted: #4868a0; --accent: #0080cc; --accent-dim: rgba(0,128,204,0.08); --accent2: #e04020;
+  }
+}
+:root[data-theme="light"] {
+  --bg: #f0f4fc; --surface: #fff; --border: #d4dced; --text: #0c1828;
+  --muted: #4868a0; --accent: #0080cc; --accent-dim: rgba(0,128,204,0.08); --accent2: #e04020;
+}
+*,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
 
-<main id="main">
-<nav class="seo-breadcrumbs" aria-label="Breadcrumb">
-  <a href="https://thecreatingco.com/start/">thecreatingco</a><span aria-hidden="true"> / </span><span aria-current="page">BPM &amp; Key Finder</span>
+.nav { display: flex; align-items: center; justify-content: space-between; padding: 0 20px; height: 56px; border-bottom: 1px solid var(--border); background: var(--surface); position: sticky; top: 0; z-index: 10; }
+.nav-brand { font-size: 15px; font-weight: 700; color: var(--text); letter-spacing: -0.02em; }
+.nav-brand span { color: var(--accent); }
+.nav-link { font-size: 14px; color: var(--muted); }
+.nav-link:hover { color: var(--text); }
+
+.hero { max-width: 840px; margin: 0 auto; padding: 72px 20px 56px; text-align: center; }
+.hero-badge { display: inline-flex; align-items: center; gap: 6px; background: var(--accent-dim); color: var(--accent); border: 1px solid color-mix(in srgb,var(--accent) 30%,transparent); border-radius: 100px; font-size: 12px; font-weight: 600; padding: 4px 12px; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 20px; }
+.hero h1 { font-size: clamp(2rem,5vw,3.2rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 16px; }
+.hero h1 em { font-style: normal; color: var(--accent); }
+.hero-sub { font-size: clamp(1rem,2.2vw,1.2rem); color: var(--muted); max-width: 580px; margin: 0 auto 36px; }
+.hero-cta { display: inline-block; background: var(--accent); color: #fff; font-size: 16px; font-weight: 700; padding: 14px 32px; border-radius: 8px; letter-spacing: -0.01em; transition: opacity .15s; }
+.hero-cta:hover { opacity: .88; text-decoration: none; }
+.hero-note { font-size: 13px; color: var(--muted); margin-top: 10px; }
+
+/* BPM Tap illustration */
+.bpm-demo { max-width: 360px; margin: 48px auto 0; }
+.bpm-display { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px 24px; text-align: center; }
+.bpm-number { font-size: 72px; font-weight: 900; color: var(--accent); letter-spacing: -0.04em; line-height: 1; font-variant-numeric: tabular-nums; animation: bpm-pulse 0.5s ease-in-out infinite alternate; }
+@keyframes bpm-pulse { from { opacity: 1; transform: scale(1); } to { opacity: 0.85; transform: scale(0.97); } }
+.bpm-unit { font-size: 14px; font-weight: 700; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; margin-top: 4px; }
+.bpm-bar-row { display: flex; align-items: flex-end; justify-content: center; gap: 6px; height: 40px; margin-top: 20px; }
+.bpm-tick { width: 10px; border-radius: 3px 3px 0 0; background: var(--accent); animation: bpm-tick var(--d,0.5s) ease-in-out infinite; }
+@keyframes bpm-tick { 0%,100% { opacity: 0.3; } 50% { opacity: 1; } }
+.bpm-tap-btn { margin-top: 16px; display: inline-block; background: var(--accent-dim); border: 1px solid color-mix(in srgb,var(--accent) 30%,transparent); color: var(--accent); font-size: 13px; font-weight: 700; padding: 8px 20px; border-radius: 6px; letter-spacing: 0.04em; text-transform: uppercase; }
+
+.section { max-width: 840px; margin: 0 auto; padding: 64px 20px; }
+.section-title { font-size: clamp(1.4rem,3vw,1.9rem); font-weight: 800; letter-spacing: -0.025em; text-align: center; margin-bottom: 8px; }
+.section-sub { text-align: center; color: var(--muted); font-size: 1rem; margin-bottom: 40px; }
+.features { display: grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap: 20px; }
+.feature { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; }
+.feature-icon { font-size: 24px; margin-bottom: 10px; }
+.feature h3 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+.feature p { font-size: 14px; color: var(--muted); line-height: 1.5; }
+
+.use-cases { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.use-inner { max-width: 840px; margin: 0 auto; padding: 64px 20px; }
+.uc-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); gap: 16px; margin-top: 36px; }
+.uc-card { border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; }
+.uc-title { font-size: 14px; font-weight: 700; margin-bottom: 6px; }
+.uc-desc { font-size: 13px; color: var(--muted); line-height: 1.5; }
+
+.bpm-table { width: 100%; border-collapse: collapse; margin-top: 32px; font-size: 14px; }
+.bpm-table th { text-align: left; font-size: 12px; font-weight: 700; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; padding: 0 12px 12px; border-bottom: 1px solid var(--border); }
+.bpm-table td { padding: 12px; border-bottom: 1px solid var(--border); }
+.bpm-table tr:last-child td { border-bottom: none; }
+.bpm-range { font-weight: 700; color: var(--accent); font-variant-numeric: tabular-nums; }
+
+.steps { counter-reset: step; display: flex; flex-direction: column; gap: 16px; margin-top: 40px; }
+.step { display: flex; gap: 16px; align-items: flex-start; }
+.step-num { counter-increment: step; width: 32px; height: 32px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 13px; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+.step-num::before { content: counter(step); }
+.step-body h3 { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+.step-body p { font-size: 14px; color: var(--muted); }
+
+.cta-strip { background: var(--accent-dim); border-top: 1px solid color-mix(in srgb,var(--accent) 20%,transparent); border-bottom: 1px solid color-mix(in srgb,var(--accent) 20%,transparent); }
+.cta-inner { max-width: 840px; margin: 0 auto; padding: 48px 20px; text-align: center; }
+.cta-inner h2 { font-size: clamp(1.4rem,3vw,1.9rem); font-weight: 800; letter-spacing: -0.025em; margin-bottom: 10px; }
+.cta-inner p { color: var(--muted); margin-bottom: 28px; }
+
+.related { max-width: 840px; margin: 0 auto; padding: 48px 20px 64px; }
+.related-title { font-size: 16px; font-weight: 700; margin-bottom: 20px; }
+.related-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); gap: 16px; }
+.related-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; display: flex; flex-direction: column; gap: 6px; transition: border-color .15s; }
+.related-card:hover { border-color: var(--accent); text-decoration: none; }
+.related-card-name { font-size: 14px; font-weight: 700; color: var(--text); }
+.related-card-desc { font-size: 13px; color: var(--muted); }
+
+.faq { max-width: 700px; margin: 0 auto; padding: 0 20px 72px; }
+.faq-title { font-size: clamp(1.3rem,2.5vw,1.7rem); font-weight: 800; letter-spacing: -0.02em; margin-bottom: 28px; }
+.faq-item { border-bottom: 1px solid var(--border); padding: 18px 0; }
+.faq-q { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+.faq-a { font-size: 14px; color: var(--muted); line-height: 1.6; }
+.faq-a a { color: var(--accent); }
+
+.footer { border-top: 1px solid var(--border); padding: 28px 20px; text-align: center; font-size: 13px; color: var(--muted); }
+.footer a { color: var(--muted); }
+.footer a:hover { color: var(--text); }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="nav-brand" href="/start/">the<span>creating</span>co</a>
+  <a class="nav-link" href="/tools/">All free tools</a>
 </nav>
 
-<section class="bpf-hero">
-  <h1>Find the BPM and key<br>of any audio file.</h1>
-  <p>Free online tempo and song key detector. Upload a WAV, MP3 or FLAC — results in seconds, no account needed. Batch compare files and export a CSV.</p>
-  <div class="bpf-cta-group">
-    <a class="bpf-cta-primary" href="https://sattarimusic.com/studio/keybpm">Open Key &amp; BPM — free</a>
-    <a class="bpf-cta-secondary" href="/products/key-bpm/">Tool overview &amp; limits</a>
-  </div>
-  <p class="bpf-badge">Hosted alpha · Runs in your browser · No upload to a server</p>
-</section>
+<section class="hero">
+  <div class="hero-badge">Free · Tap or upload · In-browser</div>
+  <h1>BPM Finder<br><em>Free Online</em></h1>
+  <p class="hero-sub">Find the tempo of any song in your browser — tap along to the beat or upload your audio file. Instant BPM detection with no account or download needed.</p>
+  <a class="hero-cta" href="https://thecreatingco.com/products/stemdeck/" rel="noopener">Find BPM Free →</a>
+  <p class="hero-note">Powered by StemDeck · Works in Chrome, Safari, Firefox</p>
 
-<section class="bpf-features" aria-label="Features">
-  <div class="bpf-feature">
-    <h3>Instant BPM detection</h3>
-    <p>Upload a file and the tool estimates tempo from the audio's rhythmic pulse. Steady, metronomic tracks get the most reliable result.</p>
-  </div>
-  <div class="bpf-feature">
-    <h3>Musical key estimation</h3>
-    <p>Harmonic analysis returns the most probable key for tracks with clear tonal content. Percussive or atonal tracks return an inconclusive result — that's a correct answer, not a failure.</p>
-  </div>
-  <div class="bpf-feature">
-    <h3>Batch comparison</h3>
-    <p>Load several files at once to compare tempo and key across a set. Useful for stem-matching or checking whether a collection shares a tonal centre.</p>
-  </div>
-  <div class="bpf-feature">
-    <h3>CSV export</h3>
-    <p>Download results as a spreadsheet-ready CSV — filename, BPM, key, confidence. Keep the report with your project or filter it in a DAW workflow.</p>
-  </div>
-  <div class="bpf-feature">
-    <h3>Runs in your browser</h3>
-    <p>Audio analysis happens locally. Your files don't leave your device. Works on desktop Chrome — no app install, no account.</p>
-  </div>
-  <div class="bpf-feature">
-    <h3>Plain, actionable results</h3>
-    <p>"Supported", "rough estimate", or "inconclusive" — the tool labels its own confidence so you know when to trust the number and when to verify by ear.</p>
-  </div>
-</section>
-
-<section class="bpf-how">
-  <h2>How to use the BPM &amp; Key Finder</h2>
-  <ol class="bpf-steps">
-    <li>
-      <div>
-        <strong>Open Key &amp; BPM</strong>
-        <p>Go to <a href="https://sattarimusic.com/studio/keybpm">sattarimusic.com/studio/keybpm</a>. The tool runs in your browser — no install required.</p>
+  <div class="bpm-demo">
+    <div class="bpm-display">
+      <div class="bpm-number">128</div>
+      <div class="bpm-unit">BPM · Beats per minute</div>
+      <div class="bpm-bar-row">
+        <div class="bpm-tick" style="height:20px;--d:0.47s;animation-delay:0s;"></div>
+        <div class="bpm-tick" style="height:28px;--d:0.47s;animation-delay:0.12s;"></div>
+        <div class="bpm-tick" style="height:22px;--d:0.47s;animation-delay:0.24s;"></div>
+        <div class="bpm-tick" style="height:36px;--d:0.47s;animation-delay:0.35s;"></div>
+        <div class="bpm-tick" style="height:18px;--d:0.47s;animation-delay:0.12s;opacity:.5;"></div>
+        <div class="bpm-tick" style="height:26px;--d:0.47s;animation-delay:0s;opacity:.4;"></div>
       </div>
-    </li>
-    <li>
-      <div>
-        <strong>Upload your audio file</strong>
-        <p>Drag a WAV, MP3 or FLAC onto the drop zone, or click to browse. For batch mode, load several files at once.</p>
-      </div>
-    </li>
-    <li>
-      <div>
-        <strong>Read the results</strong>
-        <p>The tool displays BPM with a confidence label (supported / rough estimate) and the detected musical key. A blank key means inconclusive — not that the track is atonal.</p>
-      </div>
-    </li>
-    <li>
-      <div>
-        <strong>Export a CSV</strong>
-        <p>If you analysed multiple files, download the CSV to keep a record with filenames, BPM and key for each. Import into a spreadsheet or use it to plan a mix.</p>
-      </div>
-    </li>
-  </ol>
+      <div class="bpm-tap-btn">Tap to count →</div>
+    </div>
+  </div>
 </section>
 
-<section class="bpf-faq">
-  <h2>Common questions</h2>
-  <details>
-    <summary>What audio formats does the BPM finder support?</summary>
-    <div class="faq-answer"><p>Key &amp; BPM accepts WAV, MP3, FLAC and other common browser-decodable audio formats. Analysis runs client-side — nothing is sent to a server.</p></div>
-  </details>
-  <details>
-    <summary>Why does my BPM result show half or double my expected tempo?</summary>
-    <div class="faq-answer"><p>A tempo algorithm detects a periodic pulse, not a named musical beat. A 120 BPM track also has a 60 BPM half-note pulse and a 240 BPM sixteenth-note pulse. The tool reports the strongest detected period. Choose the multiple that aligns with your grid — <a href="/learn/guides/bpm-half-double-time/">read the full explanation here</a>.</p></div>
-  </details>
-  <details>
-    <summary>How accurate is the key detection?</summary>
-    <div class="faq-answer"><p>Key estimation works best on tracks with clear, sustained harmonic content. Percussion-heavy or atonal audio, very short clips, or heavily compressed masters may return an inconclusive result. When the tool returns a blank key, it means it didn't find sufficient evidence — not that it failed.</p></div>
-  </details>
-  <details>
-    <summary>Can I analyse multiple files at once?</summary>
-    <div class="faq-answer"><p>Yes. Key &amp; BPM supports batch mode — load several files and compare their tempo and key estimates side by side, then export the full set as a CSV.</p></div>
-  </details>
-  <details>
-    <summary>Is my audio uploaded to a server?</summary>
-    <div class="faq-answer"><p>No. The entire analysis runs in your browser. Your audio files never leave your device.</p></div>
-  </details>
-  <details>
-    <summary>What's the difference between a supported BPM and a rough estimate?</summary>
-    <div class="faq-answer"><p>"Supported" means the algorithm found a clear, consistent pulse that passed internal thresholds. "Rough estimate" means it detected a likely period but with lower confidence — worth cross-checking by ear or with a tap-tempo tool.</p></div>
-  </details>
+<section class="section">
+  <h2 class="section-title">Everything you need to find the tempo</h2>
+  <p class="section-sub">Tap-tempo input, automatic file analysis, and a full music studio — all free, all in the browser.</p>
+  <div class="features">
+    <div class="feature">
+      <div class="feature-icon">👆</div>
+      <h3>Tap-tempo counter</h3>
+      <p>Tap or click on every beat and the BPM is calculated from the average interval across your taps — works for any song.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">🎵</div>
+      <h3>Audio file BPM detection</h3>
+      <p>Upload an audio file and let the automatic tempo analyser find the BPM — no tapping required for tracks with a strong rhythmic beat.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">🎯</div>
+      <h3>Decimal precision</h3>
+      <p>BPM is shown with one decimal place — useful when you need to match a precise tempo in a DAW or sync effects to an exact BPM.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">🥁</div>
+      <h3>Metronome at the detected BPM</h3>
+      <p>Once the BPM is set, use StemDeck's built-in metronome to hear the tempo as a click track while you practise or record.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">🔒</div>
+      <h3>In-browser — fully private</h3>
+      <p>Tap-tempo works with no upload at all. Audio analysis runs locally — your files are never sent to a server.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">📱</div>
+      <h3>Works on any device</h3>
+      <p>Tap with your finger on mobile or click on desktop — StemDeck's BPM finder works in any modern browser.</p>
+    </div>
+  </div>
 </section>
 
-<section class="bpf-related">
-  <h2>Related guides and tools</h2>
-  <ul>
-    <li><a href="/learn/guides/bpm-half-double-time/">Why a BPM finder reports half or double time</a></li>
-    <li><a href="/learn/guides/align-stems-for-remix/">How to align stems for a remix</a></li>
-    <li><a href="/learn/guides/evaluate-audio-stems/">How to evaluate separated audio stems</a></li>
-    <li><a href="/products/key-bpm/">Key &amp; BPM: tool overview &amp; limits</a></li>
-    <li><a href="/products/split/">Split: audio stem separator</a></li>
-    <li><a href="/products/stemdeck/">StemDeck: stem arrangement tool</a></li>
-  </ul>
-</section>
-</main>
+<div class="use-cases">
+  <div class="use-inner">
+    <h2 class="section-title">Common BPM ranges by genre</h2>
+    <p class="section-sub">Where does your song's tempo fall?</p>
+    <table class="bpm-table">
+      <thead>
+        <tr><th>Genre</th><th>Typical BPM range</th><th>Character</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Hip-hop / Trap</td><td class="bpm-range">60–100</td><td style="color:var(--muted)">Slow, heavy, half-time feel</td></tr>
+        <tr><td>R&amp;B / Soul</td><td class="bpm-range">60–110</td><td style="color:var(--muted)">Groove-oriented, laid-back</td></tr>
+        <tr><td>Pop</td><td class="bpm-range">100–130</td><td style="color:var(--muted)">Upbeat, radio-friendly</td></tr>
+        <tr><td>House</td><td class="bpm-range">120–130</td><td style="color:var(--muted)">Four-on-the-floor dance</td></tr>
+        <tr><td>Techno / Trance</td><td class="bpm-range">128–145</td><td style="color:var(--muted)">Driving, high-energy</td></tr>
+        <tr><td>Drum &amp; Bass / Jungle</td><td class="bpm-range">160–180</td><td style="color:var(--muted)">Fast, rolling drum patterns</td></tr>
+        <tr><td>Rock / Metal</td><td class="bpm-range">80–180</td><td style="color:var(--muted)">Wide range, guitar-driven</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
 
-<footer class="mm-footer cc-footer next-footer" aria-label="thecreatingco footer">
-<div class="nf-intro"><p class="nf-eyebrow">A GOOD PLACE TO BEGIN AGAIN</p><h2>What are you<br>into next<span aria-hidden="true">?</span></h2><a class="nf-news" href="/downloads/#whats-new"><span class="nf-dot" aria-hidden="true"></span>What's new <span aria-hidden="true">↗</span></a></div>
-<div class="nf-paths" aria-label="Choose your next step"><a href="/community/network"><span class="nf-label">THE CIRCLE</span><span class="nf-sub">Private social</span></a><a href="/locker/"><span class="nf-label">LOCKER</span><span class="nf-sub">Your saved files</span></a><a href="/tools/"><span class="nf-label">APPS & TOOLS</span><span class="nf-sub">Full directory</span></a><a href="/learn/"><span class="nf-label">LEARN</span><span class="nf-sub">Guides & lessons</span></a></div>
-<nav class="nf-links" aria-label="Footer navigation"><a href="/start/">About</a><a href="/about/">Company</a><a href="/changelog/">Changelog</a><a href="/privacy/">Privacy</a><a href="/testing/">Feedback</a></nav>
-<p class="nf-legal">© 2026 thecreatingco. All rights reserved.</p>
+<section class="section">
+  <h2 class="section-title">What people use BPM detection for</h2>
+  <div class="uc-grid">
+    <div class="uc-card">
+      <div class="uc-title">🎛️ DJing and beatmatching</div>
+      <div class="uc-desc">Match the BPM of two tracks before mixing — smooth transitions without the key clashing or the beats drifting.</div>
+    </div>
+    <div class="uc-card">
+      <div class="uc-title">🎹 Music production</div>
+      <div class="uc-desc">Set your DAW project tempo to match a reference track or sample you want to use. Loop and sample precisely when the grid is locked to the right BPM.</div>
+    </div>
+    <div class="uc-card">
+      <div class="uc-title">💃 Dance and choreography</div>
+      <div class="uc-desc">Know the exact tempo before setting choreography — count phrases, plan transitions, and synchronise movement with the beat.</div>
+    </div>
+    <div class="uc-card">
+      <div class="uc-title">🏃 Fitness and running playlists</div>
+      <div class="uc-desc">Build workout playlists at a target BPM to match your exercise cadence — most running cadence recommendations fall between 150–180 BPM.</div>
+    </div>
+    <div class="uc-card">
+      <div class="uc-title">🎸 Practising with a click</div>
+      <div class="uc-desc">Find the BPM of a song you want to learn, then practise with a metronome at that tempo — start slow and build up.</div>
+    </div>
+    <div class="uc-card">
+      <div class="uc-title">📹 Video and content sync</div>
+      <div class="uc-desc">Sync video cuts, animations or effects to the beat by knowing the exact BPM of the background track.</div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2 class="section-title">How to find the BPM — 3 ways</h2>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num"></div>
+      <div class="step-body">
+        <h3>Tap the beat (fastest)</h3>
+        <p>Open <a href="https://thecreatingco.com/products/stemdeck/">StemDeck</a>, play the song, and tap or click on every beat. After 4–8 taps the BPM is averaged and displayed. Works on any song with no file upload.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num"></div>
+      <div class="step-body">
+        <h3>Upload the audio file</h3>
+        <p>Drop your MP3, WAV or FLAC into StemDeck and let the automatic tempo analyser detect the BPM. Best for tracks with a clear rhythmic beat.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num"></div>
+      <div class="step-body">
+        <h3>Use the BPM in your project</h3>
+        <p>Copy the detected BPM into your DAW, set the metronome, or use StemDeck's loop and cue tools to remix the track at its detected tempo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-strip">
+  <div class="cta-inner">
+    <h2>Find the BPM of any song — free, right now</h2>
+    <p>Tap the beat or upload an audio file. No account. No download. Instant tempo detection in your browser.</p>
+    <a class="hero-cta" href="https://thecreatingco.com/products/stemdeck/" rel="noopener">Open BPM Finder Free →</a>
+  </div>
+</div>
+
+<section class="related">
+  <div class="related-title">More free music tools</div>
+  <div class="related-grid">
+    <a class="related-card" href="/audio-visualizer/">
+      <div class="related-card-name">📊 Audio Visualizer</div>
+      <div class="related-card-desc">Real-time spectrum and waveform visualization of any audio file — free in your browser.</div>
+    </a>
+    <a class="related-card" href="/pitch-shifter/">
+      <div class="related-card-name">🎚️ Pitch Shifter</div>
+      <div class="related-card-desc">Change the pitch of any audio free online — shift up or down in semitones, no download needed.</div>
+    </a>
+    <a class="related-card" href="/vocal-remover/">
+      <div class="related-card-name">🎤 Vocal Remover</div>
+      <div class="related-card-desc">Remove vocals or isolate the acapella from any song — free AI stem separation in your browser.</div>
+    </a>
+    <a class="related-card" href="/stem-splitter/">
+      <div class="related-card-name">🎼 Stem Splitter</div>
+      <div class="related-card-desc">Split any track into vocals, drums, bass and melody stems — download each separately.</div>
+    </a>
+  </div>
+</section>
+
+<section class="faq">
+  <h2 class="faq-title">Frequently asked questions</h2>
+
+  <div class="faq-item">
+    <div class="faq-q">Is the BPM finder free?</div>
+    <div class="faq-a">Yes — StemDeck's BPM finder is completely free. No account, no download, and no usage limit.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">How do I find the BPM of a song?</div>
+    <div class="faq-a">The easiest way is to tap along to the beat: open StemDeck, tap the BPM button on every beat for a few bars, and the tool averages your taps to show the BPM. You can also upload an audio file for automatic detection.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">What is BPM?</div>
+    <div class="faq-a">BPM stands for Beats Per Minute — it measures the tempo of music. 60 BPM means one beat per second; 120 BPM means two beats per second. Most popular music falls between 80 BPM and 175 BPM depending on the genre.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Why do I need to know the BPM of a song?</div>
+    <div class="faq-a">Knowing the BPM lets you sync samples, loops and effects to the tempo of a track. DJs use it to beatmatch; producers use it to set a project tempo; dancers use it to count phrases; fitness instructors use it to match music energy to workout cadence.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">How accurate is the BPM detection?</div>
+    <div class="faq-a">For tracks with a strong rhythmic beat — pop, hip-hop, EDM, rock — automated detection is typically accurate to within 1 BPM. Ambient or classical music with subtle rhythms may need manual tap input for best results.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Can I use the BPM finder on my phone?</div>
+    <div class="faq-a">Yes — the tap BPM input works on any device with a browser. Tap or click in time with the beat and the BPM is calculated from your tap intervals.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">What audio formats does the BPM finder accept?</div>
+    <div class="faq-a">StemDeck accepts MP3, WAV, FLAC, AAC, OGG and most other formats your browser can decode.</div>
+  </div>
+</section>
+
+<footer class="footer">
+  <p>© thecreatingco · <a href="/privacy/">Privacy</a> · <a href="/start/">Home</a> · <a href="/tools/">Tools</a></p>
 </footer>
-</body></html>
+
+</body>
+</html>
