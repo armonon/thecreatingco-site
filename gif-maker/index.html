@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GIF Maker Free Online — Create Animated GIFs from Video or Images</title>
+<meta name="description" content="Free online GIF maker — convert video clips or image sequences into animated GIFs in your browser. No software, no upload limits, no watermark.">
+<link rel="canonical" href="https://thecreatingco.com/gif-maker/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://thecreatingco.com/gif-maker/">
+<meta property="og:title" content="GIF Maker Free Online — Create Animated GIFs from Video or Images">
+<meta property="og:description" content="Free online GIF maker — convert video clips or image sequences into animated GIFs in your browser. No software, no upload limits, no watermark.">
+<meta property="og:image" content="https://thecreatingco.com/assets/share/home.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="GIF Maker Free Online — Create Animated GIFs from Video or Images">
+<meta name="twitter:description" content="Free online GIF maker — convert video clips or image sequences into animated GIFs in your browser. No software, no upload limits, no watermark.">
+<meta name="twitter:image" content="https://thecreatingco.com/assets/share/home.jpg">
+<meta name="robots" content="index,follow">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://thecreatingco.com/gif-maker/#webpage","url":"https://thecreatingco.com/gif-maker/","name":"GIF Maker Free Online — Create Animated GIFs from Video or Images","description":"Free online GIF maker — convert video clips or image sequences into animated GIFs in your browser. No software, no upload limits, no watermark.","isPartOf":{"@id":"https://thecreatingco.com/#website"},"breadcrumb":{"@id":"https://thecreatingco.com/gif-maker/#breadcrumb"}},{"@type":"SoftwareApplication","@id":"https://thecreatingco.com/gif-maker/#app","name":"Online GIF Maker","applicationCategory":"MultimediaApplication","operatingSystem":"Any (web browser)","url":"https://thecreatingco.com/gif-maker/","description":"Free online GIF maker that converts video clips (MP4, WebM, MOV) or image sequences (JPG, PNG) into animated GIFs directly in your browser — no upload, no watermark.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"The Creating Co","url":"https://thecreatingco.com"}},{"@type":"FAQPage","@id":"https://thecreatingco.com/gif-maker/#faq","mainEntity":[{"@type":"Question","name":"Is the GIF maker free?","acceptedAnswer":{"@type":"Answer","text":"Yes — completely free. Upload a video or image sequence, adjust the settings, and download your GIF. No account, no watermark, no file size limit."}},{"@type":"Question","name":"What video formats can I convert to GIF?","acceptedAnswer":{"@type":"Answer","text":"The GIF maker supports MP4, WebM, MOV, and AVI video files. You can also create a GIF from a sequence of JPG or PNG images."}},{"@type":"Question","name":"Is my video uploaded to a server?","acceptedAnswer":{"@type":"Answer","text":"No — the GIF maker processes everything in your browser using the Canvas API and WebAssembly. Your files never leave your device."}},{"@type":"Question","name":"Can I control GIF frame rate and size?","acceptedAnswer":{"@type":"Answer","text":"Yes — you can set the frame rate (2–30 fps), resize the output dimensions, and choose the playback speed. Lower frame rates and smaller sizes produce smaller GIF files."}},{"@type":"Question","name":"How do I make a GIF from a video clip?","acceptedAnswer":{"@type":"Answer","text":"Upload your video, trim the section you want using the start and end handles, set the frame rate and size, then click Create GIF. The animated GIF downloads automatically when it's ready."}},{"@type":"Question","name":"Can I make a GIF from images?","acceptedAnswer":{"@type":"Answer","text":"Yes — upload multiple JPG or PNG images in order and the GIF maker will animate them as frames. You can set the delay between frames to control animation speed."}},{"@type":"Question","name":"Can I use the GIF maker on my phone?","acceptedAnswer":{"@type":"Answer","text":"Yes — the GIF maker is fully mobile-optimised. Open it in Chrome or Safari on your phone, upload a video from your camera roll, and download the GIF to share immediately."}}]},{"@type":"BreadcrumbList","@id":"https://thecreatingco.com/gif-maker/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://thecreatingco.com/"},{"@type":"ListItem","position":2,"name":"Free Tools","item":"https://thecreatingco.com/free-tools/"},{"@type":"ListItem","position":3,"name":"GIF Maker","item":"https://thecreatingco.com/gif-maker/"}]}]}</script>
+<style>
+:root {
+  --bg: #0d0d12; --surface: #16161e; --surface2: #1e1e2a;
+  --border: rgba(255,255,255,0.08); --text: #f0f0f8; --muted: #7878a0;
+  --accent: #00d4aa; --accent2: #a855f7;
+  --accent-dim: rgba(0,212,170,0.12); --accent2-dim: rgba(168,85,247,0.12);
+}
+@media (prefers-color-scheme: light) {
+  :root { --bg:#f8f8fc; --surface:#fff; --surface2:#f0f0f8; --border:rgba(0,0,0,0.08); --text:#111118; --muted:#6060a0; --accent-dim:rgba(0,180,140,0.10); --accent2-dim:rgba(140,60,200,0.10); }
+}
+:root[data-theme="dark"] { --bg:#0d0d12; --surface:#16161e; --surface2:#1e1e2a; --border:rgba(255,255,255,0.08); --text:#f0f0f8; --muted:#7878a0; }
+:root[data-theme="light"] { --bg:#f8f8fc; --surface:#fff; --surface2:#f0f0f8; --border:rgba(0,0,0,0.08); --text:#111118; --muted:#6060a0; }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+header{border-bottom:1px solid var(--border);padding:16px}
+.nav-inner{max-width:860px;margin:auto;display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:800;font-size:17px;color:var(--text)}.logo span{color:var(--accent)}
+.hero{text-align:center;padding:64px 16px 48px;max-width:700px;margin:auto}
+.badge{display:inline-flex;align-items:center;gap:6px;background:var(--accent-dim);border:1px solid color-mix(in srgb,var(--accent) 30%,transparent);border-radius:999px;padding:4px 12px;font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;text-transform:uppercase;margin-bottom:20px}
+h1{font-size:clamp(28px,5vw,48px);font-weight:900;letter-spacing:-1px;line-height:1.1;margin-bottom:16px}
+.sub{font-size:17px;color:var(--muted);max-width:500px;margin:0 auto 32px}
+.cta-btn{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#fff;font-size:16px;font-weight:800;padding:14px 28px;border-radius:8px;transition:opacity .15s}
+.cta-btn:hover{opacity:.88;text-decoration:none}
+.cta-sub{margin-top:12px;font-size:13px;color:var(--muted)}
+
+/* ---- GIF animation illustration ---- */
+.gif-demo{max-width:500px;margin:48px auto;background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:28px 24px;overflow:hidden}
+.gif-preview{position:relative;border-radius:12px;background:#000;overflow:hidden;height:180px;margin-bottom:16px;display:flex;align-items:center;justify-content:center}
+.gif-frames{display:flex;position:absolute;top:0;left:0;height:100%;animation:slide-frames 2.4s steps(1) infinite}
+.gif-frame{width:500px;height:180px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:60px}
+@keyframes slide-frames{
+  0%{transform:translateX(0)}
+  25%{transform:translateX(-500px)}
+  50%{transform:translateX(-1000px)}
+  75%{transform:translateX(-1500px)}
+}
+.gif-label{position:absolute;top:10px;left:10px;background:rgba(0,0,0,.7);border-radius:5px;padding:3px 8px;font-size:11px;font-weight:800;color:#fff;letter-spacing:.05em}
+.gif-counter{position:absolute;bottom:10px;right:10px;font-size:11px;color:rgba(255,255,255,.5);font-weight:700}
+.gif-controls{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px}
+.ctrl-group{background:var(--surface2);border-radius:8px;padding:10px 12px}
+.ctrl-label{font-size:11px;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px}
+.ctrl-val{font-size:15px;font-weight:800;color:var(--accent)}
+.progress-wrap{background:var(--surface2);border-radius:4px;height:6px;overflow:hidden}
+.progress-fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:4px;animation:progress-pulse 2.4s ease-in-out infinite}
+@keyframes progress-pulse{0%{width:0%}50%{width:100%}100%{width:0%}}
+.dl-bar{display:flex;align-items:center;gap:10px;background:var(--surface2);border-radius:8px;padding:10px 14px;margin-top:12px}
+.dl-label{font-size:13px;font-weight:700;flex:1}
+.dl-meta{font-size:11px;color:var(--muted)}
+.dl-btn{padding:6px 14px;border-radius:6px;background:var(--accent);color:#fff;font-size:12px;font-weight:800;white-space:nowrap}
+
+.section{max-width:860px;margin:0 auto;padding:48px 16px}
+.section-title{font-size:24px;font-weight:800;margin-bottom:8px}
+.section-sub{color:var(--muted);margin-bottom:32px}
+.features{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
+.feat-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px}
+.feat-icon{font-size:24px;margin-bottom:10px}
+.feat-title{font-weight:700;margin-bottom:6px}
+.feat-desc{font-size:14px;color:var(--muted)}
+.use-cases{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
+.use-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px}
+.use-title{font-weight:700;margin-bottom:6px}
+.use-desc{font-size:14px;color:var(--muted)}
+.steps{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
+.step-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px}
+.step-num{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:var(--accent-dim);color:var(--accent);font-weight:900;font-size:14px;margin-bottom:12px}
+.step-title{font-weight:700;margin-bottom:6px}
+.step-desc{font-size:14px;color:var(--muted)}
+.settings-table{width:100%;border-collapse:collapse;font-size:14px}
+.settings-table th{text-align:left;padding:10px 12px;border-bottom:2px solid var(--border);color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.06em}
+.settings-table td{padding:10px 12px;border-bottom:1px solid var(--border)}
+.settings-table tr:last-child td{border-bottom:none}
+.settings-table td:first-child{font-weight:700}
+.cta-strip{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:48px 16px;text-align:center}
+.cta-strip h2{font-size:24px;font-weight:800;margin-bottom:12px}
+.cta-strip p{color:var(--muted);margin-bottom:24px;max-width:480px;margin-left:auto;margin-right:auto}
+.related{display:flex;flex-wrap:wrap;gap:10px}
+.rel-link{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:8px 16px;font-size:14px;font-weight:600;color:var(--text)}
+.rel-link:hover{border-color:var(--accent);text-decoration:none}
+.faq{display:grid;gap:12px}
+.faq-item{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px}
+.faq-q{font-weight:700;margin-bottom:8px}
+.faq-a{font-size:14px;color:var(--muted)}
+footer{border-top:1px solid var(--border);padding:32px 16px;text-align:center}
+.footer-inner{max-width:860px;margin:auto}
+.footer-links{display:flex;flex-wrap:wrap;gap:16px;justify-content:center;margin-bottom:12px;font-size:14px}
+.footer-copy{font-size:12px;color:var(--muted)}
+</style>
+</head>
+<body>
+<header>
+  <div class="nav-inner">
+    <a class="logo" href="https://thecreatingco.com/">the<span>creating</span>co</a>
+    <nav style="display:flex;gap:20px;font-size:14px;font-weight:600">
+      <a href="https://thecreatingco.com/free-tools/" style="color:var(--muted)">Free Tools</a>
+      <a href="https://thecreatingco.com/products/stemdeck/" style="color:var(--muted)">StemDeck</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<div class="hero">
+  <div class="badge">✦ Free Online Tool</div>
+  <h1>GIF Maker</h1>
+  <p class="sub">Turn any video clip or image sequence into an animated GIF — right in your browser. No upload, no watermark, no download required.</p>
+  <a class="cta-btn" href="https://thecreatingco.com/products/stemdeck/">Create a GIF Free →</a>
+  <p class="cta-sub">Works with MP4, WebM, MOV, JPG, PNG · All processing stays on your device</p>
+</div>
+
+<!-- Animated GIF demo illustration -->
+<div class="gif-demo">
+  <div class="gif-preview">
+    <div class="gif-frames">
+      <div class="gif-frame">🎬</div>
+      <div class="gif-frame">✂️</div>
+      <div class="gif-frame">🎨</div>
+      <div class="gif-frame">⬇️</div>
+    </div>
+    <div class="gif-label">GIF</div>
+    <div class="gif-counter">4 frames · 15fps</div>
+  </div>
+  <div class="gif-controls">
+    <div class="ctrl-group">
+      <div class="ctrl-label">Frame rate</div>
+      <div class="ctrl-val">15 fps</div>
+    </div>
+    <div class="ctrl-group">
+      <div class="ctrl-label">Size</div>
+      <div class="ctrl-val">480 × 270</div>
+    </div>
+    <div class="ctrl-group">
+      <div class="ctrl-label">Duration</div>
+      <div class="ctrl-val">0:03</div>
+    </div>
+    <div class="ctrl-group">
+      <div class="ctrl-label">Output</div>
+      <div class="ctrl-val">1.2 MB</div>
+    </div>
+  </div>
+  <div class="progress-wrap"><div class="progress-fill"></div></div>
+  <div class="dl-bar">
+    <span class="dl-label">output.gif</span>
+    <span class="dl-meta">1.2 MB · 480×270</span>
+    <span class="dl-btn">Download GIF</span>
+  </div>
+</div>
+
+<!-- Features -->
+<section class="section">
+  <h2 class="section-title">Everything in a GIF maker — nothing you don't need</h2>
+  <p class="section-sub">Every feature that matters for making shareable GIFs fast.</p>
+  <div class="features">
+    <div class="feat-card">
+      <div class="feat-icon">🎥</div>
+      <div class="feat-title">Video to GIF</div>
+      <div class="feat-desc">Upload an MP4, WebM, or MOV file and trim it to the exact section you want. Set start and end points with frame-accurate handles before converting.</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">🖼️</div>
+      <div class="feat-title">Images to GIF</div>
+      <div class="feat-desc">Upload a sequence of JPG or PNG files and animate them. Set the delay between frames and choose whether the GIF loops once or forever.</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">⚙️</div>
+      <div class="feat-title">Frame rate control</div>
+      <div class="feat-desc">Choose from 5 to 30 fps. Lower frame rates produce smaller files; higher frame rates produce smoother motion. Preview the result before downloading.</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">📐</div>
+      <div class="feat-title">Resize & crop</div>
+      <div class="feat-desc">Scale the output to any width and height. Lock the aspect ratio or crop to a square for social media. Smaller dimensions mean smaller file sizes.</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">🔁</div>
+      <div class="feat-title">Loop settings</div>
+      <div class="feat-desc">Set the GIF to loop forever, play once, or repeat a specific number of times. Boomerang mode reverses the animation for a ping-pong loop effect.</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">🔒</div>
+      <div class="feat-title">Private — stays on device</div>
+      <div class="feat-desc">All conversion happens in your browser using WebAssembly and the Canvas API. Your video or images never leave your device. No server, no storage, no tracking.</div>
+    </div>
+  </div>
+</section>
+
+<!-- Settings reference -->
+<section class="section" style="padding-top:0">
+  <h2 class="section-title">GIF settings guide</h2>
+  <p class="section-sub">Understanding the controls helps you balance quality and file size.</p>
+  <table class="settings-table">
+    <thead>
+      <tr>
+        <th>Setting</th>
+        <th>Range</th>
+        <th>Effect on file size</th>
+        <th>Best value for</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Frame rate</td>
+        <td>5 – 30 fps</td>
+        <td>Higher = larger</td>
+        <td>10–15 fps for most GIFs; 24+ for smooth motion</td>
+      </tr>
+      <tr>
+        <td>Width</td>
+        <td>Up to source</td>
+        <td>Wider = larger</td>
+        <td>480px for social; 640px for high quality</td>
+      </tr>
+      <tr>
+        <td>Colors</td>
+        <td>16 – 256</td>
+        <td>More = larger</td>
+        <td>128 for simple graphics; 256 for photos</td>
+      </tr>
+      <tr>
+        <td>Duration</td>
+        <td>0 – source length</td>
+        <td>Longer = larger</td>
+        <td>2–6 seconds keeps GIFs shareable</td>
+      </tr>
+      <tr>
+        <td>Loop count</td>
+        <td>0 (infinite) – 100</td>
+        <td>No effect</td>
+        <td>0 (infinite) for most social media</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- Use cases -->
+<section class="section" style="padding-top:0">
+  <h2 class="section-title">What people make with the GIF maker</h2>
+  <p class="section-sub">GIFs are everywhere — here's how to put the tool to work.</p>
+  <div class="use-cases">
+    <div class="use-card">
+      <div class="use-title">💬 Reaction GIFs</div>
+      <div class="use-desc">Clip a 2–3 second reaction moment from a video, convert it to GIF, and share it in any chat app. Works in iMessage, Telegram, Discord, Slack, and WhatsApp.</div>
+    </div>
+    <div class="use-card">
+      <div class="use-title">📱 Social Media Loops</div>
+      <div class="use-desc">Convert short clips to GIF for Twitter/X posts, Reddit comments, and Tumblr. GIFs auto-play silently and loop — perfect for demonstrations and moments.</div>
+    </div>
+    <div class="use-card">
+      <div class="use-title">📧 Email Animations</div>
+      <div class="use-desc">Embed an animated GIF in a marketing email for a product demo or teaser. GIFs are supported by nearly every email client, unlike embedded video.</div>
+    </div>
+    <div class="use-card">
+      <div class="use-title">🎓 Screen Recording Tutorials</div>
+      <div class="use-desc">Record a short screen clip showing how to do something, convert it to GIF, and embed it in a README, help doc, or blog post. No play button required.</div>
+    </div>
+    <div class="use-card">
+      <div class="use-title">🎨 Sticker & Meme Making</div>
+      <div class="use-desc">Animate a drawing or photo sequence with frame delays. Export as a looping GIF to use as a sticker in messaging apps or upload to meme platforms.</div>
+    </div>
+    <div class="use-card">
+      <div class="use-title">🛍️ Product Showcases</div>
+      <div class="use-desc">Animate product photos from multiple angles or show a before/after result. Add to Shopify, Etsy, or WooCommerce product pages for higher engagement.</div>
+    </div>
+  </div>
+</section>
+
+<!-- How to -->
+<section class="section" style="padding-top:0">
+  <h2 class="section-title">How to make a GIF online</h2>
+  <p class="section-sub">From upload to downloadable GIF in under a minute.</p>
+  <div class="steps">
+    <div class="step-card">
+      <div class="step-num">1</div>
+      <div class="step-title">Upload a video or images</div>
+      <div class="step-desc">Click Upload or drag in an MP4, WebM, or MOV video — or upload multiple JPG/PNG files in order to animate them as frames. The preview renders immediately in your browser.</div>
+    </div>
+    <div class="step-card">
+      <div class="step-num">2</div>
+      <div class="step-title">Trim and adjust settings</div>
+      <div class="step-desc">Drag the start and end handles to select the clip you want (for video). Set the frame rate, output size, and number of colors. Toggle loop mode and preview the animation.</div>
+    </div>
+    <div class="step-card">
+      <div class="step-num">3</div>
+      <div class="step-title">Download your GIF</div>
+      <div class="step-desc">Click Create GIF. Your browser converts the clip in seconds and the GIF downloads automatically. Open it in any image viewer, upload it anywhere that accepts GIFs.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-strip">
+  <h2>Make your GIF right now — free</h2>
+  <p>No account. No watermark. No upload. Your files stay on your device.</p>
+  <a class="cta-btn" href="https://thecreatingco.com/products/stemdeck/">Create GIF Free →</a>
+</div>
+
+<!-- Related tools -->
+<section class="section">
+  <h2 class="section-title">More free creative tools</h2>
+  <p class="section-sub">Everything from image compression to video trimming — all free, all in the browser.</p>
+  <div class="related">
+    <a class="rel-link" href="https://thecreatingco.com/video-trimmer/">Video Trimmer</a>
+    <a class="rel-link" href="https://thecreatingco.com/video-compressor/">Video Compressor</a>
+    <a class="rel-link" href="https://thecreatingco.com/image-compressor/">Image Compressor</a>
+    <a class="rel-link" href="https://thecreatingco.com/image-resizer/">Image Resizer</a>
+    <a class="rel-link" href="https://thecreatingco.com/background-remover/">Background Remover</a>
+    <a class="rel-link" href="https://thecreatingco.com/pdf-compressor/">PDF Compressor</a>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" style="padding-top:0">
+  <h2 class="section-title">Frequently asked questions</h2>
+  <div class="faq">
+    <div class="faq-item">
+      <div class="faq-q">Is the GIF maker free?</div>
+      <div class="faq-a">Yes — completely free. Upload a video or image sequence, adjust the settings, and download your GIF. No account, no watermark, no file size limit.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What video formats can I convert to GIF?</div>
+      <div class="faq-a">The GIF maker supports MP4, WebM, MOV, and AVI video files. You can also create a GIF from a sequence of JPG or PNG images uploaded in order.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Is my video uploaded to a server?</div>
+      <div class="faq-a">No — the GIF maker processes everything in your browser using the Canvas API and WebAssembly. Your files never leave your device. Nothing is uploaded or stored.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Can I control GIF frame rate and size?</div>
+      <div class="faq-a">Yes — you can set the frame rate (5–30 fps), resize the output dimensions, and adjust the color palette (16–256 colors). Lower frame rates and smaller sizes produce smaller files that load faster and share more easily.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How do I make a GIF from a video clip?</div>
+      <div class="faq-a">Upload your video, trim the section you want using the start and end handles, set the frame rate and size, then click Create GIF. The animated GIF downloads automatically to your device when conversion is complete.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Can I make a GIF from images?</div>
+      <div class="faq-a">Yes — upload multiple JPG or PNG images in the order you want them animated and the GIF maker will use them as frames. Set the delay between frames to control the animation speed.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Can I use the GIF maker on my phone?</div>
+      <div class="faq-a">Yes — the GIF maker is fully mobile-optimised. Open it in Chrome on Android or Safari on iPhone, upload a video from your camera roll, and download the GIF to share directly from your phone.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Why is my GIF file so large?</div>
+      <div class="faq-a">GIF files store uncompressed frames, so they can be large. To reduce file size: trim the clip to under 4 seconds, reduce the output width to 480px or less, lower the frame rate to 10–12 fps, and reduce the color count to 128 or below.</div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="https://thecreatingco.com/">Home</a>
+      <a href="https://thecreatingco.com/free-tools/">Free Tools</a>
+      <a href="https://thecreatingco.com/video-trimmer/">Video Trimmer</a>
+      <a href="https://thecreatingco.com/image-compressor/">Image Compressor</a>
+      <a href="https://thecreatingco.com/background-remover/">Background Remover</a>
+      <a href="https://thecreatingco.com/learn/">Learning Hub</a>
+    </div>
+    <div class="footer-copy">© 2026 The Creating Co · <a href="https://thecreatingco.com/privacy/">Privacy</a> · <a href="https://thecreatingco.com/terms/">Terms</a></div>
+  </div>
+</footer>
+
+<style>
+.related-tools{background:#16161f;border-top:1px solid #2a2a3d;padding:2.5rem 1.5rem;margin-top:2rem}
+.related-tools h2{font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#7a7a98;margin-bottom:1.25rem}
+.related-tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:.75rem;max-width:960px}
+.related-tools-grid a{display:block;background:#0d0d14;border:1px solid #2a2a3d;border-radius:8px;padding:.9rem 1rem;color:#e8e8f0;text-decoration:none;font-size:.875rem;font-weight:600;transition:border-color .2s,color .2s}
+.related-tools-grid a:hover{border-color:#c8ff00;color:#c8ff00}
+.related-tools-all{display:block;margin-top:1rem;font-size:.8rem;color:#7a7a98;text-decoration:none}
+.related-tools-all:hover{color:#c8ff00}
+@media(prefers-color-scheme:light){.related-tools{background:#f0f0f8;border-top-color:#d8d8e8}.related-tools-grid a{background:#fff;border-color:#d8d8e8;color:#1a1a2e}.related-tools-grid a:hover{border-color:#556600;color:#334400}.related-tools-all{color:#6a6a88}.related-tools-all:hover{color:#334400}}
+</style>
+
+<section class="related-tools" aria-label="Related free tools">
+  <h2>Related Free Tools</h2>
+  <div class="related-tools-grid">
+    <a href="/video-trimmer/">Video Trimmer</a>
+    <a href="/video-compressor/">Video Compressor</a>
+    <a href="/image-compressor/">Image Compressor</a>
+    <a href="/image-resizer/">Image Resizer</a>
+    <a href="/background-remover/">Background Remover</a>
+  </div>
+  <a href="/free-tools/" class="related-tools-all">Browse all free tools →</a>
+</section>
+</body>
+</html>
