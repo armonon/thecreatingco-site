@@ -26,27 +26,6 @@
   Cache-Control: no-cache
   Service-Worker-Allowed: /locker/
 
-# --- content-hashed JS bundles (wave 5) — added 2026-10-18; rules above unchanged ---
-# These filenames embed a SHA-256 content hash so they are safe to cache for 1 year.
-# Browsers that have an old hash will fetch the new file; repeat visitors get it free.
-/momentium-*.js
-  Cache-Control: public, max-age=31536000, immutable
-
-/site-navigation-*.js
-  Cache-Control: public, max-age=31536000, immutable
-
-/audit-fixes-*.js
-  Cache-Control: public, max-age=31536000, immutable
-
-/site-*.js
-  Cache-Control: public, max-age=31536000, immutable
-
-/momentium-motion-*.js
-  Cache-Control: public, max-age=31536000, immutable
-
-/start/motion-*.js
-  Cache-Control: public, max-age=31536000, immutable
-
-# content-hashed CSS bundle (wave 3)
-/assets/styles/global-*.css
+# --- autopilot perf (2026-10-18): content-hashed bundles never change in place ---
+/assets/styles/*
   Cache-Control: public, max-age=31536000, immutable
