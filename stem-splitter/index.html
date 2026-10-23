@@ -1,0 +1,736 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" href="/favicon.svg">
+<title>Split Audio into Stems Free Online | Vocals, Drums, Bass | thecreatingco</title>
+<meta name="description" content="Separate any song into vocals, drums, bass and other stems for free. Runs entirely in your browser — no upload, no account. Download WAV stems instantly.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://thecreatingco.com/stem-splitter/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Split Audio into Stems Free Online | thecreatingco">
+<meta property="og:description" content="Separate any song into vocals, drums, bass and other stems for free. Runs entirely in your browser — no upload, no account. Download WAV stems instantly.">
+<meta property="og:url" content="https://thecreatingco.com/stem-splitter/">
+<meta property="og:site_name" content="thecreatingco">
+<meta property="og:image" content="https://thecreatingco.com/assets/share/home.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Split Audio into Stems Free Online | thecreatingco">
+<meta name="twitter:description" content="Separate any song into vocals, drums, bass and other stems for free. Runs in your browser — no upload, no account.">
+<meta name="twitter:image" content="https://thecreatingco.com/assets/share/home.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://thecreatingco.com/stem-splitter/#page",
+      "url": "https://thecreatingco.com/stem-splitter/",
+      "name": "Split Audio into Stems Free Online | thecreatingco",
+      "description": "Separate any song into vocals, drums, bass and other stems for free in your browser.",
+      "about": { "@id": "https://thecreatingco.com/products/split/#app" },
+      "breadcrumb": { "@id": "https://thecreatingco.com/stem-splitter/#breadcrumb" }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://thecreatingco.com/products/split/#app",
+      "name": "Split — Stem Separator",
+      "url": "https://thecreatingco.com/products/split/",
+      "installUrl": "https://sattarimusic.com/studio/split",
+      "description": "Free online stem separator. Splits any audio track into vocals, drums, bass and other parts in your browser — no upload required.",
+      "applicationCategory": "MusicApplication",
+      "operatingSystem": "Web browser",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "featureList": [
+        "Separate vocals from music in the browser",
+        "Isolate drums, bass and other stems",
+        "Download individual WAV stems",
+        "No file upload — audio stays on your device",
+        "Send stems directly to StemDeck for remixing"
+      ],
+      "publisher": {
+        "@type": "Organization",
+        "name": "thecreatingco",
+        "url": "https://thecreatingco.com"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://thecreatingco.com/stem-splitter/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is this stem splitter really free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Split is free to use in your browser. No account or payment is required. The separation model downloads once to your device and runs locally on subsequent uses."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does my audio get uploaded to a server?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Split runs its AI model locally in your browser after a one-time model download. Your audio is never sent to any server — everything happens on your device."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which stems can I separate?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Split separates audio into four stems: vocals, drums, bass and other (everything else, including melodic instruments and synths). You can preview each stem before downloading."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What audio formats does it accept?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Split accepts MP3, WAV, FLAC, OGG and most common audio formats supported by your browser. Output stems are downloaded as WAV files."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does separation take?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The first run requires downloading the separation model (about 172 MB), which can be slow on slower connections. After that, a typical 3–4 minute track separates in under a minute on a modern computer. CPU-only machines will be slower than those with GPU support."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use the stems for remixing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Split includes a direct link to open your stems in StemDeck, thecreatingco's browser mixing studio. You can balance layers, build arrangements and export a mix — all in the browser and all free."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://thecreatingco.com/stem-splitter/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://thecreatingco.com/start/" },
+        { "@type": "ListItem", "position": 2, "name": "Free tools", "item": "https://thecreatingco.com/tools/" },
+        { "@type": "ListItem", "position": 3, "name": "Stem Splitter", "item": "https://thecreatingco.com/stem-splitter/" }
+      ]
+    }
+  ]
+}
+</script>
+<style>
+/* ── Reset & tokens ───────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #0d0d10;
+  --bg2: #141418;
+  --bg3: #1c1c22;
+  --border: #2a2a32;
+  --text: #e8e8f0;
+  --muted: #8888a0;
+  --accent: #8fe0d4;
+  --accent2: #ffb05e;
+  --gap: clamp(1rem, 4vw, 2rem);
+  --max: 1100px;
+  --radius: 12px;
+}
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --bg: #f5f5f8;
+    --bg2: #ffffff;
+    --bg3: #ebebf2;
+    --border: #d0d0dc;
+    --text: #111118;
+    --muted: #55556a;
+  }
+}
+:root[data-theme="light"] {
+  --bg: #f5f5f8; --bg2: #ffffff; --bg3: #ebebf2;
+  --border: #d0d0dc; --text: #111118; --muted: #55556a;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  font-size: clamp(15px, 1.7vw, 17px);
+}
+
+/* ── Nav ─────────────────────────────────────────── */
+.ss-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem var(--gap);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  background: var(--bg);
+  z-index: 10;
+}
+.ss-wordmark {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  text-decoration: none;
+}
+.ss-wordmark span { color: var(--accent); }
+.ss-nav-link {
+  font-size: 0.85rem;
+  color: var(--muted);
+  text-decoration: none;
+}
+.ss-nav-link:hover { color: var(--text); }
+
+/* ── Layout helpers ──────────────────────────────── */
+.ss-wrap {
+  max-width: var(--max);
+  margin-inline: auto;
+  padding-inline: var(--gap);
+}
+.ss-section { padding-block: clamp(3rem, 8vw, 6rem); }
+.ss-section + .ss-section { border-top: 1px solid var(--border); }
+
+/* ── Hero ─────────────────────────────────────────── */
+.ss-hero {
+  padding-block: clamp(4rem, 10vw, 8rem);
+  text-align: center;
+}
+.ss-eyebrow {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+.ss-h1 {
+  font-size: clamp(2.2rem, 6vw, 4rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin-bottom: 1.25rem;
+}
+.ss-h1 em { font-style: normal; color: var(--accent); }
+.ss-hero-desc {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: var(--muted);
+  max-width: 560px;
+  margin-inline: auto;
+  margin-bottom: 2.5rem;
+}
+.ss-badge-row {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+}
+.ss-badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.3rem 0.8rem;
+  border-radius: 100px;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  background: var(--bg2);
+}
+.ss-badge-accent { border-color: var(--accent); color: var(--accent); background: transparent; }
+.ss-cta-group { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+.ss-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.75rem;
+  border-radius: var(--radius);
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: opacity 0.15s;
+}
+.ss-btn:hover { opacity: 0.85; }
+.ss-btn-primary { background: var(--accent); color: #0d0d10; }
+.ss-btn-ghost { background: transparent; border: 1.5px solid var(--border); color: var(--text); }
+
+/* ── Stems visual ─────────────────────────────────── */
+.ss-stems {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1px;
+  background: var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-block: 2rem;
+}
+.ss-stem {
+  background: var(--bg2);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.ss-stem-icon {
+  font-size: 1.75rem;
+  line-height: 1;
+}
+.ss-stem-name {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.ss-stem-desc {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+/* ── How it works ────────────────────────────────── */
+.ss-h2 {
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+  margin-bottom: 0.75rem;
+}
+.ss-section-desc {
+  color: var(--muted);
+  max-width: 520px;
+  margin-bottom: 2.5rem;
+}
+.ss-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+.ss-step {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+}
+.ss-step-num {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+}
+.ss-step h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.ss-step p { font-size: 0.9rem; color: var(--muted); }
+
+/* ── Feature grid ────────────────────────────────── */
+.ss-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+.ss-feature {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.ss-feature-icon {
+  font-size: 1.4rem;
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+.ss-feature h3 {
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+.ss-feature p { font-size: 0.85rem; color: var(--muted); }
+
+/* ── CTA block ───────────────────────────────────── */
+.ss-cta-block {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: clamp(2rem, 5vw, 4rem);
+  text-align: center;
+}
+.ss-cta-block .ss-h2 { margin-bottom: 0.5rem; }
+.ss-cta-block p { color: var(--muted); margin-bottom: 2rem; }
+
+/* ── FAQ ─────────────────────────────────────────── */
+.ss-faq { display: flex; flex-direction: column; gap: 0; }
+.ss-faq details {
+  border-bottom: 1px solid var(--border);
+}
+.ss-faq details:first-child { border-top: 1px solid var(--border); }
+.ss-faq summary {
+  padding: 1.25rem 0;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  user-select: none;
+}
+.ss-faq summary::-webkit-details-marker { display: none; }
+.ss-faq summary::after {
+  content: "+";
+  font-size: 1.1rem;
+  color: var(--muted);
+  flex-shrink: 0;
+  transition: transform 0.2s;
+}
+.ss-faq details[open] summary::after { transform: rotate(45deg); }
+.ss-faq-answer {
+  padding-bottom: 1.25rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+  max-width: 680px;
+}
+
+/* ── Related ─────────────────────────────────────── */
+.ss-related {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+.ss-related a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.1rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--bg2);
+  color: var(--text);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: border-color 0.15s;
+}
+.ss-related a:hover { border-color: var(--accent); }
+
+/* ── Footer ──────────────────────────────────────── */
+.ss-footer {
+  border-top: 1px solid var(--border);
+  padding-block: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+.ss-footer a { color: var(--muted); font-size: 0.8rem; text-decoration: none; }
+.ss-footer a:hover { color: var(--text); }
+.ss-footer-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+
+/* ── Waveform bars (decorative) ───────────────────── */
+.ss-waveform {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  height: 40px;
+  justify-content: center;
+  margin: 2rem auto 0;
+  opacity: 0.4;
+}
+.ss-wave-bar {
+  width: 4px;
+  border-radius: 2px;
+  background: var(--accent);
+  animation: ss-wave 1.4s ease-in-out infinite;
+}
+.ss-wave-bar:nth-child(1)  { height: 12px; animation-delay: 0s; }
+.ss-wave-bar:nth-child(2)  { height: 22px; animation-delay: 0.1s; }
+.ss-wave-bar:nth-child(3)  { height: 32px; animation-delay: 0.2s; }
+.ss-wave-bar:nth-child(4)  { height: 40px; animation-delay: 0.3s; }
+.ss-wave-bar:nth-child(5)  { height: 30px; animation-delay: 0.4s; }
+.ss-wave-bar:nth-child(6)  { height: 18px; animation-delay: 0.5s; }
+.ss-wave-bar:nth-child(7)  { height: 26px; animation-delay: 0.6s; }
+.ss-wave-bar:nth-child(8)  { height: 38px; animation-delay: 0.7s; }
+.ss-wave-bar:nth-child(9)  { height: 22px; animation-delay: 0.8s; }
+.ss-wave-bar:nth-child(10) { height: 14px; animation-delay: 0.9s; }
+@keyframes ss-wave {
+  0%, 100% { transform: scaleY(0.5); }
+  50% { transform: scaleY(1); }
+}
+
+/* ── Note bar ────────────────────────────────────── */
+.ss-note {
+  background: var(--bg3);
+  border-left: 3px solid var(--accent2);
+  padding: 0.85rem 1.1rem;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin-top: 2rem;
+}
+</style>
+</head>
+<body>
+
+<!-- Nav -->
+<nav class="ss-nav">
+  <a class="ss-wordmark" href="/start/">thecreatingco<span>.</span></a>
+  <a class="ss-nav-link" href="/tools/">All tools ↗</a>
+</nav>
+
+<!-- Breadcrumb (hidden visually, present for SEO) -->
+<nav aria-label="Breadcrumb" style="position:absolute;left:-9999px">
+  <a href="/start/">Home</a> /
+  <a href="/tools/">Free tools</a> /
+  <span aria-current="page">Stem Splitter</span>
+</nav>
+
+<main id="main">
+
+  <!-- Hero -->
+  <section class="ss-section ss-hero ss-wrap" aria-labelledby="ss-h1">
+    <p class="ss-eyebrow">Free · Browser · No upload</p>
+    <h1 class="ss-h1" id="ss-h1">
+      Split any song into<br>
+      <em>vocals, drums, bass</em> &amp; more
+    </h1>
+    <p class="ss-hero-desc">
+      Separate audio into clean stems in seconds. Free, private and runs entirely
+      in your browser — your audio never leaves your device.
+    </p>
+    <div class="ss-badge-row">
+      <span class="ss-badge ss-badge-accent">Free — no account needed</span>
+      <span class="ss-badge">WAV download</span>
+      <span class="ss-badge">No upload</span>
+      <span class="ss-badge">Remix-ready</span>
+    </div>
+    <div class="ss-cta-group">
+      <a class="ss-btn ss-btn-primary" href="https://sattarimusic.com/studio/split">
+        Split audio free ↗
+      </a>
+      <a class="ss-btn ss-btn-ghost" href="/products/split/">
+        About Split
+      </a>
+    </div>
+    <div class="ss-waveform" aria-hidden="true">
+      <div class="ss-wave-bar"></div>
+      <div class="ss-wave-bar"></div>
+      <div class="ss-wave-bar"></div>
+      <div class="ss-wave-bar"></div>
+      <div class="ss-wave-bar"></div>
+      <div class="ss-wave-bar"></div>
+      <div class="ss-wave-bar"></div>
+      <div class="ss-wave-bar"></div>
+      <div class="ss-wave-bar"></div>
+      <div class="ss-wave-bar"></div>
+    </div>
+  </section>
+
+  <!-- What you get -->
+  <section class="ss-section" aria-labelledby="ss-stems-title">
+    <div class="ss-wrap">
+      <p class="ss-eyebrow">Four stems</p>
+      <h2 class="ss-h2" id="ss-stems-title">Every layer, separated.</h2>
+      <p class="ss-section-desc">
+        Split breaks your audio into four distinct stems. Preview each one before downloading.
+      </p>
+      <div class="ss-stems">
+        <div class="ss-stem">
+          <span class="ss-stem-icon">🎤</span>
+          <p class="ss-stem-name">Vocals</p>
+          <p class="ss-stem-desc">Lead and backing vocals isolated from the mix — for karaoke, remixes or vocal study.</p>
+        </div>
+        <div class="ss-stem">
+          <span class="ss-stem-icon">🥁</span>
+          <p class="ss-stem-name">Drums</p>
+          <p class="ss-stem-desc">The full drum kit separated so you can loop it, replace it or just hear the groove.</p>
+        </div>
+        <div class="ss-stem">
+          <span class="ss-stem-icon">🎸</span>
+          <p class="ss-stem-name">Bass</p>
+          <p class="ss-stem-desc">Bass guitar, synth bass and low-end isolated for sampling and frequency control.</p>
+        </div>
+        <div class="ss-stem">
+          <span class="ss-stem-icon">🎹</span>
+          <p class="ss-stem-name">Other</p>
+          <p class="ss-stem-desc">Everything else — guitars, keys, synths, pads, strings — as one stem for layering.</p>
+        </div>
+      </div>
+      <div class="ss-note">
+        <strong>On first use:</strong> Split downloads its separation model (~172 MB) to your device. This is a one-time download — after that, it runs offline and keeps your audio private.
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="ss-section" aria-labelledby="ss-how-title">
+    <div class="ss-wrap">
+      <p class="ss-eyebrow">How it works</p>
+      <h2 class="ss-h2" id="ss-how-title">Three steps to your stems.</h2>
+      <p class="ss-section-desc">
+        No account, no upload, no waiting room. Open it, drop your file and download your stems.
+      </p>
+      <div class="ss-steps">
+        <div class="ss-step">
+          <p class="ss-step-num">Step 01</p>
+          <h3>Open Split in your browser</h3>
+          <p>Go to Split — it runs in any modern browser on desktop or laptop. No app to install, no sign-in required.</p>
+        </div>
+        <div class="ss-step">
+          <p class="ss-step-num">Step 02</p>
+          <h3>Drop or select your audio file</h3>
+          <p>Load an MP3, WAV, FLAC or OGG file you own. The AI model separates it into four stems, entirely on your device.</p>
+        </div>
+        <div class="ss-step">
+          <p class="ss-step-num">Step 03</p>
+          <h3>Preview, then download WAVs</h3>
+          <p>Listen to each stem in the browser. Download the ones you want as individual WAV files — or send them straight to StemDeck to build a remix.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="ss-section" aria-labelledby="ss-feat-title">
+    <div class="ss-wrap">
+      <p class="ss-eyebrow">Why use Split</p>
+      <h2 class="ss-h2" id="ss-feat-title">Built for privacy, speed and creative flow.</h2>
+      <p class="ss-section-desc">
+        Most stem separators upload your audio to a server. Split doesn't — and it connects directly to the tools you need next.
+      </p>
+      <div class="ss-features">
+        <div class="ss-feature">
+          <span class="ss-feature-icon">🔒</span>
+          <h3>Private by design</h3>
+          <p>The model runs in your browser. Your audio is never uploaded or stored anywhere — not even temporarily.</p>
+        </div>
+        <div class="ss-feature">
+          <span class="ss-feature-icon">⚡</span>
+          <h3>Fast after first run</h3>
+          <p>The first separation downloads the model once. After that, Split works entirely offline and is significantly faster.</p>
+        </div>
+        <div class="ss-feature">
+          <span class="ss-feature-icon">🎛️</span>
+          <h3>Mute / solo preview</h3>
+          <p>Hear each stem in the browser before committing to a download. Compare a clean vocal against the full mix instantly.</p>
+        </div>
+        <div class="ss-feature">
+          <span class="ss-feature-icon">📁</span>
+          <h3>WAV and ZIP export</h3>
+          <p>Download individual stems as WAV or grab all four in one ZIP. High-quality, uncompressed output every time.</p>
+        </div>
+        <div class="ss-feature">
+          <span class="ss-feature-icon">🎚️</span>
+          <h3>Send straight to StemDeck</h3>
+          <p>Open your separated stems directly in StemDeck's browser mixing studio — no manual file transfer needed.</p>
+        </div>
+        <div class="ss-feature">
+          <span class="ss-feature-icon">💸</span>
+          <h3>Completely free</h3>
+          <p>No credits, no subscription, no paywall. Split is a free tool from thecreatingco — no strings attached.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA band -->
+  <section class="ss-section">
+    <div class="ss-wrap">
+      <div class="ss-cta-block">
+        <p class="ss-eyebrow">Ready to try it?</p>
+        <h2 class="ss-h2">Separate your stems now.</h2>
+        <p>Free, private and instant. No sign-in. No upload. Just results.</p>
+        <div class="ss-cta-group">
+          <a class="ss-btn ss-btn-primary" href="https://sattarimusic.com/studio/split">Open Split free ↗</a>
+          <a class="ss-btn ss-btn-ghost" href="https://stemdeck.thecreatingco.com/studio">Open StemDeck ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="ss-section" aria-labelledby="ss-faq-title">
+    <div class="ss-wrap">
+      <p class="ss-eyebrow">Common questions</p>
+      <h2 class="ss-h2" id="ss-faq-title">Stem splitting, answered.</h2>
+      <div class="ss-faq">
+        <details>
+          <summary>Is this stem splitter really free?</summary>
+          <div class="ss-faq-answer">
+            Yes. Split is free to use in your browser with no account or payment required. The separation model downloads once to your device and runs locally on subsequent uses.
+          </div>
+        </details>
+        <details>
+          <summary>Does my audio get uploaded to a server?</summary>
+          <div class="ss-faq-answer">
+            No. Split runs its AI model locally in your browser after a one-time model download (~172 MB). Your audio is never sent to any server — everything happens on your device.
+          </div>
+        </details>
+        <details>
+          <summary>Which stems can I separate?</summary>
+          <div class="ss-faq-answer">
+            Split separates audio into four stems: <strong>vocals</strong>, <strong>drums</strong>, <strong>bass</strong> and <strong>other</strong> (everything else, including melodic instruments and synths). You can mute and solo each stem in the browser before downloading.
+          </div>
+        </details>
+        <details>
+          <summary>What audio formats does it accept?</summary>
+          <div class="ss-faq-answer">
+            Split accepts MP3, WAV, FLAC, OGG and most common audio formats supported by your browser. Output stems are downloaded as WAV files.
+          </div>
+        </details>
+        <details>
+          <summary>How long does separation take?</summary>
+          <div class="ss-faq-answer">
+            The first run downloads the separation model (~172 MB), which can take a few minutes on slower connections. After that, a typical 3–4 minute track separates in under a minute on a modern computer. CPU-only machines will be slower than those with GPU support.
+          </div>
+        </details>
+        <details>
+          <summary>Can I use the stems for remixing?</summary>
+          <div class="ss-faq-answer">
+            Yes — Split includes a direct link to open your stems in StemDeck, thecreatingco's browser mixing studio. You can balance stem layers, build an arrangement, add effects and export a mix — all free, all in the browser.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related tools -->
+  <section class="ss-section" aria-labelledby="ss-related-title">
+    <div class="ss-wrap">
+      <p class="ss-eyebrow">Keep going</p>
+      <h2 class="ss-h2" id="ss-related-title">More free music tools.</h2>
+      <p class="ss-section-desc">
+        Split is part of the Sattari Labs suite — free browser tools built for music creators.
+      </p>
+      <div class="ss-related">
+        <a href="https://stemdeck.thecreatingco.com/studio">StemDeck — Mix &amp; arrange stems ↗</a>
+        <a href="/bpm-finder/">BPM &amp; Key Finder — Free</a>
+        <a href="/products/vox/">Vox — Vocal pitch correction</a>
+        <a href="/products/canvas/">Canvas — Audio-reactive visuals</a>
+        <a href="/products/pocket/">Pocket — Beat sketchpad</a>
+        <a href="/products/press/">Press — Artist EPK builder</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- Footer -->
+<footer class="ss-wrap ss-footer">
+  <a href="/start/">thecreatingco</a>
+  <nav class="ss-footer-links" aria-label="Footer links">
+    <a href="/tools/">Directory</a>
+    <a href="/products/split/">About Split</a>
+    <a href="/privacy/">Privacy</a>
+    <a href="/testing/">Feedback</a>
+  </nav>
+</footer>
+
+</body>
+</html>
